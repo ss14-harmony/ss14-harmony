@@ -5,11 +5,11 @@
   description: Given to the crew of Vulture
   components:
   - type: Sprite
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: vulture
   - type: Clothing
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: vulture-equipped
@@ -21,11 +21,11 @@
   description: Given to the crew of Miros
   components:
   - type: Sprite
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: miros
   - type: Clothing
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: miros-equipped
@@ -37,11 +37,11 @@
   description: Given to the crew of Lizard
   components:
   - type: Sprite
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: lizard
   - type: Clothing
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: lizard-equipped
@@ -53,11 +53,11 @@
   description: Given to the crew of Leviathan
   components:
   - type: Sprite
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: leviathan
   - type: Clothing
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothiog/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: leviathan-equipped
@@ -69,11 +69,11 @@
   description: Given to the crew of Salamander
   components:
   - type: Sprite
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: salamander
   - type: Clothing
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: salamander-equipped
@@ -85,11 +85,11 @@
   description: Given to the crew of Axolotl
   components:
   - type: Sprite
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: axolotl
   - type: Clothing
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: axolotl-equipped
@@ -101,11 +101,11 @@
   description: Given to the crew of Frontier
   components:
   - type: Sprite
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: frontier
   - type: Clothing
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: frontier-equipped
@@ -117,11 +117,11 @@
   description: Given to the crew of Delta-V
   components:
   - type: Sprite
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: delta-v
   - type: Clothing
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: delta-v-equipped
@@ -133,11 +133,11 @@
   description: Given to the crew of Cosmatic Drift
   components:
   - type: Sprite
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     layers:
     - state: cosmatic-drift
   - type: Clothing
-    sprite: Harmony/Clothiong/Neck/Misc/pins.rsi
+    sprite: Harmony/Clothing/Neck/Misc/pins.rsi
     clothingVisuals:
       neck:
       - state: cosmatic-drift-equipped
