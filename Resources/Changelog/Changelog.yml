@@ -1,119 +1,4 @@
-<<<<<<< HEAD
 Entries:
-- author: Futuristic
-  changes:
-  - message: RandomSentience event was removed
-    type: Remove
-  id: 6761
-  time: '2024-06-16T23:24:29.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/28982
-- author: notafet
-  changes:
-  - message: Adjust TEG power generation levels.
-    type: Tweak
-  id: 6762
-  time: '2024-06-17T01:13:33.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/29112
-- author: Cojoke-dot, AJCM-git
-  changes:
-  - message: You can now flip your eyepatches to the other eye! Yarrrrr!
-    type: Add
-  id: 6763
-  time: '2024-06-17T03:21:29.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/26277
-- author: deltanedas
-  changes:
-  - message: Borgs now have a 10 second beeping timer that paralyzes them when being
-      exploded with the robotics console and a 5 second delay when being disabled
-      with it.
-    type: Tweak
-  id: 6764
-  time: '2024-06-17T03:30:10.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/27876
-- author: EmoGarbage404
-  changes:
-  - message: Changed meteor swarm spawning to be less clumped up and favor hitting
-      multiple areas more.
-    type: Tweak
-  id: 6765
-  time: '2024-06-17T05:20:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/29057
-- author: Ubaser
-  changes:
-  - message: Added new reptilian horns, "Demonic".
-    type: Add
-  id: 6766
-  time: '2024-06-17T10:53:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/29022
-- author: Tayrtahn
-  changes:
-  - message: Chemical jugs no longer spawn with two labels.
-    type: Fix
-  id: 6767
-  time: '2024-06-17T23:09:19.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/29137
-- author: Tayrtahn
-  changes:
-  - message: Mice and hamsters inside chef's hats can now steer the hat's wearer.
-    type: Add
-  id: 6768
-  time: '2024-06-18T10:59:37.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25950
-- author: metalgearsloth
-  changes:
-  - message: Fix conveyors mispredicting movement.
-    type: Fix
-  id: 6769
-  time: '2024-06-18T12:11:37.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/28157
-- author: lzk228
-  changes:
-  - message: Warning cones added to the Engivend.
-    type: Add
-  id: 6770
-  time: '2024-06-18T14:02:05.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/29085
-- author: Errant
-  changes:
-  - message: The strip interface layout of arachnids is now consistent with other
-      species.
-    type: Tweak
-  id: 6771
-  time: '2024-06-18T14:10:18.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/29165
-- author: IProduceWidgets
-  changes:
-  - message: Foam Force rifle to cargo lottery!
-    type: Add
-  - message: Foam darts now stick to things they hit!
-    type: Tweak
-  id: 6772
-  time: '2024-06-18T15:04:15.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/29103
-- author: metalgearsloth
-  changes:
-  - message: Fix lathe materials sometimes flickering.
-    type: Fix
-  id: 6773
-  time: '2024-06-18T21:47:19.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/29167
-=======
-﻿Entries:
->>>>>>> upstream/master
-- author: osjarw
-  changes:
-  - message: Fix air alarms not alarming air.
-    type: Fix
-  id: 6774
-  time: '2024-06-19T00:20:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/29172
-- author: EmoGarbage404
-  changes:
-  - message: Slightly decreased meteor frequency.
-    type: Tweak
-  id: 6775
-  time: '2024-06-19T01:57:00.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/29194
 - author: Flareguy
   changes:
   - message: Resprited most of Security's basic attire.
@@ -3961,3 +3846,17 @@ Entries:
   id: 7273
   time: '2024-09-03T13:01:38.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/31170
+- author: Lyroth001
+  changes:
+  - message: added a new artifact node for medical chems
+    type: Add
+  id: 7274
+  time: '2024-09-03T15:11:34.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/30873
+- author: DieselMohawk
+  changes:
+  - message: Added Red Neck Gaiter to Secdrobe
+    type: Add
+  id: 7275
+  time: '2024-09-03T15:16:51.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/30106
