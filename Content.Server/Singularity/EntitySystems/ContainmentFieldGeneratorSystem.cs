@@ -36,6 +36,7 @@ public sealed class ContainmentFieldGeneratorSystem : EntitySystem
         SubscribeLocalEvent<ContainmentFieldGeneratorComponent, ReAnchorEvent>(OnReanchorEvent);
         SubscribeLocalEvent<ContainmentFieldGeneratorComponent, UnanchorAttemptEvent>(OnUnanchorAttempt);
         SubscribeLocalEvent<ContainmentFieldGeneratorComponent, ComponentRemove>(OnComponentRemoved);
+        SubscribeLocalEvent<ContainmentFieldGeneratorComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<ContainmentFieldGeneratorComponent, EventHorizonAttemptConsumeEntityEvent>(PreventBreach);
     }
 
@@ -60,6 +61,12 @@ public sealed class ContainmentFieldGeneratorSystem : EntitySystem
     }
 
     #region Events
+
+    private void OnMapInit(Entity<ContainmentFieldGeneratorComponent> generator, ref MapInitEvent args)
+    {
+        if (generator.Comp.Enabled)
+            ChangeFieldVisualizer(generator);
+    }
 
     /// <summary>
     /// A generator receives power from a source colliding with it.
