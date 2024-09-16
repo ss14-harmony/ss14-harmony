@@ -1,0 +1,15 @@
+- type: entity
+  parent: [ClothingHeadBase]
+  id: ClothingHeadHatCatEarsLegal
+  name: corporate-approved cat ears
+  description: "NYAH! but legally"
+  suffix: DO NOT MAP
+  components:
+    - type: Tag
+      tags: [] # ignore "WhitelistChameleon" tag
+    - type: Sprite
+      sprite: Clothing/Head/Hats/catears.rsi
+    - type: Clothing
+      sprite: Clothing/Head/Hats/catears.rsi
+    - type: AddAccentClothing
+      accent: OwOAccent
