@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: FunClothingCatEars
+  icon:
+    sprite: Clothing/Head/Hats/catears.rsi
+    state: icon
+  product: CrateFunClothingCatEars
+  cost: 3000
+  category: cargoproduct-category-name-fun
+  group: market

@@ -1,0 +1,10 @@
+- type: entity
+  id: CrateFunClothingCatEars
+  parent: CrateGenericSteel
+  name: feline headwear crate
+  description: Contains 3 pairs of cat ears.
+  components:
+    - type: StorageFill
+      contents:
+        - id: ClothingHeadHatCatEarsLegal
+          amount: 3
