@@ -1,0 +1,60 @@
+# posters
+- type: entity
+  parent: PosterBase
+  id: PosterHarmonyEnrico
+  name: "Salazar says WEH!"
+  description: "A poster depicting a distinguished Harmony Station captain - Salazar Snek."
+  components:
+    - type: Sprite
+      sprite: Harmony/Structures/Wallmounts/posters.rsi
+      state: harmony_poster1_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterHarmonyHarmony
+  name: "Harmony Station"
+  description: "Motivational poster for Harmony Station crew."
+  components:
+    - type: Sprite
+      sprite: Harmony/Structures/Wallmounts/posters.rsi
+      state: harmony_poster2_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterHarmonyManOfWeh
+  name: "A Man of Weh"
+  description: "A painting depicting a historic figure within the Church of Weh."
+  components:
+    - type: Sprite
+      sprite: Harmony/Structures/Wallmounts/posters.rsi
+      state: harmony_poster3_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterHarmonyMoney
+  name: "HarMoney"
+  description: "A poster depicting the values of Harmony Station cargo department."
+  components:
+    - type: Sprite
+      sprite: Harmony/Structures/Wallmounts/posters.rsi
+      state: harmony_poster4_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterHarmonyWorkHard
+  name: "Work Hard"
+  description: "If you work hard enough, YOU could earn your very own Nanotrasen Plunger Plus!"
+  components:
+    - type: Sprite
+      sprite: Harmony/Structures/Wallmounts/posters.rsi
+      state: harmony_poster5_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterHarmonyMakeshiftClown
+  name: "Makeshift Clown Poster"
+  description: "A poster has a handwritten signature: Clowne was herE!!"
+  components:
+    - type: Sprite
+      sprite: Harmony/Structures/Wallmounts/posters.rsi
+      state: harmony_poster6_legit
