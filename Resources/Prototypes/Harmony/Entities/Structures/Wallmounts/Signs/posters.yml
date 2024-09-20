@@ -68,3 +68,13 @@
     - type: Sprite
       sprite: Harmony/Structures/Wallmounts/posters.rsi
       state: harmony_poster8_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterHarmonyFaded
+  name: "Faded Poster"
+  description: "Was it wanted poster? A human bounty? It's not very clear. You can tell, however, that whoever the target was probably isn't loose anymore..."
+  components:
+    - type: Sprite
+      sprite: Harmony/Structures/Wallmounts/posters.rsi
+      state: harmony_poster9_legit
