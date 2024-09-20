@@ -58,3 +58,13 @@
     - type: Sprite
       sprite: Harmony/Structures/Wallmounts/posters.rsi
       state: harmony_poster6_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterHarmonyCan
+  name: "Fallen Can"
+  description: "A poster reminding you to clean up after yourself, nobody likes littering! Or, that's probably what it means. It's been here for so long, the original meaning may have faded…"
+  components:
+    - type: Sprite
+      sprite: Harmony/Structures/Wallmounts/posters.rsi
+      state: harmony_poster8_legit
