@@ -78,3 +78,13 @@
     - type: Sprite
       sprite: Harmony/Structures/Wallmounts/posters.rsi
       state: harmony_poster9_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterHarmonyMagicCandle
+  name: "Magic Candle"
+  description: "The fire within you burns bright. Maintain it and thrive. Neglect it and wither."
+  components:
+    - type: Sprite
+      sprite: Harmony/Structures/Wallmounts/posters.rsi
+      state: harmony_poster10_legit
