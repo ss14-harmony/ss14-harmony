@@ -730,6 +730,16 @@
   - UplinkDeception
 
 - type: listing
+  id: UplinkSyndicateID
+  name: uplink-syndicate-id-name
+  description: uplink-syndicate-id-desc
+  productEntity: SyndicateIDCard
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkDeception
+
+- type: listing
   id: UplinkStealthBox
   name: uplink-stealth-box-name
   description: uplink-stealth-box-desc
