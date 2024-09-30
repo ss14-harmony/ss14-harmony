@@ -13,6 +13,9 @@
     Telecrystal: 1
   categories:
   - UplinkDeception
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
 
 # Disruption
 # Allies
