@@ -1,0 +1,22 @@
+# Guns
+# Explosives
+# Ammo
+# Chemicals
+# Deception
+
+- type: listing
+  id: UplinkSyndicateID
+  name: uplink-syndicate-id-name
+  description: uplink-syndicate-id-desc
+  productEntity: SyndicateIDCard
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkDeception
+
+# Disruption
+# Allies
+# Implants
+# Wearables
+# Pointless
+# Job Specific
