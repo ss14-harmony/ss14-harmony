@@ -5,7 +5,7 @@
 # Deception
 
 - type: listing
-  id: UplinkSyndicateID
+  id: UplinkSyndicateIDHarmony
   name: uplink-syndicate-id-name
   description: uplink-syndicate-id-desc
   productEntity: SyndicateIDCard
