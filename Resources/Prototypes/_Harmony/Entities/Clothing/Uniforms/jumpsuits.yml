@@ -1,6 +1,6 @@
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
-  id: ClothingUniformJumpsuitHeadOfPersonnelTurtleneck
+  id: ClothingUniformJumpsuitHeadOfPersonnelTurtleneckHarmony
   name: head of personnel's turtleneck
   description: A blue turtle neck meant to amplify the comfort of the office. Watch out for dog hairs.
   components:
