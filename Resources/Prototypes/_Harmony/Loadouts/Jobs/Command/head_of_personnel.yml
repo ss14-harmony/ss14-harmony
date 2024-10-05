@@ -1,0 +1,16 @@
+# Jumpsuit
+- type: loadout
+  id: HoPJumpsuitTurtleneckHarmony
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHeadOfPersonnelTurtleneckHarmony
+
+- type: loadout
+  id: HoPJumpskirtTurtleneckHarmony
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtHeadOfPersonnelTurtleneckHarmony
+
+# Shoes
+- type: loadout
+  id: HoPLeatherShoesHarmony
+  equipment:
+    shoes: ClothingShoesLeather
