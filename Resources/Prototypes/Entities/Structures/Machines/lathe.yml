@@ -1382,7 +1382,7 @@
       - FloorTileItemGratingMaint
       - FloorTileItemTechmaint
       - FloorTileItemSteelMaint
-      - FloorTileItemTechmaintDark
+      - FloorTileItemTechmaintDark # Xeno playtest
       - FloorTileItemWood
       - FloorTileItemWoodLarge
       - FloorTileItemWoodPattern

@@ -173,7 +173,7 @@
             - tool: Welding
               doAfter: 10
 
-    - node: wallChitin
+    - node: wallChitin # Xeno playtest
       entity: WallSolidChitin
       edges:
         - to: girder
@@ -419,7 +419,7 @@
             - tool: Cutting
               doAfter: 1
 
-    - node: reinforcedWallChitin
+    - node: reinforcedWallChitin # Xeno playtest
       entity: WallReinforcedChitin
       edges:
         - to: reinforcedGirder
