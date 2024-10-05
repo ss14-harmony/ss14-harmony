@@ -28,6 +28,9 @@
       containers:
         key_slots:
           - EncryptionKeyCentCom
+    - type: ContainerContainer
+      containers:
+        key_slots: !type:Container
     - type: TelecomExempt
     - type: RadioMicrophone
       unobstructedRequired: true
