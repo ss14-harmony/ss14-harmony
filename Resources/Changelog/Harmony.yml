@@ -308,3 +308,10 @@ Entries:
     - type: Add
       message: Syndicate ID is now available in the uplink. Opens Syndicate doors. Does
         not open Nanotrasen doors.
+  - id: 108
+    author: DieselMohawk
+    time: '2024-10-05T20:12:59.0000000+00:00'
+    url: https://github.com/ss14-harmony/space-station-14/pull/108
+    changes:
+    - type: Add
+      message: Added HoP Turtleneck Skirt variant.
