@@ -90,7 +90,7 @@
     speedModifierThresholds:
       100: 0.7
   - type: MovementSpeedModifier
-    sprintSpeedModifier: 0.9
+    baseSprintSpeed: 3.6
   - type: Fixtures
     fixtures:
       fix1:
