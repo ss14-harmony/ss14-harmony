@@ -1,7 +1,7 @@
 - type: gameMap
   id: Xeno
   mapName: 'Xeno'
-  mapPath: /Maps/xeno.yml
+  mapPath: /Maps/_Harmony/xeno.yml
   minPlayers: 25
   maxPlayers: 70
   stations:
@@ -16,7 +16,7 @@
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_box.yml
         - type: StationCargoShuttle
-          path: /Maps/Shuttles/cargo_xeno.yml
+          path: /Maps/_Harmony/Shuttles/cargo_xeno.yml
         - type: StationJobs
           availableJobs:
             #service
