@@ -315,3 +315,17 @@ Entries:
     changes:
     - type: Add
       message: Added HoP Turtleneck Skirt variant.
+  - id: 109
+    author: DieselMohawk
+    time: '2024-10-06T13:29:53.0000000+00:00'
+    url: https://github.com/ss14-harmony/space-station-14/pull/109
+    changes:
+    - type: Add
+      message: Added Captain's Armored Winter Coat
+  - id: 110
+    author: DieselMohawk
+    time: '2024-10-06T13:31:54.0000000+00:00'
+    url: https://github.com/ss14-harmony/space-station-14/pull/110
+    changes:
+    - type: Add
+      message: Added Harmonica to Loadouts under Trinkets
