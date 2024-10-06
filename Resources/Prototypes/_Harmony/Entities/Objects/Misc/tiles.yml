@@ -5,6 +5,7 @@
   id: FloorTileItemTechmaintDark
   components:
   - type: Sprite
+    sprite: _Harmony/Objects/Tiles/tile.rsi
     state: techfloordark
   - type: Item
     heldPrefix: dark
@@ -16,27 +17,12 @@
     stackType: FloorTileTechmaintDark
 
 - type: entity
-  name: reinforced tile
-  parent: FloorTileItemBase
-  id: FloorTileItemReinforced
-  components:
-  - type: Sprite
-    state: reinforced
-  - type: Item
-    heldPrefix: reinforced
-  - type: FloorTile
-    outputs:
-      - Plating
-      - FloorReinforced
-  - type: Stack
-    stackType: FloorTileReinforced
-
-- type: entity
   id: FloorTileItemXeno
   parent: FloorTileItemBase
   name: xeno floor
   components:
   - type: Sprite
+    sprite: _Harmony/Objects/Tiles/tile.rsi
     state: xenofloor
   - type: Item
     heldPrefix: steel
