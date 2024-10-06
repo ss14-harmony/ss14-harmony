@@ -329,3 +329,10 @@ Entries:
     changes:
     - type: Add
       message: Added Harmonica to Loadouts under Trinkets
+  - id: 27
+    author: SlamBamActionman
+    time: '2024-10-06T15:32:34.0000000+00:00'
+    url: https://github.com/ss14-harmony/space-station-14/pull/27
+    changes:
+    - type: Add
+      message: Xeno map Beta is available for playtest on Harmony.
