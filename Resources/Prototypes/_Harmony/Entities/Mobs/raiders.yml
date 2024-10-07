@@ -1,66 +1,43 @@
-# - type: entity
-#   name: surplus rifle raider spawner
-#   id: MosinRaiderSpawner
-#   parent: MarkerBase
-#   components:
-#   - type: Sprite
-#     layers:
-#       - state: red
-#       - sprite: Structures/Decoration/banner.rsi
-#         state: banner
-#   - type: RandomSpawner
-#     prototypes:
-#       - RandomHumanoidRaiderMosin
-
-# - type: randomHumanoidSettings
-#   id: Raider
-#   components:
-#     - type: GhostRole
-#       name: job-name-ce
-#       description: ghost-role-information-command-description
-#     - type: Loadout
-#       prototypes: [ VisitorCE, VisitorCEAlt ]
-#       roleLoadout: [ RoleSurvivalExtended ]
-
-# - type: entity
-#   id: RandomHumanoidRaiderMosin
-#   name: raider wielding a surplus rifle
-#   components:
-#     - type: Sprite
-#       sprite: Markers/jobs.rsi
-#       state: ce
-#     - type: RandomHumanoidSpawner
-#       settings: Raider
-#     - type: AutoImplant
-#       implants:
-#       - MindShieldImplant
-
 - type: entity
-  name: Raider
-  parent: BaseSimpleMob
-  id: MobRaiderMosin
+  parent: BaseMobHuman
+  abstract: true
+  id: BaseRaider
   components:
   - type: NpcFactionMember
     factions:
       - Syndicate
+  - type: InputMover
+
+# Weak raiders. The weapons they get are gimmicky at best, and they have little to no survivability.
+- type: entity
+  name: Raider
+  suffix: Claymore
+  parent: BaseRaider
+  id: MobRaiderClaymore
+  components:
   - type: Loadout
     prototypes:
-      - SyndicateFootsoldierGearRuin
+      - RaiderClaymoreGear
 
-- type: startingGear
-  id: MobRaiderMosinGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitCossack
-    outerClothing: ClothingOuterArmorBone
-    shoes: ClothingShoesColorRed
-    gloves: ClothingHandsGlovesColorRed
-    mask: ClothingMaskBandBlack
-    back: SpearBone
-    suitStorage: WeaponMosinSniper
-    belt: ClothingBeltStorageWaistbag
-    pocket1: PipeBomb
-  storage:
-    belt:
-    - MagazineBoxLightRifleBig
-    - Gauze
-    - SpaceCash2500
+- type: entity
+  name: Raider
+  suffix: Mosin
+  parent: BaseRaider
+  id: MobRaiderMosin
+  components:
+  - type: Loadout
+    prototypes:
+      - RaiderMosinGear
+
+- type: entity
+  name: Raider
+  suffix: Bow
+  parent: BaseRaider
+  id: MobRaiderBow
+  components:
+  - type: Loadout
+    prototypes:
+      - RaiderBowGear
+
+#Okay-ish raiders. They are more than capable of taking on some crew members on their own
+

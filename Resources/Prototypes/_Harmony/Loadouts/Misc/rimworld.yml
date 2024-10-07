@@ -1,0 +1,126 @@
+- type: startingGear
+  id: RaiderClaymoreGear
+  parent: RaiderBasicClothing
+  equipment:
+    head: ClothingHeadHelmetBone
+    eyes: ClothingEyesGlassesSunglasses
+    outerClothing: ClothingOuterArmorBone
+    back: Claymore
+    belt: ClothingBeltStorageWaistbag
+    pocket1: PipeBomb
+    pocket2: Gauze
+  storage:
+    belt:
+    - ThrowingKnife
+    - ThrowingKnife
+    - ThrowingKnife
+    - SpaceCash2500
+
+- type: startingGear
+  id: RaiderMosinGear
+  parent: RaiderBasicClothing
+  equipment:
+    outerClothing: ClothingOuterArmorBasic
+    back: SpearBone
+    suitStorage: WeaponMosinSniper
+    belt: ClothingBeltStorageWaistbag
+    pocket1: PipeBomb
+  storage:
+    belt:
+    - MagazineBoxLightRifleBig
+    - Gauze
+    - SpaceCash2500
+
+- type: startingGear
+  id: RaiderBowGear
+  parent: RaiderBasicClothing
+  equipment:
+    outerClothing: ClothingOuterArmorBasicSlim
+    back: ClothingBackpackSatchelLeather
+    suitStorage: BowImprovised
+    belt: ClothingBeltQuiver
+    pocket1: KukriKnife
+  storage:
+    back:
+    - SmokeGrenade
+    - SmokeGrenade
+    - SmokeGrenade
+    - Gauze
+    - SpaceCash2500
+    belt:
+    - ArrowRegular
+    - ArrowRegular
+    - ArrowRegular
+    - ArrowRegular
+    - ArrowRegular
+    - ArrowRegular
+    - ArrowRegular
+    - ArrowRegular
+    - ArrowRegular
+    - ArrowRegular
+    - ArrowRegular
+    - ArrowRegular
+    - ArrowRegular
+    - ArrowRegular
+    - ArrowRegular
+    - ArrowRegular
+
+- type: startingGear
+  id: RaiderMedicGear
+  parent: [RaiderBasicEquipment, RaiderBasicClothing]
+  equipment:
+    head: ClothingHeadHatBeretBrigmed
+    eyes: ClothingEyesHudMedical
+    outerClothing: ClothingOuterArmorBasic
+    back: ClothingBackpackMedical
+    belt: ClothingBeltMedicalEMT
+    pocket1: WeaponPistolViper
+  storage:
+    belt:
+    - MedicatedSuture
+    - MedicatedSuture
+    - RegenerativeMesh
+    - BloodPack
+    - BruteAutoinjector
+    - BurnAutoinjector
+    - OmnizineChemistryBottle
+    back:
+    - BaseMagazinePistol
+    - BaseMagazinePistol
+    - MagazineBoxPistol
+    - MagazineBoxPistol
+    - GrenadeFlashBang
+    - GrenadeFlashBang
+    - GrenadeFlashBang
+    - SpaceCash5000
+
+- type: startingGear
+  id: RaiderSniperGear
+  parent: [RaiderBasicEquipment, RaiderBasicClothing]
+  equipment:
+    head: ClothingHeadHatBeretMerc
+    eyes: ClothingEyesGlassesSecurity
+    outerClothing: ClothingOuterArmorBasic
+    back: ClothingSniperHristov
+    belt: ClothingBeltSyndieHolster
+    pocket1: SpaceCash5000
+    pocket2: EmergencyMedipen
+  storage:
+    belt:
+    - WeaponRevolverDeckard
+    - SpeedLoaderMagnum
+    - MagazineBoxAntimaterielBig
+
+- type: startingGear
+  id: RaiderBasicClothing
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCossack
+    shoes: ClothingShoesColorRed
+    gloves: ClothingHandsGlovesColorRed
+    mask: ClothingMaskBandBlack
+
+- type: startingGear
+  id: RaiderBasicEquipment
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    gloves: ClothingHandsGlovesCombat
