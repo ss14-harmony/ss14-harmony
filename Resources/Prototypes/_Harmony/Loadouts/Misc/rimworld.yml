@@ -89,9 +89,6 @@
     - BaseMagazinePistol
     - MagazineBoxPistol
     - MagazineBoxPistol
-    - GrenadeFlashBang
-    - GrenadeFlashBang
-    - GrenadeFlashBang
     - SpaceCash5000
 
 - type: startingGear
@@ -100,16 +97,74 @@
   equipment:
     head: ClothingHeadHatBeretMerc
     eyes: ClothingEyesGlassesSecurity
-    outerClothing: ClothingOuterArmorBasic
-    back: ClothingSniperHristov
+    outerClothing: ClothingOuterWinterColorBrown
+    back: WeaponSniperHristov
     belt: ClothingBeltSyndieHolster
-    pocket1: SpaceCash5000
-    pocket2: EmergencyMedipen
+    pocket1: EmergencyMedipen
   storage:
     belt:
     - WeaponRevolverDeckard
     - SpeedLoaderMagnum
     - MagazineBoxAntimaterielBig
+    outerClothing:
+    - SpaceCash5000
+
+- type: startingGear
+  id: RaiderRiflemanGear
+  parent: [RaiderBasicEquipment, RaiderBasicClothing]
+  equipment:
+    head: ClothingHeadHatBandRed
+    eyes: ClothingEyesGlassesSunglasses
+    outerClothing: ClothingOuterVestWebMerc
+    back: ClothingBackpackMerc
+    suitStorage: WeaponRifleAk
+    belt: ClothingBeltMilitaryWebbing
+    pocket1: WeaponPistolViper
+    pocket2: EmergencyMedipen
+  storage:
+    belt:
+    - MagazineLightRifle
+    - MagazineLightRifle
+    - MagazineLightRifle
+    - MagazineLightRifle
+    - MagazineLightRifleUranium
+    back:
+    - BaseMagazinePistol
+    - BaseMagazinePistol
+    - MagazineBoxPistol
+    - MagazineBoxPistol
+    - GrenadeFlashBang
+    - GrenadeFlashBang
+    - GrenadeFlashBang
+    - SpaceCash5000
+
+- type: startingGear
+  id: RaiderDemolitionistGear
+  parent: [RaiderBasicEquipment, RaiderBasicClothing]
+  equipment:
+    head: ClothingHeadHatTrucker
+    eyes: ClothingEyesGlassesMeson
+    outerClothing: ClothingOuterVestWebMerc
+    back: ClothingBackpackSyndicate
+    suitStorage: WeaponShotgunKammerer
+    belt: ClothingBeltMilitaryWebbing
+    pocket1: WeaponPistolViper
+    pocket2: EmergencyMedipen
+  storage:
+    belt:
+    - BaseMagazinePistol
+    - BaseMagazinePistol
+    - BoxLethalShot
+    - BoxLethalShot
+    back:
+    - GrenadeFrag
+    - GrenadeFrag
+    - GrenadeFrag
+    - GrenadeFrag
+    - GrenadeFrag
+    - ClusterGrenade
+    - ClusterGrenade
+    - SpaceCash5000
 
 - type: startingGear
   id: RaiderBasicClothing
