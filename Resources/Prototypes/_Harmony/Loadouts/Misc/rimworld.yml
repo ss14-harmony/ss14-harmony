@@ -69,7 +69,7 @@
   id: RaiderMedicGear
   parent: [RaiderBasicEquipment, RaiderBasicClothing]
   equipment:
-    head: ClothingHeadHatBeretBrigmed
+    head: ClothingHeadHatBeretBrigmedic
     eyes: ClothingEyesHudMedical
     outerClothing: ClothingOuterArmorBasic
     back: ClothingBackpackMedical
@@ -80,13 +80,13 @@
     - MedicatedSuture
     - MedicatedSuture
     - RegenerativeMesh
-    - BloodPack
-    - BruteAutoinjector
-    - BurnAutoinjector
+    - Bloodpack
+    - BruteAutoInjector
+    - BurnAutoInjector
     - OmnizineChemistryBottle
     back:
-    - BaseMagazinePistol
-    - BaseMagazinePistol
+    - MagazinePistol
+    - MagazinePistol
     - MagazineBoxPistol
     - MagazineBoxPistol
     - SpaceCash5000
@@ -100,12 +100,12 @@
     outerClothing: ClothingOuterWinterColorBrown
     back: WeaponSniperHristov
     belt: ClothingBeltSyndieHolster
-    pocket1: EmergencyMedipen
+    pocket1: WeaponRevolverDeckard
+    pocket2: EmergencyMedipen
   storage:
     belt:
-    - WeaponRevolverDeckard
-    - SpeedLoaderMagnum
-    - MagazineBoxAntimaterielBig
+    - MagazineBoxAntiMaterielBig
+    - MagazineBoxAntiMaterielBig
     outerClothing:
     - SpaceCash5000
 
@@ -113,7 +113,7 @@
   id: RaiderRiflemanGear
   parent: [RaiderBasicEquipment, RaiderBasicClothing]
   equipment:
-    head: ClothingHeadHatBandRed
+    head: ClothingHeadBandRed
     eyes: ClothingEyesGlassesSunglasses
     outerClothing: ClothingOuterVestWebMerc
     back: ClothingBackpackMerc
@@ -129,8 +129,8 @@
     - MagazineLightRifle
     - MagazineLightRifleUranium
     back:
-    - BaseMagazinePistol
-    - BaseMagazinePistol
+    - MagazinePistol
+    - MagazinePistol
     - MagazineBoxPistol
     - MagazineBoxPistol
     - GrenadeFlashBang
@@ -152,10 +152,10 @@
     pocket2: EmergencyMedipen
   storage:
     belt:
-    - BaseMagazinePistol
-    - BaseMagazinePistol
-    - BoxLethalShot
-    - BoxLethalShot
+    - MagazinePistol
+    - MagazinePistol
+    - BoxLethalshot
+    - BoxLethalshot
     back:
     - GrenadeFrag
     - GrenadeFrag
