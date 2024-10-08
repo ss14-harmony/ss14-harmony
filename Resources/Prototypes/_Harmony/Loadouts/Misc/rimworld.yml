@@ -22,7 +22,7 @@
   equipment:
     outerClothing: ClothingOuterArmorBasic
     back: SpearBone
-    suitStorage: WeaponMosinSniper
+    suitStorage: WeaponSniperMosin
     belt: ClothingBeltStorageWaistbag
     pocket1: PipeBomb
   storage:
