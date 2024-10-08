@@ -22,9 +22,10 @@
   equipment:
     outerClothing: ClothingOuterArmorBasic
     back: SpearBone
-    suitStorage: WeaponSniperMosin
     belt: ClothingBeltStorageWaistbag
     pocket1: PipeBomb
+  inhand:
+  - WeaponSniperMosin
   storage:
     belt:
     - MagazineBoxLightRifleBig
@@ -37,9 +38,10 @@
   equipment:
     outerClothing: ClothingOuterArmorBasicSlim
     back: ClothingBackpackSatchelLeather
-    suitStorage: BowImprovised
     belt: ClothingBeltQuiver
     pocket1: KukriKnife
+  inhand:
+    - BowImprovised
   storage:
     back:
     - SmokeGrenade
@@ -117,10 +119,11 @@
     eyes: ClothingEyesGlassesSunglasses
     outerClothing: ClothingOuterVestWebMerc
     back: ClothingBackpackMerc
-    suitStorage: WeaponRifleAk
     belt: ClothingBeltMilitaryWebbing
     pocket1: WeaponPistolViper
     pocket2: EmergencyMedipen
+  inhand:
+  - WeaponRifleAk
   storage:
     belt:
     - MagazineLightRifle
@@ -146,10 +149,11 @@
     eyes: ClothingEyesGlassesMeson
     outerClothing: ClothingOuterVestWebMerc
     back: ClothingBackpackSyndicate
-    suitStorage: WeaponShotgunKammerer
     belt: ClothingBeltMilitaryWebbing
     pocket1: WeaponPistolViper
     pocket2: EmergencyMedipen
+  inhand:
+    - WeaponShotgunKammerer
   storage:
     belt:
     - MagazinePistol
@@ -157,11 +161,11 @@
     - BoxLethalshot
     - BoxLethalshot
     back:
-    - GrenadeFrag
-    - GrenadeFrag
-    - GrenadeFrag
-    - GrenadeFrag
-    - GrenadeFrag
+    - ExGrenade
+    - ExGrenade
+    - ExGrenade
+    - ExGrenade
+    - ExGrenade
     - ClusterGrenade
     - ClusterGrenade
     - SpaceCash5000
