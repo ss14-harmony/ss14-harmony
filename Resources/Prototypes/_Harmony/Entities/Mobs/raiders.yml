@@ -11,7 +11,7 @@
 # Weak raiders. The weapons they get are gimmicky at best, and they have little to no survivability.
 - type: entity
   name: Weak Raider
-  suffix: Claymore
+  suffix: Rimworld, Claymore
   parent: BaseRaider
   id: MobRaiderClaymore
   components:
@@ -21,7 +21,7 @@
 
 - type: entity
   name: Weak Raider
-  suffix: Mosin
+  suffix: Rimworld, Mosin
   parent: BaseRaider
   id: MobRaiderMosin
   components:
@@ -31,7 +31,7 @@
 
 - type: entity
   name: Weak Raider
-  suffix: Bow
+  suffix: Rimworld, Bow
   parent: BaseRaider
   id: MobRaiderBow
   components:
@@ -42,7 +42,7 @@
 #Okay-ish raiders. They are more than capable of taking on some crew members on their own
 - type: entity
   name: Raider
-  suffix: Medic
+  suffix: Rimworld, Medic
   parent: BaseRaider
   id: MobRaiderMedic
   components:
@@ -52,7 +52,7 @@
 
 - type: entity
   name: Raider
-  suffix: Sniper
+  suffix: Rimworld, Sniper
   parent: BaseRaider
   id: MobRaiderSniper
   components:
@@ -62,7 +62,7 @@
 
 - type: entity
   name: Raider
-  suffix: Rifleman
+  suffix: Rimworld, Rifleman
   parent: BaseRaider
   id: MobRaiderRifleman
   components:
@@ -72,7 +72,7 @@
 
 - type: entity
   name: Raider
-  suffix: Demolitionist
+  suffix: Rimworld, Demolitionist
   parent: BaseRaider
   id: MobRaiderDemolitionist
   components:
