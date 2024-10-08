@@ -38,7 +38,7 @@
   equipment:
     outerClothing: ClothingOuterArmorBasicSlim
     back: ClothingBackpackSatchelLeather
-    belt: ClothingBeltQuiver
+    belt: ClothingBeltQuiverFilled
     pocket1: KukriKnife
   inhand:
     - BowImprovised
@@ -49,23 +49,6 @@
     - SmokeGrenade
     - Gauze
     - SpaceCash2500
-    belt:
-    - ArrowRegular
-    - ArrowRegular
-    - ArrowRegular
-    - ArrowRegular
-    - ArrowRegular
-    - ArrowRegular
-    - ArrowRegular
-    - ArrowRegular
-    - ArrowRegular
-    - ArrowRegular
-    - ArrowRegular
-    - ArrowRegular
-    - ArrowRegular
-    - ArrowRegular
-    - ArrowRegular
-    - ArrowRegular
 
 - type: startingGear
   id: RaiderMedicGear
