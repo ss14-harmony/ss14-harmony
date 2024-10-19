@@ -64,7 +64,8 @@ namespace Content.IntegrationTests.Tests
             "Cog",
             "Xeno", // Xeno map playtest
             "Packed2", // Harmony test of Packed changes
-            "Barratry" // Update of old map
+            "Barratry", // Update of old map
+            "dm01-entryway" // deathmatch PROMOD map
         };
 
         /// <summary>
