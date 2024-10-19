@@ -6,7 +6,6 @@
     gear: DeathMatchPROMODGear
     killCap: 31
     rewardSpawns:
-    - id: HealingToolbox
     - id: ClothingOuterArmorBasicSlim   # armor
       orGroup: loot
     - id: ClothingOuterArmorBasic
@@ -68,15 +67,15 @@
     - id: ScramImplanter
       orGroup: loot
     - id: EmergencyMedipen              # healing items
-      orGroup: loot
+      orGroup: loothealing
     - id: BruteAutoInjector
-      orGroup: loot
+      orGroup: loothealing
     - id: BurnAutoInjector
-      orGroup: loot
+      orGroup: loothealing
     - id: Stimpack
-      orGroup: loot
+      orGroup: loothealing
     - id: CombatMedipen
-      orGroup: loot
+      orGroup: loothealing
   - type: KillCalloutRule
   - type: PointManager
   - type: RespawnDeadRule
