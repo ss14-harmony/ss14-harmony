@@ -1,14 +1,14 @@
 - type: gameMap
-  id: MeteorArena
-  mapName: Meteor Arena
-  mapPath: /Maps/Nonstations/meteor-arena.yml
+  id: dm01-entryway
+  mapName: DM01 Entryway
+  mapPath: /Maps/_Harmony/Nonstations/dm01-entryway.yml
   minPlayers: 0
   stations:
-    Arena:
+    dm01-entryway:
       stationProto: StandardStationArena
       components:
         - type: StationNameSetup
-          mapNameTemplate: "Meteor Arena"
+          mapNameTemplate: "DM01 Entryway"
         - type: StationJobs
           availableJobs:
             Passenger: [ -1, -1 ]
