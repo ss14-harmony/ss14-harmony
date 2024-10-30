@@ -446,4 +446,4 @@ Entries:
     changes:
     - type: Tweak
       message: Barotrauma damage has been quadrupled (to be in line with values before
-      upstream nerf).
+        upstream nerf).
