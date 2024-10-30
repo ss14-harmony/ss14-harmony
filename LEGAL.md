@@ -6,12 +6,12 @@ The Authors retain all copyright to their respective work here submitted.
 
 ## Code license
 
-Code contributed to this repository after commit `7d6a6073f9c1a3954d17b78d535d43659307cbe9` is licensed under the **GNU Affero General Public License version 3.0** license, unless otherwise stated. See [LICENSE-AGPL.TXT](https://github.com/ss14-harmony/space-station-14/blob/master/LICENSE-AGPL.TXT).
+Code contributed to this repository after commit `7d6a6073f9c1a3954d17b78d535d43659307cbe9` is licensed under the **GNU Affero General Public License version 3.0** license, unless otherwise stated. See [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt).
 
 Code contributed to this repository before commit `7d6a6073f9c1a3954d17b78d535d43659307cbe9` is licensed under the **MIT** license.
-See [LICENSE-MIT.TXT](https://github.com/ss14-harmony/space-station-14/blob/master/LICENSE-MIT.TXT).
+See [LICENSE-MIT.TXT](LICENSE-MIT.txt).
 
-[7d6a6073f9c1a3954d17b78d535d43659307cbe9](https://github.com/ss14-harmony/space-station-14/commit/7d6a6073f9c1a3954d17b78d535d43659307cbe9) was pushed on October 30th, 2024 at 16:52 UTC
+[7d6a6073f9c1a3954d17b78d535d43659307cbe9](7d6a6073f9c1a3954d17b78d535d43659307cbe9) was pushed on October 30th, 2024 at 16:52 UTC
 
 ## Warranty
 
