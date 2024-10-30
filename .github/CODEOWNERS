@@ -11,11 +11,11 @@
 /Resources/**/*.yml                                 @KeldWolf @FluffMe
 
 # Sprites
-/Resources/Textures/                                @KeldWolf @liltenhead
+/Resources/Textures/                                @KeldWolf
 
 # Lobby art and music
-/Resources/Audio/Lobby/                             @KeldWolf @liltenhead
-/Resources/Textures/LobbyScreens/                   @KeldWolf @liltenhead
+/Resources/Audio/Lobby/                             @KeldWolf
+/Resources/Textures/LobbyScreens/                   @KeldWolf
 
 # Maps
 /Resources/Maps/                                    @spanky-spanky
