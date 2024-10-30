@@ -439,3 +439,11 @@ Entries:
       message: added deathmatch map DM01 Entryway
     - type: Add
       message: added deathmatch PROMOD preset
+  - id: 137
+    author: spanky-spanky
+    time: '2024-10-30T18:20:02.0000000+00:00'
+    url: https://github.com/ss14-harmony/space-station-14/pull/137
+    changes:
+    - type: Tweak
+      message: Barotrauma damage has been quadrupled (to be in line with values before
+      upstream nerf).
