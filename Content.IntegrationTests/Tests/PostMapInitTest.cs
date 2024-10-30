@@ -61,7 +61,9 @@ namespace Content.IntegrationTests.Tests
             "Reach",
             "Train",
             "Oasis",
-            "Cog"
+            "Cog",
+            "Xeno", // Xeno map playtest
+            "Barratry" // Update of old map
         };
 
         /// <summary>

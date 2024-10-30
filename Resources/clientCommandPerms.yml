@@ -20,13 +20,12 @@
     - net_watchent
     - devwindow
     - fill
-    - dumpentities
     - ">"
     - gcf
     - gc
     - gc_mode
     - cvar
-    - fuckrules
+    #- fuckrules # Harmony
     - midipanic
     - replay_recording_start
     - replay_recording_stop
@@ -73,6 +72,7 @@
     - detachent
     - localdelete
     - fullstatereset
+    - dumpentities
 
 - Flags: MAPPING
   Commands:
