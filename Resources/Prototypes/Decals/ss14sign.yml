@@ -1,5 +1,6 @@
-﻿- type: decal
-  id: SpaceStationSign1
+﻿# Hijacked paceStationSign1 ID for Resources/Prototypes/_Harmony/Decals/ss14sign.yml
+- type: decal
+  id: SpaceStationSign1Upstream # Harmony
   tags: ["station"]
   sprite:
     sprite: Decals/ss14sign.rsi
