@@ -366,7 +366,7 @@
 - type: entity #Harmony
   parent: [ClothingUniformBase, BaseCommandContraband]
   id: ClothingUniformJumpsuitHoSBlue
-  name: head of security's blue jumpsuit
+  name: head of security's blue suit
   description: A blue jumpsuit of Head of Security.
   components:
   - type: Sprite
@@ -615,7 +615,7 @@
 - type: entity #Harmony
   parent: [ClothingUniformBase, BaseRestrictedContraband]
   id: ClothingUniformJumpsuitSecBlue
-  name: security blue jumpsuit 
+  name: security blue suit 
   description: I'm a little busy right now, Calhoun.
   components:
   - type: Sprite
