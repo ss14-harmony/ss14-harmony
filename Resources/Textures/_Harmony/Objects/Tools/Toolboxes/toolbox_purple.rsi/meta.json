@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
+  "license": "GNU AGPL 3.0",
   "copyright": "Taken from baystation at commit https://github.com/Baystation12/Baystation12/commit/a929584d9db319eb7484113221be25cfa1d5dc09 , held sprites redone by Alekshhh, hue shift to purple by Unisol",
   "size": {
     "x": 32,
