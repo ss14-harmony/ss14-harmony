@@ -77,7 +77,7 @@
         amount: 2
       - id: Plunger
         amount: 2
-      - id: ToolboxJanitorialFilled
+      - id: ToolboxJanitorialFilled # Harmony change, added janitorial toolbox spawn to janitor's locker
 
 - type: entity
   id: ClosetLegalFilled
