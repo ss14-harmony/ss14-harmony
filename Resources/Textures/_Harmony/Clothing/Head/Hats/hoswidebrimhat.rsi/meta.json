@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken and Updated from cev-eris at commit https://github.com/discordia-space/CEV-Eris/pull/1073 by BoskiYourk for use in Harmony",
+    "copyright": "Taken and Updated from cev-eris at commit https://github.com/discordia-space/CEV-Eris/commit/3a941632978abfa69290c961ffb55db5e665aa69 by BoskiYourk for use in Harmony",
     "size": {
       "x": 32,
       "y": 32
