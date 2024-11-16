@@ -1,0 +1,53 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by Amatiramasu for use in Harmony",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "lantern"
+        },
+        {
+            "name": "lantern-empty"
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "empty-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "empty-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "fire-light",
+            "delays": [[0.15, 0.15, 0.15, 0.15]]
+        },
+        {
+            "name": "inhand-left-flame",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right-flame",
+            "directions": 4
+        },
+        {
+            "name": "equipped-BELT",
+            "directions": 4
+        },
+        {
+            "name": "empty-equipped-BELT",
+            "directions": 4
+        }
+    ]
+}
