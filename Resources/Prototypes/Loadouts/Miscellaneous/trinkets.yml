@@ -8,6 +8,16 @@
       department: Command
       time: 3600 # 1 hour
 
+# vox only loadout options
+- type: loadoutEffectGroup
+  id: Voxonly
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:CharacterSpeciesRequirement
+      species:
+       Vox
+
 # Flowers
 - type: loadout
   id: FlowerWreath
@@ -223,6 +233,18 @@
   storage:
     back:
     - HarmonicaInstrument
+
+- type: loadout
+  id: AuralisMask
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:CharacterSpeciesRequirement
+      species:
+       - Vox
+  storage:
+    back:
+    - ClothingMaskauralis
 
 # Towels
 - type: loadout
