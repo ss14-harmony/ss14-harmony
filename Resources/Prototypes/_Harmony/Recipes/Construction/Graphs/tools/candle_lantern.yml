@@ -1,0 +1,17 @@
+- type: constructionGraph
+  id: LanternAddCandle
+  start: start
+  graph:
+    - node: start
+      entity: EmptyCandleLantern
+      edges:
+        - to: finished
+          completed:
+            - !type:GivePrototype
+              prototype: CandleLantern
+              amount: 1
+            - !type:DeleteEntity
+          steps:
+            - tag: Candle
+              doAfter: 2
+    - node: finished

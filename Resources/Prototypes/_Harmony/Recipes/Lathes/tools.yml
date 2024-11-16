@@ -1,0 +1,7 @@
+- type: latheRecipe
+  id: EmptyCandleLantern
+  result: EmptyCandleLantern
+  completetime: 2
+  materials:
+    Glass: 100
+    Steel: 100

@@ -1,0 +1,138 @@
+- type: entity
+  parent: BaseItem
+  id: EmptyCandleLantern
+  name: empty candle lantern
+  description: An empty lantern that clearly can fit a candle inside.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Tools/candle_lantern.rsi
+    state: lantern-empty
+  - type: Item
+    size: Small
+    inhandVisuals:
+      left:
+      - state: empty-inhand-left
+      right:
+      - state: empty-inhand-right
+  - type: Clothing
+    sprite: _Harmony/Objects/Tools/candle_lantern.rsi
+    equippedPrefix: empty
+    quickEquip: false
+    slots:
+      - Belt
+  - type: Construction
+    graph: LanternAddCandle
+    node: start
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    # Spawn glass shard on destruction
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+          params:
+            volume: -4
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: EmptyCandleLantern
+  id: CandleLantern
+  name: candle lantern
+  description: The holy light guides the way.
+  components:
+  - type: Sprite
+    noRot: true
+    state: lantern
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Clothing
+    equippedPrefix: null
+  - type: Construction
+    graph: LanternAddCandle
+    node: finished
+  - type: Appearance
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+  - type: ExtinguishOnInteract
+    extinguishAttemptSound:
+      path: /Audio/Items/candle_blowing.ogg
+      params:
+        variation: 0.05
+        volume: 10
+  - type: UseDelay
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    firestacksOnIgnite: 3.0
+    firestackFade: -0.01
+    damage:
+      types:
+        Heat: 0.1
+  - type: FireVisuals
+    sprite: _Harmony/Objects/Tools/candle_lantern.rsi
+    normalState: fire-light
+    # The radius is a bit higher than the candle
+    lightRadiusPerStack: 0.5
+    # The energy is a bit higher than the candle
+    lightEnergyPerStack: 0.6
+  - type: ToggleableLightVisuals
+    spriteLayer: null
+    inhandVisuals:
+      left:
+      - state: inhand-left-flame
+        shader: unshaded
+      right:
+      - state: inhand-right-flame
+        shader: unshaded
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    # Spawn empty lantern on burn down
+    - trigger:
+        !type:DamageGroupTrigger
+        damageGroup: Burn
+        damage: 150
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          EmptyCandleLantern:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    # Spawn glass shard on destruction
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+          params:
+            volume: -4
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
