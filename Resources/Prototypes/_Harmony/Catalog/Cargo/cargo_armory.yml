@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: ArmoryRSC
+  icon:
+    sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
+    state: base
+  product: CrateArmoryRSC
+  cost: 1999
+  category: cargoproduct-category-name-armory
+  group: market
