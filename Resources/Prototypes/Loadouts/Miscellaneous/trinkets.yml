@@ -233,7 +233,7 @@
     - HarmonicaInstrument
 
 - type: loadout
-  id: AuralisMask
+  id: ClothingMaskauralis
   effects:
   - !type:SpeciesLoadoutEffect
     species:
