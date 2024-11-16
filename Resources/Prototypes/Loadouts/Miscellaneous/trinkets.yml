@@ -12,11 +12,9 @@
 - type: loadoutEffectGroup
   id: Voxonly
   effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:CharacterSpeciesRequirement
-      species:
-       Vox
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Vox
 
 # Flowers
 - type: loadout
@@ -237,11 +235,9 @@
 - type: loadout
   id: AuralisMask
   effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:CharacterSpeciesRequirement
-      species:
-       - Vox
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Vox
   storage:
     back:
     - ClothingMaskauralis
@@ -433,5 +429,5 @@
       role: JobMime
       time: 360000 # 100hr
   storage:
-    back: 
+    back:
     - TowelColorMime
