@@ -4,8 +4,10 @@
   name: bolt-action rifle crate
   description:  Contains several high-powered, bolt-action rifles with sufficient ammunition. Packaging is questionable, your mileage will vary. Requires Security or Supply access to open.
   components:
+  - type: EntityStorage
+    capacity: 50
   - type: AccessReader
-    access: [["Security"], ["Cargo"]]
+    access: [["Armory"], ["Security"], ["Cargo"]]
   - type: StorageFill
     contents:
       - id: WeaponSniperRSC
@@ -20,7 +22,6 @@
       - id: WeaponSniperRSC
         orGroup: guns
         amount: 5
-        # Lost is a dogshit show
       - id: SpeedLoaderLightRifle
         orGroup: ammo
         amount: 4
