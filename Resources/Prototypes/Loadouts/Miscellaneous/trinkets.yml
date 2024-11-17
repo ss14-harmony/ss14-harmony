@@ -224,16 +224,6 @@
     back:
     - HarmonicaInstrument
 
-- type: loadout
-  id: ClothingMaskauralis
-  effects:
-  - !type:SpeciesLoadoutEffect
-    species:
-    - Vox
-  storage:
-    back:
-    - ClothingMaskauralis
-
 # Towels
 - type: loadout
   id: TowelColorWhite
