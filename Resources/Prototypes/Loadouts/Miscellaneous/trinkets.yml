@@ -411,5 +411,5 @@
       role: JobMime
       time: 360000 # 100hr
   storage:
-    back:
+    back: 
     - TowelColorMime
