@@ -1,7 +1,7 @@
 - type: cargoProduct
   id: ArmoryRSC
   icon:
-    sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
+    sprite: _Harmony/Objects/Weapons/Guns/Snipers/rsc-m1917.rsi
     state: base
   product: CrateArmoryRSC
   cost: 1999

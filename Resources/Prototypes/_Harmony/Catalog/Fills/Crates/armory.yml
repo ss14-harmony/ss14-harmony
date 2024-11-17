@@ -2,7 +2,7 @@
   id: CrateArmoryRSC
   parent: [ CrateWeaponSecure, BaseRestrictedContraband ]
   name: bolt-action rifle crate
-  description:  Contains several high-powered, bolt-action rifles with sufficient ammunition. Packaging is questionable, your mileage will vary. requires Security or Supply access to open.
+  description:  Contains several high-powered, bolt-action rifles with sufficient ammunition. Packaging is questionable, your mileage will vary. Requires Security or Supply access to open.
   components:
   - type: AccessReader
     access: [["Security"], ["Cargo"]]
