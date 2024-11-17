@@ -186,7 +186,7 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
 
         SpawnMaterialsFromComposition(uid, item, completion * component.Efficiency, xform: xform);
 
-        if (CanGib(uid, item, component))
+        if (CanRecycleMob(uid, item, component))
         {
             // Harmony - Recycler now deals damage instead of gibbing.
             if (component.Damage == null)
