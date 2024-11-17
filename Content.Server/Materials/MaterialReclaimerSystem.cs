@@ -9,6 +9,7 @@ using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.Destructible;
 using Content.Shared.Emag.Components;
@@ -38,6 +39,7 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly SharedBodySystem _body = default!; //bobby
+    [Dependency] private readonly DamageableSystem _damageable = default!; //Harmony
     [Dependency] private readonly PuddleSystem _puddle = default!;
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
@@ -186,17 +188,17 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
 
         if (CanGib(uid, item, component))
         {
-            _adminLogger.Add(LogType.Gib, LogImpact.Extreme, $"{ToPrettyString(item):victim} was gibbed by {ToPrettyString(uid):entity} ");
-            SpawnChemicalsFromComposition(uid, item, completion, false, component, xform);
-            _body.GibBody(item, true);
+            // Harmony - Recycler now deals damage instead of gibbing.
+            _damageable.TryChangeDamage(item, component.Damage, true);
+            _adminLogger.Add(LogType.Damaged, LogImpact.Medium, $"{ToPrettyString(item):victim} was recycled by {ToPrettyString(uid):entity}, dealing {component.Damage.GetTotal()} damage.");
             _appearance.SetData(uid, RecyclerVisuals.Bloody, true);
         }
         else
         {
             SpawnChemicalsFromComposition(uid, item, completion, true, component, xform);
+            QueueDel(item);
         }
 
-        QueueDel(item);
     }
 
     private void SpawnMaterialsFromComposition(EntityUid reclaimer,

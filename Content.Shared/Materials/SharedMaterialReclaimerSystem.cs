@@ -148,7 +148,7 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
 
     /// <summary>
     /// Spawns the materials and chemicals associated
-    /// with an entity. Also deletes the item.
+    /// with an entity. Also deletes the item if it is not a mob.
     /// </summary>
     public virtual void Reclaim(EntityUid uid,
         EntityUid item,
@@ -200,6 +200,7 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
     /// <summary>
     /// Whether or not the reclaimer satisfies the conditions
     /// allowing it to gib/reclaim a living creature.
+    /// Harmony - The recycler can no longer gib living creatures, instead dealing significant brute damage.
     /// </summary>
     public bool CanGib(EntityUid uid, EntityUid victim, MaterialReclaimerComponent component)
     {
