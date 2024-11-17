@@ -1353,7 +1353,7 @@
   hidden: false # Harmony change for various Vox masks
   loadouts:
   - LoadoutSpeciesBreathTool
-  - LoadoutClothingMaskauralis # Harmony
+  - LoadoutClothingMaskAuralis # Harmony
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolMedical
@@ -1363,7 +1363,7 @@
   hidden: false # Harmony change for various Vox masks
   loadouts:
   - LoadoutSpeciesBreathToolMedical
-  - LoadoutClothingMaskauralis # Harmony
+  - LoadoutClothingMaskAuralis # Harmony
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolSecurity
@@ -1373,4 +1373,4 @@
   hidden: false # Harmony change for various Vox masks
   loadouts:
   - LoadoutSpeciesBreathToolSecurity
-  - LoadoutClothingMaskauralis # Harmony
+  - LoadoutClothingMaskAuralis # Harmony

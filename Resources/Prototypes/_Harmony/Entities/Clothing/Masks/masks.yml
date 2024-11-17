@@ -1,6 +1,6 @@
 - type: entity
   parent: ClothingMaskBase
-  id: ClothingMaskauralis
+  id: ClothingMaskAuralis
   name: auralis worship mask
   description: An Auralis worship mask frequently worn by vox zealots going on holy wars. Its unsure if the black tears mean something possitive or not.
   components:
