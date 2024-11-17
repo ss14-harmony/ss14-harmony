@@ -8,14 +8,6 @@
       department: Command
       time: 3600 # 1 hour
 
-# vox only loadout options
-- type: loadoutEffectGroup
-  id: Voxonly
-  effects:
-  - !type:SpeciesLoadoutEffect
-    species:
-    - Vox
-
 # Flowers
 - type: loadout
   id: FlowerWreath
