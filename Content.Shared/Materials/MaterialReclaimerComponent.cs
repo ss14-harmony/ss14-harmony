@@ -130,7 +130,7 @@ public sealed partial class MaterialReclaimerComponent : Component
     /// <summary>
     /// The damage the recycler will deal to creatures.
     /// </summary>
-    public DamageSpecifier Damage = default!;
+    public DamageSpecifier? Damage = default!;
 }
 
 [NetSerializable, Serializable]

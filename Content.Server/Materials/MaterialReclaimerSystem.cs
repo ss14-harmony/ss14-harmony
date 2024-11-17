@@ -189,6 +189,9 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
         if (CanGib(uid, item, component))
         {
             // Harmony - Recycler now deals damage instead of gibbing.
+            if (component.Damage == null)
+                return;
+
             _damageable.TryChangeDamage(item, component.Damage, true);
             _adminLogger.Add(LogType.Damaged, LogImpact.Medium, $"{ToPrettyString(item):victim} was recycled by {ToPrettyString(uid):entity}, dealing {component.Damage.GetTotal()} damage.");
             _appearance.SetData(uid, RecyclerVisuals.Bloody, true);
