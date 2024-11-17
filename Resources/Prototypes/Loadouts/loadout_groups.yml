@@ -1353,6 +1353,7 @@
   hidden: true
   loadouts:
   - LoadoutSpeciesBreathTool
+  - LoadoutClothingMaskauralis # Harmony
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolMedical
@@ -1362,6 +1363,7 @@
   hidden: true
   loadouts:
   - LoadoutSpeciesBreathToolMedical
+  - LoadoutClothingMaskauralis # Harmony
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolSecurity
@@ -1371,3 +1373,4 @@
   hidden: true
   loadouts:
   - LoadoutSpeciesBreathToolSecurity
+  - LoadoutClothingMaskauralis # Harmony
