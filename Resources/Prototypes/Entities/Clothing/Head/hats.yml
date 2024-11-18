@@ -274,13 +274,14 @@
     - ClothMade
     - HamsterWearable
     - WhitelistChameleon
-# Harmony Change: Sprite updated for us in detective clothing update
+
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatFedoraBrown
   name: brown fedora
   description: It's a brown fedora.
   components:
+  # Harmony Change: Sprites updated for use in detective clothing update
   - type: Sprite
     sprite: _Harmony/Clothing/Head/Hats/brownfedora.rsi
   - type: Clothing
@@ -290,13 +291,14 @@
     - ClothMade
     - HamsterWearable
     - WhitelistChameleon
-# Harmony Change: Sprite updated for us in detective clothing update
+
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatFedoraGrey
   name: grey fedora
   description: It's a grey fedora.
   components:
+  # Harmony Change: Sprites updated for us in detective clothing update
   - type: Sprite
     sprite: _Harmony/Clothing/Head/Hats/greyfedora.rsi
   - type: Clothing
