@@ -1,6 +1,6 @@
 using Content.Server.Speech.EntitySystems;
 
-namespace Content.Server.Speech.Components;
+namespace Content.Server._Harmony.Speech.Components;
 
 [RegisterComponent]
 [Access(typeof(IlleismAccentSystem))]
