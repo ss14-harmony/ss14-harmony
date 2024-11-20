@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 using System.Text;
 using Content.Server.Speech.Components;
 
-namespace Content.Server.Speech.EntitySystems;
+namespace Content.Server._Harmony.Speech.EntitySystems;
 
 public sealed class IlleismAccentSystem : EntitySystem
 {
