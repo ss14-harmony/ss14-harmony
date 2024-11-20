@@ -126,7 +126,8 @@ public sealed class ImmovableRodSystem : EntitySystem
             _bodySystem.GibBody(ent, body: body);
             return;
         }
-        else QueueDel(ent); //Harmony - Do not just... delete the entity no matter what. What da hell.
+
+        QueueDel(ent);
     }
 
     private void OnExamined(EntityUid uid, ImmovableRodComponent component, ExaminedEvent args)
