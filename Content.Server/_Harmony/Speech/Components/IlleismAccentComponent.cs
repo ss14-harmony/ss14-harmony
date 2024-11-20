@@ -1,4 +1,4 @@
-using Content.Server.Speech.EntitySystems;
+using Content.Server._Harmony.Speech.EntitySystems;
 
 namespace Content.Server._Harmony.Speech.Components;
 
