@@ -92,8 +92,11 @@
     ears: ClothingHeadsetGrey
     gloves: ClothingHandsGlovesFingerless
     shoes: ClothingShoesBootsJack
-    pocket1: WeaponPistolMk58
-#  storage:
+    pocket1: MagazinePistol
+    pocket2: MagazinePistol
+  inhand: 
+    - WeaponPistolMk58
+#  storage: # can't put starting gear in backpack. works for nukies, not for DM.
 #    back:
-#    - MagazinePistol
-#    - MagazinePistol
+#      - MagazinePistol
+#      - MagazinePistol
