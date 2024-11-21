@@ -4,8 +4,9 @@
   components:
   - type: DeathMatchRule
     gear: DeathMatchPROMODGear
-    killCap: 31
+    killCap: 16
     rewardSpawns:
+    - id: MagazinePistol # guaranteed drops
     - id: ClothingOuterArmorBasicSlim   # armor
       orGroup: loot
     - id: ClothingOuterArmorBasic
@@ -56,8 +57,6 @@
       orGroup: loot
     - id: GrenadeFlashBang              # grenades
       orGroup: loot
-    - id: WhiteholeGrenade
-      orGroup: loot
     - id: SmokeGrenade
       orGroup: loot
     - id: TearGasGrenade
@@ -94,4 +93,7 @@
     gloves: ClothingHandsGlovesFingerless
     back: ClothingBackpack
     pocket1: WeaponPistolMk58
-    pocket2: MagazinePistol
+  storage:
+    back:
+      - MagazinePistol
+      - MagazinePistol
