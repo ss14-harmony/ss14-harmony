@@ -43,18 +43,18 @@
       orGroup: loot
     - id: WeaponPistolCHIMPUpgraded
       orGroup: loot
-    - id: MagazinePistolCaselessRifle   # ammo
-      orGroup: loot
-    - id: MagazinePistol
-      orGroup: loot
-    - id: SpeedLoaderMagnum
-      orGroup: loot
-    - id: MagazinePistolSubMachineGun
-      orGroup: loot
-    - id: MagazinePistolSubMachineGunTopMounted
-      orGroup: loot
-    - id: MagazineShotgun
-      orGroup: loot
+    #- id: MagazinePistolCaselessRifle   # ammo
+    #  orGroup: loot
+    #- id: MagazinePistol
+    #  orGroup: loot
+    #- id: SpeedLoaderMagnum
+    #  orGroup: loot
+    #- id: MagazinePistolSubMachineGun
+    #  orGroup: loot
+    #- id: MagazinePistolSubMachineGunTopMounted
+    #  orGroup: loot
+    #- id: MagazineShotgun
+    #  orGroup: loot
     - id: GrenadeFlashBang              # grenades
       orGroup: loot
     - id: SmokeGrenade
@@ -88,12 +88,12 @@
   id: DeathMatchPROMODGear
   equipment:
     jumpsuit: ClothingUniformRandomStandard
-    shoes: ClothingShoesBootsJack
+    back: ClothingBackpack
     ears: ClothingHeadsetGrey
     gloves: ClothingHandsGlovesFingerless
-    back: ClothingBackpack
+    shoes: ClothingShoesBootsJack
     pocket1: WeaponPistolMk58
-  storage:
-    back:
-      - MagazinePistol
-      - MagazinePistol
+#  storage:
+#    back:
+#    - MagazinePistol
+#    - MagazinePistol
