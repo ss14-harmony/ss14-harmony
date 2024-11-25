@@ -871,7 +871,7 @@
     staticRecipes:
       - Brutepack
       - Ointment
-      - BloodPack # Harmony
+      - Bloodpack # Harmony
       - Gauze
       - HandLabeler
       - Defibrillator
