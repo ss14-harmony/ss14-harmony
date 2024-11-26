@@ -22,7 +22,7 @@
 
 - type: entity
   parent: [ClothingUniformBase, BaseRestrictedContraband]
-  id: ClothingUniformJumsuitWardenBlueHarmony
+  id: ClothingUniformJumpsuitWardenBlueHarmony
   name: Warden's Blue Suit
   description: A fashionable blue suit designed for the warden. Be careful though, it won't hide the bloodstains from the prisoners you've been abusing.
   components:
@@ -33,7 +33,7 @@
 
 - type: entity
   parent: [ClothingUniformBase, BaseRestrictedContraband]
-  id: ClothingUniformJumsuitDetectiveBlueHarmony
+  id: ClothingUniformJumpsuitDetectiveBlueHarmony
   name: Detective's Blue Suit
   description: For when the time calls for you to find the clues, which happen to be blue.
   components:

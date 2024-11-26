@@ -45,12 +45,12 @@
 ## Detective
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
-  id: ClothingUniformJumsuitDetectiveBlueHarmony
-  result: ClothingUniformJumsuitDetectiveBlueHarmony
+  id: ClothingUniformJumpsuitDetectiveBlueHarmony
+  result: ClothingUniformJumpsuitDetectiveBlueHarmony
 
 
 ## Warden
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
-  id: ClothingUniformJumsuitWardenBlueHarmony
-  result: ClothingUniformJumsuitWardenBlueHarmony
+  id: ClothingUniformJumpsuitWardenBlueHarmony
+  result: ClothingUniformJumpsuitWardenBlueHarmony

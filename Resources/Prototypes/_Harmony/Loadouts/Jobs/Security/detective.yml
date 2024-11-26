@@ -8,7 +8,7 @@
 - type: loadout
   id: DetectiveBlueSuitHarmony
   equipment:
-    jumpsuit: ClothingUniformJumsuitDetectiveBlueHarmony
+    jumpsuit: ClothingUniformJumpsuitDetectiveBlueHarmony
 
 #OuterClothing
 - type: loadout
