@@ -39,8 +39,8 @@
 
 - type: latheRecipe
   parent: BaseCommandHatRecipe
-  id: ClothingHeadHatSecsoftBlueHarmony
-  result: ClothingHeadHatSecsoftBlueHarmony
+  id: ClothingHeadHatSecSoftBlueHarmony
+  result: ClothingHeadHatSecSoftBlueHarmony
 
 ## Detective
 - type: latheRecipe

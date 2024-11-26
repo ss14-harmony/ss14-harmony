@@ -7,7 +7,7 @@
 - type: loadout
   id: SecurityBlueCapHarmony
   equipment:
-    head: ClothingHeadHatSecsoftBlueHarmony
+    head: ClothingHeadHatSecSoftBlueHarmony
 
 - type: loadout
   id: SecurityBlueBeretHarmony
