@@ -265,7 +265,7 @@
     damageCoefficient: 0.35
   - type: Armor
     modifiers:
-        coefficients:
+      coefficients:
         Blunt: 0.35
         Slash: 0.35
         Piercing: 0.35
