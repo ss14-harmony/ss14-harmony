@@ -33,6 +33,7 @@
     RLeg: MobHumanRLeg
     LFoot: MobHumanLFoot
     RFoot: MobHumanRFoot
+    Tail: MobHumanoidAnyMarking
 
 - type: markingPoints
   id: MobHumanMarkingLimits
