@@ -182,6 +182,13 @@ public partial struct AntagSelectionDefinition()
     /// </remarks>
     [DataField]
     public EntProtoId? SpawnerPrototype;
+
+    /// <summary>
+    /// Goobstation
+    /// Does this antag role roll before job
+    /// </summary>
+    [DataField]
+    public bool RollBeforeJob = true;
 }
 
 /// <summary>
