@@ -251,7 +251,7 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseRestrictedContraband]
   id: ClothingOuterHardsuitWarden
-  name: warden's tanksuit
+  name: warden's hardsuit
   description: The Warden's suit. Built like a tank.
   components:
   - type: Sprite
