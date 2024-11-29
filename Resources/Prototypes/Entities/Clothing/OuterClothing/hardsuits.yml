@@ -188,6 +188,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMaxim
 
+# Harmony change. Adjusted damage resistance values
 #Security Hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseRestrictedContraband]
@@ -247,6 +248,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitBrigmedic
 
+# Harmony change. Adjusted damage resistance values
 #Warden's Hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseRestrictedContraband]
@@ -414,6 +416,7 @@
   - type: StealTarget
     stealGroup: ClothingOuterHardsuitRd
 
+# Harmony change. Adjusted damage resistance values
 #Head of Security's Hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
