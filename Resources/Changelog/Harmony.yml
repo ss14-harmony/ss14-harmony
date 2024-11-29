@@ -571,7 +571,7 @@ Entries:
     - type: Add
       message: added rubber ducky galoshes. Quack Quack!
   - id: 183
-    author: Zap527
+    author: Jajsha
     time: '2024-11-13T23:15:55.0000000+00:00'
     url: https://github.com/ss14-harmony/space-station-14/pull/183
     changes:
@@ -591,3 +591,83 @@ Entries:
     changes:
     - type: Add
       message: Added Captain's Turtleneck and skirt variant.
+  - id: 193
+    author: BoskiYourk
+    time: '2024-11-18T01:58:54.0000000+00:00'
+    url: https://github.com/ss14-harmony/space-station-14/pull/193
+    changes:
+    - type: Tweak
+      message: Updated the detective's trenchcoats and fedoras
+  - id: 195
+    author: jack-thedragon95
+    time: '2024-11-18T02:06:26.0000000+00:00'
+    url: https://github.com/ss14-harmony/space-station-14/pull/195
+    changes:
+    - type: Add
+      message: Added Auralis Worship Mask to loadout menu SKREEEEEE!!!!
+  - id: 194
+    author: TheCrimsonJupiter
+    time: '2024-11-18T02:20:51.0000000+00:00'
+    url: https://github.com/ss14-harmony/space-station-14/pull/194
+    changes:
+    - type: Tweak
+      message: Holoparasites now take longer to gib targets
+  - id: 192
+    author: Jajsha
+    time: '2024-11-18T03:12:30.0000000+00:00'
+    url: https://github.com/ss14-harmony/space-station-14/pull/192
+    changes:
+    - type: Tweak
+      message: The emagged recycler now deals massive brute damage instead of instantly
+        gibbing players.
+  - id: 203
+    author: Golinth
+    time: '2024-11-19T23:48:11.0000000+00:00'
+    url: https://github.com/ss14-harmony/space-station-14/pull/203
+    changes:
+    - type: Add
+      message: Added Aspid, a medium pop map based around a luxury star cruiser!
+  - id: 199
+    author: thetolbean
+    time: '2024-11-20T18:06:39.0000000+00:00'
+    url: https://github.com/ss14-harmony/space-station-14/pull/199
+    changes:
+    - type: Add
+      message: Added illeism as a selectable speech trait!
+  - id: 201
+    author: Jajsha
+    time: '2024-11-20T19:19:26.0000000+00:00'
+    url: https://github.com/ss14-harmony/space-station-14/pull/201
+    changes:
+    - type: Tweak
+      message: Immovable rods now deal massive pierce damage instead of deleting you.
+  - id: 189
+    author: Unisol
+    time: '2024-11-20T19:59:09.0000000+00:00'
+    url: https://github.com/ss14-harmony/space-station-14/pull/189
+    changes:
+    - type: Add
+      message: added RSC Model 1917 for purchase in supply dept
+    - type: Add
+      message: added stripper clips with .30 ammo to security and ammo techfabs, as
+        well as emagged protolathe
+  - id: 204
+    author: meatballwalkin
+    time: '2024-11-21T15:13:58.0000000+00:00'
+    url: https://github.com/ss14-harmony/space-station-14/pull/204
+    changes:
+    - type: Add
+      message: New Lobby Track, "That's a Wrap!"
+  - id: 206
+    author: Unisol
+    time: '2024-11-21T20:00:41.0000000+00:00'
+    url: https://github.com/ss14-harmony/space-station-14/pull/206
+    changes:
+    - type: Tweak
+      message: changed starting loadout in PROMOD to have two spare mk58 magazines
+    - type: Tweak
+      message: added guaranteed mk58 magazine drop to PROMOD loot table
+    - type: Tweak
+      message: removed whitehole grenade from PROMOD loot table
+    - type: Tweak
+      message: minor changes to DM01 Entryway
