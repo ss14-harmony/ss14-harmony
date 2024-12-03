@@ -33,7 +33,7 @@
     RLeg: MobHumanRLeg
     LFoot: MobHumanLFoot
     RFoot: MobHumanRFoot
-    Tail: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking # Harmony: Cat Tail Support
 
 - type: markingPoints
   id: MobHumanMarkingLimits
