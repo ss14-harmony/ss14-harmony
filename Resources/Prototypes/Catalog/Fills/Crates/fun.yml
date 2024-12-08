@@ -324,7 +324,7 @@
       - id: PlasticBanana
       - id: WhoopieCushion
       - id: ToyHammer
-      - id: ToyRubberDuck
+      - id: ToyRubberDuck # Harmony change. More ways to spawn duckies
         amount: 2
       - id: MrChips
         orGroup: GiftPool
