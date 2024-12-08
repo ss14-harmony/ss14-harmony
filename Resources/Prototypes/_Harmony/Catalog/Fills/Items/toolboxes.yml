@@ -6,8 +6,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: ToyRubberDuck
-        amount: 2
       - id: Screwdriver
       - id: Wrench
       - id: NetworkConfigurator
