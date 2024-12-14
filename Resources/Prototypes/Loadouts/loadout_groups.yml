@@ -1362,6 +1362,7 @@
   loadouts:
   - LoadoutSpeciesBreathTool
   - LoadoutClothingMaskAuralis # Harmony
+  - LoadoutClothingMaskVoxSpecial # Harmony
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolMedical
@@ -1372,6 +1373,7 @@
   loadouts:
   - LoadoutSpeciesBreathToolMedical
   - LoadoutClothingMaskAuralis # Harmony
+  - LoadoutClothingMaskVoxSpecial # Harmony
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolSecurity
@@ -1382,3 +1384,5 @@
   loadouts:
   - LoadoutSpeciesBreathToolSecurity
   - LoadoutClothingMaskAuralis # Harmony
+  - LoadoutClothingMaskVoxSpecial # Harmony
+  - LoadoutClothingMaskNTEnforcer # Harmony
