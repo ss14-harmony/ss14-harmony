@@ -47,6 +47,8 @@
   - type: BreathMask
   - type: IdentityBlocker
   - type: Tag
+    tags:
+    - WhitelistChameleon
   - type: HideLayerClothing
     slots:
     - Snout
