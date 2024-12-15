@@ -923,3 +923,4 @@
   - type: ConditionalSpawner
     prototypes:
     - MobReindeerDoe
+    
