@@ -1,0 +1,8 @@
+﻿# Harmony gear?
+- type: startingGear
+  id: MobPoquitoGear
+  equipment:
+    ears: ClothingHeadsetService
+    head: ClothingHeadHatChef
+    jumpsuit: ClothingUniformJumpsuitChef
+    id: PoquitoIDcard

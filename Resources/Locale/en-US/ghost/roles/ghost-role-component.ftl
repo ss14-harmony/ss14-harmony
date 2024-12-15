@@ -69,9 +69,6 @@ ghost-role-information-smile-description = The sweetest creature in the world. S
 ghost-role-information-punpun-name = Pun Pun
 ghost-role-information-punpun-description = An honorable member of the monkey society in charge of the bar and helping the bartenders in any way he can.
 
-ghost-role-information-Poquito-name = Poquito
-ghost-role-information-Poquito-description = The chefs goon, here to help in his evil schemes.
-
 ghost-role-information-xeno-name = Xeno
 ghost-role-information-xeno-description = You are a xeno, co-operate with your hive to kill all crewmembers!
 ghost-role-information-xeno-rules = You are a [color=red][bold]Team Antagonist[/bold][/color] with all other xenos.
