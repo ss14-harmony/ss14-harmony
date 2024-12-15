@@ -12,7 +12,8 @@
   - type: ConditionalSpawner
     prototypes:
     - MobXenoLonePraetorianNoGhost
-#Harmony spawner?
+
+#Harmony spawner
 - type: entity
   name: Poqutio Spawner
   id: SpawnMobPoquito

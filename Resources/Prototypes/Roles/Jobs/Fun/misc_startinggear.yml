@@ -102,14 +102,6 @@
     ears: ClothingHeadsetService
     jumpsuit: ClothingUniformJumpsuitJacketMonkey
     id: PunPunIDCard
-# Harmony gear?
-- type: startingGear
-  id: MobPoquitoGear
-  equipment:
-    ears: ClothingHeadsetService
-    head: ClothingHeadHatChef
-    jumpsuit: ClothingUniformJumpsuitChef
-    id: PoquitoIDcard
 
 # DeathMatch Gear
 

@@ -1,4 +1,4 @@
-﻿# Harmony base ID card
+﻿# Harmony Poquito ID card
 - type: entity
   parent: IDCardStandard
   id: PoquitoIDcard
