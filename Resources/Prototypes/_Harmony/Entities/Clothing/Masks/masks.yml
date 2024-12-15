@@ -31,29 +31,18 @@
     - Snout
 
 - type: entity
-  parent: [ClothingMaskGas, BaseRestrictedContraband]
+  parent: [ClothingMaskGasSecurity, BaseRestrictedContraband]
   id: ClothingMaskNTEnforcer
   name: nanotrasen enforcer gasmask
   description: The mask of the dreaded Shoal Enforcers now in Nanotrasen blue
   components:
-  - type: Item
-    size: Tiny
   - type: Sprite
     sprite: _Harmony/Clothing/Mask/NTenforcer.rsi
   - type: Clothing
     sprite: _Harmony/Clothing/Mask/NTenforcer.rsi
-  - type: BreathMask
-  - type: IdentityBlocker
   - type: Tag
     tags:
     - WhitelistChameleon
   - type: HideLayerClothing
     slots:
     - Snout
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Slash: 0.95
-        Piercing: 0.95
-        Heat: 0.95
