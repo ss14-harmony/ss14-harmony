@@ -314,6 +314,19 @@
     - type: PresetIdCard
       job: Bartender
       name: Pun Pun
+# Harmony base ID card oh shit a crow just got into my house
+- type: entity
+  parent: IDCardStandard
+  id: PoquitoIDcard
+  name: poquito id card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idcook
+  - type: PresetIdCard
+    job: Chef
+    name: Poquito
 
 - type: entity
   parent: IDCardStandard
