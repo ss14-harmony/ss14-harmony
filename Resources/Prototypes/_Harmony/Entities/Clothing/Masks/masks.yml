@@ -10,7 +10,6 @@
     sprite: _Harmony/Clothing/Mask/voxcorpsepaint.rsi
   - type: BreathMask
   - type: IdentityBlocker
-  - type: Tag
   - type: HideLayerClothing
     slots:
     - Snout
@@ -27,7 +26,6 @@
     sprite: _Harmony/Clothing/Mask/specvoxmask.rsi
   - type: BreathMask
   - type: IdentityBlocker
-  - type: Tag
   - type: HideLayerClothing
     slots:
     - Snout
