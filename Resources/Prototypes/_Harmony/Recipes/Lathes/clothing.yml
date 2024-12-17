@@ -36,6 +36,16 @@
   id: ClothingHeadHatHoSWidebrimHarmony
   result: ClothingHeadHatHoSWidebrimHarmony
 
+- type: latheRecipe
+  parent: BaseCommandHatRecipe
+  id: ClothingUniformJumpsuitHeadOfSecurityTurtleneckHarmony
+  result: ClothingUniformJumpsuitHeadOfSecurityTurtleneckHarmony
+
+- type: latheRecipe
+  parent: BaseCommandHatRecipe
+  id: ClothingUniformJumpskirtHeadOfSecurityTurtleneckHarmony
+  result: ClothingUniformJumpskirtHeadOfSecurityTurtleneckHarmony
+
 ## Security Officer
 - type: latheRecipe
   parent: BaseJumpsuitRecipe

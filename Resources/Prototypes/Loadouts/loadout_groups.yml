@@ -962,11 +962,14 @@
   loadouts:
   - HeadofSecurityJumpsuit
   - HeadofSecurityJumpskirt
-  - HeadofSecurityTurtleneck
-  - HeadofSecurityTurtleneckSkirt
+  - JumpsuitHoSBlueHarmony # Harmony
+  - JumpsuitHoSGrey # Harmony
+  - JumpsuitHoSTurtleNeckHarmony # Harmony
+  - JumpskirtHoSTurtleNeckHarmony # Harmony
+  - HeadofSecurityAssaultSuit # Harmony
+  - HeadofSecurityAssaultSkirt # Harmony
   - HeadofSecurityFormalSuit
   - HeadofSecurityFormalSkirt
-  - JumpsuitHoSBlue # Harmony
 
 - type: loadoutGroup
   id: HeadofSecurityNeck
