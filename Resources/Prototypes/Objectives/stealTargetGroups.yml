@@ -86,7 +86,7 @@
 
 - type: stealTargetGroup
   id: OrwellianCircuitBoard
-  name: steal-target-groups-orwellian-circuitboard #Here at the syndicate we love to control people. Do you love to control people? Because we do.
+  name: steal-target-groups-orwellian-circuitboard
   sprite: 
     sprite: Objects/Misc/module.rsi
     state: std_mod
