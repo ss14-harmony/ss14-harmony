@@ -84,13 +84,6 @@
     sprite: Objects/Weapons/Guns/Battery/energy_shotgun.rsi
     state: base
 
-- type: stealTargetGroup
-  id: OrwellianCircuitBoard
-  name: steal-target-groups-orwellian-circuitboard
-  sprite: 
-    sprite: Objects/Misc/module.rsi
-    state: std_mod
-
 # Thief Collection
 
 - type: stealTargetGroup
