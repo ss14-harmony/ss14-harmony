@@ -27,14 +27,14 @@ namespace Content.Server.Access.Systems
             SubscribeLocalEvent<AgentIDCardComponent, AfterInteractEvent>(OnAfterInteract);
             // BUI
             SubscribeLocalEvent<AgentIDCardComponent, AfterActivatableUIOpenEvent>(AfterUIOpen);
-            SubscribeLocalEvent<AgentIDCardComponent, AgentIdCardNameChangedMessage>(OnNameChanged);
-            SubscribeLocalEvent<AgentIDCardComponent, AgentIdCardJobChangedMessage>(OnJobChanged);
-            SubscribeLocalEvent<AgentIDCardComponent, AgentIdCardJobIconChangedMessage>(OnJobIconChanged);
-            SubscribeLocalEvent<AgentIDCardComponent, AgentIdCardNumberChangedMessage>(OnNumberChanged); // DeltaV
+            SubscribeLocalEvent<AgentIDCardComponent, AgentIDCardNameChangedMessage>(OnNameChanged);
+            SubscribeLocalEvent<AgentIDCardComponent, AgentIDCardJobChangedMessage>(OnJobChanged);
+            SubscribeLocalEvent<AgentIDCardComponent, AgentIDCardJobIconChangedMessage>(OnJobIconChanged);
+            SubscribeLocalEvent<AgentIDCardComponent, AgentIDCardNumberChangedMessage>(OnNumberChanged); // DeltaV
         }
 
         // DeltaV - Add number change handler
-        private void OnNumberChanged(Entity<AgentIDCardComponent> ent, ref AgentIdCardNumberChangedMessage args)
+        private void OnNumberChanged(Entity<AgentIDCardComponent> ent, ref AgentIDCardNumberChangedMessage args)
         {
             if (!TryComp<NanoChatCardComponent>(ent, out var comp))
                 return;
@@ -122,7 +122,7 @@ namespace Content.Server.Access.Systems
             _uiSystem.SetUiState(uid, AgentIDCardUiKey.Key, state);
         }
 
-        private void OnJobChanged(EntityUid uid, AgentIDCardComponent comp, AgentIdCardJobChangedMessage args)
+        private void OnJobChanged(EntityUid uid, AgentIDCardComponent comp, AgentIDCardJobChangedMessage args)
         {
             if (!TryComp<IdCardComponent>(uid, out var idCard))
                 return;
@@ -130,7 +130,7 @@ namespace Content.Server.Access.Systems
             _cardSystem.TryChangeJobTitle(uid, args.Job, idCard);
         }
 
-        private void OnNameChanged(EntityUid uid, AgentIDCardComponent comp, AgentIdCardNameChangedMessage args)
+        private void OnNameChanged(EntityUid uid, AgentIDCardComponent comp, AgentIDCardNameChangedMessage args)
         {
             if (!TryComp<IdCardComponent>(uid, out var idCard))
                 return;
@@ -138,7 +138,7 @@ namespace Content.Server.Access.Systems
             _cardSystem.TryChangeFullName(uid, args.Name, idCard);
         }
 
-        private void OnJobIconChanged(EntityUid uid, AgentIDCardComponent comp, AgentIdCardJobIconChangedMessage args)
+        private void OnJobIconChanged(EntityUid uid, AgentIDCardComponent comp, AgentIDCardJobIconChangedMessage args)
         {
             if (!TryComp<IdCardComponent>(uid, out var idCard))
                 return;

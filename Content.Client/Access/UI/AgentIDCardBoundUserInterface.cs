@@ -32,22 +32,22 @@ namespace Content.Client.Access.UI
         // DeltaV - Add number change handler
         private void OnNumberChanged(uint newNumber)
         {
-            SendMessage(new AgentIdCardNumberChangedMessage(newNumber));
+            SendMessage(new AgentIDCardNumberChangedMessage(newNumber));
         }
 
         private void OnNameChanged(string newName)
         {
-            SendMessage(new AgentIdCardNameChangedMessage(newName));
+            SendMessage(new AgentIDCardNameChangedMessage(newName));
         }
 
         private void OnJobChanged(string newJob)
         {
-            SendMessage(new AgentIdCardJobChangedMessage(newJob));
+            SendMessage(new AgentIDCardJobChangedMessage(newJob));
         }
 
         public void OnJobIconChanged(ProtoId<JobIconPrototype> newJobIconId)
         {
-            SendMessage(new AgentIdCardJobIconChangedMessage(newJobIconId));
+            SendMessage(new AgentIDCardJobIconChangedMessage(newJobIconId));
         }
 
         /// <summary>
