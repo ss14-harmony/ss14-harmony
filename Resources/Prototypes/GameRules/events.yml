@@ -345,7 +345,7 @@
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
-    duration: 5 # DeltaV: was 50, used as a delay now
+    duration: 15 # DeltaV: was 50, used as a delay now
   - type: VentCrittersRule
     entries:
     - id: MobAdultSlimesBlueAngry
@@ -366,7 +366,7 @@
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
-    duration: 5 # DeltaV: was 50, used as a delay now
+    duration: 15 # DeltaV: was 50, used as a delay now
   - type: VentCrittersRule
     entries:
     - id: MobPurpleSnake
@@ -387,7 +387,7 @@
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
-    duration: 5 # DeltaV: was 50, used as a delay now
+    duration: 15 # DeltaV: was 50, used as a delay now
   - type: VentCrittersRule
     entries:
     - id: MobGiantSpiderAngry
@@ -404,7 +404,7 @@
     earliestStart: 20
     minimumPlayers: 20
     weight: 1.5
-    duration: 5 # DeltaV: was 50, used as a delay now
+    duration: 15 # DeltaV: was 50, used as a delay now
   - type: VentCrittersRule
     entries:
     - id: MobClownSpider

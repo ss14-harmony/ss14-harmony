@@ -27,7 +27,7 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6
-    duration: 50
+    duration: 30 # DeltaV: was 50, used as a delay now
   - type: VentCrittersRule
     entries:
     - id: MobMouse
@@ -50,7 +50,7 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6
-    duration: 50
+    duration: 30 # DeltaV: was 50, used as a delay now
     minimumPlayers: 30 # Hopefully this is enough for the Rat King's potential Army (it was not, raised from 15 -> 30)
   - type: VentCrittersRule
     entries:
@@ -75,7 +75,7 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     weight: 6
-    duration: 50
+    duration: 30 # DeltaV: was 50, used as a delay now
   - type: VentCrittersRule
     entries:
     - id: MobCockroach
@@ -92,7 +92,7 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     weight: 6
-    duration: 50
+    duration: 30 # DeltaV: was 50, used as a delay now
   - type: VentCrittersRule
     entries:
     - id: MobSnail
@@ -112,7 +112,7 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6
-    duration: 50
+    duration: 30 # DeltaV: was 50, used as a delay now
     minimumPlayers: 30
   - type: VentCrittersRule
     entries:
