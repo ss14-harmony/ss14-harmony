@@ -41,79 +41,42 @@ namespace Content.Shared.Access.Systems
 
     // DeltaV - Add number change message
     [Serializable, NetSerializable]
-    public sealed class AgentIDCardNumberChangedMessage : BoundUserInterfaceMessage
+    public sealed class AgentIdCardNumberChangedMessage : BoundUserInterfaceMessage
     {
         public uint Number { get; }
 
-        public AgentIDCardNumberChangedMessage(uint number)
+        public AgentIdCardNumberChangedMessage(uint number)
         {
             Number = number;
         }
     }
 
     [Serializable, NetSerializable]
-    public sealed class AgentIDCardNameChangedMessage : BoundUserInterfaceMessage
+    public sealed class AgentIdCardNameChangedMessage : BoundUserInterfaceMessage
     {
         public string Name { get; }
 
-        public AgentIDCardNameChangedMessage(string name)
+        public AgentIdCardNameChangedMessage(string name)
         {
             Name = name;
         }
     }
 
     [Serializable, NetSerializable]
-    public sealed class AgentIDCardJobChangedMessage : BoundUserInterfaceMessage
+    public sealed class AgentIdCardJobChangedMessage : BoundUserInterfaceMessage
     {
         public string Job { get; }
 
-        public AgentIDCardJobChangedMessage(string job)
+        public AgentIdCardJobChangedMessage(string job)
         {
             Job = job;
         }
     }
 
     [Serializable, NetSerializable]
-    public sealed class AgentIDCardJobIconChangedMessage : BoundUserInterfaceMessage
+    public sealed class AgentIdCardJobIconChangedMessage(ProtoId<JobIconPrototype> jobIconId)
+        : BoundUserInterfaceMessage
     {
-        public ProtoId<JobIconPrototype> JobIconId { get; }
-
-        public AgentIDCardJobIconChangedMessage(ProtoId<JobIconPrototype> jobIconId)
-        {
-            JobIconId = jobIconId;
-        }
+        public ProtoId<JobIconPrototype> JobIconId { get; } = jobIconId;
     }
 }
-    [Serializable, NetSerializable]
-    public sealed class AgentIDCardNameChangedMessage : BoundUserInterfaceMessage
-    {
-        public string Name { get; }
-
-        public AgentIDCardNameChangedMessage(string name)
-        {
-            Name = name;
-        }
-    }
-
-    [Serializable, NetSerializable]
-    public sealed class AgentIDCardJobChangedMessage : BoundUserInterfaceMessage
-    {
-        public string Job { get; }
-
-        public AgentIDCardJobChangedMessage(string job)
-        {
-            Job = job;
-        }
-    }
-
-    [Serializable, NetSerializable]
-    public sealed class AgentIDCardJobIconChangedMessage : BoundUserInterfaceMessage
-    {
-        public ProtoId<JobIconPrototype> JobIconId { get; }
-
-        public AgentIDCardJobIconChangedMessage(ProtoId<JobIconPrototype> jobIconId)
-        {
-            JobIconId = jobIconId;
-        }
-    }
-
