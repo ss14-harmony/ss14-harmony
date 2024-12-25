@@ -1,4 +1,5 @@
-﻿using Robust.Shared.Serialization;
+﻿using Content.Shared.DeltaV.CartridgeLoader.Cartridges;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.CartridgeLoader.Cartridges;
 
@@ -10,7 +11,7 @@ public sealed class LogProbeUiState : BoundUserInterfaceState
     /// </summary>
     public List<PulledAccessLog> PulledLogs;
 
-    public LogProbeUiState(List<PulledAccessLog> pulledLogs)
+    public LogProbeUiState(List<PulledAccessLog> pulledLogs, NanoChatData? compScannedNanoChatData)
     {
         PulledLogs = pulledLogs;
     }
