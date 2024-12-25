@@ -84,6 +84,13 @@
     sprite: Objects/Weapons/Guns/Battery/energy_shotgun.rsi
     state: base
 
+- type: stealTargetGroup
+  id: OrwellianCircuitBoard
+  name: steal-target-groups-orwellian-circuitboard #Here at the syndicate we love to control people. Do you love to control people? Because we do.
+  sprite: 
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+
 # Thief Collection
 
 - type: stealTargetGroup
