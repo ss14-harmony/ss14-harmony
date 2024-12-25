@@ -281,7 +281,7 @@
 
 - type: entity
   id: OrwellianCircuitBoard
-  parent: BaseElectronics
+  parent: parent: [BaseElectronics, BaseGrandTheftContraband]
   name: law board (Orwellian)
   description: An electronics board containing the Orwellian lawset.
   components:
