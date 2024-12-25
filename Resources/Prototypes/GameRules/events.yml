@@ -331,7 +331,7 @@
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
-    duration: 60
+    duration: 50
   - type: VentClogRule
 
 - type: entity
@@ -345,15 +345,15 @@
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
-    duration: 60
+    duration: 5 # DeltaV: was 50, used as a delay now
   - type: VentCrittersRule
     entries:
     - id: MobAdultSlimesBlueAngry
-      prob: 0.02
+      prob: 0.34
     - id: MobAdultSlimesGreenAngry
-      prob: 0.02
+      prob: 0.33
     - id: MobAdultSlimesYellowAngry
-      prob: 0.02
+      prob: 0.33
 
 - type: entity
   id: SnakeSpawn
@@ -366,15 +366,15 @@
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
-    duration: 60
+    duration: 5 # DeltaV: was 50, used as a delay now
   - type: VentCrittersRule
     entries:
     - id: MobPurpleSnake
-      prob: 0.02
+      prob: 0.34
     - id: MobSmallPurpleSnake
-      prob: 0.02
+      prob: 0.33
     - id: MobCobraSpace
-      prob: 0.02
+      prob: 0.33
 
 - type: entity
   id: SpiderSpawn
@@ -387,11 +387,11 @@
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
-    duration: 60
+    duration: 5 # DeltaV: was 50, used as a delay now
   - type: VentCrittersRule
     entries:
     - id: MobGiantSpiderAngry
-      prob: 0.05
+      prob: 1
 
 - type: entity
   id: SpiderClownSpawn
@@ -404,11 +404,11 @@
     earliestStart: 20
     minimumPlayers: 20
     weight: 1.5
-    duration: 60
+    duration: 5 # DeltaV: was 50, used as a delay now
   - type: VentCrittersRule
     entries:
     - id: MobClownSpider
-      prob: 0.05
+      prob: 1
 
 - type: entity
   id: ZombieOutbreak
