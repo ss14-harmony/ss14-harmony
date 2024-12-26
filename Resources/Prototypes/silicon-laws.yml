@@ -499,7 +499,7 @@
   - Nutimov5
   obeysTo: laws-owner-crew
 
- # ion storm random lawsets
+ #  ion storm random lawsets
 - type: weightedRandom
   id: IonStormLawsets
   weights:
