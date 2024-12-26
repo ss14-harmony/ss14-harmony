@@ -1,7 +1,8 @@
-<cartridges:NanoChatMessageBubble
+<cartridges1:NanoChatMessageBubble
     xmlns="https://spacestation14.io"
     xmlns:cartridges="clr-namespace:Content.Client.DeltaV.CartridgeLoader.Cartridges"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:cartridges1="clr-namespace:Content.Client._DeltaV.CartridgeLoader.Cartridges"
     HorizontalExpand="True">
 
     <BoxContainer Name="MessageContainer"
@@ -52,4 +53,4 @@
         <Control Name="FlexSpace"
                  HorizontalExpand="True" />
     </BoxContainer>
-</cartridges:NanoChatMessageBubble>
+</cartridges1:NanoChatMessageBubble>

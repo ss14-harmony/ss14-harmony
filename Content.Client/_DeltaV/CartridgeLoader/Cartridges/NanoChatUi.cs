@@ -7,7 +7,7 @@ namespace Content.Client.DeltaV.CartridgeLoader.Cartridges;
 
 public sealed partial class NanoChatUi : UIFragment
 {
-    private NanoChatUiFragment? _fragment;
+    private _DeltaV.CartridgeLoader.Cartridges.NanoChatUiFragment? _fragment;
 
     public override Control GetUIFragmentRoot()
     {
@@ -16,7 +16,7 @@ public sealed partial class NanoChatUi : UIFragment
 
     public override void Setup(BoundUserInterface userInterface, EntityUid? fragmentOwner)
     {
-        _fragment = new NanoChatUiFragment();
+        _fragment = new _DeltaV.CartridgeLoader.Cartridges.NanoChatUiFragment();
 
         _fragment.OnMessageSent += (type, number, content, job) =>
         {

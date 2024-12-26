@@ -84,36 +84,3 @@ namespace Content.Shared.Access.Systems
         }
     }
 }
-    [Serializable, NetSerializable]
-    public sealed class AgentIDCardNameChangedMessage : BoundUserInterfaceMessage
-    {
-        public string Name { get; }
-
-        public AgentIDCardNameChangedMessage(string name)
-        {
-            Name = name;
-        }
-    }
-
-    [Serializable, NetSerializable]
-    public sealed class AgentIDCardJobChangedMessage : BoundUserInterfaceMessage
-    {
-        public string Job { get; }
-
-        public AgentIDCardJobChangedMessage(string job)
-        {
-            Job = job;
-        }
-    }
-
-    [Serializable, NetSerializable]
-    public sealed class AgentIDCardJobIconChangedMessage : BoundUserInterfaceMessage
-    {
-        public ProtoId<JobIconPrototype> JobIconId { get; }
-
-        public AgentIDCardJobIconChangedMessage(ProtoId<JobIconPrototype> jobIconId)
-        {
-            JobIconId = jobIconId;
-        }
-    }
-
