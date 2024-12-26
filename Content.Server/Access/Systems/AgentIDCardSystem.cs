@@ -102,7 +102,7 @@ namespace Content.Server.Access.Systems
 
         private void AfterUIOpen(EntityUid uid, AgentIDCardComponent component, AfterActivatableUIOpenEvent args)
         {
-            if (!_uiSystem.HasUi(uid, AgentIDCardUiKey.Key))
+            if (!_uiSystem.HasUi(uid, AgentIdCardUiKey.Key))
                 return;
 
             if (!TryComp<IdCardComponent>(uid, out var idCard))
@@ -119,7 +119,7 @@ namespace Content.Server.Access.Systems
                 idCard.JobIcon,
                 currentNumber); // DeltaV - Pass current number
 
-            _uiSystem.SetUiState(uid, AgentIDCardUiKey.Key, state);
+            _uiSystem.SetUiState(uid, AgentIdCardUiKey.Key, state);
         }
 
         private void OnJobChanged(EntityUid uid, AgentIDCardComponent comp, AgentIDCardJobChangedMessage args)
