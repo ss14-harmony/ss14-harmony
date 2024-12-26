@@ -8,18 +8,6 @@
     },
     "states": [
         {
-            "name": "cart-cri"
-        },
-        {
-            "name": "cart-mail"
-        },
-        {
-            "name": "cart-psi"
-        },
-        {
-            "name": "cart-stonk"
-        },
-        {
             "name": "cart-chat"
         }
     ]
