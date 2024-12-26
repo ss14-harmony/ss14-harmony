@@ -330,6 +330,7 @@
     - id: WeaponDisabler
     - id: WantedListCartridge
     - id: OrwellianCircuitBoard # Harmony change -- Orwellian Lawset
+
 # Hardsuit table, used for suit storage as well
 - type: entityTable
   id: FillHeadOfSecurityHardsuit
