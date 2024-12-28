@@ -648,11 +648,29 @@
     - HandheldHealthAnalyzerUnpowered
     - LargeBeaker
     - LargeBeaker
+    - LargeBeaker
     - BorgDropper
     - SyndiHypo
-    - DefibrillatorSyndicateUnpowered
+
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: diagnosis-module }
+- type: entity
+  id: BorgModuleSyndicateDefib
+  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule, BaseSyndicateContraband ]
+  name: Syndicate Revival Cyborg Module
+  components:
+  - type: Sprite
+    layers:
+    - state: medical
+    - state: icon-defib
+  - type: ItemBorgModule
+    items:
+    - DefibrillatorSyndicateUnpowered
+    - OintmentAdvanced10
+    - BrutepackAdvanced10
+    - Gauze10Lingering
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: defib-module }
 
 - type: entity
   id: BorgModuleBulldog
@@ -672,7 +690,7 @@
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-l6c-module }
 
-# engineering modules
+
 - type: entity
   id: BorgModuleSyndicateTool
   parent: [ BaseBorgModuleEngineering, BaseProviderBorgModule ]

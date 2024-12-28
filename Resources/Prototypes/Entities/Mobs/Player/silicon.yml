@@ -579,6 +579,7 @@
       borg_module:
       - BorgModuleSyndicateWeapon
       - SyndicateBorgModuleTreatment
+      - BorgModuleSyndicateDefib
   - type: ItemSlots
     slots:
       cell_slot:
