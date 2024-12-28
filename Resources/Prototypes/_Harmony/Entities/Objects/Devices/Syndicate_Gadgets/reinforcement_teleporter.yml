@@ -3,7 +3,6 @@
   id: ReinforcementRadioSyndicateCyborgMedical # Reinforcement radio exclusive to nukeops uplink
   name: syndicate medical cyborg reinforcement radio
   description: A medical agent of chaos, ready to be summoned instantly!
-  suffix: NukeOps
   components:
   - type: GhostRole
     name: uplink-reinforcement-radio-cyborg-medical-name
@@ -18,8 +17,7 @@
   parent: ReinforcementRadio
   id: ReinforcementRadioSyndicateCyborgSaboteur
   name: syndicate saboteur cyborg reinforcement radio
-  description: Call in a syndicate agent of questionable quality, instantly!
-  Suffix: NukeOps
+  description: Call in a stealthy engineering borg, gifted to the you by waffle CO.
   components:
   - type: GhostRole
     name: uplink-reinforcement-radio-cyborg-saboteur-name
