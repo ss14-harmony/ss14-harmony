@@ -1,7 +1,7 @@
 # Harmony CC character presets
 
 - type: startingGear
-  id: HarmonyCentcomOfficialGear
+  id: CentcomOfficialGearHarmony
   equipment:
     jumpsuit: ClothingUniformJumpsuitCentcomFormal
     back: ClothingBackpackSatchelLeather
@@ -19,7 +19,7 @@
     - MindShieldImplanter
 
 - type: startingGear
-  id: HarmonyCentcomAgentGear
+  id: CentcomAgentGearHarmony
   equipment:
     jumpsuit: ClothingUniformJumpsuitCentcomAgent
     back: ClothingBackpackSatchelLeather
