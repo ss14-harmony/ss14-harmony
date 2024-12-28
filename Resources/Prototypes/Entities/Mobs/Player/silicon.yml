@@ -545,26 +545,13 @@
       borg_brain:
         - PositronicBrain
       borg_module:
-        - BorgModuleSyndicateTool
-        - BorgModuleBulldog
+        - BorgModuleSyndicateTool # Harmony Change
+        - BorgModuleBulldog # Harmony Change
   - type: ItemSlots
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellHyper
-
-- type: entity
-  id: PlayerBorgSyndicateSaboteurGhostRole
-  parent: PlayerBorgSyndicateSaboteurBattery
-  suffix: Ghost role
-  components:
-    - type: GhostRole
-      name: ghost-role-information-syndicate-cyborg-saboteur-name
-      description: ghost-role-information-syndicate-cyborg-description
-      rules: ghost-role-information-silicon-rules
-      raffle:
-        settings: default
-    - type: GhostTakeoverAvailable
 
 - type: entity
   id: PlayerBorgSyndicateMedicalBattery
@@ -579,24 +566,13 @@
       borg_module:
       - BorgModuleSyndicateWeapon
       - SyndicateBorgModuleTreatment
+      - BorgModuleSyndicateDefib
   - type: ItemSlots
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellHyper
 
-- type: entity
-  id: PlayerBorgSyndicateMedicalGhostRole
-  parent: PlayerBorgSyndicateMedicalBattery
-  suffix: Ghost role
-  components:
-  - type: GhostRole
-    name: uplink-reinforcement-radio-cyborg-medical
-    description: uplink-reinforcement-radio-cyborg-medical-desc
-    rules: ghost-role-information-silicon-rules
-    raffle:
-      settings: default
-  - type: GhostTakeoverAvailable
 
 - type: entity
   name: syndicate invasion borg spawner

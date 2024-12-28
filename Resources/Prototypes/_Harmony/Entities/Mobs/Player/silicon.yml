@@ -19,6 +19,19 @@
         startingItem: PowerCellHyper
 
 - type: entity
+  id: PlayerBorgSyndicateSaboteurGhostRole
+  parent: PlayerBorgSyndicateSaboteurBattery
+  suffix: Ghost role
+  components:
+  - type: GhostRole
+    name: ghost-role-information-syndicate-cyborg-saboteur-name
+    description: ghost-role-information-syndicate-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+
+- type: entity
   id: BorgChassisGenericSaboteurBattery
   parent: BorgChassisGenericSaboteur
   suffix: Battery, Module, Operative
