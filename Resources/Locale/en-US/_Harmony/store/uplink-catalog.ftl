@@ -3,3 +3,9 @@ uplink-syndicate-id-desc = A sleek black-and-red ID card with embossed Syndicate
 
 uplink-smuggler-satchel-name = Smuggler's Satchel
 uplink-smuggler-satchel-desc = A satchel that can fit under station tiles.
+
+uplink-reinforcement-radio-cyborg-saboteur-name = Syndicate Saboteur Borg
+uplink-reinforcement-radio-cyborg-saboteur-desc = A sneaky borg that can turn itself into a regular NT borg!
+
+uplink-reinforcement-radio-cyborg-medical-name = Syndicate Medical Borg
+uplink-reinforcement-radio-cyborg-medical-desc = A helpful medical borg to cure you aliments.

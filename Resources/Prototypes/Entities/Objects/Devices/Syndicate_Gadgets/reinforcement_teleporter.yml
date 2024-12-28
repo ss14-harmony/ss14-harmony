@@ -107,3 +107,35 @@
         settings: default
     - type: GhostRoleMobSpawner
       prototype: PlayerBorgSyndicateAssaultBattery
+
+- type: entity
+  parent: ReinforcementRadio
+  id: ReinforcementRadioSyndicateCyborgSaboteur # Reinforcement radio exclusive to nukeops uplink
+  name: syndicate saboteur cyborg reinforcement radio
+  description: Call in a sneaky saboteur borg, Instantly!
+  suffix: NukeOps
+  components:
+  - type: GhostRole
+    name: ghost-role-information-syndicate-cyborg-assault-name
+    description: ghost-role-information-syndicate-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: PlayerBorgSyndicateSaboteurBattery
+
+- type: entity
+  parent: ReinforcementRadio
+  id: ReinforcementRadioSyndicateCyborgMedical # Reinforcement radio exclusive to nukeops uplink
+  name: syndicate medical cyborg reinforcement radio
+  description: A medical agent of chaos, ready to be summoned instantly!
+  suffix: NukeOps
+  components:
+  - type: GhostRole
+    name: uplink-reinforcement-radio-cyborg-medical-name
+    description: uplink-reinforcement-radio-cyborg-medical-desc
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: PlayerBorgSyndicateMedicalBattery
