@@ -162,12 +162,12 @@
       layers:
         - state: synd_engi
         - state: synd_engi_e
-          map: [ "enum.BorgVisualLayers.Light" ]
+          map: ["enum.BorgVisualLayers.Light"]
           shader: unshaded
           visible: false
         - state: synd_engi_l
           shader: unshaded
-          map: [ "light" ]
+          map: ["light"]
           visible: false
     - type: BorgChassis
       maxModules: 3
@@ -187,7 +187,6 @@
       interactFailureString: petting-failure-syndicate-cyborg
       interactSuccessSound:
         path: /Audio/Ambience/Objects/periodic_beep.ogg
-
 
 - type: entity
   id: BorgChassisDerelict
@@ -220,3 +219,4 @@
     interactFailureString: petting-failure-derelict-cyborg
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
+

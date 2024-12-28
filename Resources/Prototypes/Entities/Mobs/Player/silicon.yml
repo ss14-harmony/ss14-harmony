@@ -553,10 +553,6 @@
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellHyper
 
-
-
-
-
 - type: entity
   id: PlayerBorgSyndicateMedicalBattery
   parent: BorgChassisSyndicateMedical
