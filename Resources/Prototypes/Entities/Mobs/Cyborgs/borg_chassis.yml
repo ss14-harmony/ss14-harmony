@@ -160,16 +160,15 @@
   components:
     - type: Sprite
       layers:
-      - state: robot
-        map: ["enum.BorgVisualLayers.Body", "movement"]
-      - state: robot_e_r
-        map: ["enum.BorgVisualLayers.Light"]
-        shader: unshaded
-        visible: false
-      - state: robot_l
-        shader: unshaded
-        map: ["light","enum.BorgVisualLayers.LightStatus"]
-        visible: false
+        - state: synd_engi
+        - state: synd_engi_e
+          map: [ "enum.BorgVisualLayers.Light" ]
+          shader: unshaded
+          visible: false
+        - state: synd_engi_l
+          shader: unshaded
+          map: [ "light" ]
+          visible: false
     - type: BorgChassis
       maxModules: 3
       moduleWhitelist:
