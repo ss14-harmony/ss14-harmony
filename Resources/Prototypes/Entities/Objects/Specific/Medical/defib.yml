@@ -111,14 +111,14 @@
   - type: Sprite
     sprite: Objects/Specific/Medical/defibsyndi.rsi
     layers:
-    - state: icon
-    - state: screen
-      map: [ "enum.ToggleVisuals.Layer" ]
-      visible: false
-      shader: unshaded
-    - state: ready
-      map: ["enum.PowerDeviceVisualLayers.Powered"]
-      shader: unshaded
+      - state: icon
+      - state: screen
+        map: [ "enum.ToggleVisuals.Layer" ]
+        visible: false
+        shader: unshaded
+      - state: ready
+        map: ["enum.PowerDeviceVisualLayers.Powered"]
+        shader: unshaded
   - type: MeleeWeapon
     damage:
       types:
