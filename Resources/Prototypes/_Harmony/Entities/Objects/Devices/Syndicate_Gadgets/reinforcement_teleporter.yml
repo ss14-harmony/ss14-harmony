@@ -24,7 +24,7 @@
     description: uplink-reinforcement-radio-cyborg-saboteur-desc
     rules: ghost-role-information-silicon-rules
     raffle:
-    settings: default
+      settings: default
   - type: GhostRoleMobSpawner
     prototype: PlayerBorgSyndicateSaboteurBattery
     selectablePrototypes: ["SaboteurBorgFake", "SaboteurBorg"]
