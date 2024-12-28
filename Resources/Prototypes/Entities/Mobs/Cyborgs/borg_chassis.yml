@@ -160,15 +160,16 @@
   components:
     - type: Sprite
       layers:
-        - state: synd_engi
-        - state: synd_engi_e
-          map: ["enum.BorgVisualLayers.Light"]
-          shader: unshaded
-          visible: false
-        - state: synd_engi_l
-          shader: unshaded
-          map: ["light"]
-          visible: false
+      - state: robot
+        map: ["enum.BorgVisualLayers.Body", "movement"]
+      - state: robot_e_r
+        map: ["enum.BorgVisualLayers.Light"]
+        shader: unshaded
+        visible: false
+      - state: robot_l
+        shader: unshaded
+        map: ["light","enum.BorgVisualLayers.LightStatus"]
+        visible: false
     - type: BorgChassis
       maxModules: 3
       moduleWhitelist:
@@ -187,6 +188,47 @@
       interactFailureString: petting-failure-syndicate-cyborg
       interactSuccessSound:
         path: /Audio/Ambience/Objects/periodic_beep.ogg
+
+- type: entity
+  id: BorgChassisGenericSaboteur
+  parent: BaseBorgChassisSyndicate
+  components:
+  - type: Sprite
+    layers:
+    - state: robot
+      map: [ "enum.BorgVisualLayers.Body", "movement" ]
+    - state: robot_e_r
+      map: [ "enum.BorgVisualLayers.Light" ]
+      shader: unshaded
+      visible: false
+    - state: robot_l
+      shader: unshaded
+      map: [ "light","enum.BorgVisualLayers.LightStatus" ]
+      visible: false
+  - type: BorgChassis
+    maxModules: 3
+    moduleWhitelist:
+      tags:
+        - BorgModuleGeneric
+        - BorgModuleSyndicate
+    hasMindState: robot_e
+    noMindState: robot_e_r
+  - type: Access
+    tags:
+    - NuclearOperative
+    - SyndicateAgent
+    - Maintenance
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+    - Syndicate
+    - Common
+  - type: ActiveRadio
+    channels:
+    - Syndicate
+    - Common
+  - type: PointLight
+    color: "#ffffff"
 
 - type: entity
   id: BorgChassisDerelict

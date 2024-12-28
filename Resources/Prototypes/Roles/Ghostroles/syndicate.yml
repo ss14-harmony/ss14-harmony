@@ -49,3 +49,19 @@
   rules: ghost-role-information-syndicate-reinforcement-rules
   entityPrototype: MobHumanSyndicateAgentThief
   iconPrototype: SyndicateJawsOfLife
+
+- type: ghostRole
+  id: SaboteurBorg
+  name: ghost-role-information-syndicate-cyborg-assault-name
+  description: ghost-role-information-syndicate-cyborg-description
+  rules: ghost-role-information-silicon-rules
+  entityPrototype: PlayerBorgSyndicateSaboteurBattery
+  iconPrototype: PlayerBorgSyndicateSaboteurBattery
+
+- type: ghostRole
+  id: SaboteurBorgFake
+  name: ghost-role-information-syndicate-cyborg-assault-name
+  description: ghost-role-information-syndicate-cyborg-description
+  rules: ghost-role-information-silicon-rules
+  entityPrototype: BorgChassisGenericSaboteurBattery
+  iconPrototype: BorgChassisGeneric

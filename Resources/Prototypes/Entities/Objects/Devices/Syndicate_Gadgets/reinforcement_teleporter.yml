@@ -30,7 +30,7 @@
       settings: default
   - type: GhostRoleMobSpawner
     prototype: MobHumanSyndicateAgentSpy
-    selectablePrototypes: ["SyndicateAgentMedic", "SyndicateAgentSpy", "SyndicateAgentThief"]
+    selectablePrototypes: ["SaboteurBorgFake", "SaboteurBorg", "SyndicateAgentThief"]
 
 - type: entity
   parent: ReinforcementRadio
@@ -108,21 +108,7 @@
     - type: GhostRoleMobSpawner
       prototype: PlayerBorgSyndicateAssaultBattery
 
-- type: entity
-  parent: ReinforcementRadio
-  id: ReinforcementRadioSyndicateCyborgSaboteur # Reinforcement radio exclusive to nukeops uplink
-  name: syndicate saboteur cyborg reinforcement radio
-  description: Call in a sneaky saboteur borg, Instantly!
-  suffix: NukeOps
-  components:
-  - type: GhostRole
-    name: ghost-role-information-syndicate-cyborg-assault-name
-    description: ghost-role-information-syndicate-cyborg-description
-    rules: ghost-role-information-silicon-rules
-    raffle:
-      settings: default
-  - type: GhostRoleMobSpawner
-    prototype: PlayerBorgSyndicateSaboteurBattery
+
 
 - type: entity
   parent: ReinforcementRadio
@@ -139,3 +125,18 @@
       settings: default
   - type: GhostRoleMobSpawner
     prototype: PlayerBorgSyndicateMedicalBattery
+
+- type: entity
+  parent: ReinforcementRadio
+  id: ReinforcementRadioSyndicateCyborgSaboteur
+  name: syndicate saboteur cyborg reinforcement radio
+  description: Call in a syndicate agent of questionable quality, instantly!
+  Suffix: NukeOps
+  components:
+  - type: GhostRole
+    rules: ghost-role-information-silicon-rules
+    raffle:
+    settings: default
+  - type: GhostRoleMobSpawner
+    prototype: MobHumanSyndicateAgentSpy
+    selectablePrototypes: ["SaboteurBorgFake", "SaboteurBorg"]
