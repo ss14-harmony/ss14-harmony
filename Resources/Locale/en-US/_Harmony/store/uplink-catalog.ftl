@@ -5,7 +5,7 @@ uplink-smuggler-satchel-name = Smuggler's Satchel
 uplink-smuggler-satchel-desc = A satchel that can fit under station tiles.
 
 uplink-reinforcement-radio-cyborg-saboteur-name = Syndicate Saboteur Borg
-uplink-reinforcement-radio-cyborg-saboteur-desc = A Waffle Co. Borg, capable of dishing out damage while cutting power to the station.
+uplink-reinforcement-radio-cyborg-saboteur-desc = A Waffle Co. borg, capable of dishing out damage while cutting power to the station.
 
 uplink-reinforcement-radio-cyborg-medical-name = Syndicate Medical Borg
-uplink-reinforcement-radio-cyborg-medical-desc = A helpful medical borg to cure you aliments.
+uplink-reinforcement-radio-cyborg-medical-desc = A combination of Gorlex and Interydyne technology, this borg will be the best medic you have ever seen. Quality of competence varies.
