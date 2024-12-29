@@ -162,6 +162,8 @@
   - HoPJumpskirt
   - HoPJumpsuitTurtleneckHarmony #Harmony
   - HoPJumpskirtTurtleneckHarmony #Harmony
+  - HoPJumpsuitMessKitHarmony #Harmony
+  - HoPJumpskirtMessKitHarmony #Harmony
 
 - type: loadoutGroup
   id: HoPNeck
@@ -1102,7 +1104,6 @@
 - type: loadoutGroup
   id: DetectiveOuterClothing
   name: loadout-group-detective-outerclothing
-  minLimit: 0
   loadouts:
   - DetectiveArmorVest
   - DetectiveCoat
@@ -1366,6 +1367,7 @@
   loadouts:
   - LoadoutSpeciesBreathTool
   - LoadoutClothingMaskAuralis # Harmony
+  - LoadoutClothingMaskVoxSpecial # Harmony
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolMedical
@@ -1376,6 +1378,7 @@
   loadouts:
   - LoadoutSpeciesBreathToolMedical
   - LoadoutClothingMaskAuralis # Harmony
+  - LoadoutClothingMaskVoxSpecial # Harmony
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolSecurity
@@ -1386,3 +1389,5 @@
   loadouts:
   - LoadoutSpeciesBreathToolSecurity
   - LoadoutClothingMaskAuralis # Harmony
+  - LoadoutClothingMaskVoxSpecial # Harmony
+  - LoadoutClothingMaskNTEnforcer # Harmony

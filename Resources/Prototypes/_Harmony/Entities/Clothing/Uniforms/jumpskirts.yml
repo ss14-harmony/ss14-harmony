@@ -22,7 +22,18 @@
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
-  id: ClothingUniformJumpskirtHeadOfSecurityTurtleneckHarmony
+  id: ClothingUniformJumpskirtHeadofPersonnelMessKitHarmony
+  name: head of personnel's mess kit
+  description: A blue denim skirt with pockets and a gold trimmed white shirt.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/hopmesskit.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/hopmesskit.rsi
+
+id: ClothingUniformJumpskirtHeadOfSecurityTurtleneckHarmony
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
   name: head of security's turtleneck
   description: You feel... innovative. Maybe you'll find a way to permabrig the clown later.
   components:
