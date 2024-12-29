@@ -62,6 +62,11 @@
   id: ClothingHeadHatSecSoftBlueHarmony
   result: ClothingHeadHatSecSoftBlueHarmony
 
+- type: latheRecipe
+  parent: BaseCommandHatRecipe
+  id: ClothingHeadHatBeretSecuritySeniorOfficerHarmony
+  result: ClothingHeadHatBeretSecuritySeniorOfficerHarmony
+
 ## Detective
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
