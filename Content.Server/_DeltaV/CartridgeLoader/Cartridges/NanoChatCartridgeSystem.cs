@@ -244,7 +244,7 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
 
         _adminLogger.Add(LogType.Chat,
             LogImpact.Low,
-            $"{ToPrettyString(msg.Actor)} Sent Message to: '{message.Content}'); {recipientsText}");
+            $"{ToPrettyString(msg.Actor)} Sent Message: '{message.Content}' to: {recipientsText}");
 
         var msgEv = new NanoChatMessageReceivedEvent(card);
         RaiseLocalEvent(ref msgEv);
