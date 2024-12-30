@@ -41,7 +41,7 @@
     tags:
     - ClothMade
     - WhitelistChameleon
-
+#Harmony Change: Updated Pathing for security resprite update
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretSecurity
@@ -330,7 +330,7 @@
     - ClothMade
     - HamsterWearable
     - WhitelistChameleon
-
+#Harmony Change: Updated Pathing for security resprite update
 - type: entity
   parent: [ClothingHeadBase, BaseCommandContraband]
   id: ClothingHeadHatHoshat
@@ -536,7 +536,7 @@
     sprite: Clothing/Head/Hats/violetwizard.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/violetwizard.rsi
-
+#Harmony Change: Updated Pathing for security resprite update
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatWarden

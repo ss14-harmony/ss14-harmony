@@ -340,11 +340,11 @@
     sprite: _Harmony/Clothing/Uniforms/Jumpsuit/hos.rsi
   - type: Clothing
     sprite: _Harmony/Clothing/Uniforms/Jumpsuit/hos.rsi
-
+# Harmony Change: Updated Sprite Pathing, Name, and Description for Harmony Security Sprite Fixing Update
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
   id: ClothingUniformJumpsuitHoSAlt
-  name: head of security's assault jumpsuit # Updated name and description for HoS Clothing and Loadout Update
+  name: head of security's assault jumpsuit
   description: It's an assault suit worn by those strong and disciplined enough to achieve the position of Head of Security.
   components:
   - type: Sprite
@@ -585,7 +585,7 @@
   description: A jumpsuit made of strong material, providing robust protection.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/security.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/security.rsi 
   - type: Clothing
     sprite: _Harmony/Clothing/Uniforms/Jumpsuit/security.rsi
 #Harmony Change: Updated the name, sprite, and contraband level for bluesec update
