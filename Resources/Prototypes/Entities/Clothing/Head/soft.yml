@@ -237,7 +237,7 @@
   parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatRedsoft]
   id: ClothingHeadHatRedsoftFlipped
   name: red cap
-
+#Harmony Change: Updated Pathing for security resprite update
 - type: entity
   parent: ClothingHeadHeadHatBaseFlippable
   id: ClothingHeadHatSecsoft
