@@ -31,9 +31,9 @@
   - type: Clothing
     sprite: _Harmony/Clothing/Uniforms/Jumpskirt/hopmesskit.rsi
 
-id: ClothingUniformJumpskirtHeadOfSecurityTurtleneckHarmony
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpskirtHeadOfSecurityTurtleneckHarmony
   name: head of security's turtleneck
   description: You feel... innovative. Maybe you'll find a way to permabrig the clown later.
   components:
