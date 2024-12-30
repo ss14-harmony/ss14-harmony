@@ -545,6 +545,9 @@
       borg_brain:
         - PositronicBrain
       borg_module:
+        #- BorgModuleTool
+        #- BorgModuleOperative
+        #- BorgModuleSyndicateWeapon
         - BorgModuleSyndicateTool # Harmony Change
         - BorgModuleBulldog # Harmony Change
   - type: ItemSlots
