@@ -33,7 +33,7 @@
   name:  uplink-reinforcement-radio-cyborg-saboteur-name
   description: uplink-reinforcement-radio-cyborg-saboteur-desc
   productEntity: ReinforcementRadioSyndicateCyborgSaboteur
-  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-borg-sabotage }
+  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-borg-assault }
   cost:
     Telecrystal: 45
   categories:
@@ -49,7 +49,7 @@
   name:  uplink-reinforcement-radio-cyborg-medical-name
   description: uplink-reinforcement-radio-cyborg-medical-desc
   productEntity: ReinforcementRadioSyndicateCyborgMedical
-  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-borg-medical }
+  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-borg-assault }
   cost:
     Telecrystal: 35
   categories:
