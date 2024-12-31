@@ -10,7 +10,7 @@
     - AllHostile
     - Blob # Goobstation - Blob
 
-    
+
 - type: npcFaction
   id: NanoTrasen
   hostile:
@@ -22,7 +22,7 @@
    - Dragon
    - AllHostile
    - Blob # Goobstation - Blob
-  
+
 - type: npcFaction
   id: Mouse
   hostile:
@@ -41,7 +41,7 @@
   - Xeno
   - AllHostile
   - Blob # Goobstation - Blob
-  
+
 - type: npcFaction
   id: SimpleHostile
   hostile:
@@ -80,7 +80,7 @@
   - Zombie
   - Revolutionary
   - AllHostile
-  - - Blob # Goobstation - Blob
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Zombie
