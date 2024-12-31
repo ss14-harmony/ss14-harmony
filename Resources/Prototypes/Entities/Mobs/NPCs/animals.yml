@@ -64,10 +64,6 @@
   - type: Tag
     tags:
     - VimPilot
-  - type: NightVision # Goobstation - Nigthvision
-    isToggle: true
-    color: "#808080"
-    playSoundOn: false
 
 - type: entity
   name: bee
@@ -388,6 +384,8 @@
         !type:DamageTypeTrigger
         damageType: Blunt
         damage: 10
+      behaviors:
+      - !type:GibBehavior { }
   - type: NonSpreaderZombie
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
@@ -433,10 +431,10 @@
     - id: FoodMeatSlime
 
 - type: entity
-  name: moth maggot
+  name: mothroach
   parent: MobCockroach
   id: MobMothroach
-  description: This is the adorable by-product of multiple attempts at genetically mixing mothpeople with maggots.
+  description: This is the adorable by-product of multiple attempts at genetically mixing mothpeople with cockroaches.
   components:
   - type: GhostRole
     makeSentient: true
@@ -460,7 +458,7 @@
   - type: Speech
     speechVerb: Moth
     speechSounds: Squeak
-    allowedEmotes: ['Chitter', 'Squeak', 'Flap'] #flap is from goob
+    allowedEmotes: ['Chitter', 'Squeak']
   - type: FaxableObject
     insertingState: inserting_mothroach
   - type: MothAccent
@@ -850,9 +848,6 @@
     - Passive
   - type: Body
     prototype: AnimalRuminant
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
   - type: HTN
     rootTask:
       task: RuminantCompound
@@ -928,9 +923,6 @@
       task: RuminantCompound
   - type: Body
     prototype: AnimalHemocyanin
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
 
 - type: entity
   name: goat
@@ -1018,9 +1010,6 @@
     - Passive
   - type: Body
     prototype: AnimalRuminant
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
   - type: NPCRetaliation
     attackMemoryLength: 5
   - type: FactionException
@@ -1262,6 +1251,24 @@
   - type: Sprite
     drawdepth: Mobs
     layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: monkey
+      sprite: Mobs/Animals/monkey.rsi
+    - map: [ "jumpsuit" ]
+    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+    - map: [ "ears" ]
+    - map: [ "outerClothing" ]
+    - map: [ "id" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "clownedon" ]
+      sprite: "Effects/creampie.rsi"
+      state: "creampie_human"
+      visible: false
   - type: Hands
   - type: ComplexInteraction
   - type: GenericVisualizer
@@ -1270,11 +1277,9 @@
         clownedon:
           True: {visible: true}
           False: {visible: false}
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
+  - type: Body
+    prototype: Primate
+    requiredLegs: 1 # TODO: More than 1 leg
   - type: CreamPied
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
@@ -1467,6 +1472,47 @@
     coldDamageThreshold: 285
     currentTemperature: 310.15
     specificHeat: 42
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: Mobs/Animals/kobold.rsi
+      state: kobold
+    - map: [ "outline" ]
+      sprite: Mobs/Animals/kobold.rsi
+      state: outline
+    - map: [ "horns" ]
+      sprite: Mobs/Customization/reptilian_parts.rsi
+      state: horns_short
+    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+    - map: [ "ears" ]
+    - map: [ "id" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "clownedon" ]
+      sprite: "Effects/creampie.rsi"
+      state: "creampie_human"
+      visible: false
+  - type: RandomSprite
+    getAllGroups: true
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          kobold: KoboldColors
+      - horns:
+          horns_curled: KoboldHornColors
+          horns_ram: KoboldHornColors
+          horns_short: KoboldHornColors
+          horns_myrsore: KoboldHornColors
+          horns_bighorn: KoboldHornColors
+          horns_argali: KoboldHornColors
+          horns_ayrshire: KoboldHornColors
+          horns_floppy_kobold_ears: Inherit
+          horns_double: Inherit
+          horns_kobold_ears: Inherit
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -1548,9 +1594,6 @@
   components:
   - type: Body
     prototype: Mouse
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
   - type: GhostRole
     makeSentient: true
     allowSpeech: true
@@ -1708,10 +1751,11 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
-  - type: NightVision # Goobstation - Nigthvision
-    isToggle: true
-    color: "#808080"
-    playSoundOn: false
+  - type: FoodSequenceElement
+    entries:
+      Taco: RatTaco
+      Burger: RatBurger
+      Skewer: RatSkewer
 
 - type: entity
   parent: MobMouse
@@ -2262,9 +2306,6 @@
   - type: CombatMode
   - type: Body
     prototype: AnimalHemocyanin
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -2328,10 +2369,6 @@
       groups:
         Brute: -0.07
         Burn: -0.07
-  - type: NightVision # Goobstation - Nigthvision
-    isToggle: true
-    color: "#808080"
-    playSoundOn: false
 
 - type: entity
   parent: MobSpiderBase
@@ -3288,15 +3325,6 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
-  - type: FoodSequenceElement
-    sprite:
-      sprite: Mobs/Animals/hamster.rsi
-      state: dead-0
-    entries:
-      burger:
-        name: food-sequence-burger-content-hamster
-      taco:
-        name: food-sequence-content-hamster
 
 - type: entity
   name: pig
