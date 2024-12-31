@@ -38,6 +38,7 @@
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: DerelictCyborgSpawn
+    - id: BlobSpawn #Goobstation - Blob 
 
 - type: entity
   id: BaseStationEvent
