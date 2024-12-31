@@ -19,9 +19,9 @@
   - Xeno
   - Zombie
   - Revolutionary
-   - Dragon
-   - AllHostile
-   - Blob # Goobstation - Blob
+  - Dragon
+  - AllHostile
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Mouse
