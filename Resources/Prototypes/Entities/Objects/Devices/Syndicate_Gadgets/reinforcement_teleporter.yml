@@ -30,7 +30,7 @@
       settings: default
   - type: GhostRoleMobSpawner
     prototype: MobHumanSyndicateAgentSpy
-    selectablePrototypes: ["SaboteurBorgFake", "SaboteurBorg", "SyndicateAgentThief"]
+    selectablePrototypes: ["SyndicateAgentMedic", "SyndicateAgentSpy", "SyndicateAgentThief"]
 
 - type: entity
   parent: ReinforcementRadio
