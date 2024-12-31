@@ -8,6 +8,7 @@
     - Zombie
     - Revolutionary
     - AllHostile
+    - Blob # Goobstation - Blob
 
     
 - type: npcFaction
@@ -20,6 +21,7 @@
   - Revolutionary
    - Dragon
    - AllHostile
+   - Blob # Goobstation - Blob
   
 - type: npcFaction
   id: Mouse
@@ -38,6 +40,7 @@
   - Zombie
   - Xeno
   - AllHostile
+  - Blob # Goobstation - Blob
   
 - type: npcFaction
   id: SimpleHostile
@@ -49,6 +52,7 @@
   - Zombie
   - Revolutionary
   - AllHostile
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: SimpleNeutral
@@ -64,6 +68,7 @@
   - Dragon
   - Dragon
   - AllHostile
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Xeno
@@ -75,6 +80,7 @@
   - Zombie
   - Revolutionary
   - AllHostile
+  - - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Zombie
@@ -97,6 +103,7 @@
   - SimpleHostile
   - Dragon
   - AllHostile
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: AllHostile
@@ -110,3 +117,4 @@
   - SimpleNeutral
   - Syndicate
   - Xeno
+  - Blob # Goobstation - Blob
