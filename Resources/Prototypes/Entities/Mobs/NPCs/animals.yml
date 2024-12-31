@@ -388,9 +388,6 @@
         !type:DamageTypeTrigger
         damageType: Blunt
         damage: 10
-      behaviors:
-      - !type:GibBehavior # Shitmed Change
-        gibContents: Skip # Shitmed Change
   - type: NonSpreaderZombie
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
@@ -549,7 +546,6 @@
     - Mouse
   - type: Body
     prototype: Mothroach
-  - type: SurgeryTarget # Shitmed
   - type: TypingIndicator
     proto: moth
   - type: Destructible
@@ -568,8 +564,6 @@
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-      enum.SurgeryUIKey.Key: # Shitmed
-        type: SurgeryBui
   - type: InventorySlots
   - type: Inventory
     speciesId: hamster
@@ -856,8 +850,6 @@
     - Passive
   - type: Body
     prototype: AnimalRuminant
-  - type: SurgeryTarget # Shitmed
-  - type: UserInterface # Shitmed
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
@@ -936,8 +928,6 @@
       task: RuminantCompound
   - type: Body
     prototype: AnimalHemocyanin
-  - type: SurgeryTarget # Shitmed
-  - type: UserInterface # Shitmed
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
@@ -1028,8 +1018,6 @@
     - Passive
   - type: Body
     prototype: AnimalRuminant
-  - type: SurgeryTarget # Shitmed
-  - type: UserInterface # Shitmed
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
@@ -1250,12 +1238,6 @@
   abstract: true
   components:
   - type: CombatMode
-  # Shitmed Change Start
-  - type: SurgeryTarget
-  - type: Targeting
-  - type: HumanoidAppearance
-    species: Monkey
-  # Shitmed Change End
   - type: Inventory
     templateId: monkey
     speciesId: monkey
@@ -1280,44 +1262,6 @@
   - type: Sprite
     drawdepth: Mobs
     layers:
-  # Shitmed Change Start
-    - map: [ "enum.HumanoidVisualLayers.Chest" ]
-    - map: [ "enum.HumanoidVisualLayers.Head" ]
-    - map: [ "enum.HumanoidVisualLayers.Snout" ]
-    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
-    - map: [ "enum.HumanoidVisualLayers.RArm" ]
-    - map: [ "enum.HumanoidVisualLayers.LArm" ]
-    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
-    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-    - map: ["jumpsuit"]
-    - map: ["enum.HumanoidVisualLayers.LFoot"]
-    - map: ["enum.HumanoidVisualLayers.RFoot"]
-    - map: ["enum.HumanoidVisualLayers.LHand"]
-    - map: ["enum.HumanoidVisualLayers.RHand"]
-    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
-      color: "#ffffff"
-      sprite: Objects/Misc/handcuffs.rsi
-      state: body-overlay-2
-      visible: false
-    - map: [ "gloves" ]
-    - map: [ "shoes" ]
-    - map: [ "ears" ]
-    - map: [ "outerClothing" ]
-    - map: [ "eyes" ]
-    - map: [ "belt" ]
-    - map: [ "id" ]
-    - map: [ "neck" ]
-    - map: [ "back" ]
-    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
-    - map: [ "enum.HumanoidVisualLayers.Hair" ]
-    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
-    - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
-    - map: [ "enum.HumanoidVisualLayers.Tail" ]
-    - map: [ "mask" ]
-    - map: [ "head" ]
-    - map: [ "pocket1" ]
-    - map: [ "pocket2" ]
-  # Shitmed Change End
   - type: Hands
   - type: ComplexInteraction
   - type: GenericVisualizer
@@ -1326,10 +1270,6 @@
         clownedon:
           True: {visible: true}
           False: {visible: false}
-  - type: Body # Shitmed Change
-    prototype: Monkey
-    requiredLegs: 2
-  - type: UserInterface # Shitmed
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
@@ -1483,13 +1423,6 @@
   - type: LizardAccent
   - type: ReplacementAccent
     accent: kobold
-  # Shitmed Change Start
-  - type: HumanoidAppearance
-    species: Kobold
-  - type: Body
-    prototype: Kobold
-    requiredLegs: 2
-  # Shitmed Change End
   - type: Speech
     speechSounds: Lizard
     speechVerb: Reptilian
@@ -1615,8 +1548,6 @@
   components:
   - type: Body
     prototype: Mouse
-  - type: SurgeryTarget # Shitmed
-  - type: UserInterface # Shitmed
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
@@ -1777,20 +1708,6 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
-  - type: FoodSequenceElement
-    sprite:
-      sprite: Mobs/Animals/mouse.rsi
-      state: dead-0
-    entries:
-      burger:
-        name: food-sequence-burger-content-rat
-      taco:
-        name: food-sequence-content-rat
-      skewer:
-        name: food-sequence-content-rat
-        sprite:
-          sprite: Objects/Consumable/Food/skewer.rsi
-          state: skewer-rat
   - type: NightVision # Goobstation - Nigthvision
     isToggle: true
     color: "#808080"
@@ -1856,10 +1773,6 @@
   - type: Item
     size: Tiny
     heldPrefix: 1
-  - type: FoodSequenceElement
-    sprite:
-      sprite: Mobs/Animals/mouse.rsi
-      state: dead-1
 
 - type: entity
   parent: MobMouse
@@ -1889,10 +1802,6 @@
   - type: Item
     size: Tiny
     heldPrefix: 2
-  - type: FoodSequenceElement
-    sprite:
-      sprite: Mobs/Animals/mouse.rsi
-      state: dead-2
 
 - type: entity
   name: cancer mouse
@@ -2353,8 +2262,6 @@
   - type: CombatMode
   - type: Body
     prototype: AnimalHemocyanin
-  - type: SurgeryTarget # Shitmed
-  - type: UserInterface # Shitmed
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui

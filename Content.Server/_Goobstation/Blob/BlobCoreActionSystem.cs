@@ -25,7 +25,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared._Goobstation.CCVar;
+using Content.Shared._Goobstation.CCVars;
 
 namespace Content.Server._Goobstation.Blob;
 

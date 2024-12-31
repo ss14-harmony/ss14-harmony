@@ -1,15 +1,15 @@
 - type: npcFaction
   id: Blob
   hostile:
-    - NanoTrasen
-    - Syndicate
-    - Xeno
-    - PetsNT
-    - Zombie
-    - Dragon
-    - Revolutionary
-    - Changeling
-    - Heretic
+  - NanoTrasen
+  - Syndicate
+  - Xeno
+  - PetsNT
+  - Zombie
+  - Dragon
+  - Revolutionary
+  - Changeling
+  - Heretic
 
 - type: explosion
   id: Blob
@@ -40,28 +40,28 @@
   suffix: Blob Ghost Role
   parent: BaseAntagSpawner
   components:
-    - type: GhostRoleMobSpawner
-      prototype: MobMouseCancerBlob
-    - type: GhostRole
-      makeSentient: true
-      name: blob-carrier-role-name
-      description: blob-carrier-role-desc
-      rules: blob-carrier-role-rules
-      raffle:
-        settings: default
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      layers:
-        - state: green
-        - sprite: Mobs/Animals/bat.rsi
-          state: bat
+  - type: GhostRoleMobSpawner
+    prototype: MobMouseCancerBlob
+  - type: GhostRole
+    makeSentient: true
+    name: blob-carrier-role-name
+    description: blob-carrier-role-desc
+    rules: blob-carrier-role-rules
+    raffle:
+      settings: default
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Mobs/Animals/bat.rsi
+      state: bat
 
 # Blob
 - type: entity
   parent: BaseMindRoleAntag
   id: MindRoleBlob
   name: Blob Role
-#  description: mind-role-blob-description
+  #  description: mind-role-blob-description
   components:
   - type: MindRole
     antagPrototype: Blob
@@ -84,4 +84,4 @@
 - type: currency
   id: BlobPoint
   displayName: store-currency-display-blob-points
-  canWithdraw: false
+  canWithdraw: fals
