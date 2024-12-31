@@ -10,7 +10,7 @@
   - Revolutionary
 
 - type: explosion
-  id: Blobexplosion
+  id: Blob
   damagePerIntensity:
     groups:
       Brute: 10
