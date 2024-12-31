@@ -150,9 +150,9 @@
   name: winter jackboots
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Shoes/Boots/winterbootssec.rsi
+    sprite: _Harmony/Clothing/Shoes/boots/winterbootssec.rsi
   - type: Clothing
-    sprite: _Harmony/Clothing/Shoes/Boots/winterbootssec.rsi
+    sprite: _Harmony/Clothing/Shoes/boots/winterbootssec.rsi
   - type: ClothingSlowOnDamageModifier
     modifier: 0.5
 
