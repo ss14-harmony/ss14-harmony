@@ -12,7 +12,7 @@
   - Heretic
 
 - type: explosion
-  id: Blob
+  id: Blobexplosion
   damagePerIntensity:
     groups:
       Brute: 10
