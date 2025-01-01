@@ -1,7 +1,6 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-  - Atlas
   - Amber
   - Bagel
   - Box
@@ -20,3 +19,4 @@
   # Harmony
   - Aspid
   - Barratry
+  - Atlas
