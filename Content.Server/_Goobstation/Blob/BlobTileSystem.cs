@@ -46,7 +46,6 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
         SubscribeLocalEvent<BlobTileComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<BlobTileComponent, DestructionEventArgs>(OnDestruction);
         SubscribeLocalEvent<BlobTileComponent, BlobTileGetPulseEvent>(OnPulsed);
-        SubscribeLocalEvent<BlobTileComponent, FlashAttemptEvent>(OnFlashAttempt);
         SubscribeLocalEvent<BlobTileComponent, EntityTerminatingEvent>(OnTerminate);
 
         _blobCoreQuery = GetEntityQuery<BlobCoreComponent>();
@@ -70,17 +69,6 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
             return;
 
         component.Core!.Value.Comp.BlobTiles.Remove(uid);
-    }
-
-    private void OnFlashAttempt(EntityUid uid, BlobTileComponent component, FlashAttemptEvent args)
-    {
-        if (args.Used == null || MetaData(args.Used.Value).EntityPrototype?.ID != "GrenadeFlashBang")
-            return;
-
-        if (component.BlobTileType == BlobTileType.Normal)
-        {
-            _damageableSystem.TryChangeDamage(uid, component.FlashDamage);
-        }
     }
 
     private void OnDestruction(EntityUid uid, BlobTileComponent component, DestructionEventArgs args)
