@@ -81,6 +81,8 @@
       children:
       - id: EmergencyOxygenTankFilled
       - id: OxygenTankFilled
+      - id: EmergencyNitrogenTankFilled
+      - id: NitrogenTankFilled
     - id: CrowbarRed
     - !type:GroupSelector
       children:
