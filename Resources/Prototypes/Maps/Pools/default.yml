@@ -1,6 +1,7 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
+  - Atlas
   - Amber
   - Bagel
   - Box
@@ -16,6 +17,3 @@
   - Packed
   - Reach
   #- Train
-  # Harmony
-  - Aspid
-  - Barratry
