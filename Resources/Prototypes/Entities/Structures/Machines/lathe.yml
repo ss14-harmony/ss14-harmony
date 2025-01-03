@@ -201,6 +201,7 @@
       - FreezerElectronics
       - CassetteTape
       - TapeRecorder
+      - Flare
   - type: EmagLatheRecipes
     emagStaticRecipes:
       - BoxLethalshot
