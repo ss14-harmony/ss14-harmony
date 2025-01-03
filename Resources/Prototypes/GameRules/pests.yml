@@ -117,4 +117,4 @@
       - id: MobSnailMoth
         weight: 0.08
       - id: MobSnailInstantDeath # DeltaV - no
-        weight: 0.01
+        weight: 0.00001
