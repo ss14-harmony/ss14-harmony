@@ -203,8 +203,6 @@
       - BoxFolderClipboard # Harmony
       - FreezerElectronics
       - Flare
-      - CassetteTape
-      - TapeRecorder
 
   - type: EmagLatheRecipes
     emagStaticRecipes:
