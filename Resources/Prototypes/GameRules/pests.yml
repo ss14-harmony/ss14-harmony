@@ -34,7 +34,8 @@
       - id: MobMouse
       - id: MobMouse1
       - id: MobMouse2
-      #- id: MobMouseCancer # DeltaV - no
+      - id: MobMouseCancer 
+        weight: 0.00001
 # Events always spawn a critter regardless of Probability https://github.com/space-wizards/space-station-14/issues/28480 I added the Rat King to their own event with a player cap.
 
 - type: entity
@@ -116,5 +117,5 @@
         weight: 0.08
       - id: MobSnailMoth
         weight: 0.08
-      - id: MobSnailInstantDeath # DeltaV - no
+      - id: MobSnailInstantDeath
         weight: 0.00001
