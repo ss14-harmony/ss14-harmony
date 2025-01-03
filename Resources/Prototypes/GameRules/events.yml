@@ -331,7 +331,7 @@
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
-    duration: 50
+    duration: 50 # De;ta V Change
   - type: VentClogRule
 
 - type: entity
