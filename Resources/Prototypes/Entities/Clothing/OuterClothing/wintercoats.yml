@@ -715,7 +715,8 @@
     priceMultiplier: 0.15
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterSci
-#Harmony Change: Updated Pathing for security resprite update
+
+# Harmony Change: Updated Sprite Pathing for security resprite update
 ################################################################
 - type: entity
   parent: [ClothingOuterArmorWarden, ClothingOuterWinterCoatToggleable, BaseRestrictedContraband]
@@ -728,6 +729,7 @@
   - type: Clothing
     sprite: _Harmony/Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
   - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodWinterWarden
 ################################################################
 
 - type: entity

@@ -340,10 +340,11 @@
     sprite: _Harmony/Clothing/Uniforms/Jumpsuit/hos.rsi
   - type: Clothing
     sprite: _Harmony/Clothing/Uniforms/Jumpsuit/hos.rsi
+
 # Harmony Change: Updated Sprite Pathing, Name, and Description for Harmony Security Sprite Fixing Update
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
-  id: ClothingUniformJumpsuitHoSAlt
+  id: ClothingUniformJumpsuitHoSAlt # Old ID: HeadofSecurityTurtleneck
   name: head of security's assault jumpsuit
   description: It's an assault suit worn by those strong and disciplined enough to achieve the position of Head of Security.
   components:
@@ -351,6 +352,7 @@
     sprite: Clothing/Uniforms/Jumpsuit/hos_alt.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/hos_alt.rsi
+
 #Harmony Change: Updated the name and sprite for bluesec update
 - type: entity 
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -577,7 +579,8 @@
     sprite: Clothing/Uniforms/Jumpsuit/roboticist.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/roboticist.rsi
-#Harmony Change: Updated Pathing for security resprite update
+
+#Harmony Change: Updated Pathing and Name for security resprite update
 - type: entity
   parent: [ClothingUniformBase, BaseRestrictedContraband]
   id: ClothingUniformJumpsuitSec
@@ -588,6 +591,7 @@
     sprite: _Harmony/Clothing/Uniforms/Jumpsuit/security.rsi 
   - type: Clothing
     sprite: _Harmony/Clothing/Uniforms/Jumpsuit/security.rsi
+
 #Harmony Change: Updated the name, sprite, and contraband level for bluesec update
 - type: entity 
   parent: [ClothingUniformBase, BaseRestrictedContraband]
@@ -621,6 +625,7 @@
     sprite: Clothing/Uniforms/Jumpsuit/security_trooper.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/security_trooper.rsi
+
 #Harmony Change: Updated Pathing for security resprite update
 - type: entity
   parent: [ClothingUniformBase, BaseRestrictedContraband]
@@ -1157,6 +1162,7 @@
     sprite: Clothing/Uniforms/Jumpsuit/senior_physician.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/senior_physician.rsi
+
 #Harmony Change: Updated Pathing for security resprite update
 - type: entity
   parent: [ClothingUniformBase, BaseRestrictedContraband]

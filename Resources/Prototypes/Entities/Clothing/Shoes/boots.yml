@@ -143,7 +143,8 @@
     sprite: Clothing/Shoes/Boots/winterbootssci.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/winterbootssci.rsi
-# Harmony Change: Updated Sprite Pathing and Name for Harmony Security Sprite Fixing Update
+
+# Harmony Change: Updated Sprite Pathing, Name, and Damage Slowdown Modifier for Harmony Security Sprite Fixing Update
 - type: entity
   parent: [ClothingShoesBaseWinterBoots, ClothingShoesMilitaryBase, BaseRestrictedContraband]
   id: ClothingShoesBootsWinterSec

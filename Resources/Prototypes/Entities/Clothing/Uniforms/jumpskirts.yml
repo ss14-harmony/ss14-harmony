@@ -185,10 +185,11 @@
     sprite: _Harmony/Clothing/Uniforms/Jumpskirt/hos.rsi
   - type: Clothing
     sprite: _Harmony/Clothing/Uniforms/Jumpskirt/hos.rsi
+
 # Harmony Change: Updated Sprite Pathing, Name, and Description for Harmony Security Sprite Fixing Update
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
-  id: ClothingUniformJumpskirtHoSAlt
+  id: ClothingUniformJumpskirtHoSAlt # Old ID: HeadofSecurityTurtleneckSkirt
   name: head of security's assault jumpskirt 
   description: It's an assault suit worn by those strong and disciplined enough to achieve the position of Head of Security.
   components:
@@ -367,7 +368,8 @@
     sprite: Clothing/Uniforms/Jumpskirt/roboticist.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/roboticist.rsi
-#Harmony Change: Updated Pathing for security resprite update
+
+#Harmony Change: Updated Pathing and Name for security resprite update
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseRestrictedContraband]
   id: ClothingUniformJumpskirtSec
@@ -378,6 +380,7 @@
     sprite: _Harmony/Clothing/Uniforms/Jumpskirt/security.rsi
   - type: Clothing
     sprite: _Harmony/Clothing/Uniforms/Jumpskirt/security.rsi
+
 #Harmony Change: Updated Pathing for security resprite update
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseRestrictedContraband]
@@ -635,6 +638,7 @@
     sprite: Clothing/Uniforms/Jumpskirt/senior_physician.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/senior_physician.rsi
+
 #Harmony Change: Updated Pathing for security resprite update
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseRestrictedContraband]
