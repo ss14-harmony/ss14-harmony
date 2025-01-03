@@ -554,6 +554,7 @@
     priceMultiplier: 0.15
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterPara
+    
 # Harmony Change: Updated the sprite pathing for the QM spriting update
 - type: entity
   parent: [ClothingOuterWinterCoatToggleable, BaseCommandContraband]
