@@ -24,3 +24,8 @@
   id: HoSWidebrimHarmony
   equipment:
     head: ClothingHeadHatHoSWidebrimHarmony
+
+- type: loadout
+  id: HoSSoftHarmony
+  equipment:
+    head: ClothingHeadHatHoSSoftHarmony

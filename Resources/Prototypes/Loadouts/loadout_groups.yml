@@ -957,6 +957,7 @@
   - HeadofSecurityHead
   - HeadofSecurityBeret
   - HoSWidebrimHarmony # Harmony
+  - HoSSoftHarmony # Harmony
 
 - type: loadoutGroup
   id: HeadofSecurityJumpsuit

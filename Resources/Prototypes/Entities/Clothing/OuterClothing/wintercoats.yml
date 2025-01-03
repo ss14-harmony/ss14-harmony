@@ -715,7 +715,7 @@
     priceMultiplier: 0.15
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterSci
-
+#Harmony Change: Updated Pathing for security resprite update
 ################################################################
 - type: entity
   parent: [ClothingOuterArmorWarden, ClothingOuterWinterCoatToggleable, BaseRestrictedContraband]
@@ -724,11 +724,10 @@
   description: A sturdy, utilitarian winter coat designed to protect a warden from any brig-bound threats and hypothermic events.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
+    sprite: _Harmony/Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
+    sprite: _Harmony/Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterWarden
 ################################################################
 
 - type: entity
