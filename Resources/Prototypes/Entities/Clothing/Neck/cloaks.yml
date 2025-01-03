@@ -63,7 +63,7 @@
     sprite: Clothing/Neck/Cloaks/rd.rsi
   - type: StealTarget
     stealGroup: HeadCloak
-#Harmony Change: Updated the sprite pathing for the QM spriting update
+# Harmony Change: Updated the sprite pathing for the QM spriting update
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckCloakQm
