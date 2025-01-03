@@ -1,3 +1,4 @@
+
 ﻿- type: entity
   id: OintmentAdvanced10
   parent: RegenerativeMesh
@@ -15,3 +16,12 @@
   - type: Stack
     lingering: true
     count: 20
+    
+- type: entity
+  id: Bloodpack1
+  parent: Bloodpack
+  suffix: Single
+  components:
+  - type: Stack
+    stackType: Bloodpack
+    count: 10
