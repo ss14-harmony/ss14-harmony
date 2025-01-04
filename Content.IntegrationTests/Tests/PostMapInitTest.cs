@@ -68,7 +68,8 @@ namespace Content.IntegrationTests.Tests
             "Aspid", // Pseudo playtest, not merged to upstream yet.
             "Gate",
             "Amber",
-            "Loop"
+            "Loop",
+			"ClusterPrime" // Update of Cluster
         };
 
         /// <summary>
