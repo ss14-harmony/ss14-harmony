@@ -59589,21 +59589,11 @@ entities:
     - type: Transform
       pos: 2.5,16.5
       parent: 1
-    - type: Door
-      secondsUntilStateChange: -106517.32
-      state: Closing
-    - type: Firelock
-      emergencyCloseCooldown: 184.2664844
   - uid: 5662
     components:
     - type: Transform
       pos: 3.5,16.5
       parent: 1
-    - type: Door
-      secondsUntilStateChange: -89845.93
-      state: Closing
-    - type: Firelock
-      emergencyCloseCooldown: 184.6998173
   - uid: 5663
     components:
     - type: Transform
@@ -59669,9 +59659,6 @@ entities:
     - type: Transform
       pos: -31.5,16.5
       parent: 1
-    - type: Door
-      secondsUntilStateChange: -34521.63
-      state: Closing
   - uid: 5679
     components:
     - type: Transform
@@ -60113,9 +60100,6 @@ entities:
     - type: Transform
       pos: -30.5,-6.5
       parent: 1
-    - type: Door
-      secondsUntilStateChange: -63821.28
-      state: Closing
   - uid: 5809
     components:
     - type: Transform
@@ -60789,9 +60773,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -11.5,37.5
       parent: 1
-    - type: Door
-      secondsUntilStateChange: -103190.086
-      state: Closing
   - uid: 9591
     components:
     - type: Transform
