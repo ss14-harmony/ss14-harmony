@@ -57,6 +57,8 @@
   - TowelColorSilver
   - TowelColorWhite
   - TowelColorYellow
+#deltav specific trinkets
+  - TapeRecorder
 
 - type: loadoutGroup
   id: Glasses
