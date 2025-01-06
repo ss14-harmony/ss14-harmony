@@ -112,6 +112,7 @@
   - SecurityOfficer
   - Detective
   - Warden
+  - BrigMedic
 
 - type: department
   id: Science
