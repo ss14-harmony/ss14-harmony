@@ -4,57 +4,109 @@
   graph:
   - node: start
     edges:
-    - to: window # 50 hp
+    
+        #- node: start
+      #edges:
+        #- to: plasmaWindow
+          #steps:
+            #- material: PlasmaGlass
+              #amount: 2
+              #doAfter: 2
+              
+    - to: window # 50 hp - Harmony Change
       steps:
       - material: Glass
         amount: 2
         doAfter: 2
-
-    - to: tintedWindow # 50 hp
+        
+        #- to: reinforcedWindow
+          #steps:
+            #- material: ReinforcedGlass
+              #amount: 2
+              #doAfter: 2
+              
+    - to: tintedWindow # 50 hp - Harmony Change
       steps:
       - material: Glass
         amount: 2
       - material: Plastic
         amount: 2
         doAfter: 2
-
-    - to: plasmaWindow # 75 hp
+        
+      #- to: tintedWindow
+          #steps:
+            #- material: ReinforcedGlass
+              #amount: 2
+              #doAfter: 2
+              
+    - to: plasmaWindow # 75 hp - Harmony Change
       steps:
       - material: PlasmaGlass
         amount: 2
         doAfter: 3
-
-    - to: uraniumWindow # 75 hp
+        
+        #- to: reinforcedPlasmaWindow
+          #steps:
+            #- material: ReinforcedPlasmaGlass
+              #amount: 2
+              #doAfter: 3
+              
+    - to: uraniumWindow # 75 hp - Harmony Change
       steps:
       - material: UraniumGlass
         amount: 2
         doAfter: 3
-
-    - to: clockworkWindow # 75 hp reinforced damage mod
+        
+        #- to: uraniumWindow
+          #steps:
+            #- material: UraniumGlass
+              #amount: 2
+              #doAfter: 2
+              
+    - to: clockworkWindow # 75 hp reinforced damage mod - Harmony Change
       steps:
       - material: ClockworkGlass
         amount: 2
         doAfter: 3
-
-    - to: reinforcedWindow # 75 hp reinforced damage mod
+        
+        #- to: reinforcedUraniumWindow
+          #steps:
+            #- material: ReinforcedUraniumGlass
+              #amount: 2
+              #doAfter: 3
+              
+    - to: reinforcedWindow # 75 hp reinforced damage mod - Harmony Change
       steps:
       - material: ReinforcedGlass
         amount: 2
         doAfter: 3
-
-    - to: reinforcedPlasmaWindow # 150 hp reinforced damage mod
-      steps:
-      - material: ReinforcedPlasmaGlass
-        amount: 2
-        doAfter: 4
-
-    - to: reinforcedUraniumWindow # 150 hp reinforced damage mod
-      steps:
-      - material: ReinforcedUraniumGlass
-        amount: 2
-        doAfter: 4
         
-    - to: shuttleWindow # 500 hp reinforced damage mod (wow)
+        #- to: window
+          #steps:
+            #- material: Glass
+              #amount: 2
+              #doAfter: 3
+              
+        #- to: shuttleWindow
+          #steps:
+            #- material: Plasteel
+              #amount: 2
+            #- material: ReinforcedGlass
+              #amount: 2
+              #doAfter: 4
+              
+    #- to: reinforcedUraniumWindow # 150 hp reinforced damage mod
+      #steps:
+      #- material: ReinforcedUraniumGlass
+        #amount: 2
+        #doAfter: 4
+                #- to: clockworkWindow
+          #steps:
+            #- material: ClockworkGlass
+              #amount: 2
+              #doAfter: 3
+              
+    - to: shuttleWindow # 500 hp reinforced damage mod (wow) - Harmony Change
       steps:
       - material: Plasteel
         amount: 2
@@ -62,7 +114,22 @@
         amount: 2
         doAfter: 6
 
-  - node: window
+    #- node: window
+      #entity: Window
+      #edges:
+        #- to: start
+          #completed:
+            #- !type:SpawnPrototype
+              #prototype: SheetGlass1
+              #amount: 2
+            #- !type:DeleteEntity {}
+          #steps:
+            #- tool: Screwing
+              #doAfter: 1
+            #- tool: Anchoring
+              #doAfter: 2
+
+  - node: window # Harmony Change
     entity: Window
     edges:
     - to: start
@@ -101,8 +168,32 @@
       - material: MetalRod
         amount: 2
         doAfter: 2
+    
 
-  - node: tintedWindow
+      #- node: reinforcedWindow
+      #entity: ReinforcedWindow
+      #edges:
+        #- to: start
+          #completed:
+            #- !type:SpawnPrototype
+              #prototype: SheetRGlass1
+              #amount: 2
+            #- !type:DeleteEntity {}
+          #steps:
+            #- tool: Welding
+              #doAfter: 5
+            #- tool: Screwing
+              #doAfter: 1
+            #- tool: Prying
+              #doAfter: 2
+            #- tool: Welding
+              #doAfter: 5
+            #- tool: Screwing
+              #doAfter: 1
+            #- tool: Anchoring
+              #doAfter: 2
+          
+  - node: tintedWindow # Harmony Change
     entity: TintedWindow
     edges:
     - to: start
@@ -119,8 +210,27 @@
         doAfter: 1
       - tool: Anchoring
         doAfter: 2
-
-  - node: plasmaWindow
+    
+    #- node: tintedWindow
+      #entity: TintedWindow
+      #edges:
+        #- to: start
+          #completed:
+            #- !type:SpawnPrototype
+              #prototype: SheetRGlass1
+              #amount: 2
+            #- !type:DeleteEntity {}
+          #steps:
+            #- tool: Screwing
+              #doAfter: 1
+            #- tool: Prying
+              #doAfter: 2
+            #- tool: Screwing
+              #doAfter: 1
+            #- tool: Anchoring
+              #doAfter: 2
+              
+  - node: plasmaWindow # Harmony Change
     entity: PlasmaWindow
     edges:
     - to: start
@@ -143,8 +253,27 @@
       - material: MetalRod
         amount: 2
         doAfter: 1
+    
+    #- node: plasmaWindow
+      #entity: PlasmaWindow
+      #edges:
+        #- to: start
+          #completed:
+            #- !type:SpawnPrototype
+              #prototype: SheetPGlass1
+              #amount: 2
+            #- !type:DeleteEntity {}
+          #steps:
+            #- tool: Screwing
+              #doAfter: 2
+            #- tool: Prying
+              #doAfter: 3
+            #- tool: Screwing
+              #doAfter: 2
+            #- tool: Anchoring
+              #doAfter: 3
 
-  - node: uraniumWindow
+  - node: uraniumWindow # Harmony Change
     entity: UraniumWindow
     edges:
     - to: start
@@ -167,8 +296,32 @@
       - material: MetalRod
         amount: 2
         doAfter: 1
+  
+    #- node: reinforcedPlasmaWindow
+      #entity: ReinforcedPlasmaWindow
+      #edges:
+        #- to: start
+          #completed:
+            #- !type:SpawnPrototype
+              #prototype: SheetRPGlass1
+              #amount: 2
+            #- !type:DeleteEntity {}
+          #steps:
+            #- tool: Welding
+              #doAfter: 5
+            #- tool: Screwing
+              #doAfter: 2
+            #- tool: Prying
+              #doAfter: 3
+            #- tool: Welding
+              #doAfter: 5
+            #- tool: Screwing
+              #doAfter: 2
+            #- tool: Anchoring
+              #doAfter: 3
 
-  - node: clockworkWindow
+
+  - node: clockworkWindow # Harmony Change
     entity: ClockworkWindow
     edges:
     - to: start
@@ -191,7 +344,26 @@
       - tool: Anchoring
         doAfter: 3
 
-  - node: reinforcedWindow
+    #- node: uraniumWindow
+      #entity: UraniumWindow
+      #edges:
+        #- to: start
+          #completed:
+            #- !type:SpawnPrototype
+              #prototype: SheetUGlass1
+              #amount: 2
+            #- !type:DeleteEntity {}
+          #steps:
+            #- tool: Screwing
+              #doAfter: 2
+            #- tool: Prying
+              #doAfter: 3
+            #- tool: Screwing
+              #doAfter: 2
+            #- tool: Anchoring
+              #doAfter: 3
+
+  - node: reinforcedWindow # Harmony Change
     entity: ReinforcedWindow
     edges:
     - to: start
@@ -224,7 +396,30 @@
         amount: 2
         doAfter: 1
 
-  - node: reinforcedPlasmaWindow
+    #- node: reinforcedUraniumWindow
+      #entity: ReinforcedUraniumWindow
+      #edges:
+        #- to: start
+          #completed:
+            #- !type:SpawnPrototype
+              #prototype: SheetRUGlass1
+              #amount: 2
+            #- !type:DeleteEntity {}
+          #steps:
+            #- tool: Welding
+              #doAfter: 5
+            #- tool: Screwing
+              #doAfter: 2
+            #- tool: Prying
+              #doAfter: 3
+            #- tool: Welding
+              #doAfter: 5
+            #- tool: Screwing
+              #doAfter: 2
+            #- tool: Anchoring
+              #doAfter: 3
+
+  - node: reinforcedPlasmaWindow # Harmony Change
     entity: ReinforcedPlasmaWindow
     edges:
     - to: start
@@ -247,7 +442,61 @@
       - tool: Anchoring
         doAfter: 3
 
-  - node: reinforcedUraniumWindow
+    #- node: clockworkWindow
+      #entity: ClockworkWindow
+      #edges:
+        #- to: start
+          #completed:
+            #- !type:SpawnPrototype
+              #prototype: SheetClockworkGlass1
+              #amount: 2
+            #- !type:DeleteEntity {}
+          #steps:
+            #- tool: Welding
+              #doAfter: 5
+            #- tool: Screwing
+              #doAfter: 2
+            #- tool: Prying
+              #doAfter: 3
+            #- tool: Welding
+              #doAfter: 5
+            #- tool: Screwing
+              #doAfter: 2
+            #- tool: Anchoring
+              #doAfter: 3
+    
+    #- node: shuttleWindow
+      #entity: ShuttleWindow
+      #edges:
+        #- to: start
+          #completed:
+            #- !type:SpawnPrototype
+              #prototype: SheetRGlass1
+              #amount: 2
+            #- !type:SpawnPrototype
+              #prototype: SheetPlasteel1
+              #amount: 2
+            #- !type:DeleteEntity {}
+          #steps:
+          #To-Do: Add deconstruct visuals
+            #- tool: Welding
+              #doAfter: 6
+            #- tool: Screwing
+              #doAfter: 2
+            #- tool: Prying
+              #doAfter: 3
+            #- tool: Welding
+              #doAfter: 5
+            #- tool: Screwing
+              #doAfter: 1
+            #- tool: Prying
+              #doAfter: 2
+            #- tool: Welding
+              #doAfter: 4
+            #- tool: Anchoring
+              #doAfter: 1
+
+  - node: reinforcedUraniumWindow # Harmony Change
     entity: ReinforcedUraniumWindow
     edges:
     - to: start
