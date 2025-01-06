@@ -1,9 +1,9 @@
 using Content.Shared.Audio;
 using Content.Shared.CartridgeLoader;
-using Content.Shared.DeltaV.CartridgeLoader.Cartridges;
-using Content.Shared.DeltaV.NanoChat;
+using Content.Shared._DeltaV.CartridgeLoader.Cartridges;
+using Content.Shared._DeltaV.NanoChat;
 
-namespace Content.Server.CartridgeLoader.Cartridges;
+namespace Content.Server._DeltaV.CartridgeLoader.Cartridges;
 
 public sealed partial class LogProbeCartridgeSystem
 {
