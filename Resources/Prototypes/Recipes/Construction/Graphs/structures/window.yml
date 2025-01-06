@@ -53,6 +53,14 @@
       - material: ReinforcedUraniumGlass
         amount: 2
         doAfter: 4
+        
+    - to: shuttleWindow # 500 hp reinforced damage mod (wow)
+      steps:
+      - material: Plasteel
+        amount: 2
+      - material: ReinforcedGlass
+        amount: 2
+        doAfter: 6
 
   - node: window
     entity: Window
