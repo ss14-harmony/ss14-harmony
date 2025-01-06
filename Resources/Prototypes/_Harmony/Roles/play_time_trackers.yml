@@ -1,2 +1,6 @@
 - type: playTimeTracker
   id: 
+
+- type: playTimeTracker
+  id: JobPermaPrisoner
+

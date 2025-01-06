@@ -113,6 +113,8 @@
   - Detective
   - Warden
   - BrigMedic
+  - PermaPrisoner # Harmony
+
 
 - type: department
   id: Science
