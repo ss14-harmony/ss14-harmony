@@ -1,0 +1,11 @@
+- type: entity
+  name: security bola
+  parent: Bola
+  id: SecurityBola
+  description: Linked together with some spare cuffs and metal.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Throwable/securitybola.rsi #Harmony Change: Sprite pathway changed.
+    state: icon
