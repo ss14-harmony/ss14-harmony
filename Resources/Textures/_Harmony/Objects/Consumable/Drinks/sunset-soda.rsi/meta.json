@@ -2,7 +2,6 @@
     "version": 1,
     "size":
     {
-
         "x": 32,
         "y": 32
     },
@@ -10,7 +9,6 @@
     "copyright": "2024 Unisol https://github.com/Unisol",
     "states":
     [
-
         {
             "name": "icon"
         },
