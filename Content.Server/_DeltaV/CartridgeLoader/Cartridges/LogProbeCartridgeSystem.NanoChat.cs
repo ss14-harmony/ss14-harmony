@@ -3,7 +3,7 @@ using Content.Shared.CartridgeLoader;
 using Content.Shared._DeltaV.CartridgeLoader.Cartridges;
 using Content.Shared._DeltaV.NanoChat;
 
-namespace Content.Server._DeltaV.CartridgeLoader.Cartridges;
+namespace Content.Server.CartridgeLoader.Cartridges;
 
 public sealed partial class LogProbeCartridgeSystem
 {
