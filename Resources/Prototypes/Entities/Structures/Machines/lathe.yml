@@ -739,6 +739,7 @@
       - WeaponFlareGunSecurity
       - WeaponLaserCarbinePractice
       - Zipties
+      - SecurityBola
     dynamicRecipes:
       - BoxBeanbag
       - BoxShotgunIncendiary

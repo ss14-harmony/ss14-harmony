@@ -2,7 +2,7 @@
   name: security bola
   parent: Bola
   id: SecurityBola
-  description: Dedicated bolas made for use in Security Operations.
+  description: Dedicated bolas made for use in Security operations.
   components:
   - type: Item
     size: Small
