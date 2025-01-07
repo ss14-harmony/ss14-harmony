@@ -7,5 +7,5 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _Harmony/Objects/Weapons/Throwable/securitybola.rsi #Harmony Change: Sprite pathway changed.
+    sprite: _Harmony/Objects/Weapons/Throwable/securitybola.rsi
     state: icon

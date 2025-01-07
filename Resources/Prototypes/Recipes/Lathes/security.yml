@@ -43,14 +43,6 @@
   materials:
     Plastic: 200
 
-- type: latheRecipe #Harmony Change: Security Bolas added
-  id: SecurityBola
-  result: SecurityBola
-  completetime: 2
-  materials:
-    Steel: 400
-
-
 - type: latheRecipe
   parent: BaseWeaponRecipe
   id: Stunbaton
