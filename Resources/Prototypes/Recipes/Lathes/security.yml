@@ -43,7 +43,7 @@
   materials:
     Plastic: 200
 
-- type: latheRecipe
+- type: latheRecipe #Harmony Change: Security Bolas added
   id: SecurityBola
   result: SecurityBola
   completetime: 2

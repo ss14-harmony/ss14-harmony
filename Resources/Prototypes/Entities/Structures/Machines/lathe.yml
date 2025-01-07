@@ -739,7 +739,7 @@
       - WeaponFlareGunSecurity
       - WeaponLaserCarbinePractice
       - Zipties
-      - SecurityBola
+      - SecurityBola #Harmony Change: Adds Security Bolas
     dynamicRecipes:
       - BoxBeanbag
       - BoxShotgunIncendiary
