@@ -12,6 +12,12 @@
       sprite: Objects/Weapons/Melee/shields.rsi
       size: Ginormous
       heldPrefix: riot
+    - type: Clothing
+      sprite: Objects/Weapons/Melee/shields.rsi
+      quickEquip: false
+      heldPrefix: riot
+      slots:
+      - suitStorage
     - type: Blocking
       passiveBlockModifier:
         coefficients:
