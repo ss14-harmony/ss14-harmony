@@ -37,7 +37,7 @@
   equipment:
     shoes: ClothingShoesBootsLaceup
     eyes: ClothingEyesGlassesSunglasses
-    belt: ClothingBeltSheathFilled
+    belt: ClothingBeltSheathFilled # Harmony Change
     gloves: ClothingHandsGlovesCaptain
     id: CaptainPDA
     ears: ClothingHeadsetAltCommand
