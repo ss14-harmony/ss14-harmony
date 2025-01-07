@@ -8,3 +8,15 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobBrigMedicHarmony
+  groups:
+  - BrigMedJumpsuit
+  - MedicalGloves
+  - BrigMedBackpack
+  - SecurityShoes
+  - SurvivalSecurity
+  - Trinkets
+  - SecurityStar
+  - GroupSpeciesBreathToolSecurity

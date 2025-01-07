@@ -13,3 +13,18 @@
   loadouts:
   - PermaPrisonerJumpsuit
   - PermaPrisonerJumpskirt
+
+- type: loadoutGroup
+  id: BrigMedJumpsuit
+  name: loadout-group-brig-medic-jumpsuit
+  loadouts:
+  - BrigMedicJumpsuit
+  - BrigMedicJumpskirt
+
+- type: loadoutGroup
+  id: BrigMedBackpack
+  name: loadout-group-brig-medic-backpack
+  loadouts:
+  - BrigmedBackpack
+  - BrigmedSatchel
+  - BrigmedDuffle

@@ -1,14 +1,14 @@
 - type: job
   id: BrigMedicHarmony
-  name: job-name-brigmedic
+  name: job-name-brigmed
   description: job-description-brigmedic
-  playTimeTracker: JobBrigMedic
+  playTimeTracker: JobBrigMedicHarmony
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
       time: 0 #10 hrs
   startingGear: BrigMedicGearHarmony
-  icon: "JobIconBrigMedicHarmony"
+  icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos
   canBeAntag: false
   access:
@@ -26,12 +26,12 @@
 - type: startingGear
   id: BrigMedicGearHarmony
   equipment:
-    eyes: ClothingEyesGlassesSecurity
+    id: BrigmedicPDA
+    eyes: ClothingEyesGlassesBrigmedicHarmony
     ears: ClothingHeadsetBrigmedic
+    head: ClothingHeadHatBeretBrigmedic
+    outerClothing: ClothingOuterCoatAMG
     pocket1: WeaponDisabler
-    pocket2: LauncherSyringe
   storage:
     back:
     - Flash
-    - MiniSyringe
-    - MiniSyringe

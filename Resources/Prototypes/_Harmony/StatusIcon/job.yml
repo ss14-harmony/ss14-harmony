@@ -1,7 +1,0 @@
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconBrigMedicHarmony
-  icon:
-    sprite: _Harmony/Textures/Interface/Misc/job_icons.rsi
-    state: BrigMedic
-  jobName: job-name-brigmedic
