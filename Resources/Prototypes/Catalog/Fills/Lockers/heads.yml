@@ -38,7 +38,7 @@
     - id: CaptainIDCard
     - id: CigarGoldCase
       prob: 0.25
-#    - id: ClothingBeltSheathFilled
+#    - id: ClothingBeltSheathFilled # Harmony Change
     - id: ClothingHeadsetAltCommand
     - id: ClothingOuterArmorCaptainCarapace
     - id: CommsComputerCircuitboard
