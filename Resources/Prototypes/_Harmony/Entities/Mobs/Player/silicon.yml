@@ -1,5 +1,5 @@
 
-﻿# Nuclear Operative Borgs
+# Nuclear Operative Borgs
 - type: entity
   id: BorgChassisGenericSaboteurBattery
   parent: BorgChassisGenericSaboteur
