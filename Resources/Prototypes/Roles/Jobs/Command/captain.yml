@@ -31,11 +31,13 @@
     components:
       - type: CommandStaff
 
+# Harmony Change: Captain now spawns with a sabre. This will be used later for loadouts involving different swords.
 - type: startingGear
   id: CaptainGear
   equipment:
     shoes: ClothingShoesBootsLaceup
     eyes: ClothingEyesGlassesSunglasses
+    belt: ClothingBeltSheathFilled
     gloves: ClothingHandsGlovesCaptain
     id: CaptainPDA
     ears: ClothingHeadsetAltCommand

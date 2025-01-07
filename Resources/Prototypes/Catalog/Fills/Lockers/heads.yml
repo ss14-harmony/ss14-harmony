@@ -29,6 +29,7 @@
       entity_storage: !type:NestedSelector
         tableId: LockerFillQuarterMaster
 
+# Harmony Change: Removes the Captain's sheath from the locker since it is now part of their loadout.
 # No laser table
 - type: entityTable
   id: LockerFillCaptainNoLaser
@@ -37,7 +38,7 @@
     - id: CaptainIDCard
     - id: CigarGoldCase
       prob: 0.25
-    - id: ClothingBeltSheathFilled
+#    - id: ClothingBeltSheathFilled
     - id: ClothingHeadsetAltCommand
     - id: ClothingOuterArmorCaptainCarapace
     - id: CommsComputerCircuitboard
