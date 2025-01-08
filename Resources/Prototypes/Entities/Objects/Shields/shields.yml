@@ -77,7 +77,7 @@
       sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-shield.rsi
       quickEquip: false
       slots:
-      - suitStorage
+      - suitStorage #Harmony Change: Allows for the shield to be put onto the suit storage slot
     - type: StaticPrice
       price: 90
     - type: Blocking
@@ -100,7 +100,7 @@
   description: A riot shield built for withstanding lasers, but not much else.
   components:
     - type: Sprite
-      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi #Harmony Change: Sprite location redirected to _Harmony Namespace
       state: icon
     - type: Item
       sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
@@ -109,7 +109,7 @@
       sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
       quickEquip: false
       slots:
-      - suitStorage
+      - suitStorage #Harmony Change: Allows for the shield to be put onto the suit storage slot
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -136,7 +136,7 @@
       sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi
       quickEquip: false
       slots:
-      - suitStorage
+      - suitStorage #Harmony Change: Allows for the shield to be put onto the suit storage slot
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -165,7 +165,7 @@
       sprite: _Harmony/Objects/Weapons/Melee/Shields/buckler.rsi
       quickEquip: false
       slots:
-      - suitStorage
+      - suitStorage #Harmony Change: Allows for the shield to be put onto the suit storage slot
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -227,7 +227,7 @@
       sprite: _Harmony/Objects/Weapons/Melee/Shields/makeshift-shield.rsi
       quickEquip: false
       slots:
-      - suitStorage
+      - suitStorage #Harmony Change: Allows for the shield to be put onto the suit storage slot
     - type: Blocking
       passiveBlockModifier:
         coefficients:
