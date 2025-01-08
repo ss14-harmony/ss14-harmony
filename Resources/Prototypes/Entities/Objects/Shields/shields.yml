@@ -7,17 +7,10 @@
   components:
     - type: Sprite
       sprite: Objects/Weapons/Melee/shields.rsi
-      state: riot-icon
+      state: icon
     - type: Item
       sprite: Objects/Weapons/Melee/shields.rsi
       size: Ginormous
-      heldPrefix: riot
-    - type: Clothing
-      sprite: Objects/Weapons/Melee/shields.rsi
-      quickEquip: false
-      heldPrefix: riot
-      slots:
-      - suitStorage
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -107,9 +100,16 @@
   description: A riot shield built for withstanding lasers, but not much else.
   components:
     - type: Sprite
-      state: riot_laser-icon
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
+      state: icon
     - type: Item
-      heldPrefix: riot_laser
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
+      size: Ginormous
+    - type: Clothing
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
+      quickEquip: false
+      slots:
+      - suitStorage
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -127,9 +127,16 @@
   description: A ballistic riot shield built for withstanding bullets, but not much else.
   components:
     - type: Sprite
-      state: riot_bullet-icon
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi #Harmony Change: Sprite location redirected to _Harmony Namespace
+      state: icon
     - type: Item
-      heldPrefix: riot_bullet
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi
+      size: Ginormous
+    - type: Clothing
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi
+      quickEquip: false
+      slots:
+      - suitStorage
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -149,9 +156,16 @@
   description: A small round wooden makeshift shield.
   components:
     - type: Sprite
-      state: buckler-icon
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/buckler.rsi #Harmony Change: Sprite location redirected to _Harmony Namespace
+      state: icon
     - type: Item
-      heldPrefix: buckler
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/buckler.rsi
+      size: Ginormous
+    - type: Clothing
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/buckler.rsi
+      quickEquip: false
+      slots:
+      - suitStorage
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -204,9 +218,16 @@
   description: A rundown looking shield, not good for much.
   components:
     - type: Sprite
-      state: makeshift-icon
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/makeshift-shield.rsi #Harmony Change: Sprite location redirected to _Harmony Namespace
+      state: icon
     - type: Item
-      heldPrefix: metal
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/makeshift-shield.rsi
+      size: Ginormous
+    - type: Clothing
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/makeshift-shield.rsi
+      quickEquip: false
+      slots:
+      - suitStorage
     - type: Blocking
       passiveBlockModifier:
         coefficients:
