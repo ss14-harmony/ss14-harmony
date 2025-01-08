@@ -74,6 +74,17 @@
   id: RiotShield
   description: A large tower shield. Good for controlling crowds.
   components:
+    - type: Sprite
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-shield.rsi #Harmony Change: Sprite location redirected to _Harmony Namespace
+      state: icon
+    - type: Item
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-shield.rsi
+      size: Ginormous
+    - type: Clothing
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-shield.rsi
+      quickEquip: false
+      slots:
+      - suitStorage
     - type: StaticPrice
       price: 90
     - type: Blocking
