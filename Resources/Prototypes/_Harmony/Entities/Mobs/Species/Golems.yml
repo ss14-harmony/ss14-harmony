@@ -67,7 +67,7 @@
         layer:
         - MobLayer
   - type: MovementSpeedModifier
-    SprintSpeedModifier: -0.1
+    BaseSprintSpeed: 0.9
 
 
 - type: entity
@@ -170,7 +170,7 @@
     color: "#cccc00"
     colorHex: "#cccc00"
   - type: MovementSpeedModifier
-    BaseSprintSpeed: 4.5
+    BaseSprintSpeed: 0.98
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: GoldGolem

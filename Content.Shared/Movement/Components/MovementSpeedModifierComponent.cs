@@ -112,7 +112,7 @@ namespace Content.Shared.Movement.Components
         [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
         public float BaseWalkSpeed { get; set; } = DefaultBaseWalkSpeed;
 
-        [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
+        [ViewVariables(VVAccess.ReadWrite), DataField(tag:"BaseSprintSpeed"), AutoNetworkedField]
         public float BaseSprintSpeed { get; set; } = DefaultBaseSprintSpeed;
 
         [ViewVariables]
