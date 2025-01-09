@@ -67,7 +67,7 @@
         layer:
         - MobLayer
   - type: MovementSpeedModifier
-    BaseSprintSpeed: 3.75
+    SprintSpeedModifier: -0.1
 
 
 - type: entity
