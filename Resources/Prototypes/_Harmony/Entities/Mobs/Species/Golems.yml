@@ -67,9 +67,7 @@
         layer:
         - MobLayer
   - type: MovementSpeedModifier
-    _baseSprintSpeedVV: 3.75
     BaseSprintSpeed: 3.75
-    DefaultBaseSprintSpeed: 3.75
 
 
 - type: entity
@@ -110,7 +108,7 @@
 
 - type: entity
   id: BasePlasmaGolem
-  name: Golem McBoomy
+  name: Golem McBoom
   parent: [MobGolemPerson, MobFlammable, MobBloodstream]
   abstract: true
   components:
@@ -119,10 +117,7 @@
     colorHex: "#aa33dd"
   - type: Flammable
     fireSpread: true
-    FirestacksOnIgnite: 6.5
-    CanExtinguish: false
     alwaysCombustible: true
-    FirestackFade: 0
     damage: #per second, scales with number of fire 'stacks'
       types:
         Heat: 2
