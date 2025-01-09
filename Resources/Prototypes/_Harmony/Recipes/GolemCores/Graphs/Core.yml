@@ -16,15 +16,15 @@
   id: GolumCoreGraphExpansion
   start: BaseCore
   graph:
-      node: BaseCore
-      entity: GolemCoreAdamantium
-      edges:
+      - node: BaseCore
+        entity: GolemCoreAdamantium
+        edges:
 
-      - to: UraniumCore
-      - tag: SheetUranium
-        name: Uranium Sheet
-        amount: 10
-        icon:
+        - to: UraniumCore
+        - tag: SheetUranium
+          name: Uranium Sheet
+          amount: 10
+          icon:
            sprite: Objects/Materials/Sheets/other.rsi
            state: uranium_3
         doAfter: 1
