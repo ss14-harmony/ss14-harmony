@@ -906,6 +906,13 @@ entities:
     - type: Transform
       pos: 7.5,-9.5
       parent: 4
+- proto: AllTraitorCodesPaper
+  entities:
+  - uid: 1398
+    components:
+    - type: Transform
+      pos: -5.3831034,10.269048
+      parent: 4
 - proto: APCBasic
   entities:
   - uid: 134
@@ -8989,6 +8996,15 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -7.5,-3.5
       parent: 4
+- proto: WarpPoint
+  entities:
+  - uid: 1397
+    components:
+    - type: Transform
+      pos: -2.5,1.5
+      parent: 4
+    - type: WarpPoint
+      location: Listening Outpost
 - proto: WaterCooler
   entities:
   - uid: 216
