@@ -59057,8 +59057,6 @@ entities:
       pos: -13.5,55.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 13079
   - uid: 16220
