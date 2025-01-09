@@ -1416,10 +1416,6 @@ entities:
           - 729
           - 730
           - 731
-    - type: UserInterface
-      actors:
-        enum.StorageUiKey.Key:
-        - invalid
     - type: ActiveUserInterface
 - proto: ButtonFrameCaution
   entities:
