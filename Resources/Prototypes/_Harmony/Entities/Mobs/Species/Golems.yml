@@ -170,9 +170,7 @@
     color: "#cccc00"
     colorHex: "#cccc00"
   - type: MovementSpeedModifier
-    _baseSprintSpeedVV: 4.5
     BaseSprintSpeed: 4.5
-    DefaultBaseSprintSpeed: 4.5
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: GoldGolem

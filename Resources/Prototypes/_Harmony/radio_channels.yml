@@ -1,6 +1,6 @@
 ﻿- type: radioChannel
   id: Golem
-  name: Golem
+  name: chat-radio-golem
   keycode: 'j'
   frequency: 1166
   color: "#566bf0"
