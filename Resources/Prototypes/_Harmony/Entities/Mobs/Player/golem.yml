@@ -125,3 +125,16 @@
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
+
+- type: entity
+  name: Plasteel Golem
+  parent: BasePlasteelGolem
+  id: PlasteelGolem
+  components:
+  - type: GhostRole
+    name: ghost-role-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable

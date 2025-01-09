@@ -227,6 +227,27 @@
       bloodReagent: SpaceLube
 
 - type: entity
+  id: BasePlasteelGolem
+  name: Golem McStrong
+  parent: MobGolemPerson
+  abstract: true
+  components:
+  - type: Sprite
+    color: "#bbbbbb"
+    colorHex: "#bbbbbb"
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0.75
+    baseSprintSpeed: 0.75
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit:
+      collection: Punch
+    damage:
+      types:
+        Blunt: 25
+
+
+- type: entity
   parent: BaseSpeciesDummy
   id: MobGolemPersonDummy
   categories: [ HideSpawnMenu ]

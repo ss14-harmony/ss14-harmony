@@ -210,3 +210,25 @@
   - type: Construction
     graph: GolumCoreGraph
     node: BananiumCore
+
+- type: entity
+  parent: BaseGolemCore
+  id: GolemCorePlasteel
+  name: Plasteel Core
+  description: Call in your creation.
+  components:
+  - type: Sprite
+    sprite: Structures/Specific/Anomalies/Cores/shadow_core.rsi
+    layers:
+    - state: core
+  - type: GhostRole
+    name: ghost-role-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: PlasteelGolem
+  - type: Construction
+    graph: GolumCoreGraph
+    node: PlasteelCore

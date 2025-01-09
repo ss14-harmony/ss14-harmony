@@ -64,6 +64,12 @@
         amount: 10
         doAfter: 1
 
+    - to: PlasteelCore
+      steps:
+      - material: Plasteel
+        amount: 10
+        doAfter: 1
+
   - node: SteelCore
     entity: GolemCoreSteel
 
@@ -88,3 +94,5 @@
   - node: BananiumCore
     entity: GolemCoreBananium
 
+  - node: PlasteelCore
+    entity: GolemCorePlasteel
