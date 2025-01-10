@@ -12,8 +12,8 @@
     sprite: _Harmony/Mobs/Species/Golem.rsi
     state: full
   - type: Sprite
-    color: "#614a61"
-    colorHex: "#614a61"
+    color: "#aaaaaa"
+    colorHex: "#aaaaaa"
   - type: ActiveRadio
     channels:
     - Golem
@@ -67,9 +67,8 @@
         layer:
         - MobLayer
   - type: MovementSpeedModifier
-    baseWalkSpeed : 0.9
+    SprintSpeedModifier : 0.9
     baseSprintSpeed : 0.9
-
 
 - type: entity
   id: BaseAdamantiumGolem
@@ -84,8 +83,8 @@
     channels:
     - Golem
   - type: Sprite
-    color: "#FFFFFF"
-    colorHex: "#FFFFFF"
+    color: "#44eedd"
+    colorHex: "##44eedd"
 
 
 - type: entity

@@ -11,10 +11,6 @@
             "name": "full"
         },
         {
-            "name": "groin",
-            "directions": 4
-        },
-        {
             "name": "head_f",
             "directions": 4
         },
@@ -36,10 +32,6 @@
         },
         {
             "name": "l_leg",
-            "directions": 4
-        },
-        {
-            "name": "overlay_husk",
             "directions": 4
         },
         {
