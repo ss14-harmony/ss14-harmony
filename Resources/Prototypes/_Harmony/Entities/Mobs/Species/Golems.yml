@@ -118,9 +118,9 @@
   - type: Flammable
     fireSpread: true
     alwaysCombustible: true
-    damage: #per second, scales with number of fire 'stacks'
+    damage:
       types:
-        Heat: 2
+        Heat: 6
   - type: Bloodstream
     bloodReagent: Plasma
 
