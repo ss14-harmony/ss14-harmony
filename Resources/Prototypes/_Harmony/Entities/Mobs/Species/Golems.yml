@@ -1,8 +1,7 @@
 ﻿- type: entity
   save: false
   name: Urist McRocky
-  parent:
-  - BaseMobSpecies
+  parent: BaseMobSpecies
   id: BaseMobGolem
   abstract: true
   components:
