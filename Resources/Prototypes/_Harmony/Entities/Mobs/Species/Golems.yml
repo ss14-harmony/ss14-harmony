@@ -38,7 +38,6 @@
       0: Alive
       150: Dead
   - type: MeleeWeapon
-    altDisarm: false
     soundHit:
       collection: Punch
     damage:

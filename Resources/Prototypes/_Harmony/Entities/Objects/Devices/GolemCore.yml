@@ -5,6 +5,10 @@
   name: The base golem core
   description: Got to make this because syndicate contraband
   components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Devices/Golemshell.rsi
+    layers:
+    - state: Shell
   - type: UserInterface
     interfaces:
       enum.GhostRoleRadioUiKey.Key:
@@ -20,11 +24,10 @@
   description: Call in your creation.
   components:
   - type: Sprite
-    sprite: Structures/Specific/Anomalies/Cores/shadow_core.rsi
-    layers:
-    - state: core
+    color: "#aaaaaa"
+    colorHex: "#aaaaaa"
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-steel-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -42,11 +45,10 @@
   description: Call in your creation.
   components:
   - type: Sprite
-    sprite: Structures/Specific/Anomalies/Cores/shadow_core.rsi
-    layers:
-    - state: core
+    color: "#77ff00"
+    colorHex: "#77ff00"
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-uranium-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -64,11 +66,10 @@
   description: Call in your creation.
   components:
   - type: Sprite
-    sprite: Structures/Specific/Anomalies/Cores/shadow_core.rsi
-    layers:
-    - state: core
+    color: "#aa33dd"
+    colorHex: "#aa33dd"
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-plasma-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -86,11 +87,10 @@
   description: Call in your creation.
   components:
   - type: Sprite
-    sprite: Structures/Specific/Anomalies/Cores/shadow_core.rsi
-    layers:
-    - state: core
+    color: "#44eedd"
+    colorHex: "##44eedd"
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-adamantium-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -108,11 +108,10 @@
   description: Call in your creation.
   components:
   - type: Sprite
-    sprite: Structures/Specific/Anomalies/Cores/shadow_core.rsi
-    layers:
-    - state: core
+    color: "#5a96b4BF"
+    colorHex: "#5a96b4BF"
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-glass-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -130,11 +129,10 @@
   description: Call in your creation.
   components:
   - type: Sprite
-    sprite: Structures/Specific/Anomalies/Cores/shadow_core.rsi
-    layers:
-    - state: core
+    color: "#cccc00"
+    colorHex: "#cccc00"
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-gold-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -152,11 +150,10 @@
   description: Call in your creation.
   components:
   - type: Sprite
-    sprite: Structures/Specific/Anomalies/Cores/shadow_core.rsi
-    layers:
-    - state: core
+    color: "#dddddd"
+    colorHex: "#dddddd"
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-silver-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -174,11 +171,10 @@
   description: Call in your creation.
   components:
   - type: Sprite
-    sprite: Structures/Specific/Anomalies/Cores/shadow_core.rsi
-    layers:
-    - state: core
+    color: "#00ffff"
+    colorHex: "#00ffff"
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-diamond-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -196,11 +192,10 @@
   description: Do you think God stays in heaven because he, too, lives in fear of what science creates.
   components:
   - type: Sprite
-    sprite: Structures/Specific/Anomalies/Cores/shadow_core.rsi
-    layers:
-    - state: core
+    color: "#ffff00"
+    colorHex: "#ffff00"
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-bananium-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -218,11 +213,10 @@
   description: Call in your creation.
   components:
   - type: Sprite
-    sprite: Structures/Specific/Anomalies/Cores/shadow_core.rsi
-    layers:
-    - state: core
+    color: "#bbbbbb"
+    colorHex: "#bbbbbb"
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-plassteel-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
