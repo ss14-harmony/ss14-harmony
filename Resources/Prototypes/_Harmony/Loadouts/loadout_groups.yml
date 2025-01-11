@@ -28,3 +28,18 @@
   - BrigmedBackpack
   - BrigmedSatchel
   - BrigmedDuffle
+
+- type: loadoutGroup
+  id: BrigMedBackpack
+  name: loadout-group-brig-medic-backpack
+  loadouts:
+  - BrigmedBackpack
+  - BrigmedSatchel
+  - BrigmedDuffle
+
+- type: loadoutGroup
+  id: BrigMedShoes
+  name: loadout-group-brig-medic-shoes
+  loadouts:
+  - EmptyJackboot
+  - EmptySecWinterBoot

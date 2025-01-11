@@ -92,10 +92,10 @@
 #      - id: ClothingUniformJumpskirtBrigmedic
 #      - id: ClothingUniformJumpskirtOfLife
 #        prob: 0.1
-#      - id: MedkitFilled
+      - id: MedkitFilled
       - id: MedkitCombatFilled
 #        prob: 0.6
-      - id: MedkitAdvancedFilled
+#      - id: MedkitAdvancedFilled
 #        prob: 0.4
 #      - id: MedkitOxygenFilled
 #        prob: 0.3
@@ -111,6 +111,8 @@
       - id: LauncherSyringe
       - id: MiniSyringe
         amount: 2
+      - id: ClothingBackpackDuffelSurgeryFilled
+      - id: ClothingBeltBrigmedHarmony
 
 - type: entity
   id: LockerDetectiveFilled

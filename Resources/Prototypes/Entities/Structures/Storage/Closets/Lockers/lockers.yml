@@ -338,7 +338,7 @@
     stateDoorOpen: armory_open
     stateDoorClosed: brigmedic_door
   - type: AccessReader
-    access: [["Medical"]]
+    access: [["Medical", "Security"]]
 
 # Security Officer
 - type: entity

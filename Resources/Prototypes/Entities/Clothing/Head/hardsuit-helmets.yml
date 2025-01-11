@@ -190,9 +190,9 @@
   description: The lightweight helmet of the brigmedic hardsuit. Protects against viruses, and clowns.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/brigmedic.rsi
+    sprite: _Harmony/Clothing/Head/Hardsuits/brigmedic.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/brigmedic.rsi
+    sprite: _Harmony/Clothing/Head/Hardsuits/brigmedic.rsi
   - type: PointLight
     color: "#00FFFF"
   - type: Armor

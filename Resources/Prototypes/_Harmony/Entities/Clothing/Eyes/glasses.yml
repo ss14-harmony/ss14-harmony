@@ -1,13 +1,13 @@
 - type: entity
   parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons, BaseRestrictedContraband]
   id: ClothingEyesGlassesBrigmedicHarmony
-  name: brigmedic glasses
+  name: brigmedic visor
   description: Upgraded sunglasses that provide flash immunity, a security HUD, and a medical HUD.
   components:
   - type: Sprite
-    sprite: Clothing/Eyes/Glasses/secglasses.rsi
+    sprite: _Harmony/Clothing/Eyes/Glasses/brigmedicglasses.rsi
   - type: Clothing
-    sprite: Clothing/Eyes/Glasses/secglasses.rsi
+    sprite: _Harmony/Clothing/Eyes/Glasses/brigmedicglasses.rsi
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 5

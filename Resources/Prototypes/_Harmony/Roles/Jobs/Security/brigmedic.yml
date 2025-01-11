@@ -27,11 +27,12 @@
   id: BrigMedicGearHarmony
   equipment:
     id: BrigmedicPDA
-    eyes: ClothingEyesGlassesBrigmedicHarmony
     ears: ClothingHeadsetBrigmedic
     head: ClothingHeadHatBeretBrigmedic
     outerClothing: ClothingOuterCoatAMG
+    belt: ClothingBeltBrigmedFilledHarmony
     pocket1: WeaponDisabler
+    pocket2: ScalpelAdvanced
   storage:
     back:
     - Flash

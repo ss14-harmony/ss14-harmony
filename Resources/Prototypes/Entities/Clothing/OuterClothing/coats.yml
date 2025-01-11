@@ -416,13 +416,13 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.75
-        Slash: 0.75
+        Blunt: 0.70
+        Slash: 0.70
         Piercing: 0.70
-        Heat: 0.85
+        Heat: 0.80
         Caustic: 0.75
   - type: ExplosionResistance
-    damageCoefficient: 0.95
+    damageCoefficient: 0.90
 
 - type: entity
   parent: ClothingOuterStorageBase

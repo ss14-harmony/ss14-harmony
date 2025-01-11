@@ -52,6 +52,7 @@
             SecurityCadet: [ 1, 1 ]
             Lawyer: [ 1, 1 ]
             PermaPrisoner: [ 1, 0 ] # HARMONY
+            BrigMedicHarmony: [ 1, 1 ] # HARMONY
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 2, 3 ]

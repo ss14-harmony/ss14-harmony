@@ -55891,12 +55891,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -51.5,-34.5
       parent: 2
-  - uid: 453
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -30.5,10.5
-      parent: 2
+#  - uid: 453
+#    components:
+#    - type: Transform
+#      rot: 1.5707963267948966 rad
+#      pos: -30.5,10.5
+#      parent: 2
   - uid: 2847
     components:
     - type: Transform
@@ -134273,5 +134273,20 @@ entities:
     components:
     - type: Transform
       pos: -27.48994,-7.388448
+      parent: 2
+# Harmony Additions
+- proto: LockerBrigmedicFilled
+  entities:
+  - uid: 453
+    components:
+    - type: Transform
+      pos: -30.5,10.5
+      parent: 2
+- proto: SpawnPointBrigMedicHarmony
+  entities:
+  - uid: 980
+    components:
+    - type: Transform
+      pos: -29.5,11.5
       parent: 2
 ...

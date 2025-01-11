@@ -250,13 +250,13 @@
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyMedical
       - EncryptionKeySecurity
+      - EncryptionKeyMedical
       - EncryptionKeyCommon
   - type: Sprite
-    sprite: Clothing/Ears/Headsets/brigmedic.rsi
+    sprite: _Harmony/Clothing/Ears/Headsets/brigmedic.rsi
   - type: Clothing
-    sprite: Clothing/Ears/Headsets/brigmedic.rsi
+    sprite: _Harmony/Clothing/Ears/Headsets/brigmedic.rsi
 
 - type: entity
   parent: ClothingHeadset

@@ -24,3 +24,13 @@
   id: BrigmedDuffle
   equipment:
     back: ClothingBackpackDuffelBrigmedic
+
+- type: loadout
+  id: EmptyJackboot
+  equipment:
+    shoes: ClothingShoesBootsJack
+
+- type: loadout
+  id: EmptySecWinterBoot
+  equipment:
+    shoes: ClothingShoesBootsWinterSec

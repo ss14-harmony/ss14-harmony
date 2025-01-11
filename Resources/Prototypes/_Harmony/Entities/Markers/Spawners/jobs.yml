@@ -1,0 +1,10 @@
+# Security
+- type: entity
+  id: SpawnPointBrigMedicHarmony
+  parent: SpawnPointJobBase
+  name: brigmedic
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: brigmedic
