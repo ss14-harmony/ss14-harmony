@@ -115,7 +115,6 @@
   - BrigMedicHarmony # Harmony
   - PermaPrisoner # Harmony
 
-
 - type: department
   id: Science
   name: department-Science

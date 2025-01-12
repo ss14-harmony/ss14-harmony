@@ -2,7 +2,7 @@
   parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons, BaseRestrictedContraband]
   id: ClothingEyesGlassesBrigmedicHarmony
   name: brigmedic visor
-  description: A unique pair of visors made by the cybersun branch of the synidcate, then stollen and upgraded by Nanotrasen for their brigmedics.
+  description: A unique pair of visors made by the Cybersun branch of the Synidcate, then stolen and upgraded by Nanotrasen for their brigmedics.
   components:
   - type: Sprite
     sprite: _Harmony/Clothing/Eyes/Glasses/brigmedicglasses.rsi
@@ -16,3 +16,4 @@
     - WhitelistChameleon
   - type: IdentityBlocker
     coverage: EYES
+    
