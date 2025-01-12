@@ -3,12 +3,12 @@
     "license": "CC-BY-SA-3.0",
     "copyright": "Taken from commit: https://github.com/space-wizards/space-station-14/pull/4870/commits/d615a45615d4f0f0744bf06a5d46a1b3a5b4a424, and resprited by BoskiYourk for use in Harmony",
     "size": {
-        "x": 32,
-        "y": 32
+    "x": 32,
+    "y": 32
     },
     "states": [
-        {
-            "name": "icon"
-        }
+    {
+        "name": "icon"
+    }
     ]
 }
