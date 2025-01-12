@@ -9,3 +9,7 @@ uplink-reinforcement-radio-cyborg-saboteur-desc = A Waffle Co. borg, capable of 
 
 uplink-reinforcement-radio-cyborg-medical-name = Syndicate Medical Borg
 uplink-reinforcement-radio-cyborg-medical-desc = A combination of Gorlex and Interydyne technology, this borg will be the best medic you have ever seen. Quality of competence varies.
+
+uplink-pizza-bomb-name = Nefarious Pizza bomb
+uplink-pizza-bomb-desc = This tech, first pioneered by terrorists, now is used by the syndicate for eliminating high value targets
+
