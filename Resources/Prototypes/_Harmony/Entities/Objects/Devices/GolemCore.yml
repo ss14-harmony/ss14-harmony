@@ -189,7 +189,7 @@
   parent: BaseGolemCore
   id: GolemCoreBananium
   name: Bananium Core
-  description: Do you think God stays in heaven because he, too, lives in fear of what science creates.
+  description: Do you think god stays in heaven because he, too, lives in fear of what science creates.
   components:
   - type: Sprite
     color: "#ffff00"

@@ -20,7 +20,7 @@
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-steel-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -38,7 +38,7 @@
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-uranium-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -56,7 +56,7 @@
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-plasma-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -74,7 +74,7 @@
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-adamantium-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -92,7 +92,7 @@
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-glass-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -110,7 +110,7 @@
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-gold-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -128,7 +128,7 @@
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-silver-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -146,7 +146,7 @@
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-diamond-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -164,7 +164,7 @@
     interactSuccessSound: /Audio/Items/airhorn.ogg
     messagePerceivedByOthers: hugging-success-generic-others
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-bananium-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:
@@ -182,7 +182,7 @@
     interactSuccessSound: /Audio/Items/airhorn.ogg
     messagePerceivedByOthers: hugging-success-generic-others
   - type: GhostRole
-    name: ghost-role-golem-name
+    name: ghost-role-plassteel-golem-name
     description: ghost-role-golem-desc
     rules: ghost-role-information-familiar-rules
     raffle:

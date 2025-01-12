@@ -1,6 +1,7 @@
 ﻿- type: entity
   save: false
   name: Urist McRocky
+  description: A being made up of solid matter
   parent: BaseMobSpecies
   id: BaseMobGolem
   abstract: true
