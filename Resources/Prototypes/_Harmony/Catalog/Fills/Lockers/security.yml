@@ -11,7 +11,7 @@
       - id: ClothingOuterCoatAMG
       - id: MedkitCombatFilled
       - id: ClothingEyesGlassesBrigmedicHarmony
-      - id: LauncherSyringe
+      - id: LauncherSyringeHarmony
       - id: MiniSyringe
         amount: 2
       - id: ClothingBackpackDuffelSurgeryFilled
