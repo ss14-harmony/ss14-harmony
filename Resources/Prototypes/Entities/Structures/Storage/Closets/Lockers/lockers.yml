@@ -338,7 +338,7 @@
     stateDoorOpen: armory_open
     stateDoorClosed: brigmedic_door
   - type: AccessReader
-    access: [["Medical", "Security"]] # Harmony Change: Adds medical access to the brigmedic's locker
+    access: [["Medical", "Security"]] # Harmony Change: Adds security access to the brigmedic's locker
 
 # Security Officer
 - type: entity
