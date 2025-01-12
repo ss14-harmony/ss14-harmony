@@ -2,7 +2,7 @@
   parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons, BaseRestrictedContraband]
   id: ClothingEyesGlassesBrigmedicHarmony
   name: brigmedic visor
-  description: Upgraded sunglasses that provide flash immunity, a security HUD, and a medical HUD.
+  description: A unique pair of visors made by the cybersun branch of the synidcate, then stollen and upgraded by Nanotrasen for their brigmedics.
   components:
   - type: Sprite
     sprite: _Harmony/Clothing/Eyes/Glasses/brigmedicglasses.rsi
@@ -13,7 +13,6 @@
     protectionTime: 5
   - type: Tag
     tags:
-    - HamsterWearable
     - WhitelistChameleon
   - type: IdentityBlocker
     coverage: EYES

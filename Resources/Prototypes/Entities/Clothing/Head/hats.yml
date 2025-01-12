@@ -172,9 +172,9 @@
   - type: Clothing
     sprite: Clothing/Head/Hats/beret_physician.rsi
 
-# Harmony Change: Updated brigmedic beret sprite pathing for Harmony brigmedic update
+# Harmony Change: Updated brigmedic beret sprite pathing and contraband level for Harmony brigmedic update
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, BaseRestrictedContraband]
   id: ClothingHeadHatBeretBrigmedic
   name: brigmedical beret
   description: White beret, looks like a cream pie on the head.
