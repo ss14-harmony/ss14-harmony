@@ -12,4 +12,3 @@ uplink-reinforcement-radio-cyborg-medical-desc = A combination of Gorlex and Int
 
 uplink-pizza-bomb-name = Nefarious Pizza bomb
 uplink-pizza-bomb-desc = This tech, first pioneered by terrorists, now is used by the syndicate for eliminating high value targets
-
