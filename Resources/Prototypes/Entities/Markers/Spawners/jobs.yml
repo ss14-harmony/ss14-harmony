@@ -486,6 +486,7 @@
       - state: green
       - state: detective
 
+# Harmony Change: Comments out old brigmedic spawn for Harmony brigmedic update
 #- type: entity
 #  id: SpawnPointBrigmedic
 #  parent: SpawnPointJobBase

@@ -221,6 +221,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitSecurity
 
 #Brigmedic Hardsuit
+# Harmony Change: Updated the sprite pathing, name, and armor values for Harmony brigmedic update
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseRestrictedContraband]
   id: ClothingOuterHardsuitBrigmedic

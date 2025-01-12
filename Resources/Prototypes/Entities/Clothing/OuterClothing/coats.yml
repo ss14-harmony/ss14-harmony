@@ -403,6 +403,7 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecaparmored.rsi
 
+# Harmony Update: Updated sprite pathing, armor values, and added suit storage for Harmony brigmedic update
 - type: entity
   parent: [ClothingOuterStorageBase, AllowSuitStorageClothing]
   id: ClothingOuterCoatAMG

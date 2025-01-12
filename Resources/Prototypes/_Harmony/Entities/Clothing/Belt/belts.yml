@@ -45,3 +45,15 @@
         - DoorRemote
         - Whistle
         - BalloonPopper
+  - type: ItemMapper
+    mapLayers:
+      stunbaton:
+        whitelist:
+          components:
+          - Stunbaton
+      bottle:
+        whitelist:
+          tags:
+          - Bottle
+    sprite: Clothing/Belt/belt_overlay.rsi
+  - type: Appearance

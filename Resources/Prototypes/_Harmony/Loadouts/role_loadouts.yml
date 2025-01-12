@@ -12,10 +12,10 @@
 - type: roleLoadout
   id: JobBrigMedicHarmony
   groups:
-  - BrigMedJumpsuit
+  - BrigmedicJumpsuit
   - MedicalGloves
-  - BrigMedBackpack
-  - BrigMedShoes
+  - BrigmedicBackpack
+  - BrigmedicShoes
   - SurvivalSecurity
   - Trinkets
   - SecurityStar

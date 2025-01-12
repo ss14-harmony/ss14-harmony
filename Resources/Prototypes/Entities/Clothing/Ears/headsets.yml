@@ -241,6 +241,7 @@
   - type: Clothing
     sprite: Clothing/Ears/Headsets/security.rsi
 
+# Harmony Change: Updates sprite path and key order for Harmony brigmedic update
 - type: entity
   parent: [ClothingHeadset, BaseRestrictedContraband]
   id: ClothingHeadsetBrigmedic

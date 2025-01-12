@@ -1,0 +1,16 @@
+- type: entity
+  parent: [BaseItem, BaseRestrictedContraband]
+  id: BrigmedicLockerSpawnHarmony
+  name: brigmedic locker radio
+  description: A flimsy and cheaply-made radio that uses bluespace technology to warp the brigmedic's locker right to their feet!
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Harmony/Objects/Devices/brigmedic_radio.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+      - id: LockerBrigmedicFilled
+    sound:
+      path: /Audio/Effects/teleport_arrival.ogg

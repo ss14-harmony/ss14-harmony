@@ -327,6 +327,7 @@
     access: [["Armory"]]
 
 # Brigmedic
+# Harmony Change: Adds medical access to the brigmedic's locker for Harmony brigmedic update
 - type: entity
   id: LockerBrigmedic
   parent: LockerBaseSecure

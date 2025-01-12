@@ -183,6 +183,7 @@
         Heat: 0.9
 
 #Brigmedic Hardsuit
+# Harmony Update: Updates Sprite pathing to add vox helmet sprites for Harmony brigmedic update
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitBrigmedic

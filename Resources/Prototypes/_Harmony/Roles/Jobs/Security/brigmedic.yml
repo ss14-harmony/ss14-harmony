@@ -1,12 +1,15 @@
 - type: job
   id: BrigMedicHarmony
-  name: job-name-brigmed
+  name: job-name-brigmedic
   description: job-description-brigmedic
   playTimeTracker: JobBrigMedicHarmony
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 0 #10 hrs
+      time: 0 # 0 hours
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 0 # 0 hours
   startingGear: BrigMedicGearHarmony
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos
@@ -36,3 +39,4 @@
   storage:
     back:
     - Flash
+    - BrigmedicLockerSpawnHarmony

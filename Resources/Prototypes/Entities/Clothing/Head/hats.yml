@@ -172,6 +172,7 @@
   - type: Clothing
     sprite: Clothing/Head/Hats/beret_physician.rsi
 
+# Harmony Change: Updated brigmedic beret sprite pathing for Harmony brigmedic update
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretBrigmedic

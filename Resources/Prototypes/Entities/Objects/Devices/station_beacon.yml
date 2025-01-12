@@ -177,6 +177,9 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-brig
+  - type: SpawnPoint # Harmony: for brigmedic spawning
+    spawn_type: Job
+    job_id: BrigMedicHarmony
 
 - type: entity
   parent: DefaultStationBeaconSecurity

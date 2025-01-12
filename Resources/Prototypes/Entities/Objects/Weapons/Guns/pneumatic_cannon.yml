@@ -104,6 +104,7 @@
       storagebase: !type:Container
         ents: []
         
+# Harmony Change: Updates item size, storage size, adds a syringe to the storage, and removed the toggle between full and semiauto mode for Harmony brigmedic update
 - type: entity
   name: syringe gun
   parent: BaseStorageItem
@@ -124,6 +125,9 @@
   - type: Gun
     fireRate: 1
     selectedMode: SemiAuto
+#    availableModes:
+#    - SemiAuto
+#    - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/syringe_gun.ogg
     soundEmpty:

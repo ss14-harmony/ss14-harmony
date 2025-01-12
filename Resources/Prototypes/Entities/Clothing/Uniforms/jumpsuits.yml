@@ -455,8 +455,9 @@
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/paramedic.rsi
 
+# Harmony Change: Updates sprite pathing and adds contraband security level for Harmony brigmedic update
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformSkirtBase, BaseRestrictedContraband]
   id: ClothingUniformJumpsuitBrigmedic
   name: brigmedic jumpsuit
   description: This uniform is issued to qualified personnel who have been trained. No one cares that the training took half a day.
