@@ -172,7 +172,6 @@
   - type: Clothing
     sprite: Clothing/Head/Hats/beret_physician.rsi
 
-# Harmony Change: Updated brigmedic beret sprite pathing and contraband level for Harmony brigmedic update
 - type: entity
   parent: [ClothingHeadBase, BaseRestrictedContraband] # Harmony Change: Updated Contraband Level
   id: ClothingHeadHatBeretBrigmedic
