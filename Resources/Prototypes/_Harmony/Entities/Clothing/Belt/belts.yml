@@ -45,6 +45,9 @@
         - DoorRemote
         - Whistle
         - BalloonPopper
+        - Injector
+        - Pill
+        - HandLabeler
   - type: ItemMapper
     mapLayers:
       stunbaton:
