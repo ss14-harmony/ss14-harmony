@@ -6,5 +6,5 @@
   targetNode: BaseCore
   category: construction-category-utilities
   description: A golem core.
-  icon: { sprite: Structures/Specific/Anomalies/Cores/shadow_core.rsi, state: core }
+  icon: { sprite: _Harmony/Objects/Devices/Golemshell.rsi, state: Shell }
   objectType: Item
