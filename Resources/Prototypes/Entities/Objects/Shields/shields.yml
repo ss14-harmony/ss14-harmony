@@ -8,9 +8,11 @@
     - type: Sprite
       sprite: Objects/Weapons/Melee/shields.rsi
       state: icon
+      #state: riot-icon #Harmony Change: Replaced with a more suitable state due to being redudant
     - type: Item
       sprite: Objects/Weapons/Melee/shields.rsi
       size: Ginormous
+      #heldPrefix: riot #Harmony Change: Removed due to being redundant
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -67,8 +69,9 @@
   id: RiotShield
   description: A large tower shield. Good for controlling crowds.
   components:
+# Begin of Harmony Change: Shield Rework -- Suit Storage Slot
     - type: Sprite
-      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-shield.rsi #Harmony Change: Sprite location redirected to _Harmony Namespace
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-shield.rsi
       state: icon
     - type: Item
       sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-shield.rsi
@@ -77,7 +80,8 @@
       sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-shield.rsi
       quickEquip: false
       slots:
-      - suitStorage #Harmony Change: Allows for the shield to be put onto the suit storage slot
+      - suitStorage
+# End of Harmony Change
     - type: StaticPrice
       price: 90
     - type: Blocking
@@ -99,17 +103,21 @@
   id: RiotLaserShield
   description: A riot shield built for withstanding lasers, but not much else.
   components:
+# Begin of Harmony Change: Shield Rework -- Suit Storage Slot
     - type: Sprite
-      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi #Harmony Change: Sprite location redirected to _Harmony Namespace
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
       state: icon
+      #state: riot_laser-icon 
     - type: Item
       sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
       size: Ginormous
+      #heldPrefix: riot_laser
     - type: Clothing
       sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
       quickEquip: false
       slots:
-      - suitStorage #Harmony Change: Allows for the shield to be put onto the suit storage slot
+      - suitStorage
+# End of Harmony Change
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -126,17 +134,21 @@
   id: RiotBulletShield
   description: A ballistic riot shield built for withstanding bullets, but not much else.
   components:
+# Begin of Harmony Change: Shield Rework -- Suit Storage Slot
     - type: Sprite
-      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi #Harmony Change: Sprite location redirected to _Harmony Namespace
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi
       state: icon
+      #state: riot_bullet-icon 
     - type: Item
       sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi
       size: Ginormous
+      #heldPrefix: riot_bullet
     - type: Clothing
       sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi
       quickEquip: false
       slots:
-      - suitStorage #Harmony Change: Allows for the shield to be put onto the suit storage slot
+      - suitStorage 
+# End of Harmony Change
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -155,17 +167,21 @@
   id: WoodenBuckler
   description: A small round wooden makeshift shield.
   components:
+# Begin of Harmony Change: Shield Rework -- Suit Storage Slot
     - type: Sprite
-      sprite: _Harmony/Objects/Weapons/Melee/Shields/buckler.rsi #Harmony Change: Sprite location redirected to _Harmony Namespace
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/buckler.rsi
       state: icon
+      #state: buckler-icon
     - type: Item
       sprite: _Harmony/Objects/Weapons/Melee/Shields/buckler.rsi
       size: Ginormous
+      #heldPrefix: buckler
     - type: Clothing
       sprite: _Harmony/Objects/Weapons/Melee/Shields/buckler.rsi
       quickEquip: false
       slots:
-      - suitStorage #Harmony Change: Allows for the shield to be put onto the suit storage slot
+      - suitStorage
+# End of Harmony Change
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -217,17 +233,21 @@
   id: MakeshiftShield
   description: A rundown looking shield, not good for much.
   components:
+# Begin of Harmony Change: Shield Rework -- Suit Storage Slot
     - type: Sprite
-      sprite: _Harmony/Objects/Weapons/Melee/Shields/makeshift-shield.rsi #Harmony Change: Sprite location redirected to _Harmony Namespace
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/makeshift-shield.rsi 
       state: icon
+      #state: makeshift-icon
     - type: Item
       sprite: _Harmony/Objects/Weapons/Melee/Shields/makeshift-shield.rsi
       size: Ginormous
+      #heldPrefix: metal
     - type: Clothing
       sprite: _Harmony/Objects/Weapons/Melee/Shields/makeshift-shield.rsi
       quickEquip: false
       slots:
-      - suitStorage #Harmony Change: Allows for the shield to be put onto the suit storage slot
+      - suitStorage 
+  # End of Harmony Change
     - type: Blocking
       passiveBlockModifier:
         coefficients:
