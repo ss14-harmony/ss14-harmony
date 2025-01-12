@@ -3,7 +3,7 @@
   parent: [BoxCardboard, BaseSyndicateContraband]
   id: BoxDeathRattleImplantsTraitor
   suffix: traitor
-  description: Two deathrattle implants for syndicate protection targets.
+  description: Two syndicate deathrattle implants.
   components:
   - type: Sprite
     layers:

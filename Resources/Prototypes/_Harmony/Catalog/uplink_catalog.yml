@@ -35,7 +35,7 @@
   description: uplink-traitor-deathrattle-implant-desc
   productEntity: BoxDeathRattleImplantsTraitor
   cost:
-    Telecrystal: 3
+    Telecrystal: 2
   categories:
   - UplinkImplants
   conditions:
