@@ -183,7 +183,6 @@
         Heat: 0.9
 
 #Brigmedic Hardsuit
-# Harmony Update: Updates Sprite pathing to add vox helmet sprites for Harmony brigmedic update
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitBrigmedic
@@ -191,9 +190,9 @@
   description: The lightweight helmet of the brigmedic hardsuit. Protects against viruses, and clowns.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Head/Hardsuits/brigmedic.rsi
+    sprite: _Harmony/Clothing/Head/Hardsuits/brigmedic.rsi # Harmony Change: Updated Sprite pathing
   - type: Clothing
-    sprite: _Harmony/Clothing/Head/Hardsuits/brigmedic.rsi
+    sprite: _Harmony/Clothing/Head/Hardsuits/brigmedic.rsi # Harmony Change: Updated Sprite pathing
   - type: PointLight
     color: "#00FFFF"
   - type: Armor

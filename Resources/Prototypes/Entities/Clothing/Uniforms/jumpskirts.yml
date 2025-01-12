@@ -266,17 +266,16 @@
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/paramedic.rsi
 
-# Harmony Change: Updates sprite pathing and adds contraband security level for Harmony brigmedic update
 - type: entity
-  parent: [ClothingUniformSkirtBase, BaseRestrictedContraband]
+  parent: [ClothingUniformSkirtBase, BaseRestrictedContraband] # Harmony Change: Added Contraband Level
   id: ClothingUniformJumpskirtBrigmedic
   name: brigmedic jumpskirt
   description: This uniform is issued to qualified personnel who have been trained. No one cares that the training took half a day.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/brigmedic.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/brigmedic.rsi # Harmony Change: Updated Sprite pathing
   - type: Clothing
-    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/brigmedic.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/brigmedic.rsi # Harmony Change: Updated Sprite pathing
 
 - type: entity
   parent: ClothingUniformBase

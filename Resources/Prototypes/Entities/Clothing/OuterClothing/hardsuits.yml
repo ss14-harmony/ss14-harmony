@@ -221,31 +221,30 @@
     clothingPrototype: ClothingHeadHelmetHardsuitSecurity
 
 #Brigmedic Hardsuit
-# Harmony Change: Updated the sprite pathing, name, and armor values for Harmony brigmedic update
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseRestrictedContraband]
   id: ClothingOuterHardsuitBrigmedic
-  name: brigmedic void suit
+  name: brigmedic void suit # Harmony Change: Updated Name
   description: Special hardsuit of the guardian angel of the brig. It is the medical version of the security hardsuit.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/brigmedic.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/brigmedic.rsi # Harmony Change: Updated Sprite pathing
   - type: Clothing
-    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/brigmedic.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/brigmedic.rsi # Harmony Change: Updated Sprite pathing
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.75
-        Slash: 0.75
-        Piercing: 0.75
-        Heat: 0.8
-        Caustic: 0.7
+        Blunt: 0.75 # Harmony Change: Updated Armor Modifiers
+        Slash: 0.75 # Harmony Change: Updated Armor Modifiers
+        Piercing: 0.75 # Harmony Change: Updated Armor Modifiers
+        Heat: 0.8 # Harmony Change: Updated Armor Modifiers
+        Caustic: 0.7 # Harmony Change: Updated Armor Modifiers
   - type: ClothingSpeedModifier
-    walkModifier: 0.90
-    sprintModifier: 0.90
+    walkModifier: 0.90 # Harmony Change: Updated Armor Modifiers
+    sprintModifier: 0.90 # Harmony Change: Updated Armor Modifiers
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitBrigmedic

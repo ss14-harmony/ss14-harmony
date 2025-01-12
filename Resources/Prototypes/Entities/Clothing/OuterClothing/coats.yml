@@ -403,27 +403,26 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecaparmored.rsi
 
-# Harmony Update: Updated sprite pathing, armor values, and added suit storage for Harmony brigmedic update
 - type: entity
-  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing]
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing] # Harmony Change: Added Suit Storage
   id: ClothingOuterCoatAMG
   name: armored medical gown
   description: The version of the medical gown, with elements of a bulletproof vest, looks strange, but your heart is protected.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/OuterClothing/Coats/brigmedic.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Coats/brigmedic.rsi # Harmony Change: Updated Sprite pathing
   - type: Clothing
-    sprite: _Harmony/Clothing/OuterClothing/Coats/brigmedic.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Coats/brigmedic.rsi # Harmony Change: Updated Sprite pathing
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.70
-        Slash: 0.70
-        Piercing: 0.70
-        Heat: 0.80
-        Caustic: 0.75
+        Blunt: 0.70 # Harmony Change: Updated Armor Values
+        Slash: 0.70 # Harmony Change: Updated Armor Values
+        Piercing: 0.70 # Harmony Change: Updated Armor Values
+        Heat: 0.80 # Harmony Change: Updated Armor Values
+        Caustic: 0.75 # Harmony Change: Updated Armor Values
   - type: ExplosionResistance
-    damageCoefficient: 0.90
+    damageCoefficient: 0.90 # Harmony Change: Updated Armor Values
 
 - type: entity
   parent: ClothingOuterStorageBase

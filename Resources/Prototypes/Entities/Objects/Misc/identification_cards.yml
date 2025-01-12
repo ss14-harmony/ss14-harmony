@@ -453,7 +453,6 @@
   - type: PresetIdCard
     job: Visitor
 
-# Harmony change: adds the propper job accesses to the brigmedic ID for Harmony brigmedic update
 - type: entity
   parent: IDCardStandard
   id: BrigmedicIDCard
@@ -463,7 +462,7 @@
     layers:
     - state: default
     - state: idbrigmedic
-  - type: PresetIdCard
+  - type: PresetIdCard # Harmony Change: Adds the Correct Accesses to the Brigmedic ID
     job: BrigMedicHarmony
 
 - type: entity

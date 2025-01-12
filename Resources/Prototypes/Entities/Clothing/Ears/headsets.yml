@@ -241,7 +241,6 @@
   - type: Clothing
     sprite: Clothing/Ears/Headsets/security.rsi
 
-# Harmony Change: Updates sprite path and key order for Harmony brigmedic update
 - type: entity
   parent: [ClothingHeadset, BaseRestrictedContraband]
   id: ClothingHeadsetBrigmedic
@@ -251,13 +250,13 @@
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeySecurity
-      - EncryptionKeyMedical
+      - EncryptionKeySecurity # Harmony Change: Swaps Security and Medical Keys for Priority
+      - EncryptionKeyMedical # Harmony Change: Swaps Security and Medical Keys for Priority
       - EncryptionKeyCommon
   - type: Sprite
-    sprite: _Harmony/Clothing/Ears/Headsets/brigmedic.rsi
+    sprite: _Harmony/Clothing/Ears/Headsets/brigmedic.rsi # Harmony Change: Updated Sprite pathing
   - type: Clothing
-    sprite: _Harmony/Clothing/Ears/Headsets/brigmedic.rsi
+    sprite: _Harmony/Clothing/Ears/Headsets/brigmedic.rsi # Harmony Change: Updated Sprite pathing
 
 - type: entity
   parent: ClothingHeadset
