@@ -1,0 +1,76 @@
+﻿- type: entity #basic marine uniform
+  parent: [ClothingUniformBase]
+  id: JumpsuitMarine
+  name: Marine uniform
+  description: Standard-issue Marine uniform. They have shards of light Kevlar to help protect against stabbing weapons and bullets.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Uniforms/Marine/standard.rsi
+  - type: Clothing
+    sprite: _RMC14/Objects/Clothing/Uniforms/Marine/standard.rsi
+
+- type: entity
+  parent: [ClothingUniformBase]
+  id: JumpsuitMarineUndershirtSleeveless
+  name: Marine uniform
+  description: Standard-issue Marine uniform. They have shards of light Kevlar to help protect against stabbing weapons and bullets.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Uniforms/Marine/t-standard-sleeveless.rsi
+  - type: Clothing
+    sprite: _RMC14/Objects/Clothing/Uniforms/Marine/t-standard-sleeveless.rsi
+
+- type: entity
+  parent: [ClothingUniformBase]
+  id: JumpsuitMarineUndershirtShortSleeve
+  name: Marine uniform
+  description: Standard-issue Marine uniform. They have shards of light Kevlar to help protect against stabbing weapons and bullets.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Uniforms/Marine/t-standard-undershirt.rsi
+  - type: Clothing
+    sprite: _RMC14/Objects/Clothing/Uniforms/Marine/t-standard-undershirt.rsi
+
+- type: entity
+  parent: [ClothingUniformBase]
+  id: JumpsuitMarineUndershirtLongSleeve
+  name: Marine uniform
+  description: Standard-issue Marine uniform. They have shards of light Kevlar to help protect against stabbing weapons and bullets.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Uniforms/Marine/t-standard-longsleeve.rsi
+  - type: Clothing
+    sprite: _RMC14/Objects/Clothing/Uniforms/Marine/t-standard-longsleeve.rsi
+    
+- type: entity
+  parent: [ClothingUniformBase]
+  id: JumpsuitMarineUndershirtSleevelessBlack
+  name: Marine uniform
+  description: Standard-issue Marine uniform. They have shards of light Kevlar to help protect against stabbing weapons and bullets.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Uniforms/Marine/b-standard-sleeveless.rsi
+  - type: Clothing
+    sprite: _RMC14/Objects/Clothing/Uniforms/Marine/b-standard-sleeveless.rsi
+    
+- type: entity
+  parent: [ClothingUniformBase]
+  id: JumpsuitMarineUndershirtShortSleeveBlack
+  name: Marine uniform
+  description: Standard-issue Marine uniform. They have shards of light Kevlar to help protect against stabbing weapons and bullets.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Uniforms/Marine/b-standard-undershirt.rsi
+  - type: Clothing
+    sprite: _RMC14/Objects/Clothing/Uniforms/Marine/b-standard-undershirt.rsi
+    
+- type: entity
+  parent: [ClothingUniformBase]
+  id: JumpsuitMarineUndershirtLongSleeveBlack
+  name: Marine uniform
+  description: Standard-issue Marine uniform. They have shards of light Kevlar to help protect against stabbing weapons and bullets.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Uniforms/Marine/b-standard-longsleeve.rsi
+  - type: Clothing
+    sprite: _RMC14/Objects/Clothing/Uniforms/Marine/b-standard-longsleeve.rsi

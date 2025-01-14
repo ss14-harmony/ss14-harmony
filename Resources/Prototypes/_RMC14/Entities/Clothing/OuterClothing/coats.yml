@@ -1,0 +1,10 @@
+- type: entity
+  parent: [ClothingOuterStorageBase]
+  id: RMCCoatService
+  name: service jacket
+  description: A service jacket typically worn by officers of the UNMC. It has shards of light Kevlar to help protect against stabbing weapons and bullets.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/OuterClothing/Coats/service/classic.rsi
+  - type: Clothing
+    sprite: _RMC14/Objects/Clothing/OuterClothing/Coats/service/classic.rsi

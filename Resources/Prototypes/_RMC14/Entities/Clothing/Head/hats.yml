@@ -1,0 +1,10 @@
+- type: entity
+  parent: [ClothingHeadBase]
+  id: CMHeadCap
+  name: cap
+  description: Standard baseball cap.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Head/Hats/cap/classic.rsi
+  - type: Clothing
+    sprite: _RMC14/Objects/Clothing/Head/Hats/cap/classic.rsi

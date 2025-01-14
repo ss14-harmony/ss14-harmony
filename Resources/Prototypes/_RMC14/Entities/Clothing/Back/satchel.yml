@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: CMSatchel
+  name: Marine satchel
+  description: A heavy-duty satchel carried by some Marine soldiers and support personnel.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Back/Satchels/Marines/standard.rsi
+  - type: Storage
+    grid:
+    - 0,0,1,3
+    - 3,0,6,3
+    - 8,0,9,3
