@@ -91,8 +91,8 @@
   groups:
   - GroupTankHarness
   - LibrarianJumpsuit
-  - LibrarianOuterClothingHarmony
-  - LibrarianNeckHarmony
+  - LibrarianOuterClothingHarmony #Harmony Change: Librarian clothing addition -- Curator Coat
+  - LibrarianNeckHarmony #Harmony Change: Librarian clothing addition -- Curator Mantle
   - CommonBackpack
   - Glasses
   - Survival
