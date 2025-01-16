@@ -10,3 +10,15 @@
     sprite: _Harmony/Clothing/OuterClothing/WinterCoats/coatcaparmored.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterCaptainArmored
+
+- type: entity
+  parent: ClothingOuterWinterCoatToggleable
+  id: ClothingOuterCuratorCoat
+  name: curator's coat
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/OuterClothing/WinterCoats/curatorcoat.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/OuterClothing/WinterCoats/curatorcoat.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodWinterCurator
