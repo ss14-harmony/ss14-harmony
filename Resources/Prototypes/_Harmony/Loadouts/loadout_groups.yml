@@ -13,3 +13,16 @@
   loadouts:
   - PermaPrisonerJumpsuit
   - PermaPrisonerJumpskirt
+
+# Civilian
+- type: loadoutGroup
+  id: LibrarianOuterClothingHarmony
+  name: loadout-group-librarian-outerclothing
+  loadouts:
+  - CuratorCoatHarmony
+
+- type: loadoutGroup
+  id: LibrarianNeckHarmony
+  name: loadout-group-librarian-neck
+  loadouts:
+  - CuratorMantleHarmony

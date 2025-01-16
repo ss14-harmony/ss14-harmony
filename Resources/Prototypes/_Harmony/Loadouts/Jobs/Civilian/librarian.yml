@@ -1,0 +1,26 @@
+- type: loadoutEffectGroup
+  id: SeniorLibrarian
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobLibrarian
+      time: 21600 #52 hrs (1 hour per week for 1 year)
+
+# Coat
+- type: loadout
+  id: CuratorCoatHarmony
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorLibrarian
+  equipment:
+    jumpsuit: ClothingOuterCuratorCoat
+
+# Mantle
+- type: loadout
+  id: CuratorMantleHarmony
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorLibrarian
+  equipment:
+    jumpsuit: ClothingNeckMantleCurator
