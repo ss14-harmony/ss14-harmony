@@ -343,7 +343,10 @@
   - SecurityShoes
   - SurvivalSecurity
   - Trinkets
-  - SecurityStar
+# Start of Harmony Change: Updates Security Loadouts for Patrol Shark Update
+#  - SecurityStar
+  - SecurityTrinketsHarmony
+# End of Harmony Change
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -357,7 +360,10 @@
   - SecurityShoes
   - SurvivalSecurity
   - Trinkets
-  - SecurityStar
+# Start of Harmony Change: Updates Security Loadouts for Patrol Shark Update
+#  - SecurityStar
+  - SecurityTrinketsHarmony
+# End of Harmony Change
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -372,7 +378,10 @@
   - SecurityBelt
   - SurvivalSecurity
   - Trinkets
-  - SecurityStar
+# Start of Harmony Change: Updates Security Loadouts for Patrol Shark Update
+#  - SecurityStar
+  - SecurityTrinketsHarmony
+# End of Harmony Change
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -386,7 +395,10 @@
   - SecurityShoes
   - SurvivalSecurity
   - Trinkets
-  - SecurityStar
+# Start of Harmony Change: Updates Security Loadouts for Patrol Shark Update
+#  - SecurityStar
+  - SecurityTrinketsHarmony
+# End of Harmony Change
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
