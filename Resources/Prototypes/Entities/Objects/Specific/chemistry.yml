@@ -389,7 +389,7 @@
 
 - type: entity
   name: mini syringe
-  parent: Syringe
+  parent: [Syringe, BaseSyndicateContraband] # Harmony Change - Added Syndiecate contraband tag.
   description: A regular syringe, reshaped to fit inside of a gun.
   id: MiniSyringe
   components:
@@ -411,7 +411,7 @@
     removalTime: 0.25
     embedOnThrow: false
   - type: SolutionInjectWhileEmbedded
-    transferAmount: 1
+    transferAmount: 3 # Harmony Change
     solution: injector
     updateInterval: 2
   - type: SolutionInjectOnEmbed
@@ -589,7 +589,7 @@
     areaInsertRadius: 1
     storageInsertSound: /Audio/Effects/pill_insert.ogg
     storageRemoveSound: /Audio/Effects/pill_remove.ogg
-    whitelist: 
+    whitelist:
       tags:
       - Pill
   - type: Dumpable

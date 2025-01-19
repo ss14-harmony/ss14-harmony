@@ -32,3 +32,17 @@
 # Wearables
 # Pointless
 # Job Specific
+- type: listing
+  id: UplinkSyringeGunHarmony
+  icon: { sprite: Objects/Weapons/Guns/Cannons/syringe_gun.rsi, state: syringe_gun }
+  name: uplink-syringe-gun-name
+  description: uplink-syringe-gun-desc
+  productEntity: SyringeGunBox
+  cost:
+    Telecrystal: 8
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Chemist

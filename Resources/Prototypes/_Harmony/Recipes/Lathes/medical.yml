@@ -35,3 +35,11 @@
     Steel: 200
     Plastic: 300
     Glass: 500
+
+- type: latheRecipe
+  id: MiniSyringeRecipe
+  result: MiniSyringe
+  completetime: 2
+  materials:
+    Steel: 100
+    Glass: 250

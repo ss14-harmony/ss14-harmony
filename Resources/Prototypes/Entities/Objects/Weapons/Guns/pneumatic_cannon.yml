@@ -103,10 +103,10 @@
     containers:
       storagebase: !type:Container
         ents: []
-        
+
 - type: entity
   name: syringe gun
-  parent: BaseStorageItem
+  parent: [BaseStorageItem, BaseSyndicateContraband] # Harmony Change - Added syndicate contraband parent.
   id: LauncherSyringe
   description: Load full of poisoned syringes for optimal fun.
   components:
@@ -117,7 +117,7 @@
   - type: Storage
     maxItemSize: Normal
     grid:
-    - 0,0,2,0
+    - 0,0,3,0 # Harmony Change - 3 Storage -> 4 Storage
     whitelist:
       tags:
       - SyringeGunAmmo
