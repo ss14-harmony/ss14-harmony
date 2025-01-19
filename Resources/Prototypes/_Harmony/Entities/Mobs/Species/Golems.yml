@@ -95,7 +95,7 @@
     color: "#77ff00"
     colorHex: "#77ff00"
   - type: RadiationSource
-    intensity: 2.5
+    intensity: 2
   - type: MeleeWeapon
     altDisarm: false
     soundHit: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
@@ -181,8 +181,8 @@
   abstract: true
   components:
   - type: Sprite
-    color: "#dddddd"
-    colorHex: "#dddddd"
+    color: "#fffcfc"
+    colorHex: "#fffcfc"
   - type: MeleeWeapon
     altDisarm: false
     soundHit:

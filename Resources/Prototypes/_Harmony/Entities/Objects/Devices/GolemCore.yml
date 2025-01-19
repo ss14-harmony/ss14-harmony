@@ -78,7 +78,7 @@
     prototype: PlasmaGolem
   - type: Construction
     graph: GolumCoreGraph
-    node: olemCorePlasma
+    node: PlasmaCore
 
 - type: entity
   parent: BaseGolemCore
