@@ -6,9 +6,8 @@ uplink-smuggler-satchel-desc = A satchel that can fit under station tiles.
 
 
 uplink-syringe-gun-name = Syringe Gun
-<<<<<<< HEAD
 uplink-syringe-gun-desc = A syringe gun, 12 Mini Syringes, and a dream.
-=======
+
 uplink-syringe-gun-desc = A syringe gun, 10 Mini Syringes, and a dream.
 
 uplink-pizza-bomb-name = Nefarious Pizza bomb
@@ -16,4 +15,4 @@ uplink-pizza-bomb-desc = This tech, first pioneered by terrorists, now is used b
 
 uplink-traitor-deathrattle-implant-name = Box Of Deathrattle Implants
 uplink-traitor-deathrattle-implant-desc = A box containing two syndicate deathrattle implants. Messages are relayed over the syndicate channel, encryption keys not included.
->>>>>>> 6c0f1d06bebf840a15550f29c5b46a073bf11100
+
