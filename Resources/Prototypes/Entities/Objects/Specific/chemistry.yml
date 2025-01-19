@@ -411,7 +411,7 @@
     removalTime: 0.25
     embedOnThrow: false
   - type: SolutionInjectWhileEmbedded
-    transferAmount: 2
+    transferAmount: 1
     solution: injector
     updateInterval: 2
   - type: SolutionInjectOnEmbed
@@ -589,7 +589,7 @@
     areaInsertRadius: 1
     storageInsertSound: /Audio/Effects/pill_insert.ogg
     storageRemoveSound: /Audio/Effects/pill_remove.ogg
-    whitelist:
+    whitelist: 
       tags:
       - Pill
   - type: Dumpable
