@@ -18,11 +18,13 @@
 - type: loadoutGroup
   id: LibrarianOuterClothingHarmony
   name: loadout-group-librarian-outerclothing
+  minlimit: 0
   loadouts:
   - CuratorCoatHarmony
 
 - type: loadoutGroup
   id: LibrarianNeckHarmony
   name: loadout-group-librarian-neck
+  minlimit: 0
   loadouts:
   - CuratorMantleHarmony

@@ -5,7 +5,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobLibrarian
-      time: 21600 #52 hrs (1 hour per week for 1 year)
+      time: 21600 #6 hrs (Harmony Reduced Seniority)
 
 # Coat
 - type: loadout
@@ -14,7 +14,7 @@
   - !type:GroupLoadoutEffect
     proto: SeniorLibrarian
   equipment:
-    jumpsuit: ClothingOuterCuratorCoat
+    outerClothing: ClothingOuterCuratorCoat
 
 # Mantle
 - type: loadout
@@ -23,4 +23,4 @@
   - !type:GroupLoadoutEffect
     proto: SeniorLibrarian
   equipment:
-    jumpsuit: ClothingNeckMantleCurator
+    neck: ClothingNeckMantleCurator
