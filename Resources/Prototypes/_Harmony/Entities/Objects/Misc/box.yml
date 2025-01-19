@@ -16,16 +16,16 @@
     - 0,0,3,3
   - type: StorageFill
     contents:
-    - id: MiniSyringe
-    - id: MiniSyringe
-    - id: MiniSyringe
-    - id: MiniSyringe
-    - id: MiniSyringe
-    - id: MiniSyringe
-    - id: MiniSyringe
-    - id: MiniSyringe
-    - id: MiniSyringe
-    - id: MiniSyringe
-    - id: MiniSyringe
-    - id: MiniSyringe
-    - id: LauncherSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: LauncherSyringeInderdyne

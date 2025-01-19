@@ -1,0 +1,19 @@
+﻿- type: entity
+  name: Interdyne Syringe Gun
+  parent: [LauncherSyringe, BaseSyndicateContraband] # Harmony Change - Added syndicate contraband parent.
+  id: LauncherSyringeInderdyne
+  description: Load full of poisoned syringes for optimal fun.
+  components:
+  - type: Gun
+    fireRate: 1.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,3,0
+    whitelist:
+      tags:
+      - SyringeGunAmmo
