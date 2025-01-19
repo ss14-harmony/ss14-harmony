@@ -250,4 +250,4 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: HumanoidAppearance
-    species: Golem
+    species: GolemSpecies
