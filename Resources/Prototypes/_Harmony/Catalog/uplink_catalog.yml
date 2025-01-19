@@ -1,7 +1,23 @@
 # Guns
 # Explosives
 # Ammo
-# Chemicals
+# Chemical
+- type: listing
+  id: UplinkSyringeGunNukeOpsHarmony
+  icon: { sprite: Objects/Weapons/Guns/Cannons/syringe_gun.rsi, state: syringe_gun }
+  name: uplink-syringe-gun-name
+  description: uplink-syringe-gun-desc
+  productEntity: SyringeGunBox
+  cost:
+    Telecrystal: 8
+  categories:
+  - UplinkChemicals
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+        - NukeOpsUplink
+
 # Deception
 - type: listing
   id: UplinkSmugglerSatchel

@@ -5,4 +5,4 @@ uplink-smuggler-satchel-name = Smuggler's Satchel
 uplink-smuggler-satchel-desc = A satchel that can fit under station tiles.
 
 uplink-syringe-gun-name = Syringe Gun
-uplink-syringe-gun-desc = A syringe gun, 10 Mini Syringes, and a dream.
+uplink-syringe-gun-desc = A syringe gun, 12 Mini Syringes, and a dream.
