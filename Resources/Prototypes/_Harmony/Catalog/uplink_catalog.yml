@@ -10,7 +10,7 @@
   categories:
   - UplinkExplosives
 # Ammo
-# Chemical
+# Chemicals
 - type: listing
   id: UplinkSyringeGunNukeOpsHarmony
   icon: { sprite: Objects/Weapons/Guns/Cannons/syringe_gun.rsi, state: syringe_gun }
