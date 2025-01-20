@@ -55,4 +55,13 @@
 
 # Wearables
 # Pointless
+- type: listing
+  id: UplinkClusterWeh
+  name: uplink-cluster-weh-name
+  description: uplink-cluster-weh-desc
+  productEntity: ClusterWeh
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkPointless
 # Job Specific
