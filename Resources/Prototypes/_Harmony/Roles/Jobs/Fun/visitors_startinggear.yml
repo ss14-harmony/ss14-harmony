@@ -12,11 +12,8 @@
     head: ClothingHeadHatBeretBrigmedic
     id: VisitorPDA
     belt: ClothingBeltBrigmedFilledHarmony
-    back: ClothingBackpackSatchelBrigmedic
+    back: ClothingBackpackBrigmedic
     ears: ClothingHeadsetBrigmedic
     outerClothing: ClothingOuterCoatAMG
     pocket1: WeaponDisabler
     pocket2: ScalpelAdvanced
-  storage:
-    back:
-    - Flash

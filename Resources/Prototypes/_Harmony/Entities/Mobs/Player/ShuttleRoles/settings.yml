@@ -7,5 +7,5 @@
     - type: GhostRole
       name: job-name-brigmedic
     - type: Loadout
-      prototypes: VisitorBrigmedicHarmony
+      prototypes: [ VisitorBrigmedicHarmony ]
       roleLoadout: [ RoleSurvivalSecurity ]
