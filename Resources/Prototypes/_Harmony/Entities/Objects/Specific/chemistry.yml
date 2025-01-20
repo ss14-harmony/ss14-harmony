@@ -5,9 +5,15 @@
   id: InderdyneSyringe
   components:
   - type: SolutionInjectWhileEmbedded
-    transferAmount: 3
+    transferAmount: 3.5
     solution: injector
     updateInterval: 3
   - type: SolutionInjectOnEmbed
-    transferAmount: 5
+    transferAmount: 5.5
     solution: injector
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+    damage:
+      types:
+        Piercing: 2.5

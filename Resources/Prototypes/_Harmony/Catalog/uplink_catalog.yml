@@ -18,7 +18,7 @@
   description: uplink-syringe-gun-desc
   productEntity: SyringeGunBox
   cost:
-    Telecrystal: 8
+    Telecrystal: 14
   categories:
   - UplinkChemicals
   conditions:
@@ -79,7 +79,7 @@
   description: uplink-syringe-gun-desc
   productEntity: SyringeGunBox
   cost:
-    Telecrystal: 8
+    Telecrystal: 10
   categories:
   - UplinkJob
   conditions:
