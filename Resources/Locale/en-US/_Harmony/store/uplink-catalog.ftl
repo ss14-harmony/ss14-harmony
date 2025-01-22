@@ -6,3 +6,9 @@ uplink-smuggler-satchel-desc = A satchel that can fit under station tiles.
 
 uplink-bug-name = Listening Bug
 uplink-bug-desc = A small device that can listen in on important conversations.
+
+uplink-pizza-bomb-name = Nefarious Pizza bomb
+uplink-pizza-bomb-desc = This tech, first pioneered by terrorists, now is used by the syndicate for eliminating high value targets
+
+uplink-traitor-deathrattle-implant-name = Box Of Deathrattle Implants
+uplink-traitor-deathrattle-implant-desc = A box containing two syndicate deathrattle implants. Messages are relayed over the syndicate channel, encryption keys not included.
