@@ -5,3 +5,7 @@ loadout-group-hop-shoes-harmony = Head of Personnel shoes
 loadout-group-perma-prisoner-jumpsuit = Prisoner jumpsuit
 
 loadout-group-security-trinkets = Security Trinkets
+
+# Civilian
+loadout-group-librarian-outerclothing = Librarian outer clothing
+loadout-group-librarian-neck = Librarian neck

@@ -14,6 +14,7 @@
   - PermaPrisonerJumpsuit
   - PermaPrisonerJumpskirt
 
+<<<<<<< HEAD
 - type: loadoutGroup
   id: SecurityTrinketsHarmony
   name: loadout-group-security-trinkets
@@ -22,3 +23,19 @@
   loadouts:
   - SecStar
   - PatrolSharkHarmony
+=======
+# Civilian
+- type: loadoutGroup
+  id: LibrarianOuterClothingHarmony
+  name: loadout-group-librarian-outerclothing
+  minLimit: 0
+  loadouts:
+  - CuratorCoatHarmony
+
+- type: loadoutGroup
+  id: LibrarianNeckHarmony
+  name: loadout-group-librarian-neck
+  minLimit: 0
+  loadouts:
+  - CuratorMantleHarmony
+>>>>>>> master
