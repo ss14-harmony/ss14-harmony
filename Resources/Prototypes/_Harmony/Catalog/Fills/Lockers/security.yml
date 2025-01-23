@@ -10,7 +10,6 @@
       - id: ClothingOuterHardsuitBrigmedic
       - id: ClothingOuterCoatAMG
       - id: MedkitCombatFilled
-      - id: ClothingEyesGlassesBrigmedicHarmony
       - id: LauncherSyringeHarmony
       - id: MiniSyringe
         amount: 2
