@@ -33,13 +33,14 @@
     RLeg: MobHumanRLeg
     LFoot: MobHumanLFoot
     RFoot: MobHumanRFoot
-    Tail: MobHumanoidAnyMarking # Harmony: Cat Tail Support
+    Tail: MobHumanoidAnyMarking # Nyanotrasen - Felinid
+    HeadSide: MobHumanoidAnyMarking # Einstein Engines - Oni
 
 - type: markingPoints
   id: MobHumanMarkingLimits
   points:
     Special: # the cat ear joke
-      points: 1 # Harmony: Cat Ear Support
+      points: 0
       required: false
     Hair:
       points: 1
@@ -51,7 +52,7 @@
       points: 1
       required: false
     Tail: # the cat tail joke
-      points: 1 # Harmony Cat Tail Support
+      points: 0
       required: false
     HeadTop:
       points: 1
@@ -60,10 +61,10 @@
       points: 1
       required: false
     Legs:
-      points: 2
+      points: 8 # imp 2<8
       required: false
     Arms:
-      points: 2
+      points: 8 # imp 2<8
       required: false
 
 - type: humanoidBaseSprite

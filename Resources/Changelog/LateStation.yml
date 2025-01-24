@@ -6,3 +6,11 @@ Entries:
     changes:
       - type: Fix
         message: Had to change stuff again... since well i broke it again.
+Entries:
+  - id: 2
+    author: ReboundQ3
+    time: "2025-01-24T17:32:36.0000000+00:00"
+    url: https://github.com/new-frontiers-14/frontier-station-14/pull/2771
+    changes:
+      - type: Add
+        message: Ported over the markings from the Impstation repo check the pull request above for more details.
