@@ -1,6 +1,6 @@
 # Mop Bucket
 - type: entity
-  name: mop bucket [DO NOT MAP]
+  name: mop bucket [DO NOT MAP] # Harmony Change: Adds [DO NOT MAP] to the name so it's not mapped
   id: MopBucketUpstream # Harmony Change: Changes ID to be used as a parent
   parent: [BaseStructureDynamic, StructureWheeled]
   description: Holds water and the tears of the janitor.
