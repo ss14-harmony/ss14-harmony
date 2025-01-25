@@ -1,112 +1,110 @@
 # Mop Bucket
-# Start of Harmony Change: Moved mop bucket to Harmony for Entity Changes
-#- type: entity
-#  name: mop bucket
-#  id: MopBucket
-#  parent: [BaseStructureDynamic, StructureWheeled]
-#  description: Holds water and the tears of the janitor.
-#  components:
-#  - type: Clickable
-#  - type: Sprite
-#    sprite: Objects/Specific/Janitorial/janitorial.rsi
-#    noRot: true
-#    layers:
-#    - state: mopbucket
-#    - state: mopbucket_water-1
-#      map: ["enum.SolutionContainerLayers.Fill"]
-#      visible: false
-#    drawdepth: Objects
-#  - type: InteractionOutline
-#  - type: SolutionContainerManager
-#    solutions:
-#      bucket:
-#        maxVol: 600
-#  - type: Spillable
-#    solution: bucket
-#    spillDelay: 3.0
-#    spillWhenThrown: false
-#  - type: DrainableSolution
-#    solution: bucket
-#  - type: RefillableSolution
-#    solution: bucket
-#  - type: ExaminableSolution
-#    solution: bucket
-#  - type: Tag
-#    tags:
-#      - Wringer
-#  - type: ItemMapper
-#    mapLayers:
-#      mopbucket_shark_blue:
-#        whitelist:
-#          tags:
-#            - PlushieSharkBlue
-#      mopbucket_shark_pink:
-#        whitelist:
-#          tags:
-#            - PlushieSharkPink
-#      mopbucket_shark_grey:
-#        whitelist:
-#          tags:
-#            - PlushieSharkGrey
-#     mopbucket_carpplush:
-#       whitelist:
-#          tags:
-#            - PlushieCarp
-#    sprite: Objects/Specific/Janitorial/janitorial.rsi
-#  - type: Transform
-#    noRot: true
-#  - type: ItemSlots
-#    slots:
-#      item_slot:
-#        name: mop-bucket-slot-component-slot-name-item
-#        ejectVerbText: mop-bucket-slot-component-eject-verb
-#        whitelist:
-#          tags:
-#            - PlushieSharkBlue
-#            - PlushieSharkPink
-#            - PlushieSharkGrey
-#            - PlushieCarp
-#          components:
-#            - Rehydratable
-#        priority: 3 # Higher than drinking priority
-#  - type: ReactiveContainer
-#    solution: bucket
-#    container: item_slot
-#  - type: Drink
-#    solution: bucket
-#  - type: Appearance
-#  - type: SolutionContainerVisuals
-#    maxFillLevels: 3
-#    fillBaseName: mopbucket_water-
-#  - type: ContainerContainer
-#    containers:
-#      storagebase: !type:Container
-#        ents: []
-#      item_slot: !type:ContainerSlot {}
-#  - type: GuideHelp
-#    guides:
-#    - Janitorial
-#  - type: Damageable
-#    damageContainer: Inorganic
-#  - type: Destructible
-#    thresholds:
-#    - trigger:
-#        !type:DamageTrigger
-#        damage: 70
-#      behaviors:
-#      - !type:DoActsBehavior
-#        acts: ["Destruction"]
-#  - type: DnaSubstanceTrace
-#  - type: Fixtures
-#    fixtures:
-#      fix1:
-#        shape:
-#          !type:PhysShapeAabb
-#          bounds: "-0.45,-0.45,0.45,0.45"
-#        density: 60
-#        mask:
-#        - MachineMask
-# End of Harmony Change
+- type: entity
+  name: mop bucket [DO NOT MAP]
+  id: MopBucketUpstream # Harmony Change: Changes ID to be used as a parent
+  parent: [BaseStructureDynamic, StructureWheeled]
+  description: Holds water and the tears of the janitor.
+  components:
+  - type: Clickable
+  - type: Sprite
+    sprite: Objects/Specific/Janitorial/janitorial.rsi
+    noRot: true
+    layers:
+    - state: mopbucket
+    - state: mopbucket_water-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+    drawdepth: Objects
+  - type: InteractionOutline
+  - type: SolutionContainerManager
+    solutions:
+      bucket:
+        maxVol: 600
+  - type: Spillable
+    solution: bucket
+    spillDelay: 3.0
+    spillWhenThrown: false
+  - type: DrainableSolution
+    solution: bucket
+  - type: RefillableSolution
+    solution: bucket
+  - type: ExaminableSolution
+    solution: bucket
+  - type: Tag
+    tags:
+      - Wringer
+  - type: ItemMapper
+    mapLayers:
+      mopbucket_shark_blue:
+        whitelist:
+          tags:
+            - PlushieSharkBlue
+      mopbucket_shark_pink:
+        whitelist:
+          tags:
+            - PlushieSharkPink
+      mopbucket_shark_grey:
+        whitelist:
+          tags:
+            - PlushieSharkGrey
+      mopbucket_carpplush:
+       whitelist:
+          tags:
+            - PlushieCarp
+    sprite: Objects/Specific/Janitorial/janitorial.rsi
+  - type: Transform
+    noRot: true
+  - type: ItemSlots
+    slots:
+      item_slot:
+        name: mop-bucket-slot-component-slot-name-item
+        ejectVerbText: mop-bucket-slot-component-eject-verb
+        whitelist:
+          tags:
+            - PlushieSharkBlue
+            - PlushieSharkPink
+            - PlushieSharkGrey
+            - PlushieCarp
+          components:
+            - Rehydratable
+        priority: 3 # Higher than drinking priority
+  - type: ReactiveContainer
+    solution: bucket
+    container: item_slot
+  - type: Drink
+    solution: bucket
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: mopbucket_water-
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      item_slot: !type:ContainerSlot {}
+  - type: GuideHelp
+    guides:
+    - Janitorial
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 70
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: DnaSubstanceTrace
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        mask:
+        - MachineMask
 
 - type: entity
   name: mop bucket
