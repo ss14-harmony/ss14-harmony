@@ -60,7 +60,7 @@
 - type: entity
   parent: ClothingShoesMilitaryBase
   id: ClothingShoesHighheelBoots
-  name: high-heeled boots
+  name: jackheels
   description: Snazy boots for when you want to be stylish, yet prepared.
   components:
   - type: MeleeWeapon
@@ -71,6 +71,13 @@
     sprite: Clothing/Shoes/Boots/highheelboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/highheelboots.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHeelsHarmony
+      params:
+        variation: 0.09
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
 
 - type: entity
   parent: [ ClothingShoesMilitaryBase ]

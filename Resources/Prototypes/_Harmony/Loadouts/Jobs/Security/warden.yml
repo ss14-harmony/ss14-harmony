@@ -3,3 +3,9 @@
   id: WardenBlueSuitHarmony
   equipment:
     jumpsuit: ClothingUniformJumpsuitWardenBlueHarmony
+
+#Shoes
+- type: loadout
+  id: JackHeelsHarmony
+  equipment:
+    shoes: ClothingShoesHighheelBoots
