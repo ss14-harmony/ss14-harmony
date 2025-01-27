@@ -1,6 +1,8 @@
 <p align="center"> <img alt="LateStation" src="https://raw.githubusercontent.com/ReboundQ3/Late-station-14/refs/heads/master/Resources/Textures/Logo/logo.png" /></p>
 
-LateStation is a fork of [Space Station 14](https://github.com/space-wizards/space-station-14). We aim to stay as close to vanilla SS14 as possible, while adding cosmetic changes that make LateStation our home, and features that enable MRP (medium roleplay) playstyle.
+LateStation is a fork of [Harmony](https://github.com/ss14-harmony/ss14-harmony). We aim to make our own station with our own content using Harmony as a base since most of our (now) playerbase come from Harmony.
+Right now there isn't much different from the Harmony fork but that will change in the future, there might be some remnants still but thats WIP.
+If you're interested in helping out just ask around in the Liltenhead discord and you'll find us pretty fast.
 
 Space Station 14 is a remake of SS13 that runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), a homegrown engine written in C#.
 
