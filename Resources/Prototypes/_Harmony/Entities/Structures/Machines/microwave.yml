@@ -4,6 +4,7 @@
   name: microwave
   components:
   - type: Item
+    sprite: _Harmony/Structures/Machines/microwave.rsi
     size: Ginormous
   - type: MultiHandedItem
   - type: MeleeWeapon
@@ -24,6 +25,7 @@
   name: donk co. microwave
   components:
   - type: Item
+    sprite: _Harmony/Structures/Machines/microwave_syndie.rsi
     size: Ginormous
   - type: MultiHandedItem
   - type: MeleeWeapon
