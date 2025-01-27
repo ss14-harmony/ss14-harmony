@@ -356,7 +356,10 @@
   - SecurityBackpack
   - SecurityBelt
   - WardenOuterClothing
-  - WardenShoes # Harmony Change
+# Start of Harmony Change: Removes the Security Shoes Loadout Group and replaces it with the Warden Shoes Loadout Group
+# - SecurityShoes
+  - WardenShoes
+# End of Harmony Change
   - SurvivalSecurity
   - Trinkets
   - SecurityStar
