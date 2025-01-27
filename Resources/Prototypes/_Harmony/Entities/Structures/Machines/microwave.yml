@@ -1,0 +1,31 @@
+- type: entity
+  id: KitchenMicrowave
+  parent: KitchenMicrowaveUpstream
+  name: microwave
+  components:
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: MeleeWeapon
+    attackRate: 0.5
+    damage:
+      types:
+        Blunt: 30
+    soundHit:
+      path: "/Audio/Weapons/smash.ogg"
+
+- type: entity
+  id: SyndicateMicrowave
+  parent: [SyndicateMicrowaveUpstream, BaseSyndicateContraband]
+  name: donk co. microwave
+  components:
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: MeleeWeapon
+    attackRate: 0.75
+    damage:
+      types:
+        Blunt: 45
+    soundHit:
+      path: "/Audio/Weapons/smash.ogg"
