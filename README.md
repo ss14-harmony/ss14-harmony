@@ -8,7 +8,7 @@ Space Station 14 is a remake of SS13 that runs on [Robust Toolbox](https://githu
 
 ## Links
 
-[LateStation Wiki](http://wiki.lateStation14.com/) | [Website (SS14)](https://spacestation14.io/) | [Steam (SS14)](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone Download (SS14)](https://spacestation14.io/about/nightlies/) | [Builds (LateStation)](http://cdn.lateStation14.com/fork/lateStation/)
+[LateStation](http://www.lateStation14.space/) | [Website (SS14)](https://spacestation14.io/) | [Steam (SS14)](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone Download (SS14)](https://spacestation14.io/about/nightlies/) | [Builds (LateStation)](http://cdn.lateStation14.space/fork/lateStation/)
 
 ## Documentation/Wiki
 
