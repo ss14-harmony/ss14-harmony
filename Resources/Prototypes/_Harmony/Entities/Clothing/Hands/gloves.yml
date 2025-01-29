@@ -1,0 +1,47 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesMantis
+  name: latex gloves
+  description: Thin sterile latex gloves. Basic PPE for any doctor.
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/latex.rsi
+    layers:
+    - state: icon
+      map: [ "enum.ToggleVisuals.Layer" ]
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/latex.rsi
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: {state: icon-activated}
+          False: {state: icon}
+  - type: Fiber
+    fiberMaterial: fibers-latex
+  - type: FingerprintMask
+  - type: ItemToggle
+    onUse: false
+    soundActivate:
+      path: /Audio/Weapons/ebladeon.ogg
+      params:
+        volume: 3
+    soundDeactivate:
+      path: /Audio/Weapons/ebladeoff.ogg
+      params:
+        volume: 3
+  - type: ToggleClothing
+    action: ActionToggleMantisGloves
+    disableOnUnequip: true
+  - type: ComponentToggler
+    components:
+    - type: MeleeWeapon
+      attackRate: 1.5
+      damage:
+        types:
+          Slash: 15
+      mustBeEquippedToUse: true
+    - type: Sharp
+    - type: Contraband
+      severity: Syndicate
