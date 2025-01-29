@@ -148,7 +148,7 @@
   name: Lecter
   parent: [BaseWeaponRifle, BaseRestrictedContraband]
   id: WeaponRifleLecter
-  description: A high end military grade carbine. Uses .20 rifle ammo. # Harmony change: "assault rifle" now says "carbine" to better fit the lecter sprite
+  description: A high end military grade carbine. Uses .20 rifle ammo. # Harmony change: "assault rifle" now says "carbine" to better fit the lecter sprite.
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Guns/Rifles/lecter.rsi # Harmony change: Use a custom lecter sprite.
