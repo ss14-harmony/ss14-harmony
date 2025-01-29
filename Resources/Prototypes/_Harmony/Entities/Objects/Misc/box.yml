@@ -1,0 +1,31 @@
+﻿- type: entity
+  id: SyringeGunBox
+  name: Syringe Box
+  parent: BoxSyringe
+  components:
+  - type: Sprite
+    sprite: Objects/Storage/boxes.rsi
+  - type: Item
+    sprite: Objects/Storage/boxes.rsi
+    size: Large
+    shape:
+    - 0,0,2,2
+  - type: Storage
+    maxItemSize: Large
+    grid:
+    - 0,0,3,3
+  - type: StorageFill
+    contents:
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: InderdyneSyringe
+    - id: LauncherSyringeInderdyne

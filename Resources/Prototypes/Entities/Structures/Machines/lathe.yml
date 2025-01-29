@@ -232,6 +232,7 @@
       - SpeedLoaderMagnum
       - SpeedLoaderMagnumEmpty
       - StripperClip  # Harmony change - part of RSC PR
+      - MiniSyringeRecipe # Harmony Change
   - type: BlueprintReceiver
     whitelist:
       tags:

@@ -1,0 +1,19 @@
+﻿- type: entity
+  name: Interdyne Syringe
+  parent: [MiniSyringe, BaseSyndicateContraband]
+  description: Specialized syringe made to administer chemicals
+  id: InderdyneSyringe
+  components:
+  - type: SolutionInjectWhileEmbedded
+    transferAmount: 3.5
+    solution: injector
+    updateInterval: 3
+  - type: SolutionInjectOnEmbed
+    transferAmount: 5.5
+    solution: injector
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+    damage:
+      types:
+        Piercing: 2.5
