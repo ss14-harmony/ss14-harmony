@@ -6,7 +6,7 @@
   - type: InstantAction
     useDelay: 1.0
     icon:
-      sprite: Clothing/Hands/Gloves/latex.rsi
+      sprite: _Harmony/Clothing/Hands/Gloves/mantis_activated.rsi
       state: icon
     itemIconStyle: NoItem
     event: !type:ToggleActionEvent {}

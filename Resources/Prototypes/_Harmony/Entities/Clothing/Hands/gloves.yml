@@ -5,19 +5,26 @@
   description: Thin sterile latex gloves. Basic PPE for any doctor.
   components:
   - type: Sprite
-    sprite: Clothing/Hands/Gloves/latex.rsi
+    sprite: _Harmony/Clothing/Hands/Gloves/mantis.rsi
     layers:
     - state: icon
       map: [ "enum.ToggleVisuals.Layer" ]
   - type: Clothing
-    sprite: Clothing/Hands/Gloves/latex.rsi
+    sprite: _Harmony/Clothing/Hands/Gloves/mantis.rsi
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND
   - type: Appearance
   - type: GenericVisualizer
     visuals:
       enum.ToggleVisuals.Toggled:
         enum.ToggleVisuals.Layer:
-          True: {state: icon-activated}
-          False: {state: icon}
+          True:
+            sprite: _Harmony/Clothing/Hands/Gloves/mantis_activated.rsi  #Goonstation license forced my hand to do this.
+            state: icon
+          False:
+            sprite: _Harmony/Clothing/Hands/Gloves/mantis.rsi
+            state: icon
   - type: Fiber
     fiberMaterial: fibers-latex
   - type: FingerprintMask
@@ -34,6 +41,7 @@
   - type: ToggleClothing
     action: ActionToggleMantisGloves
     disableOnUnequip: true
+  - type: MantisGloves  # TODO: Create this component
   - type: ComponentToggler
     components:
     - type: MeleeWeapon
