@@ -32,7 +32,7 @@ hud-chatbox-channel-Visual = Actions
 hud-chatbox-channel-Damage = Damage
 hud-chatbox-channel-Unspecified = Unspecified
 
-# Harmony - start of chat highlighting
+# Harmony - start of chat highlighting, remove when chat refactor is merged
 hud-chatbox-highlights = Highlights:
 hud-chatbox-highlights-button = Submit
 hud-chatbox-highlights-tooltip = The words need to be separated by a newline,

@@ -1,7 +1,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
-using Content.Client.CharacterInfo; // Harmony - chat highlighting
+using Content.Client.CharacterInfo; // Harmony - chat highlighting, remove when chat refactor is merged
 using Content.Client.Administration.Managers;
 using Content.Client.Chat;
 using Content.Client.Chat.Managers;
@@ -41,12 +41,12 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using static Content.Client.CharacterInfo.CharacterInfoSystem; // Harmony - chat highlighting
+using static Content.Client.CharacterInfo.CharacterInfoSystem; // Harmony - chat highlighting, remove when chat refactor is merged
 
 
 namespace Content.Client.UserInterface.Systems.Chat;
 
-public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterInfoSystem> // Harmony - chat highlighting
+public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterInfoSystem> // Harmony - chat highlighting, remove when chat refactor is merged
 {
     [Dependency] private readonly IClientAdminManager _admin = default!;
     [Dependency] private readonly IChatManager _manager = default!;
@@ -68,7 +68,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     [UISystemDependency] private readonly TransformSystem? _transform = default;
     [UISystemDependency] private readonly MindSystem? _mindSystem = default!;
     [UISystemDependency] private readonly RoleCodewordSystem? _roleCodewordSystem = default!;
-    [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!; // Harmony - chat highlighting
+    [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!; // Harmony - chat highlighting, remove when chat refactor is merged
 
     [ValidatePrototypeId<ColorPalettePrototype>]
     private const string ChatNamePalette = "ChatNames";
@@ -153,7 +153,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     /// </summary>
     private readonly Dictionary<ChatChannel, int> _unreadMessages = new();
 
-    // Harmony - start of chat highlighting
+    // Harmony - start of chat highlighting, remove when chat refactor is merged
     /// <summary>
     ///     The list of words to be highlighted in the chatbox.
     /// </summary>
@@ -195,7 +195,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     public event Action<ChatSelectChannel>? SelectableChannelsChanged;
     public event Action<ChatChannel, int?>? UnreadMessageCountsUpdated;
     public event Action<ChatMessage>? MessageAdded;
-    public event Action<string>? HighlightsUpdated; // Harmony - chat highlighting
+    public event Action<string>? HighlightsUpdated; // Harmony - chat highlighting, remove when chat refactor is merged
 
     public override void Initialize()
     {
@@ -264,7 +264,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
 
         _config.OnValueChanged(CCVars.ChatWindowOpacity, OnChatWindowOpacityChanged);
 
-        // Harmony - start of chat highlighting
+        // Harmony - start of chat highlighting, remove when chat refactor is merged
         _config.OnValueChanged(CCVars.ChatAutoFillHighlights, (value) => { _autoFillHighlightsEnabled = value; });
         _autoFillHighlightsEnabled = _config.GetCVar(CCVars.ChatAutoFillHighlights);
 
@@ -296,7 +296,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         SetMainChat(false);
     }
 
-    // Harmony - start of chat highlighting
+    // Harmony - start of chat highlighting, remove when chat refactor is merged
     public void OnSystemLoaded(CharacterInfoSystem system)
     {
         system.OnCharacterUpdate += OnCharacterUpdated;
@@ -313,7 +313,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         SetChatWindowOpacity(opacity);
     }
 
-    // Harmony - start of chat highlighting
+    // Harmony - start of chat highlighting, remove when chat refactor is merged
     private void OnCharacterUpdated(CharacterData data)
     {
         // If the _charInfoIsAttach is false then the character panel was the one
@@ -507,7 +507,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     {
         UpdateChannelPermissions();
         
-        // Harmony - start of chat highlighting
+        // Harmony - start of chat highlighting, remove when chat refactor is merged
         // If auto highlights are enabled generate a request for new character info
         // that will be used to determine the highlights.
         if (_autoFillHighlightsEnabled)
@@ -674,7 +674,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         }
     }
 
-    // Harmony - start of chat highlighting
+    // Harmony - start of chat highlighting, remove when chat refactor is merged
     public void UpdateHighlights(string highlights)
     {
         // Do nothing if the provided highlighs are the same as the old ones.
@@ -943,7 +943,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
                 msg.WrappedMessage = SharedChatSystem.InjectTagInsideTag(msg, "Name", "color", GetNameColor(SharedChatSystem.GetStringInsideTag(msg, "Name")));
         }
 
-        // Harmony - start of chat highlighting
+        // Harmony - start of chat highlighting, remove when chat refactor is merged
         // Color any words choosen by the client.
         foreach (var highlight in _highlights)
         {

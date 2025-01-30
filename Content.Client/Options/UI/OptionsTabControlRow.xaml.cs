@@ -121,7 +121,7 @@ public sealed partial class OptionsTabControlRow : Control
         return AddOption(new OptionSliderFloatCVar(this, _cfg, cVar, slider, min, max, scale, FormatPercent));
     }
 
-    // Harmony - start of chat highlighting
+    // Harmony - start of chat highlighting, remove when chat refactor is merged
     /// <summary>
     /// Add a color slider option, backed by a simple string CVar.
     /// </summary>
@@ -533,7 +533,7 @@ public sealed class OptionSliderFloatCVar : BaseOptionCVar<float>
     }
 }
 
-// Harmony - start of chat highlighting
+// Harmony - start of chat highlighting, remove when chat refactor is merged
 /// <summary>
 /// Implementation of a CVar option that simply corresponds with a string <see cref="OptionColorSlider"/>.
 /// </summary>

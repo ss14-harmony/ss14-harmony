@@ -66,7 +66,7 @@ public sealed partial class CCVars
             CVar.SERVER | CVar.SERVERONLY | CVar.ARCHIVE,
             "A message broadcast to each player that joins the lobby.");
 
-    // Harmony - start of chat highlighting
+    // Harmony - start of chat highlighting, remove when chat refactor is merged
     /// <summary>
     /// A string containing a list of newline-separated words to be highlighted in the chat.
     /// </summary>
