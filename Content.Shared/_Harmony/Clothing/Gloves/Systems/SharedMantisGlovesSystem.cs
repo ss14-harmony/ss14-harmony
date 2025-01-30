@@ -1,9 +1,5 @@
-using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared._Harmony.Clothing.Gloves.Components;
-using Robust.Shared.GameStates;
-using Robust.Shared.Utility;
-using Robust.Shared.Serialization;
 
 namespace Content.Shared._Harmony.Clothing.Gloves.Systems;
 
@@ -36,22 +32,5 @@ public abstract class SharedMantisGlovesSystem : EntitySystem
 
         if (description != null)
             _metaData.SetEntityDescription(uid, Loc.GetString(description));
-    }
-}
-
-[Serializable, NetSerializable]
-public sealed class MantisGlovesComponentState : ComponentState
-{
-    public string? ActivatedName;
-    public string? ActivatedDescription;
-    public string? DeactivatedName;
-    public string? DeactivatedDescription;
-
-    public MantisGlovesComponentState(string? activatedName, string? activatedDescription, string? deactivatedName, string? deactivatedDescription)
-    {
-        ActivatedName = activatedName;
-        ActivatedDescription = activatedDescription;
-        DeactivatedName = deactivatedName;
-        DeactivatedDescription = deactivatedDescription;
     }
 }
