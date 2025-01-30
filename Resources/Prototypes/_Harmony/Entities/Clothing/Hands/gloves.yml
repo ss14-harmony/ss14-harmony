@@ -3,6 +3,7 @@
   id: ClothingHandsGlovesMantis
   name: latex gloves
   description: Thin sterile latex gloves. Basic PPE for any doctor.
+  suffix: Mantis
   components:
   - type: Sprite
     sprite: _Harmony/Clothing/Hands/Gloves/mantis.rsi
@@ -48,6 +49,16 @@
           Slash: 15
       mustBeEquippedToUse: true
       animation: WeaponArcClaw
+      soundSwing:
+        path: /Audio/Weapons/punchmiss.ogg
+        params:
+          volume: 3
+          variation: 0.025
+      soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+        params:
+          volume: 3
+          variation: 0.025
     - type: Sharp
     - type: Contraband
       severity: Syndicate
