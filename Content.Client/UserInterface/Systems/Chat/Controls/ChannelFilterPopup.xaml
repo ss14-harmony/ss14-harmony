@@ -1,8 +1,7 @@
+<!-- Harmony - chat highlighting, line 4 -->
 <controls:ChannelFilterPopup
     xmlns="https://spacestation14.io"
-    <!-- Harmony - start of chat highlighting -->
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-    <!-- Harmony - end of chat highlighting -->
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Systems.Chat.Controls">
     <PanelContainer Name="FilterPopupPanel" StyleClasses="BorderedWindowPanel">
         <!-- Harmony - start of chat highlighting -->
