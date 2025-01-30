@@ -11,9 +11,6 @@
       map: [ "enum.ToggleVisuals.Layer" ]
   - type: Clothing
     sprite: _Harmony/Clothing/Hands/Gloves/mantis.rsi
-    clothingVisuals:
-      gloves:
-      - state: equipped-HAND
   - type: Appearance
   - type: GenericVisualizer
     visuals:
