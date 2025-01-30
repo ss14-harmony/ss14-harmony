@@ -1,3 +1,5 @@
+# These are set at round start when "Auto-fill the highlights with the characters information" is enabled
+# Putting quotes around a phrase means it will only match the partial word and not when the word is used in a phrase
 # Command
 highlights-captain = Captain, "Cap", Bridge, Command
 highlights-head-of-personnel = Head Of Personnel, "HoP", Service, Bridge, Command
