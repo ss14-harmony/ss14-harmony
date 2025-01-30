@@ -4,7 +4,5 @@ mantis-gloves-name-active = mantis blades
 mantis-gloves-desc-active = Deadly blades extend from these gloves, ready to slice and dice.
 mantis-gloves-name = latex gloves
 mantis-gloves-desc = Thin sterile latex gloves. Basic PPE for any doctor.
-mantis-gloves-examine-active = The blades are extended and ready to strike.
-mantis-gloves-examine-inactive = The blades are retracted within the gloves.
 mantis-gloves-uplink-name = Mantis Blade Gloves
 mantis-gloves-uplink-desc = Seemingly innocent latex gloves that conceal deadly retractable blades. Perfect for the discerning doctor who needs to perform surprise surgery.
