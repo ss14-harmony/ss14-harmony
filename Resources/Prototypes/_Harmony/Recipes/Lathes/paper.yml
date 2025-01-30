@@ -4,3 +4,10 @@
   completetime: 2
   materials:
     Wood: 50
+
+- type: latheRecipe
+  id: Pen
+  result: Pen
+  completetime: 1
+  materials:
+    Steel: 25 # should probably cost less than matter bins or whatever

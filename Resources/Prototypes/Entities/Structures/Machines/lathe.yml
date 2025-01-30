@@ -205,6 +205,7 @@
       - Flare
       - CassetteTape # DeltaV
       - TapeRecorder # DeltaV
+      - Pen # Harmony Change: Allow pen printing
 
   - type: EmagLatheRecipes
     emagStaticRecipes:
