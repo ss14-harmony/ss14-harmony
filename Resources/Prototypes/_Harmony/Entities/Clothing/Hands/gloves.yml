@@ -28,11 +28,11 @@
   - type: ItemToggle
     onUse: false
     soundActivate:
-      path: /Audio/Weapons/ebladeon.ogg
+      path: /Audio/_Harmony/Weapons/mantison.wav
       params:
         volume: 3
     soundDeactivate:
-      path: /Audio/Weapons/ebladeoff.ogg
+      path: /Audio/_Harmony/Weapons/mantisoff.wav
       params:
         volume: 3
   - type: ToggleClothing
@@ -47,6 +47,7 @@
         types:
           Slash: 15
       mustBeEquippedToUse: true
+      animation: WeaponArcClaw
     - type: Sharp
     - type: Contraband
       severity: Syndicate
