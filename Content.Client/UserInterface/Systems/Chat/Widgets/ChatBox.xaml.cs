@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions; // Harmony - chat highlighting
 using Content.Client.UserInterface.Systems.Chat.Controls;
 using Content.Shared.Chat;
 using Content.Shared.Input;
@@ -36,9 +37,10 @@ public partial class ChatBox : UIWidget
         ChatInput.Input.OnTextChanged += OnTextChanged;
         ChatInput.ChannelSelector.OnChannelSelect += OnChannelSelect;
         ChatInput.FilterButton.Popup.OnChannelFilter += OnChannelFilter;
-
+        ChatInput.FilterButton.Popup.OnNewHighlights += OnNewHighlights; // Harmony - chat highlighting
         _controller = UserInterfaceManager.GetUIController<ChatUIController>();
         _controller.MessageAdded += OnMessageAdded;
+        _controller.HighlightsUpdated += OnHighlightsUpdated; // Harmony - chat highlighting
         _controller.RegisterChat(this);
     }
 
@@ -64,6 +66,13 @@ public partial class ChatBox : UIWidget
 
         AddLine(msg.WrappedMessage, color);
     }
+
+    // Harmony - start of chat highlighting
+    private void OnHighlightsUpdated(string highlights)
+    {
+        ChatInput.FilterButton.Popup.UpdateHighlights(highlights);
+    }
+    // Harmony - end of chat highlighting
 
     private void OnChannelSelect(ChatSelectChannel channel)
     {
@@ -94,6 +103,13 @@ public partial class ChatBox : UIWidget
             _controller.ClearUnfilteredUnreads(channel);
         }
     }
+
+    // Harmony - start of chat highlighting
+    private void OnNewHighlights(string highlighs)
+    {
+        _controller.UpdateHighlights(highlighs);
+    }
+    // Harmony - end of chat highlighting
 
     public void AddLine(string message, Color color)
     {
