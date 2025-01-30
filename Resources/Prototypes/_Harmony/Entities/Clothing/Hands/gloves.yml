@@ -41,7 +41,7 @@
   - type: ToggleClothing
     action: ActionToggleMantisGloves
     disableOnUnequip: true
-  - type: MantisGloves  # TODO: Create this component
+  - type: MantisGloves
   - type: ComponentToggler
     components:
     - type: MeleeWeapon
