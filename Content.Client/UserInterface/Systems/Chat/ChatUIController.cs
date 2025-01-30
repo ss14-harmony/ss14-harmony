@@ -1,7 +1,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
-using Content.Client.CharacterInfo;
+using Content.Client.CharacterInfo; // Harmony - chat highlighting
 using Content.Client.Administration.Managers;
 using Content.Client.Chat;
 using Content.Client.Chat.Managers;
@@ -41,12 +41,12 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using static Content.Client.CharacterInfo.CharacterInfoSystem;
+using static Content.Client.CharacterInfo.CharacterInfoSystem; // Harmony - chat highlighting
 
 
 namespace Content.Client.UserInterface.Systems.Chat;
 
-public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterInfoSystem>
+public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterInfoSystem> // Harmony - chat highlighting
 {
     [Dependency] private readonly IClientAdminManager _admin = default!;
     [Dependency] private readonly IChatManager _manager = default!;
@@ -68,7 +68,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     [UISystemDependency] private readonly TransformSystem? _transform = default;
     [UISystemDependency] private readonly MindSystem? _mindSystem = default!;
     [UISystemDependency] private readonly RoleCodewordSystem? _roleCodewordSystem = default!;
-    [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
+    [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!; // Harmony - chat highlighting
 
     [ValidatePrototypeId<ColorPalettePrototype>]
     private const string ChatNamePalette = "ChatNames";
@@ -153,6 +153,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     /// </summary>
     private readonly Dictionary<ChatChannel, int> _unreadMessages = new();
 
+    // Harmony - start of chat highlighting
     /// <summary>
     ///     The list of words to be highlighted in the chatbox.
     /// </summary>
@@ -169,6 +170,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     ///     The boolean that keeps track of the 'OnCharacterUpdated' event, whenever it's a player attaching or opening the character info panel.
     /// </summary>
     private bool _charInfoIsAttach = false;
+    // Harmony - end of chat highlighting
 
     // TODO add a cap for this for non-replays
     public readonly List<(GameTick Tick, ChatMessage Msg)> History = new();
@@ -193,7 +195,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     public event Action<ChatSelectChannel>? SelectableChannelsChanged;
     public event Action<ChatChannel, int?>? UnreadMessageCountsUpdated;
     public event Action<ChatMessage>? MessageAdded;
-    public event Action<string>? HighlightsUpdated;
+    public event Action<string>? HighlightsUpdated; // Harmony - chat highlighting
 
     public override void Initialize()
     {
@@ -262,6 +264,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
 
         _config.OnValueChanged(CCVars.ChatWindowOpacity, OnChatWindowOpacityChanged);
 
+        // Harmony - start of chat highlighting
         _config.OnValueChanged(CCVars.ChatAutoFillHighlights, (value) => { _autoFillHighlightsEnabled = value; });
         _autoFillHighlightsEnabled = _config.GetCVar(CCVars.ChatAutoFillHighlights);
 
@@ -275,6 +278,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         {
             UpdateHighlights(highlights);
         }
+        // Harmony - end of chat highlighting
     }
 
     public void OnScreenLoad()
@@ -292,6 +296,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         SetMainChat(false);
     }
 
+    // Harmony - start of chat highlighting
     public void OnSystemLoaded(CharacterInfoSystem system)
     {
         system.OnCharacterUpdate += OnCharacterUpdated;
@@ -301,12 +306,14 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     {
         system.OnCharacterUpdate -= OnCharacterUpdated;
     }
+    // Harmony - end of chat highlighting
 
     private void OnChatWindowOpacityChanged(float opacity)
     {
         SetChatWindowOpacity(opacity);
     }
 
+    // Harmony - start of chat highlighting
     private void OnCharacterUpdated(CharacterData data)
     {
         // If the _charInfoIsAttach is false then the character panel was the one
@@ -333,6 +340,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         HighlightsUpdated?.Invoke(newHighlights);
         _charInfoIsAttach = false;
     }
+    // Harmony - end of chat highlighting
 
     private void SetChatWindowOpacity(float opacity)
     {
@@ -499,6 +507,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     {
         UpdateChannelPermissions();
         
+        // Harmony - start of chat highlighting
         // If auto highlights are enabled generate a request for new character info
         // that will be used to determine the highlights.
         if (_autoFillHighlightsEnabled)
@@ -506,6 +515,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
             _charInfoIsAttach = true;
             _characterInfo.RequestCharacterInfo();
         }
+        // Harmony - end of chat highlighting
     }
 
     private void AddSpeechBubble(ChatMessage msg, SpeechBubble.SpeechType speechType)
@@ -664,6 +674,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         }
     }
 
+    // Harmony - start of chat highlighting
     public void UpdateHighlights(string highlights)
     {
         // Do nothing if the provided highlighs are the same as the old ones.
@@ -690,6 +701,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         // the full word (eg. "Security") gets picked before the abbreviation (eg. "Sec").
         _highlights.Sort((x, y) => y.Length.CompareTo(x.Length));
     }
+    // Harmony - end of chat highlighting
 
     public override void FrameUpdate(FrameEventArgs delta)
     {
@@ -931,11 +943,13 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
                 msg.WrappedMessage = SharedChatSystem.InjectTagInsideTag(msg, "Name", "color", GetNameColor(SharedChatSystem.GetStringInsideTag(msg, "Name")));
         }
 
+        // Harmony - start of chat highlighting
         // Color any words choosen by the client.
         foreach (var highlight in _highlights)
         {
             msg.WrappedMessage = SharedChatSystem.InjectTagAroundString(msg, highlight, "color", _highlightsColor);
         }
+        // Harmony - end of chat highlighting
 
         // Color any codewords for minds that have roles that use them
         if (_player.LocalUser != null && _mindSystem != null && _roleCodewordSystem != null)

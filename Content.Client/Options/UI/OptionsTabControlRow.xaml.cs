@@ -120,7 +120,8 @@ public sealed partial class OptionsTabControlRow : Control
     {
         return AddOption(new OptionSliderFloatCVar(this, _cfg, cVar, slider, min, max, scale, FormatPercent));
     }
-    
+
+    // Harmony - start of chat highlighting
     /// <summary>
     /// Add a color slider option, backed by a simple string CVar.
     /// </summary>
@@ -133,6 +134,7 @@ public sealed partial class OptionsTabControlRow : Control
     {
         return AddOption(new OptionColorSliderCVar(this, _cfg, cVar, slider));
     }
+    // Harmony - end of chat highlighting
 
     /// <summary>
     /// Add a slider option, backed by a simple integer CVar.
@@ -401,6 +403,7 @@ public abstract class BaseOptionCVar<TValue> : BaseOption
     }
 }
 
+// Harmony - start of chat highlighting
 /// <summary>
 /// Implementation of a CVar option that simply corresponds with a <see cref="CheckBox"/>.
 /// </summary>
@@ -582,6 +585,7 @@ public sealed class OptionColorSliderCVar : BaseOptionCVar<string>
         _slider.ExampleLabel.FontColorOverride = Color.FromHex(Value);
     }
 }
+// Harmony - end of chat highlighting
 
 /// <summary>
 /// Implementation of a CVar option that simply corresponds with an integer <see cref="OptionSlider"/>.

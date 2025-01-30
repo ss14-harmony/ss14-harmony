@@ -65,7 +65,8 @@ public sealed partial class CCVars
             "",
             CVar.SERVER | CVar.SERVERONLY | CVar.ARCHIVE,
             "A message broadcast to each player that joins the lobby.");
-    
+
+    // Harmony - start of chat highlighting
     /// <summary>
     /// A string containing a list of newline-separated words to be highlighted in the chat.
     /// </summary>
@@ -83,4 +84,5 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<string> ChatHighlightsColor =
         CVarDef.Create("chat.highlights_color", "#17FFC1FF", CVar.CLIENTONLY | CVar.ARCHIVE, "The color in which the highlights will be displayed.");
+    // Harmony - end of chat highlighting
 }
