@@ -403,7 +403,6 @@ public abstract class BaseOptionCVar<TValue> : BaseOption
     }
 }
 
-// Harmony - start of chat highlighting
 /// <summary>
 /// Implementation of a CVar option that simply corresponds with a <see cref="CheckBox"/>.
 /// </summary>
@@ -534,6 +533,7 @@ public sealed class OptionSliderFloatCVar : BaseOptionCVar<float>
     }
 }
 
+// Harmony - start of chat highlighting
 /// <summary>
 /// Implementation of a CVar option that simply corresponds with a string <see cref="OptionColorSlider"/>.
 /// </summary>
