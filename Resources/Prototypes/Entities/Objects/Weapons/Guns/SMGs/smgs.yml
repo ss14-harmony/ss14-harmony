@@ -123,7 +123,7 @@
   name: Drozd
   parent: [BaseWeaponSubMachineGun, BaseRestrictedContraband]
   id: WeaponSubMachineGunDrozd
-  description: An excellent fully automatic Heavy SMG.
+  description: An excellent burst-fire SMG with a built-in counterweight system to negate recoil for one-handed fire. Uses .35 auto ammo. # Harmony change: drozd description previously called it fully automatic SMG.
   components:
     - type: Sprite
       sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
@@ -135,8 +135,8 @@
     - type: Clothing
       sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
     - type: Gun
-      minAngle: 2
-      maxAngle: 16
+      minAngle: 2 # Harmony change: drozd one-handed accuracy is it's full accuracy
+      maxAngle: 16 # Harmony change: drozd one-handed accuracy is it's full accuracy
       fireRate: 12
       burstFireRate: 12
       selectedMode: Burst
@@ -145,7 +145,7 @@
       availableModes:
         - Burst
       shotsPerBurst: 3
-      burstCooldown: 0.25
+      burstCooldown: 0.5 # Harmony change: drozd is fires slower with 0.5s between bursts instead of 0.25s
     - type: ItemSlots
       slots:
         gun_magazine:
