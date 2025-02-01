@@ -49,6 +49,7 @@
           Slash: 15
       mustBeEquippedToUse: true
       animation: WeaponArcClaw
+      wideAnimation: WeaponArcClaw
       soundSwing:
         path: /Audio/Weapons/punchmiss.ogg
         params:
