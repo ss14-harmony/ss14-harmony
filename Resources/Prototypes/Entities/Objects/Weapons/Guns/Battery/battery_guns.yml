@@ -140,7 +140,7 @@
   # Harmony Start
   - type: ProjectileBatteryAmmoProvider
     proto: BulletLaser
-    cost: 62.5
+    fireCost: 62.5
   # Harmony End
   - type: MagazineVisuals
     magState: mag
