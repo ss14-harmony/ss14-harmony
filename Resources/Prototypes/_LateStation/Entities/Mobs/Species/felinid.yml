@@ -1,0 +1,85 @@
+- type: entity
+  name: Urist McFelinid
+  parent: BaseMobSpeciesOrganic
+  id: MobFelinidBase
+  abstract: true
+  components:
+  - type: Hunger
+  - type: Thirst
+  - type: Icon
+    sprite: Mobs/Species/Human/parts.rsi
+    state: full
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5
+  - type: HumanoidAppearance
+    species: Felinid
+  - type: Body
+    prototype: Felinid
+  - type: Damageable
+    damageModifierSet: Felinid
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 5
+  - type: Speech
+    speechSounds: Alto
+    allowedEmotes:
+    - Hiss
+    - Meow
+    - Mew
+    - Growl
+    - Purr
+  - type: DamageOnHighSpeedImpact # Landing on all fours!
+    damage:
+      types:
+        Blunt: 1
+  - type: Stamina
+  - type: TypingIndicator
+    proto: felinid
+  - type: Vocal
+    wilhelm: "/Audio/_LateStation/Voice/Felinid/cat_wilhelm.ogg"
+    sounds:
+      Male: MaleFelinid
+      Female: FemaleFelinid
+      Unsexed: MaleFelinid
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+    reactions:
+    - reagents: [ Water, SpaceCleaner ]
+      methods: [ Touch ]
+      effects:
+      - !type:WashCreamPieReaction
+    - reagents: [ Water ]
+      methods: [ Touch ]
+      effects:
+      - !type:Emote
+        emote: Scream
+        probability: 0.2
+  - type: Inventory
+    speciesId: Felinid
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+
+- type: entity
+  save: false
+  name: Urist McFelinid
+  parent: MobHumanDummy
+  id: MobFelinidDummy
+  categories: [ HideSpawnMenu ]
+  description: A dummy felinid meant to be used in character setup.
+  components:
+  - type: HumanoidAppearance
+    species: Felinid
