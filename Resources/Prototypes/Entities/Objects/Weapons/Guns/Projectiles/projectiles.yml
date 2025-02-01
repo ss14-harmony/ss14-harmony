@@ -224,6 +224,8 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
+        #- Impassable
+        #- BulletImpassable
         - Opaque # Harmony Change
       fly-by: *flybyfixture
   - type: Ammo
@@ -263,6 +265,8 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
+        #- Impassable
+        #- BulletImpassable
         - Opaque # Harmony Change
       fly-by: *flybyfixture
   - type: Ammo
@@ -932,6 +936,8 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
+        #- Impassable
+        #- BulletImpassable
         - Opaque # Harmony Change
       fly-by: *flybyfixture
   - type: Ammo
@@ -1007,6 +1013,8 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
+        #- Impassable
+        #- BulletImpassable
         - Opaque # Harmony Change
       fly-by: *flybyfixture
   - type: Ammo
@@ -1015,45 +1023,6 @@
     damage:
       types:
         Heat: 17 # Harmony Change
-
-# Harmony Start
-- type: entity
-  name: laser bolt
-  id: BulletLaserSmall
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Reflective
-    reflective:
-    - Energy
-  - type: FlyBySound
-    sound:
-      collection: EnergyMiss
-      params:
-        volume: 5
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-    layers:
-    - state: heavylaser
-      shader: unshaded
-  - type: Physics
-  - type: Fixtures
-    fixtures:
-      projectile:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.15,-0.3,0.15,0.3"
-        hard: false
-        mask:
-        - Opaque # Harmony Change
-      fly-by: *flybyfixture
-  - type: Ammo
-  - type: Projectile
-    impactEffect: BulletImpactEffectOrangeDisabler
-    damage:
-      types:
-        Heat: 14
-# Harmony End
 
 - type: entity
   name: wide laser barrage
