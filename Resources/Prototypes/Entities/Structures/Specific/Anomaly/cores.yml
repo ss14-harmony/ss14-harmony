@@ -29,6 +29,7 @@
   - type: Tag
     tags:
     - ForceableFollow
+    - AnomCore # harmony change. used for construction
   - type: AnomalyCore
     timeToDecay: 600
     startPrice: 10000

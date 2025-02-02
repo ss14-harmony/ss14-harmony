@@ -19,3 +19,5 @@ guide-entry-rules-harmony-s7 = S7
 guide-entry-rules-harmony-s8 = S8
 guide-entry-rules-harmony-s9 = S9
 guide-entry-rules-harmony-s10 = S10
+
+guide-entry-golems = Golems

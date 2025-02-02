@@ -1,0 +1,228 @@
+﻿- type: entity
+  parent: [BaseItem]
+  abstract: true
+  id: BaseGolemCore
+  name: The base golem core
+  description: Got to make this because syndicate contraband
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Devices/Golemshell.rsi
+    layers:
+    - state: Shell
+  - type: UserInterface
+    interfaces:
+      enum.GhostRoleRadioUiKey.Key:
+        type: GhostRoleRadioBoundUserInterface
+  - type: ActivatableUI
+    key: enum.GhostRoleRadioUiKey.Key
+
+
+- type: entity
+  parent: BaseGolemCore
+  id: GolemCoreSteel
+  name: Steel Core
+  description: Call in your creation.
+  components:
+  - type: Sprite
+    color: "#aaaaaa"
+    colorHex: "#aaaaaa"
+  - type: GhostRole
+    name: ghost-role-steel-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: SteelGolem
+  - type: Construction
+    graph: GolumCoreGraph
+    node: SteelCore
+
+- type: entity
+  parent: BaseGolemCore
+  id: GolemCoreUranium
+  name: Uranium Core
+  description: Call in your creation.
+  components:
+  - type: Sprite
+    color: "#77ff00"
+    colorHex: "#77ff00"
+  - type: GhostRole
+    name: ghost-role-uranium-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: UraniumGolem
+  - type: Construction
+    graph: GolumCoreGraph
+    node:  UraniumCore
+
+- type: entity
+  parent: BaseGolemCore
+  id: GolemCorePlasma
+  name: Plasma Core
+  description: Call in your creation.
+  components:
+  - type: Sprite
+    color: "#aa33dd"
+    colorHex: "#aa33dd"
+  - type: GhostRole
+    name: ghost-role-plasma-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: PlasmaGolem
+  - type: Construction
+    graph: GolumCoreGraph
+    node: PlasmaCore
+
+- type: entity
+  parent: BaseGolemCore
+  id: GolemCoreAdamantium
+  name: Adamantium Core
+  description: Call in your creation.
+  components:
+  - type: Sprite
+    color: "#44eedd"
+    colorHex: "##44eedd"
+  - type: GhostRole
+    name: ghost-role-adamantium-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: AdamantiumGolem
+  - type: Construction
+    graph: GolumCoreGraph
+    node: BaseCore
+
+- type: entity
+  parent: BaseGolemCore
+  id: GolemCoreGlass
+  name: Glass Core
+  description: Call in your creation.
+  components:
+  - type: Sprite
+    color: "#5a96b4BF"
+    colorHex: "#5a96b4BF"
+  - type: GhostRole
+    name: ghost-role-glass-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: GlassGolem
+  - type: Construction
+    graph: GolumCoreGraph
+    node: GlassCore
+
+- type: entity
+  parent: BaseGolemCore
+  id: GolemCoreGold
+  name: Gold Core
+  description: Call in your creation.
+  components:
+  - type: Sprite
+    color: "#cccc00"
+    colorHex: "#cccc00"
+  - type: GhostRole
+    name: ghost-role-gold-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: GoldGolem
+  - type: Construction
+    graph: GolumCoreGraph
+    node: GoldCore
+
+- type: entity
+  parent: BaseGolemCore
+  id: GolemCoreSilver
+  name: Silver Core
+  description: Call in your creation.
+  components:
+  - type: Sprite
+    color: "#dddddd"
+    colorHex: "#dddddd"
+  - type: GhostRole
+    name: ghost-role-silver-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: SilverGolem
+  - type: Construction
+    graph: GolumCoreGraph
+    node: SilverCore
+
+- type: entity
+  parent: BaseGolemCore
+  id: GolemCoreDiamond
+  name: Diamond Core
+  description: Call in your creation.
+  components:
+  - type: Sprite
+    color: "#00ffff"
+    colorHex: "#00ffff"
+  - type: GhostRole
+    name: ghost-role-diamond-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: DiamondGolem
+  - type: Construction
+    graph: GolumCoreGraph
+    node: DiamondCore
+
+- type: entity
+  parent: BaseGolemCore
+  id: GolemCoreBananium
+  name: Bananium Core
+  description: Do you think god stays in heaven because he, too, lives in fear of what science creates.
+  components:
+  - type: Sprite
+    color: "#ffff00"
+    colorHex: "#ffff00"
+  - type: GhostRole
+    name: ghost-role-bananium-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: BananiumGolem
+  - type: Construction
+    graph: GolumCoreGraph
+    node: BananiumCore
+
+- type: entity
+  parent: BaseGolemCore
+  id: GolemCorePlasteel
+  name: Plasteel Core
+  description: Call in your creation.
+  components:
+  - type: Sprite
+    color: "#bbbbbb"
+    colorHex: "#bbbbbb"
+  - type: GhostRole
+    name: ghost-role-plassteel-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: PlasteelGolem
+  - type: Construction
+    graph: GolumCoreGraph
+    node: PlasteelCore

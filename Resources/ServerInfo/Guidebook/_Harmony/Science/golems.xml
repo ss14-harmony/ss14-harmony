@@ -1,0 +1,15 @@
+﻿<Document>
+  # Golems
+
+<Box>
+  <GuideEntityEmbed Entity="UraniumGolem"/>
+  <GuideEntityEmbed Entity="GolemCoreUranium"/>
+  <GuideEntityEmbed Entity="SheetUranium"/>
+</Box>
+  Golems are servants to their creators, that are immune to spacing and fire, having special properties depending on the material you use to make them.
+
+  ## Steps to making a Golem
+  - First, make a base Golem core from a anomaly core in the construction menu
+  - Then, add ten material of your choice to make a custom golem core.
+  - Interact with it to call out for a host to take its body.
+  </Document>

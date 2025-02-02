@@ -1,0 +1,253 @@
+﻿- type: entity
+  save: false
+  name: Urist McRocky
+  description: A being made up of solid matter
+  parent: BaseMobSpecies
+  id: BaseMobGolem
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: GolemSpecies
+  - type: Icon
+    sprite: _Harmony/Mobs/Species/Golem.rsi
+    state: full
+  - type: Sprite
+    color: "#aaaaaa"
+    colorHex: "#aaaaaa"
+  - type: ActiveRadio
+    channels:
+    - Golem
+  - type: IntrinsicRadioReceiver
+  - type: Inventory
+    templateId: golem
+  - type: Body
+    prototype: Golem
+    requiredLegs: 2
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Golem
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#555555AA"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    damage:
+      types:
+        Blunt: 10
+  - type: TransferMindOnGib
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:GibBehavior { }
+  - type: ZombieImmune
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 130
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MovementSpeedModifier
+    baseSprintSpeed : 0.9
+
+- type: entity
+  id: BaseAdamantiumGolem
+  name: Golem McAdam
+  parent: MobGolemPerson
+  abstract: true
+  components:
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Golem
+  - type: ActiveRadio
+    channels:
+    - Golem
+  - type: Sprite
+    color: "#44eedd"
+    colorHex: "##44eedd"
+
+
+- type: entity
+  id: BaseUraniumGolem
+  name: Golem McRaddy
+  parent: MobGolemPerson
+  abstract: true
+  components:
+  - type: Sprite
+    color: "#77ff00"
+    colorHex: "#77ff00"
+  - type: RadiationSource
+    intensity: 2
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+    damage:
+      types:
+        Heat: 5
+        Radiation: 5
+
+- type: entity
+  id: BasePlasmaGolem
+  name: Golem McBoom
+  parent: [MobGolemPerson, MobFlammable, MobBloodstream]
+  abstract: true
+  components:
+  - type: Sprite
+    color: "#aa33dd"
+    colorHex: "#aa33dd"
+  - type: Flammable
+    fireSpread: true
+    alwaysCombustible: true
+    damage:
+      types:
+        Heat: 6
+  - type: Bloodstream
+    bloodReagent: Plasma
+
+- type: entity
+  id: BaseGlassGolem
+  name: Golem McAss
+  parent: MobGolemPerson
+  abstract: true
+  components:
+  - type: Sprite
+    color: "#5a96b4BF"
+    colorHex: "#5a96b4BF"
+  - type: Reflect
+    reflectProb: 1
+    reflects: Energy
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: GlassGolem
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 5
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmack
+
+- type: entity
+  id: BaseGoldGolem
+  name: Golem McGold
+  parent: MobGolemPerson
+  abstract: true
+  components:
+  - type: Sprite
+    color: "#cccc00"
+    colorHex: "#cccc00"
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0.98
+    baseSprintSpeed: 0.98
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: GoldGolem
+
+- type: entity
+  id: BaseSilverGolem
+  name: Golem McSilver
+  parent: MobGolemPerson
+  abstract: true
+  components:
+  - type: Sprite
+    color: "#fffcfc"
+    colorHex: "#fffcfc"
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit:
+      collection: Punch
+    damage:
+      types:
+        Blunt: 15
+        Slash: 5
+
+- type: entity
+  id: BaseDiamondGolem
+  name: Golem McShiny
+  parent: MobGolemPerson
+  abstract: true
+  components:
+  - type: Sprite
+    color: "#00ffff"
+    colorHex: "#00ffff"
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: DiamondGolem
+
+- type: entity
+  id: BaseBananiumGolem
+  name: Golem McgodwhydidImakethis
+  parent: [MobGolemPerson, MobBloodstream]
+  abstract: true
+  components:
+    - type: Sprite
+      color: "#ffff00"
+      colorHex: "#ffff00"
+    - type: Slippery
+      paralyzeTime: 2.0
+      launchForwardsMultiplier: 6.0
+    - type: Speech
+      speechSounds: Clown
+      speechVerb:   DefaultExclamation
+    - type: Bloodstream
+      bloodReagent: SpaceLube
+
+- type: entity
+  id: BasePlasteelGolem
+  name: Golem McStrong
+  parent: MobGolemPerson
+  abstract: true
+  components:
+  - type: Sprite
+    color: "#bbbbbb"
+    colorHex: "#bbbbbb"
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0.75
+    baseSprintSpeed: 0.75
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit:
+      collection: Punch
+    damage:
+      types:
+        Blunt: 25
+
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: MobGolemPersonDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HumanoidAppearance
+    species: GolemSpecies
