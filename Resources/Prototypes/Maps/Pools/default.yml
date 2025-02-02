@@ -9,7 +9,8 @@
   - Elkridge
   - Fland
   #- Gate
-  - Loop
+  # - Loop
+  # Harmony, commented out due to technical issues  
   - Marathon
   - Meta
   - Oasis
