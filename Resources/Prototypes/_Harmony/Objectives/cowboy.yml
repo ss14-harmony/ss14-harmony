@@ -1,0 +1,24 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseCowboyObjective
+  components:
+  - type: Objective
+    # difficulty isn't used since all objectives are picked
+    difficulty: 1
+    issuer: objective-issuer-cowboy
+  - type: RoleRequirement
+    roles:
+      mindRoles:
+      - CowboyRole
+
+- type: entity
+  parent: [ BaseCowboyObjective, BaseSurviveObjective ]
+  id: CowboySurviveObjective
+  name: Survive
+  description: Live to tell the tale.
+  components:
+  - type: Objective
+    icon:
+      sprite: Clothing/Head/Hats/cowboyhatbountyhunter.rsi
+      state: icon

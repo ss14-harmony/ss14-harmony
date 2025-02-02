@@ -1,0 +1,15 @@
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointCowboy
+  components:
+  - type: GhostRole
+    name: ghost-role-information-cowboy-name
+    description: ghost-role-information-cowboy-description
+    rules: ghost-role-information-cowboy-rules
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Objects/Weapons/Guns/Revolvers/python.rsi
+      state: icon

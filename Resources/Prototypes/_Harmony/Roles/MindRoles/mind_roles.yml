@@ -1,0 +1,10 @@
+# Cowboy
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleCowboy
+# description: mind-role-cowboy-description
+  components:
+  - type: MindRole
+    exclusiveAntag: true
+    antagPrototype: Cowboy
+  - type: CowboyRole
