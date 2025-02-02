@@ -1,0 +1,5 @@
+- type: soundCollection
+  id: FootstepHeelsHarmony
+  files:
+  - /Audio/_Harmony/Effects/Footsteps/heels1.ogg
+  - /Audio/_Harmony/Effects/Footsteps/heels2.ogg

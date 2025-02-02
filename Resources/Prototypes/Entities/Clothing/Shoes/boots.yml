@@ -60,7 +60,7 @@
 - type: entity
   parent: ClothingShoesMilitaryBase
   id: ClothingShoesHighheelBoots
-  name: high-heeled boots
+  name: jackheels # Harmony Change: Updates the name of the high-heeled boots
   description: Snazy boots for when you want to be stylish, yet prepared.
   components:
   - type: MeleeWeapon
@@ -71,6 +71,15 @@
     sprite: Clothing/Shoes/Boots/highheelboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/highheelboots.rsi
+  - type: FootstepModifier
+# Start of Harmony Change: Added Unique sounds and Adds the Jackboots Slowdown Modifier
+    footstepSoundCollection:
+      collection: FootstepHeelsHarmony
+      params:
+        variation: 0.09
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
+# End of Harmony Change
 
 - type: entity
   parent: [ ClothingShoesMilitaryBase ]
