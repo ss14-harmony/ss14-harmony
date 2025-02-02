@@ -4,6 +4,12 @@ uplink-syndicate-id-desc = A sleek black-and-red ID card with embossed Syndicate
 uplink-smuggler-satchel-name = Smuggler's Satchel
 uplink-smuggler-satchel-desc = A satchel that can fit under station tiles.
 
+uplink-reinforcement-radio-cyborg-saboteur-name = Syndicate Saboteur Borg
+uplink-reinforcement-radio-cyborg-saboteur-desc = A Waffle Co. borg, capable of dishing out damage while cutting power to the station.
+
+uplink-reinforcement-radio-cyborg-medical-name = Syndicate Medical Borg
+uplink-reinforcement-radio-cyborg-medical-desc = A combination of Gorlex and Interydyne technology, this borg will be the best medic you have ever seen. Quality of competence varies.
+
 uplink-pizza-bomb-name = Nefarious Pizza bomb
 uplink-pizza-bomb-desc = This tech, first pioneered by terrorists, now is used by the syndicate for eliminating high value targets
 

@@ -1,0 +1,75 @@
+﻿- type: entity
+  id: SyndicateBorgModuleTreatment # todo: reuse when med refractor is finished
+  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule, BaseSyndicateContraband ]
+  name: Syndicate treatment and diagnosis module
+  components:
+  - type: Sprite
+    layers:
+    - state: medical
+    - state: icon-diagnosis
+  - type: ItemBorgModule
+    items:
+    - HandheldHealthAnalyzerUnpowered
+    - LargeBeaker
+    - LargeBeaker
+    - LargeBeaker
+    - BorgDropper
+    - SyndiHypo
+
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: diagnosis-module }
+- type: entity
+  id: BorgModuleSyndicateDefib
+  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule, BaseSyndicateContraband ]
+  name: Syndicate Revival Cyborg Module
+  components:
+  - type: Sprite
+    layers:
+    - state: medical
+    - state: icon-defib
+  - type: ItemBorgModule
+    items:
+    - DefibrillatorSyndicateUnpowered
+    - OintmentAdvanced10
+    - BrutepackAdvanced10
+    - Gauze10Lingering
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: defib-module }
+
+- type: entity
+  id: BorgModuleBulldog
+  parent: [ BaseBorgModuleSyndicateAssault, BaseProviderBorgModule, BaseSyndicateContraband ]
+  name: Bulldog ROW cyborg module
+  description: A module that comes with a Bulldog.
+  components:
+  - type: Sprite
+    layers:
+    - state: syndicate
+    - state: icon-syndicate
+  - type: ItemBorgModule
+    items:
+    - WeaponShotgunBulldogRow
+    - PinpointerSyndicateNuclear
+    - EnergyDaggerLoud
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-l6c-module }
+
+
+- type: entity
+  id: BorgModuleSyndicateTool
+  parent: [ BaseBorgModuleEngineering, BaseProviderBorgModule ]
+  name: Syndicate Tool Module
+  components:
+  - type: Sprite
+    layers:
+    - state: engineering
+    - state: icon-tools-adv
+  - type: ItemBorgModule
+    items:
+    - JawsOfLife
+    - PowerDrill
+    - Multitool
+    - WelderExperimental
+    - Emag
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-tools-module }

@@ -1,0 +1,30 @@
+﻿- type: entity
+  parent: ReinforcementRadio
+  id: ReinforcementRadioSyndicateCyborgMedical # Reinforcement radio exclusive to nukeops uplink
+  name: syndicate medical cyborg reinforcement radio
+  description: A medical agent of chaos, ready to be summoned instantly!
+  components:
+  - type: GhostRole
+    name: uplink-reinforcement-radio-cyborg-medical-name
+    description: uplink-reinforcement-radio-cyborg-medical-desc
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: PlayerBorgSyndicateMedicalBattery
+
+- type: entity
+  parent: ReinforcementRadio
+  id: ReinforcementRadioSyndicateCyborgSaboteur
+  name: syndicate saboteur cyborg reinforcement radio
+  description: Call in a stealthy engineering borg, gifted to the you by waffle CO.
+  components:
+  - type: GhostRole
+    name: uplink-reinforcement-radio-cyborg-saboteur-name
+    description: uplink-reinforcement-radio-cyborg-saboteur-desc
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: PlayerBorgSyndicateSaboteurBattery
+    selectablePrototypes: ["SaboteurBorgFake", "SaboteurBorg"]
