@@ -35,6 +35,15 @@
   - !type:ListingLimitedStockCondition
     stock: 1
 
+- type: listing
+  id: UplinkSyndicateBug
+  name: uplink-bug-name
+  description: uplink-bug-desc
+  productEntity: Syndiebug
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkDeception
 # Disruption
 # Allies
 # Implants

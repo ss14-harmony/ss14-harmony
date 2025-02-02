@@ -4,6 +4,9 @@ uplink-syndicate-id-desc = A sleek black-and-red ID card with embossed Syndicate
 uplink-smuggler-satchel-name = Smuggler's Satchel
 uplink-smuggler-satchel-desc = A satchel that can fit under station tiles.
 
+uplink-bug-name = Listening Bug
+uplink-bug-desc = A small device that can listen in on important conversations.
+
 uplink-pizza-bomb-name = Nefarious Pizza bomb
 uplink-pizza-bomb-desc = This tech, first pioneered by terrorists, now is used by the syndicate for eliminating high value targets
 

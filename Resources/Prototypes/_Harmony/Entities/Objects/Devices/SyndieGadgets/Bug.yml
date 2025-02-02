@@ -1,0 +1,23 @@
+﻿
+- type: entity
+  name: Listening Bug
+  description: Its watching you.
+  id: Syndiebug
+  parent: [BaseItem, BaseSyndicateContraband]
+  components:
+  - type: TelecomExempt
+  - type: RadioMicrophone
+    unobstructedRequired: true
+    listenRange: 5
+    toggleOnInteract: true
+    broadcastChannel: Syndicate
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeySyndie
+  - type: Sprite
+    noRot: false
+    drawdepth: SmallObjects
+    sprite: _Harmony/Objects/Devices/ListeningBug.rsi
+    layers:
+    - state: icon
