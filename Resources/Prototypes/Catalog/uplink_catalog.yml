@@ -560,9 +560,9 @@
   productEntity: HypopenBox
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 2 #Harmony Change: FUCK NOCTURINE -- Makes Hypos cheaper
   cost:
-    Telecrystal: 6
+    Telecrystal: 4 #Harmony Change: FUCK NOCTURINE -- Makes Hypos cheaper
   categories:
   - UplinkChemicals
 
@@ -614,18 +614,20 @@
       components:
       - SurplusBundle
 
-- type: listing
-  id: UplinkNocturineChemistryBottle
-  name: uplink-nocturine-chemistry-bottle-name
-  description: uplink-nocturine-chemistry-bottle-desc
-  productEntity: NocturineChemistryBottle
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 3
-  cost:
-    Telecrystal: 6
-  categories:
-  - UplinkChemicals
+# Start Harmony Change: FUCK NOCTURINE -- Removes Nocturine from the Syndicate Uplink
+#- type: listing
+#  id: UplinkNocturineChemistryBottle
+#  name: uplink-nocturine-chemistry-bottle-name
+#  description: uplink-nocturine-chemistry-bottle-desc
+#  productEntity: NocturineChemistryBottle
+#  discountCategory: usualDiscounts
+#  discountDownTo:
+#    Telecrystal: 3
+#  cost:
+#    Telecrystal: 6
+#  categories:
+#  - UplinkChemicals
+# End Harmony Change
 
 - type: listing
   id: UplinkCombatMedkit
