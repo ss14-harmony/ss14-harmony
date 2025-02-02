@@ -18,6 +18,7 @@
     - id: RubberStampDenied
     - id: RubberStampQm
     - id: AstroNavCartridge
+    - id: ClothingEyesGlassesSunglasses # Harmony
 
 - type: entity
   id: LockerQuarterMasterFilled
