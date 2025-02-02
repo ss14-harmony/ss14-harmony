@@ -80,12 +80,17 @@
   name: jetpack
   suffix: Empty
   components:
+# Start of Harmony Change: Updates Sprite Pathing
+  - type: Item
+    sprite: _Harmony/Objects/Tanks/Jetpacks/blue.rsi
   - type: Sprite
-    sprite: Objects/Tanks/Jetpacks/blue.rsi
+    sprite: _Harmony/Objects/Tanks/Jetpacks/blue.rsi
   - type: Clothing
-    sprite: Objects/Tanks/Jetpacks/blue.rsi
+    sprite: _Harmony/Objects/Tanks/Jetpacks/blue.rsi
+  # End of Harmony Change
     slots:
       - Back
+      - suitStorage # Harmony Change: Makes Jetpacks Wearable on the Suit Storage Slot
 
 # Filled blue
 - type: entity
@@ -111,14 +116,17 @@
   name: jetpack
   suffix: Empty
   components:
+# Start of Harmony Change: Updates Sprite Pathing
   - type: Item
-    sprite: Objects/Tanks/Jetpacks/black.rsi
+    sprite: _Harmony/Objects/Tanks/Jetpacks/black.rsi
   - type: Sprite
-    sprite: Objects/Tanks/Jetpacks/black.rsi
+    sprite: _Harmony/Objects/Tanks/Jetpacks/black.rsi
   - type: Clothing
-    sprite: Objects/Tanks/Jetpacks/black.rsi
+    sprite: _Harmony/Objects/Tanks/Jetpacks/black.rsi
+# End of Harmony Change
     slots:
       - Back
+      - suitStorage # Harmony Change: Makes Jetpacks Wearable on the Suit Storage Slot
 
 # Filled black
 - type: entity
@@ -224,14 +232,17 @@
   name: security jetpack
   suffix: Empty
   components:
+# Start of Harmony Change: Updates Sprite Pathing
   - type: Item
-    sprite: Objects/Tanks/Jetpacks/security.rsi
+    sprite: _Harmony/Objects/Tanks/Jetpacks/security.rsi
   - type: Sprite
-    sprite: Objects/Tanks/Jetpacks/security.rsi
+    sprite: _Harmony/Objects/Tanks/Jetpacks/security.rsi
   - type: Clothing
-    sprite: Objects/Tanks/Jetpacks/security.rsi
+    sprite: _Harmony/Objects/Tanks/Jetpacks/security.rsi
+# End of Harmony Change
     slots:
       - Back
+      - suitStorage # Harmony Change: Makes Jetpacks Wearable on the Suit Storage Slot
 
 #Filled security
 - type: entity
