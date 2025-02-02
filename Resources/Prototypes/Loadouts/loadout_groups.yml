@@ -1204,6 +1204,7 @@
   loadouts:
   - MedicalDoctorJumpsuit
   - MedicalDoctorJumpskirt
+  - LaissezFaireSuit # Harmony
   - SeniorPhysicianJumpsuit
   - SeniorPhysicianJumpskirt
   - MedicalBlueScrubs
@@ -1232,6 +1233,7 @@
   name: loadout-group-medical-doctor-shoes
   loadouts:
   - WhiteShoes
+  - BlackShoes # Harmony
   - MedicalWinterBoots
 
 - type: loadoutGroup
