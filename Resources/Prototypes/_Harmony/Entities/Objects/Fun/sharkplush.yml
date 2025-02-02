@@ -1,0 +1,15 @@
+- type: entity
+  parent: [PlushieSharkBlue, BaseRestrictedContraband]
+  id: PlushieSharkPatrolHarmony
+  name: security patrol shark
+  description: A cadet's best friend!
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Fun/patrol_shark.rsi
+    state: red
+  - type: Item
+    heldPrefix: red
+  - type: Tag
+    tags:
+      - PlushieSharkPatrolHarmony
+      - Payload

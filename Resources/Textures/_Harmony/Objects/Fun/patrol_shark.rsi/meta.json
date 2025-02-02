@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "Take from commit https://github.com/space-wizards/space-station-14/pull/20123/commits/2f892ebe43b22b96806575d2ef98c84744f28d24 and recolored by BoskiYourk for use in Harmony.",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "red"
+      },
+      {
+        "name": "red-inhand-left",
+        "directions": 4
+      },
+      {
+        "name": "red-inhand-right",
+        "directions": 4
+      }
+    ]
+  }
