@@ -17,6 +17,10 @@ public sealed partial class AccessibilityTab : Control
         Control.AddOptionCheckBox(CCVars.ReducedMotion, ReducedMotionCheckBox);
         Control.AddOptionPercentSlider(CCVars.ChatWindowOpacity, ChatWindowOpacitySlider);
         Control.AddOptionPercentSlider(CCVars.ScreenShakeIntensity, ScreenShakeIntensitySlider);
+        // Harmony - start of chat highlighting, remove when chat refactor is merged
+        Control.AddOptionCheckBox(HCCVars.ChatAutoFillHighlights, AutoFillHighlightsCheckBox);
+        Control.AddOptionColorSlider(HCCVars.ChatHighlightsColor, HighlightsColorSlider);
+        // Harmony - end of chat highlighting
 
         Control.Initialize();
     }
