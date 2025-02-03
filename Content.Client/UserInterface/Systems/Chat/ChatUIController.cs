@@ -265,14 +265,14 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         _config.OnValueChanged(CCVars.ChatWindowOpacity, OnChatWindowOpacityChanged);
 
         // Harmony - start of chat highlighting, remove when chat refactor is merged
-        _config.OnValueChanged(CCVars.ChatAutoFillHighlights, (value) => { _autoFillHighlightsEnabled = value; });
-        _autoFillHighlightsEnabled = _config.GetCVar(CCVars.ChatAutoFillHighlights);
+        _config.OnValueChanged(HCCVars.ChatAutoFillHighlights, (value) => { _autoFillHighlightsEnabled = value; });
+        _autoFillHighlightsEnabled = _config.GetCVar(HCCVars.ChatAutoFillHighlights);
 
-        _config.OnValueChanged(CCVars.ChatHighlightsColor, (value) => { _highlightsColor = value; });
-        _highlightsColor = _config.GetCVar(CCVars.ChatHighlightsColor);
+        _config.OnValueChanged(HCCVars.ChatHighlightsColor, (value) => { _highlightsColor = value; });
+        _highlightsColor = _config.GetCVar(HCCVars.ChatHighlightsColor);
 
         // Load highlights if any were saved.
-        string highlights = _config.GetCVar(CCVars.ChatHighlights);
+        string highlights = _config.GetCVar(HCCVars.ChatHighlights);
 
         if (!string.IsNullOrEmpty(highlights))
         {
@@ -322,8 +322,8 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
             return;
 
         var (_, job, _, _, entityName) = data;
-        
-        // If the character has a normal name (eg. "Name Surname" and not "Name Initial Surname" or a particular species name) 
+
+        // If the character has a normal name (eg. "Name Surname" and not "Name Initial Surname" or a particular species name)
         // subdivide it so that the name and surname individually get highlighted.
         if (entityName.Count(c => c == ' ') == 1)
             entityName = entityName.Replace(' ', '\n');
@@ -332,7 +332,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
 
         // Convert the job title to kebab-case and use it as a key for the loc file.
         string jobKey = job.Replace(' ', '-').ToLower();
-        
+
         if (Loc.TryGetString($"highlights-{jobKey}", out var jobMatches))
             newHighlights += '\n' + jobMatches.Replace(", ", "\n");
 
@@ -506,7 +506,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     private void OnAttachedChanged(EntityUid uid)
     {
         UpdateChannelPermissions();
-        
+
         // Harmony - start of chat highlighting, remove when chat refactor is merged
         // If auto highlights are enabled generate a request for new character info
         // that will be used to determine the highlights.
@@ -678,10 +678,10 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     public void UpdateHighlights(string highlights)
     {
         // Do nothing if the provided highlighs are the same as the old ones.
-        if (_config.GetCVar(CCVars.ChatHighlights).Equals(highlights, StringComparison.CurrentCultureIgnoreCase))
+        if (_config.GetCVar(HCCVars.ChatHighlights).Equals(highlights, StringComparison.CurrentCultureIgnoreCase))
             return;
 
-        _config.SetCVar(CCVars.ChatHighlights, highlights);
+        _config.SetCVar(HCCVars.ChatHighlights, highlights);
         _config.SaveToFile();
 
         // Replace any " character with a whole-word regex tag,

@@ -48,7 +48,7 @@ public sealed partial class ChannelFilterPopup : Popup
 
         // Load highlights if any were saved.
         var cfg = IoCManager.Resolve<IConfigurationManager>();
-        string highlights = cfg.GetCVar(CCVars.ChatHighlights);
+        string highlights = cfg.GetCVar(HCCVars.ChatHighlights);
 
         if (!string.IsNullOrEmpty(highlights))
         {
