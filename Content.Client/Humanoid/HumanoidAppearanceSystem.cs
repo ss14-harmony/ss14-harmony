@@ -296,7 +296,13 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 sprite.LayerMapSet(layerId, layer);
                 sprite.LayerSetSprite(layerId, rsi);
             }
-
+                // Harmony edit begin - check if there's a shader defined in the markingPrototype's shader datafield, and if there is...
+                if (markingPrototype.Shader != null)
+                {
+                // use spriteComponent's layersetshader fucntion to set the layer's shader to that which is specified.
+                    sprite.LayerSetShader(layerId, markingPrototype.Shader);    
+                }
+                // Harmony edit end
             sprite.LayerSetVisible(layerId, visible);
 
             if (!visible || setting == null) // this is kinda implied

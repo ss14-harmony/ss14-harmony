@@ -1,0 +1,483 @@
+- type: marking
+  id: VoxCocktail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxcocktail1
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxcocktail2
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxcocktail3
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxcocktail4
+
+- type: marking
+  id: VoxTailBalled
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Vox ]
+  forcedColoring: true
+  followSkinColor: true
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxtailballed
+
+- type: marking
+  id: VoxTailSplit
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Vox ]
+  forcedColoring: true
+  followSkinColor: true
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxtailsplit
+
+- type: marking
+  id: VoxTailStripes
+  bodyPart: Chest
+  markingCategory: Overlay
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxtailstripes
+
+- type: marking
+  id: VoxLArmProsthetic
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxarmprostheticl
+
+- type: marking
+  id: VoxRArmProsthetic
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxarmprostheticr
+
+- type: marking
+  id: VoxBeakColor
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxbeakcolor
+
+- type: marking
+  id: VoxBeakSplit
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxbeaksplit1
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxbeaksplit2
+
+- type: marking
+  id: VoxBeakTipped
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxbeaktipped
+
+- type: marking
+  id: VoxChestPlumage
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxchestplumage
+
+- type: marking
+  id: VoxFootSpines
+  bodyPart: Tail
+  markingCategory: Overlay
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxfootspines
+
+- type: marking
+  id: VoxFootGradientLFoot
+  bodyPart: LFoot
+  markingCategory: Legs
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxfootgradientl1
+
+- type: marking
+  id: VoxFootGradientRFoot
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxfootgradientr1
+
+- type: marking
+  id: VoxLegGradientLLeg
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxfootgradientl2
+
+- type: marking
+  id: VoxLegGradientRLeg
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxfootgradientr2
+
+- type: marking
+  id: VoxHandGradientRHand
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxhandgradientr1
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxhandgradientr2
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxhandgradientr3
+
+- type: marking
+  id: VoxHandGradientLHand
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxhandgradientl1
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxhandgradientl2
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxhandgradientl3
+
+- type: marking
+  id: VoxHeadGradient
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxheadgradient1
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxheadgradient2
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxheadgradient3
+
+- type: marking
+  id: VoxTailBell
+  bodyPart: Tail
+  markingCategory: Overlay
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxtailbell1
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxtailbell2
+
+- type: marking
+  id: VoxTailBack
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Vox ]
+  forcedColoring: true
+  followSkinColor: true
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxtailcolorable
+
+- type: marking
+  id: VoxTailLantern
+  bodyPart: Tail
+  markingCategory: Overlay
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxtaillantern
+  shader: unshaded
+
+- type: marking
+  id: VoxTailSingleStripe
+  bodyPart: Chest
+  markingCategory: Overlay
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxtailsinglestripe
+
+- type: marking
+  id: VoxTailSmallPlume
+  bodyPart: Tail
+  markingCategory: Overlay
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxtailsmallplume
+
+- type: marking
+  id: VoxTailSpines
+  bodyPart: Tail
+  markingCategory: Overlay
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxtailspines
+
+- type: marking
+  id: VoxArmsStripesLHand
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxarmsstripesl
+
+- type: marking
+  id: VoxArmsStripesRHand
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxarmsstripesr
+
+- type: marking
+  id: VoxLegsStripesLLeg
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxlegsstripesl
+
+- type: marking
+  id: VoxLegsStripesRLeg
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxlegsstripesr
+
+- type: marking
+  id: VoxChains
+  bodyPart: Tail
+  markingCategory: Overlay
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxchains
+
+- type: marking
+  id: VoxSunAndMoon
+  bodyPart: Tail
+  markingCategory: Overlay
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxsunandmoon
+
+- type: marking
+  id: VoxCheeks
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxcheeks
+
+- type: marking
+  id: VoxBelly
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Vox ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: voxbelly
+
+- type: marking
+  id: ScarsVoxRoadrashLeftHead
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: roadrash_l_head
+
+- type: marking
+  id: ScarsVoxRoadrashRightHead
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: roadrash_r_head
+
+- type: marking
+  id: ScarsVoxBigslashLeftHead
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: bigslash_l_head
+
+- type: marking
+  id: ScarsVoxBigslashRightHead
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: bigslash_r_head
+
+- type: marking
+  id: ScarsVoxSlashLeftHead
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: slash_l_head
+
+- type: marking
+  id: ScarsVoxSlashRightHead
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: slash_r_head
+
+- type: marking
+  id: ScarsVoxClawTorso
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/vox.rsi
+    state: claw_torso
+

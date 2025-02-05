@@ -1,0 +1,55 @@
+- type: marking
+  id: DionaMossChest
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Diona ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Diona.rsi
+    state: dionamosschest
+    
+- type: marking
+  id: DionaMoonBloom
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Diona ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Diona.rsi
+    state: dionamoonbloom
+  shader: unshaded
+
+- type: marking
+  id: DionaBigFirefly
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Diona ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Diona.rsi
+    state: dionabigfirefly
+  shader: unshaded
+
+- type: marking
+  id: DionaFirefly
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Diona ]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Diona.rsi
+    state: dionafirefly
+  shader: unshaded
+
+- type: marking
+  id: DionaLivingNymph
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Diona ]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Diona.rsi
+    state: dionalivingnymph

@@ -1,0 +1,305 @@
+- type: marking
+  id: ChestCutHere
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian, Human, Dwarf, Arachnid]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: chest_cuthere
+
+- type: marking
+  id: ArmDollJointsTattooLeft
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Reptilian, Human, Dwarf, Arachnid]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: l_arm_doll
+
+- type: marking
+  id: ArmDollJointsTattooRight
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Reptilian, Human, Dwarf, Arachnid]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: r_arm_doll
+
+- type: marking
+  id: HandDollJointsTattooLeft
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Reptilian,  Human, Dwarf, Arachnid]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: l_hand_doll
+
+- type: marking
+  id: HandDollJointsTattooRight
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Reptilian, Human, Dwarf, Arachnid]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: r_hand_doll
+
+- type: marking
+  id: LegDollJointsTattooLeft
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Reptilian, Human, Dwarf, Arachnid]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: l_leg_doll
+
+- type: marking
+  id: LegDollJointsTattooRight
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Reptilian, Human, Dwarf, Arachnid]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: r_leg_doll
+
+- type: marking
+  id: ArmProstheticLeft
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Reptilian, Human, Dwarf, Arachnid]
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: arm_l_prosthetic
+
+- type: marking
+  id: ArmTwistingLeft
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Reptilian, Human, Dwarf, Arachnid]
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: arm_l_twisting
+
+- type: marking
+  id: ArmProstheticRight
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Reptilian, Human, Dwarf, Arachnid]
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: arm_r_prosthetic
+
+- type: marking
+  id: ArmTwistingRight
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Reptilian, Human, Dwarf, Arachnid]
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: arm_r_twisting
+
+- type: marking
+  id: ChestBackstabbed
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian, Human, Dwarf]
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: chest_backstabbed
+
+- type: marking
+  id: ChestTwistingLeft
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian, Human]
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: chest_l_twisting
+
+- type: marking
+  id: ChestTwistingRight
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian, Human]
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: chest_r_twisting
+
+- type: marking
+  id: ChestStar
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian, Human, Arachnid]
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: chest_star
+
+- type: marking
+  id: FootProstheticLeft
+  bodyPart: LFoot
+  markingCategory: Legs
+  speciesRestriction: [Reptilian, Human, Arachnid] 
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: foot_l_prosthetic
+
+- type: marking
+  id: FootProstheticRight
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Reptilian, Human, Arachnid]
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: foot_r_prosthetic
+
+- type: marking
+  id: HandProstheticLeft
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Reptilian, Human, Dwarf, Arachnid]
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: hand_l_prosthetic
+
+- type: marking
+  id: HandTwistingLeft
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Reptilian, Human, Dwarf, Arachnid]
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: hand_l_twisting
+
+- type: marking
+  id: HandProstheticRight
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Reptilian, Human, Dwarf, Arachnid]
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: hand_r_prosthetic
+
+- type: marking
+  id: HandTwistingRight
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Reptilian, Human, Dwarf, Arachnid]
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: hand_r_twisting
+
+- type: marking
+  id: TorsoIncision
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Reptilian, Human, Arachnid]
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: torso_incision
+
+- type: marking
+  id: FootDollJointsTattooLeft
+  bodyPart: LFoot
+  markingCategory: Legs
+  speciesRestriction: [Reptilian, Human, Dwarf, Arachnid]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: l_foot_doll
+
+- type: marking
+  id: FootDollJointsTattooRight
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Reptilian, Human, Dwarf, Arachnid]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/reptilian.rsi
+    state: r_foot_doll

@@ -1,0 +1,211 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Sprites by LandsharkRAWR,Drawn by Carousel for Impstation",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "roadrash_l_head",
+        "directions": 4
+      },
+      {
+        "name": "roadrash_r_head",
+        "directions": 4
+      },
+      {
+        "name": "bigslash_l_head",
+        "directions": 4
+      },
+      {
+        "name": "bigslash_r_head",
+        "directions": 4
+      },
+      {
+        "name": "slash_l_head",
+        "directions": 4
+      },
+      {
+        "name": "slash_r_head",
+        "directions": 4
+      },
+      {
+        "name": "claw_torso",
+        "directions": 4
+      },
+      {
+        "name": "voxcocktail1",
+        "directions": 4
+      },
+      {
+        "name": "voxcocktail2",
+        "directions": 4
+      },
+      {
+        "name": "voxcocktail3",
+        "directions": 4
+      },
+      {
+        "name": "voxcocktail4",
+        "directions": 4
+      },
+      {
+        "name": "voxtailstripes",
+        "directions": 4
+      },
+      {
+        "name": "voxarmprostheticl",
+        "directions": 4
+      },
+      {
+        "name": "voxarmprostheticr",
+        "directions": 4
+      },
+      {
+        "name": "voxbeakcolor",
+        "directions": 4
+      },
+      {
+        "name": "voxbeaksplit1",
+        "directions": 4
+      },
+      {
+        "name": "voxbeaksplit2",
+        "directions": 4
+      },
+      {
+        "name": "voxbeaktipped",
+        "directions": 4
+      },
+      {
+        "name": "voxchestplumage",
+        "directions": 4
+      },
+      {
+        "name": "voxfootspines",
+        "directions": 4
+      },
+      {
+        "name": "voxfootgradientl1",
+        "directions": 4
+      },
+      {
+        "name": "voxfootgradientl2",
+        "directions": 4
+      },
+      {
+        "name": "voxfootgradientr1",
+        "directions": 4
+      },
+      {
+        "name": "voxfootgradientr2",
+        "directions": 4
+      },
+      {
+        "name": "voxhandgradientl1",
+        "directions": 4
+      },
+      {
+        "name": "voxhandgradientl2",
+        "directions": 4
+      },
+      {
+        "name": "voxhandgradientl3",
+        "directions": 4
+      },
+      {
+        "name": "voxhandgradientr1",
+        "directions": 4
+      },
+      {
+        "name": "voxhandgradientr2",
+        "directions": 4
+      },
+      {
+        "name": "voxhandgradientr3",
+        "directions": 4
+      },
+      {
+        "name": "voxheadgradient1",
+        "directions": 4
+      },
+      {
+        "name": "voxheadgradient2",
+        "directions": 4
+      },
+      {
+        "name": "voxheadgradient3",
+        "directions": 4
+      },
+      {
+        "name": "voxtailbell1",
+        "directions": 4
+      },
+      {
+        "name": "voxtailbell2",
+        "directions": 4
+      },
+      {
+        "name": "voxtailcolorable",
+        "directions": 4
+      },
+      {
+        "name": "voxtaillantern",
+        "directions": 4
+      },
+      {
+        "name": "voxtailsinglestripe",
+        "directions": 4
+      },
+      {
+        "name": "voxtailsmallplume",
+        "directions": 4
+      },
+      {
+        "name": "voxtailspines",
+        "directions": 4
+      },
+      {
+        "name": "voxarmsstripesl",
+        "directions": 4
+      },
+      {
+        "name": "voxarmsstripesr",
+        "directions": 4
+      },
+      {
+        "name": "voxlegsstripesr",
+        "directions": 4
+      },
+      {
+        "name": "voxlegsstripesl",
+        "directions": 4
+      },
+      {
+        "name": "voxbelly",
+        "directions": 4
+      },
+      {
+        "name": "voxchains",
+        "directions": 4
+      },
+      {
+        "name": "voxsunandmoon",
+        "directions": 4
+      },
+      {
+        "name": "voxcheeks",
+        "directions": 4
+      },
+      {
+        "name": "voxtailballed",
+        "directions": 4
+      },
+      {
+        "name": "voxtailsplit",
+        "directions": 4
+      }
+    ]
+  } 

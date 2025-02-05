@@ -6,7 +6,10 @@
   sprites: MobVoxSprites
   markingLimits: MobVoxMarkingLimits
   dollPrototype: MobVoxDummy
-  skinColoration: VoxFeathers
+# Start of Harmony Change:
+#  skinColoration: VoxFeathers
+  skinColoration: Hues # imp VoxFeathers<Hues
+# End of Harmony change
   defaultSkinTone: "#6c741d"
   maleFirstNames: names_vox
   femaleFirstNames: names_vox
