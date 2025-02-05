@@ -42,6 +42,7 @@ using Robust.Shared.Replays;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using static Content.Client.CharacterInfo.CharacterInfoSystem; // Harmony - chat highlighting, remove when chat refactor is merged
+using Content.Shared._Harmony.CCVars; // Harmony - chat highlighting, remove when chat refactor is merged
 
 
 namespace Content.Client.UserInterface.Systems.Chat;
