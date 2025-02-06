@@ -705,7 +705,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         {
             if (keyword.Equals(_playerHighlightingName))
             {
-                _highlights.Add(Concat("(?<=[^]].)", keyword));
+                _highlights.Add(string.Concat("(?<=[^]].)", keyword));
                 continue;
             }
             _highlights.Add(keyword);
