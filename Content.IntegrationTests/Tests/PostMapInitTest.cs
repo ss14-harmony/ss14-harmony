@@ -38,6 +38,7 @@ namespace Content.IntegrationTests.Tests
         private static readonly string[] Grids =
         {
             "/Maps/centcomm.yml",
+            "/Maps/_Harmony/centcomm.yml", // Harmony CC version
             "/Maps/Shuttles/cargo.yml",
             "/Maps/Shuttles/emergency.yml",
             "/Maps/Shuttles/infiltrator.yml",
@@ -66,7 +67,12 @@ namespace Content.IntegrationTests.Tests
             "Barratry", // Update of old map
             "dm01-entryway", // deathmatch PROMOD map
             "dm02-sandbomb", // deathmatch PROMOD map, Harmony change
-            "Aspid" // Pseudo playtest, not merged to upstream yet.
+            "Aspid", // Pseudo playtest, not merged to upstream yet.
+			      "Atlas", // Update of Atlas. Back from the grave!
+            "Gate",
+            "Amber",
+            "Loop",
+            "Elkridge"
         };
 
         /// <summary>

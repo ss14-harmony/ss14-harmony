@@ -67,7 +67,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
 
         var msg = Loc.GetString("laws-notify");
         var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
-        _chatManager.ChatMessageToOne(ChatChannel.Server, msg, wrappedMessage, default, false, actor.PlayerSession.Channel, colorOverride: Color.FromHex("#2ed2fd"));
+        _chatManager.ChatMessageToOne(ChatChannel.Server, msg, wrappedMessage, default, false, actor.PlayerSession.Channel, colorOverride: Color.FromHex("#5ed7aa"));
 
         if (!TryComp<SiliconLawProviderComponent>(uid, out var lawcomp))
             return;
@@ -160,6 +160,16 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
 
         // Show the silicon has been subverted.
         component.Subverted = true;
+
+        //Harmony change: check if we have law 0 and remove it
+        //Most of the time, law 0 should be "obey station AI". It could be changed by an ion storm,
+        //but I think it's not a big deal to re-write it anyway.
+        //https://github.com/ss14-harmony/ss14-harmony/pull/296
+        if (component.Lawset?.Laws.Count > 0)
+        {
+            component.Lawset.Laws.RemoveAt(0);
+        }
+        //End Harmony change
 
         // Add the first emag law before the others
         component.Lawset?.Laws.Insert(0, new SiliconLaw
