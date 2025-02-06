@@ -1,0 +1,11 @@
+- type: entity
+  parent: [GunSafeBaseSecure, BaseRestrictedContraband]
+  id: GunSafeSubMachineGunDrozd # Took old ID from drozd safe for mapping purposes
+  name: laser carbine safe
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponEnergyCarbineFilledHarmony
+      amount: 2
+    - id: PowerMagazineHarmony
+      amount: 2

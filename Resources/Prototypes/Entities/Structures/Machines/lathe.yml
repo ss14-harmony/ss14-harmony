@@ -398,6 +398,12 @@
       - WeaponLaserCannon
       - WeaponLaserCarbine
       - WeaponXrayCannon
+# Start of Harmony Change: Adds laser carbine and power magazines as a dynamic recipe to the emagged protolathe.
+      - WeaponEnergyCarbineHarmony
+      - PowerMagazinePrintedHarmony
+      - PowerMagazineUnstablePrintedHarmony
+      - PowerMagazineXRayPrintedHarmony
+# End of Harmony Change
 
 - type: entity
   id: ProtolatheHyperConvection
@@ -741,6 +747,7 @@
       - WeaponLaserCarbinePractice
       - Zipties
       - SecurityBola #Harmony Change: Adds Security Bolas
+      - PowerMagazinePrintedHarmony #Harmony Change: Adds the basic power magazine as a security techfab recipe.
     dynamicRecipes:
       - BoxBeanbag
       - BoxShotgunIncendiary
@@ -792,6 +799,11 @@
       - WeaponLaserCannon
       - WeaponLaserCarbine
       - WeaponXrayCannon
+# Start of Harmony Change: Adds laser carbine and specialized power magazines as a dynamic recipe to the security techfab.
+      - WeaponEnergyCarbineHarmony
+      - PowerMagazineUnstablePrintedHarmony
+      - PowerMagazineXRayPrintedHarmony
+# End of Harmony Change
   - type: MaterialStorage
     whitelist:
       tags:

@@ -1,0 +1,148 @@
+- type: entity
+  id: BasePowerMagazineHarmony
+  abstract: true
+  parent: BaseItem
+  components:
+  - type: Item
+  - type: Battery
+    pricePerJoule: 0.15
+  - type: Extractable
+    juiceSolution:
+      reagents:
+        - ReagentId: Zinc
+          Quantity: 5
+  - type: Tag
+    tags:
+      - PowerMagazine
+  - type: Appearance
+  - type: ProjectileBatteryAmmoProvider
+
+- type: entity
+  name: power magazine (lethal)
+  description: A rechargable magazine used with magazine fed laser weapons.
+  id: PowerMagazineHarmony
+  suffix: Full
+  parent: BasePowerMagazineHarmony
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Battery/PowerMagazines/SMGMagazines/harm.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+      shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+  - type: Battery
+    maxCharge: 1080
+    startingCharge: 1080
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserHarmony
+    fireCost: 42
+
+- type: entity
+  id: PowerMagazinePrintedHarmony
+  suffix: Empty
+  parent: PowerMagazineHarmony
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Battery/PowerMagazines/SMGMagazines/harm.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+      shader: unshaded
+  - type: Battery
+    maxCharge: 1080
+    startingCharge: 0
+
+- type: entity
+  name: power magazine (unstable)
+  description: A power magazine filled with extremely unstable energy. You only get one shot, make the most of it.
+  id: PowerMagazineUnstableHarmony
+  suffix: Full
+  parent: BasePowerMagazineHarmony
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Battery/PowerMagazines/SMGMagazines/harm-large.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+      shader: unshaded
+  - type: PointLight
+    color: "#FF1111"
+    radius: 1.5
+    energy: 1.5
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+  - type: Battery
+    maxCharge: 2000
+    startingCharge: 2000
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserUnstableHarmony
+    fireCost: 1999
+
+- type: entity
+  id: PowerMagazineUnstablePrintedHarmony
+  suffix: Empty
+  parent: PowerMagazineUnstableHarmony
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Battery/PowerMagazines/SMGMagazines/harm-large.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+      shader: unshaded
+  - type: Battery
+    maxCharge: 3000
+    startingCharge: 0
+
+- type: entity
+  name: power magazine (x-ray)
+  description: A power magazine filled with radiation altered energy.
+  id: PowerMagazineXRayHarmony
+  suffix: Full
+  parent: BasePowerMagazineHarmony
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Battery/PowerMagazines/SMGMagazines/rads.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+      shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+  - type: Battery
+    maxCharge: 1080
+    startingCharge: 1080
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserXRayHarmony
+    fireCost: 53
+
+- type: entity
+  id: PowerMagazineXRayPrintedHarmony
+  suffix: Empty
+  parent: PowerMagazineXRayHarmony
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Battery/PowerMagazines/SMGMagazines/rads.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+      shader: unshaded
+  - type: Battery
+    maxCharge: 1080
+    startingCharge: 0
