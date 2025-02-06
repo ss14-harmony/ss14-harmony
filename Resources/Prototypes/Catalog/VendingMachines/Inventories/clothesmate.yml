@@ -7,6 +7,7 @@
     ClothingBackpackSatchel: 3
     ClothingBackpackSatchelLeather: 2
     ClothingRandomSpawner: 8
+    ClothingOuterCoatRandom: 8
     ClothingHeadHatBeret: 4
     ClothingHeadBandBlack: 2
     ClothingHeadBandBlue: 2
@@ -42,6 +43,14 @@
     ClothingUniformJumpskirtColorDarkGreen: 2
     ClothingUniformJumpsuitColorTeal: 2
     ClothingUniformJumpskirtColorTeal: 2
+    ClothingUniformJumpsuitColorLightBrown: 2
+    ClothingUniformJumpskirtColorLightBrown: 2
+    ClothingUniformJumpsuitColorBrown: 2
+    ClothingUniformJumpskirtColorBrown: 2
+    ClothingUniformJumpsuitColorMaroon: 2
+    ClothingUniformJumpskirtColorMaroon: 2
+    ClothingUniformJumpsuitColorDarkPurple: 2
+    ClothingUniformJumpskirtColorDarkPurple: 2
     ClothingUniformJumpsuitHawaiBlack: 2
     ClothingUniformJumpsuitHawaiBlue: 2
     ClothingUniformJumpsuitHawaiRed: 2
@@ -55,6 +64,22 @@
     ClothingUniformJumpskirtCasualRed: 2
     ClothingUniformJumpsuitCasualGreen: 2
     ClothingUniformJumpskirtCasualGreen: 2
+    ClothingUniformJumpskirtBlackElegantDress: 4
+    ClothingUniformJumpskirtRedElegantDress: 4
+    ClothingUniformJumpskirtGreenElegantDress: 4
+    ClothingUniformJumpskirtBlueElegantDress: 4
+    ClothingUniformJumpskirtPurpleElegantDress: 4
+    ClothingUniformJumpskirtPurpleTurtleneckDress: 4
+    ClothingUniformJumpskirtRedTurtleneckDress: 4
+    ClothingUniformJumpskirtGreenTurtleneckDress: 4
+    ClothingUniformJumpskirtBlueTurtleneckDress: 4
+    ClothingUniformJumpskirtYellowTurtleneckDress: 4
+    ClothingUniformJumpskirtYellowOldDress: 4
+    ClothingUniformJumpskirtCyanStripedDress: 4
+    ClothingUniformJumpskirtRedStripedDress: 4
+    ClothingUniformJumpskirtGreenStripedDress: 4
+    ClothingUniformJumpskirtPinkStripedDress: 4
+    ClothingUniformJumpskirtOrangeStripedDress: 4
     # DO NOT ADD MORE, USE UNIFORM DYING
     ClothingShoesColorBlack: 8
     ClothingShoesColorBrown: 4

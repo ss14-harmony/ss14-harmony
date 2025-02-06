@@ -489,3 +489,34 @@
       - state: equipped-INNERCLOTHING
         color: "#cc295f"
       - state: trinkets-equipped-INNERCLOTHING
+
+# Dark Purple Jumpskirt
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtColorDarkPurple
+  name: dark purple jumpskirt
+  description: A generic dark purple jumpskirt with no rank markings.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/color.rsi
+    layers:
+    - state: icon
+      color: "#8100ac"
+    - state: trinkets-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8100ac"
+      - state: trinkets-inhand-left
+      right:
+      - state: inhand-right
+        color: "#8100ac"
+      - state: trinkets-inhand-right
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#8100ac"
+      - state: trinkets-equipped-INNERCLOTHING

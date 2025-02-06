@@ -18,7 +18,17 @@
     ClothingOuterCoatBomber: 3
     ClothingHeadHatSantahat: 2
     ClothingHeadHatXmasCrown: 2
-
+    ClothingOuterWinterColorBlack: 6
+    ClothingOuterWinterColorPurple: 6
+    ClothingOuterWinterColorRed: 6
+    ClothingOuterWinterColorBlue: 6
+    ClothingOuterWinterColorBrown: 6
+    ClothingOuterWinterColorGray: 6
+    ClothingOuterWinterColorGreen: 6
+    ClothingOuterWinterColorLightBrown: 6
+    ClothingOuterWinterColorOrange: 6
+    ClothingOuterWinterColorWhite: 6
+    ClothingOuterWinterColorYellow: 6
   emaggedInventory:
     ClothingNeckScarfStripedSyndieGreen: 3
     ClothingNeckScarfStripedSyndieRed: 3

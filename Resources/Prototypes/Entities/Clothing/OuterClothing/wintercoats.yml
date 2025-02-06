@@ -898,7 +898,7 @@
     clothingVisuals:
       outerClothing:
       - state: coatybits-equipped-OUTERCLOTHING
-        color: "#1d1d1d"
+        color: "#3f3f3f" # color changed to match other sprites, makes it slightly lighter - Harmony
       - state: winterbits-equipped-OUTERCLOTHING
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterColorBlack

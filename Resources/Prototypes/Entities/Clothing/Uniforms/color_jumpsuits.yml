@@ -490,6 +490,37 @@
         color: "#cc295f"
       - state: trinkets-equipped-INNERCLOTHING
 
+# Dark Purple Jumpsuit
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitColorDarkPurple
+  name: dark purple jumpsuit
+  description: A generic dark purple jumpsuit with no rank markings.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+    layers:
+    - state: icon
+      color: "#8100ac"
+    - state: trinkets-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#8100ac"
+      - state: trinkets-inhand-left
+      right:
+      - state: inhand-right
+        color: "#8100ac"
+      - state: trinkets-inhand-right
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#8100ac"
+      - state: trinkets-equipped-INNERCLOTHING
+
 # Rainbow Jumpsuit
 - type: entity
   parent: ClothingUniformBase
