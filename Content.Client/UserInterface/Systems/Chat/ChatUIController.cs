@@ -161,11 +161,6 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     private List<string> _highlights = new();
 
     /// <summary>
-    ///     The name of the player which is used by the highlighting engine to ignore when the player is speaking
-    /// </summary>
-    private string _playerHighlightingName = new();
-
-    /// <summary>
     ///     The string holding the hex color used to highlight words.
     /// </summary>
     private string? _highlightsColor;
@@ -329,13 +324,8 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
 
         var (_, job, _, _, entityName) = data;
 
-        // This variable is used to make sure that when the player says something their name isn't highlighted
-        _playerHighlightingName = entityName;
-
-        // If the character has a normal name (eg. "Name Surname" and not "Name Initial Surname" or a particular species name)
-        // subdivide it so that the name and surname individually get highlighted.
-        if (entityName.Count(c => c == ' ') == 1)
-            entityName = entityName.Replace(' ', '\n');
+        // Make sure our name gets highlighted only when others say it.
+        entityName = "(?<=[^]].)" + entityName;
 
         string newHighlights = entityName;
 
@@ -703,11 +693,6 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         string[] arrHighlights = highlights.Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
         foreach (var keyword in arrHighlights)
         {
-            if (keyword.Equals(_playerHighlightingName))
-            {
-                _highlights.Add(string.Concat("(?<=[^]].)", keyword));
-                continue;
-            }
             _highlights.Add(keyword);
         }
 
