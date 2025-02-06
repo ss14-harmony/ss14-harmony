@@ -175,6 +175,11 @@
   - type: GameRule
     minPlayers: 5
   - type: AntagSelection
+    # Harmony/Goobstation change: removing of delay is necessary for the entire "roll antag before jobs" system to work.
+    #delay:
+    #  min: 240
+    #  max: 420
+    # End of Harmony/Goobstation change.
     selectionTime: BeforeJobs # Goobstation
     definitions:
     - prefRoles: [ Traitor ]
