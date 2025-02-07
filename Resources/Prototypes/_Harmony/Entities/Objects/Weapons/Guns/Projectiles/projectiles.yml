@@ -22,12 +22,20 @@
         mask:
         - Impassable
         - BulletImpassable
-      fly-by: *flybyfixture
+      fly-by: &flybyfixture
+        shape: !type:PhysShapeCircle
+          radius: 1.5
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        hard: False
   - type: Ammo
   - type: Projectile
 
 - type: entity
-  name: laser bolt
+  name: laser bolt medium
   id: BulletLaserHarmony
   parent: BulletLaserBaseHarmony
   categories: [ HideSpawnMenu ]
