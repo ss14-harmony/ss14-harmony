@@ -23,8 +23,8 @@
     Plastic: 300
 
 - type: latheRecipe
-  id: PowerMagazinePrintedHarmony
-  result: PowerMagazinePrintedHarmony
+  id: EnergyCartridgePrintedHarmony
+  result: EnergyCartridgePrintedHarmony
   completetime: 2
   materials:
     Steel: 1000
@@ -32,8 +32,8 @@
     Plastic: 250
 
 - type: latheRecipe
-  id: PowerMagazineUnstablePrintedHarmony
-  result: PowerMagazineUnstablePrintedHarmony
+  id: EnergyCartridgeUnstablePrintedHarmony
+  result: EnergyCartridgeUnstablePrintedHarmony
   completetime: 2
   materials:
     Steel: 1000
@@ -43,8 +43,8 @@
     Plasma: 500
 
 - type: latheRecipe
-  id: PowerMagazineXRayPrintedHarmony
-  result: PowerMagazineXRayPrintedHarmony
+  id: EnergyCartridgeXRayPrintedHarmony
+  result: EnergyCartridgeXRayPrintedHarmony
   completetime: 2
   materials:
     Steel: 1000

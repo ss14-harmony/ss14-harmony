@@ -1,9 +1,9 @@
 - type: entity
-  name: laser carbine
+  name: energy carbine
   id: WeaponEnergyCarbineHarmony
   suffix: Empty
-  parent: [BaseWeaponPowerCellSmall, BaseRestrictedContraband]
-  description: A cheap and widely used laser pistol.
+  parent: [BaseWeaponPowerCell, BaseRestrictedContraband]
+  description: An energy weapon that uses specialized power magazines to fire dence laser bullets.
   components:
   - type: Item
     size: Large
@@ -17,6 +17,7 @@
       shader: unshaded
   - type: Clothing
     sprite: _Harmony/Objects/Weapons/Guns/Battery/laser_carbine.rsi
+    quickEquip: false
     slots:
     - Back
     - suitStorage
@@ -33,7 +34,7 @@
     minAngle: 21
     maxAngle: 32
     selectedMode: FullAuto
-    fireRate: 3
+    fireRate: 4
     availableModes:
       - FullAuto
   - type: ItemSlots
@@ -44,7 +45,7 @@
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         whitelist:
           tags:
-            - PowerMagazine
+            - EnergyCartridge
         whitelistFailPopup: gun-magazine-whitelist-fail
 
 - type: entity
@@ -56,12 +57,12 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: PowerMagazineHarmony
+        startingItem: EnergyCartridgeHarmony
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         whitelist:
           tags:
-            - PowerMagazine
+            - EnergyCartridge
         whitelistFailPopup: gun-magazine-whitelist-fail
   - type: MagazineVisuals
     magState: mag

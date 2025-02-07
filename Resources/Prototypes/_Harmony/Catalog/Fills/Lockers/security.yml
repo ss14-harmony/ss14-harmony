@@ -1,11 +1,11 @@
 - type: entity
   parent: [GunSafeBaseSecure, BaseRestrictedContraband]
-  id: GunSafeSubMachineGunDrozd # Took old ID from drozd safe for mapping purposes
+  id: GunSafeEnergyCarbineHarmony
   name: laser carbine safe
   components:
   - type: StorageFill
     contents:
     - id: WeaponEnergyCarbineFilledHarmony
       amount: 2
-    - id: PowerMagazineHarmony
+    - id: EnergyCartridgeHarmony
       amount: 2

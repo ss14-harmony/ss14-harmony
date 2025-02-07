@@ -190,7 +190,7 @@
 
 - type: entity
   parent: [GunSafeBaseSecure, BaseRestrictedContraband]
-  id: GunSafeSubMachineGunDrozdUpstream # Harmony Change: updated the drozd safe upstream ID so the old version could be used elsewhere.
+  id: GunSafeSubMachineGunDrozd
   name: drozd safe
   components:
   - type: StorageFill
