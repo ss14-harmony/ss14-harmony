@@ -8,6 +8,11 @@
 # WallSolid: Window
 # Table: null
 
+# Start of Harmony migrations
+# 2025-02-08
+GunSafeSubMachineGunDrozd: GunSafeEnergyCarbineHarmony
+# End of Harmony migrations
+
 # 2023-07-03
 ClothingHeadHelmetHelmet: ClothingHeadHelmetBasic
 ClothingHeadHelmetHelmetOld: ClothingHeadHelmetBasic
@@ -540,6 +545,3 @@ LightTree06: LightTree
 
 #2024-12-28
 DrinkIrishCarBomb: DrinkIrishSlammer
-
-# 2025-2-06 Harmony
-GunSafeSubMachineGunDrozd: GunSafeEnergyCarbineHarmony
