@@ -79,7 +79,6 @@ public sealed class ContrabandSystem : EntitySystem
             if (_id.TryFindIdCard(args.Examiner, out var id)
                 && id.Comp.AllowRestrictedContraband) // Harmony: check if the id allows restricted contraband
             {
-
                 departments = id.Comp.JobDepartments;
                 if (id.Comp.LocalizedJobTitle is not null)
                 {
