@@ -46,7 +46,7 @@
   cost: 7500
   recipeUnlocks:
   - WeaponLaserCarbine
-  - WeaponEnergyCarbineHarmony # Harmony Change: Adds the Laser Carbine to the Laser Munipulation Research.
+  - WeaponEnergyCarbineHarmony # Harmony Change: Adds the energy Carbine to the Laser Munipulation Research.
 
 - type: technology
   id: NonlethalAmmunition

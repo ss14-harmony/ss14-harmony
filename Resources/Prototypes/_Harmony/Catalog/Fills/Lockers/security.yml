@@ -1,7 +1,7 @@
 - type: entity
   parent: [GunSafeBaseSecure, BaseRestrictedContraband]
   id: GunSafeEnergyCarbineHarmony
-  name: laser carbine safe
+  name: energy carbine safe
   components:
   - type: StorageFill
     contents:

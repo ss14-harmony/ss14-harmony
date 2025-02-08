@@ -398,7 +398,7 @@
       - WeaponLaserCannon
       - WeaponLaserCarbine
       - WeaponXrayCannon
-# Start of Harmony Change: Adds laser carbine and power magazines as a dynamic recipe to the emagged protolathe.
+# Start of Harmony Change: Adds energy carbine and power magazines as a dynamic recipe to the emagged protolathe.
       - WeaponEnergyCarbineHarmony
       - EnergyCartridgePrintedHarmony
       - EnergyCartridgeUnstablePrintedHarmony
@@ -799,7 +799,7 @@
       - WeaponLaserCannon
       - WeaponLaserCarbine
       - WeaponXrayCannon
-# Start of Harmony Change: Adds laser carbine and specialized power magazines as a dynamic recipe to the security techfab.
+# Start of Harmony Change: Adds energy carbine and specialized power magazines as a dynamic recipe to the security techfab.
       - WeaponEnergyCarbineHarmony
       - EnergyCartridgeUnstablePrintedHarmony
       - EnergyCartridgeXRayPrintedHarmony
