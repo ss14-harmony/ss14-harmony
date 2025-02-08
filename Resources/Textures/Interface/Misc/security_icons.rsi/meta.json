@@ -21,6 +21,12 @@
     },
     {
       "name": "hud_wanted"
+    },
+    {
+      "name": "hud_search"
+    },
+    {
+      "name": "hud_monitor"
     }
   ]
 }

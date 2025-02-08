@@ -362,6 +362,10 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
             SecurityStatus.Detained => "hud_incarcerated",
             SecurityStatus.Discharged => "hud_discharged",
             SecurityStatus.Suspected => "hud_suspected",
+            // Harmony Start
+            SecurityStatus.Search => "hud_search",
+            SecurityStatus.Monitor => "hud_monitor",
+            // Harmony Emd
             _ => "SecurityIconNone"
         };
     }
