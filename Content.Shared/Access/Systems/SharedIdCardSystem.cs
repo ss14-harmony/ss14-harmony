@@ -186,6 +186,8 @@ public abstract class SharedIdCardSystem : EntitySystem
                 id.JobDepartments.Add(department.ID);
         }
 
+        id.AllowRestrictedContraband = job.AllowRestrictedContraband; // Harmony
+
         Dirty(uid, id);
 
         return true;
