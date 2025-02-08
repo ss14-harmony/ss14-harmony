@@ -1,17 +1,32 @@
+#start of harmony change:
+#- type: marking
+#  id: VoxBeak
+#  bodyPart: Snout
+#  markingCategory: Snout
+#  forcedColoring: true
+#  speciesRestriction: [Vox]
+#  sprites:
+#  - sprite: Mobs/Customization/vox_parts.rsi
+#    state: beak
+#  coloring:
+#   default:
+#      type:
+#        !type:SimpleColoring
+#        color: "#937e3d"
 - type: marking
-  id: VoxBeak
-  bodyPart: Snout
-  markingCategory: Snout
-  forcedColoring: true
-  speciesRestriction: [Vox]
-  sprites:
-  - sprite: Mobs/Customization/vox_parts.rsi
-    state: beak
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#937e3d"
+# id: VoxBeak
+#  bodyPart: Snout
+#  markingCategory: Snout
+#  forcedColoring: true
+#  speciesRestriction: [Vox]
+#  sprites:
+#  - sprite: Mobs/Customization/vox_parts.rsi
+#    state: beak
+#  coloring:
+#    default:
+#      type:
+#        !type:SimpleColoring
+#        color: "#937e3d"
 
 - type: marking
   id: VoxLArmScales

@@ -60,7 +60,7 @@
     Chest:
 #      points: 1
        points: 4 # imp 1<4       
-      required: false
+       required: false
 # End of Harmony change    
     Legs:
 # Start of Harmony change:   
