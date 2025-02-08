@@ -17,7 +17,6 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Content.Shared.Station.Components;
-using FastAccessors;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 
@@ -68,11 +67,13 @@ namespace Content.IntegrationTests.Tests
             "dm01-entryway", // deathmatch PROMOD map
             "dm02-sandbomb", // deathmatch PROMOD map, Harmony change
             "Aspid", // Pseudo playtest, not merged to upstream yet.
-			"Atlas", // Update of Atlas. Back from the grave!
+            "Atlas", // Update of Atlas. Back from the grave!
             "Gate",
             "Amber",
             "Loop",
-            "Elkridge"
+            "Plasma",
+            "Elkridge",
+            "Convex"
         };
 
         /// <summary>
