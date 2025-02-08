@@ -56,9 +56,12 @@
     HeadTop:
       points: 1
       required: false
+# Start of Harmony change:
     Chest:
-      points: 1
+#      points: 1
+       points: 4 # imp 1<4       
       required: false
+# End of Harmony change    
     Legs:
 # Start of Harmony change:   
 #      points: 2
