@@ -15,6 +15,8 @@
     name: ghost-role-information-space-dragon-name
     description: ghost-role-information-space-dragon-description
     rules: ghost-role-information-space-dragon-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
@@ -152,11 +154,13 @@
     - DoorBumpOpener
   - type: Puller
     needsHands: false
-  - type: NightVision # Goobstation - Nigthvision
+
+  - type: NightVision # Goobstation - Nigthvision # Goob Station Change
     isToggle: true
     color: "#808080"
     playSoundOn: false  
-    
+
+
 - type: entity
   parent: BaseMobDragon
   id: MobDragon
