@@ -60,7 +60,7 @@
         # Blunt: 0.9
         # Slash: 0.9
         # Piercing: 0.9
-        Heat: 0.8 # 0.8 -> 0.6
+        Heat: 0.6 # 0.8 -> 0.6
         Cold: 0.6 # 1.0 -> 0.6
         Shock: 0.6 # 1.0 -> 0.6
         Caustic: 0.5 # 1.0 -> 0.5
@@ -465,7 +465,7 @@
         Slash: 0.5
         Piercing: 0.5
         Heat: 0.8 # 1.0 -> 0.8
-        Caustic: 0.6
+        Caustic: 0.5 # 0.6 -> 0.5
   - type: ClothingSpeedModifier
     walkModifier: 0.85
     sprintModifier: 0.85
@@ -487,8 +487,9 @@
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
-  - type: ExplosionResistance
-    damageCoefficient: 0.5
+  # Harmony - Remove explosion resistance
+  # - type: ExplosionResistance
+  #   damageCoefficient: 0.5
   - type: Armor
     modifiers:
       coefficients:
@@ -715,20 +716,19 @@
   - type: PressureProtection
     highPressureMultiplier: 0.225
     lowPressureMultiplier: 1000
-  # Harmony - Remove explosion resistance
+  # Harmony - Remove resistances and speed reductions
   # - type: ExplosionResistance
   #   damageCoefficient: 0.2
-  - type: Armor
-    modifiers:
-      coefficients:
-        # Harmony - Change resistances
-        # Blunt: 0.95
-        # Slash: 0.95
-        # Piercing: 1 - bruh
-        # Heat: 0.5
-  - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+  # - type: Armor
+  #   modifiers:
+  #     coefficients:
+  #       Blunt: 0.95
+  #       Slash: 0.95
+  #       Piercing: 1 - bruh
+  #       Heat: 0.5
+  # - type: ClothingSpeedModifier
+  #   walkModifier: 0.8
+  #   sprintModifier: 0.8
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitLing
@@ -968,7 +968,8 @@
 #MISC. HARDSUITS
 #Clown Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  # Harmony - Inherit from EVA suits instead of hardsuits.
+  parent: ClothingOuterEVASuitBase # ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitClown
   name: clown hardsuit
   description: A custom-made clown hardsuit.
