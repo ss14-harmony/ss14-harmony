@@ -496,7 +496,7 @@
         Blunt: 0.8 # 0.9 -> 0.8
         Slash: 0.8 # 0.9 -> 0.8
         Piercing: 0.8
-        # Radiation: 0.5
+        Radiation: 0.5
         Caustic: 0.5 # 0.8 -> 0.5
   - type: ClothingSpeedModifier
     walkModifier: 0.85
