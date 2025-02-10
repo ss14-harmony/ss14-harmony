@@ -60,12 +60,15 @@
   - type: Armor
     modifiers:
       coefficients:
-        Slash: 0.9
-        Heat: 0.8
-        Cold: 0.8
+        # Harmony - Change resistances
+        # Slash: 0.9
+        Heat: 0.6 # 0.8 -> 0.6
+        Cold: 0.6 # 0.8 -> 0.6
+        Shock: 0.6 # 1.0 -> 0.6
+        Caustic: 0.5 # 1.0 -> 0.5
   - type: ClothingSpeedModifier
     walkModifier: 0.8
-    sprintModifier: 0.7
+    sprintModifier: 0.8 # Harmony - 0.7 -> 0.8
   - type: HeldSpeedModifier
   - type: GroupExamine
   - type: ProtectedFromStepTriggers
