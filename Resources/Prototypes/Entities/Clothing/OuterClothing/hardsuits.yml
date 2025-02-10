@@ -1000,6 +1000,9 @@
     node: clownHardsuit
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitClown
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
 
 #Mime Hardsuit
 - type: entity
