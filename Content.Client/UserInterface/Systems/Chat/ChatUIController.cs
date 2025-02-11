@@ -277,7 +277,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
 
         if (!string.IsNullOrEmpty(highlights))
         {
-            UpdateHighlights(highlights);
+            UpdateHighlights(highlights, true);
         }
         // Harmony - end of chat highlighting
     }
@@ -677,10 +677,10 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
     }
 
     // Harmony - start of chat highlighting, remove when chat refactor is merged
-    public void UpdateHighlights(string highlights)
+    public void UpdateHighlights(string highlights, bool firstLoad = false)
     {
         // Do nothing if the provided highlighs are the same as the old ones.
-        if (_config.GetCVar(HCCVars.ChatHighlights).Equals(highlights, StringComparison.CurrentCultureIgnoreCase))
+        if (!firstLoad && _config.GetCVar(HCCVars.ChatHighlights).Equals(highlights, StringComparison.CurrentCultureIgnoreCase))
             return;
 
         _config.SetCVar(HCCVars.ChatHighlights, highlights);
