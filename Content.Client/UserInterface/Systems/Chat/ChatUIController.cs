@@ -325,7 +325,7 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         var (_, job, _, _, entityName) = data;
 
         // Make sure our name gets highlighted only when others say it.
-        entityName = "(?<=[^]].)" + entityName;
+        entityName = "(?<=/Name.*)" + entityName;
 
         string newHighlights = entityName;
 
