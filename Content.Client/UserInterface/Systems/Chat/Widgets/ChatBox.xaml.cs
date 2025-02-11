@@ -1,4 +1,3 @@
-using System.Text.RegularExpressions; // Harmony - chat highlighting, remove when chat refactor is merged
 using Content.Client.UserInterface.Systems.Chat.Controls;
 using Content.Shared.Chat;
 using Content.Shared.Input;
