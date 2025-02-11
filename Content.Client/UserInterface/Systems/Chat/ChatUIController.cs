@@ -327,6 +327,10 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         // Mark this entity's name as our character name for the "UpdateHighlights" function.
         string newHighlights = "@" + entityName;
 
+        // If the character has a normal name (eg. "Name Surname" and not "Name Initial Surname" or a particular species name)
+        // subdivide it so that the name and surname individually get highlighted.
+        if (newHighlights.Count(c => c == ' ') == 1)
+            newHighlights = newHighlights.Replace(" ", "\n@");
 
         // Convert the job title to kebab-case and use it as a key for the loc file.
         string jobKey = job.Replace(' ', '-').ToLower();
