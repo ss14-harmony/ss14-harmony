@@ -324,10 +324,9 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
 
         var (_, job, _, _, entityName) = data;
 
-        // Make sure our name gets highlighted only when others say it.
-        entityName = "(?<=(?<=/name.*)|(?<=,.*\"\".*))" + entityName;
+        // Mark this entity's name as our character name for the "UpdateHighlights" function.
+        string newHighlights = "@" + entityName;
 
-        string newHighlights = entityName;
 
         // Convert the job title to kebab-case and use it as a key for the loc file.
         string jobKey = job.Replace(' ', '-').ToLower();
@@ -682,6 +681,9 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
 
         _config.SetCVar(HCCVars.ChatHighlights, highlights);
         _config.SaveToFile();
+
+        // Make sure any name tagged as ours gets highlighted only when others say it.
+        highlights = highlights.Replace("@", "(?<=(?<=/name.*)|(?<=,.*\"\".*))");
 
         // Replace any " character with a whole-word regex tag,
         // this tag will make the words to match are separated by spaces or punctuation.
