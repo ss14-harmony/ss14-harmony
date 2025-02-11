@@ -141,7 +141,7 @@
   cost: 10000
   recipeUnlocks:
   - WeaponLaserCannon
-  - EnergyCartridgeXRayPrintedHarmony # Harmony Change: Adds the Unstable Power Magazine to the Concentrated Laser Research
+  - EnergyCartridgeUnstablePrintedHarmony # Harmony Change: Adds the Unstable Energy Cartridge to the Concentrated Laser Research
 
 - type: technology
   id: WaveParticleHarnessing
@@ -154,7 +154,7 @@
   cost: 10000
   recipeUnlocks:
   - WeaponXrayCannon
-  - EnergyCartridgeUnstablePrintedHarmony # Harmony Change: Adds the X-ray Power Magazine to the Wave Particle Research
+  - EnergyCartridgeXRayPrintedHarmony # Harmony Change: Adds the X-ray Energy Cartridge to the Wave Particle Research
 
 - type: technology
   id: BasicShuttleArmament

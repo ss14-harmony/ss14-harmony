@@ -11,6 +11,8 @@
 # Start of Harmony migrations
 # 2025-02-08
 GunSafeSubMachineGunDrozd: GunSafeEnergyCarbineHarmony
+WeaponSubMachineGunDrozd: WeaponEnergyCarbineFilledHarmony
+MagazinePistolSubMachineGun: EnergyCartridgeHarmony
 # End of Harmony migrations
 
 # 2023-07-03
