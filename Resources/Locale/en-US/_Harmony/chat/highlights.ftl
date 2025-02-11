@@ -14,6 +14,7 @@ highlights-detective = Detective, "Det", Security, "Sec"
 highlights-security-cadet = Security Cadet, Secoff, Cadet, Security, "Sec"
 highlights-security-officer = Security Officer, Secoff, Officer, Security, "Sec"
 highlights-warden = Warden, "Ward", Armory, Security, "Sec"
+highlights-prisoner = Prisoner, Prison, Perma, Jail
 
 # Cargo
 highlights-cargo-technician = Cargo Technician, Cargo Tech, "Cargo"

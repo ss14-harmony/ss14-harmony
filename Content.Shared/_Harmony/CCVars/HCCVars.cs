@@ -21,7 +21,6 @@ public sealed class HCCVars
     public static readonly CVarDef<bool> DisableSuicide =
         CVarDef.Create("ic.disable_suicide", false, CVar.SERVER);
 
-    // Harmony - start of chat highlighting, remove when chat refactor is merged
     /// <summary>
     /// A string containing a list of newline-separated words to be highlighted in the chat.
     /// </summary>
@@ -39,5 +38,4 @@ public sealed class HCCVars
     /// </summary>
     public static readonly CVarDef<string> ChatHighlightsColor =
         CVarDef.Create("chat.highlights_color", "#17FFC1FF", CVar.CLIENTONLY | CVar.ARCHIVE, "The color in which the highlights will be displayed.");
-    // Harmony - end of chat highlighting
 }
