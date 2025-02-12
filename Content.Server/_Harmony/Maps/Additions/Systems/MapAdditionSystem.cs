@@ -9,6 +9,7 @@ namespace Content.Server._Harmony.Maps.Additions.Systems;
 public sealed class MapAdditionSystem : EntitySystem
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     public override void Initialize()
@@ -61,9 +62,15 @@ public sealed class MapAdditionSystem : EntitySystem
             var entity = _entityManager.CreateEntityUninitialized(entityAddition.Prototype,
                 new EntityCoordinates(station.Value, entityAddition.Position),
                 entityAddition.Components,
-                entityAddition.Rotation);
+                entityAddition.Rotation ?? default);
 
             _entityManager.InitializeAndStartEntity(entity, false);
+
+            if (entityAddition.Name != null)
+                _metaDataSystem.SetEntityName(entity, entityAddition.Name);
+
+            if (entityAddition.Description != null)
+                _metaDataSystem.SetEntityDescription(entity, entityAddition.Description);
         }
     }
 }

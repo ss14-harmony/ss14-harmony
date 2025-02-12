@@ -23,12 +23,18 @@ public sealed partial class MapAdditionEntity
     [DataField(required: true)]
     public ProtoId<EntityPrototype> Prototype { get; private set; }
 
+    [DataField]
+    public string? Name { get; private set; }
+
+    [DataField]
+    public string? Description { get; private set; }
+
     [DataField(required: true)]
     public Vector2 Position { get; private set; }
 
     [DataField]
-    public Angle Rotation { get; private set; }
+    public Angle? Rotation { get; private set; }
 
     [DataField]
-    public ComponentRegistry Components { get; private set; }
+    public ComponentRegistry? Components { get; private set; }
 }
