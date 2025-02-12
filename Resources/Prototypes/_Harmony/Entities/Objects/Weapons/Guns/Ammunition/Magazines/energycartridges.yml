@@ -40,7 +40,7 @@
     startingCharge: 1080
   - type: ProjectileBatteryAmmoProvider
     proto: BulletLaserHarmony
-    fireCost: 42
+    fireCost: 53
 
 - type: entity
   id: EnergyCartridgePrintedHarmony
@@ -86,7 +86,7 @@
   parent: EnergyCartridgeUnstableHarmony
   components:
   - type: Battery
-    maxCharge: 3000
+    maxCharge: 2000
     startingCharge: 0
 
 - type: entity

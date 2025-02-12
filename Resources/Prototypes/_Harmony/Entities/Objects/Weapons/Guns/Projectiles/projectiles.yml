@@ -77,10 +77,10 @@
         Heat: 5
   - type: ExplodeOnTrigger
   - type: Explosive
-    explosionType: FireBomb
-    totalIntensity: 40
-    intensitySlope: 4.5
-    maxIntensity: 9
+    explosionType: LaserBombHarmony
+    totalIntensity: 50
+    intensitySlope: 5
+    maxIntensity: 20
 
 - type: entity
   name: laser bolt x-ray
