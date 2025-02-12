@@ -333,7 +333,8 @@ public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterI
         // Convert the job title to kebab-case and use it as a key for the loc file.
         string jobKey = job.Replace(' ', '-').ToLower();
 
-        newHighlights += '\n' + _loc.GetString($"highlights-{jobKey}").Replace(", ", "\n");
+        if (_loc.TryGetString($"highlights-{jobKey}", out var jobMatches))
+            newHighlights += '\n' + jobMatches.Replace(", ", "\n");
 
         UpdateHighlights(newHighlights);
         HighlightsUpdated?.Invoke(newHighlights);
