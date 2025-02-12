@@ -1,7 +1,6 @@
 ﻿using Content.Server.GameTicking;
 using Content.Server.Maps;
 using Content.Server.Station.Components;
-using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
@@ -9,8 +8,8 @@ namespace Content.Server._Harmony.Maps.Additions.Systems;
 
 public sealed class MapAdditionSystem : EntitySystem
 {
+    [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly TransformSystem _transformSystem = default!;
 
     public override void Initialize()
     {
@@ -59,11 +58,12 @@ public sealed class MapAdditionSystem : EntitySystem
 
         foreach (var entityAddition in mapAddition.Entities)
         {
-            var entity = SpawnAtPosition(entityAddition.Prototype,
+            var entity = _entityManager.CreateEntityUninitialized(entityAddition.Prototype,
                 new EntityCoordinates(station.Value, entityAddition.Position),
-                entityAddition.Components);
+                entityAddition.Components,
+                entityAddition.Rotation);
 
-            _transformSystem.SetLocalRotation(entity, entityAddition.Rotation);
+            _entityManager.InitializeAndStartEntity(entity, false);
         }
     }
 }
