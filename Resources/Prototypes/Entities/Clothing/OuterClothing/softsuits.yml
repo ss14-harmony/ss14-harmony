@@ -115,9 +115,11 @@
   - type: Armor
     modifiers:
       coefficients:
-        Heat: 0.90
-        Radiation: 0.75
-        Caustic: 0.5
+        # Harmony - Change resistances
+        # Heat: 0.90
+        # Radiation: 0.75
+        Caustic: 0.4 # 0.5 -> 0.4
+        # End Harmony
   - type: GroupExamine
   - type: StealTarget
     stealGroup: ClothingOuterHardsuitVoidParamed

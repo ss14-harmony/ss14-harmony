@@ -112,19 +112,21 @@
     heatingCoefficient: 0.01
     coolingCoefficient: 0.01
   - type: ClothingSpeedModifier
-    walkModifier: 0.4
-    sprintModifier: 0.6
+    walkModifier: 0.8 # Harmony - 0.4 -> 0.8
+    sprintModifier: 0.8 # Harmony - 0.6 -> 0.8
   - type: HeldSpeedModifier
   - type: Item
     size: Ginormous
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.95
-        Heat: 0.90
-        Radiation: 0.25
+        # Harmony - Change resistances
+        # Blunt: 0.90
+        # Slash: 0.90
+        # Piercing: 0.95
+        # Heat: 0.90
+        # Radiation: 0.25
+        Caustic: 0.5 # 1.0 -> 0.5
   - type: ToggleableClothing
     slot: head
   - type: ContainerContainer
