@@ -9,3 +9,22 @@
       amount: 2
     - id: EnergyCartridgeHarmony
       amount: 2
+  
+  id: LockerBrigmedicFilledHarmony
+  suffix: Brigmedic, Filled, Harmony
+  parent: LockerBrigmedic
+  components:
+  - type: StorageFill
+    contents:
+      - id: TrackingImplanter
+        amount: 2
+      - id: ClothingOuterHardsuitBrigmedic
+      - id: ClothingOuterCoatAMG
+      - id: MedkitCombatFilled
+      - id: LauncherSyringeHarmony
+      - id: MiniSyringe
+        amount: 2
+      - id: ClothingBackpackDuffelSurgeryFilled
+      - id: ClothingBeltBrigmedHarmony
+      - id: Flash
+
