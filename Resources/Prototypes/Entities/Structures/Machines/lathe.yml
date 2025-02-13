@@ -639,7 +639,6 @@
     - type: Lathe
       idleState: icon
       runningState: icon
-<<<<<<< HEAD
       staticRecipes:
         - BoxLethalshot
         - BoxShotgunSlug
@@ -660,10 +659,8 @@
         - SpeedLoaderMagnum
         - SpeedLoaderMagnumEmpty
         - StripperClip  # Harmony change - part of RSC PR
-=======
       staticPacks:
       - SecurityAmmoStatic
->>>>>>> upstream/master
     - type: MaterialStorage
       whitelist:
         tags:
