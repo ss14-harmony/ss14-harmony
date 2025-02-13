@@ -21,7 +21,7 @@ public sealed class MapAdditionSystem : EntitySystem
     {
         foreach (var mapAddition in _prototypeManager.EnumeratePrototypes<MapAdditionPrototype>())
         {
-            if (mapAddition.ApplyOn != args.GameMap.ID)
+            if (mapAddition.ApplyOn == null || mapAddition.ApplyOn != args.GameMap.ID)
                 continue;
 
             ApplyMapAddition(mapAddition, args.GameMap, args.Map);
@@ -33,7 +33,6 @@ public sealed class MapAdditionSystem : EntitySystem
     /// </summary>
     /// <remarks>
     /// Assumes an uninitialized map
-    /// Ignores the <see cref="MapAdditionPrototype.ApplyOn"/> field
     /// </remarks>
     public void ApplyMapAddition(MapAdditionPrototype mapAddition, GameMapPrototype gameMap, MapId map)
     {

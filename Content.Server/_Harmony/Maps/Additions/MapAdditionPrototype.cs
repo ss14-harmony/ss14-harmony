@@ -10,10 +10,13 @@ public sealed class MapAdditionPrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = default!;
 
-    [DataField(required: true)]
-    public ProtoId<GameMapPrototype> ApplyOn { get; private set; }
-
+    /// <summary>
+    /// A <see cref="GameMapPrototype"/> ID to automatically apply this addition to.
+    /// </summary>
     [DataField]
+    public ProtoId<GameMapPrototype>? ApplyOn { get; private set; }
+
+    [DataField(required: true)]
     public List<MapAdditionEntity> Entities { get; private set; } = new();
 }
 
