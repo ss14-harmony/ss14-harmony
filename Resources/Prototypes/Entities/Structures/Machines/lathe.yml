@@ -503,7 +503,6 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-<<<<<<< HEAD
     staticRecipes:
       - BoxLethalshot
       - BoxShotgunPractice
@@ -598,7 +597,6 @@
       - WeaponLaserCannon
       - WeaponLaserCarbine
       - WeaponXrayCannon
-=======
     staticPacks:
     - SecurityEquipmentStatic
     - SecurityPracticeStatic
@@ -610,7 +608,6 @@
     - SecurityExplosives
     - SecurityAmmo
     - SecurityWeapons
->>>>>>> upstream/master
   - type: MaterialStorage
     whitelist:
       tags:
@@ -696,7 +693,6 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-<<<<<<< HEAD
     staticRecipes:
       - Brutepack
       - Ointment
@@ -747,7 +743,6 @@
       - BluespaceBeaker
       - SyringeBluespace
       - SyringeCryostasis
-=======
     staticPacks:
     - TopicalsStatic
     - ChemistryStatic
@@ -758,7 +753,6 @@
     - SurgeryStatic
     dynamicPacks:
     - Chemistry
->>>>>>> upstream/master
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget
