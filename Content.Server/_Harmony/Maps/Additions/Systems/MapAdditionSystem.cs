@@ -1,5 +1,4 @@
 ﻿using Content.Server.GameTicking;
-using Content.Server.Maps;
 using Content.Server.Station.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -24,7 +23,9 @@ public sealed class MapAdditionSystem : EntitySystem
             if (mapAddition.ApplyOn == null || mapAddition.ApplyOn != args.GameMap.ID)
                 continue;
 
-            ApplyMapAddition(mapAddition, args.GameMap, args.Map);
+            Log.Debug("Applying map addition {0} to map {1}", mapAddition.ID, args.GameMap.ID);
+
+            ApplyMapAddition(mapAddition, args.Map);
         }
     }
 
@@ -34,10 +35,8 @@ public sealed class MapAdditionSystem : EntitySystem
     /// <remarks>
     /// Assumes an uninitialized map
     /// </remarks>
-    public void ApplyMapAddition(MapAdditionPrototype mapAddition, GameMapPrototype gameMap, MapId map)
+    public void ApplyMapAddition(MapAdditionPrototype mapAddition, MapId map)
     {
-        Log.Debug("Applying map addition {0} to map {1}", mapAddition.ID, gameMap.ID);
-
         // Query all entities with the becomes station component and pick the first one in our map.
         // We have to use the becomes station component because our map might be uninitialized.
         var stationQuery = EntityQueryEnumerator<TransformComponent, BecomesStationComponent>();
@@ -53,7 +52,7 @@ public sealed class MapAdditionSystem : EntitySystem
 
         if (station == null)
         {
-            Log.Error("Tried to apply map addition {0} to map {1} but failed to find a station!", mapAddition.ID, gameMap.ID);
+            Log.Error("Tried to apply map addition {0} to map {1} but failed to find a station!", mapAddition.ID, map);
             return;
         }
 
