@@ -1,5 +1,8 @@
-﻿using System.Linq;
+﻿using Content.Server._Harmony.Maps.Additions;
+using Content.Server._Harmony.Maps.Additions.Systems;
+using Content.Server.Station.Components;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.IntegrationTests.Tests._Harmony.Maps.Additions;
@@ -14,7 +17,6 @@ public sealed class MapAdditionsTests
 
 - type: mapAddition
   id: TestingMapAddition
-  applyOn: Empty
   entities:
   - prototype: MapAdditionTestEntity
     name: TEST ENTITY NAME
@@ -28,14 +30,23 @@ public sealed class MapAdditionsTests
     [Test]
     public async Task AddsDummyTest()
     {
-        await using var pair = await PoolManager.GetServerClient(new PoolSettings { Map = "Empty", DummyTicker = false });
+        await using var pair = await PoolManager.GetServerClient();
         var server = pair.Server;
-        await server.WaitIdleAsync();
 
         var entityManager = server.ResolveDependency<IEntityManager>();
+        var prototypeManager = server.ResolveDependency<IPrototypeManager>();
+
+        var mapAdditionsSystem = entityManager.EntitySysManager.GetEntitySystem<MapAdditionSystem>();
+
+        var testMap = await pair.CreateTestMap();
 
         await server.WaitAssertion(() =>
         {
+            entityManager.EnsureComponent<BecomesStationComponent>(testMap.Grid); // required for the map addition to work.
+
+            mapAdditionsSystem.ApplyMapAddition(prototypeManager.Index<MapAdditionPrototype>("TestingMapAddition"),
+                testMap.MapId);
+
             var entities = entityManager.GetEntities();
 
             var foundEntity = entities.FirstOrNull(uid =>
