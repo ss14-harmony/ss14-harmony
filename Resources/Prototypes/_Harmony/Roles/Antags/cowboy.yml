@@ -1,0 +1,21 @@
+- type: antag
+  id: Cowboy
+  name: roles-antag-cowboy-name
+  antagonist: true
+  setPreference: false
+  objective: roles-antag-cowboy-objective
+  # guides: [ Cowboy ]
+
+- type: startingGear
+  id: CowboyGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOperative # Just using nukie outfit stuff for now
+    back: ClothingBackpackDuffelSyndicate
+    mask: ClothingMaskGasSyndicate
+    eyes: ClothingEyesHudSyndicate
+    ears: ClothingHeadsetAltSyndicate
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitSyndie
+    shoes: ClothingShoesBootsCombatFilled
+    id: SyndiPDA
+    belt: ClothingBeltMilitaryWebbing
