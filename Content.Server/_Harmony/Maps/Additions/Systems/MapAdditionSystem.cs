@@ -32,16 +32,17 @@ public sealed class MapAdditionSystem : EntitySystem
     /// Apply a map modification to a map
     /// </summary>
     /// <remarks>
+    /// Assumes an uninitialized map
     /// Ignores the <see cref="MapAdditionPrototype.ApplyOn"/> field
     /// </remarks>
     public void ApplyMapAddition(MapAdditionPrototype mapAddition, GameMapPrototype gameMap, MapId map)
     {
         Log.Debug("Applying map addition {0} to map {1}", mapAddition.ID, gameMap.ID);
 
-        // Find the station, we are unable to use the station system because our map is still paused.
+        // Query all entities with the becomes station component and pick the first one in our map.
+        // We have to use the becomes station component because our map might be uninitialized.
         var stationQuery = EntityQueryEnumerator<TransformComponent, BecomesStationComponent>();
         EntityUid? station = null;
-
         while (stationQuery.MoveNext(out var uid, out var transform, out var _))
         {
             if (transform.MapID != map)
