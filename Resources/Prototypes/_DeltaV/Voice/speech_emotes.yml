@@ -1,0 +1,95 @@
+# Harpy
+- type: emote
+  id: Ring
+  name: Ring
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["rings."]
+  chatTriggers:
+    - ring
+    - rings
+    - ringing
+    - ringed
+
+- type: emote
+  id: Pew
+  name: Pew
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["pews."]
+  chatTriggers:
+    - pew
+    - pews
+    - pewing # Frontier: consistency, I suppose
+    - pewed # Frontier
+
+- type: emote
+  id: Bang
+  name: Bang
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["bangs."]
+  chatTriggers:
+    - bang
+    - bangs
+    - banging
+    - banged
+
+- type: emote
+  id: Rev
+  name: Rev
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["revs."]
+  chatTriggers:
+    - revs
+    - rev
+    - revving
+    - revved
+
+- type: emote
+  id: Caw
+  name: Caw
+  category: Vocal
+  icon: Interface/Actions/scream.png
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["caws."]
+  chatTriggers:
+    - caws
+    - caw
+    - cawing
+    - cawed

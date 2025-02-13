@@ -1,0 +1,80 @@
+# species
+- type: emoteSounds
+  id: SoundsHarpy
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: HarpyScreams
+    Laugh:
+      collection: HarpyLaugh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: HarpyCry
+    Whistle:
+      collection: Whistles
+    Hiss:
+      collection: HarpyHisses
+    Meow:
+      collection: HarpyMeows
+    Mew:
+      collection: HarpyMews
+    Growl:
+      collection: HarpyGrowls
+    Purr:
+      collection: HarpyPurrs
+    Ring:
+      collection: HarpyRings
+    Pew:
+      collection: HarpyPews
+    Bang:
+      collection: HarpyBangs
+      params: # Frontier
+        volume: -5 # Frontier
+    Beep:
+      collection: HarpyBeeps
+    Rev:
+      collection: HarpyRevs
+      params: # Frontier
+        volume: -5 # Frontier
+    Click:
+      collection: HarpyClicks
+    Squish: # Frontier
+      collection: HarpySquishes # Frontier
+    Chitter:
+      collection: HarpyChitter
+    Squeak:
+      collection: HarpySqueak
+    Caw:
+      collection: HarpyCaws
+    Chirp:
+      collection: HarpyChirps
+    # Snarl:
+    #   collection: VulpkaninSnarls
+    # Bark:
+    #   collection: VulpkaninBarks
+    # Whine:
+    #   collection: VulpkaninWhines
+    # Howl:
+    #   collection: VulpkaninHowls
+    # Awoo:
+    #   collection: VulpkaninHowls
+    Honk:
+      collection: HarpyHonks
+      params: # Frontier
+        volume: -5 # Frontier
+    Weh:
+      collection: Weh
+    # Belch: # Frontier
+    #   collection: Belch # Frontier
+    Gasp: # Frontier
+      collection: HarpyGasp # Frontier
+    DefaultDeathgasp: # Frontier
+      collection: DeathGasp # Frontier
+    Yawn:
+      collection: MaleYawn

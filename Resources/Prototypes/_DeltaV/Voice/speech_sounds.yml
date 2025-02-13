@@ -1,0 +1,8 @@
+- type: speechSounds
+  id: Harpy
+  saySound:
+    path: /Audio/_DeltaV/Voice/Harpy/chirp1.ogg
+  askSound:
+    path: /Audio/_DeltaV/Voice/Harpy/chirp1.ogg
+  exclaimSound:
+    path: /Audio/_DeltaV/Voice/Harpy/chirp1.ogg
