@@ -44,6 +44,14 @@ public sealed partial class FTLComponent : Component
     [DataField, AutoNetworkedField]
     public Angle TargetAngle;
 
+    //Harmony
+    /// <summary>
+    /// All docks involved in this FTL operation.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public List<SharedDockingComponent> Docks = new List<SharedDockingComponent>();
+    //End Harmony
+
     /// <summary>
     /// If we're docking after FTL what is the prioritised dock tag (if applicable).
     /// </summary>

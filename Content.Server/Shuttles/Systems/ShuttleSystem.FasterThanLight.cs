@@ -333,6 +333,7 @@ public sealed partial class ShuttleSystem
             // Harmony - Mark the docks as queued for a docking
             config.Docks.ForEach(x =>
             {
+                hyperspace.Docks.AddRange([x.DockA, x.DockB]);
                 x.DockA.QueuedDocked = true;
                 x.DockB.QueuedDocked = true;
             });
@@ -512,6 +513,10 @@ public sealed partial class ShuttleSystem
             var config = _dockSystem.GetDockingConfigAt(uid, target.EntityId, target, entity.Comp1.TargetAngle);
             var mapCoordinates = _transform.ToMapCoordinates(target);
 
+            // Harmony - Mark the docks as unqueued
+            entity.Comp1.Docks.ForEach(x => x.QueuedDocked = false);
+            // End Harmony
+
             // Couldn't dock somehow so just fallback to regular position FTL.
             if (config == null)
             {
@@ -520,13 +525,6 @@ public sealed partial class ShuttleSystem
             else
             {
                 FTLDock((uid, xform), config);
-                // Harmony - Mark the docks as unqueued
-                config.Docks.ForEach(x =>
-                {
-                    x.DockA.QueuedDocked = false;
-                    x.DockB.QueuedDocked = false;
-                });
-                // End Harmony
             }
 
             mapId = mapCoordinates.MapId;

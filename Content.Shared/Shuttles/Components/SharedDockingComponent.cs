@@ -6,5 +6,13 @@ namespace Content.Shared.Shuttles.Components
         // and I was too lazy to delete it.
 
         public abstract bool Docked { get; }
+
+        // Harmony
+        /// <summary>
+        /// True if there is currently a grid in FTL trying to dock here.
+        /// </summary>
+        [DataField]
+        public bool QueuedDocked = false;
+        // End Harmony
     }
 }
