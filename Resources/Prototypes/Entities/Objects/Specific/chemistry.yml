@@ -388,11 +388,18 @@
     - Trash
 
 - type: entity
-  name: mini syringe
+# Start of Harmony Change: Renames the mini syringe to fit the new item size
+#  name: mini syringe
+  name: syringe dart
+# End of Harmony Change
   parent: Syringe
   description: A regular syringe, reshaped to fit inside of a gun.
   id: MiniSyringe
   components:
+# Start of Harmony Change: Makes the syringe larger to fit new syringe gun storage size
+  - type: Item
+    size: Small
+# End of Harmony Change
   - type: Sprite
     sprite: Objects/Specific/Chemistry/syringe.rsi
     layers:
