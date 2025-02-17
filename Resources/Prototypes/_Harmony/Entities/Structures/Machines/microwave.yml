@@ -1,7 +1,7 @@
 - type: entity
   id: KitchenMicrowave
+  suffix: Harmony
   parent: KitchenMicrowaveUpstream
-  name: microwave
   components:
   - type: Item
     sprite: _Harmony/Structures/Machines/microwave.rsi
@@ -14,15 +14,14 @@
         Blunt: 25
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
-  - type: ClothingSpeedModifier
-    walkModifier: 0.75
-    sprintModifier: 0.75
   - type: HeldSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
 
 - type: entity
   id: SyndicateMicrowave
-  parent: [SyndicateMicrowaveUpstream, BaseSyndicateContraband]
-  name: donk co. microwave
+  suffix: Harmony
+  parent: [SyndicateMicrowaveUpstream, KitchenMicrowaveUpstream, BaseSyndicateContraband]
   components:
   - type: Item
     sprite: _Harmony/Structures/Machines/microwave_syndie.rsi
@@ -36,7 +35,4 @@
         Shock: 5
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
-  - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
-  - type: HeldSpeedModifier
+
