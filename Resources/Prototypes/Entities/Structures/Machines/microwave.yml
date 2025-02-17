@@ -1,7 +1,8 @@
 - type: entity
   id: KitchenMicrowaveUpstream # Harmony Change: Updates ID to be used as a parent
   parent: [ BaseMachinePowered, SmallConstructibleMachine ]
-  name: microwave [DO NOT MAP] # Harmony Change: Updates name
+  name: microwave
+  categories: [ HideSpawnMenu ] # Harmony
   description: It's magic.
   components:
   - type: Microwave
@@ -110,7 +111,8 @@
 - type: entity
   id: SyndicateMicrowaveUpstream # Harmony Change: Updates ID to be used as a parent
   parent: KitchenMicrowave
-  name: donk co. microwave [DO NOT MAP] # Harmony Change: Updates name
+  name: donk co. microwave
+  categories: [ HideSpawnMenu ] # Harmony
   description: So advanced, it can cook donk-pockets in a mere 2.5 seconds!
   components:
   - type: Microwave
