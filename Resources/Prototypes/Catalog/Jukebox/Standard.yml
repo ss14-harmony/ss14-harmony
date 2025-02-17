@@ -39,10 +39,3 @@
   name: PigeonBeans - Sunset
   path:
     path: /Audio/Jukebox/sunset.ogg
-# Harmony Start
-- type: jukebox
-  id: Phoronmakesusrich
-  name: Alexander Divine - Phoron Will Make Us Rich
-  path:
-    path: /Audio/_Harmony/Jukebox/Phoron.ogg
-# Harmony End
