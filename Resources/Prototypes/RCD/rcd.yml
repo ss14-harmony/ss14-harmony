@@ -16,7 +16,7 @@
   id: DeconstructLattice   # Hidden prototype - do not add to RCDs  
   name: rcd-component-deconstruct
   mode: Deconstruct
-  cost: 2
+  cost: 1
   delay: 0
   rotation: Camera
   fx: EffectRCDConstruct0
@@ -93,7 +93,7 @@
   sprite: /Textures/Interface/Radial/RCD/grille.png
   mode: ConstructObject
   prototype: Grille
-  cost: 4
+  cost: 1
   delay: 2
   collisionMask: Impassable
   rotation: Fixed
@@ -106,7 +106,7 @@
   sprite: /Textures/Interface/Radial/RCD/window.png
   mode: ConstructObject
   prototype: Window
-  cost: 3
+  cost: 2
   delay: 2
   collisionMask: Impassable
   rules:
@@ -135,7 +135,7 @@
   sprite: /Textures/Interface/Radial/RCD/window_reinforced.png
   mode: ConstructObject
   prototype: ReinforcedWindow
-  cost: 4
+  cost: 3
   delay: 3
   collisionMask: Impassable
   rules:
@@ -165,7 +165,7 @@
   sprite: /Textures/Interface/Radial/RCD/airlock.png
   mode: ConstructObject
   prototype: Airlock
-  cost: 4
+  cost: 6
   delay: 4
   collisionMask: FullTileMask
   rotation: Camera
@@ -177,7 +177,7 @@
   sprite: /Textures/Interface/Radial/RCD/glass_airlock.png
   mode: ConstructObject
   prototype: AirlockGlass
-  cost: 4
+  cost: 8
   delay: 4
   collisionMask: FullTileMask
   rotation: Camera
