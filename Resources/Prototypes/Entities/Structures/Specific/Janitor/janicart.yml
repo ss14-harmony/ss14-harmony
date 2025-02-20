@@ -1,7 +1,8 @@
 # Mop Bucket
 - type: entity
   name: mop bucket
-  id: MopBucket
+  categories: [ HideSpawnMenu ] # Harmony Change: Hides the upstream mop bucket from the spawn menu
+  id: MopBucketUpstream # Harmony Change: Changes ID to be used as a parent
   parent: [BaseStructureDynamic, StructureWheeled]
   description: Holds water and the tears of the janitor.
   components:

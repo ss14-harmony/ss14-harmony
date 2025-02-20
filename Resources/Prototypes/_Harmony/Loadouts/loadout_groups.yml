@@ -14,6 +14,15 @@
   - PermaPrisonerJumpsuit
   - PermaPrisonerJumpskirt
 
+- type: loadoutGroup
+  id: SecurityTrinketsHarmony
+  name: loadout-group-security-trinkets
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - SecStar
+  - PatrolSharkHarmony
+
 # Medical
 - type: loadoutGroup
   id: MedicalDoctorNeck
