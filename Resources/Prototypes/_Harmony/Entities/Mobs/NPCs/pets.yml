@@ -38,3 +38,63 @@
         kobold: PoquitoColors
     - horns:
         horns_ram: KoboldHornColors
+
+- type: entity
+  id: Hubert
+  parent: BaseMobAsteroid
+  name: Hubert
+  description: The friendliest creature in all of lavaland, you wont find another like him.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Mobs/Pets/Hubert.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: Hubert
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: Hubert
+      Dead:
+        Base: HubertDead
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.00
+    baseSprintSpeed : 2.00
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      250: Dead
+  - type: MeleeWeapon
+    soundHit:
+      path: "/Audio/Weapons/smash.ogg"
+    angle: 0
+    attackRate: 0.75
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Slash: 10
+        Piercing: 10
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: GoliathCompound
+    blackboard:
+      VisionRadius: !type:Single
+        6
+      AggroVisionRadius: !type:Single
+        10
+  - type: NPCUseActionOnTarget
+    actionId: ActionGoliathTentacle
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - Goliath
+    - FootstepSound
+  - type: NoSlip
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatGoliath
+      amount: 3
+    - id: MaterialGoliathHide1
+      amount: 3
