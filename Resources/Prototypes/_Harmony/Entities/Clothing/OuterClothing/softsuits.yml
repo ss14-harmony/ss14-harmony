@@ -11,3 +11,4 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTLeaderCardBoard
   - type: ContainerContainer
+    toggleable-clothing: !type:ContainerSlot
