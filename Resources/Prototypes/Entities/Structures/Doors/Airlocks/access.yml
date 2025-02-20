@@ -1265,7 +1265,7 @@
       - HideLabel
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsExternal ]
+      board: [ DoorElectronics ]
 
 #HighSecDoors
 - type: entity
