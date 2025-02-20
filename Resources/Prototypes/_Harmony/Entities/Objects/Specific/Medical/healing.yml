@@ -1,3 +1,22 @@
+
+- type: entity
+  id: OintmentAdvanced10
+  parent: RegenerativeMesh
+  suffix: 20, lingering
+  components:
+  - type: Stack
+    lingering: true
+    count: 20
+
+- type: entity
+  id: BrutepackAdvanced10
+  parent: MedicatedSuture
+  suffix: 20, lingering
+  components:
+  - type: Stack
+    lingering: true
+    count: 20
+
 - type: entity
   id: Bloodpack1
   parent: Bloodpack
