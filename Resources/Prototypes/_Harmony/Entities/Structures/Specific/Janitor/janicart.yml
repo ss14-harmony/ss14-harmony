@@ -2,6 +2,7 @@
 - type: entity
   name: mop bucket
   id: MopBucket
+  suffix: Harmony
   parent: MopBucketUpstream
   components:
   - type: ItemMapper
