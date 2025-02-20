@@ -1,6 +1,8 @@
+<!-- Harmony - chat highlighting, line 4 and 5 -->
 <Control xmlns="https://spacestation14.io"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-         xmlns:ui="clr-namespace:Content.Client.Options.UI">
+         xmlns:ui="clr-namespace:Content.Client.Options.UI"
+         xmlns:hui="clr-namespace:Content.Client._Harmony.Options.UI">
     <BoxContainer Orientation="Vertical">
         <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
             <BoxContainer Orientation="Vertical" Margin="8">
@@ -9,6 +11,12 @@
                 <CheckBox Name="ColorblindFriendlyCheckBox" Text="{Loc 'ui-options-colorblind-friendly'}" />
                 <ui:OptionSlider Name="ChatWindowOpacitySlider" Title="{Loc 'ui-options-chat-window-opacity'}" />
                 <ui:OptionSlider Name="ScreenShakeIntensitySlider" Title="{Loc 'ui-options-screen-shake-intensity'}" />
+                <!-- Harmony - start of chat highlighting -->
+                <CheckBox Name="AutoFillHighlightsCheckBox" Text="{Loc 'ui-options-auto-fill-highlights'}" />
+                <hui:OptionColorSlider Name="HighlightsColorSlider"
+                    Title="{Loc 'ui-options-highlights-color'}"
+                    Example="{Loc 'ui-options-highlights-color-example'}"/>
+                <!-- Harmony - end of chat highlighting -->
             </BoxContainer>
         </ScrollContainer>
         <ui:OptionsTabControlRow Name="Control" Access="Public" />

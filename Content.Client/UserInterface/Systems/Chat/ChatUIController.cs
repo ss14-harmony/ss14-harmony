@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
+using Content.Client.CharacterInfo; // Harmony - chat highlighting, remove when chat refactor is merged
 using Content.Client.Administration.Managers;
 using Content.Client.Chat;
 using Content.Client.Chat.Managers;
@@ -40,10 +41,12 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using static Content.Client.CharacterInfo.CharacterInfoSystem; // Harmony - chat highlighting, remove when chat refactor is merged
+using Content.Shared._Harmony.CCVars; // Harmony - chat highlighting, remove when chat refactor is merged
 
 namespace Content.Client.UserInterface.Systems.Chat;
 
-public sealed class ChatUIController : UIController
+public sealed class ChatUIController : UIController, IOnSystemChanged<CharacterInfoSystem> // Harmony - chat highlighting, remove when chat refactor is merged
 {
     [Dependency] private readonly IClientAdminManager _admin = default!;
     [Dependency] private readonly IChatManager _manager = default!;
@@ -57,6 +60,7 @@ public sealed class ChatUIController : UIController
     [Dependency] private readonly IStateManager _state = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IReplayRecordingManager _replayRecording = default!;
+    [Dependency] private readonly ILocalizationManager _loc = default!; // Harmony - chat highlighting, remove when chat refactor is merged
 
     [UISystemDependency] private readonly ExamineSystem? _examine = default;
     [UISystemDependency] private readonly GhostSystem? _ghost = default;
@@ -65,6 +69,7 @@ public sealed class ChatUIController : UIController
     [UISystemDependency] private readonly TransformSystem? _transform = default;
     [UISystemDependency] private readonly MindSystem? _mindSystem = default!;
     [UISystemDependency] private readonly RoleCodewordSystem? _roleCodewordSystem = default!;
+    [UISystemDependency] private readonly CharacterInfoSystem? _characterInfo = default!; // Harmony - chat highlighting, remove when chat refactor is merged
 
     [ValidatePrototypeId<ColorPalettePrototype>]
     private const string ChatNamePalette = "ChatNames";
@@ -149,6 +154,25 @@ public sealed class ChatUIController : UIController
     /// </summary>
     private readonly Dictionary<ChatChannel, int> _unreadMessages = new();
 
+    // Harmony - start of chat highlighting, remove when chat refactor is merged
+    /// <summary>
+    ///     The list of words to be highlighted in the chatbox.
+    /// </summary>
+    private List<string> _highlights = new();
+
+    /// <summary>
+    ///     The string holding the hex color used to highlight words.
+    /// </summary>
+    private string? _highlightsColor;
+
+    private bool _autoFillHighlightsEnabled;
+
+    /// <summary>
+    ///     The boolean that keeps track of the 'OnCharacterUpdated' event, whenever it's a player attaching or opening the character info panel.
+    /// </summary>
+    private bool _charInfoIsAttach = false;
+    // Harmony - end of chat highlighting
+
     // TODO add a cap for this for non-replays
     public readonly List<(GameTick Tick, ChatMessage Msg)> History = new();
 
@@ -172,6 +196,7 @@ public sealed class ChatUIController : UIController
     public event Action<ChatSelectChannel>? SelectableChannelsChanged;
     public event Action<ChatChannel, int?>? UnreadMessageCountsUpdated;
     public event Action<ChatMessage>? MessageAdded;
+    public event Action<string>? HighlightsUpdated; // Harmony - chat highlighting, remove when chat refactor is merged
 
     public override void Initialize()
     {
@@ -240,6 +265,19 @@ public sealed class ChatUIController : UIController
 
         _config.OnValueChanged(CCVars.ChatWindowOpacity, OnChatWindowOpacityChanged);
 
+        // Harmony - start of chat highlighting, remove when chat refactor is merged
+        _config.OnValueChanged(HCCVars.ChatAutoFillHighlights, value => _autoFillHighlightsEnabled = value, true);
+
+        _config.OnValueChanged(HCCVars.ChatHighlightsColor, value => _highlightsColor = value, true);
+
+        // Load highlights if any were saved.
+        string highlights = _config.GetCVar(HCCVars.ChatHighlights);
+
+        if (!string.IsNullOrEmpty(highlights))
+        {
+            UpdateHighlights(highlights, true);
+        }
+        // Harmony - end of chat highlighting
     }
 
     public void OnScreenLoad()
@@ -257,10 +295,52 @@ public sealed class ChatUIController : UIController
         SetMainChat(false);
     }
 
+    // Harmony - start of chat highlighting, remove when chat refactor is merged
+    public void OnSystemLoaded(CharacterInfoSystem system)
+    {
+        system.OnCharacterUpdate += OnCharacterUpdated;
+    }
+
+    public void OnSystemUnloaded(CharacterInfoSystem system)
+    {
+        system.OnCharacterUpdate -= OnCharacterUpdated;
+    }
+    // Harmony - end of chat highlighting
+
     private void OnChatWindowOpacityChanged(float opacity)
     {
         SetChatWindowOpacity(opacity);
     }
+
+    // Harmony - start of chat highlighting, remove when chat refactor is merged
+    private void OnCharacterUpdated(CharacterData data)
+    {
+        // If the _charInfoIsAttach is false then the character panel was the one
+        // to generate the event, dismiss it.
+        if (!_charInfoIsAttach)
+            return;
+
+        var (_, job, _, _, entityName) = data;
+
+        // Mark this entity's name as our character name for the "UpdateHighlights" function.
+        string newHighlights = "@" + entityName;
+
+        // If the character has a normal name (eg. "Name Surname" and not "Name Initial Surname" or a particular species name)
+        // subdivide it so that the name and surname individually get highlighted.
+        if (newHighlights.Count(c => c == ' ') == 1)
+            newHighlights = newHighlights.Replace(" ", "\n@");
+
+        // Convert the job title to kebab-case and use it as a key for the loc file.
+        string jobKey = job.Replace(' ', '-').ToLower();
+
+        if (_loc.TryGetString($"highlights-{jobKey}", out var jobMatches))
+            newHighlights += '\n' + jobMatches.Replace(", ", "\n");
+
+        UpdateHighlights(newHighlights);
+        HighlightsUpdated?.Invoke(newHighlights);
+        _charInfoIsAttach = false;
+    }
+    // Harmony - end of chat highlighting
 
     private void SetChatWindowOpacity(float opacity)
     {
@@ -426,6 +506,16 @@ public sealed class ChatUIController : UIController
     private void OnAttachedChanged(EntityUid uid)
     {
         UpdateChannelPermissions();
+
+        // Harmony - start of chat highlighting, remove when chat refactor is merged
+        // If auto highlights are enabled generate a request for new character info
+        // that will be used to determine the highlights.
+        if (_autoFillHighlightsEnabled && _characterInfo != null)
+        {
+            _charInfoIsAttach = true;
+            _characterInfo.RequestCharacterInfo();
+        }
+        // Harmony - end of chat highlighting
     }
 
     private void AddSpeechBubble(ChatMessage msg, SpeechBubble.SpeechType speechType)
@@ -583,6 +673,38 @@ public sealed class ChatUIController : UIController
             UnreadMessageCountsUpdated?.Invoke(channel, 0);
         }
     }
+
+    // Harmony - start of chat highlighting, remove when chat refactor is merged
+    public void UpdateHighlights(string highlights, bool firstLoad = false)
+    {
+        // Do nothing if the provided highlights are the same as the old ones.
+        if (!firstLoad && _config.GetCVar(HCCVars.ChatHighlights).Equals(highlights, StringComparison.CurrentCultureIgnoreCase))
+            return;
+
+        _config.SetCVar(HCCVars.ChatHighlights, highlights);
+        _config.SaveToFile();
+
+        // Make sure any name tagged as ours gets highlighted only when others say it.
+        highlights = highlights.Replace("@", "(?<=(?<=/name.*)|(?<=,.*\"\".*))");
+
+        // Replace any " character with a whole-word regex tag,
+        // this tag will make the words to match are separated by spaces or punctuation.
+        highlights = highlights.Replace("\"", "\\b");
+
+        _highlights.Clear();
+
+        // Fill the array with the highlights separated by newlines, disregarding empty entries.
+        string[] arrHighlights = highlights.Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        foreach (var keyword in arrHighlights)
+        {
+            _highlights.Add(keyword);
+        }
+
+        // Arrange the list of highlights in descending order so that when highlighting,
+        // the full word (eg. "Security") gets picked before the abbreviation (eg. "Sec").
+        _highlights.Sort((x, y) => y.Length.CompareTo(x.Length));
+    }
+    // Harmony - end of chat highlighting
 
     public override void FrameUpdate(FrameEventArgs delta)
     {
@@ -816,6 +938,14 @@ public sealed class ChatUIController : UIController
 
     public void ProcessChatMessage(ChatMessage msg, bool speechBubble = true)
     {
+        // Harmony - start of chat highlighting, remove when chat refactor is merged
+        // Color any words chosen by the client.
+        foreach (var highlight in _highlights)
+        {
+            msg.WrappedMessage = SharedChatSystem.InjectTagAroundString(msg, highlight, "color", _highlightsColor);
+        }
+        // Harmony - end of chat highlighting
+
         // color the name unless it's something like "the old man"
         if ((msg.Channel == ChatChannel.Local || msg.Channel == ChatChannel.Whisper) && _chatNameColorsEnabled)
         {
