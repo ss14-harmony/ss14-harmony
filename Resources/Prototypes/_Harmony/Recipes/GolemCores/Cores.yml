@@ -1,0 +1,10 @@
+﻿- type: construction
+  name: Golem Core
+  id: GolemCoreConstruction
+  graph: GolumCoreGraph
+  startNode: start
+  targetNode: BaseCore
+  category: construction-category-utilities
+  description: A golem core.
+  icon: { sprite: _Harmony/Objects/Devices/Golemshell.rsi, state: Shell }
+  objectType: Item

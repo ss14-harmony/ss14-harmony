@@ -1,0 +1,190 @@
+﻿- type: entity
+  save: false
+  parent: BaseMobGolem
+  id: MobGolemPerson
+  components:
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+    messagePerceivedByOthers: hugging-success-generic-others
+
+- type: entity
+  name: Steel Golem
+  parent: MobGolemPerson
+  id: SteelGolem
+  components:
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+    messagePerceivedByOthers: hugging-success-generic-others
+  - type: GhostRole
+    name: ghost-role-steel-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  name: Uranium Golem
+  parent: BaseUraniumGolem
+  id: UraniumGolem
+  components:
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+    messagePerceivedByOthers: hugging-success-generic-others
+  - type: GhostRole
+    name: ghost-role-uranium-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  name: Plasma Golem
+  parent: BasePlasmaGolem
+  id: PlasmaGolem
+  components:
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+    messagePerceivedByOthers: hugging-success-generic-others
+  - type: GhostRole
+    name: ghost-role-plasma-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  name: Adamantium Golem
+  parent: BaseAdamantiumGolem
+  id: AdamantiumGolem
+  components:
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+    messagePerceivedByOthers: hugging-success-generic-others
+  - type: GhostRole
+    name: ghost-role-adamantium-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  name: Glass Golem
+  parent: BaseGlassGolem
+  id: GlassGolem
+  components:
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+    messagePerceivedByOthers: hugging-success-generic-others
+  - type: GhostRole
+    name: ghost-role-glass-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  name: Gold Golem
+  parent: BaseGoldGolem
+  id: GoldGolem
+  components:
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+    messagePerceivedByOthers: hugging-success-generic-others
+  - type: GhostRole
+    name: ghost-role-gold-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  name: Silver Golem
+  parent: BaseSilverGolem
+  id: SilverGolem
+  components:
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+    messagePerceivedByOthers: hugging-success-generic-others
+  - type: GhostRole
+    name: ghost-role-silver-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  name: Diamond Golem
+  parent: BaseDiamondGolem
+  id: DiamondGolem
+  components:
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+    messagePerceivedByOthers: hugging-success-generic-others
+  - type: GhostRole
+    name: ghost-role-diamond-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  name: Bananium Golem
+  parent: BaseBananiumGolem
+  id: BananiumGolem
+  components:
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Items/airhorn.ogg
+    messagePerceivedByOthers: hugging-success-generic-others
+  - type: GhostRole
+    name: ghost-role-bananium-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  name: Plasteel Golem
+  parent: BasePlasteelGolem
+  id: PlasteelGolem
+  components:
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Items/airhorn.ogg
+    messagePerceivedByOthers: hugging-success-generic-others
+  - type: GhostRole
+    name: ghost-role-plassteel-golem-name
+    description: ghost-role-golem-desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
