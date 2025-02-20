@@ -95,3 +95,11 @@
   color: "#f6ce64"
   # long range since otherwise it'd defeat the point of a handheld radio independent of telecomms
   longRange: true
+
+- type: radioChannel
+  id: Hivemind
+  name: chat-radio-hivemind
+  keycode: 'h'
+  frequency: 1520
+  color: "#6f730f"
+  longRange: true
