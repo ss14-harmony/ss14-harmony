@@ -46,6 +46,7 @@
   cost: 7500
   recipeUnlocks:
   - WeaponLaserCarbine
+  - WeaponEnergyCarbineHarmony # Harmony Change: Adds the energy Carbine to the Laser Munipulation Research.
 
 - type: technology
   id: NonlethalAmmunition
@@ -140,6 +141,7 @@
   cost: 10000
   recipeUnlocks:
   - WeaponLaserCannon
+  - EnergyCartridgeUnstablePrintedHarmony # Harmony Change: Adds the Unstable Energy Cartridge to the Concentrated Laser Research
 
 - type: technology
   id: WaveParticleHarnessing
@@ -152,6 +154,7 @@
   cost: 10000
   recipeUnlocks:
   - WeaponXrayCannon
+  - EnergyCartridgeXRayPrintedHarmony # Harmony Change: Adds the X-ray Energy Cartridge to the Wave Particle Research
 
 - type: technology
   id: BasicShuttleArmament
