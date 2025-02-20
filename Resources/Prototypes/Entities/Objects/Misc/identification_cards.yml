@@ -25,6 +25,7 @@
     - WhitelistChameleonIdCard
   - type: StealTarget
     stealGroup: IDCard
+  - type: NanoChatCard # DeltaV
 
 #IDs with layers
 
@@ -819,6 +820,8 @@
     - NuclearOperative
     - SyndicateAgent
     - Wizard
+  - type: NanoChatCard # DeltaV
+
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
