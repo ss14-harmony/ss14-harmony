@@ -276,7 +276,7 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
 
         if (criminalRecord.Status != SecurityStatus.None)
         {
-            specifier = new SpriteSpecifier.Rsi(new ResPath("Interface/Misc/security_icons.rsi"),  GetStatusIcon(criminalRecord.Status));
+            specifier = new SpriteSpecifier.Rsi(new ResPath("_Harmony/Interface/Misc/security_icons.rsi"),  GetStatusIcon(criminalRecord.Status)); // Harmony Change, to use custom wanted statuses
         }
         PersonStatusTX.SetFromSpriteSpecifier(specifier);
         PersonStatusTX.DisplayRect.TextureScale = new Vector2(3f, 3f);
@@ -362,6 +362,10 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
             SecurityStatus.Detained => "hud_incarcerated",
             SecurityStatus.Discharged => "hud_discharged",
             SecurityStatus.Suspected => "hud_suspected",
+            // Harmony Start
+            SecurityStatus.Search => "hud_search",
+            SecurityStatus.Monitor => "hud_monitor",
+            // Harmony Emd
             _ => "SecurityIconNone"
         };
     }
