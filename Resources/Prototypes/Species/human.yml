@@ -56,15 +56,22 @@
     HeadTop:
       points: 1
       required: false
+# Start of Harmony change:
     Chest:
-      points: 1
-      required: false
+#      points: 1
+       points: 4 # imp 1<4       
+       required: false
+# End of Harmony change    
     Legs:
-      points: 2
+# Start of Harmony change:   
+#      points: 2
+      points: 8 # imp 2<8
       required: false
     Arms:
-      points: 2
+#      points: 2
+      points: 8 # imp 2<8
       required: false
+# End of Harmony change
 
 - type: humanoidBaseSprite
   id: MobHumanoidEyes

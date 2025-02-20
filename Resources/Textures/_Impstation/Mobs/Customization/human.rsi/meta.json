@@ -1,0 +1,175 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Drawn by Carousel for Impstation; Moth scars drawn by Snavian for Impstation, Doll and incision tattoos by Sha-Seng (Github)",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "arm_l_prosthetic",
+        "directions": 4
+      },
+      {
+          "name": "arm_l_twisting",
+          "directions": 4
+      },
+      {
+          "name": "arm_r_prosthetic",
+          "directions": 4
+      },
+      {
+          "name": "arm_r_twisting",
+          "directions": 4
+      },
+      {
+          "name": "chest_backstabbed",
+          "directions": 4
+      },
+      {
+          "name": "chest_l_twisting",
+          "directions": 4
+      },
+      {
+          "name": "chest_r_twisting",
+          "directions": 4
+      },
+      {
+          "name": "chest_star",
+          "directions": 4
+      },
+      {
+          "name": "foot_l_prosthetic",
+          "directions": 4
+      },
+      {
+          "name": "foot_r_prosthetic",
+          "directions": 4
+      },
+      {
+          "name": "hand_l_prosthetic",
+          "directions": 4
+      },
+      {
+          "name": "hand_l_twisting",
+          "directions": 4
+      },
+      {
+          "name": "hand_r_prosthetic",
+          "directions": 4
+      },
+      {
+          "name": "hand_r_twisting",
+          "directions": 4
+      },
+      {
+          "name": "head_smile",
+          "directions": 4
+      },
+      {
+          "name": "head_twisting",
+          "directions": 4
+      },
+      {
+          "name": "leg_l_prosthetic",
+          "directions": 4
+      },
+      {
+          "name": "leg_l_twisting",
+          "directions": 4
+      },
+      {
+          "name": "leg_r_prosthetic",
+          "directions": 4
+      },
+      {
+          "name": "leg_r_twisting",
+          "directions": 4
+      },
+      {
+          "name": "torso_incision",
+          "directions": 4
+      },
+      {
+        "name": "vitiligoheadl",
+        "directions": 4
+      },
+      {
+        "name": "vitiligoheadr",
+        "directions": 4
+      },
+      {
+        "name": "vitiligoheadjaw",
+        "directions": 4
+      },
+      {
+        "name": "vitiligochestf",
+        "directions": 4
+      },
+      {
+        "name": "vitiligoarmr",
+        "directions": 4
+      },
+      {
+        "name": "vitiligoarml",
+        "directions": 4
+      },
+      {
+        "name": "vitiligohandl",
+        "directions": 4
+      },
+      {
+        "name": "vitiligohandr",
+        "directions": 4
+      },
+      {
+        "name": "vitiligolegl",
+        "directions": 4
+      },
+      {
+        "name": "vitiligolegr",
+        "directions": 4
+      },
+      {
+        "name": "vitiligochestspots",
+        "directions": 4
+      },
+      {
+        "name": "l_arm_doll",
+        "directions": 4
+      },
+      {
+        "name": "r_arm_doll",
+        "directions": 4
+      },
+      {
+        "name": "l_hand_doll",
+        "directions": 4
+      },
+      {
+        "name": "r_hand_doll",
+        "directions": 4
+      },
+      {
+        "name": "l_leg_doll",
+        "directions": 4
+      },
+      {
+        "name": "r_leg_doll",
+        "directions": 4
+      },
+      {
+        "name": "l_foot_doll",
+        "directions": 4
+      },
+      {
+        "name": "r_foot_doll",
+        "directions": 4
+      },
+      {
+        "name": "chest_cuthere",
+        "directions": 4
+      }
+    ]
+  }

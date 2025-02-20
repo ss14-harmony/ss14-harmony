@@ -64,11 +64,15 @@
       points: 1
       required: false
     Legs:
-      points: 2
+# Start of Harmony change: adds more points 
+#      points: 2
+      points: 6 # imp 2>6     
       required: false
     Arms:
-      points: 2
+#     points: 2
+      points: 8 # imp 2>8    
       required: false
+# End of Harmony change
 
 - type: humanoidBaseSprite
   id: MobArachnidHead

@@ -35,6 +35,10 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("sprites", required: true)]
         public List<SpriteSpecifier> Sprites { get; private set; } = default!;
 
+        // Harmony Edit start - allow markings to support shaders
+        [DataField("shader")]
+        public string? Shader { get; private set; } = null;
+        // Harmony Edit End
         public Marking AsMarking()
         {
             return new Marking(ID, Sprites.Count);

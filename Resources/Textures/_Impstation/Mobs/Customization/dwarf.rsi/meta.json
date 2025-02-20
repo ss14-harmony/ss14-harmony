@@ -1,0 +1,591 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Drawn and coded by Carousel for Impstation, Doll and incision tattoos by Sha-Seng (Github)",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+    {
+      "name": "dwarfconstellationhead",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "dwarfconstellationchest",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "dwarfconstellationlarm",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "dwarfconstellationlhand",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "dwarfconstellationrarm",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "dwarfconstellationrhand",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "dwarfconstellationlleg",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "dwarfconstellationlfoot",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "dwarfconstellationrleg",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "dwarfconstellationrfoot",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "dwarfheadglow",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "dwarfmarkbear",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "dwarfmarkkangaroo",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "dwarfmarkkangaroolhand",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "dwarfmarkcobra",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "dwarfmarkspider",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "arm_l_prosthetic",
+      "directions": 4
+    },
+    {
+      "name": "arm_l_twisting",
+      "directions": 4
+    },
+    {
+      "name": "arm_r_prosthetic",
+      "directions": 4
+    },
+    {
+      "name": "arm_r_twisting",
+      "directions": 4
+    },
+    {
+      "name": "chest_backstabbed",
+      "directions": 4
+    },
+    {
+      "name": "chest_cuthere",
+      "directions": 4
+    },
+    {
+      "name": "l_arm_doll",
+      "directions": 4
+    },
+    {
+      "name": "r_arm_doll",
+      "directions": 4
+    },
+    {
+      "name": "l_hand_doll",
+      "directions": 4
+    },
+    {
+      "name": "r_hand_doll",
+      "directions": 4
+    },
+    {
+      "name": "l_leg_doll",
+      "directions": 4
+    },
+    {
+      "name": "r_leg_doll",
+      "directions": 4
+    },
+    {
+      "name": "l_foot_doll",
+      "directions": 4
+    },
+    {
+      "name": "r_foot_doll",
+      "directions": 4
+    },
+    {
+      "name": "hand_l_prosthetic",
+      "directions": 4
+    },
+    {
+      "name": "hand_l_twisting",
+      "directions": 4
+    },
+    {
+      "name": "hand_r_prosthetic",
+      "directions": 4
+    },
+    {
+      "name": "hand_r_twisting",
+      "directions": 4
+    },
+    {
+      "name": "leg_l_prosthetic",
+      "directions": 4
+    },
+    {
+      "name": "leg_l_twisting",
+      "directions": 4
+    },
+    {
+      "name": "leg_r_prosthetic",
+      "directions": 4
+    },
+    {
+      "name": "leg_r_twisting",
+      "directions": 4
+    },
+    {
+      "name": "head_twisting",
+      "directions": 4
+    },
+    {
+      "name": "dwarfbearcheeks",
+      "directions": 4
+    },
+    {
+      "name": "dwarfchesthair",
+      "directions": 4
+    },
+    {
+      "name": "dwarfarmhair",
+      "directions": 4
+    },
+    {
+      "name": "dwarfleghair",
+      "directions": 4
+    },
+    {
+      "name": "dwarftattooshootingstar",
+      "directions": 4
+    },
+    {
+      "name": "vitiligoheadl",
+      "directions": 4
+    },
+    {
+      "name": "vitiligoheadr",
+      "directions": 4
+    },
+    {
+      "name": "vitiligoheadjaw",
+      "directions": 4
+    },
+    {
+      "name": "vitiligochestf",
+      "directions": 4
+    },
+    {
+      "name": "vitiligoarmr",
+      "directions": 4
+    },
+    {
+      "name": "vitiligoarml",
+      "directions": 4
+    },
+    {
+      "name": "vitiligohandl",
+      "directions": 4
+    },
+    {
+      "name": "vitiligohandr",
+      "directions": 4
+    },
+    {
+      "name": "vitiligolegl",
+      "directions": 4
+    },
+    {
+      "name": "vitiligolegr",
+      "directions": 4
+    },
+    {
+      "name": "vitiligochestspots",
+      "directions": 4
+    }
+  ]
+}
+
+
+
+
+
+
+
+

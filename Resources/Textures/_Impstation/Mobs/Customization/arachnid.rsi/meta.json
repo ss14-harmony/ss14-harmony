@@ -1,0 +1,173 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Doll and incision tattoos by Sha-Seng (Github) Drawn and coded by Carousel for Impstation",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "l_arm_doll",
+        "directions": 4
+      },
+      {
+        "name": "r_arm_doll",
+        "directions": 4
+      },
+      {
+        "name": "arm_l_prosthetic",
+        "directions": 4
+      },
+      {
+        "name": "arm_l_twisting",
+        "directions": 4
+      },
+      {
+        "name": "arm_r_prosthetic",
+        "directions": 4
+      },
+      {
+        "name": "arm_r_twisting",
+        "directions": 4
+      },
+      {
+        "name": "chest_star",
+        "directions": 4
+      },
+      {
+        "name": "foot_l_prosthetic",
+        "directions": 4
+      },
+      {
+        "name": "hand_l_twisting",
+        "directions": 4
+      },
+      {
+        "name": "hand_r_twisting",
+        "directions": 4
+      },
+      {
+        "name": "foot_r_prosthetic",
+        "directions": 4
+      },
+      {
+        "name": "hand_l_prosthetic",
+        "directions": 4
+      },
+      {
+        "name": "hand_r_prosthetic",
+        "directions": 4
+      },
+      {
+        "name": "torso_incision",
+        "directions": 4
+      },
+      {
+        "name": "l_hand_doll",
+        "directions": 4
+      },
+      {
+        "name": "leg_l_twisting",
+        "directions": 4
+      },
+      {
+        "name": "r_hand_doll",
+        "directions": 4
+      },
+      {
+        "name": "l_leg_doll",
+        "directions": 4
+      },
+      {
+        "name": "leg_r_prosthetic",
+        "directions": 4
+      },
+      {
+        "name": "leg_r_twisting",
+        "directions": 4
+      },
+      {
+        "name": "spidergloweyes",
+        "directions": 4
+      },
+      {
+        "name": "spidereyesmulti1",
+        "directions": 4
+      },
+      {
+        "name": "spidereyesmulti2",
+        "directions": 4
+      },
+      {
+        "name": "spidereyesmulti3",
+        "directions": 4
+      },
+      {
+        "name": "spidereyesmulti4",
+        "directions": 4
+      },
+      {
+        "name": "spidermirror",
+        "directions": 4,
+        "delays": [
+          [
+            5.0,
+            0.1,
+            0.1,
+            0.1,
+            1.0,
+            0.1,
+            0.1,
+            0.1
+          ],
+          [
+            5.0,
+            0.1,
+            0.1,
+            0.1,
+            1.0,
+            0.1,
+            0.1,
+            0.1
+          ],
+          [
+            5.0,
+            0.1,
+            0.1,
+            0.1,
+            1.0,
+            0.1,
+            0.1,
+            0.1
+          ],
+          [
+            5.0,
+            0.1,
+            0.1,
+            0.1,
+            1.0,
+            0.1,
+            0.1,
+            0.1
+          ]
+        ]
+      },
+      {
+        "name": "r_leg_doll",
+        "directions": 4
+      },
+      {
+        "name": "l_foot_doll",
+        "directions": 4
+      },
+      {
+        "name": "r_foot_doll",
+        "directions": 4
+      },
+      {
+        "name": "chest_cuthere",
+        "directions": 4
+      }
+    ]
+  }

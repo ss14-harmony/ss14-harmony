@@ -56,14 +56,19 @@
       points: 1
       required: false
     Chest:
-      points: 3
+# Start of Harmony change:
+#      points: 3
+      points: 4 # imp 3<4
       required: false
     Legs:
-      points: 2
+#      points: 2
+      points: 8 # imp 2<8
       required: false
     Arms:
-      points: 2
+#      points: 2
+      points: 8 # imp 2<8
       required: false
+# End of Harmony change
 
 - type: humanoidBaseSprite
   id: MobReptilianHead

@@ -1,0 +1,384 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Sprites by LandsharkRAWR,Drawn by Carousel for Impstation",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "roadrash_l_head",
+        "directions": 4
+      },
+      {
+        "name": "roadrash_r_head",
+        "directions": 4
+      },
+      {
+        "name": "bigslash_l_head",
+        "directions": 4
+      },
+      {
+        "name": "bigslash_r_head",
+        "directions": 4
+      },
+      {
+        "name": "slash_l_head",
+        "directions": 4
+      },
+      {
+        "name": "slash_r_head",
+        "directions": 4
+      },
+      {
+        "name": "claw_torso",
+        "directions": 4
+      },
+      {
+        "name": "voxcocktail1",
+        "directions": 4
+      },
+      {
+        "name": "voxcocktail2",
+        "directions": 4
+      },
+      {
+        "name": "voxcocktail3",
+        "directions": 4
+      },
+      {
+        "name": "voxcocktail4",
+        "directions": 4
+      },
+      {
+        "name": "voxtailstripes",
+        "directions": 4
+      },
+      {
+        "name": "voxarmprostheticl",
+        "directions": 4
+      },
+      {
+        "name": "voxarmprostheticr",
+        "directions": 4
+      },
+      {
+        "name": "voxbeakcolor",
+        "directions": 4
+      },
+      {
+        "name": "voxbeaksplit1",
+        "directions": 4
+      },
+      {
+        "name": "voxbeaksplit2",
+        "directions": 4
+      },
+      {
+        "name": "voxbeaktipped",
+        "directions": 4
+      },
+      {
+        "name": "voxchestplumage",
+        "directions": 4
+      },
+      {
+        "name": "voxfootspines",
+        "directions": 4
+      },
+      {
+        "name": "voxfootgradientl1",
+        "directions": 4
+      },
+      {
+        "name": "voxfootgradientl2",
+        "directions": 4
+      },
+      {
+        "name": "voxfootgradientr1",
+        "directions": 4
+      },
+      {
+        "name": "voxfootgradientr2",
+        "directions": 4
+      },
+      {
+        "name": "voxhandgradientl1",
+        "directions": 4
+      },
+      {
+        "name": "voxhandgradientl2",
+        "directions": 4
+      },
+      {
+        "name": "voxhandgradientl3",
+        "directions": 4
+      },
+      {
+        "name": "voxhandgradientr1",
+        "directions": 4
+      },
+      {
+        "name": "voxhandgradientr2",
+        "directions": 4
+      },
+      {
+        "name": "voxhandgradientr3",
+        "directions": 4
+      },
+      {
+        "name": "voxheadgradient1",
+        "directions": 4
+      },
+      {
+        "name": "voxheadgradient2",
+        "directions": 4
+      },
+      {
+        "name": "voxheadgradient3",
+        "directions": 4
+      },
+      {
+        "name": "voxtailbell1",
+        "directions": 4
+      },
+      {
+        "name": "voxtailbell2",
+        "directions": 4
+      },
+      {
+        "name": "voxtailcolorable",
+        "directions": 4
+      },
+      {
+        "name": "voxtaillantern",
+        "directions": 4
+      },
+      {
+        "name": "voxtailsinglestripe",
+        "directions": 4
+      },
+      {
+        "name": "voxtailsmallplume",
+        "directions": 4
+      },
+      {
+        "name": "voxtailspines",
+        "directions": 4
+      },
+      {
+        "name": "voxarmsstripesl",
+        "directions": 4
+      },
+      {
+        "name": "voxarmsstripesr",
+        "directions": 4
+      },
+      {
+        "name": "voxlegsstripesr",
+        "directions": 4
+      },
+      {
+        "name": "voxlegsstripesl",
+        "directions": 4
+      },
+      {
+        "name": "voxbelly",
+        "directions": 4
+      },
+      {
+        "name": "voxchains",
+        "directions": 4
+      },
+      {
+        "name": "voxsunandmoon",
+        "directions": 4
+      },
+      {
+        "name": "voxcheeks",
+        "directions": 4
+      },
+      {
+        "name": "voxtailballed",
+        "directions": 4
+      },
+      {
+        "name": "voxtailsplit",
+        "directions": 4
+      },
+      {
+          "name": "featheredlegl",
+          "directions": 4
+      },
+      {
+          "name": "featheredlegr",
+          "directions": 4
+      },
+      {
+          "name": "spotsarml",
+          "directions": 4
+      },
+      {
+          "name": "spotsarmr",
+          "directions": 4
+      },
+      {
+          "name": "spotschest1",
+          "directions": 4
+      },
+      {
+          "name": "spotschest2",
+          "directions": 4
+      },
+      {
+          "name": "spotstail",
+          "directions": 4
+      },
+      {
+          "name": "streamers1",
+          "directions": 4
+      },
+      {
+          "name": "streamers2",
+          "directions": 4
+      },
+      {
+          "name": "streamers3",
+          "directions": 4
+      },
+      {
+          "name": "vchest1",
+          "directions": 4
+      },
+      {
+          "name": "vchest2",
+          "directions": 4
+      },
+      {
+          "name": "vchest3",
+          "directions": 4
+      },
+      {
+          "name": "balding",
+          "directions": 4
+      },
+      {
+          "name": "beardlargewattle",
+          "directions": 4
+      },
+      {
+          "name": "beardpadovana",
+          "directions": 4
+      },
+      {
+          "name": "beardsmallwattle",
+          "directions": 4
+      },
+      {
+          "name": "earhole",
+          "directions": 4
+      },
+      {
+          "name": "friendsfeather1",
+          "directions": 4
+      },
+      {
+          "name": "friendsfeather2",
+          "directions": 4
+      },
+      {
+          "name": "hairemover",
+          "directions": 4
+      },
+      {
+          "name": "hairpadovana",
+          "directions": 4
+      },
+      {
+          "name": "hairpolish",
+          "directions": 4
+      },
+      {
+          "name": "hairwindswept",
+          "directions": 4
+      },
+      {
+          "name": "largecomb",
+          "directions": 4
+      },
+      {
+          "name": "neckband",
+          "directions": 4
+      },
+      {
+          "name": "scarheadblasted",
+          "directions": 4
+      },
+      {
+          "name": "scarincision",
+          "directions": 4
+      },
+      {
+          "name": "scarmangled",
+          "directions": 4
+      },
+      {
+          "name": "scarspinal",
+          "directions": 4
+      },
+      {
+          "name": "sidequills1",
+          "directions": 4
+      },
+      {
+          "name": "sidequills2",
+          "directions": 4
+      },
+      {
+          "name": "sidequills3",
+          "directions": 4
+      },
+      {
+          "name": "tailbloom1",
+          "directions": 4
+      },
+      {
+          "name": "tailbloom2",
+          "directions": 4
+      },
+      {
+          "name": "tailbloom3",
+          "directions": 4
+      },
+      {
+          "name": "understrappy1",
+          "directions": 4
+      },
+      {
+          "name": "understrappy2",
+          "directions": 4
+      },
+      {
+          "name": "understrappy3",
+          "directions": 4
+      },
+      {
+          "name": "underwearhighwaisted",
+          "directions": 4
+      },
+      {
+          "name": "underwearbriefs",
+          "directions": 4
+      },
+      {
+          "name": "underwearixixspecial1",
+          "directions": 4
+      },
+      {
+          "name": "underwearixixspecial2",
+          "directions": 4
+      }
+  ]
+}
+  

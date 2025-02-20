@@ -1,0 +1,759 @@
+- type: marking
+  id: DwarfBearCheeks
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Dwarf ]
+  forcedColoring: true
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfbearcheeks
+  shader: unshaded
+
+- type: marking
+  id: DwarfHeadGlow
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Dwarf ]
+  forcedColoring: true
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfheadglow
+  shader: unshaded
+
+- type: marking
+  id: DwarfConstellationHead
+  bodyPart: Head
+  markingCategory: Overlay
+  speciesRestriction: [ Dwarf ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfconstellationhead
+  shader: unshaded
+
+- type: marking
+  id: DwarfConstellationChest
+  bodyPart: Chest
+  markingCategory: Overlay
+  speciesRestriction: [ Dwarf ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfconstellationchest
+  shader: unshaded
+
+- type: marking
+  id: DwarfConstellationLArm
+  bodyPart: LArm
+  markingCategory: Overlay
+  speciesRestriction: [ Dwarf ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfconstellationlarm
+  shader: unshaded
+
+- type: marking
+  id: DwarfConstellationLHand
+  bodyPart: LHand
+  markingCategory: Overlay
+  speciesRestriction: [ Dwarf ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfconstellationlhand
+  shader: unshaded
+
+- type: marking
+  id: DwarfConstellationRArm
+  bodyPart: RArm
+  markingCategory: Overlay
+  speciesRestriction: [ Dwarf ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfconstellationrarm
+  shader: unshaded
+
+- type: marking
+  id: DwarfConstellationRHand
+  bodyPart: RHand
+  markingCategory: Overlay
+  speciesRestriction: [ Dwarf ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfconstellationrhand
+  shader: unshaded
+
+- type: marking
+  id: DwarfConstellationLLeg
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [ Dwarf ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfconstellationlleg
+  shader: unshaded
+
+- type: marking
+  id: DwarfConstellationLFoot
+  bodyPart: LFoot
+  markingCategory: Overlay
+  speciesRestriction: [ Dwarf ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfconstellationlfoot
+  shader: unshaded
+
+- type: marking
+  id: DwarfConstellationRLeg
+  bodyPart: RLeg
+  markingCategory: Overlay
+  speciesRestriction: [ Dwarf ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfconstellationrleg
+  shader: unshaded
+
+- type: marking
+  id: DwarfConstellationRFoot
+  bodyPart: RFoot
+  markingCategory: Overlay
+  speciesRestriction: [ Dwarf ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfconstellationrfoot
+  shader: unshaded
+
+- type: marking
+  id: DwarfChestHair
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Dwarf ]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfchesthair
+
+- type: marking
+  id: DwarfArmHair
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [ Dwarf ]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfarmhair
+
+- type: marking
+  id: DwarfLegHair
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [ Dwarf ]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfleghair
+
+- type: marking
+  id: DwarfTattooShootingStar
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Dwarf ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarftattooshootingstar
+  shader: unshaded
+
+- type: marking
+  id: DwarfMarkBear
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Dwarf ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfmarkbear
+  shader: unshaded
+
+- type: marking
+  id: DwarfMarkKangarooLHand
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [ Dwarf ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfmarkkangaroolhand
+  shader: unshaded
+
+- type: marking
+  id: DwarfMarkKangarooRHand
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [ Dwarf ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfmarkkangaroo
+  shader: unshaded
+
+- type: marking
+  id: DwarfMarkCobra
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Dwarf ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfmarkcobra
+  shader: unshaded
+
+- type: marking
+  id: DwarfMarkSpider
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Dwarf ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: dwarfmarkspider
+  shader: unshaded
+
+- type: marking
+  id: VitiligoHeadL
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: vitiligoheadl
+
+- type: marking
+  id: VitiligoHeadR
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: vitiligoheadr
+
+- type: marking
+  id: VitiligoHeadJaw
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: vitiligoheadjaw
+
+- type: marking
+  id: VitiligoChestF
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Dwarf, Human]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: vitiligochestf
+
+- type: marking
+  id: VitiligoChestSpots
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Dwarf, Human]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: vitiligochestspots
+
+- type: marking
+  id: VitiligoArmR
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: vitiligoarmr
+
+- type: marking
+  id: VitiligoArmL
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: vitiligoarml
+
+- type: marking
+  id: VitiligoHandR
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: vitiligohandr
+
+- type: marking
+  id: VitiligoHandL
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: vitiligohandl
+
+- type: marking
+  id: VitiligoLegR
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Dwarf, Human]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: vitiligolegr
+
+- type: marking
+  id: VitiligoLegL
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Dwarf, Human]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFE5D6"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: vitiligolegl
+
+- type: marking
+  id: ArmProstheticLeft
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: arm_l_prosthetic
+
+- type: marking
+  id: ArmTwistingLeft
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: arm_l_twisting
+
+- type: marking
+  id: ArmProstheticRight
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: arm_r_prosthetic
+
+- type: marking
+  id: ArmTwistingRight
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: arm_r_twisting
+
+- type: marking
+  id: ChestBackstabbed
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Dwarf, Human, Reptilian]
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: chest_backstabbed
+
+- type: marking
+  id: HandProstheticLeft
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: hand_l_prosthetic
+
+- type: marking
+  id: HandTwistingLeft
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: hand_l_twisting
+
+- type: marking
+  id: HandProstheticRight
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: hand_r_prosthetic
+
+- type: marking
+  id: HandTwistingRight
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: hand_r_twisting
+
+- type: marking
+  id: HeadTwisting
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human]
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: head_twisting
+
+- type: marking
+  id: LegProstheticLeft
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: leg_l_prosthetic
+
+- type: marking
+  id: LegTwistingLeft
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: leg_l_twisting
+
+- type: marking
+  id: LegProstheticRight
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: leg_r_prosthetic
+
+- type: marking
+  id: LegTwistingRight
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: leg_r_twisting
+
+- type: marking
+  id: ChestCutHere
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: chest_cuthere
+
+- type: marking
+  id: ArmDollJointsTattooLeft
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: l_arm_doll
+
+- type: marking
+  id: ArmDollJointsTattooRight
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: r_arm_doll
+
+- type: marking
+  id: HandDollJointsTattooLeft
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: l_hand_doll
+
+- type: marking
+  id: HandDollJointsTattooRight
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: r_hand_doll
+
+- type: marking
+  id: LegDollJointsTattooLeft
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: l_leg_doll
+
+- type: marking
+  id: LegDollJointsTattooRight
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: r_leg_doll
+
+- type: marking
+  id: FootDollJointsTattooLeft
+  bodyPart: LFoot
+  markingCategory: Legs
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: l_foot_doll
+
+- type: marking
+  id: FootDollJointsTattooRight
+  bodyPart: RFoot
+  markingCategory: Legs
+  speciesRestriction: [Dwarf, Human, Arachnid, Reptilian]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/dwarf.rsi
+    state: r_foot_doll

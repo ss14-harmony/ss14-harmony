@@ -6,7 +6,10 @@
   sprites: MobVoxSprites
   markingLimits: MobVoxMarkingLimits
   dollPrototype: MobVoxDummy
-  skinColoration: VoxFeathers
+# Start of Harmony Change:
+#  skinColoration: VoxFeathers
+  skinColoration: Hues # imp VoxFeathers<Hues
+# End of Harmony change
   defaultSkinTone: "#6c741d"
   maleFirstNames: names_vox
   femaleFirstNames: names_vox
@@ -44,27 +47,45 @@
       points: 1
       required: false
     Head:
-      points: 1
-      required: true
+# Start of Harmony change:
+#     points: 1
+      points: 2
+#     required: true
+      required: false 
+# End of harmony change
     Snout:
       points: 1
-      required: true
-      defaultMarkings: [ VoxBeak ]
+# start of harmony change:
+#     required: true
+      required: false                
+#      defaultMarkings: [ VoxBeak ]
+       #defaultMarkings:[ VoxBeak ]
+# end of harmony change
     Arms:
-      points: 4
-      required: true
-      defaultMarkings: [ VoxLArmScales, VoxRArmScales, VoxRHandScales, VoxLHandScales ]
+# start of harmony change:    
+#      points: 4
+       points: 6 
+#      required: true
+       required: false
+#      defaultMarkings: [ VoxLArmScales, VoxRArmScales, VoxRHandScales, VoxLHandScales ]
+       #defaultMarkings:[ VoxLArmScales, VoxRArmScales, VoxRHandScales, VoxLHandScales ] 
     Legs:
-      points: 4
-      required: true
-      defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
+#      points: 4
+       points: 6 
+#      required: true
+       required: false 
+#      defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
+       #defaultMarkings:[ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ] 
     Chest:
-      points: 1
-      required: false
+#      points: 1
+       points: 2 
+       required: false
     Tail:
       points: 1
-      required: true
-      defaultMarkings: [ VoxTail ]
+#     required: true
+      required: false 
+#      defaultMarkings: [ VoxTail ]
+       #defaultMarkings: [ VoxTail ] 
 
 - type: humanoidBaseSprite
   id: MobVoxEyes
