@@ -57,4 +57,13 @@ public sealed partial class IdCardComponent : Component
 
     [DataField]
     public bool CanMicrowave = true;
+
+    // Harmony start
+    /// <summary>
+    /// If set to true, the id holder will be told they are not allowed to use restricted contraband.
+    /// </summary>
+    [DataField]
+    [AutoNetworkedField]
+    public bool AllowRestrictedContraband = true;
+    // Harmony end
 }
