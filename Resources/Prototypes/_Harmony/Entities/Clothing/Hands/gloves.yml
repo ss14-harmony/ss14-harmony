@@ -64,7 +64,6 @@
   parent: ClothingHandsGlovesLatex
   id: ClothingHandsGlovesToyMantis
   name: Toy Mantis Gloves
-  desc: Donk. Co branded Mantis Gloves, perfect for scaring people.
   components:
   - type: Sprite
     sprite: _Harmony/Clothing/Hands/Gloves/mantis.rsi
