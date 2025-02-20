@@ -434,9 +434,6 @@
     - id: PortableRecharger
       prob: 0.001
       orGroup: Useful
-    - id: MobGingerbreadAI
-      prob: 0.001
-      orGroup: Useful
     # Harmony Not Useful
     - id: Hubert
       prob: 0.001
