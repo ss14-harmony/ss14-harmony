@@ -7,3 +7,7 @@
 # Patrol Shark
 - type: Tag
   id: PlushieSharkPatrolHarmony
+
+# Tag used for escape pod landing.
+- type: Tag
+  id: DockPod
