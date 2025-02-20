@@ -85,7 +85,7 @@
   description: uplink-hyposhell-desc
   productEntity: BoxShellHypo
   cost:
-    Telecrystal: 4
+    Telecrystal: 2 #Change: FUCK NOCTURINE -- Makes Hypos cheaper
   categories:
   - UplinkJob
   conditions:
