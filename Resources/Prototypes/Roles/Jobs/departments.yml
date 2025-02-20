@@ -113,6 +113,7 @@
   - Detective
   - Warden
   - PermaPrisoner # Harmony
+  - BrigMedicHarmony # Harmony Change: Adds the Brigmedic to the Security Department
 
 - type: department
   id: Science

@@ -3,6 +3,7 @@
   name: job-name-brigmedic
   description: job-description-brigmedic
   playTimeTracker: JobBrigMedicHarmony
+  setPreference: false # Makes the job not show up in the role options
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
