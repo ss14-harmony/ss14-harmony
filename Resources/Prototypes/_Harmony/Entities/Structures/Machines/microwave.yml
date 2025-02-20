@@ -1,0 +1,38 @@
+- type: entity
+  id: KitchenMicrowave
+  suffix: Harmony
+  parent: KitchenMicrowaveUpstream
+  components:
+  - type: Item
+    sprite: _Harmony/Structures/Machines/microwave.rsi
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: MeleeWeapon
+    attackRate: 0.5
+    damage:
+      types:
+        Blunt: 25
+    soundHit:
+      path: "/Audio/Weapons/smash.ogg"
+  - type: HeldSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+
+- type: entity
+  id: SyndicateMicrowave
+  suffix: Harmony
+  parent: [SyndicateMicrowaveUpstream, KitchenMicrowaveUpstream, BaseSyndicateContraband]
+  components:
+  - type: Item
+    sprite: _Harmony/Structures/Machines/microwave_syndie.rsi
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: MeleeWeapon
+    attackRate: 0.75
+    damage:
+      types:
+        Blunt: 30
+        Shock: 5
+    soundHit:
+      path: "/Audio/Weapons/smash.ogg"
+
