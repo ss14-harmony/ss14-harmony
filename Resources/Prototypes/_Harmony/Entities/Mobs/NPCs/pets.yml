@@ -38,3 +38,21 @@
         kobold: PoquitoColors
     - horns:
         horns_ram: KoboldHornColors
+
+- type: entity
+  id: Hubert
+  parent: MobGoliath
+  name: Hubert
+  description: The friendliest creature in all of lavaland, you wont find another like him.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Mobs/Pets/Hubert.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: Hubert
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: Hubert
+      Dead:
+        Base: HubertDead

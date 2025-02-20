@@ -1,0 +1,10 @@
+﻿- type: entity
+  parent: ClothingHeadLightBase
+  id: ClothingHeadHelmetHardsuitERTLeaderCardBoard
+  name: Cardboard ERT Helmet
+  description: A special hardsuit helmet worn by members of an emergency response team.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardsuits/ERThelmets/ertleader.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hardsuits/ERThelmets/ertleader.rsi
