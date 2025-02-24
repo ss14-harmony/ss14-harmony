@@ -51,7 +51,7 @@ namespace Content.IntegrationTests.Tests
             "Barratry", // Harmony, revived by Spanky
             "Aspid", // Harmony, playtest for upstream by Golinth
             "Atlas", // Harmony revived by Kravin
-            "Mira" // Harmony, developed by tanuko
+            "Mira", // Harmony, developed by tanuko
             "Dev",
             "TestTeg",
             "Fland",
@@ -74,7 +74,7 @@ namespace Content.IntegrationTests.Tests
             "Loop",
             "Plasma",
             "Elkridge",
-            "Convex",
+            "Convex"
 
         };
 
