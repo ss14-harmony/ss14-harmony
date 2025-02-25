@@ -23,7 +23,6 @@
   - WeaponDisablerPractice
   - WeaponLaserCarbinePractice
   - WeaponFlareGunSecurity
-  - SecurityBola #Harmony Change: Adds Security Bolas
 
 # Shared between secfab and emagged autolathe
 - type: latheRecipePack
@@ -50,7 +49,6 @@
   - MagazineShotgunSlug
   - SpeedLoaderMagnum
   - SpeedLoaderMagnumEmpty
-  - StripperClip  # Harmony change - part of RSC PR
 
 
 - type: latheRecipePack
