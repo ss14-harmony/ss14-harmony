@@ -41,6 +41,8 @@ using Robust.Server.Player;
 using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Physics.Components;
 using static Content.Shared.Configurable.ConfigurationComponent;
+using Content.Server.Objectives;
+using Content.Shared.Mind;
 
 namespace Content.Server.Administration.Systems
 {
@@ -86,6 +88,7 @@ namespace Content.Server.Administration.Systems
         private void GetVerbs(GetVerbsEvent<Verb> ev)
         {
             AddAdminVerbs(ev);
+            AddHarmonyAdminVerbs(ev); //Harmony
             AddDebugVerbs(ev);
             AddSmiteVerbs(ev);
             AddTricksVerbs(ev);
@@ -392,6 +395,42 @@ namespace Content.Server.Administration.Systems
             }
         }
 
+        private void AddHarmonyAdminVerbs(GetVerbsEvent<Verb> args)
+        {
+            if (!EntityManager.TryGetComponent(args.User, out ActorComponent? actor))
+                return;
+
+            var player = actor.PlayerSession;
+
+            if (_adminManager.IsAdmin(player))
+            {
+                if (TryComp(args.Target, out ActorComponent? targetActor))
+                {
+                    // Objective control
+                    Verb verb = new();
+                    verb.Text = Loc.GetString("Manage Objectives");
+                    verb.Category = VerbCategory.Admin;
+                    verb.Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/gavel.svg.192dpi.png"));
+                    verb.Act = () =>
+                        {
+                            if (!_playerManager.TryGetSessionByEntity(args.User, out var session))
+                                return;
+
+                            var mind = _mindSystem.GetMind(args.Target);
+                            if (mind is null)
+                                return;
+
+                            var ui = new ManageObjectivesEui((EntityUid)mind);
+                            _euiManager.OpenEui(ui, session);
+                            ui.refresh();
+                        };
+                    verb.Impact = LogImpact.Low;
+                    args.Verbs.Add(verb);
+                }
+            }
+
+
+        }
         private void AddDebugVerbs(GetVerbsEvent<Verb> args)
         {
             if (!EntityManager.TryGetComponent(args.User, out ActorComponent? actor))

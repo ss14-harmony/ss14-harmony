@@ -1,0 +1,14 @@
+<ui:FancyWindow xmlns="https://spacestation14.io"
+                xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+                VerticalExpand="True" HorizontalExpand="True"
+                Title="Manage objectives"
+                MinSize="400 200">
+
+    <BoxContainer>
+        <Button Name="SaveButton" Text="ApplyChanges" Access="Public"></Button>
+    </BoxContainer>
+
+    <BoxContainer Name="ObjectivesBox">
+    </BoxContainer>
+
+</ui:FancyWindow>
