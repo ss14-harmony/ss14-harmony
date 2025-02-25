@@ -6,7 +6,7 @@
 
 ## Clothing
 - type: latheRecipePack
-  id: HarmonyClothingStatic
+  id: HarmonyClothing
   recipes:
   # Cargo
   - ClothingUniformJumpsuitCargoPantsHarmony
@@ -58,9 +58,13 @@
 
 ## Security
 - type: latheRecipePack
-  id: HarmonySecurityStatic
+  id: HarmonySecurityEquipmentStatic
   recipes:
   - SecurityBola
+
+- type: latheRecipePack
+  id: HarmonySecurityAmmoStatic
+  recipes:
   - StripperClip
 
 ## Service
