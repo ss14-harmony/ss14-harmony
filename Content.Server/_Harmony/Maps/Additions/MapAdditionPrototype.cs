@@ -14,30 +14,30 @@ public sealed class MapAdditionPrototype : IPrototype
     /// A <see cref="GameMapPrototype"/> ID to automatically apply this addition to.
     /// </summary>
     [DataField]
-    public ProtoId<GameMapPrototype>? ApplyOn { get; private set; }
+    public ProtoId<GameMapPrototype>? ApplyOn;
 
     [DataField(required: true)]
-    public List<MapAdditionEntity> Entities { get; private set; } = new();
+    public List<MapAdditionEntity> Entities = new();
 }
 
 [DataDefinition]
 public sealed partial class MapAdditionEntity
 {
     [DataField(required: true)]
-    public ProtoId<EntityPrototype> Prototype { get; private set; }
+    public EntProtoId Prototype;
 
     [DataField]
-    public string? Name { get; private set; }
+    public string? Name;
 
     [DataField]
-    public string? Description { get; private set; }
+    public string? Description;
 
     [DataField(required: true)]
-    public Vector2 Position { get; private set; }
+    public Vector2 Position;
 
     [DataField]
-    public Angle? Rotation { get; private set; }
+    public Angle? Rotation;
 
     [DataField]
-    public ComponentRegistry? Components { get; private set; }
+    public ComponentRegistry? Components;
 }
