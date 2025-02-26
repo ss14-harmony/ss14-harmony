@@ -14,7 +14,7 @@
   - ClothingUniformJumpsuitCargoOfficeSlacksHarmony
   - ClothingUniformJumpskirtCargoOfficeSkirtHarmony
   - ClothingUniformJumpsuitSeniorTechnicianHarmony
-  - ClothingUniformJumpskirtSeniorTechnicianHarmony
+  - ClothingUniformJumpskirtSeniorTechnicianHarmonygit c
   # Command - Captain
   - ClothingHeadHatBeretCaptainHarmony
   - ClothingUniformJumpsuitCaptainHawaiianHarmony
@@ -79,3 +79,5 @@
   id: HarmonyFloorTilesStatic
   recipes:
   - FloorTileItemTechmaintDark # Xeno playtest
+
+
