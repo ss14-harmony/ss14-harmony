@@ -6,7 +6,6 @@
   - Brutepack
   - Ointment
   - Gauze
-  - Bloodpack # Harmony
 
 
 - type: latheRecipePack
@@ -25,7 +24,6 @@
   - Jug
   - ChemistryEmptyBottle01
   - ClothingEyesGlassesChemical
-  - BaseChemistryEmptyVial # Harmony
 
 - type: latheRecipePack
   id: SurgeryStatic
@@ -36,7 +34,6 @@
   - Drill
   - Saw
   - Hemostat
-  - CircularSaw # Harmony
 
 - type: latheRecipePack
   id: MedicalStatic
@@ -47,8 +44,6 @@
   - DiseaseSwab
   - BodyBag
   - WhiteCane
-  - ClothingEyesEyepatchHudMedical # Harmony
-  - ClothingEyesHudMedical # Harmony
 
 - type: latheRecipePack
   id: RollerBedsStatic
