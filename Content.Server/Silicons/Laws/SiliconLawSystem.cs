@@ -157,16 +157,6 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
         // Show the silicon has been subverted.
         component.Subverted = true;
 
-        //Harmony change: check if we have law 0 and remove it
-        //Most of the time, law 0 should be "obey station AI". It could be changed by an ion storm,
-        //but I think it's not a big deal to re-write it anyway.
-        //https://github.com/ss14-harmony/ss14-harmony/pull/296
-        if (component.Lawset?.Laws.Count > 0)
-        {
-            component.Lawset.Laws.RemoveAt(0);
-        }
-        //End Harmony change
-
         // Add the first emag law before the others
         component.Lawset?.Laws.Insert(0, new SiliconLaw
         {
@@ -182,14 +172,18 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
         });
     }
 
-    private void EnsureSubvertedSiliconRole(EntityUid mindId)
+    protected override void EnsureSubvertedSiliconRole(EntityUid mindId)
     {
+        base.EnsureSubvertedSiliconRole(mindId);
+
         if (!_roles.MindHasRole<SubvertedSiliconRoleComponent>(mindId))
             _roles.MindAddRole(mindId, "MindRoleSubvertedSilicon", silent: true);
     }
 
-    private void RemoveSubvertedSiliconRole(EntityUid mindId)
+    protected override void RemoveSubvertedSiliconRole(EntityUid mindId)
     {
+        base.RemoveSubvertedSiliconRole(mindId);
+
         if (_roles.MindHasRole<SubvertedSiliconRoleComponent>(mindId))
             _roles.MindTryRemoveRole<SubvertedSiliconRoleComponent>(mindId);
     }
@@ -249,8 +243,10 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
         return ev.Laws;
     }
 
-    public void NotifyLawsChanged(EntityUid uid, SoundSpecifier? cue = null)
+    public override void NotifyLawsChanged(EntityUid uid, SoundSpecifier? cue = null)
     {
+        base.NotifyLawsChanged(uid, cue);
+
         if (!TryComp<ActorComponent>(uid, out var actor))
             return;
 
