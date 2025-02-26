@@ -2,6 +2,7 @@ using Content.Client.Eui;
 using Content.Client._Harmony.Objectives;
 using Content.Shared.Eui;
 using Content.Shared.Objectives;
+using System.Linq;
 
 namespace Content.Server.Objectives;
 
@@ -11,6 +12,8 @@ public sealed class ManageObjectivesEui : BaseEui
     private ManageObjectivesUi _manageObjectivesUi;
     public ManageObjectivesEui()
     {
+        _entityManager = IoCManager.Resolve<EntityManager>();
+
         _manageObjectivesUi = new ManageObjectivesUi();
         _manageObjectivesUi.OnClose += () => CloseWindow();
         _manageObjectivesUi.SaveButton.OnPressed += _ => OnSubmitButtonPressed();
@@ -21,7 +24,7 @@ public sealed class ManageObjectivesEui : BaseEui
         if (state is not ManageObjectivesEuiState s)
             return;
 
-        _manageObjectivesUi.UpdateState(_entityManager.GetEntity(s.Mind));
+        _manageObjectivesUi.UpdateState(s.Objectives);
     }
 
     private void OnSubmitButtonPressed()

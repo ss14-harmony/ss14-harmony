@@ -8,8 +8,10 @@ namespace Content.Shared.Objectives;
 public sealed class ManageObjectivesEuiState : EuiStateBase
 {
     public NetEntity Mind { get; }
-    public ManageObjectivesEuiState(NetEntity mind)
+    public List<ValueTuple<string, string>> Objectives { get; }
+    public ManageObjectivesEuiState(NetEntity mind, List<ValueTuple<string, string>> objectives)
     {
         Mind = mind;
+        Objectives = objectives;
     }
 }

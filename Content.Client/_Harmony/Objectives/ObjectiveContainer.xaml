@@ -1,0 +1,15 @@
+<BoxContainer
+    xmlns="https://spacestation14.io"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    HorizontalExpand="True"
+    Orientation="Vertical"
+    >
+
+    <Label Name="ObjectiveNameLabel" Margin="0 0 0 5"></Label>
+    <TextEdit Name="ObjectiveContentTextEdit"
+        HorizontalExpand="True"
+        MinHeight="80"
+        Editable="False"></TextEdit>
+
+</BoxContainer>

@@ -4,11 +4,15 @@
                 Title="Manage objectives"
                 MinSize="400 200">
 
-    <BoxContainer>
-        <Button Name="SaveButton" Text="ApplyChanges" Access="Public"></Button>
-    </BoxContainer>
+    <BoxContainer Orientation="Vertical">
 
-    <BoxContainer Name="ObjectivesBox">
+        <BoxContainer>
+            <Button Name="SaveButton" Text="ApplyChanges" Access="Public"></Button>
+        </BoxContainer>
+
+        <BoxContainer Name="ObjectivesBox" Orientation="Vertical">
+        </BoxContainer>
+
     </BoxContainer>
 
 </ui:FancyWindow>
