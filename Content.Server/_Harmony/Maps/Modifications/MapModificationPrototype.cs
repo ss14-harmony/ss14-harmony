@@ -54,30 +54,20 @@ public sealed partial class MapModificationReplacement
     [DataField(required: true)]
     public List<EntitySelector> From = new();
 
-    /// <summary>
-    /// The entity by which all the selected entities should be replaced.
-    /// </summary>
-    /// <remarks>
-    /// The position and rotation will be overriden by the position and rotation of the entity it's replacing
-    /// </remarks>
     [DataField(required: true)]
-    public MapReplacementEntity To = new();
-}
-
-[DataDefinition]
-public sealed partial class MapReplacementEntity
-{
-    [DataField(required: true)]
-    public EntProtoId Prototype;
+    public EntProtoId NewPrototype;
 
     [DataField]
-    public string? Name;
+    public string? NewName;
 
     [DataField]
-    public string? Description;
+    public string? NewDescription;
 
     [DataField]
-    public ComponentRegistry? Components;
+    public Angle? NewRotation;
+
+    [DataField]
+    public ComponentRegistry? NewComponents;
 }
 
 [DataDefinition]

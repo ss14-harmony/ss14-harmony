@@ -80,12 +80,12 @@ public sealed class MapModificationSystem : EntitySystem
                 var entityTransform = Transform(entity);
                 var newEntity = new MapModificationEntity
                 {
-                    Prototype = replacement.To.Prototype,
-                    Name = replacement.To.Name,
-                    Description = replacement.To.Description,
+                    Prototype = replacement.NewPrototype,
+                    Name = replacement.NewName,
+                    Description = replacement.NewDescription,
                     Position = entityTransform.LocalPosition,
-                    Rotation = entityTransform.LocalRotation,
-                    Components = replacement.To.Components,
+                    Rotation = replacement.NewRotation ?? entityTransform.LocalRotation,
+                    Components = replacement.NewComponents,
                 };
 
                 Del(entity);

@@ -42,10 +42,9 @@ public sealed class MapModificationsTests
   - from:
     - !type:EntityPrototypeSelector
       prototype: TestEntityToRemove
-    to:
-      prototype: TestEntityToAdd
-      name: TESTNAME2
-      description: TESTDESCRIPTION2
+    newPrototype: TestEntityToAdd
+    newName: TESTNAME2
+    newDescription: TESTDESCRIPTION2
 ";
 
     /// <summary>
