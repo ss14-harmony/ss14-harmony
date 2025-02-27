@@ -7,6 +7,7 @@ public sealed partial class EntityPrototypeSelector : EntitySelector
     [DataField(required: true)]
     public EntProtoId Prototype;
 
+    /// <inheritdoc />
     public override bool Matches(EntityUid entity)
     {
         if (!base.Matches(entity))

@@ -1,28 +1,24 @@
 ﻿using System.Runtime.CompilerServices;
-using Robust.Shared.Prototypes;
+using JetBrains.Annotations;
 
 namespace Content.Shared._Harmony.EntitySelector.Systems;
 
+/// <summary>
+/// Provides an API for using an <see cref="EntitySelector"/>
+/// </summary>
 public sealed class EntitySelectorSystem : EntitySystem
 {
     [Robust.Shared.IoC.Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
 
-    /// <summary>
-    /// Ensures that an <see cref="EntitySelector"/> is correctly initialized.
-    /// </summary>
-    /// <remarks>
-    /// This should always be called before using an <see cref="EntitySelector"/>
-    /// </remarks>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public void EnsureInitialized(EntitySelector selector)
+    [PublicAPI]
+    public bool EntityMatches(EntityUid entity, EntitySelector selector)
     {
-        if (!selector.Initialized)
-            selector.Initialize(_entitySystemManager);
+        EnsureInitialized(selector);
+
+        return selector.Matches(entity);
     }
 
-    /// <summary>
-    /// Check if the entity matches any of the given selectors.
-    /// </summary>
+    [PublicAPI]
     public bool EntityMatchesAny(EntityUid entity, IEnumerable<EntitySelector> selectors)
     {
         foreach (var selector in selectors)
@@ -36,10 +32,8 @@ public sealed class EntitySelectorSystem : EntitySystem
         return false;
     }
 
-    /// <summary>
-    /// Get all entities from the enumerator that match the <paramref name="selector"/>
-    /// </summary>
-    public IEnumerable<EntityUid> GetMatchingEntities(IEnumerable<EntityUid> entities, EntitySelector selector)
+    [PublicAPI]
+    public IEnumerable<EntityUid> AllMatchingEntities(IEnumerable<EntityUid> entities, EntitySelector selector)
     {
         EnsureInitialized(selector);
 
@@ -48,5 +42,32 @@ public sealed class EntitySelectorSystem : EntitySystem
             if (selector.Matches(entity))
                 yield return entity;
         }
+    }
+
+    [PublicAPI]
+    public IEnumerable<EntityUid> AllEntitiesMatchingAny(
+        IEnumerable<EntityUid> entities,
+        List<EntitySelector> selectors)
+    {
+        foreach (var entity in entities)
+        {
+            foreach (var selector in selectors)
+            {
+                EnsureInitialized(selector);
+
+                if (!selector.Matches(entity))
+                    continue;
+
+                yield return entity;
+                break;
+            }
+        }
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private void EnsureInitialized(EntitySelector selector)
+    {
+        if (!selector.Initialized)
+            selector.Initialize(_entitySystemManager);
     }
 }

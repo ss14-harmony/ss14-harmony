@@ -1,8 +1,10 @@
-﻿using Robust.Shared.Utility;
+﻿using Content.Shared._Harmony.EntitySelector.Systems;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._Harmony.EntitySelector;
 
 [ImplicitDataDefinitionForInheritors]
+[Access(typeof(EntitySelectorSystem))]
 public abstract partial class EntitySelector
 {
     [Dependency] protected readonly IEntityManager EntityManager = default!;
