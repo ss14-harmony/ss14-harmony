@@ -7,11 +7,18 @@
     <BoxContainer Orientation="Vertical">
 
         <BoxContainer>
-            <Button Name="SaveButton" Text="ApplyChanges" Access="Public"></Button>
+            <Button Name="SaveButton"
+                Text="Apply Changes"
+                HorizontalExpand="True"
+                Access="Public">
+            </Button>
         </BoxContainer>
 
-        <BoxContainer Name="ObjectivesBox" Orientation="Vertical">
-        </BoxContainer>
+        <PanelContainer>
+            <BoxContainer Name="ObjectivesBox" Orientation="Vertical">
+
+            </BoxContainer>
+        </PanelContainer>
 
     </BoxContainer>
 

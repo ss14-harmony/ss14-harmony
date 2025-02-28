@@ -1,15 +1,25 @@
-<BoxContainer
+<Control
     xmlns="https://spacestation14.io"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
     HorizontalExpand="True"
-    Orientation="Vertical"
     >
 
-    <Label Name="ObjectiveNameLabel" Margin="0 0 0 5"></Label>
-    <TextEdit Name="ObjectiveContentTextEdit"
-        HorizontalExpand="True"
-        MinHeight="80"
-        Editable="False"></TextEdit>
+    <PanelContainer Name="ObjectivePanel"
+        VerticalExpand="True"
+        Margin="5 5 5 5"
+        StyleClasses="BackgroundDark">
 
-</BoxContainer>
+        <BoxContainer Orientation="Vertical">
+            <RichTextLabel Name="ObjectiveNameLabel" Margin="0 0 0 5" StyleClasses="LabelKeyText"></RichTextLabel>
+            <customControls:HSeparator Margin="0 0 0 5"/>
+            <TextEdit Name="ObjectiveContentTextEdit"
+                HorizontalExpand="True"
+                MinHeight="80"
+                Editable="False">
+            </TextEdit>
+        </BoxContainer>
+
+    </PanelContainer>
+
+</Control>
