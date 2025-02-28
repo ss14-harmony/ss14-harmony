@@ -8,10 +8,22 @@ namespace Content.Shared.Objectives;
 public sealed class ManageObjectivesEuiState : EuiStateBase
 {
     public NetEntity Mind { get; }
-    public List<ValueTuple<string, string>> Objectives { get; }
-    public ManageObjectivesEuiState(NetEntity mind, List<ValueTuple<string, string>> objectives)
+    public List<ObjectiveContainerData> Objectives { get; }
+    public ManageObjectivesEuiState(NetEntity mind, List<ObjectiveContainerData> objectives)
     {
         Mind = mind;
         Objectives = objectives;
+    }
+}
+
+[Serializable, NetSerializable]
+public sealed class ObjectiveContainerData : EuiStateBase
+{
+    public string Name { get; }
+    public string Description { get; }
+    public ObjectiveContainerData(string name, string desc)
+    {
+        Name = name;
+        Description = desc;
     }
 }

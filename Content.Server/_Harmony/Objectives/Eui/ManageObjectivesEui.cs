@@ -22,10 +22,10 @@ public sealed class ManageObjectivesEui : BaseEui
 
     public override EuiStateBase GetNewState()
     {
-        List<ValueTuple<string, string>> objList = new List<ValueTuple<string, string>>();
+        List<ObjectiveContainerData> objList = new List<ObjectiveContainerData>();
 
         if (_entityManager.TryGetComponent<MindComponent>(_mind, out var mindComp))
-            objList = mindComp.Objectives.Select(x => new ValueTuple<string, string>(
+            objList = mindComp.Objectives.Select(x => new ObjectiveContainerData(
                 _entityManager.GetComponent<MetaDataComponent>(x).EntityName,
                 _entityManager.GetComponent<MetaDataComponent>(x).EntityDescription
                 )).ToList();
