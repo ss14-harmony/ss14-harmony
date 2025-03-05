@@ -1,6 +1,6 @@
 ﻿using Content.Server.GameTicking;
 using Content.Server.Station.Components;
-using Content.Shared._Harmony.EntitySelector.Systems;
+using Content.Shared._Harmony.EntitySelector;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
@@ -10,7 +10,6 @@ public sealed class MapModificationSystem : EntitySystem
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly EntitySelectorSystem _entitySelectorSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
 
     public override void Initialize()
@@ -66,7 +65,7 @@ public sealed class MapModificationSystem : EntitySystem
         while (removalEntityEnumerator.MoveNext(out var entity))
         {
             // Apply removals
-            if (_entitySelectorSystem.EntityMatchesAny(entity, mapModification.Removals))
+            if (EntitySelectorManager.EntityMatchesAny(entity, mapModification.Removals))
             {
                 Del(entity);
                 continue;
@@ -75,7 +74,7 @@ public sealed class MapModificationSystem : EntitySystem
             // Apply replacements
             foreach (var replacement in mapModification.Replacements)
             {
-                if (!_entitySelectorSystem.EntityMatchesAny(entity, replacement.From))
+                if (!EntitySelectorManager.EntityMatchesAny(entity, replacement.From))
                     continue;
 
                 var entityTransform = Transform(entity);

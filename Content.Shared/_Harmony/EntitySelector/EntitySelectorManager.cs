@@ -1,17 +1,15 @@
 ﻿using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 
-namespace Content.Shared._Harmony.EntitySelector.Systems;
+namespace Content.Shared._Harmony.EntitySelector;
 
 /// <summary>
 /// Provides an API for using an <see cref="EntitySelector"/>
 /// </summary>
-public sealed class EntitySelectorSystem : EntitySystem
+public sealed class EntitySelectorManager
 {
-    [Robust.Shared.IoC.Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
-
     [PublicAPI]
-    public bool EntityMatches(EntityUid entity, EntitySelector selector)
+    public static bool EntityMatches(EntityUid entity, EntitySelector selector)
     {
         EnsureInitialized(selector);
 
@@ -19,7 +17,7 @@ public sealed class EntitySelectorSystem : EntitySystem
     }
 
     [PublicAPI]
-    public bool EntityMatchesAny(EntityUid entity, IEnumerable<EntitySelector> selectors)
+    public static bool EntityMatchesAny(EntityUid entity, IEnumerable<EntitySelector> selectors)
     {
         foreach (var selector in selectors)
         {
@@ -33,7 +31,7 @@ public sealed class EntitySelectorSystem : EntitySystem
     }
 
     [PublicAPI]
-    public IEnumerable<EntityUid> AllMatchingEntities(IEnumerable<EntityUid> entities, EntitySelector selector)
+    public static IEnumerable<EntityUid> AllMatchingEntities(IEnumerable<EntityUid> entities, EntitySelector selector)
     {
         EnsureInitialized(selector);
 
@@ -45,7 +43,7 @@ public sealed class EntitySelectorSystem : EntitySystem
     }
 
     [PublicAPI]
-    public IEnumerable<EntityUid> AllEntitiesMatchingAny(
+    public static IEnumerable<EntityUid> AllEntitiesMatchingAny(
         IEnumerable<EntityUid> entities,
         List<EntitySelector> selectors)
     {
@@ -65,9 +63,9 @@ public sealed class EntitySelectorSystem : EntitySystem
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private void EnsureInitialized(EntitySelector selector)
+    private static void EnsureInitialized(EntitySelector selector)
     {
         if (!selector.Initialized)
-            selector.Initialize(_entitySystemManager);
+            selector.Initialize();
     }
 }

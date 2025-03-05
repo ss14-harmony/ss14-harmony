@@ -1,10 +1,9 @@
-﻿using Content.Shared._Harmony.EntitySelector.Systems;
-using Robust.Shared.Utility;
+﻿using Robust.Shared.Utility;
 
 namespace Content.Shared._Harmony.EntitySelector;
 
 [ImplicitDataDefinitionForInheritors]
-[Access(typeof(EntitySelectorSystem))]
+[Access(typeof(EntitySelectorManager))]
 public abstract partial class EntitySelector
 {
     [Dependency] protected readonly IEntityManager EntityManager = default!;
@@ -19,7 +18,7 @@ public abstract partial class EntitySelector
     /// Recursively initializes all sub-selectors.
     /// </summary>
     [MustCallBase]
-    public virtual void Initialize(IEntitySystemManager entitySystemManager)
+    public virtual void Initialize()
     {
         DebugTools.Assert(!Initialized, "Tried to initialize an entity selector twice.");
 
@@ -30,7 +29,7 @@ public abstract partial class EntitySelector
         foreach (var subSelector in SubSelectors)
         {
             if (!subSelector.Initialized)
-                subSelector.Initialize(entitySystemManager);
+                subSelector.Initialize();
         }
     }
 

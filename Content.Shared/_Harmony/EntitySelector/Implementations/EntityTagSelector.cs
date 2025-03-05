@@ -18,11 +18,11 @@ public sealed partial class EntityTagSelector : EntitySelector
     public bool RequireAll;
 
     /// <inheritdoc />
-    public override void Initialize(IEntitySystemManager entitySystemManager)
+    public override void Initialize()
     {
-        base.Initialize(entitySystemManager);
+        base.Initialize();
 
-        _tagSystem = entitySystemManager.GetEntitySystem<TagSystem>();
+        _tagSystem = EntityManager.EntitySysManager.GetEntitySystem<TagSystem>();
     }
 
     /// <inheritdoc />
