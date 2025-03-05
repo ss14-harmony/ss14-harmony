@@ -43,7 +43,7 @@ public sealed class MapModificationSystem : EntitySystem
         // We have to use the becomes station component because our map might be uninitialized.
         var stationQuery = EntityQueryEnumerator<TransformComponent, BecomesStationComponent>();
         EntityUid? station = null;
-        while (stationQuery.MoveNext(out var uid, out var transform, out var _))
+        while (stationQuery.MoveNext(out var uid, out var transform, out _))
         {
             if (transform.MapID != map)
                 return;
@@ -61,6 +61,7 @@ public sealed class MapModificationSystem : EntitySystem
         var entitiesToAdd = new List<MapModificationEntity>();
         entitiesToAdd.AddRange(mapModification.Additions);
 
+        // Iterate over all entities inside the station grid
         var removalEntityEnumerator = Transform(station.Value).ChildEnumerator;
         while (removalEntityEnumerator.MoveNext(out var entity))
         {
