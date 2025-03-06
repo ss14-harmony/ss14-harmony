@@ -3,7 +3,6 @@
 namespace Content.Shared._Harmony.EntitySelector;
 
 [ImplicitDataDefinitionForInheritors]
-[Access(typeof(EntitySelectorManager))]
 public abstract partial class EntitySelector
 {
     [Dependency] protected readonly IEntityManager EntityManager = default!;
@@ -18,7 +17,7 @@ public abstract partial class EntitySelector
     /// Recursively initializes all sub-selectors.
     /// </summary>
     [MustCallBase]
-    public virtual void Initialize()
+    internal virtual void Initialize()
     {
         DebugTools.Assert(!Initialized, "Tried to initialize an entity selector twice.");
 
@@ -39,7 +38,8 @@ public abstract partial class EntitySelector
     [MustCallBase]
     public virtual bool Matches(EntityUid entity)
     {
-        DebugTools.Assert(Initialized, "Tried to use an entity selector before initializing it.");
+        if (!Initialized)
+            Initialize();
 
         foreach (var subSelector in SubSelectors)
         {

@@ -18,7 +18,7 @@ public sealed partial class EntityTagSelector : EntitySelector
     public bool RequireAll;
 
     /// <inheritdoc />
-    public override void Initialize()
+    internal override void Initialize()
     {
         base.Initialize();
 

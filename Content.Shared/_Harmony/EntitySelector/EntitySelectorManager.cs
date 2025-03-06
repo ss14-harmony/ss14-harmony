@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 
 namespace Content.Shared._Harmony.EntitySelector;
 
@@ -9,20 +8,10 @@ namespace Content.Shared._Harmony.EntitySelector;
 public sealed class EntitySelectorManager
 {
     [PublicAPI]
-    public static bool EntityMatches(EntityUid entity, EntitySelector selector)
-    {
-        EnsureInitialized(selector);
-
-        return selector.Matches(entity);
-    }
-
-    [PublicAPI]
     public static bool EntityMatchesAny(EntityUid entity, IEnumerable<EntitySelector> selectors)
     {
         foreach (var selector in selectors)
         {
-            EnsureInitialized(selector);
-
             if (selector.Matches(entity))
                 return true;
         }
@@ -33,8 +22,6 @@ public sealed class EntitySelectorManager
     [PublicAPI]
     public static IEnumerable<EntityUid> AllMatchingEntities(IEnumerable<EntityUid> entities, EntitySelector selector)
     {
-        EnsureInitialized(selector);
-
         foreach (var entity in entities)
         {
             if (selector.Matches(entity))
@@ -51,8 +38,6 @@ public sealed class EntitySelectorManager
         {
             foreach (var selector in selectors)
             {
-                EnsureInitialized(selector);
-
                 if (!selector.Matches(entity))
                     continue;
 
@@ -60,12 +45,5 @@ public sealed class EntitySelectorManager
                 break;
             }
         }
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static void EnsureInitialized(EntitySelector selector)
-    {
-        if (!selector.Initialized)
-            selector.Initialize();
     }
 }
