@@ -1,0 +1,15 @@
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateAmmo
+  id: ClothingBackpackDuffelSyndicateShotgunAmmoFilled
+  name: shotgun ammo bundle
+  description: "Reloading! Contains buckshot, slug and incendiary rounds packed into Bulldog drum magazines."
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineShotgun
+        amount: 3
+      - id: MagazineShotgunSlug
+        amount: 3
+      - id: MagazineShotgunIncendiary
+        amount: 2

@@ -10,6 +10,25 @@
   categories:
   - UplinkExplosives
 # Ammo
+- type: listing
+  id: UplinkShotgunAmmoBundleNukie
+  name: uplink-shotgun-ammo-bundle-name
+  description: uplink-shotgun-ammo-bundle-desc
+  productEntity: ClothingBackpackDuffelSyndicateShotgunAmmoFilled
+  cost:
+    Telecrystal: 8
+  categories:
+  - UplinkAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+        - SurplusBundle
+
 # Chemicals
 # Deception
 - type: listing
@@ -94,3 +113,24 @@
     - Bartender
     - Zookeeper
 
+- type: listing
+  id: UplinkShotgunAmmoBundleJob
+  name: uplink-shotgun-ammo-bundle-name
+  description: uplink-shotgun-ammo-bundle-desc
+  productEntity: ClothingBackpackDuffelSyndicateShotgunAmmoFilled
+  cost:
+    Telecrystal: 8
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 6
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerWhitelistCondition
+      blacklist:
+        components:
+          - SurplusBundle
+  - !type:BuyerJobCondition
+    whitelist:
+    - Bartender
+    - Zookeeper

@@ -15,3 +15,6 @@ uplink-cluster-weh-desc = Scatters 10 lizard plushies in a circle after a short 
 
 uplink-hyposhell-name = Box of hyposhells
 uplink-hyposhell-desc = A box containing four hyposhells, shotgun shells that can hold 7u of any chemical.
+
+uplink-shotgun-ammo-bundle-name = Shotgun ammo bundle
+uplink-shotgun-ammo-bundle-desc = A dufflebag with buckshot, slug and incendiary rounds. Packed into Bulldog drum magazines for easy loading.
