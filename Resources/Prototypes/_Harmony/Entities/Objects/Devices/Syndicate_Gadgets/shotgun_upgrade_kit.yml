@@ -1,0 +1,14 @@
+- type: entity
+  name: SA-6 'Lupara' barrel modification
+  parent: BaseItem
+  id: WeaponShotgunSixBarrelUpgradeKit
+  description: An aftermarket barrel modification for double-barrel shotgun.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: abductor_mod
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - WeaponShotgunSixBarrelUpgradeKit

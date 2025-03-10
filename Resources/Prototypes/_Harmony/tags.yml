@@ -7,3 +7,7 @@
 # Tag used for escape pod landing.
 - type: Tag
   id: DockPod
+
+# Tag used for six-barrel shotgun construction graph
+- type: Tag
+  id: WeaponShotgunSixBarrelUpgradeKit

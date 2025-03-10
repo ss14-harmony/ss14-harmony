@@ -8,5 +8,27 @@
           steps:
             - tool: Sawing
               doAfter: 2
+# harmony change start
+        - to: sixbarrel
+          steps:
+            - tag: WeaponShotgunSixBarrelUpgradeKit
+              doAfter: 12
+# harmony change end
     - node: shotgunsawn
       entity: WeaponShotgunSawnEmpty # Makes the sawn-off spawn empty. At max they're losing 2 shells.
+# harmony change start
+      edges:
+      - to: sixbarrelsawn
+        steps:
+          - tag: WeaponShotgunSixBarrelUpgradeKit
+            doAfter: 16
+    - node: sixbarrel
+      entity: WeaponShotgunSixBarreledEmpty
+      edges:
+        - to: sixbarrelsawn
+          steps:
+            - tool: Sawing
+              doAfter: 6 # takes three times as long to saw through three times the barrels
+    - node: sixbarrelsawn
+      entity: WeaponShotgunSixBarreledSawnOffEmpty
+# harmony change end

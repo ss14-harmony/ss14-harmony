@@ -1,0 +1,53 @@
+- type: entity
+  name: six-barreled shotgun
+  parent: WeaponShotgunDoubleBarreled
+  id: WeaponShotgunSixBarreled
+  description: An immortal classic. Uses .50 shotgun shells. This one has an interesting aftermarket modification installed.
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 6
+  - type: Construction
+    graph: ShotgunSawn
+    node: sixbarrel
+    deconstructionTarget: null
+
+- type: entity
+  name: six-barreled shotgun
+  parent: WeaponShotgunSixBarreled
+  id: WeaponShotgunSixBarreledEmpty
+  description: An immortal classic. Uses .50 shotgun shells. This one has an interesting aftermarket modification installed.
+  suffix: Empty
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Construction
+    graph: ShotgunSawn
+    node: sixbarrel
+    deconstructionTarget: null
+
+- type: entity
+  name: sawn-off six-barreled shotgun
+  parent: WeaponShotgunSawn
+  id: WeaponShotgunSixBarreledSawnOff
+  description: Groovy! Uses .50 shotgun shells. This one has an interesting aftermarket modification installed.
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 6
+  - type: Construction
+    graph: ShotgunSawn
+    node: sixbarrelsawn
+    deconstructionTarget: null
+
+- type: entity
+  name: sawn-off six-barreled shotgun
+  parent: WeaponShotgunSixBarreledSawnOff
+  id: WeaponShotgunSixBarreledSawnOffEmpty
+  description: Groovy! Uses .50 shotgun shells. This one has an interesting aftermarket modification installed.
+  suffix: Empty
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Construction
+    graph: ShotgunSawn
+    node: sixbarrelsawn
+    deconstructionTarget: null

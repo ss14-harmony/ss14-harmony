@@ -94,3 +94,17 @@
     - Bartender
     - Zookeeper
 
+- type: listing
+  id: UplinkSixBarrelShotgunMod
+  name: uplink-six-barrel-mod-name
+  description: uplink-six-barrel-mod-desc
+  productEntity: WeaponShotgunSixBarrelUpgradeKit
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Bartender
+    - Zookeeper
