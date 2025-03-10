@@ -16,7 +16,8 @@
   id: DeconstructLattice   # Hidden prototype - do not add to RCDs  
   name: rcd-component-deconstruct
   mode: Deconstruct
-  cost: 2
+  #cost: 2
+  cost: 1 # Harmony
   delay: 0
   rotation: Camera
   fx: EffectRCDConstruct0
@@ -93,7 +94,8 @@
   sprite: /Textures/Interface/Radial/RCD/grille.png
   mode: ConstructObject
   prototype: Grille
-  cost: 4
+  #cost: 4
+  cost: 1 # Harmony
   delay: 2
   collisionMask: Impassable
   rotation: Fixed
@@ -106,7 +108,8 @@
   sprite: /Textures/Interface/Radial/RCD/window.png
   mode: ConstructObject
   prototype: Window
-  cost: 3
+  #cost: 3
+  cost: 2 # Harmony
   delay: 2
   collisionMask: Impassable
   rules:
@@ -135,7 +138,8 @@
   sprite: /Textures/Interface/Radial/RCD/window_reinforced.png
   mode: ConstructObject
   prototype: ReinforcedWindow
-  cost: 4
+  #cost: 4
+  cost: 3 # Harmony
   delay: 3
   collisionMask: Impassable
   rules:
@@ -149,7 +153,8 @@
   sprite: /Textures/Interface/Radial/RCD/directional_reinforced.png
   mode: ConstructObject
   prototype: WindowReinforcedDirectional
-  cost: 3
+  #cost: 4
+  cost: 3 # Harmony
   delay: 2
   collisionMask: Impassable
   collisionBounds: "-0.23,-0.49,0.23,-0.36"
@@ -165,7 +170,8 @@
   sprite: /Textures/Interface/Radial/RCD/airlock.png
   mode: ConstructObject
   prototype: Airlock
-  cost: 4
+  #cost: 4
+  cost: 6 # Harmony
   delay: 4
   collisionMask: FullTileMask
   rotation: Camera
@@ -177,7 +183,8 @@
   sprite: /Textures/Interface/Radial/RCD/glass_airlock.png
   mode: ConstructObject
   prototype: AirlockGlass
-  cost: 4
+  #cost: 4
+  cost: 8 # Harmony
   delay: 4
   collisionMask: FullTileMask
   rotation: Camera

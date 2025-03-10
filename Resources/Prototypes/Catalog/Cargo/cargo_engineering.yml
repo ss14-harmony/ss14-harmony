@@ -114,7 +114,8 @@
     sprite: Objects/Tools/rcd.rsi
     state: ammo
   product: CrateRCDAmmo
-  cost: 2500
+  #cost: 2500
+  cost: 3000 #Harmony
   category: cargoproduct-category-name-engineering
   group: market
 
@@ -124,7 +125,8 @@
     sprite: Objects/Tools/rcd.rsi
     state: icon
   product: CrateRCD
-  cost: 800
+  #cost: 800
+  cost: 1500 # Harmony
   category: cargoproduct-category-name-engineering
   group: market
 
