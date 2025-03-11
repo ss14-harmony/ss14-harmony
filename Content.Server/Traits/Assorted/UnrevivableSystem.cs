@@ -12,7 +12,7 @@ public sealed class UnrevivableSystem : EntitySystem
 ///
 ///        SubscribeLocalEvent<UnrevivableComponent, CloningAttemptEvent>(OnCloningAttempt);
 ///    }
-
+///
 ///    private void OnCloningAttempt(Entity<UnrevivableComponent> ent, ref CloningAttemptEvent args)
 ///    {
 ///        if (!ent.Comp.Cloneable)
