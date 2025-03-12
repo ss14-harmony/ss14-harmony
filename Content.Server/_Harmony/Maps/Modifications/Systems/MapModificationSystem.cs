@@ -1,8 +1,10 @@
 ﻿using Content.Server.GameTicking;
 using Content.Server.Station.Components;
+using Content.Server.Station.Systems;
 using Content.Shared._Harmony.EntitySelector;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Server._Harmony.Maps.Modifications.Systems;
 
@@ -11,10 +13,11 @@ public sealed class MapModificationSystem : EntitySystem
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
+    [Dependency] private readonly StationSystem _stationSystem = default!;
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<PostGameMapLoad>(OnPostGameMapLoad);
+        SubscribeLocalEvent<PostGameMapLoad>(OnPostGameMapLoad, after: [ typeof(StationSystem) ]);
     }
 
     private void OnPostGameMapLoad(PostGameMapLoad args)
@@ -26,43 +29,37 @@ public sealed class MapModificationSystem : EntitySystem
 
             Log.Debug("Applying map addition {0} to map {1}", mapModification.ID, args.GameMap.ID);
 
-            ApplyMapModification(mapModification, args.Map);
+            var station = _stationSystem.GetStationInMap(args.Map);
+            if (station == null)
+            {
+                DebugTools.Assert($"Failed to find a station on map {args.GameMap.ID} but it had a map modification assigned!");
+                Log.Error("Tried to apply map modification {0} to map {1} but failed to find a station!", mapModification.ID, args.Map);
+                break;
+            }
+
+            var grid = _stationSystem.GetLargestGrid(Comp<StationDataComponent>(station.Value));
+            if (grid == null)
+            {
+                DebugTools.Assert($"Station on map {args.GameMap.ID} has no grids.");
+                Log.Error("Station has no grids???");
+                break;
+            }
+
+            ApplyMapModification(mapModification, grid.Value);
         }
     }
 
     /// <summary>
     /// Apply a map modification to a map
     /// </summary>
-    /// <remarks>
-    /// Assumes an uninitialized map
-    /// </remarks>
-    public void ApplyMapModification(MapModificationPrototype mapModification, MapId map)
+    public void ApplyMapModification(MapModificationPrototype mapModification, EntityUid grid)
     {
-        // Query all entities with the becomes station component and pick the first one in our map.
-        // We have to use the becomes station component because our map might be uninitialized.
-        var stationQuery = EntityQueryEnumerator<TransformComponent, BecomesStationComponent>();
-        EntityUid? station = null;
-        while (stationQuery.MoveNext(out var uid, out var transform, out _))
-        {
-            if (transform.MapID != map)
-                return;
-
-            station = uid;
-            break;
-        }
-
-        if (station == null)
-        {
-            Log.Error("Tried to apply map modification {0} to map {1} but failed to find a station!", mapModification.ID, map);
-            return;
-        }
-
         var entitiesToAdd = new List<MapModificationEntity>();
         entitiesToAdd.AddRange(mapModification.Additions);
 
-        // Iterate over all entities inside the station grid
-        var removalEntityEnumerator = Transform(station.Value).ChildEnumerator;
-        while (removalEntityEnumerator.MoveNext(out var entity))
+        // Iterate over all entities inside the grid
+        var gridEntities = Transform(grid).ChildEnumerator;
+        while (gridEntities.MoveNext(out var entity))
         {
             // Apply removals
             if (EntitySelectorManager.EntityMatchesAny(entity, mapModification.Removals))
@@ -96,7 +93,7 @@ public sealed class MapModificationSystem : EntitySystem
         // Apply additions
         foreach (var addition in entitiesToAdd)
         {
-            ApplyMapModificationEntity(addition, station.Value);
+            ApplyMapModificationEntity(addition, grid);
         }
     }
 
