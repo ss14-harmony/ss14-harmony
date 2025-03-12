@@ -1,11 +1,10 @@
 using Content.Shared.Cloning.Events;
-using Content.Shared.Traits.Assorted;
+using Content.Server._Harmony.Uncloneable;
 
-namespace Content.Server.Traits.Assorted;
+namespace Content.Server._Harmony.Uncloneable;
 
 public sealed class UncloneableSystem : EntitySystem
 {
-/// Harmony - New Uncloneable Trait
     public override void Initialize()
     {
         base.Initialize();
@@ -15,7 +14,6 @@ public sealed class UncloneableSystem : EntitySystem
 
     private void OnCloningAttempt(Entity<UncloneableComponent> ent, ref CloningAttemptEvent args)
     {
-        if (!ent.Comp.Cloneable)
             args.Cancelled = true;
     }
 }
