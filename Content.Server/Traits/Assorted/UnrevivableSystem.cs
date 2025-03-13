@@ -5,9 +5,9 @@ namespace Content.Server.Traits.Assorted;
 
 public sealed class UnrevivableSystem : EntitySystem
 {
-   public override void Initialize()
+    public override void Initialize()
     {
-       base.Initialize();
+        base.Initialize();
 
        // SubscribeLocalEvent<UnrevivableComponent, CloningAttemptEvent>(OnCloningAttempt);
     }

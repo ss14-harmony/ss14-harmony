@@ -9,11 +9,11 @@ public sealed class UncloneableSystem : EntitySystem
     {
         base.Initialize();
 
-       SubscribeLocalEvent<UncloneableComponent, CloningAttemptEvent>(OnCloningAttempt);
+        SubscribeLocalEvent<UncloneableComponent, CloningAttemptEvent>(OnCloningAttempt);
     }
 
     private void OnCloningAttempt(Entity<UncloneableComponent> ent, ref CloningAttemptEvent args)
     {
-            args.Cancelled = true;
+        args.Cancelled = true;
     }
 }
