@@ -92,7 +92,7 @@
     - id: MaterialGoliathHide1
     # harmony change start
       amount: 1
-      prob: 0.05
+      prob: 0.3
       orGroup: leather
     - id: MaterialSheetMeat1
       amount: 1
