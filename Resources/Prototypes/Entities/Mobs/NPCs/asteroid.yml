@@ -51,7 +51,7 @@
         Base: goliath_dead
   - type: MovementSpeedModifier
     baseWalkSpeed : 2.00
-    baseSprintSpeed : 2.00
+    baseSprintSpeed : 4.00 # harmony change: sprint speed doubled
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -90,7 +90,16 @@
     - id: FoodMeatGoliath
       amount: 3
     - id: MaterialGoliathHide1
-      amount: 3
+    # harmony change start
+      amount: 1
+      prob: 0.05
+      orGroup: leather
+    - id: MaterialSheetMeat1
+      amount: 1
+      orGroup: leather
+    - id: MaterialSheetMeat1
+      amount: 2
+    # harmony change end
 
 - type: entity
   id: ActionGoliathTentacle
