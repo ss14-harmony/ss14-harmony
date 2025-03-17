@@ -1,0 +1,37 @@
+﻿- type: entity
+  name: Gizard
+  parent: MobLizard
+  id: MobLizardGizard
+  description: It's Gizard the Wizard Lizard! Here to help with wizarding!
+  components:
+  - type: Sprite
+    sprite: _Harmony/Mobs/Pets/gizard.rsi
+    state: gizard
+  - type: GhostRole
+    makeSentient: true
+    allowMovement: true
+    allowSpeech: true
+    name: ghost-role-information-gizard-name
+    description: ghost-role-information-gizard-description
+    rules: ghost-role-information-familiar-rules
+    mindRoles:
+    - MindRoleGhostRoleFamiliar
+  - type: GhostTakeoverAvailable
+  - type: Grammar
+    attributes:
+      gender: male
+      proper: true
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - VimPilot
+  - type: Access
+    tags:
+    - Wizard
+  - type: MindContainer
+    showExamineInfo: true
+  - type: NpcFactionMember
+    factions:
+    - Wizard
+  - type: Alerts
+  - type: Familiar

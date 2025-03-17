@@ -14,7 +14,7 @@
     - MobXenoLonePraetorianNoGhost
 
 #Harmony spawner
-- type: entity
+- type: entityF
   name: Poqutio Spawner
   id: SpawnMobPoquito
   parent: MarkerBase

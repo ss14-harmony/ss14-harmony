@@ -1,0 +1,22 @@
+﻿- type: entity
+  id: SpawnPointGhostGizard
+  name: ghost role spawn point
+  suffix: Gizard
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: ghost-role-information-gizard-name
+    description: ghost-role-information-gizard-description
+    rules: ghost-role-information-familiar-rules
+    mindRoles:
+    - MindRoleGhostRoleFamiliar
+    raffle:
+      settings: short
+  - type: GhostRoleMobSpawner
+    prototype: MobLizardGizard
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: _Harmony/Mobs/Pets/gizard.rsi
+      state: gizard
