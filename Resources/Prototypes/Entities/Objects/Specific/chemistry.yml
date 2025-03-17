@@ -542,7 +542,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 50
   - type: ExplosionResistance
     damageCoefficient: 0.025 # survives conventional explosives but not minibombs and nukes
   - type: Damageable
@@ -590,7 +590,7 @@
     areaInsertRadius: 1
     storageInsertSound: /Audio/Effects/pill_insert.ogg
     storageRemoveSound: /Audio/Effects/pill_remove.ogg
-    whitelist: 
+    whitelist:
       tags:
       - Pill
   - type: Dumpable
