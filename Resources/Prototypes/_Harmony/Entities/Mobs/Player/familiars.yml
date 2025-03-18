@@ -5,8 +5,11 @@
   description: It's Gizard the Wizard Lizard! Here to help with wizarding!
   components:
   - type: Sprite
-    sprite: _Harmony/Mobs/Pets/gizard.rsi
-    state: gizard
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: gizard
+      sprite: _Harmony/Mobs/Pets/gizard.rsi
   - type: GhostRole
     makeSentient: true
     allowMovement: true
@@ -54,3 +57,4 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/lizard_happy.ogg
+
