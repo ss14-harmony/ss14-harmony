@@ -12,8 +12,9 @@
       "name": "gizard",
       "directions": 4
     },
-    { "name": "dead",
-      "directions":  1
+    {
+      "name": "gizarddead",
+      "directions": 1
     }
   ]
 
