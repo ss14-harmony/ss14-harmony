@@ -2,7 +2,7 @@
   id: ProjectileWehball
   name: wehball
   description: You better GITTAH WEH.
-  parent: BulletRocket
+  parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: PointLight
@@ -14,4 +14,7 @@
     layers:
     - state: plushie_lizard
   - type: Projectile
+    damage:
+      types:
+        Piercing: 0
 
