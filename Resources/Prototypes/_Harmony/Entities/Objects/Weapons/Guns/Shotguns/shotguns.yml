@@ -10,6 +10,16 @@
     graph: ShotgunSawn
     node: sixbarrel
     deconstructionTarget: null
+  - type: Clothing
+    sprite: _Harmony/Objects/Weapons/Guns/Shotguns/6b_shotgun.rsi
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Shotguns/6b_shotgun_icon.rsi
+  - type: Item
+    size: Normal
+    shape:
+    - 1,0,4,0
+    - 0,1,4,1
+    sprite: Objects/Weapons/Guns/Shotguns/6b_shotgun.rsi
 
 - type: entity
   name: six-barreled shotgun
@@ -37,6 +47,15 @@
     graph: ShotgunSawn
     node: sixbarrelsawn
     deconstructionTarget: null
+  - type: Clothing
+    sprite: _Harmony/Objects/Weapons/Guns/Shotguns/6b_sawn.rsi
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Shotguns/6b_sawn_icon.rsi
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
+    sprite: Objects/Weapons/Guns/Shotguns/6b_sawn.rsi
 
 - type: entity
   name: sawn-off six-barreled shotgun

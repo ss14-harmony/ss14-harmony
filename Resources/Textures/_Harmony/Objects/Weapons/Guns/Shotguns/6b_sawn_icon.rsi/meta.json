@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-4.0",
+    "copyright": "Harmony resprite by thesaladmancer on Discord / Twitter / GitHub",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "bolt-open"
+        }
+    ]
+}
