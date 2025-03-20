@@ -20,7 +20,7 @@ using Content.Shared.Strip.Components;
 using Content.Shared.Temperature;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Events;
-using Content.Shared.Examine;
+using Content.Shared.Examine;   // Harmony - for lanyards
 
 namespace Content.Shared.Inventory;
 

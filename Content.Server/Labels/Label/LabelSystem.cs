@@ -1,15 +1,15 @@
 using Content.Server.Labels.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Examine;
-using Content.Shared.Inventory;
+using Content.Shared.Inventory; // Harmony - for lanyards
 using Content.Shared.Labels;
 using Content.Shared.Labels.Components;
 using Content.Shared.Labels.EntitySystems;
 using Content.Shared.Paper;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
-using System.Linq;
-using Content.Shared.IdentityManagement;
+using System.Linq;  // Harmony - for lanyards
+using Content.Shared.IdentityManagement;    // Harmony - for lanyards
 
 namespace Content.Server.Labels
 {
@@ -72,7 +72,7 @@ namespace Content.Server.Labels
 
         private void OnExamined(EntityUid uid, PaperLabelComponent comp, ExaminedEvent args)
         {
-            if (comp.LabelSlot.Item is not { Valid: true } item)
+            if (comp.LabelSlot.Item is not {Valid: true} item)
                 return;
 
             using (args.PushGroup(nameof(PaperLabelComponent)))
