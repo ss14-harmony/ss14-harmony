@@ -1,0 +1,32 @@
+# Jumpsuit
+- type: loadout
+  id: HoPJumpsuitTurtleneckHarmony
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHeadOfPersonnelTurtleneckHarmony
+
+- type: loadout
+  id: HoPJumpskirtTurtleneckHarmony
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtHeadOfPersonnelTurtleneckHarmony
+    
+- type: loadout
+  id: HoPJumpsuitMessKitHarmony
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHeadofPersonnelMessKitHarmony
+
+- type: loadout
+  id: HoPJumpskirtMessKitHarmony
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtHeadofPersonnelMessKitHarmony
+
+# Shoes
+- type: loadout
+  id: HoPLeatherShoesHarmony
+  equipment:
+    shoes: ClothingShoesLeather
+
+# Head
+- type: loadout
+  id: HoPBeretHarmony
+  equipment:
+    head: ClothingHeadHatBeretHeadofPersonnelHarmony

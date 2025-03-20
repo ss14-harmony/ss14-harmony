@@ -31,7 +31,7 @@ public sealed partial class GameMapPrototype : IPrototype
     [DataField] public bool IsGrid;
 
     [DataField]
-    public bool RandomRotation = true;
+    public bool RandomRotation = false; // Harmony change for QOL, default is true.
 
     /// <summary>
     /// Name of the map to use in generic messages, like the map vote.

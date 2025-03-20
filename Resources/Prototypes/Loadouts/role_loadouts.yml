@@ -20,6 +20,7 @@
   - HoPJumpsuit
   - HoPBackpack
   - HoPOuterClothing
+  - HoPShoesHarmony # Harmony
   - Glasses
   - Survival
   - Trinkets
@@ -96,6 +97,8 @@
   groups:
   - GroupTankHarness
   - LibrarianJumpsuit
+  - LibrarianOuterClothingHarmony #Harmony Change: Librarian clothing addition -- Curator Coat
+  - LibrarianNeckHarmony #Harmony Change: Librarian clothing addition -- Curator Mantle
   - CommonBackpack
   - Glasses
   - Survival
@@ -427,6 +430,7 @@
   - GroupTankHarness
   - MedicalDoctorHead
   - MedicalMask
+  - MedicalDoctorNeck # Harmony
   - MedicalDoctorJumpsuit
   - MedicalGloves
   - MedicalBackpack

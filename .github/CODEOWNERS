@@ -1,45 +1,26 @@
 # Last match in file takes precedence.
 
-# Sorting by path instead of by who added it one day :(
-# this isn't how codeowners rules work pls read the first comment instead of trying to force a sorting order
+# Everything
+*                                                   @KeldWolf @FluffMe
 
-/Resources/ConfigPresets/WizardsDen/  @nikthechampiongr @crazybrain23
-/Content.*/Administration/ @DrSmugleaf @nikthechampiongr @crazybrain23
-/Resources/ServerInfo/ @nikthechampiongr @crazybrain23
-/Resources/ServerInfo/Guidebook/ServerRules/ @nikthechampiongr @crazybrain23
+# C# code
+/Content.*/                                         @KeldWolf @FluffMe
 
-/Resources/Prototypes/Maps/** @Emisse
+# YML files
+/Resources/*.yml                                    @KeldWolf @FluffMe
+/Resources/**/*.yml                                 @KeldWolf @FluffMe
 
-/Resources/Prototypes/Body/ @DrSmugleaf # suffering
-/Resources/Prototypes/Entities/Mobs/Player/ @DrSmugleaf
-/Resources/Prototypes/Entities/Mobs/Species/ @DrSmugleaf
-/Resources/Prototypes/Guidebook/rules.yml @nikthechampiongr @crazybrain23
-/Content.*/Body/ @DrSmugleaf
-/Content.YAMLLinter @DrSmugleaf
-/Content.Shared/Damage/ @DrSmugleaf
+# Sprites
+/Resources/Textures/                                @DieselMohawk
 
-/Content.*/Anomaly/ @TheShuEd
-/Resources/Prototypes/Entities/Structures/Specific/anomalies.yml @TheShuEd
+# Lobby art and music
+/Resources/Audio/Lobby/                             @KeldWolf
+/Resources/Audio/_Harmony/Lobby/                    @KeldWolf
+/Resources/Textures/LobbyScreens/                   @DieselMohawk
+/Resources/Textures/_Harmony/LobbyScreens/          @DieselMohawk
 
-/Content.*/Forensics/ @ficcialfaint
-
-# SKREEEE
-/Content.*.Database/ @PJB3005 @DrSmugleaf
-/Content.Shared.Database/Log*.cs @PJB3005 @DrSmugleaf @nikthechampiongr @crazybrain23
-/Pow3r/ @PJB3005
-/Content.Server/Power/Pow3r/ @PJB3005
-
-# notafet
-/Content.*/Atmos/ @Partmedia
-/Content.*/Botany/ @Partmedia
-
-# Jezi
-/Content.*/Medical @Jezithyr
-/Content.*/Body @Jezithyr
-
-# Sloth
-/Content.*/Audio @metalgearsloth
-/Content.*/Movement @metalgearsloth
-/Content.*/NPC @metalgearsloth
-/Content.*/Shuttles @metalgearsloth
-/Content.*/Weapons @metalgearsloth
+# Maps
+/Resources/Maps/                                    @spanky-spanky
+/Resources/Prototypes/Maps/                         @spanky-spanky
+/Resources/Prototypes/_Harmony/Maps/                @spanky-spanky
+/Content.IntegrationTests/Tests/PostMapInitTest.cs  @spanky-spanky

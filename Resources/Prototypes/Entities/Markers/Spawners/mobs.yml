@@ -376,6 +376,7 @@
   - type: ConditionalSpawner
     prototypes:
       - MobAlexander
+      - MobKoboldPoquito # Harmony Pet
 
 - type: entity
   name: Shiva Spawner
@@ -561,7 +562,8 @@
     layers:
     - state: green
     - state: monkey
-      sprite: Mobs/Animals/monkey.rsi
+#     sprite: Mobs/Animals/monkey.rsi
+      sprite: _Harmony/Mobs/Animals/monkey.rsi # Harmony Change: Updated Sprite Pathing
   - type: ConditionalSpawner
     prototypes:
     - MobMonkeyPunpun
@@ -592,7 +594,8 @@
     layers:
     - state: green
     - state: monkey
-      sprite: Mobs/Animals/monkey.rsi
+#     sprite: Mobs/Animals/monkey.rsi
+      sprite: _Harmony/Mobs/Animals/monkey.rsi # Harmony Change: Updates Sprite Pathing
   - type: ConditionalSpawner
     prototypes:
     - MobMonkey

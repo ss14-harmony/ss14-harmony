@@ -172,4 +172,3 @@ public sealed class SliceableFoodSystem : EntitySystem
         _solutionContainer.EnsureSolution(entity.Owner, foodComp.Solution, out _);
     }
 }
-

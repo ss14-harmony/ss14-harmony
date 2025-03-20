@@ -1,0 +1,26 @@
+# Base Alcohol
+
+# Mixed Alcohol
+
+- type: reagent
+  id: AviationCocktail
+  name: reagent-name-aviation
+  parent: BaseAlcohol
+  desc: reagent-desc-aviation
+  physicalDesc: reagent-physical-desc-tart
+  flavor: alcohol
+  color: "#8484d4"
+  metamorphicSprite:
+    sprite: _Harmony/Objects/Consumable/Drinks/aviationcocktail.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.25

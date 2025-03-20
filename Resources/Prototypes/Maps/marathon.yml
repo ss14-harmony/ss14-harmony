@@ -2,7 +2,7 @@
   id: Marathon
   mapName: 'Marathon Station'
   mapPath: /Maps/marathon.yml
-  minPlayers: 35
+  minPlayers: 30
   maxPlayers: 70
   stations:
     Marathon:
@@ -50,6 +50,7 @@
             Detective: [ 1, 1 ]
             SecurityCadet: [ 4, 4 ]
             Lawyer: [ 2, 2 ]
+            PermaPrisoner: [ 1, 0 ] # HARMONY
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]

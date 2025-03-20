@@ -1297,7 +1297,8 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: monkey
-      sprite: Mobs/Animals/monkey.rsi
+#     sprite: Mobs/Animals/monkey.rsi
+      sprite: _Harmony/Mobs/Animals/monkey.rsi # Harmony Change: Updates Monkey Sprite Pathing
     - map: [ "jumpsuit" ]
     - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
       color: "#ffffff"
@@ -2370,7 +2371,7 @@
       - ReagentId: Mechanotoxin
         Quantity: 1
   - type: MeleeChemicalInjector
-    transferAmount: 0.75
+    transferAmount: 1.5 # harmony change - part of tarantula buff PR
     solution: melee
   - type: ReplacementAccent
     accent: xeno
@@ -2439,8 +2440,10 @@
     rules: ghost-role-information-giant-spider-rules
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
-    raffle:
-      settings: short
+    # harmony start: remove ghost role raffle from spiders
+    # raffle:
+    #   settings: short
+    # harmony end
   - type: GhostTakeoverAvailable
 
 - type: entity

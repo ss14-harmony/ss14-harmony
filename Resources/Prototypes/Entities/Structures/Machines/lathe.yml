@@ -130,6 +130,8 @@
     - ServiceStatic
     - PowerCellsStatic
     - ElectronicsStatic
+    - HarmonyCargoStatic # Harmony
+    - HarmonyServiceStatic # Harmony
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityAmmoStatic
@@ -393,6 +395,8 @@
     - SecurityPracticeStatic
     - SecurityAmmoStatic
     - SecurityWeaponsStatic
+    - HarmonySecurityEquipmentStatic # Harmony
+    - HarmonySecurityAmmoStatic # Harmony
     dynamicPacks:
     - SecurityEquipment
     - SecurityBoards
@@ -433,6 +437,7 @@
       runningState: icon
       staticPacks:
       - SecurityAmmoStatic
+      - HarmonySecurityAmmoStatic # Harmony
     - type: MaterialStorage
       whitelist:
         tags:
@@ -470,6 +475,7 @@
     - MedicalClothingStatic
     - EmptyMedkitsStatic
     - SurgeryStatic
+    - HarmonyMedicalStatic # Harmony
     dynamicPacks:
     - Chemistry
   - type: Machine
@@ -511,6 +517,7 @@
     - Scarves
     - Carpets
     - Bedsheets
+    - HarmonyClothing # Harmony
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ClothingCentComm
@@ -673,6 +680,7 @@
     runningState: building
     staticPacks:
     - FloorTilesStatic
+    - HarmonyFloorTilesStatic # Harmony
   - type: MaterialStorage
     whitelist:
       tags:

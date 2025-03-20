@@ -9,6 +9,7 @@
       settings: default
   - type: GhostRoleAntagSpawner
 
+# RatKing modified on Harmony to be set as an Antagonist instead of free agent.
 - type: entity
   id: SpawnPointGhostRatKing
   name: ghost role spawn point
@@ -18,9 +19,9 @@
   - type: GhostRole
     name: ghost-role-information-rat-king-name
     description: ghost-role-information-rat-king-description
-    rules: ghost-role-information-freeagent-rules
+    rules: ghost-role-information-antagonist-rules
     mindRoles:
-    - MindRoleGhostRoleFreeAgent
+    - MindRoleGhostRoleSoloAntagonist
     raffle:
       settings: default
   - type: GhostRoleMobSpawner

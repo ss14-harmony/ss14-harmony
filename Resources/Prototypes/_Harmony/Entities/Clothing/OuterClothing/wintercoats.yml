@@ -1,0 +1,25 @@
+- type: entity
+  parent: [ClothingOuterArmorCaptainCarapace, ClothingOuterWinterCoatToggleable, BaseCommandContraband]
+  id: ClothingOuterWinterCapArmored
+  name: captain's armored winter coat
+  description: A winter coat for the cautious captain.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/OuterClothing/WinterCoats/coatcaparmored.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/OuterClothing/WinterCoats/coatcaparmored.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodWinterCaptainArmored
+
+- type: entity
+  parent: ClothingOuterWinterCoatToggleable
+  id: ClothingOuterCuratorCoat
+  name: curator's coat
+  description: A faded brown winter coat for chilly nights in the study.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/OuterClothing/WinterCoats/curatorcoat.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/OuterClothing/WinterCoats/curatorcoat.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodWinterCurator

@@ -5,7 +5,7 @@
   playTimeTracker: JobSecurityCadet
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 36000 #10 hrs
+      time: 3600 #1 hrs
     - !type:DepartmentTimeRequirement
       department: Security
       time: 54000 #15 hrs
@@ -33,9 +33,10 @@
     id: SecurityCadetPDA
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolMk58
+    pocket1: WeaponDisabler
     pocket2: BookSecurity
   storage:
     back:
     - Flash
     - MagazinePistol
+    - WeaponPistolMk58

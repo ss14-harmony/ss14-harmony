@@ -1,0 +1,27 @@
+- type: gamePreset
+  id: SecretNukeops #For Admin Use: Runs Nukeops but shows "Secret" in lobby.
+  alias:
+    - secretnukeops
+  name: secret-title
+  description: secret-description
+  showInVote: false #Admin Use
+  rules:
+    - Nukeops
+    - SubGamemodesRule
+    - BasicStationEventScheduler
+    - MeteorSwarmScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
+
+- type: gamePreset
+  id: DeathmatchPROMOD
+  alias:
+    - deathmatchpromod
+    - dmpm
+  name: death-match-promod-title
+  description: death-match-promod-description
+  maxPlayers: 15
+  showInVote: true
+  supportedMaps: DeathMatchPROMODMapPool
+  rules:
+    - DeathMatchPROMOD
