@@ -1,0 +1,37 @@
+- type: reaction
+  id: Aviation
+  reactants:
+    Gin:
+      amount: 3
+    LemonLime:
+      amount: 1
+    JuiceBerry:
+      amount: 1
+  products:
+    AviationCocktail: 5
+
+- type: reaction
+  id: StarsetSarsaparilla
+  reactants:
+    SolDry:
+      amount: 2
+    Cola:
+      amount: 2
+    JuiceLemon:
+      amount: 1
+  products:
+    StarsetSarsaparilla: 5
+
+- type: reaction
+  id: SunsetSoda
+  reactants:
+    Cream:
+      amount: 1
+    SodaWater:
+      amount: 2
+    Ice:
+      amount: 2
+    Sap:
+      amount: 1
+  products:
+    SunsetSoda: 6

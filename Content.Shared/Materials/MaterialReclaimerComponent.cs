@@ -1,4 +1,6 @@
-﻿using Content.Shared.Whitelist;
+﻿using Content.Shared.Damage;
+using Content.Shared.Whitelist;
+using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
@@ -26,6 +28,12 @@ public sealed partial class MaterialReclaimerComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
     public bool Enabled = true;
+
+    /// <summary>
+    /// A master control for whether or not the recycler is broken and can function.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool Broken;
 
     /// <summary>
     /// How efficiently the materials are reclaimed.
@@ -59,8 +67,15 @@ public sealed partial class MaterialReclaimerComponent : Component
     /// <summary>
     /// The id of our output solution
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public string SolutionContainerId = "output";
+    [DataField]
+    public string? SolutionContainerId;
+
+    /// <summary>
+    /// If the reclaimer should attempt to reclaim all solutions or just drainable ones
+    /// Difference between Recycler and Industrial Reagent Grinder
+    /// </summary>
+    [DataField]
+    public bool OnlyReclaimDrainable = true;
 
     /// <summary>
     /// a whitelist for what entities can be inserted into this reclaimer
@@ -109,16 +124,24 @@ public sealed partial class MaterialReclaimerComponent : Component
     /// </remarks>
     [DataField, AutoNetworkedField]
     public int ItemsProcessed;
+
+    [DataField]
+
+    /// <summary>
+    /// The damage the recycler will deal to creatures.
+    /// </summary>
+    public DamageSpecifier? Damage = default!;
 }
 
 [NetSerializable, Serializable]
 public enum RecyclerVisuals
 {
-    Bloody
+    Bloody,
+    Broken
 }
 
+[UsedImplicitly]
 public enum RecyclerVisualLayers : byte
 {
-    Main,
-    Bloody
+    Main
 }

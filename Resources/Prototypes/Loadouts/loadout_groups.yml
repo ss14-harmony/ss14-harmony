@@ -5,8 +5,12 @@
   minLimit: 0
   maxLimit: 3
   loadouts:
+  - FlowerWreath
+  - Hairflower
+  - Headphones
   - PlushieLizard
   - PlushieSpaceLizard
+  - ThreeCandles
   - Lighter
   - CigPackGreen
   - CigPackRed
@@ -15,16 +19,53 @@
   - CigarCase
   - CigarGold
   - ClothingNeckLGBTPin
+  - ClothingNeckAllyPin
   - ClothingNeckAromanticPin
   - ClothingNeckAsexualPin
+  - ClothingNeckAroacePin
   - ClothingNeckBisexualPin
+  - ClothingNeckGayPin
   - ClothingNeckIntersexPin
   - ClothingNeckLesbianPin
   - ClothingNeckNonBinaryPin
   - ClothingNeckPansexualPin
+  - ClothingNeckOmnisexualPin
+  - ClothingNeckGenderqueerPin
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
   - ClothingNeckGoldAutismPin
+#harmony specific trinkets
+  - ClothingNeckVulturePin
+  - ClothingNeckMirosPin
+  - ClothingNeckLizardPin
+  - ClothingNeckLeviathanPin
+  - ClothingNeckSalamanderPin
+  - ClothingNeckAxolotlPin
+  - ClothingNeckFrontierPin
+  - ClothingNeckDeltaVPin
+  - ClothingNeckCosmaticDriftPin
+  - ClothingNeckLanyard
+  - HarmonicaInstrument
+  - TowelColorBlack
+  - TowelColorDarkBlue
+  - TowelColorDarkGreen
+  - TowelColorGold
+  - TowelColorGray
+  - TowelColorGreen
+  - TowelColorLightBlue
+  - TowelColorLightBrown
+  - TowelColorMaroon
+  - TowelColorMime
+  - TowelColorOrange
+  - TowelColorPurple
+  - TowelColorRed
+  - TowelColorSilver
+  - TowelColorWhite
+  - TowelColorYellow
+  - TowelStripedOrange # Harmony
+  - PlushieVox
+#deltav specific trinkets
+  - TapeRecorder
 
 - type: loadoutGroup
   id: Glasses
@@ -36,14 +77,38 @@
   - GlassesJensen
 
 - type: loadoutGroup
+  id: GroupTankHarness
+  name: loadout-group-tank-harness
+  minLimit: 1
+  hidden: true
+  loadouts:
+  - LoadoutTankHarness
+
+- type: loadoutGroup
   id: Survival
   name: loadout-group-survival-basic
-  minLimit: 1
-  maxLimit: 1
+  minLimit: 3
   hidden: true
   loadouts:
   - EmergencyNitrogen
   - EmergencyOxygen
+  - LoadoutSpeciesVoxNitrogen
+
+- type: loadoutGroup
+  id: GroupEVATank
+  name: loadout-group-EVA-tank
+  hidden: true
+  loadouts:
+  - LoadoutSpeciesEVANitrogen
+  - LoadoutSpeciesEVAOxygen
+
+- type: loadoutGroup
+  id: GroupPocketTankDouble
+  name: loadout-group-pocket-tank-double
+  hidden: true
+  loadouts:
+  - LoadoutSpeciesPocketDoubleNitrogen
+  - LoadoutSpeciesPocketDoubleOxygen
 
 # Command
 - type: loadoutGroup
@@ -53,6 +118,7 @@
   loadouts:
   - CaptainHead
   - CaptainCap
+  - BeretCaptainHarmony # Harmony
 
 - type: loadoutGroup
   id: CaptainJumpsuit
@@ -62,6 +128,9 @@
   - CaptainJumpskirt
   - CaptainFormalSuit
   - CaptainFormalSkirt
+  - CaptainJumpsuitTurtleneckHarmony #Harmony
+  - CaptainJumpskirtTurtleneckHarmony #Harmony
+  - CaptainHawaiianHarmony # Harmony
 
 - type: loadoutGroup
   id: CaptainNeck
@@ -86,6 +155,7 @@
   loadouts:
   - CaptainOuterClothing
   - CaptainWintercoat
+  - CaptainArmoredWinterCoatHarmony #Harmony
 
 - type: loadoutGroup
   id: HoPHead
@@ -93,6 +163,7 @@
   minLimit: 0
   loadouts:
   - HoPHead
+  - HoPBeretHarmony # Harmony
 
 - type: loadoutGroup
   id: HoPJumpsuit
@@ -100,6 +171,10 @@
   loadouts:
   - HoPJumpsuit
   - HoPJumpskirt
+  - HoPJumpsuitTurtleneckHarmony #Harmony
+  - HoPJumpskirtTurtleneckHarmony #Harmony
+  - HoPJumpsuitMessKitHarmony #Harmony
+  - HoPJumpskirtMessKitHarmony #Harmony
 
 - type: loadoutGroup
   id: HoPNeck
@@ -156,6 +231,13 @@
   - CommonBackpack
   - CommonSatchel
   - CommonDuffel
+
+- type: loadoutGroup
+  id: PassengerNeck
+  name: loadout-group-passenger-neck
+  minLimit: 0
+  loadouts:
+  - Mantle
 
 - type: loadoutGroup
   id: PassengerOuterClothing
@@ -376,13 +458,16 @@
   minLimit: 0
   loadouts:
   - JesterHat
+  - JesterAltHat
 
 - type: loadoutGroup
   id: ClownJumpsuit
   name: loadout-group-clown-jumpsuit
   loadouts:
   - ClownSuit
+  - ClownSkirt
   - JesterSuit
+  - JesterAltSuit
 
 - type: loadoutGroup
   id: ClownBackpack
@@ -411,11 +496,11 @@
   id: SurvivalClown
   name: loadout-group-survival-clown
   minLimit: 2
-  maxLimit: 2
   hidden: true
   loadouts:
   - EmergencyNitrogenClown
   - EmergencyOxygenClown
+  - LoadoutSpeciesVoxNitrogen
 
 - type: loadoutGroup
   id: MimeHead
@@ -455,6 +540,23 @@
   minLimit: 0
   loadouts:
   - MimeWintercoat
+
+- type: loadoutGroup
+  id: MimeBelt
+  name: loadout-group-mime-belt
+  loadouts:
+  - MimeSuspendersRed
+  - MimeSuspendersBlack
+
+- type: loadoutGroup
+  id: SurvivalMime
+  name: loadout-group-survival-mime
+  minLimit: 2
+  hidden: true
+  loadouts:
+  - EmergencyNitrogenMime
+  - EmergencyOxygenMime
+  - LoadoutSpeciesVoxNitrogen
 
 - type: loadoutGroup
   id: MusicianJumpsuit
@@ -552,6 +654,8 @@
   minLimit: 0
   loadouts:
   - CargoTechnicianHead
+  - CargoTechnicianBandanaHarmony # Harmony
+  - SeniorTechnicianBeretHarmony # Harmony change: adds senior tech beret to loadout group
 
 - type: loadoutGroup
   id: CargoTechnicianJumpsuit
@@ -559,6 +663,14 @@
   loadouts:
   - CargoTechnicianJumpsuit
   - CargoTechnicianJumpskirt
+# start of harmony change: adds new outfits to loadout
+  - CargoPantsHarmony
+  - CargoverallsHarmony
+  - CargoOfficeSlacksJumpsuitHarmony
+  - CargoOfficeSkirtJumpskirtHarmony
+  - SeniorTechnicianJumpsuitHarmony
+  - SeniorTechnicianJumpskirtHarmony
+# end of harmony change
 
 - type: loadoutGroup
   id: CargoTechnicianBackpack
@@ -611,7 +723,8 @@
   minLimit: 0
   loadouts:
   - ChiefEngineerHead
-  - ChiefEngineerBeret
+#  - ChiefEngineerBeret
+  - CEBeretHarmony # Harmony Change
 
 - type: loadoutGroup
   id: ChiefEngineerJumpsuit
@@ -654,6 +767,7 @@
 - type: loadoutGroup
   id: StationEngineerHead
   name: loadout-group-station-engineer-head
+  minLimit: 0
   loadouts:
   - StationEngineerHardhatYellow
   - StationEngineerHardhatOrange
@@ -734,11 +848,11 @@
   id: SurvivalExtended
   name: loadout-group-survival-extended
   minLimit: 2
-  maxLimit: 2
   hidden: true
   loadouts:
   - EmergencyNitrogenExtended
   - EmergencyOxygenExtended
+  - LoadoutSpeciesVoxNitrogen
 
 # Science
 - type: loadoutGroup
@@ -746,7 +860,8 @@
   name: loadout-group-research-director-head
   minLimit: 0
   loadouts:
-  - ResearchDirectorBeret
+#  - ResearchDirectorBeret
+  - RDBeretHarmony # Harmony Change
 
 - type: loadoutGroup
   id: ResearchDirectorNeck
@@ -864,6 +979,8 @@
   loadouts:
   - HeadofSecurityHead
   - HeadofSecurityBeret
+  - HoSWidebrimHarmony # Harmony
+  - HoSSoftHarmony # Harmony
 
 - type: loadoutGroup
   id: HeadofSecurityJumpsuit
@@ -871,8 +988,14 @@
   loadouts:
   - HeadofSecurityJumpsuit
   - HeadofSecurityJumpskirt
-  - HeadofSecurityTurtleneck
-  - HeadofSecurityTurtleneckSkirt
+  - JumpsuitHoSBlueHarmony # Harmony
+  - JumpsuitHoSGrey # Harmony
+  - JumpsuitHoSTurtleNeckHarmony # Harmony
+  - JumpskirtHoSTurtleNeckHarmony # Harmony
+# - HeadofSecurityTurtleneck
+# - HeadofSecurityTurtleneckSkirt
+  - HeadofSecurityAssaultSuit # Harmony
+  - HeadofSecurityAssaultSkirt # Harmony
   - HeadofSecurityFormalSuit
   - HeadofSecurityFormalSkirt
 
@@ -905,6 +1028,7 @@
   loadouts:
   - WardenJumpsuit
   - WardenJumpskirt
+  - WardenBlueSuitHarmony # Harmony
 
 - type: loadoutGroup
   id: WardenOuterClothing
@@ -921,6 +1045,11 @@
   - SecurityHelmet
   - SecurityBeret
   - SecurityHat
+  - TrooperHat
+  - SecurityBandanaHarmony # Harmony
+  - SecurityBlueCapHarmony # Harmony
+  - SeniorOfficerBeretHarmony # Harmony
+  - SecurityBlueBeretHarmony # Harmony
 
 - type: loadoutGroup
   id: SecurityJumpsuit
@@ -932,6 +1061,8 @@
   - SecurityJumpskirtGrey
   - SeniorOfficerJumpsuit
   - SeniorOfficerJumpskirt
+  - TrooperUniform
+  - JumpsuitSecBlue # Harmony
 
 - type: loadoutGroup
   id: SecurityBackpack
@@ -960,7 +1091,6 @@
   id: SecurityShoes
   name: loadout-group-security-shoes
   loadouts:
-  - CombatBoots
   - JackBoots
   - SecurityWinterBoots
 
@@ -978,6 +1108,7 @@
   loadouts:
   - DetectiveFedora
   - DetectiveFedoraGrey
+  - DetectiveFedoraBlueHarmony # Harmony
 
 - type: loadoutGroup
   id: DetectiveNeck
@@ -994,15 +1125,20 @@
   - DetectiveJumpskirt
   - NoirJumpsuit
   - NoirJumpskirt
+  - DetectiveBlueSuitHarmony # Harmony
+  - DetectiveBlueSkirtHarmony # Harmony
 
 - type: loadoutGroup
   id: DetectiveOuterClothing
   name: loadout-group-detective-outerclothing
-  minLimit: 0
   loadouts:
   - DetectiveArmorVest
   - DetectiveCoat
-
+  - DetectiveCoatGrey
+  - DetectiveBlueCoatHarmony # Harmony
+  - DetectiveBomberCoatHarmony # Harmony
+  - DetectiveDiscoCoatHarmony # Harmony
+ 
 - type: loadoutGroup
   id: SecurityCadetJumpsuit
   name: loadout-group-security-cadet-jumpsuit
@@ -1014,11 +1150,18 @@
   id: SurvivalSecurity
   name: loadout-group-survival-security
   minLimit: 2
-  maxLimit: 2
   hidden: true
   loadouts:
   - EmergencyNitrogenSecurity
   - EmergencyOxygenSecurity
+  - LoadoutSpeciesVoxNitrogen
+
+- type: loadoutGroup
+  id: SecurityStar
+  name: loadout-group-security-star
+  minLimit: 0
+  loadouts:
+  - SecStar
 
 # Medical
 - type: loadoutGroup
@@ -1080,6 +1223,7 @@
   loadouts:
   - MedicalDoctorJumpsuit
   - MedicalDoctorJumpskirt
+  - WorkadaySuit # Harmony
   - SeniorPhysicianJumpsuit
   - SeniorPhysicianJumpskirt
   - MedicalBlueScrubs
@@ -1108,6 +1252,7 @@
   name: loadout-group-medical-doctor-shoes
   loadouts:
   - WhiteShoes
+  - BlackShoes # Harmony
   - MedicalWinterBoots
 
 - type: loadoutGroup
@@ -1196,11 +1341,11 @@
   id: SurvivalMedical
   name: loadout-group-survival-medical
   minLimit: 2
-  maxLimit: 2
   hidden: true
   loadouts:
   - EmergencyNitrogenMedical
   - EmergencyOxygenMedical
+  - LoadoutSpeciesVoxNitrogen
 
 # Wildcards
 - type: loadoutGroup
@@ -1209,6 +1354,13 @@
   loadouts:
   - ReporterJumpsuit
   - JournalistJumpsuit
+
+- type: loadoutGroup
+  id: PsychologistJumpsuit
+  name: loadout-group-psychologist-jumpsuit
+  loadouts:
+  - PsychologistJumpsuit
+  - PsychologistJumpskirt
 
 - type: loadoutGroup
   id: BoxerJumpsuit
@@ -1231,8 +1383,42 @@
   id: SurvivalSyndicate
   name: loadout-group-survival-syndicate
   minLimit: 2
-  maxLimit: 2
   hidden: true
   loadouts:
   - EmergencyNitrogenSyndicate
   - EmergencyOxygenSyndicate
+  - LoadoutSpeciesVoxNitrogen
+
+- type: loadoutGroup
+  id: GroupSpeciesBreathTool
+  name: loadout-group-breath-tool
+  minLimit: 1
+  maxLimit: 1
+  hidden: false # Harmony change for various Vox masks
+  loadouts:
+  - LoadoutSpeciesBreathTool
+  - LoadoutClothingMaskAuralis # Harmony
+  - LoadoutClothingMaskVoxSpecial # Harmony
+
+- type: loadoutGroup
+  id: GroupSpeciesBreathToolMedical
+  name: loadout-group-breath-tool
+  minLimit: 1
+  maxLimit: 1
+  hidden: false # Harmony change for various Vox masks
+  loadouts:
+  - LoadoutSpeciesBreathToolMedical
+  - LoadoutClothingMaskAuralis # Harmony
+  - LoadoutClothingMaskVoxSpecial # Harmony
+
+- type: loadoutGroup
+  id: GroupSpeciesBreathToolSecurity
+  name: loadout-group-breath-tool
+  minLimit: 1
+  maxLimit: 1
+  hidden: false # Harmony change for various Vox masks
+  loadouts:
+  - LoadoutSpeciesBreathToolSecurity
+  - LoadoutClothingMaskAuralis # Harmony
+  - LoadoutClothingMaskVoxSpecial # Harmony
+  - LoadoutClothingMaskNTEnforcer # Harmony

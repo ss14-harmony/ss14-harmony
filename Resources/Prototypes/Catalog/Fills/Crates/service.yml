@@ -20,6 +20,7 @@
       - id: Plunger
         amount: 2
       - id: BoxCleanerGrenades
+      - id: ToyRubberDuck # Harmony change. More ways to spawn duckies
 
 - type: entity
   id: CrateServiceReplacementLights
@@ -31,6 +32,17 @@
     contents:
       - id: BoxLighttube
       - id: BoxLightbulb
+
+- type: entity
+  id: CrateServiceHolidayLights
+  parent: CrateGenericSteel
+  name: holiday lights crate
+  description: Deck the halls with these festive holiday lights!
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxLighttubeHoliday
+      - id: BoxLighttubeHoliday
 
 - type: entity
   id: CrateMousetrapBoxes
@@ -78,6 +90,7 @@
     contents:
     - id: ClothingUniformJumpskirtPerformer
     - id: ClothingShoesBootsPerformer
+    - id: ClothingHeadPerformerWig
     - id: ClothingOuterSuitMonkey
     - id: ClothingHeadHatAnimalMonkey
     - id: ClothingNeckCloakMoth
@@ -91,7 +104,8 @@
     - id: ClothingUniformJumpskirtOldDress
     - id: BikeHorn
     - id: ClownRecorder
-    - id: ClothingBeltSuspenders
+    - id: ClothingBeltSuspendersRed
+    - id: ClothingBeltSuspendersBlack
 
 - type: entity
   id: CrateServiceCustomSmokable
@@ -128,6 +142,9 @@
     - id: BoxFolderRed
     - id: BoxFolderYellow
     - id: NewtonCradle
+    - id: BoxEnvelope
+    - id: BrbSign
+    - id: ClothingNeckLanyard #Harmony addition. Also obtainable through character loadouts and PTech vendor
 
 - type: entity
   id: CrateServiceFaxMachine
@@ -173,7 +190,7 @@
       - id: BookSpaceEncyclopedia
       - id: BookTheBookOfControl
       - id: BookBartendersManual
-      - id: BookChefGaming
+      - id: BookHowToCookForFortySpaceman
       - id: BookLeafLoversSecret
       - id: BookEngineersHandbook
       - id: BookScientistsGuidebook
@@ -183,6 +200,7 @@
       - id: BookMedicalReferenceBook
       - id: BookHowToSurvive
       - id: BookChemicalCompendium
+      - id: BookSpaceLaw
 
 - type: entity
   id: CrateServiceSodaDispenser
@@ -332,3 +350,16 @@
           prob: 0.1
         - id: ShardGlassPlasma
           prob: 0.1
+
+- type: entity
+  id: CrateCandles
+  parent: CrateGenericSteel
+  name: candles crate
+  description: Contains 4 boxes of candles, 2 large and 2 small. For atmosphere or something.
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxCandle
+        amount: 2
+      - id: BoxCandleSmall
+        amount: 2

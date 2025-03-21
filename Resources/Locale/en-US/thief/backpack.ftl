@@ -18,7 +18,8 @@ thief-backpack-button-deselect = Select [X]
 thief-backpack-category-chameleon-name = chameleon kit
 thief-backpack-category-chameleon-description =
     You are everyone and no one; you are a master of disguise.
-    Includes: Set of chameleon clothing, a chameleon projector.
+    Includes: A full set of chameleon clothing,
+    a chameleon projector, and an Agent ID.
     Disguise as anyone and anything.
 
 thief-backpack-category-tools-name = breacher kit
@@ -38,8 +39,8 @@ thief-backpack-category-syndie-name = syndie kit
 thief-backpack-category-syndie-description =
     Trinkets from a disavowed past, or stolen from a careless agent?
     You've made some connections. Whiskey, echo...
-    Includes: Agent ID card, Emag, syndicate pAI, Interdyne cigs,
-    and some strange red crystals.
+    Includes: An Emag, Access Breaker, Interdyne cigs, a Syndicate codeword,
+    a Radio Jammer, a lighter and some strange red crystals.
 
 thief-backpack-category-sleeper-name = sleeper kit
 thief-backpack-category-sleeper-description =
@@ -59,5 +60,5 @@ thief-backpack-category-smuggler-name = smuggler kit
 thief-backpack-category-smuggler-description =
     All thieves need somewhere to stash their goods in the dark.
     Don't forget to link your fulton.
-    Includes: Fulton beacon, 10 fultons, 3 smoke grenades,
+    Includes: Fulton beacon, 10 fultons, 3 smoke grenades, a smugglers satchel,
     and an invisible crate to hide valuable loot.

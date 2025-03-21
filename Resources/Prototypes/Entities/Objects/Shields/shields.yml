@@ -7,11 +7,12 @@
   components:
     - type: Sprite
       sprite: Objects/Weapons/Melee/shields.rsi
-      state: riot-icon
+      state: icon
+      #state: riot-icon #Harmony Change: Replaced with a more suitable state due to being redudant
     - type: Item
       sprite: Objects/Weapons/Melee/shields.rsi
       size: Ginormous
-      heldPrefix: riot
+      #heldPrefix: riot #Harmony Change: Removed due to being redundant
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -36,13 +37,13 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 80
+            damage: 140
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
-            damage: 40 #This is probably enough damage before it breaks
+            damage: 100 #This is probably enough damage before it breaks
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
@@ -58,61 +59,105 @@
                   min: 2
                   max: 2
     - type: StaticPrice
-      price: 50
+      price: 100
 
 #Security Shields
 
 - type: entity
   name: riot shield
-  parent: BaseShield
+  parent: [ BaseShield, BaseSecurityContraband ]
   id: RiotShield
   description: A large tower shield. Good for controlling crowds.
   components:
+# Begin of Harmony Change: Shield Rework -- Suit Storage Slot
+    - type: Sprite
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-shield.rsi
+      state: icon
+    - type: Item
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-shield.rsi
+      size: Ginormous
+    - type: Clothing
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-shield.rsi
+      quickEquip: false
+      slots:
+      - suitStorage
+# End of Harmony Change
     - type: StaticPrice
       price: 90
-
-- type: entity
-  name: riot laser shield
-  parent: BaseShield
-  id: RiotLaserShield
-  description: A riot shield built for withstanding lasers, but not much else.
-  components:
-    - type: Sprite
-      state: riot_laser-icon
-    - type: Item
-      heldPrefix: riot_laser
     - type: Blocking
       passiveBlockModifier:
-        coefficients:
-          Heat: 0.8
-      activeBlockModifier:
-        coefficients:
-          Heat: 0.7
-        flatReductions:
-          Heat: 2
-
-- type: entity
-  name: riot bullet shield
-  parent: BaseShield
-  id: RiotBulletShield
-  description: A ballistic riot shield built for withstanding bullets, but not much else.
-  components:
-    - type: Sprite
-      state: riot_bullet-icon
-    - type: Item
-      heldPrefix: riot_bullet
-    - type: Blocking
-      passiveBlockModifier:
-        coefficients:
-          Blunt: 0.8
-          Piercing: 0.8
-      activeBlockModifier:
         coefficients:
           Blunt: 0.7
-          Piercing: 0.7
+          Slash: 0.7
+      activeBlockModifier:
+        coefficients:
+          Blunt: 0.5
+          Slash: 0.5
         flatReductions:
-          Blunt: 1.5
-          Piercing: 1.5
+          Blunt: 1
+          Slash: 1
+
+- type: entity
+  name: laser shield
+  parent: [ BaseShield, BaseSecurityContraband ]
+  id: RiotLaserShield
+  description: A shield built for withstanding lasers, but not much else.
+  components:
+# Begin of Harmony Change: Shield Rework -- Suit Storage Slot
+    - type: Sprite
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
+      state: icon
+      #state: riot_laser-icon 
+    - type: Item
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
+      size: Ginormous
+      #heldPrefix: riot_laser
+    - type: Clothing
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
+      quickEquip: false
+      slots:
+      - suitStorage
+# End of Harmony Change
+    - type: Blocking
+      passiveBlockModifier:
+        coefficients:
+          Heat: 0.7
+      activeBlockModifier:
+        coefficients:
+          Heat: 0.5
+        flatReductions:
+          Heat: 1
+
+- type: entity
+  name: ballistic shield
+  parent: [ BaseShield, BaseSecurityContraband ]
+  id: RiotBulletShield
+  description: A shield built for protecting against ballistics, but not much else.
+  components:
+# Begin of Harmony Change: Shield Rework -- Suit Storage Slot
+    - type: Sprite
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi
+      state: icon
+      #state: riot_bullet-icon 
+    - type: Item
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi
+      size: Ginormous
+      #heldPrefix: riot_bullet
+    - type: Clothing
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi
+      quickEquip: false
+      slots:
+      - suitStorage 
+# End of Harmony Change
+    - type: Blocking
+      passiveBlockModifier:
+        coefficients:
+          Piercing: 0.7
+      activeBlockModifier:
+        coefficients:
+          Piercing: 0.5
+        flatReductions:
+          Piercing: 1
 
 #Craftable shields
 
@@ -122,10 +167,21 @@
   id: WoodenBuckler
   description: A small round wooden makeshift shield.
   components:
+# Begin of Harmony Change: Shield Rework -- Suit Storage Slot
     - type: Sprite
-      state: buckler-icon
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/buckler.rsi
+      state: icon
+      #state: buckler-icon
     - type: Item
-      heldPrefix: buckler
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/buckler.rsi
+      size: Ginormous
+      #heldPrefix: buckler
+    - type: Clothing
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/buckler.rsi
+      quickEquip: false
+      slots:
+      - suitStorage
+# End of Harmony Change
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -177,10 +233,21 @@
   id: MakeshiftShield
   description: A rundown looking shield, not good for much.
   components:
+# Begin of Harmony Change: Shield Rework -- Suit Storage Slot
     - type: Sprite
-      state: makeshift-icon
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/makeshift-shield.rsi 
+      state: icon
+      #state: makeshift-icon
     - type: Item
-      heldPrefix: metal
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/makeshift-shield.rsi
+      size: Ginormous
+      #heldPrefix: metal
+    - type: Clothing
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/makeshift-shield.rsi
+      quickEquip: false
+      slots:
+      - suitStorage 
+  # End of Harmony Change
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -313,7 +380,7 @@
   name: mirror shield
   parent: BaseShield
   id: MirrorShield
-  description: Glows an eerie red. You hear the Geometer whispering...
+  description: Eerily glows red... you hear the geometer whispering
   components:
     - type: Sprite
       state: mirror-icon
@@ -321,7 +388,6 @@
       heldPrefix: mirror
     - type: Reflect
       reflectProb: 0.95
-      innate: true
       reflects:
         - Energy
     - type: Blocking #Mirror shield reflects heat/laser, but is relatively weak to everything else.
@@ -360,7 +426,7 @@
 
 - type: entity
   name: energy shield
-  parent: BaseItem
+  parent: [BaseItem, BaseSyndicateContraband]
   id: EnergyShield
   description: Exotic energy shield, when folded, can even fit in your pocket.
   components:
@@ -374,8 +440,10 @@
         path: /Audio/Weapons/ebladehum.ogg
     - type: ItemToggleSize
       activatedSize: Huge
-    - type: ItemToggleDisarmMalus
-      activatedDisarmMalus: 0.6
+    - type: ComponentToggler
+      components:
+      - type: DisarmMalus
+        malus: 0.6
     - type: Sprite
       sprite: Objects/Weapons/Melee/e_shield.rsi
       layers:
@@ -406,10 +474,9 @@
       radius: 1.5
       energy: 2
       color: blue
+    - type: ItemTogglePointLight
     - type: Reflect
-      enabled: false
       reflectProb: 0.95
-      innate: true
       reflects:
         - Energy
     - type: Blocking
@@ -485,8 +552,10 @@
         path: /Audio/Weapons/telescopicoff.ogg
         params:
           volume: -5
-    - type: ItemToggleDisarmMalus
-      activatedDisarmMalus: 0.6
+    - type: ComponentToggler
+      components:
+      - type: DisarmMalus
+        malus: 0.6
     - type: ItemToggleSize
       activatedSize: Huge
     - type: Sprite

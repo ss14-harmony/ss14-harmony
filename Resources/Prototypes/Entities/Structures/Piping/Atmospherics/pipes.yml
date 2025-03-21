@@ -12,13 +12,18 @@
   - type: Transform
     anchored: true
   - type: Damageable
-    damageContainer: Inorganic
+    damageContainer: StructuralInorganic
     damageModifierSet: Metallic
   - type: SubFloorHide
   - type: CollideOnAnchor
   - type: PipeAppearance
   - type: Anchorable
   - type: Rotatable
+  - type: RCDDeconstructable
+    cost: 0.5
+    delay: 2
+    fx: EffectRCDDeconstruct2
+    rpd: true
   - type: Destructible
     thresholds:
     - trigger: # for nukes
@@ -54,6 +59,7 @@
   - type: PipeRestrictOverlap
   - type: AtmosUnsafeUnanchor
   - type: AtmosPipeColor
+  - type: AtmosMonitoringConsoleDevice
   - type: Tag
     tags:
     - Pipe
@@ -61,7 +67,7 @@
     canCollide: false
     bodyType: static
   - type: StaticPrice
-    price: 11
+    price: 30
 
 #Note: The PipeDirection of the PipeNode should be the south-facing version, because the entity starts at an angle of 0 (south)
 
@@ -83,6 +89,10 @@
   - type: Construction
     graph: GasPipe
     node: half
+  - type: GuideHelp
+    guides:
+    - Pipes
+    - PipeNetworks
 
 - type: entity
   parent: GasPipeBase
@@ -116,6 +126,10 @@
         Blunt: 8
     soundHit:
       collection: MetalThud # this NEEDS to changed to the metal pipe falling sound effect on april first every year
+  - type: GuideHelp
+    guides:
+    - Pipes
+    - PipeNetworks
 
 - type: entity
   parent: GasPipeBase
@@ -155,7 +169,11 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 3 #This should be 6 but throwing damage is doubled at the moment for some reason so for now it's 3
+        Blunt: 8 # Woe, pipe be upon ye!
+  - type: GuideHelp
+    guides:
+    - Pipes
+    - PipeNetworks
 
 - type: entity
   parent: GasPipeBase
@@ -192,6 +210,10 @@
         Blunt: 10
     soundHit:
       collection: MetalThud
+  - type: GuideHelp
+    guides:
+    - Pipes
+    - PipeNetworks
 
 - type: entity
   parent: GasPipeBase
@@ -227,6 +249,10 @@
         Blunt: 10
     soundHit:
       collection: MetalThud
+  - type: GuideHelp
+    guides:
+    - Pipes
+    - PipeNetworks
 
 - type: entity
   id: GasPipeBroken
@@ -252,3 +278,7 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: GuideHelp
+    guides:
+    - Pipes
+    - PipeNetworks

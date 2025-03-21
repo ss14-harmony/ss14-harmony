@@ -4,6 +4,7 @@
     - /Audio/Lobby/thunderdome.ogg
     - /Audio/Lobby/absconditus.ogg
     - /Audio/Lobby/space_asshole.ogg
+    - /Audio/Lobby/the_wizard.ogg
     - /Audio/Lobby/endless_space.ogg
     - /Audio/Lobby/singuloose.ogg
     - /Audio/Lobby/comet_haley.ogg
@@ -15,3 +16,6 @@
     - /Audio/Lobby/lasers_rip_apart_the_bulkhead.ogg
     - /Audio/Lobby/every_light_is_blinking_at_once.ogg
     - /Audio/Lobby/atomicamnesiammx.ogg
+#Harmony additions
+    - /Audio/_Harmony/Lobby/rustycansbattle.ogg
+    - /Audio/_Harmony/Lobby/harmonilla.ogg

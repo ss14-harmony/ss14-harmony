@@ -1,0 +1,102 @@
+- type: entity
+  id: DeathMatchPROMOD
+  parent: BaseGameRule
+  components:
+  - type: DeathMatchRule
+    gear: DeathMatchPROMODGear
+    killCap: 16
+    rewardSpawns:
+    - id: MagazinePistol # guaranteed drops
+    - id: ClothingOuterArmorBasicSlim   # armor
+      orGroup: loot
+    - id: ClothingOuterArmorBasic
+      orGroup: loot
+    - id: ClothingOuterArmorBulletproof
+      orGroup: loot
+    - id: ClothingOuterArmorReflective
+      orGroup: loot
+    - id: WeaponPistolViper             # handguns
+      orGroup: loot
+    - id: WeaponPistolCobra
+      orGroup: loot
+    - id: WeaponRevolverInspector
+      orGroup: loot
+    - id: WeaponRevolverPython
+      orGroup: loot
+    - id: WeaponSubMachineGunC20r       # SMGs
+      orGroup: loot
+    - id: WeaponSubMachineGunDrozd
+      orGroup: loot
+    - id: WeaponSubMachineGunWt550
+      orGroup: loot
+    - id: WeaponShotgunDoubleBarreled   # shotguns
+      orGroup: loot
+    - id: WeaponShotgunSawn
+      orGroup: loot
+    - id: WeaponShotgunKammerer
+      orGroup: loot
+    - id: WeaponDisablerSMG             # energy weapons
+      orGroup: loot
+    - id: WeaponLaserCarbine
+      orGroup: loot
+    - id: WeaponLaserSvalinn
+      orGroup: loot
+    - id: WeaponPistolCHIMPUpgraded
+      orGroup: loot
+    #- id: MagazinePistolCaselessRifle   # ammo
+    #  orGroup: loot
+    #- id: MagazinePistol
+    #  orGroup: loot
+    #- id: SpeedLoaderMagnum
+    #  orGroup: loot
+    #- id: MagazinePistolSubMachineGun
+    #  orGroup: loot
+    #- id: MagazinePistolSubMachineGunTopMounted
+    #  orGroup: loot
+    #- id: MagazineShotgun
+    #  orGroup: loot
+    - id: GrenadeFlashBang              # grenades
+      orGroup: loot
+    - id: SmokeGrenade
+      orGroup: loot
+    - id: TearGasGrenade
+      orGroup: loot
+    - id: EmpImplanter                  # implants
+      orGroup: loot
+    - id: ScramImplanter
+      orGroup: loot
+    - id: EmergencyMedipen              # healing items
+      orGroup: loothealing
+    - id: BruteAutoInjector
+      orGroup: loothealing
+    - id: BurnAutoInjector
+      orGroup: loothealing
+    - id: Stimpack
+      orGroup: loothealing
+    - id: CombatMedipen
+      orGroup: loothealing
+  - type: KillCalloutRule
+  - type: PointManager
+  - type: RespawnDeadRule
+  - type: RespawnTracker
+    respawnDelay: 5
+
+
+# DeathMatch PROMOD Gear
+
+- type: startingGear
+  id: DeathMatchPROMODGear
+  equipment:
+    jumpsuit: ClothingUniformRandomStandard
+    back: ClothingBackpack
+    ears: ClothingHeadsetGrey
+    gloves: ClothingHandsGlovesFingerless
+    shoes: ClothingShoesBootsJack
+    pocket1: MagazinePistol
+    pocket2: MagazinePistol
+  inhand: 
+    - WeaponPistolMk58
+#  storage: # can't put starting gear in backpack. works for nukies, not for DM.
+#    back:
+#      - MagazinePistol
+#      - MagazinePistol

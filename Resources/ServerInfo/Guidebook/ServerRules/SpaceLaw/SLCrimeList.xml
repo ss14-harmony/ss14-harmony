@@ -1,9 +1,10 @@
 <Document>
   # Space Law: Crime Listing
-  Crime codes are organized by a Category Code (_-xx) which is a collection of non-stackable crimes on a row, prefixed
-  by the Severity Number (X-__).
 
   ## Quick Crime Guide
+
+  Crime codes are organized by a Category Code (_-xx) which is a collection of non-stackable crimes on a row, prefixed by the Severity Number (X-__).
+
   <Table Columns="6">
     <ColorBox>
       <Box>
@@ -80,8 +81,9 @@
         Possession: Weaponry (P)
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2f3832">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession: Terrorism (P)
       </Box>
     </ColorBox>
     <ColorBox>
@@ -142,7 +144,6 @@
     </ColorBox>
     <ColorBox Color="#453a59">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Terrorism (D)
       </Box>
     </ColorBox>
     <ColorBox>
@@ -265,7 +266,6 @@
 
   ## Minor Crimes
   - Warnings should be issued for a first offense.
-  - If multiple minor crimes have been committed or it is a repeat offense, 5 minutes per minor crime is the maximum.
   <Table Columns="4">
     <ColorBox>
       <Box>
@@ -308,9 +308,11 @@
         1-00
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2f3832">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession/Use of Controlled Substances
+        Possession/
+        Use of Controlled
+        Substances
       </Box>
     </ColorBox>
     <ColorBox>
@@ -320,9 +322,9 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Combat enhancing drugs are those that benefit stun times, or movement speed, and are restricted. Poisons are
-        restricted. Substances such as Ephedrine, Desoxyephedrine, and Hyperzine are restricted. The captain or highest
-        standing command staff may publicly restrict other harmful substances.
+        Combat enhancing drugs are those that benefit stun times, or movement speed, and are restricted.
+        Poisons are restricted. Substances such as Ephedrine, Desoxyephedrine, and stimulants are restricted.
+        The captain or highest standing command staff may publicly restrict other harmful substances.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -330,7 +332,7 @@
         1-01
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2e422e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Petty Theft
       </Box>
@@ -353,7 +355,7 @@
         1-02
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#453a59">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Vandalism
       </Box>
@@ -374,7 +376,7 @@
         1-03
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#59563a">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Trespass
       </Box>
@@ -394,7 +396,7 @@
         1-04
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#3b4354">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Disturbance
       </Box>
@@ -418,7 +420,7 @@
   </Table>
 
   ## Moderate Crimes
-  - The maximum sentence per moderate crime is 5 minutes.
+  - The maximum sentence for a moderate crime is 5 minutes.
   - Depending on the situation you may want to issue a warning instead of a detaining.
   <Table Columns="4">
     <ColorBox>
@@ -441,7 +443,7 @@
         Code
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#593a4e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Failure to Comply
       </Box>
@@ -462,7 +464,7 @@
         2-00
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2f3832">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Possession of Restricted Gear
       </Box>
@@ -474,9 +476,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        This is mostly for syndicate contraband; EMAGs, syndicate gas masks, bloodred hardsuits, hijacked PDAs, or
-        syndicate implants, however can sometimes extend to things the individual shouldn't possess like kevlar vests
-        and security gear.
+        This is mostly for syndicate contraband; EMAGs, syndicate gas masks, bloodred hardsuits, hijacked PDAs, or syndicate implants, however can sometimes extend to things the individual shouldn't possess like kevlar vests and security gear.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -484,7 +484,7 @@
         2-01
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#453a59">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Damage/Destruction of Property
       </Box>
@@ -505,7 +505,7 @@
         2-03
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#4d2e2e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Endangerment
       </Box>
@@ -528,8 +528,7 @@
   </Table>
 
   ## Major Crimes
-  - The maximum sentence per major crime is 10 minutes.
-  - Assault and Manslaughter are linked crimes, and cannot be stacked against a suspect.
+  - The maximum sentence for a major crime is 10 minutes.
   - It is recommended to not use maximum sentences for those being compliant.
   <Table Columns="4">
     <ColorBox>
@@ -552,7 +551,7 @@
         Code
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#593a4e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Breach of Arrest
       </Box>
@@ -573,7 +572,7 @@
         3-00
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2f3832">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Possession of Restricted Weaponry
       </Box>
@@ -593,7 +592,7 @@
         3-01
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2e422e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Grand Theft
       </Box>
@@ -615,7 +614,7 @@
         3-02
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#453a59">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Mass Destruction
       </Box>
@@ -636,7 +635,7 @@
         3-03
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#59563a">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Secure Trespass
       </Box>
@@ -656,7 +655,7 @@
         3-04
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#4d2e2e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Assault/Battery
       </Box>
@@ -677,7 +676,7 @@
         3-05
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#4d2e2e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Manslaughter
       </Box>
@@ -697,7 +696,7 @@
         3-06
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#3b4354">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Rioting
       </Box>
@@ -720,9 +719,8 @@
   </Table>
 
   ## Extreme Crimes
-  - The maximum sentence per extreme crime is 15 minutes.
+  - The maximum sentence for an extreme crime is 15 minutes.
   - Particularly violent offenders may be placed in perma. (Attacking officers in an attempt to escape prison)
-  - Attempted murder and murder are linked crimes and cannot be stacked together.
   - Attempted murderers should be granted a more lenient sentence than a murderer.
   <Table Columns="4">
     <ColorBox>
@@ -745,7 +743,7 @@
         Code
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#593a4e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Breach of Custody
       </Box>
@@ -763,6 +761,26 @@
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         4-00
+      </Box>
+    </ColorBox>
+        <ColorBox Color="#2f3832">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Restricted Weaponry with Terroristic Intent
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To possess a significant amount of lethal weaponry.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Examples include having a c-4 bundle versus a single brick of c4. An l6 Saw or China Lake versus a C20 or handgun. Melee weapons are exempt from being labeled for terroristic intent. This crime should be charged rarely, and only for those who truly had an armories worth of gear.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        4-01
       </Box>
     </ColorBox>
     <ColorBox>
@@ -785,7 +803,7 @@
         4-02
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#4d2e2e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Attempted Murder
       </Box>
@@ -805,7 +823,7 @@
         4-05
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#4d2e2e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Murder
       </Box>
@@ -850,7 +868,7 @@
         Code
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#593a4e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Refusal of Mental Shielding
       </Box>
@@ -870,27 +888,7 @@
         5-00
       </Box>
     </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Terrorism
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To engage in maliciously destructive actions which threaten to destroy, or successfully destroy a vessel or habitat.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Summed up; extreme sabotage of station systems or setting off self-destruction systems.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        5-03
-      </Box>
-    </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#4d2e2e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Prevention of Revival
       </Box>
@@ -910,7 +908,7 @@
         5-05
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#4d2e2e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Mass Murder
       </Box>

@@ -1,18 +1,24 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-  - Atlas
+  - Amber
   - Bagel
   - Box
-  - Cluster
-  - Core
+  - Convex
+  #- Core
+  - Elkridge
   - Fland
+  #- Gate
+  #- Loop # Harmony, removed
   - Marathon
   - Meta
   - Oasis
   - Omega
-  - Origin
-  - Saltern
   - Packed
+  - Plasma
   - Reach
   #- Train
+  # Harmony
+  - Aspid
+  - Barratry
+  - Atlas

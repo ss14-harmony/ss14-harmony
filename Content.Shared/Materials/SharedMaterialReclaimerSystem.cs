@@ -2,7 +2,6 @@ using System.Linq;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Audio;
 using Content.Shared.Body.Components;
-using Content.Shared.Coordinates;
 using Content.Shared.Database;
 using Content.Shared.Emag.Components;
 using Content.Shared.Emag.Systems;
@@ -10,7 +9,6 @@ using Content.Shared.Examine;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Stacks;
 using Content.Shared.Whitelist;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
@@ -31,6 +29,7 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] protected readonly SharedContainerSystem Container = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly EmagSystem _emag = default!;
 
     public const string ActiveReclaimerContainerId = "active-material-reclaimer-container";
 
@@ -62,6 +61,12 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
 
     private void OnEmagged(EntityUid uid, MaterialReclaimerComponent component, ref GotEmaggedEvent args)
     {
+        if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
+            return;
+
+        if (_emag.CheckFlag(uid, EmagType.Interaction))
+            return;
+
         args.Handled = true;
     }
 
@@ -90,19 +95,20 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
         if (!CanStart(uid, component))
             return false;
 
-        if (HasComp<MobStateComponent>(item) && !CanGib(uid, item, component)) // whitelist? We be gibbing, boy!
+        if (HasComp<MobStateComponent>(item) && !CanRecycleMob(uid, item, component)) // whitelist? We be gibbing, boy!
             return false;
 
         if (_whitelistSystem.IsWhitelistFail(component.Whitelist, item) ||
             _whitelistSystem.IsBlacklistPass(component.Blacklist, item))
             return false;
 
-        if (Container.TryGetContainingContainer(item, out _) && !Container.TryRemoveFromContainer(item))
+        if (Container.TryGetContainingContainer((item, null, null), out _) && !Container.TryRemoveFromContainer(item))
             return false;
 
         if (user != null)
         {
-            _adminLog.Add(LogType.Action, LogImpact.High,
+            _adminLog.Add(LogType.Action,
+                LogImpact.High,
                 $"{ToPrettyString(user.Value):player} destroyed {ToPrettyString(item)} in the material reclaimer, {ToPrettyString(uid)}");
         }
 
@@ -149,7 +155,7 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
 
     /// <summary>
     /// Spawns the materials and chemicals associated
-    /// with an entity. Also deletes the item.
+    /// with an entity. Also deletes the item if it is not a mob.
     /// </summary>
     public virtual void Reclaim(EntityUid uid,
         EntityUid item,
@@ -171,13 +177,19 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
     /// <summary>
     /// Sets the Enabled field on the reclaimer.
     /// </summary>
-    public void SetReclaimerEnabled(EntityUid uid, bool enabled, MaterialReclaimerComponent? component = null)
+    public bool SetReclaimerEnabled(EntityUid uid, bool enabled, MaterialReclaimerComponent? component = null)
     {
         if (!Resolve(uid, ref component, false))
-            return;
+            return true;
+
+        if (component.Broken && enabled)
+            return false;
+
         component.Enabled = enabled;
         AmbientSound.SetAmbience(uid, enabled && component.Powered);
         Dirty(uid, component);
+
+        return true;
     }
 
     /// <summary>
@@ -189,19 +201,21 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
         if (HasComp<ActiveMaterialReclaimerComponent>(uid))
             return false;
 
-        return component.Powered && component.Enabled;
+        return component.Powered && component.Enabled && !component.Broken;
     }
 
     /// <summary>
     /// Whether or not the reclaimer satisfies the conditions
-    /// allowing it to gib/reclaim a living creature.
+    /// allowing it to reclaim a living creature.
+    /// Harmony - The recycler can no longer gib living creatures, instead dealing significant brute damage.
     /// </summary>
-    public bool CanGib(EntityUid uid, EntityUid victim, MaterialReclaimerComponent component)
+    public bool CanRecycleMob(EntityUid uid, EntityUid victim, MaterialReclaimerComponent component)
     {
         return component.Powered &&
                component.Enabled &&
+               !component.Broken &&
                HasComp<BodyComponent>(victim) &&
-               HasComp<EmaggedComponent>(uid);
+               _emag.CheckFlag(uid, EmagType.Interaction);
     }
 
     /// <summary>

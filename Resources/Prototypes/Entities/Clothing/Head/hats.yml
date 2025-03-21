@@ -28,7 +28,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretFrench
-  name: French beret
+  name: french beret
   description: A French beret, "vive la France".
   components:
   - type: Sprite
@@ -42,6 +42,7 @@
     - ClothMade
     - WhitelistChameleon
 
+#Harmony Change: Updated Pathing for security resprite update
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretSecurity
@@ -49,9 +50,9 @@
   description: A stylish clothing option for security officers.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/beret_security.rsi
+    sprite: _Harmony/Clothing/Head/Hats/beret_security.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hats/beret_security.rsi
+    sprite: _Harmony/Clothing/Head/Hats/beret_security.rsi
   - type: Tag
     tags:
     - ClothMade
@@ -60,9 +61,24 @@
 
 - type: entity
   parent: ClothingHeadBase
+  id: ClothingHeadHatSecurityTrooper
+  name: trooper hat
+  description: A campaign hat for the Nanotrasen Troopers, comes with a case too, but you lost it.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/security_trooper_hat.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/security_trooper_hat.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
   id: ClothingHeadHatCasa
   name: casa
-  description: Cone-shaped hat
+  description: Cone-shaped hat.
   components:
     - type: Sprite
       sprite: Clothing/Head/Hats/casa.rsi
@@ -72,13 +88,17 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretRND
-  name: scientific beret
+  name: senior researcher's beret # Harmony Change: Renamed the Scientific Beret to better fit the jumpsuit name
   description: A beret for real scientists.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/beret_rnd.rsi
+# Start of Harmony Change: Updated Sprite pathing
+#   sprite: Clothing/Head/Hats/beret_rnd.rsi
+    sprite: _Harmony/Clothing/Head/Hats/beret_rnd.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hats/beret_rnd.rsi
+#   sprite: Clothing/Head/Hats/beret_rnd.rsi
+    sprite: _Harmony/Clothing/Head/Hats/beret_rnd.rsi
+# End of Change
   - type: Tag
     tags:
     - ClothMade
@@ -88,19 +108,24 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretEngineering
-  name: engineering beret
+  name: senior engineer's beret # Harmony Change: Renamed the Engineering Beret to better fit the jumpsuit name
   description: A beret with the engineering insignia emblazoned on it. For engineers that are more inclined towards style than safety.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/beret_engineering.rsi
+# Start of Harmony Change: Updated Sprite pathing
+#   sprite: Clothing/Head/Hats/beret_engineering.rsi
+    sprite: _Harmony/Clothing/Head/Hats/beret_engineering.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hats/beret_engineering.rsi
+#   sprite: Clothing/Head/Hats/beret_engineering.rsi
+    sprite: _Harmony/Clothing/Head/Hats/beret_engineering.rsi
+# End of Change
   - type: Tag
     tags:
     - ClothMade
     - HamsterWearable
     - WhitelistChameleon
 
+# Harmony Change: Updated Sprite Pathing for Head of Staff Beret Update
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretQM
@@ -108,9 +133,9 @@
   description: A beret with the cargo's insignia emblazoned on it. For quartermasters that are more inclined towards style.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/beret_qm.rsi
+    sprite: _Harmony/Clothing/Head/Hats/beret_qm.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hats/beret_qm.rsi
+    sprite: _Harmony/Clothing/Head/Hats/beret_qm.rsi
   - type: Tag
     tags:
     - ClothMade
@@ -147,27 +172,35 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretSeniorPhysician
-  name: physician beret
+  name: senior physician's beret # Harmony Change: Renamed the Physician Beret to better fit the jumpsuit name
   description: Donning the colours of medical and chemistry, physicians are the pride of this department!
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/beret_physician.rsi
+# Start of Harmony Change: Updated Sprite pathing
+#  sprite: Clothing/Head/Hats/beret_physician.rsi
+    sprite: _Harmony/Clothing/Head/Hats/beret_physician.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hats/beret_physician.rsi
+#  sprite: Clothing/Head/Hats/beret_physician.rsi
+    sprite: _Harmony/Clothing/Head/Hats/beret_physician.rsi
+# End of Change
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, BaseSecurityContraband] # Harmony Change: Updated Contraband Level
   id: ClothingHeadHatBeretBrigmedic
-  name: brigmedical beret
+  name: brigmedic beret # Harmony Change: Updated Name
   description: White beret, looks like a cream pie on the head.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/beret_brigmedic.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#   sprite: Clothing/Head/Hats/beret_brigmedic.rsi
+    sprite: _Harmony/Clothing/Head/Hats/beret_brigmedic.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hats/beret_brigmedic.rsi
+#   sprite: Clothing/Head/Hats/beret_brigmedic.rsi
+    sprite: _Harmony/Clothing/Head/Hats/beret_brigmedic.rsi
+# End of Change
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase ]
   id: ClothingHeadHatBeretMerc
   name: mercenary beret
   description: Olive beret, the badge depicts a jackal on a rock.
@@ -189,7 +222,7 @@
     sprite: Clothing/Head/Hats/bowler_hat.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, BaseCommandContraband]
   id: ClothingHeadHatCaptain
   name: captain's hardhat
   description: It's good being the king.
@@ -220,9 +253,9 @@
   - type: IngestionBlocker
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseCentcommContraband ]
   id: ClothingHeadHatCentcom
-  name: CentCom brand hat
+  name: CentComm brand hat
   description: "It's good to be the emperor."
   components:
   - type: Sprite
@@ -266,10 +299,11 @@
   name: brown fedora
   description: It's a brown fedora.
   components:
+  # Harmony Change: Sprites updated for use in detective clothing update
   - type: Sprite
-    sprite: Clothing/Head/Hats/brownfedora.rsi
+    sprite: _Harmony/Clothing/Head/Hats/brownfedora.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hats/brownfedora.rsi
+    sprite: _Harmony/Clothing/Head/Hats/brownfedora.rsi
   - type: Tag
     tags:
     - ClothMade
@@ -282,10 +316,11 @@
   name: grey fedora
   description: It's a grey fedora.
   components:
+  # Harmony Change: Sprites updated for us in detective clothing update
   - type: Sprite
-    sprite: Clothing/Head/Hats/greyfedora.rsi
+    sprite: _Harmony/Clothing/Head/Hats/greyfedora.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hats/greyfedora.rsi
+    sprite: _Harmony/Clothing/Head/Hats/greyfedora.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -299,15 +334,15 @@
     sprite: Clothing/Head/Hats/fez.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, BaseCommandContraband]
   id: ClothingHeadHatHopcap
   name: head of personnel's cap
   description: A grand, stylish head of personnel's cap.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/hopcap.rsi
+    sprite: _Harmony/Clothing/Head/Hats/hopcap.rsi # Harmony change. Resprite
   - type: Clothing
-    sprite: Clothing/Head/Hats/hopcap.rsi
+    sprite: _Harmony/Clothing/Head/Hats/hopcap.rsi # Harmony change. Resprite
   - type: Tag
     tags:
     - ClothMade
@@ -315,7 +350,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, BaseCommandContraband]
   id: ClothingHeadHatHoshat
   name: head of security cap
   description: The robust standard-issue cap of the Head of Security. For showing the officers who's in charge.
@@ -391,7 +426,6 @@
   - type: HideLayerClothing
     slots:
     - Hair
-    - Snout
     - HeadTop
     - HeadSide
 
@@ -410,7 +444,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatSantahat
   name: santa hat
-  description: "A festive hat worn by Santa Claus"
+  description: A festive hat worn by Santa Claus.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/santahat.rsi
@@ -495,8 +529,6 @@
   - type: Appearance
   - type: AddAccentClothing
     accent: RussianAccent
-  - type: RussianAccent
-  - type: AccentWearerNameClothing
   - type: Foldable
     canFoldInsideContainer: true
   - type: FoldableClothing
@@ -523,6 +555,7 @@
   - type: Clothing
     sprite: Clothing/Head/Hats/violetwizard.rsi
 
+#Harmony Change: Updated Pathing for security resprite update
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatWarden
@@ -530,9 +563,9 @@
   description: A police officer's Hat. This hat emphasizes that you are THE LAW
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/warden.rsi
+    sprite: _Harmony/Clothing/Head/Hats/warden.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hats/warden.rsi
+    sprite: _Harmony/Clothing/Head/Hats/warden.rsi
   - type: StealTarget
     stealGroup: ClothingHeadHatWarden
 
@@ -568,7 +601,7 @@
 
 - type: entity
   abstract: true
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseMagicalContraband ]
   id: ClothingHeadHatWizardBase
   components:
   - type: WizardClothes
@@ -612,7 +645,7 @@
     sprite: Clothing/Head/Hats/truckershat.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseSyndicateContraband ]
   id: ClothingHeadPyjamaSyndicateBlack
   name: syndicate black pyjama hat
   description: For keeping that traitor head of yours warm.
@@ -623,7 +656,7 @@
     sprite: Clothing/Head/Hats/pyjamasyndicateblack.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseSyndicateContraband ]
   id: ClothingHeadPyjamaSyndicatePink
   name: syndicate pink pyjama hat
   description: For keeping that traitor head of yours warm.
@@ -634,7 +667,7 @@
     sprite: Clothing/Head/Hats/pyjamasyndicatepink.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseSyndicateContraband ]
   id: ClothingHeadPyjamaSyndicateRed
   name: syndicate red pyjama hat
   description: For keeping that traitor head of yours warm.
@@ -738,7 +771,7 @@
       sprite: Clothing/Head/Hats/jester2.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ClothingHeadBase, BaseCommandContraband]
   id: ClothingHeadHatBeretCmo
   name: chief medical officer's beret
   description: Turquoise beret with a cross on the front. The sight of it calms you down and makes it clear that you will be cured.
@@ -781,6 +814,21 @@
 
 - type: entity
   parent: ClothingHeadBase
+  id: ClothingHeadHatHolyWatermelon
+  name: watermelon halo
+  description: Holy moly.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/holyhatmelon.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/holyhatmelon.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.95
+
+- type: entity
+  parent: [ClothingHeadBase, BaseSyndicateContraband]
   id: ClothingHeadHatSyndie
   name: syndicate hat
   description: A souvenir hat from "Syndieland", their production has already been closed.
@@ -872,11 +920,15 @@
     - ClothMade
     - WhitelistChameleon
     - HamsterWearable
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-inanimate
+    weight: 0.0002 # 5,000 times less likely than 1 regular animal
+  - type: BlockMovement
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ ClothingHeadBase, BaseCentcommContraband ]
   id: ClothingHeadHatCentcomcap
-  name: CentCom cap
+  name: CentComm cap
   description: An extravagant, fancy Central Commander cap.
   components:
   - type: Sprite
@@ -1092,6 +1144,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
 
+# Harmony change: Updates Sprite Pathing for Inter-Departmental Berets Update
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretMedic
@@ -1099,6 +1152,10 @@
   description: White beret that encourages you to be clean.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/beret_medic.rsi
+# Start of Harmony Change: Updated Sprite pathing
+#   sprite: Clothing/Head/Hats/beret_medic.rsi
+    sprite: _Harmony/Clothing/Head/Hats/beret_medic.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hats/beret_medic.rsi
+#   sprite: Clothing/Head/Hats/beret_medic.rsi
+    sprite: _Harmony/Clothing/Head/Hats/beret_medic.rsi
+# End of Change

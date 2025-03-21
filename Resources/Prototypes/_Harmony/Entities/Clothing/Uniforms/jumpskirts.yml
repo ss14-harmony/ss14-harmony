@@ -1,0 +1,76 @@
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpskirtCaptainTurtleneckHarmony
+  name: captain's turtleneck
+  description: A regal blue turtleneck sweater finely made with mothroach silk. Fit for a captain.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/capturtleskirt.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/capturtleskirt.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpskirtHeadOfPersonnelTurtleneckHarmony
+  name: head of personnel's turtleneck
+  description: A blue turtle neck meant to amplify the comfort of the office. Watch out for dog hairs.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/hop_turtle.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/hop_turtle.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpskirtHeadofPersonnelMessKitHarmony
+  name: head of personnel's mess kit
+  description: A blue denim skirt with pockets and a gold trimmed white shirt.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/hopmesskit.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/hopmesskit.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpskirtHeadOfSecurityTurtleneckHarmony
+  name: head of security's turtleneck
+  description: You feel... innovative. Maybe you'll find a way to permabrig the clown later.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/hos_turtle.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/hos_turtle.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformJumpskirtDetectiveBlueHarmony
+  name: detective's blue suitskirt
+  description: For when the time calls for you to find the clues, which happen to be blue.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/det_blue.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/det_blue.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtCargoOfficeSkirtHarmony
+  name: cargo office skirt
+  description: For those who'd rather push pencils than crates.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/cargo_skirt.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/cargo_skirt.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtSeniorTechnicianHarmony
+  name: senior technician jumpskirt
+  description: For the veteran freight movers, you've earned it.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/senior_technician.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/senior_technician.rsi
