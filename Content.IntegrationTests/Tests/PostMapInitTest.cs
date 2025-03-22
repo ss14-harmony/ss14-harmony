@@ -51,6 +51,8 @@ namespace Content.IntegrationTests.Tests
         {
             "/Maps/centcomm.yml",
             "/Maps/_Harmony/centcomm.yml", // Harmony CC version
+            "/Maps/_Harmony/eclipse.yml", // Harmony Map - Contains Matter Dematerializer and svalinn shuttle guns.
+            "/Maps/_Harmony/emergency_totality.yml", // Harmony - Contains LSE-1200c "Perforator"
             "/Maps/_Harmony/xeno.yml", // Harmony map - Contains Matter Dematerializer
             "/Maps/_Harmony/Nonstations/listening-outpost.yml", // Harmony - Contains a billion illegal things
             "/Maps/_Harmony/Shuttles/ERT-chaplain-medium.yml", // Harmony - Contains centcomm folders.
