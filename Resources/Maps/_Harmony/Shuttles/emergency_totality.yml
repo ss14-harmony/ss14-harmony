@@ -4,7 +4,7 @@ meta:
   engineVersion: 248.0.2
   forkId: ""
   forkVersion: ""
-  time: 03/23/2025 02:35:32
+  time: 03/23/2025 06:01:36
   entityCount: 1587
 maps: []
 grids:
@@ -1670,10 +1670,11 @@ entities:
       parent: 1
 - proto: ButtonFrameCautionSecurity
   entities:
-  - uid: 506
+  - uid: 512
     components:
     - type: Transform
-      pos: 11.5,11.5
+      rot: 3.141592653589793 rad
+      pos: 11.812227,10.739218
       parent: 1
 - proto: CableApcExtension
   entities:
@@ -6877,6 +6878,23 @@ entities:
     - type: Transform
       pos: 11.5,3.5
       parent: 1
+- proto: MachineFrame
+  entities:
+  - uid: 2
+    components:
+    - type: Transform
+      pos: 10.5,10.5
+      parent: 1
+  - uid: 527
+    components:
+    - type: Transform
+      pos: 11.5,12.5
+      parent: 1
+  - uid: 698
+    components:
+    - type: Transform
+      pos: 12.5,10.5
+      parent: 1
 - proto: MedicalBed
   entities:
   - uid: 596
@@ -7016,29 +7034,28 @@ entities:
       parent: 1
 - proto: PowerCageHigh
   entities:
-  - uid: 458
+  - uid: 693
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 11.197548,11.422743
+      rot: 1.5707963267948966 rad
+      pos: 11.115661,11.145468
       parent: 1
-  - uid: 527
+  - uid: 694
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 11.091549,11.324898
+      pos: 11.053161,10.754843
       parent: 1
-  - uid: 707
+  - uid: 696
     components:
     - type: Transform
-      pos: 11.238317,10.89275
+      rot: 1.5707963267948966 rad
+      pos: 11.318786,11.379843
       parent: 1
 - proto: PowerCageRecharger
   entities:
-  - uid: 698
+  - uid: 458
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 11.5,11.5
       parent: 1
 - proto: PoweredDimSmallLight
@@ -7821,32 +7838,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 9.5,-16.5
       parent: 1
-- proto: ShuttleGunPerforator
-  entities:
-  - uid: 693
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 10.5,10.5
-      parent: 1
-    - type: DeviceLinkSink
-      invokeCounter: 8
-  - uid: 694
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 12.5,10.5
-      parent: 1
-    - type: DeviceLinkSink
-      invokeCounter: 8
-  - uid: 696
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 11.5,12.5
-      parent: 1
-    - type: DeviceLinkSink
-      invokeCounter: 8
 - proto: ShuttleWindow
   entities:
   - uid: 48
@@ -8456,22 +8447,12 @@ entities:
       parent: 1
 - proto: SignalButton
   entities:
-  - uid: 512
+  - uid: 506
     components:
     - type: Transform
-      pos: 11.5,11.5
+      rot: 3.141592653589793 rad
+      pos: 11.812227,10.739218
       parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        694:
-        - Pressed: Toggle
-        - Pressed: Trigger
-        696:
-        - Pressed: Toggle
-        - Pressed: Trigger
-        693:
-        - Pressed: Toggle
-        - Pressed: Trigger
 - proto: SignDirectionalMed
   entities:
   - uid: 1275
