@@ -79,6 +79,7 @@ namespace Content.IntegrationTests.Tests
             "Aspid", // Harmony, playtest for upstream by Golinth
             "Atlas", // Harmony revived by Kravin
             "Mira", // Harmony, developed by tanuko
+            "Eclipse", //Harmony, Developed by Lachryphage
             "Dev",
             "TestTeg",
             "Fland",

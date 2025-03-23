@@ -14,9 +14,9 @@
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: Maps/_Harmony/Shuttles/emergency_totality.yml
+          emergencyShuttlePath: /Maps/_Harmony/Shuttles/emergency_totality.yml
         - type: StationCargoShuttle
-          path: Maps/_Harmony/Shuttles/cargo_eclipse.yml
+          path: /Maps/_Harmony/Shuttles/cargo_eclipse.yml
         - type: StationJobs
           availableJobs:
             #service
@@ -47,6 +47,7 @@
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
+            Brigmed: [ 1, 1 ]
             SecurityOfficer: [ 6, 6 ]
             Detective: [ 1, 2 ]
             SecurityCadet: [ 4, 4 ]
