@@ -19,7 +19,7 @@
     shape:
     - 1,0,4,0
     - 0,1,4,1
-    sprite: Objects/Weapons/Guns/Shotguns/6b_shotgun.rsi
+    sprite: _Harmony/Objects/Weapons/Guns/Shotguns/6b_shotgun.rsi
 
 - type: entity
   name: six-barreled shotgun
@@ -55,7 +55,7 @@
     size: Small
     shape:
     - 0,0,1,1
-    sprite: Objects/Weapons/Guns/Shotguns/6b_sawn.rsi
+    sprite: _Harmony/Objects/Weapons/Guns/Shotguns/6b_sawn.rsi
 
 - type: entity
   name: sawn-off six-barreled shotgun
