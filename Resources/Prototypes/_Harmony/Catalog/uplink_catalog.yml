@@ -100,7 +100,7 @@
   description: uplink-six-barrel-mod-desc
   productEntity: WeaponShotgunSixBarrelUpgradeKit
   cost:
-    Telecrystal: 10
+    Telecrystal: 8
   categories:
   - UplinkJob
   conditions:
