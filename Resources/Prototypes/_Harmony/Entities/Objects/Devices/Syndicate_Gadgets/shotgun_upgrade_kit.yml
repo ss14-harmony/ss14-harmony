@@ -5,8 +5,8 @@
   description: An aftermarket barrel modification for double-barrel shotgun.
   components:
   - type: Sprite
-    sprite: Objects/Misc/module.rsi
-    state: abductor_mod
+    sprite: _Harmony/Objects/misc/6b_upgrade_kit.rsi
+    state: icon
   - type: Item
     size: Small
   - type: Tag
