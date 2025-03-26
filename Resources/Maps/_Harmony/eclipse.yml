@@ -94937,7 +94937,6 @@ entities:
             - [color=orange]Explosion[/color] damage [color=white]to contents[/color] reduced by [color=lightblue]10%[/color].
           priority: 0
           component: Armor
-        title: null
   - uid: 35402
     components:
     - type: Transform
@@ -233553,7 +233552,6 @@ entities:
         stash: !type:ContainerSlot
           showEnts: False
           occludes: True
-          ent: null
         disposals: !type:Container
           showEnts: False
           occludes: True
