@@ -1,0 +1,24 @@
+﻿- type: entity
+  id: ActionWehball
+  name: Weball
+  description: Fires an weh towards the clicked location.
+  components:
+  - type: Magic
+  - type: WorldTargetAction
+    event: !type:ProjectileSpellEvent
+      prototype: ProjectileWehball
+      speech: action-speech-spell-wehball
+    icon:
+      sprite: Objects/Fun/toys.rsi
+      state: plushie_lizard
+    useDelay: 10
+    itemIconStyle: BigAction
+    checkCanAccess: false
+    raiseOnUser: true
+    range: 60
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Items/Toys/hew.ogg
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    layers:
+    - state: plushie_lizard

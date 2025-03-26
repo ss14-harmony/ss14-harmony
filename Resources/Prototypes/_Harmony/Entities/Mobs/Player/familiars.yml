@@ -1,0 +1,64 @@
+﻿- type: entity
+  name: Gizard
+  parent: SimpleMobBase
+  id: MobLizardGizard
+  description: It's Gizard the Wizard Lizard! Here to help with wizarding!
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: gizard
+      sprite: _Harmony/Mobs/Pets/gizard.rsi
+  - type: GhostRole
+    makeSentient: true
+    allowMovement: true
+    allowSpeech: true
+    name: ghost-role-information-gizard-name
+    description: ghost-role-information-gizard-description
+    rules: ghost-role-information-familiar-rules
+    mindRoles:
+    - MindRoleGhostRoleFamiliar
+  - type: GhostTakeoverAvailable
+  - type: Grammar
+    attributes:
+      gender: male
+      proper: true
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - VimPilot
+  - type: Access
+    tags:
+    - Wizard
+  - type: MindContainer
+    showExamineInfo: true
+  - type: NpcFactionMember
+    factions:
+    - Wizard
+  - type: Alerts
+  - type: Familiar
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: gizard
+      Critical:
+        Base: gizarddead
+      Dead:
+        Base: gizarddead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatLizard
+      amount: 1
+  - type: InteractionPopup
+    successChance: 0.3
+    interactSuccessString: petting-success-reptile
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/lizard_happy.ogg
+  - type: ActionGrant
+    actions:
+    - ActionBlink
+    - ActionPolymorphJauntII
+    - ActionWehball

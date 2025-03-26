@@ -1,0 +1,20 @@
+﻿- type: entity
+  id: ProjectileWehball
+  name: wehball
+  description: You better GITTAH WEH.
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#67CC40"
+    radius: 1.0
+    energy: 3.0
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    layers:
+    - state: plushie_lizard
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 0
+

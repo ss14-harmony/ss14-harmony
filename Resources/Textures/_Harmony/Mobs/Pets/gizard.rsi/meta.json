@@ -1,0 +1,21 @@
+﻿
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Lizard Sprite Made by Mithrandalf, Hat made by Flarbergaster",
+  "states": [
+    {
+      "name": "gizard",
+      "directions": 4
+    },
+    {
+      "name": "gizarddead",
+      "directions": 1
+    }
+  ]
+
+}
