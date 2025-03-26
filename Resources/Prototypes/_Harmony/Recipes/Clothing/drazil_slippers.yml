@@ -1,0 +1,22 @@
+﻿- type: constructionGraph
+  id: ClothingShoeSlippersDrazil
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: shoes
+          steps:
+            - tag: ClothingDrazilSlippers
+              name: drazil plushie
+              icon:
+                sprite: Objects/Fun/toys.rsi
+                state: plushie_lizard_inversed
+              doAfter: 1
+            - tag: ClothingDrazilSlippers
+              name: drazil plushie
+              icon:
+                sprite: Objects/Fun/toys.rsi
+                state: plushie_lizard_inversed
+              doAfter: 1
+    - node: shoes
+      entity: ClothingShoeSlippersDrazil

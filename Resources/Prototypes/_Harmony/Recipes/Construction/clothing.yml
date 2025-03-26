@@ -8,3 +8,14 @@
   description: Rubber boots. Quack Quack!
   icon: { sprite: _Harmony/Clothing/Shoes/Misc/ducky-galoshes.rsi, state: icon }
   objectType: Item
+
+- type: construction
+  name: lizard drazil slippers
+  id: ClothingShoeSlippersDrazil
+  graph: ClothingShoeSlippersDrazil
+  startNode: start
+  targetNode: shoes
+  category: construction-category-clothing
+  description: A comfy pair of slippers that resemble a drazilperson. Combine this with some other purple clothing and you'll be the comfiest crewmember on the station!
+  icon: { sprite: _Harmony/Clothing/Shoes/Misc/drazil-slippers.rsi, state: icon }
+  objectType: Item

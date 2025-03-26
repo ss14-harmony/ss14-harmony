@@ -503,6 +503,10 @@
     equippedPrefix: lizard-inversed
     slots:
     - HEAD
+  - type: Tag # Harmony Change: Added a tag for the drazil slippers crafting recipe
+    tags:
+    - ClothingDrazilSlippers
+
 
 
 - type: entity

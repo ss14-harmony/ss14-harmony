@@ -1,0 +1,32 @@
+﻿- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoeSlippersDrazil
+  name: drazil plushie slippers
+  description: A comfy pair of slippers that resemble a drazilperson. Combine this with some other purple clothing and you'll be the comfiest crewmember on the station!
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Shoes/Misc/drazil-slippers.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Shoes/Misc/drazil-slippers.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepDrazilSlippers
+      params:
+        variation: 0.02
+  - type: Construction
+    graph: ClothingShoeSlippersDrazil
+    node: shoes
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceThatMakesYouHew
+        Quantity: 60
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 20
+        - ReagentId: JuiceThatMakesYouHew
+          Quantity: 20

@@ -7,3 +7,7 @@
 # Tag used for escape pod landing.
 - type: Tag
   id: DockPod
+
+# Added to upstream entity PlushieLizardInversed in Resources/Prototypes/Entities/Objects/Fun/toys.yml ; Tag used to make drazil slippers
+- type: Tag
+  id: ClothingDrazilSlippers
