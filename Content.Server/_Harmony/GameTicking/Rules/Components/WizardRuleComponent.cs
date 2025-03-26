@@ -36,13 +36,14 @@ public sealed partial class WizardRuleComponent : Component
     public string RoundEndTextAnnouncement = "wizard-no-more-threat-announcement";
 
     /// <summary>
-    /// Time to emergency shuttle to arrive if the wizard dies.
+    /// Time until the emergency shuttle arrives after the wizard dies.
     /// </summary>
     [DataField]
     public TimeSpan EvacShuttleTime = TimeSpan.FromMinutes(5);
 
     /// <summary>
-    /// Delay before triggering a sleeper agent event after the shuttle is recalled
+    /// Holds the delayed server time for when a sleeper agent event should be triggered after the shuttle is recalled.
+    /// Zero when not currently awaiting a time.
     /// </summary>
     [DataField]
     public TimeSpan SleeperTime = TimeSpan.Zero;
