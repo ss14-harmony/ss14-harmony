@@ -22,6 +22,7 @@ using Content.Shared.Stunnable;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Systems;
+using Content.Shared._Harmony.Wizard;   // Harmony addition
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -508,6 +509,23 @@ public abstract class SharedMagicSystem : EntitySystem
 
         ev.Handled = true;
         Speak(ev);
+
+        // Harmony addition begins - Wizards now have a WizardComponent, and this needs to stay on whichever body contains the wizard's mind.
+        // This is so the shuttle can be auto-called if the wizard dies.
+        // This component doesn't control the wizard's antag status or faction or whatever else.
+
+        if (HasComp<WizardComponent>(ev.Performer) && !HasComp<WizardComponent>(ev.Target))
+        {
+            AddComp<WizardComponent>(ev.Target);
+            RemComp<WizardComponent>(ev.Performer);
+        }
+        else if (!HasComp<WizardComponent>(ev.Performer) && HasComp<WizardComponent>(ev.Target))    //How?
+        {
+            AddComp<WizardComponent>(ev.Performer);
+            RemComp<WizardComponent>(ev.Target);
+        }
+
+        // Harmony addition ends
 
         // Need performer mind, but target mind is unnecessary, such as taking over a NPC
         // Need to get target mind before putting performer mind into their body if they have one

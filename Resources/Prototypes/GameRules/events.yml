@@ -256,6 +256,8 @@
     earliestStart: 30
     reoccurrenceDelay: 60
     minimumPlayers: 10
+  - type: WizardRule  # Harmony addition - wizard gamerule specifies round ending text and behavior when the wizard dies.
+    roundEndBehavior: Nothing # Round should not end from wizard dying on a midround wizard spawn.
   - type: AntagSelection
     agentName: wizard-round-end-name
     definitions:
@@ -274,6 +276,7 @@
         #sound: "/Audio/Ambience/Antag/wizard_start.ogg"
       # TODO: WizardComp as needed
       components:
+      - type: Wizard  # Harmony addition - wizards have a WizardComponent now
       - type: NpcFactionMember
         factions:
         - Wizard

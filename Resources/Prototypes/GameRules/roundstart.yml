@@ -271,6 +271,7 @@
   components:
   - type: GameRule
     minPlayers: 10
+  - type: WizardRule # Harmony addition - wizard gamerule specifies round ending text and behavior when the wizard dies.
   - type: AntagSelection
     agentName: wizard-round-end-name
     selectionTime: PrePlayerSpawn
@@ -289,6 +290,7 @@
       startingGear: WizardBlueGear
       # TODO: WizardComp as needed
       components:
+      - type: Wizard  # Harmony addition - wizards have a WizardComponent now
       - type: NpcFactionMember
         factions:
         - Wizard
