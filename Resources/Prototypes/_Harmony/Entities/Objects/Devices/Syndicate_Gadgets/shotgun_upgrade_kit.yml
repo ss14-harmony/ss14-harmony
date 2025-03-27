@@ -1,6 +1,6 @@
 - type: entity
   name: SA-6 'Lupara' barrel modification
-  parent: BaseItem
+  parent: [BaseItem, BaseMajorContraband]
   id: WeaponShotgunSixBarrelUpgradeKit
   description: An aftermarket barrel modification for double-barrel shotgun.
   components:

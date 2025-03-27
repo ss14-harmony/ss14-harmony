@@ -1,9 +1,22 @@
 - type: entity
   name: six-barreled shotgun
-  parent: WeaponShotgunDoubleBarreled
+  parent: [WeaponShotgunDoubleBarreled, BaseMajorContraband]
   id: WeaponShotgunSixBarreled
   description: An immortal classic. Uses .50 shotgun shells. This one has an interesting aftermarket modification installed.
   components:
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+    burstFireRate: 4
+    shotsPerBurst: 6
+    burstCooldown: 2
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticAmmoProvider
     capacity: 6
   - type: Construction
@@ -37,10 +50,23 @@
 
 - type: entity
   name: sawn-off six-barreled shotgun
-  parent: WeaponShotgunSawn
+  parent: [WeaponShotgunSawn, BaseMajorContraband]
   id: WeaponShotgunSixBarreledSawnOff
   description: Groovy! Uses .50 shotgun shells. This one has an interesting aftermarket modification installed.
   components:
+  - type: Gun
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+    burstFireRate: 6
+    shotsPerBurst: 6
+    burstCooldown: 2
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticAmmoProvider
     capacity: 6
   - type: Construction
