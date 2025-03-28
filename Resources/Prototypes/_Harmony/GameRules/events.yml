@@ -1,0 +1,6 @@
+- type: entity
+  parent: SleeperAgents
+  id: PostWizardSleeperAgents
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-communication-interception-wizard

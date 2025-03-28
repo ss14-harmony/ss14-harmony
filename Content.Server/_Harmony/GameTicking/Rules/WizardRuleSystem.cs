@@ -84,13 +84,17 @@ public sealed class WizardRuleSystem : GameRuleSystem<WizardRuleComponent>
     {
         // Sleeper agent events are only meant to trigger once per round.
         // We're going to keep this true for the forced sleeper event, and first check if one has occurred already.
+
+        // Note that the event used here is a separate version parented from the normal event, but it will still check if the original
+        // event has happened before as they are functionally identical. The wizard version may be configured later.
+        // If this should stack on top of the normal sleeper event instead of being blocked by it, then the below check can be commented out.
         if (GameTicker.AllPreviousGameRules.Any(p => p.Item2 == "SleeperAgents"))
         {
             Log.Info("Tried to start a sleeper agent event, but one has already occurred");
             return;
         }
 
-        GameTicker.AddGameRule("SleeperAgents");
+        GameTicker.AddGameRule("PostWizardSleeperAgents");
     }
 
     public override void Update(float frameTime)
@@ -108,4 +112,3 @@ public sealed class WizardRuleSystem : GameRuleSystem<WizardRuleComponent>
         }
     }
 }
-
