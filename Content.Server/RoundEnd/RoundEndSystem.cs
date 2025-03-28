@@ -242,6 +242,7 @@ namespace Content.Server.RoundEnd
             ExpectedCountdownEnd = null;
             ActivateCooldown();
             RaiseLocalEvent(RoundEndSystemChangedEvent.Default);
+            RaiseLocalEvent(ShuttleRecalledEvent.Default);  // Harmony addition - need to know this for triggering post-wizard sleepers
 
             // remove active clientside evac shuttle timers by zeroing the target time
             var zero = TimeSpan.Zero;
@@ -372,6 +373,13 @@ namespace Content.Server.RoundEnd
     {
         public static RoundEndSystemChangedEvent Default { get; } = new();
     }
+
+    // Harmony addition begins - theres no event for the shuttle being recalled?
+    public sealed class ShuttleRecalledEvent : EntityEventArgs
+    {
+        public static ShuttleRecalledEvent Default { get; } = new();
+    }
+    // Harmony addition ends
 
     public enum RoundEndBehavior : byte
     {
