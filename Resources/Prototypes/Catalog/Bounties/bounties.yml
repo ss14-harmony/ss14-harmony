@@ -746,22 +746,92 @@
 
 - type: cargoBounty
   id: BountyTeethSpaceCarp
-  reward: 800
+  reward: 1600 # Harmony Change
   description: bounty-description-tooth-space-carp
   entries:
   - name: bounty-item-tooth-space-carp
-    amount: 8
+    amount: 2 # Harmony Change
     whitelist:
       tags:
       - ToothSpaceCarp
 
 - type: cargoBounty
   id: BountyTeethSharkminnow
-  reward: 1500
+  reward: 6000 # Harmony Change
   description: bounty-description-tooth-sharkminnow
   entries:
   - name: bounty-item-tooth-sharkminnow
-    amount: 5
+    amount: 2 # Harmony Change
     whitelist:
       tags:
       - ToothSharkminnow
+
+# Begin Harmony Specific Bounties
+
+- type: cargoBounty
+  id: BountyContainerBottle
+  reward: 1500
+  description: bounty-description-container-bottle
+  entries:
+  - name: bounty-item-container-bottle
+    amount: 3
+    whitelist:
+      tags:
+      - Bottle
+
+- type: cargoBounty
+  id: BountyFloorTile
+  reward: 800
+  description: bounty-description-floor-tile
+  entries:
+  - name: bounty-item-floor-tile
+    amount: 12
+    whitelist:
+      components:
+      - FloorTile
+
+- type: cargoBounty
+  id: BountyChemGoggles
+  reward: 1800
+  description: bounty-description-chem-goggles
+  entries:
+  - name: bounty-item-chem-goggles
+    amount: 1
+    whitelist:
+      components:
+      - SolutionScanner
+
+- type: cargoBounty
+  id: BountySurgicalTools
+  reward: 1000
+  description: bounty-description-surgical-tools
+  entries:
+  - name: bounty-item-surgical-tools
+    amount: 10
+    whitelist:
+      tags:
+      - SurgeryTool
+
+- type: cargoBounty
+  id: BountyHeaterBoard
+  reward: 3000
+  description: bounty-description-heater-board
+  entries:
+  - name: bounty-item-heater-board
+    amount: 1
+    whitelist:
+      tags:
+      - SpaceHeaterMachineBoard
+
+- type: cargoBounty
+  id: BountyCentrifugeBoard
+  reward: 6000
+  description: bounty-description-centrifuge-board
+  entries:
+  - name: bounty-item-centrifuge-board
+    amount: 3
+    whitelist:
+      tags:
+      - CentrifugeMachineBoard
+
+# End Harmony Specific Bounties

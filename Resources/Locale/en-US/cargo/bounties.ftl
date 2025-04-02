@@ -69,6 +69,17 @@ bounty-item-flash = Flash
 bounty-item-tooth-space-carp = Space Carp Tooth
 bounty-item-tooth-sharkminnow = Sharkminnow Tooth
 
+# Begin New Harmony Bounty Names
+
+bounty-item-container-bottle = Bottles
+bounty-item-floor-tile = Floor Tiles
+bounty-item-chem-goggles = Chemical Analysis Goggles
+bounty-item-surgical-tools = Surgical Tools
+bounty-item-heater-board = Space Heater Machine Boards
+bounty-item-centrifuge-board = Centrifuge Machine Boards
+
+# End New Harmony Bounty Names
+
 bounty-description-artifact = NanoTrasen is in some hot water for stealing artifacts from non-spacefaring planets. Return one and we'll compensate you for it.
 bounty-description-baseball-bat = Baseball fever is going on at CentComm! Be a dear and ship them some baseball bats, so that management can live out their childhood dream.
 bounty-description-box-hugs = Several chief officials have sustained serious boo-boos. A box of hugs is urgently needed to aid in their recovery.
@@ -138,3 +149,14 @@ bounty-description-microwave-machine-board = Mr. Giggles thought it'd be funny t
 bounty-description-flashes = GREETINGS \[Station] WE REQUIRE 6 FLASHES DUE TO A NORMAL \[TrainingExercise] WITH SECURITY. EVERYTHING IS \[Normal].
 bounty-description-tooth-space-carp = Some lads from "down unda" need some teeth to make their traditional apparel. Send them a few from some space carp.
 bounty-description-tooth-sharkminnow = The chef is claiming that the teeth of sharkminnows are some kind of high-quality knife. I don't know what they're on about, but they want a set. Send it to them.
+
+# Begin New Harmony Bounty Descriptions
+
+bounty-description-container-bottle = One of our new Medical Interns decided to make a cup tower out of all of our bottles, and you can imagine how that ended. Please send us a few new ones.
+bounty-description-floor-tile = The station's Botanist seems to be high on his own supply and "redecorating". Please send us some tiles so we can repair the hallways he has ripped up.
+bounty-description-chem-goggles = Our chemist collided with our Bartender, and now we need to seperate the chems from the booze! Please send some Chemical Analysis Goggles so we know what is and isn't safe to drink at the Head of Personnel's birthday party!
+bounty-description-surgical-tools = Due to budget cuts, another sector has run out of surgical tools! Send some over ASAP! It's not like your station is using them.
+bounty-description-heater-board = Our ice planet research facility has been hit by a major cold snap. Central Command needs some assistance fufilling a supply order for heaters, please ship some circuit boards to make new ones in-situ before people start to freeze.
+bounty-description-centrifuge-board = Someone stole our centrifuges and we've only just noticed now. Can you send some new ones before our chemists notice too? Cheers!
+
+# End New Harmony Bounty Descriptions

@@ -7,3 +7,11 @@
 # Tag used for escape pod landing.
 - type: Tag
   id: DockPod
+
+# Tag used to identity space heater machine boards for bounty.
+- type: Tag
+  id: SpaceHeaterMachineBoard
+
+# Tag used to identify centrigue machine boards for bounty.
+- type: Tag
+  id: CentrifugeMachineBoard

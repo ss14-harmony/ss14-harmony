@@ -471,6 +471,9 @@
       MatterBin: 1
       Capacitor: 2
       Cable: 5
+  - type: Tag # Harmony Specific Change For Bounty
+    tags: # Harmony Specific Change For Bounty
+      - SpaceHeaterMachineBoard # Harmony Specific Change For Bounty
 
 - type: entity
   id: CloningPodMachineCircuitboard
@@ -986,6 +989,9 @@
     stackRequirements:
       Manipulator: 1
       Steel: 1
+  - type: Tag # Harmony Specific Change For Bounty
+    tags: # Harmony Specific Change For Bounty
+      - CentrifugeMachineBoard # Harmony Specific Change For Bounty
 
 - type: entity
   id: OreProcessorMachineCircuitboard
