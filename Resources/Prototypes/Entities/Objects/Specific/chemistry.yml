@@ -542,7 +542,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        #maxVol: 30
+        #maxVol: 20
         maxVol: 50 #Harmony Change: Increased pill max volume to 50u
   - type: ExplosionResistance
     damageCoefficient: 0.025 # survives conventional explosives but not minibombs and nukes
