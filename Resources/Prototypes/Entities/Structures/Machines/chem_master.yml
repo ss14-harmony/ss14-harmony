@@ -18,7 +18,7 @@
     sprite: Structures/Machines/mixer.rsi
     state: mixer_loaded
   - type: ChemMaster
-    #pillDosageLimit: 30
+    #pillDosageLimit: 20
     pillDosageLimit: 50 #Harmony Change: Increases pill max volume to 50
   - type: Physics
     bodyType: Static
