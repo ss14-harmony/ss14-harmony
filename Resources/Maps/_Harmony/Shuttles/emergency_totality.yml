@@ -4,8 +4,8 @@ meta:
   engineVersion: 248.0.2
   forkId: harmony
   forkVersion: 9aebd01c58ceabdee09f0e638b2febd221cd0236
-  time: 03/29/2025 14:00:57
-  entityCount: 1590
+  time: 04/03/2025 08:36:25
+  entityCount: 1608
 maps: []
 grids:
 - 1
@@ -3662,6 +3662,12 @@ entities:
       parent: 1
 - proto: Catwalk
   entities:
+  - uid: 2
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 11.5,9.5
+      parent: 1
   - uid: 25
     components:
     - type: Transform
@@ -3708,6 +3714,12 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 14.5,21.5
+      parent: 1
+  - uid: 76
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 11.5,11.5
       parent: 1
   - uid: 90
     components:
@@ -3923,8 +3935,8 @@ entities:
   - uid: 391
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 11.5,9.5
+      rot: 3.141592653589793 rad
+      pos: 11.5,10.5
       parent: 1
   - uid: 401
     components:
@@ -3938,22 +3950,10 @@ entities:
       rot: 3.141592653589793 rad
       pos: 15.5,19.5
       parent: 1
-  - uid: 676
+  - uid: 644
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: 11.5,10.5
-      parent: 1
-  - uid: 693
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 11.5,11.5
-      parent: 1
-  - uid: 694
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 11.5,8.5
       parent: 1
   - uid: 1158
@@ -6881,114 +6881,112 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 15.5,5.5
       parent: 1
-- proto: HolopadCentCommEvacShuttle
+- proto: Holopad
   entities:
-  - uid: 747
-    components:
-    - type: Transform
-      pos: 11.5,3.5
-      parent: 1
-- proto: HolopadLongRange
-  entities:
-  - uid: 2
-    components:
-    - type: MetaData
-      name: long-range holopad (Totality|Medical)
-    - type: Transform
-      pos: 17.5,6.5
-      parent: 1
-    - type: Label
-      currentLabel: Totality|Medical
-    - type: NameModifier
-      baseName: long-range holopad
-  - uid: 405
-    components:
-    - type: MetaData
-      name: long-range holopad (Totality|Bar)
-    - type: Transform
-      pos: 11.5,-11.5
-      parent: 1
-    - type: Label
-      currentLabel: Totality|Bar
-    - type: NameModifier
-      baseName: long-range holopad
-  - uid: 429
-    components:
-    - type: MetaData
-      name: long-range holopad (Totality|Engineering)
-    - type: Transform
-      pos: 11.5,-21.5
-      parent: 1
-    - type: Label
-      currentLabel: Totality|Engineering
-    - type: NameModifier
-      baseName: long-range holopad
-  - uid: 512
-    components:
-    - type: MetaData
-      name: long-range holopad (Totality|Security)
-    - type: Transform
-      pos: 4.5,7.5
-      parent: 1
-    - type: Label
-      currentLabel: Totality|Security
-    - type: NameModifier
-      baseName: long-range holopad
   - uid: 527
     components:
     - type: MetaData
-      name: long-range holopad (Totality|Port Seating)
+      name: holopad (Port Seating)
     - type: Transform
       pos: 3.5,-20.5
       parent: 1
     - type: Label
-      currentLabel: Totality|Port Seating
+      currentLabel: Port Seating
     - type: NameModifier
-      baseName: long-range holopad
-  - uid: 698
+      baseName: holopad
+  - uid: 554
     components:
     - type: MetaData
-      name: long-range holopad (Totality|Starboard Seating)
+      name: holopad (Starboard Seating)
     - type: Transform
       pos: 19.5,-20.5
       parent: 1
     - type: Label
-      currentLabel: Totality|Starboard Seating
+      currentLabel: Starboard Seating
     - type: NameModifier
-      baseName: long-range holopad
-  - uid: 1569
+      baseName: holopad
+- proto: HolopadAiCore
+  entities:
+  - uid: 247
     components:
-    - type: MetaData
-      name: long-range holopad (Totality|Brig)
     - type: Transform
-      pos: 6.5,16.5
+      pos: 11.5,10.5
       parent: 1
-    - type: Label
-      currentLabel: Totality|Brig
-    - type: NameModifier
-      baseName: long-range holopad
-  - uid: 1589
+- proto: HolopadCentCommEvacShuttle
+  entities:
+  - uid: 1606
     components:
-    - type: MetaData
-      name: long-range holopad (Totality|Morgue)
     - type: Transform
-      pos: 16.5,16.5
+      pos: 11.5,3.5
       parent: 1
-    - type: Label
-      currentLabel: Totality|Morgue
-    - type: NameModifier
-      baseName: long-range holopad
-  - uid: 1590
+- proto: HolopadCommandBridge
+  entities:
+  - uid: 405
     components:
-    - type: MetaData
-      name: long-range holopad (Totality|Amidship Seating)
+    - type: Transform
+      pos: 11.5,-1.5
+      parent: 1
+- proto: HolopadEngineeringMain
+  entities:
+  - uid: 506
+    components:
+    - type: Transform
+      pos: 11.5,-21.5
+      parent: 1
+- proto: HolopadGeneralTheater
+  entities:
+  - uid: 676
+    components:
     - type: Transform
       pos: 11.5,-5.5
       parent: 1
-    - type: Label
-      currentLabel: Totality|Amidship Seating
-    - type: NameModifier
-      baseName: long-range holopad
+- proto: HolopadMedicalMedbay
+  entities:
+  - uid: 1605
+    components:
+    - type: Transform
+      pos: 17.5,6.5
+      parent: 1
+- proto: HolopadMedicalMorgue
+  entities:
+  - uid: 557
+    components:
+    - type: Transform
+      pos: 16.5,16.5
+      parent: 1
+- proto: HolopadSecurityBrig
+  entities:
+  - uid: 1604
+    components:
+    - type: Transform
+      pos: 5.5,6.5
+      parent: 1
+- proto: HolopadSecurityPerma
+  entities:
+  - uid: 512
+    components:
+    - type: Transform
+      pos: 6.5,16.5
+      parent: 1
+- proto: HolopadServiceBar
+  entities:
+  - uid: 429
+    components:
+    - type: Transform
+      pos: 11.5,-11.5
+      parent: 1
+- proto: IntercomAll
+  entities:
+  - uid: 1607
+    components:
+    - type: Transform
+      pos: 10.5,0.5
+      parent: 1
+  - uid: 1608
+    components:
+    - type: Transform
+      pos: 12.5,0.5
+      parent: 1
 - proto: MedicalBed
   entities:
   - uid: 596
@@ -7346,6 +7344,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.5,0.5
       parent: 1
+  - uid: 694
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 12.5,9.5
+      parent: 1
   - uid: 697
     components:
     - type: Transform
@@ -7394,6 +7398,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 10.5,2.5
       parent: 1
+  - uid: 747
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 10.5,11.5
+      parent: 1
   - uid: 773
     components:
     - type: Transform
@@ -7441,6 +7451,18 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 11.5,-5.5
+      parent: 1
+  - uid: 1569
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 10.5,9.5
+      parent: 1
+  - uid: 1589
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 12.5,11.5
       parent: 1
 - proto: RailingCorner
   entities:
@@ -7696,6 +7718,17 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 11.5,0.5
       parent: 1
+  - uid: 693
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 10.5,10.5
+      parent: 1
+  - uid: 698
+    components:
+    - type: Transform
+      pos: 12.5,10.5
+      parent: 1
   - uid: 705
     components:
     - type: Transform
@@ -7831,6 +7864,18 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 12.5,-4.5
       parent: 1
+  - uid: 1602
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 12.5,10.5
+      parent: 1
+  - uid: 1603
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 10.5,10.5
+      parent: 1
 - proto: RailingRound
   entities:
   - uid: 711
@@ -7867,6 +7912,80 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 9.5,-16.5
+      parent: 1
+- proto: Screen
+  entities:
+  - uid: 1590
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 14.5,16.5
+      parent: 1
+  - uid: 1591
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 8.5,-3.5
+      parent: 1
+  - uid: 1592
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 14.5,-3.5
+      parent: 1
+  - uid: 1593
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 11.5,1.5
+      parent: 1
+  - uid: 1594
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 8.5,16.5
+      parent: 1
+  - uid: 1595
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 9.5,-14.5
+      parent: 1
+  - uid: 1596
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 16.5,9.5
+      parent: 1
+  - uid: 1597
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 6.5,9.5
+      parent: 1
+  - uid: 1598
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 13.5,-14.5
+      parent: 1
+  - uid: 1599
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 11.5,-20.5
+      parent: 1
+  - uid: 1600
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 1.5,-20.5
+      parent: 1
+  - uid: 1601
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 21.5,-20.5
       parent: 1
 - proto: ShuttleWindow
   entities:
@@ -10265,20 +10384,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 6.5,10.5
       parent: 1
-- proto: Windoor
-  entities:
-  - uid: 557
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 12.5,10.5
-      parent: 1
-  - uid: 644
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 10.5,10.5
-      parent: 1
 - proto: WindoorSecureBarLocked
   entities:
   - uid: 675
@@ -10347,12 +10452,6 @@ entities:
       parent: 1
 - proto: WindowReinforcedDirectional
   entities:
-  - uid: 76
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 12.5,9.5
-      parent: 1
   - uid: 172
     components:
     - type: Transform
@@ -10364,12 +10463,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 18.5,7.5
-      parent: 1
-  - uid: 247
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 10.5,11.5
       parent: 1
   - uid: 389
     components:
@@ -10398,12 +10491,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 17.5,-18.5
-      parent: 1
-  - uid: 506
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 12.5,11.5
       parent: 1
   - uid: 511
     components:
@@ -10476,12 +10563,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 19.5,-17.5
-      parent: 1
-  - uid: 554
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 10.5,9.5
       parent: 1
   - uid: 633
     components:
