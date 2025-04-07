@@ -1,0 +1,12 @@
+- type: listing
+  id: SpellbookItemCurse
+  name: spellbook-item-recall-name
+  description: spellbook-item-recall-description
+  productAction: ActionItemCurse
+  cost:
+    WizCoin: 1
+  categories:
+  - SpellbookUtility
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
