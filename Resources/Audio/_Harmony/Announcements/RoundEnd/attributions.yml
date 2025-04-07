@@ -7,7 +7,7 @@
   license: "CC-BY-3.0"
   copyright: "TBD"
   source: "https://www.youtube.com/watch?v=1zvV2clsaX4"
-  
+
 - files: ["tortilla.ogg"]
   license: "CC-BY-3.0"
   copyright: "TBD"
@@ -27,3 +27,19 @@
   license: "CC-BY-3.0"
   copyright: "TBD"
   source: "https://www.youtube.com/watch?v=l3OV60r3078"
+
+- files: ["jail.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "TBD"
+  source: "https://www.youtube.com/watch?v=VLN0mOsGpQg"
+
+- files: ["robusted.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "TBD"
+  source: "https://youtu.be/3X7DpMX7wvs"
+
+- files: ["done.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "TBD"
+  source: "https://youtu.be/3X7DpMX7wvs"
+
