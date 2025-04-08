@@ -79,8 +79,8 @@
               Heat: 0.5
     - type: AtmosExposed
     - type: Kudzu
-      growthTickChance: 0.3
-      spreadChance: 0.4
+      growthTickChance: 0.31 #Harmony Change
+      spreadChance: 0.43 #Harmony Change
     - type: SpeedModifierContacts
       walkSpeedModifier: 0.2
       sprintSpeedModifier: 0.2
@@ -99,6 +99,13 @@
           reagents:
           - ReagentId: Nutriment
             Quantity: 2
+    - type: DamageContacts #Harmony Addition Begins
+      damage:
+        types:
+          Slash: 1.75
+      ignoreWhitelist:
+        components:
+        - IgnoreKudzu #Harmony Addition Ends
 
 - type: entity
   id: WeakKudzu
@@ -106,7 +113,11 @@
   suffix: Weak
   components:
     - type: Kudzu
-      spreadChance: 0.3
+      spreadChance: 0.32 #Harmony Change
+    - type: DamageContacts #Harmony Addition Begins
+      damage:
+        types:
+          Slash: 0 #Harmony Addition Ends
 
 - type: entity
   id: KudzuFlowerFriendly
