@@ -39,7 +39,7 @@ public sealed partial class WizardRuleComponent : Component
     /// Time until the emergency shuttle arrives after the wizard dies.
     /// </summary>
     [DataField]
-    public TimeSpan EvacShuttleTime = TimeSpan.FromMinutes(5);
+    public TimeSpan EvacShuttleTime = TimeSpan.FromMinutes(3);
 
     /// <summary>
     /// Holds the delayed server time for when a sleeper agent event should be triggered after the shuttle is recalled.
