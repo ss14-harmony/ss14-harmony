@@ -14,7 +14,15 @@
       "name": "icon-flash"
     },
     {
+      "name": "off-equipped-HELMET",
+      "directions": 4
+    },
+    {
       "name": "on-equipped-HELMET",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-vox",
       "directions": 4
     },
     {
