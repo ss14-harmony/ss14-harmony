@@ -2103,12 +2103,10 @@
   - !type:BuyerJobCondition
     whitelist:
     - Janitor
-  Start of Harmony change
   - !type:BuyerWhitelistCondition
     blacklist:
       components:
       - SurplusBundle
-  End of Harmony change
 
 - type: listing
   id: UplinkSyndicateSpongeBox
