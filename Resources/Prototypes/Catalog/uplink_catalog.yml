@@ -2146,7 +2146,7 @@
   - !type:BuyerJobCondition
     whitelist:
     - Librarian
-  #Change of Harmony change
+  #Start of Harmony change
   #- !type:BuyerWhitelistCondition
   #  blacklist:
   #    components:
