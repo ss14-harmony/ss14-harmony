@@ -1,0 +1,9 @@
+﻿<GridContainer xmlns="https://spacestation14.io"
+               Columns="2"
+               Margin="5 0">
+    <BoxContainer Name="JobDataHolder" Orientation="Horizontal">
+        <TextureRect Name="JobIcon" TextureScale="2 2" VerticalAlignment="Center" Margin="0 0 4 0" />
+        <Label Name="JobTitle" HorizontalExpand="True" />
+    </BoxContainer>
+    <RichTextLabel Name="ReadyCount" HorizontalExpand="True" />
+</GridContainer>
