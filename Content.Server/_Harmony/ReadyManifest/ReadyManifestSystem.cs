@@ -28,6 +28,7 @@ public sealed class ReadyManifestSystem : SharedReadyManifestSystem
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStarting);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
         SubscribeLocalEvent<PlayerToggledReadyEvent>(OnPlayerToggledReady);
+        SubscribeLocalEvent<PlayerDisconnectedEvent>(OnPlayerDisconnected);
         SubscribeNetworkEvent<RequestReadyManifestMessage>(OnRequestReadyManifest);
     }
 
@@ -51,6 +52,12 @@ public sealed class ReadyManifestSystem : SharedReadyManifestSystem
         // Rebuild the entire ready manifest because I can't directly update the values - it would be too likely to
         // desync, and when I thought about ways to rebuild only the updated jobs, it ironically seemed more
         // expensive than just rebuilding the entire ready manifest.
+        RebuildReadyManifest();
+        UpdateAllEuis();
+    }
+
+    private void OnPlayerDisconnected(ref PlayerDisconnectedEvent args)
+    {
         RebuildReadyManifest();
         UpdateAllEuis();
     }

@@ -125,6 +125,13 @@ namespace Content.Server.GameTicking
 
                 case SessionStatus.Disconnected:
                 {
+                    // Harmony start - ready manifest
+                    _playerGameStatuses[session.UserId] = PlayerGameStatus.NotReadyToPlay;
+
+                    var playerDisconnected = new PlayerDisconnectedEvent(session);
+                    RaiseLocalEvent(ref playerDisconnected);
+                    // Harmony end - ready manifest
+
                     _chatManager.SendAdminAnnouncement(Loc.GetString("player-leave-message", ("name", args.Session.Name)));
                     if (mind != null)
                     {
@@ -232,4 +239,12 @@ namespace Content.Server.GameTicking
             PlayerSession = playerSession;
         }
     }
+
+    // Harmony start - ready manifest
+    [ByRefEvent]
+    public struct PlayerDisconnectedEvent(ICommonSession playerSession)
+    {
+        public readonly ICommonSession PlayerSession = playerSession;
+    }
+    // Harmony end - ready manifest
 }
