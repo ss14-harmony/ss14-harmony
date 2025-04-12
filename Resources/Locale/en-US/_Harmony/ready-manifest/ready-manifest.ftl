@@ -1,7 +1,12 @@
 ready-manifest-title = Ready Manifest
 ready-manifest-job-title = {$jobTitle}:
 
-ready-manifest-no-ready-count = [color=red]0[/color]
-ready-manifest-low-ready-count = [color=red]{$count} low[/color]
-ready-manifest-medium-ready-count = [color=orange]{$count} medium[/color]
-ready-manifest-high-ready-count = [color=lightgreen]{$count} high[/color]
+ready-manifest-no-ready-count = 0
+ready-manifest-low-ready-count = {$count} low
+ready-manifest-medium-ready-count = {$count} medium
+ready-manifest-high-ready-count = {$count} high
+
+ready-manifest-no-ready-indicator = -
+ready-manifest-low-ready-indicator = -
+ready-manifest-medium-ready-indicator = o
+ready-manifest-high-ready-indicator = +

@@ -14,6 +14,11 @@ public sealed partial class ReadyManifestJobListing : GridContainer
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
+    public const string StyleClassReadyIndicatorNoReady = "ReadyIndicatorNoReady";
+    public const string StyleClassReadyIndicatorLowReady = "ReadyIndicatorLowReady";
+    public const string StyleClassReadyIndicatorMediumReady = "ReadyIndicatorMediumReady";
+    public const string StyleClassReadyIndicatorHighReady = "ReadyIndicatorHighReady";
+
     public ReadyManifestJobListing(ProtoId<JobPrototype> jobId, ReadyManifestJobData? readyCount)
     {
         RobustXamlLoader.Load(this);
@@ -31,25 +36,44 @@ public sealed partial class ReadyManifestJobListing : GridContainer
 
         JobTitle.Text = Loc.GetString("ready-manifest-job-title", ("jobTitle", job.LocalizedName));
 
-        // If we don't have a ready count, assume no one is ready.
         if (readyCount == null)
         {
             ReadyCount.Text = Loc.GetString("ready-manifest-no-ready-count");
+            ReadyIndicator.Text = Loc.GetString("ready-manifest-no-ready-indicator");
+            ReadyIndicator.StyleClasses.Add(StyleClassReadyIndicatorNoReady);
             return;
         }
 
-        // Show the appropriate ready count text depending on the amount of people ready for the role in this order:
-        // - If the number of high readies is higher than 0, show that
-        // - If the number of medium readies is higher than 0, show that
-        // - If the number of low readies is higher than 0, show that
-        // - If nobody is ready, show that
+        string locId;
+        int usedReadyCount;
         if (readyCount.Value.HighReadies > 0)
-            ReadyCount.Text = Loc.GetString("ready-manifest-high-ready-count", ("count", readyCount.Value.HighReadies));
+        {
+            locId = "high";
+            usedReadyCount = readyCount.Value.HighReadies;
+            ReadyIndicator.StyleClasses.Add(StyleClassReadyIndicatorHighReady);
+        }
         else if (readyCount.Value.MediumReadies > 0)
-            ReadyCount.Text = Loc.GetString("ready-manifest-medium-ready-count", ("count", readyCount.Value.MediumReadies));
+        {
+            locId = "medium";
+            usedReadyCount = readyCount.Value.MediumReadies;
+            ReadyIndicator.StyleClasses.Add(StyleClassReadyIndicatorMediumReady);
+        }
         else if (readyCount.Value.LowReadies > 0)
-            ReadyCount.Text = Loc.GetString("ready-manifest-low-ready-count", ("count", readyCount.Value.LowReadies));
+        {
+            locId = "low";
+            usedReadyCount = readyCount.Value.LowReadies;
+            ReadyIndicator.StyleClasses.Add(StyleClassReadyIndicatorLowReady);
+        }
         else
-            ReadyCount.Text = Loc.GetString("ready-manifest-no-ready-count");
+        {
+            locId = "no";
+            usedReadyCount = 0;
+            ReadyIndicator.StyleClasses.Add(StyleClassReadyIndicatorNoReady);
+        }
+
+        ReadyCount.Text = Loc.GetString(
+            $"ready-manifest-{locId}-ready-count",
+            ("count", usedReadyCount));
+        ReadyIndicator.Text = Loc.GetString($"ready-manifest-{locId}-ready-indicator");
     }
 }
