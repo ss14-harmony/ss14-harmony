@@ -126,7 +126,8 @@ namespace Content.Server.GameTicking
                 case SessionStatus.Disconnected:
                 {
                     // Harmony start - ready manifest
-                    if (_playerGameStatuses[session.UserId] == PlayerGameStatus.ReadyToPlay)
+                    if (_playerGameStatuses.TryGetValue(session.UserId, out var playerGameStatus) &&
+                        playerGameStatus == PlayerGameStatus.ReadyToPlay)
                         _playerGameStatuses[session.UserId] = PlayerGameStatus.NotReadyToPlay;
 
                     var playerDisconnected = new PlayerDisconnectedEvent();
