@@ -89,7 +89,7 @@ namespace Content.Client.Lobby
             _voteManager.ClearPopupContainer();
 
             Lobby!.CharacterPreview.CharacterSetupButton.OnPressed -= OnSetupPressed;
-            Lobby!.ManifestButton.OnPressed -= OnManifestPressed;
+            Lobby!.ManifestButton.OnPressed -= OnManifestPressed; // Harmony
             Lobby!.ReadyButton.OnPressed -= OnReadyPressed;
             Lobby!.ReadyButton.OnToggled -= OnReadyToggled;
 
