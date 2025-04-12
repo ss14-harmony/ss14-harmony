@@ -1,0 +1,92 @@
+﻿- type: entity
+  id: SyndieKudzu
+  name: kudzu
+  suffix: Syndicate Flavor
+  parent: BaseKudzu
+  description: A rapidly growing, dangerous plant. WHY ARE YOU STOPPING TO LOOK AT IT?!
+  components:
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path:
+          "/Audio/Weapons/slash.ogg"
+  - type: Sprite
+    sprite: Objects/Misc/kudzu.rsi
+    state: kudzu_11
+    drawdepth: Overdoors
+  - type: KudzuVisuals
+  - type: Clickable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        density: 7
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+        - MidImpassable
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DamageContacts
+    damage:
+      types:
+        Piercing: 3
+        Poison: 1.3
+    ignoreWhitelist:
+      components:
+      - IgnoreKudzu
+  - type: Temperature
+    heatDamage:
+      types:
+        Heat: 5
+    coldDamage: {}
+    coldDamageThreshold: 0
+  - type: Flammable
+    fireSpread: true #If you walk into incredibly dense, flaming vines, you can expect to burn.
+    damage:
+      types:
+        Heat: 3
+  - type: Reactive
+    groups:
+      Flammable: [Touch]
+      Extinguish: [Touch]
+    reactions:
+    - reagents: [WeedKiller, PlantBGone]
+      methods: [Touch]
+      effects:
+      - !type:HealthChange
+        scaleByQuantity: true
+        damage:
+          types:
+            Heat: 0.5
+  - type: AtmosExposed
+  - type: Kudzu
+    growthTickChance: 0.5
+    spreadChance: 0.66
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.15
+    sprintSpeedModifier: 0.15
+    ignoreWhitelist:
+      components:
+      - IgnoreKudzu
+  - type: Food
+    requiredStomachs: 2 # ruminants have 4 stomachs but i dont care to give them literally 4 stomachs. 2 is good
+    delay: 0.5
+  - type: FlavorProfile
+    flavors:
+    - fiber
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2

@@ -2,7 +2,7 @@
   parent: [ScatteringGrenadeBase, BaseSyndicateContraband]
   id: KudzuGrenade
   name: kudzu grenade
-  description: Repurposed foam dart grenade containing mutated kudzu.
+  description: A Diona's favorite grenade.
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Grenades/kudzugrenade.rsi
