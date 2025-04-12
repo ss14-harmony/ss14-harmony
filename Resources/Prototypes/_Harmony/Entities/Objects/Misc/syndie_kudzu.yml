@@ -1,7 +1,7 @@
 ﻿- type: entity
   id: SyndieKudzu
   parent: Kudzu
-  suffix: Syndicate Flavor
+  suffix: Syndicate
   components:
   - type: Kudzu
     growthTickChance: 0.5
