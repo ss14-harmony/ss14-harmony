@@ -1,0 +1,27 @@
+﻿- type: entity
+  parent: [ScatteringGrenadeBase, BaseSyndicateContraband]
+  id: KudzuGrenade
+  name: kudzu grenade
+  description: Repurposed foam dart grenade containing mutated kudzu.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Grenades/kudzugrenade.rsi
+    layers:
+    - state: icon
+      map: [ "Base" ]
+    - state: primed
+      map: [ "enum.TriggerVisualLayers.Base" ]
+  - type: ScatteringGrenade
+    fillPrototype: SyndieKudzu
+    distance: 4
+  - type: OnUseTimerTrigger
+    beepSound:
+      path: "/Audio/Effects/beep1.ogg"
+      params:
+        volume: 3
+    initialBeepDelay: 0
+    beepInterval: 0.5
+    delay: 2
+  - type: EmitSoundOnTrigger
+    sound:
+      path: "/Audio/Machines/door_lock_off.ogg"

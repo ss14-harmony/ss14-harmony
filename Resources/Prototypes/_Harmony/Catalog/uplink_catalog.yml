@@ -1,6 +1,16 @@
 # Guns
 # Explosives
 - type: listing
+  id: UplinkKudzuGrenade
+  name: uplink-kudzu-grenade-name
+  description: uplink-kudzu-grenade-desc
+  productEntity: KudzuGrenade
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkExplosives
+
+- type: listing
   id: UplinkPizzaBomb
   name: uplink-pizza-bomb-name
   description: uplink-pizza-bomb-desc
