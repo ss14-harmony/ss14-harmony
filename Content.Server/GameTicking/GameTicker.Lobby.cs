@@ -157,11 +157,11 @@ namespace Content.Server.GameTicking
                 if (!_playerManager.TryGetSessionById(playerUserId, out var playerSession))
                     continue;
                 RaiseNetworkEvent(GetStatusMsg(playerSession), playerSession.Channel);
-                // Harmony start - ready manifest
-                var playerToggledReady = new PlayerToggledReadyEvent(playerSession);
-                RaiseLocalEvent(ref playerToggledReady);
-                // Harmony end - ready manifest
             }
+            // Harmony start - ready manifest
+            var playerToggledReady = new PlayerToggledReadyEvent();
+            RaiseLocalEvent(ref playerToggledReady);
+            // Harmony end - ready manifest
         }
 
         public void ToggleReady(ICommonSession player, bool ready)
@@ -181,7 +181,7 @@ namespace Content.Server.GameTicking
             _playerGameStatuses[player.UserId] = ready ? PlayerGameStatus.ReadyToPlay : PlayerGameStatus.NotReadyToPlay;
             RaiseNetworkEvent(GetStatusMsg(player), player.Channel);
             // Harmony start - ready manifest
-            var playerToggledReady = new PlayerToggledReadyEvent(player);
+            var playerToggledReady = new PlayerToggledReadyEvent();
             RaiseLocalEvent(ref playerToggledReady);
             // Harmony end - ready manifest
             // update server info to reflect new ready count
@@ -197,14 +197,6 @@ namespace Content.Server.GameTicking
 
     // Harmony start - ready manifest
     [ByRefEvent]
-    public struct PlayerToggledReadyEvent
-    {
-        public readonly ICommonSession PlayerSession;
-
-        public PlayerToggledReadyEvent(ICommonSession session)
-        {
-            PlayerSession = session;
-        }
-    }
-    // Harmony end
+    public struct PlayerToggledReadyEvent;
+    // Harmony end - ready manifest
 }

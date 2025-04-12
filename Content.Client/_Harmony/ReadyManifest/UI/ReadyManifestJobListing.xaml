@@ -6,7 +6,8 @@
         <Label Name="JobTitle" HorizontalExpand="True" />
     </BoxContainer>
     <BoxContainer Orientation="Horizontal">
-        <RichTextLabel Name="ReadyCount" HorizontalExpand="True" />
-        <Label Name="ReadyIndicator" Margin="4 0" StyleClasses="LabelBig" />
+        <Label Name="ReadyCount" HorizontalExpand="True" Text="{Loc 'ready-manifest-no-ready-count'}" />
+        <Label Name="ReadyIndicator" Margin="4 0" StyleClasses="LabelBig"
+               Text="{Loc 'ready-manifest-no-ready-indicator'}" />
     </BoxContainer>
 </GridContainer>

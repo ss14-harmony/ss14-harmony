@@ -29,6 +29,7 @@ public sealed partial class ReadyManifestJobListing : GridContainer
         if (!_prototypeManager.TryIndex(jobId, out var job))
             return;
 
+        // Set the icon texture if it can be found, otherwise delete the icon control
         if (_prototypeManager.TryIndex(job.Icon, out var icon))
             JobIcon.Texture = spriteSystem.Frame0(icon.Icon);
         else
@@ -38,8 +39,6 @@ public sealed partial class ReadyManifestJobListing : GridContainer
 
         if (readyCount == null)
         {
-            ReadyCount.Text = Loc.GetString("ready-manifest-no-ready-count");
-            ReadyIndicator.Text = Loc.GetString("ready-manifest-no-ready-indicator");
             ReadyIndicator.StyleClasses.Add(StyleClassReadyIndicatorNoReady);
             return;
         }

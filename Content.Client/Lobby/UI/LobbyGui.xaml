@@ -38,7 +38,7 @@
                                                StyleClasses="LabelBig" HorizontalExpand="True" />
                                         <!-- Begin Harmony - ready manifest button -->
                                         <Button Name="ManifestButton" Access="Public"
-                                                Text="Manifest"
+                                                Text="{Loc 'ui-lobby-manifest-button'}"
                                                 StyleClasses="ButtonBig" MinWidth="137" />
                                         <!-- End Harmony - ready manifest button -->
                                         <Button Name="ReadyButton" Access="Public" ToggleMode="True"

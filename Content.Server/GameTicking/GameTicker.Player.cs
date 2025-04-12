@@ -128,7 +128,7 @@ namespace Content.Server.GameTicking
                     // Harmony start - ready manifest
                     _playerGameStatuses[session.UserId] = PlayerGameStatus.NotReadyToPlay;
 
-                    var playerDisconnected = new PlayerDisconnectedEvent(session);
+                    var playerDisconnected = new PlayerDisconnectedEvent();
                     RaiseLocalEvent(ref playerDisconnected);
                     // Harmony end - ready manifest
 
@@ -242,9 +242,6 @@ namespace Content.Server.GameTicking
 
     // Harmony start - ready manifest
     [ByRefEvent]
-    public struct PlayerDisconnectedEvent(ICommonSession playerSession)
-    {
-        public readonly ICommonSession PlayerSession = playerSession;
-    }
+    public struct PlayerDisconnectedEvent;
     // Harmony end - ready manifest
 }

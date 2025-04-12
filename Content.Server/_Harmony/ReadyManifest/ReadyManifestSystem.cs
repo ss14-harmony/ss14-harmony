@@ -49,8 +49,8 @@ public sealed class ReadyManifestSystem : SharedReadyManifestSystem
 
     private void OnPlayerToggledReady(ref PlayerToggledReadyEvent args)
     {
-        // Rebuild the entire ready manifest because I can't directly update the values - it would be too likely to
-        // desync, and when I thought about ways to rebuild only the updated jobs, it ironically seemed more
+        // Rebuild the entire ready manifest because I can't directly update the values since it would be too likely to
+        // desync, and when I thought about ways to rebuild only the updated jobs, it seemed more
         // expensive than just rebuilding the entire ready manifest.
         RebuildReadyManifest();
         UpdateAllEuis();
