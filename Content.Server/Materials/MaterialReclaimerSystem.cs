@@ -25,6 +25,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Shared.Humanoid;
 
 namespace Content.Server.Materials;
 
@@ -192,9 +193,12 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
             if (component.Damage == null)
                 return;
 
+            var logImpact = HasComp<HumanoidAppearanceComponent>(item) ? LogImpact.Extreme : LogImpact.Medium;
+
             _damageable.TryChangeDamage(item, component.Damage, true);
-            _adminLogger.Add(LogType.Damaged, LogImpact.Medium, $"{ToPrettyString(item):victim} was recycled by {ToPrettyString(uid):entity}, dealing {component.Damage.GetTotal()} damage.");
+            _adminLogger.Add(LogType.Damaged, logImpact, $"{ToPrettyString(item):victim} was recycled by {ToPrettyString(uid):entity}, dealing {component.Damage.GetTotal()} damage.");
             _appearance.SetData(uid, RecyclerVisuals.Bloody, true);
+            // End Harmony
         }
         else
         {
