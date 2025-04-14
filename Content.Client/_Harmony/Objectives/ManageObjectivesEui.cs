@@ -16,7 +16,9 @@ public sealed class ManageObjectivesEui : BaseEui
 
         _manageObjectivesUi = new ManageObjectivesUi();
         _manageObjectivesUi.OnClose += () => CloseWindow();
-        _manageObjectivesUi.SaveButton.OnPressed += _ => OnSubmitButtonPressed();
+        _manageObjectivesUi.AddObjectiveAdminButton.OnPressed += _ => OnAddObjectiveAdminButtonPressed();
+        _manageObjectivesUi.AddObjectivePlayerButton.OnPressed += _ => OnAddObjectivePlayerButtonPressed();
+        //_manageObjectivesUi.SaveButton.OnPressed += _ => OnSubmitButtonPressed();
     }
 
     public override void HandleState(EuiStateBase state)
@@ -26,6 +28,17 @@ public sealed class ManageObjectivesEui : BaseEui
 
         _manageObjectivesUi.UpdateState(s.Objectives);
     }
+
+    private void OnAddObjectiveAdminButtonPressed()
+    {
+        CloseWindow();
+    }
+
+    private void OnAddObjectivePlayerButtonPressed()
+    {
+        SendMessage(new AddObjectiveMessage());
+    }
+
 
     private void OnSubmitButtonPressed()
     {

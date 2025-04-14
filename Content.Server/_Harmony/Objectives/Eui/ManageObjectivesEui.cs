@@ -9,10 +9,12 @@ namespace Content.Server.Objectives;
 public sealed class ManageObjectivesEui : BaseEui
 {
     private EntityManager _entityManager;
+    private SharedMindSystem _mindSystem;
     private EntityUid _mind;
-    public ManageObjectivesEui(EntityManager entityManager, EntityUid mind)
+    public ManageObjectivesEui(EntityManager entityManager, SharedMindSystem mindSystem, EntityUid mind)
     {
         _entityManager = entityManager;
+        _mindSystem = mindSystem;
         _mind = mind;
     }
 
@@ -37,6 +39,10 @@ public sealed class ManageObjectivesEui : BaseEui
     {
         switch (msg)
         {
+            case AddObjectiveMessage:
+                if (_entityManager.TryGetComponent<MindComponent>(_mind, out var mindComp))
+                    _mindSystem.TryAddObjective(_mind, mindComp, "CustomPlayerObjective");
+                break;
             case CloseEuiMessage:
                 Close();
                 break;

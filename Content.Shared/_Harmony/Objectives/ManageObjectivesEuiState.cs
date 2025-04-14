@@ -5,6 +5,12 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Objectives;
 
 [Serializable, NetSerializable]
+public sealed class AddObjectiveMessage : EuiMessageBase
+{
+
+}
+
+[Serializable, NetSerializable]
 public sealed class ManageObjectivesEuiState : EuiStateBase
 {
     public NetEntity Mind { get; }

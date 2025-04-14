@@ -8,8 +8,13 @@
     <BoxContainer Orientation="Vertical">
 
         <BoxContainer>
-            <Button Name="SaveButton"
-                Text="Apply Changes"
+            <Button Name="AddObjectiveAdminButton"
+                Text="Add custom objective (Admin)"
+                HorizontalExpand="True"
+                Access="Public">
+            </Button>
+            <Button Name="AddObjectivePlayerButton"
+                Text="Add custom objective (Player)"
                 HorizontalExpand="True"
                 Access="Public">
             </Button>

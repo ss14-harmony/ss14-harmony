@@ -421,7 +421,7 @@ namespace Content.Server.Administration.Systems
                             if (mind is null)
                                 return;
 
-                            var ui = new ManageObjectivesEui(_entityManager, (EntityUid)mind);
+                            var ui = new ManageObjectivesEui(_entityManager, _mindSystem, (EntityUid)mind);
                             _euiManager.OpenEui(ui, session);
                             ui.refresh();
                         };
