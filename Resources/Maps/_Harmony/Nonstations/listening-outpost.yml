@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 250.0.0
   forkId: ""
   forkVersion: ""
-  time: 04/15/2025 09:09:03
-  entityCount: 1393
-maps:
-- 240
+  time: 04/15/2025 09:30:58
+  entityCount: 1392
+maps: []
 grids:
 - 4
-orphans: []
+orphans:
+- 4
 nullspace: []
 tilemap:
   0: Space
@@ -41,7 +41,7 @@ entities:
     - type: MetaData
       name: Unknown
     - type: Transform
-      parent: 240
+      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -811,18 +811,6 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: NavMap
-  - uid: 240
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: PhysicsMap
-    - type: GridTree
-    - type: MovedGrids
-    - type: Broadphase
-    - type: OccluderTree
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 1317
