@@ -1,11 +1,13 @@
 using Content.Shared.Actions;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.IdentityManagement;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
+using Content.Shared.Throwing;
+using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Player;
+using Robust.Shared.Random;
 
 namespace Content.Shared.ItemCurse;
 
@@ -22,6 +24,10 @@ public abstract partial class SharedItemCurseSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly SharedProjectileSystem _proj = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly ThrowingSystem _throwing = default!;
+    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -64,12 +70,13 @@ public abstract partial class SharedItemCurseSystem : EntitySystem
             TryMarkItem(ent, markItem.Value);
             return;
         }
-
-        CurseItem(ent.Comp.MarkedEntity.Value);
+        Log.Debug("a");
+        Snap(args.Performer);
+        CurseItem(ent.Comp.MarkedEntity.Value, ent.Comp);
         args.Handled = true;
     }
 
-    private void CurseItem(Entity<CurseMarkerComponent?> ent)
+    private void CurseItem(Entity<CurseMarkerComponent?> ent, ItemCurseComponent comp)
     {
         if (!Resolve(ent.Owner, ref ent.Comp, false))
             return;
@@ -85,12 +92,15 @@ public abstract partial class SharedItemCurseSystem : EntitySystem
         if (TryComp<EmbeddableProjectileComponent>(ent, out var projectile))
             _proj.EmbedDetach(ent, projectile, actionOwner.Value);
 
-        _popups.PopupPredicted(Loc.GetString("item-Curse-item-summon-self", ("item", ent)),
-                               Loc.GetString("item-Curse-item-summon-others", ("item", ent), ("name", Identity.Entity(actionOwner.Value, EntityManager))),
-                               actionOwner.Value, actionOwner.Value);
-        _popups.PopupPredictedCoordinates(Loc.GetString("item-Curse-item-disappear", ("item", ent)), Transform(ent).Coordinates, actionOwner.Value);
+        if (_containerSystem.TryGetOuterContainer(ent, Transform(ent), out var holder))
+        {
+            _transform.SetCoordinates(ent, Transform(holder.Owner).Coordinates);
+            _transform.AttachToGridOrMap(ent);
+            ShockHolder(holder.Owner, ent, comp);
+        }
+        _throwing.TryThrow(ent, _random.NextVector2(), baseThrowSpeed: comp.FlingStrength);
 
-        _hands.TryForcePickupAnyHand(actionOwner.Value, ent);
+        CreateLightning(ent, comp);
     }
 
     private void OnCurseMarkerShutdown(Entity<CurseMarkerComponent> ent, ref ComponentShutdown args)
@@ -130,12 +140,14 @@ public abstract partial class SharedItemCurseSystem : EntitySystem
 
         if (TryComp<ItemCurseComponent>(marker.MarkedByAction, out var action))
         {
+            // The following comment was from the recall code I copied. I'll just leave it here because it's probably important. TL;DR this code doesn't work yet.
+            //
             // For some reason client thinks the station grid owns the action on client and this doesn't work. It doesn't work in PopupEntity(mispredicts) and PopupPredicted either(doesnt show).
             // I don't have the heart to move this code to server because of this small thing.
             // This line will only do something once that is fixed.
             if (instantAction.AttachedEntity != null)
             {
-                _popups.PopupClient(Loc.GetString("item-Curse-item-unmark", ("item", item)), instantAction.AttachedEntity.Value, instantAction.AttachedEntity.Value, PopupType.MediumCaution);
+                _popups.PopupClient(Loc.GetString("item-recall-item-unmark", ("item", item)), instantAction.AttachedEntity.Value, instantAction.AttachedEntity.Value, PopupType.MediumCaution);
                 RemoveFromPvsOverride(item, instantAction.AttachedEntity.Value);
             }
 
@@ -188,5 +200,20 @@ public abstract partial class SharedItemCurseSystem : EntitySystem
             return;
 
         _pvs.RemoveSessionOverride(uid, mindSession);
+    }
+
+    public virtual void CreateLightning(EntityUid ent, ItemCurseComponent comp)
+    {
+
+    }
+
+    public virtual void ShockHolder(EntityUid ent, EntityUid source, ItemCurseComponent comp)
+    {
+
+    }
+
+    public virtual void Snap(EntityUid ent)
+    {
+
     }
 }

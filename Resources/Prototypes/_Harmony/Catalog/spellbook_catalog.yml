@@ -1,7 +1,7 @@
 - type: listing
   id: SpellbookItemCurse
-  name: spellbook-item-recall-name
-  description: spellbook-item-recall-description
+  name: spellbook-item-curse-name
+  description: spellbook-item-curse-description
   productAction: ActionItemCurse
   cost:
     WizCoin: 1
