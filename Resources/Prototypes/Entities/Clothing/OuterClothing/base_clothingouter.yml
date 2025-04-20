@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: Clothing
+  parent: [Clothing, AllowSuitStorageClothing] # Harmony Change - allows suit storage for all clothing
   id: ClothingOuterBase
   components:
   - type: Clothing
