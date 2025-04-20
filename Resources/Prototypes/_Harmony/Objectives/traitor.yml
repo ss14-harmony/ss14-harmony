@@ -7,8 +7,8 @@
   - type: Objective
     difficulty: 1.3
     icon:
-      sprite: Structures/Furniture/chairs.rsi
-      state: shuttle
+      sprite: Objects/Specific/Medical/medical.rsi
+      state: gauze
   - type: ObjectiveBlacklistRequirement
     blacklist:
       components:
