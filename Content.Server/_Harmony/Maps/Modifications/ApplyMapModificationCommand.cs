@@ -66,7 +66,7 @@ public sealed class ApplyMapModificationCommand : LocalizedCommands
 
         mapModificationSystem.ApplyMapModification(modification, grid);
 
-        shell.WriteLine(Loc.GetString("cmd-applymapmodification-success"));
+        shell.WriteLine(Loc.GetString("cmd-applymapmodification-success", ("modification", modification.ID), ("grid", _entityManager.ToPrettyString(grid))));
     }
 
     public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
