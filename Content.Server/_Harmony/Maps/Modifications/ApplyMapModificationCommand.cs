@@ -1,7 +1,9 @@
 ﻿using System.Linq;
 using Content.Server._Harmony.Maps.Modifications.Systems;
 using Content.Server.Administration;
+using Content.Server.Administration.Logs;
 using Content.Shared.Administration;
+using Content.Shared.Database;
 using Robust.Shared.Console;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
@@ -11,6 +13,7 @@ namespace Content.Server._Harmony.Maps.Modifications;
 [AdminCommand(AdminFlags.Fun)] // I'm not sure if this is the right flag but it should be fine
 public sealed class ApplyMapModificationCommand : LocalizedCommands
 {
+    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
@@ -44,6 +47,21 @@ public sealed class ApplyMapModificationCommand : LocalizedCommands
         {
             shell.WriteLine(Loc.GetString("cmd-applymapmodification-grid-not-found", ("grid", intGridId)));
             return;
+        }
+
+        if (shell.Player is { } player)
+        {
+            _adminLogger.Add(
+                LogType.AdminCommands,
+                LogImpact.Extreme,
+                $"Player {player.Name} ({player.UserId}) applied map modification {modification.ID} to grid {_entityManager.ToPrettyString(grid):grid}.");
+        }
+        else
+        {
+            _adminLogger.Add(
+                LogType.AdminCommands,
+                LogImpact.Extreme,
+                $"Map modification {modification.ID} was applied to grid {_entityManager.ToPrettyString(grid):grid}.");
         }
 
         mapModificationSystem.ApplyMapModification(modification, grid);
