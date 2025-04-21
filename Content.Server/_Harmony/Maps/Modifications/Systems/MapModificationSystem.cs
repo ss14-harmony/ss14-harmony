@@ -27,7 +27,7 @@ public sealed class MapModificationSystem : EntitySystem
             if (!mapModification.ApplyOn.Contains(args.GameMap.ID))
                 continue;
 
-            Log.Debug("Applying map addition {0} to map {1}", mapModification.ID, args.GameMap.ID);
+            Log.Debug("Applying map modification {0} to map {1}", mapModification.ID, args.GameMap.ID);
 
             var station = _stationSystem.GetStationInMap(args.Map);
             if (station == null)
