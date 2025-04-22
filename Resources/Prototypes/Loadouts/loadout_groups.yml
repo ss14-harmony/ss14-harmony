@@ -49,6 +49,7 @@
   - ClothingNeckCosmaticDriftPin
   - ClothingNeckLanyard
   - HarmonicaInstrument
+  - StationMap
   # End harmony change - Server pins & neck slot items.
   - TowelColorBlack
   - TowelColorDarkBlue
@@ -1150,7 +1151,7 @@
   - DetectiveBlueCoatHarmony # Harmony
   - DetectiveBomberCoatHarmony # Harmony
   - DetectiveDiscoCoatHarmony # Harmony
- 
+
 - type: loadoutGroup
   id: SecurityCadetJumpsuit
   name: loadout-group-security-cadet-jumpsuit

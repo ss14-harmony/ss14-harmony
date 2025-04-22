@@ -77,6 +77,12 @@
     back:
     - Cane
 
+- type: loadout
+  id: StationMap
+  storage:
+    back:
+    - HandheldStationMap
+
 # Towels
 - type: loadout
   id: TowelStripedOrange
