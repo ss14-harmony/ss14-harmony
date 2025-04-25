@@ -1,3 +1,4 @@
+# TODO: Directly add the prisoner spawn point to the map
 - type: mapModification
   id: XenoPermaPrisoner
   applyOn:
