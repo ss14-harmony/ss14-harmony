@@ -7,8 +7,7 @@
     issuer: objective-issuer-syndicate
   - type: RoleRequirement
     roles:
-      mindRoles:
-      - TraitorRole
+    - TraitorRole
 
 - type: entity
   abstract: true
@@ -46,6 +45,13 @@
     icon:
       sprite: Structures/Furniture/chairs.rsi
       state: shuttle
+#begin harmony change
+  - type: ObjectiveBlacklistRequirement
+    blacklist:
+      components:
+      - DieCondition
+      - SurviveCondition
+#end harmony change
   - type: EscapeShuttleCondition
 
 - type: entity
@@ -64,6 +70,7 @@
       components:
       - EscapeShuttleCondition
       - StealCondition
+      - SurviveCondition #Harmony change
   - type: DieCondition
 
 #- type: entity
