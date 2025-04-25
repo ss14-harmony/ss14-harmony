@@ -4,8 +4,8 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.ItemCurse;
 
 /// <summary>
-/// Component for the ItemCurse action.
-/// Used for marking a held item and making it do something funny with second action use.
+/// Component for the ItemCurse action. Based off of ItemRecallComponent
+/// Used for first marking a held item, and then shocking the holder and surrounding entities when activated.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(SharedItemCurseSystem))]
 public sealed partial class ItemCurseComponent : Component
@@ -46,7 +46,7 @@ public sealed partial class ItemCurseComponent : Component
     /// How hard the item will be flung when the curse is activated
     /// </summary>
     [DataField]
-    public int FlingStrength = 20;
+    public int FlingStrength = 25;
 
     /// <summary>
     /// Range of lightning bolts created when the curse is activated
@@ -67,13 +67,13 @@ public sealed partial class ItemCurseComponent : Component
     public string LightningPrototype = "LightningRevenant";
 
     /// <summary>
-    /// Shock damage dealt to the holder of the cursed item when the curse is activated
+    /// Insuls-bypassing shock damage dealt to the holder of the cursed item when the curse is activated
     /// </summary>
     [DataField]
     public int ShockDamage = 15;
 
     /// <summary>
-    /// Shock damage dealt to the holder of the cursed item when the curse is activated
+    /// Insuls-bypassing shock duration for the holder of the cursed item when the curse is activated
     /// </summary>
     [DataField]
     public TimeSpan ShockDuration = TimeSpan.FromSeconds(3);

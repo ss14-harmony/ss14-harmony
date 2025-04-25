@@ -1,6 +1,8 @@
 using Content.Shared.Actions;
+using Content.Shared.Body.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
@@ -13,7 +15,7 @@ namespace Content.Shared.ItemCurse;
 
 /// <summary>
 /// System for handling the ItemCurse ability for wizards.
-/// This is pretty much an exact copy of SharedItemRecallSystem.
+/// This is pretty much a copy of SharedItemRecallSystem with the resulting effect on the marked item changed.
 /// </summary>
 public abstract partial class SharedItemCurseSystem : EntitySystem
 {
@@ -70,7 +72,8 @@ public abstract partial class SharedItemCurseSystem : EntitySystem
             TryMarkItem(ent, markItem.Value);
             return;
         }
-        Log.Debug("a");
+
+        // Finger snap emote because it's Cool.
         Snap(args.Performer);
         CurseItem(ent.Comp.MarkedEntity.Value, ent.Comp);
         args.Handled = true;
@@ -89,17 +92,33 @@ public abstract partial class SharedItemCurseSystem : EntitySystem
         if (actionOwner == null)
             return;
 
+        // Un-embed embeddable projectiles
         if (TryComp<EmbeddableProjectileComponent>(ent, out var projectile))
             _proj.EmbedDetach(ent, projectile, actionOwner.Value);
 
-        if (_containerSystem.TryGetOuterContainer(ent, Transform(ent), out var holder))
+        // Check if the cursed item is in any container.
+        // If it is, check each outer container until either finding a body to target or running out of containers.
+        // The first body found will be targeted by the direct shocking effect.
+        var containerEnt = ent;
+        while (_containerSystem.TryGetContainingContainer((containerEnt, null, null), out var nextContainer))
         {
-            _transform.SetCoordinates(ent, Transform(holder.Owner).Coordinates);
-            _transform.AttachToGridOrMap(ent);
-            ShockHolder(holder.Owner, ent, comp);
+            if (HasComp<BodyComponent>(nextContainer.Owner))    // Is checking for the body comp the right way to do this? I hope so.
+            {
+                ShockHolder(nextContainer.Owner, ent, comp);
+                break;
+            }
+            containerEnt = nextContainer.Owner;
         }
-        _throwing.TryThrow(ent, _random.NextVector2(), baseThrowSpeed: comp.FlingStrength);
 
+        // If the entity is in a container, place it into the world instead
+        if (_containerSystem.IsEntityInContainer(ent))
+        {
+            _transform.SetCoordinates(ent, Transform(ent.Owner).Coordinates);
+            _transform.AttachToGridOrMap(ent);
+        }
+
+        // Give it a good chuck
+        _throwing.TryThrow(ent, _random.NextVector2(), baseThrowSpeed: comp.FlingStrength);
         CreateLightning(ent, comp);
     }
 
@@ -202,6 +221,7 @@ public abstract partial class SharedItemCurseSystem : EntitySystem
         _pvs.RemoveSessionOverride(uid, mindSession);
     }
 
+    // Methods to be overridden in server ItemCurseSystem
     public virtual void CreateLightning(EntityUid ent, ItemCurseComponent comp)
     {
 

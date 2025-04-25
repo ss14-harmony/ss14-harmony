@@ -15,6 +15,9 @@ public sealed partial class ItemCurseSystem : SharedItemCurseSystem
     [Dependency] private readonly ElectrocutionSystem _electrocution = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!;
+
+    // The curse system is mostly handled by SharedItemCurseSystem, this is just overrides for anything which must happen server-side.
+
     public override void CreateLightning(EntityUid ent, ItemCurseComponent comp)
     {
         _popups.PopupEntity(Loc.GetString("item-curse-item-activates", ("item", ent)), ent, PopupType.MediumCaution);
@@ -29,6 +32,5 @@ public sealed partial class ItemCurseSystem : SharedItemCurseSystem
     public override void Snap(EntityUid ent)
     {
         _chat.TryEmoteWithChat(ent, "Snap");
-        Log.Debug(Name(ent));
     }
 }
