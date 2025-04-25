@@ -16,7 +16,7 @@
     tags:
       - HideContextMenu
   - type: AnimationPlayer
-  
+
 - type: entity
   parent: MuzzleFlashEffect
   id: MuzzleFlashEffectOmnilaser
@@ -30,7 +30,7 @@
       map: ["enum.EffectLayers.Unshaded"]
       sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
       state: omnilaser_flash
-  
+
 - type: entity
   parent: MuzzleFlashEffect
   id: MuzzleFlashEffectHeavyLaser
@@ -257,12 +257,12 @@
       fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
-    damage: 33
+    damage: 30  # Harmony Change - Reverts to Pre-Buff (33 -> 30)
   - type: Projectile
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 5
+        Heat: 0
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -302,7 +302,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 1
+        Heat: 0
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -972,7 +972,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 2
+        Heat: 0
     soundHit:
       collection: WeakHit
     forceSound: true
