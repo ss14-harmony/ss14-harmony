@@ -4,8 +4,8 @@ meta:
   engineVersion: 250.0.0
   forkId: harmony
   forkVersion: 29d41e7f548568298be97e9bd045dbc0d1b735ef
-  time: 04/25/2025 10:14:11
-  entityCount: 45059
+  time: 04/26/2025 13:48:04
+  entityCount: 45065
 maps:
 - 1
 grids:
@@ -17587,6 +17587,31 @@ entities:
     - type: GridAtmosphere
       version: 2
       data:
+        tiles:
+          0,0:
+            0: 273
+          0,-1:
+            0: 4352
+          -1,0:
+            0: 8
+          -1,-1:
+            0: 32768
+        uniqueMixes:
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 21.824879
+          - 82.10312
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
         chunkSize: 4
     - type: GasTileOverlay
     - type: IFF
@@ -19656,8 +19681,6 @@ entities:
       parent: 2
     - type: DeviceList
       devices:
-      - 17343
-      - 16448
       - 14527
   - uid: 37662
     components:
@@ -20237,7 +20260,7 @@ entities:
       pos: 16.5,-9.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -1212074.2
+      secondsUntilStateChange: -1213018.4
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -22307,7 +22330,7 @@ entities:
       pos: -40.5,-18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -341279.7
+      secondsUntilStateChange: -342223.78
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -22666,7 +22689,7 @@ entities:
       pos: -66.5,139.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -290016.72
+      secondsUntilStateChange: -290960.8
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -22839,7 +22862,7 @@ entities:
       pos: -46.5,155.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -293165.78
+      secondsUntilStateChange: -294109.88
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -23264,7 +23287,7 @@ entities:
       pos: 5.5,2.5
       parent: 13260
     - type: Door
-      secondsUntilStateChange: -296977.16
+      secondsUntilStateChange: -297921.25
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -67864,6 +67887,11 @@ entities:
     - type: Transform
       pos: 60.5,-8.5
       parent: 2
+  - uid: 41327
+    components:
+    - type: Transform
+      pos: 55.5,158.5
+      parent: 2
   - uid: 41329
     components:
     - type: Transform
@@ -68118,6 +68146,11 @@ entities:
     components:
     - type: Transform
       pos: 115.5,88.5
+      parent: 2
+  - uid: 42233
+    components:
+    - type: Transform
+      pos: 56.5,158.5
       parent: 2
   - uid: 42265
     components:
@@ -69084,6 +69117,16 @@ entities:
     - type: Transform
       pos: 6.5,0.5
       parent: 11079
+  - uid: 45040
+    components:
+    - type: Transform
+      pos: 57.5,158.5
+      parent: 2
+  - uid: 45044
+    components:
+    - type: Transform
+      pos: 58.5,158.5
+      parent: 2
   - uid: 45052
     components:
     - type: Transform
@@ -98575,6 +98618,11 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -83.5,38.5
       parent: 2
+  - uid: 16448
+    components:
+    - type: Transform
+      pos: 82.5,65.5
+      parent: 2
   - uid: 16450
     components:
     - type: Transform
@@ -105300,11 +105348,6 @@ entities:
     - type: Transform
       pos: 83.5,65.5
       parent: 2
-  - uid: 42233
-    components:
-    - type: Transform
-      pos: 82.5,65.5
-      parent: 2
   - uid: 42234
     components:
     - type: Transform
@@ -105649,6 +105692,18 @@ entities:
       rot: 3.141592653589793 rad
       pos: 35.5,215.5
       parent: 2
+  - uid: 45060
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -0.5,0.5
+      parent: 44961
+  - uid: 45062
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -0.5,-0.5
+      parent: 44961
 - proto: Cautery
   entities:
   - uid: 28417
@@ -110991,6 +111046,13 @@ entities:
     - type: Transform
       pos: 8.5,8.5
       parent: 23150
+  - uid: 45065
+    components:
+    - type: Transform
+      pos: 0.5,1.5
+      parent: 44961
+    - type: Anchorable
+      flags: Anchorable
 - proto: ComputerShuttleCargo
   entities:
   - uid: 38952
@@ -110998,11 +111060,6 @@ entities:
     - type: Transform
       pos: 107.5,104.5
       parent: 2
-  - uid: 45044
-    components:
-    - type: Transform
-      pos: 0.5,1.5
-      parent: 44961
 - proto: ComputerSolarControl
   entities:
   - uid: 7303
@@ -180325,11 +180382,9 @@ entities:
   - uid: 17343
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: 58.5,158.5
       parent: 2
-    - type: DeviceNetwork
-      deviceLists:
-      - 14520
   - uid: 37656
     components:
     - type: Transform
@@ -183442,16 +183497,6 @@ entities:
       parent: 2
 - proto: GasVentScrubberVox
   entities:
-  - uid: 16448
-    components:
-    - type: Transform
-      pos: 58.5,156.5
-      parent: 2
-    - type: DeviceNetwork
-      deviceLists:
-      - 14520
-    - type: AtmosPipeColor
-      color: '#FF1212FF'
   - uid: 37658
     components:
     - type: Transform
@@ -183460,6 +183505,12 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 37662
+  - uid: 40520
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 58.5,156.5
+      parent: 2
 - proto: GasVolumePump
   entities:
   - uid: 8221
@@ -197718,6 +197769,10 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,-0.5
       parent: 44961
+    - type: Physics
+      torque: 1
+    - type: Anchorable
+      flags: Anchorable
 - proto: GyroscopeUnanchored
   entities:
   - uid: 32892
@@ -198888,7 +198943,7 @@ entities:
       pos: -24.5,-48.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -595984.1
+      secondsUntilStateChange: -596928.25
       state: Opening
   - uid: 18444
     components:
@@ -202207,11 +202262,12 @@ entities:
       parent: 2
 - proto: MailBag
   entities:
-  - uid: 41327
+  - uid: 45066
     components:
     - type: Transform
-      pos: 91.26213,66.63924
-      parent: 2
+      rot: -1.5707963267948966 rad
+      pos: 0.47489548,0.6797943
+      parent: 44961
 - proto: MailingUnit
   entities:
   - uid: 1192
@@ -216939,11 +216995,6 @@ entities:
     components:
     - type: Transform
       pos: 51.5,148.5
-      parent: 2
-  - uid: 40520
-    components:
-    - type: Transform
-      pos: 58.5,154.5
       parent: 2
   - uid: 40521
     components:
@@ -249011,12 +249062,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,-1.5
       parent: 44961
-  - uid: 45040
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 0.5,2.5
-      parent: 44961
   - uid: 45042
     components:
     - type: Transform
@@ -249027,6 +249072,12 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -0.5,-0.5
+      parent: 44961
+  - uid: 45061
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 0.5,2.5
       parent: 44961
 - proto: ThrusterUnanchored
   entities:
@@ -278238,7 +278289,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -300805.12
+      secondsUntilStateChange: -301749.22
       state: Opening
     - type: Airlock
       autoClose: False
@@ -278461,7 +278512,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -681528.2
+      secondsUntilStateChange: -682472.3
       state: Opening
     - type: Airlock
       autoClose: False
@@ -279574,6 +279625,14 @@ entities:
     - type: Transform
       pos: -12.5,167.5
       parent: 2
+- proto: WindowClockworkDirectional
+  entities:
+  - uid: 45064
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,1.5
+      parent: 44961
 - proto: WindowDirectional
   entities:
   - uid: 237
@@ -283601,7 +283660,7 @@ entities:
       pos: 10.5,6.5
       parent: 13260
     - type: Door
-      secondsUntilStateChange: -791975.6
+      secondsUntilStateChange: -792919.75
       state: Opening
   - uid: 13491
     components:
