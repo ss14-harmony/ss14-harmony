@@ -80,6 +80,7 @@ namespace Content.IntegrationTests.Tests
             "Atlas", // Harmony revived by Kravin
             "Mira", // Harmony, developed by tanuko
             "Eclipse", //Harmony, Developed by Lachryphage
+            "Vanquish" //Harmony, developed by Lachryphage
             "Dev",
             "TestTeg",
             "Fland",

@@ -1,0 +1,58 @@
+- type: gameMap
+  id: Akatsumi
+  mapName: 'vanquish'
+  mapPath: /Maps/_Harmony/vanquish.yml
+  minPlayers: 0
+  maxPlayers: 15
+  stations:
+    Akatsumi:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Akatsumi Syndicate Cruiser {1}'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/_Harmony/shuttles/emergency_vanquish.yml
+        - type: StationJobs
+          availableJobs:
+            #service
+            Bartender: [ 1, 1 ]
+            Botanist: [ 1, 1]
+            Chef: [ 1, 1 ]
+            Janitor: [ 1, 1 ]
+            Captain: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+            ServiceWorker: [ 1, 1 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 1, 2 ]
+            AtmosphericTechnician: [ 1, 2 ]
+            TechnicalAssistant: [ 1, 1 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            MedicalDoctor: [ 2, 3 ]
+            Chemist: [ 1, 1 ]
+            MedicalIntern: [ 1, 1 ]
+            Paramedic: [ 1, 1 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 2, 2 ]
+            ResearchAssistant: [ 1, 1 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 3, 3 ]
+            Warden: [ 1, 1 ]
+            SecurityCadet: [ 1, 1 ]
+            Detective: [ 1, 1 ]
+            #supply
+            CargoTechnician: [ 2, 2 ]
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 2, 2 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            # silicon
+            Borg: [ 1, 2 ]
+
