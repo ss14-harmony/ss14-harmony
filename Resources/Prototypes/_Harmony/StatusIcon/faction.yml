@@ -1,0 +1,10 @@
+- type: factionIcon
+  id: BloodBrotherFaction
+  priority: 11
+  showTo:
+    components:
+    - SwowAntagIcons
+    - BloodBrother
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Revolutionary # TODO: get an actual icon

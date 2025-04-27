@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseGameRule
+  id: BloodBrothers
+  components:
+  - type: AntagSelection
+    agentName: blood-brothers-round-end-agent-name
+    selectionTime: IntraPlayerSpawn
+    definitions:
+    - prefRoles: [ BloodBrother ]
+      max: 1 # Don't allow two blood brother pairs
+      playerRatio: 1
+      allowNonHumans: true
+      multiAntagSetting: NotExclusive
+      components:
+      - type: BloodBrother
+      - type: InitialBloodBrother
+      mindRoles:
+      - MindRoleBloodBrother

@@ -1,0 +1,12 @@
+- type: entity
+  id: ActionBloodBrotherConvert
+  name: Convert
+  description: Convert a crew-member into your brother.
+  components:
+  - type: EntityTargetAction
+    event: !type:BloodBrotherConvertActionEvent
+    whitelist:
+      components:
+      - HumanoidAppearance
+    canTargetSelf: false
+    keywords: [ Convert, Blood Brothers ]
