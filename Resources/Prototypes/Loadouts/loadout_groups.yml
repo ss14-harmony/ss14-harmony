@@ -8,10 +8,10 @@
   - FlowerWreath
   - Hairflower
   - Headphones
-  # Harmony Change: Playing Cards
-  - CardBoxNanotrasen
+  #Harmony Change Start: Playing Cards
   - CardBoxBlack
-  # End Harmony Change
+  - CardBoxNanotrasen
+  #Harmony Change End
   - PlushieLizard
   - PlushieSpaceLizard
   - ThreeCandles
@@ -1147,7 +1147,7 @@
   loadouts:
   - DetectiveArmorVest
   - DetectiveCoat
-  - DetectiveCoatGrey 
+  - DetectiveCoatGrey
   - DetectiveBlueCoatHarmony # Harmony
   - DetectiveBomberCoatHarmony # Harmony
   - DetectiveDiscoCoatHarmony # Harmony
