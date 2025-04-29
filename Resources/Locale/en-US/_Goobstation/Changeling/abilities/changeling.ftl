@@ -4,10 +4,11 @@ changeling-chemicals-deficit = Not enough chemicals!
 changeling-action-fail-lesserform = Can't use it while in lesser form!
 changeling-action-fail-absorbed = Need to absorb {$number} more organics to use it!
 
-# Harmony - might as well fix this typo
+# Harmony - Might as well fix this typo
 changeling-absorb-start = {CAPITALIZE(THE($user))} starts absorbing {CAPITALIZE(THE($target))}!
 changeling-absorb-fail-incapacitated = You can't absorb it until it's not incapacitated.
-changeling-absorb-fail-absorbed = You've already absorbed it.
+# Harmony - "You've already absorbed it" is wrong if another ling absorbed them or they were already absorbed (cargo corpses)
+changeling-absorb-fail-absorbed = It's already been absorbed.
 changeling-absorb-fail-unabsorbable = The target is not absorbable.
 changeling-absorb-end-self = Another organic absorbed. You are evolving.
 changeling-absorb-end-self-ling = Another changeling absorbed. You are evolving more rapidly.
