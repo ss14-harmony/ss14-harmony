@@ -132,27 +132,31 @@
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/cmo_turtle.rsi
 
+# Harmony Change - Updates sprite pathing, contraband level, name, and description.
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ClothingUniformSkirtBase, BaseSecurityContraband]
   id: ClothingUniformJumpskirtDetective
-  name: hard-worn suit
-  description: Someone who wears this means business.
+  name: detective's hard-worn suitskirt
+  description: This suit used to really catch the light. The tie is god awful.
   components:
     - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/detective.rsi
+      sprite: _Harmony/Clothing/Uniforms/Jumpskirt/detective.rsi
     - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/detective.rsi
+      sprite: _Harmony/Clothing/Uniforms/Jumpskirt/detective.rsi
+# End of Harmony changes.
 
+# Harmony Change - Updates sprite pathing, contraband level, name, and description.
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ClothingUniformSkirtBase, BaseSecurityContraband]
   id: ClothingUniformJumpskirtDetectiveGrey
-  name: noir suit
-  description: A hard-boiled private investigator's grey suit, complete with tie clip.
+  name: detective's noir suitskirt
+  description: Beyond the shadow of a doubt, this is the epitome of impeccable tailoring.
   components:
     - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/detective_grey.rsi
+      sprite: _Harmony/Clothing/Uniforms/Jumpskirt/detective_grey.rsi
     - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/detective_grey.rsi
+      sprite: _Harmony/Clothing/Uniforms/Jumpskirt/detective_grey.rsi
+# End of Harmony changes.
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -210,6 +214,17 @@
     sprite: Clothing/Uniforms/Jumpskirt/hos_parade.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/hos_parade.rsi
+
+- type: entity
+  parent: [ClothingUniformSkirtBase, BaseCommandContraband]
+  id: ClothingUniformJumpskirtCommandGeneric
+  name: command jumpskirt
+  description: A generic Command-colored jumpsuit not associated with any particular department.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/commandgeneric.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/commandgeneric.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -285,7 +300,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpskirtPrisoner
   name: prisoner jumpskirt
-  description: Busted.
+  description: A jumpskirt used for prisoners. It has suit sensors automatically enabled at all times.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/color.rsi
@@ -580,7 +595,7 @@
       sprite: Clothing/Uniforms/Jumpskirt/lawyergood.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ ClothingUniformSkirtBase, BaseSyndicateContraband ]
   id: ClothingUniformJumpskirtSyndieFormalDress
   name: syndicate formal dress
   description: "The syndicate's uniform is made in an elegant style, it's even a pity to do dirty tricks in this."
