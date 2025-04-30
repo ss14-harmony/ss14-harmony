@@ -24,7 +24,9 @@
     definitions:
     - prefRoles: [ Changeling ]
       max: 1
-      playerRatio: 1 # 10 normally, 1 for testing   ...Harmony - Then why is it set to 1? This makes it sound like it's meant to be 10, but I'll leave it as-is.
+      # Harmony - I'm gonna assume that means I should set it to 10
+      #playerRatio: 1 # 10 normally, 1 for testing
+      playerRatio: 10
       blacklist:
         components:
           - AntagImmune
@@ -32,6 +34,7 @@
       components:
       - type: ChangelingInfection # Funky: Made midround lings infections instead of instant.
         needsInitialization: true
-  - type: Tag
-    tags:
-      - MidroundAntag
+# Harmony - I think this is more dynamic gamemode stuff
+#  - type: Tag
+#    tags:
+#      - MidroundAntag

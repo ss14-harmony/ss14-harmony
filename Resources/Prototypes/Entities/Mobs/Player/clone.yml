@@ -72,6 +72,8 @@
   - HeadRevolutionary
   - Revolutionary
   - NukeOperative
+  # Harmony - Changeling port. A paradox clone of a changeling should also be a changeling
+  - Changeling
 
 # for cloning pods
 - type: cloningSettings

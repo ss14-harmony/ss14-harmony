@@ -6,5 +6,7 @@
       - ShowAntagIcons
       - Hivemind
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
+    # Harmony - This shouldn't be in the upstream icon rsi so I've moved it to it's own file in the goob namespace
+    #sprite: /Textures//Interface/Misc/job_icons.rsi  
+    sprite: /Textures/_Goobstation/Interface/Misc/job_icons.rsi
     state: Changeling
