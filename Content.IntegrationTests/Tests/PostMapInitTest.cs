@@ -72,7 +72,6 @@ namespace Content.IntegrationTests.Tests
 
         private static readonly string[] GameMaps =
         {
-            "dm01-entryway", // Harmony, deathmatch PROMOD map by Unisol
             "dm02-sandbomb", // Harmony, deathmatch PROMOD map by Unisol
             "Xeno", // Harmony, playtest for upstream by SlamBamActionman
             "Barratry", // Harmony, revived by Spanky
@@ -102,7 +101,8 @@ namespace Content.IntegrationTests.Tests
             "Plasma",
             "Elkridge",
             "Convex",
-            "Relic"
+            "Relic",
+            "dm01-entryway",
         };
 
         /// <summary>
