@@ -57,6 +57,8 @@
   - SouthernAccent
   - SpanishAccent
   - StutteringAccent
+  # Harmony - Changeling port. Changeling paradox clones should still have their evolution menu
+  - Store
   blacklist:
     components:
     - AttachedClothing # helmets, which are part of the suit

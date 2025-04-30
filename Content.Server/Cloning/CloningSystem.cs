@@ -17,6 +17,12 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+// Harmony change begins
+using Content.Shared.Store.Components;
+using Content.Shared.Changeling;
+using Content.Shared.FixedPoint;
+using Content.Shared.Store;
+// Harmony change ends
 
 namespace Content.Server.Cloning;
 
@@ -79,6 +85,20 @@ public sealed partial class CloningSystem : EntitySystem
                 if (HasComp(clone.Value, componentRegistration.Type)) // CopyComp cannot overwrite existing components
                     RemComp(clone.Value, componentRegistration.Type);
                 CopyComp(original, clone.Value, sourceComp);
+                // Harmony change begins - Item-based stores (uplinks) always have full currency on clones since a new entity is created from the prototype.
+                // However, stores contained within the entity themself (changelings currently, but maybe others in the future) are copied directly to the clone.
+                // This means a changeling paradox clone will have the original's evo point count (possibly 0) but none of the abilities.
+                // This checks for a store component, allowing the starting values to be set as their base amount.
+                // Hopefully this is more fair on the clone and also more consistent with item store copying functionality.
+                if (TryComp<StoreComponent>(clone.Value, out var store))
+                {
+                    // Other components with base starting currency for their own store can be added in here if needed
+                    if (TryComp<ChangelingComponent>(clone.Value, out var lingComp))
+                        store.Balance = new Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> { { "EvolutionPoint", lingComp.StartingEvolutionPoints } };
+
+                    store.BoughtEntities = new();
+                }
+                // Harmony change ends
             }
         }
 

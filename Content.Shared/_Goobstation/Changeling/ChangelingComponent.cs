@@ -133,6 +133,11 @@ public sealed partial class ChangelingComponent : Component
 
     [ViewVariables(VVAccess.ReadOnly)]
     public TransformData? SelectedForm;
+
+    /// <summary>
+    ///     Harmony - The amount of evolution points a changeling starts with.
+    /// </summary>
+    public float StartingEvolutionPoints = 16f;
 }
 
 [DataDefinition]

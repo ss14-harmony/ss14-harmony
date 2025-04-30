@@ -85,7 +85,9 @@ public sealed partial class ChangelingRuleSystem : GameRuleSystem<ChangelingRule
         foreach (var category in rule.StoreCategories)
             store.Categories.Add(category);
         store.CurrencyWhitelist.Add(Currency);
-        store.Balance.Add(Currency, 16);
+        // Harmony - I'm un-hardcoding the starting evo point balance and moving it to the changeling comp cos it's causing issues
+        if (TryComp<ChangelingComponent>(target, out var comp))
+            store.Balance.Add(Currency, comp.StartingEvolutionPoints);
 
         rule.ChangelingMinds.Add(mindId);
 
