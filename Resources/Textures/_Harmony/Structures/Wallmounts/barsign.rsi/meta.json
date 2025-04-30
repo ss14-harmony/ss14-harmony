@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "size": {
+    "x": 64,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "textures by burd",
+  "states": [
+    {
+      "name": "mcliltens",
+      "delays": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    }
+  ]
+}

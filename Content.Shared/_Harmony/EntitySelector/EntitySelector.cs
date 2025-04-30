@@ -41,12 +41,15 @@ public abstract partial class EntitySelector
         if (!Initialized)
             Initialize();
 
+        if (SubSelectors.Count == 0)
+            return true;
+
         foreach (var subSelector in SubSelectors)
         {
-            if (!subSelector.Matches(entity))
-                return false;
+            if (subSelector.Matches(entity))
+                return true;
         }
 
-        return true;
+        return false;
     }
 }
