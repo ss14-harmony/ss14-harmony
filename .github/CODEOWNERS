@@ -1,14 +1,14 @@
 # Last match in file takes precedence.
 
 # Everything
-*                                                   @KeldWolf @FluffMe
+*                                                   @KeldWolf @FluffMe @youtissoum
 
 # C# code
-/Content.*/                                         @KeldWolf @FluffMe
+/Content.*/                                         @KeldWolf @FluffMe @youtissoum
 
 # YML files
-/Resources/*.yml                                    @KeldWolf @FluffMe
-/Resources/**/*.yml                                 @KeldWolf @FluffMe
+/Resources/*.yml                                    @KeldWolf @FluffMe @youtissoum @Zap527
+/Resources/**/*.yml                                 @KeldWolf @FluffMe @youtissoum @Zap527
 
 # Sprites
 /Resources/Textures/                                @DieselMohawk

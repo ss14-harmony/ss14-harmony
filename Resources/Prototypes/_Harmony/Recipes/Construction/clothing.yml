@@ -8,3 +8,15 @@
   description: Rubber boots. Quack Quack!
   icon: { sprite: _Harmony/Clothing/Shoes/Misc/ducky-galoshes.rsi, state: icon }
   objectType: Item
+
+- type: construction
+  name: goliath cloak
+  id: ClothingGoliathCloak
+  graph: ClothingGoliathCloak
+  startNode: start
+  targetNode: cloak
+  category: construction-category-clothing
+  description: Makes you look spooky
+  icon: { sprite: Clothing/Neck/Cloaks/goliathcloak.rsi, state: icon }
+  objectType: Item
+

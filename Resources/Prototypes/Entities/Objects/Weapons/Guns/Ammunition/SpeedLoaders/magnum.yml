@@ -18,6 +18,10 @@
     containers:
       ballistic-ammo: !type:Container
         ents: []
+  # Harmony Start
+  - type: Item
+    size: Tiny
+  # Harmony END
 
 - type: entity
   id: SpeedLoaderMagnum

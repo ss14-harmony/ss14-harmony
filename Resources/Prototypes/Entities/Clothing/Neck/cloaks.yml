@@ -161,6 +161,11 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+  # Harmony Start
+  - type: Construction
+    graph: ClothingGoliathCloak
+    node: cloak
+  # Harmony End
 
 - type: entity
   parent: ClothingNeckBase

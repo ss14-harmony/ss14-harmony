@@ -36,9 +36,13 @@
   description: A special suit that protects against hazardous, low pressure environments. Has thermal shielding.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/atmospherics.rsi
+  #start of Harmony change : Update sprite pathing
+    #sprite: Clothing/OuterClothing/Hardsuits/atmospherics.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/atmospherics.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/atmospherics.rsi
+    #sprite: Clothing/OuterClothing/Hardsuits/atmospherics.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/atmospherics.rsi
+  #end of Harmony change
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -72,9 +76,13 @@
   description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi
+#  start of Harmony change : Update sprite pathing
+#   sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/engineering.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi
+#   sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/engineering.rsi
+#  end of Harmony change
   - type: PressureProtection
     highPressureMultiplier: 0.04
     lowPressureMultiplier: 1000
@@ -373,9 +381,13 @@
   description: A special hardsuit that protects against hazardous, low pressure environments, made for the chief engineer of the station.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/engineering-white.rsi
+#  start of Harmony change : Update sprite pathing
+#   sprite: Clothing/OuterClothing/Hardsuits/engineering-white.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/engineering-white.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/engineering-white.rsi
+#   sprite: Clothing/OuterClothing/Hardsuits/engineering-white.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/engineering-white.rsi
+#  end of Harmony change
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -533,6 +545,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitLuxury
 
 #ANTAG HARDSUITS
+# Harmony change. Updated sprite file path due to resprite
 #Blood-red Hardsuit
 - type: entity
   parent: [ ClothingOuterHardsuitBase, BaseSyndicateContraband ]
@@ -541,11 +554,15 @@
   description: A heavily armored hardsuit designed for work in special operations. Property of Gorlex Marauders.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
+  #start of Harmony change
+    #sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/syndicate.rsi
   - type: Item
     size: Huge
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
+    #sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/syndicate.rsi
+  #end of Harmony change
   - type: PressureProtection
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000
@@ -574,6 +591,7 @@
     - Hardsuit
     - WhitelistChameleon
 
+# Harmony change. Updated sprite file path due to resprite
 # Syndicate Medic Hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitSyndie, BaseSyndicateContraband]
@@ -582,16 +600,21 @@
   description: A heavily armored and agile advanced hardsuit specifically designed for field medic operations.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/syndiemedic.rsi
+  #start of Harmony change
+    #sprite: Clothing/OuterClothing/Hardsuits/syndiemedic.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/syndiemedic.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/syndiemedic.rsi
+    #sprite: Clothing/OuterClothing/Hardsuits/syndiemedic.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/syndiemedic.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieMedic
+  #end of Harmony change
   - type: Tag
     tags:
     - Hardsuit
     - WhitelistChameleon
 
+# Harmony change. Updated sprite file path due to resprite
 #Syndicate Elite Hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband]
@@ -600,9 +623,13 @@
   description: An elite version of the blood-red hardsuit, with improved radiation resistance and fireproofing. Property of Gorlex Marauders.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
+  #start of Harmony change
+    #sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/syndieelite.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
+    #sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/syndieelite.rsi
+  #end of Harmony change
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -633,6 +660,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieElite
 
+# Harmony change. Updated sprite file path due to resprite
 #Syndicate Commander Hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband]
@@ -641,9 +669,13 @@
   description: A bulked up version of the blood-red hardsuit, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
+  #start of Harmony change
+    #sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
+    #sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
+  #end of Harmony change
   - type: PressureProtection
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000

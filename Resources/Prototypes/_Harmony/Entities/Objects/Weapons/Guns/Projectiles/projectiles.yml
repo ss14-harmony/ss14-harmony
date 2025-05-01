@@ -1,0 +1,102 @@
+- type: entity
+  id: BulletLaserBaseHarmony
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  abstract: true
+  components:
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: FlyBySound
+    sound:
+      collection: EnergyMiss
+      params:
+        volume: 5
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.3,0.15,0.3"
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
+      fly-by: &flybyfixture
+        shape: !type:PhysShapeCircle
+          radius: 1.5
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        hard: False
+  - type: Ammo
+  - type: Projectile
+
+- type: entity
+  name: laser bolt medium
+  id: BulletLaserHarmony
+  parent: BulletLaserBaseHarmony
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/laser_projectile.rsi
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#ff4300"
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 15
+
+- type: entity
+  name: laser bolt unstable
+  id: BulletLaserUnstableHarmony
+  parent: [BulletLaserBaseHarmony, BaseBulletTrigger]
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/large_projectile.rsi
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#ff4300"
+    radius: 10
+    energy: 3
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 5
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: LaserBombHarmony
+    totalIntensity: 50
+    intensitySlope: 5
+    maxIntensity: 20
+
+- type: entity
+  name: laser bolt x-ray
+  id: BulletLaserXRayHarmony
+  parent: BulletLaserBaseHarmony
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/xray_projectile.rsi
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#15cb2a"
+  - type: Projectile
+    impactEffect: BulletImpactEffectXRayHarmony
+    damage:
+      types:
+        Heat: 10
+        Radiation: 6

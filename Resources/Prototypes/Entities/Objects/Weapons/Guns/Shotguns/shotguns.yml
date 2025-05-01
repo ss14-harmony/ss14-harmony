@@ -175,6 +175,10 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 1
+    # Start of Harmony change
+    soundGunshot:
+      path: /Audio/_Harmony/Weapons/Guns/Gunshots/kammerer_shot.ogg
+    # End of Harmony change
   - type: Tag
     tags:
     - WeaponShotgunKammerer

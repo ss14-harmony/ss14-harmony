@@ -1083,6 +1083,7 @@
     preinstalled:
       - NotekeeperCartridge
       - NanoTaskCartridge
+      - AstroNavCartridge # Harmony change to give Syndicate PDA AstroNav
 
 - type: entity
   parent: BaseSecurityPDA
@@ -1457,6 +1458,7 @@
       - NotekeeperCartridge
       - NanoTaskCartridge
       - MedTekCartridge
+      - AstroNavCartridge # Harmony change to give Syndicate Agent PDA AstroNav
 
 - type: entity
   parent: BasePDA
