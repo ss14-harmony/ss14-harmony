@@ -30,7 +30,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: AmeControllerUnanchored
+      - id: AmeControllerFlatpack #Harmony Change
 
 # Singularity
 

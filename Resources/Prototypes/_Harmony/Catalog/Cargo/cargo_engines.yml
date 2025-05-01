@@ -1,0 +1,19 @@
+﻿- type: cargoProduct
+  id: EngineAmePart
+  icon:
+    sprite: Objects/Devices/flatpack.rsi
+    state: ame-part
+  product: CrateAmeParts
+  cost: 3500
+  category: cargoproduct-category-name-engineering
+  group: market
+
+- type: cargoProduct
+  id: EngineAmeController
+  icon:
+    sprite: Structures/Power/Generation/ame.rsi
+    state: static
+  product: CrateEngineeringAMEControl
+  cost: 5000
+  category: cargoproduct-category-name-engineering
+  group: market

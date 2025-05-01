@@ -1,0 +1,11 @@
+﻿- type: entity
+  parent: BaseFlatpack
+  id: AmeControllerFlatpack
+  name: AME controller flatpack
+  description: A flatpack for constructing a ame controller.
+  components:
+  - type: Flatpack
+    entity: AmeController
+  - type: Sprite
+    layers:
+    - state: ame-controller

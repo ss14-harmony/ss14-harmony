@@ -8,6 +8,9 @@
     },
     "states": [
         {
+            "Name": "ame-controller"
+        },
+        {
             "name": "base"
         },
         {

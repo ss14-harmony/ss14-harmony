@@ -1,0 +1,10 @@
+﻿- type: entity
+  id: CrateAmeParts
+  parent: CrateEngineering
+  name: antimatter parts crate
+  description: A crate containing 3 AME part flatpacks.
+  components:
+  - type: StorageFill
+    contents:
+    - id: AmePartFlatpack
+      amount: 3
