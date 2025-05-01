@@ -147,6 +147,19 @@
     stock: 1
 
 - type: listing
+  id: SpellbookKnock
+  name: spellbook-knock-name
+  description: spellbook-knock-desc
+  productAction: ActionKnock
+  cost:
+    WizCoin: 1
+  categories:
+  - SpellbookUtility
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
   id: SpellbookCharge
   name: spellbook-charge-name
   description: spellbook-charge-desc
@@ -277,7 +290,7 @@
   - SpellbookEvents
   conditions:
   - !type:ListingLimitedStockCondition
-    stock: 1
+    stock: 0 # Harmony change
 
 - type: listing
   id: SpellbookEventSummonGuns
@@ -290,7 +303,7 @@
   - SpellbookEvents
   conditions:
   - !type:ListingLimitedStockCondition
-    stock: 1
+    stock: 0 # Harmony change
   disableRefund: true
 
 - type: listing
@@ -304,7 +317,7 @@
   - SpellbookEvents
   conditions:
   - !type:ListingLimitedStockCondition
-    stock: 1
+    stock: 0 # Harmony change
   disableRefund: true
 
 # Upgrades

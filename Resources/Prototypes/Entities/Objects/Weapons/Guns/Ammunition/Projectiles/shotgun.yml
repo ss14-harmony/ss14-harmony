@@ -10,7 +10,14 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 28
+# Start of Harmony Change: Updates slug damages and gives it penetration
+#        Piercing: 28
+        Piercing: 37
+        Structural: 75
+    penetrationThreshold: 75
+    penetrationDamageTypeRequirement:
+    - Structural
+# End of Harmony Change
 
 - type: entity
   id: PelletShotgunBeanbag

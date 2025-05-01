@@ -12,15 +12,6 @@
 # Ammo
 # Chemicals
 # Deception
-- type: listing
-  id: UplinkSmugglerSatchel
-  name: uplink-smuggler-satchel-name
-  description: uplink-smuggler-satchel-desc
-  productEntity: ClothingSatchelSmugglers
-  cost:
-    Telecrystal: 3
-  categories:
-  - UplinkDeception
 
 - type: listing
   id: UplinkSyndicateIDHarmony
@@ -67,6 +58,26 @@
     Telecrystal: 4
   categories:
   - UplinkWearables
+
+- type: listing
+  id: UplinkClothingOuterArmorRaidHarmony
+  name: uplink-syndie-raid-name
+  description: uplink-syndie-raid-desc
+  icon: { sprite: /Textures/Clothing/OuterClothing/Armor/syndie-raid.rsi, state: icon }
+  productEntity: ClothingBackpackSyndicateRaidBundle
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 7
+  cost:
+    Telecrystal: 12
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+        - NukeOpsUplink
+
 # Pointless
 - type: listing
   id: UplinkClusterWeh
