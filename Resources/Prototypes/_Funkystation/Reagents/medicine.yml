@@ -13,7 +13,10 @@
       - !type:HealthChange
         damage:
           types:
-            Cellular: 5
+          # Harmony - This means 4u does 200 genetic damage. 1 hypopen click is pretty much round removal.
+          # I know it's hard to make but holy hell I'm reducing it to 1 genetic (10 genetic per 1u, which might STILL be overtuned but eh)
+          # Cellular: 5
+            Cellular: 1
       - !type:Jitter
         conditions:
         - !type:ReagentThreshold
