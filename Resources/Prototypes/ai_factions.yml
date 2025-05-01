@@ -21,6 +21,7 @@
   - Dragon
   - AllHostile
   - Wizard
+  - Xenoborg
   - Changeling  # Harmony - Changeling port
 
 - type: npcFaction
@@ -53,9 +54,11 @@
   - PetsNT
   - Zombie
   - Revolutionary
+  - Dragon
+  - Xeno
   - AllHostile
   - Wizard
-  - Dragon
+  - Xenoborg
 
 - type: npcFaction
   id: SimpleNeutral
@@ -71,6 +74,7 @@
   - Dragon
   - AllHostile
   - Wizard
+  - Xenoborg
   - Changeling  # Harmony - Changeling port
 
 - type: npcFaction
@@ -85,6 +89,7 @@
   - AllHostile
   - Wizard
   - Dragon
+  - Xenoborg
 
 - type: npcFaction
   id: Zombie
@@ -99,6 +104,7 @@
   - AllHostile
   - Wizard
   - Dragon
+  - Xenoborg
   - Changeling  # Harmony - Changeling port
 
 - type: npcFaction
@@ -110,6 +116,7 @@
   - Dragon
   - AllHostile
   - Wizard
+  - Xenoborg
 
 - type: npcFaction
   id: AllHostile
@@ -126,6 +133,7 @@
   - Zombie
   - Revolutionary
   - Wizard
+  - Xenoborg
   - Changeling  # Harmony - Changeling port
 
 - type: npcFaction
@@ -142,4 +150,21 @@
   - Xeno
   - Zombie
   - Revolutionary
+  - AllHostile
+  - Xenoborg
+
+- type: npcFaction
+  id: Xenoborg
+  hostile:
+  # they have brains
+  - NanoTrasen
+  - Syndicate
+  - Zombie
+  - Revolutionary
+  - Wizard
+
+  - Xeno # rivalry
+
+  # cause they are hostile to them
+  - SimpleHostile 
   - AllHostile

@@ -47,6 +47,7 @@
   cost: 7500
   recipeUnlocks:
   - WeaponLaserCarbine
+  - WeaponEnergyCarbineHarmony # Harmony Change: Adds the energy Carbine to the Laser Munipulation Research.
 
 - type: technology
   id: NonlethalAmmunition
@@ -142,6 +143,7 @@
   cost: 10000
   recipeUnlocks:
   - WeaponLaserCannon
+  - EnergyCartridgeUnstablePrintedHarmony # Harmony Change: Adds the Unstable Energy Cartridge to the Concentrated Laser Research
 
 - type: technology
   id: WaveParticleHarnessing
@@ -154,6 +156,7 @@
   cost: 10000
   recipeUnlocks:
   - WeaponXrayCannon
+  - EnergyCartridgeXRayPrintedHarmony # Harmony Change: Adds the X-ray Energy Cartridge to the Wave Particle Research
 
 - type: technology
   id: BasicShuttleArmament
@@ -193,16 +196,16 @@
   - PortableRecharger
 
 - type: technology
-  id: ExperimentalBatteryAmmo
-  name: research-technology-experimental-battery-ammo
+  id: ThermalWeaponry
+  name: research-technology-thermal-weaponry
   icon:
-    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
+    sprite: Objects/Weapons/Guns/Battery/temp_gun.rsi
     state: icon
   discipline: Arsenal
   tier: 3
   cost: 15000
   recipeUnlocks:
-  - WeaponLaserSvalinn
+  - WeaponTemperatureGun
 
 - type: technology
   id: AdvancedShuttleWeapon
