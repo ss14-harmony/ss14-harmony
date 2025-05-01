@@ -72,6 +72,10 @@
       - StealCondition
       - SurviveCondition #Harmony change
   - type: DieCondition
+    # Begin Harmony specfic change
+  - type: ObjectiveLimit
+    limit: 1 # Not everyone gets to run it down!
+    # End Harmony specific change
 
 #- type: entity
 #  parent: [BaseTraitorObjective, BaseLivingObjective]

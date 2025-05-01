@@ -153,6 +153,14 @@ namespace Content.Shared.Roles
         /// </summary>
         [DataField]
         public List<ProtoId<GuideEntryPrototype>>? Guides;
+
+        // Harmony start
+        /// <summary>
+        /// Whether the job should be allowed to use restricted contraband.
+        /// </summary>
+        [DataField]
+        public bool AllowRestrictedContraband = true;
+        // Harmony end
     }
 
     /// <summary>
