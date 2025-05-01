@@ -51,6 +51,7 @@
   - SpeedLoaderMagnum
   - SpeedLoaderMagnumEmpty
   - StripperClip  # Harmony change - part of RSC PR
+  - EnergyCartridgePrintedHarmony # Harmony Change: Adds the lethal energy cartridge to the security recipe pack
 
 
 - type: latheRecipePack
@@ -121,6 +122,8 @@
   - MagazineShotgunIncendiary
   - SpeedLoaderMagnumIncendiary
   - SpeedLoaderMagnumUranium
+  - EnergyCartridgeUnstablePrintedHarmony # Harmony Change: Adds the unstable energy cartridge to the security recipe pack
+  - EnergyCartridgeXRayPrintedHarmony # Harmony Change: Adds the x-ray energy cartridge to the security recipe pack
 
 - type: latheRecipePack
   id: SecurityWeapons
@@ -130,6 +133,8 @@
   - WeaponLaserCannon
   - WeaponLaserCarbine
   - WeaponXrayCannon
+  - WeaponEnergyCarbineHarmony # Harmony Change: Adds the energy carbine to the security recipe pack
+  - WeaponTemperatureGun
 
 - type: latheRecipePack
   id: SecurityDisablers

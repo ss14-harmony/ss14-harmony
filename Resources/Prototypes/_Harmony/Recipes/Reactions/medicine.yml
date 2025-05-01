@@ -1,0 +1,14 @@
+- type: reaction
+  id: Barozine
+  minTemp: 370
+  reactants:
+    Vestine:
+      amount: 1
+    Bruizine:
+      amount: 1
+    DexalinPlus:
+      amount: 1
+    Leporazine:
+      amount: 1
+  products:
+    Barozine: 2
