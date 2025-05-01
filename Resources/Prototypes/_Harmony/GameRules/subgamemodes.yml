@@ -2,6 +2,7 @@
   parent: BaseGameRule
   id: BloodBrothers
   components:
+  - type: BloodBrotherRule
   - type: AntagRandomObjectives
     sets:
     - groups: BloodBrotherObjectiveGroups

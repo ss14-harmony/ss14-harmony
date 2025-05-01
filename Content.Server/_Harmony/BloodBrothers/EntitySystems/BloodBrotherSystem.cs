@@ -39,102 +39,7 @@ public sealed class BloodBrotherSystem : SharedBloodBrotherSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<InitialBloodBrotherComponent, BloodBrotherConvertActionEvent>(OnBloodBrotherConvert);
         SubscribeLocalEvent<BloodBrotherComponent, MapInitEvent>(OnBloodBrotherMapInit);
-    }
-
-    private void OnBloodBrotherConvert(
-        Entity<InitialBloodBrotherComponent> entity,
-        ref BloodBrotherConvertActionEvent args)
-    {
-        if (!TryComp<BloodBrotherComponent>(entity, out var originalComp))
-            return;
-
-        var (canConvert, failureMessage) = CanConvert(entity, args.Target);
-
-        if (!canConvert)
-        {
-            _popupSystem.PopupEntity(Loc.GetString(failureMessage), args.Target, entity, PopupType.SmallCaution);
-            return;
-        }
-
-        var convertedComp = CopyComp(entity, args.Target, originalComp);
-
-        if (!_mindSystem.TryGetMind(args.Target, out var targetMindId, out var targetMind))
-            return;
-
-        // Objective setup
-        if (!_objectivesSystem.TryCreateObjective((targetMindId, targetMind),
-                entity.Comp.ConvertedBrotherObjective,
-                out var newObjective))
-            return;
-
-        var targetObjective = EnsureComp<TargetObjectiveComponent>(newObjective.Value);
-
-        _targetObjectiveSystem.SetTarget(newObjective.Value, entity, targetObjective);
-
-        _mindSystem.AddObjective(targetMindId, targetMind, newObjective.Value);
-
-        _adminLogManager.Add(
-            LogType.Mind,
-            LogImpact.Medium,
-            $"{ToPrettyString(entity)} converted {args.Target} into a Blood Brother");
-
-        RemCompDeferred<InitialBloodBrotherComponent>(entity);
-
-        Dirty(entity.Owner, originalComp);
-        Dirty(args.Target, convertedComp);
-    }
-
-    private (bool canConvert, LocId failureMessage) CanConvert(
-        Entity<InitialBloodBrotherComponent> entity,
-        EntityUid target)
-    {
-        if (!_mindSystem.TryGetMind(entity, out _, out var converterMind))
-        {
-            DebugTools.Assert("Blood brother tried to convert but had no mind.");
-            Log.Error("Blood brother tried to convert but had no mind.");
-            return (false, default); // How would this even happen
-        }
-
-        if (!_mindSystem.TryGetMind(target, out var targetMindId, out var targetMind))
-            return (false, entity.Comp.MessageConvertFailedNoMind);
-
-        // Stop the blood brother from converting a target.
-        foreach (var objective in converterMind.Objectives)
-        {
-            if (!TryComp<TargetObjectiveComponent>(objective, out var targetObjective))
-                continue;
-
-            if (targetObjective.Target == targetMindId)
-                return (false, entity.Comp.MessageConvertFailedTarget);
-        }
-
-        if (!HasComp<HumanoidAppearanceComponent>(target))
-            return (false, entity.Comp.MessageConvertFailedNotHumanoid);
-
-        if (HasComp<ZombieComponent>(target))
-            return (false, entity.Comp.MessageConvertFailedZombie);
-
-        if (HasComp<MindShieldComponent>(target))
-            return (false, entity.Comp.MessageConvertFailedMindShielded);
-
-        if (!_mobStateSystem.IsAlive(target))
-            return (false, entity.Comp.MessageConvertFailedDead);
-
-        if (targetMind.UserId == null)
-            return (false, entity.Comp.MessageConvertFailedNoMind);
-
-        if (entity.Comp.IgnorePreference ||
-            !_preferencesManager.TryGetCachedPreferences(targetMind.UserId.Value, out var preferences))
-            return (true, default);
-
-        var profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
-
-        if (profile.AntagPreferences.Contains(entity.Comp.RequiredAntagPreference) != true)
-            return (false, entity.Comp.MessageConvertFailedPreference);
-
-        return (true, default);
     }
 
     private void OnBloodBrotherMapInit(Entity<BloodBrotherComponent> entity, ref MapInitEvent args)
@@ -146,14 +51,5 @@ public sealed class BloodBrotherSystem : SharedBloodBrotherSystem
 
         if (mindId == default || !_roleSystem.MindHasRole<BloodBrotherRoleComponent>(mindId))
             _roleSystem.MindAddRole(mindId, entity.Comp.BloodBrotherMindRole);
-
-        if (mind.Session != null)
-        {
-            _antagSelectionSystem.SendBriefing(
-                mind.Session,
-                Loc.GetString(entity.Comp.BriefingText),
-                entity.Comp.BriefingColor,
-                null);
-        }
     }
 }

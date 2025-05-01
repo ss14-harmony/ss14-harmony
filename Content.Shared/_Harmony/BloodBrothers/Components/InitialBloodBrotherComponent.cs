@@ -45,6 +45,8 @@ public sealed partial class InitialBloodBrotherComponent : Component
 
     [DataField]
     public LocId MessageConvertFailedTarget = "blood-brother-convert-failed-target";
+
+    public LocId MessageConvertFailedAlreadyBrother = "blood-brother-convert-failed-already-brother";
     // Am I going too far in this whole "don't hard-code" thing...
 
     #endregion

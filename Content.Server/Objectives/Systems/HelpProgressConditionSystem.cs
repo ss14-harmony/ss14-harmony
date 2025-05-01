@@ -54,7 +54,7 @@ public sealed class HelpProgressConditionSystem : EntitySystem
         // require 50% completion for this one to be complete
         // Harmony start: allow for custom percents on the help progress objective
         var completion = total / max;
-        return completion >= component.CompletionPercentNeeded ? 1f : completion / component.CompletionPercentNeeded;
+        return completion >= (component.CompletionPercentNeeded / 100f) ? 1f : completion / (component.CompletionPercentNeeded / 100f);
         // Harmony end
     }
 }
