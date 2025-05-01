@@ -1,5 +1,7 @@
 ﻿using Content.Shared._Harmony.BloodBrothers.EntitySystems;
 using Content.Shared.Actions;
+using Content.Shared.Objectives.Components;
+using Content.Shared.Roles;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -15,8 +17,13 @@ public sealed partial class InitialBloodBrotherComponent : Component
     [DataField]
     public EntProtoId<EntityTargetActionComponent> ConvertAction = "ActionBloodBrotherConvert";
 
+    [DataField]
+    public EntProtoId<ObjectiveComponent> ConvertedBrotherObjective = "BloodBrotherConvertedObjective";
+
     [DataField, AutoNetworkedField]
     public EntityUid? ConvertActionEntity;
+
+    #region Conversion Failure Messages
 
     [DataField]
     public LocId MessageConvertFailedNoMind = "blood-brother-convert-failed-no-mind";
@@ -32,6 +39,21 @@ public sealed partial class InitialBloodBrotherComponent : Component
 
     [DataField]
     public LocId MessageConvertFailedDead = "blood-brother-convert-failed-dead";
+
+    [DataField]
+    public LocId MessageConvertFailedPreference = "blood-brother-convert-failed-preference";
+
+    [DataField]
+    public LocId MessageConvertFailedTarget = "blood-brother-convert-failed-target";
+    // Am I going too far in this whole "don't hard-code" thing...
+
+    #endregion
+
+    [DataField]
+    public bool IgnorePreference;
+
+    [DataField]
+    public ProtoId<AntagPrototype> RequiredAntagPreference = "BloodBrother";
 
     public override bool SendOnlyToOwner => true;
 }

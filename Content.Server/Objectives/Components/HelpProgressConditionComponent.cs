@@ -9,4 +9,8 @@ namespace Content.Server.Objectives.Components;
 [RegisterComponent, Access(typeof(HelpProgressConditionSystem))]
 public sealed partial class HelpProgressConditionComponent : Component
 {
+    // Harmony start: allow for custom percents on the help progress objective
+    [DataField]
+    public int CompletionPercentNeeded = 50;
+    // Harmony end
 }

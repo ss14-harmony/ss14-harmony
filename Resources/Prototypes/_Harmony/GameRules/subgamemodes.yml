@@ -2,6 +2,10 @@
   parent: BaseGameRule
   id: BloodBrothers
   components:
+  - type: AntagRandomObjectives
+    sets:
+    - groups: BloodBrotherObjectiveGroups
+    maxDifficulty: 5
   - type: AntagSelection
     agentName: blood-brothers-round-end-agent-name
     selectionTime: IntraPlayerSpawn

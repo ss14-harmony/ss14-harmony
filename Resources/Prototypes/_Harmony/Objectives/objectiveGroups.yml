@@ -1,0 +1,5 @@
+- type: weightedRandom
+  id: BloodBrotherObjectiveGroups
+  weights:
+    TraitorObjectiveGroupSteal: 1
+    # DEBUG: TraitorObjectiveGroupKill: 1

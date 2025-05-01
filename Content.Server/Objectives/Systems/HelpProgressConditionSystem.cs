@@ -25,10 +25,10 @@ public sealed class HelpProgressConditionSystem : EntitySystem
         if (!_target.GetTarget(uid, out var target))
             return;
 
-        args.Progress = GetProgress(target.Value);
+        args.Progress = GetProgress(target.Value, comp); // Harmony: allow for custom percents on the help progress objective
     }
 
-    private float GetProgress(EntityUid target)
+    private float GetProgress(EntityUid target, HelpProgressConditionComponent component) // Harmony: allow for custom percents on the help progress objective
     {
         var total = 0f; // how much progress they have
         var max = 0f; // how much progress is needed for 100%
@@ -52,7 +52,9 @@ public sealed class HelpProgressConditionSystem : EntitySystem
             return 1f;
 
         // require 50% completion for this one to be complete
+        // Harmony start: allow for custom percents on the help progress objective
         var completion = total / max;
-        return completion >= 0.5f ? 1f : completion / 0.5f;
+        return completion >= component.CompletionPercentNeeded ? 1f : completion / component.CompletionPercentNeeded;
+        // Harmony end
     }
 }
