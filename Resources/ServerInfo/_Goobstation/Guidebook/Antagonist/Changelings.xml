@@ -10,7 +10,7 @@
   Changelings are reported to be extinct. Once the apex predator of the universe reduced to being a myth.
 
   The Changeling can be anyone it's absorbed, it can switch identities instantaneously, only absorbing takes time and peace.
-  Unlike the Traitor, the Changeling's only objective is to survive until the shuttle arrives and escape on it while transformed into somebody else.
+  Unlike the Traitor, the Changeling's objectives are to steal a certain amount of DNA, absorb a member of the crew, survive until the shuttle arrives and escape on it while transformed into somebody else.
 
   Remember that Changelings are not obliged to work each other as a team, and some may go solo/rogue depending on the situation.
   Changelings are generally expected to keep a low profile.
@@ -27,7 +27,7 @@
   - Violently shaking
   - Death.
 
-  You cannot die normally, as in being gibbed by blunt trauma. As you are a natural organism, being tossed in the incinerator is your biggest worry. Or tossed into the super-matter.
+  You cannot die normally, as in being gibbed by blunt trauma. As you are a natural organism, being tossed in the incinerator is your biggest worry.
 
   ## DNA Extraction
   If your main weapon is deception, then DNA Extraction is your main tool. This sting allows you to copy the genetic information of anyone you come into contact with.
@@ -90,8 +90,6 @@
   </Box>
   Along with this, hollowing someone does not mean they are round removed.
 
-  Hollowing someone gives them 200 genetic damage; in most cases this does mean they are dead forever. Genetic damage causes cloning to fail, and there's no conventional mean to heal genetic damage on corpses.
-  By setting up pyrogenics and making Natusixadone, medical is able to completely revive any hollowed corpses.
-
-  <GuideReagentEmbed Reagent="Natusixadone"/>
+  Hollowing someone gives them 50 genetic, 75 bloodloss and 75 airloss damage; this is a devastating amount of damage, but [color=red]it can be healed by a skilled doctor[/color].
+  Genetic damage causes cloning to fail, and there's no conventional mean to heal genetic damage on corpses.
 </Document>
