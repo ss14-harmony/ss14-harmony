@@ -1476,3 +1476,45 @@ Entries:
     changes:
     - type: Add
       message: Added Sponsored By Syndicate by mrjajkes
+  - id: 367
+    author: youtissoum
+    time: '2025-05-01T16:36:36.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/367
+    changes:
+    - type: Fix
+      message: The round-start prisoner will no longer be told they are allowed to use security-restricted contraband
+  - id: 544
+    author: Lachryphage
+    time: '2025-05-01T18:57:42.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/544
+    changes:
+    - type: Tweak
+      message: Eclipse Starport now has gateways to engineering and security from bridge, a second AI core, a mail courier speeder, and various QoL improvements!
+  - id: 547
+    author: Flarbergaster
+    time: '2025-05-02T08:57:11.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/547
+    changes:
+    - type: Tweak
+      message: Added the ability for Ais to be Ioned
+  - id: 516
+    author: MissKay1994
+    time: '2025-05-02T09:29:28.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/516
+    changes:
+    - type: Tweak
+      message: Being cluwned is no longer round removal
+  - id: 579
+    author: Flarbergaster
+    time: '2025-05-02T14:53:47.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/579
+    changes:
+    - type: Tweak
+      message: Tweaked Hyperzines metabolism to be .5.
+  - id: 541
+    author: MoonlightHollow
+    time: '2025-05-02T15:21:31.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/541
+    changes:
+    - type: Add
+      message: Added moth audio
