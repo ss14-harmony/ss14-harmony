@@ -1,0 +1,9 @@
+- type: mapModification
+  id: MarathonPermaPrisoner
+  applyOn:
+  - Marathon
+  additions:
+  - prototype: SpawnPointPermaPrisoner
+    position: -45.5, 61.5
+  - prototype: SpawnPointPermaPrisoner
+    position: -49.5, 61.5

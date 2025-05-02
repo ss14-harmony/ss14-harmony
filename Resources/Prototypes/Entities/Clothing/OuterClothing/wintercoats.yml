@@ -19,6 +19,8 @@
         Slash: 0.95
         Heat: 0.90
     priceMultiplier: 0
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.55
   - type: Food
     requiresSpecialDigestion: true
   - type: SolutionContainerManager
@@ -365,9 +367,11 @@
   description: A sturdy, utilitarian winter coat designed to protect a head of security from any brig-bound threats and hypothermic events.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coathosarmored.rsi
+#    sprite: Clothing/OuterClothing/WinterCoats/coathosarmored.rsi # Commented out on Harmony
+    sprite: _Harmony/Clothing/OuterClothing/WinterCoats/coathosarmored.rsi # Updated sprite pathing for Harmony 
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coathosarmored.rsi
+#    sprite: Clothing/OuterClothing/WinterCoats/coathosarmored.rsi # Commented out on Harmony
+    sprite: _Harmony/Clothing/OuterClothing/WinterCoats/coathosarmored.rsi # Updated sprite pathing for Harmony
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterHOS
 ##########################################################
@@ -783,7 +787,7 @@
 
 ##############################################################
 - type: entity
-  parent: [ClothingOuterWinterWarden, BaseSyndicateContraband]
+  parent: [ BaseSyndicateContraband, ClothingOuterWinterWarden ]
   id: ClothingOuterWinterSyndieCapArmored
   name: syndicate's armored winter coat
   description: "The syndicate's armored winter coat is made of durable fabric, with gilded patterns, and coarse wool."

@@ -10,7 +10,7 @@ namespace Content.Shared.Roles
     /// <summary>
     ///     Describes information for a single job on the station.
     /// </summary>
-    [Prototype("job")]
+    [Prototype]
     public sealed partial class JobPrototype : IPrototype
     {
         [ViewVariables]
@@ -153,6 +153,14 @@ namespace Content.Shared.Roles
         /// </summary>
         [DataField]
         public List<ProtoId<GuideEntryPrototype>>? Guides;
+
+        // Harmony start
+        /// <summary>
+        /// Whether the job should be allowed to use restricted contraband.
+        /// </summary>
+        [DataField]
+        public bool AllowRestrictedContraband = true;
+        // Harmony end
     }
 
     /// <summary>

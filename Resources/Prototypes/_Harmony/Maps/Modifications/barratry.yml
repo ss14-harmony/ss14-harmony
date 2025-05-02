@@ -1,0 +1,10 @@
+# TODO: Directly add the prisoner spawn point to the map
+- type: mapModification
+  id: BarratryPermaPrisoner
+  applyOn:
+  - Barratry
+  additions:
+  - prototype: SpawnPointPermaPrisoner
+    position: -54.5, 84.5
+  - prototype: SpawnPointPermaPrisoner
+    position: -54.5, 90.5
