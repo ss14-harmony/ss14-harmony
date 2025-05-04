@@ -1,3 +1,6 @@
+#Weapons
+uplink-drungnov-bundle-name = Drungnov Bundle
+uplink-drungnov-bundle-desc = A bundle that includes a modified semi-auto sniper and 2 .45 magnnum magazines.
 uplink-syndicate-id-name = Syndicate ID card
 uplink-syndicate-id-desc = A sleek black-and-red ID card with embossed Syndicate logo and syndicate access. Does not possess any Nanotrasen access. Limited to one ID per agent.
 

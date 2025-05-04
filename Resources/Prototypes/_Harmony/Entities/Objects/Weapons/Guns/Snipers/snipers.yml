@@ -55,3 +55,65 @@
   - type: Appearance
   - type: StaticPrice
     price: 400
+
+- type: entity
+  name: Drungnov
+  parent: [BaseWeaponSniper, BaseGunWieldable, BaseSyndicateContraband]
+  id: WeaponSniperDrungnov
+  description: A old, reliable sniper. Modified to use .45 magnum ammo.
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 0.6
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeMagnum
+    capacity: 8
+    proto: CartridgeMagnum
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 2.5
+    pvsIncrease: 0.25
+
+- type: entity
+  name: Drungnov
+  parent: [BaseWeaponSniper, BaseGunWieldable, BaseSyndicateContraband]
+  id: WeaponSniperDrungnov
+  description: A old, reliable sniper. Modified to use .45 magnum ammo.
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 0.6
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeMagnum
+    capacity: 8
+    proto: CartridgeMagnum
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 2.5
+    pvsIncrease: 0.25

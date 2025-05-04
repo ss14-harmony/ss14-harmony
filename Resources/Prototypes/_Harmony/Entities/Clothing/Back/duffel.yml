@@ -1,0 +1,11 @@
+﻿- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateFilledDrungov
+  name: drungov bundle
+  description: Moderatly long range. Contains a Drungnov and 2 .45 magnum magazines.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSniperDrungnov
+    - id: MagazineMagnum
+    - id: MagazineMagnum

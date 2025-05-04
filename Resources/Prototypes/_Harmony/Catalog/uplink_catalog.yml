@@ -1,4 +1,17 @@
 # Guns
+- type: listing
+  id: UplinkDrungnovBundle
+  name: uplink-drungnov-bundle-name
+  description: uplink-drungnov-bundle-desc
+  icon: { sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi, state: base }
+  productEntity: ClothingBackpackDuffelSyndicateFilledDrungov
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 10
+  cost:
+    Telecrystal: 13
+  categories:
+    - UplinkWeaponry
 # Explosives
 - type: listing
   id: UplinkPizzaBomb
