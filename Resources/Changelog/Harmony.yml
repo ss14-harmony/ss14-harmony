@@ -1518,3 +1518,45 @@ Entries:
     changes:
     - type: Add
       message: Added moth audio
+  - id: 584
+    author: BoskiYourk
+    time: '2025-05-03T16:49:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/584
+    changes:
+    - type: Tweak
+      message: Energy Cartridges Can Now Fit in Sec Belts
+  - id: 586
+    author: GithubEnjoyer1984
+    time: '2025-05-03T17:05:11.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/586
+    changes:
+    - type: Fix
+      message: Fixed kammerer audio
+  - id: 485
+    author: Ermucat
+    time: '2025-05-03T18:00:56.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/485
+    changes:
+    - type: Tweak
+      message: Spray painters now instantly color pipes
+  - id: 386
+    author: Ermucat
+    time: '2025-05-03T18:35:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/386
+    changes:
+    - type: Add
+      message: Added Phoron will make us rich to the jukebox
+  - id: 585
+    author: 3nderall
+    time: '2025-05-04T01:08:27.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/585
+    changes:
+    - type: Add
+      message: Added the Medical Analysis Goggles, they are a mix between the chemical analysis goggles and the medical HUD.
+  - id: 588
+    author: youtissoum
+    time: '2025-05-04T02:05:29.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/588
+    changes:
+    - type: Tweak
+      message: Playtime requirements for seniority items have been increased.
