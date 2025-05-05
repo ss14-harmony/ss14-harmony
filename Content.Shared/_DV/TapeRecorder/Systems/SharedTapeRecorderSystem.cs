@@ -1,6 +1,6 @@
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
-using Content.Shared._DeltaV.TapeRecorder.Components;
+using Content.Shared._DV.TapeRecorder.Components;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
@@ -19,7 +19,7 @@ using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Content.Shared._DeltaV.TapeRecorder.Systems;
+namespace Content.Shared._DV.TapeRecorder.Systems;
 
 public abstract class SharedTapeRecorderSystem : EntitySystem
 {

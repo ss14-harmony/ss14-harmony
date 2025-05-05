@@ -1,8 +1,8 @@
-using Content.Shared._DeltaV.TapeRecorder.Systems;
+using Content.Shared._DV.TapeRecorder.Systems;
 using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._DeltaV.TapeRecorder.Components;
+namespace Content.Shared._DV.TapeRecorder.Components;
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedTapeRecorderSystem))]
 [AutoGenerateComponentState]

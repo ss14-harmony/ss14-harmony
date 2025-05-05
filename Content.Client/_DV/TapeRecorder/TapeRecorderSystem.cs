@@ -1,6 +1,6 @@
-using Content.Shared._DeltaV.TapeRecorder.Systems;
+using Content.Shared._DV.TapeRecorder.Systems;
 
-namespace Content.Client._DeltaV.TapeRecorder;
+namespace Content.Client._DV.TapeRecorder;
 
 /// <summary>
 /// Required for client side prediction stuff

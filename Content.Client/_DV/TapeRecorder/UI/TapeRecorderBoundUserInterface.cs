@@ -1,9 +1,9 @@
-using Content.Shared._DeltaV.TapeRecorder;
+using Content.Shared._DV.TapeRecorder;
 using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Client._DeltaV.TapeRecorder.UI;
+namespace Content.Client._DV.TapeRecorder.UI;
 
 public sealed class TapeRecorderBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
 {
