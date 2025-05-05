@@ -1,0 +1,28 @@
+﻿- type: entity
+  parent: ComputerComms
+  id: PirateComputerComms
+  name: pirate communications computer
+  description: Yar, a screen with buttons that somehow shouts your demands to the bigger ship. Using this to make an announcement will alert the station to your presence.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: comm_pirate
+    - map: ["computerLayerKeys"]
+      state: generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  - type: AccessReader
+    access: [[ "SyndicateAgent" ]]
+  - type: CommunicationsConsole
+    title: comms-console-announcement-title-pirate
+    color: "#D9790B"
+    canShuttle: false
+    global: true
+    sound: /Audio/_Harmony/Announcements/foghorn.ogg
+  - type: Computer
+    board: PirateCommsComputerCircuitboard

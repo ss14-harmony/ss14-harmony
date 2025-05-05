@@ -1,0 +1,21 @@
+﻿- type: entity
+  abstract: true
+  parent: BaseGameRule
+  id: BasePirateShuttleRule
+  components:
+  - type: RuleGrids
+  - type: LoadMapRule
+
+- type: entity
+  parent: BasePirateShuttleRule
+  id: PirateSpawn
+  components:
+  - type: StationEvent
+    earliestStart: 45
+    reoccurrenceDelay: 30
+    weight: 2
+    minimumPlayers: 20
+  - type: RuleGrids
+  - type: LoadMapRule
+    gridPath: /Maps/_Harmony/Shuttles/ShuttleEvent/pirate_shuttle.yml
+

@@ -1,0 +1,10 @@
+﻿- type: entity
+  parent: [ BaseComputerCircuitboard, BaseMajorContraband ]
+  id: PirateCommsComputerCircuitboard
+  name: pirate communications computer board
+  description: A computer printed circuit board for a pirate communications console.
+  components:
+  - type: Sprite
+    state: cpu_pirate
+  - type: ComputerBoard
+    prototype: PirateComputerComms

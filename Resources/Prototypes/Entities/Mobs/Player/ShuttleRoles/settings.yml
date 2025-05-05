@@ -809,7 +809,7 @@
       mindRoles:
       - MindRoleGhostRoleTeamAntagonist
       raffle:
-        settings: default
+        settings: default #Harmony Change
     - type: Loadout
       prototypes: [ PirateScoonerAltA, PirateScoonerAltB, PirateScoonerAltC, PirateScoonerAltD ]
       roleLoadout: [ RoleSurvivalEVA ]
@@ -828,7 +828,7 @@
       mindRoles:
       - MindRoleGhostRoleTeamAntagonist
       raffle:
-        settings: default
+        settings: default #Harmony change
     - type: Loadout
       prototypes: [ PirateCaptainScooner ]
       roleLoadout: [ RoleSurvivalEVA ]
