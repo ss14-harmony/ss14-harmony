@@ -75,7 +75,10 @@
     - sprite: Mobs/Silicon/station_ai.rsi
       state: default
   - type: ShowJobIcons
-  - type: IonStormTarget #Harmony Addition
+  # harmony start
+  - type: IonStormTarget
+    chance: 0.5
+  # harmony end
 
 - type: entity
   id: AiHeldIntellicard
