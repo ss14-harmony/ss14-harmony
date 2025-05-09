@@ -1560,3 +1560,31 @@ Entries:
     changes:
     - type: Tweak
       message: Playtime requirements for seniority items have been increased.
+  - id: 574
+    author: MoonlightHollow
+    time: '2025-05-06T19:32:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/574
+    changes:
+    - type: Add
+      message: 'Added admin smite: Valley Girl Accent'
+  - id: 596
+    author: youtissoum
+    time: '2025-05-06T19:33:32.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/596
+    changes:
+    - type: Tweak
+      message: The AI is now less likely to get affected by an ion storm.
+  - id: 502
+    author: DoggowithaKeyboard
+    time: '2025-05-08T22:39:53.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/502
+    changes:
+    - type: Tweak
+      message: PAIs now deal 0.1 blunt damage when thrown.
+  - id: 521
+    author: Lachryphage
+    time: '2025-05-09T03:43:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/521
+    changes:
+    - type: Add
+      message: Added Thirst Trap.
