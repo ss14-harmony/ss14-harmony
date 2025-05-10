@@ -375,7 +375,7 @@
     - type: SalvageMobRestrictions
 
 - type: entity
-  parent: SimpleSpaceMobBase
+  parent: SimpleMobBase # Harmony - Changed parent to non-spaceproof version.
   id: MobSnail
   name: snail
   description: Revolting unless you're french.
