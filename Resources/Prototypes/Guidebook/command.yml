@@ -2,3 +2,7 @@
   id: Command
   name: guide-entry-command
   text: "/ServerInfo/Guidebook/Command.xml"
+  # Harmony change - Add SOP in game
+  children:
+  - HarmonyStandardOperatingProcedure
+  # End harmony
