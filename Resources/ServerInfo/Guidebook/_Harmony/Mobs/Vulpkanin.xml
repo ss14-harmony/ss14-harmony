@@ -1,0 +1,14 @@
+﻿<Document>
+  # Vulpkanin
+
+  <Box>
+    <GuideEntityEmbed Entity="MobVulpkanin" Caption=""/>
+  </Box>
+
+  They can eat raw meat without any ill effects, but some foods like chocolate and onion poisons them.
+  They suffocate 50% faster, but have the ability to identify chemical compositions.
+
+  Vulpkanin bite for their unarmed attack, dealing Piercing damage instead of Blunt.
+
+  They take [color=#1e90ff]30% less Cold damage[/color] but [color=#ffa500]30% more Heat damage, and catch on fire more easily[/color].
+</Document>
