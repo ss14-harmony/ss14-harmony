@@ -6,7 +6,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: Science
-      time: 10800 #60 hrs
+      time: 108000 # Harmony: 60 hrs -> 30 hrs (~20 rounds)
 
 # Head
 - type: startingGear

@@ -120,7 +120,7 @@
   meltingPoint: 170.0
   metabolisms:
     Narcotic:
-      metabolismRate: 1.0
+      metabolismRate: 0.5   #Harmony Change
       effects:
       - !type:MovespeedModifier
         walkSpeedModifier: 1.3

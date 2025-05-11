@@ -1,0 +1,10 @@
+# TODO: Directly add the prisoner spawn point to the map
+- type: mapModification
+  id: AspidPermaPrisoner
+  applyOn:
+  - Aspid
+  additions:
+  - prototype: SpawnPointPermaPrisoner
+    position: -38.5, 42.5
+  - prototype: SpawnPointPermaPrisoner
+    position: -38.5, 46.5

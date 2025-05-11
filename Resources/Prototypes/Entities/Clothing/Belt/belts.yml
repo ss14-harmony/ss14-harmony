@@ -481,6 +481,8 @@
         - MagazineMagnum
         - CombatKnife
         - Truncheon
+        - HandGrenade
+        - EnergyCartridge # Harmony Change: Adds the Energy Cartridge to the sec belt whitelist
       components:
         - Stunbaton
         - FlashOnTrigger
@@ -545,7 +547,10 @@
 # Belts without visualizers
 
 - type: entity
-  parent: [ClothingBeltAmmoProviderBase, BaseSecurityBartenderContraband]
+# Start of Harmony Change: Updates Bandolier's Parents
+#  parent: [ClothingBeltAmmoProviderBase, BaseSecurityBartenderContraband]
+  parent: [ClothingBeltStorageBase, BaseSecurityBartenderContraband]
+# End of Harmony Change
   id: ClothingBeltBandolier
   name: bandolier
   description: A bandolier for holding shotgun ammunition.
@@ -556,11 +561,19 @@
     sprite: Clothing/Belt/bandolier.rsi
   - type: Item
     size: Huge
-  - type: BallisticAmmoProvider
+# Start of Harmony Change: Makes the Bandolier have Storage Slots
+#  - type: BallisticAmmoProvider
+#    whitelist:
+#      tags:
+#        - ShellShotgun
+#    capacity: 14
+  - type: Storage
+    grid:
+    - 0,0,6,1
     whitelist:
       tags:
         - ShellShotgun
-    capacity: 14
+# End of Harmony Change
 
 - type: entity
   parent: ClothingBeltBase
@@ -657,7 +670,7 @@
   - type: Clothing
     sprite: Clothing/Belt/militarywebbing.rsi
   - type: ExplosionResistance
-    damageCoefficient: 0.5
+    damageCoefficient: 0.1
 
 - type: entity
   parent: ClothingBeltMilitaryWebbing

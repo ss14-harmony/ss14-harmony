@@ -1,0 +1,8 @@
+# TODO: Directly add the prisoner spawn point to the map
+- type: mapModification
+  id: XenoPermaPrisoner
+  applyOn:
+  - Xeno
+  additions:
+  - prototype: SpawnPointPermaPrisoner
+    position: 57.5, -36.5
