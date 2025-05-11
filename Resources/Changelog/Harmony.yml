@@ -1588,3 +1588,33 @@ Entries:
     changes:
     - type: Add
       message: Added Thirst Trap.
+  - id: 605
+    author: youtissoum
+    time: '2025-05-10T18:24:40.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/605
+    changes:
+    - type: Fix
+      message: The cargo department is no longer unaffected by the seniority item timer changes.
+  - id: 540
+    author: BoskiYourk
+    time: '2025-05-10T20:20:58.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/540
+    changes:
+    - type: Tweak
+      message: All Nuclear Operative Uplinks Get an Extra 5 TC
+    - type: Tweak
+      message: Nuclear Operatives and Lone Ops No Longer Start with Blood-Reds
+  - id: 608
+    author: youtissoum
+    time: '2025-05-11T11:49:57.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/608
+    changes:
+    - type: Fix
+      message: ERT hardsuit helmets will no longer show up as error sprites.
+  - id: 597
+    author: MoonlightHollow
+    time: '2025-05-11T21:55:34.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/597
+    changes:
+    - type: Add
+      message: Added two new alcohol theme traits
