@@ -12,10 +12,7 @@
   id: LightweightDrunk
   name: trait-lightweight-name
   description: trait-lightweight-desc
-  #Harmony Addition start
-  category: DrinkingSkill # CD: Multiple levels
-  cost: 1 # CD: Multiple levels
-  #Harmony Addition end
+  category: Quirks
   components:
   - type: LightweightDrunk
     boozeStrengthMultiplier: 2
