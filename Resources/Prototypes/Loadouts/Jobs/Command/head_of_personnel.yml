@@ -6,7 +6,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobHeadOfPersonnel
-      time: 10800 #20 hrs
+      time: 16200 # harmony: 20 hrs -> 4.5 hrs (~3 rounds)
 
 # Professional HoP Time
 - type: loadoutEffectGroup
@@ -16,7 +16,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobHeadOfPersonnel
-      time: 7200 #15 hrs, special reward for HoP mains
+      time: 7200 # harmony: 15 hrs -> 2 hrs (~2 rounds)
 
 # Jumpsuit
 - type: loadout

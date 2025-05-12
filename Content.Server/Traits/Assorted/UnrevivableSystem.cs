@@ -9,7 +9,7 @@ public sealed class UnrevivableSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<UnrevivableComponent, CloningAttemptEvent>(OnCloningAttempt);
+       // SubscribeLocalEvent<UnrevivableComponent, CloningAttemptEvent>(OnCloningAttempt); Harmony
     }
 
     private void OnCloningAttempt(Entity<UnrevivableComponent> ent, ref CloningAttemptEvent args)

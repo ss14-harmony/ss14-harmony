@@ -1,0 +1,12 @@
+# TODO: Directly add the prisoner spawn point to the map
+- type: mapModification
+  id: EclipsePermaPrisoner
+  applyOn:
+  - Eclipse
+  additions:
+  - prototype: SpawnPointPermaPrisoner
+    position: 62.5, 147.5
+  - prototype: SpawnPointPermaPrisoner
+    position: 62.5, 148.5
+  - prototype: SpawnPointPermaPrisoner
+    position: 62.5, 149.5
