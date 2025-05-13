@@ -1,6 +1,6 @@
 using Content.Shared.Actions;
 
-namespace Content.Shared.ItemCurse;
+namespace Content.Shared._Harmony.ItemCurse;
 
 /// <summary>
 /// Raised when using the ItemCurse action.

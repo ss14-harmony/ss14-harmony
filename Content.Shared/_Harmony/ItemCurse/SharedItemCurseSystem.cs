@@ -2,7 +2,6 @@ using Content.Shared.Actions;
 using Content.Shared.Body.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
@@ -11,13 +10,13 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 
-namespace Content.Shared.ItemCurse;
+namespace Content.Shared._Harmony.ItemCurse;
 
 /// <summary>
 /// System for handling the ItemCurse ability for wizards.
 /// This is pretty much a copy of SharedItemRecallSystem with the resulting effect on the marked item changed.
 /// </summary>
-public abstract partial class SharedItemCurseSystem : EntitySystem
+public abstract class SharedItemCurseSystem : EntitySystem
 {
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly SharedPvsOverrideSystem _pvs = default!;
@@ -45,6 +44,7 @@ public abstract partial class SharedItemCurseSystem : EntitySystem
     {
         ent.Comp.InitialName = Name(ent);
         ent.Comp.InitialDescription = Description(ent);
+        Dirty(ent);
     }
 
     private void OnItemCurseActionUse(Entity<ItemCurseComponent> ent, ref OnItemCurseActionEvent args)
@@ -54,9 +54,7 @@ public abstract partial class SharedItemCurseSystem : EntitySystem
             if (!TryComp<HandsComponent>(args.Performer, out var hands))
                 return;
 
-            var markItem = _hands.GetActiveItem((args.Performer, hands));
-
-            if (markItem == null)
+            if (!_hands.TryGetActiveItem((args.Performer, hands), out var markItem))
             {
                 _popups.PopupClient(Loc.GetString("item-recall-item-mark-empty"), args.Performer, args.Performer);
                 return;
@@ -74,7 +72,7 @@ public abstract partial class SharedItemCurseSystem : EntitySystem
         }
 
         // Finger snap emote because it's Cool.
-        Snap(args.Performer);
+        Snap(args.Performer, ent.Comp);
         CurseItem(ent.Comp.MarkedEntity.Value, ent.Comp);
         args.Handled = true;
     }
@@ -139,7 +137,7 @@ public abstract partial class SharedItemCurseSystem : EntitySystem
 
         AddToPvsOverride(item, actionOwner.Value);
 
-        var marker = AddComp<CurseMarkerComponent>(item);
+        var marker = EnsureComp<CurseMarkerComponent>(item);
         ent.Comp.MarkedEntity = item;
         Dirty(ent);
 
@@ -149,10 +147,9 @@ public abstract partial class SharedItemCurseSystem : EntitySystem
         Dirty(item, marker);
     }
 
-    private void TryUnmarkItem(EntityUid item)
+    private void TryUnmarkItem(Entity<CurseMarkerComponent> item)
     {
-        if (!TryComp<CurseMarkerComponent>(item, out var marker))
-            return;
+        var marker = item.Comp;
 
         if (!TryComp<InstantActionComponent>(marker.MarkedByAction, out var instantAction))
             return;
@@ -194,45 +191,35 @@ public abstract partial class SharedItemCurseSystem : EntitySystem
         else
         {
             if (action.Comp.WhileMarkedName != null)
-                _metaData.SetEntityName(action, Loc.GetString(action.Comp.WhileMarkedName,
+            {
+                _metaData.SetEntityName(action,
+                    Loc.GetString(action.Comp.WhileMarkedName,
                     ("item", action.Comp.MarkedEntity.Value)));
+            }
 
             if (action.Comp.WhileMarkedDescription != null)
-                _metaData.SetEntityDescription(action, Loc.GetString(action.Comp.WhileMarkedDescription,
+            {
+                _metaData.SetEntityDescription(action,
+                    Loc.GetString(action.Comp.WhileMarkedDescription,
                     ("item", action.Comp.MarkedEntity.Value)));
+            }
 
             _actions.SetEntityIcon(action, action.Comp.MarkedEntity, instantAction);
         }
     }
 
-    private void AddToPvsOverride(EntityUid uid, EntityUid user)
-    {
-        if (!_player.TryGetSessionByEntity(user, out var mindSession))
-            return;
-
-        _pvs.AddSessionOverride(uid, mindSession);
-    }
-
-    private void RemoveFromPvsOverride(EntityUid uid, EntityUid user)
-    {
-        if (!_player.TryGetSessionByEntity(user, out var mindSession))
-            return;
-
-        _pvs.RemoveSessionOverride(uid, mindSession);
-    }
-
     // Methods to be overridden in server ItemCurseSystem
-    public virtual void CreateLightning(EntityUid ent, ItemCurseComponent comp)
+    protected virtual void CreateLightning(EntityUid sourceUid, ItemCurseComponent spellComp)
     {
 
     }
 
-    public virtual void ShockHolder(EntityUid ent, EntityUid source, ItemCurseComponent comp)
+    protected virtual void ShockHolder(EntityUid targetUid, EntityUid sourceUid, ItemCurseComponent spellComp)
     {
 
     }
 
-    public virtual void Snap(EntityUid ent)
+    protected virtual void Snap(EntityUid targetUid, ItemCurseComponent spellComp)
     {
 
     }

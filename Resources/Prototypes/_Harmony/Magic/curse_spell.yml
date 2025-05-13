@@ -1,7 +1,7 @@
 - type: entity
   id: ActionItemCurse
   name: Curse Item
-  description: Mark a held item to later unleash a curse
+  description: Mark a held item to later unleash a curse.
   components:
   - type: InstantAction
     useDelay: 50

@@ -1,7 +1,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.ItemCurse;
+namespace Content.Shared._Harmony.ItemCurse;
 
 /// <summary>
 /// Component for the ItemCurse action. Based off of ItemRecallComponent
@@ -26,14 +26,14 @@ public sealed partial class ItemCurseComponent : Component
     /// The name the action starts with.
     /// This shouldn't be set in yaml.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public string? InitialName;
 
     /// <summary>
     /// The description the action starts with.
     /// This shouldn't be set in yaml.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public string? InitialDescription;
 
     /// <summary>
@@ -64,7 +64,7 @@ public sealed partial class ItemCurseComponent : Component
     /// Prototype used for lightning bolts created when the curse is activated
     /// </summary>
     [DataField]
-    public string LightningPrototype = "LightningRevenant";
+    public EntProtoId LightningPrototype = "LightningRevenant";
 
     /// <summary>
     /// Insuls-bypassing shock damage dealt to the holder of the cursed item when the curse is activated
@@ -77,4 +77,10 @@ public sealed partial class ItemCurseComponent : Component
     /// </summary>
     [DataField]
     public TimeSpan ShockDuration = TimeSpan.FromSeconds(3);
+
+    /// <summary>
+    /// The emote action used when casting the spell
+    /// </summary>
+    [DataField]
+    public string SpellUseEmote = "Snap";
 }

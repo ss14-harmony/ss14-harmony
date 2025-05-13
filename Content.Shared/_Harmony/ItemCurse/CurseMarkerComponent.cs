@@ -1,7 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.ItemCurse;
-
+namespace Content.Shared._Harmony.ItemCurse;
 
 /// <summary>
 /// Component used as a marker for an item marked by the ItemCurse ability.

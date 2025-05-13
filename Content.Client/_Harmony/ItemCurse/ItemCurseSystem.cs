@@ -1,11 +1,6 @@
-using Content.Shared.ItemCurse;
+using Content.Shared._Harmony.ItemCurse;
 
-namespace Content.Client.ItemCurse;
+namespace Content.Client._Harmony.ItemCurse;
 
-/// <summary>
-/// System for handling the ItemCurse ability for wizards.
-/// </summary>
-public sealed partial class ItemCurseSystem : SharedItemCurseSystem
-{
-
-}
+/// <inheritdoc />
+public sealed class ItemCurseSystem : SharedItemCurseSystem;
