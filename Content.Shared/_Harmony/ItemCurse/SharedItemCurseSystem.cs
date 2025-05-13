@@ -135,8 +135,6 @@ public abstract class SharedItemCurseSystem : EntitySystem
         if (actionOwner == null)
             return;
 
-        AddToPvsOverride(item, actionOwner.Value);
-
         var marker = EnsureComp<CurseMarkerComponent>(item);
         ent.Comp.MarkedEntity = item;
         Dirty(ent);
@@ -164,7 +162,6 @@ public abstract class SharedItemCurseSystem : EntitySystem
             if (instantAction.AttachedEntity != null)
             {
                 _popups.PopupClient(Loc.GetString("item-recall-item-unmark", ("item", item)), instantAction.AttachedEntity.Value, instantAction.AttachedEntity.Value, PopupType.MediumCaution);
-                RemoveFromPvsOverride(item, instantAction.AttachedEntity.Value);
             }
 
             action.MarkedEntity = null;
