@@ -11,6 +11,27 @@
   - UplinkExplosives
 # Ammo
 # Chemicals
+- type: listing
+  id: UplinkDefib
+  name: uplink-defib-name
+  description: uplink-defib-desc
+  productEntity: DefibrillatorSyndicate
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 8
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkChemicals
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
 # Deception
 
 - type: listing

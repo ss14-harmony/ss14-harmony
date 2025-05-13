@@ -10,6 +10,7 @@
   - Headphones
   - PlushieLizard
   - PlushieSpaceLizard
+  - PlushieVox # Harmony
   - ThreeCandles
   - Lighter
   - CigPackGreen
@@ -36,7 +37,7 @@
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
   - ClothingNeckGoldAutismPin
-#harmony specific trinkets
+  # Start harmony change - Server pins & neck slot items.
   - ClothingNeckVulturePin
   - ClothingNeckMirosPin
   - ClothingNeckLizardPin
@@ -48,6 +49,7 @@
   - ClothingNeckCosmaticDriftPin
   - ClothingNeckLanyard
   - HarmonicaInstrument
+  # End harmony change - Server pins & neck slot items.
   - TowelColorBlack
   - TowelColorDarkBlue
   - TowelColorDarkGreen
@@ -65,10 +67,8 @@
   - TowelColorWhite
   - TowelColorYellow
   - TowelStripedOrange # Harmony
-  - PlushieVox
   - Cane # Harmony
-#deltav specific trinkets
-  - TapeRecorder
+  - TapeRecorder # DeltaV / Harmony
 
 - type: loadoutGroup
   id: Glasses

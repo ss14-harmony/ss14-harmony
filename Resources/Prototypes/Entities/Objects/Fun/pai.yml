@@ -92,6 +92,13 @@
     whitelist:
       components:
         - SecretStash
+        - WrappedParcel
+  # Start Harmony Change for comedic PAI pelting
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 0.1
+  # End Harmony Change
 
 - type: entity
   parent: [ PersonalAI, BaseSyndicateContraband]

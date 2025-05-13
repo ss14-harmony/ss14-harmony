@@ -1,0 +1,7 @@
+- type: mapModification
+  id: OasisPermaPrisoner
+  applyOn:
+  - Oasis
+  additions:
+  - prototype: SpawnPointPermaPrisoner
+    position: 42.5, -12.5

@@ -1,0 +1,7 @@
+- type: mapModification
+  id: CorePermaPrisoner
+  applyOn:
+  - Core
+  additions:
+  - prototype: SpawnPointPermaPrisoner
+    position: -6.5, 42.5

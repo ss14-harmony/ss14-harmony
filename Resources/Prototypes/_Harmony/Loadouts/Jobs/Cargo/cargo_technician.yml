@@ -6,17 +6,17 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobSalvageSpecialist
-      time: 3600 # 1 hr
+      time: 10800 # 3 hrs (~2 rounds)
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
       role: JobCargoTechnician
-      time: 3600 # 1 hr
+      time: 10800 # 3 hrs (~2 rounds)
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
       department: Cargo
-      time: 10800 # 3 hrs
+      time: 108000 # 30 hrs (~20 rounds)
 
 # Head
 - type: loadout

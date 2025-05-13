@@ -2,7 +2,7 @@
   name: energy carbine
   id: WeaponEnergyCarbineHarmony
   suffix: Empty
-  parent: [BaseWeaponPowerCell, BaseSecurityContraband]
+  parent: [BaseItem, BaseSecurityContraband]
   description: An energy weapon that uses specialized power magazines to fire dense laser bullets.
   components:
   - type: Item
@@ -21,6 +21,7 @@
     slots:
     - Back
     - suitStorage
+  - type: AmmoCounter
   - type: Wieldable
     unwieldOnUse: false
   - type: GunWieldBonus
@@ -38,6 +39,9 @@
     availableModes:
       - FullAuto
       - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+  - type: MagazineAmmoProvider
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -49,7 +53,12 @@
           tags:
             - EnergyCartridge
         whitelistFailPopup: gun-magazine-whitelist-fail
-
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
 
 - type: entity
   id: WeaponEnergyCarbineFilledHarmony
@@ -68,6 +77,3 @@
           tags:
             - EnergyCartridge
         whitelistFailPopup: gun-magazine-whitelist-fail
-  - type: MagazineVisuals
-    magState: mag
-    steps: 5

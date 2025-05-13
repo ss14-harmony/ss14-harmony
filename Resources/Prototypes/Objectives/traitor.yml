@@ -72,6 +72,10 @@
       - StealCondition
       - SurviveCondition #Harmony change
   - type: DieCondition
+    # Begin Harmony specfic change
+  - type: ObjectiveLimit
+    limit: 1 # Not everyone gets to run it down!
+    # End Harmony specific change
 
 #- type: entity
 #  parent: [BaseTraitorObjective, BaseLivingObjective]
@@ -239,6 +243,16 @@
     job: Quartermaster
   - type: StealCondition
     stealGroup: BoxFolderQmClipboard
+    owner: job-name-qm
+
+- type: entity
+  parent: BaseTraitorStealObjective
+  id: KnuckleDustersStealObjective
+  components:
+  - type: NotJobRequirement
+    job: Quartermaster
+  - type: StealCondition
+    stealGroup: ClothingHandsKnuckleDustersQM
     owner: job-name-qm
 
 ## hop
