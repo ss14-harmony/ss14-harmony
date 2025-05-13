@@ -38,7 +38,7 @@
   id: SubWizard
   components:
   # Start harmony specific change
-  - type: SubGamemodesRule
+  - type: SubGamemodes
     minPlayers: 25
   # End harmony specific change
   - type: AntagSelection
