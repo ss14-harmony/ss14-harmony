@@ -1618,3 +1618,40 @@ Entries:
     changes:
     - type: Add
       message: Added two new alcohol theme traits
+  - id: 499
+    author: BlueMoon059
+    time: '2025-05-14T16:31:55.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/499
+    changes:
+    - type: Add
+      message: Three new voicelines have been added to the end of round lobby announcement system.
+    - type: Fix
+      message: fixed an issue that prevented two existing end of round lobby voicelines from playing.
+  - id: 604
+    author: Jajsha
+    time: '2025-05-14T18:01:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/604
+    changes:
+    - type: Add
+      message: Added the SOP book to the game. SOP can also be accessed under the Command tab in the guidebook.
+  - id: 617
+    author: KravinDes
+    time: '2025-05-14T20:06:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/617
+    changes:
+    - type: Tweak
+      message: The amount of players it takes to spawn a wizard has been increased.
+  - id: 618
+    author: GithubEnjoyer1984
+    time: '2025-05-15T17:05:53.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/618
+    changes:
+    - type: Tweak
+      message: Buffed hypopen price to 4 TC, nerfed nocturine price to 8 TC
+  - id: 412
+    author: GithubEnjoyer1984
+    time: '2025-05-16T16:02:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/412
+    changes:
+    - type: Tweak
+      message: Reduced amount of nuclear operatives required to declare war from 4 to 3.
