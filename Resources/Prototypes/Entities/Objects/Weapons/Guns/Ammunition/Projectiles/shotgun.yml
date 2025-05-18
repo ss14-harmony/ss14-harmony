@@ -33,7 +33,7 @@
       types:
         Blunt: 10
   - type: StaminaDamageOnCollide
-    damage: 40 # 3 hits to stun
+    damage: 50 # 3 hits to stun #Harmony change back to 2 hits
 
 - type: entity
   id: PelletShotgun
