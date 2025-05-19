@@ -1655,3 +1655,24 @@ Entries:
     changes:
     - type: Tweak
       message: Reduced amount of nuclear operatives required to declare war from 4 to 3.
+  - id: 490
+    author: Quantum-cross
+    time: '2025-05-19T01:18:50.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/490
+    changes:
+    - type: Fix
+      message: Pizza bomb goes boom when you open it as the gods intended
+  - id: 559
+    author: MoonlightHollow
+    time: '2025-05-19T01:29:03.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/559
+    changes:
+    - type: Add
+      message: Added new color turtlenecks
+  - id: 634
+    author: Lachryphage
+    time: '2025-05-19T13:03:11.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/634
+    changes:
+    - type: Add
+      message: Added Genpop to Eclipse Starport!
