@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
-  engineVersion: 255.0.0
-  forkId: harmony
-  forkVersion: 5f341cf253a787a15ac8631bd5fb672423d06dba
-  time: 05/19/2025 09:25:17
-  entityCount: 219
-maps:
-- 10
+  category: Grid
+  engineVersion: 255.1.0
+  forkId: ""
+  forkVersion: ""
+  time: 05/19/2025 12:45:30
+  entityCount: 218
+maps: []
 grids:
 - 1
-orphans: []
+orphans:
+- 1
 nullspace: []
 tilemap:
   0: Space
@@ -28,7 +28,7 @@ entities:
       name: NTS-6 "Prosperity" Cargo Shuttle
     - type: Transform
       pos: -0.203125,-0.578125
-      parent: 10
+      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -59,6 +59,7 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
+      dampingModifier: 0.25
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -213,18 +214,6 @@ entities:
     - type: RadiationGridResistance
     - type: StationMember
     - type: NavMap
-  - uid: 10
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: PhysicsMap
-    - type: GridTree
-    - type: MovedGrids
-    - type: Broadphase
-    - type: OccluderTree
 - proto: AirCanister
   entities:
   - uid: 209
