@@ -74,6 +74,7 @@ namespace Content.IntegrationTests.Tests
             "Atlas", // Harmony revived by Kravin
             "Mira", // Harmony, developed by tanuko
             "Eclipse", //Harmony, Developed by Lachryphage
+			"Prime", //Harmony, Developed/revived by luckyshotpictures
             "Dev",
             "TestTeg",
             "Fland",

@@ -1,11 +1,11 @@
 - type: gameMap
-  id: ClusterPrime
-  mapName: ClusterPrime
+  id: Prime
+  mapName: Prime
   mapPath: /Maps/_Harmony/prime.yml
   minPlayers: 25
   maxPlayers: 50
   stations:
-    ClusterPrime:
+    Prime:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationEmergencyShuttle
