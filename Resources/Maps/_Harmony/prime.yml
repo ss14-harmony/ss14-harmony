@@ -9227,7 +9227,7 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: BecomesStation
-      id: ClusterPrime
+      id: Prime
     - type: SpreaderGrid
     - type: GridPathfinding
     - type: NavMap
