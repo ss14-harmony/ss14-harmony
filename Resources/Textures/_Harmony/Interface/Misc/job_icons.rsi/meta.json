@@ -1,14 +1,14 @@
 {
-	"version": 1,
-	"license": "CC-BY-SA-3.0",
-	"copright": "Taken from tgstation at https://github.com/tgstation/tgstation/blob/53d1f1477d22a11a99c6c6924977cd431075761b/icons/mob/hud.dmi",
-	"size": {
-		"x": 8,
-		"y": 8
-	},
-	"states": [
-		{
-			"name": "BloodBrother"
-		}
-	]
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/blob/53d1f1477d22a11a99c6c6924977cd431075761b/icons/mob/hud.dmi",
+    "size": {
+        "x": 8,
+        "y": 8
+    },
+    "states": [
+        {
+            "name": "BloodBrother"
+        }
+    ]
 }
