@@ -23,34 +23,6 @@ public sealed partial class InitialBloodBrotherComponent : Component
     [DataField, AutoNetworkedField]
     public EntityUid? ConvertActionEntity;
 
-    #region Conversion Failure Messages
-
-    [DataField]
-    public LocId MessageConvertFailedNoMind = "blood-brother-convert-failed-no-mind";
-
-    [DataField]
-    public LocId MessageConvertFailedNotHumanoid = "blood-brother-convert-failed-no-mind";
-
-    [DataField]
-    public LocId MessageConvertFailedZombie = "blood-brother-convert-failed-zombie";
-
-    [DataField]
-    public LocId MessageConvertFailedMindShielded = "blood-brother-convert-failed-shielded";
-
-    [DataField]
-    public LocId MessageConvertFailedDead = "blood-brother-convert-failed-dead";
-
-    [DataField]
-    public LocId MessageConvertFailedPreference = "blood-brother-convert-failed-preference";
-
-    [DataField]
-    public LocId MessageConvertFailedTarget = "blood-brother-convert-failed-target";
-
-    public LocId MessageConvertFailedAlreadyBrother = "blood-brother-convert-failed-already-brother";
-    // Am I going too far in this whole "don't hard-code" thing...
-
-    #endregion
-
     [DataField]
     public bool IgnorePreference;
 

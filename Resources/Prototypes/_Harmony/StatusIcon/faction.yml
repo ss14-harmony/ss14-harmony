@@ -1,10 +1,11 @@
 - type: factionIcon
   id: BloodBrotherFaction
+  isShaded: true
   priority: 11
   showTo:
     components:
-    - SwowAntagIcons
+    - ShowAntagIcons
     - BloodBrother
   icon:
-    sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: Revolutionary # TODO: get an actual icon
+    sprite: /Textures/_Harmony/Interface/Misc/job_icons.rsi
+    state: BloodBrother # TODO: get an actual icon

@@ -58,7 +58,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
 
         if (!canConvert)
         {
-            _popupSystem.PopupEntity(Loc.GetString(failureMessage), args.Target, entity, PopupType.SmallCaution);
+            _popupSystem.PopupEntity(Loc.GetString(failureMessage, ("converter", entity), ("converted", args.Target)), args.Target, entity, PopupType.MediumCaution);
             return;
         }
 
@@ -119,11 +119,11 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
         }
 
         if (!_mindSystem.TryGetMind(target, out var targetMindId, out var targetMind))
-            return (false, entity.Comp.MessageConvertFailedNoMind);
+            return (false, "blood-brother-convert-failed-no-mind");
 
         // Target is already a blood brother
         if (HasComp<BloodBrotherRoleComponent>(target))
-            return (false, entity.Comp.MessageConvertFailedAlreadyBrother);
+            return (false, "blood-brother-convert-failed-already-brother");
 
         // Stop the blood brother from converting a target.
         foreach (var objective in converterMind.Objectives)
@@ -132,23 +132,23 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
                 continue;
 
             if (targetObjective.Target == targetMindId)
-                return (false, entity.Comp.MessageConvertFailedTarget);
+                return (false, "blood-brother-convert-failed-target");
         }
 
         if (!HasComp<HumanoidAppearanceComponent>(target))
-            return (false, entity.Comp.MessageConvertFailedNotHumanoid);
+            return (false, "blood-brother-convert-failed-no-mind");
 
         if (HasComp<ZombieComponent>(target))
-            return (false, entity.Comp.MessageConvertFailedZombie);
+            return (false, "blood-brother-convert-failed-zombie");
 
         if (HasComp<MindShieldComponent>(target))
-            return (false, entity.Comp.MessageConvertFailedMindShielded);
+            return (false, "blood-brother-convert-failed-shielded");
 
         if (!_mobStateSystem.IsAlive(target))
-            return (false, entity.Comp.MessageConvertFailedDead);
+            return (false, "blood-brother-convert-failed-dead");
 
         if (targetMind.UserId == null)
-            return (false, entity.Comp.MessageConvertFailedNoMind);
+            return (false, "blood-brother-convert-failed-no-mind");
 
         if (entity.Comp.IgnorePreference ||
             !_preferencesManager.TryGetCachedPreferences(targetMind.UserId.Value, out var preferences))
@@ -157,7 +157,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
         var profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
 
         if (profile.AntagPreferences.Contains(entity.Comp.RequiredAntagPreference) != true)
-            return (false, entity.Comp.MessageConvertFailedPreference);
+            return (false, "blood-brother-convert-failed-preference");
 
         return (true, default);
     }

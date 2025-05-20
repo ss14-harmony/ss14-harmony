@@ -16,6 +16,10 @@
       playerRatio: 1
       allowNonHumans: true
       multiAntagSetting: NotExclusive
+      briefing:
+        text: blood-brother-initial-role-greeting
+        color: DarkRed
+        # TODO: find a sound for the conversion
       components:
       - type: BloodBrother
       - type: InitialBloodBrother
