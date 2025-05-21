@@ -1676,3 +1676,17 @@ Entries:
     changes:
     - type: Add
       message: Added Genpop to Eclipse Starport!
+  - id: 636
+    author: youtissoum
+    time: '2025-05-20T18:30:57.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/636
+    changes:
+    - type: Fix
+      message: The prisoner will no longer spawn inside of the walls on amber.
+  - id: 639
+    author: BoskiYourk
+    time: '2025-05-21T01:38:11.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/639
+    changes:
+    - type: Tweak
+      message: Resprites the Energy Carbine
