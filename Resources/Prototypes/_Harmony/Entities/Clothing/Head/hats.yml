@@ -142,7 +142,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadWhiteBow
   name: white bow
-  description: 'very pretty silver bow, made of high-quality materials.'
+  description: 'Very pretty silver bow, made of high-quality materials.'
   components:
   - type: Sprite
     sprite: _Harmony/Clothing/Head/Hats/white_bow.rsi
