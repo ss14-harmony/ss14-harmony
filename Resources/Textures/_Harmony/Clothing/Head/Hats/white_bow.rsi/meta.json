@@ -1,26 +1,26 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "drawn by Svetoslav228",
-    "size": {
-        "x": 32,
-        "y": 32
+  "copyright": "Drawn by Svetoslav228 (GitHub)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+        "name": "icon"
     },
-    "states": [
-        {
-            "name": "icon"
-        },
-        {
-            "name": "equipped-HELMET",
-            "directions": 4
-        },
-        {
-            "name": "inhand-left",
-            "directions": 4
-        },
-        {
-            "name": "inhand-right",
-            "directions": 4
-        }
-    ]
+    {
+        "name": "equipped-HELMET",
+        "directions": 4
+    },
+    {
+        "name": "inhand-left",
+        "directions": 4
+    },
+    {
+        "name": "inhand-right",
+        "directions": 4
+    }
+  ]
 }
