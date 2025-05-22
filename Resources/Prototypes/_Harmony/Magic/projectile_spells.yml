@@ -1,7 +1,7 @@
 ﻿- type: entity
   id: ActionWehball
   name: Weball
-  description: Fires an weh towards the clicked location.
+  description: Fires a weh towards the clicked location.
   components:
   - type: Magic
   - type: WorldTargetAction

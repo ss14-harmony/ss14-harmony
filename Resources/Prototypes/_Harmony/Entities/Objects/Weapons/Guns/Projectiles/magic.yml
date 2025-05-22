@@ -1,9 +1,9 @@
 ﻿- type: entity
+  parent: BaseBullet
   id: ProjectileWehball
+  categories: [ HideSpawnMenu ]
   name: wehball
   description: You better GITTAH WEH.
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
   components:
   - type: PointLight
     color: "#67CC40"
@@ -17,4 +17,5 @@
     damage:
       types:
         Piercing: 0
-
+    soundHit:
+      path: /Audio/Items/Toys/weh.ogg

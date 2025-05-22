@@ -1,8 +1,8 @@
 ﻿- type: entity
+  parent: MarkerBase
   id: SpawnPointGhostGizard
   name: ghost role spawn point
   suffix: Gizard
-  parent: MarkerBase
   components:
   - type: GhostRole
     name: ghost-role-information-gizard-name

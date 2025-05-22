@@ -1,7 +1,7 @@
 ﻿- type: entity
-  name: Gizard
-  parent: SimpleMobBase
+  parent: MobLizard
   id: MobLizardGizard
+  name: Gizard
   description: It's Gizard the Wizard Lizard! Here to help with wizarding!
   components:
   - type: Sprite
@@ -19,6 +19,8 @@
     rules: ghost-role-information-familiar-rules
     mindRoles:
     - MindRoleGhostRoleFamiliar
+    raffle:
+      settings: short
   - type: GhostTakeoverAvailable
   - type: Grammar
     attributes:
