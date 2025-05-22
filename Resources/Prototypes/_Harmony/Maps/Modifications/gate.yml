@@ -1,0 +1,9 @@
+- type: mapModification
+  id: GatePermaPrisoner
+  applyOn:
+  - Gate
+  additions:
+  - prototype: SpawnPointPermaPrisoner
+    position: 51.5, 22.5
+  - prototype: SpawnPointPermaPrisoner
+    position: 55.5, 22.5

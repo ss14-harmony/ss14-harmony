@@ -108,6 +108,20 @@
   - UplinkWeaponry
 
 - type: listing
+  id: UplinkGlovesKnuckleDusters
+  name: uplink-gloves-knuckleduster-name
+  description: uplink-gloves-knuckleduster-desc
+  icon: { sprite: Clothing/Hands/Gloves/KnuckleDusters/syndicateknuckleduster.rsi, state: syndicateknuckleduster }
+  productEntity: ClothingHandsKnuckleDustersSyndicate
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkWeaponry
+
+- type: listing
   id: UplinkDisposableTurret
   name: uplink-disposable-turret-name
   description: uplink-disposable-turret-desc
@@ -560,9 +574,9 @@
   productEntity: HypopenBox
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 2 # Harmony change
   cost:
-    Telecrystal: 6
+    Telecrystal: 4 # Harmony change
   categories:
   - UplinkChemicals
 
@@ -621,9 +635,9 @@
   productEntity: ChemistryBottleNocturine
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 3
+    Telecrystal: 6 # Harmony change
   cost:
-    Telecrystal: 6
+    Telecrystal: 8 # Harmony change
   categories:
   - UplinkChemicals
 
@@ -684,11 +698,8 @@
   name: uplink-cigarettes-name
   description: uplink-cigarettes-desc
   productEntity: CigPackSyndicate
-  discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 1
   cost:
-    Telecrystal: 2
+    Telecrystal: 1
   categories:
   - UplinkChemicals
 
@@ -862,6 +873,13 @@
     Telecrystal: 4
   categories:
   - UplinkDeception
+  #Start of Harmony change
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  #End of Harmony change
 
 # Disruption
 
@@ -1098,6 +1116,13 @@
     Telecrystal: 12
   categories:
     - UplinkDisruption
+  #Start of Harmony change
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  #End of Harmony change
 
 - type: listing
   id: UplinkCameraBug
@@ -1250,6 +1275,13 @@
     Telecrystal: 6
   categories:
     - UplinkAllies
+  #Start of Harmony change
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  #End of Harmony change
 
 - type: listing
   id: UplinkSyndicatePersonalAI
@@ -1539,16 +1571,17 @@
   categories:
   - UplinkWearables
 
+# TODO: Revert back to normal thieving gloves when clothes dyeing is added
 - type: listing
   id: UplinkgClothingThievingGloves
-  name: uplink-clothing-thieving-gloves-name
-  description: uplink-clothing-thieving-gloves-desc
-  productEntity: ThievingGloves
+  name: uplink-clothing-chameleon-thieving-gloves-name
+  description: uplink-clothing-chameleon-thieving-gloves-desc
+  productEntity: ClothingHandsChameleonThief
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 3
   cost:
-    Telecrystal: 4
+    Telecrystal: 5
   categories:
   - UplinkWearables
 
@@ -2143,10 +2176,12 @@
   - !type:BuyerJobCondition
     whitelist:
     - Librarian
-  - !type:BuyerWhitelistCondition
-    blacklist:
-      components:
-      - SurplusBundle
+  #Start of Harmony change
+  #- !type:BuyerWhitelistCondition
+  #  blacklist:
+  #    components:
+  #    - SurplusBundle
+  #End of Harmony change
 
 - type: listing
   id: UplinkCombatBakery

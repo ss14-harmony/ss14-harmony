@@ -1,4 +1,16 @@
 - type: entity
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  id: GunSafeEnergyCarbineHarmony
+  name: energy carbine safe
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponEnergyCarbineFilledHarmony
+      amount: 2
+    - id: EnergyCartridgeHarmony
+      amount: 2
+
+- type: entity
   id: LockerBrigmedicFilledHarmony
   suffix: Brigmedic, Filled, Harmony
   parent: LockerBrigmedic

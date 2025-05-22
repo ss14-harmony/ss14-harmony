@@ -35,3 +35,15 @@
       amount: 1
   products:
     SunsetSoda: 6
+
+- type: reaction
+  id: ThirstTrap
+  reactants:
+    Cream:
+      amount: 3
+    TableSalt:
+      amount: 2
+    SodiumPolyacrylate:
+      amount: 1
+  products:
+    ThirstTrap: 6
