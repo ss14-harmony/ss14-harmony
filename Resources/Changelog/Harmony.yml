@@ -1690,3 +1690,12 @@ Entries:
     changes:
     - type: Tweak
       message: Resprites the Energy Carbine
+  - id: 610
+    author: BoskiYourk
+    time: '2025-05-22T02:30:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/610
+    changes:
+    - type: Add
+      message: Added the Energy Magnum
+    - type: Tweak
+      message: Gave the Warden the Energy Shotgun
