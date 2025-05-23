@@ -7,7 +7,6 @@
   - type: WorldTargetAction
     event: !type:ProjectileSpellEvent
       prototype: ProjectileWehball
-      speech: action-speech-spell-wehball
     icon:
       sprite: Objects/Fun/toys.rsi
       state: plushie_lizard
@@ -16,8 +15,8 @@
     checkCanAccess: false
     raiseOnUser: true
     range: 60
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Items/Toys/hew.ogg
+  #- type: SpeakOnAction | Doesn't Work?
+    #sentence: action-speech-spell-wehball
   - type: Sprite
     sprite: Objects/Fun/toys.rsi
     layers:

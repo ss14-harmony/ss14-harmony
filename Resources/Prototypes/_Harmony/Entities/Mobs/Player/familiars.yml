@@ -52,6 +52,12 @@
     spawned:
     - id: FoodMeatLizard
       amount: 1
+  - type: LizardAccent
+  - type: Speech
+    speechSounds: Lizard
+    speechVerb: Reptilian
+  - type: TypingIndicator
+    proto: lizard
   - type: InteractionPopup
     successChance: 0.3
     interactSuccessString: petting-success-reptile
