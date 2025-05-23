@@ -6,12 +6,12 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobWarden
-      time: 3600 #6 hrs
+      time: 10800 # harmony: 6 hrs -> 3 hrs (~2 rounds)
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
       department: Security
-      time: 10800 # 60 hrs
+      time: 108000 # Harmony: 60 hrs -> 30 hrs (~20 rounds)
 
 #Security Star
 - type: loadoutEffectGroup
@@ -21,7 +21,7 @@
       requirement:
         !type:DepartmentTimeRequirement
         department: Security
-        time: 21600 #100 hrs
+        time: 180000 # Harmony: 100 hrs -> 50 hrs (~34 rounds)
 
 # Head
 - type: loadout

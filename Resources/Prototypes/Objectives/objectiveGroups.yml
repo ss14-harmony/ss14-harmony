@@ -5,8 +5,7 @@
     TraitorObjectiveGroupSteal: 1
     TraitorObjectiveGroupKill: 1
     TraitorObjectiveGroupState: 1 #As in, something about your character. Alive, dead, arrested, gained an ability...
-    TraitorObjectiveGroupSocial: 1 #Involves helping/harming others without killing them or stealing their stuff
-
+    TraitorObjectiveGroupSocial: 0.5 # Harmony. Change: 1 -> 0.5 #Involves helping/harming others without killing them or stealing their stuff
 - type: weightedRandom
   id: TraitorObjectiveGroupSteal
   weights:
@@ -34,7 +33,7 @@
   id: TraitorObjectiveGroupState
   weights:
     EscapeShuttleObjective: 0.4 #Harmony change: 1 -> 0.4
-    DieObjective: 0.05
+    DieObjective: 0.15 # Harmony. Change: 0.05 -> 0.15
     TraitorSurviveObjective: 0.6 #Harmony objective
     #HijackShuttleObjective: 0.02
 
@@ -42,8 +41,7 @@
   id: TraitorObjectiveGroupSocial
   weights:
     RandomTraitorAliveObjective: 1
-    RandomTraitorProgressObjective: 1
-
+    RandomTraitorProgressObjective: 0.5 # Harmony. Change: 1 -> 0.5
 #Thief groups
 - type: weightedRandom
   id: ThiefObjectiveGroups

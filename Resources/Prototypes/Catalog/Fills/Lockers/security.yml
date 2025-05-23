@@ -49,6 +49,7 @@
       - id: RemoteSignaller
         amount: 2
       - id: Binoculars
+      - id: WeaponEnergyShotgun # Harmony Change: Gives the Warden the Energy Shotgun
 
 - type: entity
   id: LockerSecurityFilled
@@ -120,8 +121,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingEyesGlassesSecurity
-        prob: 0.3
+      - id: ClothingEyesGlassesNoir
       - id: ClothingHeadHatDetGadget
       - id: ClothingNeckTieDet
       - id: ClothingOuterVestDetective

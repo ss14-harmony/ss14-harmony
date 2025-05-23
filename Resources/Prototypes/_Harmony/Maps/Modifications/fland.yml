@@ -1,0 +1,13 @@
+- type: mapModification
+  id: FlandPermaPrisoner
+  applyOn:
+  - Fland
+  additions:
+  - prototype: SpawnPointPermaPrisoner
+    position: 41.5, 15.5
+  - prototype: SpawnPointPermaPrisoner
+    position: 44.5, 15.5
+  - prototype: SpawnPointPermaPrisoner
+    position: 48.5, 15.5
+  - prototype: SpawnPointPermaPrisoner
+    position: 51.5, 15.5

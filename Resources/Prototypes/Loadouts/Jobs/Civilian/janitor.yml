@@ -5,7 +5,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobJanitor
-      time: 21600 #52 hrs (1 hour per week for 1 year)
+      time: 54000 # Harmony: 52 hrs -> 15 hrs (~10 rounds), intentionally high because it's made for insane players
 
 # Head
 - type: loadout

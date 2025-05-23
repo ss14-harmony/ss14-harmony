@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 248.0.2
-  forkId: harmony
-  forkVersion: 9aebd01c58ceabdee09f0e638b2febd221cd0236
-  time: 03/30/2025 04:47:33
-  entityCount: 216
+  engineVersion: 255.1.0
+  forkId: ""
+  forkVersion: ""
+  time: 05/19/2025 12:45:30
+  entityCount: 218
 maps: []
 grids:
 - 1
@@ -59,6 +59,7 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
+      dampingModifier: 0.25
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -360,6 +361,12 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -1.5,-1.5
+      parent: 1
+  - uid: 218
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -3.5,7.5
       parent: 1
 - proto: CableApcExtension
   entities:
@@ -1005,7 +1012,8 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         189:
-        - Pressed: Toggle
+        - - Pressed
+          - Toggle
   - uid: 103
     components:
     - type: Transform
@@ -1014,7 +1022,8 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         191:
-        - Pressed: Toggle
+        - - Pressed
+          - Toggle
   - uid: 128
     components:
     - type: Transform
@@ -1024,7 +1033,8 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         190:
-        - Pressed: Toggle
+        - - Pressed
+          - Toggle
   - uid: 192
     components:
     - type: Transform
@@ -1033,7 +1043,8 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         130:
-        - Pressed: Toggle
+        - - Pressed
+          - Toggle
 - proto: PlasticFlapsAirtightClear
   entities:
   - uid: 20
@@ -1230,6 +1241,20 @@ entities:
       rot: 3.141592653589793 rad
       pos: -3.5,7.5
       parent: 1
+- proto: SignalButton
+  entities:
+  - uid: 219
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -3.5,7.5
+      parent: 1
+    - type: EmitSoundOnActivate
+      sound: !type:SoundCollectionSpecifier
+        params:
+          variation: 0.246
+          maxDistance: 25
+        collection: BananiumHorn
 - proto: SignCargo
   entities:
   - uid: 75
@@ -1346,37 +1371,61 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         118:
-        - Left: Forward
-        - Right: Reverse
-        - Middle: Off
+        - - Left
+          - Forward
+        - - Right
+          - Reverse
+        - - Middle
+          - Off
         117:
-        - Left: Forward
-        - Right: Reverse
-        - Middle: Off
+        - - Left
+          - Forward
+        - - Right
+          - Reverse
+        - - Middle
+          - Off
         97:
-        - Left: Forward
-        - Right: Reverse
-        - Middle: Off
+        - - Left
+          - Forward
+        - - Right
+          - Reverse
+        - - Middle
+          - Off
         100:
-        - Left: Forward
-        - Right: Reverse
-        - Middle: Off
+        - - Left
+          - Forward
+        - - Right
+          - Reverse
+        - - Middle
+          - Off
         9:
-        - Left: Forward
-        - Right: Reverse
-        - Middle: Off
+        - - Left
+          - Forward
+        - - Right
+          - Reverse
+        - - Middle
+          - Off
         120:
-        - Left: Forward
-        - Right: Reverse
-        - Middle: Off
+        - - Left
+          - Forward
+        - - Right
+          - Reverse
+        - - Middle
+          - Off
         119:
-        - Left: Forward
-        - Right: Reverse
-        - Middle: Off
+        - - Left
+          - Forward
+        - - Right
+          - Reverse
+        - - Middle
+          - Off
         121:
-        - Left: Forward
-        - Right: Reverse
-        - Middle: Off
+        - - Left
+          - Forward
+        - - Right
+          - Reverse
+        - - Middle
+          - Off
 - proto: WallShuttle
   entities:
   - uid: 5

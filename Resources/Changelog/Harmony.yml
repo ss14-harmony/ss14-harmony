@@ -1136,3 +1136,557 @@ Entries:
     changes:
     - type: Add
       message: Added new clothing for the cargo technician.
+  - id: 364
+    author: Jajsha
+    time: '2025-02-08T17:28:18.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/364
+    changes:
+    - type: Fix
+      message: Escape pods now correctly dock at centcomm.
+  - id: 319
+    author: BoskiYourk
+    time: '2025-02-13T05:26:18.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/319
+    changes:
+    - type: Add
+      message: Adds the brigmedic as a midround shuttle ghost role
+  - id: 387
+    author: BoskiYourk
+    time: '2025-02-20T12:22:29.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/387
+    changes:
+    - type: Fix
+      message: Fixed the pizza bomb's name being capitalized
+  - id: 381
+    author: Anno-Midi
+    time: '2025-02-20T12:23:21.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/381
+    changes:
+    - type: Fix
+      message: Fixed Poquito's description
+  - id: 378
+    author: youtissoum
+    time: '2025-02-20T12:26:34.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/378
+    changes:
+    - type: Add
+      message: A striped orange towel is now available in loadouts after 100 hours of
+        prisoner playtime.
+  - id: 390
+    author: raccoonio
+    time: '2025-02-24T04:45:09.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/390
+    changes:
+    - type: Add
+      message: New lop pop station Mira!
+  - id: 353
+    author: Unisol
+    time: '2025-02-24T23:18:17.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/353
+    changes:
+    - type: Add
+      message: Added DM02 Sandbomb
+  - id: 382
+    author: TheSecondLord
+    time: '2025-03-19T18:09:07.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/382
+    changes:
+    - type: Add
+      message: Added lanyards to player loadouts, HoP's Ptech vendor and bureaucracy
+        crates.
+  - id: 362
+    author: BoskiYourk
+    time: '2025-05-01T05:43:03.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/362
+    changes:
+    - type: Add
+      message: Added the energy carbine to the game
+    - type: Add
+      message: Added the lethal, x-ray, and unstable energy cartridges
+  - id: 367
+    author: youtissoum
+    time: '2025-05-01T16:36:36.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/367
+    changes:
+    - type: Fix
+      message: The round-start prisoner will no longer be told they are allowed to use
+        security-restricted contraband
+  - id: 392
+    author: spanky-spanky
+    time: '2025-02-21T21:53:04.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/392
+    changes:
+    - type: Tweak
+      message: The station will now start rotationally aligned to space.
+  - id: 393
+    author: spanky-spanky
+    time: '2025-02-22T18:12:03.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/393
+    changes:
+    - type: Tweak
+      message: Increased role timers for command and security.
+  - id: 398
+    author: liltenhead
+    time: '2025-02-24T09:03:11.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/398
+    changes:
+    - type: Remove
+      message: Removed Terrorism from the list of crimes under space law.
+  - id: 413
+    author: spanky-spanky
+    time: '2025-03-07T06:41:36.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/413
+    changes:
+    - type: Remove
+      message: Removed Loop from rotation.
+  - id: 422
+    author: Unisol
+    time: '2025-03-13T02:45:41.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/422
+    changes:
+    - type: Remove
+      message: removed harmony-specific espresso martini in favor of upstream espresso
+        martini.
+  - id: 426
+    author: liltenhead
+    time: '2025-03-13T16:29:43.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/426
+    changes:
+    - type: Tweak
+      message: Changed implantation procedures in space law.
+  - id: 461
+    author: MoonlightHollow
+    time: '2025-03-22T18:44:43.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/461
+    changes:
+    - type: Tweak
+      message: Lathes/Fabs can now eject full 30 stacks
+  - id: 441
+    author: liltenhead
+    time: '2025-03-23T11:07:32.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/441
+    changes:
+    - type: Remove
+      message: Removed event spells from the wizard.
+    - type: Tweak
+      message: Reduced the likelihood of wizards appearing.
+  - id: 473
+    author: BoskiYourk
+    time: '2025-03-26T21:55:59.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/473
+    changes:
+    - type: Fix
+      message: Fixed the brigmedic shuttle so it has the proper shuttle console
+  - id: 470
+    author: Ermucat
+    time: '2025-03-27T03:52:53.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/470
+    changes:
+    - type: Tweak
+      message: Replaced old smugglers stashes with new wizden stashes
+  - id: 475
+    author: GithubEnjoyer1984
+    time: '2025-04-07T04:30:07.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/475
+    changes:
+    - type: Tweak
+      message: The Syndicate Listening Post can now spawn 20 minutes into the round
+        instead of 60.
+  - id: 520
+    author: Lachryphage
+    time: '2025-04-15T16:39:25.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/520
+    changes:
+    - type: Add
+      message: Added Handheld GPS, Cryosleep botany fixtures and paper variety to the
+        listening post
+  - id: 530
+    author: BoskiYourk
+    time: '2025-04-18T16:53:18.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/530
+    changes:
+    - type: Tweak
+      message: Resprited the Singularity Generator
+    - type: Add
+      message: Adds some reflective paint to the bottom of the singularity generator
+  - id: 525
+    author: thecopbennet
+    time: '2025-04-20T17:25:34.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/525
+    changes:
+    - type: Add
+      message: Added a new "Survive" objective for traitors, this objective does not
+        require traitors to board the evac shuttle or be unrestrained.
+    - type: Tweak
+      message: The "Escape to centcomm alive and unrestrained" objective for traitors
+        is now more rare.
+  - id: 404
+    author: Ermucat
+    time: '2025-04-20T17:27:48.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/404
+    changes:
+    - type: Tweak
+      message: Reverted the disabler buff, rejoice.
+  - id: 536
+    author: jack-thedragon95
+    time: '2025-04-22T00:46:31.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/536
+    changes:
+    - type: Tweak
+      message: Updated vox mask icons to be more consistent
+  - id: 501
+    author: spanky-spanky
+    time: '2025-04-22T23:39:05.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/501
+    changes:
+    - type: Add
+      message: New lobby song Dropzone by Qwesta.
+  - id: 561
+    author: TastelessMAX
+    time: '2025-04-30T04:17:10.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/561
+    changes:
+    - type: Remove
+      message: Removed Meta from rotation.
+  - id: 408
+    author: burdburd
+    time: '2025-04-30T13:48:28.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/408
+    changes:
+    - type: Add
+      message: Added McLilten's Barsign
+  - id: 458
+    author: Palourde89
+    time: '2025-05-01T05:28:24.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/458
+    changes:
+    - type: Add
+      message: New sprites for Engineer, Atmo and CE's hardsuits
+    - type: Fix
+      message: Lights are now properly unshaded on engie and CE's helmets
+  - id: 507
+    author: DieselMohawk
+    time: '2025-05-01T06:12:32.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/507
+    changes:
+    - type: Add
+      message: Merc Sec resprite for security jumpsuits and helmet.
+  - id: 511
+    author: MoonlightHollow
+    time: '2025-05-01T06:13:47.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/511
+    changes:
+    - type: Add
+      message: Added the cane
+  - id: 406
+    author: Ermucat
+    time: '2025-05-01T06:17:22.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/406
+    changes:
+    - type: Tweak
+      message: Changed Magnum Speedloaders to be 1x1 instead of 1x2
+  - id: 509
+    author: MoonlightHollow
+    time: '2025-05-01T06:21:20.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/509
+    changes:
+    - type: Tweak
+      message: Added and remove surplus blacklist
+  - id: 506
+    author: BoskiYourk
+    time: '2025-05-01T06:21:58.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/506
+    changes:
+    - type: Tweak
+      message: Makes shotgun slugs do more damage
+    - type: Tweak
+      message: Shotgun slugs now deal structural damage and can pierce through weaker
+        structures
+  - id: 495
+    author: Ermucat
+    time: '2025-05-01T06:24:02.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/495
+    changes:
+    - type: Tweak
+      message: Goliath cloaks are now craftable
+  - id: 555
+    author: BoskiYourk
+    time: '2025-05-01T06:27:53.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/555
+    changes:
+    - type: Add
+      message: Gives Barozine its Own Vestine-Based Recipe
+  - id: 457
+    author: MoonlightHollow
+    time: '2025-05-01T06:28:55.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/457
+    changes:
+    - type: Add
+      message: Traitors can now buy raid suits at 12TC.
+  - id: 554
+    author: BoskiYourk
+    time: '2025-05-01T06:31:59.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/554
+    changes:
+    - type: Tweak
+      message: Gives the Bandolier actual Storage Slots
+  - id: 543
+    author: SomegnihT
+    time: '2025-05-01T06:43:18.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/543
+    changes:
+    - type: Add
+      message: Added AstroNav to syndicate & syndicate agent PDAs.
+  - id: 420
+    author: Anzuneth
+    time: '2025-05-01T11:26:50.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/420
+    changes:
+    - type: Tweak
+      message: Removed the uncloneability portion of Unrevivable
+    - type: Add
+      message: Added the Uncloneable trait
+  - id: 434
+    author: GithubEnjoyer1984
+    time: '2025-05-01T11:57:42.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/434
+    changes:
+    - type: Tweak
+      message: Changed kammerer firing sound
+  - id: 436
+    author: thesaladmancer
+    time: '2025-05-01T12:04:23.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/436
+    changes:
+    - type: Add
+      message: Restored the fireaxe's ability to pry hull plating tiles, with a longer
+        doafter.
+  - id: 477
+    author: GithubEnjoyer1984
+    time: '2025-05-01T12:50:59.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/477
+    changes:
+    - type: Add
+      message: Added the Interdyne defibrillator as a separate purchase for nukies,
+        costing 10 TC
+  - id: 486
+    author: GithubEnjoyer1984
+    time: '2025-05-01T13:11:17.0000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/486
+    changes:
+    - type: Add
+      message: Added Sponsored By Syndicate by mrjajkes
+  - id: 367
+    author: youtissoum
+    time: '2025-05-01T16:36:36.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/367
+    changes:
+    - type: Fix
+      message: The round-start prisoner will no longer be told they are allowed to use security-restricted contraband
+  - id: 544
+    author: Lachryphage
+    time: '2025-05-01T18:57:42.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/544
+    changes:
+    - type: Tweak
+      message: Eclipse Starport now has gateways to engineering and security from bridge, a second AI core, a mail courier speeder, and various QoL improvements!
+  - id: 547
+    author: Flarbergaster
+    time: '2025-05-02T08:57:11.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/547
+    changes:
+    - type: Tweak
+      message: Added the ability for Ais to be Ioned
+  - id: 516
+    author: MissKay1994
+    time: '2025-05-02T09:29:28.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/516
+    changes:
+    - type: Tweak
+      message: Being cluwned is no longer round removal
+  - id: 579
+    author: Flarbergaster
+    time: '2025-05-02T14:53:47.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/579
+    changes:
+    - type: Tweak
+      message: Tweaked Hyperzines metabolism to be .5.
+  - id: 541
+    author: MoonlightHollow
+    time: '2025-05-02T15:21:31.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/541
+    changes:
+    - type: Add
+      message: Added moth audio
+  - id: 584
+    author: BoskiYourk
+    time: '2025-05-03T16:49:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/584
+    changes:
+    - type: Tweak
+      message: Energy Cartridges Can Now Fit in Sec Belts
+  - id: 586
+    author: GithubEnjoyer1984
+    time: '2025-05-03T17:05:11.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/586
+    changes:
+    - type: Fix
+      message: Fixed kammerer audio
+  - id: 485
+    author: Ermucat
+    time: '2025-05-03T18:00:56.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/485
+    changes:
+    - type: Tweak
+      message: Spray painters now instantly color pipes
+  - id: 386
+    author: Ermucat
+    time: '2025-05-03T18:35:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/386
+    changes:
+    - type: Add
+      message: Added Phoron will make us rich to the jukebox
+  - id: 585
+    author: 3nderall
+    time: '2025-05-04T01:08:27.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/585
+    changes:
+    - type: Add
+      message: Added the Medical Analysis Goggles, they are a mix between the chemical analysis goggles and the medical HUD.
+  - id: 588
+    author: youtissoum
+    time: '2025-05-04T02:05:29.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/588
+    changes:
+    - type: Tweak
+      message: Playtime requirements for seniority items have been increased.
+  - id: 574
+    author: MoonlightHollow
+    time: '2025-05-06T19:32:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/574
+    changes:
+    - type: Add
+      message: 'Added admin smite: Valley Girl Accent'
+  - id: 596
+    author: youtissoum
+    time: '2025-05-06T19:33:32.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/596
+    changes:
+    - type: Tweak
+      message: The AI is now less likely to get affected by an ion storm.
+  - id: 502
+    author: DoggowithaKeyboard
+    time: '2025-05-08T22:39:53.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/502
+    changes:
+    - type: Tweak
+      message: PAIs now deal 0.1 blunt damage when thrown.
+  - id: 521
+    author: Lachryphage
+    time: '2025-05-09T03:43:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/521
+    changes:
+    - type: Add
+      message: Added Thirst Trap.
+  - id: 605
+    author: youtissoum
+    time: '2025-05-10T18:24:40.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/605
+    changes:
+    - type: Fix
+      message: The cargo department is no longer unaffected by the seniority item timer changes.
+  - id: 540
+    author: BoskiYourk
+    time: '2025-05-10T20:20:58.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/540
+    changes:
+    - type: Tweak
+      message: All Nuclear Operative Uplinks Get an Extra 5 TC
+    - type: Tweak
+      message: Nuclear Operatives and Lone Ops No Longer Start with Blood-Reds
+  - id: 608
+    author: youtissoum
+    time: '2025-05-11T11:49:57.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/608
+    changes:
+    - type: Fix
+      message: ERT hardsuit helmets will no longer show up as error sprites.
+  - id: 597
+    author: MoonlightHollow
+    time: '2025-05-11T21:55:34.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/597
+    changes:
+    - type: Add
+      message: Added two new alcohol theme traits
+  - id: 499
+    author: BlueMoon059
+    time: '2025-05-14T16:31:55.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/499
+    changes:
+    - type: Add
+      message: Three new voicelines have been added to the end of round lobby announcement system.
+    - type: Fix
+      message: fixed an issue that prevented two existing end of round lobby voicelines from playing.
+  - id: 604
+    author: Jajsha
+    time: '2025-05-14T18:01:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/604
+    changes:
+    - type: Add
+      message: Added the SOP book to the game. SOP can also be accessed under the Command tab in the guidebook.
+  - id: 617
+    author: KravinDes
+    time: '2025-05-14T20:06:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/617
+    changes:
+    - type: Tweak
+      message: The amount of players it takes to spawn a wizard has been increased.
+  - id: 618
+    author: GithubEnjoyer1984
+    time: '2025-05-15T17:05:53.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/618
+    changes:
+    - type: Tweak
+      message: Buffed hypopen price to 4 TC, nerfed nocturine price to 8 TC
+  - id: 412
+    author: GithubEnjoyer1984
+    time: '2025-05-16T16:02:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/412
+    changes:
+    - type: Tweak
+      message: Reduced amount of nuclear operatives required to declare war from 4 to 3.
+  - id: 490
+    author: Quantum-cross
+    time: '2025-05-19T01:18:50.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/490
+    changes:
+    - type: Fix
+      message: Pizza bomb goes boom when you open it as the gods intended
+  - id: 559
+    author: MoonlightHollow
+    time: '2025-05-19T01:29:03.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/559
+    changes:
+    - type: Add
+      message: Added new color turtlenecks
+  - id: 634
+    author: Lachryphage
+    time: '2025-05-19T13:03:11.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/634
+    changes:
+    - type: Add
+      message: Added Genpop to Eclipse Starport!
+  - id: 636
+    author: youtissoum
+    time: '2025-05-20T18:30:57.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/636
+    changes:
+    - type: Fix
+      message: The prisoner will no longer spawn inside of the walls on amber.
+  - id: 639
+    author: BoskiYourk
+    time: '2025-05-21T01:38:11.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/639
+    changes:
+    - type: Tweak
+      message: Resprites the Energy Carbine

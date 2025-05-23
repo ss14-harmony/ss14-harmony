@@ -35,9 +35,9 @@
   description: Standard security gear. Protects the head from impacts.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Helmets/security.rsi
+    sprite: _Harmony/Clothing/Head/Helmets/security.rsi #Harmony Change: Harmony Exclusive Resprite
   - type: Clothing
-    sprite: Clothing/Head/Helmets/security.rsi
+    sprite: _Harmony/Clothing/Head/Helmets/security.rsi #Harmony Change: Harmony Exclusive Resprite
   - type: Tag
     tags:
     - WhitelistChameleon

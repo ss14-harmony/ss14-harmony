@@ -1,13 +1,13 @@
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Examine;
+using Content.Shared.IdentityManagement; //Harmony
+using Content.Shared.Inventory; //Harmony
 using Content.Shared.Labels.Components;
 using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Paper;
 using Robust.Shared.Containers;
 using Robust.Shared.Utility;
-using Content.Shared.IdentityManagement; //Harmony
 using System.Linq; //Harmony
-using Content.Shared.Inventory; //Harmony
 
 namespace Content.Shared.Labels.EntitySystems;
 

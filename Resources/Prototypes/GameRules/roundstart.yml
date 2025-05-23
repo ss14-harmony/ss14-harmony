@@ -99,6 +99,7 @@
     - NamesOperationSuffix
     nameFormat: name-format-nuclear-operation
   - type: NukeopsRule
+    warDeclarationMinOps: 3 # Harmony addition
   - type: RuleGrids
   - type: AntagSelection
   - type: AntagLoadProfileRule
@@ -185,7 +186,7 @@
   - type: AntagRandomObjectives
     sets:
     - groups: TraitorObjectiveGroups
-    maxDifficulty: 5
+    maxDifficulty: 7.5 # Harmony. Change: 5 -> 7.5
   - type: AntagSelection
     agentName: traitor-round-end-agent-name
 
@@ -282,7 +283,7 @@
   id: Wizard
   components:
   - type: GameRule
-    minPlayers: 10
+    minPlayers: 25 # Harmony specific change. 10 -> 25
   - type: AntagSelection
     agentName: wizard-round-end-name
     selectionTime: PrePlayerSpawn

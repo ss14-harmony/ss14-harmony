@@ -11,6 +11,27 @@
   - UplinkExplosives
 # Ammo
 # Chemicals
+- type: listing
+  id: UplinkDefib
+  name: uplink-defib-name
+  description: uplink-defib-desc
+  productEntity: DefibrillatorSyndicate
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 8
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkChemicals
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
 # Deception
 
 - type: listing
@@ -58,6 +79,26 @@
     Telecrystal: 4
   categories:
   - UplinkWearables
+
+- type: listing
+  id: UplinkClothingOuterArmorRaidHarmony
+  name: uplink-syndie-raid-name
+  description: uplink-syndie-raid-desc
+  icon: { sprite: /Textures/Clothing/OuterClothing/Armor/syndie-raid.rsi, state: icon }
+  productEntity: ClothingBackpackSyndicateRaidBundle
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 7
+  cost:
+    Telecrystal: 12
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+        - NukeOpsUplink
+
 # Pointless
 - type: listing
   id: UplinkClusterWeh
