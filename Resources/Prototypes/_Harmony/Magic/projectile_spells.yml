@@ -15,8 +15,8 @@
     checkCanAccess: false
     raiseOnUser: true
     range: 60
-  #- type: SpeakOnAction | Doesn't Work?
-    #sentence: action-speech-spell-wehball
+  - type: SpeakOnAction
+    sentence: action-speech-spell-wehball
   - type: Sprite
     sprite: Objects/Fun/toys.rsi
     layers:
