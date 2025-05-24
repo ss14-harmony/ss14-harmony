@@ -5,7 +5,7 @@
         "y": 32
     },
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/pull/32742/commits/44820f5b6e2c864a35bfad448e0a9437f01ad2e2",
+    "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/9b308c274d206fecb0c04165405130255866b8c9",
     "states": [
         {
             "name": "scrub_off",
