@@ -23,6 +23,7 @@
         amount: 2
       - id: RemoteSignaller
         amount: 2
+      - id: WeaponEnergyShotgun # Harmony Change: Gives the Warden the Energy Shotgun
 
 - type: entity
   id: LockerWardenFilled
@@ -49,6 +50,7 @@
       - id: RemoteSignaller
         amount: 2
       - id: Binoculars
+      - id: WeaponEnergyShotgun # Harmony Change: Gives the Warden the Energy Shotgun
 
 - type: entity
   id: LockerSecurityFilled

@@ -574,9 +574,9 @@
   productEntity: HypopenBox
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 2 # Harmony change
   cost:
-    Telecrystal: 6
+    Telecrystal: 4 # Harmony change
   categories:
   - UplinkChemicals
 
@@ -635,9 +635,9 @@
   productEntity: ChemistryBottleNocturine
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 3
+    Telecrystal: 6 # Harmony change
   cost:
-    Telecrystal: 6
+    Telecrystal: 8 # Harmony change
   categories:
   - UplinkChemicals
 
