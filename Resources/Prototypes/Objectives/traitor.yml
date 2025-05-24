@@ -8,7 +8,6 @@
   - type: RoleRequirement
     roles:
     - TraitorRole
-    - BloodBrotherRole # Harmony (why does this even exist...)
 
 - type: entity
   abstract: true

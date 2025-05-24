@@ -20,10 +20,10 @@ public sealed partial class BloodBrotherComponent : Component
     public EntProtoId<MindRoleComponent> BloodBrotherMindRole = "MindRoleBloodBrother";
 
     [DataField]
-    public LocId BriefingText = "blood-brother-briefing";
+    public LocId BriefingText = "blood-brother-role-greeting";
 
     [DataField]
-    public Color BriefingColor = Color.Red; // TODO: find the right color.
+    public Color BriefingColor = Color.MediumVioletRed;
 
     // TODO: get a sound
 

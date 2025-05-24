@@ -145,6 +145,8 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
 
         Dirty(entity, originalComponent);
         Dirty(args.Target, convertedComp);
+
+        _antagSystem.SendBriefing(args.Target, Loc.GetString(convertedComp.BriefingText), convertedComp.BriefingColor, null);
     }
 
     private (bool canConvert, LocId failureMessage) CanConvert(

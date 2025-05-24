@@ -8,13 +8,11 @@ blood-brother-round-end = [color=white]{CAPITALIZE($name)}[/color] ([color=gray]
 blood-brother-initial-role-greeting =
     You are a blood brother.
     You have been given the ability to convert one crewmember to be on your side.
-    Use it wisely and finish your objectives given to you by an anonymous source.
-    Not even death shall separate you from your brother.
+    Use this ability wisely and finish your objectives given to you by an anonymous source.
 
 blood-brother-role-greeting =
     You have been converted into a blood brother.
-    Listen to your brother and help them accomplish any objectives they need.
-    Not even death shall separate you from your brother.
+    Listen to your brother and help them accomplish their objectives
 
 blood-brother-briefing = Collaborate with your blood brother to accomplish all your objectives.
 
