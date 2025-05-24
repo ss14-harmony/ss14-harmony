@@ -4,6 +4,7 @@ using Content.Server._Harmony.Roles;
 using Content.Server.Administration.Logs;
 using Content.Server.Antag;
 using Content.Server.Antag.Components;
+using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Mind;
 using Content.Server.Objectives;
@@ -14,6 +15,7 @@ using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
 using Content.Shared._Harmony.BloodBrothers.Components;
 using Content.Shared.Database;
+using Content.Shared.GameTicking.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Mobs.Systems;
@@ -45,7 +47,45 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
     {
         base.Initialize();
 
+        SubscribeLocalEvent<BloodBrotherRuleComponent, ObjectivesTextPrependEvent>(OnObjectivesTextPrepend);
         SubscribeLocalEvent<InitialBloodBrotherComponent, BloodBrotherConvertActionEvent>(OnBloodBrotherConvert);
+    }
+
+    private void OnObjectivesTextPrepend(Entity<BloodBrotherRuleComponent> entity, ref ObjectivesTextPrependEvent args)
+    {
+        var antags = _antagSystem.GetAntagIdentifiers(entity.Owner);
+
+        foreach (var (mind, sessionData, name) in antags)
+        {
+            if (!_roleSystem.MindHasRole<BloodBrotherRoleComponent>(mind, out var role))
+                continue;
+
+            var brotherRole = role.Value.Comp2;
+
+            if (brotherRole.Brother == null)
+                continue;
+
+            if (!_mindSystem.TryGetMind(brotherRole.Brother.Value, out var brotherMindId, out var brotherMind)
+                || brotherMind.UserId == null)
+            {
+                args.Text += "\n" + Loc.GetString("blood-brother-round-end-no-mind",
+                    ("name", name),
+                    ("username", sessionData.UserName),
+                    ("brotherName", MetaData(role.Value).EntityName));
+            }
+
+            if (brotherMind == null
+                || brotherMind.UserId == null) // Required because uh???????????
+                continue;
+
+            var brotherUsername = _playerManager.GetPlayerData(brotherMind.UserId.Value).UserName;
+
+            args.Text += "\n" + Loc.GetString("blood-brother-round-end",
+                ("name", name),
+                ("username", sessionData.UserName),
+                ("brotherName", MetaData(brotherRole.Brother.Value).EntityName),
+                ("brotherUsername", (brotherUsername)));
+        }
     }
 
     private void OnBloodBrotherConvert(Entity<InitialBloodBrotherComponent> entity,
@@ -77,7 +117,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
             $"{ToPrettyString(entity)} converted {ToPrettyString(args.Target)} into their Blood Brother");
 
         if (_roleSystem.MindHasRole<BloodBrotherRoleComponent>(mindId, out var role))
-            role.Value.Comp2.Brother = targetMindId;
+            role.Value.Comp2.Brother = args.Target;
 
         Entity<MindRoleComponent, BloodBrotherRoleComponent>? targetRole = null;
         if (!_roleSystem.MindHasRole(targetMindId, out targetRole))
