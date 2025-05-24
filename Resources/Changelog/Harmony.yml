@@ -1699,3 +1699,26 @@ Entries:
       message: Added the Energy Magnum
     - type: Tweak
       message: Gave the Warden the Energy Shotgun
+  - id: 642
+    author: BoskiYourk
+    time: '2025-05-24T12:47:40.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/642
+    changes:
+    - type: Add
+      message: Pellet and slug shotgun drums are now in the uplink.
+  - id: 661
+    author: BoskiYourk
+    time: '2025-05-24T14:47:17.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/661
+    changes:
+    - type: Tweak
+      message: Mice now deal one blunt damage when thrown.
+    - type: Tweak
+      message: Mice now take five blunt damage on impact when thrown.
+  - id: 643
+    author: Flarbergaster
+    time: '2025-05-24T14:54:10.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/643
+    changes:
+    - type: Tweak
+      message: The zombies and zombeteors gamemodes are now slightly more common.
