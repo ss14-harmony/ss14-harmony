@@ -8,4 +8,4 @@
     - BloodBrother
   icon:
     sprite: /Textures/_Harmony/Interface/Misc/job_icons.rsi
-    state: BloodBrother # TODO: get an actual icon
+    state: BloodBrother

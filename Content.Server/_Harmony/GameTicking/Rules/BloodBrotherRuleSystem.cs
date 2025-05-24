@@ -13,6 +13,7 @@ using Content.Server.Objectives.Systems;
 using Content.Server.Popups;
 using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
+using Content.Server.Stunnable;
 using Content.Shared._Harmony.BloodBrothers.Components;
 using Content.Shared.Database;
 using Content.Shared.GameTicking.Components;
@@ -41,6 +42,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
     [Dependency] private readonly ObjectivesSystem _objectivesSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly RoleSystem _roleSystem = default!;
+    [Dependency] private readonly StunSystem _stunSystem = default!;
     [Dependency] private readonly TargetObjectiveSystem _targetObjectiveSystem = default!;
 
     public override void Initialize()
@@ -141,18 +143,29 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
 
         _mindSystem.AddObjective(targetMindId, targetMind, newObjective.Value);
 
+        // visuals
+        _antagSystem.SendBriefing(args.Target, Loc.GetString(convertedComp.BriefingText), convertedComp.BriefingColor, null);
+
+        _popupSystem.PopupEntity(
+            Loc.GetString(entity.Comp.ConvertPopupText, ("converter", entity), ("converted", args.Target)),
+            args.Target,
+            PopupType.LargeCaution);
+
+        _stunSystem.TryParalyze(args.Target, entity.Comp.ConvertStunTime, true);
+
+        // remove old components and update state
         RemCompDeferred<InitialBloodBrotherComponent>(entity);
 
         Dirty(entity, originalComponent);
         Dirty(args.Target, convertedComp);
-
-        _antagSystem.SendBriefing(args.Target, Loc.GetString(convertedComp.BriefingText), convertedComp.BriefingColor, null);
     }
 
     private (bool canConvert, LocId failureMessage) CanConvert(
         Entity<InitialBloodBrotherComponent> entity,
         EntityUid target)
     {
+        return (true, default); // DEBUG
+
         if (!_mindSystem.TryGetMind(entity, out _, out var converterMind))
         {
             DebugTools.Assert("Blood brother tried to convert but had no mind.");

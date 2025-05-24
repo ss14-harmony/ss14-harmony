@@ -16,7 +16,7 @@ blood-brother-role-greeting =
 
 blood-brother-briefing = Collaborate with your blood brother to accomplish all your objectives.
 
-# Conversion errors
+# Conversion
 
 blood-brother-convert-failed-no-mind = {CAPITALIZE(THE($converted))} does not have a mind
 blood-brother-convert-failed-already-brother = {CAPITALIZE(THE($converted))} is already a blood brother
@@ -25,3 +25,5 @@ blood-brother-convert-failed-zombie = {CAPITALIZE(THE($converted))} is a zombie
 blood-brother-convert-failed-shielded = {CAPITALIZE(THE($converted))}'s mind is too protected
 blood-brother-convert-failed-dead = {CAPITALIZE(THE($converted))} is dead
 blood-brother-convert-failed-preference = {CAPITALIZE(THE($converted))}'s mind is unaffected by the conversion
+
+blood-brother-conversion-popup = {CAPITALIZE(THE($converter))} grabs {THE($converted)} firmly and digs deep symbols into their arms.

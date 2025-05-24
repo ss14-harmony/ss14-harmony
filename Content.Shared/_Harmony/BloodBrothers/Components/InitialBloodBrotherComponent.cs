@@ -29,6 +29,12 @@ public sealed partial class InitialBloodBrotherComponent : Component
     [DataField]
     public ProtoId<AntagPrototype> RequiredAntagPreference = "BloodBrother";
 
+    [DataField]
+    public LocId ConvertPopupText = "blood-brother-conversion-popup";
+
+    [DataField]
+    public TimeSpan ConvertStunTime = TimeSpan.FromSeconds(3);
+
     public override bool SendOnlyToOwner => true;
 }
 

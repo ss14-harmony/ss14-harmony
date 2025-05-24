@@ -3,7 +3,7 @@
   weights:
     BloodBrotherObjectiveGroupState: 1
     BloodBrotherObjectiveGroupSteal: 1
-    BloodBrotherObjectiveGroupKill: 1
+    # DEBUG: BloodBrotherObjectiveGroupKill: 1
 
 - type: weightedRandom
   id: BloodBrotherObjectiveGroupState
