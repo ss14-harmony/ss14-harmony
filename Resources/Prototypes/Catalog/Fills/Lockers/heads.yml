@@ -324,7 +324,10 @@
   id: LockerFillHeadOfSecurityNoHardsuit
   table: !type:AllSelector
     children:
-    - id: WeaponEnergyShotgun
+# Start of Harmony Change: Replaces the Energy Shotgun with the Energy Magnum
+#    - id: WeaponEnergyShotgun
+    - id: WeaponEnergyMagnumHarmony
+# End of Harmony Change
     - id: BookSpaceLaw
     - id: BoxEncryptionKeySecurity
     - id: CigarGoldCase
