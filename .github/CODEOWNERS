@@ -10,6 +10,12 @@
 /Resources/*.yml                                    @KeldWolf @FluffMe @youtissoum @Zap527
 /Resources/**/*.yml                                 @KeldWolf @FluffMe @youtissoum @Zap527
 
+# FTL files
+/Resources/Locale                                   @Zap527
+
+# Server info and rules
+/Resources/ServerInfo                               @Zap527
+
 # Sprites
 /Resources/Textures/                                @DieselMohawk
 
