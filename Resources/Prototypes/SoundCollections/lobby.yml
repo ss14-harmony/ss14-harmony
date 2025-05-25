@@ -1,8 +1,8 @@
 - type: soundCollection
   id: LobbyMusic
   files:
-    - /Audio/Lobby/thunderdome.ogg
-    - /Audio/Lobby/absconditus.ogg
+#    - /Audio/Lobby/thunderdome.ogg # Harmony, Disabled
+#    - /Audio/Lobby/absconditus.ogg # Harmony, Disabled
     - /Audio/Lobby/space_asshole.ogg
     - /Audio/Lobby/the_wizard.ogg
     - /Audio/Lobby/endless_space.ogg
@@ -11,7 +11,7 @@
     - /Audio/Lobby/title2.ogg
     - /Audio/Lobby/title3.ogg
     - /Audio/Lobby/mod.flip-flap.ogg
-    - /Audio/Lobby/Spac_Stac.ogg
+#    - /Audio/Lobby/Spac_Stac.ogg # Harmony, Disabled
     - /Audio/Lobby/pwmur.ogg
     - /Audio/Lobby/lasers_rip_apart_the_bulkhead.ogg
     - /Audio/Lobby/every_light_is_blinking_at_once.ogg
@@ -19,3 +19,4 @@
 #Harmony additions
     - /Audio/_Harmony/Lobby/rustycansbattle.ogg
     - /Audio/_Harmony/Lobby/harmonilla.ogg
+    - /Audio/_Harmony/Lobby/dropzone.ogg

@@ -5,7 +5,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobLibrarian
-      time: 21600 #6 hrs (Harmony Reduced Seniority)
+      time: 21600 # 6 hrs (~4 rounds)
 
 # Coat
 - type: loadout

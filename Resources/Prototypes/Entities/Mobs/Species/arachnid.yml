@@ -81,6 +81,8 @@
       - map: [ "enum.HumanoidVisualLayers.LArm" ]
       - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+      - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
+      - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
       - map: ["jumpsuit"]
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
@@ -90,9 +92,10 @@
       - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "eyes" ]
-      - map: [ "belt" ]
+      #- map: [ "belt" ] #Harmony Change: Moves Belt back over outerclothing
       - map: [ "id" ]
       - map: [ "outerClothing" ]
+      - map: [ "belt" ] #Harmony Change: Moves Belt back over outerclothing
       - map: [ "enum.HumanoidVisualLayers.Tail" ] # Mentioned in moth code: This needs renaming lol.
       - map: [ "back" ]
       - map: [ "neck" ]
@@ -115,6 +118,7 @@
         visible: false
   - type: Inventory
     templateId: arachnid
+    speciesId: arachnid
 
 
 - type: entity
@@ -124,6 +128,8 @@
   components:
   - type: HumanoidAppearance
     species: Arachnid
+  - type: Inventory
+    speciesId: arachnid 
 
 
 #>88w88<

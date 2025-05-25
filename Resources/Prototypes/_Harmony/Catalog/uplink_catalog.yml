@@ -10,17 +10,53 @@
   categories:
   - UplinkExplosives
 # Ammo
-# Chemicals
-# Deception
+
+# For the Bulldog
 - type: listing
-  id: UplinkSmugglerSatchel
-  name: uplink-smuggler-satchel-name
-  description: uplink-smuggler-satchel-desc
-  productEntity: ClothingSatchelSmugglers
+  id: UplinkShotgunBuckshotMagazineHarmony
+  name: uplink-shotgun-drum-pellet-name
+  description: uplink-shotgun-drum-pellet-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: pellets }
+  productEntity: MagazineShotgun
   cost:
-    Telecrystal: 3
+    Telecrystal: 2
   categories:
-  - UplinkDeception
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkShotgunSlugMagazineHarmony
+  name: uplink-shotgun-drum-slug-name
+  description: uplink-shotgun-drum-slug-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: slug }
+  productEntity: MagazineShotgunSlug
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkAmmo
+
+# Chemicals
+- type: listing
+  id: UplinkDefib
+  name: uplink-defib-name
+  description: uplink-defib-desc
+  productEntity: DefibrillatorSyndicate
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 8
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkChemicals
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+# Deception
 
 - type: listing
   id: UplinkSyndicateIDHarmony
@@ -67,6 +103,26 @@
     Telecrystal: 4
   categories:
   - UplinkWearables
+
+- type: listing
+  id: UplinkClothingOuterArmorRaidHarmony
+  name: uplink-syndie-raid-name
+  description: uplink-syndie-raid-desc
+  icon: { sprite: /Textures/Clothing/OuterClothing/Armor/syndie-raid.rsi, state: icon }
+  productEntity: ClothingBackpackSyndicateRaidBundle
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 7
+  cost:
+    Telecrystal: 12
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+        - NukeOpsUplink
+
 # Pointless
 - type: listing
   id: UplinkClusterWeh

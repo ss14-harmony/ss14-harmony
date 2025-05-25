@@ -332,6 +332,7 @@
   - type: Item
     size: Tiny
   - type: HTN
+    constantlyReplan: false
     rootTask:
       task: MouseCompound
   - type: Physics
@@ -457,7 +458,7 @@
     description: ghost-role-information-mothroach-description
     rules: ghost-role-information-freeagent-rules
     mindRoles:
-    - MindRoleGhostRoleFreeAgent
+    - MindRoleGhostRoleFreeAgentHarmless
   - type: Fixtures
     fixtures:
       fix1:
@@ -472,7 +473,7 @@
   - type: GhostTakeoverAvailable
   - type: Speech
     speechVerb: Moth
-    speechSounds: Squeak
+    speechSounds: Moth #CD change/addition, Squeak -> Moth
     allowedEmotes: ['Chitter', 'Squeak']
   - type: FaxableObject
     insertingState: inserting_mothroach
@@ -516,7 +517,7 @@
     baseSprintSpeed : 4
     weightlessAcceleration: 1.5
     weightlessFriction: 1
-    weightlessModifier: 1
+    baseWeightlessModifier: 1
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Moth
@@ -1650,7 +1651,7 @@
     description: ghost-role-information-mouse-description
     rules: ghost-role-information-freeagent-rules
     mindRoles:
-    - MindRoleGhostRoleFreeAgent
+    - MindRoleGhostRoleFreeAgentHarmless
   - type: GhostTakeoverAvailable
   - type: Speech
     speechSounds: Squeak
@@ -1682,6 +1683,7 @@
     factions:
       - Mouse
   - type: HTN
+    constantlyReplan: false
     rootTask:
       task: MouseCompound
   - type: Physics
@@ -1806,6 +1808,20 @@
       Taco: RatTaco
       Burger: RatBurger
       Skewer: RatSkewer
+# Start of Harmony Change: Mice now deal damage when thrown, and take damage when they land
+  - type: DamageOtherOnHit
+    ignoreResistances: true
+    damage:
+      types:
+        Blunt: 1
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 5
+  - type: EmitSoundOnLand
+    sound:
+      collection: WeakHit
+# End of Harmony Change
 
 - type: entity
   parent: MobMouse
@@ -2970,6 +2986,9 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 4
 
 - type: entity
   name: calico cat

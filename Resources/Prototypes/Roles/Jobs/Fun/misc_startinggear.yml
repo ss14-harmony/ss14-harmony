@@ -136,7 +136,7 @@
 - type: startingGear
   id: MobAghostGear
   equipment:
-    back: ClothingBackpackSatchelHolding
+    back: ClothingBackpackSatchelAdmin # Harmony: give admin bags explosion resistance
     id: AdminPDA
   storage:
     back:
@@ -155,6 +155,7 @@
     - BluespaceBeaker
     - SyringeBluespace
     - RubberStampCentcom
+    - DoorRemoteAll
     # End harmony specific admin tools
 
 #Gladiator with spear

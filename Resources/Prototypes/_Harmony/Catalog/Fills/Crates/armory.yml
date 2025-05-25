@@ -44,3 +44,27 @@
       - id: SpeedLoaderLightRifle
         orGroup: ammo
         amount: 42
+
+- type: entity
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  id: CrateArmorySMGHarmony
+  name: SMG crate
+  suffix: Drozd, Secure
+  description: Contains two Drozd SMGs. Requires Armory access to open.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSubMachineGunDrozd
+      amount: 2
+
+- type: entity
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  id: CrateArmoryShotgunHarmony
+  name: shotgun crate
+  suffix: Kammerer, Secure
+  description: For when the enemy absolutely needs to be replaced with lead. Contains two Kammerer Shotguns. Requires Armory access to open.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponShotgunKammerer
+      amount: 2

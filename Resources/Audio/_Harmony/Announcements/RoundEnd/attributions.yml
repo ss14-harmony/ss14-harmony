@@ -1,29 +1,44 @@
 - files: ["chickens.ogg"]
   license: "CC-BY-3.0"
-  copyright: "TBD"
+  copyright: "Liltenhead -- voice is taken from video content with permission"
   source: "https://www.youtube.com/watch?v=XIqMvjwaEGk"
 
 - files: ["freesteel.ogg"]
   license: "CC-BY-3.0"
-  copyright: "TBD"
+  copyright: "Liltenhead -- voice is taken from video content with permission"
   source: "https://www.youtube.com/watch?v=1zvV2clsaX4"
-  
+
 - files: ["tortilla.ogg"]
   license: "CC-BY-3.0"
-  copyright: "TBD"
+  copyright: "Liltenhead -- voice is taken from video content with permission"
   source: "https://www.youtube.com/watch?v=snQ8MnJNNY0"
 
 - files: ["unacceptable.ogg"]
   license: "CC-BY-3.0"
-  copyright: "TBD"
+  copyright: "Liltenhead -- voice is taken from video content with permission"
   source: "https://www.youtube.com/watch?v=6AdZEYK9FwQ"
 
 - files: ["throngle.ogg"]
   license: "CC-BY-3.0"
-  copyright: "TBD"
+  copyright: "Liltenhead -- voice is taken from video content with permission"
   source: "https://www.youtube.com/watch?v=nKYZq_R5Ljw"
 
 - files: ["blame.ogg"]
   license: "CC-BY-3.0"
-  copyright: "TBD"
+  copyright: "Liltenhead -- voice is taken from video content with permission"
   source: "https://www.youtube.com/watch?v=l3OV60r3078"
+
+- files: ["jail.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "Liltenhead -- voice is taken from video content with permission"
+  source: "https://www.youtube.com/watch?v=VLN0mOsGpQg"
+
+- files: ["robusted.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "Liltenhead -- voice is taken from video content with permission"
+  source: "https://youtu.be/3X7DpMX7wvs"
+
+- files: ["done.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "Liltenhead -- voice is taken from video content with permission"
+  source: "https://youtu.be/3X7DpMX7wvs"

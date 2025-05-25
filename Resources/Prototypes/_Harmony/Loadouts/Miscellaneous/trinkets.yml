@@ -54,6 +54,12 @@
     - ClothingNeckAxolotlPin
 
 - type: loadout
+  id: ClothingNeckLanyard
+  storage:
+    back:
+    - ClothingNeckLanyard
+
+- type: loadout
   id: HarmonicaInstrument
   storage:
     back:
@@ -64,6 +70,12 @@
   storage:
     back:
     - PlushieVox
+
+- type: loadout
+  id: Cane
+  storage:
+    back:
+    - Cane
 
 # Towels
 - type: loadout

@@ -1,0 +1,7 @@
+- type: mapModification
+  id: BoxPermaPrisoner
+  applyOn:
+  - Box
+  additions:
+  - prototype: SpawnPointPermaPrisoner
+    position: -17.5, 48.5

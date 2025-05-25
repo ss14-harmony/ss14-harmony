@@ -50,7 +50,11 @@
   - ClothingUniformJumpskirtHoPMessKitHarmony #Harmony
   - ClothingUniformJumpsuitTurtleneckHoPHarmony # Harmony
   - ClothingUniformJumpskirtTurtleneckHoPHarmony #Harmony
-
+  # Generic
+  - ClothingHeadHatBeretCommand
+  - ClothingHeadHatCommandSoft
+  - ClothingUniformJumpskirtCommandGeneric
+  - ClothingUniformJumpsuitCommandGeneric
 
 - type: latheRecipePack
   id: ClothingEngineering
