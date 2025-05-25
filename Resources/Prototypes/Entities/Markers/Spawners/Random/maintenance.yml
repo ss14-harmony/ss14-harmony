@@ -296,7 +296,7 @@
       - id: PetCarrier
       - id: DrinkMopwataBottleRandom
       - id: SpectralLocator
-      - id: WehpetInstrument
+      - id: WehpetInstrument  # Harmony change to add weh-pet to rare maints loot
       - id: LidSalami
         weight: 0.05
 
