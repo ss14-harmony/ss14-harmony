@@ -1722,3 +1722,58 @@ Entries:
     changes:
     - type: Tweak
       message: The zombies and zombeteors gamemodes are now slightly more common.
+  - id: 641
+    author: BoskiYourk
+    time: '2025-05-25T01:07:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/641
+    changes:
+    - type: Tweak
+      message: The secfab now prints full energy cartridges
+    - type: Tweak
+      message: The basic and x-ray energy cartridges now charge faster
+    - type: Tweak
+      message: Updates the energy carbine's shooting sounds
+  - id: 669
+    author: Jajsha
+    time: '2025-05-25T15:41:53.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/669
+    changes:
+    - type: Tweak
+      message: Halved the acceleration of all jetpacks.
+  - id: 623
+    author: BoskiYourk
+    time: '2025-05-25T17:08:03.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/623
+    changes:
+    - type: Tweak
+      message: Alters a lot of weapon prices in the uplink
+  - id: 411
+    author: BoskiYourk
+    time: '2025-05-25T17:10:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/411
+    changes:
+    - type: Tweak
+      message: Changed the contents of the SMG and Shotgun crates to be consistent with station-side weaponry.
+    - type: Remove
+      message: Removed Spare Ammo From Armory Gun Crates
+  - id: 649
+    author: spanky-spanky
+    time: '2025-05-25T20:53:50.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/649
+    changes:
+    - type: Tweak
+      message: Vent and scrubber sprites have been updated.
+  - id: 444
+    author: BoskiYourk
+    time: '2025-05-26T03:02:02.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/444
+    changes:
+    - type: Add
+      message: Added New Wall Sprites!
+  - id: 678
+    author: BoskiYourk
+    time: '2025-05-26T05:18:43.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/678
+    changes:
+    - type: Tweak
+      message: Buffs the Energy Magnum Recharge Rate
