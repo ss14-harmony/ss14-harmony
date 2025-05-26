@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by Ubaser at commit https://github.com/space-wizards/space-station-14/commit/dd2343b57390e2371f82393d958b8b6cf16fb79d. Inhands made by SeamLesss at commit https://github.com/space-wizards/space-station-14/commit/557e5b3a1055049323740d0d8fe6cd7e28a31f77. Modified and recolored by CrimsonJupiter.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "equipped-HAND",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        }
+    ]
+}

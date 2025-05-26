@@ -110,9 +110,9 @@
   description: Rubber boots.
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/Specific/galoshes.rsi
+    sprite: _Harmony/Clothing/Shoes/Specific/galoshes.rsi # Updated sprite pathing for Harmony
   - type: Clothing
-    sprite: Clothing/Shoes/Specific/galoshes.rsi
+    sprite: _Harmony/Clothing/Shoes/Specific/galoshes.rsi # Updated sprite pathing for Harmony
   - type: NoSlip
   - type: SlowedOverSlippery
     slowdownModifier: 0.7

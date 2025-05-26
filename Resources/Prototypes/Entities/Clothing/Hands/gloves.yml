@@ -442,9 +442,9 @@
   description: High-quality rubber gloves, squeaky to do some cleaning!
   components:
   - type: Sprite
-    sprite: Clothing/Hands/Gloves/janitor.rsi
+    sprite: _Harmony/Clothing/Hands/Gloves/janitor.rsi # Updated sprite pathing for Harmony
   - type: Clothing
-    sprite: Clothing/Hands/Gloves/janitor.rsi
+    sprite: _Harmony/Clothing/Hands/Gloves/janitor.rsi # Updated sprite pathing for Harmony
   - type: Fiber
     fiberMaterial: fibers-rubber
     fiberColor: fibers-yellow
