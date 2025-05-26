@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: harmony
   forkVersion: f0d7eb26aa3e10ccf7f0a910644619331aaf2576
-  time: 05/26/2025 00:48:40
-  entityCount: 27861
+  time: 05/26/2025 16:51:42
+  entityCount: 27862
 maps:
 - 12281
 grids:
@@ -4254,41 +4254,45 @@ entities:
           decals:
             2914: 6,-17
         - node:
-            color: '#DE3A3A96'
-            id: MiniTileCheckerAOverlay
-          decals:
-            8120: 20,12
-            8121: 21,13
-            8122: 22,12
-            8127: 19,13
-        - node:
-            color: '#DE3A3A96'
-            id: MiniTileCheckerBOverlay
-          decals:
-            8123: 20,13
-            8124: 21,12
-            8125: 22,13
-            8126: 19,12
-        - node:
             color: '#D381C996'
             id: MiniTileCornerOverlayNE
           decals:
             6112: -62,-12
+        - node:
+            color: '#DE3A3A96'
+            id: MiniTileCornerOverlayNE
+          decals:
+            8213: 22,13
         - node:
             color: '#D381C996'
             id: MiniTileCornerOverlayNW
           decals:
             6113: -64,-12
         - node:
+            color: '#DE3A3A96'
+            id: MiniTileCornerOverlayNW
+          decals:
+            8212: 19,13
+        - node:
             color: '#D381C996'
             id: MiniTileCornerOverlaySE
           decals:
             6115: -62,-14
         - node:
+            color: '#DE3A3A96'
+            id: MiniTileCornerOverlaySE
+          decals:
+            8211: 22,12
+        - node:
             color: '#D381C996'
             id: MiniTileCornerOverlaySW
           decals:
             6114: -64,-14
+        - node:
+            color: '#DE3A3A96'
+            id: MiniTileCornerOverlaySW
+          decals:
+            8210: 19,12
         - node:
             color: '#FFFFFFFF'
             id: MiniTileDarkBox
@@ -4465,6 +4469,12 @@ entities:
             6105: -63,-14
             6106: -63,-12
         - node:
+            color: '#DE3A3A96'
+            id: MiniTileLineOverlayN
+          decals:
+            8216: 20,13
+            8217: 21,13
+        - node:
             color: '#8C347F96'
             id: MiniTileLineOverlayS
           decals:
@@ -4485,6 +4495,8 @@ entities:
             8145: 19,14
             8146: 21,14
             8147: 22,14
+            8214: 20,12
+            8215: 21,12
         - node:
             color: '#FA750096'
             id: MiniTileLineOverlayS
@@ -4741,6 +4753,9 @@ entities:
             4950: 34,7
             4951: 34,4
             4952: 33,4
+            8205: 18,13
+            8206: 18,12
+            8207: 18,11
         - node:
             color: '#EFB34147'
             id: MonoOverlay
@@ -4968,18 +4983,6 @@ entities:
             2141: 25,-2
             2142: 26,-2
         - node:
-            color: '#DE3A3A96'
-            id: PavementVerticalCheckerAOverlay
-          decals:
-            8129: 20,15
-            8130: 20,11
-        - node:
-            color: '#DE3A3A96'
-            id: PavementVerticalCheckerBOverlay
-          decals:
-            8128: 20,14
-            8131: 20,10
-        - node:
             color: '#4B709C93'
             id: PavementVerticalOverlay
           decals:
@@ -4997,6 +5000,15 @@ entities:
             2145: 22,-3
             2146: 22,-4
             2147: 22,-5
+        - node:
+            color: '#DE3A3A96'
+            id: PavementVerticalOverlay
+          decals:
+            8192: 20,10
+            8193: 20,11
+            8194: 20,14
+            8195: 20,15
+            8196: 20,16
         - node:
             color: '#334E6DC8'
             id: QuarterTileOverlayGreyscale
@@ -11686,7 +11698,7 @@ entities:
       pos: 37.5,-7.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -539748.44
+      secondsUntilStateChange: -539857.4
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12754,7 +12766,7 @@ entities:
       pos: 48.5,18.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -24553.262
+      secondsUntilStateChange: -24662.182
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13693,7 +13705,7 @@ entities:
       pos: -62.5,-44.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -334793.66
+      secondsUntilStateChange: -334902.56
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -14490,6 +14502,8 @@ entities:
       pos: 74.5,-12.5
       parent: 1
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 20197
   - uid: 21020
@@ -35560,6 +35574,11 @@ entities:
     components:
     - type: Transform
       pos: 50.5,7.5
+      parent: 1
+  - uid: 27862
+    components:
+    - type: Transform
+      pos: -50.5,-2.5
       parent: 1
 - proto: CableApcStack
   entities:
@@ -170206,7 +170225,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -278551.22
+      secondsUntilStateChange: -278660.12
       state: Opening
     - type: Airlock
       autoClose: False
