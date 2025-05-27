@@ -5,7 +5,7 @@
   description: Pretty purple headphones with plastic cat ears, perfect for listening to nightcore.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Neck/Misc/headphones_purpul_cat.rsi
+    sprite: _Harmony/Clothing/Neck/Misc/headphones_purple_cat.rsi
     layers:
     - state: icon
       map: [ "enum.ToggleVisuals.Layer" ]
