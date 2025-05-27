@@ -1,14 +1,14 @@
 - type: entity
-  name: energy carbine
+  parent: [BaseItem, BaseSecurityContraband]
   id: WeaponEnergyCarbineHarmony
+  name: energy carbine
   suffix: Empty
-  parent: [BaseWeaponPowerCell, BaseSecurityContraband]
   description: An energy weapon that uses specialized power magazines to fire dense laser bullets.
   components:
   - type: Item
     size: Large
   - type: Sprite
-    sprite: _Harmony/Objects/Weapons/Guns/Battery/laser_carbine.rsi
+    sprite: _Harmony/Objects/Weapons/Guns/Battery/energy_carbine.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -16,11 +16,12 @@
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
   - type: Clothing
-    sprite: _Harmony/Objects/Weapons/Guns/Battery/laser_carbine.rsi
+    sprite: _Harmony/Objects/Weapons/Guns/Battery/energy_carbine.rsi
     quickEquip: false
     slots:
     - Back
     - suitStorage
+  - type: AmmoCounter
   - type: Wieldable
     unwieldOnUse: false
   - type: GunWieldBonus
@@ -38,6 +39,9 @@
     availableModes:
       - FullAuto
       - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+  - type: MagazineAmmoProvider
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -47,27 +51,62 @@
         priority: 1
         whitelist:
           tags:
-            - EnergyCartridge
+            - EnergyCarbineCartridge
         whitelistFailPopup: gun-magazine-whitelist-fail
-
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
 
 - type: entity
+  parent: WeaponEnergyCarbineHarmony
   id: WeaponEnergyCarbineFilledHarmony
   suffix: Full
-  parent: WeaponEnergyCarbineHarmony
   components:
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: EnergyCartridgeHarmony
+        startingItem: EnergyCarbineCartridgeHarmony
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         priority: 1
         whitelist:
           tags:
-            - EnergyCartridge
+            - EnergyCarbineCartridge
         whitelistFailPopup: gun-magazine-whitelist-fail
-  - type: MagazineVisuals
-    magState: mag
-    steps: 5
+
+- type: entity
+  name: energy magnum
+  parent: [BaseWeaponBatterySmall, BaseSecurityContraband]
+  id: WeaponEnergyMagnumHarmony
+  description: A unique energy pistol given to the Head of Security of your station. It has three different firing modes that serve different purposes.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Battery/energy_magnum.rsi
+    layers:
+    - state: icon
+    - state: icon-unshaded
+      shader: unshaded
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserMagnumHarmony
+    fireCost: 150
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: BulletLaserMagnumHarmony
+      fireCost: 150
+    - proto: BulletLaserWindowPiercingMagnumHarmony
+      fireCost: 150
+    - proto: BulletDisabler
+      fireCost: 100
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 48
+    autoRechargePause: true
+    autoRechargePauseTime: 10
+  - type: Appearance

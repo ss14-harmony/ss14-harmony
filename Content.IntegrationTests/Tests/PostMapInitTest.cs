@@ -70,10 +70,11 @@ namespace Content.IntegrationTests.Tests
             "dm02-sandbomb", // Harmony, deathmatch PROMOD map by Unisol
             "Xeno", // Harmony, playtest for upstream by SlamBamActionman
             "Barratry", // Harmony, revived by Spanky
-            "Aspid", // Harmony, playtest for upstream by Golinth
+            "Aspid", // Harmony, revived by Golinth and gruesomegray
             "Atlas", // Harmony revived by Kravin
             "Mira", // Harmony, developed by tanuko
-            "Eclipse", //Harmony, Developed by Lachryphage
+            "Eclipse", // Harmony, developed by Lachryphage
+            "Prime", // Harmony, developed/revived by luckyshotpictures
             "Dev",
             "TestTeg",
             "Fland",

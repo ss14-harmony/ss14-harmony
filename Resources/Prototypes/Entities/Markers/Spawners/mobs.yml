@@ -552,6 +552,7 @@
   - type: ConditionalSpawner
     prototypes:
       - MobSlimesPet
+      - MobGlorp # Harmony pet
 
 - type: entity
   name: Pun Pun Spawner

@@ -38,3 +38,42 @@
         kobold: PoquitoColors
     - horns:
         horns_ram: KoboldHornColors
+
+- type: entity
+  parent: MobCat
+  id: MobGlorp
+  name: Glorp
+  description: An esoteric feline from outer space. Gleeby deeby florba zorp.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Harmony/Mobs/Pets/glorp.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: glorp
+  - type: Bloodstream
+    bloodReagent: UnstableMutagen
+    bloodMaxVolume: 650
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: glorp
+      Critical:
+        Base: glorp_dead
+      Dead:
+        Base: glorp_dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatXeno
+      amount: 2
+  - type: InteractionPopup
+    interactSuccessString: petting-success-glorp
+  - type: Grammar
+    attributes:
+      proper: true
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - VimPilot
+  - type: StealTarget
+    stealGroup: AnimalGlorp

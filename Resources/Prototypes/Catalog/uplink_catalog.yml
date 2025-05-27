@@ -88,9 +88,13 @@
   productEntity: ThrowingKnivesKit
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 3
+# Start of Harmony Change: Lowers throwing knives kit cost to four TC
+#    Telecrystal: 3
+    Telecrystal: 2
   cost:
-    Telecrystal: 6
+#    Telecrystal: 6
+    Telecrystal: 4
+# End of Harmony Change
   categories:
     - UplinkWeaponry
 
@@ -104,6 +108,24 @@
     Telecrystal: 4
   cost:
     Telecrystal: 8
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkGlovesKnuckleDusters
+  name: uplink-gloves-knuckleduster-name
+  description: uplink-gloves-knuckleduster-desc
+  icon: { sprite: Clothing/Hands/Gloves/KnuckleDusters/syndicateknuckleduster.rsi, state: syndicateknuckleduster }
+  productEntity: ClothingHandsKnuckleDustersSyndicate
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+# Start of Harmony Change: Lowers syndicate knuckle duster price to three TC
+#    Telecrystal: 3
+    Telecrystal: 1
+  cost:
+#    Telecrystal: 6
+    Telecrystal: 3
+# End of Harmony Change
   categories:
   - UplinkWeaponry
 
@@ -166,9 +188,13 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledSMG
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 10
+# Start of Harmony Change: Lowers the C20 TC cost and discount cost
+#   Telecrystal: 10
+    Telecrystal: 8
   cost:
-    Telecrystal: 17
+#   Telecrystal: 17
+    Telecrystal: 16
+# End of Harmony Change
   categories:
   - UplinkWeaponry
 
@@ -180,9 +206,13 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledShotgun
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 12
+# Start of Harmony Change: Lowers the Bulldog TC cost and discount cost
+#   Telecrystal: 12
+    Telecrystal: 10
   cost:
-    Telecrystal: 20
+#   Telecrystal: 20
+    Telecrystal: 18
+# End of Harmony Change
   categories:
   - UplinkWeaponry
 
@@ -194,9 +224,13 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledGrenadeLauncher
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 20
-  cost:
+# Start of Harmony Change: Increases the price of the china lake bundle
+#    Telecrystal: 20
     Telecrystal: 25
+  cost:
+#    Telecrystal: 25
+    Telecrystal: 30
+# End of Harmony Change
   categories:
   - UplinkWeaponry
 
@@ -208,9 +242,13 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledLMG
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 24
+  # Start of Harmony Change: Decreases the price of the L6 saw bundle
+#    Telecrystal: 24
+    Telecrystal: 20
   cost:
-    Telecrystal: 30
+#    Telecrystal: 30
+    Telecrystal: 25
+# End of Harmony Change
   categories:
   - UplinkWeaponry
 
@@ -560,9 +598,9 @@
   productEntity: HypopenBox
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 2 # Harmony change
   cost:
-    Telecrystal: 6
+    Telecrystal: 4 # Harmony change
   categories:
   - UplinkChemicals
 
@@ -621,9 +659,9 @@
   productEntity: ChemistryBottleNocturine
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 3
+    Telecrystal: 6 # Harmony change
   cost:
-    Telecrystal: 6
+    Telecrystal: 8 # Harmony change
   categories:
   - UplinkChemicals
 
@@ -684,11 +722,8 @@
   name: uplink-cigarettes-name
   description: uplink-cigarettes-desc
   productEntity: CigPackSyndicate
-  discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 1
   cost:
-    Telecrystal: 2
+    Telecrystal: 1
   categories:
   - UplinkChemicals
 
@@ -1560,16 +1595,17 @@
   categories:
   - UplinkWearables
 
+# TODO: Revert back to normal thieving gloves when clothes dyeing is added
 - type: listing
   id: UplinkgClothingThievingGloves
-  name: uplink-clothing-thieving-gloves-name
-  description: uplink-clothing-thieving-gloves-desc
-  productEntity: ThievingGloves
+  name: uplink-clothing-chameleon-thieving-gloves-name
+  description: uplink-clothing-chameleon-thieving-gloves-desc
+  productEntity: ClothingHandsChameleonThief
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 3
   cost:
-    Telecrystal: 4
+    Telecrystal: 5
   categories:
   - UplinkWearables
 

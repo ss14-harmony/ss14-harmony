@@ -26,3 +26,6 @@
     ToyFigurineLawyer: 1
   emaggedInventory:
     CyberPen: 1
+    # Harmony Change - adds business uniform to emagged lawdrobe
+    ClothingUniformJumpsuitSyndicateBusinessSuitHarmony: 1
+    # Harmony Change end

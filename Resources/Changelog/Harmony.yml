@@ -1518,3 +1518,262 @@ Entries:
     changes:
     - type: Add
       message: Added moth audio
+  - id: 584
+    author: BoskiYourk
+    time: '2025-05-03T16:49:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/584
+    changes:
+    - type: Tweak
+      message: Energy Cartridges Can Now Fit in Sec Belts
+  - id: 586
+    author: GithubEnjoyer1984
+    time: '2025-05-03T17:05:11.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/586
+    changes:
+    - type: Fix
+      message: Fixed kammerer audio
+  - id: 485
+    author: Ermucat
+    time: '2025-05-03T18:00:56.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/485
+    changes:
+    - type: Tweak
+      message: Spray painters now instantly color pipes
+  - id: 386
+    author: Ermucat
+    time: '2025-05-03T18:35:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/386
+    changes:
+    - type: Add
+      message: Added Phoron will make us rich to the jukebox
+  - id: 585
+    author: 3nderall
+    time: '2025-05-04T01:08:27.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/585
+    changes:
+    - type: Add
+      message: Added the Medical Analysis Goggles, they are a mix between the chemical analysis goggles and the medical HUD.
+  - id: 588
+    author: youtissoum
+    time: '2025-05-04T02:05:29.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/588
+    changes:
+    - type: Tweak
+      message: Playtime requirements for seniority items have been increased.
+  - id: 574
+    author: MoonlightHollow
+    time: '2025-05-06T19:32:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/574
+    changes:
+    - type: Add
+      message: 'Added admin smite: Valley Girl Accent'
+  - id: 596
+    author: youtissoum
+    time: '2025-05-06T19:33:32.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/596
+    changes:
+    - type: Tweak
+      message: The AI is now less likely to get affected by an ion storm.
+  - id: 502
+    author: DoggowithaKeyboard
+    time: '2025-05-08T22:39:53.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/502
+    changes:
+    - type: Tweak
+      message: PAIs now deal 0.1 blunt damage when thrown.
+  - id: 521
+    author: Lachryphage
+    time: '2025-05-09T03:43:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/521
+    changes:
+    - type: Add
+      message: Added Thirst Trap.
+  - id: 605
+    author: youtissoum
+    time: '2025-05-10T18:24:40.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/605
+    changes:
+    - type: Fix
+      message: The cargo department is no longer unaffected by the seniority item timer changes.
+  - id: 540
+    author: BoskiYourk
+    time: '2025-05-10T20:20:58.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/540
+    changes:
+    - type: Tweak
+      message: All Nuclear Operative Uplinks Get an Extra 5 TC
+    - type: Tweak
+      message: Nuclear Operatives and Lone Ops No Longer Start with Blood-Reds
+  - id: 608
+    author: youtissoum
+    time: '2025-05-11T11:49:57.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/608
+    changes:
+    - type: Fix
+      message: ERT hardsuit helmets will no longer show up as error sprites.
+  - id: 597
+    author: MoonlightHollow
+    time: '2025-05-11T21:55:34.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/597
+    changes:
+    - type: Add
+      message: Added two new alcohol theme traits
+  - id: 499
+    author: BlueMoon059
+    time: '2025-05-14T16:31:55.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/499
+    changes:
+    - type: Add
+      message: Three new voicelines have been added to the end of round lobby announcement system.
+    - type: Fix
+      message: fixed an issue that prevented two existing end of round lobby voicelines from playing.
+  - id: 604
+    author: Jajsha
+    time: '2025-05-14T18:01:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/604
+    changes:
+    - type: Add
+      message: Added the SOP book to the game. SOP can also be accessed under the Command tab in the guidebook.
+  - id: 617
+    author: KravinDes
+    time: '2025-05-14T20:06:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/617
+    changes:
+    - type: Tweak
+      message: The amount of players it takes to spawn a wizard has been increased.
+  - id: 618
+    author: GithubEnjoyer1984
+    time: '2025-05-15T17:05:53.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/618
+    changes:
+    - type: Tweak
+      message: Buffed hypopen price to 4 TC, nerfed nocturine price to 8 TC
+  - id: 412
+    author: GithubEnjoyer1984
+    time: '2025-05-16T16:02:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/412
+    changes:
+    - type: Tweak
+      message: Reduced amount of nuclear operatives required to declare war from 4 to 3.
+  - id: 490
+    author: Quantum-cross
+    time: '2025-05-19T01:18:50.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/490
+    changes:
+    - type: Fix
+      message: Pizza bomb goes boom when you open it as the gods intended
+  - id: 559
+    author: MoonlightHollow
+    time: '2025-05-19T01:29:03.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/559
+    changes:
+    - type: Add
+      message: Added new color turtlenecks
+  - id: 634
+    author: Lachryphage
+    time: '2025-05-19T13:03:11.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/634
+    changes:
+    - type: Add
+      message: Added Genpop to Eclipse Starport!
+  - id: 636
+    author: youtissoum
+    time: '2025-05-20T18:30:57.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/636
+    changes:
+    - type: Fix
+      message: The prisoner will no longer spawn inside of the walls on amber.
+  - id: 639
+    author: BoskiYourk
+    time: '2025-05-21T01:38:11.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/639
+    changes:
+    - type: Tweak
+      message: Resprites the Energy Carbine
+  - id: 610
+    author: BoskiYourk
+    time: '2025-05-22T02:30:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/610
+    changes:
+    - type: Add
+      message: Added the Energy Magnum
+    - type: Tweak
+      message: Gave the Warden the Energy Shotgun
+  - id: 642
+    author: BoskiYourk
+    time: '2025-05-24T12:47:40.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/642
+    changes:
+    - type: Add
+      message: Pellet and slug shotgun drums are now in the uplink.
+  - id: 661
+    author: BoskiYourk
+    time: '2025-05-24T14:47:17.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/661
+    changes:
+    - type: Tweak
+      message: Mice now deal one blunt damage when thrown.
+    - type: Tweak
+      message: Mice now take five blunt damage on impact when thrown.
+  - id: 643
+    author: Flarbergaster
+    time: '2025-05-24T14:54:10.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/643
+    changes:
+    - type: Tweak
+      message: The zombies and zombeteors gamemodes are now slightly more common.
+  - id: 641
+    author: BoskiYourk
+    time: '2025-05-25T01:07:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/641
+    changes:
+    - type: Tweak
+      message: The secfab now prints full energy cartridges
+    - type: Tweak
+      message: The basic and x-ray energy cartridges now charge faster
+    - type: Tweak
+      message: Updates the energy carbine's shooting sounds
+  - id: 669
+    author: Jajsha
+    time: '2025-05-25T15:41:53.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/669
+    changes:
+    - type: Tweak
+      message: Halved the acceleration of all jetpacks.
+  - id: 623
+    author: BoskiYourk
+    time: '2025-05-25T17:08:03.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/623
+    changes:
+    - type: Tweak
+      message: Alters a lot of weapon prices in the uplink
+  - id: 411
+    author: BoskiYourk
+    time: '2025-05-25T17:10:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/411
+    changes:
+    - type: Tweak
+      message: Changed the contents of the SMG and Shotgun crates to be consistent with station-side weaponry.
+    - type: Remove
+      message: Removed Spare Ammo From Armory Gun Crates
+  - id: 649
+    author: spanky-spanky
+    time: '2025-05-25T20:53:50.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/649
+    changes:
+    - type: Tweak
+      message: Vent and scrubber sprites have been updated.
+  - id: 444
+    author: BoskiYourk
+    time: '2025-05-26T03:02:02.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/444
+    changes:
+    - type: Add
+      message: Added New Wall Sprites!
+  - id: 678
+    author: BoskiYourk
+    time: '2025-05-26T05:18:43.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/678
+    changes:
+    - type: Tweak
+      message: Buffs the Energy Magnum Recharge Rate

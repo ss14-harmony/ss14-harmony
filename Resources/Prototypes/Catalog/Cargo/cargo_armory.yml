@@ -1,9 +1,15 @@
 - type: cargoProduct
   id: ArmorySmg
   icon:
-    sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
+# Start of Harmony Change: Updated icon to match the item in the crate
+    # sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
+    sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
+# End of Harmony Change
     state: icon
-  product: CrateArmorySMG
+# Start of Harmony Change: Replaces the WTs with Drozds in the SMG crate
+  # product: CrateArmorySMG
+  product: CrateArmorySMGHarmony
+# End of Harmony Change
   cost: 9000
   category: cargoproduct-category-name-armory
   group: market
@@ -11,9 +17,15 @@
 - type: cargoProduct
   id: ArmoryShotgun
   icon:
-    sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
+# Start of Harmony Change: Updated icon to match the item in the crate
+    # sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
+# End of Harmony Change
     state: icon
-  product: CrateArmoryShotgun
+# Start of Harmony Change: Replaces the Enforcers with Kammerers in the shotgun crate
+  # product: CrateArmoryShotgun
+  product: CrateArmoryShotgunHarmony
+# End of Harmony Change
   cost: 7000
   category: cargoproduct-category-name-armory
   group: market

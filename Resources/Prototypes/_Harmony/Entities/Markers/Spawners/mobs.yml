@@ -27,3 +27,17 @@
   - type: ConditionalSpawner
     prototypes:
     - MobKoboldPoquito
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobGlorp
+  name: Glorp Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: glorp
+      sprite: _Harmony/Mobs/Pets/glorp.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MobGlorp

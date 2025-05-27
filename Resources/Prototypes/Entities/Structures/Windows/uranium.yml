@@ -5,9 +5,13 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/uranium_window.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Windows/uranium_window.rsi
+    sprite: _Harmony/Structures/Windows/uranium_window.rsi
   - type: Icon
-    sprite: Structures/Windows/uranium_window.rsi
+#    sprite: Structures/Windows/uranium_window.rsi
+    sprite: _Harmony/Structures/Windows/uranium_window.rsi
+# End of Harmony Change
     state: full
   - type: Damageable
     damageContainer: StructuralInorganic
@@ -62,10 +66,14 @@
     - Window
   components:
   - type: Sprite
-    sprite: Structures/Windows/directional.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Windows/directional.rsi
+    sprite: _Harmony/Structures/Windows/directional.rsi
     state: uranium_window
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
+#    sprite: Structures/Windows/directional.rsi
+    sprite: _Harmony/Structures/Windows/directional.rsi
+# End of Harmony Change
     state: uranium_window
   - type: Construction
     graph: WindowDirectional
@@ -115,17 +123,26 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/uranium_window_diagonal.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Windows/uranium_window_diagonal.rsi
+    sprite: _Harmony/Structures/Windows/uranium_window_diagonal.rsi
+# End of Harmony Change
     state: state0
   - type: Tag
     tags:
     - Diagonal
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+# Start of Harmony Change: Makes walls and windows connect to eachother.
+#    key: windows
+    key: walls
+# End of Harmony Change
     base: state
   - type: Icon
-    sprite: Structures/Windows/uranium_window_diagonal.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Windows/uranium_window_diagonal.rsi
+    sprite: _Harmony/Structures/Windows/uranium_window_diagonal.rsi
+# End of Harmony Change
     state: state0
   - type: Fixtures
     fixtures:

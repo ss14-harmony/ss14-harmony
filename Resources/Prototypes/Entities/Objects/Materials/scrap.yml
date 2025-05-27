@@ -27,7 +27,7 @@
     - Recyclable
 
 - type: entity
-  parent: BaseStructure
+  parent: BaseStructureDynamic # Harmony change - Changed BaseStructure to BaseStructureDynamic
   id: BaseScrapLarge
   abstract: true
   name: scrap

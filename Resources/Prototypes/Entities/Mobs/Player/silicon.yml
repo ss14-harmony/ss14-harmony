@@ -75,7 +75,10 @@
     - sprite: Mobs/Silicon/station_ai.rsi
       state: default
   - type: ShowJobIcons
-  - type: IonStormTarget #Harmony Addition
+  # harmony start
+  - type: IonStormTarget
+    chance: 0.5
+  # harmony end
 
 - type: entity
   id: AiHeldIntellicard
@@ -125,31 +128,6 @@
         # The alternative is you add a bunch of events trying to override it; we don't even really need the container functionality
         # anyway it's just a quality of life thing.
         showEnts: True
-
-# Boards
-- type: entity
-  id: AsimovCircuitBoard
-  parent: BaseElectronics
-  name: law board (Crewsimov)
-  description: An electronics board containing the Crewsimov lawset.
-  components:
-  - type: Sprite
-    sprite: Objects/Misc/module.rsi
-    state: std_mod
-  - type: SiliconLawProvider
-    laws: Crewsimov
-
-- type: entity
-  id: CorporateCircuitBoard
-  parent: BaseElectronics
-  name: law board (Corporate)
-  description: An electronics board containing the Corporate lawset.
-  components:
-  - type: Sprite
-    sprite: Objects/Misc/module.rsi
-    state: std_mod
-  - type: SiliconLawProvider
-    laws: Corporate
 
 # Items
 - type: entity
@@ -493,7 +471,6 @@
       borg_module:
         - BorgModuleTool
         - BorgModuleFireExtinguisher
-        - BorgModuleGPS
   - type: ItemSlots
     slots:
       cell_slot:
