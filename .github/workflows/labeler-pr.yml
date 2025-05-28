@@ -12,9 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # Harmony start
-    - name: Get Current Labels
-      id: get_current_labels
-      uses: snnaplab/get-labels-action@v1.0.1
+    - uses: snnaplab/get-labels-action@v1.0.1
       continue-on-error: true
     # Harmony end
     - uses: actions/labeler@v5
