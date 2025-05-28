@@ -12,6 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # Harmony start
+    - name: Automatic Maintenance Label
+      uses: actions-ecosystem/action-add-labels@v1
+      if: ${{ startsWith(github.event.pull_request.title, 'Upstream') || startsWith(github.event.pull_request.title, 'Changelog') }}
+      with:
+        labels: Maintenance
     - uses: snnaplab/get-labels-action@v1.0.1
       continue-on-error: true
     # Harmony end
