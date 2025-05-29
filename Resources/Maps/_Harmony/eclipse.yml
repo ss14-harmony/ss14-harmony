@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 05/19/2025 12:22:04
-  entityCount: 45168
+  time: 05/29/2025 10:14:42
+  entityCount: 45163
 maps:
 - 1
 grids:
@@ -20096,7 +20096,7 @@ entities:
       pos: 16.5,-9.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -1232731.2
+      secondsUntilStateChange: -1233095.2
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -22513,7 +22513,7 @@ entities:
       pos: -40.5,-18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -361936.78
+      secondsUntilStateChange: -362300.78
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -22574,7 +22574,7 @@ entities:
       pos: -66.5,139.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -310673.8
+      secondsUntilStateChange: -311037.8
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -22780,7 +22780,7 @@ entities:
       pos: -46.5,155.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -313822.88
+      secondsUntilStateChange: -314186.88
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -23217,7 +23217,7 @@ entities:
       pos: 5.5,2.5
       parent: 13260
     - type: Door
-      secondsUntilStateChange: -317634.25
+      secondsUntilStateChange: -317998.25
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -49924,18 +49924,6 @@ entities:
     - type: Transform
       pos: 1.3684158,8.200619
       parent: 10516
-- proto: BoxMagazinePistolPractice
-  entities:
-  - uid: 22819
-    components:
-    - type: Transform
-      pos: 46.71671,176.43945
-      parent: 2
-  - uid: 22820
-    components:
-    - type: Transform
-      pos: 46.410942,176.62292
-      parent: 2
 - proto: BoxMousetrap
   entities:
   - uid: 2649
@@ -109744,16 +109732,6 @@ entities:
     - type: Transform
       pos: 100.19612,66.41268
       parent: 2
-  - uid: 22578
-    components:
-    - type: Transform
-      pos: 52.413628,176.4436
-      parent: 2
-  - uid: 22617
-    components:
-    - type: Transform
-      pos: 52.444878,176.78735
-      parent: 2
 - proto: ClothingShoesJester
   entities:
   - uid: 884
@@ -135240,12 +135218,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -68.5,-25.5
-      parent: 2
-  - uid: 12218
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -65.5,-25.5
       parent: 2
   - uid: 12220
     components:
@@ -199244,7 +199216,7 @@ entities:
       pos: -24.5,-48.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -616641.2
+      secondsUntilStateChange: -617005.2
       state: Opening
   - uid: 18444
     components:
@@ -200515,11 +200487,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -43.5,-22.5
-      parent: 2
-  - uid: 5080
-    components:
-    - type: Transform
-      pos: -62.5,-28.5
       parent: 2
   - uid: 5085
     components:
@@ -202868,6 +202835,13 @@ entities:
     components:
     - type: Transform
       pos: -9.5,142.5
+      parent: 2
+- proto: MachineMaterialSilo
+  entities:
+  - uid: 40508
+    components:
+    - type: Transform
+      pos: -24.5,-18.5
       parent: 2
 - proto: MagazinePistolSubMachineGunTopMounted
   entities:
@@ -205979,23 +205953,11 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 52.5,174.5
       parent: 2
-  - uid: 22608
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 52.5,176.5
-      parent: 2
   - uid: 22609
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 46.5,174.5
-      parent: 2
-  - uid: 22610
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 46.5,176.5
       parent: 2
 - proto: PlasticFlapsAirtightClear
   entities:
@@ -212010,11 +211972,6 @@ entities:
     - type: Transform
       pos: 44.5,178.5
       parent: 2
-  - uid: 22538
-    components:
-    - type: Transform
-      pos: 52.5,176.5
-      parent: 2
   - uid: 22543
     components:
     - type: Transform
@@ -212055,11 +212012,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -12.5,156.5
-      parent: 2
-  - uid: 22818
-    components:
-    - type: Transform
-      pos: 46.5,176.5
       parent: 2
   - uid: 23118
     components:
@@ -217541,11 +217493,6 @@ entities:
     components:
     - type: Transform
       pos: 41.5,175.5
-      parent: 2
-  - uid: 40508
-    components:
-    - type: Transform
-      pos: 48.5,174.5
       parent: 2
   - uid: 40516
     components:
@@ -278973,6 +278920,90 @@ entities:
     - type: Transform
       pos: 41.439083,176.522
       parent: 2
+- proto: WeaponEnergyTurretAI
+  entities:
+  - uid: 5080
+    components:
+    - type: Transform
+      pos: -65.5,-25.5
+      parent: 2
+  - uid: 12218
+    components:
+    - type: Transform
+      pos: -62.5,-28.5
+      parent: 2
+  - uid: 19117
+    components:
+    - type: Transform
+      pos: -72.5,-28.5
+      parent: 2
+  - uid: 22538
+    components:
+    - type: Transform
+      pos: -62.5,-35.5
+      parent: 2
+  - uid: 22578
+    components:
+    - type: Transform
+      pos: -43.5,-28.5
+      parent: 2
+  - uid: 22608
+    components:
+    - type: Transform
+      pos: -43.5,-25.5
+      parent: 2
+  - uid: 22610
+    components:
+    - type: Transform
+      pos: -65.5,-18.5
+      parent: 2
+  - uid: 22617
+    components:
+    - type: Transform
+      pos: -65.5,-35.5
+      parent: 2
+  - uid: 22818
+    components:
+    - type: Transform
+      pos: -55.5,-29.5
+      parent: 2
+  - uid: 22819
+    components:
+    - type: Transform
+      pos: -55.5,-24.5
+      parent: 2
+  - uid: 22820
+    components:
+    - type: Transform
+      pos: -72.5,-25.5
+      parent: 2
+  - uid: 23003
+    components:
+    - type: Transform
+      pos: -62.5,-18.5
+      parent: 2
+- proto: WeaponEnergyTurretStation
+  entities:
+  - uid: 17372
+    components:
+    - type: Transform
+      pos: 52.5,176.5
+      parent: 2
+  - uid: 17373
+    components:
+    - type: Transform
+      pos: 46.5,176.5
+      parent: 2
+  - uid: 20407
+    components:
+    - type: Transform
+      pos: 47.5,148.5
+      parent: 2
+  - uid: 40651
+    components:
+    - type: Transform
+      pos: 93.5,124.5
+      parent: 2
 - proto: WeaponGrapplingGun
   entities:
   - uid: 10707
@@ -279137,63 +279168,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 35.26486,163.63933
-      parent: 2
-- proto: WeaponTurretSyndicateBroken
-  entities:
-  - uid: 17372
-    components:
-    - type: Transform
-      pos: -72.5,-25.5
-      parent: 2
-  - uid: 17373
-    components:
-    - type: Transform
-      pos: -65.5,-35.5
-      parent: 2
-  - uid: 19117
-    components:
-    - type: Transform
-      pos: -43.5,-28.5
-      parent: 2
-  - uid: 20407
-    components:
-    - type: Transform
-      pos: 47.5,148.5
-      parent: 2
-  - uid: 23003
-    components:
-    - type: Transform
-      pos: -43.5,-25.5
-      parent: 2
-  - uid: 40651
-    components:
-    - type: Transform
-      pos: -62.5,-18.5
-      parent: 2
-  - uid: 40658
-    components:
-    - type: Transform
-      pos: -62.5,-35.5
-      parent: 2
-  - uid: 40694
-    components:
-    - type: Transform
-      pos: -55.5,-24.5
-      parent: 2
-  - uid: 40706
-    components:
-    - type: Transform
-      pos: -55.5,-29.5
-      parent: 2
-  - uid: 40707
-    components:
-    - type: Transform
-      pos: -72.5,-28.5
-      parent: 2
-  - uid: 40728
-    components:
-    - type: Transform
-      pos: -65.5,-18.5
       parent: 2
 - proto: WeaponTurretXeno
   entities:
@@ -279706,7 +279680,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -321462.22
+      secondsUntilStateChange: -321826.22
       state: Opening
     - type: Airlock
       autoClose: False
@@ -279933,7 +279907,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -702185.25
+      secondsUntilStateChange: -702549.25
       state: Opening
     - type: Airlock
       autoClose: False
@@ -284993,7 +284967,7 @@ entities:
       pos: 10.5,6.5
       parent: 13260
     - type: Door
-      secondsUntilStateChange: -812632.7
+      secondsUntilStateChange: -812996.7
       state: Opening
   - uid: 13491
     components:
