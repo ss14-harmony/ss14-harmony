@@ -7,7 +7,7 @@
     contents:
     - id: WeaponEnergyCarbineFilledHarmony
       amount: 2
-    - id: EnergyCartridgeHarmony
+    - id: EnergyCarbineCartridgeHarmony
       amount: 2
 
 - type: entity

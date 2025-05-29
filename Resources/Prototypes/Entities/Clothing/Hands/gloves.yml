@@ -442,9 +442,9 @@
   description: High-quality rubber gloves, squeaky to do some cleaning!
   components:
   - type: Sprite
-    sprite: Clothing/Hands/Gloves/janitor.rsi
+    sprite: _Harmony/Clothing/Hands/Gloves/janitor.rsi # Updated sprite pathing for Harmony
   - type: Clothing
-    sprite: Clothing/Hands/Gloves/janitor.rsi
+    sprite: _Harmony/Clothing/Hands/Gloves/janitor.rsi # Updated sprite pathing for Harmony
   - type: Fiber
     fiberMaterial: fibers-rubber
     fiberColor: fibers-yellow
@@ -513,6 +513,7 @@
     damage:
       types:
         Blunt: 14
+        Structural: 10 # Harmony Change, Adds sturctural damage to allow the QM to use them as a stylish pickaxe
     soundHit:
       collection: Punch
     animation: WeaponArcFist

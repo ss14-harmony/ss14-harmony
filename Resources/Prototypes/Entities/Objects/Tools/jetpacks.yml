@@ -51,6 +51,7 @@
         temperature: 293.15
     - type: Jetpack
       moleUsage: 0.00085
+      acceleration: 0.5 # Harmony
     - type: Appearance
     - type: StaticPrice
       price: 100

@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateFilledHushpup
+  name: Hushpup bundle
+  description: A duffel bag containing a Hushpup, bundled with a box of buckshot. Quarter included.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponShotgunHushpup
+    - id: BoxLethalshot
+    - id: TreasureCoinIron

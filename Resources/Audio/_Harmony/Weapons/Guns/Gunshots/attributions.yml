@@ -1,4 +1,9 @@
 - files: ["kammerer_shot.ogg"]
   license: "CC-BY-4.0"
   copyright: "Created by DrinkingWindGames, modified by halycon"
-  source: "https://freesound.org/people/DrinkingWindGames"
+  source: "https://freesound.org/people/DrinkingWindGames/sounds/789647/"
+
+- files: ["hushpup_fire.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Created by UnderlinedDesigns and DrinkingWindGames (https://freesound.org/people/DrinkingWindGames/sounds/789647), modified by Halycon"
+  source: "https://freesound.org/people/UnderlinedDesigns/sounds/188499/"

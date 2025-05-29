@@ -4,7 +4,7 @@ meta:
   engineVersion: 255.1.0
   forkId: ""
   forkVersion: ""
-  time: 05/19/2025 12:45:30
+  time: 05/29/2025 10:17:26
   entityCount: 218
 maps: []
 grids:
@@ -1245,6 +1245,9 @@ entities:
   entities:
   - uid: 219
     components:
+    - type: MetaData
+      desc: For when you REALLY need someone to get the fuck out of the way.
+      name: Horn
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -3.5,7.5
@@ -1252,7 +1255,7 @@ entities:
     - type: EmitSoundOnActivate
       sound: !type:SoundCollectionSpecifier
         params:
-          variation: 0.246
+          variation: 0
           maxDistance: 25
         collection: BananiumHorn
 - proto: SignCargo

@@ -88,9 +88,13 @@
   productEntity: ThrowingKnivesKit
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 3
+# Start of Harmony Change: Lowers throwing knives kit cost to four TC
+#    Telecrystal: 3
+    Telecrystal: 2
   cost:
-    Telecrystal: 6
+#    Telecrystal: 6
+    Telecrystal: 4
+# End of Harmony Change
   categories:
     - UplinkWeaponry
 
@@ -115,9 +119,13 @@
   productEntity: ClothingHandsKnuckleDustersSyndicate
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 3
+# Start of Harmony Change: Lowers syndicate knuckle duster price to three TC
+#    Telecrystal: 3
+    Telecrystal: 1
   cost:
-    Telecrystal: 6
+#    Telecrystal: 6
+    Telecrystal: 3
+# End of Harmony Change
   categories:
   - UplinkWeaponry
 
@@ -180,9 +188,13 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledSMG
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 10
+# Start of Harmony Change: Lowers the C20 TC cost and discount cost
+#   Telecrystal: 10
+    Telecrystal: 8
   cost:
-    Telecrystal: 17
+#   Telecrystal: 17
+    Telecrystal: 16
+# End of Harmony Change
   categories:
   - UplinkWeaponry
 
@@ -194,9 +206,13 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledShotgun
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 12
+# Start of Harmony Change: Lowers the Bulldog TC cost and discount cost
+#   Telecrystal: 12
+    Telecrystal: 10
   cost:
-    Telecrystal: 20
+#   Telecrystal: 20
+    Telecrystal: 18
+# End of Harmony Change
   categories:
   - UplinkWeaponry
 
@@ -208,9 +224,13 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledGrenadeLauncher
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 20
-  cost:
+# Start of Harmony Change: Increases the price of the china lake bundle
+#    Telecrystal: 20
     Telecrystal: 25
+  cost:
+#    Telecrystal: 25
+    Telecrystal: 30
+# End of Harmony Change
   categories:
   - UplinkWeaponry
 
@@ -222,9 +242,13 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledLMG
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 24
+  # Start of Harmony Change: Decreases the price of the L6 saw bundle
+#    Telecrystal: 24
+    Telecrystal: 20
   cost:
-    Telecrystal: 30
+#    Telecrystal: 30
+    Telecrystal: 25
+# End of Harmony Change
   categories:
   - UplinkWeaponry
 
@@ -1103,6 +1127,26 @@
     blacklist:
       components:
       - SurplusBundle
+
+- type: listing
+  id: UplinkStarterKit
+  name: uplink-starter-kit-name
+  description: uplink-starter-kit-desc
+  productEntity: ClothingBackpackDuffelSyndicateFilledStarterKit
+  cost:
+    Telecrystal: 40
+  categories:
+  - UplinkDisruption
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+        - NukeOpsUplink
+    - !type:BuyerWhitelistCondition
+      blacklist:
+        components:
+        - SurplusBundle
+
 
 - type: listing
   id: UplinkSingarityBeacon

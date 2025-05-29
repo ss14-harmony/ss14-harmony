@@ -63,5 +63,17 @@ reagent-effect-condition-guidebook-has-tag =
 
 reagent-effect-condition-guidebook-this-reagent = this reagent
 
+reagent-effect-condition-guidebook-breathing =
+    the metabolizer is { $isBreathing ->
+                [true] breathing normally
+                *[false] suffocating
+               }
+
+reagent-effect-condition-guidebook-internals =
+    the metabolizer is { $usingInternals ->
+                [true] using internals
+                *[false] breathing atmospheric air
+               }
+
 # Harmony - Changeling port
 reagent-effect-condition-guidebook-ling = the target is a changeling
