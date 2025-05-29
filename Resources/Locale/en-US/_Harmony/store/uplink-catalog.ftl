@@ -7,6 +7,10 @@ uplink-pizza-bomb-desc = This tech, first pioneered by terrorists, now is used b
 uplink-traitor-deathrattle-implant-name = Box Of Deathrattle Implants
 uplink-traitor-deathrattle-implant-desc = A box containing two syndicate deathrattle implants. Messages are relayed over the syndicate channel, encryption keys not included.
 
+uplink-kudzu-grenade-name = Kudzu grenade
+uplink-kudzu-grenade-desc = Repurposed foam dart grenade containing mutated kudzu.
+
+
 uplink-cluster-weh-name = Tactical Clusterplushie
 uplink-cluster-weh-desc = Scatters 10 lizard plushies in a circle after a short delay. Weh.
 
@@ -14,7 +18,4 @@ uplink-hyposhell-name = Box of hyposhells
 uplink-hyposhell-desc = A box containing four hyposhells, shotgun shells that can hold 7u of any chemical.
 
 uplink-defib-name = Interdyne Defibrillator
-uplink-defib-desc = A compact defibrillator that can be used to revive your fellow comrades, or as an effective melee weapon! You should probably throw away your acidifier if you expect to use this.
-
-uplink-kudzu-grenade-name = Kudzu grenade
-uplink-kudzu-grenade-desc = Repurposed foam dart grenade containing mutated kudzu.
+uplink-defib-desc = A compact defibrillator. It can be used to revive your fellow comrades, or as an effective melee weapon! You should probably throw away your acidifier if you expect to use this.
