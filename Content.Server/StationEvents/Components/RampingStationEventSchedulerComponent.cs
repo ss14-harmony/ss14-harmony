@@ -6,7 +6,6 @@ namespace Content.Server.StationEvents.Components;
 [RegisterComponent, Access(typeof(RampingStationEventSchedulerSystem))]
 public sealed partial class RampingStationEventSchedulerComponent : Component
 {
-    /* DeltaV replaced with vector math
     /// <summary>
     ///     Average ending chaos modifier for the ramping event scheduler. Higher means faster.
     ///     Max chaos chosen for a round will deviate from this
@@ -29,7 +28,6 @@ public sealed partial class RampingStationEventSchedulerComponent : Component
 
     [DataField]
     public float StartingChaos;
-    */
     
     /// <summary>
     ///     DeltaV - Key points which determine during what period will events last on average.

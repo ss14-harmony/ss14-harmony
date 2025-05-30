@@ -11,8 +11,7 @@ public sealed class RampingStationEventSchedulerSystem : GameRuleSystem<RampingS
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly EventManagerSystem _event = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
-
-    /* Delta V replaced with vector math
+    
     /// <summary>
     /// Returns the ChaosModifier which increases as round time increases to a point.
     /// </summary>
@@ -24,7 +23,6 @@ public sealed class RampingStationEventSchedulerSystem : GameRuleSystem<RampingS
 
         return component.MaxChaos / component.EndTime * roundTime + component.StartingChaos;
     }
-    */
 
     protected override void Started(EntityUid uid, RampingStationEventSchedulerComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
@@ -76,10 +74,10 @@ public sealed class RampingStationEventSchedulerSystem : GameRuleSystem<RampingS
 
         // 4-12 minutes baseline. Will get faster over time as the chaos mod increases.
         component.TimeUntilNextEvent = _random.NextFloat(240f / mod, 720f / mod);
-        */
+        DeltaV end*/
         
         // Begin DeltaV Additions
-        var averageTimeUntilNextEvent = -component.TimeKeyPoints[0].X;
+        var averageTimeUntilNextEvent = component.TimeKeyPoints[0].X;
         var timeUntilNextEventDeviation = _random.NextFloat(-1f, 1f) * component.TimeDeviation;
         var roundTime = (float)_gameTicker.RoundDuration().TotalMinutes;
         var absoluteTimePoint = 0f;
