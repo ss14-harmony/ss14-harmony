@@ -33,8 +33,8 @@
     maxIntensity: 10
     intensitySlope: 3
     totalIntensity: 120 # about a ~4 tile radius
+  - type: ExplodeOnTrigger
   #Harmony change start-Remove payload explode on trigger
-  #- type: ExplodeOnTrigger
   #- type: Destructible
   #  thresholds:
   #  - trigger:
