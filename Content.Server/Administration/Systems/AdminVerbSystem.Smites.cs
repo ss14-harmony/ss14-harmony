@@ -51,6 +51,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Timer = Robust.Shared.Timing.Timer;
+using Content.Server._Latestation.Speech.Components;//Harmony added-Valley Girl Acent
 
 namespace Content.Server.Administration.Systems;
 
@@ -923,5 +924,23 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", omniaccentName, Loc.GetString("admin-smite-omni-accent-description"))
         };
         args.Verbs.Add(omniaccent);
+        
+        //Harmony change start-Added Valley Girl Smite
+        var valleyGirlName = Loc.GetString("admin-smite-valley-accent-name").ToLowerInvariant();
+        Verb valleyaccent = new()
+        {
+            Text = valleyGirlName,
+            Category = VerbCategory.Smite,
+            Icon = new SpriteSpecifier.Rsi(new("Interface/Actions/voice-mask.rsi"), "icon"),
+            Act = () =>
+            {
+                EnsureComp<ValleyGirlAccentComponent>(args.Target);
+            },
+            Impact = LogImpact.Extreme,
+            Message = string.Join(": ", valleyGirlName, Loc.GetString("admin-smite-valley-accent-description"))
+        };
+        args.Verbs.Add(valleyaccent);
+        //Harmony change end
+        
     }
 }

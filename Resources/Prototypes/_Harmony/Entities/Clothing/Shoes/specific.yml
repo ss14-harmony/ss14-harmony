@@ -1,6 +1,7 @@
 - type: entity
   parent: ClothingShoesGaloshes
   id: ClothingShoesDuckyGaloshes
+  name: ducky galoshes
   description: Rubber boots. Quack Quack!
   components:
   - type: FootstepModifier

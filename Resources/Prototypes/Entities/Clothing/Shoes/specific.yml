@@ -58,11 +58,12 @@
     sprite: Clothing/Shoes/Specific/clown_banana.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Specific/clown_banana.rsi
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepSlip
-      params:
-        variation: 0.10
+  #- type: FootstepModifier You can add a sound effect when you make one that doesn't sound like a dog dying. -emo
+  #  footstepSoundCollection:
+  #    collection: FootstepSlip
+  #    params:
+  #      volume: -10
+  #      variation: 0.10
   - type: Construction
     graph: BananaClownShoes
     node: shoes
@@ -110,9 +111,9 @@
   description: Rubber boots.
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/Specific/galoshes.rsi
+    sprite: _Harmony/Clothing/Shoes/Specific/galoshes.rsi # Updated sprite pathing for Harmony
   - type: Clothing
-    sprite: Clothing/Shoes/Specific/galoshes.rsi
+    sprite: _Harmony/Clothing/Shoes/Specific/galoshes.rsi # Updated sprite pathing for Harmony
   - type: NoSlip
   - type: SlowedOverSlippery
     slowdownModifier: 0.7

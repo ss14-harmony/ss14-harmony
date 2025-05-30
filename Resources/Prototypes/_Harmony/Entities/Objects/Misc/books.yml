@@ -1,0 +1,16 @@
+- type: entity
+  id: BookSOP
+  parent: BaseGuidebook
+  name: standard operating procedure
+  description: A series of standards and procedures imposed upon command members.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_strong
+      color: "#284c8f"
+    - state: icon_sop_harmony
+      color: "#f7d61a"
+  - type: GuideHelp
+    guides:
+    - HarmonyStandardOperatingProcedure

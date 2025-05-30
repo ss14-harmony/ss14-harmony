@@ -143,7 +143,7 @@
   cost: 10000
   recipeUnlocks:
   - WeaponLaserCannon
-  - EnergyCartridgeUnstablePrintedHarmony # Harmony Change: Adds the Unstable Energy Cartridge to the Concentrated Laser Research
+  - EnergyCarbineCartridgeUnstableHarmony # Harmony Change: Adds the Unstable Energy Carbine Cartridge to the Concentrated Laser Research
 
 - type: technology
   id: WaveParticleHarnessing
@@ -156,7 +156,21 @@
   cost: 10000
   recipeUnlocks:
   - WeaponXrayCannon
-  - EnergyCartridgeXRayPrintedHarmony # Harmony Change: Adds the X-ray Energy Cartridge to the Wave Particle Research
+  - EnergyCarbineCartridgeXRayHarmony # Harmony Change: Adds the X-ray Energy Carbine Cartridge to the Wave Particle Research
+
+- type: technology
+  id: KineticModifications
+  name: research-technology-kinetic-modifications
+  icon:
+    sprite: Objects/Tools/upgrade.rsi
+    state: display
+  discipline: Arsenal
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - PKAUpgradeDamage
+  - PKAUpgradeRange
+  - PKAUpgradeFireRate
 
 - type: technology
   id: BasicShuttleArmament

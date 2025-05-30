@@ -17,13 +17,15 @@
   # traits
   # - LegsParalyzed (you get healed)
   - LightweightDrunk
+  - Muted
   - Narcolepsy
   - Pacified
   - PainNumbness
   - Paracusia
   - PermanentBlindness
+  - Snoring
   - Unrevivable
-  - Uncloneable #Harmony
+  - Uncloneable # Harmony
   # job specific
   - BibleUser
   - CommandStaff
@@ -38,6 +40,7 @@
   - BleatingAccent
   - DamagedSiliconAccent
   - FrenchAccent
+  - FrontalLisp
   - GermanAccent
   - LizardAccent
   - MobsterAccent
