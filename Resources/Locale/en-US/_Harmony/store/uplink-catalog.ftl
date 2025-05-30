@@ -10,7 +10,6 @@ uplink-traitor-deathrattle-implant-desc = A box containing two syndicate deathra
 uplink-kudzu-grenade-name = Kudzu grenade
 uplink-kudzu-grenade-desc = Repurposed foam dart grenade containing mutated kudzu.
 
-
 uplink-cluster-weh-name = Tactical Clusterplushie
 uplink-cluster-weh-desc = Scatters 10 lizard plushies in a circle after a short delay. Weh.
 

@@ -1,6 +1,6 @@
 ﻿- type: entity
-  id: SyndieKudzu
   parent: Kudzu
+  id: SyndieKudzu
   suffix: Syndicate
   components:
   - type: Kudzu

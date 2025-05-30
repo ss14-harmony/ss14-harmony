@@ -9,8 +9,6 @@
     layers:
     - state: icon
       map: [ "Base" ]
-    - state: primed
-      map: [ "enum.TriggerVisualLayers.Base" ]
   - type: ScatteringGrenade
     fillPrototype: SyndieKudzu
     distance: 4
@@ -22,6 +20,9 @@
     initialBeepDelay: 0
     beepInterval: 0.5
     delay: 2
-  - type: EmitSoundOnTrigger
-    sound:
-      path: "/Audio/Machines/door_lock_off.ogg"
+  - type: GenericVisualizer
+    visuals:
+      enum.Trigger.TriggerVisuals.VisualState:
+        enum.ConstructionVisuals.Layer:
+          Primed: { state: primed }
+          Unprimed: { state: icon }
