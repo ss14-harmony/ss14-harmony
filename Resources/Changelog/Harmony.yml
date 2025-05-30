@@ -1835,3 +1835,45 @@ Entries:
     changes:
     - type: Tweak
       message: The QM's golden knuckledusters can now be used to mine asteroids.
+  - id: 699
+    author: Lachryphage
+    time: '2025-05-29T18:18:56.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/699
+    changes:
+    - type: Add
+      message: Added turrets and material silo to Eclipse Starport.
+  - id: 690
+    author: kleinerstation13
+    time: '2025-05-29T18:41:34.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/690
+    changes:
+    - type: Add
+      message: Added parabellum by Jacek "Fragik" Rogal to nuke detonation track pool.
+  - id: 440
+    author: kleinerstation13
+    time: '2025-05-29T19:50:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/440
+    changes:
+    - type: Add
+      message: Added the hushpup, a silenced shotgun with trades magazine capacity for sheer power.
+  - id: 688
+    author: Ermucat
+    time: '2025-05-29T21:25:55.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/688
+    changes:
+    - type: Tweak
+      message: Glorp now bleeds glorp juice instead of mutagen.
+  - id: 700
+    author: Ermucat
+    time: '2025-05-30T10:35:23.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/700
+    changes:
+    - type: Tweak
+      message: Upgrading Jaunt now allows you to use it while cuffed or down.
+  - id: 696
+    author: CollectionOfBones128
+    time: '2025-05-30T14:52:18.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/696
+    changes:
+    - type: Tweak
+      message: The Quartermaster's PDA now starts with AstroNav installed, allowing them quick access to their coordinates.
