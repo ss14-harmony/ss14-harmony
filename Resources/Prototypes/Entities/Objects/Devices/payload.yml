@@ -33,21 +33,23 @@
     maxIntensity: 10
     intensitySlope: 3
     totalIntensity: 120 # about a ~4 tile radius
-  - type: ExplodeOnTrigger
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 25
-      behaviors:
-      - !type:ExplodeBehavior
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+  #Harmony change start-Remove payload explode on trigger
+  #- type: ExplodeOnTrigger
+  #- type: Destructible
+  #  thresholds:
+  #  - trigger:
+  #      !type:DamageTypeTrigger
+  #      damageType: Heat
+  #      damage: 25
+  #    behaviors:
+  #    - !type:ExplodeBehavior
+  #  - trigger:
+  #      !type:DamageTrigger
+  #      damage: 50
+  #    behaviors:
+  #    - !type:DoActsBehavior
+  #      acts: [ "Destruction" ]
+  #Harmony change end
 
 - type: entity
   name: chemical payload
