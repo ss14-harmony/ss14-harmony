@@ -1,0 +1,5 @@
+recipes-button-frame-grey-name = button frame (grey)
+recipes-button-frame-caution-name = button frame (caution)
+recipes-button-frame-caution-security-name = button frame (danger)
+recipes-button-frame-exit-name = button frame (exit)
+recipes-button-frame-janitor-name = button frame (janitor)

@@ -1,7 +1,12 @@
 - type: entity
-  id: KitchenMicrowave
+# Start of Harmony Change: Updates ID to be used as a parent and adds upstream suffix
+#  id: KitchenMicrowave
+  id: KitchenMicrowaveUpstream
+  suffix: Upstream
+# End of Harmony Change
   parent: [ BaseMachinePowered, SmallConstructibleMachine ]
   name: microwave
+  categories: [ HideSpawnMenu ] # Harmony Change: Hides Upstream Microwave Prototypes from the spawn menu
   description: It's magic.
   components:
   - type: Microwave
@@ -108,9 +113,14 @@
     - FoodRecipes
 
 - type: entity
-  id: SyndicateMicrowave
+# Start of Harmony Change: Updates ID to be used as a parent and adds upstream suffix
+#  id: SyndicateMicrowave
+  id: SyndicateMicrowaveUpstream
+  suffix: Upstream
+# End of Harmony Change
   parent: KitchenMicrowave
   name: donk co. microwave
+  categories: [ HideSpawnMenu ] # Harmony Change: Hides Upstream Microwave Prototypes from the spawn menu
   description: So advanced, it can cook donk-pockets in a mere 2.5 seconds!
   components:
   - type: Microwave

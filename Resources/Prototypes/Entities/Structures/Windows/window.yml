@@ -20,9 +20,13 @@
       - Window
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Windows/window.rsi
+    sprite: _Harmony/Structures/Windows/window.rsi
   - type: Icon
-    sprite: Structures/Windows/window.rsi
+#    sprite: Structures/Windows/window.rsi
+    sprite: _Harmony/Structures/Windows/window.rsi
+# End of Harmony Change
     state: full
   - type: Physics
     bodyType: Static
@@ -72,7 +76,10 @@
         acts: [ "Destruction" ]
   - type: Airtight
   - type: IconSmooth
-    key: windows
+# Start of Harmony Change: Makes walls and windows connect to eachother.
+#    key: windows
+    key: walls
+# End of Harmony Change
     base: window
   - type: InteractionPopup
     interactSuccessString: comp-window-knock
@@ -100,9 +107,13 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/tinted_window.rsi
+# Start of Harmony Change
+#    sprite: Structures/Windows/tinted_window.rsi
+    sprite: _Harmony/Structures/Windows/tinted_window.rsi
   - type: Icon
-    sprite: Structures/Windows/tinted_window.rsi
+#    sprite: Structures/Windows/tinted_window.rsi
+    sprite: _Harmony/Structures/Windows/tinted_window.rsi
+# End of Harmony Change
   - type: IconSmooth
     base: twindow
   - type: Construction
@@ -141,10 +152,14 @@
         collection: GlassSmack
   - type: Sprite
     drawdepth: Mobs
-    sprite: Structures/Windows/directional.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Windows/directional.rsi
+    sprite: _Harmony/Structures/Windows/directional.rsi
     state: window
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
+#    sprite: Structures/Windows/directional.rsi
+    sprite: _Harmony/Structures/Windows/directional.rsi
+# End of Harmony Change
     state: window
   - type: InteractionPopup
     interactSuccessString: comp-window-knock
@@ -233,10 +248,14 @@
     - Window
   components:
   - type: Sprite
-    sprite: Structures/Windows/directional.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Windows/directional.rsi
+    sprite: _Harmony/Structures/Windows/directional.rsi
     state: frosted_window
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
+#    sprite: Structures/Windows/directional.rsi
+    sprite: _Harmony/Structures/Windows/directional.rsi
+# End of Harmony Change
     state: frosted_window
   - type: StaticPrice
     price: 35
@@ -252,17 +271,26 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window_diagonal.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Windows/window_diagonal.rsi
+    sprite: _Harmony/Structures/Windows/window_diagonal.rsi
+# End of Harmony Change
     state: state0
   - type: Tag
     tags:
     - Diagonal
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+# Start of Harmony Change: Makes walls and windows connect to eachother.
+#    key: windows
+    key: walls
+# End of Harmony Change
     base: state
   - type: Icon
-    sprite: Structures/Windows/window_diagonal.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Windows/window_diagonal.rsi
+    sprite: _Harmony/Structures/Windows/window_diagonal.rsi
+# End of Harmony Change
     state: state0
   - type: Fixtures
     fixtures:

@@ -92,6 +92,11 @@
     ClothingHandsGlovesColorOrange: 2
     ClothingHandsGlovesColorPurple: 2
     ClothingEyesGlassesCheapSunglasses: 3
+    # Harmony change
+    ClothingHeadWhiteBow: 3
+    ClothingHeadBlackBow: 3
+    ClothingNeckHeadphonesCat: 3
+    # Harmony change
     # DO NOT ADD MORE, USE UNIFORM DYING
   contrabandInventory:
     ClothingMaskNeckGaiter: 2

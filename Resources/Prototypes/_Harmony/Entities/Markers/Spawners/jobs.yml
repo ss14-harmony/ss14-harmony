@@ -1,0 +1,13 @@
+# Security
+
+- type: entity
+  parent: SpawnPointJobBase
+  id: SpawnPointPermaPrisoner
+  name: permaprisoner
+  components:
+  - type: SpawnPoint
+    job_id: PermaPrisoner
+  - type: Sprite
+    layers:
+    - state: green
+    - state: prisoner

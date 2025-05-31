@@ -6,9 +6,12 @@
 
 # Tag used for energy weapon's energy cartridges.
 - type: Tag
-  id: EnergyCartridge
+  id: EnergyCarbineCartridge
 
 # Tag used for escape pod landing.
 - type: Tag
   id: DockPod
 
+# Tag used for pride mantles.
+- type: Tag
+  id: WhitelistChameleonPrideMantle

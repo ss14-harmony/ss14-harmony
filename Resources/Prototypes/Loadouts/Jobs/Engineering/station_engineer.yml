@@ -6,17 +6,17 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
-      time: 3600 #6 hrs
+      time: 10800 # harmony: 6 hrs -> 3 hrs (~2 rounds)
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
       role: JobStationEngineer
-      time: 3600 #6 hrs
+      time: 10800 # harmony: 6 hrs -> 3 hrs (~2 rounds)
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
       department: Engineering
-      time: 10800 # 60 hrs
+      time: 108000 # Harmony: 60 hrs -> 30 hrs (~20 rounds)
 
 # Head
 - type: startingGear

@@ -129,3 +129,14 @@
     sprite: _Harmony/Clothing/Uniforms/Jumpsuit/cargo_pants.rsi
   - type: Clothing
     sprite: _Harmony/Clothing/Uniforms/Jumpsuit/cargo_pants.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSyndicateContraband]
+  id: ClothingUniformJumpsuitSyndicateBusinessSuitHarmony
+  name: syndicate business suit
+  description: For agents that prefer a bit more elegance.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/syndie_business.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/syndie_business.rsi

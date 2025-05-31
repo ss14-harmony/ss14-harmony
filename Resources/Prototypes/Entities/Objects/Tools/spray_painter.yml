@@ -16,6 +16,7 @@
       enum.SprayPainterUiKey.Key:
         type: SprayPainterBoundUserInterface
   - type: SprayPainter
+    pipeSprayTime: 0 # Harmony Change, 1 -> 0
     colorPalette:
       red: '#FF1212FF'
       yellow: '#B3A234FF'

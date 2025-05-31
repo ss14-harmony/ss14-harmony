@@ -360,7 +360,7 @@
       - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       drawdepth: FloorObjects
-      sprite: Structures/Piping/Atmospherics/vent.rsi
+      sprite: _Harmony/Structures/Piping/Atmospherics/vent.rsi # Harmony, new file path.
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
           state: pipeStraight

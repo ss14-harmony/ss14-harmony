@@ -72,6 +72,7 @@
     event: !type:PolymorphActionEvent
       protoId: Jaunt
     itemIconStyle: NoItem
+    checkCanInteract: false # Harmony Change - allows you to jaunt while cuffed
     icon:
       sprite: Objects/Magic/magicactions.rsi
       state: jaunt
@@ -87,6 +88,7 @@
     event: !type:PolymorphActionEvent
       protoId: Jaunt
     itemIconStyle: NoItem
+    checkCanInteract: false # Harmony Change - allows you to jaunt while cuffed
     icon:
       sprite: Objects/Magic/magicactions.rsi
       state: jaunt
