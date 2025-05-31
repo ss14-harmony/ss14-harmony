@@ -6,4 +6,6 @@
   - type: BloodBrotherRole
   - type: MindRole
     antagPrototype: BloodBrother
+    exclusiveAntag: true
     roleType: TeamAntagonist
+    subtype: role-subtype-blood-brother
