@@ -127,3 +127,11 @@
   - type: Sprite
     layers:
     - state: landmine
+  #Harmony Change Starts
+  - type: PointLight
+    mask: /Textures/Effects/LightMasks/double_cone.png
+    color: "#DC143C"
+    radius: 2
+    softness: 1
+  - type: RotatingLight
+  #Harmony Change Ends
