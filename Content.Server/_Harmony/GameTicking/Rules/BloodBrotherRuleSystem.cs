@@ -145,7 +145,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
         _antagSystem.SendBriefing(args.Target,
             Loc.GetString(entity.Comp.BriefingText),
             entity.Comp.BriefingColor,
-            null);
+            entity.Comp.BriefingSound);
 
         _popupSystem.PopupEntity(
             Loc.GetString(entity.Comp.ConvertPopupText, ("converter", entity), ("converted", args.Target)),

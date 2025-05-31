@@ -19,7 +19,7 @@
       briefing:
         text: blood-brother-initial-role-greeting
         color: MediumVioletRed
-        # TODO: find a sound for the conversion
+        sound: /Audio/Ambience/Antag/traitor_start.ogg
       components:
       - type: BloodBrother
       - type: InitialBloodBrother

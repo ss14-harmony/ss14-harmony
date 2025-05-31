@@ -3,6 +3,7 @@ using Content.Shared.Actions;
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Roles;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -66,7 +67,8 @@ public sealed partial class InitialBloodBrotherComponent : Component
     [DataField]
     public Color BriefingColor = Color.MediumVioletRed;
 
-    // TODO: get a sound
+    [DataField]
+    public SoundSpecifier BriefingSound = new SoundPathSpecifier("/Audio/Ambience/Antag/traitor_start.ogg"); // TODO: get a custom briefing sound
 
     #endregion
 
