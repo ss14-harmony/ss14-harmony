@@ -2,8 +2,12 @@
   parent: BaseGameRule
   id: BloodBrothers
   components:
+  - type: GameRule
+    minPlayers: 10
+    delay:
+      min: 240
+      max: 420
   - type: BloodBrotherRule
-    minPlayers: 10 # takes two people so I'm requiring double as many people as traitors
   - type: AntagRandomObjectives
     sets:
     - groups: BloodBrotherObjectiveGroups
