@@ -137,7 +137,7 @@
     state: goliath
   entries:
   - name: bounty-item-plates
-    amount: #Harmony Change: Changes the amount needed to 3
+    amount: 3 #Harmony Change: Changes the amount needed to 3
     whitelist:
       tags:
       - GoliathPlate
