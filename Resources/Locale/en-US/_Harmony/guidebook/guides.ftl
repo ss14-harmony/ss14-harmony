@@ -1,5 +1,7 @@
 guide-entry-rules-sl-restricted-list = Restricted Lists
 
+guide-entry-blood-brothers = Blood Brothers
+
 guide-entry-rules-harmony-r0 = R0
 guide-entry-rules-harmony-r1 = R1
 guide-entry-rules-harmony-r2 = R2
