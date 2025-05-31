@@ -165,7 +165,7 @@
     sprite: Objects/Tools/upgrade.rsi
     state: display
   discipline: Arsenal
-  tier: 2
+  tier: 1 #Harmony Change: Changes the tier to T1
   cost: 7500
   recipeUnlocks:
   - PKAUpgradeDamage
