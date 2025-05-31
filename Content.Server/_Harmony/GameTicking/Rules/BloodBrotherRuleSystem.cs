@@ -1,10 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using Content.Server._Harmony.GameTicking.Rules.Components;
+﻿using Content.Server._Harmony.GameTicking.Rules.Components;
 using Content.Server._Harmony.Roles;
 using Content.Server.Administration.Logs;
 using Content.Server.Antag;
-using Content.Server.Antag.Components;
-using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Mind;
 using Content.Server.Objectives;
@@ -16,7 +13,6 @@ using Content.Server.Roles;
 using Content.Server.Stunnable;
 using Content.Shared._Harmony.BloodBrothers.Components;
 using Content.Shared.Database;
-using Content.Shared.GameTicking.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Mobs.Systems;
@@ -68,18 +64,16 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
             if (brotherRole.Brother == null)
                 continue;
 
-            if (!_mindSystem.TryGetMind(brotherRole.Brother.Value, out var brotherMindId, out var brotherMind)
+            if (!_mindSystem.TryGetMind(brotherRole.Brother.Value, out _, out var brotherMind)
                 || brotherMind.UserId == null)
             {
                 args.Text += "\n" + Loc.GetString("blood-brother-round-end-no-mind",
                     ("name", name),
                     ("username", sessionData.UserName),
                     ("brotherName", MetaData(role.Value).EntityName));
-            }
 
-            if (brotherMind == null
-                || brotherMind.UserId == null) // Required because uh???????????
                 continue;
+            }
 
             var brotherUsername = _playerManager.GetPlayerData(brotherMind.UserId.Value).UserName;
 
@@ -106,7 +100,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
             return;
         }
 
-        if (!_mindSystem.TryGetMind(entity, out var mindId, out var mind))
+        if (!_mindSystem.TryGetMind(entity, out var mindId, out _))
             return;
 
         if (!_mindSystem.TryGetMind(args.Target, out var targetMindId, out var targetMind))
@@ -115,24 +109,25 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
         // Actual conversion logic
         var convertedComp = CopyComp(entity, args.Target, originalComponent);
 
-        _npcFactionSystem.AddFaction(args.Target, convertedComp.BloodBrotherFaction);
+        _npcFactionSystem.AddFaction(args.Target, entity.Comp.BloodBrotherFaction);
 
         _adminLogManager.Add(LogType.Mind,
             LogImpact.Medium,
             $"{ToPrettyString(entity)} converted {ToPrettyString(args.Target)} into their Blood Brother");
 
+        originalComponent.Brother = args.Target;
         if (_roleSystem.MindHasRole<BloodBrotherRoleComponent>(mindId, out var role))
             role.Value.Comp2.Brother = args.Target;
 
-        Entity<MindRoleComponent, BloodBrotherRoleComponent>? targetRole = null;
-        if (!_roleSystem.MindHasRole(targetMindId, out targetRole))
+        if (!_roleSystem.MindHasRole(targetMindId, out Entity<MindRoleComponent, BloodBrotherRoleComponent>? targetRole))
         {
-            _roleSystem.MindAddRole(targetMindId, convertedComp.BloodBrotherMindRole, targetMind);
+            _roleSystem.MindAddRole(targetMindId, entity.Comp.BloodBrotherMindRole, targetMind);
             _roleSystem.MindHasRole(targetMindId, out targetRole);
         }
 
         DebugTools.AssertNotNull(targetRole, "Blood brother role was null after assigning it.");
 
+        convertedComp.Brother = entity;
         targetRole!.Value.Comp2.Brother = entity;
 
         if (!_objectivesSystem.TryCreateObjective((targetMindId, targetMind),
@@ -147,14 +142,18 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
         _mindSystem.AddObjective(targetMindId, targetMind, newObjective.Value);
 
         // Visuals
-        _antagSystem.SendBriefing(args.Target, Loc.GetString(convertedComp.BriefingText), convertedComp.BriefingColor, null);
+        _antagSystem.SendBriefing(args.Target,
+            Loc.GetString(entity.Comp.BriefingText),
+            entity.Comp.BriefingColor,
+            null);
 
         _popupSystem.PopupEntity(
             Loc.GetString(entity.Comp.ConvertPopupText, ("converter", entity), ("converted", args.Target)),
             args.Target,
             PopupType.LargeCaution);
 
-        _stunSystem.TryParalyze(args.Target, entity.Comp.ConvertStunTime, true);
+        if (entity.Comp.ConvertStunTime != null)
+            _stunSystem.TryParalyze(args.Target, entity.Comp.ConvertStunTime.Value, true);
 
         // Cleanup the data
         RemCompDeferred<InitialBloodBrotherComponent>(entity);
@@ -181,8 +180,6 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
         Entity<InitialBloodBrotherComponent> entity,
         EntityUid target)
     {
-        // return (true, default); // DEBUG
-
         if (!_mindSystem.TryGetMind(entity, out _, out var converterMind))
         {
             DebugTools.Assert("Blood brother tried to convert but had no mind.");
@@ -222,41 +219,16 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
         if (targetMind.UserId == null)
             return (false, "blood-brother-convert-failed-no-mind");
 
-        if (entity.Comp.IgnorePreference ||
+        // Check antag preference
+        if (entity.Comp.RequiredAntagPreference == null ||
             !_preferencesManager.TryGetCachedPreferences(targetMind.UserId.Value, out var preferences))
             return (true, default);
 
         var profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
 
-        if (profile.AntagPreferences.Contains(entity.Comp.RequiredAntagPreference) != true)
+        if (profile.AntagPreferences.Contains(entity.Comp.RequiredAntagPreference.Value) != true)
             return (false, "blood-brother-convert-failed-preference");
 
         return (true, default);
-    }
-
-    /// <summary>
-    /// Tries to get the blood brother rule from a blood brother
-    /// </summary>
-    private bool TryGetBloodBrotherRule(Entity<BloodBrotherComponent> entity,
-        [NotNullWhen(true)] out Entity<BloodBrotherRuleComponent>? bloodBrotherRule)
-    {
-        var allRules = QueryAllRules();
-        while (allRules.MoveNext(out var uid, out var bloodBrother, out _))
-        {
-            if (!TryComp<AntagSelectionComponent>(uid, out var antagSelection))
-                continue;
-
-            foreach (var session in antagSelection.AssignedSessions)
-            {
-                if (session.AttachedEntity != entity.Owner)
-                    continue;
-
-                bloodBrotherRule = (uid, bloodBrother);
-                return true;
-            }
-        }
-
-        bloodBrotherRule = null;
-        return false;
     }
 }

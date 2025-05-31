@@ -1,6 +1,4 @@
-﻿using Content.Server.Antag.Components;
-
-namespace Content.Server._Harmony.GameTicking.Rules.Components;
+﻿namespace Content.Server._Harmony.GameTicking.Rules.Components;
 
 /// <summary>
 /// Game rule for blood brothers. Handles conversion.

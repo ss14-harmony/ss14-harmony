@@ -1,4 +1,4 @@
-using Content.Server._Harmony.GameTicking.Rules.Components;
+using Content.Server._Harmony.GameTicking.Rules.Components; // Harmony
 using Content.Server.Administration.Commands;
 using Content.Server.Antag;
 using Content.Server.GameTicking;
@@ -37,8 +37,10 @@ public sealed partial class AdminVerbSystem
     [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultThiefRule = "Thief";
 
+    // Harmony start
     [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultBloodBrotherRule = "BloodBrothers";
+    // Harmony end
 
     [ValidatePrototypeId<StartingGearPrototype>]
     private const string PirateGearId = "PirateGear";
