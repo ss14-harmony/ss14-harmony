@@ -2,10 +2,7 @@
 	# Blood Brothers
 
 	<Box>
-		[color=#999999][italic]"UHHHHH I GOTTA FIND SOMETHING TO SAY HERE."[/italic][/color]
-	</Box>
-	<Box>
-		<GuideEntityEmbed Entity="ActionBloodBrotherConvert" Caption=""/>
+		[color=#999999][italic]"I must help my brother, no matter the cost."[/italic][/color]
 	</Box>
 	Blood Brothers are a team of two people working together to complete a list of objectives. These objectives are mostly equal to the objectives given to [textlink="Traitors" link="Traitors"].
 
@@ -25,7 +22,5 @@
 
 	To do so, you must first bring them to a hidden location where no one will see and then use the "Convert" action. This action is [bold]very visible[/bold], do not use it in public.
 
-	The crewmember will then become your blood brother, with the objective to help you with whatever you need.
-
-	You can easily remember who is your blood brother thanks to the icon visible next to their head.
+	The crewmember will then become your blood brother, with the objective to help you with your objectives.
 </Document>
