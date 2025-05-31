@@ -16,6 +16,8 @@
 
   This action will quietly check and tell you if someone is possible to convert or not.
 
+  You will not be able to convert anyone who is mindshielded or anyone who has blood brothers turned off in their character creation panel.
+
   ### Converting a crewmember
 
   After finding a suitable and convertible crewmember, you will want to convert them to your side.
