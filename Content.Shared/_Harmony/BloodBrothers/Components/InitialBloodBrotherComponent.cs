@@ -2,6 +2,7 @@
 using Content.Shared.Actions;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Roles;
+using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -17,11 +18,17 @@ public sealed partial class InitialBloodBrotherComponent : Component
     [DataField]
     public EntProtoId<EntityTargetActionComponent> ConvertAction = "ActionBloodBrotherConvert";
 
-    [DataField]
-    public EntProtoId<ObjectiveComponent> ConvertedBrotherObjective = "BloodBrotherConvertedObjective";
-
     [DataField, AutoNetworkedField]
     public EntityUid? ConvertActionEntity;
+
+    [DataField]
+    public EntProtoId<EntityTargetActionComponent> CheckConvertAction = "ActionBloodBrotherCheckConvert";
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? CheckConvertActionEntity;
+
+    [DataField]
+    public EntProtoId<ObjectiveComponent> ConvertedBrotherObjective = "BloodBrotherConvertedObjective";
 
     [DataField]
     public bool IgnorePreference;
@@ -39,3 +46,5 @@ public sealed partial class InitialBloodBrotherComponent : Component
 }
 
 public sealed partial class BloodBrotherConvertActionEvent : EntityTargetActionEvent;
+
+public sealed partial class BloodBrotherCheckConvertActionEvent : EntityTargetActionEvent;

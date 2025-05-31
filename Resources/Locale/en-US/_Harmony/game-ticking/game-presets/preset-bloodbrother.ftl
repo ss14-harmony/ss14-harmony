@@ -26,4 +26,5 @@ blood-brother-convert-failed-shielded = {CAPITALIZE(THE($converted))}'s mind is 
 blood-brother-convert-failed-dead = {CAPITALIZE(THE($converted))} is dead
 blood-brother-convert-failed-preference = {CAPITALIZE(THE($converted))}'s mind is unaffected by the conversion
 
+blood-brother-convert-convertible = {CAPITALIZE(THE($converted))} is convertible
 blood-brother-conversion-popup = {CAPITALIZE(THE($converter))} grabs {THE($converted)} firmly and digs deep symbols into their arms.

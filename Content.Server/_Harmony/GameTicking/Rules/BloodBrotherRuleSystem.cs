@@ -51,6 +51,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
 
         SubscribeLocalEvent<BloodBrotherRuleComponent, ObjectivesTextPrependEvent>(OnObjectivesTextPrepend);
         SubscribeLocalEvent<InitialBloodBrotherComponent, BloodBrotherConvertActionEvent>(OnBloodBrotherConvert);
+        SubscribeLocalEvent<InitialBloodBrotherComponent, BloodBrotherCheckConvertActionEvent>(OnBloodBrotherCheckConvert);
     }
 
     private void OnObjectivesTextPrepend(Entity<BloodBrotherRuleComponent> entity, ref ObjectivesTextPrependEvent args)
@@ -93,6 +94,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
     private void OnBloodBrotherConvert(Entity<InitialBloodBrotherComponent> entity,
         ref BloodBrotherConvertActionEvent args)
     {
+        // Check if convertible
         if (!TryComp<BloodBrotherComponent>(entity, out var originalComponent))
             return;
 
@@ -110,6 +112,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
         if (!_mindSystem.TryGetMind(args.Target, out var targetMindId, out var targetMind))
             return;
 
+        // Actual conversion logic
         var convertedComp = CopyComp(entity, args.Target, originalComponent);
 
         _npcFactionSystem.AddFaction(args.Target, convertedComp.BloodBrotherFaction);
@@ -143,7 +146,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
 
         _mindSystem.AddObjective(targetMindId, targetMind, newObjective.Value);
 
-        // visuals
+        // Visuals
         _antagSystem.SendBriefing(args.Target, Loc.GetString(convertedComp.BriefingText), convertedComp.BriefingColor, null);
 
         _popupSystem.PopupEntity(
@@ -153,18 +156,32 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
 
         _stunSystem.TryParalyze(args.Target, entity.Comp.ConvertStunTime, true);
 
-        // remove old components and update state
+        // Cleanup the data
         RemCompDeferred<InitialBloodBrotherComponent>(entity);
 
         Dirty(entity, originalComponent);
         Dirty(args.Target, convertedComp);
     }
 
+    private void OnBloodBrotherCheckConvert(Entity<InitialBloodBrotherComponent> entity,
+        ref BloodBrotherCheckConvertActionEvent args)
+    {
+        var (canConvert, failureMessage) = CanConvert(entity, args.Target);
+
+        if (!canConvert)
+        {
+            _popupSystem.PopupEntity(Loc.GetString(failureMessage, ("converter", entity), ("converted", args.Target)), args.Target, entity, PopupType.MediumCaution);
+            return;
+        }
+
+        _popupSystem.PopupEntity(Loc.GetString("blood-brother-convert-convertible", ("converter", entity), ("converted", args.Target)), args.Target, entity, PopupType.Medium);
+    }
+
     private (bool canConvert, LocId failureMessage) CanConvert(
         Entity<InitialBloodBrotherComponent> entity,
         EntityUid target)
     {
-        return (true, default); // DEBUG
+        // return (true, default); // DEBUG
 
         if (!_mindSystem.TryGetMind(entity, out _, out var converterMind))
         {

@@ -1,6 +1,8 @@
 ﻿using Content.Shared._Harmony.BloodBrothers.Components;
 using Content.Shared._Harmony.BloodBrothers.EntitySystems;
+using Content.Shared.Humanoid;
 using Content.Shared.StatusIcon.Components;
+using Robust.Client.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client._Harmony.BloodBrothers.EntitySystems;
