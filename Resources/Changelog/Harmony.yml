@@ -1877,3 +1877,19 @@ Entries:
     changes:
     - type: Tweak
       message: The Quartermaster's PDA now starts with AstroNav installed, allowing them quick access to their coordinates.
+  - id: 336
+    author: BoskiYourk
+    time: '2025-05-30T16:35:53.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/336
+    changes:
+    - type: Tweak
+      message: Makes the microwave a holdable item that can be used to assault kitchen trespassers
+  - id: 611
+    author: Svetoslav228
+    time: '2025-05-30T22:14:28.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/611
+    changes:
+    - type: Add
+      message: black/white bows
+    - type: Add
+      message: purple headphones
