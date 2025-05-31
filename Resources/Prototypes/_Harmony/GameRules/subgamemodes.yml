@@ -3,17 +3,18 @@
   id: BloodBrothers
   components:
   - type: BloodBrotherRule
+    minPlayers: 10 # takes two people so I'm requiring double as many people as traitors
   - type: AntagRandomObjectives
     sets:
     - groups: BloodBrotherObjectiveGroups
-    maxDifficulty: 5
+    maxDifficulty: 7.5
   - type: AntagSelection
     agentName: blood-brothers-round-end-agent-name
     selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ BloodBrother ]
-      max: 1 # Don't allow two blood brother pairs
-      playerRatio: 1
+      max: 2
+      playerRatio: 20 # if I counted right this should be about 40 players for 2 BBs
       allowNonHumans: true
       multiAntagSetting: NotExclusive
       briefing:

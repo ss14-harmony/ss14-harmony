@@ -191,7 +191,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
             return (false, "blood-brother-convert-failed-no-mind");
 
         // Target is already a blood brother
-        if (HasComp<BloodBrotherRoleComponent>(target))
+        if (HasComp<BloodBrotherComponent>(target))
             return (false, "blood-brother-convert-failed-already-brother");
 
         // Stop the blood brother from converting a target.
