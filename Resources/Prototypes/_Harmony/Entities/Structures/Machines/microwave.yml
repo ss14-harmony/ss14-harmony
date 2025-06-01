@@ -9,6 +9,8 @@
   - type: MultiHandedItem
   - type: MeleeWeapon
     attackRate: 0.5
+    soundHit:
+      collection: MetalBreak
     damage:
       types:
         Blunt: 25
@@ -28,6 +30,7 @@
   - type: HeldSpeedModifier
     walkModifier: 0.85
     sprintModifier: 0.85
+  - type: DamageExaminable
 
 - type: entity
   parent: [SyndicateMicrowaveUpstream, KitchenMicrowaveUpstream, BaseSyndicateContraband]
