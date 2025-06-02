@@ -25,6 +25,7 @@
   - type: Tag
     tags:
     - Recyclable
+    - SalvageScrap
 
 - type: entity
   parent: BaseStructureDynamic # Harmony change - Changed BaseStructure to BaseStructureDynamic

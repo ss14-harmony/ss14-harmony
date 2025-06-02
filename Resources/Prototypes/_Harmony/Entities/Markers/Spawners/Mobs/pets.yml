@@ -1,0 +1,27 @@
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobPoquito
+  name: Poqutio Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: kobold
+      sprite: Mobs/Animals/kobold.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MobKoboldPoquito
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobGlorp
+  name: Glorp Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: glorp
+      sprite: _Harmony/Mobs/Pets/glorp.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MobGlorp

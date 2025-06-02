@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/9b308c274d206fecb0c04165405130255866b8c9",
+    "copyright": "Scrubbers made at commit https://github.com/BeeStation/BeeStation-Hornet/commit/9b308c274d206fecb0c04165405130255866b8c9. Modifications and welded states done by CrimsonJupiter.",
     "size": {
         "x": 32,
         "y": 32

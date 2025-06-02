@@ -1,5 +1,35 @@
 # Guns
+
+- type: listing
+  id: UplinkHushpup
+  name: uplink-hushpup-name
+  description: uplink-hushpup-desc
+  icon: { sprite: /Textures/_Harmony/Objects/Weapons/Guns/Shotguns/hushpup.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledHushpup
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 8
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkMantisGloves
+  name: mantis-gloves-uplink-name
+  description: mantis-gloves-uplink-desc
+  icon: { sprite: /Textures/_Harmony/Clothing/Hands/Gloves/mantis_activated.rsi, state: icon }
+  productEntity: ClothingHandsGlovesMantis
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkWeaponry
+
 # Explosives
+
 - type: listing
   id: UplinkPizzaBomb
   name: uplink-pizza-bomb-name
@@ -9,6 +39,7 @@
     Telecrystal: 4
   categories:
   - UplinkExplosives
+
 # Ammo
 
 # For the Bulldog
@@ -35,6 +66,7 @@
   - UplinkAmmo
 
 # Chemicals
+
 - type: listing
   id: UplinkDefib
   name: uplink-defib-name
@@ -56,6 +88,7 @@
     blacklist:
       components:
       - SurplusBundle
+
 # Deception
 
 - type: listing
@@ -72,8 +105,11 @@
     stock: 1
 
 # Disruption
+
 # Allies
+
 # Implants
+
 - type: listing
   id: UplinkDeathRattleTraitor
   name: uplink-traitor-deathrattle-implant-name
@@ -90,19 +126,6 @@
       - NukeOpsUplink
 
 # Wearables
-- type: listing
-  id: UplinkMantisGloves
-  name: mantis-gloves-uplink-name
-  description: mantis-gloves-uplink-desc
-  icon: { sprite: /Textures/_Harmony/Clothing/Hands/Gloves/mantis_activated.rsi, state: icon }
-  productEntity: ClothingHandsGlovesMantis
-  discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 2
-  cost:
-    Telecrystal: 4
-  categories:
-  - UplinkWearables
 
 - type: listing
   id: UplinkClothingOuterArmorRaidHarmony
@@ -124,6 +147,7 @@
         - NukeOpsUplink
 
 # Pointless
+
 - type: listing
   id: UplinkClusterWeh
   name: uplink-cluster-weh-name
@@ -135,6 +159,7 @@
   - UplinkPointless
 
 # Job Specific
+
 - type: listing
   id: UplinkHypoShell
   name: uplink-hyposhell-name
@@ -149,4 +174,3 @@
     whitelist:
     - Bartender
     - Zookeeper
-

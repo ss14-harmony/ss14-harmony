@@ -52,7 +52,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: glorp
   - type: Bloodstream
-    bloodReagent: UnstableMutagen
+    bloodReagent: GlorpExtract
     bloodMaxVolume: 650
   - type: DamageStateVisuals
     states:

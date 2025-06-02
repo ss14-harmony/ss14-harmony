@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/9b308c274d206fecb0c04165405130255866b8c9, with modification by spanky_spanky (GitHub)",
+    "copyright": "Air vents made at commit https://github.com/BeeStation/BeeStation-Hornet/commit/9b308c274d206fecb0c04165405130255866b8c9. Welded states and lights from commit https://github.com/BeeStation/BeeStation-Hornet/commit/d0aaca728e504ce966d99e1638b5508845a082b5. Modified by spanky_spanky (GitHub) and CrimsonJupiter.",
     "size": {
         "x": 32,
         "y": 32

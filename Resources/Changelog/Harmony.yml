@@ -1777,3 +1777,119 @@ Entries:
     changes:
     - type: Tweak
       message: Buffs the Energy Magnum Recharge Rate
+  - id: 676
+    author: BoskiYourk
+    time: '2025-05-26T20:38:19.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/676
+    changes:
+    - type: Tweak
+      message: Throwing stars no longer deal stun damage.
+  - id: 534
+    author: BoskiYourk
+    time: '2025-05-26T20:39:01.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/534
+    changes:
+    - type: Tweak
+      message: The fire extinguisher in salvage lockers has been replaced by a mini jetpack.
+  - id: 491
+    author: GithubEnjoyer1984
+    time: '2025-05-26T20:39:40.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/491
+    changes:
+    - type: Tweak
+      message: Generator scrap can now be fultoned.
+  - id: 460
+    author: MoonlightHollow
+    time: '2025-05-26T20:40:10.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/460
+    changes:
+    - type: Add
+      message: Silver and gold rings are now available in loadouts.
+  - id: 621
+    author: GithubEnjoyer1984
+    time: '2025-05-27T16:47:12.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/621
+    changes:
+    - type: Add
+      message: Glorp.
+  - id: 672
+    author: spanky-spanky
+    time: '2025-05-27T20:04:11.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/672
+    changes:
+    - type: Add
+      message: New lobby songs "Droopy likes your face" by C418 and "See Your Sunbeam" by Interrobang Pie.
+  - id: 651
+    author: ProbablyAta
+    time: '2025-05-27T20:20:58.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/651
+    changes:
+    - type: Add
+      message: Added the Syndicate business suit, available in the syndiedrobe and the emagged lawdrobe.
+    - type: Tweak
+      message: Replaced the black lawyer suit in the hristov bundle and the lobbying bundle tacticool suit with the Syndicate business suit.
+  - id: 683
+    author: CollectionOfBones128
+    time: '2025-05-27T20:25:11.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/683
+    changes:
+    - type: Tweak
+      message: The QM's golden knuckledusters can now be used to mine asteroids.
+  - id: 699
+    author: Lachryphage
+    time: '2025-05-29T18:18:56.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/699
+    changes:
+    - type: Add
+      message: Added turrets and material silo to Eclipse Starport.
+  - id: 690
+    author: kleinerstation13
+    time: '2025-05-29T18:41:34.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/690
+    changes:
+    - type: Add
+      message: Added parabellum by Jacek "Fragik" Rogal to nuke detonation track pool.
+  - id: 440
+    author: kleinerstation13
+    time: '2025-05-29T19:50:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/440
+    changes:
+    - type: Add
+      message: Added the hushpup, a silenced shotgun with trades magazine capacity for sheer power.
+  - id: 688
+    author: Ermucat
+    time: '2025-05-29T21:25:55.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/688
+    changes:
+    - type: Tweak
+      message: Glorp now bleeds glorp juice instead of mutagen.
+  - id: 700
+    author: Ermucat
+    time: '2025-05-30T10:35:23.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/700
+    changes:
+    - type: Tweak
+      message: Upgrading Jaunt now allows you to use it while cuffed or down.
+  - id: 696
+    author: CollectionOfBones128
+    time: '2025-05-30T14:52:18.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/696
+    changes:
+    - type: Tweak
+      message: The Quartermaster's PDA now starts with AstroNav installed, allowing them quick access to their coordinates.
+  - id: 336
+    author: BoskiYourk
+    time: '2025-05-30T16:35:53.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/336
+    changes:
+    - type: Tweak
+      message: Makes the microwave a holdable item that can be used to assault kitchen trespassers
+  - id: 611
+    author: Svetoslav228
+    time: '2025-05-30T22:14:28.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/611
+    changes:
+    - type: Add
+      message: black/white bows
+    - type: Add
+      message: purple headphones
