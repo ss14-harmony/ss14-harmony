@@ -1,4 +1,5 @@
-﻿using Content.Server._Harmony.GameTicking.Rules.Components;
+﻿using System.Diagnostics.CodeAnalysis;
+using Content.Server._Harmony.GameTicking.Rules.Components;
 using Content.Server._Harmony.Roles;
 using Content.Server.Administration.Logs;
 using Content.Server.Antag;
@@ -92,9 +93,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
         if (!TryComp<BloodBrotherComponent>(entity, out var originalComponent))
             return;
 
-        var (canConvert, failureMessage) = CanConvert(entity, args.Target);
-
-        if (!canConvert)
+        if (!CanConvert(entity, args.Target, out var failureMessage))
         {
             _popupSystem.PopupEntity(Loc.GetString(failureMessage, ("converter", entity), ("converted", args.Target)), args.Target, entity, PopupType.MediumCaution);
             return;
@@ -165,9 +164,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
     private void OnBloodBrotherCheckConvert(Entity<InitialBloodBrotherComponent> entity,
         ref BloodBrotherCheckConvertActionEvent args)
     {
-        var (canConvert, failureMessage) = CanConvert(entity, args.Target);
-
-        if (!canConvert)
+        if (!CanConvert(entity, args.Target, out var failureMessage))
         {
             _popupSystem.PopupEntity(Loc.GetString(failureMessage, ("converter", entity), ("converted", args.Target)), args.Target, entity, PopupType.MediumCaution);
             return;
@@ -176,23 +173,33 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
         _popupSystem.PopupEntity(Loc.GetString("blood-brother-convert-convertible", ("converter", entity), ("converted", args.Target)), args.Target, entity, PopupType.Medium);
     }
 
-    private (bool canConvert, LocId failureMessage) CanConvert(
+    private bool CanConvert(
         Entity<InitialBloodBrotherComponent> entity,
-        EntityUid target)
+        EntityUid target,
+        [NotNullWhen(false)] out string? errorMessage)
     {
+        errorMessage = null;
+
         if (!_mindSystem.TryGetMind(entity, out _, out var converterMind))
         {
             DebugTools.Assert("Blood brother tried to convert but had no mind.");
             Log.Error("Blood brother tried to convert but had no mind.");
-            return (false, default); // How would this even happen
+            errorMessage = "guh";
+            return false; // How would this even happen
         }
 
         if (!_mindSystem.TryGetMind(target, out var targetMindId, out var targetMind))
-            return (false, "blood-brother-convert-failed-no-mind");
+        {
+            errorMessage = "blood-brother-convert-failed-no-mind";
+            return false;
+        }
 
         // Target is already a blood brother
         if (HasComp<BloodBrotherComponent>(target))
-            return (false, "blood-brother-convert-failed-already-brother");
+        {
+            errorMessage = "blood-brother-convert-failed-already-brother";
+            return false;
+        }
 
         // Stop the blood brother from converting a target.
         foreach (var objective in converterMind.Objectives)
@@ -200,35 +207,56 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
             if (!TryComp<TargetObjectiveComponent>(objective, out var targetObjective))
                 continue;
 
-            if (targetObjective.Target == targetMindId)
-                return (false, "blood-brother-convert-failed-target");
+            if (targetObjective.Target != targetMindId)
+                continue;
+
+            errorMessage = "blood-brother-convert-failed-target";
+            return false;
         }
 
         if (!HasComp<HumanoidAppearanceComponent>(target))
-            return (false, "blood-brother-convert-failed-no-mind");
+        {
+            errorMessage = "blood-brother-convert-failed-no-mind";
+            return false;
+        }
 
         if (HasComp<ZombieComponent>(target))
-            return (false, "blood-brother-convert-failed-zombie");
+        {
+            errorMessage = "blood-brother-convert-failed-zombie";
+            return false;
+        }
 
         if (HasComp<MindShieldComponent>(target))
-            return (false, "blood-brother-convert-failed-shielded");
+        {
+            errorMessage = "blood-brother-convert-failed-shielded";
+            return false;
+        }
 
         if (!_mobStateSystem.IsAlive(target))
-            return (false, "blood-brother-convert-failed-dead");
+        {
+            errorMessage = "blood-brother-convert-failed-dead";
+            return false;
+        }
 
         if (targetMind.UserId == null)
-            return (false, "blood-brother-convert-failed-no-mind");
+        {
+            errorMessage = "blood-brother-convert-failed-no-mind";
+            return false;
+        }
 
         // Check antag preference
         if (entity.Comp.RequiredAntagPreference == null ||
             !_preferencesManager.TryGetCachedPreferences(targetMind.UserId.Value, out var preferences))
-            return (true, default);
+            return true;
 
         var profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
 
         if (profile.AntagPreferences.Contains(entity.Comp.RequiredAntagPreference.Value) != true)
-            return (false, "blood-brother-convert-failed-preference");
+        {
+            errorMessage = "blood-brother-convert-failed-preference";
+            return false;
+        }
 
-        return (true, default);
+        return true;
     }
 }
