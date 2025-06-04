@@ -24,7 +24,7 @@
       briefing:
         text: blood-brother-initial-role-greeting
         color: MediumVioletRed
-        sound: /Audio/Ambience/Antag/traitor_start.ogg
+        sound: /Audio/_Harmony/Misc/blood_brother_greeting.ogg
       components:
       - type: BloodBrother
       - type: InitialBloodBrother

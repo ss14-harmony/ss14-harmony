@@ -68,7 +68,7 @@ public sealed partial class InitialBloodBrotherComponent : Component
     public Color BriefingColor = Color.MediumVioletRed;
 
     [DataField]
-    public SoundSpecifier BriefingSound = new SoundPathSpecifier("/Audio/Ambience/Antag/traitor_start.ogg"); // TODO: get a custom briefing sound
+    public SoundSpecifier BriefingSound = new SoundPathSpecifier("/Audio/_Harmony/Misc/blood_brother_greeting.ogg");
 
     #endregion
 
