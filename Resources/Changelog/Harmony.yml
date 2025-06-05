@@ -1893,3 +1893,17 @@ Entries:
       message: black/white bows
     - type: Add
       message: purple headphones
+  - id: 638
+    author: youtissoum
+    time: '2025-06-04T15:54:33.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/638
+    changes:
+    - type: Add
+      message: Blood brothers, a two people team working with no TC to do objectives, are now in the game. Check the guidebook for more information!
+  - id: 514
+    author: youtissoum
+    time: '2025-06-04T15:56:25.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/514
+    changes:
+    - type: Add
+      message: A ready manifest is now available in the pre-round lobby. It will show you the amount of people ready for each role.
