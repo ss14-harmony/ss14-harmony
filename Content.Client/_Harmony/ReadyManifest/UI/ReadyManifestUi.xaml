@@ -1,0 +1,10 @@
+﻿<controls:FancyWindow xmlns="https://spacestation14.io"
+             xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+             Title="{Loc 'ready-manifest-title'}"
+             SetSize="450 750">
+    <BoxContainer HorizontalExpand="True" VerticalExpand="True">
+        <ScrollContainer HorizontalExpand="True" VerticalExpand="True">
+            <BoxContainer Name="ReadyManifestListing" Orientation="Vertical" />
+        </ScrollContainer>
+    </BoxContainer>
+</controls:FancyWindow>

@@ -1,3 +1,4 @@
+using Content.Client._Harmony.ReadyManifest; // Harmony
 using Content.Client.Audio;
 using Content.Client.GameTicking.Managers;
 using Content.Client.LateJoin;
@@ -29,6 +30,7 @@ namespace Content.Client.Lobby
 
         private ClientGameTicker _gameTicker = default!;
         private ContentAudioSystem _contentAudioSystem = default!;
+        private ReadyManifestSystem _readyManifestSystem = default!; // Harmony
 
         protected override Type? LinkedScreenType { get; } = typeof(LobbyGui);
         public LobbyGui? Lobby;
@@ -46,6 +48,7 @@ namespace Content.Client.Lobby
             _gameTicker = _entityManager.System<ClientGameTicker>();
             _contentAudioSystem = _entityManager.System<ContentAudioSystem>();
             _contentAudioSystem.LobbySoundtrackChanged += UpdateLobbySoundtrackInfo;
+            _readyManifestSystem = _entityManager.System<ReadyManifestSystem>(); // Harmony
 
             chatController.SetMainChat(true);
 
@@ -65,6 +68,7 @@ namespace Content.Client.Lobby
             UpdateLobbyUi();
 
             Lobby.CharacterPreview.CharacterSetupButton.OnPressed += OnSetupPressed;
+            Lobby.ManifestButton.OnPressed += OnManifestPressed; // Harmony
             Lobby.ReadyButton.OnPressed += OnReadyPressed;
             Lobby.ReadyButton.OnToggled += OnReadyToggled;
 
@@ -85,6 +89,7 @@ namespace Content.Client.Lobby
             _voteManager.ClearPopupContainer();
 
             Lobby!.CharacterPreview.CharacterSetupButton.OnPressed -= OnSetupPressed;
+            Lobby!.ManifestButton.OnPressed -= OnManifestPressed; // Harmony
             Lobby!.ReadyButton.OnPressed -= OnReadyPressed;
             Lobby!.ReadyButton.OnToggled -= OnReadyToggled;
 
@@ -102,6 +107,16 @@ namespace Content.Client.Lobby
             SetReady(false);
             Lobby?.SwitchState(LobbyGui.LobbyGuiState.CharacterSetup);
         }
+
+        // Harmony start - ready manifest
+        private void OnManifestPressed(BaseButton.ButtonEventArgs args)
+        {
+            if (_gameTicker.IsGameStarted)
+                return;
+
+            _readyManifestSystem.RequestReadyManifest();
+        }
+        // Harmony end - ready manifest
 
         private void OnReadyPressed(BaseButton.ButtonEventArgs args)
         {
@@ -180,6 +195,7 @@ namespace Content.Client.Lobby
                 Lobby!.ReadyButton.ToggleMode = false;
                 Lobby!.ReadyButton.Pressed = false;
                 Lobby!.ObserveButton.Disabled = false;
+                Lobby!.ManifestButton.Disabled = true; // Harmony
             }
             else
             {
@@ -189,6 +205,7 @@ namespace Content.Client.Lobby
                 Lobby!.ReadyButton.Disabled = false;
                 Lobby!.ReadyButton.Pressed = _gameTicker.AreWeReady;
                 Lobby!.ObserveButton.Disabled = true;
+                Lobby!.ManifestButton.Disabled = false; // Harmony
             }
 
             if (_gameTicker.ServerInfoBlob != null)

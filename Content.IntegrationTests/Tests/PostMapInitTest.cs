@@ -71,8 +71,9 @@ namespace Content.IntegrationTests.Tests
             "Aspid", // Harmony, revived by Golinth and gruesomegray
             "Atlas", // Harmony revived by Kravin
             "Mira", // Harmony, developed by tanuko
-            "Eclipse", // Harmony, developed by Lachryphage
+            "Eclipse", //Harmony, Developed by Lachryphage
             "Prime", // Harmony, developed/revived by luckyshotpictures
+            "Spire", // Harmony, Developed by Dogbone10, PenguinCodest, Jack_the_Dragon
             "Dev",
             "TestTeg",
             "Fland",
