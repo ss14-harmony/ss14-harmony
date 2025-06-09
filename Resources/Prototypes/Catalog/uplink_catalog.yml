@@ -1840,14 +1840,19 @@
     Telecrystal: 2
   categories:
   - UplinkPointless
-
+  
 - type: listing
   id: UplinkCatEars
   name: uplink-cat-ears-name
   description: uplink-cat-ears-desc
   productEntity: ClothingHeadHatCatEars
+  # Start of Harmony Change: Slightly lowers the Cat ears TC cost and adds a very rare discount
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+   Telecrystal: 20
   cost:
-    Telecrystal: 26
+    Telecrystal: 25 # Harmony change - Reduced from 26 Telecrystals
+  # End of Harmony Change
   categories:
   - UplinkPointless
 
@@ -1980,7 +1985,7 @@
   - !type:BuyerJobCondition
     whitelist:
     - Botanist
-
+    
 - type: listing
   id: uplinkRiggedBoxingGlovesPassenger
   name: uplink-rigged-boxing-gloves-name
