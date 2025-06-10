@@ -1,6 +1,6 @@
 # Customizations
-station-ai-icon-xeno = Friendly Invader
+station-ai-icon-xeno = Xeno Form
 
-station-ai-hologram-house = Things are... less than optimal.
-station-ai-hologram-lizard = Weh!
-station-ai-hologram-xeno-queen = She got into our systems!
+station-ai-hologram-house = House
+station-ai-hologram-lizard = Lizard
+station-ai-hologram-xeno-queen = Xeno Queen
