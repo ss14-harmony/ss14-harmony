@@ -1907,3 +1907,17 @@ Entries:
     changes:
     - type: Add
       message: A ready manifest is now available in the pre-round lobby. It will show you the amount of people ready for each role.
+  - id: 747
+    author: youtissoum
+    time: '2025-06-07T22:19:10.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/747
+    changes:
+    - type: Tweak
+      message: Thieves will no longer become blood brothers.
+  - id: 750
+    author: youtissoum
+    time: '2025-06-08T17:08:02.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/750
+    changes:
+    - type: Tweak
+      message: The maximum number of blood brother pairs that can appear in a round has been reduced to 1.

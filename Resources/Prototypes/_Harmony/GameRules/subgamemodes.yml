@@ -17,10 +17,9 @@
     selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ BloodBrother ]
-      max: 2
-      playerRatio: 20 # if I counted right this should be about 40 players for 2 BBs
+      max: 1
+      playerRatio: 1
       allowNonHumans: true
-      multiAntagSetting: NotExclusive
       briefing:
         text: blood-brother-initial-role-greeting
         color: MediumVioletRed
