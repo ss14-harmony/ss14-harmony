@@ -2,7 +2,7 @@
 - type: stationAiCustomization
   parent: StationAiIconBase
   id: StationAiIconHouse
-  name: station-ai-icon-house
+  name: House
   layerData:
     Occupied:
       sprite: _Harmony/Mobs/Silicon/station_ai.rsi
@@ -11,7 +11,7 @@
 - type: stationAiCustomization
   parent: StationAiIconBase
   id: StationAiIconLizard
-  name: station-ai-icon-lizard
+  name: Lizard
   layerData:
     Occupied:
       sprite: _Harmony/Mobs/Silicon/station_ai.rsi
@@ -19,16 +19,17 @@
 
 - type: stationAiCustomization
   parent: StationAiIconBase
-  id: StationAiIconXenoTakeover
-  name: station-ai-icon-xeno-takeover
+  id: StationAiIconXenoQueen
+  name: Xeno Queen
   layerData:
     Occupied:
       sprite: _Harmony/Mobs/Silicon/station_ai.rsi
-      state: ai_xeno_takeover
+      state: ai_xeno_queen
+
 # Holograms
 - type: stationAiCustomization
   id: StationAiHologramXeno
-  name: station-ai-hologram-xeno
+  name: Xeno Form
   previewKey: Hologram
   layerData:
     Hologram:
