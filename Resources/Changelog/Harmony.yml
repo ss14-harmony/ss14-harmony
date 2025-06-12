@@ -1921,3 +1921,33 @@ Entries:
     changes:
     - type: Tweak
       message: The maximum number of blood brother pairs that can appear in a round has been reduced to 1.
+  - id: 715
+    author: Flarbergaster
+    time: '2025-06-11T12:45:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/715
+    changes:
+    - type: Tweak
+      message: Made PKA Mods T1 Arsenal
+    - type: Tweak
+      message: Re-balanced Salvage Job Board Required Ore Amounts
+  - id: 752
+    author: Flarbergaster
+    time: '2025-06-11T23:51:32.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/752
+    changes:
+    - type: Add
+      message: Added more AI customization
+  - id: 739
+    author: spanky-spanky
+    time: '2025-06-12T00:55:23.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/739
+    changes:
+    - type: Tweak
+      message: Maintenance airlocks now have sprites based on their department.
+  - id: 760
+    author: youtissoum
+    time: '2025-06-12T15:41:21.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/760
+    changes:
+    - type: Tweak
+      message: The blood brother antag selection preference has been split off into the initial and converted preference.
