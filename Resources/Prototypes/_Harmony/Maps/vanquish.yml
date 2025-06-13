@@ -11,7 +11,7 @@
         - type: StationNameSetup
           mapNameTemplate: '{0} Akatsumi Syndicate Cruiser {1}'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/_Harmony/shuttles/emergency_vanquish.yml
+          emergencyShuttlePath: /Maps/_Harmony/Shuttles/emergency_vanquish.yml
         - type: StationJobs
           availableJobs:
             #service
