@@ -1,0 +1,11 @@
+- type: mapModification
+  id: PlasmaPermaPrisoner
+  applyOn:
+  - Plasma
+  additions:
+  - prototype: SpawnPointPermaPrisoner
+    position: -86.5, -42.5
+  - prototype: SpawnPointPermaPrisoner
+    position: -82.5, -42.5
+  - prototype: SpawnPointPermaPrisoner
+    position: -78.5, -42.5

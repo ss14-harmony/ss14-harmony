@@ -1,0 +1,13 @@
+- type: mapModification
+  id: ConvexPermaPrisoner
+  applyOn:
+  - Convex
+  additions:
+  - prototype: SpawnPointPermaPrisoner
+    position: 128.5, 43.5
+  - prototype: SpawnPointPermaPrisoner
+    position: 128.5, 41.5
+  - prototype: SpawnPointPermaPrisoner
+    position: 132.5, 43.5
+  - prototype: SpawnPointPermaPrisoner
+    position: 132.5, 41.5

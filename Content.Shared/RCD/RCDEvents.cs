@@ -4,39 +4,16 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.RCD;
 
 [Serializable, NetSerializable]
-public sealed class RCDSystemMessage : BoundUserInterfaceMessage
+public sealed class RCDSystemMessage(ProtoId<RCDPrototype> protoId) : BoundUserInterfaceMessage
 {
-    public ProtoId<RCDPrototype> ProtoId;
-
-    public RCDSystemMessage(ProtoId<RCDPrototype> protoId)
-    {
-        ProtoId = protoId;
-    }
+    public ProtoId<RCDPrototype> ProtoId = protoId;
 }
 
 [Serializable, NetSerializable]
-public sealed class RCDConstructionGhostRotationEvent : EntityEventArgs
+public sealed class RCDConstructionGhostRotationEvent(NetEntity netEntity, Direction direction) : EntityEventArgs
 {
-    public readonly NetEntity NetEntity;
-    public readonly Direction Direction;
-
-    public RCDConstructionGhostRotationEvent(NetEntity netEntity, Direction direction)
-    {
-        NetEntity = netEntity;
-        Direction = direction;
-    }
-}
-
-[Serializable, NetSerializable]
-public sealed class RCDConstructionGhostFlipEvent : EntityEventArgs
-{
-    public readonly NetEntity NetEntity;
-    public readonly bool UseMirrorPrototype;
-    public RCDConstructionGhostFlipEvent(NetEntity netEntity, bool useMirrorPrototype)
-    {
-        NetEntity = netEntity;
-        UseMirrorPrototype = useMirrorPrototype;
-    }
+    public readonly NetEntity NetEntity = netEntity;
+    public readonly Direction Direction = direction;
 }
 
 [Serializable, NetSerializable]

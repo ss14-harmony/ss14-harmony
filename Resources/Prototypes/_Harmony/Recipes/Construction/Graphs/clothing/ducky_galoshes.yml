@@ -7,25 +7,25 @@
         - to: shoes
           steps:
             - tag: ToyRubberDuck
-              name: rubber ducky
+              name: construction-graph-tag-rubber-ducky
               icon:
                 sprite: Objects/Fun/ducky.rsi
                 state: icon
               doAfter: 1
             - tag: ToyRubberDuck
-              name: rubber ducky
+              name: construction-graph-tag-rubber-ducky
               icon:
                 sprite: Objects/Fun/ducky.rsi
                 state: icon
               doAfter: 1
             - tag: ClothingShoesGaloshes
-              name: galoshes
+              name: construction-graph-tag-galoshes
               icon:
-                sprite: Clothing/Shoes/Specific/galoshes.rsi
+                sprite: _Harmony/Clothing/Shoes/Specific/galoshes.rsi
                 state: icon
               doAfter: 1
             - tag: DrinkSpaceGlue
-              name: glue
+              name: construction-graph-tag-glue
               icon:
                 sprite: Objects/Fun/glue.rsi
                 state: icon

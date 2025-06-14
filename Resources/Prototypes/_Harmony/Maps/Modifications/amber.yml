@@ -1,0 +1,11 @@
+- type: mapModification
+  id: AmberPermaPrisoner
+  applyOn:
+  - Amber
+  additions:
+  - prototype: SpawnPointPermaPrisoner
+    position: -39.5, 8.5
+  - prototype: SpawnPointPermaPrisoner
+    position: -40.5, 11.5
+  - prototype: SpawnPointPermaPrisoner
+    position: -40.5, 17.5

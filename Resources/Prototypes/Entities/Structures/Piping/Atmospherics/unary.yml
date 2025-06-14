@@ -36,9 +36,12 @@
       tags:
         - GasVent
         - Unstackable
+    - type: SubFloorHide
+      visibleLayers:
+      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       drawdepth: FloorObjects
-      sprite: Structures/Piping/Atmospherics/vent.rsi
+      sprite: _Harmony/Structures/Piping/Atmospherics/vent.rsi # Harmony, new file path.
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
           state: pipeHalf
@@ -83,9 +86,12 @@
   placement:
     mode: SnapgridCenter
   components:
+    - type: SubFloorHide
+      visibleLayers:
+      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       drawdepth: FloorObjects
-      sprite: Structures/Piping/Atmospherics/vent.rsi
+      sprite: _Harmony/Structures/Piping/Atmospherics/vent.rsi # Harmony, new file path.
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
           state: pipeHalf
@@ -120,9 +126,12 @@
       tags:
         - GasScrubber
         - Unstackable
+    - type: SubFloorHide
+      visibleLayers:
+      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       drawdepth: FloorObjects
-      sprite: Structures/Piping/Atmospherics/scrubber.rsi
+      sprite: _Harmony/Structures/Piping/Atmospherics/scrubber.rsi # Harmony, new file path.
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
           state: pipeHalf

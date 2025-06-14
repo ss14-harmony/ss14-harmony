@@ -1,14 +1,20 @@
 # Last match in file takes precedence.
 
 # Everything
-*                                                   @KeldWolf @FluffMe
+*                                                   @KeldWolf @FluffMe @youtissoum
 
 # C# code
-/Content.*/                                         @KeldWolf @FluffMe
+/Content.*/                                         @KeldWolf @FluffMe @youtissoum
 
 # YML files
-/Resources/*.yml                                    @KeldWolf @FluffMe
-/Resources/**/*.yml                                 @KeldWolf @FluffMe
+/Resources/*.yml                                    @KeldWolf @FluffMe @youtissoum @Zap527
+/Resources/**/*.yml                                 @KeldWolf @FluffMe @youtissoum @Zap527
+
+# FTL files
+/Resources/Locale                                   @KeldWolf @FluffMe @youtissoum @Zap527
+
+# Server info and rules
+/Resources/ServerInfo                               @KeldWolf @FluffMe @youtissoum @Zap527 @spanky-spanky
 
 # Sprites
 /Resources/Textures/                                @DieselMohawk
@@ -20,7 +26,7 @@
 /Resources/Textures/_Harmony/LobbyScreens/          @DieselMohawk
 
 # Maps
-/Resources/Maps/                                    @spanky-spanky
-/Resources/Prototypes/Maps/                         @spanky-spanky
-/Resources/Prototypes/_Harmony/Maps/                @spanky-spanky
-/Content.IntegrationTests/Tests/PostMapInitTest.cs  @spanky-spanky
+/Resources/Maps/                                    @spanky-spanky @raccoonio
+/Resources/Prototypes/Maps/                         @spanky-spanky @raccoonio
+/Resources/Prototypes/_Harmony/Maps/                @spanky-spanky @raccoonio
+/Content.IntegrationTests/Tests/PostMapInitTest.cs  @spanky-spanky @raccoonio

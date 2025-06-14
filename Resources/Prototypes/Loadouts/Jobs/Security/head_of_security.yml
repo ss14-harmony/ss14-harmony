@@ -6,7 +6,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobHeadOfSecurity
-      time: 10800 #20 hrs
+      time: 16200 # harmony: 20 hrs -> 4.5 hrs (~3 rounds)
 
 # Jumpsuit
 - type: loadout

@@ -5,7 +5,7 @@
   description: A PDA made only for the worst of the worst.
   components:
   - type: Pda
-    id: PrisonerIDCard
+    id: HarmonyPrisonerIDCard
   - type: Appearance
     appearanceDataInit:
      enum.PdaVisuals.PdaType:

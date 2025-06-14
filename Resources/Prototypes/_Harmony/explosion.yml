@@ -1,0 +1,8 @@
+- type: explosion
+  id: LaserBombHarmony
+  damagePerIntensity:
+    types:
+      Heat: 6
+  lightColor: "#ff4300"
+  fireColor: "#ff4300"
+  texturePath: /Textures/Effects/fire.rsi

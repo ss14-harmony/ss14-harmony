@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingNeckHeadphones
+  id: ClothingNeckHeadphonesCat
+  name: purple headphones with ears
+  description: Pretty purple headphones with plastic cat ears, perfect for listening to nightcore.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Neck/Misc/headphones_purple_cat.rsi
+    layers:
+    - state: icon
+      map: [ "enum.ToggleVisuals.Layer" ]
+  - type: Clothing
+    equippedPrefix: off
+    sprite: _Harmony/Clothing/Neck/Misc/headphones_purple_cat.rsi
