@@ -12,6 +12,7 @@
     Telecrystal: 13
   categories:
     - UplinkWeaponry
+
 # Explosives
 - type: listing
   id: UplinkPizzaBomb
