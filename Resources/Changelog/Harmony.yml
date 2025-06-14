@@ -1951,3 +1951,31 @@ Entries:
     changes:
     - type: Tweak
       message: The blood brother antag selection preference has been split off into the initial and converted preference.
+  - id: 689
+    author: 3nderall
+    time: '2025-06-13T20:20:09.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/689
+    changes:
+    - type: Add
+      message: The medical analysis goggles have been made a thief objective.
+  - id: 531
+    author: BoskiYourk
+    time: '2025-06-13T20:21:15.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/531
+    changes:
+    - type: Tweak
+      message: Tweaks and Standardizes all Salvage Hardsuit Armor Values
+  - id: 744
+    author: BaIthamel
+    time: '2025-06-13T20:44:35.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/744
+    changes:
+    - type: Tweak
+      message: Pizza bombs coming from the surplus will now have a box.
+  - id: 765
+    author: BoskiYourk
+    time: '2025-06-14T05:10:17.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/765
+    changes:
+    - type: Tweak
+      message: Made doors no longer connect to walls
