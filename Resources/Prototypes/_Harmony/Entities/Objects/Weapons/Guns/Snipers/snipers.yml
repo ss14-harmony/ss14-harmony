@@ -58,7 +58,7 @@
 
 - type: entity
   name: Drungnov
-  parent: [BaseWeaponSniper, BaseGunWieldable, BaseSyndicateContraband]
+  parent: [BaseWeaponRifle, BaseGunWieldable, BaseSyndicateContraband]
   id: WeaponSniperDrungnov
   description: A old and reliable sniper. Modified to use .45 magnum ammo.
   components:
@@ -99,7 +99,8 @@
         priority: 1
         whitelist:
           tags:
-          - CartridgeRifle
+          - CartridgeMagnum
+  - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset
     maxOffset: 2.5
     pvsIncrease: 0.25

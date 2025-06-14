@@ -12,12 +12,12 @@
     Telecrystal: 10
   categories:
   - UplinkWeaponry
- 
+
 - type: listing
   id: UplinkDrungnovBundle
   name: uplink-drungnov-bundle-name
   description: uplink-drungnov-bundle-desc
-  icon: { sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi, state: base }
+  icon: { sprite: _Harmony/Objects/Weapons/Guns/Snipers/Drungnov.rsi, state: base }
   productEntity: ClothingBackpackDuffelSyndicateFilledDrungov
   discountCategory: rareDiscounts
   discountDownTo:
@@ -40,7 +40,7 @@
     Telecrystal: 4
   categories:
   - UplinkWeaponry
-  
+
 # Explosives
 
 - type: listing
