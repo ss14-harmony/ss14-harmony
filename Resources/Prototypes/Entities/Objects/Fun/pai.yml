@@ -61,7 +61,6 @@
   - type: Store
     categories:
     - PAIAbilities
-    - PAIHacked # Harmony Change
     currencyWhitelist:
     - SiliconMemory
     balance:
@@ -134,11 +133,6 @@
           Off: { state: syndicate-pai-off-overlay }
           Searching: { state: syndicate-pai-searching-overlay }
           On: { state: syndicate-pai-on-overlay }
-  # Harmony Start - adds hacked uplink
-  - type: Tag
-    tags:
-    - HackedPAI
-  # Harmony End
 
 - type: entity
   parent: PersonalAI
