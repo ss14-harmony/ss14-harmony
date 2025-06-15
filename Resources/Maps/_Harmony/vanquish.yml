@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 260.2.0
+  engineVersion: 261.2.0
   forkId: harmony
-  forkVersion: 6caedea0ab1692b021759fb17070d2eb35b07239
-  time: 06/12/2025 13:47:09
-  entityCount: 4520
+  forkVersion: 151e4cd1fff5919f0908c0d600e3f24342ac4974
+  time: 06/15/2025 09:44:17
+  entityCount: 4524
 maps:
 - 1
 grids:
@@ -81,9 +81,7 @@ entities:
     - type: Transform
     - type: Map
       mapPaused: True
-    - type: PhysicsMap
     - type: GridTree
-    - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
   - uid: 2
@@ -3978,63 +3976,42 @@ entities:
     components:
     - type: Transform
       parent: 1507
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 1507
   - uid: 143
     mapInit: true
     paused: true
     components:
     - type: Transform
       parent: 1650
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 1650
   - uid: 145
     mapInit: true
     paused: true
     components:
     - type: Transform
       parent: 144
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 144
   - uid: 935
     mapInit: true
     paused: true
     components:
     - type: Transform
       parent: 907
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 907
   - uid: 996
     mapInit: true
     paused: true
     components:
     - type: Transform
       parent: 981
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 981
   - uid: 1725
     mapInit: true
     paused: true
     components:
     - type: Transform
       parent: 1692
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 1692
   - uid: 3414
     mapInit: true
     paused: true
     components:
     - type: Transform
       parent: 3413
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 3413
 - proto: ActionToggleJetpack
   entities:
   - uid: 986
@@ -4043,18 +4020,12 @@ entities:
     components:
     - type: Transform
       parent: 981
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 981
   - uid: 1724
     mapInit: true
     paused: true
     components:
     - type: Transform
       parent: 1692
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 1692
 - proto: AirAlarm
   entities:
   - uid: 1828
@@ -9998,7 +9969,7 @@ entities:
   - uid: 3183
     components:
     - type: Transform
-      pos: 21.05214,-6.12346
+      pos: 21.074982,-7.7622414
       parent: 2
 - proto: CaptainIDCard
   entities:
@@ -13270,6 +13241,13 @@ entities:
     - type: Transform
       pos: 8.5,-24.5
       parent: 2
+- proto: CrateCoffin
+  entities:
+  - uid: 3286
+    components:
+    - type: Transform
+      pos: 19.5,-6.5
+      parent: 2
 - proto: CrateFreezer
   entities:
   - uid: 1708
@@ -13725,6 +13703,18 @@ entities:
     - type: Transform
       pos: 2.5,-7.5
       parent: 2
+  - uid: 3427
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 19.5,-6.5
+      parent: 2
+  - uid: 3428
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 21.5,-6.5
+      parent: 2
 - proto: CurtainsRedOpen
   entities:
   - uid: 4210
@@ -13733,13 +13723,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 7.5,-10.5
       parent: 4191
-- proto: DawInstrument
-  entities:
-  - uid: 1200
-    components:
-    - type: Transform
-      pos: -17.5,-18.5
-      parent: 2
 - proto: DefaultStationBeaconArmory
   entities:
   - uid: 3022
@@ -21499,6 +21482,14 @@ entities:
     - type: Transform
       pos: -6.40229,-42.65604
       parent: 2
+- proto: PianoInstrument
+  entities:
+  - uid: 1200
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -17.5,-18.5
+      parent: 2
 - proto: PlaqueAtmos
   entities:
   - uid: 3042
@@ -22774,8 +22765,7 @@ entities:
   - uid: 2425
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 16.5,-23.5
+      pos: 13.5,-17.5
       parent: 2
   - uid: 3169
     components:
@@ -22891,6 +22881,16 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -19.5,-27.5
+      parent: 2
+  - uid: 3429
+    components:
+    - type: Transform
+      pos: 2.5,-16.5
+      parent: 2
+  - uid: 3430
+    components:
+    - type: Transform
+      pos: 18.5,-13.5
       parent: 2
   - uid: 3966
     components:
@@ -26627,13 +26627,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 2.5,-7.5
-      parent: 2
-- proto: TableFancyRed
-  entities:
-  - uid: 3286
-    components:
-    - type: Transform
-      pos: 19.5,-6.5
       parent: 2
 - proto: TablePlasmaGlass
   entities:
