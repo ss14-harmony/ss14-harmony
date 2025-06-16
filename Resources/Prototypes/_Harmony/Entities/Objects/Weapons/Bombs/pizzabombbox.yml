@@ -1,0 +1,10 @@
+- type: entity
+  id: PizzabombSurplus
+  parent: CrateSyndicate
+  suffix: Filled
+  name: nefarious pizza bomb box
+  description: Contains one nefarious pizza bomb. Does not contain pizza.
+  components:
+  - type: StorageFill
+    contents:
+    - id: Pizzabomb

@@ -6,15 +6,15 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 10800 #3hrs
+      time: 10800 # Harmony: 3hrs
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 0 #0 hrs
+      time: 0 # Harmony: 0 hrs
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000 #10 hrs
+      time: 36000 # Harmony: 10 hrs
     - !type:OverallPlaytimeRequirement
-      time: 43200 #12 hrs
+      time: 43200 # Harmony: 12 hrs
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
@@ -51,3 +51,11 @@
     - Flash
     - MagazinePistol
     - WeaponPistolMk58
+
+- type: chameleonOutfit
+  id: HeadOfSecurityChameleonOutfit
+  job: HeadOfSecurity
+  hasMindShield: true
+  equipment:
+    mask: ClothingMaskGasSecurity
+    neck: ClothingNeckCloakHos

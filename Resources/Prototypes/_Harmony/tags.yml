@@ -6,7 +6,7 @@
 
 # Tag used for energy weapon's energy cartridges.
 - type: Tag
-  id: EnergyCartridge
+  id: EnergyCarbineCartridge
 
 # Tag used for escape pod landing.
 - type: Tag

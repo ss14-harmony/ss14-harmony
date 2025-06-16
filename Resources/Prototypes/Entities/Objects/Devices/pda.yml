@@ -473,6 +473,16 @@
     accentVColor: "#a23e3e"
   - type: Icon
     state: pda-qm
+# Harmony Change Start, adds AstroNav to QM PDA and adds the necessary lines so the PDA keeps the basic cartridges
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - AstroNavCartridge
+# Harmony Change End
 
 - type: entity
   parent: BasePDA

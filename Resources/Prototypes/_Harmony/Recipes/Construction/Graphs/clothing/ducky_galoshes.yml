@@ -21,7 +21,7 @@
             - tag: ClothingShoesGaloshes
               name: construction-graph-tag-galoshes
               icon:
-                sprite: Clothing/Shoes/Specific/galoshes.rsi
+                sprite: _Harmony/Clothing/Shoes/Specific/galoshes.rsi
                 state: icon
               doAfter: 1
             - tag: DrinkSpaceGlue

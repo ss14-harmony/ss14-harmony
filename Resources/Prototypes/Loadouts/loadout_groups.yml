@@ -67,6 +67,8 @@
   - TowelColorWhite
   - TowelColorYellow
   - TowelStripedOrange # Harmony
+  - SilverRing # Harmony
+  - GoldRing # Harmony
   - Cane # Harmony
   - TapeRecorder # DeltaV / Harmony
 
@@ -221,6 +223,7 @@
   - GreyJumpskirt
   - AncientJumpsuit
   - RainbowJumpsuit
+  - RainbowJumpskirt
 
 - type: loadoutGroup
   id: PassengerFace
@@ -568,6 +571,7 @@
   loadouts:
   - EmergencyNitrogenMime
   - EmergencyOxygenMime
+  - EmergencySpeciesMothMime
   - LoadoutSpeciesVoxNitrogen
 
 - type: loadoutGroup

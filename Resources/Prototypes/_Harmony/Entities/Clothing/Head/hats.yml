@@ -137,3 +137,33 @@
     - ClothMade
     - HamsterWearable
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadWhiteBow
+  name: white bow
+  description: A very pretty silver bow, made of high-quality materials.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Head/Hats/white_bow.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Head/Hats/white_bow.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadBlackBow
+  name: black bow
+  description: Looks good with a maid suit.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Head/Hats/black_bow.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Head/Hats/black_bow.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon

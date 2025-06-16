@@ -115,9 +115,11 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: IconSmooth
-    key: walls
-    mode: NoSprite
+# Start of Harmony Change: Removes IconSmoothing from High Security Doors
+#  - type: IconSmooth
+#    key: walls
+#    mode: NoSprite
+# End of Harmony Change
   - type: Construction
     graph: Airlock
     node: highSecDoor

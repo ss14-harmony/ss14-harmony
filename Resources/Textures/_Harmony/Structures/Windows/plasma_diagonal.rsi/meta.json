@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from ADT at commit https://github.com/AdventureTimeSS14/space_station_ADT/commit/71ce92ddc1346522ce0e2325a3ec6982beca8099, and updated by BoskiYourk",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "state0"
+        },
+        {
+            "name": "state1"
+        }
+    ]
+}

@@ -179,6 +179,8 @@
     soundGunshot:
       path: /Audio/_Harmony/Weapons/Guns/Gunshots/kammerer_shot.ogg
     # End of Harmony change
+  - type: GunSpreadModifier
+    spread: 0.6
   - type: Tag
     tags:
     - WeaponShotgunKammerer

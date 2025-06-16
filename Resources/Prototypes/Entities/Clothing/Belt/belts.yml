@@ -482,7 +482,7 @@
         - CombatKnife
         - Truncheon
         - HandGrenade
-        - EnergyCartridge # Harmony Change: Adds the Energy Cartridge to the sec belt whitelist
+        - EnergyCarbineCartridge # Harmony Change: Adds the Energy Carbine Cartridge to the sec belt whitelist
       components:
         - Stunbaton
         - FlashOnTrigger
