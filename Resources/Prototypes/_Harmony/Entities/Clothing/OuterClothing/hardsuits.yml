@@ -1,6 +1,6 @@
 #Quartermaster's Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseGrandTheftContraband]
+  parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitQM
   name: quartermaster's antique salvage hardsuit
   description: A salvaged pirate hardsuit generously donated to NanoTrasen, retrofitted for the Quartermaster.
@@ -27,15 +27,8 @@
     walkModifier: 0.75
     sprintModifier: 0.75
   - type: HeldSpeedModifier
-  - type: Item
-    size: Huge
-    shape:
-    - 0,0,4,4 #5X5, can fit in a duffel bag but nothing smaller, same as RD suit.
   - type: Tag
     tags:
     - WhitelistChameleon
-    - HighRiskItem
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitQM
-  - type: StealTarget
-    stealGroup: ClothingOuterHardsuitQM

@@ -11,12 +11,3 @@
   sprite:
     sprite: _Harmony/Clothing/Eyes/Glasses/cmo.rsi
     state: icon
-
-# Traitor single items
-
-- type: stealTargetGroup
-  id: ClothingOuterHardsuitQM
-  name: steal-target-groups-clothing-outer-hardsuit-qm
-  sprite:
-    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/qmsuit.rsi
-    state: icon
