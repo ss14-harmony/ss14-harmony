@@ -3,7 +3,6 @@
   name: BaseWeaponKineticSidearm # Defined to remove wieldable and to give room for further differentiation from the PKA
   parent: BaseItem
   id: BaseWeaponKineticSidearm
-  description: A rooty tooty point and shooty, now kinetic.
   abstract: true
   components:
   - type: Sprite
