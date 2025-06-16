@@ -75,13 +75,16 @@
   suffix: Wizard
   components:
   - type: ImmovableRod
-    maxSpeed: 25
+    maxSpeed: 15 # Harmony - 25 -> 15
     destroyTiles: false
     randomizeVelocity: false
     shouldGib: false
     damage:
       types:
-        Blunt: 190
+# Begin harmony change - tweaked damage values
+#       Blunt: 190
+        Piercing: 90
+# End harmony change
   - type: MovementIgnoreGravity
     gravityState: true
   - type: InputMover

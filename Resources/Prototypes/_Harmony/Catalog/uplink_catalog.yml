@@ -1,6 +1,20 @@
 # Guns
 
 - type: listing
+  id: UplinkBloodRedCarbineBundleHarmony
+  name: uplink-blood-red-carbine-name
+  description: uplink-blood-red-carbine-desc
+  icon: { sprite: _Harmony/Objects/Weapons/Guns/Battery/blood-red_energy_carbine.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledBloodRedEnergyCarbineHarmony
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 15
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkWeaponry
+
+- type: listing
   id: UplinkHushpup
   name: uplink-hushpup-name
   description: uplink-hushpup-desc
@@ -39,6 +53,29 @@
     Telecrystal: 4
   categories:
   - UplinkExplosives
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+
+# The Pizzabomb is visually identical to the non-bomb version to avoid (more) accidents it comes in an informative
+# packaging when acquired from a surplus crate.
+- type: listing
+  id: UplinkPizzaBombSurplus
+  name: uplink-pizza-bomb-surplus-name
+  description: uplink-pizza-bomb-surplus-desc
+  productEntity: PizzabombSurplus
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkExplosives
+  conditions:
+  - !type:BuyerWhitelistCondition
+    whitelist:
+      components:
+      - SurplusBundle
+
 
 # Ammo
 
@@ -49,6 +86,17 @@
   description: uplink-shotgun-drum-pellet-desc
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: pellets }
   productEntity: MagazineShotgun
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkAmmo
+
+# For the Blood-Red Energy Carbine
+- type: listing
+  id: UplinkBloodRedCarbineAmmoHarmony
+  name: uplink-blood-red-carbine-ammo-name
+  description: uplink-blood-red-carbine-ammo-desc
+  productEntity: EnergyCarbineCartridgeSyndicateHarmony
   cost:
     Telecrystal: 2
   categories:

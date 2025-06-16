@@ -8,6 +8,9 @@
 - type: Tag
   id: EnergyCarbineCartridge
 
+- type: Tag
+  id: EnergyCarbineCartridgeSyndicate
+
 # Tag used for escape pod landing.
 - type: Tag
   id: DockPod

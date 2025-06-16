@@ -114,6 +114,13 @@
       sprite: Mobs/Aliens/Carps/magic.rsi
     - type: TypingIndicator
       proto: guardian
+# Begin harmony addition
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+# End harmony addition
 
 - type: entity
   name: holocarp

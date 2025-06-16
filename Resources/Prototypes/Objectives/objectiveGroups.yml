@@ -6,6 +6,7 @@
     TraitorObjectiveGroupKill: 1
     TraitorObjectiveGroupState: 1 #As in, something about your character. Alive, dead, arrested, gained an ability...
     TraitorObjectiveGroupSocial: 0.5 # Harmony. Change: 1 -> 0.5 #Involves helping/harming others without killing them or stealing their stuff
+
 - type: weightedRandom
   id: TraitorObjectiveGroupSteal
   weights:
@@ -40,8 +41,9 @@
 - type: weightedRandom
   id: TraitorObjectiveGroupSocial
   weights:
-    RandomTraitorAliveObjective: 1
+#    RandomTraitorAliveObjective: 1 - Removed because the objective was boring and didn't progress the round.
     RandomTraitorProgressObjective: 0.5 # Harmony. Change: 1 -> 0.5
+
 #Thief groups
 - type: weightedRandom
   id: ThiefObjectiveGroups
@@ -76,7 +78,8 @@
     WantedListCartridgeStealObjective: 1
     ClothingOuterHardsuitVoidParamedStealObjective: 1   #med
     MedicalTechFabCircuitboardStealObjective: 1
-    ClothingHeadsetAltMedicalStealObjective: 1
+    # ClothingHeadsetAltMedicalStealObjective: 1 # replaced by harmony objective
+    CMOGogglesStealObjective: 1 # harmony change
     FireAxeStealObjective: 1                            #eng
     AmePartFlatpackStealObjective: 1
     ExpeditionsCircuitboardStealObjective: 1            #sup

@@ -1893,3 +1893,121 @@ Entries:
       message: black/white bows
     - type: Add
       message: purple headphones
+  - id: 638
+    author: youtissoum
+    time: '2025-06-04T15:54:33.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/638
+    changes:
+    - type: Add
+      message: Blood brothers, a two people team working with no TC to do objectives, are now in the game. Check the guidebook for more information!
+  - id: 514
+    author: youtissoum
+    time: '2025-06-04T15:56:25.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/514
+    changes:
+    - type: Add
+      message: A ready manifest is now available in the pre-round lobby. It will show you the amount of people ready for each role.
+  - id: 747
+    author: youtissoum
+    time: '2025-06-07T22:19:10.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/747
+    changes:
+    - type: Tweak
+      message: Thieves will no longer become blood brothers.
+  - id: 750
+    author: youtissoum
+    time: '2025-06-08T17:08:02.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/750
+    changes:
+    - type: Tweak
+      message: The maximum number of blood brother pairs that can appear in a round has been reduced to 1.
+  - id: 715
+    author: Flarbergaster
+    time: '2025-06-11T12:45:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/715
+    changes:
+    - type: Tweak
+      message: Made PKA Mods T1 Arsenal
+    - type: Tweak
+      message: Re-balanced Salvage Job Board Required Ore Amounts
+  - id: 752
+    author: Flarbergaster
+    time: '2025-06-11T23:51:32.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/752
+    changes:
+    - type: Add
+      message: Added more AI customization
+  - id: 739
+    author: spanky-spanky
+    time: '2025-06-12T00:55:23.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/739
+    changes:
+    - type: Tweak
+      message: Maintenance airlocks now have sprites based on their department.
+  - id: 760
+    author: youtissoum
+    time: '2025-06-12T15:41:21.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/760
+    changes:
+    - type: Tweak
+      message: The blood brother antag selection preference has been split off into the initial and converted preference.
+  - id: 689
+    author: 3nderall
+    time: '2025-06-13T20:20:09.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/689
+    changes:
+    - type: Add
+      message: The medical analysis goggles have been made a thief objective.
+  - id: 531
+    author: BoskiYourk
+    time: '2025-06-13T20:21:15.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/531
+    changes:
+    - type: Tweak
+      message: Tweaks and Standardizes all Salvage Hardsuit Armor Values
+  - id: 744
+    author: BaIthamel
+    time: '2025-06-13T20:44:35.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/744
+    changes:
+    - type: Tweak
+      message: Pizza bombs coming from the surplus will now have a box.
+  - id: 765
+    author: BoskiYourk
+    time: '2025-06-14T05:10:17.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/765
+    changes:
+    - type: Tweak
+      message: Made doors no longer connect to walls
+  - id: 757
+    author: AryaRaiin
+    time: '2025-06-14T23:51:25.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/757
+    changes:
+    - type: Add
+      message: The aromantic mantle is now available when using the chameleon pride mantle.
+  - id: 601
+    author: kleinerstation13
+    time: '2025-06-16T04:43:40.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/601
+    changes:
+    - type: Tweak
+      message: Tweaked wizard spell prices and effectiveness
+    - type: Tweak
+      message: Nerfed wizard hardsuit pierce protection
+  - id: 673
+    author: BoskiYourk
+    time: '2025-06-16T05:08:34.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/673
+    changes:
+    - type: Add
+      message: Added the Blood-Red Energy Carbine
+    - type: Add
+      message: Added the Jailbroken Energy Cartridge
+  - id: 528
+    author: BoskiYourk
+    time: '2025-06-16T07:05:21.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/528
+    changes:
+    - type: Tweak
+      message: Ports new box and box icon sprites from ADT

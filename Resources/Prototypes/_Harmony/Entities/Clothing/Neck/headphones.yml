@@ -8,7 +8,7 @@
     sprite: _Harmony/Clothing/Neck/Misc/headphones_purple_cat.rsi
     layers:
     - state: icon
-      map: [ "enum.ToggleVisuals.Layer" ]
+      map: [ "enum.ToggleableVisuals.Layer" ]
   - type: Clothing
     equippedPrefix: off
     sprite: _Harmony/Clothing/Neck/Misc/headphones_purple_cat.rsi

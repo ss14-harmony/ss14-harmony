@@ -1,5 +1,17 @@
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateFilledBloodRedEnergyCarbineHarmony
+  name: blood-red energy carbine bundle
+  description: A bundle containing an improved Energy Carbine. It comes with two spare Jailbroken Energy Cartridges.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponBloodRedEnergyCarbineHarmony
+    - id: EnergyCarbineCartridgeSyndicateHarmony
+      amount: 2
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
   id: ClothingBackpackDuffelSyndicateFilledHushpup
   name: Hushpup bundle
   description: A duffel bag containing a Hushpup, bundled with a box of buckshot. Quarter included.

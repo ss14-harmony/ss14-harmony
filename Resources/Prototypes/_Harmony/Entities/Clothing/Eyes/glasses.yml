@@ -30,3 +30,5 @@
     - type: SolutionScanner
     - type: IdentityBlocker
       coverage: EYES
+    - type: StealTarget
+      stealGroup: ClothingEyesGlassesMedical

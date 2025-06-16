@@ -11,6 +11,11 @@
   - StationAiIconDorf
   - StationAiIconHeartline
   - StationAiIconSmiley
+# Harmony Addition Starts
+  - StationAiIconHouse
+  - StationAiIconLizard
+  - StationAiIconXenoQueen
+# Harmony Addition Ends
 
 - type: stationAiCustomizationGroup
   id: StationAiHolograms
@@ -22,6 +27,7 @@
   - StationAiHologramFace
   - StationAiHologramCat
   - StationAiHologramDog
+  - StationAiHologramXeno # Harmony Addition
 
 # Iconography
 - type: stationAiCustomization

@@ -22,6 +22,10 @@
     rules:
     - id: Thief
       prob: 0.5
+    # Harmony start
+    - id: BloodBrothers
+      prob: 0.5
+    # Harmony end
     - id: SubWizard
       prob: 0.05
 
@@ -33,6 +37,10 @@
     rules:
     - id: Thief
       prob: 0.5
+    # Harmony start
+    - id: BloodBrothers
+      prob: 0.5
+    # Harmony end
 
 - type: entity
   parent: BaseGameRule
@@ -450,3 +458,11 @@
       prob: 0.90
     - id: SolarPanelDamageVariationPass
     - id: SolarPanelEmptyVariationPass
+    - id: BasicDecalDirtVariationPass
+    - id: BasicDecalGraffitiVariationPass
+    - id: BasicDecalBrunsVariationPass
+      prob: 0.50
+      orGroup: monospaceDecals
+    - id: BasicDecalDirtMonospaceVariationPass
+      prob: 0.50
+      orGroup: monospaceDecals
