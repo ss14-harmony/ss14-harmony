@@ -140,15 +140,3 @@
     sprite: _Harmony/Clothing/Neck/mantles/aromantle.rsi
   - type: Clothing
     sprite: _Harmony/Clothing/Neck/mantles/aromantle.rsi
-
-# Senior Salvage Mantle
-- type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckMantleSeniorSalvager
-  name: senior salvager's mantle
-  description: A battle-torn mantle, whoever is wearing this has probably slain their fair share of space carp.
-  components:
-  - type: Sprite
-    sprite: _Harmony/Clothing/Neck/mantles/seniorsalvmantle.rsi
-  - type: Clothing
-    sprite: _Harmony/Clothing/Neck/mantles/seniorsalvmantle.rsi

@@ -43,7 +43,7 @@
   name: loadout-group-salvage-specialist-neck
   minLimit: 0
   loadouts:
-  - ClothingNeckMantleSeniorSalvager
+  - ClothingNeckCloakSeniorSalvager
 
 - type: loadoutGroup
   id: SalvageSpecialistID

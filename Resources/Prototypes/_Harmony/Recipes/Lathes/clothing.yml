@@ -146,5 +146,5 @@
 ## Salvager
 - type: latheRecipe
   parent: BaseNeckClothingRecipe
-  id: ClothingNeckMantleSeniorSalvager
-  result: ClothingNeckMantleSeniorSalvager
+  id: ClothingNeckCloakSeniorSalvager
+  result: ClothingNeckCloakSeniorSalvager

@@ -26,7 +26,7 @@
   - ClothingUniformJumpskirtCargoOfficeSkirtHarmony # Harmony
   - ClothingUniformJumpsuitSeniorTechnicianHarmony # Harmony
   - ClothingUniformJumpskirtSeniorTechnicianHarmony # Harmony
-  - ClothingNeckMantleSeniorSalvager # Harmony
+  - ClothingNeckCloakSeniorSalvager # Harmony
 
 - type: latheRecipePack
   id: ClothingCommand

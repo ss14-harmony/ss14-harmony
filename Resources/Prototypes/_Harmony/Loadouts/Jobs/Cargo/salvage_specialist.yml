@@ -9,12 +9,12 @@
 
 # Neck
 - type: loadout
-  id: ClothingNeckMantleSeniorSalvager
+  id: ClothingNeckCloakSeniorSalvager
   effects:
   - !type:GroupLoadoutEffect
     proto: SeniorSalvageSpecialist
   equipment:
-    neck: ClothingNeckMantleSeniorSalvager
+    neck: ClothingNeckCloakSeniorSalvager
 
 # ID
 - type: loadout
