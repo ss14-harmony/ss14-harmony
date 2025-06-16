@@ -4,20 +4,18 @@
   description: Fires a weh towards the clicked location.
   components:
   - type: Magic
-  - type: WorldTargetAction
-    event: !type:ProjectileSpellEvent
-      prototype: ProjectileWehball
+  - type: Action
+    useDelay: 10
+    itemIconStyle: BigAction
+    raiseOnUser: true
     icon:
       sprite: Objects/Fun/toys.rsi
       state: plushie_lizard
-    useDelay: 10
-    itemIconStyle: BigAction
-    checkCanAccess: false
-    raiseOnUser: true
+  - type: TargetAction
     range: 60
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:ProjectileSpellEvent
+      prototype: ProjectileWehball
   - type: SpeakOnAction
     sentence: action-speech-spell-wehball
-  - type: Sprite
-    sprite: Objects/Fun/toys.rsi
-    layers:
-    - state: plushie_lizard
