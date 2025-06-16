@@ -1,11 +1,11 @@
 ﻿{
     "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Lizard Sprite Made by Mithrandalf, modified by Flarbergaster (GitHub)",
     "size": {
         "x": 32,
         "y": 32
     },
-    "license": "CC-BY-SA-3.0",
-    "copyright": "Lizard Sprite Made by Mithrandalf, modified by Flarbergaster",
     "states": [
         {
             "name": "gizard",
