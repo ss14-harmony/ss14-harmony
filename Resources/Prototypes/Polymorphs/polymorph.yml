@@ -29,7 +29,7 @@
     inventory: None
     transferName: true
     transferDamage: true
-    revertOnCrit: false
+    revertOnCrit: true # Harmony
     revertOnDeath: true
     polymorphSound: !type:SoundPathSpecifier
       path: /Audio/Magic/forcewall.ogg

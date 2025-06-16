@@ -27,7 +27,7 @@
       map: [ "light" ]
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     spriteLayer: light
     clothingVisuals:
       head:
@@ -132,7 +132,7 @@
 #end of Harmony change
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     clothingVisuals:
       head:
       - state: equipped-head-light
@@ -223,7 +223,7 @@
 #end of Harmony change
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     clothingVisuals:
       head:
       - state: equipped-head-light
@@ -279,9 +279,33 @@
   description: Armored hardsuit helmet for security needs.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/security.rsi
+#start of harmony change
+#    sprite: Clothing/Head/Hardsuits/security.rsi
+#  - type: Clothing
+#    sprite: Clothing/Head/Hardsuits/security.rsi
+    sprite: _Harmony/Clothing/Head/Hardsuits/security.rsi
+  #Modification of light layering
+  - type: HandheldLight
+    addPrefix: false
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-light-vox
+        shader: unshaded
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/security.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+#end of Harmony change
   - type: PointLight
     color: "#ffeead"
   - type: PressureProtection
@@ -333,9 +357,33 @@
   description: A modified riot helmet. Oddly comfortable.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/security-warden.rsi
+#start of harmony change
+#    sprite: Clothing/Head/Hardsuits/security-warden.rsi
+#  - type: Clothing
+#    sprite: Clothing/Head/Hardsuits/security-warden.rsi
+    sprite: _Harmony/Clothing/Head/Hardsuits/security-warden.rsi
+  #Modification of light layering
+  - type: HandheldLight
+    addPrefix: false
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-light-vox
+        shader: unshaded
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/security-warden.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+#end of Harmony change
   - type: PointLight
     color: "#ffeead"
   - type: PressureProtection
@@ -460,9 +508,33 @@
   description: Security hardsuit helmet with the latest top secret NT-HUD software. Belongs to the HoS.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/security-red.rsi
+#start of harmony change
+#    sprite: Clothing/Head/Hardsuits/security-red.rsi
+#  - type: Clothing
+#    sprite: Clothing/Head/Hardsuits/security-red.rsi
+    sprite: _Harmony/Clothing/Head/Hardsuits/security-red.rsi
+  #Modification of light layering
+  - type: HandheldLight
+    addPrefix: false
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-light-vox
+        shader: unshaded
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/security-red.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+#end of Harmony change
   - type: PointLight
     color: "#ffeead"
   - type: PressureProtection
@@ -1053,7 +1125,8 @@
 #MISC. HARDSUITS
 #Clown Hardsuit
 - type: entity
-  parent: ClothingHeadHelmetHardsuitSecurity
+# parent: ClothingHeadHelmetHardsuitSecurity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ] #Harmony change : update parent because of the security hardsuits resprite
   id: ClothingHeadHelmetHardsuitClown
   name: clown hardsuit helmet
   description: A clown hardsuit helmet.
@@ -1068,7 +1141,8 @@
 
 #Mime Hardsuit
 - type: entity
-  parent: ClothingHeadHelmetHardsuitSecurity
+# parent: ClothingHeadHelmetHardsuitSecurity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ] #Harmony change : update parent because of the security hardsuits resprite
   id: ClothingHeadHelmetHardsuitMime
   name: mime hardsuit helmet
   description: A mime hardsuit helmet.

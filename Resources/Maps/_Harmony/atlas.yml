@@ -68,9 +68,7 @@ entities:
     - type: Transform
     - type: Map
       mapPaused: True
-    - type: PhysicsMap
     - type: GridTree
-    - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
   - uid: 2
@@ -3220,23 +3218,6 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: NavMap
-- proto: ActionToggleLight
-  entities:
-  - uid: 4
-    components:
-    - type: Transform
-      parent: 3
-    - type: InstantAction
-      container: 3
-  - uid: 1964
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 1960
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 1960
 - proto: AirAlarm
   entities:
   - uid: 5
@@ -43239,42 +43220,28 @@ entities:
       pos: -43.645462,-17.224262
       parent: 2
     - type: HandheldLight
-      toggleActionEntity: 4
     - type: ContainerContainer
       containers:
         cell_slot: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 4
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
   - uid: 1960
     components:
     - type: Transform
       pos: -34.51584,-3.694189
       parent: 2
     - type: HandheldLight
-      toggleActionEntity: 1964
     - type: ContainerContainer
       containers:
         cell_slot: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 1964
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
   - uid: 5680
     components:
     - type: Transform

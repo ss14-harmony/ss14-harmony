@@ -220,7 +220,7 @@
     - id: ClothingBackpackDuffelSurgeryFilled
     - id: ClothingCloakCmo
     - id: ClothingEyesGlassesMedical # Harmony item
-  # - id: ClothingEyesHudMedical
+  # - id: ClothingEyesHudMedical # Replaced with Harmony item
     - id: ClothingHandsGlovesNitrile
     - id: ClothingHeadHatBeretCmo
     - id: ClothingHeadsetAltMedical
