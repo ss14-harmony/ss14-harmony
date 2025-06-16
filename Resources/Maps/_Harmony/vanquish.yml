@@ -2244,64 +2244,6 @@ entities:
     - type: GasTileOverlay
     - type: NavMap
     - type: ImplicitRoof
-- proto: ActionToggleInternals
-  entities:
-  - uid: 3
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 1507
-  - uid: 143
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 1650
-  - uid: 145
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 144
-  - uid: 935
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 907
-  - uid: 996
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 981
-  - uid: 1725
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 1692
-  - uid: 3414
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 3413
-- proto: ActionToggleJetpack
-  entities:
-  - uid: 986
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 981
-  - uid: 1724
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 1692
 - proto: AirAlarm
   entities:
   - uid: 1828
@@ -17320,36 +17262,18 @@ entities:
     - type: Transform
       parent: 895
     - type: GasTank
-      toggleActionEntity: 996
     - type: Jetpack
-      toggleActionEntity: 986
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 986
-          - 996
     - type: InsideEntityStorage
   - uid: 1692
     components:
     - type: Transform
       parent: 895
     - type: GasTank
-      toggleActionEntity: 1725
     - type: Jetpack
-      toggleActionEntity: 1724
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 1724
-          - 1725
     - type: InsideEntityStorage
 - proto: KitchenElectricGrill
   entities:
@@ -18315,15 +18239,8 @@ entities:
     - type: Transform
       parent: 895
     - type: GasTank
-      toggleActionEntity: 145
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 145
     - type: InsideEntityStorage
   - uid: 3331
     components:
@@ -18377,15 +18294,8 @@ entities:
     - type: Transform
       parent: 895
     - type: GasTank
-      toggleActionEntity: 935
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 935
     - type: InsideEntityStorage
   - uid: 976
     components:
@@ -18399,30 +18309,16 @@ entities:
     - type: Transform
       parent: 895
     - type: GasTank
-      toggleActionEntity: 3
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 3
     - type: InsideEntityStorage
   - uid: 1650
     components:
     - type: Transform
       parent: 895
     - type: GasTank
-      toggleActionEntity: 143
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 143
     - type: InsideEntityStorage
   - uid: 3411
     components:
@@ -18443,15 +18339,8 @@ entities:
     - type: Transform
       parent: 3072
     - type: GasTank
-      toggleActionEntity: 3414
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 3414
     - type: InsideEntityStorage
 - proto: PartRodMetal
   entities:
@@ -23532,8 +23421,6 @@ entities:
       - Arsenal
       - Experimental
       - CivilianServices
-    - type: Emagged
-      emagType: Interaction
 - proto: VendingMachineBooze
   entities:
   - uid: 1189
