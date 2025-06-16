@@ -29,9 +29,6 @@ entities:
     components:
     - type: MetaData
       name: Warsong
-    - type: Transform
-      pos: -0.60546875,-0.4296875
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
