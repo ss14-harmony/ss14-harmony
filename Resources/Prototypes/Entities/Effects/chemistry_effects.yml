@@ -163,9 +163,11 @@
   - type: Occluder
   - type: Appearance
   - type: SmoothEdge
-  - type: IconSmooth
-    key: walls
-    mode: NoSprite
+# Start of Harmony Change: Removes IconSmoothing
+#  - type: IconSmooth
+#    key: walls
+#    mode: NoSprite
+# End of Harmony Change
   - type: Transform
     anchored: true
   - type: Airtight

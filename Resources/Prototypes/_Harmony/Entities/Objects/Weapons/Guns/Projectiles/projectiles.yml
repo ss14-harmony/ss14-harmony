@@ -150,3 +150,25 @@
       types:
         Heat: 10
         Radiation: 6
+
+- type: entity
+  name: laser bolt shock
+  id: BulletLaserShockHarmony
+  parent: BulletLaserBaseHarmony
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/shock_projectile.rsi
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#AA00FF"
+  - type: Projectile
+    impactEffect: BulletImpactShockHarmony
+    damage:
+      types:
+        Shock: 9
+    ignoreResistances: true
+  - type: StaminaDamageOnCollide
+    damage: 5

@@ -76,9 +76,9 @@
         acts: [ "Destruction" ]
   - type: Airtight
   - type: IconSmooth
-# Start of Harmony Change: Makes walls and windows connect to eachother.
+# Start of Harmony Change: Updates IconSmooth key
 #    key: windows
-    key: walls
+    key: station
 # End of Harmony Change
     base: window
   - type: InteractionPopup
@@ -281,9 +281,9 @@
     - Diagonal
   - type: IconSmooth
     mode: Diagonal
-# Start of Harmony Change: Makes walls and windows connect to eachother.
+# Start of Harmony Change: Updates IconSmooth key
 #    key: windows
-    key: walls
+    key: station
 # End of Harmony Change
     base: state
   - type: Icon

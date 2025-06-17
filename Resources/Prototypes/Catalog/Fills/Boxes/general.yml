@@ -30,7 +30,10 @@
           amount: 4
     - type: Sprite
       layers:
-        - state: box
+# Start of Harmony Change: Updates Janitorial Box Sprite State
+#        - state: box
+        - state: box_janitorial
+# End of Harmony Change
         - state: mousetraps
 
 - type: entity
@@ -41,7 +44,10 @@
   components:
   - type: Sprite
     layers:
-      - state: box
+# Start of Harmony Change: Updates Janitorial Box Sprite State
+#      - state: box
+      - state: box_janitorial
+# End of Harmony Change
       - state: light
   - type: Storage
     grid:
@@ -71,7 +77,10 @@
   components:
   - type: Sprite
     layers:
-      - state: box
+# Start of Harmony Change: Updates Janitorial Box Sprite State
+#      - state: box
+      - state: box_janitorial
+# End of Harmony Change
       - state: lighttube
   - type: StorageFill
     contents:
@@ -85,7 +94,10 @@
   components:
   - type: Sprite
     layers:
-      - state: box
+# Start of Harmony Change: Updates Janitorial Box Sprite State
+#      - state: box
+      - state: box_janitorial
+# End of Harmony Change
       - state: lightmixed
   - type: StorageFill
     contents:
@@ -171,7 +183,10 @@
         amount: 4
   - type: Sprite
     layers:
-      - state: box
+# Start of Harmony Change: Updates Meson Box Sprite States
+#      - state: box
+      - state: box_engineering
+# End of Harmony Change
       - state: meson
 
 - type: entity
@@ -267,7 +282,10 @@
         - TrashBag
   - type: Sprite
     layers:
-      - state: box
+# Start of Harmony Change: Updates Janitorial Box Sprite State
+#      - state: box
+      - state: box_janitorial
+# End of Harmony Change
       - state: trashbag
 
 - type: entity

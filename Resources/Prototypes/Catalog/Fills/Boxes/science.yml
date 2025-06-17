@@ -16,5 +16,8 @@
       amount: 2
   - type: Sprite
     layers:
-      - state: box
+# Start of Harmony Change: Updates Medical Box Sprite States
+#      - state: box
+      - state: box_medical
+# End of Harmony Change
       - state: beaker

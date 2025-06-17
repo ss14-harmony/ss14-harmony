@@ -1,5 +1,8 @@
 # Guns
 
+uplink-blood-red-carbine-name = Blood-Red Energy Carbine Bundle
+uplink-blood-red-carbine-desc = A bundle containing the stolen and improved Blood-Red Energy Carbine. It comes with two spare Jailbroken Energy Cartridges.
+
 uplink-hushpup-name = Hushpup
 uplink-hushpup-desc = Contains a Hushpup, a powerful silenced shotgun with a low magazine capacity, as well as a spare box of buckshot. Uses .50 shotgun ammo.
 
@@ -15,6 +18,9 @@ uplink-kudzu-grenade-name = Kudzu grenade
 uplink-kudzu-grenade-desc = Repurposed foam dart grenade containing mutated kudzu.
 
 # Ammo
+
+uplink-blood-red-carbine-ammo-name = Jailbroken Energy Cartridge
+uplink-blood-red-carbine-ammo-desc = An energy cartridge that holds twenty charges of electric bolts.
 
 uplink-shotgun-drum-pellet-name = Shotgun Magazine (.50 pellet)
 uplink-shotgun-drum-pellet-desc = Shotgun drum with eight pellet shells. Compatible with the Bulldog.
@@ -51,4 +57,3 @@ uplink-cluster-weh-desc = Scatters 10 lizard plushies in a circle after a short 
 
 uplink-hyposhell-name = Box of hyposhells
 uplink-hyposhell-desc = A box containing four hyposhells, shotgun shells that can hold 7u of any chemical.
-
