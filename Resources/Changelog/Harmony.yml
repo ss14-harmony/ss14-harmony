@@ -2011,3 +2011,10 @@ Entries:
     changes:
     - type: Tweak
       message: Ports new box and box icon sprites from ADT
+  - id: 775
+    author: BoskiYourk
+    time: '2025-06-16T20:45:22.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/775
+    changes:
+    - type: Tweak
+      message: Updates iconsmoothing across the board
