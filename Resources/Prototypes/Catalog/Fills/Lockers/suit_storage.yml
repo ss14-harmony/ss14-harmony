@@ -259,17 +259,3 @@
         # TODO: Gone until reworked to have no space protection
         #- id: ClothingOuterHardsuitWizard
         #- id: JetpackVoidFilled
-
-# Harmony Change Start
-# Quartermaster
-- type: entity
-  id: SuitStorageQM
-  parent: SuitStorageBase
-  suffix: Quartermaster
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:NestedSelector
-        tableId: FillQuarterMasterHardsuit
-  - type: AccessReader
-    access: [["Quartermaster"]]

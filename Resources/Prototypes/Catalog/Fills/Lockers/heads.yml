@@ -21,29 +21,6 @@
     - id: ClothingHandsKnuckleDustersQM
     - id: MailTeleporterMachineCircuitboard
 
-
-# Harmony Change Start
-# QM Hardsuit table
-- type: entityTable
-  id: FillQuarterMasterHardsuit
-  table: !type:AllSelector
-    children:
-    - id: ClothingMaskBreath
-    - id: ClothingOuterHardsuitQM
-    - id: OxygenTankFilled
-
-# Quartermaster locker without suit
-- type: entity
-  id: LockerQuarterMasterFilledNoSuit
-  suffix: Filled, No Suit
-  parent: LockerQuarterMaster
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:NestedSelector
-        tableId: LockerFillQuarterMaster
-# Harmony Change End
-
 - type: entity
   id: LockerQuarterMasterFilled
   suffix: Filled
