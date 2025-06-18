@@ -214,7 +214,7 @@
   parent: [ClothingEyesBase, ShowSecurityIcons, BaseSyndicateContraband]
   id: ClothingEyesHudSyndicateAgent
   name: syndicate medical visor
-  description: The Syndicate Combat Medic's professional heads-up display, designed for quick diagnosis of their team's status. # Harmony Change - Nukie Corpsman > Nukie Combat Medic
+  description: The Syndicate Medic's professional heads-up display, designed for quick diagnosis of their team's status. # Harmony Change - Nukie Corpsman > Nukie Medic
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Hud/syndagent.rsi

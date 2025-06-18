@@ -31,6 +31,6 @@ nukeops-not-enough-ready-players = Not enough players readied up for the game! T
 nukeops-no-one-ready = No players readied up! Can't start Nukeops.
 
 nukeops-role-commander = Commander
-## Harmony Change - Nukie Corpsman > Nukie Combat Medic
-nukeops-role-agent = Combat Medic
+## Harmony Change - Nukie Corpsman > Nukie Medic
+nukeops-role-agent = Medic
 nukeops-role-operator = Operator
