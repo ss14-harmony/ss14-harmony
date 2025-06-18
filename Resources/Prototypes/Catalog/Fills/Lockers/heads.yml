@@ -20,7 +20,29 @@
     - id: AstroNavCartridge
     - id: ClothingHandsKnuckleDustersQM
     - id: MailTeleporterMachineCircuitboard
-    - id: ClothingOuterHardsuitQM # Harmony Change, adds a hardsuit for QM
+
+
+# Harmony Change Start
+# QM Hardsuit table
+- type: entityTable
+  id: FillQuarterMasterHardsuit
+  table: !type:AllSelector
+    children:
+    - id: ClothingMaskBreath
+    - id: ClothingOuterHardsuitQM
+    - id: OxygenTankFilled
+
+# Quartermaster locker without suit
+- type: entity
+  id: LockerQuarterMasterFilledNoSuit
+  suffix: Filled, No Suit
+  parent: LockerQuarterMaster
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillQuarterMaster
+# Harmony Change End
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -29,8 +51,16 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      entity_storage: !type:NestedSelector
-        tableId: LockerFillQuarterMaster
+    # Harmony Change Start
+      # entity_storage: !type:NestedSelector
+        # tableId: LockerFillQuarterMaster
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: LockerFillQuarterMaster
+        - !type:NestedSelector
+          tableId: FillQuarterMasterHardsuit
+    # Harmony Change End
 
 # No laser table
 - type: entityTable
