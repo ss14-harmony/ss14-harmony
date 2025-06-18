@@ -17,4 +17,3 @@
     containers:
       entity_storage: !type:NestedSelector
         tableId: LockerFillQuarterMaster
-
