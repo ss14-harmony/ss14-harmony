@@ -2018,3 +2018,40 @@ Entries:
     changes:
     - type: Tweak
       message: Updates iconsmoothing across the board
+  - id: 778
+    author: kleinerstation13
+    time: '2025-06-17T22:25:13.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/778
+    changes:
+    - type: Tweak
+      message: Resprited welding gas mask for lizards
+  - id: 737
+    author: CollectionOfBones128
+    time: '2025-06-17T22:26:17.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/737
+    changes:
+    - type: Add
+      message: Added a Senior Salvager Mantle and PDA
+  - id: 721
+    author: CollectionOfBones128
+    time: '2025-06-17T22:27:04.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/721
+    changes:
+    - type: Add
+      message: Adds a unique hardsuit for the Quartermaster.
+  - id: 698
+    author: CollectionOfBones128
+    time: '2025-06-17T22:27:56.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/698
+    changes:
+    - type: Add
+      message: Adds a unique PKA that can be bought for $15,000 spesos
+  - id: 593
+    author: MissKay1994
+    time: '2025-06-17T22:30:20.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/593
+    changes:
+    - type: Add
+      message: Impstation markings are now available
+    - type: Tweak
+      message: Vox colors are no longer restricted in range
