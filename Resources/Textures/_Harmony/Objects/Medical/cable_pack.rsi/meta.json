@@ -1,7 +1,7 @@
 {
     "version": 1,
-    "license": "CC-BY-SA-3.0",
-    "copyright": "Sprites taken from https://github.com/space-wizards/space-station-14/commit/63350853f06076651a4504ea5362879c0da19ebd, https://github.com/space-wizards/space-station-14/commit/0d70d6bfdfb74702f8df325afabd65f95b65b6b3, and https://github.com/space-wizards/space-station-14/commit/b2d91da387120b9c49f2f7883d8903cb044aff6d, combined and modified by CollectionOfBones128 (Github)",
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Made by @Playnetty.bsky.social (Bluesky)",
     "size": {
         "x": 32,
         "y": 32

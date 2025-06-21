@@ -1,7 +1,7 @@
 {
     "version": 1,
-    "license": "CC-BY-SA-3.0",
-    "copyright": "Sprites taken from https://github.com/ss14-harmony/ss14-harmony/commit/2ccca5a02ddfe44495a7b8bb8942047383772279, https://github.com/ss14-harmony/ss14-harmony/commit/5f9ba812caabcf674fb45e25e14ea15b6de07855, and https://github.com/ss14-harmony/ss14-harmony/commit/79be8258ec3d2f7222c61bbece7a51c117932c50, combined and modified by CollectionOfBones128 (Github)",
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Made by @Playnetty.bsky.social (Bluesky)",
     "size": {
         "x": 32,
         "y": 32
