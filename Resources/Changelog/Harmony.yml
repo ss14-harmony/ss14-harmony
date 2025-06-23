@@ -2055,3 +2055,45 @@ Entries:
       message: Impstation markings are now available
     - type: Tweak
       message: Vox colors are no longer restricted in range
+  - id: 779
+    author: Dogman20801
+    time: '2025-06-22T16:40:31.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/779
+    changes:
+    - type: Add
+      message: Replaced the sprites for multitool. Exotic butters not included.
+  - id: 795
+    author: BlueMoon059
+    time: '2025-06-22T17:09:42.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/795
+    changes:
+    - type: Add
+      message: Adds a new piece of lobby art showing off some of the members of Harmony, by Bi0nix!
+  - id: 712
+    author: MoonlightHollow
+    time: '2025-06-23T15:05:15.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/712
+    changes:
+    - type: Remove
+      message: The explosive payload will no longer chain with other explosives.
+  - id: 794
+    author: Absotively
+    time: '2025-06-23T15:26:45.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/794
+    changes:
+    - type: Fix
+      message: Wizard will no longer sometimes cause rounds with 5-24 players to fail to start
+  - id: 793
+    author: Absotively
+    time: '2025-06-23T15:28:45.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/793
+    changes:
+    - type: Fix
+      message: Blood Brothers will no longer sometimes cause rounds with 5-9 players to fail to start
+  - id: 798
+    author: kleinerstation13
+    time: '2025-06-23T15:35:28.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/798
+    changes:
+    - type: Remove
+      message: Removed flagship wreck
