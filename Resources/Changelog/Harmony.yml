@@ -2097,3 +2097,10 @@ Entries:
     changes:
     - type: Remove
       message: Removed flagship wreck
+  - id: 806
+    author: youtissoum
+    time: '2025-06-24T13:35:17.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/806
+    changes:
+    - type: Fix
+      message: Blood brothers will no longer fail to convert people with kill objectives
