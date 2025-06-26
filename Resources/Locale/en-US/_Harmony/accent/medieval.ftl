@@ -2,7 +2,7 @@ accent-medieval-words-1 = your
 accent-medieval-replacement-1 = thy
 
 accent-medieval-words-2 = yours
-accent-medieval-replacement-2 = thy's
+accent-medieval-replacement-2 = ye's
 
 accent-medieval-words-3 = my
 accent-medieval-replacement-3 = mine
@@ -35,7 +35,7 @@ accent-medieval-words-12 = have
 accent-medieval-replacement-12 = hath
 
 accent-medieval-words-13 = syndicate
-accent-medieval-replacement-13 = no-good wrong-doer
+accent-medieval-replacement-13 = betrayer
 
 accent-medieval-words-14 = for
 accent-medieval-replacement-14 = forsooth
@@ -53,7 +53,7 @@ accent-medieval-words-18 = cap
 accent-medieval-replacement-18 = liege
 
 accent-medieval-words-19 = syndi
-accent-medieval-replacement-19 = no-good wrong-doer
+accent-medieval-replacement-19 = betrayer
 
 accent-medieval-words-20 = captain
 accent-medieval-replacement-20 = liege
@@ -62,19 +62,19 @@ accent-medieval-words-21 = kitchen
 accent-medieval-replacement-21 = cookery
 
 accent-medieval-words-22 = clown
-accent-medieval-replacement-22 = village idiot
+accent-medieval-replacement-22 = jester
 
 accent-medieval-words-23 = mime
-accent-medieval-replacement-23 = thou silent fool
+accent-medieval-replacement-23 = silent jester
 
 accent-medieval-words-24 = musician
 accent-medieval-replacement-24 = bard
 
 accent-medieval-words-25 = hos
-accent-medieval-replacement-25 = overseer of the legion of guards
+accent-medieval-replacement-25 = guard overseer
 
 accent-medieval-words-26 = head of security
-accent-medieval-replacement-26 = overseer of the legion of Guards
+accent-medieval-replacement-26 = guard overseer
 
 accent-medieval-words-27 = sec
 accent-medieval-replacement-27 = guards
@@ -83,7 +83,7 @@ accent-medieval-words-28 = secoff
 accent-medieval-replacement-28 = guard
 
 accent-medieval-words-29 = cadet
-accent-medieval-replacement-29 = guard-in-thy-training
+accent-medieval-replacement-29 = trainee guard
 
 accent-medieval-words-30 = warden
 accent-medieval-replacement-30 = armourer
@@ -122,7 +122,7 @@ accent-medieval-words-41 = china lake
 accent-medieval-replacement-41 = cannon
 
 accent-medieval-words-42 = gun
-accent-medieval-replacement-42 = bow and arrow
+accent-medieval-replacement-42 = crossbow
 
 accent-medieval-words-43 = command
 accent-medieval-replacement-43 = council
@@ -184,8 +184,8 @@ accent-medieval-replacement-61 = arcane mage
 accent-medieval-words-62 = dear god
 accent-medieval-replacement-62 = by thy gods
 
-accent-medieval-words-63 = what
-accent-medieval-replacement-63 = what thine sard
+accent-medieval-words-63 = what the fuck
+accent-medieval-replacement-63 = by the saints
 
 accent-medieval-words-64 = shut up
 accent-medieval-replacement-64 = silence
@@ -227,7 +227,7 @@ accent-medieval-words-76 = borg
 accent-medieval-replacement-76 = machination
 
 accent-medieval-words-77 = science
-accent-medieval-replacement-77 = sorcerers
+accent-medieval-replacement-77 = sorcerery
 
 accent-medieval-words-78 = scientist
 accent-medieval-replacement-78 = sorcerer
@@ -262,11 +262,8 @@ accent-medieval-replacement-87 = wicked
 accent-medieval-words-88 = it
 accent-medieval-replacement-88 = 'tis
 
-accent-medieval-words-89 = this
-accent-medieval-replacement-89 = this here
-
-accent-medieval-words-90 = but
+accent-medieval-words-89 = how
 accent-medieval-replacement-90 = howbeit
 
-accent-medieval-words-91 = because
-accent-medieval-replacement-91 = forsooth
+accent-medieval-words-90 = because
+accent-medieval-replacement-90 = forsooth
