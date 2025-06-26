@@ -263,7 +263,7 @@ accent-medieval-words-88 = it
 accent-medieval-replacement-88 = 'tis
 
 accent-medieval-words-89 = how
-accent-medieval-replacement-90 = howbeit
+accent-medieval-replacement-89 = howbeit
 
 accent-medieval-words-90 = because
 accent-medieval-replacement-90 = forsooth
