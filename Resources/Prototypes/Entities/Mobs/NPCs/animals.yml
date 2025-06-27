@@ -653,6 +653,7 @@
           32:
             sprite: Mobs/Animals/mothroach/displacement.rsi
             state: neck
+  - type: PleebnarGibbable # imp edit
 
 
 # Note that the mallard duck is actually a male drake mallard, with the brown duck being the female variant of the same species, however ss14 lacks sex specific textures
@@ -865,6 +866,7 @@
       - !type:GibBehavior
         recursive: false
   - type: ZombieImmune
+  - type: PleebnarGibbable # imp edit
 
 - type: entity
   name: cow
@@ -1731,6 +1733,7 @@
   id: MobMouse
   description: Squeak!
   components:
+  - type: PleebnarGibbable # imp edit
   - type: GhostRole
     makeSentient: true
     allowSpeech: true
@@ -2113,6 +2116,14 @@
   - type: Tag
     tags:
     - VimPilot
+    - MultitoolDefibrillatorTarget
+  - type: NightVision # EE edit
+    isActive: true
+    toggleAction: null
+    color: "#50595C"
+    activateSound: null
+    deactivateSound: null
+  - type: PleebnarGibbable # imp edit
 
 
 - type: entity
@@ -2164,6 +2175,7 @@
       reagents:
       - ReagentId: Blood
         Quantity: 50
+  - type: PleebnarGibbable # imp edit
 
 - type: entity
   name: frog
@@ -2235,6 +2247,7 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  - type: PleebnarGibbable # imp edit
 
 # Would be cool to have some functionality for the parrot to be able to sit on stuff
 - type: entity
@@ -3602,6 +3615,7 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  - type: PleebnarGibbable # imp edit
 
 - type: entity
   name: pig
@@ -3673,6 +3687,7 @@
   - type: HTN
     rootTask:
       task: RuminantCompound
+  - type: PleebnarGibbable # imp edit
 
 - type: entity
   name: diona nymph
@@ -3764,6 +3779,7 @@
   components:
   - type: ReplacementAccent
     accent: nymph
+  - type: PleebnarGibbable # imp edit, if tupid then pleebnar meal
 
 - type: entity
   name: reindeer buck

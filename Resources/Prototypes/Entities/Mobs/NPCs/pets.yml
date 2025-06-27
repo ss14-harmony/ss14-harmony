@@ -661,6 +661,7 @@
     flavors:
     - meaty
     - sadness
+  - type: PleebnarMindShield #imp edit
 
 - type: entity
   parent: MobHamsterHamlet

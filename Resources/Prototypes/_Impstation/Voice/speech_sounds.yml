@@ -1,0 +1,71 @@
+- type: speechSounds
+  id: Finfin
+  saySound:
+    path: /Audio/_Impstation/Animals/finfin1.ogg
+  askSound:
+    path: /Audio/_Impstation/Animals/finfin2.ogg
+  exclaimSound:
+    path: /Audio/_Impstation/Animals/finfin3.ogg
+
+- type: speechSounds
+  id: Bros
+  saySound:
+    path: /Audio/_Impstation/Animals/bros_hit.ogg
+  askSound:
+    path: /Audio/_Impstation/Animals/bros_hit.ogg
+  exclaimSound:
+    path: /Audio/_Impstation/Animals/bros_hit.ogg
+
+- type: speechSounds
+  id: Plushie
+  saySound:
+    collection: ToySqueak
+  askSound:
+    collection: ToySqueak
+  exclaimSound:
+    collection: ToySqueak
+
+- type: speechSounds
+  id: Gorilla
+  saySound:
+    path: /Audio/_Impstation/Animals/Gorilla_Chuff.ogg
+  askSound:
+    path: /Audio/_Impstation/Animals/Gorilla_Chuff.ogg
+  exclaimSound:
+    path: /Audio/_Impstation/Animals/Gorilla_Chuff.ogg
+
+- type: speechSounds
+  id: Kodepiia
+  saySound:
+    path: /Audio/_Impstation/Kodepiia/kodetalk.ogg
+  askSound:
+    path: /Audio/_Impstation/Kodepiia/kodeask.ogg
+  exclaimSound:
+    path: /Audio/_Impstation/Kodepiia/kodeexclaim.ogg
+
+- type: speechSounds
+  id: Suppy
+  saySound:
+    collection: SuppySay
+  askSound:
+    collection: SuppyAsk
+  exclaimSound:
+    collection: SuppyExclaim
+
+- type: speechSounds
+  id: PleebnarPVC
+  saySound:
+    path: /Audio/_Impstation/Animals/pleebnar_speak.ogg
+  askSound:
+    path: /Audio/_Impstation/Animals/pleebnar_speak.ogg
+  exclaimSound:
+    path: /Audio/_Impstation/Animals/pleebnar_speak.ogg
+
+- type: speechSounds
+  id: Penguin
+  saySound:
+    path: /Audio/Animals/penguin_squawk.ogg
+  askSound:
+    path: /Audio/Animals/penguin_squawk.ogg
+  exclaimSound:
+    path: /Audio/Animals/penguin_squawk.ogg
