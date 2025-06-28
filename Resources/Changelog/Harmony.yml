@@ -2104,3 +2104,10 @@ Entries:
     changes:
     - type: Fix
       message: Blood brothers will no longer fail to convert people with kill objectives
+  - id: 371
+    author: Ermucat
+    time: '2025-06-27T21:03:33.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/371
+    changes:
+    - type: Fix
+      message: The criminal records console will no longer show error icons for harmony specific statuses.
