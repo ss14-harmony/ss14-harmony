@@ -226,9 +226,11 @@
   - type: HideLayerClothing
     layers:
       Hair: HEAD
-  - type: AddAccentClothing # begin harmony Change
+  # begin harmony Change
+  - type: AddAccentClothing
     accent: ReplacementAccent
-    replacement: medieval # end harmony Change
+    replacement: medieval
+  # end harmony Change
 
 #Thunderdome Helmet
 - type: entity
