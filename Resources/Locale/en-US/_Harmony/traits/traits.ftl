@@ -56,4 +56,4 @@ trait-uncloneable-name = Uncloneable
 trait-uncloneable-desc = You are unable to be cloned
 
 trait-medieval-name = Medieval Accent
-trait-medieval-desc = Hear ye'! you've an outdated fasion of speech.
+trait-medieval-desc = Hear ye'! You have an outdated fashion of speech.
