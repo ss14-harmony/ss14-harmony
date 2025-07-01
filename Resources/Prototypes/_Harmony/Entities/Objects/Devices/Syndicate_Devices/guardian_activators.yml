@@ -1,0 +1,22 @@
+- type: entity
+  name: hololawyer injector
+  id: HololawyerInjector
+  parent: [BaseItem, BaseSyndicateContraband]
+  description: A complex artwork of handheld machinery allowing the user to host a hololawyer guardian.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/hypospray.rsi
+    state: combat_hypo
+  - type: GuardianCreator
+    guardianProto: MobHoloLawyerGuardian
+
+- type: entity
+  id: BriefcaseSyndieHoloLawyerFilled
+  parent: BriefcaseSyndie
+  suffix: Syndicate, HoloLawyer
+  components:
+  - type: StorageFill
+    contents:
+    - id: HololawyerInjector
+    - id: HoloLawyerInfo
+    - id: BookSpaceLaw
