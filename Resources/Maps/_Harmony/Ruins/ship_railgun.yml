@@ -4,8 +4,8 @@ meta:
   engineVersion: 261.2.0
   forkId: harmony
   forkVersion: 76a6405f5b6e7ab48870c874d0158e0f42b695e4
-  time: 07/01/2025 07:18:56
-  entityCount: 4477
+  time: 07/01/2025 22:08:35
+  entityCount: 4483
 maps: []
 grids:
 - 1
@@ -487,7 +487,7 @@ entities:
       pos: -48.5,8.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -20191.645
+      secondsUntilStateChange: -20698.906
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -17385,13 +17385,6 @@ entities:
     - type: Transform
       pos: -68.5,8.5
       parent: 1
-- proto: GunSafePistolMk58
-  entities:
-  - uid: 1709
-    components:
-    - type: Transform
-      pos: -70.5,4.5
-      parent: 1
 - proto: KitchenMicrowave
   entities:
   - uid: 1544
@@ -17706,10 +17699,20 @@ entities:
       parent: 1
 - proto: LootSpawnerScienceMajor
   entities:
+  - uid: 1709
+    components:
+    - type: Transform
+      pos: -2.5,5.5
+      parent: 1
   - uid: 1732
     components:
     - type: Transform
       pos: -0.5,9.5
+      parent: 1
+  - uid: 1795
+    components:
+    - type: Transform
+      pos: -4.5,10.5
       parent: 1
 - proto: MachineFrame
   entities:
@@ -18707,6 +18710,11 @@ entities:
       parent: 1
 - proto: Rack
   entities:
+  - uid: 571
+    components:
+    - type: Transform
+      pos: -70.5,4.5
+      parent: 1
   - uid: 1222
     components:
     - type: Transform
@@ -19181,6 +19189,13 @@ entities:
     - type: Transform
       pos: 43.5,6.5
       parent: 1
+- proto: ResearchDisk
+  entities:
+  - uid: 4481
+    components:
+    - type: Transform
+      pos: -1.5,-7.5
+      parent: 1
 - proto: RollingPin
   entities:
   - uid: 1546
@@ -19241,37 +19256,37 @@ entities:
       parent: 1
 - proto: SalvageMobSpawner
   entities:
-  - uid: 1792
+  - uid: 1789
     components:
     - type: Transform
-      pos: 40.5,-13.5
+      pos: 3.5,-8.5
+      parent: 1
+  - uid: 1790
+    components:
+    - type: Transform
+      pos: -11.5,-11.5
       parent: 1
   - uid: 1793
     components:
     - type: Transform
-      pos: 44.5,-9.5
-      parent: 1
-  - uid: 1794
-    components:
-    - type: Transform
-      pos: 47.5,-3.5
-      parent: 1
-  - uid: 1795
-    components:
-    - type: Transform
-      pos: 48.5,-7.5
+      pos: 14.5,-2.5
       parent: 1
 - proto: SalvageMobSpawner75
   entities:
-  - uid: 1790
+  - uid: 1712
     components:
     - type: Transform
-      pos: 35.5,-9.5
+      pos: -31.5,-11.5
       parent: 1
   - uid: 1791
     components:
     - type: Transform
-      pos: 45.5,-2.5
+      pos: 37.5,-4.5
+      parent: 1
+  - uid: 4480
+    components:
+    - type: Transform
+      pos: -69.5,0.5
       parent: 1
 - proto: SalvageSpawnerEquipmentValuable
   entities:
@@ -19292,10 +19307,20 @@ entities:
     - type: Transform
       pos: 43.5,-3.5
       parent: 1
-  - uid: 1789
+  - uid: 1792
     components:
     - type: Transform
-      pos: 36.5,-6.5
+      pos: 27.5,-2.5
+      parent: 1
+  - uid: 4479
+    components:
+    - type: Transform
+      pos: -73.5,8.5
+      parent: 1
+  - uid: 4483
+    components:
+    - type: Transform
+      pos: -69.5,-5.5
       parent: 1
 - proto: SalvageSpawnerScrapCommon
   entities:
@@ -20501,6 +20526,13 @@ entities:
     - type: Transform
       pos: -53.5,15.5
       parent: 1
+- proto: TreasureDatadiskEncrypted
+  entities:
+  - uid: 4482
+    components:
+    - type: Transform
+      pos: -17.5,-1.5
+      parent: 1
 - proto: TritiumCanister
   entities:
   - uid: 1631
@@ -20535,16 +20567,17 @@ entities:
       parent: 1
 - proto: UraniumWindoorSecureSyndicateLocked
   entities:
-  - uid: 1712
-    components:
-    - type: Transform
-      pos: -70.5,5.5
-      parent: 1
   - uid: 1750
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -73.5,-5.5
+      parent: 1
+  - uid: 1794
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -70.5,4.5
       parent: 1
 - proto: VendingMachineCigs
   entities:
@@ -23015,11 +23048,6 @@ entities:
     - type: Transform
       pos: -75.5,-8.5
       parent: 1
-  - uid: 571
-    components:
-    - type: Transform
-      pos: -77.5,-5.5
-      parent: 1
   - uid: 572
     components:
     - type: Transform
@@ -24974,6 +25002,11 @@ entities:
     components:
     - type: Transform
       pos: -34.5,-6.5
+      parent: 1
+  - uid: 4478
+    components:
+    - type: Transform
+      pos: -70.5,4.5
       parent: 1
 - proto: WeaponTurretAllHostile
   entities:
