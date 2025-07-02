@@ -7,6 +7,9 @@
   components:
     - type: LightweightDrunk
       boozeStrengthMultiplier: 4
+    - type: AddTagOnMapInit
+      tags:
+      - VeryLightweightDrunk
 
 - type: trait
   id: HeavyweightDrunk
@@ -17,3 +20,7 @@
   components:
     - type: LightweightDrunk
       boozeStrengthMultiplier: 0.5
+    - type: AddTagOnMapInit
+      tags:
+      - HeavyweightDrunk
+

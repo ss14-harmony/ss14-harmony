@@ -163,10 +163,57 @@
   metabolisms:
     Alcohol:
       effects:
+      #Keeps characters without alcohol tolerance traits at the normal threshold for alcohol poisoning
       - !type:HealthChange
         conditions:
+        - !type:HasTag
+          tag: HeavyweightDrunk
+          invert: true
+        - !type:HasTag
+          tag: LightweightDrunk
+          invert: true
+        - !type:HasTag
+          tag: VeryLightweightDrunk
+          invert: true
         - !type:ReagentThreshold
           min: 15
+        - !type:OrganType
+          type: Dwarf
+          shouldHave: false
+        damage:
+          types:
+            Poison: 1
+      #Changes poison damage threshold for characters with alcoholic tolerance traits
+      - !type:HealthChange
+        conditions:
+        - !type:HasTag
+          tag: HeavyweightDrunk
+        - !type:ReagentThreshold
+          min: 30
+        - !type:OrganType
+          type: Dwarf
+          shouldHave: false
+        damage:
+          types:
+            Poison: 1
+      - !type:HealthChange
+        conditions:
+        - !type:HasTag
+          tag: LightweightDrunk
+        - !type:ReagentThreshold
+          min: 7.5
+        - !type:OrganType
+          type: Dwarf
+          shouldHave: false
+        damage:
+          types:
+            Poison: 1
+      - !type:HealthChange
+        conditions:
+        - !type:HasTag
+          tag: VeryLightweightDrunk
+        - !type:ReagentThreshold
+          min: 3.75
         - !type:OrganType
           type: Dwarf
           shouldHave: false
@@ -176,6 +223,15 @@
       # dwarves take less toxin damage and heal a marginal amount of brute
       - !type:HealthChange
         conditions:
+        - !type:HasTag
+          tag: HeavyweightDrunk
+          invert: true
+        - !type:HasTag
+          tag: LightweightDrunk
+          invert: true
+        - !type:HasTag
+          tag: VeryLightweightDrunk
+          invert: true
         - !type:ReagentThreshold
           min: 15
         - !type:OrganType
@@ -185,6 +241,15 @@
             Poison: 0.2
       - !type:HealthChange
         conditions:
+        - !type:HasTag
+          tag: HeavyweightDrunk
+          invert: true
+        - !type:HasTag
+          tag: LightweightDrunk
+          invert: true
+        - !type:HasTag
+          tag: VeryLightweightDrunk
+          invert: true
         - !type:ReagentThreshold
           min: 15
         - !type:OrganType
@@ -192,12 +257,114 @@
         damage:
           groups:
             Brute: -1
+      #Changes poison damage threshold for characters with alcoholic tolerance traits
+      - !type:HealthChange
+        conditions:
+        - !type:HasTag
+          tag: HeavyweightDrunk
+        - !type:ReagentThreshold
+          min: 30
+        - !type:OrganType
+          type: Dwarf
+        damage:
+          types:
+            Poison: 0.2
+      - !type:HealthChange
+        conditions:
+        - !type:HasTag
+          tag: HeavyweightDrunk
+        - !type:ReagentThreshold
+          min: 30
+        - !type:OrganType
+          type: Dwarf
+        damage:
+          groups:
+            Brute: -1
+      - !type:HealthChange
+        conditions:
+        - !type:HasTag
+          tag: LightweightDrunk
+        - !type:ReagentThreshold
+          min: 7.5
+        - !type:OrganType
+          type: Dwarf
+        damage:
+          types:
+            Poison: 0.2
+      - !type:HealthChange
+        conditions:
+        - !type:HasTag
+          tag: LightweightDrunk
+        - !type:ReagentThreshold
+          min: 7.5
+        - !type:OrganType
+          type: Dwarf
+        damage:
+          groups:
+            Brute: -1
+      - !type:HealthChange
+        conditions:
+        - !type:HasTag
+          tag: VeryLightweightDrunk
+        - !type:ReagentThreshold
+          min: 3.75
+        - !type:OrganType
+          type: Dwarf
+        damage:
+          types:
+            Poison: 0.2
+      - !type:HealthChange
+        conditions:
+        - !type:HasTag
+          tag: VeryLightweightDrunk
+        - !type:ReagentThreshold
+          min: 3.75
+        - !type:OrganType
+          type: Dwarf
+        damage:
+          groups:
+            Brute: -1
+      #Determines what ethanol threshold will cause vomiting, varies on alcohol tolerance.
       - !type:ChemVomit
         probability: 0.04
         conditions:
         - !type:ReagentThreshold
           reagent: Ethanol
           min: 12
+        - !type:HasTag
+          tag: HeavyweightDrunk
+          invert: true
+        - !type:HasTag
+          tag: LightweightDrunk
+          invert: true
+        - !type:HasTag
+          tag: VeryLightweightDrunk
+          invert: true
+      - !type:ChemVomit
+        probability: 0.04
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Ethanol
+          min: 24
+        - !type:HasTag
+          tag: HeavyweightDrunk
+      - !type:ChemVomit
+        probability: 0.04
+        conditions:
+        - !type:ReagentThreshold
+          tag: LightweightDrunk
+          reagent: Ethanol
+          min: 6
+        - !type:HasTag
+          tag: LightweightDrunk
+      - !type:ChemVomit
+        probability: 0.04
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Ethanol
+          min: 3
+        - !type:HasTag
+          tag: VeryLightweightDrunk
         # dwarves immune to vomiting from alcohol
         - !type:OrganType
           type: Dwarf

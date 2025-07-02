@@ -19,6 +19,9 @@
   components:
   - type: LightweightDrunk
     boozeStrengthMultiplier: 2
+  - type: AddTagOnMapInit
+    tags:
+    - LightweightDrunk
 
 - type: trait
   id: Snoring

@@ -18,3 +18,13 @@
 # Tag used for pride mantles.
 - type: Tag
   id: WhitelistChameleonPrideMantle
+
+# Tags for the different levels of drinker
+- type: Tag
+  id: HeavyweightDrunk
+
+- type: Tag
+  id: LightweightDrunk
+
+- type: Tag
+  id: VeryLightweightDrunk
