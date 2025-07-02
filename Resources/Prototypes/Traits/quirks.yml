@@ -19,10 +19,11 @@
   components:
   - type: LightweightDrunk
     boozeStrengthMultiplier: 2
+    #start of harmony specific tags
   - type: AddTagOnMapInit
     tags:
     - LightweightDrunk
-
+    #end of harmony specific tags
 - type: trait
   id: Snoring
   name: trait-snoring-name

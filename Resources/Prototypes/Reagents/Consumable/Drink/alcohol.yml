@@ -164,6 +164,7 @@
     Alcohol:
       effects:
       #Keeps characters without alcohol tolerance traits at the normal threshold for alcohol poisoning
+      #Harmony start
       - !type:HealthChange
         conditions:
         - !type:HasTag
@@ -365,6 +366,7 @@
           min: 3
         - !type:HasTag
           tag: VeryLightweightDrunk
+        #Harmony End
         # dwarves immune to vomiting from alcohol
         - !type:OrganType
           type: Dwarf
