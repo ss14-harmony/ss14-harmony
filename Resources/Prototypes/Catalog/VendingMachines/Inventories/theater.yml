@@ -1,6 +1,17 @@
 - type: vendingMachineInventory
   id: AutoDrobeInventory
   startingInventory:
+  #harmony change start
+    ClothingShoesJesteralt: 1
+    ClothingShoesJesterPomni: 1
+    ClothingShoesJesterJevil: 1
+    ClothingUniformJumpsuitJesterPomni: 1
+    ClothingUniformJumpsuitJesterJevil: 1
+    ClothingMaskClownBaseNIBS: 1
+    ClothingHeadHatJesterPomni: 1
+    ClothingHeadHatJesterJevil: 1
+    ClothingHandsGlovesColorPomni: 1
+  #harmony change end
     ClothingHeadHatJester: 1
     ClothingUniformJumpsuitJester: 1
     ClothingHeadHatJesterAlt: 1

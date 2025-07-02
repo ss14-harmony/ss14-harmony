@@ -21,3 +21,51 @@
     - ClothingShoesDuckyGaloshes
     - WhitelistChameleon
     - ClothMade
+
+- type: entity
+  parent: ClothingShoesClown
+  id: ClothingShoesJesteralt
+  name: jester shoes
+  description: A court jester's shoes, updated with modern squeaking technology.
+  components:
+    - type: Sprite
+      sprite: _Harmony/Clothing/Shoes/Specific/jester2.rsi
+    - type: Clothing
+      sprite: _Harmony/Clothing/Shoes/Specific/jester2.rsi
+    - type: FootstepModifier
+      footstepSoundCollection:
+        collection: FootstepJester
+        params:
+          variation: 0.07
+          
+- type: entity
+  parent: ClothingShoesClown
+  id: ClothingShoesJesterPomni
+  name: jester shoes
+  description: i feel like glitching.
+  components:
+    - type: Sprite
+      sprite: _Harmony/Clothing/Shoes/Specific/jester3.rsi
+    - type: Clothing
+      sprite: _Harmony/Clothing/Shoes/Specific/jester3.rsi
+    - type: FootstepModifier
+      footstepSoundCollection:
+        collection: FootstepJester
+        params:
+          variation: 0.07
+
+- type: entity
+  parent: ClothingShoesClown
+  id: ClothingShoesJesterJevil
+  name: jester shoes
+  description: CHAOS IS MY DRIP.
+  components:
+    - type: Sprite
+      sprite: _Harmony/Clothing/Shoes/Specific/jester4.rsi
+    - type: Clothing
+      sprite: _Harmony/Clothing/Shoes/Specific/jester4.rsi
+    - type: FootstepModifier
+      footstepSoundCollection:
+        collection: FootstepJester
+        params:
+          variation: 0.07

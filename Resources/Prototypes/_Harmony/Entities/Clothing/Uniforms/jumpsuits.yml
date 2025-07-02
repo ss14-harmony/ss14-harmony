@@ -140,3 +140,25 @@
     sprite: _Harmony/Clothing/Uniforms/Jumpsuit/syndie_business.rsi
   - type: Clothing
     sprite: _Harmony/Clothing/Uniforms/Jumpsuit/syndie_business.rsi
+
+- type: entity
+  parent: [ClothingUniformBase]
+  id: ClothingUniformJumpsuitJesterPomni
+  name: weird jester suit
+  description: You feel like you are a part of a digital circus.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/jester3.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/jester3.rsi
+
+- type: entity
+  parent: [ClothingUniformBase]
+  id: ClothingUniformJumpsuitJesterJevil
+  name: weird jester suit
+  description: You feel like you are a part of CHAOS.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/jester4.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/jester4.rsi

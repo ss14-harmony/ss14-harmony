@@ -49,3 +49,27 @@
   - type: HideLayerClothing
     slots:
     - Snout
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskClownBaseNIBS
+  name: Strange clown mask
+  description: Hehe.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Mask/clownnibs.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Mask/clownnibs.rsi
+  - type: BreathMask
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - ClownMask
+    - HamsterWearable
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide

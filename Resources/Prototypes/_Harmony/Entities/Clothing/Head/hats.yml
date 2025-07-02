@@ -167,3 +167,28 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadHatJester
+  id: ClothingHeadHatJesterPomni
+  name: jester hat
+  description: A hat with bells, it feels digital.
+  components:
+    - type: Sprite
+      sprite: _Harmony/Clothing/Head/Hats/jester3.rsi
+    - type: Clothing
+      sprite: _Harmony/Clothing/Head/Hats/jester3.rsi
+
+- type: entity
+  parent: ClothingHeadHatJester
+  id: ClothingHeadHatJesterJevil
+  components:
+    - type: Sprite
+      sprite: _Harmony/Clothing/Head/Hats/jester4.rsi
+    - type: Clothing
+      sprite: _Harmony/Clothing/Head/Hats/jester4.rsi
+    - type: HideLayerClothing
+      layers:
+        Hair: HEAD
+        HeadTop : HEAD
+        HeadSide : HEAD

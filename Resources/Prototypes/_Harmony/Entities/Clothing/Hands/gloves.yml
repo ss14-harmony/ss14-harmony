@@ -59,3 +59,17 @@
     - type: Sharp
     - type: Contraband
       severity: Syndicate
+
+
+- type: entity
+  parent: ClothingHandsGlovesSyntheticBase
+  id: ClothingHandsGlovesColorPomni
+  name: Red and blue gloves
+  description: Regular gloves, seems someone mixxed the pair..
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Hands/Gloves/Color/jester3.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Hands/Gloves/Color/jester3.rsi
+  - type: Fiber
+    fiberColor: fibers-red
