@@ -1,0 +1,70 @@
+# As with Upstream, NOTE! All mobs that come out of this should have Salvage rulesets.
+
+# ENTITY TABLES FOR SPAWNERS
+
+- type: entityTable
+  id: HarmonySalvageArmoryWeaponsTable
+  table: !type:GroupSelector
+    children:
+    # Very Common
+    - !type:GroupSelector
+      weight: 50
+      children:
+      - WeaponCrusher
+      - WeaponCrusherGlaive
+      - WeaponCrusherDagger
+    # Common
+    - !type:GroupSelector
+      weight: 30
+      children:
+      - PKAUpgradeDamage
+      - PKAUpgradeRange
+      - PKAUpgradeFireRate
+      - ClothingHandsKnuckleDustersBrass
+    # Uncommon
+    - !type:GroupSelector
+      weight: 10
+      children:
+      - WeaponShotgunBlunderbuss
+      - ModularReceiver
+      - RifleStock
+    # Rare
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - WeaponShotgunDoubleBarreledRubber
+      - WeaponSniperMosin
+      - ClothingHandsKnuckleDustersSyndicate
+    # Very Rare
+    - !type:GroupSelector
+      weight: 4
+      children:
+      - WeaponSniperRSC
+      - WeaponLaserCarbine # Found in Upstreams armory spawner. Impossible to reload without the exact right charging station
+    # Legendary
+    - !type:GroupSelector
+      weight: 1
+      children:
+      - WeaponKineticSidearmLuxury # To be replaced with a unique Kinetic Sidearm
+      - WeaponLaserGun # Retro Laser, only found on salv grids, a way to map it without guaranteeing it
+      - WeaponRevolverPirate # Mapped on salv grids, a way to map it without guaranteeing it
+      - WeaponShotgunKammerer # Purchaseable at cargo, but that comes with more and ammo. Found in upstreams armory spawner
+      - WeaponSubMachineGunDrozd # Purchaseable at cargo, but that comes with more and ammo. Found in upstreams armory spawner
+
+# SPAWNERS
+
+- type: entity
+  name: salvage armory loot spawner
+  suffix: Guns, Harmony
+  id: HarmonyLootSpawnerSalvageArmoryWeaponsOnly
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
+        state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: HarmonySalvageArmoryWeaponsTable
+      offset: 0.0
