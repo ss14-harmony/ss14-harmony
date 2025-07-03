@@ -2148,3 +2148,10 @@ Entries:
     changes:
     - type: Add
       message: Added the staff of slipping to the wizard's grimoire.
+  - id: 781
+    author: kleinerstation13
+    time: '2025-07-02T15:58:51.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/781
+    changes:
+    - type: Tweak
+      message: Changed the hristov's firing sound.
