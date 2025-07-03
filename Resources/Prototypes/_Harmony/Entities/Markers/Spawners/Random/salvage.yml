@@ -94,6 +94,7 @@
       - id: ClothingHeadHelmetBombSuit
       - id: ClothingOuterArmorBasic
       - !type:AllSelector
+        children:
         - id: ClothingOuterHardsuitSpatio
         - id: SheetPlastic10
         - id: MaterialCloth10
