@@ -93,7 +93,10 @@
       - id: ClothingHeadHelmetRiot
       - id: ClothingHeadHelmetBombSuit
       - id: ClothingOuterArmorBasic
-      - id: ClothingOuterHardsuitSpatio
+      - !type:AllSelector
+        - id: ClothingOuterHardsuitSpatio
+        - id: SheetPlastic10
+        - id: MaterialCloth10
     # Rare
     - !type:GroupSelector
       weight: 25
@@ -104,8 +107,41 @@
       - id: ClothingOuterSuitBomb
       - id: ClothingOuterHardsuitSalvage
 
+- type: entityTable
+  id: HarmonySalvageArmoryGunSafeTable
+  table: !type:GroupSelector
+    children:
+    - id: GunSafeSalvageBase # Empty Safe
+      weight: 30
+    # Common
+    - !type:GroupSelector
+      weight: 30
+      children:
+      - id: GunSafeSalvageCrushers
+      - id: GunSafeSalvagePKA
+      - id: GunSafeSalvageFlintlock
+      - id: GunSafeSalvageImprovisedShotgun
+    # Uncommon
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - id: GunSafeSalvageDoubleBarrelShotgun
+      - id: GunSafeSalvageMosin
+      - id: GunSafeSalvageBlunderbuss
+    # Rare
+    - !type:GroupSelector
+      weight: 15
+      children:
+      - id: GunSafeSalvageRSC
+      - id: GunSafeSalvageLaserCarbine
+      - id: GunSafeSalvageKammerer
+        weight: 0.1
+      - id: GunSafeSalvageDrozd
+        weight: 0.1
+
 # SPAWNERS
 
+## Gun Spawner
 - type: entity
   name: salvage armory loot spawner
   suffix: Guns, Harmony
@@ -122,6 +158,7 @@
     table: !type:NestedSelector
       tableId: HarmonySalvageArmoryWeaponsTable
 
+## Armor Spawner
 - type: entity
   name: salvage armory loot spawner
   suffix: Armor, Harmony
@@ -138,6 +175,7 @@
     table: !type:NestedSelector
       tableId: HarmonySalvageArmoryArmorTable
 
+## Gun and Armor Spawner
 - type: entity
   name: salvage armory loot spawner
   suffix: Armor, Guns, Harmony
@@ -161,3 +199,24 @@
       - !type:NestedSelector
         tableId: HarmonySalvageArmoryWeaponsTable
         weight: 45.0
+
+## Safe Spawner
+- type: entity
+  name: random safe spawner
+  suffix: Salvage, Harmony
+  id: HarmonyRandomSafeSpawnerSalvage
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Structures/Storage/closet.rsi
+      state: shotguncase
+    - sprite: Structures/Storage/closet.rsi
+      state: shotguncase_door
+    - sprite: Structures/Storage/closet.rsi
+      state: locked
+  - type: EntityTableSpawner
+    offset: 0.0
+    table: !type:NestedSelector
+      tableId: HarmonySalvageArmoryGunSafeTable
