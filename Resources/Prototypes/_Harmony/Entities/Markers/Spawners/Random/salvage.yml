@@ -2,54 +2,107 @@
 
 # ENTITY TABLES FOR SPAWNERS
 
+## Armory Weapon Spawner - Upstreams contains too powerful guns too readily.
 - type: entityTable
   id: HarmonySalvageArmoryWeaponsTable
   table: !type:GroupSelector
     children:
     # Very Common
     - !type:GroupSelector
-      weight: 50
+      weight: 32
       children:
-      - WeaponCrusher
-      - WeaponCrusherGlaive
-      - WeaponCrusherDagger
+      - id: WeaponCrusher
+      - id: WeaponCrusherGlaive
     # Common
     - !type:GroupSelector
-      weight: 30
+      weight: 28
       children:
-      - PKAUpgradeDamage
-      - PKAUpgradeRange
-      - PKAUpgradeFireRate
-      - ClothingHandsKnuckleDustersBrass
+      - !type:GroupSelector
+        children:
+        - id: PKAUpgradeDamage
+        - id: PKAUpgradeRange
+        - id: PKAUpgradeFireRate
+        # PKA Damage + Range
+        - !type:AllSelector
+          children:
+          - id: PKAUpgradeDamage
+          - id: PKAUpgradeRange
+        # PKA Damage + Fire Rate
+        - !type:AllSelector
+          children:
+          - id: PKAUpgradeDamage
+          - id: PKAUpgradeFireRate
+        # PKA Fire Rate + Range
+        - !type:AllSelector
+          children:
+          - id: PKAUpgradeFireRate
+          - id: PKAUpgradeRange
+        # All Modkits
+        - !type:AllSelector
+          children:
+          - id: PKAUpgradeDamage
+          - id: PKAUpgradeRange
+          - id: PKAUpgradeFireRate
+      - id: ClothingHandsKnuckleDustersBrass
+      - id: WeaponPistolFlintlock
     # Uncommon
     - !type:GroupSelector
-      weight: 10
+      weight: 16
       children:
-      - WeaponShotgunBlunderbuss
-      - ModularReceiver
-      - RifleStock
+      - id: WeaponShotgunBlunderbuss
+      # Improvised Shotgun Pieces
+      - !type:AllSelector
+        children:
+        - id: ModularReceiver
+        - id: RifleStock
     # Rare
     - !type:GroupSelector
-      weight: 5
+      weight: 14
       children:
-      - WeaponShotgunDoubleBarreledRubber
-      - WeaponSniperMosin
-      - ClothingHandsKnuckleDustersSyndicate
+      - id: WeaponShotgunDoubleBarreledRubber
+      - id: WeaponSniperMosin
+      - id: ClothingHandsKnuckleDustersSyndicate
     # Very Rare
     - !type:GroupSelector
-      weight: 4
+      weight: 8
       children:
-      - WeaponSniperRSC
-      - WeaponLaserCarbine # Found in Upstreams armory spawner. Impossible to reload without the exact right charging station
+      - id: WeaponSniperRSC
+      - id: WeaponLaserCarbine # Found in Upstreams armory spawner. Impossible to reload without the exact right charging station
     # Legendary
     - !type:GroupSelector
-      weight: 1
+      weight: 2
       children:
-      - WeaponKineticSidearmLuxury # To be replaced with a unique Kinetic Sidearm
-      - WeaponLaserGun # Retro Laser, only found on salv grids, a way to map it without guaranteeing it
-      - WeaponRevolverPirate # Mapped on salv grids, a way to map it without guaranteeing it
-      - WeaponShotgunKammerer # Purchaseable at cargo, but that comes with more and ammo. Found in upstreams armory spawner
-      - WeaponSubMachineGunDrozd # Purchaseable at cargo, but that comes with more and ammo. Found in upstreams armory spawner
+      - id: WeaponKineticSidearmLuxury # To be replaced with a unique Kinetic Sidearm
+      - id: WeaponLaserGun # Retro Laser, only found on salv grids, a way to map it without guaranteeing it
+      - id: WeaponRevolverPirate # Mapped on salv grids, a way to map it without guaranteeing it
+      - id: WeaponShotgunKammerer # Purchaseable at cargo, but that comes with more and ammo. Found in upstreams armory spawner
+      - id: WeaponSubMachineGunDrozd # Purchaseable at cargo, but that comes with more and ammo. Found in upstreams armory spawner
+
+## Armory Armour Spawner - Upstreams is fine. In fact, this contains more. This is more to create the combined Weapons AND Armor spawner
+- type: entityTable
+  id: HarmonySalvageArmoryArmorTable
+  table: !type:GroupSelector
+    children:
+    # Common
+    - !type:GroupSelector
+      weight: 75
+      children:
+      - id: RiotShield
+      - id: RiotLaserShield
+      - id: RiotBulletShield
+      - id: ClothingHeadHelmetRiot
+      - id: ClothingHeadHelmetBombSuit
+      - id: ClothingOuterArmorBasic
+      - id: ClothingOuterHardsuitSpatio
+    # Rare
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - id: ClothingHeadHelmetSwat
+      - id: ClothingOuterArmorRiot
+      - id: ClothingOuterArmorBulletproof
+      - id: ClothingOuterSuitBomb
+      - id: ClothingOuterHardsuitSalvage
 
 # SPAWNERS
 
@@ -68,3 +121,43 @@
     offset: 0.0
     table: !type:NestedSelector
       tableId: HarmonySalvageArmoryWeaponsTable
+
+- type: entity
+  name: salvage armory loot spawner
+  suffix: Armor, Harmony
+  id: HarmonyLootSpawnerSalvageArmoryArmorOnly
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Clothing/OuterClothing/Armor/security.rsi
+        state: icon
+  - type: EntityTableSpawner
+    offset: 0.0
+    table: !type:NestedSelector
+      tableId: HarmonySalvageArmoryArmorTable
+
+- type: entity
+  name: salvage armory loot spawner
+  suffix: Armor, Guns, Harmony
+  id: HarmonyLootSpawnerSalvageArmoryOnly
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Clothing/OuterClothing/Armor/security.rsi
+        state: icon
+      - sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
+        state: icon
+  - type: EntityTableSpawner
+    offset: 0.0
+    table: !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        tableId: HarmonySalvageArmoryArmorTable
+        weight: 55.0
+      - !type:NestedSelector
+        tableId: HarmonySalvageArmoryWeaponsTable
+        weight: 45.0
