@@ -65,6 +65,6 @@
       - sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
         state: icon
   - type: EntityTableSpawner
+    offset: 0.0
     table: !type:NestedSelector
       tableId: HarmonySalvageArmoryWeaponsTable
-      offset: 0.0
