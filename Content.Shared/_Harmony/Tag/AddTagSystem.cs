@@ -1,4 +1,5 @@
-namespace Content.Shared.Tag;
+using Content.Shared.Tag;
+namespace Content.Shared._Harmony.Tag;
 
 public sealed class AddTagSystem : EntitySystem
 {
