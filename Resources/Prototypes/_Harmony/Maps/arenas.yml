@@ -1,20 +1,4 @@
 - type: gameMap
-  id: dm01-entryway
-  mapName: DM01 Entryway
-  mapPath: /Maps/_Harmony/Nonstations/dm01-entryway.yml
-  minPlayers: 0
-  maxPlayers: 10
-  stations:
-    dm01-entryway:
-      stationProto: StandardStationArena
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: "DM01 Entryway"
-        - type: StationJobs
-          availableJobs:
-            Passenger: [ -1, -1 ]
-
-- type: gameMap
   id: dm02-sandbomb
   mapName: DM02 Sandbomb
   mapPath: /Maps/_Harmony/Nonstations/dm02-sandbomb.yml

@@ -1,4 +1,6 @@
-<p align="center"> <img alt="Harmony Station" src="https://raw.githubusercontent.com/ss14-harmony/ss14-harmony/refs/heads/master/Resources/Textures/Logo/logo.png" /></p>
+<div class="header" align="center">
+<img alt="Harmony Station" src="https://raw.githubusercontent.com/ss14-harmony/ss14-harmony/refs/heads/master/Resources/Textures/Logo/logo.png">
+</div>
 
 Harmony is a fork of [Space Station 14](https://github.com/space-wizards/space-station-14). We aim to stay as close to vanilla SS14 as possible, while adding cosmetic changes that make Harmony our home, and features that enable MRP (medium roleplay) playstyle.
 
@@ -10,7 +12,12 @@ Space Station 14 is a remake of SS13 that runs on [Robust Toolbox](https://githu
 
 ## Documentation/Wiki
 
-SS14 [docs site](https://docs.spacestation14.io/) has documentation on SS14s content, engine, game design and more. It also has lots of resources for new contributors to the project.
+SS14 [docs site](https://docs.spacestation14.com/) has documentation on SS14's content, engine, game design, and more.
+Additionally, see these resources for license and attribution information:
+- [Robust Generic Attribution](https://docs.spacestation14.com/en/specifications/robust-generic-attribution.html)
+- [Robust Station Image](https://docs.spacestation14.com/en/specifications/robust-station-image.html)
+
+It also has lots of resources for new contributors to the project.
 
 ## Contributing
 
@@ -20,9 +27,18 @@ Make sure to read our contributing guidelines in [CONTRIBUTING.md](/CONTRIBUTING
 
 ## Building
 
-1. Clone this repo.
-2. Run `RUN_THIS.py` to init submodules and download the engine.
-3. Compile the solution.
+1. Clone this repo:
+```shell
+git clone https://github.com/space-wizards/space-station-14.git
+```
+2. Go to the project folder and run `RUN_THIS.py` to initialize the submodules and load the engine:
+```shell
+cd space-station-14
+python RUN_THIS.py
+```
+3. Compile the solution:
+
+Build the server using `dotnet build`.
 
 [More detailed instructions on building the project.](https://docs.spacestation14.com/en/general-development/setup.html)
 
@@ -35,4 +51,5 @@ See [LICENSE-MIT.TXT](LICENSE-MIT.txt).
 
 Most assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and the copyright in the metadata file. [Example](https://github.com/ss14-harmony/ss14-harmony/blob/master/Resources/Textures/_Harmony/Clothing/Uniforms/Jumpsuit/hop_turtle.rsi/meta.json).
 
-Note that some assets are licensed under the non-commercial [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) or similar non-commercial licenses and will need to be removed if you wish to use this project commercially.
+> [!NOTE]
+> Some assets are licensed under the non-commercial [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) or similar non-commercial licenses and will need to be removed if you wish to use this project commercially.

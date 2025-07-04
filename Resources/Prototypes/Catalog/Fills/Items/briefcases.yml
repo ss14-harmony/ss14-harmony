@@ -25,7 +25,10 @@
       - id: MagazineBoxAntiMateriel
       - id: ClothingNeckTieRed
       - id: ClothingHandsGlovesLatex
-      - id: ClothingUniformJumpsuitLawyerBlack
+        # Harmony Change - Replaces black law jumpsuit with syndicate business suit
+      - id: ClothingUniformJumpsuitSyndicateBusinessSuitHarmony
+      #- id: ClothingUniformJumpsuitLawyerBlack
+        # Harmony Change end
       - id: BarberScissors
 
 - type: entity
@@ -41,7 +44,10 @@
       - id: EncryptionKeySyndie
       - id: RubberStampTrader
       - id: PhoneInstrumentSyndicate
-      - id: ClothingUniformJumpsuitTacticool
+        # Harmony Change - Replaces tacticool jumpsuit with syndicate business suit
+      - id: ClothingUniformJumpsuitSyndicateBusinessSuitHarmony
+      #- id: ClothingUniformJumpsuitTacticool
+        # Harmony Change end
       - id: ClothingOuterCoatJensen
       - id: ClothingHandsGlovesCombat
       - id: ClothingMaskNeckGaiter

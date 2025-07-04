@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "textures by BodenPflanze, Emii-olii, eli_sarek, Denetth, LevitatingTree, sevount, TillsterRulz",
+    "copyright": "textures by BodenPflanze, Emii-olii, eli_sarek, Denetth, LevitatingTree, TillsterRulz",
     "size": {
         "x": 32,
         "y": 32
@@ -24,9 +24,6 @@
         },
         {
             "name": "harmony_poster6_legit"
-        },
-        {
-            "name": "harmony_poster7_legit"
         },
         {
             "name": "harmony_poster8_legit"

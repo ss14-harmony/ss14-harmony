@@ -32,11 +32,8 @@ namespace Content.Server.GameTicking
             {
                 if (args.NewStatus != SessionStatus.Disconnected)
                 {
-                    mind.Session = session;
-                    _pvsOverride.AddSessionOverride(GetNetEntity(mindId.Value), session);
+                    _pvsOverride.AddSessionOverride(mindId.Value, session);
                 }
-
-                DebugTools.Assert(mind.Session == session);
             }
 
             DebugTools.Assert(session.GetMind() == mindId);
@@ -125,11 +122,19 @@ namespace Content.Server.GameTicking
 
                 case SessionStatus.Disconnected:
                 {
+                    // Harmony start - ready manifest
+                    if (_playerGameStatuses.TryGetValue(session.UserId, out var playerGameStatus) &&
+                        playerGameStatus == PlayerGameStatus.ReadyToPlay)
+                        _playerGameStatuses[session.UserId] = PlayerGameStatus.NotReadyToPlay;
+
+                    var playerDisconnected = new PlayerDisconnectedEvent();
+                    RaiseLocalEvent(ref playerDisconnected);
+                    // Harmony end - ready manifest
+
                     _chatManager.SendAdminAnnouncement(Loc.GetString("player-leave-message", ("name", args.Session.Name)));
-                    if (mind != null)
+                    if (mindId != null)
                     {
-                        _pvsOverride.ClearOverride(GetNetEntity(mindId!.Value));
-                        mind.Session = null;
+                        _pvsOverride.RemoveSessionOverride(mindId.Value, session);
                     }
 
                     _userDb.ClientDisconnected(session);
@@ -232,4 +237,9 @@ namespace Content.Server.GameTicking
             PlayerSession = playerSession;
         }
     }
+
+    // Harmony start - ready manifest
+    [ByRefEvent]
+    public struct PlayerDisconnectedEvent;
+    // Harmony end - ready manifest
 }

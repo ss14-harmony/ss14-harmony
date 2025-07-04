@@ -36,12 +36,14 @@
   - type: ExplodeOnTrigger
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 25
-      behaviors:
-      - !type:ExplodeBehavior
+  #Harmony change start-Remove payload explode on trigger
+  #  - trigger:
+  #      !type:DamageTypeTrigger
+  #      damageType: Heat
+  #      damage: 25
+  #    behaviors:
+  #    - !type:ExplodeBehavior
+  #Harmony change end
     - trigger:
         !type:DamageTrigger
         damage: 50

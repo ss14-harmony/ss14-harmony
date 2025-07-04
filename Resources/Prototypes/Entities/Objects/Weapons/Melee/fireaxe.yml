@@ -41,7 +41,9 @@
   - type: Tool
     qualities:
       - Prying
+      - Axing # Harmony specific change for allowing the base fireaxe to rip up plating
   - type: ToolTileCompatible
+    delay: 5 # Harmony specific change
   - type: Prying
   - type: UseDelay
     delay: 1
@@ -53,7 +55,7 @@
 - type: entity
   id: FireAxeFlaming
   name: fire axe
-  parent: [BaseSyndicateContraband, FireAxe]
+  parent: [ BaseSyndicateContraband, FireAxe ]
   description: Why fight fire with an axe when you can fight with fire and axe? Now featuring rugged rubberized handle!
   components:
   - type: MeleeWeapon
@@ -68,3 +70,8 @@
     quickEquip: false
     slots:
     - back
+  # Harmony specific addition, to prevent the Syndicate fire axe from ripping up plating
+  - type: Tool
+    qualities:
+    - Prying
+  # End of Harmony specific addition

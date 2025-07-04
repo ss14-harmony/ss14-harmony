@@ -1,0 +1,128 @@
+- type: entity
+  abstract: true
+  parent: [BaseItem, BaseSecurityContraband]
+  id: BaseEnergyCartridgeHarmony
+  components:
+  - type: Battery
+    pricePerJoule: 0.15
+  - type: Extractable
+    juiceSolution:
+      reagents:
+        - ReagentId: Zinc
+          Quantity: 5
+  - type: Appearance
+  - type: ProjectileBatteryAmmoProvider
+
+# Carbine
+
+- type: entity
+  parent: BaseEnergyCartridgeHarmony
+  id: EnergyCarbineCartridgeHarmony
+  name: energy cartridge (carbine)
+  description: A rechargable magazine used with cartrdige fed laser weapons.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Magazines/EnergyCartridges/Carbine/heat.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+      shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+  - type: Battery
+    maxCharge: 750
+    startingCharge: 750
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserHarmony
+    fireCost: 37
+  - type: Tag
+    tags:
+      - EnergyCarbineCartridge
+
+- type: entity
+  parent: BaseEnergyCartridgeHarmony
+  id: EnergyCarbineCartridgeUnstableHarmony
+  name: unstable energy cartridge (carbine)
+  description: An energy cartridge filled with extremely unstable energy. It shoots forking energy bolts, be sure to stay close!
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Magazines/EnergyCartridges/Carbine/unstable.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+      shader: unshaded
+  - type: PointLight
+    color: "#FF1111"
+    radius: 1.5
+    energy: 1.5
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+  - type: Battery
+    maxCharge: 750
+    startingCharge: 750
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletEnergyCarbineUnstableHarmony
+    fireCost: 50
+  - type: Tag
+    tags:
+      - EnergyCarbineCartridge
+
+- type: entity
+  parent: BaseEnergyCartridgeHarmony
+  id: EnergyCarbineCartridgeXRayHarmony
+  name: x-ray energy cartridge (carbine)
+  description: An energy cartridge filled with radiation altered energy.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Magazines/EnergyCartridges/Carbine/x-ray.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+      shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+  - type: Battery
+    maxCharge: 750
+    startingCharge: 750
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserXRayHarmony
+    fireCost: 37
+  - type: Tag
+    tags:
+      - EnergyCarbineCartridge
+
+- type: entity
+  parent: [BaseSyndicateContraband, BaseEnergyCartridgeHarmony]
+  id: EnergyCarbineCartridgeSyndicateHarmony
+  name: jailbroken energy cartridge
+  description: A modified energy cartridge that is only compatible with the Blood-Red Energy Carbine. It shoots deadly armor-piercing shock projectiles.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Magazines/EnergyCartridges/Carbine/jailbroken.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+      shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+  - type: Battery
+    maxCharge: 750
+    startingCharge: 750
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserShockHarmony
+    fireCost: 37
+  - type: Tag
+    tags:
+    - EnergyCarbineCartridgeSyndicate

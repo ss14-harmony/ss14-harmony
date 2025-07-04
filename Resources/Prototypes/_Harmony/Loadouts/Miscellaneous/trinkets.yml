@@ -71,6 +71,24 @@
     back:
     - PlushieVox
 
+- type: loadout
+  id: SilverRing
+  storage:
+    back:
+    - SilverRing
+
+- type: loadout
+  id: GoldRing
+  storage:
+    back:
+    - GoldRing
+
+- type: loadout
+  id: Cane
+  storage:
+    back:
+    - Cane
+
 # Towels
 - type: loadout
   id: TowelStripedOrange

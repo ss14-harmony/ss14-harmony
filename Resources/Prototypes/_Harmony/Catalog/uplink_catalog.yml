@@ -1,5 +1,49 @@
 # Guns
+
+- type: listing
+  id: UplinkBloodRedCarbineBundleHarmony
+  name: uplink-blood-red-carbine-name
+  description: uplink-blood-red-carbine-desc
+  icon: { sprite: _Harmony/Objects/Weapons/Guns/Battery/blood-red_energy_carbine.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledBloodRedEnergyCarbineHarmony
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 15
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkHushpup
+  name: uplink-hushpup-name
+  description: uplink-hushpup-desc
+  icon: { sprite: /Textures/_Harmony/Objects/Weapons/Guns/Shotguns/hushpup.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledHushpup
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 8
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkMantisGloves
+  name: mantis-gloves-uplink-name
+  description: mantis-gloves-uplink-desc
+  icon: { sprite: /Textures/_Harmony/Clothing/Hands/Gloves/mantis_activated.rsi, state: icon }
+  productEntity: ClothingHandsGlovesMantis
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkWeaponry
+
 # Explosives
+
 - type: listing
   id: UplinkPizzaBomb
   name: uplink-pizza-bomb-name
@@ -9,8 +53,122 @@
     Telecrystal: 4
   categories:
   - UplinkExplosives
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+
+# The Pizzabomb is visually identical to the non-bomb version to avoid (more) accidents it comes in an informative
+# packaging when acquired from a surplus crate.
+- type: listing
+  id: UplinkPizzaBombSurplus
+  name: uplink-pizza-bomb-surplus-name
+  description: uplink-pizza-bomb-surplus-desc
+  productEntity: PizzabombSurplus
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkExplosives
+  conditions:
+  - !type:BuyerWhitelistCondition
+    whitelist:
+      components:
+      - SurplusBundle
+  
+- type: listing
+  id: UplinkX4
+  name: uplink-X4-name
+  description: uplink-X4-desc
+  productEntity: X4
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkExplosives
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+
+- type: listing
+  id: UplinkX4Bundle
+  name: uplink-X4-bundle-name
+  description: uplink-X4-bundle-desc
+  productEntity: ClothingBackpackDuffelSyndicateX4Bundle
+  cost:
+    Telecrystal: 14
+  categories:
+  - UplinkExplosives
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+
 # Ammo
+
+# For the Bulldog
+- type: listing
+  id: UplinkShotgunBuckshotMagazineHarmony
+  name: uplink-shotgun-drum-pellet-name
+  description: uplink-shotgun-drum-pellet-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: pellets }
+  productEntity: MagazineShotgun
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkAmmo
+
+# For the Blood-Red Energy Carbine
+- type: listing
+  id: UplinkBloodRedCarbineAmmoHarmony
+  name: uplink-blood-red-carbine-ammo-name
+  description: uplink-blood-red-carbine-ammo-desc
+  productEntity: EnergyCarbineCartridgeSyndicateHarmony
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkShotgunSlugMagazineHarmony
+  name: uplink-shotgun-drum-slug-name
+  description: uplink-shotgun-drum-slug-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: slug }
+  productEntity: MagazineShotgunSlug
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkAmmo
+
 # Chemicals
+
+- type: listing
+  id: UplinkDefib
+  name: uplink-defib-name
+  description: uplink-defib-desc
+  productEntity: DefibrillatorSyndicate
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 8
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkChemicals
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+
 # Deception
 
 - type: listing
@@ -27,8 +185,11 @@
     stock: 1
 
 # Disruption
+
 # Allies
+
 # Implants
+
 - type: listing
   id: UplinkDeathRattleTraitor
   name: uplink-traitor-deathrattle-implant-name
@@ -45,20 +206,28 @@
       - NukeOpsUplink
 
 # Wearables
+
 - type: listing
-  id: UplinkMantisGloves
-  name: mantis-gloves-uplink-name
-  description: mantis-gloves-uplink-desc
-  icon: { sprite: /Textures/_Harmony/Clothing/Hands/Gloves/mantis_activated.rsi, state: icon }
-  productEntity: ClothingHandsGlovesMantis
+  id: UplinkClothingOuterArmorRaidHarmony
+  name: uplink-syndie-raid-name
+  description: uplink-syndie-raid-desc
+  icon: { sprite: /Textures/Clothing/OuterClothing/Armor/syndie-raid.rsi, state: icon }
+  productEntity: ClothingBackpackSyndicateRaidBundle
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 7
   cost:
-    Telecrystal: 4
+    Telecrystal: 12
   categories:
   - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+        - NukeOpsUplink
+
 # Pointless
+
 - type: listing
   id: UplinkClusterWeh
   name: uplink-cluster-weh-name
@@ -70,6 +239,7 @@
   - UplinkPointless
 
 # Job Specific
+
 - type: listing
   id: UplinkHypoShell
   name: uplink-hyposhell-name
@@ -84,4 +254,3 @@
     whitelist:
     - Bartender
     - Zookeeper
-
