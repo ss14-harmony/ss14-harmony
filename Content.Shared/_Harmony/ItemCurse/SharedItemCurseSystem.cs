@@ -125,7 +125,7 @@ public abstract class SharedItemCurseSystem : EntitySystem
         if (_actions.GetAction(ent.Owner) is not { } action)
             return;
 
-        if (action.Comp.AttachedEntity is not { } user)
+        if (action.Comp.AttachedEntity is null)
             return;
 
         ent.Comp.MarkedEntity = item;
