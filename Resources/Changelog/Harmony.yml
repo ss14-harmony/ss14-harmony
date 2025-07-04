@@ -2155,3 +2155,24 @@ Entries:
     changes:
     - type: Tweak
       message: Changed the hristov's firing sound.
+  - id: 508
+    author: kleinerstation13
+    time: '2025-07-04T15:38:26.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/508
+    changes:
+    - type: Add
+      message: Added a syndicate support cyborg, available to Nuclear Operatives for 25 TC.
+  - id: 545
+    author: TheSecondLord
+    time: '2025-07-04T15:38:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/545
+    changes:
+    - type: Add
+      message: Added an item curse spell to the wizard's grimoire.
+  - id: 577
+    author: kleinerstation13
+    time: '2025-07-04T15:40:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/577
+    changes:
+    - type: Add
+      message: Added a semi-auto DMR to the uplink.
