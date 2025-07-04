@@ -3,13 +3,10 @@ using Content.Shared.Actions.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.ItemRecall;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
 using Robust.Shared.Containers;
-using Robust.Shared.GameStates;
-using Robust.Shared.Player;
 using Robust.Shared.Random;
 
 namespace Content.Shared._Harmony.ItemCurse;
@@ -20,8 +17,6 @@ namespace Content.Shared._Harmony.ItemCurse;
 /// </summary>
 public abstract class SharedItemCurseSystem : EntitySystem
 {
-    [Dependency] private readonly ISharedPlayerManager _player = default!;
-    [Dependency] private readonly SharedPvsOverrideSystem _pvs = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
@@ -187,8 +182,10 @@ public abstract class SharedItemCurseSystem : EntitySystem
         {
             if (action.Comp2.InitialName is { } name)
                 _metaData.SetEntityName(action, name);
+
             if (action.Comp2.InitialDescription is { } desc)
                 _metaData.SetEntityDescription(action, desc);
+
             _actions.SetEntityIcon((action, action), null);
         }
     }

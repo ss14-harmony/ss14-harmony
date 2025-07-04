@@ -1,3 +1,4 @@
+using Content.Shared.Chat.Prototypes;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -82,5 +83,5 @@ public sealed partial class ItemCurseComponent : Component
     /// The emote action used when casting the spell
     /// </summary>
     [DataField]
-    public string SpellUseEmote = "Snap";
+    public ProtoId<EmotePrototype> SpellUseEmote = "Snap";
 }
