@@ -250,6 +250,11 @@
       children:
       - id: JetpackBlue
       - id: JetpackBlack
+    # Harmony Change Start
+    - id: PickaxeLight
+      weight: 0.5
+    # Harmony Change end
+
 
 - type: entityTable
   id: SalvageEquipmentLegendary

@@ -55,6 +55,7 @@
       - WeaponCrusherDagger
       - WeaponCrusherGlaive
       - MiningDrill
+      - PickaxeLight # Harmony Change - adds new harmony mining tool to the loot pool
       offset: 0.0
 
 - type: entity
