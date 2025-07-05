@@ -23,6 +23,10 @@
   - MineralScannerEmpty
   - AdvancedMineralScannerEmpty
   - OreBagOfHolding
+  # Harmony Change Start, Adds Upgraded Pickaxes
+  - PickaxeLight
+  - PickaxeUltralight
+  # Harmony Change End
 
 - type: latheRecipePack
   id: CargoBoards
