@@ -249,9 +249,10 @@ namespace Content.Server.Voting
 
         public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
         {
+            var mgr = IoCManager.Resolve<IVoteManager>();
             if (args.Length == 1)
             {
-                var options = _voteManager.ActiveVotes
+                var options = mgr.ActiveVotes
                     .OrderBy(v => v.Id)
                     .Select(v => new CompletionOption(v.Id.ToString(), v.Title));
 

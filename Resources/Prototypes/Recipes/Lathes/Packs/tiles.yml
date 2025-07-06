@@ -12,7 +12,6 @@
   - FloorTileItemDarkPavement
   - FloorTileItemDarkPavementVertical
   - FloorTileItemDarkOffset
-  - FloorTileItemDarkSquiggly
   - FloorTileItemSteelCheckerDark
   - FloorTileItemSteel
   - FloorTileItemSteelOffset
@@ -36,7 +35,7 @@
   - FloorTileItemGratingMaint
   - FloorTileItemTechmaint
   - FloorTileItemSteelMaint
-  - FloorTileItemTechmaintDark
+  - FloorTileItemTechmaintDark # Xeno playtest
   - FloorTileItemWood
   - FloorTileItemWoodLarge
   - FloorTileItemWoodPattern

@@ -1,7 +1,8 @@
 using Content.Shared.Body.Components;
+using Content.Shared.EntityEffects;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.EntityEffects.EffectConditions;
+namespace Content.Server.EntityEffects.EffectConditions;
 
 /// <summary>
 ///     Condition for if the entity is or isn't wearing internals.

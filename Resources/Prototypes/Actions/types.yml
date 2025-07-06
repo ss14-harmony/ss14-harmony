@@ -330,7 +330,6 @@
   components:
   - type: Action
     icon: { sprite: Objects/Fun/bikehorn.rsi, state: icon }
-    useDelay: 1
 
 - type: entity
   parent: BaseAction
@@ -403,8 +402,8 @@
 - type: entity
   parent: BaseToggleAction
   id: ActionToggleRootable
-  name: Rootable
-  description: Begin or stop being rooted to the floor.
+  name: action-name-toggle-rootable
+  description: action-description-toggle-rootable
   components:
   - type: Action
     icon: Interface/Actions/rooting.png
