@@ -52,6 +52,10 @@ uplink-syndicate-id-desc = A sleek black-and-red ID card with embossed Syndicate
 uplink-reinforcement-radio-cyborg-support-name = Syndicate Support Cyborg Teleporter
 uplink-reinforcement-radio-cyborg-support-desc = A lean, mean supporting machine with access to a Pinpointer, Echis, Cryptographic Sequencer, Energy Dagger and advanced medical treatment module.
 
+uplink-hololawyer-kit-name = Hololawyer Kit
+uplink-hololawyer-kit-desc = The pinnacle of legal technology. Contains an injector that hosts a pacified sentient metaphysical lawyer made of hard light which resides in the user's body when not active.
+    The hololawyer has pockets to store things, a hardlight hand it can manipulate the environment with, and is immune to hazardous environments while being resistant to direct trauma, but shares any damage it takes with the user.
+
 # Implants
 
 

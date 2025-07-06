@@ -1,0 +1,5 @@
+- type: startingGear
+  id: HoloLawyerGear
+  equipment:
+    pocket1: RubberStampSyndicate
+    pocket2: CyberPen

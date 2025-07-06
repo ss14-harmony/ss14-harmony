@@ -1,0 +1,71 @@
+- type: entity
+  parent: [MobGuardianBase, InventoryBase]
+  id: MobHoloLawyerGuardian
+  name: Hololawyer
+  description: A mesmerising whirl of hard-light patterns weaves a red colored lawyer of dubious origin. It emits an aura of wasted money and excessive funding.
+  components:
+  - type: CombatMode
+    state: false
+  - type: Pacified
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: ghost-role-information-hololawyer-name
+    description: ghost-role-information-hololawyer-description
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: NameIdentifier
+    group: Holoparasite
+  - type: FootstepModifier
+  - type: Speech
+    speechVerb: Robotic
+  - type: TypingIndicator
+    proto: holo
+  - type: RandomSprite
+    available:
+    - enum.DamageStateVisualLayers.Base:
+        hololawyer_base: ""
+      enum.DamageStateVisualLayers.BaseUnshaded:
+        hololawyer_flare: Sixteen
+    - enum.DamageStateVisualLayers.Base:
+        hololawyer_base: ""
+      enum.DamageStateVisualLayers.BaseUnshaded:
+        hololawyer_flare: Sixteen
+    - enum.DamageStateVisualLayers.Base:
+        hololawyer_base: ""
+      enum.DamageStateVisualLayers.BaseUnshaded:
+        hololawyer_flare: Sixteen
+  - type: Sprite
+    sprite: _Harmony/Mobs/Aliens/Guardians/guardians.rsi
+    layers:
+    - state: hololawyer_base
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+    - state: hololawyer_flare
+      map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      color: "#8adaff"
+      shader: unshaded
+  - type: Body
+    prototype: Primate
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - FootstepSound
+  - type: Inventory
+    templateId: holoclown
+  - type: Hands
+  - type: ComplexInteraction
+  - type: Loadout
+    prototypes: [ HoloLawyerGear ]
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: MeleeWeapon
+    angle: 30
+    animation: WeaponArcFist
+    attackRate: 1.8
+    damage:
+      types:
+        Blunt: 5
