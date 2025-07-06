@@ -1,7 +1,7 @@
 - type: entity
-  name: Hololawyer
-  id: MobHoloLawyerGuardian
   parent: [MobGuardianBase, InventoryBase]
+  id: MobHoloLawyerGuardian
+  name: Hololawyer
   description: A mesmerising whirl of hard-light patterns weaves a red colored lawyer of dubious origin. It emits an aura of wasted money and excessive funding.
   components:
   - type: CombatMode
