@@ -1,43 +1,43 @@
 {
-  "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "made by Lachryphage (GitHub) based on ProbablyAlta's work at commit https://github.com/ss14-harmony/ss14-harmony/commit/04bc3bfc90590d85afb50855f7cf02e27aede371.",
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "states": [
-    {
-      "name": "hololawyer",
-      "directions": 4
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "made by Lachryphage (GitHub) based on ProbablyAta's work at commit https://github.com/ss14-harmony/ss14-harmony/commit/04bc3bfc90590d85afb50855f7cf02e27aede371.",
+    "size": {
+        "x": 32,
+        "y": 32
     },
-    {
-      "name": "hololawyer_base",
-      "directions": 4
-    },
-    {
-      "name": "hololawyer_flare",
-      "directions": 4,
-      "delays": [
-        [
-          0.1,
-          0.1
-        ],
-        [
-          0.1,
-          0.1
-        ],
-        [
-          0.1,
-          0.1
-        ],
-        [
-          0.1,
-          0.1
-        ]
-      ]
-    }
-  ]
+    "states": [
+        {
+            "name": "hololawyer",
+            "directions": 4
+        },
+        {
+            "name": "hololawyer_base",
+            "directions": 4
+        },
+        {
+            "name": "hololawyer_flare",
+            "directions": 4,
+            "delays": [
+                [
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1
+                ]
+            ]
+        }
+    ]
 }
 
 
