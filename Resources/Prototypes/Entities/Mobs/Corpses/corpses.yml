@@ -25,7 +25,8 @@
       - CorpseBotanist
       - CorpseChef
       - CorpseChaplain
-      - CorpsePassenger
+      - LimitedPassengerGear
+      - CorpseRandomJumpsuit
       - VisitorLibrarian
       - VisitorLibrarianAlt
       - VisitorReporter
