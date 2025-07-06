@@ -6,6 +6,9 @@ uplink-blood-red-carbine-desc = A bundle containing the stolen and improved Bloo
 uplink-hushpup-name = Hushpup
 uplink-hushpup-desc = Contains a Hushpup, a powerful silenced shotgun with a low magazine capacity, as well as a spare box of buckshot. Uses .50 shotgun ammo.
 
+uplink-rifle-bandit-name = Bandit Bundle
+uplink-rifle-bandit-desc = Contains the Bandit, a reliable semi-auto bullpup which fires devastating caseless rounds, bundled with 2 DMR magazines. Uses .30 rifle caseless ammo.
+
 # Explosive
 
 uplink-pizza-bomb-name = Nefarious Pizza bomb
@@ -13,6 +16,12 @@ uplink-pizza-bomb-desc = This tech, first pioneered by terrorists, now is used b
 
 uplink-pizza-bomb-surplus-name = Surplus Pizza Bomb
 uplink-pizza--surplus-desc = This shouldn't be visible, report me.
+
+uplink-X4-name = X-4
+uplink-X4-desc = The cousin of the infamous C-4, uses experimental explosives to better pierce through structures.
+
+uplink-X4-bundle-name = X-4 Bundle
+uplink-X4-bundle-desc = A bag containing 4 X-4s, perfect for going all in on sabotage.
 
 # Ammo
 
@@ -24,6 +33,9 @@ uplink-shotgun-drum-pellet-desc = Shotgun drum with eight pellet shells. Compati
 
 uplink-shotgun-drum-slug-name = Shotgun Magazine (.50 slug)
 uplink-shotgun-drum-slug-desc = Shotgun drum with eight slug shells. Compatible with the Bulldog.
+
+uplink-rifle-magazine-bandit-name = DMR Magazine (.30 rifle caseless)
+uplink-rifle-magazine-bandit-desc = Rifle magazine with 15 cartridges. Compatible with the Bandit.
 
 # Chemicals
 
@@ -40,6 +52,9 @@ uplink-syndicate-id-desc = A sleek black-and-red ID card with embossed Syndicate
 uplink-hololawyer-kit-name = Hololawyer Kit
 uplink-hololawyer-kit-desc = The pinnacle of legal technology. Contains an injector that hosts a pacified sentient metaphysical lawyer made of hard light which resides in the user's body when not active.
     The hololawyer has pockets to store things, a hardlight hand it can manipulate the environment with, and is immune to hazardous environments while being resistant to direct trauma, but shares any damage it takes with the user.
+
+uplink-reinforcement-radio-cyborg-support-name = Syndicate Support Cyborg Teleporter
+uplink-reinforcement-radio-cyborg-support-desc = A lean, mean supporting machine with access to a Pinpointer, Echis, Cryptographic Sequencer, Energy Dagger and advanced medical treatment module.
 
 # Implants
 
