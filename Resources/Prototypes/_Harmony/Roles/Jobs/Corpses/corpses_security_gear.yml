@@ -1,0 +1,27 @@
+# List of Gearsets intended for Security Corpse Spawners
+
+- type: startingGear
+  id: CorpseWarden
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitWarden
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    belt: ClothingBeltSecurity
+
+- type: startingGear
+  id: CorpseDetective
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitDetective
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesSecurity
+    belt: ClothingBeltHolster
+
+- type: startingGear
+  id: CorpseSecurityOfficer
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSec
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesSecurity
+    outerClothing: ClothingOuterArmorBasic
+    belt: ClothingBeltSecurity

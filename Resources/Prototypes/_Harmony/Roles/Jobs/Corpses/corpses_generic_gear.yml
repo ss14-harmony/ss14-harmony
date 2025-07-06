@@ -1,0 +1,7 @@
+# List of Gearsets intended for Non-departmental Corpse Spawners
+
+- type: startingGear
+  id: CorpsePassenger
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    shoes: ClothingShoesColorBlack
