@@ -26,7 +26,7 @@
 /Resources/Textures/_Harmony/LobbyScreens/          @DieselMohawk
 
 # Maps
-/Resources/Maps/                                    @spanky-spanky
-/Resources/Prototypes/Maps/                         @spanky-spanky
-/Resources/Prototypes/_Harmony/Maps/                @spanky-spanky
-/Content.IntegrationTests/Tests/PostMapInitTest.cs  @spanky-spanky
+/Resources/Maps/                                    @spanky-spanky @raccoonio
+/Resources/Prototypes/Maps/                         @spanky-spanky @raccoonio
+/Resources/Prototypes/_Harmony/Maps/                @spanky-spanky @raccoonio
+/Content.IntegrationTests/Tests/PostMapInitTest.cs  @spanky-spanky @raccoonio

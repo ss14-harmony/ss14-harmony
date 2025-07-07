@@ -13,3 +13,32 @@
        harmony-pda-prisoner
   - type: Icon
     state: harmony-pda-prisoner
+
+## Senior Salvager
+- type: entity
+  parent: BasePDA
+  id: SeniorSalvagePDA
+  name: senior salvage PDA
+  description: Smells like ash and goliath plates.
+  components:
+  - type: Pda
+    id: SalvageIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       harmony-pda-seniorminer
+  - type: PdaBorderColor
+    borderColor: "#af9366"
+    accentVColor: "#8900c9"
+    accentHColor: "#8900c9"
+  - type: Icon
+    state: pda-miner
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - AstroNavCartridge

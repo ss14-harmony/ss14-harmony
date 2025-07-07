@@ -142,3 +142,9 @@
   parent: BaseJumpsuitRecipe
   id: ClothingUniformJumpskirtSeniorTechnicianHarmony
   result: ClothingUniformJumpskirtSeniorTechnicianHarmony
+
+## Salvager
+- type: latheRecipe
+  parent: BaseNeckClothingRecipe
+  id: ClothingNeckCloakSeniorSalvager
+  result: ClothingNeckCloakSeniorSalvager

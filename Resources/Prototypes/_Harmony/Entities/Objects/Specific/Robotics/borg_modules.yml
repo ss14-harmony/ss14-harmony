@@ -1,0 +1,19 @@
+- type: entity
+  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
+  id: BorgModuleAdvancedTreatmentSyndicate
+  name: syndicate support cyborg module
+  description: A module that comes with a borg hypo, dropper, two large beakers, and a health analyzer.
+  components:
+  - type: Sprite
+    layers:
+    - state: syndicate
+    - state: icon-syndicate
+  - type: ItemBorgModule
+    items:
+    - HandheldHealthAnalyzerUnpowered
+    - LargeBeaker
+    - LargeBeaker
+    - BorgDropper
+    - BorgHypo
+  - type: BorgModuleIcon
+    icon: { sprite: _Harmony/Interface/Actions/actions_syndicate_borg.rsi, state: adv-diagnosis-module-syndicate }

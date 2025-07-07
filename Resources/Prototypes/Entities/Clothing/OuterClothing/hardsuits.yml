@@ -40,6 +40,11 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitAtmos
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Engineering Hardsuit
 - type: entity
@@ -76,6 +81,11 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitEngineering
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Harmony change : Hardsuit resprite
 #Spationaut Hardsuit
@@ -99,14 +109,20 @@
   - type: Armor
     modifiers:
       coefficients:
+# Start of Harmony Change: Updates Spationaut Hardsuit Armor and Speed Values
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.9
-        Radiation: 0.3 #salv is supposed to have radiation hazards in the future
-        Caustic: 0.8
+#        Radiation: 0.3 #salv is supposed to have radiation hazards in the future
+#        Caustic: 0.8
+        Radiation: 0.6
+        Caustic: 0.6
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.8
+#    walkModifier: 0.9
+#    sprintModifier: 0.8
+    walkModifier: 0.85
+    sprintModifier: 0.85
+# End of Harmony Change
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSpatio
@@ -115,6 +131,7 @@
     - Hardsuit
     - WhitelistChameleon
     - HardsuitSpatio
+    - CorgiWearable
 
 #Harmony change : Hardsuit resprite
 #Salvage Hardsuit
@@ -136,22 +153,37 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.7
+#Start of Harmony Change: Lowers the Mining Hardsuit Explosion Resistance
+#    damageCoefficient: 0.7
+    damageCoefficient: 0.6
+# End of Harmony Change
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.7
+# Start of Harmony Change: Updates Mining Hardsuit Armor and Speed Values
+#        Blunt: 0.7
+#        Piercing: 0.7
+#        Radiation: 0.3
+#        Caustic: 0.7
+        Blunt: 0.6
         Slash: 0.6
-        Piercing: 0.7
-        Heat: 0.7
-        Radiation: 0.3
-        Caustic: 0.7
+        Piercing: 0.8
+        Radiation: 0.5
+        Caustic: 0.5
   - type: ClothingSpeedModifier
-    walkModifier: 0.75
-    sprintModifier: 0.75
+#    walkModifier: 0.75
+#    sprintModifier: 0.75
+    walkModifier: 0.70
+    sprintModifier: 0.70
+# End of Harmony Change
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSalvage
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Harmony change : Hardsuit resprite
 #Goliath Hardsuit
@@ -173,25 +205,43 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.3
+#Start of Harmony Change: Lowers the Goliath Hardsuit Explosion Resistance
+#    damageCoefficient: 0.3
+    damageCoefficient: 0.5
+# End of Harmony Change
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.7
-        Slash: 0.7
-        Piercing: 0.5
-        Heat: 0.7 #Goliath hide gets grilled instead of you
-        Radiation: 0.3
-        Caustic: 0.8
+# Start of Harmony Change: Updates Goliath Hardsuit Armor and Speed Values
+#        Blunt: 0.7
+#        Slash: 0.7
+#        Piercing: 0.5
+#        Heat: 0.7 #Goliath hide gets grilled instead of you
+#        Radiation: 0.3
+#        Caustic: 0.8
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.8
+        Heat: 0.8
+        Radiation: 0.4
+        Caustic: 0.4
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+#    walkModifier: 0.8
+#    sprintModifier: 0.8
+    walkModifier: 0.85
+    sprintModifier: 0.85
+# End of Harmony Change
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitGoliath
   - type: Construction
     graph: HardsuitGoliath
     node: hardsuitGoliath
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Maxim Hardsuit
 - type: entity
@@ -226,7 +276,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMaxim
 
-# Harmony change. Adjusted damage resistance values
+# Harmony change. Adjusted damage resistance values + Resprite
 #Security Hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
@@ -235,9 +285,13 @@
   description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/security.rsi
+#  start of Harmony change : Update sprite pathing
+#    sprite: Clothing/OuterClothing/Hardsuits/security.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/security.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/security.rsi
+#    sprite: Clothing/OuterClothing/Hardsuits/security.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/security.rsi
+#  end of Harmony change
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
@@ -257,6 +311,11 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurity
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Brigmedic Hardsuit
 - type: entity
@@ -298,7 +357,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitBrigmedic
 
-# Harmony change. Adjusted damage resistance values
+# Harmony change. Adjusted damage resistance values + Resprite
 #Warden's Hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
@@ -307,9 +366,13 @@
   description: The Warden's suit. Built like a tank.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/security-warden.rsi
+#  start of Harmony change : Update sprite pathing
+#    sprite: Clothing/OuterClothing/Hardsuits/security-warden.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/security-warden.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/security-warden.rsi
+#    sprite: Clothing/OuterClothing/Hardsuits/security-warden.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/security-warden.rsi
+#  end of Harmony change
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
@@ -361,6 +424,11 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCap
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -394,11 +462,16 @@
         Radiation: 0.0
         Caustic: 0.7
   - type: ClothingSpeedModifier
-    walkModifier: 0.75
+    walkModifier: 0.8
     sprintModifier: 0.8
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitEngineeringWhite
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Chief Medical Officer's Hardsuit
 - type: entity
@@ -421,11 +494,16 @@
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.4
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
+    walkModifier: 0.95
     sprintModifier: 0.95
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMedical
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Research Director's Hardsuit
 - type: entity
@@ -464,6 +542,8 @@
     tags:
     - WhitelistChameleon
     - HighRiskItem
+    - CorgiWearable
+    - Hardsuit
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitRd
   - type: StaticPrice
@@ -471,7 +551,7 @@
   - type: StealTarget
     stealGroup: ClothingOuterHardsuitRd
 
-# Harmony change. Adjusted damage resistance values
+# Harmony change. Adjusted damage resistance values + Resprite
 #Head of Security's Hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
@@ -480,9 +560,13 @@
   description: A huge, looming, armored space suit. The biggest and the baddest.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/security-red.rsi
+#  start of Harmony change : Update sprite pathing
+#    sprite: Clothing/OuterClothing/Hardsuits/security-red.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/security-red.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/security-red.rsi
+#    sprite: Clothing/OuterClothing/Hardsuits/security-red.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/security-red.rsi
+#  end of Harmony change
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
@@ -524,19 +608,26 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.9
+# Start of Harmony Change: Updates the Luxury Mining Hardsuit Explosion Resistance Values
+#    damageCoefficient: 0.5
+    damageCoefficient: 0.8
+# End of Harmony Change
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.9
+# Start of Harmony Change: Updates Luxury Mining Hardsuit Armor and Speed Values
+#        Blunt: 0.9
+        Blunt: 0.8
         Slash: 0.8
         Piercing: 0.9
-        Heat: 0.9
+#        Heat: 0.9
         Radiation: 0.5
-        Caustic: 0.8
+#        Caustic: 0.8
+        Caustic: 0.6
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
+    walkModifier: 0.9
     sprintModifier: 0.9
+# End of Harmony Change
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitLuxury
@@ -587,6 +678,9 @@
     - MonkeyWearable
     - Hardsuit
     - WhitelistChameleon
+    - CorgiWearable
+  - type: StaticPrice
+    price: 5000
 
 # Harmony change. Updated sprite file path due to resprite
 # Syndicate Medic Hardsuit
@@ -651,11 +745,16 @@
   - type: Item
     size: Huge
   - type: ClothingSpeedModifier
-    walkModifier: 1.0
+    walkModifier: 0.9
     sprintModifier: 0.9
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieElite
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 # Harmony change. Updated sprite file path due to resprite
 #Syndicate Commander Hardsuit
@@ -695,6 +794,12 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieCommander
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
+
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
@@ -724,7 +829,7 @@
         Radiation: 0.2
         Caustic: 0.2
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
+    walkModifier: 0.65
     sprintModifier: 0.65
   - type: HeldSpeedModifier
   - type: ToggleableClothing
@@ -732,6 +837,9 @@
   - type: Tag
     tags:
     - MonkeyWearable
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Wizard Hardsuit
 - type: entity
@@ -754,7 +862,7 @@
       coefficients:
         Blunt: 0.6
         Slash: 0.6
-        Piercing: 0.4
+        Piercing: 0.6 # Harmony change - 0.4 -> 0.6
         Heat: 0.25
         Radiation: 0.25
         Caustic: 0.75
@@ -764,6 +872,11 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitWizard
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - Hardsuit
+    - WhitelistChameleon
 
 #Ling Space Suit
 - type: entity

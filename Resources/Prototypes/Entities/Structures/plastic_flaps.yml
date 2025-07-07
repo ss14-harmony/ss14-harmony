@@ -35,9 +35,11 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: IconSmooth
-    key: walls
-    mode: NoSprite
+# Start of Harmony Change: Removes IconSmoothing
+#  - type: IconSmooth
+#    key: walls
+#    mode: NoSprite
+# End of Harmony Change
   - type: StaticPrice
     price: 100
 

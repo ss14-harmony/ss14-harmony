@@ -1,0 +1,10 @@
+- type: entity
+  id: BingleSpawn
+  parent: BaseGameRule
+  components:
+  - type: StationEvent
+    startAnnouncement: bingle-station-announcement
+    duration: 50
+    minimumPlayers: 15
+  - type: RandomSpawnRule
+    prototype: SpawnPointGhostBinglePrime

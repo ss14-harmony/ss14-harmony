@@ -9,6 +9,7 @@
   - Revolutionary
   - AllHostile
   - Wizard
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: NanoTrasen
@@ -22,6 +23,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: Mouse
@@ -58,6 +60,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: SimpleNeutral
@@ -88,6 +91,7 @@
   - Wizard
   - Dragon
   - Xenoborg
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: Zombie
@@ -103,6 +107,7 @@
   - Wizard
   - Dragon
   - Xenoborg
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: Revolutionary
@@ -131,6 +136,7 @@
   - Revolutionary
   - Wizard
   - Xenoborg
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: Wizard
@@ -148,6 +154,7 @@
   - Revolutionary
   - AllHostile
   - Xenoborg
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: Xenoborg
@@ -158,6 +165,7 @@
   - Zombie
   - Revolutionary
   - Wizard
+  - BloodBrother # Harmony
 
   - Xeno # rivalry
 

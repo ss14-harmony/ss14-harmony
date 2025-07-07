@@ -140,7 +140,7 @@
     sound:
       path: /Audio/Items/multitool_drop.ogg
   - type: Sprite
-    sprite: Objects/Tools/multitool.rsi
+    sprite: _Harmony/Objects/Tools/multitool.rsi # Harmony texture replacement
     layers:
     - state: icon
     - state: green-unlit
@@ -148,7 +148,7 @@
   - type: Item
     size: Small
   - type: Clothing
-    sprite: Objects/Tools/multitool.rsi
+    sprite: _Harmony/Objects/Tools/multitool.rsi # Harmony texture replacement
     quickEquip: false
     slots:
     - Belt
