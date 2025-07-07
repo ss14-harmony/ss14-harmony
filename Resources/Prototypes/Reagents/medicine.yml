@@ -1053,7 +1053,7 @@
       effects:
 # Harmony Change Start, reintroduce Punct cauterizing wounds without relying on a bug
       - !type:ModifyBleedAmount
-         amount: -0.5
+        amount: -0.5
 # Harmony Change End
       - !type:HealthChange
         damage:
