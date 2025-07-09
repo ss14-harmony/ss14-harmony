@@ -149,7 +149,7 @@
       children:
       # NTSRA + Voidpack
       - !type:AllSelector
-        weight: 0.5
+        weight: 0.2
         children:
         - id: JetpackVoidFilled
         - id: ClothingHeadHelmetAncient
