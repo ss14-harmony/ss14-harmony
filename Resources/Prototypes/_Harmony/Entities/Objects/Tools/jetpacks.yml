@@ -1,0 +1,8 @@
+# Filled black (Stealth)
+- type: entity
+  id: HarmonyJetpackBlackFilledStealth
+  parent: JetpackBlackFilled
+  name: jetpack
+  suffix: Filled, Stealthy, Harmony
+  components:
+  - type: RadarBlipStealth #imp edit - hide this specific proto from mass scanners. fine to use on this proto because it's only given to traitors / syndies / ninjas who should be stealthy.

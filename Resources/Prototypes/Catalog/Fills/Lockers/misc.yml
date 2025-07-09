@@ -9,7 +9,7 @@
         children:
         - id: ClothingBeltMilitaryWebbing
         - id: ClothingHandsGlovesCombat
-        - id: JetpackBlackFilled
+        - id: HarmonyJetpackBlackFilledStealth # Harmony Change, JetpackBlackFilled > HarmonyJetpackBlackFilledStealth, Nukies should not show up on Mass Scanners
         - id: ClothingUniformJumpsuitOperative
         - id: ClothingUniformJumpskirtOperative
         - id: ClothingHeadsetAltSyndicate
