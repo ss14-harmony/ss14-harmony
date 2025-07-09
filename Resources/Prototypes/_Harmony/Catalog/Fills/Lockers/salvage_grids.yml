@@ -74,12 +74,12 @@
     # Suits (Common)
     - !type:GroupSelector
       children:
-      - id: ClothingOuterHarduitPirateEVA
+      - id: ClothingOuterHardsuitPirateEVA
       - !type:AllSelector
         children:
           - id: ClothingOuterHardsuitSpatio
-        - id: MaterialCloth10
-        - id: SheetPlastic10
+          - id: MaterialCloth10
+          - id: SheetPlastic10
     # Tanks (Common)
     - !type:GroupSelector
       children:
@@ -110,8 +110,10 @@
     # Suits (Rare)
     - !type:GroupSelector
       children:
-      - id: ClothingOuterHardsuitMime
-      - id: ClothingOuterHardsuitClown
+      - !type:GroupSelector
+        children:
+          - id: ClothingOuterHardsuitMime
+          - id: ClothingOuterHardsuitClown
       - id: ClothingOuterHardsuitPirateCap
       - id: ClothingOuterHardsuitSalvage
     # Tanks (Rare)
@@ -152,6 +154,7 @@
         - id: JetpackVoidFilled
         - id: ClothingHeadHelmetAncient
         - id: ClothingOuterHardsuitAncientEVA
+        - id: AirTankFilled
       - !type:AllSelector
         children:
         # Suits (Legendary)
@@ -187,5 +190,17 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      entity_storage: !type:NestedSelector
-        tableId: SuitStorageSalvLootTableBasic
+      entity_storage: !type:GroupSelector
+        children:
+        - !type:NestedSelector
+          weight: 30
+          tableId: SuitStorageSalvLootTableBasic
+        - !type:NestedSelector
+          weight: 40
+          tableId: SuitStorageSalvLootTableCommon
+        - !type:NestedSelector
+          weight: 25
+          tableId: SuitStorageSalvLootTableRare
+        - !type:NestedSelector
+          weight: 5
+          tableId: SuitStorageSalvLootTableLegendary
