@@ -1,0 +1,191 @@
+# Lockers for salvage grids such as Ruins and Wrecks or for spawner tables for them
+
+# Suit Storage Unit Tables
+
+# Tank Tables
+
+## Big Tanks
+- type: entityTable
+  id: BigTankFilledTable
+  table: !type:GroupSelector
+    children:
+    - id: AirTankFilled
+    - id: OxygenTankFilled
+    - id: NitrogenTankFilled
+
+## Emergency Tanks
+- type: entityTable
+  id: EmergencyTankFilledTable
+  table: !type:GroupSelector
+    children:
+    - id: EmergencyOxygenTankFilled
+    - id: EmergencyNitrogenTankFilled
+    - id: EmergencyFunnyOxygenTankFilled
+
+## Extended Tanks
+- type: entityTable
+  id: ExtendedTankFilledTable
+  table: !type:GroupSelector
+    children:
+    - id: ExtendedEmergencyOxygenTankFilled
+    - id: ExtendedEmergencyNitrogenTankFilled
+
+## Double Emergency Tanks
+- type: entityTable
+  id: DoubleEmergencyTankFilledTable
+  table: !type:GroupSelector
+    children:
+    - id: DoubleEmergencyOxygenTankFilled
+    - id: DoubleEmergencyNitrogenTankFilled
+
+## Suits Table
+- type: entityTable
+  id: SuitStorageSalvLootTableBasic
+  table: !type:AllSelector
+    children:
+    # Basic
+    - id: ClothingMaskBreath
+    # Suits (Basic)
+    - !type:GroupSelector
+      children:
+      # Emergency EVA
+      - id: ClothingOuterSuitEmergency
+      # EVA
+      - !type:AllSelector
+        children:
+        - id: ClothingOuterHardsuitEVA
+        # EVA Helmet
+        - !type:GroupSelector
+          children:
+          - id: ClothingHeadHelmetEVA
+          - id: ClothingHeadHelmetEVALarge
+    # Tanks (Basic)
+    - !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        tableId: BigTankFilledTable
+      - !type:NestedSelector
+        tableId: EmergencyTankFilledTable
+
+- type: entityTable
+  id: SuitStorageSalvLootTableCommon
+  table: !type:AllSelector
+    children:
+    # Suits (Common)
+    - !type:GroupSelector
+      children:
+      - id: ClothingOuterHarduitPirateEVA
+      - !type:AllSelector
+        children:
+          - id: ClothingOuterHardsuitSpatio
+        - id: MaterialCloth10
+        - id: SheetPlastic10
+    # Tanks (Common)
+    - !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        tableId: BigTankFilledTable
+        weight: 2
+      - !type:NestedSelector
+        tableId: EmergencyTankFilledTable
+      - !type:NestedSelector
+        tableId: ExtendedTankFilledTable
+    # Jetpacks (Common)
+    - !type:GroupSelector
+      children:
+      - id: ScrapJetpack
+        weight: 2
+      - id: JetpackMiniFilled
+    # Masks (Common)
+    - !type:GroupSelector
+      children:
+      - id: ClothingMaskBreath
+      - id: ClothingMaskBreathMedicalSecurity
+      - id: ClothingMaskGas
+
+- type: entityTable
+  id: SuitStorageSalvLootTableRare
+  table: !type:AllSelector
+    children:
+    # Suits (Rare)
+    - !type:GroupSelector
+      children:
+      - id: ClothingOuterHardsuitMime
+      - id: ClothingOuterHardsuitClown
+      - id: ClothingOuterHardsuitPirateCap
+      - id: ClothingOuterHardsuitSalvage
+    # Tanks (Rare)
+    - !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        tableId: BigTankFilledTable
+      - !type:NestedSelector
+        tableId: ExtendedTankFilledTable
+      - !type:NestedSelector
+        tableId: DoubleEmergencyTankFilledTable
+    # Jetpacks (Rare)
+    - !type:GroupSelector
+      children:
+      - id: ScrapJetpack
+      - id: JetpackMiniFilled
+      - id: JetpackBlueFilled
+      - id: JetpackVoidFilled
+        weight: 0.5
+    # Masks (Rare)
+    - !type:GroupSelector
+      children:
+      - id: ClothingMaskGasExplorer
+      - id: ClothingMaskGas
+      - id: ClothingMaskBreathMedicalSecurity
+
+- type: entityTable
+  id: SuitStorageSalvLootTableLegendary
+  table: !type:AllSelector
+    children:
+    - id: ClothingMaskGasMerc
+    - !type:GroupSelector
+      children:
+      # NTSRA + Voidpack
+      - !type:AllSelector
+        weight: 0.5
+        children:
+        - id: JetpackVoidFilled
+        - id: ClothingHeadHelmetAncient
+        - id: ClothingOuterHardsuitAncientEVA
+      - !type:AllSelector
+        children:
+        # Suits (Legendary)
+        - !type:GroupSelector
+          children:
+          - id: ClothingOuterHardsuitLuxury
+          - !type:AllSelector
+            children:
+            - id: ClothingOuterEVASuitSyndicate
+            - id: ClothingHeadHelmetSyndicate
+          - id: ClothingOuterHardsuitBrigmedic # Dripped out suit that only spawns on the visitor shuttle
+          - id: ClothingOuterSuitCarp # Not the hardsuit one, just for drip
+          - id: ClothingOuterHardsuitLing # Creepy...
+        # Tanks (Legendary)
+        - !type:GroupSelector
+          children:
+          - !type:NestedSelector
+            tableId: ExtendedTankFilledTable
+          - !type:NestedSelector
+            tableId: DoubleEmergencyTankFilledTable
+        # Jetpacks (Legendary)
+        - !type:GroupSelector
+          children:
+          - id: JetpackVoidFilled
+          - id: JetpackBlueFilled
+            weight: 0.5
+
+# Random Suit Storage Locker
+- type: entity
+  id: HarmonySuitStorageRandomSalvLoot
+  parent: SuitStorageBase
+  suffix: Filled, Random, Salvage, Harmony
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: SuitStorageSalvLootTableBasic
