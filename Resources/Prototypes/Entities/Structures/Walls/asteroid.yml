@@ -62,6 +62,11 @@
         layer:
         - WallLayer
         density: 2000
+# Harmony Change - Makes basic asteroids drop ore
+  - type: OreVein
+    oreChance: 0.33
+    oreRarityPrototypeId: RandomOreDistributionStandard
+# End Harmony Change
 
 - type: entity
   abstract: true
@@ -446,18 +451,18 @@
   id: AsteroidRockMining
   parent: AsteroidRock
   name: asteroid rock
-  suffix: higher ore yield .33
+  suffix: High Ore Yield # Harmony Change, higher ore yield .33 > High Ore Yield
   description: An asteroid.
   components:
   - type: OreVein
-    oreChance: 0.33
+    oreChance: 0.5 # Harmony Change, increases oreChance to compensate for new base oreChance
     oreRarityPrototypeId: RandomOreDistributionStandard
 
 - type: entity
   id: IronRock
   parent: AsteroidRock
   name: ironrock
-  suffix: Low Ore Yield
+  suffix: VGRoid # Harmony Change, Low Ore Yield > VGRoid
   description: A rocky asteroid.
   components:
   - type: IconSmooth
@@ -482,6 +487,11 @@
       state: ironrock_north
     - map: [ "enum.EdgeLayer.West" ]
       state: ironrock_west
+# Harmony Change - Make the basic VGRoid rocks drop cool ore
+  - type: OreVein
+    oreChance: 0.66
+    oreRarityPrototypeId: RandomOreDistributionVGRoid
+# End Harmony Change
 
 - type: entity
   id: IronRockMining
@@ -491,7 +501,7 @@
   description: An asteroid.
   components:
   - type: OreVein
-    oreChance: 0.33
+    oreChance: 0.5 # Harmony Change, 0.33 > 0.5, specific prototype for more mats.
     oreRarityPrototypeId: RandomOreDistributionStandard
 
 # Ore veins
@@ -815,6 +825,11 @@
       state: rock_north
     - map: [ "enum.EdgeLayer.West" ]
       state: rock_west
+# Harmony Change Start - Make basic rocks drop ore
+  - type: OreVein
+    oreChance: 0.2
+    oreRarityPrototypeId: RandomOreDistributionStandard
+# Harmony Change End
 
 # Ore veins
 - type: entity

@@ -1,0 +1,98 @@
+# Geode
+- type: entity
+  parent: OreBase
+  id: Geode
+  name: geode
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: Geode
+  - type: Sprite
+    sprite: _Harmony/Objects/Materials/geode.rsi
+    state: geode
+  - type: Item
+    sprite: _Harmony/Objects/Materials/geode.rsi
+    state: geode
+    size: Normal
+  - type: StackPrice
+    price: 200
+
+- type: entity
+  parent: Geode
+  id: Geode1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+# Buried Cache
+- type: entity
+  parent: OreBase
+  id: BuriedCache
+  name: buried cache
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Materials/buried_cache.rsi
+    state: buried_cache
+  - type: Item
+    sprite: _Harmony/Objects/Materials/buried_cache.rsi
+    state: buried_cache
+    storedRotation: 90
+    size: Small
+  - type: SpawnItemsOnUse
+    items:
+    - id: SpaceCash100
+      amount: 3
+      orGroup: BuriedTreasure
+    - id: SpaceCash1000
+      orGroup: BuriedTreasure
+    - id: IngotGold1
+      amount: 10
+      orGroup: BuriedTreasure
+    - id: TreasureCoinGold
+      prob: 0.5
+      amount: 3
+      orGroup: BuriedTreasure
+    - id: BlueprintDoubleEmergencyTank
+      prob: 0.33
+      orGroup: BuriedTreasure
+    - id: BlueprintFulton
+      prob: 0.33
+      orGroup: BuriedTreasure
+    - id: BlueprintSeismicCharge
+      prob: 0.33
+      orGroup: BuriedTreasure
+    - id: DoubleEmergencyOxygenTankFilled
+      orGroup: BuriedTreasure
+    - id: DoubleEmergencyNitrogenTankFilled
+      orGroup: BuriedTreasure
+    - id: WeaponCrusherDagger
+      orGroup: BuriedTreasure
+    - id: PowerCellHighPrinted
+      orGroup: BuriedTreasure
+    - id: ClothingBeltSalvageWebbing
+      prob: 0.5
+      orGroup: BuriedTreasure
+    - id: ClothingOuterHardsuitSalvage
+      prob: 0.2
+      orGroup: BuriedTreasure
+    - id: PKAUpgradeDamage
+      prob: 0.5
+      orGroup: BuriedTreasure
+    - id: PKAUpgradeRange
+      prob: 0.5
+      orGroup: BuriedTreasure
+    - id: PKAUpgradeFireRate
+      prob: 0.5
+      orGroup: BuriedTreasure
+    - id: ResearchDisk
+      orGroup: BuriedTreasure
+    - id: TreasureDatadiskEncrypted
+      orGroup: BuriedTreasure
+    - id: GoldRing
+      orGroup: BuriedTreasure
+    - id: SilverRing
+      orGroup: BuriedTreasure
+    - id: SilverRingGem
+      prob: 0.5
+      orGroup: BuriedTreasure

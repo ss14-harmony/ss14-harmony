@@ -110,6 +110,10 @@
     OreUranium: 1
     OreBananium: 0.5
     OreArtifactFragment: 0.5
+# Harmony Change Start, add new ores
+    OreGeode: 5
+    OreBuriedCache: 0.5
+# Harmony Change End
 
 - type: weightedRandomOre
   id: OreCrab

@@ -1,0 +1,26 @@
+- type: ore
+  id: OreGeode
+  oreEntity: Geode1
+  minOreYield: 1
+  maxOreYield: 3
+
+- type: ore
+  id: OreBuriedCache
+  oreEntity: BuriedCache
+  minOreYield: 1
+  maxOreYield: 1
+
+- type: weightedRandomOre
+  id: RandomOreDistributionVGRoid
+  weights:
+    OreSteel: 2.5
+    OreCoal: 2.5
+    OreSpaceQuartz: 2
+    OreGold: 8
+    OrePlasma: 8
+    OreSilver: 4
+    OreUranium: 4
+    OreArtifactFragment: 0.1
+    OreGeode: 5
+    OreBuriedCache: 2
+    OreDiamond: 0.5
