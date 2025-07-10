@@ -3,6 +3,7 @@
   parent: OreBase
   id: Geode
   name: geode
+  description: a pretty-looking formation of crystals inside a rock housing. looks expensive.
   suffix: Full
   components:
   - type: Stack
@@ -15,7 +16,7 @@
     state: geode
     size: Normal
   - type: StackPrice # TODO - make this instead drop random ore when cracked open
-    price: 200
+    price: 75
 
 - type: entity
   parent: Geode
@@ -27,9 +28,10 @@
 
 # Buried Cache
 - type: entity
-  parent: OreBase
+  parent: BaseItem
   id: BuriedCache
   name: buried cache
+  description: a buried tube, filled with lost treasure. it has been aged by time.
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Materials/buried_cache.rsi
@@ -39,6 +41,17 @@
     state: buried_cache
     storedRotation: 90
     size: Small
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 20
+        mask:
+          - ItemMask
+        restitution: 0.3
+        friction: 0.2
   - type: SpawnItemsOnUse # TODO - try and replace this with a loot table with weights
     items:
     - id: SpaceCash100
