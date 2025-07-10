@@ -13,7 +13,6 @@
     state: geode
   - type: Item
     sprite: _Harmony/Objects/Materials/geode.rsi
-    state: geode
     size: Normal
   - type: StackPrice # TODO - make this instead drop random ore when cracked open
     price: 75
@@ -38,7 +37,6 @@
     state: buried_cache
   - type: Item
     sprite: _Harmony/Objects/Materials/buried_cache.rsi
-    state: buried_cache
     storedRotation: 90
     size: Small
   - type: Fixtures
