@@ -490,7 +490,7 @@
 # Harmony Change - Make the basic VGRoid rocks drop cool ore
   - type: OreVein
     oreChance: 0.66
-    oreRarityPrototypeId: RandomOreDistributionVGRoid
+    oreRarityPrototypeId: RandomOreDistributionVGRoid # Better loot, higher quality ore, higher chance at getting caches
 # End Harmony Change
 
 - type: entity

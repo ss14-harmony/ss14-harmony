@@ -10,6 +10,7 @@
   minOreYield: 1
   maxOreYield: 1
 
+# Richer ore table for the VGRoid
 - type: weightedRandomOre
   id: RandomOreDistributionVGRoid
   weights:

@@ -7,4 +7,4 @@
   components:
   - type: OreVein
     oreChance: 0.33 # Less ore than IronRockMining, comparable to the base asteroid
-    oreRarityPrototypeId: RandomOreDistributionStandard
+    oreRarityPrototypeId: RandomOreDistributionStandard # Not the improved richness VGRoid set. Suitable for stations.

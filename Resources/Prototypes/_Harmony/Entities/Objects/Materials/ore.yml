@@ -14,7 +14,7 @@
     sprite: _Harmony/Objects/Materials/geode.rsi
     state: geode
     size: Normal
-  - type: StackPrice
+  - type: StackPrice # TODO - make this instead drop random ore when cracked open
     price: 200
 
 - type: entity
@@ -39,7 +39,7 @@
     state: buried_cache
     storedRotation: 90
     size: Small
-  - type: SpawnItemsOnUse
+  - type: SpawnItemsOnUse # TODO - try and replace this with a loot table with weights
     items:
     - id: SpaceCash100
       amount: 3
