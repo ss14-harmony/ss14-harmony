@@ -52,14 +52,14 @@
 
 - type: entity
   parent: ClothingMaskBase
-  id: ClothingMaskClownBaseNIBS
+  id: ClothingMaskClownBaseNERD
   name: Strange clown mask
   description: Hehe.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Mask/clownnibs.rsi
+    sprite: _Harmony/Clothing/Mask/clownNERD.rsi
   - type: Clothing
-    sprite: _Harmony/Clothing/Mask/clownnibs.rsi
+    sprite: _Harmony/Clothing/Mask/clownNERD.rsi
   - type: BreathMask
   - type: IdentityBlocker
   - type: Tag

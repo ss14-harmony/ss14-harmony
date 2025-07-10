@@ -148,9 +148,9 @@
   description: You feel like you are a part of a digital circus.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/jester3.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/jesterPOMNI.rsi
   - type: Clothing
-    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/jester3.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/jesterPOMNI.rsi
 
 - type: entity
   parent: [ClothingUniformBase]
@@ -159,6 +159,6 @@
   description: You feel like you are a part of CHAOS.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/jester4.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/jesterJEVIL.rsi
   - type: Clothing
-    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/jester4.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/jesterJEVIL.rsi

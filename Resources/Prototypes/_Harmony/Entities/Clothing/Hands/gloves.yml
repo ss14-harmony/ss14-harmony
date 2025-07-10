@@ -68,8 +68,8 @@
   description: Regular gloves, seems someone mixxed the pair..
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Hands/Gloves/Color/jester3.rsi
+    sprite: _Harmony/Clothing/Hands/Gloves/Color/jesterPOMNI.rsi
   - type: Clothing
-    sprite: _Harmony/Clothing/Hands/Gloves/Color/jester3.rsi
+    sprite: _Harmony/Clothing/Hands/Gloves/Color/jesterPOMNI.rsi
   - type: Fiber
-    fiberColor: fibers-red
+    fiberColor: fibers-redblue

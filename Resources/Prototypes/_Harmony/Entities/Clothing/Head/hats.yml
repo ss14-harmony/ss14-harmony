@@ -175,18 +175,18 @@
   description: A hat with bells, it feels digital.
   components:
     - type: Sprite
-      sprite: _Harmony/Clothing/Head/Hats/jester3.rsi
+      sprite: _Harmony/Clothing/Head/Hats/jesterPOMNI.rsi
     - type: Clothing
-      sprite: _Harmony/Clothing/Head/Hats/jester3.rsi
+      sprite: _Harmony/Clothing/Head/Hats/jesterPOMNI.rsi
 
 - type: entity
   parent: ClothingHeadHatJester
   id: ClothingHeadHatJesterJevil
   components:
     - type: Sprite
-      sprite: _Harmony/Clothing/Head/Hats/jester4.rsi
+      sprite: _Harmony/Clothing/Head/Hats/jesterJEVIL.rsi
     - type: Clothing
-      sprite: _Harmony/Clothing/Head/Hats/jester4.rsi
+      sprite: _Harmony/Clothing/Head/Hats/jesterJEVIL.rsi
     - type: HideLayerClothing
       layers:
         Hair: HEAD
