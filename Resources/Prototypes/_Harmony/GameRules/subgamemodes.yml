@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseGameRule
-  id: BloodBrothers
+  id: BloodBounds
   components:
   - type: GameRule
     minPlayers: 10
@@ -8,25 +8,25 @@
     delay:
       min: 240
       max: 420
-  - type: BloodBrotherRule
+  - type: BloodBoundRule
   - type: AntagRandomObjectives
     sets:
-    - groups: BloodBrotherObjectiveGroups
+    - groups: BloodBoundObjectiveGroups
     maxDifficulty: 7.5
   - type: AntagSelection
-    agentName: blood-brothers-round-end-agent-name
+    agentName: blood-bounds-round-end-agent-name
     selectionTime: IntraPlayerSpawn
     definitions:
-    - prefRoles: [ BloodBrother ]
+    - prefRoles: [ BloodBound ]
       max: 1
       playerRatio: 1
       allowNonHumans: true
       briefing:
-        text: blood-brother-initial-role-greeting
+        text: blood-bound-initial-role-greeting
         color: MediumVioletRed
-        sound: /Audio/_Harmony/Misc/blood_brother_greeting.ogg
+        sound: /Audio/_Harmony/Misc/blood_bound_greeting.ogg
       components:
-      - type: BloodBrother
-      - type: InitialBloodBrother
+      - type: BloodBound
+      - type: InitialBloodBound
       mindRoles:
-      - MindRoleBloodBrother
+      - MindRoleBloodBound

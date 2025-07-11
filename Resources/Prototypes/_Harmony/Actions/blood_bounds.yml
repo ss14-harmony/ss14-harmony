@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseAction
-  id: ActionBloodBrotherConvert
+  id: ActionBloodBoundConvert
   name: Convert
-  description: Convert a crewmember to your brotherhood.
+  description: Bind a crewmember to your blood.
   components:
   - type: Action
     icon:
@@ -11,7 +11,7 @@
     itemIconStyle: BigAction
   - type: TargetAction
   - type: EntityTargetAction
-    event: !type:BloodBrotherConvertActionEvent
+    event: !type:BloodBoundConvertActionEvent
     whitelist:
       components:
       - HumanoidAppearance
@@ -19,7 +19,7 @@
 
 - type: entity
   parent: BaseAction
-  id: ActionBloodBrotherCheckConvert
+  id: ActionBloodBoundCheckConvert
   name: Check If Convertible
   description: Check if a crewmember is susceptible to conversion.
   components:
@@ -28,7 +28,7 @@
     itemIconStyle: BigAction
   - type: TargetAction
   - type: EntityTargetAction
-    event: !type:BloodBrotherCheckConvertActionEvent
+    event: !type:BloodBoundCheckConvertActionEvent
     whitelist:
       components:
       - HumanoidAppearance

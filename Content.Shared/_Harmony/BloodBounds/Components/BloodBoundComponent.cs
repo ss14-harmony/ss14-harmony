@@ -2,17 +2,17 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Harmony.BloodBrothers.Components;
+namespace Content.Shared._Harmony.BloodBounds.Components;
 
 [RegisterComponent, NetworkedComponent]
 [AutoGenerateComponentState]
-public sealed partial class BloodBrotherComponent : Component
+public sealed partial class BloodBoundComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public EntityUid? Brother;
+    public EntityUid? Bound;
 
     [DataField]
-    public ProtoId<FactionIconPrototype> BloodBrotherIcon = "BloodBrotherFaction";
+    public ProtoId<FactionIconPrototype> BloodBoundIcon = "BloodBoundFaction";
 
     public override bool SessionSpecific => true;
 }

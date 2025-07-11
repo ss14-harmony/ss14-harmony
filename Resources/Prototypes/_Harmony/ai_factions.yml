@@ -1,5 +1,5 @@
 - type: npcFaction
-  id: BloodBrother
+  id: BloodBound
   hostile:
   - NanoTrasen
   - Zombie
