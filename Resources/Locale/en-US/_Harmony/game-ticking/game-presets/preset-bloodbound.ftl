@@ -6,13 +6,13 @@ blood-bound-round-end-no-mind = [color=white]{CAPITALIZE($name)}[/color] ([color
 blood-bound-round-end = [color=white]{CAPITALIZE($name)}[/color] ([color=gray]{$username}[/color]) was oath-bound with [color=white]{$boundName}[/color] ([color=gray]{$boundUsername}[/color]).
 
 blood-bound-initial-role-greeting =
-    You are a blood binder.
+    You are a blood bound.
     You have been given the ability to take a blood oath with one member of the crew.
     Use this ability wisely and finish your objectives given to you by an anonymous source.
 
 blood-bound-role-greeting =
     You have been sworn into a blood oath.
-    Listen to your blood binder and help them accomplish their objectives
+    Listen to your blood bound and help them accomplish their objectives
 
 blood-bound-briefing = Collaborate with your blood-bound to accomplish all your objectives.
 
