@@ -12,7 +12,7 @@ using Content.Server.Popups;
 using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
 using Content.Server.Stunnable;
-using Content.Shared._Harmony.BloodBounds.Components;
+using Content.Shared._Harmony.BloodOath.Components;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;

@@ -1,11 +1,11 @@
-﻿using Content.Shared._Harmony.BloodBounds.Components;
-using Content.Shared._Harmony.BloodBounds.EntitySystems;
+﻿using Content.Shared._Harmony.BloodOath.Components;
+using Content.Shared._Harmony.BloodOath.EntitySystems;
 using Content.Shared.Antag;
 using Content.Shared.StatusIcon.Components;
 using Robust.Client.Player;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._Harmony.BloodBounds.EntitySystems;
+namespace Content.Client._Harmony.BloodOath.EntitySystems;
 
 public sealed class BloodBoundSystem : SharedBloodBoundSystem
 {

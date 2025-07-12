@@ -2,7 +2,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Harmony.BloodBounds.Components;
+namespace Content.Shared._Harmony.BloodOath.Components;
 
 [RegisterComponent, NetworkedComponent]
 [AutoGenerateComponentState]

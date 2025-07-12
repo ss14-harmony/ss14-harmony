@@ -1,4 +1,4 @@
-﻿using Content.Shared._Harmony.BloodBounds.EntitySystems;
+﻿using Content.Shared._Harmony.BloodOath.EntitySystems;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
 using Content.Shared.NPC.Prototypes;
@@ -8,7 +8,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Harmony.BloodBounds.Components;
+namespace Content.Shared._Harmony.BloodOath.Components;
 
 /// <summary>
 /// Signifies that an entity is the blood bound chosen by a game-rule.

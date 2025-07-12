@@ -1,10 +1,10 @@
-﻿using Content.Shared._Harmony.BloodBounds.Components;
+﻿using Content.Shared._Harmony.BloodOath.Components;
 using Content.Shared.Actions;
 using Content.Shared.Antag;
 using Robust.Shared.GameStates;
 using Robust.Shared.Player;
 
-namespace Content.Shared._Harmony.BloodBounds.EntitySystems;
+namespace Content.Shared._Harmony.BloodOath.EntitySystems;
 
 public abstract class SharedBloodBoundSystem : EntitySystem
 {
