@@ -40,7 +40,7 @@ public sealed partial class AdminVerbSystem
 
     // Harmony start
     [ValidatePrototypeId<EntityPrototype>]
-    private const string DefaultBloodBoundRule = "BloodBounds";
+    private const string DefaultBloodBoundRule = "BloodBound";
     // Harmony end
 
     [ValidatePrototypeId<StartingGearPrototype>]
