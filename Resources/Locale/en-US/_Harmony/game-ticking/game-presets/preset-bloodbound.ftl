@@ -1,4 +1,4 @@
-blood-bounds-round-end-agent-name = blood bound
+blood-bound-round-end-agent-name = blood bound
 
 objective-issuer-blood-bound = [color=mediumvioletred]The Blood Oath[/color]
 

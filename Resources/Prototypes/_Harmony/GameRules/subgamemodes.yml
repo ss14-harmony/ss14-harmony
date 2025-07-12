@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseGameRule
-  id: BloodBounds
+  id: BloodBound
   components:
   - type: GameRule
     minPlayers: 10
@@ -14,7 +14,7 @@
     - groups: BloodBoundObjectiveGroups
     maxDifficulty: 7.5
   - type: AntagSelection
-    agentName: blood-bounds-round-end-agent-name
+    agentName: blood-bound-round-end-agent-name
     selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ BloodBound ]
