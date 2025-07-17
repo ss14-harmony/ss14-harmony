@@ -765,15 +765,16 @@
   color: "#ba7d7d"
   metabolisms:
     Medicine:
+      metabolismRate: 0.2 # Harmony Change, roughly halves the rate of tranex, gives it more applications
       effects:
       # Medium-large quantities can hurt you instead,
       # but still technically stop your bleeding.
       - !type:ModifyBleedAmount
-        amount: -1.5
+        amount: -2 # Harmony Change, buffs Tranex
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
-          min: 15
+          min: 20 # Harmony Change, Increased to compensate for reduced Metabolism
         damage:
           types:
             Bloodloss: 3
@@ -1058,7 +1059,7 @@
       - !type:HealthChange
         damage:
           types:
-            Piercing: -4
+            Piercing: -3 # Harmony Change, Nerfs Punct
             Blunt: 0.1
       - !type:HealthChange
         conditions:
