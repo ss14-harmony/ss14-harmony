@@ -112,7 +112,7 @@ public sealed class PleebnarTelepathySystem : SharedPleebnarTelepathySystem
         entity.Comp.PleebnarVison = visProto.VisionString;
         entity.Comp.PleebnarVisonName = visProto.Name;
         entity.Comp.PleebnarVisonID = visProto.ID;
-        _popupSystem.PopupEntity(Loc.GetString("pleebnar-telepathy-select")+" "+Loc.GetString(entity.Comp.PleebnarVisonName),entity.Owner,entity.Owner,PopupType.Small);
+        _popupSystem.PopupEntity(Loc.GetString("pleebnar-telepathy-select",("vision", Loc.GetString(entity.Comp.PleebnarVisonName))),entity.Owner,entity.Owner,PopupType.Small);
         UpdateUI(entity);
     }
 
