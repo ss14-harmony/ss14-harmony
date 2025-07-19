@@ -20,7 +20,7 @@
   cost: 1
   components:
     - type: LightweightDrunk
-      boozeStrengthMultiplier: 0.5
+      boozeStrengthMultiplier: 0.75
       #start of harmony specific tags
     - type: AddTagOnMapInit
       tags:
