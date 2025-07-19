@@ -1,3 +1,15 @@
+﻿- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateX4Bundle
+  name: syndicate X-4 bundle
+  suffix: Harmony
+  description: Contains a lot of X-4 charges.
+  components:
+  - type: StorageFill
+    contents:
+    - id: X4
+      amount: 4
+
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
   id: ClothingBackpackDuffelSyndicateFilledBloodRedEnergyCarbineHarmony
@@ -21,3 +33,15 @@
     - id: WeaponShotgunHushpup
     - id: BoxLethalshot
     - id: TreasureCoinIron
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateFilledDMR
+  name: Bandit bundle
+  description: You're on your own, Noble. Contains a Bandit DMR bundled with 2 DMR magazines.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleBandit
+    - id: MagazineLightRifleCaseless
+      amount: 2

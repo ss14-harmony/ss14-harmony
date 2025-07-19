@@ -23,6 +23,7 @@
     - id: SnakeSpawn
     - id: SpiderClownSpawn
     - id: SpiderSpawn
+    - id: CarpMigration # Harmony Change
     - id: VentClog
 
 - type: entityTable
@@ -42,6 +43,7 @@
     - id: LoneOpsSpawn
     - id: DerelictCyborgSpawn
     - id: WizardSpawn
+    - id: BingleSpawn # Harmony change
 
 - type: entity
   id: BaseStationEvent

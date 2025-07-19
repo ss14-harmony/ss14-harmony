@@ -11,7 +11,7 @@
 
 # Converted blood brother
 - type: entity
-  parent: [BaseBloodBrotherObjective, BaseHelpProgressObjective]
+  parent: [BaseBloodBrotherObjective, BaseTargetObjective]
   id: BloodBrotherConvertedObjective
   name: Help your brother.
   description: Assist your brother in completing all of their objectives no matter the cost.

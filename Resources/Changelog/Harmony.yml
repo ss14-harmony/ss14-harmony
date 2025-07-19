@@ -2097,3 +2097,89 @@ Entries:
     changes:
     - type: Remove
       message: Removed flagship wreck
+  - id: 806
+    author: youtissoum
+    time: '2025-06-24T13:35:17.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/806
+    changes:
+    - type: Fix
+      message: Blood brothers will no longer fail to convert people with kill objectives
+  - id: 371
+    author: Ermucat
+    time: '2025-06-27T21:03:33.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/371
+    changes:
+    - type: Fix
+      message: The criminal records console will no longer show error icons for harmony specific statuses.
+  - id: 741
+    author: Ermucat
+    time: '2025-06-29T15:56:43.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/741
+    changes:
+    - type: Add
+      message: Added new carp migration event.
+  - id: 764
+    author: BoskiYourk
+    time: '2025-06-29T15:58:03.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/764
+    changes:
+    - type: Tweak
+      message: Adds ammo back to the SMG and shotgun crates.
+  - id: 786
+    author: BoskiYourk
+    time: '2025-06-30T14:19:39.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/786
+    changes:
+    - type: Tweak
+      message: Updates the Energy Carbine's Unstable Energy Cartridge.
+  - id: 727
+    author: Ermucat
+    time: '2025-06-30T14:32:21.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/727
+    changes:
+    - type: Add
+      message: Nukies now have X-4, a stronger C-4, in their uplinks.
+    - type: Tweak
+      message: C-4 is now less powerfful.
+  - id: 471
+    author: Ermucat
+    time: '2025-06-30T14:32:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/471
+    changes:
+    - type: Add
+      message: Added the staff of slipping to the wizard's grimoire.
+  - id: 781
+    author: kleinerstation13
+    time: '2025-07-02T15:58:51.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/781
+    changes:
+    - type: Tweak
+      message: Changed the hristov's firing sound.
+  - id: 508
+    author: kleinerstation13
+    time: '2025-07-04T15:38:26.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/508
+    changes:
+    - type: Add
+      message: Added a syndicate support cyborg, available to Nuclear Operatives for 25 TC.
+  - id: 545
+    author: TheSecondLord
+    time: '2025-07-04T15:38:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/545
+    changes:
+    - type: Add
+      message: Added an item curse spell to the wizard's grimoire.
+  - id: 577
+    author: kleinerstation13
+    time: '2025-07-04T15:40:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/577
+    changes:
+    - type: Add
+      message: Added a semi-auto DMR to the uplink.
+  - id: 482
+    author: Ermucat
+    time: '2025-07-05T14:40:54.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/482
+    changes:
+    - type: Add
+      message: Added bingles.
