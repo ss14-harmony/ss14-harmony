@@ -2,8 +2,8 @@
 - type: entity
   id: IronRockStation
   parent: IronRock
-  suffix: Station
-  description: An asteroid.
+  suffix: Station, Harmony
+  description: A rocky asteroid.
   components:
   - type: OreVein
     oreChance: 0.33 # Less ore than IronRockMining, comparable to the base asteroid

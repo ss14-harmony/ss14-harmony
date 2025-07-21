@@ -3,8 +3,8 @@
   parent: OreBase
   id: Geode
   name: geode
-  description: a pretty-looking formation of crystals inside a rock housing. looks expensive.
-  suffix: Full
+  description: A pretty-looking formation of crystals inside a rock housing. It looks expensive.
+  suffix: Full, Harmony
   components:
   - type: Stack
     stackType: Geode
@@ -20,7 +20,7 @@
 - type: entity
   parent: Geode
   id: Geode1
-  suffix: Single
+  suffix: Single, Harmony
   components:
   - type: Stack
     count: 1
@@ -30,7 +30,8 @@
   parent: BaseItem
   id: BuriedCache
   name: buried cache
-  description: a buried tube, filled with lost treasure. it has been aged by time.
+  description: A buried tube, filled with lost treasure. It has been aged by time.
+  suffix: Harmony
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Materials/buried_cache.rsi
