@@ -57,6 +57,10 @@
   # Also ZombieComponent overwrites the old replacement accent, because you can only have one at a time.
   - RussianAccent
   - ScrambledAccent
+  # harmony changes
+  - Hypophonia
+  - IlleismAccent
+  # end harmony changes
   - SkeletonAccent
   - SlurredAccent
   - SouthernAccent
