@@ -1,0 +1,43 @@
+#Snacks
+
+- type: entity
+  name: Slim-John
+  parent: BaseItem
+  id: FoodSnackSlimJohn
+  description: Might outlast the universe, unless you get to it first!
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Consumable/Food/snacks.rsi
+    state: slimjohn
+  - type: Item
+    heldPrefix: slimjohn
+    size: Tiny
+  - type: Tag
+    tags:
+    - FoodSnack
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodPacketSlimJohnTrash
+    - id: FoodMeatMeatStick
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+#Trash
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketSlimJohnTrash
+  name: Slim-John
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Consumable/Food/snacks.rsi
+    state: slimjohn-trash
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: trash-inhand-left
+        color: "#FF1818"
+      right:
+      - state: trash-inhand-right
+        color: "#FF1818"
