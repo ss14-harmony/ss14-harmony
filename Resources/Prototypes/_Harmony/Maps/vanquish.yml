@@ -3,7 +3,7 @@
   mapName: 'vanquish'
   mapPath: /Maps/_Harmony/vanquish.yml
   minPlayers: 0
-  maxPlayers: 15
+  maxPlayers: 10
   stations:
     Akatsumi:
       stationProto: StandardNanotrasenStation
