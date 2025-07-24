@@ -7,6 +7,7 @@
     DrinkEnergyDrinkCan: 4
     FoodSnackPopcorn: 3
     FoodSnackEnergy: 3
+    FoodSnackSlimJohn: 3 #Harmony change.
     CigPackMixed: 2
   contrabandInventory:
     FoodSnackDanDanNoodles: 3

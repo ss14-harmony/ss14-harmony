@@ -1,6 +1,6 @@
 - type: entity
   parent: BasePlushie
-  id: SlimJohnPlushie
+  id: PlushieSlimJohn
   name: Slim-John Plushie
   description: A delicious-looking Slim-Jim, made into a marketable toy!
   components:

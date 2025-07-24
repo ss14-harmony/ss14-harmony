@@ -49,6 +49,7 @@
     - id: FoodSnackPopcorn
     - id: FoodSnackRaisins
     - id: FoodSnackSemki
+    - id: FoodSnackSlimJohn #Harmony change.
     - id: FoodSnackSus
     - id: FoodSnackSyndi
     - id: FoodSnackSwirlLollipop
