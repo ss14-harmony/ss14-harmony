@@ -11,6 +11,12 @@
   - type: Sprite
     sprite: _Harmony/Objects/Consumable/Food/Meat/meatstick.rsi
     state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -90
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 0
   - type: Item
     heldPrefix: icon
     size: Tiny

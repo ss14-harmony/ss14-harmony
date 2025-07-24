@@ -9,6 +9,12 @@
   - type: Sprite
     sprite: _Harmony/Objects/Consumable/Food/Snacks/slimjohn.rsi
     state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -90
+    attackRate: 2
+    damage:
+      types:
+        Blunt: 0
   - type: Item
     heldPrefix: icon
     size: Tiny
