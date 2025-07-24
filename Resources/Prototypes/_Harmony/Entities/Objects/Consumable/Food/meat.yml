@@ -9,8 +9,16 @@
     - Cooked
     - Meat
   - type: Sprite
-    sprite: _Harmony/Objects/Consumable/Food/meat.rsi
-    state: meatstick
+    sprite: _Harmony/Objects/Consumable/Food/Meat/meatstick.rsi
+    state: icon
+  - type: Item
+    heldPrefix: icon
+    size: Tiny
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: SolutionContainerManager
     solutions:
       food:
@@ -19,3 +27,8 @@
           Quantity: 5
         - ReagentId: Protein
           Quantity: 5
+  - type: Clothing
+    sprite: _Harmony/Objects/Consumable/Food/Meat/meatstick.rsi
+    quickEquip: false
+    slots:
+    - suitStorage

@@ -7,11 +7,16 @@
   description: Might outlast the universe, unless you get to it first!
   components:
   - type: Sprite
-    sprite: _Harmony/Objects/Consumable/Food/snacks.rsi
-    state: slimjohn
+    sprite: _Harmony/Objects/Consumable/Food/Snacks/slimjohn.rsi
+    state: icon
   - type: Item
-    heldPrefix: slimjohn
+    heldPrefix: icon
     size: Tiny
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: Tag
     tags:
     - FoodSnack
@@ -21,6 +26,11 @@
     - id: FoodMeatMeatStick
     sound:
       path: /Audio/Effects/unwrap.ogg
+  - type: Clothing
+    sprite: _Harmony/Objects/Consumable/Food/Snacks/slimjohn.rsi
+    quickEquip: false
+    slots:
+    - suitStorage
 
 #Trash
 
@@ -31,8 +41,8 @@
   name: Slim-John
   components:
   - type: Sprite
-    sprite: _Harmony/Objects/Consumable/Food/snacks.rsi
-    state: slimjohn-trash
+    sprite: _Harmony/Objects/Consumable/Food/Snacks/slimjohn.rsi
+    state: trash
   - type: Item
     inhandVisuals:
       left:
