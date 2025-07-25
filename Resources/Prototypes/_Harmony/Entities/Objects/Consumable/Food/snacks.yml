@@ -4,7 +4,7 @@
   name: Slim-John
   parent: BaseItem
   id: FoodSnackSlimJohn
-  description: Might outlast the universe, unless you get to it first!
+  description: A protein-packed snack. Might outlast the universe, unless you get to it first!
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Consumable/Food/Snacks/slimjohn.rsi
@@ -18,6 +18,8 @@
   - type: Item
     heldPrefix: icon
     size: Tiny
+    shape:
+    - 0,0,0,1
     inhandVisuals:
       left:
       - state: inhand-left
@@ -26,6 +28,7 @@
   - type: Tag
     tags:
     - FoodSnack
+    - SlimJohnSingle
   - type: SpawnItemsOnUse
     items:
     - id: FoodPacketSlimJohnTrash

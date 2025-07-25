@@ -20,6 +20,8 @@
   - type: Item
     heldPrefix: icon
     size: Tiny
+    shape:
+    - 0,0,0,1
     inhandVisuals:
       left:
       - state: inhand-left
@@ -30,9 +32,9 @@
       food:
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 2
         - ReagentId: Protein
-          Quantity: 5
+          Quantity: 8
   - type: Clothing
     sprite: _Harmony/Objects/Consumable/Food/Meat/meatstick.rsi
     quickEquip: false

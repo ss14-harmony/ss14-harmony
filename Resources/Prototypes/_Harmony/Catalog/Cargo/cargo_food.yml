@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: CargoSlimJohn
+  icon:
+    sprite: _Harmony/Objects/Consumable/Food/Snacks/slimjohn.rsi
+    state: icon
+  product: CrateCargoSlimJohn
+  cost: 10000
+  category: cargoproduct-category-name-cargo
+  group: market
