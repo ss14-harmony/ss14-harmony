@@ -201,6 +201,7 @@ entities:
       - 513
       - 512
       - 526
+      - 505
 - proto: Airlock
   entities:
   - uid: 152
@@ -1920,8 +1921,6 @@ entities:
       pos: 9.5,14.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 105
       - 174
@@ -1934,8 +1933,6 @@ entities:
       pos: 4.5,10.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 105
       - 174
@@ -1945,8 +1942,6 @@ entities:
       pos: 10.5,11.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 105
       - 174
@@ -1956,8 +1951,6 @@ entities:
       pos: 9.5,11.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 105
       - 174
@@ -1968,8 +1961,6 @@ entities:
       pos: 14.5,10.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 105
       - 174
@@ -2391,8 +2382,8 @@ entities:
       pos: 10.5,12.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
+      deviceLists:
+      - 105
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 506
@@ -2402,8 +2393,6 @@ entities:
       pos: 8.5,15.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 105
     - type: AtmosPipeColor
@@ -2415,8 +2404,6 @@ entities:
       pos: 12.5,19.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 105
     - type: AtmosPipeColor
@@ -2428,8 +2415,6 @@ entities:
       pos: 8.5,19.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 105
     - type: AtmosPipeColor
@@ -2441,8 +2426,6 @@ entities:
       pos: 6.5,16.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 105
     - type: AtmosPipeColor
@@ -2454,8 +2437,6 @@ entities:
       pos: 5.5,14.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 105
     - type: AtmosPipeColor
@@ -2467,8 +2448,6 @@ entities:
       pos: 6.5,8.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 105
     - type: AtmosPipeColor
@@ -2480,8 +2459,6 @@ entities:
       pos: 12.5,8.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 105
     - type: AtmosPipeColor
@@ -2492,8 +2469,6 @@ entities:
       pos: 12.5,13.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 105
     - type: AtmosPipeColor
@@ -2504,8 +2479,6 @@ entities:
       pos: 12.5,16.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 105
     - type: AtmosPipeColor
@@ -2517,8 +2490,6 @@ entities:
       pos: 15.5,16.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 105
     - type: AtmosPipeColor
@@ -2530,8 +2501,6 @@ entities:
       pos: 9.5,3.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 105
     - type: AtmosPipeColor
