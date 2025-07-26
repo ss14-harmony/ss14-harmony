@@ -4,8 +4,8 @@ meta:
   engineVersion: 262.0.0
   forkId: harmony
   forkVersion: 21a367180c2409895a6d447f24f63f4d3f8d27df
-  time: 07/26/2025 18:26:28
-  entityCount: 622
+  time: 07/26/2025 21:41:15
+  entityCount: 621
 maps: []
 grids:
 - 1
@@ -185,32 +185,22 @@ entities:
       parent: 1
     - type: DeviceList
       devices:
-      - 511
+      - 252
       - 251
       - 104
       - 50
       - 45
-      - 252
-      - 526
-      - 512
-      - 505
+      - 511
+      - 510
+      - 509
       - 506
       - 508
       - 507
+      - 515
       - 514
       - 513
-      - 515
-      - 509
-      - 510
-  - uid: 231
-    components:
-    - type: Transform
-      pos: 3.5,11.5
-      parent: 1
-    - type: DeviceList
-      devices:
-      - 511
       - 512
+      - 526
 - proto: Airlock
   entities:
   - uid: 152
@@ -1916,11 +1906,11 @@ entities:
       parent: 1
     - type: DeviceList
       devices:
+      - 252
       - 251
       - 104
       - 50
       - 45
-      - 252
 - proto: Firelock
   entities:
   - uid: 252
@@ -1930,9 +1920,11 @@ entities:
       pos: 9.5,14.5
       parent: 1
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
-      - 174
       - 105
+      - 174
 - proto: FirelockEdge
   entities:
   - uid: 45
@@ -1942,27 +1934,33 @@ entities:
       pos: 4.5,10.5
       parent: 1
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
-      - 174
       - 105
+      - 174
   - uid: 50
     components:
     - type: Transform
       pos: 10.5,11.5
       parent: 1
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
-      - 174
       - 105
+      - 174
   - uid: 104
     components:
     - type: Transform
       pos: 9.5,11.5
       parent: 1
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
-      - 174
       - 105
+      - 174
   - uid: 251
     components:
     - type: Transform
@@ -1970,9 +1968,11 @@ entities:
       pos: 14.5,10.5
       parent: 1
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
-      - 174
       - 105
+      - 174
 - proto: FloorDrain
   entities:
   - uid: 504
@@ -2393,8 +2393,6 @@ entities:
     - type: DeviceNetwork
       configurators:
       - invalid
-      deviceLists:
-      - 105
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 506
@@ -2472,7 +2470,6 @@ entities:
       configurators:
       - invalid
       deviceLists:
-      - 231
       - 105
     - type: AtmosPipeColor
       color: '#0055CCFF'
@@ -2486,7 +2483,6 @@ entities:
       configurators:
       - invalid
       deviceLists:
-      - 231
       - 105
     - type: AtmosPipeColor
       color: '#0055CCFF'
