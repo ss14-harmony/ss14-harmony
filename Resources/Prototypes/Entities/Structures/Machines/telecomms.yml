@@ -201,6 +201,7 @@
       - EncryptionKeySecurity
       - EncryptionKeyService
       - EncryptionKeyCommand
+      - EncryptionKeySalvage # Harmony Change, Adds Salv Comms
 
 - type: entity
   parent: TelecomServer
@@ -215,12 +216,13 @@
 - type: entity
   parent: TelecomServer
   id: TelecomServerFilledCargo
-  suffix: Cargo
+  suffix: Cargo, Salvage # Harmony Change, Adds Salv Comms
   components:
   - type: ContainerFill
     containers:
       key_slots:
       - EncryptionKeyCargo
+      - EncryptionKeySalvage
 
 - type: entity
   parent: TelecomServer

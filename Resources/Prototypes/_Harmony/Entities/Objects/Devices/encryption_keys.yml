@@ -1,0 +1,35 @@
+# Salv Key
+- type: entity
+  parent: [EncryptionKey, BaseCargoContraband]
+  id: EncryptionKeySalvage
+  name: salvage encryption key
+  description: An encryption key used by salvagers.
+  suffix: Harmony
+  components:
+  - type: EncryptionKey
+    channels:
+    - Salvage
+    defaultChannel: Salvage
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: miner_label
+  - type: Tag
+    tags:
+    - EncryptionSalvage
+
+# Salv-Cargo Key
+- type: entity
+  parent: EncryptionKeySalvage
+  id: EncryptionKeySalvageCargo
+  name: salvage-cargo encryption key
+  components:
+  - type: EncryptionKey
+    channels:
+    - Salvage
+    - Supply
+    defaultChannel: Salvage
+  - type: Tag
+    tags:
+    - EncryptionSalvage
+    - EncryptionCargo

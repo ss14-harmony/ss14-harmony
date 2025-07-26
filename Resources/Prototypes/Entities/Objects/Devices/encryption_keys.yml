@@ -78,6 +78,7 @@
     - Security
     - Service
     - Supply
+    - Salvage # Harmony Change - Adds Salv Comms Channel
     defaultChannel: Command
   - type: Sprite
     layers:
