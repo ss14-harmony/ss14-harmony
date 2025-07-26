@@ -31,5 +31,4 @@
     defaultChannel: Salvage
   - type: Tag
     tags:
-    - EncryptionSalvage
     - EncryptionCargo

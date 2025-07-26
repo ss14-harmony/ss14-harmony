@@ -20,6 +20,10 @@
     - id: AstroNavCartridge
     - id: ClothingHandsKnuckleDustersQM
     - id: MailTeleporterMachineCircuitboard
+    # Harmony Change Start - Adds unique salv comms
+    - id: BoxEncryptionKeySalvage
+    - id: RadioHandheldMining
+    # Harmony Change End
 
 - type: entity
   id: LockerQuarterMasterFilled

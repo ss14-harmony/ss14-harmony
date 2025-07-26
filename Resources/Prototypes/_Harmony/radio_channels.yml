@@ -4,4 +4,4 @@
   name: chat-radio-salvage
   keycode: "l"
   frequency: 1340 # seems to be no rhyme or reason to these.
-  color: "#c4686d" # god picking colours sucks
+  color: "#FF91A4" # god picking colours sucks

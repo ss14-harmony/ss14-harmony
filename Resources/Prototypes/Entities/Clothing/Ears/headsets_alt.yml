@@ -18,7 +18,10 @@
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyCargo
+      # Harmony Change Start - Adds Salv Comms Channel
+      # - EncryptionKeyCargo
+      - EncryptionKeySalvageCargo
+      # Harmony Change Ends
       - EncryptionKeyCommand
       - EncryptionKeyCommon
   - type: Sprite

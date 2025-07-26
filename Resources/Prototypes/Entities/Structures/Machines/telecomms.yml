@@ -221,8 +221,7 @@
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyCargo
-      - EncryptionKeySalvage
+      - EncryptionKeySalvageCargo
 
 - type: entity
   parent: TelecomServer

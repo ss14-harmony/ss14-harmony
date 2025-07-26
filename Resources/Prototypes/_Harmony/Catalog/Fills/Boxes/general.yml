@@ -1,0 +1,10 @@
+# Salv Comms
+- type: entity
+  name: salvage encryption key box
+  parent: BoxEncryptionKeyPassenger
+  id: BoxEncryptionKeySalvage
+  components:
+  - type: StorageFill
+    contents:
+      - id: EncryptionKeySalvage
+        amount: 4

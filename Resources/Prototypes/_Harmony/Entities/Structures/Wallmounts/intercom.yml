@@ -1,0 +1,28 @@
+# Adds Salv Comms
+
+## Cargo Only
+- type: entity
+  id: IntercomSupplyCargo
+  parent: Intercom
+  suffix: Cargo, Harmony
+  components:
+  - type: ContainerFill
+    containers:
+      board:
+      - IntercomElectronics
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyCargo
+
+- type: entity
+  id: IntercomSupplySalvage
+  parent: Intercom
+  suffix: Salvage, Harmony
+  components:
+  - type: ContainerFill
+    containers:
+      board:
+      - IntercomElectronics
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeySalvage

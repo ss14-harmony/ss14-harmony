@@ -7,7 +7,7 @@
     Flare: 4
     FlashlightLantern: 2
     HandheldGPSBasic: 2
-    RadioHandheld: 2
+    # RadioHandheld: 2 # Harmony Change - Handheld Radio > Mining Radio
     WeaponGrapplingGun: 4
     WeaponProtoKineticAccelerator: 4
 # Harmony change - Readed Floodlights, seismic charges, fultons, and fulton beacons.
@@ -15,6 +15,7 @@
     SeismicCharge: 2
     FultonBeacon: 1
     Fulton: 2
+    RadioHandheldMining: 2 # Adds salvage radio channel
 # End of Harmony change.
   contrabandInventory:
     PlushieCarp: 1

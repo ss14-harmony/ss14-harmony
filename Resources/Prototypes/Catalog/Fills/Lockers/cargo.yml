@@ -14,7 +14,10 @@
     - id: ClothingBeltUtilityFilled
     - id: SurvivalKnife
     - id: HandheldGPSBasic
-    - id: RadioHandheld
+  # Begin Harmony Change - Add unique salv comms
+    # - id: RadioHandheld
+    - id: RadioHandheldMining
+  # End Harmony Change - Add unique salv comms
     - id: SeismicCharge # Harmony change
     - id: AppraisalTool
 # Start of Harmony Change: Replaces the Fire Extinguisher with a minijetpack
