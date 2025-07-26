@@ -69,7 +69,6 @@
   - type: Clothing
     sprite: Clothing/Ears/Headsets/mining.rsi
 
-
 - type: entity
   parent: [ClothingHeadsetCargo, BaseCommandContraband]
   id: ClothingHeadsetQM

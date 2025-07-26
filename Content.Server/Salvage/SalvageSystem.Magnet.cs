@@ -16,7 +16,10 @@ public sealed partial class SalvageSystem
     [Dependency] private readonly IRuntimeLog _runtimeLog = default!;
 
     [ValidatePrototypeId<RadioChannelPrototype>]
-    private const string MagnetChannel = "Supply";
+    // Harmony Change Start - Adds Salvage Comms
+    // private const string MagnetChannel = "Supply";
+    private const string MagnetChannel = "Salvage";
+    // Harmony Change Ends
 
     private EntityQuery<SalvageMobRestrictionsComponent> _salvMobQuery;
     private EntityQuery<MobStateComponent> _mobStateQuery;
