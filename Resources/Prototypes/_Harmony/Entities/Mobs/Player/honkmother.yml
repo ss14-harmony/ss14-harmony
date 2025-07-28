@@ -36,7 +36,7 @@
       message: honkmother-has-risen
       sender: honkmother-has-risen-sender
       sound:
-        path: /Audio/Misc/narsie_rises.ogg
+        path: /Audio/_Harmony/Misc/honkmother_arrival.ogg
       color: red
     - type: CargoSellBlacklist
     # big honkmother needs to see the universe
