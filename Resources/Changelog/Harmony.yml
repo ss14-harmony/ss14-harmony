@@ -2176,3 +2176,10 @@ Entries:
     changes:
     - type: Add
       message: Added a semi-auto DMR to the uplink.
+  - id: 482
+    author: Ermucat
+    time: '2025-07-05T14:40:54.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/482
+    changes:
+    - type: Add
+      message: Added bingles.
