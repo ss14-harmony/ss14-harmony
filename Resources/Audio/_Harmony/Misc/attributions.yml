@@ -2,3 +2,9 @@
   license: "CC-BY-SA-3.0"
   copyright: "Taken from TG station as bloodcult_scribe.ogg"
   source: "https://github.com/tgstation/tgstation/commit/436ba869ebcd0b60b63973fb7562f447ee655205"
+
+- files: ["Honkmother_Arrival.ogg"]
+  license: "Public Domain"
+  copyright: "Taken from Library Of Congress and modify by _nonagon on Discord"
+  source: "https://www.loc.gov/item/jukebox-120678/"
+  
