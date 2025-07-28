@@ -2183,3 +2183,54 @@ Entries:
     changes:
     - type: Add
       message: Added bingles.
+  - id: 841
+    author: BlueMoon059
+    time: '2025-07-07T15:22:45.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/841
+    changes:
+    - type: Tweak
+      message: Bingles no longer announce their presence over the Central Command announcement console when they appear on station.
+  - id: 843
+    author: BlueMoon059
+    time: '2025-07-08T15:16:40.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/843
+    changes:
+    - type: Tweak
+      message: Fultons no longer vanish from containers when the container is damaged.
+  - id: 774
+    author: CollectionOfBones128
+    time: '2025-07-08T15:21:02.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/774
+    changes:
+    - type: Tweak
+      message: The healing-focused Nuclear Operative is now called the Nuclear Operative Medic.
+  - id: 860
+    author: kleinerstation13
+    time: '2025-07-17T01:40:19.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/860
+    changes:
+    - type: Tweak
+      message: The hushpup firerate and spread has been nerfed.
+  - id: 874
+    author: thejMark14
+    time: '2025-07-19T21:27:39.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/874
+    changes:
+    - type: Add
+      message: Many markings from Impstation, EE, and ATD have been added.
+    - type: Tweak
+      message: The marking limits have been increased.
+  - id: 882
+    author: kleinerstation13
+    time: '2025-07-23T01:06:03.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/882
+    changes:
+    - type: Tweak
+      message: The Bandit DMR has been resprited.
+  - id: 875
+    author: kleinerstation13
+    time: '2025-07-23T01:08:19.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/875
+    changes:
+    - type: Tweak
+      message: The hushpup has been resprited.
