@@ -12,10 +12,6 @@
   - type: Icon
     sprite: _CD/Mobs/Species/Avali/parts.rsi
     state: full
-  - type: Sprite
-    noRot: true
-    drawdepth: Mobs
-    scale: 0.8, 0.8
   - type: Body
     prototype: Avali
     requiredLegs: 2
@@ -88,7 +84,7 @@
     thermalRegulationTemperatureThreshold: 10
   - type: Metabolizer
     solutionOnBody: false
-    updateInterval: 0.5
+    updateInterval: 0.7 #Matches Arachnids but in reverse
     groups:
       - id: Medicine
       - id: Poison
