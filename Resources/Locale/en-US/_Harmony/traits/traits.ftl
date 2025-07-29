@@ -52,6 +52,9 @@ trait-hypophonia-desc = You can only whisper.
 trait-illeism-name = Illeism
 trait-illeism-desc = You seem to only be able to refer to yourself by name.
 
+trait-irish-accent-name = Irish accent
+trait-irish-accent-desc = Ya sap! Seems you got a pet hate fer rubbish!
+
 trait-scandinavian-name = Scandinavian accent
 trait-scandinavian-desc = You have to assemble the sentence yourself.
 
