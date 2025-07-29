@@ -1,6 +1,6 @@
-using Content.Server._DV.Speech.EntitySystems;
+using Content.Server._Harmony.Speech.EntitySystems;
 
-namespace Content.Server._DV.Speech.Components;
+namespace Content.Server._Harmony.Speech.Components;
 
 // Takes the ES and assigns the system and component to each other
 [RegisterComponent]

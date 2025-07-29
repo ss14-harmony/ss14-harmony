@@ -65,16 +65,14 @@
   - type: ReplacementAccent
     accent: italian
 
-#Harmony change start-Replaced by a new version
-#- type: trait
-#  id: FrenchAccent
-#  name: trait-french-name
-#  description: trait-french-desc
-#  category: SpeechTraits
-#  cost: 1
-#  components:
-#  - type: FrenchAccent
-#Harmony change end
+- type: trait
+  id: FrenchAccent
+  name: trait-french-name
+  description: trait-french-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: FrenchAccent
 
 - type: trait
   id: SpanishAccent
