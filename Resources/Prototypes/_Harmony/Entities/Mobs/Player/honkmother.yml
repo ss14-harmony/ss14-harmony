@@ -1,8 +1,9 @@
 - type: entity
   abstract: true
-  id: MobHonkmotherBase
+  id: MobHonkMotherBase
+  suffix: Harmony
   name: Honk Mother
-  description: 500-foot nightmare stitched from painted clown flesh
+  description: 500-foot nightmare stitched from painted clown flesh.
   components:
     - type: Sprite
       sprite: Mobs/Demons/honkmother.rsi
@@ -14,7 +15,7 @@
 
 # spawn animation, spawns actual honkmother when it ends
 - type: entity
-  parent: MobHonkmotherBase
+  parent: MobHonkMotherBase
   id: MobHonkmotherSpawn
   suffix: Spawn
   components:
@@ -29,7 +30,7 @@
       prototype: MobHonkmother
 
 - type: entity
-  parent: [MobNHonkmotherBase, BaseMob]
+  parent: [MobHonkMotherBase, BaseMob]
   id: MobHonkmother
   components:
     - type: AnnounceOnSpawn
