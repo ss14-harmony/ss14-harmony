@@ -27,7 +27,13 @@
   storage:
     back:
     - ClothingNeckHeadphones
-
+# Harmony Change Start: CardsPort
+- type: loadout
+  id: CardBoxBlack
+  storage:
+    back:
+    - CardBoxBlack
+# End Harmony Change
 # Toys
 - type: loadout
   id: PlushieLizard

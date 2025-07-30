@@ -118,6 +118,15 @@
       - id: BalloonCorgi
       - id: MysteryFigureBox
       - id: RubberChicken
+      # Start Harmony Change: Adds Playing Cards to Loot Table
+      - !type:GroupSelector
+        children:
+        - id: CardBoxBlack
+        - id: CardBoxNanotrasen
+        - id: CardBoxSyndicate
+          weight: 0.1
+      # End Harmony Change
+
       # Cult
       - !type:AllSelector
         children:
