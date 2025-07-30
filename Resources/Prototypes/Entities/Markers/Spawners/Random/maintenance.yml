@@ -56,7 +56,7 @@
       - id: ClothingHeadHatPaper
       - id: ClothingHeadHatPirate
       - id: ClothingMaskSterile
-      - id: ClothingNeckHeadphones
+      - id: ClothingMultipleHeadphones
       - id: ClothingNeckTieRed
       - id: ClothingOuterCoatGentle
       - !type:AllSelector
@@ -118,6 +118,15 @@
       - id: BalloonCorgi
       - id: MysteryFigureBox
       - id: RubberChicken
+      # Start Harmony Change: Adds Playing Cards to Loot Table
+      - !type:GroupSelector
+        children:
+        - id: CardBoxBlack
+        - id: CardBoxNanotrasen
+        - id: CardBoxSyndicate
+          weight: 0.1
+      # End Harmony Change
+
       # Cult
       - !type:AllSelector
         children:
@@ -172,6 +181,8 @@
       - id: ClothingUniformJumpsuitFamilyGuy
       - id: WristwatchGold
       - id: RubberStampGreytide
+      - id: MysteryLighterBox
+      - id: GoldenPersonalAI
 
 - type: entity
   name: Maint Loot Spawner

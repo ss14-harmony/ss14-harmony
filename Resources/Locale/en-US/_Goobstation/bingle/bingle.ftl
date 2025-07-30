@@ -11,7 +11,8 @@ bingle-verb-2 = Mumbles
 bingle-verb-3 = Harks
 bingle-verb-4 = Grumbles
 
-bingle-station-announcement = Bingle Bingle Bingle
+#Harmony Change - comments out announcement to make bingles a silent antag spawn.
+#bingle-station-announcement = Bingle Bingle Bingle
 
 ghost-role-information-bingle-name = Bingle
 ghost-role-information-bingle-description = The Pit is love. The Pit is life. The Pit must grow
