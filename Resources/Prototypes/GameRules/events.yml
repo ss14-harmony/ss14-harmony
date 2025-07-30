@@ -23,6 +23,7 @@
     - id: SnakeSpawn
     - id: SpiderClownSpawn
     - id: SpiderSpawn
+    - id: CarpMigration # Harmony Change
     - id: VentClog
 
 - type: entityTable
@@ -42,6 +43,7 @@
     - id: LoneOpsSpawn
     - id: DerelictCyborgSpawn
     - id: WizardSpawn
+    - id: BingleSpawn # Harmony change
 
 - type: entity
   id: BaseStationEvent
@@ -525,7 +527,7 @@
     earliestStart: 60
     weight: 2
     minimumPlayers: 35
-    duration: 1
+    duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end scrreen (not always "Neutral outcome!") and... ending the game if the station is nuked.
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml

@@ -15,3 +15,7 @@
     id: PrisonerPDA
     shoes: ClothingShoesColorBlack
     ears: ClothingHeadsetGrey
+
+- type: chameleonOutfit
+  id: PermaPrisonerChameleonOutfit
+  job: PermaPrisoner

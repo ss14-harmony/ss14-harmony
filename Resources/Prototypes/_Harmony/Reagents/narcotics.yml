@@ -1,0 +1,21 @@
+﻿- type: reagent
+  id: GlorpExtract
+  name: reagent-name-glorp-extract
+  group: Narcotics
+  desc: reagent-desc-glorp-extract
+  physicalDesc: reagent-physical-desc-syrupy
+  flavor: glorp
+  color: "#09ff00"
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 10
+        refresh: false
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2.5

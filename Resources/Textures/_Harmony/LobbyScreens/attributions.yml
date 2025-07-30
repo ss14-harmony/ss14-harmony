@@ -12,3 +12,8 @@
   license: "CC0-1.0"
   copyright: "Logan Avery on Twitter / @eli_sarek"
   source: "https://github.com/ss14-harmony/ss14-harmony"
+
+- files: ["harmonyscrapbook.webp"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Made by bi0nix (Discord)"
+  source: "https://github.com/ss14-harmony/ss14-harmony"

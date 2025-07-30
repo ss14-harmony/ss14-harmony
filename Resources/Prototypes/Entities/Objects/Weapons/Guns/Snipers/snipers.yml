@@ -46,6 +46,9 @@
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
+  - type: GunRequiresWield
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   name: Hristov
@@ -64,7 +67,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+      path: /Audio/_Harmony/Weapons/Guns/Gunshots/hristov_fire_alt.ogg # harmony - changed audio path
   - type: BallisticAmmoProvider
     whitelist:
       tags:
@@ -78,6 +81,8 @@
   - type: EyeCursorOffset
     maxOffset: 3
     pvsIncrease: 0.3
+  - type: StaticPrice
+    price: 3500
 
 - type: entity
   name: musket
@@ -116,6 +121,7 @@
     animation: WeaponArcThrust
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
+  - type: GunRequiresWield
 
 - type: entity
   name: flintlock pistol

@@ -27,6 +27,7 @@
       - id: ClothingHandsGlovesLatex
         # Harmony Change - Replaces black law jumpsuit with syndicate business suit
       - id: ClothingUniformJumpsuitSyndicateBusinessSuitHarmony
+      #- id: ClothingUniformJumpsuitLawyerBlack
         # Harmony Change end
       - id: BarberScissors
 
@@ -45,6 +46,7 @@
       - id: PhoneInstrumentSyndicate
         # Harmony Change - Replaces tacticool jumpsuit with syndicate business suit
       - id: ClothingUniformJumpsuitSyndicateBusinessSuitHarmony
+      #- id: ClothingUniformJumpsuitTacticool
         # Harmony Change end
       - id: ClothingOuterCoatJensen
       - id: ClothingHandsGlovesCombat

@@ -158,9 +158,11 @@
     - board
   - type: PlacementReplacement
     key: walls
-  - type: IconSmooth
-    key: walls
-    mode: NoSprite
+# Start of Harmony Change: Removes IconSmoothing from Airlocks
+#  - type: IconSmooth
+#    key: walls
+#    mode: NoSprite
+# End of Harmony Change
   - type: PaintableAirlock
     group: Standard
     department: Civilian

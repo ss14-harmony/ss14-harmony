@@ -158,6 +158,10 @@ namespace Content.Server.GameTicking
                     continue;
                 RaiseNetworkEvent(GetStatusMsg(playerSession), playerSession.Channel);
             }
+            // Harmony start - ready manifest
+            var playerToggledReady = new PlayerToggledReadyEvent();
+            RaiseLocalEvent(ref playerToggledReady);
+            // Harmony end - ready manifest
         }
 
         public void ToggleReady(ICommonSession player, bool ready)
@@ -176,6 +180,10 @@ namespace Content.Server.GameTicking
             var status = ready ? PlayerGameStatus.ReadyToPlay : PlayerGameStatus.NotReadyToPlay;
             _playerGameStatuses[player.UserId] = ready ? PlayerGameStatus.ReadyToPlay : PlayerGameStatus.NotReadyToPlay;
             RaiseNetworkEvent(GetStatusMsg(player), player.Channel);
+            // Harmony start - ready manifest
+            var playerToggledReady = new PlayerToggledReadyEvent();
+            RaiseLocalEvent(ref playerToggledReady);
+            // Harmony end - ready manifest
             // update server info to reflect new ready count
             UpdateInfoText();
         }
@@ -186,4 +194,9 @@ namespace Content.Server.GameTicking
         public bool UserHasJoinedGame(NetUserId userId)
             => PlayerGameStatuses.TryGetValue(userId, out var status) && status == PlayerGameStatus.JoinedGame;
     }
+
+    // Harmony start - ready manifest
+    [ByRefEvent]
+    public struct PlayerToggledReadyEvent;
+    // Harmony end - ready manifest
 }
