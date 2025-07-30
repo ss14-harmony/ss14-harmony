@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Numerics;
 using Content.Client.Examine;
+using Content.Client.Hands.Systems;
 using Content.Client.Strip;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
@@ -24,6 +25,7 @@ using Robust.Shared.Input;
 using Robust.Shared.Map;
 using static Content.Client.Inventory.ClientInventorySystem;
 using static Robust.Client.UserInterface.Control;
+using Content.Shared._EE.Strip.Components; // Harmony Change: EE
 
 namespace Content.Client.Inventory
 {
@@ -34,6 +36,7 @@ namespace Content.Client.Inventory
         [Dependency] private readonly IUserInterfaceManager _ui = default!;
 
         private readonly ExamineSystem _examine;
+        private readonly HandsSystem _hands;
         private readonly InventorySystem _inv;
         private readonly SharedCuffableSystem _cuffable;
         private readonly StrippableSystem _strippable;
@@ -65,6 +68,7 @@ namespace Content.Client.Inventory
         public StrippableBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
         {
             _examine = EntMan.System<ExamineSystem>();
+            _hands = EntMan.System<HandsSystem>();
             _inv = EntMan.System<InventorySystem>();
             _cuffable = EntMan.System<SharedCuffableSystem>();
             _strippable = EntMan.System<StrippableSystem>();
@@ -120,28 +124,28 @@ namespace Content.Client.Inventory
             {
                 // good ol hands shit code. there is a GuiHands comparer that does the same thing... but these are hands
                 // and not gui hands... which are different...
-                foreach (var hand in handsComp.Hands.Values)
+                foreach (var (id, hand) in handsComp.Hands)
                 {
                     if (hand.Location != HandLocation.Right)
                         continue;
 
-                    AddHandButton(hand);
+                    AddHandButton((Owner, handsComp), id, hand);
                 }
 
-                foreach (var hand in handsComp.Hands.Values)
+                foreach (var (id, hand) in handsComp.Hands)
                 {
                     if (hand.Location != HandLocation.Middle)
                         continue;
 
-                    AddHandButton(hand);
+                    AddHandButton((Owner, handsComp), id, hand);
                 }
 
-                foreach (var hand in handsComp.Hands.Values)
+                foreach (var (id, hand) in handsComp.Hands)
                 {
                     if (hand.Location != HandLocation.Left)
                         continue;
 
-                    AddHandButton(hand);
+                    AddHandButton((Owner, handsComp), id, hand);
                 }
             }
 
@@ -177,20 +181,23 @@ namespace Content.Client.Inventory
             _strippingMenu.SetSize = new Vector2(horizontalMenuSize, verticalMenuSize);
         }
 
-        private void AddHandButton(Hand hand)
+        private void AddHandButton(Entity<HandsComponent> ent, string handId, Hand hand)
         {
-            var button = new HandButton(hand.Name, hand.Location);
+            var button = new HandButton(handId, hand.Location);
 
             button.Pressed += SlotPressed;
 
-            if (EntMan.TryGetComponent<VirtualItemComponent>(hand.HeldEntity, out var virt))
+            var heldEntity = _hands.GetHeldItem(ent.AsNullable(), handId);
+            if (EntMan.TryGetComponent<VirtualItemComponent>(heldEntity, out var virt))
             {
                 button.Blocked = true;
                 if (EntMan.TryGetComponent<CuffableComponent>(Owner, out var cuff) && _cuffable.GetAllCuffs(cuff).Contains(virt.BlockingEntity))
                     button.BlockedRect.MouseFilter = MouseFilterMode.Ignore;
             }
 
-            UpdateEntityIcon(button, hand.HeldEntity);
+            // Goobstation + Harmony : use virtual entity if hidden
+            UpdateEntityIcon(button, EntMan.HasComponent<StripMenuHiddenComponent>(heldEntity) ? _virtualHiddenEntity : heldEntity);
+            // End Goobstation + Harmony
             _strippingMenu!.HandsContainer.AddChild(button);
             LayoutContainer.SetPosition(button, new Vector2i(_handCount, 0) * (SlotControl.DefaultButtonSize + ButtonSeparation));
             _handCount++;
@@ -233,6 +240,11 @@ namespace Content.Client.Inventory
             // this does not work for modified clients because they are still sent the real entity
             if (entity != null && _strippable.IsStripHidden(slotDef, _player.LocalEntity))
                 entity = _virtualHiddenEntity;
+
+            // Goobstation/EE + Harmony Change: hide strip menu items
+            if (entity != null && EntMan.HasComponent<StripMenuHiddenComponent>(entity))
+                entity = _virtualHiddenEntity;
+            // End Goobstation/EE + Harmony
 
             var button = new SlotButton(new SlotData(slotDef, container));
             button.Pressed += SlotPressed;

@@ -171,7 +171,7 @@ public sealed class BinglePitSystem : EntitySystem
         // make max-size bingle pit ignore gravity
         if (component.Level == component.MaxSize)
             _step.SetIgnoreWeightless(uid, true);
-        
+
         _popup.PopupEntity(Loc.GetString("bingle-pit-grow"), uid);
     }
 
@@ -267,12 +267,12 @@ public sealed class BinglePitSystem : EntitySystem
         {
             if (tile.Tile.TypeId == convertTile.TileId)
                 continue;
-            if (tile.GetContentTileDefinition().Name != convertTile.Name &&
-                _random.Prob(0.1f)) // 10% probability to transform tile
-            {
-                _tile.ReplaceTile(tile, convertTile);
-                _tile.PickVariant(convertTile);
-            }
+
+            if (!_random.Prob(0.1f)) // 10% probability to transform tile
+                continue;
+
+            _tile.ReplaceTile(tile, convertTile);
+            _tile.PickVariant(convertTile);
         }
 
     }

@@ -89,6 +89,12 @@
     back:
     - Cane
 
+- type: loadout
+  id: CardBoxBlack
+  storage:
+    back:
+    - CardBoxBlack
+
 # Towels
 - type: loadout
   id: TowelStripedOrange
