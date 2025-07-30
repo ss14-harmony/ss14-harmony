@@ -9,7 +9,7 @@
     description: ghost-role-information-bingle-description
     rules: ghost-role-information-bingle-rules
     raffle:
-      settings: default
+      settings: short #Harmony Change from default
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
   - type: GhostRoleMobSpawner
