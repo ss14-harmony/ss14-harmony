@@ -4,8 +4,6 @@
   - Elkridge
   additions:
   - prototype: SpawnPointPermaPrisoner
-    position: -10.5, -33.5
+    position: -12.5, -37.5
   - prototype: SpawnPointPermaPrisoner
-    position: -12.5, -33.5
-  - prototype: SpawnPointPermaPrisoner
-    position: -12.5, -32.5
+    position: -12.5, -38.5

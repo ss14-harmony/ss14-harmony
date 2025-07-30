@@ -14,6 +14,7 @@
   - MineralScannerEmpty
   - OreProcessorIndustrialMachineCircuitboard
   - ClothingMaskWeldingGas
+  - ClothingShoesBootsJump
   - PickaxeLight # Harmony Change, adds alternate mining tool upgrades
 
 - type: technology
