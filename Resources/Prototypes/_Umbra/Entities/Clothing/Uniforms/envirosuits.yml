@@ -19,16 +19,6 @@
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
-  id: ClothingUniformEnvirosuitBitrunner
-  name: bitrunner envirosuit
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Uniforms/Envirosuit/bitrunner.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Uniforms/Envirosuit/bitrunner.rsi
-
-- type: entity
-  parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitBotanist
   name: botanist envirosuit
   components:
@@ -129,16 +119,6 @@
 
 - type: entity
   parent: ClothingUniformEnvirosuitBase
-  id: ClothingUniformEnvirosuitCoroner
-  name: coroner envirosuit
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Uniforms/Envirosuit/coroner.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Uniforms/Envirosuit/coroner.rsi
-
-- type: entity
-  parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitDoctor
   name: doctor envirosuit
   components:
@@ -166,16 +146,6 @@
     sprite: _Umbra/Clothing/Uniforms/Envirosuit/generic.rsi
   - type: Clothing
     sprite: _Umbra/Clothing/Uniforms/Envirosuit/generic.rsi
-
-- type: entity
-  parent: ClothingUniformEnvirosuitBase
-  id: ClothingUniformEnvirosuitGeneticist
-  name: geneticist envirosuit
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Uniforms/Envirosuit/geneticist.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Uniforms/Envirosuit/geneticist.rsi
 
 - type: entity
   parent: [ClothingUniformEnvirosuitBase, BaseCommandContraband]
@@ -258,16 +228,6 @@
     sprite: _Umbra/Clothing/Uniforms/Envirosuit/prisoner.rsi
 
 - type: entity
-  parent: ClothingUniformEnvirosuitBase
-  id: ClothingUniformEnvirosuitPrototype
-  name: prototype envirosuit
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Uniforms/Envirosuit/prototype.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Uniforms/Envirosuit/prototype.rsi
-
-- type: entity
   parent: [ClothingUniformEnvirosuitBase, BaseCommandContraband]
   id: ClothingUniformEnvirosuitRD
   name: research director envirosuit
@@ -336,16 +296,6 @@
     sprite: _Umbra/Clothing/Uniforms/Envirosuit/syndie.rsi
   - type: Clothing
     sprite: _Umbra/Clothing/Uniforms/Envirosuit/syndie.rsi
-
-- type: entity
-  parent: ClothingUniformEnvirosuitBase
-  id: ClothingUniformEnvirosuitViro
-  name: virology envirosuit
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Uniforms/Envirosuit/viro.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Uniforms/Envirosuit/viro.rsi
 
 - type: entity
   parent: [ClothingUniformEnvirosuitBase, BaseSecurityContraband]
