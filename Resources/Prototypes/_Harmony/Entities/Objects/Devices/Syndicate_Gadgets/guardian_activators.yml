@@ -2,6 +2,7 @@
   parent: [BaseItem, BaseSyndicateContraband]
   id: HololawyerInjector
   name: hololawyer injector
+  suffix: Harmony
   description: A complex artwork of handheld machinery allowing the user to host a hololawyer guardian.
   components:
   - type: Sprite
@@ -13,7 +14,7 @@
 - type: entity
   parent: BriefcaseSyndie
   id: BriefcaseSyndieHoloLawyerFilled
-  suffix: Syndicate, HoloLawyer
+  suffix: Syndicate, HoloLawyer, Harmony
   components:
   - type: StorageFill
     contents:

@@ -2,6 +2,7 @@
   parent: [MobGuardianBase, InventoryBase]
   id: MobHoloLawyerGuardian
   name: Hololawyer
+  suffix: Harmony
   description: A mesmerising whirl of hard-light patterns weaves a red colored lawyer of dubious origin. It emits an aura of wasted money and excessive funding.
   components:
   - type: Pacified
@@ -17,7 +18,6 @@
   - type: GhostTakeoverAvailable
   - type: NameIdentifier
     group: Holoparasite
-  - type: FootstepModifier
   - type: Speech
     speechVerb: Robotic
   - type: TypingIndicator
@@ -52,7 +52,7 @@
     - CannotSuicide
     - FootstepSound
   - type: Inventory
-    templateId: holoclown
+    templateId: hololawyer
   - type: Hands
   - type: ComplexInteraction
   - type: Loadout

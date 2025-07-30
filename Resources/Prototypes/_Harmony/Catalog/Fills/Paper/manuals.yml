@@ -1,7 +1,8 @@
 - type: entity
   parent: BaseItem
   id: HoloLawyerInfo
-  name: "hololawyer terms and conditions"
+  name: hololawyer terms and conditions
+  suffix: Harmony
   description: A tiny volumetric display for documents, the text is barely legible. Makes one realize Cybersun's legal budget is way too high.
   components:
   - type: Sprite
