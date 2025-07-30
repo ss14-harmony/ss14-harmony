@@ -10,6 +10,10 @@
     ClothingUniformJumpsuitCentcomAgent: 3
     ClothingUniformJumpsuitCentcomFormal: 3
     ClothingUniformJumpskirtCentcomFormalDress: 3
+# start of harmony change: adds new centcomm pyjamas
+    ClothingUniformJumpsuitPyjamaCentcomm: 3
+    ClothingHeadPyjamaCentcomm: 3
+# end of harmony change
     ClothingHeadHatCentcom: 3
     ClothingHeadHatCentcomcap: 3
     ClothingMaskGasCentcom: 3

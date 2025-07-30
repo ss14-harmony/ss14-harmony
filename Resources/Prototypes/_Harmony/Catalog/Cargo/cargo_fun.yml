@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: FunNanotrasenPyjamas
+  icon:
+    sprite: _Harmony/Clothing/Head/Hats/pyjama_nanotrasenblue.rsi
+    state: icon
+  product: CrateFunNanotrasenPyjamas
+  cost: 1800
+  category: cargoproduct-category-name-fun
+  group: market
