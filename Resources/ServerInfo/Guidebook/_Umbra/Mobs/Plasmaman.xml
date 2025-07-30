@@ -1,0 +1,27 @@
+<Document>
+  # Plasma Man
+
+  <Box>
+    <GuideEntityEmbed Entity="MobPlasmaman" Caption=""/>
+  </Box>
+  [color=#ff0505]Warning! This species is not recommended for new players due to their tendency to get incinerated![/color]
+
+  Plasma men dont have to eat or drink. They are [color=#03ad0b]immune to radiation damage[/color] and take [color=#d60606]20% less slash, 30% less pierce,[/color] and [color=#1e90ff]70% less cold.[/color] They take [color=#d60606]20% more blunt[/color] and [color=#ffa500]50% more heat.[/color]
+
+  ## Breathing Plasma
+  <Box>
+    <GuideEntityEmbed Entity="PlasmamanTank" Caption=""/>
+    <GuideEntityEmbed Entity="EmergencyPlasmamanTank" Caption=""/>
+  </Box>
+  Plasma men must breathe plasma at all times to survive. Oxygen is incredibly toxic to them and should be avoided at all costs. Unlike Vox, plasma men do not regenerate any toxin damage on their own so even brief oxygen inhalation should be avoided.
+  
+  ## Envirosuits
+  <Box>
+    <GuideEntityEmbed Entity="ClothingUniformEnvirosuitGeneric" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingHeadEnvirosuitGeneric" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingHandsEnvirosuitGeneric" Caption=""/>
+  </Box>
+  Plasma men have the dangerous trait of catching on fire when exposed to oxygen. To prevent this, you are equipped with envirosuits that protect the user from the air around them. You must wear the helmet, gloves, and jumpsuit to get full protection.
+
+  More envirosuits can be ordered from cargo if needed. Hardsuits and EVA suits also function like envirosuits. They can remove their gear for a very short period to swap gear.
+</Document>

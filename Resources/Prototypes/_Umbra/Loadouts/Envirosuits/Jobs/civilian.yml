@@ -1,0 +1,195 @@
+# Generic
+- type: loadout
+  id: GenericEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitGeneric
+
+- type: loadout
+  id: GenericEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitGeneric
+
+- type: loadout
+  id: GenericEnvirosuitGloves
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    gloves: ClothingHandsEnvirosuitGeneric
+
+# Head of Personnel
+- type: loadout
+  id: HoPEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitHoP
+
+- type: loadout
+  id: HoPEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitHoP
+
+- type: loadout
+  id: HoPEnvirosuitGloves
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    gloves: ClothingHandsEnvirosuitHoP
+
+
+# Slacks
+- type: loadout
+  id: SlacksEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitSlacks
+
+# White
+- type: loadout
+  id: WhiteEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitWhite
+
+- type: loadout
+  id: WhiteEnvirosuitGloves
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    gloves: ClothingHandsEnvirosuitWhite
+
+# Black
+- type: loadout
+  id: BlackEnvirosuitGloves
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    gloves: ClothingHandsEnvirosuitBlack
+
+# Chef
+- type: loadout
+  id: ChefEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitChef
+
+# Chaplain
+- type: loadout
+  id: ChaplainEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitChaplain
+
+- type: loadout
+  id: ChaplainEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitChaplain
+
+# Janitor
+- type: loadout
+  id: JanitorEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitJanitor
+
+- type: loadout
+  id: JanitorEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitJanitor
+
+- type: loadout
+  id: JanitorEnvirosuitGloves
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    gloves: ClothingHandsEnvirosuitJanitor
+
+# Botanist
+- type: loadout
+  id: BotanistEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitBotanist
+
+- type: loadout
+  id: BotanistEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitBotanist
+
+# Clown
+- type: loadout
+  id: ClownEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitClown
+
+- type: loadout
+  id: ClownEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitClown
+
+- type: loadout
+  id: ClownEnvirosuitGloves
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    gloves: ClothingHandsEnvirosuitClown
+
+# Mime
+- type: loadout
+  id: MimeEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitMime
+
+- type: loadout
+  id: MimeEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitMime

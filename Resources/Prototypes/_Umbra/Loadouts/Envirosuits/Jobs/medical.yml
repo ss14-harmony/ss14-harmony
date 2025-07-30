@@ -1,0 +1,76 @@
+# CMO
+- type: loadout
+  id: CMOEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitCMO
+
+- type: loadout
+  id: CMOEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitCMO
+
+# Doctor
+- type: loadout
+  id: DoctorEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitDoctor
+
+- type: loadout
+  id: DoctorEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitDoctor
+
+# Chemist
+- type: loadout
+  id: ChemistEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitChemist
+
+- type: loadout
+  id: ChemistEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitChemist
+
+# Paramedic
+- type: loadout
+  id: ParamedicEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitParamedic
+
+- type: loadout
+  id: ParamedicEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitParamedic
+
+# Nitrile
+- type: loadout
+  id: NitrileEnvirosuitGloves
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    gloves: ClothingHandsEnvirosuitNitrile

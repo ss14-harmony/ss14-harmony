@@ -141,6 +141,8 @@
     - Snout
     - HeadTop
     - HeadSide
+  - type: SpontaneousCombustionProtection # Umbra
+    protectionPercent: 25 # Umbra
 
 - type: entity
   abstract: true
@@ -189,6 +191,8 @@
     - Snout
     - HeadTop
     - HeadSide
+  - type: SpontaneousCombustionProtection # Umbra
+    protectionPercent: 25 # Umbra
 
 - type: entity
   abstract: true

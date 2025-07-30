@@ -1,0 +1,33 @@
+# Syndicate
+- type: loadout
+  id: SyndicateEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitSyndie
+
+- type: loadout
+  id: SyndicateEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitSyndie
+
+# Prisoner
+- type: loadout
+  id: PrisonerEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitPrisoner
+
+- type: loadout
+  id: PrisonerEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitPrisoner

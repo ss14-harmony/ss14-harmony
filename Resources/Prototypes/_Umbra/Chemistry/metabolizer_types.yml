@@ -1,0 +1,7 @@
+- type: metabolizerType
+  id: Mantidae
+  name: metabolizer-type-mantidae
+
+- type: metabolizerType
+  id: Plasmaman
+  name: metabolizer-type-plasmaman

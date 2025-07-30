@@ -1,0 +1,1 @@
+species-name-plasmaman = Plasma Man

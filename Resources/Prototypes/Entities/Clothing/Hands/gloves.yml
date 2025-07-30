@@ -29,6 +29,8 @@
     tags:
     - Kangaroo
     - WhitelistChameleon
+  - type: SpontaneousCombustionProtection # Umbra
+    protectionPercent: 15
 
 - type: entity
   parent: ClothingHandsGlovesBoxingRed
@@ -108,6 +110,8 @@
     fiberMaterial: fibers-durathread
     fiberColor: fibers-regal-blue
   - type: FingerprintMask
+  - type: SpontaneousCombustionProtection # Umbra
+    protectionPercent: 15 # Umbra
 
 - type: entity
   parent: ClothingHandsBase

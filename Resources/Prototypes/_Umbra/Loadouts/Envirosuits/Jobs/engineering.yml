@@ -1,0 +1,74 @@
+# CE
+- type: loadout
+  id: CEEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitCE
+
+- type: loadout
+  id: CEEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitCE
+
+- type: loadout
+  id: CEEnvirosuitGloves
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    gloves: ClothingHandsEnvirosuitCE
+
+# Engineer
+- type: loadout
+  id: EngineerEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitEngineer
+
+- type: loadout
+  id: EngineerEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitEngineer
+
+- type: loadout
+  id: EngineerEnvirosuitGloves
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    gloves: ClothingHandsEnvirosuitEngineer
+
+# Atmos
+- type: loadout
+  id: AtmosEnvirosuitJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitAtmos
+
+- type: loadout
+  id: AtmosEnvirosuitHead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    head: ClothingHeadEnvirosuitAtmos
+
+- type: loadout
+  id: AtmosEnvirosuitGloves
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    gloves: ClothingHandsEnvirosuitAtmos

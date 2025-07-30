@@ -1,0 +1,88 @@
+- type: entity
+  abstract: true
+  parent: BasePart
+  id: PartPlasmaman
+  name: plasmaman body part
+  components:
+  - type: Sprite
+    sprite: _Umbra/Mobs/Species/Plasmaman/parts.rsi
+
+- type: entity
+  parent: [ PartPlasmaman, BaseTorso ]
+  id: TorsoPlasmaman
+  name: plasmaman torso
+  components:
+  - type: Sprite
+    state: "torso"
+
+- type: entity
+  parent: [ PartPlasmaman, BaseHead ]
+  id: HeadPlasmaman
+  name: plasmaman head
+  components:
+  - type: Sprite
+    state: "head"
+
+- type: entity
+  parent: [ PartPlasmaman, BaseLeftArm ]
+  id: LeftArmPlasmaman
+  name: left plasmaman arm
+  components:
+  - type: Sprite
+    state: "l_arm"
+
+- type: entity
+  parent: [ PartPlasmaman, BaseRightArm ]
+  id: RightArmPlasmaman
+  name: right plasmaman arm
+  components:
+  - type: Sprite
+    state: "r_arm"
+
+- type: entity
+  parent: [ PartPlasmaman, BaseLeftHand ]
+  id: LeftHandPlasmaman
+  name: left plasmaman hand
+  components:
+  - type: Sprite
+    state: "l_hand"
+
+- type: entity
+  parent: [ PartPlasmaman, BaseRightHand ]
+  id: RightHandPlasmaman
+  name: right plasmaman hand
+  components:
+  - type: Sprite
+    state: "r_hand"
+
+- type: entity
+  parent: [ PartPlasmaman, BaseLeftLeg ]
+  id: LeftLegPlasmaman
+  name: left plasmaman leg
+  components:
+  - type: Sprite
+    state: "l_leg"
+
+- type: entity
+  parent: [ PartPlasmaman, BaseRightLeg ]
+  id: RightLegPlasmaman
+  name: right plasmaman leg
+  components:
+  - type: Sprite
+    state: "r_leg"
+
+- type: entity
+  parent: [ PartPlasmaman, BaseLeftFoot ]
+  id: LeftFootPlasmaman
+  name: left plasmaman foot
+  components:
+  - type: Sprite
+    state: "l_foot"
+
+- type: entity
+  parent: [ PartPlasmaman, BaseRightFoot ]
+  id: RightFootPlasmaman
+  name: right plasmaman foot
+  components:
+  - type: Sprite
+    state: "r_foot"

@@ -1,0 +1,70 @@
+# Plasma tank
+- type: loadout
+  id: LoadoutSpeciesPlasmamanPlasma
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    suitstorage: PlasmamanTankFilled
+
+# Breath masks
+- type: loadout
+  id: LoadoutSpeciesBreathToolPlasma
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    mask: ClothingMaskBreath
+
+- type: loadout
+  id: LoadoutSpeciesBreathToolMedicalPlasma
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    mask: ClothingMaskBreathMedical
+
+- type: loadout
+  id: LoadoutSpeciesBreathToolSecurityPlasma
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    mask: ClothingMaskGasSecurity
+
+# Tank harness
+- type: loadout
+  id: LoadoutTankHarnessPlasma
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesPlasmaman
+  equipment:
+    outerClothing: ClothingOuterVestTank
+
+# Emergency box
+- type: loadout
+  id: EmergencyPlasma
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlasmaBreather
+  storage:
+    back:
+    - BoxSurvivalPlasma
+
+- type: loadout
+  id: EmergencyPlasmaSecurity
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlasmaBreather
+  storage:
+    back:
+    - BoxSurvivalSecurityPlasma
+
+- type: loadout
+  id: EmergencyPlasmaMedical
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlasmaBreather
+  storage:
+    back:
+    - BoxSurvivalMedicalPlasma

@@ -1,0 +1,247 @@
+- type: entity
+  abstract: true
+  parent: ClothingHandsBase
+  id: ClothingHandsEnvirosuitBase
+  description: Gloves designed to protect its user from the environment.
+  components:
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+  - type: SpontaneousCombustionProtection
+    protectionPercent: 15
+
+- type: entity
+  parent: ClothingHandsEnvirosuitBase
+  id: ClothingHandsEnvirosuitAtmos
+  name: atmospherics tech envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/atmos.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/atmos.rsi
+  - type: Fiber
+    fiberColor: fibers-blue
+
+- type: entity
+  parent: ClothingHandsEnvirosuitBase
+  id: ClothingHandsEnvirosuitBlack
+  name: black envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/black.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/black.rsi
+  - type: Fiber
+    fiberColor: fibers-black
+
+- type: entity
+  parent: ClothingHandsEnvirosuitBase
+  id: ClothingHandsEnvirosuitCargo
+  name: cargo envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/cargo.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/cargo.rsi
+  - type: Fiber
+    fiberColor: fibers-beige
+
+- type: entity
+  parent: [ClothingHandsEnvirosuitBase, BaseCommandContraband]
+  id: ClothingHandsEnvirosuitCE
+  name: chief engineer envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/ce.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/ce.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+    fiberColor: fibers-lime
+
+- type: entity
+  parent: ClothingHandsEnvirosuitBase
+  id: ClothingHandsEnvirosuitClown
+  name: clown envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/clown.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/clown.rsi
+  - type: Fiber
+    fiberColor: fibers-red
+
+- type: entity
+  parent: [ClothingHandsEnvirosuitBase, BaseCentcommContraband]
+  id: ClothingHandsEnvirosuitCommander
+  name: commander envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/commander.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/commander.rsi
+  - type: Fiber
+    fiberColor: fibers-green
+
+- type: entity
+  parent: ClothingHandsEnvirosuitBase
+  id: ClothingHandsEnvirosuitEngineer
+  name: engineer envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/engi.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/engi.rsi
+  - type: Fiber
+    fiberColor: fibers-orange
+  - type: Insulated
+
+- type: entity
+  parent: ClothingHandsEnvirosuitBase
+  id: ClothingHandsEnvirosuitGeneric
+  name: envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/generic.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/generic.rsi
+  - type: Fiber
+    fiberColor: fibers-orange
+
+- type: entity
+  parent: [ClothingHandsEnvirosuitBase, BaseCommandContraband]
+  id: ClothingHandsEnvirosuitHoP
+  name: head of personnel envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/hop.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/hop.rsi
+  - type: Fiber
+    fiberColor: fibers-blue
+
+- type: entity
+  parent: [ClothingHandsEnvirosuitBase, BaseCentcommContraband]
+  id: ClothingHandsEnvirosuitIntern
+  name: intern envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/intern.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/intern.rsi
+  - type: Fiber
+    fiberColor: fibers-blue
+
+- type: entity
+  parent: ClothingHandsEnvirosuitBase
+  id: ClothingHandsEnvirosuitJanitor
+  name: janitor envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/janitor.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/janitor.rsi
+  - type: Fiber
+    fiberMaterial: fibers-rubber
+    fiberColor: fibers-yellow
+  - type: FingerprintMask
+
+- type: entity
+  parent: [ClothingHandsEnvirosuitBase, BaseCentcommContraband]
+  id: ClothingHandsEnvirosuitOfficial
+  name: official envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/official.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/official.rsi
+  - type: Fiber
+    fiberColor: fibers-green
+
+- type: entity
+  parent: ClothingHandsEnvirosuitBase
+  id: ClothingHandsEnvirosuitPrototype
+  name: prototype envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/prototype.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/prototype.rsi
+  - type: Fiber
+    fiberColor: fibers-red
+
+- type: entity
+  parent: [ClothingHandsEnvirosuitBase, BaseCommandContraband]
+  id: ClothingHandsEnvirosuitRD
+  name: research director envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/rd.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/rd.rsi
+  - type: Fiber
+    fiberColor: fibers-purple
+
+- type: entity
+  parent: ClothingHandsEnvirosuitBase
+  id: ClothingHandsEnvirosuitRobo
+  name: roboticist envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/robo.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/robo.rsi
+  - type: Fiber
+    fiberColor: fibers-red
+
+- type: entity
+  parent: ClothingHandsEnvirosuitBase
+  id: ClothingHandsEnvirosuitSalvage
+  name: salvage envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/salvage.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/salvage.rsi
+  - type: Fiber
+    fiberColor: fibers-grey
+
+- type: entity
+  parent: ClothingHandsEnvirosuitBase
+  id: ClothingHandsEnvirosuitWhite
+  name: white envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/white.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/white.rsi
+  - type: Fiber
+    fiberColor: fibers-white
+
+- type: entity
+  parent: ClothingHandsEnvirosuitBase
+  id: ClothingHandsEnvirosuitNitrile
+  name: nitrile envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/nitrile.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/nitrile.rsi
+  - type: Fiber
+    fiberMaterial: fibers-nitrile
+  - type: FingerprintMask
+
+- type: entity
+  parent: [ClothingHandsEnvirosuitBase, BaseSecurityContraband]
+  id: ClothingHandsEnvirosuitForensic
+  name: forensic envirosuit gloves
+  components:
+  - type: Sprite
+    sprite: _Umbra/Clothing/Hands/Envirosuit/black.rsi
+  - type: Clothing
+    sprite: _Umbra/Clothing/Hands/Envirosuit/black.rsi
+  - type: FingerprintMask
+  - type: GuideHelp
+    guides:
+    - Forensics
+

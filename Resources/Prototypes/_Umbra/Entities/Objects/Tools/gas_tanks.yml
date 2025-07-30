@@ -1,0 +1,37 @@
+- type: entity
+  parent: GasTankRoundBase
+  id: PlasmamanTank
+  name: plasma man tank
+  description: Contains plasma in a tank designed for internals. Do not inhale if your not a plasma man. It can hold 5 L of gas.
+  components:
+  - type: GasTank
+    outputPressure: 30.4
+  - type: Sprite
+    sprite: Objects/Tanks/plasmaman.rsi
+  - type: Item
+    sprite: Objects/Tanks/plasmaman.rsi
+  - type: Clothing
+    sprite: Objects/Tanks/plasmaman.rsi
+    slots:
+    - Back
+    - Belt
+    - suitStorage
+
+- type: entity
+  parent: EmergencyOxygenTank
+  id: EmergencyPlasmamanTank
+  name: emergency plasma man tank
+  description: An easily portable tank for emergencies. Contains plasma in a tank designed for internals. Do not inhale if your not a plasma man. It can hold 0.66 L of gas.
+  components:
+  - type: GasTank
+    outputPressure: 30.4
+  - type: Sprite
+    sprite: _Umbra/Objects/Tanks/emergency_plasmaman.rsi
+  - type: Item
+    sprite: _Umbra/Objects/Tanks/emergency_plasmaman.rsi
+  - type: Clothing
+    sprite: _Umbra/Objects/Tanks/emergency_plasmaman.rsi
+    slots:
+    - Back
+    - Belt
+    - suitStorage

@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: EmergencyEnvirosuitGeneric
+  icon:
+    sprite: _Umbra/Clothing/Head/Envirosuit/generic.rsi
+    state: icon
+  product: CrateEmergencyEnvirosuitGeneric
+  cost: 600
+  category: cargoproduct-category-name-emergency
+  group: market

@@ -100,6 +100,25 @@
             type: Vox
         clear: true
         time: 5
+      - !type:HealthChange # Start Umbra
+        conditions:
+        - !type:OrganType
+          type: Plasmaman
+        scaleByQuantity: true
+        ignoreResistances: true
+        damage:
+          types:
+            Poison:
+              10
+      - !type:AdjustAlert
+        alertType: Toxins
+        conditions:
+          - !type:ReagentThreshold
+            min: 0.5
+          - !type:OrganType
+            type: Plasmaman
+        clear: true
+        time: 5 # End Umbra
 
 - type: reagent
   id: Plasma
@@ -121,9 +140,67 @@
         damage:
           types:
             Poison: 3
+        conditions: # Start Umbra - following changes are for plasma man
+        - !type:OrganType
+          type: Human
       - !type:AdjustReagent
         reagent: Inaprovaline
         amount: -2.0
+        conditions:
+        - !type:OrganType
+          type: Human
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 3
+        conditions:
+        - !type:OrganType
+          type: Animal
+      - !type:AdjustReagent
+        reagent: Inaprovaline
+        amount: -2.0
+        conditions:
+        - !type:OrganType
+          type: Animal
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 3
+        conditions:
+        - !type:OrganType
+          type: Rat
+      - !type:AdjustReagent
+        reagent: Inaprovaline
+        amount: -2.0
+        conditions:
+        - !type:OrganType
+          type: Rat
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 3
+        conditions:
+        - !type:OrganType
+          type: Plant
+      - !type:AdjustReagent
+        reagent: Inaprovaline
+        amount: -2.0
+        conditions:
+        - !type:OrganType
+          type: Plant
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 3
+        conditions:
+        - !type:OrganType
+          type: Vox
+      - !type:AdjustReagent
+        reagent: Inaprovaline
+        amount: -2.0
+        conditions:
+        - !type:OrganType
+          type: Vox
     Gas:
       effects:
       - !type:HealthChange
@@ -133,14 +210,98 @@
           types:
             Poison:
               1
-      # We need a metabolism effect on reagent removal
+        conditions:
+        - !type:OrganType
+          type: Human
       - !type:AdjustAlert
         alertType: Toxins
         conditions:
-          - !type:ReagentThreshold
-            min: 1.5
+        - !type:OrganType
+          type: Human
+        - !type:ReagentThreshold
+          min: 1.5
         clear: True
         time: 5
+      - !type:HealthChange
+        scaleByQuantity: true
+        ignoreResistances: true
+        damage:
+          types:
+            Poison:
+              1
+        conditions:
+        - !type:OrganType
+          type: Animal
+      - !type:AdjustAlert
+        alertType: Toxins
+        conditions:
+        - !type:OrganType
+          type: Animal
+        - !type:ReagentThreshold
+          min: 1.5
+        clear: True
+        time: 5
+      - !type:HealthChange
+        scaleByQuantity: true
+        ignoreResistances: true
+        damage:
+          types:
+            Poison:
+              1
+        conditions:
+        - !type:OrganType
+          type: Rat
+      - !type:AdjustAlert
+        alertType: Toxins
+        conditions:
+        - !type:OrganType
+          type: Rat
+        - !type:ReagentThreshold
+          min: 1.5
+        clear: True
+        time: 5
+      - !type:HealthChange
+        scaleByQuantity: true
+        ignoreResistances: true
+        damage:
+          types:
+            Poison:
+              1
+        conditions:
+        - !type:OrganType
+          type: Plant
+      - !type:AdjustAlert
+        alertType: Toxins
+        conditions:
+        - !type:OrganType
+          type: Plant
+        - !type:ReagentThreshold
+          min: 1.5
+        clear: True
+        time: 5
+      - !type:HealthChange
+        scaleByQuantity: true
+        ignoreResistances: true
+        damage:
+          types:
+            Poison:
+              1
+        conditions:
+        - !type:OrganType
+          type: Vox
+      - !type:AdjustAlert
+        alertType: Toxins
+        conditions:
+        - !type:OrganType
+          type: Vox
+        - !type:ReagentThreshold
+          min: 1.5
+        clear: True
+        time: 5
+      - !type:Oxygenate
+        conditions:
+        - !type:OrganType
+          type: Plasmaman # End Umbra
   reactiveEffects:
     Flammable:
       methods: [ Touch ]

@@ -1,0 +1,8 @@
+- type: alert
+  id: LowPlasma
+  category: Breathing
+  icons:
+    - sprite: _Umbra/Interface/Alerts/plasma.rsi
+      state: not_enough_plasma
+  name: alerts-low-plasma-name
+  description: alerts-low-plasma-desc

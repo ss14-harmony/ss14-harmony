@@ -1,0 +1,75 @@
+- type: entity
+  parent: BoxSurvival
+  id: BoxSurvivalPlasma
+  suffix: Standard Plasma
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskBreath
+    - id: EmergencyPlasmamanTankFilled
+    - id: EmergencyMedipen
+    - id: Flare
+  - type: Sprite
+    sprite: _Umbra/Objects/Storage/boxes.rsi
+    layers:
+    - state: internals
+    - state: plasmatank
+  - type: Label
+    currentLabel: reagent-name-plasma
+
+- type: entity
+  parent: BoxSurvivalSecurity
+  id: BoxSurvivalSecurityPlasma
+  suffix: Security Plasma
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskGasSecurity
+    - id: EmergencyPlasmamanTankFilled
+    - id: EmergencyMedipen
+    - id: Flare
+  - type: Sprite
+    sprite: _Umbra/Objects/Storage/boxes.rsi
+    layers:
+    - state: internals
+    - state: plasmatank
+  - type: Label
+    currentLabel: reagent-name-plasma
+
+- type: entity
+  parent: BoxSurvivalMedical
+  id: BoxSurvivalMedicalPlasma
+  suffix: Medical Plasma
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskBreathMedical
+    - id: EmergencyPlasmamanTankFilled
+    - id: EmergencyMedipen
+    - id: Flare
+  - type: Sprite
+    sprite: _Umbra/Objects/Storage/boxes.rsi
+    layers:
+    - state: internals
+    - state: plasmatank
+  - type: Label
+    currentLabel: reagent-name-plasma
+
+- type: entity
+  parent: BoxSurvivalSyndicate
+  id: BoxSurvivalSyndicatePlasma
+  suffix: Syndicate Plasma
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskGasSyndicate
+    - id: EmergencyPlasmamanTankFilled
+    - id: EmergencyMedipen
+    - id: Flare
+  - type: Sprite
+    sprite: _Umbra/Objects/Storage/boxes.rsi
+    layers:
+    - state: internals
+    - state: plasmatank
+  - type: Label
+    currentLabel: reagent-name-plasma

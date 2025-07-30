@@ -1,0 +1,85 @@
+- type: entity
+  id: OrganPlasmamanLungs
+  parent: OrganHumanLungs
+  name: plasma man lungs
+  description: "These lungs breath plasma. Avoid oxygen at all costs."
+  suffix: "plasma man"
+  components:
+  - type: Sprite
+    sprite: _Umbra/Mobs/Species/Plasmaman/organs.rsi
+    layers:
+      - state: lungs
+  - type: Metabolizer
+    metabolizerTypes: [ Plasmaman ]
+  - type: Lung
+    alert: LowPlasma
+
+- type: entity
+  id: OrganPlasmamanHeart
+  parent: OrganHumanHeart
+  name: plasma man heart
+  components:
+  - type: Sprite
+    sprite: _Umbra/Mobs/Species/Plasmaman/organs.rsi
+    layers:
+      - state: heart-on
+  - type: Metabolizer
+    metabolizerTypes: [ Plasmaman ]
+
+- type: entity
+  id: OrganPlasmamanStomach
+  parent: OrganHumanStomach
+  name: plasma man stomach
+  components:
+  - type: Sprite
+    sprite: _Umbra/Mobs/Species/Plasmaman/organs.rsi
+    layers:
+      - state: stomach
+  - type: Metabolizer
+    maxReagents: 3
+    metabolizerTypes: [ Plasmaman ]
+
+- type: entity
+  id: OrganPlasmamanLiver
+  parent: OrganHumanLiver
+  name: plasma man liver
+  components:
+  - type: Sprite
+    sprite: _Umbra/Mobs/Species/Plasmaman/organs.rsi
+    layers:
+      - state: liver
+  - type: Metabolizer
+    metabolizerTypes: [ Plasmaman ]
+
+- type: entity
+  id: OrganPlasmamanKidneys
+  parent: OrganHumanKidneys
+  name: plasma man kidneys
+  components:
+  - type: Sprite
+    sprite: _Umbra/Mobs/Species/Plasmaman/organs.rsi
+    layers:
+      - state: kidney-l
+      - state: kidney-r
+  - type: Metabolizer
+    metabolizerTypes: [ Plasmaman ]
+
+- type: entity
+  id: OrganPlasmamanTongue
+  parent: OrganHumanTongue
+  name: plasma man tongue
+  components:
+  - type: Sprite
+    sprite: _Umbra/Mobs/Species/Plasmaman/organs.rsi
+    layers:
+      - state: tongue
+
+- type: entity
+  id: OrganPlasmamanBrain
+  parent: OrganHumanBrain
+  name: plasma man brain
+  components:
+  - type: Sprite
+    sprite: _Umbra/Mobs/Species/Plasmaman/organs.rsi
+    layers:
+      - state: brain
