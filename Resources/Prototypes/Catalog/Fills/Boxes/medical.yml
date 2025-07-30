@@ -123,6 +123,7 @@
       - state: box_medical
 # End of Harmony Change
       - state: bodybags
+  - type: Storage
     whitelist:
       tags:
         - BodyBag

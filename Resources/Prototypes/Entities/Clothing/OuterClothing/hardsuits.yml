@@ -306,8 +306,10 @@
         Heat: 0.8
         Caustic: 0.7
   - type: ClothingSpeedModifier
+    # Harmony Start - changes walk speed value, 0.75 -> 0.85
     walkModifier: 0.85
     sprintModifier: 0.85
+    # Harmony End
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurity
@@ -363,7 +365,7 @@
   parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
   id: ClothingOuterHardsuitWarden
   name: warden's hardsuit
-  description: The Warden's suit. Built like a tank.
+  description: The Warden's suit. Built like a tank. # Harmony change - changes description from "A specialized riot suit geared to combat low pressure environments."
   components:
   - type: Sprite
 #  start of Harmony change : Update sprite pathing
@@ -381,14 +383,18 @@
   - type: Armor
     modifiers:
       coefficients:
+        # Harmony start - changes armor values
         Blunt: 0.4
-        Slash: 0.4
-        Piercing: 0.4
-        Heat: 0.7
+        Slash: 0.4 # slash reduced, 0.5 -> 0.4
+        Piercing: 0.4 # piercing reduced, 0.6 -> 0.4
+        Heat: 0.7 # adds heat resistence, 0.8 -> 0.7
+        # Harmony End
         Caustic: 0.7
   - type: ClothingSpeedModifier
+    # Harmony start - changes value to include hundredths place
     walkModifier: 0.70
     sprintModifier: 0.70
+    # Harmony End
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitWarden
@@ -556,8 +562,10 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitSecurityRed
-  name: head of security's assault suit
-  description: A huge, looming, armored space suit. The biggest and the baddest.
+  # Harmony Start - changes name and description
+  name: head of security's assault suit # Changed from, "head of security's hardsuit"
+  description: A huge, looming, armored space suit. The biggest and the baddest. # Changed from, "A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
+  # Harmony End
   components:
   - type: Sprite
 #  start of Harmony change : Update sprite pathing
@@ -571,18 +579,21 @@
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.4
+    damageCoefficient: 0.4 # Harmony Change - reduces explosion damage, 0.5 -> 0.4
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.5
+        Blunt: 0.5 # Harmony Change - reduces blunt resistance, 0.6 -> 0.5
         Slash: 0.5
         Piercing: 0.5
-        Heat: 0.75
+        # Radiation: 0.5 - Harmony Change, removes radiation resistance
+        Heat: 0.75 # Harmony Change - adds heat resistance, 0.8 -> 0.75
         Caustic: 0.6
   - type: ClothingSpeedModifier
+    # Harmony Start - increases speed modifier and include hundredths place, 0.8 -> 0.85
     walkModifier: 0.85
     sprintModifier: 0.85
+    # Harmony End
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurityRed
@@ -656,8 +667,8 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
-  #- type: StaminaResistance
-  #  damageCoefficient: 0.75
+  - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
+    damageCoefficient: 0.75
   - type: Armor
     modifiers:
       coefficients:
@@ -679,6 +690,7 @@
     - Hardsuit
     - WhitelistChameleon
     - CorgiWearable
+    - ScurretWearable
   - type: StaticPrice
     price: 5000
 
@@ -731,8 +743,8 @@
     damageCoefficient: 0.2
   - type: FireProtection
     reduction: 0.8
-  #- type: StaminaResistance
-  #  damageCoefficient: 0.6
+  - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
+    damageCoefficient: 0.6
   - type: Armor
     modifiers:
       coefficients:
@@ -777,8 +789,8 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
-  #- type: StaminaResistance
-  #  damageCoefficient: 0.6
+  - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
+    damageCoefficient: 0.6
   - type: Armor
     modifiers:
       coefficients:
@@ -817,8 +829,7 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.3
-  #- type: StaminaResistance # Should not have stamina resistance, this is purely so people know it was not forgotten.
-  #  damageCoefficient: 0.99
+  # - type: StaminaResistance # Should not have stamina resistance, this is purely so people know it was not forgotten.
   - type: Armor
     modifiers:
       coefficients:
