@@ -159,18 +159,6 @@
     fiberColor: fibers-green
 
 - type: entity
-  parent: ClothingHandsEnvirosuitBase
-  id: ClothingHandsEnvirosuitPrototype
-  name: prototype envirosuit gloves
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Hands/Envirosuit/prototype.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Hands/Envirosuit/prototype.rsi
-  - type: Fiber
-    fiberColor: fibers-red
-
-- type: entity
   parent: [ClothingHandsEnvirosuitBase, BaseCommandContraband]
   id: ClothingHandsEnvirosuitRD
   name: research director envirosuit gloves
@@ -205,18 +193,6 @@
     sprite: _Umbra/Clothing/Hands/Envirosuit/salvage.rsi
   - type: Fiber
     fiberColor: fibers-grey
-
-- type: entity
-  parent: ClothingHandsEnvirosuitBase
-  id: ClothingHandsEnvirosuitWhite
-  name: white envirosuit gloves
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Hands/Envirosuit/white.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Hands/Envirosuit/white.rsi
-  - type: Fiber
-    fiberColor: fibers-white
 
 - type: entity
   parent: ClothingHandsEnvirosuitBase

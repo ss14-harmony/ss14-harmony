@@ -19,16 +19,6 @@
 
 - type: entity
   parent: ClothingHeadEnvirosuitBase
-  id: ClothingHeadEnvirosuitBitrunner
-  name: bitrunner envirosuit helmet
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Head/Envirosuit/bitrunner.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Head/Envirosuit/bitrunner.rsi
-
-- type: entity
-  parent: ClothingHeadEnvirosuitBase
   id: ClothingHeadEnvirosuitBotanist
   name: botanist envirosuit helmet
   components:
@@ -108,26 +98,6 @@
     sprite: _Umbra/Clothing/Head/Envirosuit/cmo.rsi
 
 - type: entity
-  parent: [ClothingHeadEnvirosuitBase, BaseCentcommContraband]
-  id: ClothingHeadEnvirosuitCommander
-  name: commander envirosuit helmet
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Head/Envirosuit/commander.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Head/Envirosuit/commander.rsi
-
-- type: entity
-  parent: ClothingHeadEnvirosuitBase
-  id: ClothingHeadEnvirosuitCoroner.rsi
-  name: coroner envirosuit helmet
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Head/Envirosuit/coroner.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Head/Envirosuit/coroner.rsi
-
-- type: entity
   parent: ClothingHeadEnvirosuitBase
   id: ClothingHeadEnvirosuitDoctor
   name: doctor envirosuit helmet
@@ -146,26 +116,6 @@
     sprite: _Umbra/Clothing/Head/Envirosuit/engineer.rsi
   - type: Clothing
     sprite: _Umbra/Clothing/Head/Envirosuit/engineer.rsi
-
-- type: entity
-  parent: ClothingHeadEnvirosuitBase
-  id: ClothingHeadEnvirosuitGene
-  name: geneticist envirosuit helmet
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Head/Envirosuit/gene.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Head/Envirosuit/gene.rsi
-
-- type: entity
-  parent: ClothingHeadEnvirosuitBase
-  id: ClothingHeadEnvirosuitGeneric
-  name: envirosuit helmet
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Head/Envirosuit/generic.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Head/Envirosuit/generic.rsi
 
 - type: entity
   parent: [ClothingHeadEnvirosuitBase, BaseCommandContraband]
@@ -248,16 +198,6 @@
     sprite: _Umbra/Clothing/Head/Envirosuit/prisoner.rsi
 
 - type: entity
-  parent: ClothingHeadEnvirosuitBase
-  id: ClothingHeadEnvirosuitPrototype
-  name: prototype envirosuit helmet
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Head/Envirosuit/prototype.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Head/Envirosuit/prototype.rsi
-
-- type: entity
   parent: [ClothingHeadEnvirosuitBase, BaseCommandContraband]
   id: ClothingHeadEnvirosuitRD
   name: research director envirosuit helmet
@@ -318,16 +258,6 @@
     sprite: _Umbra/Clothing/Head/Envirosuit/syndie.rsi
 
 - type: entity
-  parent: ClothingHeadEnvirosuitBase
-  id: ClothingHeadEnvirosuitViro
-  name: virology envirosuit helmet
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Head/Envirosuit/viro.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Head/Envirosuit/viro.rsi
-
-- type: entity
   parent: [ClothingHeadEnvirosuitBase, BaseSecurityContraband]
   id: ClothingHeadEnvirosuitWarden
   name: warden envirosuit helmet
@@ -336,13 +266,3 @@
     sprite: _Umbra/Clothing/Head/Envirosuit/warden.rsi
   - type: Clothing
     sprite: _Umbra/Clothing/Head/Envirosuit/warden.rsi
-
-- type: entity
-  parent: ClothingHeadEnvirosuitBase
-  id: ClothingHeadEnvirosuitWhite
-  name: white envirosuit helmet
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Head/Envirosuit/white.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Head/Envirosuit/white.rsi
