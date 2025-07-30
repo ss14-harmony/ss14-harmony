@@ -108,16 +108,6 @@
     sprite: _Umbra/Clothing/Uniforms/Envirosuit/cmo.rsi
 
 - type: entity
-  parent: [ClothingUniformEnvirosuitBase, BaseCentcommContraband]
-  id: ClothingUniformEnvirosuitCommander
-  name: commander envirosuit
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Uniforms/Envirosuit/commander.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Uniforms/Envirosuit/commander.rsi
-
-- type: entity
   parent: ClothingUniformEnvirosuitBase
   id: ClothingUniformEnvirosuitDoctor
   name: doctor envirosuit

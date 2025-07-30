@@ -72,18 +72,6 @@
     fiberColor: fibers-red
 
 - type: entity
-  parent: [ClothingHandsEnvirosuitBase, BaseCentcommContraband]
-  id: ClothingHandsEnvirosuitCommander
-  name: commander envirosuit gloves
-  components:
-  - type: Sprite
-    sprite: _Umbra/Clothing/Hands/Envirosuit/commander.rsi
-  - type: Clothing
-    sprite: _Umbra/Clothing/Hands/Envirosuit/commander.rsi
-  - type: Fiber
-    fiberColor: fibers-green
-
-- type: entity
   parent: ClothingHandsEnvirosuitBase
   id: ClothingHandsEnvirosuitEngineer
   name: engineer envirosuit gloves
