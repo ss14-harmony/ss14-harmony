@@ -57,17 +57,18 @@
   # Also ZombieComponent overwrites the old replacement accent, because you can only have one at a time.
   - RussianAccent
   - ScrambledAccent
-  # harmony changes
-  - Hypophonia
-  - IlleismAccent
-  - Speech
-  - Vocal
-  # end harmony changes
   - SkeletonAccent
   - SlurredAccent
   - SouthernAccent
   - SpanishAccent
   - StutteringAccent
+
+  # harmony changes
+  - Hypophonia
+  - IlleismAccent
+  - Speech # For raisedBy traits
+  # end harmony changes
+
   blacklist:
     components:
     - AttachedClothing # helmets, which are part of the suit
