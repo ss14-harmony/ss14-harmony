@@ -4,7 +4,6 @@ using Content.Shared.Popups;
 using Content.Shared._Goobstation.Bingle;
 using Robust.Shared.Map;
 using System.Numerics;
-using Content.Server.Flash.Components;
 using Content.Server.Polymorph.Components;
 using Content.Server.Polymorph.Systems;
 using Content.Shared.CombatMode;

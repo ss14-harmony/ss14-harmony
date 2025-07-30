@@ -90,6 +90,12 @@
     - Cane
 
 - type: loadout
+  id: CardBoxBlack
+  storage:
+    back:
+    - CardBoxBlack
+
+- type: loadout
   id: FoodSnackSwirlLollipop
   effects:
   - !type:JobRequirementLoadoutEffect
