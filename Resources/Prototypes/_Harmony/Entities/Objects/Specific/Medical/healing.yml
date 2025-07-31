@@ -17,7 +17,7 @@
     damage:
       types:
         Heat: -0.5 # if this isn't here it doesn't work... might as well make it meaningful
-    ModifyBloodLevel: 10 # restores a lot of blood for IPCs.
+    modifyBloodLevel: 10 # restores a lot of blood for IPCs.
   - type: Stack
     stackType: IPCOilPack
     count: 10
