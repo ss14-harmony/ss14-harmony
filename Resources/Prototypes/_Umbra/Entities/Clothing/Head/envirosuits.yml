@@ -286,3 +286,13 @@
     sprite: _Umbra/Clothing/Head/Envirosuit/warden.rsi
   - type: Clothing
     sprite: _Umbra/Clothing/Head/Envirosuit/warden.rsi
+
+- type: entity
+  parent: ClothingHeadEnvirosuitBase
+  id: ClothingHeadEnvirosuitWhite
+  name: white envirosuit helmet
+  components:
+    - type: Sprite
+      sprite: _Umbra/Clothing/Head/Envirosuit/white.rsi
+    - type: Clothing
+      sprite: _Umbra/Clothing/Head/Envirosuit/white.rsi

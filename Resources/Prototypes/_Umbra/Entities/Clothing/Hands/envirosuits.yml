@@ -181,6 +181,18 @@
     sprite: _Umbra/Clothing/Hands/Envirosuit/salvage.rsi
   - type: Fiber
     fiberColor: fibers-grey
+    
+  - type: entity
+    parent: ClothingHandsEnvirosuitBase
+    id: ClothingHandsEnvirosuitWhite
+    name: white envirosuit gloves
+    components:
+      - type: Sprite
+        sprite: _Umbra/Clothing/Hands/Envirosuit/white.rsi
+      - type: Clothing
+        sprite: _Umbra/Clothing/Hands/Envirosuit/white.rsi
+      - type: Fiber
+        fiberColor: fibers-white
 
 - type: entity
   parent: ClothingHandsEnvirosuitBase
