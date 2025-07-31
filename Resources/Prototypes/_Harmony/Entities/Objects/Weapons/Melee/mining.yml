@@ -13,7 +13,7 @@
     sprite: _Harmony/Objects/Weapons/Melee/pickaxe_light.rsi
     state: pickaxe
   - type: MeleeWeapon
-    attackRate: 1.2
+    attackRate: 1
     wideAnimationRotation: -135
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
@@ -50,7 +50,7 @@
     sprite: _Harmony/Objects/Weapons/Melee/pickaxe_ultralight.rsi
     state: pickaxe
   - type: MeleeWeapon
-    attackRate: 2
+    attackRate: 1.5
     wideAnimationRotation: -135
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
