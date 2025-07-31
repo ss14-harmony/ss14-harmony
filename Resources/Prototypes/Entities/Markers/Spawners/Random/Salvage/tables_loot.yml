@@ -262,7 +262,6 @@
       weight: 0.5
     # Harmony Change end
 
-
 - type: entityTable
   id: SalvageEquipmentLegendary
   table: !type:GroupSelector

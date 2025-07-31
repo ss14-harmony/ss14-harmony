@@ -16,7 +16,7 @@
     attackRate: 1
     wideAnimationRotation: -135
     soundHit:
-      path: "/Audio/Weapons/smash.ogg"
+      path: /Audio/Weapons/smash.ogg
       params:
         volume: -3
     damage:
@@ -48,14 +48,8 @@
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Melee/pickaxe_ultralight.rsi
-    state: pickaxe
   - type: MeleeWeapon
     attackRate: 1.5
-    wideAnimationRotation: -135
-    soundHit:
-      path: "/Audio/Weapons/smash.ogg"
-      params:
-        volume: -3
     damage:
       groups:
         Brute: 6
@@ -66,9 +60,4 @@
       types:
         Structural: 30
   - type: Item
-    size: Normal
-    shape:
-    - 0,0,2,0
-    - 1,1,1,2
     sprite: _Harmony/Objects/Weapons/Melee/pickaxe_ultralight.rsi
-    storedRotation: -45
