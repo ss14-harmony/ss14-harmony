@@ -2,7 +2,7 @@
   parent: CrateGenericSteel
   id: CrateSlimJohn
   name: Slim-John crate
-  description: The initials, "HH", are scratched on the back.
+  description: A red and white crate, presumably full of snacks.
   components:
   - type: Icon
     sprite: _Harmony/Structures/Storage/Crates/slimjohncrate.rsi

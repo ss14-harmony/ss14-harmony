@@ -27,8 +27,7 @@
 - type: Tag
   id: CartridgeLightRifleCaseless
 
-# Tag used for Slim John containters and Slim John containters for Slim John containers.
-
+# Tag used for Slim John boxes and cartons.
 - type: Tag
   id: SlimJohnSingle
 
