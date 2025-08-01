@@ -187,7 +187,7 @@
   parent: [ClothingHeadBase, BaseCentcommContraband]
   id: ClothingHeadPyjamaCentcomm
   name: CentComm pyjama hat
-  description: A hat worn by centcomm officials to increase their 'work' efficiency.
+  description: A hat worn by CentComm officials to increase their 'work' efficiency.
   components:
   - type: Sprite
     sprite: _Harmony/Clothing/Head/Hats/pyjama_centcomm.rsi
