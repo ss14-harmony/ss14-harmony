@@ -2,7 +2,7 @@
   parent: CrateGenericSteel
   id: CrateFunNanotrasenPyjamas
   name: nanotrasen pyjama crate
-  description: Contains a set of three Nanotrasen brand pyjamas to keep the Syndicate at night away.
+  description: Contains a set of three NanoTrasen brand pyjamas to keep the Syndicate away at night.
   components:
   - type: StorageFill
     contents:
