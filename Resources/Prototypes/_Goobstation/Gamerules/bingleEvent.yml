@@ -3,7 +3,7 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    startAnnouncement: bingle-station-announcement
+    #startAnnouncement: bingle-station-announcement Harmony Change, removes announcement to make bingles a stealth spawn.
     duration: 50
     minimumPlayers: 15
   - type: RandomSpawnRule
