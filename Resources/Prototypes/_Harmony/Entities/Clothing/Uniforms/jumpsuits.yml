@@ -156,7 +156,7 @@
   parent: [ ClothingUniformBase, BaseCentcommContraband ]
   id: ClothingUniformJumpsuitPyjamaCentcomm
   name: CentComm pyjamas
-  description: A pyjama jumpsuit worn by centcomm officials while 'working'.
+  description: A pyjama jumpsuit worn by CentComm officials while 'working'.
   components:
   - type: Sprite
     sprite: _Harmony/Clothing/Uniforms/Jumpsuit/pyjama_centcomm.rsi
