@@ -1,6 +1,18 @@
-﻿# Offensive
+# Offensive
 # Defensive
 # Utility
+- type: listing
+  id: SpellbookItemCurse
+  name: spellbook-item-curse-name
+  description: spellbook-item-curse-desc
+  productAction: ActionItemCurse
+  cost:
+    WizCoin: 1
+  categories:
+  - SpellbookUtility
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
 # Equipment
 - type: listing
   id: SpellbookStaffSlipping

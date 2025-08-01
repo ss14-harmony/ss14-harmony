@@ -1448,7 +1448,7 @@
 - type: entity
   parent: [ BaseMedicalPDA, BaseSyndicateContraband ]
   id: SyndiAgentPDA
-  name: syndicate corpsman PDA
+  name: syndicate medic PDA # Harmony Change - Nukie Corpsman > Nukie Medic
   description: For those days when healing normal syndicates aren't enough, try healing nuclear operatives instead!
   components:
   - type: Pda
