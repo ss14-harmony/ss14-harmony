@@ -162,8 +162,8 @@
   id: ForensicScanner
   name: steal-target-groups-forensic-scanner
   sprite:
-    sprite: _Harmony/Objects/Devices/forensic_scanner.rsi # Updated sprite pathing for Harmony
-    state: forensicnew
+    sprite: Objects/Devices/forensic_scanner.rsi
+    state: icon
 
 - type: stealTargetGroup
   id: FlippoEngravedLighter

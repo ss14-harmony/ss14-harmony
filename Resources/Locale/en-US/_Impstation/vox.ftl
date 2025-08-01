@@ -155,17 +155,6 @@ marking-UnderwearStrappy-strappy3 = Underwear
 marking-UnderwearTangaV = Tanga
 marking-UnderwearTangaV-tanga_vox = Underwear
 
-marking-UndergarmentBottomBoxersVox-boxers_vox = Underwear
-marking-UndergarmentBottomBriefsVox-briefs_vox = Underwear
-marking-UndergarmentBottomSatinVox-satin_vox = Underwear
-
-# UndergarmentTop
-
-marking-UndergarmentTopTanktopVox-tanktop_vox = Tanktop
-marking-UndergarmentTopBinderVox-binder_vox = Binder
-marking-UndergarmentTopBraVox-classic_vox = Bra
-marking-UndergarmentTopSportsbraVox-sports_vox = Bra
-
 # LFoot
 
 marking-VoxFootGradientLFoot = Solid (Left Foot)
