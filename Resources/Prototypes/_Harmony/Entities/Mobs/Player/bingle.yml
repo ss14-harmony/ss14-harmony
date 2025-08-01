@@ -21,7 +21,6 @@
           True: { visible: true }
           False: { visible: false }
   - type: DamageStateVisuals
-    rotate: true
     states:
       Alive:
         Base: alive

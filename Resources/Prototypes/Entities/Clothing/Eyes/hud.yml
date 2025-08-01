@@ -44,7 +44,7 @@
   - type: Tag
     tags:
     - HudMedical
-    - CorgiWearable
+    - PetWearable
     - WhitelistChameleon
 
 - type: entity
@@ -60,7 +60,7 @@
   - type: Tag
     tags:
     - HudSecurity
-    - CorgiWearable
+    - PetWearable
     - WhitelistChameleon
 
 - type: entity
@@ -76,7 +76,7 @@
   - type: ShowJobIcons
   - type: Tag
     tags:
-    - CorgiWearable
+    - PetWearable
     - WhitelistChameleon
 
 - type: entity
@@ -95,7 +95,7 @@
   - type: SolutionScanner
   - type: Tag
     tags:
-    - CorgiWearable
+    - PetWearable
     - WhitelistChameleon
 
 - type: entity
@@ -221,14 +221,14 @@
   - type: ShowSyndicateIcons
   - type: Tag
     tags:
-    - CorgiWearable
+    - PetWearable
     - WhitelistChameleon
 
 - type: entity
   parent: [ClothingEyesBase, ShowSecurityIcons, BaseSyndicateContraband]
   id: ClothingEyesHudSyndicateAgent
   name: syndicate medical visor
-  description: The Syndicate Corpsman's professional heads-up display, designed for quick diagnosis of their team's status.
+  description: The Syndicate Medic's professional heads-up display, designed for quick diagnosis of their team's status. # Harmony Change - Nukie Corpsman > Nukie Medic
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Hud/syndagent.rsi
@@ -238,7 +238,7 @@
   - type: ShowHealthBars
   - type: Tag
     tags:
-    - CorgiWearable
+    - PetWearable
     - WhitelistChameleon
 
 - type: entity
@@ -258,7 +258,7 @@
     sprite: Clothing/Eyes/Hud/medpatch.rsi
   - type: Tag
     tags:
-    - CorgiWearable
+    - PetWearable
     - WhitelistChameleon
     - HudMedical
 
@@ -279,7 +279,7 @@
     sprite: Clothing/Eyes/Hud/secpatch.rsi
   - type: Tag
     tags:
-    - CorgiWearable
+    - PetWearable
     - WhitelistChameleon
     - HudSecurity
 

@@ -185,7 +185,6 @@ namespace Content.Shared.Random.Helpers
             throw new InvalidOperationException($"Invalid weighted pick for {prototype.ID}!");
         }
 
-        // Harmony start - early take hashcodecombine
         /// <summary>
         /// A very simple, deterministic djb2 hash function for generating a combined seed for the random number generator.
         /// We can't use HashCode.Combine because that is initialized with a random value, creating different results on the server and client.
@@ -205,6 +204,5 @@ namespace Content.Shared.Random.Helpers
             }
             return hash;
         }
-        // Harmony end
     }
 }

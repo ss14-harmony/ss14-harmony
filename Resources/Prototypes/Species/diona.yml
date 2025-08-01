@@ -37,13 +37,13 @@
   onlyWhitelisted: true
   points:
     Head:
-      points: 2
+      points: 6 # Harmony - 2->6
       required: false
     HeadTop:
-      points: 1
+      points: 4 # Harmony - 1->4
       required: false
     HeadSide:
-      points: 1
+      points: 2 # Harmony - 1->2
       required: false
     UndergarmentTop:
       points: 1
@@ -52,13 +52,13 @@
       points: 1
       required: false
     Chest:
-      points: 2
+      points: 4 # Harmony - 2->4
       required: false
     Legs:
-      points: 2
+      points: 6 # Harmony - 2->6
       required: false
     Arms:
-      points: 2
+      points: 6 # Harmony - 2->6
       required: false
     Overlay:
       points: 1
