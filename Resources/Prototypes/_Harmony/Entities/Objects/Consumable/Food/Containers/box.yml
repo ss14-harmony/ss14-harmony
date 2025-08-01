@@ -1,0 +1,55 @@
+- type: entity
+  parent: BoxCardboard
+  id: FoodBoxSlimJohn
+  name: box of Slim-Johns
+  description: A small box, made for 9 Slim Johns.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Storage/slimjohnbox.rsi
+    state: box_small
+  - type: Storage
+    grid:
+    - 0,0,2,5
+    whitelist:
+      tags:
+      - SlimJohnSingle
+  - type: Item
+    sprite: _Harmony/Objects/Storage/slimjohnbox.rsi
+    size: Small
+    shape:
+    - 0,0,1,2
+  - type: Tag
+    tags:
+    - SlimJohnBox
+  - type: StorageFill
+    contents:
+    - id: FoodSnackSlimJohn
+      amount: 9
+
+- type: entity
+  parent: BoxCardboard
+  id: FoodBoxBoxSlimJohn
+  name: carton of Slim-Johns
+  description: A large box, made for 6 boxes of Slim Johns.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Storage/slimjohnbox.rsi
+    state: box_large
+  - type: Storage
+    grid:
+    - 0,0,5,5
+    maxItemSize: Huge
+    whitelist:
+      tags:
+      - SlimJohnBox
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+  - type: Item
+    sprite: _Harmony/Objects/Storage/slimjohnbox.rsi
+    size: Small
+  - type: StorageFill
+    contents:
+    - id: FoodBoxSlimJohn
+      amount: 6

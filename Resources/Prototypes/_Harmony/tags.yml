@@ -27,3 +27,10 @@
 - type: Tag
   id: CartridgeLightRifleCaseless
 
+# Tag used for Slim John boxes and cartons.
+- type: Tag
+  id: SlimJohnSingle
+
+- type: Tag
+  id: SlimJohnBox
+

@@ -1,0 +1,39 @@
+- type: entity
+  parent: BasePlushie
+  id: PlushieSlimJohn
+  name: Slim-John Plushie
+  description: A delicious-looking Slim-John, made into a marketable toy!
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Fun/Plushies/slimjohnplushie.rsi
+    state: icon
+  - type: Item
+    heldPrefix: icon
+    size: Tiny
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_Harmony/Items/Toys/slimjohn.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Harmony/Items/Toys/slimjohn.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_Harmony/Items/Toys/slimjohn.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_Harmony/Items/Toys/slimjohn.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/_Harmony/Items/Toys/slimjohn.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/_Harmony/Items/Toys/slimjohn.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/_Harmony/Items/Toys/slimjohn.ogg

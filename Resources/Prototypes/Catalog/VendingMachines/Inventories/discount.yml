@@ -9,6 +9,7 @@
     FoodSnackEnergy: 3
     CigPackMixed: 2
     DiscountDanLighter: 1
+    FoodSnackSlimJohn: 3 #Harmony change.
   contrabandInventory:
     FoodSnackDanDanNoodles: 3
     FoodBakedBunHoney: 3

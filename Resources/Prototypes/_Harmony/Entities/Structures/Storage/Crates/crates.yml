@@ -1,0 +1,10 @@
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateSlimJohn
+  name: Slim-John crate
+  description: A red and white crate, presumably full of snacks.
+  components:
+  - type: Icon
+    sprite: _Harmony/Structures/Storage/Crates/slimjohncrate.rsi
+  - type: Sprite
+    sprite: _Harmony/Structures/Storage/Crates/slimjohncrate.rsi

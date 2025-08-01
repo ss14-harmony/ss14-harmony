@@ -1,0 +1,61 @@
+#Snacks
+
+- type: entity
+  name: Slim-John
+  parent: BaseItem
+  id: FoodSnackSlimJohn
+  description: A protein-packed snack. Might outlast the universe, unless you get to it first!
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Consumable/Food/Snacks/slimjohn.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Blunt: 0
+  - type: Item
+    heldPrefix: icon
+    size: Tiny
+    shape:
+    - 0,0,0,1
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Tag
+    tags:
+    - FoodSnack
+    - SlimJohnSingle
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodPacketSlimJohnTrash
+    - id: FoodMeatMeatStick
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+  - type: Clothing
+    sprite: _Harmony/Objects/Consumable/Food/Snacks/slimjohn.rsi
+    quickEquip: false
+    slots:
+    - suitStorage
+
+#Trash
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketSlimJohnTrash
+  name: Slim-John
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Consumable/Food/Snacks/slimjohn.rsi
+    state: trash
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: trash-inhand-left
+        color: "#FF1818"
+      right:
+      - state: trash-inhand-right
+        color: "#FF1818"
