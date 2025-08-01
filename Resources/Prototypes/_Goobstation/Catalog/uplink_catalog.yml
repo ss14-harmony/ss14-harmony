@@ -1,0 +1,55 @@
+- type: listing
+  id: UplinkSarinGasGrenade
+  name: uplink-sarin-gas-grenade-name
+  description: uplink-sarin-gas-grenade-desc
+  productEntity: SarinGasGrenade
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 4 # same price as a grenade because the damage is over time and can be entirely negated
+  categories:
+    -  UplinkDisruption
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+
+- type: listing
+  id: UplinkM172
+  name: uplink-M172LAW-name
+  description: uplink-M172LAW-desc
+  productEntity: WeaponLauncherRocketDisposable
+  icon: { sprite: _Goobstation/Objects/Weapons/Guns/Launchers/m172.rsi, state: icon }
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 3 # Basically a C4 but ranged
+  categories:
+  - UplinkExplosives
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+
+- type: listing
+  id: UplinkRPOA
+  name: uplink-RPOA-name
+  description: uplink-RPOA-desc
+  productEntity: WeaponLauncherRocketDisposableThermobaric
+  icon: { sprite: _Goobstation/Objects/Weapons/Guns/Launchers/shmel.rsi, state: icon }
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 5 # Only a little better than an incendiary grenade but 3 times as large
+  categories:
+  - UplinkExplosives
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink

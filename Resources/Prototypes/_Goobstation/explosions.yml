@@ -1,0 +1,12 @@
+  # Used by RPO-A shmel
+- type: explosion
+  id: Thermobaric
+  damagePerIntensity:
+    types:
+      Heat: 3
+      Blunt: 2
+      Piercing: 2
+  lightColor: Orange
+  texturePath: /Textures/Effects/fire.rsi
+  fireStates: 8
+  fireStacks: 4

@@ -1,0 +1,13 @@
+- type: reaction
+  id: Atropine
+  reactants:
+    Acetone:
+      amount: 1
+    Diethylamine:
+      amount: 1
+    Phenol:
+      amount: 1
+    Ethanol:
+      amount: 1
+  products:
+    Atropine: 4

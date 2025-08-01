@@ -1,0 +1,60 @@
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseBulletTrigger
+  id: BulletRocketLAW
+  name: 84mm HEAT rocket
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/aprocket.rsi
+    layers:
+      - state: aprocket
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 65
+        Ion: 100 # fuck borgs
+        Structural: 3000 # Anti structure weapon, overkills substations/gens so they dont explode
+    ignoreResistances: true # designed to pierce tanks / 50% when partial AP is added
+  - type: StaminaDamageOnCollide
+    damage: 150 # It's a fucking rocket
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default # Just the old goob burner explosion. not meant to be shot at people but still hurts
+    maxIntensity: 3 # 3x3 explosion
+    intensitySlope: 1.5 # 45 damage at the center tile
+    totalIntensity: 12 # 22.5 damage at the edges, 11.25 damage at the corners
+    maxTileBreak: 0 # for breaking open walls not floors
+  - type: PointLight
+    radius: 3.5
+    color: blue
+    energy: 0.5
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseBulletTrigger
+  id: BulletRocketShmel
+  name: 93mm thermobaric rocket
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/thermobaricrocket.rsi
+    layers:
+      - state: thermobaric
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 20
+        Heat: 15
+        Structural: 50
+  - type: StaminaDamageOnCollide
+    damage: 200 # It's a fat fucking rocket
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Thermobaric
+    maxIntensity: 5
+    intensitySlope: 1.5
+    totalIntensity: 70
+    maxTileBreak: 0
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5
