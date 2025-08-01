@@ -187,12 +187,11 @@ public abstract class SharedBinglePitSystem : EntitySystem
 
             var seed = SharedRandomExtensions.HashCodeCombine(new() { (int)_gameTiming.CurTick.Value, tile.GetHashCode() });
             var random = new System.Random(seed);
-            if (tile.GetContentTileDefinition().Name != newTile.Name &&
-                random.Prob(0.1f)) // 10% probability to transform tile
-            {
-                _tileSystem.ReplaceTile(tile, newTile);
-                _tileSystem.PickVariant(newTile);
-            }
+            if (!random.Prob(0.1f)) // 10% probability to transform tile
+                continue;
+
+            _tileSystem.ReplaceTile(tile, newTile);
+            _tileSystem.PickVariant(newTile);
         }
     }
 
