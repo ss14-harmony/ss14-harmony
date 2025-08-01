@@ -45,7 +45,7 @@
   discountDownTo:
     Telecrystal: 3
   cost:
-    Telecrystal: 5 # Only a little better than an incendiary grenade but 3 times as large
+    Telecrystal: 6 # Only a little better than an incendiary grenade but 3 times as large
   categories:
   - UplinkExplosives
   conditions:

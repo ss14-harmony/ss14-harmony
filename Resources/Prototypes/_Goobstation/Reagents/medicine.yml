@@ -36,8 +36,8 @@
         component: StutteringAccent
       - !type:Jitter
       - !type:Paralyze
-        probability: 0.3
-        paralyzeTime: 3
+        probability: 0.15
+        paralyzeTime: 2
       - !type:Drunk
         boozePower: 5
       - !type:HealthChange
