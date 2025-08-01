@@ -1,7 +1,7 @@
 {
     "version": 1,
-    "license": "CC-BY-SA-3.0",
-    "copyright": "Resprite and recolor of https://github.com/space-wizards/space-station-14/commit/14a5c86674560f46381a7d3a59ae15cdd6e95f88 by ProbablyAta (GitHub) for use in Harmony.",
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "Taken from https://github.com/space-wizards/space-station-14/commit/14a5c86674560f46381a7d3a59ae15cdd6e95f88. Resprite and recolor by ProbablyAta (GitHub)",
     "size": {
         "x": 32,
         "y": 32
