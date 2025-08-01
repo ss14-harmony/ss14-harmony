@@ -2234,3 +2234,24 @@ Entries:
     changes:
     - type: Tweak
       message: The hushpup has been resprited.
+  - id: 879
+    author: kleinerstation13
+    time: '2025-07-28T21:52:32.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/879
+    changes:
+    - type: Tweak
+      message: Tweaked pizza box description to be less ambiguous
+  - id: 523
+    author: DoggowithaKeyboard
+    time: '2025-07-29T21:20:53.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/523
+    changes:
+    - type: Add
+      message: Ported over Playing Cards from Estacao Pirata!
+  - id: 923
+    author: youtissoum
+    time: '2025-07-30T23:25:06.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/923
+    changes:
+    - type: Fix
+      message: Non-humanoids can no longer become blood brothers.
