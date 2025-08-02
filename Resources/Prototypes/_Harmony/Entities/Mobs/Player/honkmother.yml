@@ -1,8 +1,8 @@
 - type: entity
   abstract: true
   id: MobHonkMotherBase
-  suffix: Harmony
   name: Honk Mother
+  suffix: Harmony
   description: 500-foot nightmare stitched from painted clown flesh.
   components:
     - type: Sprite
@@ -17,7 +17,7 @@
 - type: entity
   parent: MobHonkMotherBase
   id: MobHonkmotherSpawn
-  suffix: Spawn
+  suffix: Spawn, Harmony
   components:
     - type: Sprite
       layers:
@@ -51,24 +51,23 @@
             radius: 5
           hard: false
           restitution: 0.8
-          density: 99999
+          density: 1
           mask:
-            - AllMask
+            - SingularityLayer
           layer:
-            - AllMask
+            - SingularityLayer
         EventHorizonConsumer:
           shape:
             !type:PhysShapeCircle
             radius: 5
           hard: false
           mask:
-            - AllMask
+            - SingularityLayer
           layer:
-            - AllMask
+            - SingularityLayer
     - type: Input
       context: "ghost"
     - type: MovementIgnoreGravity
-    # Honkmother hears all
     - type: IntrinsicRadioReceiver
     - type: ActiveRadio
       channels:
@@ -88,13 +87,18 @@
       bodyType: Dynamic
       bodyStatus: InAir
     - type: CanMoveInAir
-    # singulose components
     - type: EventHorizon
       radius: 5
       canBreachContainment: true
     - type: GravityWell
       baseRadialAcceleration: 6
       maxRange: 8
+    - type: Tag
+      tags:
+        - GhostOnlyWarp
     - type: WarpPoint
       follow: true
       location: Honk Mother
+      blacklist:
+        tags:
+          - GhostOnlyWarp
