@@ -13,7 +13,7 @@ public sealed class ScandinavianAccentSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
     
-    private static readonly ProtoId<ReplacementAccentPrototype> accentname = new("scandinavian");
+    private static readonly ProtoId<ReplacementAccentPrototype> AccentName = new("scandinavian");
 
     private static readonly IReadOnlyDictionary<char, char[]> Vowels = new Dictionary<char, char[]>()
     {
@@ -33,7 +33,7 @@ public sealed class ScandinavianAccentSystem : EntitySystem
         var msg = message;
 
         // Apply word replacements
-        msg = _replacement.ApplyReplacements(msg, accentname);
+        msg = _replacement.ApplyReplacements(msg, AccentName);
 
         // Random Umlaut Time! Happily taken from the German code.
         var msgBuilder = new StringBuilder(msg);
