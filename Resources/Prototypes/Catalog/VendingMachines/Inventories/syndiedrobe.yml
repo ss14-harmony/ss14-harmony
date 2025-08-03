@@ -15,6 +15,10 @@
     ClothingNeckScarfStripedSyndieGreen: 2
     ClothingNeckScarfStripedSyndieRed: 2
     ClothingShoesBootsWinterSyndicate: 2
+    # Harmony Change - adds business uniform & cards to syndiedrobe
+    ClothingUniformJumpsuitSyndicateBusinessSuitHarmony: 3
+    CardBoxSyndicate: 1 
+    # Harmony Change end
   contrabandInventory:
     ToyFigurineFootsoldier: 1
     ToyFigurineNukieElite: 1

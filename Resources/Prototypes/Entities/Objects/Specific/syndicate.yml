@@ -94,11 +94,17 @@
 - type: entity
   parent: BaseUplinkRadio
   id: BaseUplinkRadio40TC
-  suffix: 40 TC, NukeOps
+# Start of Harmony Change: Updates suffix to represent proper TC amount
+#  suffix: 40 TC, NukeOps
+  suffix: 45 TC, NukeOps
+# End of Harmony Change
   components:
   - type: Store
     balance:
-      Telecrystal: 40
+# Start of Harmony Change: Adds five TC to the nukie uplink
+#      Telecrystal: 40
+      Telecrystal: 45
+# End of Harmony Change
   - type: Tag
     tags:
     - NukeOpsUplink
@@ -106,11 +112,17 @@
 - type: entity
   parent: BaseUplinkRadio
   id: BaseUplinkRadio60TC
-  suffix: 60 TC, LoneOps
+# Start of Harmony Change: Updates suffix to represent proper TC amount
+#  suffix: 60 TC, LoneOps
+  suffix: 65 TC, LoneOps
+# End of Harmony Change
   components:
   - type: Store
     balance:
-      Telecrystal: 60
+# Start of Harmony Change: Adds five TC to the lone op uplink
+#      Telecrystal: 60
+      Telecrystal: 65
+# End of Harmony Change
   - type: Tag
     tags:
     - NukeOpsUplink

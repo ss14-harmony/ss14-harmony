@@ -9,3 +9,7 @@
 - type: lobbyBackground
   id: SurvivalHarmony
   background: /Textures/_Harmony/LobbyScreens/survivalharmony.webp
+
+- type: lobbyBackground
+  id: HarmonyScrapbook
+  background: /Textures/_Harmony/LobbyScreens/harmonyscrapbook.webp

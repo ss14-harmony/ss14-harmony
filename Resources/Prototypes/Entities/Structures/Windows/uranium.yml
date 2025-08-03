@@ -5,9 +5,13 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/uranium_window.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Windows/uranium_window.rsi
+    sprite: _Harmony/Structures/Windows/uranium_window.rsi
   - type: Icon
-    sprite: Structures/Windows/uranium_window.rsi
+#    sprite: Structures/Windows/uranium_window.rsi
+    sprite: _Harmony/Structures/Windows/uranium_window.rsi
+# End of Harmony Change
     state: full
   - type: Damageable
     damageContainer: StructuralInorganic
@@ -16,13 +20,13 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 200
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 75
+        damage: 100
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -53,7 +57,7 @@
 
 - type: entity
   id: UraniumWindowDirectional
-  parent: WindowDirectional
+  parent: WindowDirectionalRCDResistant
   name: directional uranium window
   description: Don't smudge up the glass down there.
   placement:
@@ -62,10 +66,14 @@
     - Window
   components:
   - type: Sprite
-    sprite: Structures/Windows/directional.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Windows/directional.rsi
+    sprite: _Harmony/Structures/Windows/directional.rsi
     state: uranium_window
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
+#    sprite: Structures/Windows/directional.rsi
+    sprite: _Harmony/Structures/Windows/directional.rsi
+# End of Harmony Change
     state: uranium_window
   - type: Construction
     graph: WindowDirectional
@@ -81,13 +89,13 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 75
+        damage: 100
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 37
+        damage: 50
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -115,17 +123,26 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/uranium_window_diagonal.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Windows/uranium_window_diagonal.rsi
+    sprite: _Harmony/Structures/Windows/uranium_window_diagonal.rsi
+# End of Harmony Change
     state: state0
   - type: Tag
     tags:
     - Diagonal
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+# Start of Harmony Change: Updates IconSmooth key
+#    key: windows
+    key: station
+# End of Harmony Change
     base: state
   - type: Icon
-    sprite: Structures/Windows/uranium_window_diagonal.rsi
+# Start of Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Windows/uranium_window_diagonal.rsi
+    sprite: _Harmony/Structures/Windows/uranium_window_diagonal.rsi
+# End of Harmony Change
     state: state0
   - type: Fixtures
     fixtures:

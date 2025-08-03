@@ -246,9 +246,9 @@
   description: The jumpskirt for the poor sop with a mop.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirt/janitor.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/janitor.rsi # Updated sprite pathing for Harmony
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirt/janitor.rsi
+    sprite: _Harmony/Clothing/Uniforms/Jumpskirt/janitor.rsi # Updated sprite pathing for Harmony
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -334,6 +334,7 @@
   - type: Tag
     tags:
     - ClothMade
+    - Recyclable
     - PrisonUniform
     - WhitelistChameleon
 
@@ -492,6 +493,8 @@
     sprite: Clothing/Uniforms/Jumpskirt/operative_s.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/operative_s.rsi
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   parent: ClothingUniformSkirtBase

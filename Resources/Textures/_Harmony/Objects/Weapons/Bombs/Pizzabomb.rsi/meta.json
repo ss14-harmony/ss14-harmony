@@ -1,17 +1,17 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from tgstation and modified by Swept at https://github.com/tgstation/tgstation/commit/40d75cc340c63582fb66ce15bf75a36115f6bdaa , primed sprite made by _Rot on Discord for use in Harmony",
+    "copyright": "Taken from tgstation and modified by Swept at https://github.com/tgstation/tgstation/commit/40d75cc340c63582fb66ce15bf75a36115f6bdaa , box-open sprite (previously 'primed') made by _Rot on Discord for use in Harmony",
     "size": {
         "x": 32,
         "y": 32
     },
     "states": [
         {
-            "name": "icon"
+            "name": "box"
         },
         {
-            "name": "primed"
+            "name": "box-open"
         },
         {
             "name": "box-inhand-right",

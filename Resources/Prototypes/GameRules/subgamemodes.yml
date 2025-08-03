@@ -27,6 +27,9 @@
       startingGear: ThiefGear
       components:
       - type: Pacified
+      - type: Thieving
+        stripTimeReduction: 2
+        stealthy: true
       mindRoles:
       - MindRoleThief
       briefing:
@@ -37,6 +40,11 @@
   parent: BaseWizardRule
   id: SubWizard
   components:
+  # Start harmony specific change
+  - type: GameRule
+    minPlayers: 25
+    cancelPresetOnTooFewPlayers: false
+  # End harmony specific change
   - type: AntagSelection
     agentName: wizard-round-end-name
     selectionTime: PrePlayerSpawn

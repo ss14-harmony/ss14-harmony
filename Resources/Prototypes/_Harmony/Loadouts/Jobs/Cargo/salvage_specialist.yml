@@ -1,0 +1,31 @@
+- type: loadoutEffectGroup
+  id: SeniorSalvageSpecialist
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobSalvageSpecialist
+      time: 108000 # 30 hrs (~20 rounds)
+
+# Neck
+- type: loadout
+  id: ClothingNeckCloakSeniorSalvager
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorSalvageSpecialist
+  equipment:
+    neck: ClothingNeckCloakSeniorSalvager
+
+# ID
+- type: loadout
+  id: SalvagePDA
+  equipment:
+    id: SalvagePDA
+
+- type: loadout
+  id: SeniorSalvagePDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorSalvageSpecialist
+  equipment:
+    id: SeniorSalvagePDA

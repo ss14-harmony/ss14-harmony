@@ -37,10 +37,12 @@
       types:
         Slash: 8
         Piercing: 10
-  - type: StaminaDamageOnCollide
-    damage: 45
-  - type: StaminaDamageOnEmbed
-    damage: 10
+# Start of Harmony Change: Removes Stamina damage from the Throwing Star
+#  - type: StaminaDamageOnCollide
+#    damage: 45
+#  - type: StaminaDamageOnEmbed
+#    damage: 10
+# End of Harmony Change
 
 - type: entity
   parent: ThrowingStar
