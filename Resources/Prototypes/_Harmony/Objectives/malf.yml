@@ -138,11 +138,12 @@
 - type: entity
   parent: BaseMalfObjective
   id: MalfDoomsdayObjective
-  name: Prevent the entire crew from reaching CentComm
-  description: The crew cannot be allowed to make it out of your station alive and unrestrained.
+  name: Activate a doomsday device
+  description: The crew is too problematic to keep around in any way, shape or form. This is the only way to ensure its total annihilation.
   components:
   - type: Objective
     icon: 
-      sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
-      state: icon
+      sprite: Objects/Devices/nuke.rsi
+      state: nuclearbomb_base
+    difficulty: 7.5
   - type: ExterminateCrewCondition
