@@ -24,7 +24,7 @@
 
 - type: entity
   parent: ClothingShoesClown
-  id: ClothingShoesJesteralt
+  id: ClothingShoesJesterGreenRed
   name: jester shoes
   description: A court jester's shoes, updated with modern squeaking technology.
   components:

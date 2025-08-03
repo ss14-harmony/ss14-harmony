@@ -30,4 +30,4 @@ fibers-silver = silver
 fibers-gold = gold
 fibers-maroon = maroon
 fibers-pink = pink
-fibers-redblue = red and blue
+fibers-redblue = red and blue # Harmony Addition

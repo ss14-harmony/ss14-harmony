@@ -64,8 +64,8 @@
 - type: entity
   parent: ClothingHandsGlovesSyntheticBase
   id: ClothingHandsGlovesColorPomni
-  name: Red and blue gloves
-  description: Regular gloves, seems someone mixxed the pair..
+  name: red and blue gloves
+  description: Regular gloves, seems someone mixed the pair.
   components:
   - type: Sprite
     sprite: _Harmony/Clothing/Hands/Gloves/Color/jesterPOMNI.rsi

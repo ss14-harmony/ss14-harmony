@@ -1,17 +1,7 @@
 - type: vendingMachineInventory
   id: AutoDrobeInventory
   startingInventory:
-  #harmony change start
-    ClothingShoesJesteralt: 1
-    ClothingShoesJesterPomni: 1
-    ClothingShoesJesterJevil: 1
-    ClothingUniformJumpsuitJesterPomni: 1
-    ClothingUniformJumpsuitJesterJevil: 1
-    ClothingMaskClownBaseNERD: 1
-    ClothingHeadHatJesterPomni: 1
-    ClothingHeadHatJesterJevil: 1
-    ClothingHandsGlovesColorPomni: 1
-  #harmony change end
+
     ClothingHeadHatJester: 1
     ClothingUniformJumpsuitJester: 1
     ClothingHeadHatJesterAlt: 1
@@ -66,6 +56,17 @@
     ClothingShoesBootsCowboyBrown: 1
     ClothingShoesBootsCowboyBlack: 1
     ClothingShoesBootsCowboyWhite: 1
+    #harmony change start
+    ClothingShoesJesterGreenRed: 1
+    ClothingShoesJesterPomni: 1
+    ClothingShoesJesterJevil: 1
+    ClothingUniformJumpsuitJesterPomni: 1
+    ClothingUniformJumpsuitJesterJevil: 1
+    ClothingMaskClownBaseNERD: 1
+    ClothingHeadHatJesterPomni: 1
+    ClothingHeadHatJesterJevil: 1
+    ClothingHandsGlovesColorPomni: 1
+  #harmony change end
   contrabandInventory:
     ClothingHeadHatRichard: 1
     ToyFigurineBoxer: 1

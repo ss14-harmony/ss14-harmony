@@ -53,7 +53,7 @@
 - type: entity
   parent: ClothingMaskBase
   id: ClothingMaskClownBaseNERD
-  name: Strange clown mask
+  name: strange clown mask
   description: Hehe.
   components:
   - type: Sprite
@@ -73,3 +73,4 @@
     - Snout
     - HeadTop
     - HeadSide
+    
