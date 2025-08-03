@@ -7,14 +7,14 @@
     sprite: _Harmony/Clothing/Hands/Gloves/mantis.rsi
     layers:
     - state: icon
-      map: [ "enum.ToggleVisuals.Layer" ]
+      map: [ "enum.ToggleableVisuals.Layer" ]
   - type: Clothing
     sprite: _Harmony/Clothing/Hands/Gloves/mantis.rsi
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.ToggleVisuals.Toggled:
-        enum.ToggleVisuals.Layer:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
           True:
             sprite: _Harmony/Clothing/Hands/Gloves/mantis_activated.rsi  #Goonstation license forced my hand to do this.
             state: icon

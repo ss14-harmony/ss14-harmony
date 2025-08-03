@@ -76,6 +76,7 @@
       tags:
         - Carp
         - DoorBumpOpener
+        - CannotSuicide
     - type: ReplacementAccent
       accent: genericAggressive
     - type: Speech
@@ -114,6 +115,13 @@
       sprite: Mobs/Aliens/Carps/magic.rsi
     - type: TypingIndicator
       proto: guardian
+# Begin harmony addition
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+# End harmony addition
 
 - type: entity
   name: holocarp
@@ -156,6 +164,10 @@
   suffix: "Salvage Ruleset"
   components:
     - type: SalvageMobRestrictions
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        30: Dead
 
 - type: entity
   name: space carp
@@ -172,10 +184,6 @@
       rules: ghost-role-information-space-dragon-summoned-carp-rules
       mindRoles:
       - MindRoleGhostRoleTeamAntagonistFlock
-      # harmony start: remove ghost role raffle from carps
-      # raffle:
-      #   settings: short
-      # harmony end
     - type: GhostTakeoverAvailable
     - type: HTN
       rootTask:
@@ -226,7 +234,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        150: Dead
+        82: Dead # Might seem random, but this brings up the hits to kill with a crusher mark to 3
     - type: Stamina
       critThreshold: 150
     - type: DamageStateVisuals
@@ -245,8 +253,7 @@
         - id: FoodMeatFish
           amount: 4
         - id: MaterialToothSharkminnow1
-          amount: 1
-          maxAmount: 3
+          amount: 3
     - type: MeleeWeapon
       damage:
         types:

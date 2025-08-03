@@ -1,0 +1,62 @@
+- type: entity
+  parent: KitchenMicrowaveUpstream
+  id: KitchenMicrowave
+  suffix: Harmony
+  components:
+  - type: Item
+    sprite: _Harmony/Structures/Machines/microwave.rsi
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: MeleeWeapon
+    attackRate: 0.5
+    soundHit:
+      collection: MetalBreak
+    damage:
+      types:
+        Blunt: 25
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 10
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 50
+  - type: EmitSoundOnLand
+    sound:
+      collection: MetalBreak
+      params:
+        variation: 0.25
+  - type: HeldSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: DamageExaminable
+
+- type: entity
+  parent: [SyndicateMicrowaveUpstream, KitchenMicrowaveUpstream, BaseSyndicateContraband]
+  id: SyndicateMicrowave
+  suffix: Harmony
+  components:
+  - type: Item
+    sprite: _Harmony/Structures/Machines/microwave_syndie.rsi
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: MeleeWeapon
+    attackRate: 0.75
+    damage:
+      types:
+        Blunt: 30
+        Shock: 5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 15
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 25
+  - type: EmitSoundOnLand
+    sound:
+      collection: MetalBreak
+      params:
+        variation: 0.25

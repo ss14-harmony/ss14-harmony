@@ -6,7 +6,10 @@
   components:
   - type: InteractionOutline
   - type: Sprite
-    sprite: Structures/Doors/Windoors/windoor.rsi
+# Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Doors/Windoors/windoor.rsi
+    sprite: _Harmony/Structures/Doors/Windoors/windoor.rsi
+# End of Harmony Change
     layers:
     - state: assembly
   - type: Physics
@@ -56,7 +59,10 @@
   parent: WindoorAssembly
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/windoor.rsi
+# Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Doors/Windoors/windoor.rsi
+    sprite: _Harmony/Structures/Doors/Windoors/windoor.rsi
+# End of Harmony Change
     layers:
     - state: secure_underlay
     - state: assembly
@@ -112,7 +118,10 @@
   parent: WindoorAssembly
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/plasma.rsi
+# Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Doors/Windoors/plasma.rsi
+    sprite: _Harmony/Structures/Doors/Windoors/plasma.rsi
+# End of Harmony Change
     layers:
     - state: assembly
   - type: Destructible
@@ -142,7 +151,10 @@
   parent: WindoorAssembly
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/plasma.rsi
+# Harmony Change: Updates Sprite Pathing
+#    sprite: Structures/Doors/Windoors/plasma.rsi
+    sprite: _Harmony/Structures/Doors/Windoors/plasma.rsi
+# End of Harmony Change
     layers:
     - state: secure_underlay
     - state: assembly

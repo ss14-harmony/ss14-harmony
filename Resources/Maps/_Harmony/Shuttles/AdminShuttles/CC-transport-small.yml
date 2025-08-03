@@ -1703,23 +1703,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.5,-4.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        board: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 59
-        capacitor: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 58
-        powercell: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 56
     - type: PowerNetworkBattery
       loadingNetworkDemand: 14115.014
       currentReceiving: 14115.014

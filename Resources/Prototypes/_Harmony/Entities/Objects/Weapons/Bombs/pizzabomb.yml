@@ -1,30 +1,21 @@
 ﻿- type: entity
-  parent: [GrenadeBase, FoodBoxPizza]
+  parent: FoodBoxPizzaFilled
   id: Pizzabomb
-  name: pizza box
   suffix: Bomb
-  description: A cardboard box for storing things.
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Bombs/Pizzabomb.rsi
-    layers:
-    - state: icon
-    - state: primed
-      map: ["enum.TriggerVisualLayers.Base"]
-  - type: OnUseTimerTrigger # todo: make it activate through welder/lighter/fire instead
-    delay: 100
-    examinable: false
-    initialBeepDelay: 0
-    beepSound: /Audio/Machines/microwave_done_beep.ogg
-  - type: RandomTimerTrigger
-    min: 0.5
-    max: 0.5
-  - type: ExplodeOnTrigger
+  - type: TwoStageTrigger # Trigger the sound trigger, delay, then explode
+    triggerDelay: 0.5
+    components:
+    - type: ExplodeOnTrigger # Explode after the delay
+  - type: SoundOnTrigger
+    sound: /Audio/Machines/microwave_done_beep.ogg
+    removeOnTrigger: false
+  - type: TriggerOnUiOpen # Timer is triggered on storage open
   - type: Explosive # Weak explosion in a very small radius. Doesn't break underplating.
     explosionType: Default
     totalIntensity: 130
     intensitySlope: 10
     maxIntensity: 10
     canCreateVacuum: false
-  - type: Appearance
-  - type: TimerTriggerVisuals

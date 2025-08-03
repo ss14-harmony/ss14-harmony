@@ -1,0 +1,35 @@
+#Quartermasters Hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitQM
+  name: quartermaster's antique salvage hardsuit helmet
+  description: A salvaged pirate helmet generously donated to NanoTrasen, retrofitted for the Quartermaster.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Head/Hardsuits/qmsuit.rsi
+  - type: HandheldLight
+    addPrefix: false
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-light-vox
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+  - type: PointLight
+    radius: 6
+    color: "#67ffe2"
+  - type: PressureProtection
+    highPressureMultiplier: 0.72
+    lowPressureMultiplier: 1000

@@ -17,9 +17,9 @@
   description: Nanotrasen-issue Security combat boots for combat scenarios or combat situations. All combat, all the time.
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/Boots/jackboots.rsi
+    sprite: _Harmony/Clothing/Shoes/Boots/jackboots.rsi # Updated sprite pathing for Harmony
   - type: Clothing
-    sprite: Clothing/Shoes/Boots/jackboots.rsi
+    sprite: _Harmony/Clothing/Shoes/Boots/jackboots.rsi # Updated sprite pathing for Harmony
   - type: ClothingSlowOnDamageModifier
     modifier: 0.5
 
@@ -75,6 +75,7 @@
     footstepSoundCollection:
       collection: FootstepHighHeels
       params:
+        volume: -6
         variation: 0.09
 
 - type: entity
@@ -218,6 +219,7 @@
       collection: FootstepSpurs
       params:
         variation: 0.09
+        volume: -6
 
 - type: entity
   parent: ClothingShoesBootsCowboyBrown

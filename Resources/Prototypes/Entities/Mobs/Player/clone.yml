@@ -16,14 +16,17 @@
   - NpcFactionMember
   # traits
   # - LegsParalyzed (you get healed)
+  - BlackAndWhiteOverlay
   - LightweightDrunk
+  - Muted
   - Narcolepsy
   - Pacified
   - PainNumbness
   - Paracusia
   - PermanentBlindness
+  - Snoring
   - Unrevivable
-  - Uncloneable #Harmony
+  - Uncloneable # Harmony
   # job specific
   - BibleUser
   - CommandStaff
@@ -31,6 +34,7 @@
   - MindShield
   - MimePowers
   - SpaceNinja
+  - Thieving
   # accents
   - Accentless
   - BackwardsAccent
@@ -38,6 +42,7 @@
   - BleatingAccent
   - DamagedSiliconAccent
   - FrenchAccent
+  - FrontalLisp
   - GermanAccent
   - LizardAccent
   - MobsterAccent
@@ -63,6 +68,9 @@
   - ScandinavianAccent
   - ScottishAccent
   - StreetpunkAccent
+  - Hypophonia
+  - IlleismAccent
+  - Speech # For raisedBy traits
   # Hamrony addons end
   blacklist:
     components:
