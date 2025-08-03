@@ -63,6 +63,13 @@
   - SouthernAccent
   - SpanishAccent
   - StutteringAccent
+
+  # harmony changes
+  - Hypophonia
+  - IlleismAccent
+  - Speech # For raisedBy traits
+  # end harmony changes
+
   blacklist:
     components:
     - AttachedClothing # helmets, which are part of the suit
