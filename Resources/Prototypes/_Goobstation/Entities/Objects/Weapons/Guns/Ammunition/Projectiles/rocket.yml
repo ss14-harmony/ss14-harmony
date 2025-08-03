@@ -12,7 +12,7 @@
     damage:
       types:
         Piercing: 65
-        Ion: 100 # fuck borgs
+#        Ion: 100 # fuck borgs
         Structural: 3000 # Anti structure weapon, overkills substations/gens so they dont explode
     ignoreResistances: true # designed to pierce tanks / 50% when partial AP is added
   - type: StaminaDamageOnCollide

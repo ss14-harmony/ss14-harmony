@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ SmokeGrenade , BaseSyndicateContraband ]
+  parent: [ SmokeGrenade, BaseSyndicateContraband ]
   id: SarinGasGrenade
   name: sarin gas grenade
   description: A brutal nerve agent gas that stuns, blinds, and poisons anybody unlucky enough to catch a whiff aswell as burning anyone not in a voidsuit.
