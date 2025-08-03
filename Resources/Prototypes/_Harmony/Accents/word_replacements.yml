@@ -173,6 +173,7 @@
     accent-irish-words-168: accent-irish-words-replace-168
     accent-irish-words-169: accent-irish-words-replace-169
     accent-irish-words-170: accent-irish-words-replace-170
+    
 - type: accent
   id: scandinavian
   wordReplacements:
@@ -203,3 +204,4 @@
     accent-scandinavian-words-22: accent-scandinavian-words-replace-22
     accent-scandinavian-words-23: accent-scandinavian-words-replace-23
     accent-scandinavian-words-24: accent-scandinavian-words-replace-24
+    

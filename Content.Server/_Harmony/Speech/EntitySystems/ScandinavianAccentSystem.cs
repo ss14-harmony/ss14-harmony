@@ -1,10 +1,8 @@
 using System.Text;
 using Content.Server._Harmony.Speech.Components;
 using Robust.Shared.Random;
-using System.Text.RegularExpressions;
 using Content.Server.Speech;
 using Content.Server.Speech.EntitySystems;
-using Content.Server._Harmony.Speech.Components;
 
 namespace Content.Server._Harmony.Speech.EntitySystems;
 
@@ -12,6 +10,8 @@ public sealed class ScandinavianAccentSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
+    
+    private const string accentname = "scandinavian";
 
     private static readonly IReadOnlyDictionary<char, char[]> Vowels = new Dictionary<char, char[]>()
     {
@@ -31,7 +31,7 @@ public sealed class ScandinavianAccentSystem : EntitySystem
         var msg = message;
 
         // Apply word replacements
-        msg = _replacement.ApplyReplacements(msg, "scandinavian");
+        msg = _replacement.ApplyReplacements(msg, accentname);
 
         // Random Umlaut Time! Happily taken from the German code.
         var msgBuilder = new StringBuilder(msg);
@@ -46,12 +46,12 @@ public sealed class ScandinavianAccentSystem : EntitySystem
                 'w' => 'v',
                 'J' => 'Y',
                 'j' => 'y',
-                _ => msgBuilder[i]
+                _ => msgBuilder[i],
             };
 
             if (umlautCooldown == 0)
             {
-                if (_random.Prob(0.4f)) // 40% of all eligible vowels become umlauts)
+                if (_random.Prob(0.4f)) // 40% of all eligible vowels become umlauts
                 {
                     msgBuilder[i] = tempchar switch
                     {

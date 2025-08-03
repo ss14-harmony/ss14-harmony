@@ -5,5 +5,4 @@ namespace Content.Server._Harmony.Speech.Components;
 // Takes the ES and assigns the system and component to each other
 [RegisterComponent]
 [Access(typeof(IrishAccentSystem))]
-public sealed partial class IrishAccentComponent : Component
-{ }
+public sealed partial class IrishAccentComponent : Component;
