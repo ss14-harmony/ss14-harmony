@@ -1,7 +1,7 @@
 using Content.Server._Harmony.Speech.Components;
-using Content.Server.Speech;
 using Content.Server.Speech.EntitySystems;
 using Content.Server.Speech.Prototypes;
+using Content.Shared.Speech;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Harmony.Speech.EntitySystems;
