@@ -36,3 +36,16 @@
     BloodBrotherKillRandomPersonObjective: 0.85
     BloodBrotherKillRandomHeadObjective: 0.25
     BloodBrotherTeachLessonRandomPersonObjective: 1
+
+- type: weightedRandom
+  id: MalfunctionPrimeObjectiveGroup
+  weights:
+    MalfExterminateCrewObjective: 0.5
+    MalfExterminateScienceObjective: 1
+    MalfExterminateEngineeringObjective: 1
+    MalfExterminateMedicalObjective: 1
+    MalfExterminateSecurityObjective: 0.85
+    MalfExterminateServiceObjective: 1
+    MalfExterminateSupplyObjective: 1
+    MalfExterminateCommandObjective: 0.75
+    MalfDoomsdayObjective: 1

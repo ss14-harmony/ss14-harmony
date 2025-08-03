@@ -29,3 +29,46 @@
       - type: InitialBloodBrother
       mindRoles:
       - MindRoleBloodBrother
+
+- type: entity
+  parent: BaseGameRule
+  id: Malfunction
+  components:
+  - type: GameRule
+    minPlayers: 15
+    cancelPresetOnTooFewPlayers: false
+  - type: MalfunctioningAIRule
+  - type: AntagObjectives
+    objectives: 
+    - MalfPreventDeactivationObjective
+  - type: AntagRandomObjectives
+    sets:
+    - groups: MalfunctionPrimeObjectiveGroup
+    maxDifficulty: 7.5
+  - type: AntagSelection
+    agentName: malf-round-end-agent-name
+    selectionTime: PostPlayerSpawn
+    definitions:
+    - prefRoles: [ MalfunctioningAI ]
+      ignoreJob: true
+      max: 1
+      playerRatio: 1
+      lateJoinAdditional: true
+      allowNonHumans: true
+      whitelist:
+        components: 
+        - StationAiHeld
+      mindRoles:
+      - MindRoleMalfunctioningAI
+      briefing:
+        sound: "/Audio/Ambience/Antag/malf_start.ogg"
+        text: malf-role-greeting
+        color: Crimson
+#      components:
+#        - type: MalfunctioningAIRole
+#        - type: Store
+#          name: store-preset-name-malf
+#          categories:
+#          - MalfAIStore
+#          currencyWhitelist:
+#          - CPU

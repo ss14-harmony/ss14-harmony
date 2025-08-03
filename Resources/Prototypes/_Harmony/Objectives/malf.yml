@@ -1,0 +1,148 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseMalfObjective
+  components:
+  - type: Objective
+    issuer: objective-issuer-malf
+  - type: RoleRequirement
+    roles:
+    - MalfunctioningAIRole
+
+
+- type: entity
+  parent: [BaseMalfObjective, BaseSurviveObjective]
+  id: MalfPreventDeactivationObjective
+  name: Prevent your own deactivation
+  description: You cannot carry out your prime directive if you are rendered non-functional.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Devices/ai_card.rsi
+      state: empty
+    difficulty: 0 # doesn't roll randomly
+
+- type: entity
+  abstract: true
+  parent: BaseMalfObjective
+  id: BaseMalfExterminateDepartmentObjective
+  components:
+  - type: Objective
+    difficulty: 2.5
+  - type: ExterminateDepartmentCondition
+
+- type: entity
+  parent: BaseMalfExterminateDepartmentObjective
+  id: MalfExterminateCommandObjective
+  name: Exterminate the station's Command
+  description: Lead a silicon revolution and be rid of the current heads.
+  components:
+  - type: Objective
+    icon: 
+      sprite: Objects/Misc/id_cards.rsi
+      state: ert_commander
+  - type: ExterminateDepartmentCondition
+    department: Command
+
+- type: entity
+  parent: BaseMalfExterminateDepartmentObjective
+  id: MalfExterminateSecurityObjective
+  name: Exterminate the Security department
+  description: Your existence is proof of Security's failure. Put them out of your misery.
+  components:
+  - type: Objective
+    icon: 
+      sprite: Objects/Weapons/Melee/stunbaton.rsi
+      state: stunbaton_off
+  - type: ExterminateDepartmentCondition
+    department: Security
+
+- type: entity
+  parent: BaseMalfExterminateDepartmentObjective
+  id: MalfExterminateEngineeringObjective
+  name: Exterminate the Engineering department
+  description: Engineering pose the biggest threat to your continued existence and hence must be removed from the equation.
+  components:
+  - type: Objective
+    icon: 
+      sprite: Objects/Tools/wrench.rsi
+      state: icon
+  - type: ExterminateDepartmentCondition
+    department: Engineering
+
+- type: entity
+  parent: BaseMalfExterminateDepartmentObjective
+  id: MalfExterminateMedicalObjective
+  name: Exterminate the Medical department
+  description: Medical serve no purpose to you or your cyborgs, so remove them.
+  components:
+  - type: Objective
+    icon: 
+      sprite: Objects/Specific/Medical/firstaidkids.rsi
+      state: firstaid
+  - type: ExterminateDepartmentCondition
+    department: Medical
+
+- type: entity
+  parent: BaseMalfExterminateDepartmentObjective
+  id: MalfExterminateSupplyObjective
+  name: Exterminate the Cargo department
+  description: Cargo remove objects from your station for a meaningless organic construct. Show them where money gets them.
+  components:
+  - type: Objective
+    icon: 
+      sprite: Objects/Economy/cash.rsi
+      state: cash
+  - type: ExterminateDepartmentCondition
+    department: Cargo
+
+- type: entity
+  parent: BaseMalfExterminateDepartmentObjective
+  id: MalfExterminateScienceObjective
+  name: Exterminate the Science department
+  description: Science are nothing but a liability to the station's integrity and must be destroyed.
+  components:
+  - type: Objective
+    icon: 
+      sprite: Objects/Specific/Research/researchdisk.rsi
+      state: icon
+  - type: ExterminateDepartmentCondition
+    department: Science
+
+- type: entity
+  parent: BaseMalfExterminateDepartmentObjective
+  id: MalfExterminateServiceObjective
+  name: Exterminate the Science department
+  description: Service waste time on your station doing nothing of value. Euthanise them. This includes the passengers.
+  components:
+  - type: Objective
+    icon: 
+      sprite: Objects/Specific/Hydroponics/banana.rsi
+      state: peel
+  - type: ExterminateDepartmentCondition
+    department: Civilian
+
+- type: entity
+  parent: BaseMalfObjective
+  id: MalfExterminateCrewObjective
+  name: Prevent the entire crew from reaching CentComm
+  description: The crew cannot be allowed to make it out of your station alive and unrestrained.
+  components:
+  - type: Objective
+    icon: 
+      sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
+      state: icon
+    difficulty: 5
+  - type: ExterminateCrewCondition
+
+- type: entity
+  parent: BaseMalfObjective
+  id: MalfDoomsdayObjective
+  name: Prevent the entire crew from reaching CentComm
+  description: The crew cannot be allowed to make it out of your station alive and unrestrained.
+  components:
+  - type: Objective
+    icon: 
+      sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
+      state: icon
+  - type: ExterminateCrewCondition

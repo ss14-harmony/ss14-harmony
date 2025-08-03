@@ -9,3 +9,25 @@
     exclusiveAntag: true
     roleType: TeamAntagonist
     subtype: role-subtype-blood-brother
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleMalfunctioningAI
+  name: MalfunctioningAIRole
+  components:
+  - type: MindRole
+    roleType: TeamAntagonist
+    exclusiveAntag: true
+    antagPrototype: MalfunctioningAI
+  - type: MalfunctioningAIRole
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleMalfunctioningCyborg
+  name: MalfunctioningCyborgRole
+  components:
+  - type: MindRole
+    roleType: TeamAntagonist
+    exclusiveAntag: true
+    antagPrototype: MalfunctioningCyborg
+  - type: MalfunctioningCyborgRole

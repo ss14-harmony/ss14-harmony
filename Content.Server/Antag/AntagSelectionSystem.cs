@@ -552,7 +552,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         }
 
         // todo: expand this to allow for more fine antag-selection logic for game rules.
-        if (!_jobs.CanBeAntag(session))
+        if (!_jobs.CanBeAntag(session) && !def.IgnoreJob) // harmony change: added !def.IgnoreJob condition as part of Malf implementation
             return false;
 
         return true;

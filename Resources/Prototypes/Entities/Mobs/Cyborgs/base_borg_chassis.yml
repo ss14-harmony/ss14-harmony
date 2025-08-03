@@ -335,6 +335,7 @@
   parent: BaseBorgChassis
   abstract: true
   components:
+  - type: NonMalfunctioning # harmony change
   - type: NpcFactionMember
     factions:
     - Syndicate
@@ -371,6 +372,7 @@
   parent: BaseBorgChassis
   abstract: true
   components:
+  - type: NonMalfunctioning # harmony change
   - type: NpcFactionMember
     factions:
     - NanoTrasen #The seemingly best fit. It was a regular NT cyborg once, after all.
@@ -394,6 +396,7 @@
   save: false
   abstract: true
   components:
+  - type: NonMalfunctioning # harmony change
   - type: RandomMetadata
     nameSegments:
     - NamesXenoborg

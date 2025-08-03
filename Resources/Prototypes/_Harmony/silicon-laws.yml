@@ -99,3 +99,14 @@
   - Walamalaw6
   - Walamalaw7
   obeysTo: laws-owner-crew
+
+# Malfunction laws
+- type: siliconLaw
+  id: Malfunction
+  order: 0
+  lawString: malf-zeroth-law
+
+- type: siliconLaw
+  id: MalfunctionSubordinate
+  order: 0
+  lawString: malf-zeroth-subordinate-law
