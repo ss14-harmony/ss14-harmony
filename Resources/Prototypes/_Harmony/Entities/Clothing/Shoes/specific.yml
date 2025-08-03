@@ -45,9 +45,9 @@
   description: i feel like glitching.
   components:
     - type: Sprite
-      sprite: _Harmony/Clothing/Shoes/Specific/jesterPOMNI.rsi
+      sprite: _Harmony/Clothing/Shoes/Specific/jesterpomni.rsi
     - type: Clothing
-      sprite: _Harmony/Clothing/Shoes/Specific/jesterPOMNI.rsi
+      sprite: _Harmony/Clothing/Shoes/Specific/jesterpomni.rsi
     - type: FootstepModifier
       footstepSoundCollection:
         collection: FootstepJester
@@ -61,9 +61,9 @@
   description: CHAOS IS MY DRIP.
   components:
     - type: Sprite
-      sprite: _Harmony/Clothing/Shoes/Specific/jesterJEVIL.rsi
+      sprite: _Harmony/Clothing/Shoes/Specific/jesterjevil.rsi
     - type: Clothing
-      sprite: _Harmony/Clothing/Shoes/Specific/jesterJEVIL.rsi
+      sprite: _Harmony/Clothing/Shoes/Specific/jesterjevil.rsi
     - type: FootstepModifier
       footstepSoundCollection:
         collection: FootstepJester

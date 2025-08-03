@@ -57,9 +57,9 @@
   description: Hehe.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Mask/clownNERD.rsi
+    sprite: _Harmony/Clothing/Mask/clownnerd.rsi
   - type: Clothing
-    sprite: _Harmony/Clothing/Mask/clownNERD.rsi
+    sprite: _Harmony/Clothing/Mask/clownnerd.rsi
   - type: BreathMask
   - type: IdentityBlocker
   - type: Tag
