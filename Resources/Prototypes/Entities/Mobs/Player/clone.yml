@@ -63,6 +63,15 @@
   - SouthernAccent
   - SpanishAccent
   - StutteringAccent
+  # Hamrony addons start
+  - IrishAccent
+  - ScandinavianAccent
+  - ScottishAccent
+  - StreetpunkAccent
+  - Hypophonia
+  - IlleismAccent
+  - Speech # For raisedBy traits
+  # Hamrony addons end
   blacklist:
     components:
     - AttachedClothing # helmets, which are part of the suit
