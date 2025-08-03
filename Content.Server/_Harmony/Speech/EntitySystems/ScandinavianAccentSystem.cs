@@ -1,8 +1,10 @@
 using System.Text;
-using Content.Server._Harmony.Speech.Components;
 using Robust.Shared.Random;
 using Content.Server.Speech;
 using Content.Server.Speech.EntitySystems;
+using Content.Server._Harmony.Speech.Components;
+using Content.Server.Speech.Prototypes;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Harmony.Speech.EntitySystems;
 
@@ -11,7 +13,7 @@ public sealed class ScandinavianAccentSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
     
-    private const string accentname = "scandinavian";
+    private static readonly ProtoId<ReplacementAccentPrototype> accentname = new("scandinavian");
 
     private static readonly IReadOnlyDictionary<char, char[]> Vowels = new Dictionary<char, char[]>()
     {

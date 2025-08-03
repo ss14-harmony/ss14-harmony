@@ -1,6 +1,8 @@
 using Content.Server._Harmony.Speech.Components;
 using Content.Server.Speech;
 using Content.Server.Speech.EntitySystems;
+using Content.Server.Speech.Prototypes;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Harmony.Speech.EntitySystems;
 
@@ -8,7 +10,7 @@ public sealed class IrishAccentSystem : EntitySystem
 {
     [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
     
-    private const string accentname = "irish";
+    private static readonly ProtoId<ReplacementAccentPrototype> accentname = new("irish");
     
     public override void Initialize()
     {
