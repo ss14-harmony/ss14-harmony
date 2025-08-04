@@ -5,6 +5,7 @@ using Content.Server._EE.Silicon.Charge;
 using Content.Server._EE.Power.Components;
 using Content.Server.Humanoid;
 using Content.Shared.Humanoid;
+using Content.Shared.StatusEffectNew; // starcup
 
 namespace Content.Server._EE.Silicon.Death;
 
@@ -13,6 +14,7 @@ public sealed class SiliconDeathSystem : EntitySystem
     [Dependency] private readonly SleepingSystem _sleep = default!;
     [Dependency] private readonly SiliconChargeSystem _silicon = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearanceSystem = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffect = default!; // starcup
 
     public override void Initialize()
     {
@@ -47,7 +49,7 @@ public sealed class SiliconDeathSystem : EntitySystem
             return;
 
         EntityManager.EnsureComponent<SleepingComponent>(uid);
-        EntityManager.EnsureComponent<ForcedSleepingStatusEffectComponent>(uid); // Broken, needs replacing with a status effect
+        _statusEffect.TrySetStatusEffectDuration(uid, SleepingSystem.StatusEffectForcedSleeping); // starcup: edited for status effects refactor
 
         if (TryComp(uid, out HumanoidAppearanceComponent? humanoidAppearanceComponent))
         {
@@ -62,7 +64,7 @@ public sealed class SiliconDeathSystem : EntitySystem
 
     private void SiliconUnDead(EntityUid uid, SiliconDownOnDeadComponent siliconDeadComp, BatteryComponent? batteryComp, EntityUid batteryUid)
     {
-        RemComp<ForcedSleepingStatusEffectComponent>(uid); // Broken, needs replacing with a status effect
+        _statusEffect.TryRemoveStatusEffect(uid, SleepingSystem.StatusEffectForcedSleeping); // starcup: edited for status effects refactor
         _sleep.TryWaking(uid, true, null);
 
         siliconDeadComp.Dead = false;
