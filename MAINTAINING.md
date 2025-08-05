@@ -16,7 +16,7 @@ If a maintainer is unsure of what to do in any situation, they SHOULD ask anothe
 
 - A maintainer MUST make sure that the PR does not cause any unnecessary trouble to the administration team.
 
-  If a maintainer believes that a PR may cause trouble to the admin team, they MUST post it in the [`#admin-dev`](https://discord.com/channels/1139716325627932682/1324253592634396734) channel for proper feedback
+  If a maintainer believes that a PR may cause trouble to the administration team, they MUST post it in the [`#admin-dev`](https://discord.com/channels/1139716325627932682/1324253592634396734) channel for proper feedback
 
 - If a PR involves a change to the rules, it MUST be approved by a Harmony Project Manager.
 
