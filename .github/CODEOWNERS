@@ -22,8 +22,8 @@
 # Lobby art and music
 /Resources/Audio/Lobby/                             @KeldWolf
 /Resources/Audio/_Harmony/Lobby/                    @KeldWolf
-#/Resources/Textures/LobbyScreens/                   @DieselMohawk
-#/Resources/Textures/_Harmony/LobbyScreens/          @DieselMohawk
+#/Resources/Textures/LobbyScreens/                   @TheCrimsonJupiter
+#/Resources/Textures/_Harmony/LobbyScreens/          @TheCrimsonJupiter
 
 # Maps
 /Resources/Maps/                                    @spanky-spanky @raccoonio
