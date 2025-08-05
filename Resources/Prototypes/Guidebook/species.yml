@@ -4,6 +4,7 @@
   text: "/ServerInfo/Guidebook/Mobs/Species.xml"
   children:
     - Arachnid
+    - Avali # harmony
     - Diona
     - Dwarf
     - Human

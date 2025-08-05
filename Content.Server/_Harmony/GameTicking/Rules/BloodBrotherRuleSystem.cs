@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server._Harmony.GameTicking.Rules.Components;
 using Content.Server._Harmony.Roles;
+using Content.Server.Actions;
 using Content.Server.Administration.Logs;
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules;
@@ -34,6 +35,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IServerPreferencesManager _preferencesManager = default!;
+    [Dependency] private readonly ActionsSystem _actionsSystem = default!;
     [Dependency] private readonly AntagSelectionSystem _antagSystem = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
@@ -163,11 +165,13 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
             PopupType.LargeCaution);
 
         if (entity.Comp.ConvertStunTime != null)
-            _stunSystem.TryParalyze(args.Target, entity.Comp.ConvertStunTime.Value, true);
+            _stunSystem.TryUpdateParalyzeDuration(args.Target, entity.Comp.ConvertStunTime);
 
-        // Cleanup the data
-        RemCompDeferred<InitialBloodBrotherComponent>(entity);
+        // Remove the conversion actions
+        _actionsSystem.RemoveAction(entity.Comp.ConvertActionEntity);
+        _actionsSystem.RemoveAction(entity.Comp.CheckConvertActionEntity);
 
+        // Make sure the components are sent correctly
         Dirty(entity, originalComponent);
         Dirty(args.Target, convertedComp);
     }
