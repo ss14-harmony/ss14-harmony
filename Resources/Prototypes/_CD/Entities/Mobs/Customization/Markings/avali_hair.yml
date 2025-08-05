@@ -4,12 +4,12 @@
   markingCategory: HeadTop
   speciesRestriction: [ Avali ]
   sprites:
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_bigponytail_primary
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_bigponytail_secondary
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_bigponytail_tertiary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_bigponytail_primary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_bigponytail_secondary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_bigponytail_tertiary
 
 - type: marking
   id: AvaliHairCockatiel
@@ -17,10 +17,10 @@
   markingCategory: HeadTop
   speciesRestriction: [ Avali ]
   sprites:
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_cockatiel_primary
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_cockatiel_secondary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_cockatiel_primary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_cockatiel_secondary
 
 - type: marking
   id: AvaliHairCockatoo
@@ -28,10 +28,10 @@
   markingCategory: HeadTop
   speciesRestriction: [ Avali ]
   sprites:
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_cockatoo_primary
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_cockatoo_secondary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_cockatoo_primary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_cockatoo_secondary
 
 - type: marking
   id: AvaliHairDuelFeather
@@ -39,10 +39,10 @@
   markingCategory: HeadTop
   speciesRestriction: [ Avali ]
   sprites:
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_dualfeather_primary
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_dualfeather_secondary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_dualfeather_primary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_dualfeather_secondary
 
 - type: marking
   id: AvaliHairHooked
@@ -50,10 +50,10 @@
   markingCategory: HeadTop
   speciesRestriction: [ Avali ]
   sprites:
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_hooked_primary
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_hooked_secondary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_hooked_primary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_hooked_secondary
 
 - type: marking
   id: AvaliHairJay
@@ -61,10 +61,10 @@
   markingCategory: HeadTop
   speciesRestriction: [ Avali ]
   sprites:
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_jay_primary
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_jay_secondary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_jay_primary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_jay_secondary
 
 - type: marking
   id: AvaliHairLongFeather
@@ -72,10 +72,10 @@
   markingCategory: HeadTop
   speciesRestriction: [ Avali ]
   sprites:
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_longfeather_primary
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_longfeather_secondary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_longfeather_primary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_longfeather_secondary
 
 - type: marking
   id: AvaliHairPunk
@@ -83,7 +83,7 @@
   markingCategory: HeadTop
   speciesRestriction: [ Avali ]
   sprites:
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_punk_primary
-    - sprite: _CD/Mobs/Customization/Avali/avali_crests.rsi
-      state: avali_crest_punk_secondary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_punk_primary
+  - sprite: _Starlight/Mobs/Customization/Avali/avali_crests.rsi
+    state: avali_crest_punk_secondary
