@@ -16,6 +16,8 @@ blood-brother-role-greeting =
 
 blood-brother-briefing = Collaborate with your blood brother to accomplish all your objectives.
 
+blood-brother-break-control = {CAPITALIZE(THE($name))} has remembered their true allegiance!
+
 # Conversion
 
 blood-brother-convert-failed-no-mind = {CAPITALIZE(THE($converted))} does not have a mind
