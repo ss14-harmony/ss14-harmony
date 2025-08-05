@@ -16,7 +16,6 @@ public sealed partial class SalvageSystem
 {
     [Dependency] private readonly IRuntimeLog _runtimeLog = default!;
 
-    [ValidatePrototypeId<RadioChannelPrototype>]
     // Harmony Change Start - Adds Salvage Comms
     // private static readonly ProtoId<RadioChannelPrototype> MagnetChannel = "Supply";
     private static readonly ProtoId<RadioChannelPrototype> MagnetChannel = "Salvage";
