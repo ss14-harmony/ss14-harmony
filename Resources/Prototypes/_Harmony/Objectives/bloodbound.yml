@@ -25,16 +25,13 @@
   - type: TargetObjective
     title: objective-condition-blood-bound-progress-title
   - type: HelpProgressCondition
+  - type: ConvertedBloodBoundObjective
 
 # state
 
 - type: entity
   parent: [BaseBloodBoundObjective, EscapeShuttleObjective]
   id: BloodBoundEscapeShuttleObjective
-
-- type: entity
-  parent: [BaseBloodBoundObjective, DieObjective]
-  id: BloodBoundDieObjective
 
 - type: entity
   parent: [BaseBloodBoundObjective, TraitorSurviveObjective]

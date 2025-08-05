@@ -20,7 +20,6 @@
     - prefRoles: [ BloodBound ]
       max: 1
       playerRatio: 1
-      allowNonHumans: true
       briefing:
         text: blood-bound-initial-role-greeting
         color: MediumVioletRed

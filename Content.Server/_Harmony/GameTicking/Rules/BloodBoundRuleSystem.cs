@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server._Harmony.GameTicking.Rules.Components;
 using Content.Server._Harmony.Roles;
+using Content.Server.Actions;
 using Content.Server.Administration.Logs;
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules;
@@ -34,6 +35,7 @@ public sealed class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRuleComponen
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IServerPreferencesManager _preferencesManager = default!;
+    [Dependency] private readonly ActionsSystem _actionsSystem = default!;
     [Dependency] private readonly AntagSelectionSystem _antagSystem = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
@@ -62,29 +64,29 @@ public sealed class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRuleComponen
             if (!_roleSystem.MindHasRole<BloodBoundRoleComponent>(mind, out var role))
                 continue;
 
-            var boundRole = role.Value.Comp2;
+            var brotherRole = role.Value.Comp2;
 
-            if (boundRole.Bound == null)
+            if (brotherRole.Bound == null)
                 continue;
 
-            if (!_mindSystem.TryGetMind(boundRole.Bound.Value, out _, out var boundMind)
-                || boundMind.UserId == null)
+            if (!_mindSystem.TryGetMind(brotherRole.Bound.Value, out _, out var brotherMind)
+                || brotherMind.UserId == null)
             {
-                args.Text += "\n" + Loc.GetString("blood-bound-round-end-no-mind",
+                args.Text += "\n" + Loc.GetString("blood-brother-round-end-no-mind",
                     ("name", name),
                     ("username", sessionData.UserName),
-                    ("boundName", MetaData(role.Value).EntityName));
+                    ("brotherName", MetaData(role.Value).EntityName));
 
                 continue;
             }
 
-            var boundUsername = _playerManager.GetPlayerData(boundMind.UserId.Value).UserName;
+            var brotherUsername = _playerManager.GetPlayerData(brotherMind.UserId.Value).UserName;
 
-            args.Text += "\n" + Loc.GetString("blood-bound-round-end",
+            args.Text += "\n" + Loc.GetString("blood-brother-round-end",
                 ("name", name),
                 ("username", sessionData.UserName),
-                ("boundName", MetaData(boundRole.Bound.Value).EntityName),
-                ("boundUsername", (boundUsername)));
+                ("brotherName", MetaData(brotherRole.Bound.Value).EntityName),
+                ("brotherUsername", (brotherUsername)));
         }
     }
 
@@ -132,7 +134,7 @@ public sealed class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRuleComponen
             _roleSystem.MindHasRole(targetMindId, out targetRole);
         }
 
-        DebugTools.AssertNotNull(targetRole, "Blood bound role was null after assigning it.");
+        DebugTools.AssertNotNull(targetRole, "Blood brother role was null after assigning it.");
 
         convertedComp.Bound = entity;
         targetRole!.Value.Comp2.Bound = entity;
@@ -163,11 +165,13 @@ public sealed class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRuleComponen
             PopupType.LargeCaution);
 
         if (entity.Comp.ConvertStunTime != null)
-            _stunSystem.TryParalyze(args.Target, entity.Comp.ConvertStunTime.Value, true);
+            _stunSystem.TryUpdateParalyzeDuration(args.Target, entity.Comp.ConvertStunTime);
 
-        // Cleanup the data
-        RemCompDeferred<InitialBloodBoundComponent>(entity);
+        // Remove the conversion actions
+        _actionsSystem.RemoveAction(entity.Comp.ConvertActionEntity);
+        _actionsSystem.RemoveAction(entity.Comp.CheckConvertActionEntity);
 
+        // Make sure the components are sent correctly
         Dirty(entity, originalComponent);
         Dirty(args.Target, convertedComp);
     }
@@ -188,7 +192,7 @@ public sealed class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRuleComponen
         }
 
         _popupSystem.PopupEntity(
-            Loc.GetString("blood-bound-convert-convertible",
+            Loc.GetString("blood-brother-convert-convertible",
                 ("converter", Identity.Entity(entity, _entityManager)),
                 ("converted", Identity.Entity(args.Target, _entityManager))),
             args.Target,
@@ -205,26 +209,26 @@ public sealed class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRuleComponen
 
         if (!_mindSystem.TryGetMind(entity, out _, out var converterMind))
         {
-            DebugTools.Assert("Blood bound tried to convert but had no mind.");
-            Log.Error("Blood bound tried to convert but had no mind.");
+            DebugTools.Assert("Blood brother tried to convert but had no mind.");
+            Log.Error("Blood brother tried to convert but had no mind.");
             errorMessage = "guh";
             return false; // How would this even happen
         }
 
         if (!_mindSystem.TryGetMind(target, out var targetMindId, out var targetMind))
         {
-            errorMessage = "blood-bound-convert-failed-no-mind";
+            errorMessage = "blood-brother-convert-failed-no-mind";
             return false;
         }
 
-        // Target is already a blood bound
+        // Target is already a blood brother
         if (HasComp<BloodBoundComponent>(target))
         {
-            errorMessage = "blood-bound-convert-failed-already-bound";
+            errorMessage = "blood-brother-convert-failed-already-brother";
             return false;
         }
 
-        // Stop the blood bound from converting a target.
+        // Stop the blood brother from converting a target.
         foreach (var objective in converterMind.Objectives)
         {
             if (!TryComp<TargetObjectiveComponent>(objective, out var targetObjective))
@@ -233,25 +237,25 @@ public sealed class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRuleComponen
             if (targetObjective.Target != targetMindId)
                 continue;
 
-            errorMessage = "blood-bound-convert-failed-target";
+            errorMessage = "blood-brother-convert-failed-target";
             return false;
         }
 
         if (!HasComp<HumanoidAppearanceComponent>(target))
         {
-            errorMessage = "blood-bound-convert-failed-no-mind";
+            errorMessage = "blood-brother-convert-failed-no-mind";
             return false;
         }
 
         if (HasComp<ZombieComponent>(target))
         {
-            errorMessage = "blood-bound-convert-failed-zombie";
+            errorMessage = "blood-brother-convert-failed-zombie";
             return false;
         }
 
         if (targetMind.UserId == null)
         {
-            errorMessage = "blood-bound-convert-failed-no-mind";
+            errorMessage = "blood-brother-convert-failed-no-mind";
             return false;
         }
 
@@ -264,20 +268,20 @@ public sealed class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRuleComponen
 
             if (profile.AntagPreferences.Contains(entity.Comp.RequiredAntagPreference!.Value) != true)
             {
-                errorMessage = "blood-bound-convert-failed-preference";
+                errorMessage = "blood-brother-convert-failed-preference";
                 return false;
             }
         }
 
         if (!_mobStateSystem.IsAlive(target))
         {
-            errorMessage = "blood-bound-convert-failed-dead";
+            errorMessage = "blood-brother-convert-failed-dead";
             return false;
         }
 
         if (HasComp<MindShieldComponent>(target))
         {
-            errorMessage = "blood-bound-convert-failed-shielded";
+            errorMessage = "blood-brother-convert-failed-shielded";
             return false;
         }
 

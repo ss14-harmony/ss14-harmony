@@ -8,10 +8,9 @@
 - type: weightedRandom
   id: BloodBoundObjectiveGroupState
   weights:
-    # Blood bounds are expected to be usually trying to be stealthy, so low DAGD chance.
-    BloodBoundEscapeShuttleObjective: 0.25
-    BloodBoundDieObjective: 0.10
-    BloodBoundSurviveObjective: 0.65
+    # These should add up to 1
+    BloodBoundEscapeShuttleObjective: 0.30
+    BloodBoundSurviveObjective: 0.7
 
 # TODO: figure out how to make the converted bound holding the objective item also count towards the objective
 - type: weightedRandom
