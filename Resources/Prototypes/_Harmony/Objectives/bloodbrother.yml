@@ -13,7 +13,7 @@
 - type: entity
   parent: [BaseBloodBrotherObjective, BaseTargetObjective]
   id: BloodBrotherConvertedObjective
-  name: Help your brother.
+  name: Help your blood bound.
   description: Assist your blood bound in completing all of their objectives no matter the cost.
   components:
   - type: Objective
