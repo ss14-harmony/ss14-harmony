@@ -10,7 +10,7 @@
   - type: Hunger
   - type: Thirst
   - type: Icon
-    sprite: _Starlight/Mobs/Species/Avali/parts.rsi
+    sprite: _Harmony/Mobs/Species/Avali/parts.rsi # Harmony change _CD -> _Harmony
     state: full
   - type: Body
     prototype: Avali
