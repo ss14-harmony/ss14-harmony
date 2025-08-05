@@ -78,11 +78,6 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-# Start of Harmony Change: Removes IconSmoothing from Shutters
-#  - type: IconSmooth
-#    key: walls
-#    mode: NoSprite
-# End of Harmony Change
   - type: DoorSignalControl
   - type: DeviceNetwork
     deviceNetId: Wireless

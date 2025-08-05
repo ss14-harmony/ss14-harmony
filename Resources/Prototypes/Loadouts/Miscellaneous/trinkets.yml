@@ -26,14 +26,8 @@
   id: Headphones
   storage:
     back:
-    - ClothingNeckHeadphones
-# Harmony Change Start: CardsPort
-- type: loadout
-  id: CardBoxBlack
-  storage:
-    back:
-    - CardBoxBlack
-# End Harmony Change
+    - ClothingMultipleHeadphones
+
 # Toys
 - type: loadout
   id: PlushieLizard
