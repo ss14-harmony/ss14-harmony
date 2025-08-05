@@ -34,7 +34,7 @@ The only exception is changelog update PRs and the code review for upstream merg
 
 ## Publishing
 
-A maintainer MUST NOT run the `Publish` GitHub action without being explicitly permitted to do so.
+A maintainer MUST NOT publish code to the server without being explicitly permitted to do so.
 
 ## In-Game permissions
 
