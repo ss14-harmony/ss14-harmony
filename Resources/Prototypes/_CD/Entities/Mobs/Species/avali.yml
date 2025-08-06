@@ -34,10 +34,10 @@
             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
             state: mask
       back:
-          sizeMaps:
-            32:
-              sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
-              state: back
+         sizeMaps:
+           32:
+             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
+             state: back
   - type: Butcherable
     butcheringType: Spike
     spawned:
