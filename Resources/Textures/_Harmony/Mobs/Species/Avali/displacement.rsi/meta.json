@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "by Zeyria + TiniestShark",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "load": {
+      "srgb": false
+  },
+  "states": [
+    {
+      "name": "mask",
+      "directions": 4
+    },
+    {
+      "name": "head",
+      "directions": 4
+    },
+    {
+      "name": "hand",
+      "directions": 4
+    },
+	  {
+      "name": "back",
+      "directions" : 4
+    }
+  ]
+}

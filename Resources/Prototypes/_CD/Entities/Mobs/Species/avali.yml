@@ -15,6 +15,29 @@
   - type: Body
     prototype: Avali
     requiredLegs: 2
+  - type: Inventory
+    speciesId: reptilian
+    hand:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
+            state: hand
+      head:
+        sizeMaps:
+          32:
+            sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
+            state: mask
+        back:
+          sizeMaps:
+            32:
+              sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
+              state: back
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -100,5 +123,27 @@
   components:
   - type: HumanoidAppearance
     species: Avali
-
+  - type: Inventory
+    speciesId: avali
+    displacements:
+      hand:
+        sizeMaps:
+          32:
+            sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
+            state: hand
+      head:
+        sizeMaps:
+          32:
+            sprite: _Harmony//Species/Avali/displacement.rsi # Harmony change added displacements
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
+            state: mask
+        back:
+          sizeMaps:
+            32:
+              sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
+              state: back
 # Chirp!
