@@ -18,11 +18,6 @@
   - type: Inventory
     speciesId: reptilian
     displacements:
-      hand:
-        sizeMaps:
-          32:
-            sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
-            state: hand
       head:
         sizeMaps:
           32:
@@ -33,11 +28,6 @@
           32:
             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
             state: mask
-      back:
-         sizeMaps:
-         32:
-             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
-             state: back
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -126,11 +116,6 @@
   - type: Inventory
     speciesId: avali
     displacements:
-      hand:
-        sizeMaps:
-          32:
-            sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
-            state: hand
       head:
         sizeMaps:
           32:
@@ -141,9 +126,4 @@
           32:
             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
             state: mask
-      back:
-        sizeMaps:
-          32:
-            sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
-            state: back
 # Chirp!
