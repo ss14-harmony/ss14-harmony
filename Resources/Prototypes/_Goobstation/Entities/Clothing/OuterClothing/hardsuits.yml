@@ -35,8 +35,10 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
-  - type: ClothingGrantComponent
-    component:
-    - type: StealthOnMove
-      passiveVisibilityRate: -0.5
-      movementVisibilityRate: 0.6
+  # Harmony start
+  # - type: ClothingGrantComponent
+  #   component:
+  #   - type: StealthOnMove
+  #     passiveVisibilityRate: -0.5
+  #     movementVisibilityRate: 0.6
+  # Harmony end

@@ -24,4 +24,8 @@
   - type: ClothingGrantComponent
     component:
     - type: Stealth
-
+    # Harmony start
+    - type: StealthOnMove
+      passiveVisibilityRate: -0.5
+      movementVisibilityRate: 0.6
+    # Harmony end
