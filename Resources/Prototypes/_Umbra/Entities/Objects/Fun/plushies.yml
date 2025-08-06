@@ -1,0 +1,40 @@
+- type: entity
+  parent: BasePlushie
+  id: PlushieAvali
+  name: avali plushie
+  description: A cute little plush of an Avali! Its covered in feathers and appears to be based off the more common Avali color schemes.
+  components:
+    - type: Sprite
+      sprite: _Umbra/Objects/Fun/Plushies/Avali.rsi
+      state: icon
+    - type: Item
+      heldPrefix: plushieavali
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/_CD/Voice/Talk/avali_1.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/_CD/Voice/Talk/avali_1.ogg
+    - type: EmitSoundOnActivate
+      sound:
+        path: /Audio/_CD/Voice/Talk/avali_1.ogg
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/_CD/Voice/Talk/avali_1.ogg
+    - type: EmitSoundOnCollide
+      sound:
+        path: /Audio/_CD/Voice/Talk/avali_1.ogg
+    - type: Food
+      requiresSpecialDigestion: true
+      useSound:
+        path: /Audio/_CD/Voice/Avali/avali_scream.ogg
+    - type: MeleeWeapon
+      wideAnimationRotation: 180
+      soundHit:
+        path: /Audio/_CD/Voice/Talk/avali_1.ogg
+    - type: Clothing
+      quickEquip: false
+      sprite: _Umbra/Objects/Fun/Plushies/Avali.rsi
+      equippedPrefix: avali
+      slots:
+        - HEAD
