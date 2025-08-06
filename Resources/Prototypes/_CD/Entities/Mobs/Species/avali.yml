@@ -35,7 +35,7 @@
             state: mask
       back:
          sizeMaps:
-           32:
+         32:
              sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
              state: back
   - type: Butcherable
@@ -141,9 +141,9 @@
           32:
             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
             state: mask
-        back:
-          sizeMaps:
-            32:
-              sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
-              state: back
+      back:
+        sizeMaps:
+          32:
+            sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
+            state: back
 # Chirp!
