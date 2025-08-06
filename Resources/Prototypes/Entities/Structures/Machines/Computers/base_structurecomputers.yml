@@ -89,7 +89,7 @@
     sound:
       collection: HarmonyComputerSFX
       params:
-        volume: -7
+        volume: -8
         maxDistance: 3.5
         variation: 0.1
 # End Harmony changes
