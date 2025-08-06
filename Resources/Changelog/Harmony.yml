@@ -2283,3 +2283,99 @@ Entries:
     changes:
     - type: Add
       message: Added a guidebook entry for Avali.
+  - id: 941
+    author: kleinerstation13
+    time: '2025-08-04T16:41:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/941
+    changes:
+    - type: Tweak
+      message: Avali can no longer recieve blood from saline or iron, they must replenish blood with copper or liquid ammonia instead.
+    - type: Tweak
+      message: Saline will now poison Avali.
+  - id: 850
+    author: youtissoum
+    time: '2025-08-05T09:34:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/850
+    changes:
+    - type: Tweak
+      message: Bingles now deal less stun damage, only stunning after 6 hits.
+    - type: Tweak
+      message: Bingles are now slightly less common.
+    - type: Tweak
+      message: Bingles can now wide-swing.
+    - type: Tweak
+      message: Bingle max health is now 80.
+    - type: Fix
+      message: Destroyed bingle pits will now correctly spawn a bingle loot crate.
+    - type: Fix
+      message: People who fell into bingle pits will now actually be unable to interact.
+  - id: 842
+    author: youtissoum
+    time: '2025-08-05T09:35:33.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/842
+    changes:
+    - type: Tweak
+      message: Converted blood brothers will now be deconverted when they are mindshielded.
+  - id: 838
+    author: youtissoum
+    time: '2025-08-05T09:36:22.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/838
+    changes:
+    - type: Tweak
+      message: Blood brothers can no longer roll the "Die A Glorious Death" objective.
+  - id: 816
+    author: youtissoum
+    time: '2025-08-05T09:36:55.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/816
+    changes:
+    - type: Tweak
+      message: Handheld lights will now only enter their dying state once they reach 5% battery capacity.
+  - id: 839
+    author: youtissoum
+    time: '2025-08-05T09:39:38.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/839
+    changes:
+    - type: Remove
+      message: The prisoner round-start job has been removed from the game.
+  - id: 947
+    author: TheCrimsonJupiter
+    time: '2025-08-05T11:46:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/947
+    changes:
+    - type: Fix
+      message: The open HoS flask will no longer show up as an error sprite.
+  - id: 950
+    author: CollectionOfBones128
+    time: '2025-08-05T18:56:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/950
+    changes:
+    - type: Tweak
+      message: Blood Brother has been renamed to Blood Bound.
+  - id: 609
+    author: Ermucat
+    time: '2025-08-06T11:48:03.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/609
+    changes:
+    - type: Add
+      message: Added a spell that summons pitbulls to the wizard grimoire.
+  - id: 891
+    author: CollectionOfBones128
+    time: '2025-08-06T12:37:31.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/891
+    changes:
+    - type: Tweak
+      message: The salvage mining hardsuit is now faster.
+  - id: 724
+    author: kleinerstation13
+    time: '2025-08-06T14:54:28.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/724
+    changes:
+    - type: Tweak
+      message: The tech disk terminal will no longer deafen the user.
+  - id: 640
+    author: kleinerstation13
+    time: '2025-08-06T16:13:08.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/640
+    changes:
+    - type: Add
+      message: The nuclear operative uplink now contains a stealth suit.
