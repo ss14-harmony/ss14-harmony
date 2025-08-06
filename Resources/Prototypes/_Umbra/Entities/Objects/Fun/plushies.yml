@@ -2,6 +2,7 @@
   parent: BasePlushie
   id: PlushieAvali
   name: avali plushie
+  suffix: Harmony
   description: A cute little plush of an Avali! Its covered in feathers and appears to be based off the more common Avali color schemes.
   components:
     - type: Sprite
