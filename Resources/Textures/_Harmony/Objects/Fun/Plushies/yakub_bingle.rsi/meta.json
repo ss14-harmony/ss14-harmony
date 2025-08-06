@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by George Gimme (@imasleeping on discord) and Ahti. Reduced to a single direction by @youtissoum (GitHub)",
+    "size": {
+        "x": 32,
+        "y": 36
+    },
+    "states": [
+        {
+            "name": "icon"
+        }
+    ]
+}

@@ -79,6 +79,51 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
 
 - type: entity
+  parent: [BaseSyndicateContraband, WeaponEnergyCarbineHarmony]
+  id: WeaponBloodRedEnergyCarbineHarmony
+  name: blood-red energy carbine
+  suffix: Full
+  description: A modified version of Nanotrasen's Energy Carbine. It has a modified connector port and is backward compatible with other carbine cartridges.
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Battery/blood-red_energy_carbine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    sprite: _Harmony/Objects/Weapons/Guns/Battery/blood-red_energy_carbine.rsi
+  - type: Gun
+    selectedMode: FullAuto
+    fireRate: 3.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+    minAngle: 15
+    maxAngle: 26
+  - type: GunWieldBonus
+    minAngle: -8
+    maxAngle: -6
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: EnergyCarbineCartridgeSyndicateHarmony
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 1
+        whitelist:
+          tags:
+          - EnergyCarbineCartridgeSyndicate
+          - EnergyCarbineCartridge
+        whitelistFailPopup: gun-magazine-whitelist-fail
+  - type: MagazineVisuals
+    magState: mag
+
+- type: entity
   name: energy magnum
   parent: [BaseWeaponBatterySmall, BaseSecurityContraband]
   id: WeaponEnergyMagnumHarmony

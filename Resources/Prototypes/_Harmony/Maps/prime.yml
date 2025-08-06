@@ -3,7 +3,7 @@
   mapName: Prime
   mapPath: /Maps/_Harmony/prime.yml
   minPlayers: 25
-  maxPlayers: 50
+  maxPlayers: 60
   stations:
     Prime:
       stationProto: StandardNanotrasenStation
@@ -23,7 +23,7 @@
             Bartender: [ 1, 2 ]
             Botanist: [ 2, 2 ]
             Chef: [ 2, 2 ]
-            Janitor: [ 1, 1 ]
+            Janitor: [ 1, 2 ]
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             Lawyer: [ 1, 1]
@@ -50,7 +50,6 @@
             Detective: [ 1, 1 ]
             SecurityOfficer: [ 3, 5 ]
             SecurityCadet: [ 2, 4 ]
-            PermaPrisoner: [ 1, 0 ] # HARMONY
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]

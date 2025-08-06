@@ -236,6 +236,20 @@ public sealed class StepTriggerSystem : EntitySystem
         component.Active = active;
         Dirty(uid, component);
     }
+
+    // Goobstation start
+    public void SetIgnoreWeightless(Entity<StepTriggerComponent?> entity, bool ignore)
+    {
+        if (!Resolve(entity, ref entity.Comp))
+            return;
+
+        if (ignore == entity.Comp.IgnoreWeightless)
+            return;
+
+        entity.Comp.IgnoreWeightless = ignore;
+        Dirty(entity);
+    }
+    // Goobstation end
 }
 
 [ByRefEvent]

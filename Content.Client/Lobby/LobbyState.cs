@@ -1,8 +1,10 @@
+using Content.Client._Harmony.ReadyManifest; // Harmony
 using Content.Client.Audio;
 using Content.Client.GameTicking.Managers;
 using Content.Client.LateJoin;
 using Content.Client.Lobby.UI;
 using Content.Client.Message;
+using Content.Client.Playtime;
 using Content.Client.UserInterface.Systems.Chat;
 using Content.Client.Voting;
 using Content.Shared.CCVar;
@@ -26,9 +28,11 @@ namespace Content.Client.Lobby
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IVoteManager _voteManager = default!;
+        [Dependency] private readonly ClientsidePlaytimeTrackingManager _playtimeTracking = default!;
 
         private ClientGameTicker _gameTicker = default!;
         private ContentAudioSystem _contentAudioSystem = default!;
+        private ReadyManifestSystem _readyManifestSystem = default!; // Harmony
 
         protected override Type? LinkedScreenType { get; } = typeof(LobbyGui);
         public LobbyGui? Lobby;
@@ -46,6 +50,7 @@ namespace Content.Client.Lobby
             _gameTicker = _entityManager.System<ClientGameTicker>();
             _contentAudioSystem = _entityManager.System<ContentAudioSystem>();
             _contentAudioSystem.LobbySoundtrackChanged += UpdateLobbySoundtrackInfo;
+            _readyManifestSystem = _entityManager.System<ReadyManifestSystem>(); // Harmony
 
             chatController.SetMainChat(true);
 
@@ -65,6 +70,7 @@ namespace Content.Client.Lobby
             UpdateLobbyUi();
 
             Lobby.CharacterPreview.CharacterSetupButton.OnPressed += OnSetupPressed;
+            Lobby.ManifestButton.OnPressed += OnManifestPressed; // Harmony
             Lobby.ReadyButton.OnPressed += OnReadyPressed;
             Lobby.ReadyButton.OnToggled += OnReadyToggled;
 
@@ -85,6 +91,7 @@ namespace Content.Client.Lobby
             _voteManager.ClearPopupContainer();
 
             Lobby!.CharacterPreview.CharacterSetupButton.OnPressed -= OnSetupPressed;
+            Lobby!.ManifestButton.OnPressed -= OnManifestPressed; // Harmony
             Lobby!.ReadyButton.OnPressed -= OnReadyPressed;
             Lobby!.ReadyButton.OnToggled -= OnReadyToggled;
 
@@ -102,6 +109,16 @@ namespace Content.Client.Lobby
             SetReady(false);
             Lobby?.SwitchState(LobbyGui.LobbyGuiState.CharacterSetup);
         }
+
+        // Harmony start - ready manifest
+        private void OnManifestPressed(BaseButton.ButtonEventArgs args)
+        {
+            if (_gameTicker.IsGameStarted)
+                return;
+
+            _readyManifestSystem.RequestReadyManifest();
+        }
+        // Harmony end - ready manifest
 
         private void OnReadyPressed(BaseButton.ButtonEventArgs args)
         {
@@ -180,6 +197,7 @@ namespace Content.Client.Lobby
                 Lobby!.ReadyButton.ToggleMode = false;
                 Lobby!.ReadyButton.Pressed = false;
                 Lobby!.ObserveButton.Disabled = false;
+                Lobby!.ManifestButton.Disabled = true; // Harmony
             }
             else
             {
@@ -189,12 +207,33 @@ namespace Content.Client.Lobby
                 Lobby!.ReadyButton.Disabled = false;
                 Lobby!.ReadyButton.Pressed = _gameTicker.AreWeReady;
                 Lobby!.ObserveButton.Disabled = true;
+                Lobby!.ManifestButton.Disabled = false; // Harmony
             }
 
             if (_gameTicker.ServerInfoBlob != null)
             {
                 Lobby!.ServerInfo.SetInfoBlob(_gameTicker.ServerInfoBlob);
             }
+
+            var minutesToday = _playtimeTracking.PlaytimeMinutesToday;
+            if (minutesToday > 60)
+            {
+                Lobby!.PlaytimeComment.Visible = true;
+
+                var hoursToday = Math.Round(minutesToday / 60f, 1);
+
+                var chosenString = minutesToday switch
+                {
+                    < 180 => "lobby-state-playtime-comment-normal",
+                    < 360 => "lobby-state-playtime-comment-concerning",
+                    < 720 => "lobby-state-playtime-comment-grasstouchless",
+                    _ => "lobby-state-playtime-comment-selfdestructive"
+                };
+
+                Lobby.PlaytimeComment.SetMarkup(Loc.GetString(chosenString, ("hours", hoursToday)));
+            }
+            else
+                Lobby!.PlaytimeComment.Visible = false;
         }
 
         private void UpdateLobbySoundtrackInfo(LobbySoundtrackChangedEvent ev)

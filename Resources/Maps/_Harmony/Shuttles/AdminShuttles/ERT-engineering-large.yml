@@ -3154,29 +3154,6 @@ entities:
     - type: ContainedSolution
       containerName: mvcable
       container: 211
-- proto: ActionVendingThrow
-  entities:
-  - uid: 216
-    components:
-    - type: Transform
-      parent: 215
-    - type: InstantAction
-      container: 215
-      attachedEntity: 215
-  - uid: 218
-    components:
-    - type: Transform
-      parent: 217
-    - type: InstantAction
-      container: 217
-      attachedEntity: 217
-  - uid: 220
-    components:
-    - type: Transform
-      parent: 219
-    - type: InstantAction
-      container: 219
-      attachedEntity: 219
 - proto: AirCanister
   entities:
   - uid: 221
@@ -10637,18 +10614,8 @@ entities:
       pos: -3.5,3.5
       parent: 1
     - type: VendingMachine
-      actionEntity: 218
     - type: PointLight
       enabled: True
-    - type: Actions
-      actions:
-      - 218
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 218
 - proto: VendingMachineTankDispenserEVA
   entities:
   - uid: 219
@@ -10657,18 +10624,8 @@ entities:
       pos: 4.5,8.5
       parent: 1
     - type: VendingMachine
-      actionEntity: 220
     - type: PointLight
       enabled: True
-    - type: Actions
-      actions:
-      - 220
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 220
 - proto: VendingMachineYouTool
   entities:
   - uid: 215
@@ -10677,18 +10634,8 @@ entities:
       pos: -3.5,4.5
       parent: 1
     - type: VendingMachine
-      actionEntity: 216
     - type: PointLight
       enabled: True
-    - type: Actions
-      actions:
-      - 216
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 216
 - proto: WallShuttle
   entities:
   - uid: 664
