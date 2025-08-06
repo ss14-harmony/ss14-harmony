@@ -16,7 +16,7 @@
     prototype: Avali
     requiredLegs: 2
   - type: Inventory
-    speciesId: reptilian
+    speciesId: moth
     displacements:
       head:
         sizeMaps:
@@ -114,7 +114,7 @@
   - type: HumanoidAppearance
     species: Avali
   - type: Inventory
-    speciesId: avali
+    speciesId: moth
     displacements:
       head:
         sizeMaps:
