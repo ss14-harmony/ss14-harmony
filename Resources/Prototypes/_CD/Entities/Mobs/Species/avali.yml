@@ -17,8 +17,8 @@
     requiredLegs: 2
   - type: Inventory
     speciesId: reptilian
-    hand:
-      jumpsuit:
+    displacements:
+      hand:
         sizeMaps:
           32:
             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
@@ -33,7 +33,7 @@
           32:
             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
             state: mask
-        back:
+      back:
           sizeMaps:
             32:
               sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
