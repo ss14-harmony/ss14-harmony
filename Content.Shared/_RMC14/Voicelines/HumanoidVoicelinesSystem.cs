@@ -99,4 +99,23 @@ public sealed class HumanoidVoicelinesSystem : EntitySystem
 
         return _config.GetClientCVar<bool>(forPlayer.Channel, play.Name);
     }
+
+// Harmony Change Start
+    public bool ShouldPlayVoicelines(Entity<HumanoidAppearanceComponent?> vocalizer, ICommonSession forPlayer)
+    {
+        if (forPlayer.AttachedEntity == vocalizer &&
+            !_config.GetClientCVar(forPlayer.Channel, RMCCVars.RMCPlayVoicelinesYourself))
+        {
+            return false;
+        }
+
+        if (!_humanoidAppearanceQuery.Resolve(vocalizer, ref vocalizer.Comp, false) ||
+            !_voicelineCVars.TryGetValue(vocalizer.Comp.Species, out var play))
+        {
+            return true;
+        }
+// Harmony Change End
+
+        return _config.GetClientCVar<bool>(forPlayer.Channel, play.Name);
+    }
 }
