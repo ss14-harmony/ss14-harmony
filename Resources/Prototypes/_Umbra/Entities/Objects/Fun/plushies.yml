@@ -26,9 +26,11 @@
       sound:
         path: /Audio/_CD/Voice/Talk/avali_1.ogg
     - type: Food
+      #requiresSpecialDigestion: true
       useSound:
         path: /Audio/_CD/Voice/Avali/avali_scream.ogg
     - type: MeleeWeapon
+      #wideAnimationRotation: 180
       soundHit:
         path: /Audio/_CD/Voice/Talk/avali_1.ogg
     - type: Clothing
