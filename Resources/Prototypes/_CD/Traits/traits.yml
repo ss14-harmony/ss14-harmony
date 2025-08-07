@@ -12,6 +12,7 @@
       tags:
       - VeryLightweightDrunk
       #end of harmony specific tags
+
 - type: trait
   id: HeavyweightDrunk
   name: cd-trait-heavyweight-name
