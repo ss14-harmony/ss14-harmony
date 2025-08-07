@@ -69,7 +69,7 @@
   id: Hot
   desc: salvage-temperature-mod-hot
   cost: 1
-  temperature: 303.15 # 50C # Harmony Change, 30C
+  temperature: 303.15 # 50C # Harmony Change, 323.15 > 303.15, 30C
   biomes:
     - Caves
     #- LowDesert
@@ -80,7 +80,7 @@
   id: Burning
   desc: salvage-temperature-mod-high-temperature
   cost: 2
-  temperature: 333.15 # 200C # Harmony Change, 60C
+  temperature: 333.15 # 200C # Harmony Change, 423.15 > 333.15, 60C
   biomes:
     - Caves
     #- LowDesert
@@ -90,7 +90,7 @@
   id: Melting
   desc: salvage-temperature-mod-extreme-heat
   cost: 4
-  temperature: 408.15 # 1000C hot hot hot # Harmony Change, 135C
+  temperature: 408.15 # 1000C hot hot hot # Harmony Change, 1273.15 > 408.15, 135C
   biomes:
     - Lava
 
