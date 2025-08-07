@@ -1,21 +1,23 @@
 ﻿cm-ui-rmc14 = RMC14
 
-rmc-ui-voicelines = Voicelines
-rmc-ui-options-tab-voicelines = Voicelines
-rmc-ui-audio-voicelines-yourself = Play voicelines from yourself
-rmc-ui-audio-voicelines-arachnid = Play voicelines for arachnids
-rmc-ui-audio-voicelines-diona = Play voicelines for dionae
-rmc-ui-audio-voicelines-dwarf = Play voicelines for dwarves
-# rmc-ui-audio-voicelines-felinid = Play voicelines for felinids
-rmc-ui-audio-voicelines-human = Play voicelines for humans
-rmc-ui-audio-voicelines-moth = Play voicelines for moths
-rmc-ui-audio-voicelines-reptilian = Play voicelines for reptilians
-rmc-ui-audio-voicelines-slime = Play voicelines for slimes
-rmc-ui-audio-voicelines-avali = Play voicelines for avalis
-# rmc-ui-audio-voicelines-vulpkanin = Play voicelines for vulpkanins
-# rmc-ui-audio-voicelines-rodentia = Play voicelines for rodentias
-# rmc-ui-audio-voicelines-feroxi = Play voicelines for feroxis
-# rmc-ui-audio-voicelines-skrell = Play voicelines for skrells
+# HARMONY CHANGE START - Voielines > Speech Sounds
+rmc-ui-voicelines = Speech Sounds
+rmc-ui-options-tab-voicelines = Speech Sounds
+rmc-ui-audio-voicelines-yourself = Play speech sounds from yourself
+rmc-ui-audio-voicelines-arachnid = Play speech sounds for arachnids
+rmc-ui-audio-voicelines-diona = Play speech sounds for dionae
+rmc-ui-audio-voicelines-dwarf = Play speech sounds for dwarves
+# rmc-ui-audio-voicelines-felinid = Play speech sounds for felinids
+rmc-ui-audio-voicelines-human = Play speech sounds for humans
+rmc-ui-audio-voicelines-moth = Play speech sounds for moths
+rmc-ui-audio-voicelines-reptilian = Play speech sounds for reptilians
+rmc-ui-audio-voicelines-slime = Play speech sounds for slimes
+rmc-ui-audio-voicelines-avali = Play speech sounds for avalis
+# rmc-ui-audio-voicelines-vulpkanin = Play speech sounds for vulpkanins
+# rmc-ui-audio-voicelines-rodentia = Play speech sounds for rodentias
+# rmc-ui-audio-voicelines-feroxi = Play speech sounds for feroxis
+# rmc-ui-audio-voicelines-skrell = Play speech sounds for skrells
+# HARMONY CHANGE END
 
 rmc-ui-emotes = Emotes
 rmc-ui-audio-emotes-yourself = Play emotes from yourself
