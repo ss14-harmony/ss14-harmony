@@ -26,11 +26,11 @@
       sound:
         path: /Audio/_CD/Voice/Talk/avali_1.ogg
     - type: Food
-      #requiresSpecialDigestion: true
+      #requiresSpecialDigestion: true #Harmony: Inherits from base plushie
       useSound:
         path: /Audio/_CD/Voice/Avali/avali_scream.ogg
     - type: MeleeWeapon
-      #wideAnimationRotation: 180
+      #wideAnimationRotation: 180 #Harmony: Inherits from base plushie
       soundHit:
         path: /Audio/_CD/Voice/Talk/avali_1.ogg
     - type: Clothing
