@@ -2,7 +2,7 @@
   parent: BasePlushie
   id: PlushieAvali
   name: avali plushie
-  suffix: Harmony
+  suffix: Harmony # Harmony - added suffix
   description: A cute little plush of an Avali! It's covered in feathers and appears to be based off the more common Avali color schemes. # Harmony change - fixed grammar
   components:
     - type: Sprite
