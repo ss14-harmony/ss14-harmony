@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: CargoLuxuryKineticSidearm
+  icon:
+    sprite: _Harmony/Objects/Weapons/Guns/Kinetic/kinetic_pistol.rsi
+    state: icon
+  product: CrateCargoLuxuryKineticSidearm
+  cost: 15000
+  category: cargoproduct-category-name-cargo
+  group: market

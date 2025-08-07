@@ -1,0 +1,14 @@
+- type: listing
+  id: UplinkSyndicateDeck
+  name: uplink-syndicate-deck-name
+  description: uplink-syndicate-deck-desc
+  productEntity: CardBoxSyndicate
+  # Start Harmony Change: One Card Pack Per Agent
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  # End Harmony Change
+  cost:
+    Telecrystal: 4 # Frontier: 1<4 (less spam please)
+  categories:
+  - UplinkPointless

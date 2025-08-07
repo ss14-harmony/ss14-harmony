@@ -2,6 +2,7 @@
 - type: emote
   id: Flip
   name: chat-emote-name-flip
+  icon: _Harmony/Interface/Emotes/flip.png
   chatMessages: ["chat-emote-msg-flip"]
   chatTriggers:
   - flip
@@ -19,6 +20,7 @@
 - type: emote
   id: Spin
   name: chat-emote-name-spin
+  icon: _Harmony/Interface/Emotes/spin.png
   chatMessages: ["chat-emote-msg-spin"]
   chatTriggers:
   - spin
@@ -31,6 +33,7 @@
 - type: emote
   id: Jump
   name: chat-emote-name-jump
+  icon: _Harmony/Interface/Emotes/jump.png
   chatMessages: ["chat-emote-msg-jump"]
   chatTriggers:
   - jump

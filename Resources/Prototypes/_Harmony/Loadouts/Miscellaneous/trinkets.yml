@@ -72,10 +72,28 @@
     - PlushieVox
 
 - type: loadout
+  id: SilverRing
+  storage:
+    back:
+    - SilverRing
+
+- type: loadout
+  id: GoldRing
+  storage:
+    back:
+    - GoldRing
+
+- type: loadout
   id: Cane
   storage:
     back:
     - Cane
+
+- type: loadout
+  id: CardBoxBlack
+  storage:
+    back:
+    - CardBoxBlack
 
 # Towels
 - type: loadout

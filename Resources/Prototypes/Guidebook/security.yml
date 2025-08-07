@@ -23,6 +23,7 @@
   name: guide-entry-criminal-records
   text: "/ServerInfo/Guidebook/Security/CriminalRecords.xml"
 
+# Harmony change - use custom space law.
 # - type: guideEntry
 #   id: SpaceLaw
 #   name: guide-entry-rules-space-law
@@ -34,3 +35,4 @@
 #   id: SpaceLawCrimeList
 #   name: guide-entry-rules-sl-crime-list
 #   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
+# End harmony

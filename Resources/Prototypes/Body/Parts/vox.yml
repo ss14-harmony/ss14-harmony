@@ -22,7 +22,15 @@
   name: "vox torso"
   components:
   - type: Sprite
+    sprite: _Impstation/Mobs/Species/Vox/parts.rsi #imp, harmony: Modified sprite path
     state: "torso"
+    # Harmony change
+  - type: Icon #imp
+    sprite: _Impstation/Mobs/Species/Vox/parts.rsi #imp
+    state: "torso"
+  - type: BodyPart
+    partType: Torso
+    # End harmony
   - type: Extractable
     juiceSolution:
       reagents:

@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by SpadesSlick at commit https://github.com/discordia-space/CEV-Eris/commit/cf8cfa2778c69027058861fffe2cdb14d56b3e4b#diff-36d8f0718e73d7817f147fcdcd5f2ce97c00a8dfd0ff76fe820f9b22f16b6a6e. Resprited by CrimsonJupiter.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "equipped-FEET",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+          "name": "inhand-right",
+          "directions": 4
+        }
+    ]
+}

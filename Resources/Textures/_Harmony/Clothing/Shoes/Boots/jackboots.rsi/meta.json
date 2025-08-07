@@ -1,0 +1,30 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Originally made by Firecase (Github) at commit https://github.com/tgstation/tgstation/commit/5da34a92eaed1bd1de2b35b623adcfb53e5dbcb9#diff-7ffc17d0bcb7c367a1177ac156b6bf905e7fe00be105cd6de1c8a28f80029053. Icon originally made by Krysonism (Github) at commit https://github.com/tgstation/tgstation/commit/1edc7fb582b348320b2edb57cb8b8cb25d83d0d2. Modified by TheCrimsonJupiter (GitHub).",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "equipped-FEET",
+            "directions": 4
+        },
+        {
+            "name": "equipped-FEET-vox",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        }
+    ]
+}

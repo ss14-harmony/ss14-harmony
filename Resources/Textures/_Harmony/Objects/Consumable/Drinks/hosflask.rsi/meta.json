@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Created by BoskiYourk for use in Harmony",
+    "copyright": "Created by MrGreen at commit https://github.com/space-wizards/space-station-14/commit/0d2bf9d23c16a9f0258eeb92a03a0d8be9816cbe. Modified by BoskiYourk (GitHub) at commit https://github.com/ss14-harmony/ss14-harmony/commit/fdda871cbd546352415bb39c63d86da3ba9f2f7b. Inhand made by Prole0 (Github) at commit https://github.com/space-wizards/space-station-14/commit/f1d60b44e190c70b01ebf1946010e8504bd77e8f modified by TheCrimsonJupiter (Github).",
     "size": {
         "x": 32,
         "y": 32
@@ -9,6 +9,17 @@
     "states": [
         {
             "name": "icon"
+        },
+        {
+            "name": "icon_open"
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
         }
     ]
 }

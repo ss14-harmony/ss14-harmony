@@ -5,24 +5,6 @@
 #Generally, unless you're adding something like caustic damage, you should probably avoid messing with armor here outside of the above scenario.
 
 #CREW HARDSUITS
-#Standard Hardsuit
-- type: entity
-  parent: ClothingHeadHardsuitBase
-  id: ClothingHeadHelmetHardsuitBasic
-  name: basic hardsuit helmet
-  description: A basic-looking hardsuit helmet that provides minor protection against most sources of damage.
-  components:
-  - type: Sprite
-    sprite: Clothing/Head/Hardsuits/basic.rsi
-  - type: Clothing
-    sprite: Clothing/Head/Hardsuits/basic.rsi
-  - type: HideLayerClothing
-    slots:
-    - Hair
-    - Snout
-    - HeadTop
-    - HeadSide
-
 #Atmospherics Hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
@@ -31,10 +13,7 @@
   description: A special hardsuit helmet designed for working in low-pressure, high thermal environments.
   components:
   - type: Sprite
-#  start of Harmony change : Update sprite pathing
-#   sprite: Clothing/Head/Hardsuits/atmospherics.rsi
-    sprite: _Harmony/Clothing/Head/Hardsuits/atmospherics.rsi
-#  end of Harmony change
+    sprite: _Harmony/Clothing/Head/Hardsuits/atmospherics.rsi # Harmony
     layers:
     - state: icon
     - state: icon-unshaded
@@ -45,7 +24,7 @@
       map: [ "light" ]
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     spriteLayer: light
     clothingVisuals:
       head:
@@ -53,6 +32,9 @@
         shader: unshaded
       head-vox:
       - state: equipped-head-light-vox
+        shader: unshaded
+      head-dog:
+      - state: equipped-head-light-dog
         shader: unshaded
   - type: Clothing
     clothingVisuals:
@@ -63,6 +45,10 @@
       head-vox:
       - state: equipped-head-vox
       - state: equipped-head-unshaded-vox
+        shader: unshaded
+      head-dog:
+      - state: equipped-head-dog
+      - state: equipped-head-unshaded-dog
         shader: unshaded
   - type: PointLight
     color: "#adffe6"
@@ -74,6 +60,10 @@
     coolingCoefficient: 0.005
   - type: FireProtection
     reduction: 0.2
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 #Engineering Hardsuit
 - type: entity
@@ -83,12 +73,7 @@
   description: An engineering hardsuit helmet designed for working in low-pressure, high radioactive environments.
   components:
   - type: Sprite
-#  start of Harmony change : Update sprite pathing
-#   sprite: Clothing/Head/Hardsuits/engineering.rsi
-#   -type: Clothing
-#   sprite: Clothing/Head/Hardsuits/engineering.rsi
-    sprite: _Harmony/Clothing/Head/Hardsuits/engineering.rsi
-#    added code for the light sprites layering START here
+    sprite: _Harmony/Clothing/Head/Hardsuits/engineering.rsi # Harmony
     layers:
     - state: icon
     - state: icon-unshaded
@@ -99,33 +84,41 @@
       map: [ "light" ]
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     spriteLayer: light
     clothingVisuals:
       head:
       - state: equipped-head-light
         shader: unshaded
       head-vox:
-       - state: equipped-head-light-vox
-         shader: unshaded
+      - state: equipped-head-light-vox
+        shader: unshaded
+      head-dog:
+      - state: equipped-head-light-dog
+        shader: unshaded
   - type: Clothing
     clothingVisuals:
       head:
-       - state: equipped-head
-       - state: equipped-head-unshaded
-         shader: unshaded
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
       head-vox:
-       - state: equipped-head-vox
-       - state: equipped-head-unshaded-vox
-         shader: unshaded
-#    added code for the light sprites layering END here
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+      head-dog:
+      - state: equipped-head-dog
+      - state: equipped-head-unshaded-dog
+        shader: unshaded
   - type: PointLight
-#   color: "#ffdbad"
-    color: "#adffe6" #New flashlight color to match the new sprite
-#  end of Harmony change
+    color: "#adffe6" # Harmony: from #ffdbad
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 #Spationaut Hardsuit
 - type: entity
@@ -135,24 +128,29 @@
   description: A sturdy helmet designed for complex industrial operations in space.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/spatiohelm.rsi
-    layers:
-    - state: icon
-    - state: icon-unshaded
-      shader: unshaded
-    - state: light-overlay
-      visible: false
-      shader: unshaded
-      map: [ "light" ]
+#start of Harmony change
+    sprite: _Harmony/Clothing/Head/Hardsuits/spatiohelm.rsi
+    #layers:
+    #- state: icon
+    #- state: icon-unshaded
+      #shader: unshaded
+    #- state: light-overlay
+      #visible: false
+      #shader: unshaded
+      #map: [ "light" ]
+#end of Harmony change
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     clothingVisuals:
       head:
       - state: equipped-head-light
         shader: unshaded
       head-vox:
       - state: equipped-head-light-vox
+        shader: unshaded
+      head-dog:
+      - state: equipped-head-light-dog
         shader: unshaded
   - type: Clothing
     clothingVisuals:
@@ -164,11 +162,20 @@
       - state: equipped-head-vox
       - state: equipped-head-unshaded-vox
         shader: unshaded
+      head-dog:
+      - state: equipped-head-dog
+      - state: equipped-head-unshaded-dog
+        shader: unshaded
   - type: PointLight
+    color: "#adffe6"     #Harmony : added a color to the flashlight to match the sprite
     radius: 6
   - type: PressureProtection
     highPressureMultiplier: 0.72
     lowPressureMultiplier: 1000
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 #Salvage Hardsuit
 - type: entity
@@ -178,32 +185,11 @@
   description: A special helmet designed for work in a hazardous, low pressure environment. Has reinforced plating for wildlife encounters and dual floodlights.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/salvage.rsi
-  - type: Clothing
-    sprite: Clothing/Head/Hardsuits/salvage.rsi
-  - type: PressureProtection
-    highPressureMultiplier: 0.525
-    lowPressureMultiplier: 1000
-  - type: PointLight
-    radius: 7
-    energy: 3
-
-- type: entity
-  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
-  id: ClothingHeadHelmetHardsuitGoliath
-  name: goliath hardsuit helmet
-  description: A sturdy hardsuit helmet, infused with a goliath's hide and an eerie, unblinking eye cut from its mass.
-  components:
-  - type: Sprite
-    sprite: Clothing/Head/Hardsuits/goliathhelm.rsi
-    layers:
-    - state: icon
-    - state: icon-unshaded
-      shader: unshaded
-    - state: light-overlay
-      visible: false
-      shader: unshaded
-      map: [ "light" ]
+#start of Harmony change
+    #sprite: Clothing/Head/Hardsuits/salvage.rsi
+  #- type: Clothing
+   #sprite: Clothing/Head/Hardsuits/salvage.rsi
+    sprite: _Harmony/Clothing/Head/Hardsuits/salvage.rsi
   - type: HandheldLight
     addPrefix: false
   - type: ToggleableLightVisuals
@@ -224,12 +210,77 @@
       - state: equipped-head-vox
       - state: equipped-head-unshaded-vox
         shader: unshaded
+#end of Harmony change
+  - type: PressureProtection
+    highPressureMultiplier: 0.525
+    lowPressureMultiplier: 1000
   - type: PointLight
+    color: "#fff5d9" #Harmony : added a color to the flashlight to match the sprite
+    radius: 7
+    energy: 3
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitGoliath
+  name: goliath hardsuit helmet
+  description: A sturdy hardsuit helmet, infused with a goliath's hide and an eerie, unblinking eye cut from its mass.
+  components:
+  - type: Sprite
+#start of Harmony change
+    #sprite: Clothing/Head/Hardsuits/goliathhelm.rsi
+    sprite: _Harmony/Clothing/Head/Hardsuits/goliathhelm.rsi
+    #layers:
+    #- state: icon
+    #- state: icon-unshaded
+     # shader: unshaded
+    #- state: light-overlay
+      #visible: false
+      #shader: unshaded
+      #map: [ "light" ]
+#end of Harmony change
+  - type: HandheldLight
+    addPrefix: false
+  - type: ToggleableVisuals
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-light-vox
+        shader: unshaded
+      head-dog:
+      - state: equipped-head-light-dog
+        shader: unshaded
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+      head-dog:
+      - state: equipped-head-dog
+      - state: equipped-head-unshaded-dog
+        shader: unshaded
+  - type: PointLight
+    color: "#adffe6" #Harmony : added a color to the flashlight to match the sprite
     radius: 6
   - type: PressureProtection
     highPressureMultiplier: 0.72
     lowPressureMultiplier: 1000
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
+#Maxim Hardsuit
 - type: entity
   parent: ClothingHeadHardsuitBase
   id: ClothingHeadHelmetHardsuitMaxim
@@ -260,9 +311,33 @@
   description: Armored hardsuit helmet for security needs.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/security.rsi
+#start of harmony change
+#    sprite: Clothing/Head/Hardsuits/security.rsi
+#  - type: Clothing
+#    sprite: Clothing/Head/Hardsuits/security.rsi
+    sprite: _Harmony/Clothing/Head/Hardsuits/security.rsi
+  #Modification of light layering
+  - type: HandheldLight
+    addPrefix: false
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-light-vox
+        shader: unshaded
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/security.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+#end of Harmony change
   - type: PointLight
     color: "#ffeead"
   - type: PressureProtection
@@ -275,6 +350,10 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 #Brigmedic Hardsuit
 - type: entity
@@ -284,13 +363,9 @@
   description: The lightweight helmet of the brigmedic hardsuit. Protects against viruses, and clowns.
   components:
   - type: Sprite
-# Start of Harmony Change: Updated Sprite pathing
-#   sprite: Clothing/Head/Hardsuits/brigmedic.rsi
-    sprite: _Harmony/Clothing/Head/Hardsuits/brigmedic.rsi
+    sprite: _Harmony/Clothing/Head/Hardsuits/brigmedic.rsi # Harmony
   - type: Clothing
-#   sprite: Clothing/Head/Hardsuits/brigmedic.rsi
-    sprite: _Harmony/Clothing/Head/Hardsuits/brigmedic.rsi
-# End of Change
+    sprite: _Harmony/Clothing/Head/Hardsuits/brigmedic.rsi # Harmony
   - type: PointLight
     color: "#00FFFF"
   - type: Armor
@@ -314,9 +389,33 @@
   description: A modified riot helmet. Oddly comfortable.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/security-warden.rsi
+#start of harmony change
+#    sprite: Clothing/Head/Hardsuits/security-warden.rsi
+#  - type: Clothing
+#    sprite: Clothing/Head/Hardsuits/security-warden.rsi
+    sprite: _Harmony/Clothing/Head/Hardsuits/security-warden.rsi
+  #Modification of light layering
+  - type: HandheldLight
+    addPrefix: false
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-light-vox
+        shader: unshaded
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/security-warden.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+#end of Harmony change
   - type: PointLight
     color: "#ffeead"
   - type: PressureProtection
@@ -344,6 +443,10 @@
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -353,12 +456,7 @@
   description: Special hardsuit helmet, made for the chief engineer of the station.
   components:
   - type: Sprite
-#  start of Harmony change : Update sprite pathing
-#   sprite: Clothing/Head/Hardsuits/engineering-white.rsi
-#    -type: Clothing
-#   sprite: Clothing/Head/Hardsuits/engineering-white.rsi
-    sprite: _Harmony/Clothing/Head/Hardsuits/engineering-white.rsi
-#    added code for the light sprites layering START here
+    sprite: _Harmony/Clothing/Head/Hardsuits/engineering-white.rsi # Harmony
     layers:
     - state: icon
     - state: icon-unshaded
@@ -369,7 +467,7 @@
       map: [ "light" ]
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     spriteLayer: light
     clothingVisuals:
       head:
@@ -377,6 +475,9 @@
         shader: unshaded
       head-vox:
       - state: equipped-head-light-vox
+        shader: unshaded
+      head-dog:
+      - state: equipped-head-light-dog
         shader: unshaded
   - type: Clothing
     clothingVisuals:
@@ -388,16 +489,21 @@
       - state: equipped-head-vox
       - state: equipped-head-unshaded-vox
         shader: unshaded
-#    added code for the light sprites layering END here
+      head-dog:
+      - state: equipped-head-dog
+      - state: equipped-head-unshaded-dog
+        shader: unshaded
   - type: PointLight
-#   color: "#daffad"
-    color: "#adffe6" #New flashlight color to match the new sprite
-#  end of Harmony change
+    color: "#adffe6" # Harmony: from #daffad
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
   - type: FireProtection
     reduction: 0.2
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 #Chief Medical Officer's Hardsuit
 - type: entity
@@ -415,6 +521,10 @@
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 #Research Director's Hardsuit
 - type: entity
@@ -432,6 +542,10 @@
   - type: PressureProtection
     highPressureMultiplier: 0.60
     lowPressureMultiplier: 1000
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 #Head of Security's hardsuit
 - type: entity
@@ -441,9 +555,33 @@
   description: Security hardsuit helmet with the latest top secret NT-HUD software. Belongs to the HoS.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/security-red.rsi
+#start of harmony change
+#    sprite: Clothing/Head/Hardsuits/security-red.rsi
+#  - type: Clothing
+#    sprite: Clothing/Head/Hardsuits/security-red.rsi
+    sprite: _Harmony/Clothing/Head/Hardsuits/security-red.rsi
+  #Modification of light layering
+  - type: HandheldLight
+    addPrefix: false
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-light-vox
+        shader: unshaded
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/security-red.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+#end of Harmony change
   - type: PointLight
     color: "#ffeead"
   - type: PressureProtection
@@ -466,18 +604,41 @@
   categories: [ DoNotMap ]
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/luxury.rsi
+#start of Harmony change
+    #sprite: Clothing/Head/Hardsuits/luxury.rsi
+  #- type: Clothing
+    #sprite: Clothing/Head/Hardsuits/luxury.rsi
+    sprite: _Harmony/Clothing/Head/Hardsuits/luxury.rsi
+  - type: HandheldLight
+    addPrefix: false
+  - type: ToggleableLightVisuals
+    clothingVisuals:
+      head:
+      - state: equipped-head-light
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-light-vox
+        shader: unshaded
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/luxury.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-head
+      - state: equipped-head-unshaded
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+#end of Harmony change
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
   - type: PointLight
+    color: "#adffe6" #Harmony : added a color to the flashlight to match the sprite
     radius: 7
     energy: 3
 
 #ANTAG HARDSUITS
-#Harmony change : sprite pathing and light layering
 #Blood-red Hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
@@ -526,8 +687,11 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
-#Harmony change : sprite pathing and light layering
 #Blood-red Medic Hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
@@ -577,7 +741,6 @@
         Piercing: 0.9
         Heat: 0.9
 
-#Harmony change : sprite pathing and light layering
 #Syndicate Elite Hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
@@ -631,8 +794,11 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
-#Harmony change : sprite pathing and light layering
 #Syndicate Commander Hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
@@ -681,6 +847,10 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
@@ -703,6 +873,10 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 #Wizard Hardsuit
 - type: entity
@@ -727,6 +901,10 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 #Organic Space Suit
 - type: entity
@@ -769,7 +947,7 @@
   components:
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/piratecaptainhelm.rsi
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     clothingVisuals:
       head:
       - state: equipped-HELMET-light
@@ -1009,7 +1187,8 @@
 #MISC. HARDSUITS
 #Clown Hardsuit
 - type: entity
-  parent: ClothingHeadHelmetHardsuitSecurity
+# parent: ClothingHeadHelmetHardsuitSecurity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ] #Harmony change : update parent because of the security hardsuits resprite
   id: ClothingHeadHelmetHardsuitClown
   name: clown hardsuit helmet
   description: A clown hardsuit helmet.
@@ -1024,7 +1203,8 @@
 
 #Mime Hardsuit
 - type: entity
-  parent: ClothingHeadHelmetHardsuitSecurity
+# parent: ClothingHeadHelmetHardsuitSecurity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ] #Harmony change : update parent because of the security hardsuits resprite
   id: ClothingHeadHelmetHardsuitMime
   name: mime hardsuit helmet
   description: A mime hardsuit helmet.
