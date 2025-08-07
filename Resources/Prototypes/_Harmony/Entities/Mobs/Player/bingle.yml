@@ -71,7 +71,7 @@
     damage: 10 # 6 hits to stun
     sound: /Audio/Weapons/egloves.ogg
   - type: InteractionPopup
-    successChance: 0.45
+    successChance: 0.33
     interactSuccessString: petting-success-bingle
     interactFailureString: petting-failure-bingle
     interactSuccessSound:
