@@ -166,7 +166,7 @@
       #Keeps characters without alcohol tolerance traits at the normal threshold for alcohol poisoning
       - !type:HealthChange
         conditions:
-        #Harmony Change start - [Describe effect here?]
+        #Harmony Change start - Checks to see if a character doesn't have any tolerance traits
         - !type:HasTag
           tag: HeavyweightDrunk
           invert: true
