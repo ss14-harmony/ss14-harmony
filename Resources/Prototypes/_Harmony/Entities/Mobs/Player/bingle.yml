@@ -75,9 +75,9 @@
     interactSuccessString: petting-success-bingle
     interactFailureString: petting-failure-bingle
     interactSuccessSound:
-      path: /Audio/Effects/desecration-03.ogg # ew but appropriate
+      path: /Audio/Voice/Slime/slime_squish.ogg # ew but appropriate
     interactFailureSound:
-      path: /Audio/Effects/desecration-02.ogg
+      path: /Audio/Voice/Slime/slime_squish.ogg
   # Specific components
   - type: GhostRole
     name: ghost-role-information-bingle-name
