@@ -2379,3 +2379,59 @@ Entries:
     changes:
     - type: Add
       message: The nuclear operative uplink now contains a stealth suit.
+  - id: 963
+    author: CollectionOfBones128
+    time: '2025-08-07T12:56:41.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/963
+    changes:
+    - type: Add
+      message: You can now mute species sound effects in a new options tab.
+  - id: 916
+    author: kleinerstation13
+    time: '2025-08-07T21:09:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/916
+    changes:
+    - type: Fix
+      message: Fixed incorrect hyperzine uplink descriptions.
+  - id: 865
+    author: kleinerstation13
+    time: '2025-08-07T21:12:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/865
+    changes:
+    - type: Remove
+      message: Removed the Estoc DMR from the uplink.
+  - id: 862
+    author: kleinerstation13
+    time: '2025-08-07T21:13:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/862
+    changes:
+    - type: Fix
+      message: Fixed upstream lecter sprite appearing in the rifle crate order.
+  - id: 702
+    author: Ermucat
+    time: '2025-08-08T12:20:33.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/702
+    changes:
+    - type: Add
+      message: Added a blob AI core customization option.
+  - id: 954
+    author: BlueMoon059
+    time: '2025-08-08T12:23:43.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/954
+    changes:
+    - type: Tweak
+      message: The in-game description of the blue alert has been modified to better reflect the SoP.
+  - id: 959
+    author: spanky-spanky
+    time: '2025-08-08T12:46:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/959
+    changes:
+    - type: Add
+      message: Computers now emit ambient audio.
+  - id: 837
+    author: kleinerstation13
+    time: '2025-08-08T13:22:22.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/837
+    changes:
+    - type: Tweak
+      message: The bandit DMR now does 35 damage per hit.
