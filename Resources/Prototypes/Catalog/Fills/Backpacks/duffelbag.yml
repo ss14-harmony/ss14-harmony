@@ -136,6 +136,10 @@
         amount: 4
       - id: MagazineShotgun
         amount: 4
+    # Begin harmony change - removes estoc from uplink
+    #  - id: MagazineRifle
+    #     amount: 3
+    # End harmony change
       - id: MagazineShotgunSlug
         amount: 1
       - id: MagazineLightRifleBox
@@ -340,6 +344,19 @@
         amount: 2
       - id: SyndieTrickyBomb
         amount: 2
+
+- type: entity
+  parent: [ ClothingBackpackDuffelBundle, BaseMajorContraband ]
+  id: ClothingBackpackDuffelAcolyteBundle
+  name: acolyte armor bundle
+  description: "Contains the Acolyte Armor, the must have of any cult leader."
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingOuterArmorCult
+    - id: ClothingHeadHelmetCult
+    - id: ClothingShoesCult
+    - id: BedsheetCult
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle

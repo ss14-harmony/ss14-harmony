@@ -1,5 +1,15 @@
 - type: entity
-  parent: CrateGenericSteel
+  parent: CrateBaseWeldable
+  id: CrateBingle
+  name: bingle crate
+  components:
+  - type: Sprite
+    sprite: _Harmony/Structures/Storage/Crates/bingle_crate.rsi
+  - type: Icon
+    sprite: _Harmony/Structures/Storage/Crates/bingle_crate.rsi
+
+- type: entity
+  parent: CrateBaseWeldable
   id: CrateSlimJohn
   name: Slim-John crate
   description: A red and white crate, presumably full of snacks.
