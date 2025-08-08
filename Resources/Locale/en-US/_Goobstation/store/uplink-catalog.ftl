@@ -1,3 +1,7 @@
+uplink-hardsuit-cybersun-stealth-name = Cybersun Stealth Hardsuit
+uplink-hardsuit-cybersun-stealth-desc = Reversed engineered from Spider Clan technology, this hardsuit has stealth plating in it for those special ops. Slightly slower and less armored than the default hardsuits.
+## Harmony - Fixed typo
+
 uplink-sarin-gas-grenade-name = Sarin gas grenade
 uplink-sarin-gas-grenade-desc = A brutal nerve agent gas that stuns, blinds, and poisons anybody unlucky enough to catch a whiff aswell as burning anyone not in a voidsuit, leaving them writhing on the floor begging to be finished off.
 
