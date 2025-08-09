@@ -19,7 +19,7 @@
   id: BingleSpawn
   components:
   - type: StationEvent
-    weight: 5 # Currently equal to a paradox clone
+    weight: 3.5 # Equal to a Dragon
     duration: null
     earliestStart: 30
     reoccurrenceDelay: 90 # 1h30 between each bingle
