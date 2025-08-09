@@ -299,7 +299,7 @@
 
 # Nukie Stealth Jetpack
 - type: listing
-  id: UplinkJetpack
+  id: UplinkJetpackNukie
   name: uplink-black-jetpack-name
   description: uplink-stealth-jetpack-desc
   productEntity: HarmonyJetpackBlackFilledStealth
