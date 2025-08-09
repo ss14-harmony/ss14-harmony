@@ -3,3 +3,6 @@
 
 - type: playTimeTracker
   id: JobPermaPrisoner
+
+- type: playTimeTracker
+  id: JobERPLeader

@@ -11,3 +11,18 @@
   - type: PresetIdCard
     job: Chef
     name: Poquito
+
+- type: entity
+  parent: IDCardStandard
+  id: ERPLeaderIDCard
+  name: ERP leader ID card
+  suffix: Harmony
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: ert_commander # They will never know
+  - type: PresetIdCard
+    job: ERPLeader
+  - type: Item
+    heldPrefix: gold

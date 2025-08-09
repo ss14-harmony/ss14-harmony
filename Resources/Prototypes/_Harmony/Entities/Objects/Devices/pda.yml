@@ -26,3 +26,13 @@
       - NanoTaskCartridge
       - NewsReaderCartridge
       - AstroNavCartridge
+
+- type: entity
+  parent: ClownPDA
+  id: ERPLeaderPDA
+  name: ERP Leader PDA
+  suffix: Harmony
+  description: Only given out to the most elite of the Nanotrasen clown forces.
+  components:
+  - type: Pda
+    id: ERPLeaderIDCard
