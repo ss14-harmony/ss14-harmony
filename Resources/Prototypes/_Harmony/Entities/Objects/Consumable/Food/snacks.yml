@@ -40,6 +40,93 @@
     slots:
     - suitStorage
 
+- type: entity
+  name: Slim-Fuzz
+  parent: BaseItem
+  id: FoodSnackSlimFuzz
+  description: A cotton-packed snack, made after multiple incidents of moths dying after eating the original Slim-John.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Consumable/Food/Snacks/slimfuzz.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Blunt: 0
+  - type: Item
+    heldPrefix: icon
+    size: Tiny
+    shape:
+    - 0,0,0,1
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Tag
+    tags:
+    - FoodSnack
+    - SlimJohnSingle
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodPacketSlimFuzzTrash
+    - id: FoodSnackCottonStick
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+  - type: Clothing
+    sprite: _Harmony/Objects/Consumable/Food/Snacks/slimfuzz.rsi
+    quickEquip: false
+    slots:
+    - suitStorage
+
+- type: entity
+  name: cotton stick
+  parent: BaseItem
+  id: FoodSnackCottonStick
+  description: Will it cotton?
+  components:
+  - type: FlavorProfile
+    flavors:
+    - cotton
+  - type: Sprite
+    sprite: _Harmony/Objects/Consumable/Food/Snacks/cottonstick.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Blunt: 0
+  - type: Item
+    heldPrefix: icon
+    size: Tiny
+    shape:
+    - 0,0,0,1
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Food
+    requiresSpecialDigestion: true
+  - type: Tag
+    tags:
+    - FoodSnack
+    - ClothMade
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Fiber
+          Quantity: 8
+  - type: Clothing
+    sprite: _Harmony/Objects/Consumable/Food/Snacks/cottonstick.rsi
+    quickEquip: false
+    slots:
+    - suitStorage
+
 #Trash
 
 - type: entity
@@ -50,6 +137,24 @@
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Consumable/Food/Snacks/slimjohn.rsi
+    state: trash
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: trash-inhand-left
+        color: "#FF1818"
+      right:
+      - state: trash-inhand-right
+        color: "#FF1818"
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketSlimFuzzTrash
+  name: Slim-Fuzz
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Consumable/Food/Snacks/slimfuzz.rsi
     state: trash
   - type: Item
     inhandVisuals:
