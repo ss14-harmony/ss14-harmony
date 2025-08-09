@@ -79,6 +79,7 @@
     ClothingHeadHatCorpsoft: 2
     ClothingHeadFishCap: 2
     ClothingHeadRastaHat: 2
+    ClothingHeadPropellerHat: 2
     ClothingBeltStorageWaistbag: 3
     ClothingEyesGlasses: 6
     ClothingHandsGlovesColorBlack: 4
@@ -95,7 +96,7 @@
     # Harmony change
     ClothingHeadWhiteBow: 3
     ClothingHeadBlackBow: 3
-    ClothingNeckHeadphonesCat: 3
+    ClothingMultipleHeadphonesCat: 3
     # Harmony change
     # DO NOT ADD MORE, USE UNIFORM DYING
   contrabandInventory:

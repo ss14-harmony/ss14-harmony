@@ -1,0 +1,36 @@
+﻿- type: entity
+  parent: BaseAction
+  id: ActionPitbullSummon
+  name: Summon Pitbulls
+  description: Summons three pitbulls.
+  components:
+  - type: Action
+    useDelay: 15
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Harmony/Mobs/Animals/pitbull.rsi
+      state: pitbull
+  - type: InstantAction
+    event: !type:InstantSpawnSpellEvent
+      prototype: MobPitbullWizard
+      posData: !type:TargetInFront
+  - type: ActionUpgrade
+    effectedLevels:
+      2: ActionPitbullSmashedSummon
+  - type: SpeakOnAction
+    sentence: action-speech-spell-pitbull
+
+- type: entity
+  parent: ActionPitbullSummon
+  id: ActionPitbullSmashedSummon
+  name: Summon Smashed Pitbulls
+  description: Summons three SMASHED pitbulls.
+  components:
+  - type: Action
+    icon:
+      sprite: _Harmony/Mobs/Animals/pitbull.rsi
+      state: toadline_pitbull
+  - type: InstantAction
+    event: !type:InstantSpawnSpellEvent
+      prototype: MobSmashedPitbullWizard
+      posData: !type:TargetInFront
