@@ -90,7 +90,7 @@
     whitelist:
       components:
       - SurplusBundle
-  
+
 - type: listing
   id: UplinkX4
   name: uplink-X4-name
@@ -296,3 +296,22 @@
     whitelist:
     - Bartender
     - Zookeeper
+
+# Nukie Stealth Jetpack
+- type: listing
+  id: UplinkJetpack
+  name: uplink-black-jetpack-name
+  description: uplink-stealth-jetpack-desc
+  productEntity: HarmonyJetpackBlackFilledStealth
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink

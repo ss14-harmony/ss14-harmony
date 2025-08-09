@@ -68,3 +68,6 @@ uplink-cluster-weh-desc = Scatters 10 lizard plushies in a circle after a short 
 
 uplink-hyposhell-name = Box of hyposhells
 uplink-hyposhell-desc = A box containing four hyposhells, shotgun shells that can hold 7u of any chemical.
+
+# Nukie Stealth jetpack
+uplink-stealth-jetpack-desc = A black jetpack that doesn't appear on radar. It allows you to fly around in space. Refills not included, use your fuel wisely.
