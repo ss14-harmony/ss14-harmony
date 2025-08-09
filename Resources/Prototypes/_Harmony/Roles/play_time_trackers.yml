@@ -6,3 +6,6 @@
 
 - type: playTimeTracker
   id: JobERPLeader
+
+- type: playTimeTracker
+  id: JobERPClown

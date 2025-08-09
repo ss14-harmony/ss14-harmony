@@ -36,3 +36,13 @@
   components:
   - type: Pda
     id: ERPLeaderIDCard
+
+- type: entity
+  parent: ClownPDA
+  id: ERPClownPDA
+  name: ERP Clown PDA
+  suffix: Harmony
+  description: Given to clowns part of the elite Emergency Clown Party.
+  components:
+  - type: Pda
+    id: ERPClownIDCard

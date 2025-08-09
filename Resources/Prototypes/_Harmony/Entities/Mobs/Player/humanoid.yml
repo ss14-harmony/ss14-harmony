@@ -317,3 +317,60 @@
     requirements:
     - !type:OverallPlaytimeRequirement
       time: 21600 # 6 hrs
+
+## ERP Clown
+
+- type: entity
+  id: RandomHumanoidSpawnerERPClown
+  name: ERP clown
+  suffix: Harmony, ERPRole, Basic
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: clown
+  - type: RandomMetadata
+    nameSegments:
+    - NamesMilitaryFirst
+    - NamesClown
+    nameFormat: name-format-standard
+  - type: RandomHumanoidSpawner
+    settings: ERPClown
+
+- type: randomHumanoidSettings
+  parent: EventHumanoidCentcomm
+  id: ERPClown
+  components:
+  - type: GhostRole
+    name: ghost-role-information-erp-clown-name
+    description: ghost-role-information-erp-clown-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: ERPClown
+  - type: Loadout
+    prototypes: [ ERPClownGear ]
+    roleLoadout: [ RoleSurvivalClown ]
+  - type: RandomMetadata
+    nameSegments:
+    - NamesMilitaryFirst
+    - NamesClown
+    nameFormat: name-format-standard
+
+## ERP Clown Timer
+
+- type: entity
+  parent: RandomHumanoidSpawnerERPClown
+  id: RandomHumanoidSpawnerERPClownTime
+  suffix: Harmony, ERPRole, Time
+  components:
+  - type: RandomHumanoidSpawner
+    settings: ERPClown
+
+- type: randomHumanoidSettings
+  parent: ERPClown
+  id: ERPClownTime
+  components:
+  - type: GhostRole
+    requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 10800 # 3 hrs
