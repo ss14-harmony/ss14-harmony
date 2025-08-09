@@ -1,5 +1,5 @@
 using System.Numerics;
-using Content.Client._NF.Radar; //NF
+using Content.Client._NF.Radar; // Harmony, Radar Blip - NF
 using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
@@ -15,7 +15,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 // using Robust.Shared.Utility; // Harmony, comments out. Radar Blip Port
-using Robust.Shared.Timing; //NF
+using Robust.Shared.Timing; // Harmony, Radar Blip - NF
 
 namespace Content.Client.Shuttles.UI;
 
@@ -52,18 +52,19 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
     private List<Entity<MapGridComponent>> _grids = new();
 
+    // Harmony Change Start - Radar Blip
     //imp / frontier - timer for blip requests.
     private float _blipRequestAccumulator = 0;
     private float _blipRequestTime = 1.5f;
     private bool _shouldShowSelf = true;
+    // Harmony Change End
 
     public ShuttleNavControl() : base(64f, 256f, 256f)
     {
         RobustXamlLoader.Load(this);
         _shuttles = EntManager.System<SharedShuttleSystem>();
         _transform = EntManager.System<SharedTransformSystem>();
-        // Frontier
-        _blipSystem = EntManager.System<ClientRadarBlipSystem>();
+        _blipSystem = EntManager.System<ClientRadarBlipSystem>(); // Harmony, Radar Blip - Frontier
     }
 
     public void SetMatrix(EntityCoordinates? coordinates, Angle? angle)
@@ -292,7 +293,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         // player determine where they are relative to the shuttle.
         if (_consoleEntity != null && xformQuery.TryGetComponent(_consoleEntity, out var consoleXform))
         {
-            if ((consoleXform.ParentUid != _coordinates.Value.EntityId) && _shouldShowSelf) //imp edit - added showSelf check
+            if ((consoleXform.ParentUid != _coordinates.Value.EntityId) && _shouldShowSelf) // Harmony, Radar Blip - imp edit - added showSelf check
             {
                 var consolePositionWorld = _transform.GetWorldPosition((EntityUid)_consoleEntity);
                 var p = Vector2.Transform(consolePositionWorld, worldToShuttle * shuttleToView);
@@ -300,8 +301,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             }
         }
 
-        //frontier - draw radar blips
-        DrawBlips(handle, worldToShuttle, shuttleToView);
+        DrawBlips(handle, worldToShuttle, shuttleToView); // Harmony - frontier - draw radar blips
 
     }
 
@@ -355,6 +355,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         return (value - MidPointVector) / MinimapScale;
     }
 
+    // Harmony Change Start - Radar Blip
     //frontier / imp edit - update the radar blips
     protected override void FrameUpdate(FrameEventArgs args)
     {
@@ -374,5 +375,6 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     {
         _shouldShowSelf = value;
     }
+    // Harmony Change End
 
 }

@@ -20,7 +20,7 @@ public sealed partial class RadarConsoleWindow : FancyWindow,
     {
         RadarScreen.UpdateState(scc);
     }
-
+    // Harmony Change Start - Radar Blip
     //frontier - set the console this is being accessed from
     public void SetConsole(EntityUid consoleEntity)
     {
@@ -32,4 +32,5 @@ public sealed partial class RadarConsoleWindow : FancyWindow,
     {
         RadarScreen.SetShowSelf(value);
     }
+    // Harmony Change End
 }
