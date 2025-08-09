@@ -268,6 +268,25 @@
       tags:
         - NukeOpsUplink
 
+## Nukie Stealth Jetpack
+- type: listing
+  id: UplinkJetpackNukie
+  name: uplink-black-jetpack-name
+  description: uplink-stealth-jetpack-desc
+  productEntity: HarmonyJetpackBlackFilledStealth
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+
 # Pointless
 
 - type: listing
@@ -296,22 +315,3 @@
     whitelist:
     - Bartender
     - Zookeeper
-
-# Nukie Stealth Jetpack
-- type: listing
-  id: UplinkJetpackNukie
-  name: uplink-black-jetpack-name
-  description: uplink-stealth-jetpack-desc
-  productEntity: HarmonyJetpackBlackFilledStealth
-  discountCategory: veryRareDiscounts
-  discountDownTo:
-    Telecrystal: 1
-  cost:
-    Telecrystal: 2
-  categories:
-  - UplinkWearables
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
