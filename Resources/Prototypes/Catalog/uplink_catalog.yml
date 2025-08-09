@@ -1602,11 +1602,13 @@
     Telecrystal: 2
   categories:
   - UplinkWearables
-  conditions: # Harmony Change - Adds stealth jetpack for Nukies
+# Harmony change start - Adds stealth jetpack for Nukies
+  conditions: 
     - !type:StoreWhitelistCondition
       blacklist:
         tags:
           - NukeOpsUplink
+# Harmony change end
 
 - type: listing
   id: UplinkVoiceMask
