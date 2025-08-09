@@ -2,7 +2,7 @@
   parent: BoxCardboard
   id: FoodBoxSlimJohn
   name: box of Slim-Johns
-  description: A small box, made for 9 Slim Johns.
+  description: A small box, made for 6 Slim Johns and 3 Slim Fuzzes.
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Storage/slimjohnbox.rsi
@@ -24,7 +24,9 @@
   - type: StorageFill
     contents:
     - id: FoodSnackSlimJohn
-      amount: 9
+      amount: 6
+    - id: FoodSnackSlimFuzz
+      amount: 3
 
 - type: entity
   parent: BoxCardboard

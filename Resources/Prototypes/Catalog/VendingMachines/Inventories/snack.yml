@@ -7,7 +7,10 @@
     FoodSnackPistachios: 3
     FoodSnackSus: 3
     FoodSnackSemki: 3
-    FoodSnackSlimJohn: 3 #Harmony change.
+  # Begin Harmony Slim-John.
+    FoodSnackSlimJohn: 3
+    FoodSnackSlimFuzz: 3
+  # End Harmony Slim-John.
   contrabandInventory:
     FoodSnackSwirlLollipop: 2
     FoodSnackSyndi: 3
