@@ -60,7 +60,6 @@ uplink-traitor-deathrattle-implant-desc = A box containing two syndicate deathra
 
 # Wearables
 
-## Nukie Stealth jetpack
 uplink-stealth-jetpack-desc = A black jetpack that doesn't appear on radar. It allows you to fly around in space. Refills not included, use your fuel wisely.
 
 # Pointless
