@@ -60,7 +60,6 @@
     - type: Contraband
       severity: Syndicate
 
-
 - type: entity
   parent: ClothingHandsGlovesSyntheticBase
   id: ClothingHandsGlovesColorPomni

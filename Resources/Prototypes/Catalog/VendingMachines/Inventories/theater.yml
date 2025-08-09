@@ -1,7 +1,6 @@
 - type: vendingMachineInventory
   id: AutoDrobeInventory
   startingInventory:
-
     ClothingHeadHatJester: 1
     ClothingUniformJumpsuitJester: 1
     ClothingHeadHatJesterAlt: 1
