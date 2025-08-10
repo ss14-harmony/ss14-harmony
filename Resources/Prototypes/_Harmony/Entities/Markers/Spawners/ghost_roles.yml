@@ -29,7 +29,7 @@
   - type: GhostRoleMobSpawner
     prototype: MobBinglePrime
 
-﻿- type: entity
+- type: entity
   parent: MarkerBase
   id: SpawnPointGhostGizard
   name: ghost role spawn point
@@ -51,4 +51,3 @@
     - state: green
     - sprite: _Harmony/Mobs/Pets/gizard.rsi
       state: gizard
-      

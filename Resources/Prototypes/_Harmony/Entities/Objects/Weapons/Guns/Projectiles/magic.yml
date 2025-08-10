@@ -32,9 +32,9 @@
     radius: 1.0
     energy: 3.0
   - type: Sprite
-    sprite: Objects/Fun/toys.rsi
+    sprite: Objects/Fun/Plushies/lizard.rsi
     layers:
-    - state: plushie_lizard
+    - state: icon
   - type: Projectile
     damage:
       types:

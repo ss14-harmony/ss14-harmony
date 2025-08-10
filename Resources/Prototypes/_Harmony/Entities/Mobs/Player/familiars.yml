@@ -45,9 +45,9 @@
       Alive:
         Base: gizard
       Critical:
-        Base: gizarddead
+        Base: dead
       Dead:
-        Base: gizarddead
+        Base: dead
   - type: Butcherable
     spawned:
     - id: FoodMeatLizard

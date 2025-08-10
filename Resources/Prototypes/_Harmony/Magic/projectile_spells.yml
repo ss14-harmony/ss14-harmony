@@ -9,8 +9,8 @@
     itemIconStyle: BigAction
     raiseOnUser: true
     icon:
-      sprite: Objects/Fun/toys.rsi
-      state: plushie_lizard
+      sprite: Objects/Fun/Plushies/lizard.rsi
+      state: icon
   - type: TargetAction
     range: 60
     checkCanAccess: false
