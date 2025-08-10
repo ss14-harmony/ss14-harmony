@@ -101,7 +101,10 @@
   - type: Sprite
     layers:
     - state: box_security
-    - state: secglasses
+# Start of Harmony Change: Updates Secglasses State
+#    - state: secglasses
+    - state: sechud
+# End of Harmony Change
 
 - type: entity
   name: sunglasses box
@@ -116,7 +119,10 @@
   - type: Sprite
     layers:
     - state: box_security
-    - state: sunglasses
+# Start of Harmony Change: Updates Sunglasses State
+#    - state: sunglasses
+    - state: sechud
+# End of Harmony Change
 
 - type: entity
   name: forensic pad box

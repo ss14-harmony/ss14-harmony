@@ -5,8 +5,8 @@
   description: Pushes entities away from the user.
   components:
   - type: RepulseAttract
-    speed: 10
-    range: 5
+    speed: 25 # Harmony change - 10 -> 25
+    range: 10 # Harmony change - 5 -> 10
     whitelist:
       components:
       - MobMover

@@ -22,7 +22,7 @@
   id: SalvageSpecialistGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
-    id: SalvagePDA
+    # id: SalvagePDA - Harmony change
     ears: ClothingHeadsetCargo
   #storage:
     #back:
