@@ -1,0 +1,21 @@
+﻿- type: entity
+  parent: BaseBullet
+  id: ProjectileBanana
+  categories: [ HideSpawnMenu ]
+  name: slippery banana
+  description: slip
+  components:
+  - type: Projectile
+    deleteOnCollide: false
+    damage:
+      types:
+        Holy: 1
+    soundHit:
+      path: "/Audio/Effects/slip.ogg"
+  - type: Sprite
+    sprite: Objects/Materials/materials.rsi
+    layers:
+    - state: bananium
+  - type: StunOnCollide
+    stunAmount: 1
+    knockdownAmount: 1
