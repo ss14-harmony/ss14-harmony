@@ -10,12 +10,11 @@ uplink-rifle-bandit-name = Bandit Bundle
 uplink-rifle-bandit-desc = Contains the Bandit, a reliable semi-auto bullpup which fires devastating caseless rounds, bundled with 2 DMR magazines. Uses .30 rifle caseless ammo.
 
 # Explosive
+uplink-kudzu-grenade-name = Kudzu grenade
+uplink-kudzu-grenade-desc = Repurposed foam dart grenade containing mutated kudzu.
 
 uplink-pizza-bomb-name = Pizza Bomb
 uplink-pizza-bomb-desc = This tech, first pioneered by terrorists, now is used by the Syndicate for eliminating high value targets. WARNING: Explodes after opening with a short timer. Do not attempt to throw.
-
-uplink-kudzu-grenade-name = Kudzu grenade
-uplink-kudzu-grenade-desc = Repurposed foam dart grenade containing mutated kudzu.
 
 uplink-pizza-bomb-surplus-name = Surplus Pizza Bomb
 uplink-pizza--surplus-desc = This shouldn't be visible, report me.
