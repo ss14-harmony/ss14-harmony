@@ -10,6 +10,9 @@
     sprite: _Harmony/Clothing/OuterClothing/WinterCoats/coatcaparmored.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterCaptainArmored
+  - type: Tag
+    tags:
+    - WhitelistChameleon
 
 - type: entity
   parent: ClothingOuterWinterCoatToggleable

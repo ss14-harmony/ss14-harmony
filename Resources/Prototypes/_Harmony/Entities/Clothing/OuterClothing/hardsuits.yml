@@ -1,0 +1,34 @@
+#Quartermaster's Hardsuit
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
+  id: ClothingOuterHardsuitQM
+  name: quartermaster's antique salvage hardsuit
+  description: A salvaged pirate hardsuit generously donated to NanoTrasen, retrofitted for the Quartermaster.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/qmsuit.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/qmsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.60 # stepping on a landmine saving a salv would suck, but being unnecessarily resistant to a clake or penbomb would too
+  - type: Armor
+    modifiers:
+      coefficients: # Better than spationaut, worse than mining, slower than luxury and goliath
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.80 # on par with other non-sec protective hardsuits
+        Heat: 0.9
+        Radiation: 0.4 # salv is supposed to have radiation hazards in the future
+        Caustic: 0.70
+  - type: ClothingSpeedModifier # make qm not want to use it casually on station
+    walkModifier: 0.75
+    sprintModifier: 0.75
+  - type: HeldSpeedModifier
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitQM

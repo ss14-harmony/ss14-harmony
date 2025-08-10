@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by hex_reject (Discord) and akirrer (Discord) based upon the lizard plushie, found in: https://github.com/Sector-Umbra/Sector-Umbra/commit/ebebb3603acc9d801d5ae87ac948b1c287aa2116",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "icon"
+      },
+      {
+        "name": "avali-equipped-HELMET",
+        "directions": 4
+      },
+      {
+        "name": "plushieavali-inhand-left",
+        "directions": 4
+      },
+      {
+        "name": "plushieavali-inhand-right",
+        "directions": 4
+      }
+    ]
+  }
