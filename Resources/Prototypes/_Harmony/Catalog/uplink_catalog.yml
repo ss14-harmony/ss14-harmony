@@ -29,20 +29,6 @@
   - UplinkWeaponry
 
 - type: listing
-  id: UplinkDrungnovBundle
-  name: uplink-drungnov-bundle-name
-  description: uplink-drungnov-bundle-desc
-  icon: { sprite: _Harmony/Objects/Weapons/Guns/Snipers/Drungnov.rsi, state: base }
-  productEntity: ClothingBackpackDuffelSyndicateFilledDrungov
-  discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 8
-  cost:
-    Telecrystal: 12
-  categories:
-    - UplinkWeaponry
-
-- type: listing
   id: UplinkMantisGloves
   name: mantis-gloves-uplink-name
   description: mantis-gloves-uplink-desc
@@ -104,7 +90,7 @@
     whitelist:
       components:
       - SurplusBundle
-  
+
 - type: listing
   id: UplinkX4
   name: uplink-X4-name

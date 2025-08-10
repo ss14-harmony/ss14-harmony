@@ -72,3 +72,16 @@
       amount: 2
     - id: BoxLethalshot
       amount: 4
+
+- type: entity
+  parent: [ CrateWeaponSecure, BaseSecurityContraband]
+  id: CrateArmoryDrungnov
+  name: DMR crate
+  description: Contains three Drungnov DMRs. Requires Armory access to open.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSniperDrungnov
+      amount: 3
+    - id: MagazineLightRifle
+      amount: 3

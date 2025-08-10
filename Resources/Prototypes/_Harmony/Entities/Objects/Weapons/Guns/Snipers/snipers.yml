@@ -58,21 +58,21 @@
 
 - type: entity
   name: Drungnov
-  parent: [BaseWeaponRifle, BaseGunWieldable, BaseSyndicateContraband]
+  parent: [BaseWeaponRifle, BaseGunWieldable, BaseMajorContraband]
   id: WeaponSniperDrungnov
-  description: A old and reliable sniper. Modified to use .45 magnum ammo.
+  description: A very old and well used rifle. Uses .30 rifle.
   components:
   - type: Item
     size: Large
   - type: Sprite
-    sprite: _Harmony/Objects/Weapons/Guns/Snipers/Drungnov.rsi
+    sprite: _Harmony/Objects/Weapons/Guns/Snipers/drungnov.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Harmony/Objects/Weapons/Guns/Snipers/Drungnov.rsi
+    sprite: _Harmony/Objects/Weapons/Guns/Snipers/drungnov.rsi
   - type: GunRequiresWield
   - type: Gun
     fireRate: 0.6
@@ -85,21 +85,21 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineMagnum
+        startingItem: MagazineLightRifle
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-          - MagazineMagnum
+          - MagazineLightRifle
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeMagnum
+        startingItem: CartridgeLightRifle
         priority: 1
         whitelist:
           tags:
-          - CartridgeMagnum
+          - CartridgeLightRifle
   - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset
     maxOffset: 2.5
