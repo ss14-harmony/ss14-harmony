@@ -2,7 +2,7 @@
   parent: MobLizard
   id: MobLizardGizard
   name: Gizard
-  description: It's Gizard the Wizard Lizard! Here to help with wizarding!
+  description: Sometimes you think you're the magic potion.
   components:
   - type: Sprite
     drawdepth: Mobs
