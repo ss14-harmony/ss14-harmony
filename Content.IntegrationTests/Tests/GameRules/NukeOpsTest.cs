@@ -241,8 +241,8 @@ public sealed class NukeOpsTest
                 var resp = entMan.GetComponent<RespiratorComponent>(player);
                 Assert.That(resp.SuffocationCycles, Is.LessThanOrEqualTo(resp.SuffocationCycleThreshold));
             }
-            Assert.That(damage.TotalDamage, Is.EqualTo(FixedPoint2.Zero));
             // Harmony Change End
+            Assert.That(damage.TotalDamage, Is.EqualTo(FixedPoint2.Zero));
         }
 
         // Check that the round does not end prematurely when agents are deleted in the outpost

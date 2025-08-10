@@ -2,7 +2,7 @@
   parent: BaseHealingItem
   id: IPCOilPack
   name: ipc oil pack
-  suffix: Full
+  suffix: Full, Harmony
   description: Utilising a proprietary double-nozzle connector, IPCs can now recover all their missing fluids in one easy package.
   components:
   - type: Sprite
@@ -27,7 +27,7 @@
 - type: entity
   parent: IPCOilPack
   id: IPCOilPack1
-  suffix: Single
+  suffix: Single, Harmony
   components:
   - type: Stack
     count: 1
@@ -36,7 +36,7 @@
   parent: BaseHealingItem
   id: CablePack
   name: robot rewiring kit
-  suffix: Full
+  suffix: Full, Harmony
   description: a bundle of cables capable of replacing any burnt out wiring inside an ipc.
   components:
   - type: Sprite
@@ -59,7 +59,7 @@
 - type: entity
   parent: CablePack
   id: CablePack1
-  suffix: Single
+  suffix: Single, Harmony
   components:
   - type: Stack
     count: 1
@@ -68,7 +68,7 @@
   parent: BaseHealingItem
   id: ComponentPack
   name: component replacement kit
-  suffix: Full
+  suffix: Full, Harmony
   description: a set of spare components to repair damage caused by radiaton and electrocution on ipcs.
   components:
   - type: Sprite
@@ -93,7 +93,7 @@
 - type: entity
   parent: ComponentPack
   id: ComponentPack1
-  suffix: Single
+  suffix: Single, Harmony
   components:
   - type: Stack
     count: 1
@@ -102,7 +102,7 @@
   parent: BaseHealingItem
   id: RobotStructPack
   name: robot structural repair kit
-  suffix: Full
+  suffix: Full, Harmony
   description: everything you need to repair and replace damaged or brittle components inside a robot.
   components:
   - type: Sprite
@@ -129,7 +129,7 @@
 - type: entity
   parent: RobotStructPack
   id: RobotStructPack1
-  suffix: Single
+  suffix: Single, Harmony
   components:
   - type: Stack
     count: 1
@@ -138,6 +138,7 @@
   parent: BaseHealingItem
   id: ReplacementLenses
   name: replacement lenses
+  suffix: Harmony
   description: a pair of replacement lenses for repairing robot vision.
   components:
   - type: Sprite
@@ -160,7 +161,7 @@
   description: A self-adhering metallic mesh capable of patching gashes in robots. A good way to stop bleeding.
   parent: BaseHealingItem
   id: ChassisPatch
-  suffix: Full
+  suffix: Full, Harmony
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Medical/chassis_patch.rsi
@@ -198,7 +199,7 @@
 - type: entity
   id: ChassisPatch1
   parent: ChassisPatch
-  suffix: Single
+  suffix: Single, Harmony
   components:
   - type: Stack
     count: 1

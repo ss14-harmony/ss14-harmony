@@ -21,7 +21,7 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-zombie-objective
-  # Harmony Change Start, IPCs can't be infected so can't be zombies
+# Harmony Change Start, IPCs can't be infected so can't be zombies (See if this can be changed?)
   requirements:
   - !type:SpeciesRequirement
     inverted: true

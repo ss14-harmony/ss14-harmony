@@ -1,8 +1,8 @@
-
+# IPCs
 - type: entity
   parent: BoxSurvival
   id: BoxSurvivalHumanoidSilicon
-  suffix: IPC
+  suffix: IPC, Harmony
   components:
   - type: StorageFill
     contents:

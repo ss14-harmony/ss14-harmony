@@ -180,10 +180,13 @@ public sealed class SuicideSystem : EntitySystem
             return;
         }
 
+        // Harmony Change Start, made it slash to prevent testfail and to make self-execution more thematic
+        // args.DamageType ??= "Bloodloss";
         if (HasComp<SiliconComponent>(victim)) // Goobstation
-            args.DamageType ??= "Slash"; // Harmony Change, made it slash to prevent testfail and to make self-execution more thematic
+            args.DamageType ??= "Slash";
         else
             args.DamageType ??= "Bloodloss";
+        // Harmony Change End
         _suicide.ApplyLethalDamage(victim, args.DamageType);
         args.Handled = true;
     }

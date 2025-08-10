@@ -46,7 +46,7 @@ namespace Content.Shared.Humanoid
                 case SpeciesNaming.FirstDashLast: // Goobstation
                     return Loc.GetString("namepreset-firstdashlast",
                         ("first", GetFirstName(speciesProto, gender)), ("last", GetLastName(speciesProto)));
-                    // Harmony Change End
+                // Harmony Change End
             }
         }
 

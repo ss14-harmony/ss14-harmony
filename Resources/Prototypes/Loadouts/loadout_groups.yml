@@ -101,7 +101,6 @@
   - LoadoutSpeciesVoxNitrogen
   - EmergencyIPCBox # Harmony Change, Port DeltaV IPCs
 
-
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
   id: GroupEVATank

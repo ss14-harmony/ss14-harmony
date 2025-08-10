@@ -2,3 +2,8 @@
   id: Avali
   name: species-name-avali
   text: "/ServerInfo/_Harmony/Guidebook/Mobs/Avali.xml"
+
+- type: guideEntry
+  id: IPC
+  name: species-name-ipc
+  text: "/ServerInfo/_Harmony/Guidebook/Mobs/IPCs.xml"

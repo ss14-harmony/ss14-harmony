@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseHealingItem # Harmony Change, parent DV called for wasn't ported
   id: OmniPatch
-  suffix: Full
+  suffix: Full, Harmony
   name: omni patch
   description: A topical patch of specially grown silica microbots, curated to heal machine entities. Smells of ozone.
   components:
@@ -30,7 +30,7 @@
 - type: entity
   id: Omnipatch1
   parent: OmniPatch
-  suffix: Single
+  suffix: Single, Harmony
   components:
   - type: Stack
     count: 1
