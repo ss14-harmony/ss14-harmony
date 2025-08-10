@@ -2251,12 +2251,13 @@
   cost:
     Telecrystal: 5
   categories:
-  - UplinkJob
-  conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - Librarian
   #Start of Harmony change
+  #- UplinkJob
+  - UplinkWeaponry #Swapped the category to weaponry. It was originally a librarian's job item upstream which is why it's listed in job specific
+  #conditions:
+  #- !type:BuyerJobCondition
+  #  whitelist:
+  #  - Librarian
   #- !type:BuyerWhitelistCondition
   #  blacklist:
   #    components:
