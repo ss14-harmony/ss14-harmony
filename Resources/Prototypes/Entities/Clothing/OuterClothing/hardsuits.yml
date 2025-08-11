@@ -42,7 +42,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitAtmos
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - Hardsuit
     - WhitelistChameleon
 
@@ -83,7 +83,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitEngineering
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - Hardsuit
     - WhitelistChameleon
 
@@ -131,7 +131,7 @@
     - Hardsuit
     - WhitelistChameleon
     - HardsuitSpatio
-    - CorgiWearable
+    # - CorgiWearable # Harmony
 
 #Harmony change : Hardsuit resprite
 #Salvage Hardsuit
@@ -173,15 +173,15 @@
   - type: ClothingSpeedModifier
 #    walkModifier: 0.75
 #    sprintModifier: 0.75
-    walkModifier: 0.70
-    sprintModifier: 0.70
+    walkModifier: 0.80
+    sprintModifier: 0.80
 # End of Harmony Change
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSalvage
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - Hardsuit
     - WhitelistChameleon
 
@@ -239,7 +239,7 @@
     node: hardsuitGoliath
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - Hardsuit
     - WhitelistChameleon
 
@@ -315,7 +315,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitSecurity
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - Hardsuit
     - WhitelistChameleon
 
@@ -475,7 +475,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitEngineeringWhite
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - Hardsuit
     - WhitelistChameleon
 
@@ -689,8 +689,8 @@
     - MonkeyWearable
     - Hardsuit
     - WhitelistChameleon
-    - CorgiWearable
-    - ScurretWearable
+    # - CorgiWearable # Harmony
+    # - ScurretWearable # Harmony
   - type: StaticPrice
     price: 5000
 
@@ -764,7 +764,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieElite
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - Hardsuit
     - WhitelistChameleon
 
@@ -808,7 +808,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieCommander
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - Hardsuit
     - WhitelistChameleon
 

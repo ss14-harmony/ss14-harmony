@@ -2255,3 +2255,183 @@ Entries:
     changes:
     - type: Fix
       message: Non-humanoids can no longer become blood brothers.
+  - id: 570
+    author: MoonlightHollow
+    time: '2025-08-02T20:35:29.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/570
+    changes:
+    - type: Add
+      message: Added Avali, chirps!
+  - id: 560
+    author: MoonlightHollow
+    time: '2025-08-03T16:56:27.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/560
+    changes:
+    - type: Add
+      message: Added more accents.
+  - id: 933
+    author: MoonlightHollow
+    time: '2025-08-04T13:58:55.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/933
+    changes:
+    - type: Add
+      message: Added 58 more Avali names.
+  - id: 940
+    author: kleinerstation13
+    time: '2025-08-04T14:15:08.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/940
+    changes:
+    - type: Add
+      message: Added a guidebook entry for Avali.
+  - id: 941
+    author: kleinerstation13
+    time: '2025-08-04T16:41:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/941
+    changes:
+    - type: Tweak
+      message: Avali can no longer recieve blood from saline or iron, they must replenish blood with copper or liquid ammonia instead.
+    - type: Tweak
+      message: Saline will now poison Avali.
+  - id: 850
+    author: youtissoum
+    time: '2025-08-05T09:34:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/850
+    changes:
+    - type: Tweak
+      message: Bingles now deal less stun damage, only stunning after 6 hits.
+    - type: Tweak
+      message: Bingles are now slightly less common.
+    - type: Tweak
+      message: Bingles can now wide-swing.
+    - type: Tweak
+      message: Bingle max health is now 80.
+    - type: Fix
+      message: Destroyed bingle pits will now correctly spawn a bingle loot crate.
+    - type: Fix
+      message: People who fell into bingle pits will now actually be unable to interact.
+  - id: 842
+    author: youtissoum
+    time: '2025-08-05T09:35:33.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/842
+    changes:
+    - type: Tweak
+      message: Converted blood brothers will now be deconverted when they are mindshielded.
+  - id: 838
+    author: youtissoum
+    time: '2025-08-05T09:36:22.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/838
+    changes:
+    - type: Tweak
+      message: Blood brothers can no longer roll the "Die A Glorious Death" objective.
+  - id: 816
+    author: youtissoum
+    time: '2025-08-05T09:36:55.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/816
+    changes:
+    - type: Tweak
+      message: Handheld lights will now only enter their dying state once they reach 5% battery capacity.
+  - id: 839
+    author: youtissoum
+    time: '2025-08-05T09:39:38.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/839
+    changes:
+    - type: Remove
+      message: The prisoner round-start job has been removed from the game.
+  - id: 947
+    author: TheCrimsonJupiter
+    time: '2025-08-05T11:46:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/947
+    changes:
+    - type: Fix
+      message: The open HoS flask will no longer show up as an error sprite.
+  - id: 950
+    author: CollectionOfBones128
+    time: '2025-08-05T18:56:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/950
+    changes:
+    - type: Tweak
+      message: Blood Brother has been renamed to Blood Bound.
+  - id: 609
+    author: Ermucat
+    time: '2025-08-06T11:48:03.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/609
+    changes:
+    - type: Add
+      message: Added a spell that summons pitbulls to the wizard grimoire.
+  - id: 891
+    author: CollectionOfBones128
+    time: '2025-08-06T12:37:31.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/891
+    changes:
+    - type: Tweak
+      message: The salvage mining hardsuit is now faster.
+  - id: 724
+    author: kleinerstation13
+    time: '2025-08-06T14:54:28.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/724
+    changes:
+    - type: Tweak
+      message: The tech disk terminal will no longer deafen the user.
+  - id: 640
+    author: kleinerstation13
+    time: '2025-08-06T16:13:08.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/640
+    changes:
+    - type: Add
+      message: The nuclear operative uplink now contains a stealth suit.
+  - id: 963
+    author: CollectionOfBones128
+    time: '2025-08-07T12:56:41.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/963
+    changes:
+    - type: Add
+      message: You can now mute species sound effects in a new options tab.
+  - id: 916
+    author: kleinerstation13
+    time: '2025-08-07T21:09:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/916
+    changes:
+    - type: Fix
+      message: Fixed incorrect hyperzine uplink descriptions.
+  - id: 865
+    author: kleinerstation13
+    time: '2025-08-07T21:12:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/865
+    changes:
+    - type: Remove
+      message: Removed the Estoc DMR from the uplink.
+  - id: 862
+    author: kleinerstation13
+    time: '2025-08-07T21:13:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/862
+    changes:
+    - type: Fix
+      message: Fixed upstream lecter sprite appearing in the rifle crate order.
+  - id: 702
+    author: Ermucat
+    time: '2025-08-08T12:20:33.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/702
+    changes:
+    - type: Add
+      message: Added a blob AI core customization option.
+  - id: 954
+    author: BlueMoon059
+    time: '2025-08-08T12:23:43.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/954
+    changes:
+    - type: Tweak
+      message: The in-game description of the blue alert has been modified to better reflect the SoP.
+  - id: 959
+    author: spanky-spanky
+    time: '2025-08-08T12:46:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/959
+    changes:
+    - type: Add
+      message: Computers now emit ambient audio.
+  - id: 837
+    author: kleinerstation13
+    time: '2025-08-08T13:22:22.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/837
+    changes:
+    - type: Tweak
+      message: The bandit DMR now does 35 damage per hit.

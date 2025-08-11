@@ -5,3 +5,18 @@
   - /Audio/_Harmony/Weapons/Guns/Gunshots/dmr_fire1.ogg
   - /Audio/_Harmony/Weapons/Guns/Gunshots/dmr_fire2.ogg
   - /Audio/_Harmony/Weapons/Guns/Gunshots/dmr_fire3.ogg
+
+# Used in _Harmony/Entities/Objects/Weapons/Guns/Rifles/shotguns.yml
+- type: soundCollection
+  id: ShotgunFire
+  files:
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/bulldog_fire1.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/bulldog_fire2.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/bulldog_fire3.ogg
+
+# Used in /Entities/Objects/Weapons/Guns/Revolvers/revolvers.yml
+- type: soundCollection
+  id: RevolverFire
+  files:
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/python_fire1.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/python_fire2.ogg

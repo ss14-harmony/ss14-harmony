@@ -13,3 +13,16 @@
     meteors:
       MobCarp: 10
       MobCarpRainbow: 1
+
+- type: entity
+  parent: BaseGameRule
+  id: BingleSpawn
+  components:
+  - type: StationEvent
+    weight: 5 # Currently equal to a paradox clone
+    duration: null
+    earliestStart: 30
+    reoccurrenceDelay: 90 # 1h30 between each bingle
+    minimumPlayers: 20
+  - type: RandomSpawnRule
+    prototype: SpawnPointGhostBinglePrime

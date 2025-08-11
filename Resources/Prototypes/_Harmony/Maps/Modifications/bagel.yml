@@ -1,7 +1,0 @@
-- type: mapModification
-  id: BagelPermaPrisoner
-  applyOn:
-  - Bagel
-  additions:
-  - prototype: SpawnPointPermaPrisoner
-    position: -6.5, -17.5
