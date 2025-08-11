@@ -1,7 +1,7 @@
 {
     "version": 1,
-    "license": "CC-BY-NC-SA-4.0",
-    "copyright": "created by SnoWDooM",
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Base clownmask by Sheridan : https://github.com/tgstation/tgstation/commit/0c4668e5c6fae886e49932557183fa520764ce89#diff-caf163f3d9fd89509eabbe202f71fc4dd514f49720a458df55b04c260ee4c3a7 Edited artwork by SnoWDooM",
     "size": {
       "x": 32,
       "y": 32

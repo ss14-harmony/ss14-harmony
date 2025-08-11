@@ -42,7 +42,7 @@
   parent: ClothingShoesClown
   id: ClothingShoesJesterPomni
   name: jester shoes
-  description: i feel like glitching.
+  description: I feel like glitching.
   components:
     - type: Sprite
       sprite: _Harmony/Clothing/Shoes/Specific/jesterpomni.rsi
