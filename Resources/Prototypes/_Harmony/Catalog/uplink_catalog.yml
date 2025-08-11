@@ -90,7 +90,7 @@
     whitelist:
       components:
       - SurplusBundle
-
+  
 - type: listing
   id: UplinkX4
   name: uplink-X4-name
