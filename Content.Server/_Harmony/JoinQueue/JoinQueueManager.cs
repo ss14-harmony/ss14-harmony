@@ -47,7 +47,7 @@ public sealed class JoinQueueManager : IJoinQueueManager
     private bool _isEnabled;
 
     public int PlayerInQueueCount => _queue.Count;
-    public int ActualPlayersCount => _player.PlayerCount - PlayerInQueueCount - GetAdminAdjustment(); // Now it's only real value with actual players count that in game
+    public int ActualPlayersCount => _player.PlayerCount - PlayerInQueueCount - GetAdminAdjustment();
 
 
     public void Initialize()
