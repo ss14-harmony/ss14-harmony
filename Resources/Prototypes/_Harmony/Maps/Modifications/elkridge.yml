@@ -1,9 +1,0 @@
-- type: mapModification
-  id: ElkridgePermaPrisoner
-  applyOn:
-  - Elkridge
-  additions:
-  - prototype: SpawnPointPermaPrisoner
-    position: -12.5, -37.5
-  - prototype: SpawnPointPermaPrisoner
-    position: -12.5, -38.5

@@ -11,15 +11,3 @@
   - type: PresetIdCard
     job: Chef
     name: Poquito
-
-- type: entity
-  parent: IDCardStandard
-  id: HarmonyPrisonerIDCard
-  name: prisoner ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: orange
-  - type: PresetIdCard
-    job: PermaPrisoner

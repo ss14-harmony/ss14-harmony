@@ -50,7 +50,6 @@
             Detective: [ 1, 1 ]
             SecurityOfficer: [ 3, 5 ]
             SecurityCadet: [ 2, 4 ]
-            PermaPrisoner: [ 1, 0 ] # HARMONY
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]

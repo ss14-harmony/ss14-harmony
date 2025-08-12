@@ -1,0 +1,14 @@
+- type: entity
+  parent: FloorTileItemBase
+  id: FloorTileItemBingle
+  name: bingle floor
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Tiles/tile.rsi
+    state: bingle
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorBingle
+  - type: Stack
+    stackType: FloorTileBingle

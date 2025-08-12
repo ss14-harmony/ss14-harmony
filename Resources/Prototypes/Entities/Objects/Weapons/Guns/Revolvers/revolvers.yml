@@ -132,7 +132,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+      collection: RevolverFire # Harmony change - Changes sound path to sound collection
       params:
         volume: 2.25
   - type: StaticPrice
