@@ -168,12 +168,11 @@ public sealed class JoinQueueManager : IJoinQueueManager
     }
 
     /// <summary>
-    /// Returns the number of admins online if admins could for max players,
-    /// Otherwise returns 0
+    /// Returns the number of admins that need to be removed from the active player count
     /// </summary>
     /// <returns></returns>
     private int GetAdminAdjustment()
     {
-        return _configuration.GetCVar(CCVars.AdminsCountForMaxPlayers) ? _adminManager.ActiveAdmins.Count() : 0;
+        return _configuration.GetCVar(CCVars.AdminsCountForMaxPlayers) ? 0 : _adminManager.ActiveAdmins.Count();
     }
 }
