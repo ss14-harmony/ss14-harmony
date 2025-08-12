@@ -3,6 +3,7 @@ using Robust.Client.Audio;
 using Robust.Client.Console;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
+using Robust.Shared.Audio;
 using Robust.Shared.Player;
 
 namespace Content.Client._Harmony.JoinQueue;
@@ -13,7 +14,7 @@ public sealed class QueueState : State
     [Dependency] private readonly IClientConsoleHost _console = default!;
 
 
-    private const string JoinSoundPath = "/Audio/Effects/newplayerping.ogg";
+    private static readonly SoundSpecifier JoinSoundPath = new SoundPathSpecifier("/Audio/Effects/newplayerping.ogg");
 
     private QueueGui? _gui;
 
@@ -29,7 +30,7 @@ public sealed class QueueState : State
     protected override void Shutdown()
     {
         _gui!.QuitPressed -= OnQuitPressed;
-        _gui.Dispose();
+        _userInterface.StateRoot.RemoveChild(_gui);
 
         Ding();
     }
@@ -42,7 +43,7 @@ public sealed class QueueState : State
 
     private void OnQuitPressed()
     {
-        _console.ExecuteCommand("quit");
+        _console.ExecuteCommand("disconnect");
     }
 
 

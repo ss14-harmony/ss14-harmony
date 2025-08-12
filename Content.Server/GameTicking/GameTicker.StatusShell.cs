@@ -47,12 +47,9 @@ namespace Content.Server.GameTicking
                 jObject["name"] = _baseServer.ServerName;
                 jObject["map"] = _gameMapManager.GetSelectedMap()?.MapName;
                 jObject["round_id"] = _gameTicker.RoundId;
-                // Harmony Queue Start
-                // jObject["players"] = _cfg.GetCVar(CCVars.AdminsCountInReportedPlayerCount)
-                //     ? _playerManager.PlayerCount
-                //     : _playerManager.PlayerCount - _adminManager.ActiveAdmins.Count();
-                jObject["players"] = _joinQueue.ActualPlayersCount;
-                // Harmony Queue End
+                jObject["players"] = _cfg.GetCVar(CCVars.AdminsCountInReportedPlayerCount)
+                    ? _playerManager.PlayerCount
+                    : _playerManager.PlayerCount - _adminManager.ActiveAdmins.Count();
                 jObject["soft_max_players"] = _cfg.GetCVar(CCVars.SoftMaxPlayers);
                 jObject["panic_bunker"] = _cfg.GetCVar(CCVars.PanicBunkerEnabled);
                 jObject["run_level"] = (int) _runLevel;

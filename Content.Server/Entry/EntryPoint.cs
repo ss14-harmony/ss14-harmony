@@ -80,7 +80,7 @@ namespace Content.Server.Entry
 
             foreach (var callback in TestingCallbacks)
             {
-                var cast = (ServerModuleTestingCallbacks)callback;
+                var cast = (ServerModuleTestingCallbacks) callback;
                 cast.ServerBeforeIoC?.Invoke();
             }
 

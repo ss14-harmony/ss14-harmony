@@ -42,7 +42,7 @@ public sealed class JoinQueueManager : IJoinQueueManager
     /// </summary>
     private readonly List<ICommonSession> _queue = new();
 
-    private bool _isEnabled = false;
+    private bool _isEnabled;
 
     public int PlayerInQueueCount => _queue.Count;
     public int ActualPlayersCount => _player.PlayerCount - PlayerInQueueCount; // Now it's only real value with actual players count that in game
@@ -75,7 +75,7 @@ public sealed class JoinQueueManager : IJoinQueueManager
         {
             var wasInQueue = _queue.Remove(e.Session);
 
-            if (!wasInQueue && e.OldStatus != SessionStatus.InGame) // Process queue only if player disconnected from InGame or from queue
+            if (!wasInQueue || e.OldStatus != SessionStatus.InGame) // Process queue only if player disconnected from InGame or from queue
                 return;
 
             ProcessQueue(true, e.Session.ConnectedTime);
@@ -129,7 +129,7 @@ public sealed class JoinQueueManager : IJoinQueueManager
 
         if (haveFreeSlot && regularQueueContains)
         {
-            ICommonSession session = _queue.First();
+            var session = _queue.First();
             SendToGame(session);
             QueueTimings.WithLabels("Waited").Observe((DateTime.UtcNow - connectedTime).TotalSeconds);
         }
@@ -148,11 +148,12 @@ public sealed class JoinQueueManager : IJoinQueueManager
 
         for (var i = 0; i < _queue.Count; i++, currentPosition++)
         {
-            _queue[i].Channel.SendMessage(new QueueUpdateMessage
-            {
-                Total = totalInQueue,
-                Position = currentPosition
-            });
+            _queue[i]
+                .Channel.SendMessage(new QueueUpdateMessage
+                {
+                    Total = totalInQueue,
+                    Position = currentPosition,
+                });
         }
     }
 
@@ -162,8 +163,7 @@ public sealed class JoinQueueManager : IJoinQueueManager
     /// <param name="session">Player session that will be sent to game</param>
     private void SendToGame(ICommonSession session)
     {
-        if (_queue.Contains(session))
-            _queue.Remove(session);
+        _queue.Remove(session);
         Timer.Spawn(0, () => _player.JoinGame(session));
     }
 }
