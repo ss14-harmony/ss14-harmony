@@ -10,6 +10,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Content.Shared._Harmony.CCVars;
+using Content.Server.Administration.Managers;
 
 namespace Content.Server._Harmony.JoinQueue;
 
@@ -36,6 +37,7 @@ public sealed class JoinQueueManager : IJoinQueueManager
     [Dependency] private readonly IConfigurationManager _configuration = default!;
     [Dependency] private readonly IServerNetManager _net = default!;
     [Dependency] private readonly IConnectionManager _connection = default!;
+    [Dependency] private readonly IAdminManager _adminManager = default!;
 
     /// <summary>
     /// Queue of active player sessions
@@ -45,7 +47,7 @@ public sealed class JoinQueueManager : IJoinQueueManager
     private bool _isEnabled;
 
     public int PlayerInQueueCount => _queue.Count;
-    public int ActualPlayersCount => _player.PlayerCount - PlayerInQueueCount; // Now it's only real value with actual players count that in game
+    public int ActualPlayersCount => _player.PlayerCount - PlayerInQueueCount - GetAdminAdjustment(); // Now it's only real value with actual players count that in game
 
 
     public void Initialize()
@@ -74,11 +76,9 @@ public sealed class JoinQueueManager : IJoinQueueManager
         if (e.NewStatus == SessionStatus.Disconnected)
         {
             var wasInQueue = _queue.Remove(e.Session);
-
-            if (!wasInQueue || e.OldStatus != SessionStatus.InGame) // Process queue only if player disconnected from InGame or from queue
-                return;
-
-            ProcessQueue(true, e.Session.ConnectedTime);
+            // Process the queue if user was in queue, or if they were in the game
+            if (wasInQueue || e.OldStatus == SessionStatus.InGame)
+                ProcessQueue(true, e.Session.ConnectedTime);
 
             if (wasInQueue)
                 QueueTimings.WithLabels("Unwaited").Observe((DateTime.UtcNow - e.Session.ConnectedTime).TotalSeconds);
@@ -99,7 +99,7 @@ public sealed class JoinQueueManager : IJoinQueueManager
         }
 
         var isPrivileged = await _connection.HasPrivilegedJoin(session.UserId);
-        var currentOnline = _player.PlayerCount - 1;
+        var currentOnline = _player.PlayerCount - GetAdminAdjustment() - 1;
         var haveFreeSlot = currentOnline < _configuration.GetCVar(CCVars.SoftMaxPlayers);
         if (isPrivileged || haveFreeSlot)
         {
@@ -165,5 +165,15 @@ public sealed class JoinQueueManager : IJoinQueueManager
     {
         _queue.Remove(session);
         Timer.Spawn(0, () => _player.JoinGame(session));
+    }
+
+    /// <summary>
+    /// Returns the number of admins online if admins could for max players,
+    /// Otherwise returns 0
+    /// </summary>
+    /// <returns></returns>
+    private int GetAdminAdjustment()
+    {
+        return _configuration.GetCVar(CCVars.AdminsCountForMaxPlayers) ? _adminManager.ActiveAdmins.Count() : 0;
     }
 }
