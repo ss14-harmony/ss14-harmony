@@ -363,3 +363,35 @@
     state: tail_avali_primary
   - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
     state: tail_avali_secondary
+
+# Begin harmony changes
+- type: marking
+  id: AvaliEyesCosmatic
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [ Avali ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_eyes.rsi
+    state: eyes_Cosmatic
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_eyes.rsi
+    state: eyes_Cosmatic_skin
+
+- type: marking
+  id: AvaliEyesStarlight
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [ Avali ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_eyes.rsi
+    state: eyes_Starlight
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_eyes.rsi
+    state: eyes_Starlight_skin
+# End harmony changes

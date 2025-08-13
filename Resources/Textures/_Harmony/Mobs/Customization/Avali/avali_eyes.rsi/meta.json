@@ -1,0 +1,27 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Sprites by Github MozarteanChaos / Discord mozarteanchaos (213813868282118144) and modified by Github Zeyria / Discord zeyria (232964236186353664)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "eyes_Cosmatic",
+            "directions": 4
+        },
+        {
+            "name": "eyes_Cosmatic_skin",
+            "directions": 4
+        },
+        {
+            "name": "eyes_Starlight_skin",
+            "directions": 4
+        },
+        {
+            "name": "eyes_Starlight",
+            "directions": 4
+        }
+    ]
+}
