@@ -115,6 +115,7 @@
   components:
   - type: HumanoidAppearance
     species: Avali
+
 # Harmony change start
   - type: Inventory
     speciesId: moth
