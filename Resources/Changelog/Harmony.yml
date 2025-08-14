@@ -2516,3 +2516,10 @@ Entries:
       message: The blood bound survive objective now requires both the converted and the initial blood bound to be alive.
     - type: Tweak
       message: The blood bound escape to centcomm objective now requires both the converted and the initial blood bound to be on the shuttle.
+  - id: 711
+    author: dragydevi
+    time: '2025-08-14T13:33:13.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/711
+    changes:
+    - type: Add
+      message: A queue system is now available to make connecting to the server more fair.
