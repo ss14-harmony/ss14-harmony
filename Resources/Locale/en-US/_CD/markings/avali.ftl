@@ -142,5 +142,4 @@ marking-AvaliEyesCosmatic-eyes_Cosmatic_skin = Skin
 marking-AvaliEyesStarlight = Starry eyes
 marking-AvaliEyesStarlight-eyes_Starlight = Eye
 marking-AvaliEyesStarlight-eyes_Starlight_skin = Skin
-
 # End harmony changes
