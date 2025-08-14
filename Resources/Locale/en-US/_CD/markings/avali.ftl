@@ -1,4 +1,4 @@
-marking-AvaliEarsBase = (Base) Avali Ears
+marking-AvaliEarsBase = (Base) Avali Ears 
 marking-AvaliEarsBase-ears_avalibase_primary = Top Ears
 marking-AvaliEarsBase-ears_avalibase_secondary = Bottom Ears
 
@@ -132,7 +132,6 @@ marking-AvaliTailTrimTwo = (Type Two) Trimmed Avali Tail
 marking-AvaliTailTrimTwo-tail_avalibase = Tail Base
 marking-AvaliTailTrimTwo-tail_avali_primary = Primary
 marking-AvaliTailTrimTwo-tail_avali_secondary = Secondary
-
 # Begin harmony changes
 
 marking-AvaliEyesCosmatic = Cosmic eyes
@@ -142,5 +141,4 @@ marking-AvaliEyesCosmatic-eyes_Cosmatic_skin = Skin
 marking-AvaliEyesStarlight = Starry eyes
 marking-AvaliEyesStarlight-eyes_Starlight = Eye
 marking-AvaliEyesStarlight-eyes_Starlight_skin = Skin
-
 # End harmony changes
