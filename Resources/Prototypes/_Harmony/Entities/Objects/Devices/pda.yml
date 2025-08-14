@@ -42,7 +42,7 @@
   id: ERPClownPDA
   name: ERP Clown PDA
   suffix: Harmony
-  description: Given to clowns part of the elite Emergency Clown Party.
+  description: Given to clowns part of the elite Emergency Response Party.
   components:
   - type: Pda
     id: ERPClownIDCard
