@@ -31,3 +31,8 @@
     containers:
       ballistic-ammo: !type:Container
         ents: []
+# Start Harmony change - Adds speedloader landing sound
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Harmony/Items/rsc_speedloader_impact.ogg
+# End Harmony change
