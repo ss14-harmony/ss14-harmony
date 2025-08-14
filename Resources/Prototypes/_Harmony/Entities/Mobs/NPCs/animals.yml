@@ -103,3 +103,23 @@
       types:
         Piercing: 10
         Slash: 10
+
+- type: entity
+  parent: MobCorgi
+  id: MobArnold
+  name: arnold
+  description: arnold
+  components:
+  - type: Sprite
+    sprite: _Harmony/Mobs/Animals/arnold.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: icon
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: icon
+        Critical:
+          Base: icon
+        Dead:
+          Base: icon
