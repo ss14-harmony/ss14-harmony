@@ -19,4 +19,11 @@ public sealed class HCCVars
     /// </summary>
     public static readonly CVarDef<bool> EnableQueue =
         CVarDef.Create("queue.enable", false, CVar.SERVER);
+
+    /// <summary>
+    /// The maximum number of people that can be in the queue at a time.
+    /// If this is set to 0, an infinite number of people can connect to the queue.
+    /// </summary>
+    public static readonly CVarDef<int> MaxQueuePlayerCount =
+        CVarDef.Create("queue.max_player_count", 0, CVar.SERVER | CVar.SERVERONLY); // Client doesn't care about this CVar whatsoever
 }
