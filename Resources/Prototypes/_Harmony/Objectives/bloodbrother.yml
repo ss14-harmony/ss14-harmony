@@ -30,12 +30,44 @@
 # state
 
 - type: entity
-  parent: [BaseBloodBrotherObjective, EscapeShuttleObjective]
+  parent: BaseBloodBrotherObjective
   id: BloodBrotherEscapeShuttleObjective
+  name: Escape to centcomm alive and unrestrained.
+  description: You must escape to Central Command alive and unrestrained with your blood bound.
+  components:
+  - type: Objective
+    difficulty: 1.5
+    icon:
+      sprite: Structures/Furniture/chairs.rsi
+      state: shuttle
+  - type: ObjectiveBlacklistRequirement
+    blacklist:
+      components:
+      - SelfAndTargetSurviveCondition
+  - type: TargetObjective
+    title: objective-condition-blood-brother-escape-title
+  - type: BloodBrotherTarget
+  - type: SelfAndTargetEscapeShuttleCondition
 
 - type: entity
-  parent: [BaseBloodBrotherObjective, TraitorSurviveObjective]
+  parent: BaseBloodBrotherObjective
   id: BloodBrotherSurviveObjective
+  name: Survive.
+  description: We just need you and your blood bound alive, cuffs or not. Escaping to centcomm is not necessary.
+  components:
+  - type: Objective
+    difficulty: 1.5
+    icon:
+      sprite: Objects/Specific/Medical/medical.rsi
+      state: gauze
+  - type: ObjectiveBlacklistRequirement
+    blacklist:
+      components:
+      - SelfAndTargetEscapeShuttleCondition
+  - type: TargetObjective
+    title: objective-condition-blood-brother-survive-title
+  - type: BloodBrotherTarget
+  - type: SelfAndTargetSurviveCondition
 
 # kill
 

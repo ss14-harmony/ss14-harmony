@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server._Harmony.GameTicking.Rules.Components;
+using Content.Server._Harmony.Objectives.Components;
 using Content.Server._Harmony.Roles;
 using Content.Server.Actions;
 using Content.Server.Administration.Logs;
@@ -109,7 +110,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
             return;
         }
 
-        if (!_mindSystem.TryGetMind(entity, out var mindId, out _))
+        if (!_mindSystem.TryGetMind(entity, out var mindId, out var mind))
             return;
 
         if (!_mindSystem.TryGetMind(args.Target, out var targetMindId, out var targetMind))
@@ -149,6 +150,14 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
         _targetObjectiveSystem.SetTarget(newObjective.Value, mindId, targetObjective);
 
         _mindSystem.AddObjective(targetMindId, targetMind, newObjective.Value);
+
+        foreach (var objective in mind.Objectives)
+        {
+            if (!HasComp<BloodBrotherTargetComponent>(objective))
+                continue;
+
+            _targetObjectiveSystem.SetTarget(objective, args.Target);
+        }
 
         // Visuals
         _antagSystem.SendBriefing(args.Target,
