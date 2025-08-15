@@ -2530,3 +2530,17 @@ Entries:
     changes:
     - type: Add
       message: Added athena station, a station meant to be used during Teach and Learn events.
+  - id: 1000
+    author: youtissoum
+    time: '2025-08-15T17:25:13.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1000
+    changes:
+    - type: Add
+      message: Added ERP (Emergency Response Parties).
+  - id: 937
+    author: CollectionOfBones128
+    time: '2025-08-15T18:17:28.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/937
+    changes:
+    - type: Tweak
+      message: The ChemMaster 4000 now uses the chemicals in the beaker to make pills, instead of the ones from the buffer.
