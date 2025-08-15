@@ -10,6 +10,7 @@ uplink-rifle-bandit-name = Bandit Bundle
 uplink-rifle-bandit-desc = Contains the Bandit, a reliable semi-auto bullpup which fires devastating caseless rounds, bundled with 2 DMR magazines. Uses .30 rifle caseless ammo.
 
 # Explosive
+
 uplink-kudzu-grenade-name = Kudzu grenade
 uplink-kudzu-grenade-desc = Repurposed foam dart grenade containing mutated kudzu.
 
