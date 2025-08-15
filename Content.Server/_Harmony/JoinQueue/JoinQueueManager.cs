@@ -11,6 +11,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Content.Shared._Harmony.CCVars;
 using Content.Server.Administration.Managers;
+using Content.Server.Chat.Managers;
 
 namespace Content.Server._Harmony.JoinQueue;
 
@@ -38,6 +39,7 @@ public sealed class JoinQueueManager : IJoinQueueManager
     [Dependency] private readonly IServerNetManager _net = default!;
     [Dependency] private readonly IConnectionManager _connection = default!;
     [Dependency] private readonly IAdminManager _adminManager = default!;
+    [Dependency] private readonly IChatManager _chatManager = default!;
 
     /// <summary>
     /// Queue of active player sessions
@@ -107,6 +109,12 @@ public sealed class JoinQueueManager : IJoinQueueManager
         }
         else
         {
+            _chatManager.SendAdminAnnouncement(
+                Loc.GetString(
+                    "player-join-queue-message",
+                    ("name", session.Name),
+                    ("queueCount", PlayerInQueueCount + 1)));
+
             _queue.Add(session);
         }
 
