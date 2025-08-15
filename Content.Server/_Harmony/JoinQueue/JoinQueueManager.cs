@@ -112,6 +112,7 @@ public sealed class JoinQueueManager : IJoinQueueManager
         if (isPrivileged || haveFreeSlot)
         {
             SendToGame(session);
+            ProcessQueue(false);
             return;
         }
 
