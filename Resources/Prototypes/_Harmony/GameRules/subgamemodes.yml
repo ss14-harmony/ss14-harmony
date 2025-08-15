@@ -4,6 +4,7 @@
   components:
   - type: GameRule
     minPlayers: 10
+    cancelPresetOnTooFewPlayers: false
     delay:
       min: 240
       max: 420
@@ -19,7 +20,6 @@
     - prefRoles: [ BloodBrother ]
       max: 1
       playerRatio: 1
-      allowNonHumans: true
       briefing:
         text: blood-brother-initial-role-greeting
         color: MediumVioletRed

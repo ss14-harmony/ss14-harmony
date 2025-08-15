@@ -1,5 +1,6 @@
 ﻿using Content.Shared._Harmony.BloodBrothers.EntitySystems;
 using Content.Shared.Actions;
+using Content.Shared.Actions.Components;
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Roles;
@@ -37,7 +38,7 @@ public sealed partial class InitialBloodBrotherComponent : Component
     /// If null, the check will be skipped.
     /// </summary>
     [DataField]
-    public ProtoId<AntagPrototype>? RequiredAntagPreference = "BloodBrother";
+    public ProtoId<AntagPrototype>? RequiredAntagPreference = "BloodBrotherConvertible";
 
     /// <summary>
     /// The popup that will happen when a blood brother is converted.

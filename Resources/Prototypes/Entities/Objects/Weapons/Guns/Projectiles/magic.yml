@@ -20,8 +20,8 @@
       shader: unshaded
   - type: Explosive
     explosionType: Default
-    maxIntensity: 40
-    intensitySlope: 6
+    maxIntensity: 25 # Harmony change - 40 -> 25
+    intensitySlope: 3 # Harmony change - 6 -> 3
     totalIntensity: 200
     maxTileBreak: 0
   - type: IgnitionSource

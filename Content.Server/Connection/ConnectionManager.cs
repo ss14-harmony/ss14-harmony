@@ -18,6 +18,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Content.Shared._Harmony.CCVars;
+using Content.Shared._Harmony.JoinQueue;
 
 /*
  * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.
@@ -29,6 +31,10 @@ namespace Content.Server.Connection
     {
         void Initialize();
         void PostInit();
+
+        // Harmony Queue Start
+        Task<bool> HasPrivilegedJoin(NetUserId userId);
+        // Harmony Queue End
 
         /// <summary>
         /// Temporarily allow a user to bypass regular connection requirements.
@@ -62,6 +68,10 @@ namespace Content.Server.Connection
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly IHttpClientHolder _http = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
+        [Dependency] private readonly IEntityManager _entityManager = default!;
+        [Dependency] private readonly IJoinQueueManager _joinQueueManager = default!; // Harmony
+
+        private GameTicker? _ticker;
 
         private ISawmill _sawmill = default!;
         private readonly Dictionary<NetUserId, TimeSpan> _temporaryBypasses = [];
@@ -288,10 +298,16 @@ namespace Content.Server.Connection
                 }
             }
 
-            var wasInGame = EntitySystem.TryGet<GameTicker>(out var ticker) &&
-                            ticker.PlayerGameStatuses.TryGetValue(userId, out var status) &&
+            _ticker ??= _entityManager.SystemOrNull<GameTicker>();
+            var wasInGame = _ticker != null &&
+                            _ticker.PlayerGameStatuses.TryGetValue(userId, out var status) &&
                             status == PlayerGameStatus.JoinedGame;
             var adminBypass = _cfg.GetCVar(CCVars.AdminBypassMaxPlayers) && adminData != null;
+            // Harmony Queue Start
+            var isQueueEnabled = _cfg.GetCVar(HCCVars.EnableQueue);
+            var maxQueuePlayerCount = _cfg.GetCVar(HCCVars.MaxQueuePlayerCount);
+            // Harmony Queue End
+
             var softPlayerCount = _plyMgr.PlayerCount;
 
             if (!_cfg.GetCVar(CCVars.AdminsCountForMaxPlayers))
@@ -299,8 +315,15 @@ namespace Content.Server.Connection
                 softPlayerCount -= _adminManager.ActiveAdmins.Count();
             }
 
-            if ((softPlayerCount >= _cfg.GetCVar(CCVars.SoftMaxPlayers) && !adminBypass) && !wasInGame)
+            // Harmony Queue Start
+            softPlayerCount -= _joinQueueManager.PlayerInQueueCount; // Harmony: fill any holes if the player count ever changed without the queue noticing.
+
+            var queueOverloaded = maxQueuePlayerCount > 0 &&
+                                  _joinQueueManager.PlayerInQueueCount + 1 > maxQueuePlayerCount;
+            var queueCanTakePlayers = isQueueEnabled && !queueOverloaded;
+            if ((softPlayerCount >= _cfg.GetCVar(CCVars.SoftMaxPlayers) && !adminBypass) && !wasInGame && !queueCanTakePlayers)
             {
+            // Harmony Queue End
                 return (ConnectionDenyReason.Full, Loc.GetString("soft-player-cap-full"), null);
             }
 
@@ -368,5 +391,18 @@ namespace Content.Server.Connection
             await _db.AssignUserIdAsync(name, assigned);
             return assigned;
         }
+
+        // Harmony Queue Start
+        public async Task<bool> HasPrivilegedJoin(NetUserId userId)
+        {
+            var isAdmin = await _db.GetAdminDataForAsync(userId) != null;
+            var hasBypass = isAdmin && _cfg.GetCVar(CCVars.AdminBypassMaxPlayers);
+            _ticker ??= _entityManager.SystemOrNull<GameTicker>();
+            var wasInGame = _ticker != null &&
+                            _ticker.PlayerGameStatuses.TryGetValue(userId, out var status) &&
+                            status == PlayerGameStatus.JoinedGame;
+            return hasBypass || wasInGame;
+        }
+        // Harmony Queue End
     }
 }

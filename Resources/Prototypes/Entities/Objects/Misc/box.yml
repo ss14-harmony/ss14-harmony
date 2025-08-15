@@ -4,9 +4,13 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Objects/Storage/boxes.rsi
+# Start of Harmony Change: Updates Box Sprite Pathing
+#    sprite: Objects/Storage/boxes.rsi
+    sprite: _Harmony/Objects/Storage/boxes.rsi
   - type: Item
-    sprite: Objects/Storage/boxes.rsi
+#    sprite: Objects/Storage/boxes.rsi
+    sprite: _Harmony/Objects/Storage/boxes.rsi
+# End of Harmony Change
     size: Large
     shape:
     - 0,0,2,2

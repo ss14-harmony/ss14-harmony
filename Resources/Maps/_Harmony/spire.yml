@@ -121,9 +121,7 @@ entities:
     - type: Transform
     - type: Map
       mapPaused: True
-    - type: PhysicsMap
     - type: GridTree
-    - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
     - type: Parallax
@@ -7728,74 +7726,6 @@ entities:
     - type: Transform
       pos: 5.5,20.5
       parent: 2
-- proto: ActionToggleBlock
-  entities:
-  - uid: 5042
-    components:
-    - type: Transform
-      parent: 5041
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 5041
-  - uid: 5210
-    components:
-    - type: Transform
-      parent: 5209
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 5209
-  - uid: 5212
-    components:
-    - type: Transform
-      parent: 5211
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 5211
-- proto: ActionToggleInternals
-  entities:
-  - uid: 4782
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 7402
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 7402
-  - uid: 18709
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 18708
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 18708
-- proto: ActionToggleLight
-  entities:
-  - uid: 6404
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 1570
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 1570
-  - uid: 8783
-    components:
-    - type: Transform
-      parent: 12734
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 12734
-  - uid: 10704
-    components:
-    - type: Transform
-      parent: 10700
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 10700
 - proto: AirAlarm
   entities:
   - uid: 1426
@@ -56740,19 +56670,12 @@ entities:
     - type: Physics
       canCollide: False
     - type: HandheldLight
-      toggleActionEntity: 8783
     - type: ContainerContainer
       containers:
         cell_slot: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 8783
-    - type: ActionsContainer
     - type: InsideEntityStorage
 - proto: ClothingHeadHatHoodBioCmo
   entities:
@@ -65730,13 +65653,6 @@ entities:
       pos: 20.290073,-7.502109
       parent: 2
     - type: GasTank
-      toggleActionEntity: 4782
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 4782
   - uid: 10218
     components:
     - type: Transform
@@ -66993,13 +66909,6 @@ entities:
       pos: 19.41635,-8.695675
       parent: 2
     - type: GasTank
-      toggleActionEntity: 18709
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 18709
 - proto: EmergencyNitrogenTankFilled
   entities:
   - uid: 4785
@@ -113279,42 +113188,28 @@ entities:
       pos: -18.475246,-34.160187
       parent: 2
     - type: HandheldLight
-      toggleActionEntity: 6404
     - type: ContainerContainer
       containers:
         cell_slot: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 6404
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
   - uid: 10700
     components:
     - type: Transform
       pos: -44.528725,-28.928894
       parent: 2
     - type: HandheldLight
-      toggleActionEntity: 10704
     - type: ContainerContainer
       containers:
         cell_slot: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 10704
     - type: Physics
       canCollide: True
-    - type: ActionsContainer
   - uid: 19887
     components:
     - type: Transform
@@ -128849,39 +128744,18 @@ entities:
       pos: -27.356781,-43.417835
       parent: 2
     - type: Blocking
-      blockingToggleActionEntity: 5042
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 5042
   - uid: 5209
     components:
     - type: Transform
       pos: -27.721363,-43.42825
       parent: 2
     - type: Blocking
-      blockingToggleActionEntity: 5210
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 5210
   - uid: 5211
     components:
     - type: Transform
       pos: -27.554697,-43.61575
       parent: 2
     - type: Blocking
-      blockingToggleActionEntity: 5212
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 5212
 - proto: RipleyChassis
   entities:
   - uid: 10585

@@ -40,6 +40,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
+    key: mining # Harmony Change: Adds a Key to IconSmoothing
     base: mwindow
   - type: Appearance
   - type: DamageVisuals
@@ -69,7 +70,7 @@
     - Diagonal
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+    key: mining # Harmony: windows -> mining
     base: state
   - type: Icon
     sprite: Structures/Windows/mining_diagonal.rsi

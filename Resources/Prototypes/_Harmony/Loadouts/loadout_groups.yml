@@ -6,14 +6,6 @@
   - BrownShoes
   - HoPLeatherShoesHarmony
 
-# Security
-- type: loadoutGroup
-  id: PermaPrisonerJumpsuit
-  name: loadout-group-perma-prisoner-jumpsuit
-  loadouts:
-  - PermaPrisonerJumpsuit
-  - PermaPrisonerJumpskirt
-
 # Medical
 - type: loadoutGroup
   id: MedicalDoctorNeck
@@ -36,3 +28,18 @@
   minLimit: 0
   loadouts:
   - CuratorMantleHarmony
+
+# Cargo
+- type: loadoutGroup
+  id: SalvageSpecialistNeck
+  name: loadout-group-salvage-specialist-neck
+  minLimit: 0
+  loadouts:
+  - ClothingNeckCloakSeniorSalvager
+
+- type: loadoutGroup
+  id: SalvageSpecialistID
+  name: loadout-group-salvage-specialist-id
+  loadouts:
+  - SalvagePDA
+  - SeniorSalvagePDA
