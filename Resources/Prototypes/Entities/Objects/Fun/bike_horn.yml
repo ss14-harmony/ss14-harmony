@@ -197,7 +197,7 @@
     graph: BananiumHorn
     node: bananiumHorn
   - type: UseDelay # Harmony - increase bananium horn delay
-    delay: 1.5
+    delay: 3
 
 - type: entity
   parent: BaseItem
