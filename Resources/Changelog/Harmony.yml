@@ -2435,3 +2435,112 @@ Entries:
     changes:
     - type: Tweak
       message: The bandit DMR now does 35 damage per hit.
+  - id: 863
+    author: Ermucat
+    time: '2025-08-08T17:28:21.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/863
+    changes:
+    - type: Tweak
+      message: Wizards can no longer spawn as a midround.
+  - id: 887
+    author: superjeepboy
+    time: '2025-08-08T20:33:08.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/887
+    changes:
+    - type: Add
+      message: Added a new lobby screen of Fossa's character, Hears-The-Voices made by Baxter!
+  - id: 821
+    author: DDeegan
+    time: '2025-08-09T18:20:46.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/821
+    changes:
+    - type: Add
+      message: Added a dragon head helmet, dropped by Space Dragons.
+  - id: 910
+    author: kleinerstation13
+    time: '2025-08-09T19:39:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/910
+    changes:
+    - type: Tweak
+      message: Steal the Disk + Survive to Central Command objectives are no longer able to roll alongside eachother
+    - type: Tweak
+      message: Teach a Lesson and Maroon/Gib objectives difficulty was tweaked
+  - id: 962
+    author: MoonlightHollow
+    time: '2025-08-09T19:51:27.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/962
+    changes:
+    - type: Add
+      message: An avali plushie is now available as a trinket.
+  - id: 826
+    author: kleinerstation13
+    time: '2025-08-09T20:14:47.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/826
+    changes:
+    - type: Add
+      message: Added a headset with the command key to the Warden's locker.
+  - id: 870
+    author: kleinerstation13
+    time: '2025-08-09T20:46:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/870
+    changes:
+    - type: Tweak
+      message: Changed Bulldog and Python firing sound.
+  - id: 978
+    author: CollectionOfBones128
+    time: '2025-08-11T00:32:13.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/978
+    changes:
+    - type: Tweak
+      message: Recolored the cargo banner sprite.
+  - id: 982
+    author: kleinerstation13
+    time: '2025-08-11T12:17:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/982
+    changes:
+    - type: Tweak
+      message: Changed RSC sounds.
+  - id: 833
+    author: kleinerstation13
+    time: '2025-08-11T14:29:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/833
+    changes:
+    - type: Add
+      message: Added an announcement that plays after 25 minutes when the Extended preset is selected.
+  - id: 985
+    author: youtissoum
+    time: '2025-08-11T18:44:09.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/985
+    changes:
+    - type: Tweak
+      message: The blood bound survive objective now requires both the converted and the initial blood bound to be alive.
+    - type: Tweak
+      message: The blood bound escape to centcomm objective now requires both the converted and the initial blood bound to be on the shuttle.
+  - id: 711
+    author: dragydevi
+    time: '2025-08-14T13:33:13.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/711
+    changes:
+    - type: Add
+      message: A queue system is now available to make connecting to the server more fair.
+  - id: 992
+    author: whythelettuce
+    time: '2025-08-14T22:08:40.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/992
+    changes:
+    - type: Add
+      message: Added athena station, a station meant to be used during Teach and Learn events.
+  - id: 1000
+    author: youtissoum
+    time: '2025-08-15T17:25:13.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1000
+    changes:
+    - type: Add
+      message: Added ERP (Emergency Response Parties).
+  - id: 937
+    author: CollectionOfBones128
+    time: '2025-08-15T18:17:28.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/937
+    changes:
+    - type: Tweak
+      message: The ChemMaster 4000 now uses the chemicals in the beaker to make pills, instead of the ones from the buffer.
