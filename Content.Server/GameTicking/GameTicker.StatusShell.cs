@@ -41,10 +41,12 @@ namespace Content.Server.GameTicking
         private void GetStatusResponse(JsonNode jObject)
         {
             var preset = CurrentPreset ?? Preset;
+            // Harmony start
             var playerCountAdminAdjustment = _cfg.GetCVar(CCVars.AdminsCountInReportedPlayerCount)
                 ? 0
                 : _adminManager.ActiveAdmins.Count();
             var playerCount = _joinQueue.ActualPlayersCount - playerCountAdminAdjustment;
+            // Harmony end
 
             // This method is raised from another thread, so this better be thread safe!
             lock (_statusShellLock)
