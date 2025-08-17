@@ -6,10 +6,13 @@ uplink-blood-red-carbine-desc = A bundle containing the stolen and improved Bloo
 uplink-hushpup-name = Hushpup
 uplink-hushpup-desc = Contains a Hushpup, a powerful silenced shotgun with a low magazine capacity, as well as a spare box of buckshot. Uses .50 shotgun ammo.
 
+uplink-rifle-bandit-name = Bandit Bundle
+uplink-rifle-bandit-desc = Contains the Bandit, a reliable semi-auto bullpup which fires devastating caseless rounds, bundled with 2 DMR magazines. Uses .30 rifle caseless ammo.
+
 # Explosive
 
-uplink-pizza-bomb-name = Nefarious Pizza bomb
-uplink-pizza-bomb-desc = This tech, first pioneered by terrorists, now is used by the syndicate for eliminating high value targets
+uplink-pizza-bomb-name = Pizza Bomb
+uplink-pizza-bomb-desc = This tech, first pioneered by terrorists, now is used by the Syndicate for eliminating high value targets. WARNING: Explodes after opening with a short timer. Do not attempt to throw.
 
 uplink-pizza-bomb-surplus-name = Surplus Pizza Bomb
 uplink-pizza--surplus-desc = This shouldn't be visible, report me.
@@ -31,6 +34,9 @@ uplink-shotgun-drum-pellet-desc = Shotgun drum with eight pellet shells. Compati
 uplink-shotgun-drum-slug-name = Shotgun Magazine (.50 slug)
 uplink-shotgun-drum-slug-desc = Shotgun drum with eight slug shells. Compatible with the Bulldog.
 
+uplink-rifle-magazine-bandit-name = DMR Magazine (.30 rifle caseless)
+uplink-rifle-magazine-bandit-desc = Rifle magazine with 15 cartridges. Compatible with the Bandit.
+
 # Chemicals
 
 uplink-defib-name = Interdyne Defibrillator
@@ -42,6 +48,9 @@ uplink-syndicate-id-name = Syndicate ID card
 uplink-syndicate-id-desc = A sleek black-and-red ID card with embossed Syndicate logo and syndicate access. Does not possess any Nanotrasen access. Limited to one ID per agent.
 
 # Allies
+
+uplink-reinforcement-radio-cyborg-support-name = Syndicate Support Cyborg Teleporter
+uplink-reinforcement-radio-cyborg-support-desc = A lean, mean supporting machine with access to a Pinpointer, Echis, Cryptographic Sequencer, Energy Dagger and advanced medical treatment module.
 
 # Implants
 

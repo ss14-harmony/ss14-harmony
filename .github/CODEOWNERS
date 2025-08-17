@@ -7,23 +7,23 @@
 /Content.*/                                         @KeldWolf @FluffMe @youtissoum
 
 # YML files
-/Resources/*.yml                                    @KeldWolf @FluffMe @youtissoum @Zap527
-/Resources/**/*.yml                                 @KeldWolf @FluffMe @youtissoum @Zap527
+/Resources/*.yml                                    @KeldWolf @FluffMe @youtissoum @Zap527 @kleinerstation13
+/Resources/**/*.yml                                 @KeldWolf @FluffMe @youtissoum @Zap527 @kleinerstation13
 
 # FTL files
-/Resources/Locale                                   @KeldWolf @FluffMe @youtissoum @Zap527
+/Resources/Locale                                   @KeldWolf @FluffMe @youtissoum @Zap527 @kleinerstation13
 
 # Server info and rules
 /Resources/ServerInfo                               @KeldWolf @FluffMe @youtissoum @Zap527 @spanky-spanky
 
 # Sprites
-/Resources/Textures/                                @DieselMohawk
+/Resources/Textures/                                @TheCrimsonJupiter @KeldWolf @FluffMe @youtissoum
 
 # Lobby art and music
 /Resources/Audio/Lobby/                             @KeldWolf
 /Resources/Audio/_Harmony/Lobby/                    @KeldWolf
-/Resources/Textures/LobbyScreens/                   @DieselMohawk
-/Resources/Textures/_Harmony/LobbyScreens/          @DieselMohawk
+/Resources/Textures/LobbyScreens/                   @TheCrimsonJupiter
+/Resources/Textures/_Harmony/LobbyScreens/          @TheCrimsonJupiter
 
 # Maps
 /Resources/Maps/                                    @spanky-spanky @raccoonio

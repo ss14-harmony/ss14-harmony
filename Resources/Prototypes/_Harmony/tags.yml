@@ -1,6 +1,7 @@
 # added to upstream entity ClothingShoesGaloshes in Resources/Prototypes/Entities/Clothing/Shoes/specific.yml ; used for ducky galoshes crafting recipe
 - type: Tag
   id: ClothingShoesGaloshes
+
 - type: Tag
   id: ClothingShoesDuckyGaloshes
 
@@ -18,3 +19,11 @@
 # Tag used for pride mantles.
 - type: Tag
   id: WhitelistChameleonPrideMantle
+
+#used in _Harmony/Entities/Objects/Weapons/Guns/Ammunition/Magazines/light_rifle.yml and _Harmony/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/light_rifle.yml
+- type: Tag
+  id: MagazineLightRifleCaseless
+
+- type: Tag
+  id: CartridgeLightRifleCaseless
+
