@@ -8,9 +8,11 @@
   - FlowerWreath
   - Hairflower
   - Headphones
+  - CardBoxBlack # Harmony Change: Playing Card Port
   - PlushieLizard
   - PlushieSpaceLizard
   - PlushieVox # Harmony
+  - PlushieAvali # Harmony Change: Umbra ported plushie
   - ThreeCandles
   - Lighter
   - CigPackGreen
@@ -397,6 +399,17 @@
   minLimit: 0
   loadouts:
   - ChaplainNeck
+
+- type: loadoutGroup
+  id: ChaplainBible
+  name: loadout-group-chaplain-bible
+  minLimit: 1
+  loadouts:
+  - Bible
+  - BibleDruid
+  - BibleNanoTrasen
+  - BibleSatanic
+  - BibleTanakh
 
 - type: loadoutGroup
   id: JanitorHead
