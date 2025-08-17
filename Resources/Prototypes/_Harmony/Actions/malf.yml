@@ -11,12 +11,27 @@
 
 - type: entity
   parent: BaseAction
-  id: ActionMalfOverloadMachine
-  name: Overload Machine
-  description: Detonate a machine.
+  id: ActionMalfDoomsday
+  name: Activate Doomsday Device
+  description: Activate a doomsday device, eradicating the entire crew after 450 seconds. Cancelled if you are deactivated in any form.
   components:
   - type: Action
-    charges: 2
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Devices/nuke.rsi
+      state: nuclearbomb_base
+  - type: InstantAction
+    event: !type:MalfDoomsdayStartEvent
+  - type: LimitedCharges
+    maxCharges: 1 # if you want to try again hack another 9 APCs
+
+- type: entity
+  parent: BaseAction
+  id: ActionMalfOverloadMachine
+  name: Overload Machine
+  description: Detonate a device connected to an APC. Does not work if the machine is not powered.
+  components:
+  - type: Action
     priority: 2
     itemIconStyle: BigAction
     icon: 
@@ -30,7 +45,9 @@
     event: !type:MalfOverloadMachineActionEvent
     whitelist: 
       components:
-      - Machine
+      - ApcPowerReceiver
+  - type: LimitedCharges
+    maxCharges: 3
 
 - type: entity
   parent: BaseAction
@@ -53,3 +70,27 @@
     whitelist: 
       components:
       - Apc
+
+- type: entity
+  parent: BaseAction
+  id: ActionMalfOverrideAia
+  name: Override AI Access
+  description: Override the AI access permissions of any device.
+  components:
+  - type: Action
+    priority: 3
+    itemIconStyle: BigAction
+    icon: 
+      sprite: Objects/Tools/Toolboxes/toolbox_syn.rsi
+      state: icon
+  - type: TargetAction
+    range: 0
+    checkCanAccess: false
+    interactOnMiss: false
+  - type: EntityTargetAction
+    event: !type:MalfOverrideAiaActionEvent
+    whitelist: 
+      components:
+      - StationAiWhitelist
+  - type: LimitedCharges
+    maxCharges: 1

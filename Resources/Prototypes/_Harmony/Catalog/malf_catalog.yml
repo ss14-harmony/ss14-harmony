@@ -3,8 +3,42 @@
   name: malf-overload-name
   description: malf-overload-desc
   productAction: ActionMalfOverloadMachine
-  icon: Objects/Weapons/Grenades/syndgrenade.rsi
+  icon: { sprite: Objects/Weapons/Grenades/syndgrenade.rsi, state: icon }
   cost:
     CPU: 20
   categories:
-  - MalfAIStore
+  - MalfAIStoreActions
+
+- type: listing
+  id: MalfOverrideAia
+  name: malf-override-aia-name
+  description: malf-override-aia-desc
+  productAction: ActionMalfOverrideAia
+  icon: { sprite: Objects/Tools/Toolboxes/toolbox_syn.rsi, state: icon }
+  cost:
+    CPU: 15
+  categories:
+  - MalfAIStoreActions
+
+- type: listing
+  id: MalfDoomsday
+  name: malf-doomsday-name
+  description: malf-doomsday-desc
+  productAction: ActionMalfDoomsday
+  icon: { sprite: Objects/Devices/nuke.rsi, state: nuclearbomb_base }
+  cost:
+    CPU: 180
+  categories:
+  - MalfAIStoreActions
+
+- type: listing
+  id: MalfSenseAIWireSnipped # doesn't work at the moment
+  name: malf-sense-snip-name
+  description: malf-sense-snip-desc
+  productEvent: !type:MalfPurchaseSenseAIWireSnippedEvent
+  purchaseAmount: 1
+  icon: { sprite: Objects/Tools/wirecutters.rsi, state: cutters }
+  cost:
+    CPU: 40
+  categories:
+  - MalfAIStoreAbilities

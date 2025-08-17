@@ -10,4 +10,9 @@ public sealed partial class MalfunctioningAIRuleComponent : Component
     /// Whether or not the malfunctioning AI is "present"; if there is no AI then there will be no zeroth laws
     /// </summary>
     public bool Active = false;
+
+    /// <summary>
+    ///  Whether or not the Malf AI has successfully set off a Doomsday Device. If so, all of their objectives are automatically completed.
+    /// </summary>
+    public bool DoomsdayActivated = false;
 }

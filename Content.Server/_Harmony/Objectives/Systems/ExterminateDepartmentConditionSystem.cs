@@ -1,3 +1,4 @@
+using Content.Server._Harmony.GameTicking.Rules.Components;
 using Content.Server._Harmony.Objectives.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind;
@@ -69,8 +70,14 @@ public sealed class ExterminateDepartmentConditionSystem : EntitySystem
 
         }
 
+
         if (targets.Count == 0) // if somehow there's no entities left in that department I'd call it exterminated
             return 1f;
+
+        var query = EntityQueryEnumerator<MalfunctioningAIRuleComponent>();
+        while (query.MoveNext(out var rule, out var component))
+            if (component.DoomsdayActivated)
+                return 1f; // doomsday device equals free greentext
 
         return exterminated / targets.Count;
     }

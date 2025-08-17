@@ -1,28 +1,43 @@
 using Content.Server.Actions;
+using Content.Server.AlertLevel;
 using Content.Server.Antag;
+using Content.Server.Audio;
+using Content.Server.Chat.Systems;
+using Content.Server.Explosion.EntitySystems;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Mind;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Radio.Components;
 using Content.Server.Roles;
+using Content.Server.RoundEnd;
 using Content.Server.Silicons.StationAi;
 using Content.Server.Silicons.Laws;
-using Content.Shared.Silicons.Laws.Components;
 using Content.Server.Station.Systems;
 using Content.Server.Store.Systems;
 using Content.Server._Harmony.GameTicking.Rules.Components;
 using Content.Server._Harmony.Roles;
+using Content.Shared.Audio;
+using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
+using Content.Shared.DoAfter;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Popups;
 using Content.Shared.Roles;
+using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Silicons.StationAi;
+using Content.Shared.Station.Components;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
 using Content.Shared._Harmony.Malfunction;
 using Content.Shared._Harmony.Malfunction.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Content.Server._Harmony.Malfunction.Components;
+using Content.Shared.Humanoid;
 
 namespace Content.Server._Harmony.GameTicking.Rules;
 
@@ -39,10 +54,24 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly SharedRoleSystem _roles = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly ExplosionSystem _explosion = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly AlertLevelSystem _alertLevel = default!;
+    [Dependency] private readonly ServerGlobalSoundSystem _sound = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly ChatSystem _chatSystem = default!;
+    [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
 
     private const string MalfShopId = "ActionMalfShop";
     private const string MalfHackApcId = "ActionMalfHackApc";
     private static readonly ProtoId<CurrencyPrototype> CpuCurrencyPrototype = "CPU";
+
+    /// <summary>
+    ///     Logic ripped from NukeSystem for the Doomsday device.
+    /// </summary>
+    private float _nukeSongLength;
+    private ResolvedSoundSpecifier _selectedNukeSong = String.Empty;
 
     public override void Initialize()
     {
@@ -52,7 +81,16 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
         SubscribeLocalEvent<MalfunctioningAIRoleComponent, GetBriefingEvent>(OnGetBriefing);
         SubscribeLocalEvent<StoreComponent, MalfShopActionEvent>(OnShop);
         SubscribeLocalEvent<MalfunctioningAIRoleComponent, MalfHackApcActionEvent>(OnApcHacked);
-        //SubscribeLocalEvent<MalfunctioningAIRoleComponent, MalfOverloadMachineActionEvent>(OnOverload);
+        SubscribeLocalEvent<MalfunctioningAIRoleComponent, MalfOverloadMachineActionEvent>(OnOverloadAttempt);
+        SubscribeLocalEvent<PendingOverloadComponent, MalfOverloadMachineFinishedEvent>(OnOverloadFinished);
+        SubscribeLocalEvent<MalfunctioningAIRoleComponent, MalfOverrideAiaActionEvent>(OnOverrideAia);
+        SubscribeLocalEvent<MalfunctioningAIRoleComponent, MalfDoomsdayStartEvent>(OnDoomsdayStart);
+
+    }
+
+    public bool IsAIDeactivated(EntityUid uid)
+    {
+        return HasComp<IntellicardedComponent>(uid) || !HasComp<StationMemberComponent>(Transform(uid).GridUid);
     }
 
     // Greeting upon MalfunctioningAI activation
@@ -93,27 +131,181 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
 
     private void OnShop(EntityUid uid, StoreComponent component, MalfShopActionEvent args)
     {
+        if (IsAIDeactivated(uid)) return;
         _store.ToggleUi(args.Performer, uid, component);
     }
 
     private void OnApcHacked(EntityUid uid, MalfunctioningAIRoleComponent component, MalfHackApcActionEvent args)
     {
+        if (IsAIDeactivated(uid)) return;
+        if (args.Handled) return;
+        args.Handled = true;
         if (TryComp<ApcComponent>(args.Target, out var apc))
         {
             if (apc.Hacked)
                 return;
             _store.TryAddCurrency(new() { { CpuCurrencyPrototype, 20 } }, uid);
             apc.Hacked = true;
-            _popup.PopupEntity(Loc.GetString("malf-apc-hacked"), args.Target, PopupType.LargeCaution);
+            _popup.PopupEntity(Loc.GetString("malf-apc-hacked"), args.Target, PopupType.MediumCaution);
         }
     }
-    /*
-    private void OnOverload(EntityUid uid, MalfunctioningAIRoleComponent component, MalfOverloadMachineActionEvent args)
+
+    private void OnOverloadAttempt(EntityUid uid, MalfunctioningAIRoleComponent component, MalfOverloadMachineActionEvent args)
     {
-        var target = args.Target;
+        if (IsAIDeactivated(uid)) return;
+        if (args.Handled) return;
+        args.Handled = true;
 
-    //    AddComp<ExplosiveComponent>(target);
-        
-    }*/
+        var doAfter = new DoAfterArgs(EntityManager, uid, TimeSpan.FromSeconds(component.OverloadMachineDetonationTime), new MalfOverloadMachineFinishedEvent(), args.Target, args.Target)
+        {
+            BreakOnDamage = false,
+            BreakOnMove = false,
+            NeedHand = false,
+        };
 
+        if (!TryComp<ApcPowerReceiverComponent>(args.Target, out var targetComp) || !targetComp.Powered)
+        {
+            _popup.PopupEntity(Loc.GetString("malf-machine-overload-not-powered"), args.Target, uid);
+            return;
+        }
+
+        if (HasComp<StationAiCoreComponent>(args.Target))
+        {
+            _popup.PopupEntity(Loc.GetString("malf-must-prevent-deactivation"), args.Target, uid); // no overloading yourself
+            return;
+        }
+
+        if (HasComp<PendingOverloadComponent>(args.Target))
+        {
+            _popup.PopupEntity(Loc.GetString("malf-already-overloading", ("machine", Identity.Entity(args.Target, EntityManager))), args.Target, uid);
+            return;
+        }
+
+        if (!_doAfter.TryStartDoAfter(doAfter))
+            return;
+
+        _popup.PopupEntity(Loc.GetString("malf-machine-overloaded", ("machine", Identity.Entity(args.Target, EntityManager))), args.Target, uid, PopupType.MediumCaution);
+        _popup.PopupEntity(Loc.GetString("malf-machine-overloaded-others", ("machine", Identity.Entity(args.Target, EntityManager))), args.Target, Filter.PvsExcept(uid), true, PopupType.MediumCaution);
+
+        AddComp<PendingOverloadComponent>(args.Target);
+    }
+
+    private void OnOverrideAia(EntityUid uid, MalfunctioningAIRoleComponent component, MalfOverrideAiaActionEvent args)
+    {
+        if (IsAIDeactivated(uid)) return;
+        if (args.Handled) return;
+        args.Handled = true;
+
+        if (!TryComp<StationAiWhitelistComponent>(args.Target, out var whitelistComp)) return;
+        _popup.PopupEntity(Loc.GetString("malf-access-override", ("machine", Identity.Entity(args.Target, EntityManager))), args.Target, uid);
+
+        EntityManager.System<SharedStationAiSystem>()
+            .SetWhitelistEnabled((args.Target, whitelistComp), true);
+    }
+
+    private void OnOverloadFinished(EntityUid uid, PendingOverloadComponent component, MalfOverloadMachineFinishedEvent args)
+    {
+        _explosion.QueueExplosion(uid, component.ExplosionType, component.TotalIntensity, component.Slope, component.MaxTileIntensity);
+        // QueueDel(uid);
+    }
+
+    private void OnDoomsdayStart(EntityUid uid, MalfunctioningAIRoleComponent component, MalfDoomsdayStartEvent args) // a ton of Doomsday logic is ripped from nuke logic as they are very similar
+    {
+        if (HasComp<DoomsdayComponent>(uid)) return; // you can't activate multiple doomsday devices at a time
+        if (IsAIDeactivated(uid)) return;
+
+        if (args.Handled) return;
+        args.Handled = true;
+
+        var stationUid = _station.GetStationInMap(Transform(uid).MapID);
+
+        EnsureComp<DoomsdayComponent>(uid, out var doomsdayComponent);
+        doomsdayComponent.RemainingTime = doomsdayComponent.Timer;
+
+
+        doomsdayComponent.InitialGrid = _station.GetStationInMap(Transform(uid).MapID);
+        if (stationUid != null)
+            _alertLevel.SetLevel(stationUid.Value, doomsdayComponent.AlertLevelOnActivate, true, true, true, true);
+
+        // We are collapsing the randomness here, otherwise we would get separate random song picks for checking duration and when actually playing the song afterwards
+        _selectedNukeSong = _audio.ResolveSound(doomsdayComponent.ArmMusic);
+
+        var announcement = Loc.GetString("malf-doomsday-announcement",
+        ("time", (int)doomsdayComponent.RemainingTime));
+        var sender = Loc.GetString("malf-doomsday-announcement-sender");
+        _chatSystem.DispatchStationAnnouncement(stationUid ?? uid, announcement, sender, false, null, Color.Crimson);
+
+        _nukeSongLength = (float)_audio.GetAudioLength(_selectedNukeSong).TotalSeconds;
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<DoomsdayComponent>();
+        while (query.MoveNext(out var uid, out var doomsday))
+        {
+            if (IsAIDeactivated(uid))
+                AvertDoomsday(uid, doomsday); // cancel the doomsday device if the AI is detached or carded
+
+            TickTimer(uid, frameTime, doomsday);
+        }
+    }
+
+    private void TickTimer(EntityUid uid, float frameTime, DoomsdayComponent? doomsday = null)
+    {
+        if (!Resolve(uid, ref doomsday))
+            return;
+
+        doomsday.RemainingTime -= frameTime;
+
+        // Start playing the song
+        // should play
+        if (doomsday.RemainingTime <= _nukeSongLength && !doomsday.PlayedDoomsdaySong && !ResolvedSoundSpecifier.IsNullOrEmpty(_selectedNukeSong))
+        {
+            _sound.DispatchStationEventMusic(uid, _selectedNukeSong, StationEventMusicType.Nuke);
+            doomsday.PlayedDoomsdaySong = true;
+        }
+
+        if (doomsday.RemainingTime <= 0)
+        {
+            doomsday.RemainingTime = 0;
+            DoomsdayActivate(uid, doomsday);
+        }
+    }
+
+    private void DoomsdayActivate(EntityUid uid, DoomsdayComponent? doomsday = null)
+    {
+        var query = EntityQueryEnumerator<MalfunctioningAIRuleComponent>();
+        while (query.MoveNext(out var comp))
+            comp.DoomsdayActivated = true;
+
+        var crewQuery = EntityQueryEnumerator<HumanoidAppearanceComponent, TransformComponent>();
+        while (crewQuery.MoveNext(out var ent, out _, out var transform))
+        {
+            if (!TryComp<BodyComponent>(ent, out var body))
+                return;
+            if (Transform(uid).MapID != transform.MapID) return;
+
+            _body.GibBody(ent, true, body); // it just instantly gibs all humanoids on the same grid
+        }
+
+        _roundEndSystem.EndRound();
+    }
+
+    private void AvertDoomsday(EntityUid uid, DoomsdayComponent component)
+    {
+        var stationUid = component.InitialGrid;
+        if (stationUid != null)
+            _alertLevel.SetLevel(stationUid.Value, component.AlertLevelOnDeactivate, true, true, true);
+
+        var announcement = Loc.GetString("malf-doomsday-aborted");
+        var sender = Loc.GetString("malf-doomsday-announcement-sender");
+        _chatSystem.DispatchStationAnnouncement(uid, announcement, sender, false);
+
+        _sound.PlayGlobalOnStation(uid, _audio.ResolveSound(component.DisarmSound));
+        _sound.StopStationEventMusic(uid, StationEventMusicType.Nuke);
+
+        RemComp<DoomsdayComponent>(uid);
+    }
 }

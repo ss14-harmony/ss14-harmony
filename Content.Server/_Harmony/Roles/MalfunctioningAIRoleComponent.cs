@@ -9,4 +9,5 @@ namespace Content.Server._Harmony.Roles;
 public sealed partial class MalfunctioningAIRoleComponent : BaseMindRoleComponent
 {
     [DataField] public EntityUid? Action;
+    [DataField] public int OverloadMachineDetonationTime = 3; // time for Overload Machine do-after
 }

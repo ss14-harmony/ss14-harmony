@@ -1,4 +1,5 @@
 using Content.Server.Shuttles.Systems;
+using Content.Server._Harmony.GameTicking.Rules.Components;
 using Content.Server._Harmony.Objectives.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind;
@@ -55,6 +56,11 @@ public sealed class ExterminateCrewConditionSystem : EntitySystem
                 contained++;
 
         }
+
+        var query = EntityQueryEnumerator<MalfunctioningAIRuleComponent>();
+        while (query.MoveNext(out var rule, out var component))
+            if (component.DoomsdayActivated)
+                return 1f; // doomsday device equals free greentext
 
         // Failed if evac isn't here yet
         if (!_emergencyShuttle.EmergencyShuttleArrived)

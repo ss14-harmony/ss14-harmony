@@ -147,4 +147,4 @@
       sprite: Objects/Devices/nuke.rsi
       state: nuclearbomb_base
     difficulty: 7.5
-  - type: ExterminateCrewCondition
+  - type: DoomsdayCondition

@@ -153,6 +153,8 @@
     guides:
     - VoltageNetworks
     - Power
+  - type: StationAiVision # harmony change: allow AIs to always see APCs to always be able to hack them
+    range: 1
 
 # APC under construction
 - type: entity

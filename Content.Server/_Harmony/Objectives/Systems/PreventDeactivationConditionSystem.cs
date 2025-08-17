@@ -1,8 +1,9 @@
+using Content.Server._Harmony.Objectives.Components;
+using Content.Server._Harmony.GameTicking.Rules.Components;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Mind;
 using Content.Shared._Harmony.Malfunction.Components;
 using Content.Shared.Station.Components;
-using Content.Server._Harmony.Objectives.Components;
 
 namespace Content.Server._Harmony.Objectives.Systems;
 

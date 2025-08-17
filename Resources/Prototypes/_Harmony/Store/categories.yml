@@ -1,4 +1,8 @@
 # malf
 - type: storeCategory
-  id: MalfAIStore
-  name: store-category-malf
+  id: MalfAIStoreActions
+  name: store-category-malf-actions
+
+- type: storeCategory
+  id: MalfAIStoreAbilities
+  name: store-category-malf-abilities

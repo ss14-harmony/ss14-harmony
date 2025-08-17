@@ -69,6 +69,22 @@
       - type: Store
         name: store-preset-name-malf
         categories:
-        - MalfAIStore
+        - MalfAIStoreActions
         currencyWhitelist:
         - CPU
+        balance: 
+          CPU: 250 #TEMPORARY, final value should be 50, set this high to test doomsday device while hacking APCs is broken
+      - type: UserInterface # i have to include all of the regular AI stuff too because otherwise it doesn't work for some reason
+        interfaces:
+          enum.StoreUiKey.Key:
+            type: StoreBoundUserInterface
+          enum.RadarConsoleUiKey.Key:
+            type: RadarConsoleBoundUserInterface
+          enum.CrewMonitoringUIKey.Key:
+            type: CrewMonitoringBoundUserInterface
+          enum.GeneralStationRecordConsoleKey.Key:
+            type: GeneralStationRecordConsoleBoundUserInterface
+          enum.SiliconLawsUiKey.Key:
+            type: SiliconLawBoundUserInterface
+          enum.CommunicationsConsoleUiKey.Key:
+            type: CommunicationsConsoleBoundUserInterface
