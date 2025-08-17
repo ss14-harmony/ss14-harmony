@@ -1,0 +1,55 @@
+- type: entity
+  parent: BaseAction
+  id: ActionMalfShop
+  name: Spend Processing Power
+  description: Spend your processing power to unlock new abilities.
+  components:
+  - type: Action
+    icon: Interface/Actions/shop.png
+  - type: InstantAction
+    event: !type:MalfShopActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionMalfOverloadMachine
+  name: Overload Machine
+  description: Detonate a machine.
+  components:
+  - type: Action
+    charges: 2
+    priority: 2
+    itemIconStyle: BigAction
+    icon: 
+      sprite: Objects/Weapons/Grenades/syndgrenade.rsi
+      state: icon
+  - type: TargetAction
+    range: 0
+    checkCanAccess: false
+    interactOnMiss: false
+  - type: EntityTargetAction
+    event: !type:MalfOverloadMachineActionEvent
+    whitelist: 
+      components:
+      - Machine
+
+- type: entity
+  parent: BaseAction
+  id: ActionMalfHackApc
+  name: Hack APC
+  description: Hack an APC, gaining 20 processing power. Hacked APCs are obvious, so hide them well. 30 second cooldown.
+  components:
+  - type: Action
+    priority: 1
+    useDelay: 30
+    icon: 
+      sprite: Structures/Power/apc.rsi
+      state: static
+  - type: TargetAction
+    range: 0
+    checkCanAccess: false
+    interactOnMiss: false
+  - type: EntityTargetAction
+    event: !type:MalfHackApcActionEvent
+    whitelist: 
+      components:
+      - Apc

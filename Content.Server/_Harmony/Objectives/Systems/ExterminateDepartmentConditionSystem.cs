@@ -4,7 +4,6 @@ using Content.Shared.Mind;
 using Content.Shared.Roles;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Roles.Jobs;
-using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 
 
@@ -15,7 +14,6 @@ namespace Content.Server._Harmony.Objectives.Systems;
 /// </summary>
 public sealed class ExterminateDepartmentConditionSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly SharedJobSystem _job = default!;
 

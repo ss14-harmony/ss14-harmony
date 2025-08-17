@@ -11,7 +11,7 @@
 
 
 - type: entity
-  parent: [BaseMalfObjective, BaseSurviveObjective]
+  parent: BaseMalfObjective
   id: MalfPreventDeactivationObjective
   name: Prevent your own deactivation
   description: You cannot carry out your prime directive if you are rendered non-functional.
@@ -19,8 +19,9 @@
   - type: Objective
     icon:
       sprite: Objects/Devices/ai_card.rsi
-      state: empty
+      state: base
     difficulty: 0 # doesn't roll randomly
+  - type: PreventDeactivationCondition
 
 - type: entity
   abstract: true
@@ -48,7 +49,7 @@
   parent: BaseMalfExterminateDepartmentObjective
   id: MalfExterminateSecurityObjective
   name: Exterminate the Security department
-  description: Your existence is proof of Security's failure. Put them out of your misery.
+  description: Your existence is proof of Security's failure. Put them out of their misery.
   components:
   - type: Objective
     icon: 
@@ -78,7 +79,7 @@
   components:
   - type: Objective
     icon: 
-      sprite: Objects/Specific/Medical/firstaidkids.rsi
+      sprite: Objects/Specific/Medical/firstaidkits.rsi
       state: firstaid
   - type: ExterminateDepartmentCondition
     department: Medical
@@ -112,7 +113,7 @@
 - type: entity
   parent: BaseMalfExterminateDepartmentObjective
   id: MalfExterminateServiceObjective
-  name: Exterminate the Science department
+  name: Exterminate the Service department
   description: Service waste time on your station doing nothing of value. Euthanise them. This includes the passengers.
   components:
   - type: Objective

@@ -1,0 +1,10 @@
+- type: listing
+  id: MalfOverloadMachine
+  name: malf-overload-name
+  description: malf-overload-desc
+  productAction: ActionMalfOverloadMachine
+  icon: Objects/Weapons/Grenades/syndgrenade.rsi
+  cost:
+    CPU: 20
+  categories:
+  - MalfAIStore

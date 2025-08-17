@@ -16,4 +16,5 @@
   id: MalfunctioningCyborg
   name: roles-antag-malf-cyborg-name
   antagonist: true
+  setPreference: false
   objective: roles-antag-malf-cyborg-objective

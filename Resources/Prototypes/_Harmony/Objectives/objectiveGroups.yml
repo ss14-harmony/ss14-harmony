@@ -40,7 +40,12 @@
 - type: weightedRandom
   id: MalfunctionPrimeObjectiveGroup
   weights:
-    MalfExterminateCrewObjective: 0.5
+    MalfunctionDepartmentalExterminationObjectiveGroup: 1
+    MalfunctionStationWideObjectiveGroup: 0.8
+
+- type: weightedRandom
+  id: MalfunctionDepartmentalExterminationObjectiveGroup
+  weights:
     MalfExterminateScienceObjective: 1
     MalfExterminateEngineeringObjective: 1
     MalfExterminateMedicalObjective: 1
@@ -48,4 +53,9 @@
     MalfExterminateServiceObjective: 1
     MalfExterminateSupplyObjective: 1
     MalfExterminateCommandObjective: 0.75
-    MalfDoomsdayObjective: 1
+
+- type: weightedRandom
+  id: MalfunctionStationWideObjectiveGroup
+  weights:
+    MalfExterminateCrewObjective: 1
+    MalfDoomsdayObjective: 0.8

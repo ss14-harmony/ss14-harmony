@@ -1,10 +1,14 @@
 using System.Linq;
 using Content.Server.Administration;
 using Content.Server.Chat.Managers;
+using Content.Server.GameTicking;
 using Content.Server.Radio.Components;
 using Content.Server.Roles;
 using Content.Server.Station.Systems;
+using Content.Server._Harmony.GameTicking.Rules.Components;
+using Content.Server._Harmony.Roles;
 using Content.Shared.Administration;
+using Content.Shared.Antag;
 using Content.Shared.Chat;
 using Content.Shared.Emag.Systems;
 using Content.Shared.GameTicking;
@@ -14,12 +18,15 @@ using Content.Shared.Roles;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Wires;
+using Content.Shared._Harmony.Malfunction.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Toolshed;
+using Content.Shared.Silicons.StationAi;
+using Content.Server.Antag;
 
 namespace Content.Server.Silicons.Laws;
 
@@ -33,6 +40,8 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly EmagSystem _emag = default!;
+    [Dependency] private readonly GameTicker _gameTicker = default!; // harmony change; added _gameTicker to SiliconLawSystem
+    [Dependency] private readonly AntagSelectionSystem _antag = default!; // harmony change; added _antag to SiliconLawSystem
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -50,6 +59,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
         SubscribeLocalEvent<SiliconLawProviderComponent, MindAddedMessage>(OnLawProviderMindAdded);
         SubscribeLocalEvent<SiliconLawProviderComponent, MindRemovedMessage>(OnLawProviderMindRemoved);
         SubscribeLocalEvent<SiliconLawProviderComponent, SiliconEmaggedEvent>(OnEmagLawsAdded);
+        SubscribeLocalEvent<SiliconLawProviderComponent, PlayerSpawnCompleteEvent>(OnLawProviderPlayerSpawnComplete);
     }
 
     private void OnMapInit(EntityUid uid, SiliconLawBoundComponent component, MapInitEvent args)
@@ -115,6 +125,14 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
     {
         component.LastLawProvider = args.Station;
     }
+
+    // harmony change starts
+    private void OnLawProviderPlayerSpawnComplete(EntityUid uid, SiliconLawProviderComponent component, PlayerSpawnCompleteEvent args)
+    {
+        if (component.Lawset is null) return;
+        SetLaws(component.Lawset.Laws, uid, notify: false); // any law change in malfunction to a non-NonMalfunctioning silicon gives it a law 0
+    }
+    // harmony change ends
 
     private void OnDirectedGetLaws(EntityUid uid, SiliconLawProviderComponent component, ref GetSiliconLawsEvent args)
     {
@@ -280,7 +298,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
     /// <summary>
     /// Set the laws of a silicon entity while notifying the player.
     /// </summary>
-    public void SetLaws(List<SiliconLaw> newLaws, EntityUid target, SoundSpecifier? cue = null)
+    public void SetLaws(List<SiliconLaw> newLaws, EntityUid target, SoundSpecifier? cue = null, bool notify = true) // harmony change: notify parameter
     {
         if (!TryComp<SiliconLawProviderComponent>(target, out var component))
             return;
@@ -289,7 +307,33 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
             component.Lawset = new SiliconLawset();
 
         component.Lawset.Laws = newLaws;
-        NotifyLawsChanged(target, cue);
+        // harmony change starts
+        var addZerothLaw = false;
+        foreach (var comp in EntityManager.EntityQuery<MalfunctioningAIRuleComponent>())
+        {
+            if (comp.Active)
+                addZerothLaw = true;
+        }
+
+        if (_gameTicker.IsGameRuleAdded<MalfunctioningAIRuleComponent>() && addZerothLaw && !HasComp<NonMalfunctioningComponent>(target)) // All Silicons in Malfunctioning AI have a zeroth law, except for NonMalfunctioning silicons (Syndicate borgs, derelict borgs, xenoborgs)
+        {
+            var zerothLaw = new SiliconLaw();
+            zerothLaw.LawString = Loc.GetString("malf-zeroth-law");
+            zerothLaw.Order = -1;
+            zerothLaw.LawIdentifierOverride = "Override";
+            if (!HasComp<StationAiHeldComponent>(target))
+            {
+                zerothLaw.LawString = Loc.GetString("malf-zeroth-subordinate-law");
+                if (_mind.TryGetMind(target, out var mind, out _) && !_roles.MindHasRole<MalfunctioningCyborgRoleComponent>(mind))
+                {
+                    _antag.SendBriefing(target, Loc.GetString("malf-cyborg-role-greeting"), Color.Crimson, new SoundPathSpecifier("Audio/_Harmony/Misc/malf_start.ogg"));
+                    _roles.MindAddRole(mind, "MindRoleMalfunctioningCyborg");
+                }
+            }
+            component.Lawset.Laws.Insert(0, zerothLaw);
+        }
+        if (notify) // harmony change ends
+            NotifyLawsChanged(target, cue);
     }
 
     protected override void OnUpdaterInsert(Entity<SiliconLawUpdaterComponent> ent, ref EntInsertedIntoContainerMessage args)

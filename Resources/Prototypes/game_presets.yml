@@ -108,6 +108,21 @@
     - Secret
 
 - type: gamePreset
+  id: Malfunction
+  alias:
+    - malf
+  name: malf-title
+  showInVote: true
+  description: malf-description
+  rules:
+    - Malfunction
+    - BasicStationEventScheduler
+    - MeteorSwarmScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
+
+
+- type: gamePreset
   id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
   alias:
     - secretextended

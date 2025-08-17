@@ -61,14 +61,14 @@
       mindRoles:
       - MindRoleMalfunctioningAI
       briefing:
-        sound: "/Audio/Ambience/Antag/malf_start.ogg"
+        sound: "/Audio/_Harmony/Misc/malf_start.ogg"
         text: malf-role-greeting
         color: Crimson
-#      components:
-#        - type: MalfunctioningAIRole
-#        - type: Store
-#          name: store-preset-name-malf
-#          categories:
-#          - MalfAIStore
-#          currencyWhitelist:
-#          - CPU
+      components:
+      - type: MalfunctioningAIRole
+      - type: Store
+        name: store-preset-name-malf
+        categories:
+        - MalfAIStore
+        currencyWhitelist:
+        - CPU

@@ -97,6 +97,7 @@
       enum.SiliconLawsUiKey.Key:
         type: SiliconLawBoundUserInterface
   - type: ShowJobIcons
+  - type: Intellicarded # harmony change: addedIntellicarded
 
 # Ai
 - type: entity
