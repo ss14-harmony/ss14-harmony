@@ -80,10 +80,10 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
         SubscribeLocalEvent<MalfunctioningAIRuleComponent, AfterAntagEntitySelectedEvent>(AfterAntagSelected);
         SubscribeLocalEvent<MalfunctioningAIRoleComponent, GetBriefingEvent>(OnGetBriefing);
         SubscribeLocalEvent<StoreComponent, MalfShopActionEvent>(OnShop);
-        SubscribeLocalEvent<MalfunctioningAIRoleComponent, MalfHackApcActionEvent>(OnApcHacked);
-        SubscribeLocalEvent<MalfunctioningAIRoleComponent, MalfOverloadMachineActionEvent>(OnOverloadAttempt);
+        SubscribeLocalEvent<MalfHackApcActionEvent>(OnApcHacked);
+        SubscribeLocalEvent<MalfOverloadMachineActionEvent>(OnOverloadAttempt);
         SubscribeLocalEvent<PendingOverloadComponent, MalfOverloadMachineFinishedEvent>(OnOverloadFinished);
-        SubscribeLocalEvent<MalfunctioningAIRoleComponent, MalfOverrideAiaActionEvent>(OnOverrideAia);
+        SubscribeLocalEvent<MalfOverrideAiaActionEvent>(OnOverrideAia);
         SubscribeLocalEvent<MalfunctioningAIRoleComponent, MalfDoomsdayStartEvent>(OnDoomsdayStart);
 
     }
@@ -135,28 +135,29 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
         _store.ToggleUi(args.Performer, uid, component);
     }
 
-    private void OnApcHacked(EntityUid uid, MalfunctioningAIRoleComponent component, MalfHackApcActionEvent args)
+    private void OnApcHacked(MalfHackApcActionEvent args)
     {
-        if (IsAIDeactivated(uid)) return;
+        if (IsAIDeactivated(args.Performer)) return;
         if (args.Handled) return;
         args.Handled = true;
         if (TryComp<ApcComponent>(args.Target, out var apc))
         {
             if (apc.Hacked)
                 return;
-            _store.TryAddCurrency(new() { { CpuCurrencyPrototype, 20 } }, uid);
+            _store.TryAddCurrency(new() { { CpuCurrencyPrototype, 20 } }, args.Performer);
             apc.Hacked = true;
             _popup.PopupEntity(Loc.GetString("malf-apc-hacked"), args.Target, PopupType.MediumCaution);
         }
     }
 
-    private void OnOverloadAttempt(EntityUid uid, MalfunctioningAIRoleComponent component, MalfOverloadMachineActionEvent args)
+    private void OnOverloadAttempt(MalfOverloadMachineActionEvent args)
     {
-        if (IsAIDeactivated(uid)) return;
+        if (IsAIDeactivated(args.Performer)) return;
+        if (!TryComp<MalfunctioningAIRoleComponent>(args.Performer, out var component)) return;
         if (args.Handled) return;
         args.Handled = true;
 
-        var doAfter = new DoAfterArgs(EntityManager, uid, TimeSpan.FromSeconds(component.OverloadMachineDetonationTime), new MalfOverloadMachineFinishedEvent(), args.Target, args.Target)
+        var doAfter = new DoAfterArgs(EntityManager, args.Performer, TimeSpan.FromSeconds(component.OverloadMachineDetonationTime), new MalfOverloadMachineFinishedEvent(), args.Target, args.Target)
         {
             BreakOnDamage = false,
             BreakOnMove = false,
@@ -165,39 +166,39 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
 
         if (!TryComp<ApcPowerReceiverComponent>(args.Target, out var targetComp) || !targetComp.Powered)
         {
-            _popup.PopupEntity(Loc.GetString("malf-machine-overload-not-powered"), args.Target, uid);
+            _popup.PopupEntity(Loc.GetString("malf-machine-overload-not-powered"), args.Target, args.Performer);
             return;
         }
 
         if (HasComp<StationAiCoreComponent>(args.Target))
         {
-            _popup.PopupEntity(Loc.GetString("malf-must-prevent-deactivation"), args.Target, uid); // no overloading yourself
+            _popup.PopupEntity(Loc.GetString("malf-must-prevent-deactivation"), args.Target, args.Performer); // no overloading yourself
             return;
         }
 
         if (HasComp<PendingOverloadComponent>(args.Target))
         {
-            _popup.PopupEntity(Loc.GetString("malf-already-overloading", ("machine", Identity.Entity(args.Target, EntityManager))), args.Target, uid);
+            _popup.PopupEntity(Loc.GetString("malf-already-overloading", ("machine", Identity.Entity(args.Target, EntityManager))), args.Target, args.Performer);
             return;
         }
 
         if (!_doAfter.TryStartDoAfter(doAfter))
             return;
 
-        _popup.PopupEntity(Loc.GetString("malf-machine-overloaded", ("machine", Identity.Entity(args.Target, EntityManager))), args.Target, uid, PopupType.MediumCaution);
-        _popup.PopupEntity(Loc.GetString("malf-machine-overloaded-others", ("machine", Identity.Entity(args.Target, EntityManager))), args.Target, Filter.PvsExcept(uid), true, PopupType.MediumCaution);
+        _popup.PopupEntity(Loc.GetString("malf-machine-overloaded", ("machine", Identity.Entity(args.Target, EntityManager))), args.Target, args.Performer, PopupType.MediumCaution);
+        _popup.PopupEntity(Loc.GetString("malf-machine-overloaded-others", ("machine", Identity.Entity(args.Target, EntityManager))), args.Target, Filter.PvsExcept(args.Performer), true, PopupType.MediumCaution);
 
         AddComp<PendingOverloadComponent>(args.Target);
     }
 
-    private void OnOverrideAia(EntityUid uid, MalfunctioningAIRoleComponent component, MalfOverrideAiaActionEvent args)
+    private void OnOverrideAia(MalfOverrideAiaActionEvent args)
     {
-        if (IsAIDeactivated(uid)) return;
+        if (IsAIDeactivated(args.Performer)) return;
         if (args.Handled) return;
         args.Handled = true;
 
         if (!TryComp<StationAiWhitelistComponent>(args.Target, out var whitelistComp)) return;
-        _popup.PopupEntity(Loc.GetString("malf-access-override", ("machine", Identity.Entity(args.Target, EntityManager))), args.Target, uid);
+        _popup.PopupEntity(Loc.GetString("malf-access-override", ("machine", Identity.Entity(args.Target, EntityManager))), args.Target, args.Performer);
 
         EntityManager.System<SharedStationAiSystem>()
             .SetWhitelistEnabled((args.Target, whitelistComp), true);

@@ -13,7 +13,6 @@ public sealed partial class MalfDoomsdayStartEvent : InstantActionEvent
 
 public sealed partial class MalfDoomsdayActivatedEvent : EntityEventArgs
 {
-    public EntityUid? OwningStation;
 }
 
 public sealed partial class MalfOverloadMachineActionEvent : EntityTargetActionEvent
@@ -21,10 +20,6 @@ public sealed partial class MalfOverloadMachineActionEvent : EntityTargetActionE
 }
 
 public sealed partial class MalfPurchaseSenseAIWireSnippedEvent : EntityEventArgs
-{
-}
-
-public sealed partial class AiDetachedEvent : EntityEventArgs
 {
 }
 
