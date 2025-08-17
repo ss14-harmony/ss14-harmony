@@ -165,7 +165,7 @@
     sprite: Objects/Tools/upgrade.rsi
     state: display
   discipline: Arsenal
-  tier: 2
+  tier: 1 #Harmony Change: Changes the tier to T1
   cost: 7500
   recipeUnlocks:
   - PKAUpgradeDamage
@@ -193,6 +193,18 @@
   - ShuttleGunFriendshipCircuitboard
   technologyPrerequisites:
   - SalvageWeapons
+
+- type: technology
+  id: DualWieldingTechnology
+  name: research-technology-dual-wielding-technology
+  icon:
+    sprite: Clothing/Back/Specific/harmpack.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ClothingBackpackHarmpack
 
 # Tier 3
 

@@ -85,7 +85,7 @@
   description: spellbook-repulse-desc
   productAction: ActionRepulse
   cost:
-    WizCoin: 2
+    WizCoin: 1 # Harmony change - 2 -> 1
   categories:
   - SpellbookDefensive
   conditions:
@@ -112,7 +112,7 @@
   description: spellbook-polymorph-spider-desc
   productAction: ActionPolymorphWizardSpider
   cost:
-    WizCoin: 2
+    WizCoin: 1 # Harmony change - 2 -> 1
   categories:
   - SpellbookUtility
   conditions:
@@ -206,7 +206,7 @@
   description: spellbook-wand-polymorph-door-description
   productEntity: WeaponWandPolymorphDoor
   cost:
-    WizCoin: 3
+    WizCoin: 2 # Harmony change - 3 -> 2
   categories:
   - SpellbookEquipment
   conditions:

@@ -1,0 +1,13 @@
+- type: entity
+  parent: CrateBingle
+  id: CrateFunBingleLoot
+  name: bingle loot
+  components:
+  - type: StorageFill
+    contents:
+    - id: PlushieBingle
+      amount: 3
+    - id: PlushieBingleSmall
+    - id: PlushieBongle
+    - id: PlushieBingleYakub
+    - id: PlushieBinglePony

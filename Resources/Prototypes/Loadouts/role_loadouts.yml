@@ -127,6 +127,7 @@
   - ChaplainJumpsuit
   - CommonBackpack
   - ChaplainOuterClothing
+  - ChaplainBible
   - Glasses
   - Survival
   - Trinkets
@@ -236,9 +237,11 @@
   id: JobSalvageSpecialist
   groups:
   - GroupTankHarness
+  - SalvageSpecialistNeck # Harmony Change
   - SalvageSpecialistBackpack
   - SalvageSpecialistOuterClothing
   - SalvageSpecialistShoes
+  - SalvageSpecialistID # Harmony Change
   - Glasses
   - Survival
   - Trinkets

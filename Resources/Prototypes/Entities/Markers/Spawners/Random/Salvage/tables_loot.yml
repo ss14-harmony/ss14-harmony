@@ -130,6 +130,12 @@
     - id: WristwatchGold
     - !type:NestedSelector
       tableId: RingTableCommon
+      # Harmony Change: Adds Playing Cards to Loot table using Frontier's Values
+    - id: CardBoxNanotrasen # Frontier
+      weight: 0.05 # Frontier
+    - id: CardBoxSyndicate # Frontier
+      weight: 0.005 # Frontier
+      # End Harmony Change
 
 - type: entityTable
   id: SalvageTreasureRare
@@ -172,6 +178,7 @@
     - id: ClothingHeadHatFancyCrown
     - id: GoldenBikeHorn
     - id: ClothingHeadHatCatEars
+    - id: GoldenPersonalAI
     - id: TreasureCoinDiamond
       amount: !type:RangeNumberSelector
         range: 2, 5
