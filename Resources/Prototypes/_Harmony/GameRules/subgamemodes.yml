@@ -35,7 +35,7 @@
   id: Malfunction
   components:
   - type: GameRule
-    minPlayers: 15
+    minPlayers: 35
     cancelPresetOnTooFewPlayers: false
   - type: MalfunctioningAIRule
   - type: AntagObjectives
