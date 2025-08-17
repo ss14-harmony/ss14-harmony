@@ -312,9 +312,11 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+# Harmony Change Starts
+    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/practice_omnilaser
     layers:
-    - state: omnilaser
+    - state: icon
+# Harmony Change Ends
       shader: unshaded
   - type: Physics
   - type: Fixtures
