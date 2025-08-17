@@ -9,6 +9,17 @@
     "states": [
         {
             "name": "icon"
+        },
+        {
+            "name": "impact_laser_green",
+            "delays": [
+                [
+                    0.05,
+                    0.05,
+                    0.05,
+                    0.05
+                ]
+            ]
         }
     ]
 }

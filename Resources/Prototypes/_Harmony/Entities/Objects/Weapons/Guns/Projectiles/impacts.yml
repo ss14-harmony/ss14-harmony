@@ -35,3 +35,21 @@
   - type: Tag
     tags:
     - HideContextMenu
+
+- type: entity
+  id: BulletImpactEffectPracticeDisabler
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.2
+  - type: Sprite
+    drawdepth: Effects
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: _Harmony/Objects/Weapons/Guns/Projectiles/practice_omnilaser
+      state: impact_laser_green
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+    - HideContextMenu

@@ -334,7 +334,7 @@
   - type: StaminaDamageOnCollide
     damage: 1
   - type: Projectile
-    impactEffect: BulletImpactEffectDisabler
+    impactEffect: BulletImpactEffectPracticeDisabler #Harmony Change
     damage:
       types:
         Heat: 0
