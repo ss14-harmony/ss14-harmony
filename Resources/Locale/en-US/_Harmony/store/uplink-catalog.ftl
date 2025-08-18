@@ -12,7 +12,7 @@ uplink-rifle-bandit-desc = Contains the Bandit, a reliable semi-auto bullpup whi
 # Explosive
 
 uplink-kudzu-grenade-name = Kudzu grenade
-uplink-kudzu-grenade-desc = A grenade containing mutated kudzu that spreads faster and deals damage to anyone caught inside, excluding diona's.
+uplink-kudzu-grenade-desc = A grenade containing mutated kudzu that spreads faster and deals damage to anyone caught inside, excluding diona.
 
 uplink-pizza-bomb-name = Pizza Bomb
 uplink-pizza-bomb-desc = This tech, first pioneered by terrorists, now is used by the Syndicate for eliminating high value targets. WARNING: Explodes after opening with a short timer. Do not attempt to throw.
