@@ -1,7 +1,7 @@
 ﻿{
     "version": 1,
     "license": "CC-BY-NC-SA-3.0",
-    "copyright": "Taken from goonstation at https://github.com/goonstation/goonstation/pull/13630/commits/e02e94cea0465d07f566b8f9d9f0a900cbf0c1bf, Modified by Flarbergaster (Github)",
+    "copyright": "Taken from goonstation at https://github.com/goonstation/goonstation/commit/f328d8233021c57ddaf5edb0689b36da424e82eb, Modified by Flarbergaster (Github)",
     "size": {
         "x": 32,
         "y": 32
