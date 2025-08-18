@@ -55,8 +55,12 @@
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
-    - state: internals
-    - state: extendedtank
+# Start of Harmony Change: Updates Engineering Survival Box Sprite States
+#    - state: internals
+#    - state: extendedtank
+    - state: box_engineering
+    - state: emergencytank
+# End of Harmony Change
 
 - type: entity
   parent: BoxSurvivalEngineering
@@ -73,7 +77,10 @@
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
-    - state: internals
+# Start of Harmony Change: Updates Engineering Survival Box Sprite States
+#   - state: internals
+    - state: box_engineering
+# End of Harmony Change
     - state: nitrogentank
   - type: Label
     currentLabel: reagent-name-nitrogen
@@ -96,7 +103,10 @@
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
-    - state: internals
+# Start of Harmony Change: Updates Security Survival Box Sprite States
+#   - state: internals
+    - state: box_security
+# End of Harmony Change
     - state: emergencytank
 
 - type: entity
@@ -114,7 +124,10 @@
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
-    - state: internals
+# Start of Harmony Change: Updates Security Survival Box Sprite States
+#   - state: internals
+    - state: box_security
+# End of Harmony Change
     - state: nitrogentank
   - type: Label
     currentLabel: reagent-name-nitrogen
@@ -137,7 +150,10 @@
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
-    - state: internals
+# Start of Harmony Change: Updates Medical Survival Box Sprite States
+#   - state: internals
+    - state: box_medical
+# End of Harmony Change
     - state: emergencytank
 
 - type: entity
@@ -155,7 +171,10 @@
     - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
-    - state: internals
+# Start of Harmony Change: Updates Medical Survival Box Sprite States
+#   - state: internals
+    - state: box_medical
+# End of Harmony Change
     - state: nitrogentank
   - type: Label
     currentLabel: reagent-name-nitrogen
@@ -265,8 +284,12 @@
     - id: FoodSnackNutribrick
   - type: Sprite
     layers:
-    - state: internals
-    - state: extendedtank
+# Start of Harmony Change: Updates Syndicate Survival Box Sprite State
+#    - state: internals
+#    - state: extendedtank
+    - state: box_of_doom
+    - state: emergencytank
+# End of Harmony Change
 
 - type: entity
   parent: BoxSurvivalSyndicate
@@ -282,7 +305,10 @@
     - id: FoodSnackNutribrick
   - type: Sprite
     layers:
-    - state: internals
+# Start of Harmony Change: Updates Syndicate Survival Box Sprite State
+#    - state: internals
+    - state: box_of_doom
+# End of Harmony Change
     - state: nitrogentank
   - type: Label
     currentLabel: reagent-name-nitrogen

@@ -1,0 +1,4 @@
+﻿- files: ["beep1.ogg", "beep2.ogg", "beep3.ogg", "beep4.ogg", "beep5.ogg", "beep6.ogg", "beep7.ogg", "buzz1.ogg", "hum1.ogg", "hum2.ogg", "scroll1.ogg", "scroll2.ogg", "scroll3.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from NSV13"
+  source: "https://github.com/BeeStation/NSV13/commit/dfd5d068b8cbadd3130e76c3613d9e4094a5166d"

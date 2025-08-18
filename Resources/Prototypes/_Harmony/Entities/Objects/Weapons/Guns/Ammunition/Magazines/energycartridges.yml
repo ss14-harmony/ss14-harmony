@@ -46,7 +46,7 @@
   parent: BaseEnergyCartridgeHarmony
   id: EnergyCarbineCartridgeUnstableHarmony
   name: unstable energy cartridge (carbine)
-  description: An energy cartridge filled with extremely unstable energy. You only get one shot, make the most of it.
+  description: An energy cartridge filled with extremely unstable energy. It shoots forking energy bolts, be sure to stay close!
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Magazines/EnergyCartridges/Carbine/unstable.rsi
@@ -62,13 +62,13 @@
     energy: 1.5
   - type: MagazineVisuals
     magState: mag
-    steps: 2
+    steps: 6
   - type: Battery
-    maxCharge: 2000
-    startingCharge: 2000
+    maxCharge: 750
+    startingCharge: 750
   - type: ProjectileBatteryAmmoProvider
-    proto: BulletLaserUnstableHarmony
-    fireCost: 2000
+    proto: BulletEnergyCarbineUnstableHarmony
+    fireCost: 50
   - type: Tag
     tags:
       - EnergyCarbineCartridge
@@ -99,3 +99,30 @@
   - type: Tag
     tags:
       - EnergyCarbineCartridge
+
+- type: entity
+  parent: [BaseSyndicateContraband, BaseEnergyCartridgeHarmony]
+  id: EnergyCarbineCartridgeSyndicateHarmony
+  name: jailbroken energy cartridge
+  description: A modified energy cartridge that is only compatible with the Blood-Red Energy Carbine. It shoots deadly armor-piercing shock projectiles.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Magazines/EnergyCartridges/Carbine/jailbroken.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+      shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+  - type: Battery
+    maxCharge: 750
+    startingCharge: 750
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserShockHarmony
+    fireCost: 37
+  - type: Tag
+    tags:
+    - EnergyCarbineCartridgeSyndicate

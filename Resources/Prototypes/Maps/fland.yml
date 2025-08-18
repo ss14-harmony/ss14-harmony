@@ -53,7 +53,6 @@
             Detective: [ 1, 1 ]
             SecurityCadet: [ 6, 6 ] #intern, not counted
             Lawyer: [ 2, 2 ]
-            PermaPrisoner: [ 2, 0 ] # HARMONY
             #supply (9)
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 6, 6 ]

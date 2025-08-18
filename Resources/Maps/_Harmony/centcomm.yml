@@ -3622,15 +3622,6 @@ entities:
         chunkSize: 4
     - type: BecomesStation
       id: centcomm
-- proto: ActionStethoscope
-  entities:
-  - uid: 1447
-    components:
-    - type: Transform
-      parent: 6735
-    - type: EntityTargetAction
-      originalIconColor: '#FFFFFFFF'
-      container: 6735
 - proto: AirAlarm
   entities:
   - uid: 4628
@@ -18255,13 +18246,6 @@ entities:
       pos: 74.5757,33.585632
       parent: 1
     - type: Stethoscope
-      actionEntity: 1447
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 1447
 - proto: ClothingOuterHardsuitDeathsquad
   entities:
   - uid: 5347

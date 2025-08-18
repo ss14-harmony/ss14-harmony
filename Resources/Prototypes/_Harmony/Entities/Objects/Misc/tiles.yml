@@ -1,34 +1,14 @@
-# Xeno playtest
 - type: entity
-  name: dark techmaint floor
   parent: FloorTileItemBase
-  id: FloorTileItemTechmaintDark
+  id: FloorTileItemBingle
+  name: bingle floor
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Tiles/tile.rsi
-    state: techfloordark
-  - type: Item
-    heldPrefix: dark
-  - type: FloorTile
-    outputs:
-      - Plating
-      - FloorTechMaintDark
-  - type: Stack
-    stackType: FloorTileTechmaintDark
-
-- type: entity
-  id: FloorTileItemXeno
-  parent: FloorTileItemBase
-  name: xeno floor
-  components:
-  - type: Sprite
-    sprite: _Harmony/Objects/Tiles/tile.rsi
-    state: xenofloor
-  - type: Item
-    heldPrefix: steel
+    state: bingle
   - type: FloorTile
     outputs:
     - Plating
-    - FloorXeno
+    - FloorBingle
   - type: Stack
-    stackType: FloorTileXeno
+    stackType: FloorTileBingle

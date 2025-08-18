@@ -129,3 +129,14 @@
     sprite: _Harmony/Clothing/Neck/mantles/rainbowmantle.rsi
   - type: Clothing
     sprite: _Harmony/Clothing/Neck/mantles/rainbowmantle.rsi
+
+- type: entity
+  parent: ClothingPrideMantleBase
+  id: ClothingNeckMantleAro
+  name: aro mantle
+  description: A soft mantle, striped with the aromantic flag.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Neck/mantles/aromantle.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Neck/mantles/aromantle.rsi

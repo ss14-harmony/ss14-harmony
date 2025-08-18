@@ -1,0 +1,11 @@
+# Senior Salvage Poncho
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakSeniorSalvager
+  name: senior salvager's poncho
+  description: A battle-torn mantle, whoever is wearing this has probably slain their fair share of space carp.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Neck/Cloaks/seniorsalvcloak.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Neck/Cloaks/seniorsalvcloak.rsi

@@ -264,15 +264,6 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: NavMap
-- proto: ActionToggleInternals
-  entities:
-  - uid: 131
-    components:
-    - type: Transform
-      parent: 130
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 130
 - proto: AirlockGlassShuttle
   entities:
   - uid: 54
@@ -1341,13 +1332,6 @@ entities:
       pos: 1.4131083,-6.3776712
       parent: 1
     - type: GasTank
-      toggleActionEntity: 131
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 131
 - proto: Ointment
   entities:
   - uid: 145

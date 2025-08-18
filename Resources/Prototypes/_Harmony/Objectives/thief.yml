@@ -8,3 +8,14 @@
     difficulty: 1
   - type: NotJobRequirement
     job: Scientist
+
+- type: entity
+  parent: BaseThiefStealObjective
+  id: CMOGogglesStealObjective
+  components:
+  - type: NotJobRequirement
+    job: ChiefMedicalOfficer
+  - type: StealCondition
+    stealGroup: ClothingEyesGlassesMedical
+  - type: Objective
+    difficulty: 1
