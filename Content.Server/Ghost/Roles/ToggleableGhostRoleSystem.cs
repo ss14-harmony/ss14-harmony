@@ -1,12 +1,12 @@
 using Content.Server.Ghost.Roles.Components;
-using Content.Server.Power.EntitySystems;
+using Content.Server.Power.EntitySystems; //Harmony
 using Content.Shared.Examine;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
-using Robust.Shared.Player;
+using Robust.Shared.Player; //Harmony
 
 namespace Content.Server.Ghost.Roles;
 
@@ -18,7 +18,7 @@ public sealed class ToggleableGhostRoleSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
+    [Dependency] private readonly ISharedPlayerManager _playerManager = default!; //Harmony
 
 
     /// <inheritdoc/>
@@ -49,7 +49,7 @@ public sealed class ToggleableGhostRoleSystem : EntitySystem
             _popup.PopupEntity(Loc.GetString(component.ExamineTextMindSearching), uid, args.User);
             return;
         }
-        else _popup.PopupEntity(Loc.GetString(component.BeginSearchingText), uid, args.User);
+        _popup.PopupEntity(Loc.GetString(component.BeginSearchingText), uid, args.User);
 
         UpdateAppearance(uid, ToggleableGhostRoleStatus.Searching);
 
