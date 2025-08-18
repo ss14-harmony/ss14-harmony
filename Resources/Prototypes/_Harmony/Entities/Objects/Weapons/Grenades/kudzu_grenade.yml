@@ -2,7 +2,8 @@
   parent: [ScatteringGrenadeBase, BaseSyndicateContraband]
   id: KudzuGrenade
   name: kudzu grenade
-  description: A Diona's favorite grenade.
+  suffix: Harmony
+  description: A diona's favorite grenade.
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Grenades/kudzugrenade.rsi
@@ -10,7 +11,7 @@
     - state: icon
       map: [ "Base" ]
   - type: ScatteringGrenade
-    fillPrototype: SyndieKudzu
+    fillPrototype: SyndicateKudzu
     distance: 4
   - type: OnUseTimerTrigger
     beepSound:

@@ -1,7 +1,7 @@
 ﻿- type: entity
   parent: Kudzu
-  id: SyndieKudzu
-  suffix: Syndicate
+  id: SyndicateKudzu
+  suffix: Harmony, Syndicate
   components:
   - type: Kudzu
     growthTickChance: 0.5
