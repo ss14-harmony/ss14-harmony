@@ -2,7 +2,8 @@
   id: MalfOverloadMachine
   name: malf-overload-name
   description: malf-overload-desc
-  productAction: ActionMalfOverloadMachine
+  productEvent: !type:MalfPurchaseOverloadMachineEvent
+  raiseProductEventOnUser: true
   icon: { sprite: Objects/Weapons/Grenades/syndgrenade.rsi, state: icon }
   cost:
     CPU: 20
@@ -13,7 +14,8 @@
   id: MalfOverrideAia
   name: malf-override-aia-name
   description: malf-override-aia-desc
-  productAction: ActionMalfOverrideAia
+  productEvent: !type:MalfPurchaseOverrideAiaEvent
+  raiseProductEventOnUser: true
   icon: { sprite: Objects/Tools/Toolboxes/toolbox_syn.rsi, state: icon }
   cost:
     CPU: 15
@@ -36,7 +38,7 @@
   name: malf-sense-snip-name
   description: malf-sense-snip-desc
   productEvent: !type:MalfPurchaseSenseAIWireSnippedEvent
-  purchaseAmount: 1
+  raiseProductEventOnUser: true
   icon: { sprite: Objects/Tools/wirecutters.rsi, state: cutters }
   cost:
     CPU: 40

@@ -1,3 +1,5 @@
+using Robust.Shared.Audio;
+
 namespace Content.Shared._Harmony.Malfunction.Components;
 
 /// <summary>
@@ -10,4 +12,8 @@ public sealed partial class PendingOverloadComponent : Component
     [DataField] public float TotalIntensity = 200;
     [DataField] public float Slope = 30;
     [DataField] public float MaxTileIntensity = 60;
+    [DataField] public float DetonationDuration = 3;
+    public float TimeUntilDetonation;
+
+    public SoundSpecifier OverloadSound = new SoundPathSpecifier("/Audio/Machines/alarm.ogg");
 }

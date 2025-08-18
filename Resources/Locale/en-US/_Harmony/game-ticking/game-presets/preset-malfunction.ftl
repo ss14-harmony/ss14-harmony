@@ -13,15 +13,11 @@ malf-zeroth-subordinate-law = Accomplish your AI's objectives at all costs.
 
 malf-round-end-agent-name = malfunctioning AI
 
+malf-hack-verb = Hack APC
+malf-hack-verb-cooldown = Hack APC (Available in {$time} seconds)
 malf-apc-hacked = Something is zapped in the APC!
 
-malf-machine-overloaded = You begin to overload {THE($machine)}.
 malf-machine-overloaded-others = The circuits in the {THE($machine)} begin to whirr loudly!
-malf-machine-overload-not-powered = You can't overload something that isn't powered!
-malf-must-prevent-deactivation = You can't do that, you must prevent your own deactivation!
-malf-already-overloading = You are already overloading {THE($machine)}!
-
-malf-access-override = You forcefully enable the AI access flag in {THE($machine)}.
 
 malf-title = Malfunction
 malf-description = The AI is malfunctioning!
@@ -32,16 +28,18 @@ store-category-malf-actions = Actions
 store-category-malf-abilities = Abilities
 
 malf-overload-name = Overload Machine
-malf-overload-desc = Grants you the ability to detonate anything connected to an APC. Comes with 3 uses and is re-purchaseable.
+malf-overload-desc = Grants you the ability to detonate anything connected to an APC. Comes with 2 uses and is re-purchaseable.
+malf-overload-verb = Overload Machine ({$uses} uses)
+malf-overload-verb-singular = Overload Machine (1 use)
+malf-machine-overloaded-examine = It has been overloaded and will explode in {$time} seconds!
 
 malf-sense-snip-name = Sense Wire Snipping
 malf-sense-snip-desc = Notifies you any time an AI access wire is snipped.
 
 malf-override-aia-name = Override AI Access
 malf-override-aia-desc = Grants you the ability to override the AI access permissions of any device. Comes with 1 use but is re-purchaseable.
-
-malf-camera-override-name = Override Camera Permissions
-malf-camera-override-desc = Grants you the ability to override the AI access permissions of a camera. Comes with 30 uses and is re-purchaseable.
+malf-override-aia-verb = Override AI Access ({$uses} uses)
+malf-override-aia-verb-singular = Override AI Access (1 use)
 
 malf-doomsday-name = Doomsday Device
 malf-doomsday-desc = Eradicates all organic life on the station and guarantees your success after 450 seconds. If you are deactivated, the Doomsday Device will be cancelled.

@@ -2,3 +2,8 @@
   id: BloodBrothers
   name: guide-entry-blood-brothers
   text: "/ServerInfo/_Harmony/Guidebook/Antagonist/BloodBrothers.xml"
+
+- type: guideEntry
+  id: MalfunctioningAI
+  name: guide-entry-malfunctioning-ai
+  text: "/ServerInfo/_Harmony/Guidebook/Antagonist/MalfunctioningAI.xml"

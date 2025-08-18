@@ -4,7 +4,7 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-malf-ai-objective
-  guides: [ Traitors ] # this is temporary, if it's still Traitors by PR time please point that out
+  guides: [ MalfunctioningAI ]
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 3600 # 1h

@@ -34,7 +34,7 @@ public sealed partial class ApcComponent : BaseApcNetComponent
     public const float HighPowerThreshold = 0.9f;
     public static TimeSpan VisualsChangeDelay = TimeSpan.FromSeconds(1);
 
-    public bool Hacked = false; // harmony change, used for Malf AI
+    [DataField] public bool Hacked = false; // harmony change, used for Malf AI
 
     // TODO ECS power a little better!
     // End the suffering

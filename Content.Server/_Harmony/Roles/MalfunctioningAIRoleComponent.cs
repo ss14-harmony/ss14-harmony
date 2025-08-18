@@ -1,4 +1,5 @@
 using Content.Shared.Roles;
+using Robust.Shared.Audio;
 
 namespace Content.Server._Harmony.Roles;
 
@@ -9,5 +10,8 @@ namespace Content.Server._Harmony.Roles;
 public sealed partial class MalfunctioningAIRoleComponent : BaseMindRoleComponent
 {
     [DataField] public EntityUid? Action;
-    [DataField] public int OverloadMachineDetonationTime = 3; // time for Overload Machine do-after
+    [DataField] public SoundSpecifier HackSound = new SoundCollectionSpecifier("sparks");
+    [DataField] public int HackApcTime = 15; // time taken to fully hack an APC
+
+    public float CurrentHackCooldown = 0;
 }

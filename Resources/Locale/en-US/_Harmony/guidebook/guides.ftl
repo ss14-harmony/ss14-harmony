@@ -3,6 +3,8 @@ guide-entry-rules-sop = Standard Operating Procedure
 
 guide-entry-blood-brothers = Blood Brothers
 
+guide-entry-malfunctioning-ai = Malfunctioning AI
+
 guide-entry-rules-harmony-title = Harmony Rules
 guide-entry-rules-harmony-r0 = R0
 guide-entry-rules-harmony-r1 = R1
