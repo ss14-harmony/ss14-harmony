@@ -43,6 +43,16 @@ public sealed partial class MalfPurchaseDisableControlPanelEvent : EntityEventAr
 }
 
 [Serializable, NetSerializable]
+public sealed partial class MalfPurchaseOverloadLightEvent : EntityEventArgs
+{
+}
+
+[Serializable, NetSerializable]
+public sealed partial class MalfPurchaseJamFirelockEvent : EntityEventArgs
+{
+}
+
+[Serializable, NetSerializable]
 public sealed partial class MalfPurchaseOverrideSafetyEvent : EntityEventArgs
 {
 }

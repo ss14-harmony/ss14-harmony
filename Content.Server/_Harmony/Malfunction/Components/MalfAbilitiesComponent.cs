@@ -10,6 +10,9 @@ public sealed partial class MalfAbilitiesComponent : Component
     [DataField] public int OverrideAiaUses = 0;
     [DataField] public int DisableControlPanelUses = 0;
     [DataField] public int OverrideSafetyUses = 0;
+    [DataField] public int OverloadLightUses = 0;
+    [DataField] public int JamFirelockUses = 0;
+
     [DataField] public bool VoiceModulation = false;
 
 }

@@ -3,6 +3,7 @@ using Content.Shared.Doors.Components;
 using Content.Shared.Examine;
 using Content.Shared.Popups;
 using Content.Shared.Prying.Components;
+using Content.Shared._Harmony.Malfunction.Components;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 
@@ -37,6 +38,11 @@ public abstract class SharedFirelockSystem : EntitySystem
     {
         if (!Resolve(uid, ref firelock, ref door))
             return false;
+
+        // harmony change: firelocks can be jammed (by malf AI)
+        if (HasComp<FirelockJammedComponent>(uid))
+            return false;
+        // harmony change ends
 
         if (door.State != DoorState.Open
             || firelock.EmergencyCloseCooldown != null

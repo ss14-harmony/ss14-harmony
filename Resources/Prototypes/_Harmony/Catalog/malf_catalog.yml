@@ -62,6 +62,31 @@
   - MalfAIStoreActions
 
 - type: listing
+  id: MalfOverloadLight
+  name: malf-overload-light-name
+  description: malf-overload-light-desc
+  productEvent: !type:MalfPurchaseOverloadLightEvent
+  raiseProductEventOnUser: true
+  icon: { sprite: Objects/Power/light_tube.rsi, state: broken }
+  cost:
+    CPU: 5
+  categories:
+  - MalfAIStoreActions
+
+- type: listing
+  id: MalfJamFirelock
+  name: malf-jam-firelock-name
+  description: malf-jam-firelock-desc
+  productEvent: !type:MalfPurchaseJamFirelockEvent
+  raiseProductEventOnUser: true
+  icon: { sprite: Structures/Doors/Airlocks/Glass/firelock.rsi, state: closed }
+  cost:
+    CPU: 5
+  categories:
+  - MalfAIStoreActions
+
+
+- type: listing
   id: MalfOverrideSafety
   name: malf-override-safety-name
   description: malf-override-safety-desc

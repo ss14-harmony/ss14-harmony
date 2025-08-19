@@ -5,6 +5,7 @@ using Content.Server.Audio;
 using Content.Server.Chat.Systems;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.GameTicking.Rules;
+using Content.Server.Light.EntitySystems;
 using Content.Server.Mind;
 using Content.Server.Popups;
 using Content.Server.Power.EntitySystems;
@@ -25,9 +26,13 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chat;
 using Content.Shared.DoAfter;
+using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
+using Content.Shared.Electrocution;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
+using Content.Shared.IgnitionSource;
+using Content.Shared.Light.Components;
 using Content.Shared.Popups;
 using Content.Shared.Roles;
 using Content.Shared.Silicons.Laws.Components;
@@ -44,8 +49,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
-using Content.Shared.Doors.Components;
-using Content.Shared.Electrocution;
+using Content.Server.Light.Components;
 
 namespace Content.Server._Harmony.GameTicking.Rules;
 
@@ -74,6 +78,8 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedDoorSystem _door = default!;
     [Dependency] private readonly SharedAirlockSystem _airlock = default!;
+    [Dependency] private readonly SharedIgnitionSourceSystem _sharedIgnition = default!;
+    [Dependency] private readonly LightBulbSystem _lightBulb = default!;
 
     private const string MalfShopId = "ActionMalfShop";
     private static readonly ProtoId<CurrencyPrototype> CpuCurrencyPrototype = "CPU";
@@ -96,6 +102,8 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseVoiceModulationEvent>(OnPurchaseVoiceModulation);
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseTurretUpgradeEvent>(OnPurchaseTurretUpgrade);
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseOverrideSafetyEvent>(OnPurchaseOverrideSafety);
+        SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseOverloadLightEvent>(OnPurchaseOverloadLight);
+        SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseJamFirelockEvent>(OnPurchaseJamFirelock);
         SubscribeLocalEvent<MalfAbilitiesComponent, TransformSpeakerNameEvent>(OnModulatedVoice);
         SubscribeLocalEvent<StoreComponent, MalfShopActionEvent>(OnShop);
         SubscribeLocalEvent<PendingOverloadComponent, MalfOverloadMachineFinishedEvent>(OnOverloadFinished);
@@ -128,8 +136,18 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
     private void OnPurchaseDisableControlPanel(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseDisableControlPanelEvent args)
     {
         comp.DisableControlPanelUses++;
-
     }
+
+    private void OnPurchaseOverloadLight(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseOverloadLightEvent args)
+    {
+        comp.OverloadLightUses++;
+    }
+
+    private void OnPurchaseJamFirelock(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseJamFirelockEvent args)
+    {
+        comp.JamFirelockUses += 3;
+    }
+
     private void OnPurchaseTurretUpgrade(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseTurretUpgradeEvent args)
     {
         var query = EntityQueryEnumerator<DeployableTurretComponent>();
@@ -343,6 +361,8 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
         var isOverrideAiaTarget = TryComp<StationAiWhitelistComponent>(args.Target, out var whitelist) && !whitelist.Enabled && abilities.OverrideAiaUses > 0;
         var isDisableControlPanelTarget = TryComp<DeployableTurretControllerComponent>(args.Target, out var controller) && abilities.DisableControlPanelUses > 0;
         var isOverrideSafetyTarget = TryComp<AirlockComponent>(args.Target, out var airlock) && airlock.Safety && abilities.OverrideSafetyUses > 0;
+        var isOverloadLightTarget = TryComp<PoweredLightComponent>(args.Target, out var bulb) && !HasComp<IgnitionSourceComponent>(args.Target) && abilities.OverloadLightUses > 0;
+        var isJamFirelockTarget = TryComp<FirelockComponent>(args.Target, out var firelock) && !HasComp<FirelockJammedComponent>(args.Target) && abilities.JamFirelockUses > 0;
 
         if (isMachineOverloadTarget)
         {
@@ -407,6 +427,38 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
                     _popup.PopupEntity(Loc.GetString("malf-override-safety-popup"), args.Target);
                     _audio.PlayPvs(door.SparkSound, args.Target);
                     abilities.OverrideSafetyUses--;
+                }
+            };
+            args.Verbs.Add(verb);
+        }
+
+        if (isOverloadLightTarget)
+        {
+            var verb = new Verb
+            {
+                Text = abilities.OverloadLightUses == 1 ? Loc.GetString("malf-overload-light-verb-singular") : Loc.GetString("malf-overload-light-verb", ("uses", abilities.OverloadLightUses)),
+                Act = () =>
+                {
+                    EnsureComp<IgnitionSourceComponent>(args.Target, out var ignition);
+                    _sharedIgnition.SetIgnited((args.Target, ignition), true);
+                    _audio.PlayPvs(new SoundCollectionSpecifier("sparks"), args.Target);
+
+                    abilities.OverloadLightUses--;
+                }
+            };
+            args.Verbs.Add(verb);
+        }
+
+        if (isJamFirelockTarget)
+        {
+            var verb = new Verb
+            {
+                Text = abilities.JamFirelockUses == 1 ? Loc.GetString("malf-jam-firelock-verb-singular") : Loc.GetString("malf-jam-firelock-verb", ("uses", abilities.JamFirelockUses)),
+                Act = () =>
+                {
+                    AddComp<FirelockJammedComponent>(args.Target);
+
+                    abilities.JamFirelockUses--;
                 }
             };
             args.Verbs.Add(verb);
