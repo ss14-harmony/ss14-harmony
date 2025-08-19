@@ -471,6 +471,7 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
         || !args.CanComplexInteract
         || !args.CanInteract) return;
         if (apc.Hacked) return;
+        if (!TryComp<StationAiWhitelistComponent>(args.Target, out var whitelist) || !whitelist.Enabled) return;
 
         var verb = new AlternativeVerb
         {
