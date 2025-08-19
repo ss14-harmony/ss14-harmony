@@ -119,6 +119,7 @@
     spawned:
     - id: FoodMeatDragon
       amount: 2
+    - id: ClothingHeadHelmetDragon # Harmony change - Dragon drops its head as a trophy
   - type: InteractionPopup
     successChance: 0.25 # It's no goose, but you better smell like carp.
     interactSuccessString: petting-success-dragon

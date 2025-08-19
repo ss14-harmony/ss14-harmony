@@ -196,6 +196,8 @@
   - type: Construction
     graph: BananiumHorn
     node: bananiumHorn
+  - type: UseDelay # Harmony - increase bananium horn delay
+    delay: 3
 
 - type: entity
   parent: BaseItem
@@ -229,3 +231,4 @@
       - MobMover
   - type: SpawnOnTrigger
     proto: EffectGravityPulse
+    predicted: true

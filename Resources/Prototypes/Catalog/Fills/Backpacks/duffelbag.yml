@@ -128,7 +128,7 @@
   parent: ClothingBackpackDuffelSyndicateAmmo
   id: ClothingBackpackDuffelSyndicateAmmoFilled
   name: ammo bundle
-  description: "Reloading! Contains 4 magazines for the C-20r, 5 drums for the Bulldog, 3 magazines for the Estoc DMR, 2 ammo boxes for the L6 SAW, and 3 magazines for the Bandit." # Harmony change - changes ammo bundle description
+  description: "Reloading! Contains 4 magazines for the C-20r, 5 drums for the Bulldog, 2 ammo boxes for the L6 SAW, and 3 magazines for the Bandit." # Harmony change - changes ammo bundle description
   components:
   - type: StorageFill
     contents:
@@ -136,8 +136,10 @@
         amount: 4
       - id: MagazineShotgun
         amount: 4
-      - id: MagazineRifle
-        amount: 3
+    # Begin harmony change - removes estoc from uplink
+    #  - id: MagazineRifle
+    #     amount: 3
+    # End harmony change
       - id: MagazineShotgunSlug
         amount: 1
       - id: MagazineLightRifleBox

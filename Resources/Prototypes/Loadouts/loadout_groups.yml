@@ -12,6 +12,7 @@
   - PlushieLizard
   - PlushieSpaceLizard
   - PlushieVox # Harmony
+  - PlushieAvali # Harmony Change: Umbra ported plushie
   - ThreeCandles
   - Lighter
   - CigPackGreen
@@ -51,6 +52,12 @@
   - ClothingNeckLanyard
   - HarmonicaInstrument
   # End harmony change - Server pins & neck slot items.
+  - OffsetCane
+  - OffsetCaneWood
+  - OffsetCaneClown
+  - OffsetCaneMime
+  - OffsetCaneNT
+  - Cane
   - TowelColorBlack
   - TowelColorDarkBlue
   - TowelColorDarkGreen
@@ -70,7 +77,6 @@
   - TowelStripedOrange # Harmony
   - SilverRing # Harmony
   - GoldRing # Harmony
-  - Cane # Harmony
   - TapeRecorder # DeltaV / Harmony
 
 - type: loadoutGroup

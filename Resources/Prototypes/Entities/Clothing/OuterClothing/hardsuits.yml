@@ -173,8 +173,8 @@
   - type: ClothingSpeedModifier
 #    walkModifier: 0.75
 #    sprintModifier: 0.75
-    walkModifier: 0.70
-    sprintModifier: 0.70
+    walkModifier: 0.80
+    sprintModifier: 0.80
 # End of Harmony Change
   - type: HeldSpeedModifier
   - type: ToggleableClothing
