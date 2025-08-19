@@ -92,7 +92,7 @@ public sealed partial class ToggleableGhostRoleComponent : Component
     /// The last contained mind
     /// </summary>
     [DataField]
-    public EntityUid LastMind = default!;
+    public EntityUid? LastMind = default!;
 
     /// <summary>
     /// Whether a wiped mind will automatically be returned once toggled back on

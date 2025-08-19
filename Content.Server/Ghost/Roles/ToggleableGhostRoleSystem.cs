@@ -58,9 +58,9 @@ public sealed class ToggleableGhostRoleSystem : EntitySystem
         var hasUserId = mindComp?.UserId;
         var hasActiveSession = hasUserId != null && _playerManager.ValidSessionId(hasUserId.Value);
 
-        if (component.PriorityBoarding && hasActiveSession)
+        if (component.PriorityBoarding && hasActiveSession && component.LastMind != null)
         {
-            _mind.TransferTo(component.LastMind, uid);
+            _mind.TransferTo((EntityUid)component.LastMind, uid);
             return;
         }
         //End harmony
