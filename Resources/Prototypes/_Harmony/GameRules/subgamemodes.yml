@@ -71,6 +71,7 @@
         name: store-preset-name-malf
         categories:
         - MalfAIStoreActions
+        - MalfAIStoreAbilities
         currencyWhitelist:
         - CPU
         balance: 
@@ -89,3 +90,5 @@
             type: SiliconLawBoundUserInterface
           enum.CommunicationsConsoleUiKey.Key:
             type: CommunicationsConsoleBoundUserInterface
+          enum.VoiceMaskUIKey.Key: # malf module: voice modulation
+            type: VoiceMaskBoundUserInterface

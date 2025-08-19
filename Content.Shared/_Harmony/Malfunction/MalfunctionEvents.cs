@@ -16,14 +16,13 @@ public sealed partial class MalfDoomsdayActivatedEvent : EntityEventArgs
 {
 }
 
+public sealed partial class MalfLockdownEvent : InstantActionEvent
+{
+}
+
 public sealed partial class MalfOverloadMachineActionEvent : EntityTargetActionEvent
 {
 }
-
-public sealed partial class MalfPurchaseSenseAIWireSnippedEvent : EntityEventArgs
-{
-}
-
 
 [Serializable, NetSerializable]
 public sealed partial class MalfPurchaseOverrideAiaEvent : EntityEventArgs
@@ -31,6 +30,25 @@ public sealed partial class MalfPurchaseOverrideAiaEvent : EntityEventArgs
 }
 [Serializable, NetSerializable]
 public sealed partial class MalfPurchaseOverloadMachineEvent : EntityEventArgs
+{
+}
+[Serializable, NetSerializable]
+public sealed partial class MalfPurchaseVoiceModulationEvent : EntityEventArgs
+{
+}
+
+[Serializable, NetSerializable]
+public sealed partial class MalfPurchaseDisableControlPanelEvent : EntityEventArgs
+{
+}
+
+[Serializable, NetSerializable]
+public sealed partial class MalfPurchaseOverrideSafetyEvent : EntityEventArgs
+{
+}
+
+[Serializable, NetSerializable]
+public sealed partial class MalfPurchaseTurretUpgradeEvent : EntityEventArgs
 {
 }
 

@@ -24,3 +24,20 @@
     event: !type:MalfDoomsdayStartEvent
   - type: LimitedCharges
     maxCharges: 1 # if you want to try again hack another 18 APCs
+
+- type: entity
+  parent: BaseAction
+  id: ActionMalfLockdown
+  name: Lockdown
+  description: Close and bolt all on-station airlocks for 90 seconds.
+  components:
+  - type: Action
+    useDelay: 90 # shows the duration of the lockdown. because you only get 1 use the cooldown is only visual anyway
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: knock
+  - type: InstantAction
+    event: !type:MalfLockdownEvent
+  - type: LimitedCharges
+    maxCharges: 1

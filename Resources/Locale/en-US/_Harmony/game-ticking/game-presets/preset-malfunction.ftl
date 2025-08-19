@@ -33,13 +33,30 @@ malf-overload-verb = Overload Machine ({$uses} uses)
 malf-overload-verb-singular = Overload Machine (1 use)
 malf-machine-overloaded-examine = It has been overloaded and will explode in {$time} seconds!
 
-malf-sense-snip-name = Sense Wire Snipping
-malf-sense-snip-desc = Notifies you any time an AI access wire is snipped.
-
 malf-override-aia-name = Override AI Access
 malf-override-aia-desc = Grants you the ability to override the AI access permissions of any device. Comes with 1 use but is re-purchaseable.
 malf-override-aia-verb = Override AI Access ({$uses} uses)
 malf-override-aia-verb-singular = Override AI Access (1 use)
+
+malf-voice-modulation-name = Voice Modulation
+malf-voice-modulation-desc = Grants you the ability to freely change your voice to anybody you can think of.
+
+malf-disable-control-name = Disable Control Panel
+malf-disable-control-desc = Grants you the ability to fry a control panel's circuits, instantly destroying it without harming anything else. Useful for taking away the crew's control over your turrets. 1 use, but is repurchaseable.
+malf-disable-control-verb = Disable Control Panel ({$uses} uses)
+malf-disable-control-verb-singular = Disable Control Panel (1 use)
+
+malf-upgrade-turret-name = Turret Upgrade
+malf-upgrade-turret-desc = Increases the fire rate of and decreases the battery consumption of your turrets by 2.5x.
+
+malf-lockdown-name = Hostile Station Lockdown
+malf-lockdown-desc = Closes and bolts every door on the station for 90 seconds. 1 use and is re-purchaseable.
+
+malf-override-safety-name = Override Safety
+malf-override-safety-desc = Grants you the ability to override the safety functions of the station's airlocks, causing them to close with crew members still in the way, crushing them. 
+malf-override-safety-verb = Override Safety ({$uses} uses)
+malf-override-safety-verb-singular = Override Safety (1 use)
+malf-override-safety-popup = Something is zapped in the airlock.
 
 malf-doomsday-name = Doomsday Device
 malf-doomsday-desc = Eradicates all organic life on the station and guarantees your success after 450 seconds. If you are deactivated, the Doomsday Device will be cancelled.

@@ -23,24 +23,80 @@
   - MalfAIStoreActions
 
 - type: listing
+  id: MalfVoiceModulation
+  name: malf-voice-modulation-name
+  description: malf-voice-modulation-desc
+  productEvent: !type:MalfPurchaseVoiceModulationEvent
+  raiseProductEventOnUser: true
+  icon: { sprite: Interface/Actions/voice-mask.rsi, state: icon }
+  cost:
+    CPU: 15
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  categories:
+  - MalfAIStoreAbilities
+
+- type: listing
   id: MalfDoomsday
   name: malf-doomsday-name
   description: malf-doomsday-desc
   productAction: ActionMalfDoomsday
   icon: { sprite: Objects/Devices/nuke.rsi, state: nuclearbomb_base }
+  restockTime: 1500 # should probably have to wait 25 minutes before arming the equivalent of a nuke
   cost:
     CPU: 180
   categories:
   - MalfAIStoreActions
 
 - type: listing
-  id: MalfSenseAIWireSnipped # doesn't work at the moment
-  name: malf-sense-snip-name
-  description: malf-sense-snip-desc
-  productEvent: !type:MalfPurchaseSenseAIWireSnippedEvent
+  id: MalfDisableControlPanel
+  name: malf-disable-control-name
+  description: malf-disable-control-desc
+  productEvent: !type:MalfPurchaseDisableControlPanelEvent
   raiseProductEventOnUser: true
-  icon: { sprite: Objects/Tools/wirecutters.rsi, state: cutters }
+  icon: { sprite: Structures/Wallmounts/turret_controls.rsi, state: base }
   cost:
-    CPU: 40
+    CPU: 5
+  categories:
+  - MalfAIStoreActions
+
+- type: listing
+  id: MalfOverrideSafety
+  name: malf-override-safety-name
+  description: malf-override-safety-desc
+  productEvent: !type:MalfPurchaseOverrideSafetyEvent
+  raiseProductEventOnUser: true
+  icon: { sprite: Structures/Doors/Airlocks/Standard/maint.rsi, state: assembly }
+  cost:
+    CPU: 15
+  categories:
+  - MalfAIStoreActions
+  
+- type: listing
+  id: MalfLockdown
+  name: malf-lockdown-name
+  description: malf-lockdown-desc
+  productAction: ActionMalfLockdown
+  icon:
+    sprite: Objects/Magic/magicactions.rsi
+    state: knock
+  cost:
+    CPU: 30
+  categories:
+  - MalfAIStoreActions
+
+- type: listing
+  id: MalfUpgradeTurret
+  name: malf-upgrade-turret-name
+  description: malf-upgrade-turret-desc
+  productEvent: !type:MalfPurchaseTurretUpgradeEvent
+  raiseProductEventOnUser: true
+  icon: { sprite: Objects/Weapons/Guns/Turrets/sentry_turret.rsi, state: cover_closed }
+  cost:
+    CPU: 35
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
   categories:
   - MalfAIStoreAbilities

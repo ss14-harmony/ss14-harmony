@@ -16,13 +16,16 @@ using Content.Server.Silicons.StationAi;
 using Content.Server.Silicons.Laws;
 using Content.Server.Station.Systems;
 using Content.Server.Store.Systems;
+using Content.Server.VoiceMask;
 using Content.Server._Harmony.GameTicking.Rules.Components;
 using Content.Server._Harmony.Malfunction.Components;
 using Content.Server._Harmony.Roles;
 using Content.Shared.Audio;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
+using Content.Shared.Chat;
 using Content.Shared.DoAfter;
+using Content.Shared.Doors.Systems;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Popups;
@@ -32,16 +35,17 @@ using Content.Shared.Silicons.StationAi;
 using Content.Shared.Station.Components;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
+using Content.Shared.TurretController;
+using Content.Shared.Turrets;
 using Content.Shared.Verbs;
 using Content.Shared._Harmony.Malfunction;
 using Content.Shared._Harmony.Malfunction.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Content.Server.Administration.Commands;
-using Robust.Server.GameStates;
+using Content.Shared.Doors.Components;
+using Content.Shared.Electrocution;
 
 namespace Content.Server._Harmony.GameTicking.Rules;
 
@@ -67,6 +71,9 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
     [Dependency] private readonly SharedBodySystem _body = default!;
     [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
     [Dependency] private readonly ApcSystem _apc = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly SharedDoorSystem _door = default!;
+    [Dependency] private readonly SharedAirlockSystem _airlock = default!;
 
     private const string MalfShopId = "ActionMalfShop";
     private static readonly ProtoId<CurrencyPrototype> CpuCurrencyPrototype = "CPU";
@@ -85,8 +92,14 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
         SubscribeLocalEvent<MalfunctioningAIRoleComponent, GetBriefingEvent>(OnGetBriefing);
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseOverloadMachineEvent>(OnPurchaseOverload);
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseOverrideAiaEvent>(OnPurchaseOverride);
+        SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseDisableControlPanelEvent>(OnPurchaseDisableControlPanel);
+        SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseVoiceModulationEvent>(OnPurchaseVoiceModulation);
+        SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseTurretUpgradeEvent>(OnPurchaseTurretUpgrade);
+        SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseOverrideSafetyEvent>(OnPurchaseOverrideSafety);
+        SubscribeLocalEvent<MalfAbilitiesComponent, TransformSpeakerNameEvent>(OnModulatedVoice);
         SubscribeLocalEvent<StoreComponent, MalfShopActionEvent>(OnShop);
         SubscribeLocalEvent<PendingOverloadComponent, MalfOverloadMachineFinishedEvent>(OnOverloadFinished);
+        SubscribeLocalEvent<MalfunctioningAIRoleComponent, MalfLockdownEvent>(OnLockdown);
         SubscribeLocalEvent<MalfunctioningAIRoleComponent, MalfDoomsdayStartEvent>(OnDoomsdayStart);
         SubscribeLocalEvent<ApcComponent, GetVerbsEvent<AlternativeVerb>>(OnApcVerbs);
         SubscribeLocalEvent<GetVerbsEvent<Verb>>(OnGetVerbs);
@@ -105,7 +118,41 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
     {
         comp.OverrideAiaUses += 1;
     }
+    private void OnPurchaseVoiceModulation(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseVoiceModulationEvent args)
+    {
+        EnsureComp<VoiceMaskComponent>(uid, out var voice);
+        comp.VoiceModulation = true;
+        _action.AddAction(uid, ref voice.ActionEntity, voice.Action, uid);
+    }
 
+    private void OnPurchaseDisableControlPanel(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseDisableControlPanelEvent args)
+    {
+        comp.DisableControlPanelUses++;
+
+    }
+    private void OnPurchaseTurretUpgrade(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseTurretUpgradeEvent args)
+    {
+        var query = EntityQueryEnumerator<DeployableTurretComponent>();
+        EntProtoId upgradedTurretId = "WeaponEnergyTurretAIUpgrades";
+        while (query.MoveNext(out var turret, out _))
+        {
+            if (!_proto.TryIndex<EntityPrototype>(upgradedTurretId, out var upgradedTurret)) return;
+            EntityManager.AddComponents(turret, upgradedTurret);
+        }
+    }
+
+    private void OnPurchaseOverrideSafety(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseOverrideSafetyEvent args)
+    {
+        comp.OverrideSafetyUses += 3;
+    }
+    private void OnModulatedVoice(EntityUid uid, MalfAbilitiesComponent comp, TransformSpeakerNameEvent args)
+    {
+        if (!comp.VoiceModulation) return;
+        if (!TryComp<VoiceMaskComponent>(uid, out var voice)) return;
+
+        args.VoiceName = voice.VoiceMaskName ?? args.VoiceName;
+        args.SpeechVerb = voice.VoiceMaskSpeechVerb ?? args.SpeechVerb;
+    }
 
     // Greeting upon MalfunctioningAI activation
     private void AfterAntagSelected(Entity<MalfunctioningAIRuleComponent> mindId, ref AfterAntagEntitySelectedEvent args)
@@ -186,7 +233,7 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
         _nukeSongLength = (float)_audio.GetAudioLength(_selectedNukeSong).TotalSeconds;
     }
 
-    public override void Update(float frameTime)
+    public override void Update(float frameTime) // timers being held on components get ticked down
     {
         base.Update(frameTime);
 
@@ -216,6 +263,15 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
                 var ev = new MalfOverloadMachineFinishedEvent();
                 RaiseLocalEvent(uid, ev);
             }
+        }
+
+        var lockdownQuery = EntityQueryEnumerator<LockdownComponent>();
+        while (lockdownQuery.MoveNext(out var uid, out var lockdown))
+        {
+            if (lockdown.RemainingTime >= 0)
+                lockdown.RemainingTime -= frameTime;
+            else
+                OnLockdownEnd(uid);
         }
 
     }
@@ -285,6 +341,8 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
         if (IsAIDeactivated(args.User)) return;
         var isMachineOverloadTarget = TryComp<ApcPowerReceiverComponent>(args.Target, out var receiver) && receiver.Powered && abilities.MachineOverloadUses > 0 && !HasComp<PendingOverloadComponent>(args.Target) && !HasComp<StationAiCoreComponent>(args.Target); // add one of these variables to every action the malf AI gets that targets things. 
         var isOverrideAiaTarget = TryComp<StationAiWhitelistComponent>(args.Target, out var whitelist) && !whitelist.Enabled && abilities.OverrideAiaUses > 0;
+        var isDisableControlPanelTarget = TryComp<DeployableTurretControllerComponent>(args.Target, out var controller) && abilities.DisableControlPanelUses > 0;
+        var isOverrideSafetyTarget = TryComp<AirlockComponent>(args.Target, out var airlock) && airlock.Safety && abilities.OverrideSafetyUses > 0;
 
         if (isMachineOverloadTarget)
         {
@@ -319,6 +377,40 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
             };
             args.Verbs.Add(verb);
         }
+
+        if (isDisableControlPanelTarget)
+        {
+            var verb = new Verb
+            {
+                Text = abilities.DisableControlPanelUses == 1 ? Loc.GetString("malf-disable-control-verb-singular") : Loc.GetString("malf-disable-control-verb", ("uses", abilities.DisableControlPanelUses)),
+                Act = () =>
+                {
+                    _explosion.QueueExplosion(args.Target, "Default", (float)0.01, 1, (float)0.01); // Completely cosmetic explsion, equivalent to a snap pop. The main use is the thing that comes after this anyway.
+                    QueueDel(args.Target); // it destroys the control panel but nothing else
+
+                    abilities.DisableControlPanelUses--;
+                }
+            };
+            args.Verbs.Add(verb);
+        }
+
+        if (isOverrideSafetyTarget)
+        {
+            var verb = new Verb
+            {
+                Text = abilities.OverrideSafetyUses == 1 ? Loc.GetString("malf-override-safety-verb-singular") : Loc.GetString("malf-override-safety-verb", ("uses", abilities.OverrideSafetyUses)),
+                Act = () =>
+                {
+                    if (airlock is null) return;
+                    if (!TryComp<DoorComponent>(args.Target, out var door)) return;
+                    _airlock.SetSafety(airlock, false);
+                    _popup.PopupEntity(Loc.GetString("malf-override-safety-popup"), args.Target);
+                    _audio.PlayPvs(door.SparkSound, args.Target);
+                    abilities.OverrideSafetyUses--;
+                }
+            };
+            args.Verbs.Add(verb);
+        }
     }
 
     private void OnApcVerbs(EntityUid uid, ApcComponent apc, GetVerbsEvent<AlternativeVerb> args)
@@ -344,5 +436,43 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
             }
         };
         args.Verbs.Add(verb);
+    }
+
+    private void OnLockdown(EntityUid uid, MalfunctioningAIRoleComponent comp, MalfLockdownEvent args)
+    {
+        if (args.Handled) return;
+        if (HasComp<LockdownComponent>(uid)) return;
+        var query = EntityQueryEnumerator<DoorBoltComponent>();
+        while (query.MoveNext(out var ent, out var bolt))
+        {
+            if (!HasComp<StationMemberComponent>(Transform(ent).GridUid)) continue;
+            EnsureComp<LockedDownComponent>(ent, out var lockedDownComponent);
+
+            _door.TryClose(ent);
+            lockedDownComponent.Bolted = _door.IsBolted(ent);
+            _door.SetBoltsDown((ent, bolt), true, uid);
+            if (!TryComp<ElectrifiedComponent>(ent, out var electrified)) continue;
+            lockedDownComponent.Electrified = electrified.Enabled;
+            electrified.Enabled = true;
+            EnsureComp<LockdownComponent>(uid, out var lockdown);
+            lockdown.RemainingTime = lockdown.Duration;
+        }
+
+        args.Handled = true;
+    }
+
+    private void OnLockdownEnd(EntityUid uid)
+    {
+        var query = EntityQueryEnumerator<LockedDownComponent>();
+        while (query.MoveNext(out var ent, out var lockedDownComponent))
+        {
+            if (!TryComp<DoorBoltComponent>(ent, out var bolt)) continue;
+            _door.SetBoltsDown((ent, bolt), lockedDownComponent.Bolted, uid);
+            if (!TryComp<ElectrifiedComponent>(ent, out var electrified)) continue;
+            electrified.Enabled = lockedDownComponent.Electrified ?? false;
+            RemComp<LockedDownComponent>(ent);
+        }
+
+        RemComp<LockdownComponent>(uid);
     }
 }
