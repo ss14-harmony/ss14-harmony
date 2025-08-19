@@ -4,8 +4,8 @@ meta:
   engineVersion: 265.0.0
   forkId: harmony
   forkVersion: 667fadc4478961df8695866cc2f73cb2e0b23df1
-  time: 08/19/2025 06:00:55
-  entityCount: 16047
+  time: 08/19/2025 07:20:06
+  entityCount: 16048
 maps:
 - 1
 grids:
@@ -8434,6 +8434,8 @@ entities:
       pos: -27.5,18.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 35
   - uid: 445
@@ -8582,6 +8584,8 @@ entities:
       pos: 17.5,15.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 58
       - 7246
@@ -8637,6 +8641,8 @@ entities:
       pos: -9.5,-7.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 48
   - uid: 471
@@ -8704,6 +8710,8 @@ entities:
       pos: 18.5,19.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 68
   - uid: 480
@@ -8741,6 +8749,8 @@ entities:
       pos: 5.5,-2.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 63
   - uid: 485
@@ -8835,6 +8845,8 @@ entities:
       pos: -11.5,27.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 77
   - uid: 497
@@ -46264,6 +46276,8 @@ entities:
       pos: -11.5,26.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 76
       - 77
@@ -46548,6 +46562,8 @@ entities:
       pos: 3.5,1.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 7241
       - 49
@@ -46710,6 +46726,8 @@ entities:
       pos: 1.5,-2.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 7241
       - 49
@@ -46721,6 +46739,8 @@ entities:
       pos: 1.5,-1.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 7241
       - 49
@@ -46732,6 +46752,8 @@ entities:
       pos: 1.5,-0.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 7241
       - 49
@@ -46743,6 +46765,8 @@ entities:
       pos: -6.5,-6.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 7241
       - 48
@@ -46754,6 +46778,8 @@ entities:
       pos: -6.5,-5.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 7241
       - 48
@@ -46820,6 +46846,8 @@ entities:
       pos: 13.5,14.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 58
       - 7246
@@ -46831,6 +46859,8 @@ entities:
       pos: 13.5,15.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 58
       - 7246
@@ -46852,6 +46882,8 @@ entities:
       pos: 21.5,15.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 32
       - 58
@@ -46861,6 +46893,8 @@ entities:
       pos: 15.5,16.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 7246
       - 68
@@ -47064,6 +47098,8 @@ entities:
       pos: -10.5,-10.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 48
   - uid: 7368
@@ -47234,6 +47270,8 @@ entities:
       pos: -17.5,-10.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 48
       - 47
@@ -47244,6 +47282,8 @@ entities:
       pos: -24.5,18.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 35
       - 94
@@ -47261,6 +47301,8 @@ entities:
       pos: -28.5,18.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 31
       - 35
@@ -47329,6 +47371,8 @@ entities:
       pos: -30.5,0.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 60
       - 90
@@ -47338,6 +47382,8 @@ entities:
       pos: -30.5,-4.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 60
       - 67
@@ -47347,6 +47393,8 @@ entities:
       pos: -5.5,-8.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 7241
       - 48
@@ -47373,6 +47421,8 @@ entities:
       pos: -26.5,15.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 36
       - 35
@@ -47382,6 +47432,8 @@ entities:
       pos: -28.5,-2.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 60
       - 73
@@ -47392,6 +47444,8 @@ entities:
       pos: -28.5,-1.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 60
       - 73
@@ -47402,6 +47456,8 @@ entities:
       pos: -24.5,1.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 91
       - 73
@@ -47413,6 +47469,8 @@ entities:
       pos: -24.5,2.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 91
       - 73
@@ -47562,6 +47620,8 @@ entities:
       pos: 16.5,22.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 68
       - 7259
@@ -47572,6 +47632,8 @@ entities:
       pos: 17.5,22.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 68
       - 7259
@@ -47855,6 +47917,8 @@ entities:
       pos: 18.5,16.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 58
       - 68
@@ -47864,6 +47928,8 @@ entities:
       pos: 19.5,16.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 58
       - 68
@@ -68256,6 +68322,8 @@ entities:
       pos: -26.5,19.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 35
     - type: AtmosPipeColor
@@ -68360,6 +68428,8 @@ entities:
       pos: 17.5,19.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 68
     - type: AtmosPipeColor
@@ -68413,6 +68483,8 @@ entities:
       pos: -13.5,28.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 77
     - type: AtmosPipeColor
@@ -68491,6 +68563,8 @@ entities:
     - type: AtmosPipeColor
       color: '#0055CCFF'
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 48
   - uid: 10165
@@ -68502,6 +68576,8 @@ entities:
     - type: AtmosPipeColor
       color: '#0055CCFF'
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 48
   - uid: 10166
@@ -68629,6 +68705,8 @@ entities:
       pos: 4.5,-0.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 63
     - type: AtmosPipeColor
@@ -69664,6 +69742,8 @@ entities:
       pos: -26.5,17.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 35
     - type: AtmosPipeLayers
@@ -69788,6 +69868,8 @@ entities:
       pos: 15.5,19.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 68
     - type: AtmosPipeLayers
@@ -69865,6 +69947,8 @@ entities:
       pos: -12.5,28.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 77
     - type: AtmosPipeLayers
@@ -69944,6 +70028,8 @@ entities:
     - type: AtmosPipeColor
       color: '#990000FF'
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 48
     - type: AtmosPipeLayers
@@ -69957,6 +70043,8 @@ entities:
     - type: AtmosPipeColor
       color: '#990000FF'
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 48
     - type: AtmosPipeLayers
@@ -70007,6 +70095,8 @@ entities:
       pos: 4.5,-2.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 63
     - type: AtmosPipeLayers
@@ -87384,6 +87474,13 @@ entities:
     components:
     - type: Transform
       pos: -6.5,16.5
+      parent: 2
+- proto: SpawnPointLibrarian
+  entities:
+  - uid: 16048
+    components:
+    - type: Transform
+      pos: -31.5,-17.5
       parent: 2
 - proto: SpawnPointMedicalDoctor
   entities:
