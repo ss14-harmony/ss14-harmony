@@ -1,6 +1,6 @@
-using Content.Shared.Roles;
+using Content.Shared.Roles.Components;
 
-namespace Content.Server._Harmony.Roles;
+namespace Content.Shared._Harmony.Roles.Components;
 
 /// <summary>
 ///     Added to mind role entities to tag that they are a malfunctioning cyborg.

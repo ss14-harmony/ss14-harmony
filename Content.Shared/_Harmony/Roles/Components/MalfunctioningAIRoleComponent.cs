@@ -1,7 +1,7 @@
-using Content.Shared.Roles;
+using Content.Shared.Roles.Components;
 using Robust.Shared.Audio;
 
-namespace Content.Server._Harmony.Roles;
+namespace Content.Shared._Harmony.Roles.Components;
 
 /// <summary>
 ///     Added to mind role entities to tag that they are a malfunctioning AI.
