@@ -82,13 +82,15 @@
     shiveringHeatRegulation: 2000
     normalBodyTemperature: 296.15
     thermalRegulationTemperatureThreshold: 10
-  - type: Metabolizer
-    solutionOnBody: false
-    updateInterval: 0.7 #Matches Arachnids but in reverse
-    groups:
-      - id: Medicine
-      - id: Poison
-      - id: Drink
+# Start harmony change
+#  - type: Metabolizer
+#    solutionOnBody: false
+#    updateInterval: 0.7 #Matches Arachnids but in reverse
+#    groups:
+#      - id: Medicine
+#      - id: Poison
+#      - id: Drink
+# End harmony change
 
 - type: entity
   parent: BaseSpeciesDummy

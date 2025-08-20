@@ -57,6 +57,7 @@ namespace Content.IntegrationTests.Tests
             "/Maps/Shuttles/ShuttleEvent/honki.yml", // Contains golden honker, clown's rubber stamp
             "/Maps/Shuttles/ShuttleEvent/instigator.yml", // Contains EXP-320g "Friendship"
             "/Maps/Shuttles/ShuttleEvent/syndie_evacpod.yml", // Contains syndicate rubber stamp
+            "/Maps/_Harmony/Shuttles/ShuttleEvent/ERPSmall.yml", // Harmony map - who cares
         };
 
         private static readonly string[] GameMaps =
@@ -69,6 +70,7 @@ namespace Content.IntegrationTests.Tests
             "Eclipse", //Harmony, Developed by Lachryphage
             "Prime", // Harmony, developed/revived by luckyshotpictures
             "Spire", // Harmony, Developed by Dogbone10, PenguinCodest, Jack_the_Dragon
+            "Athena", // Harmony, Developed by whythelettuce
             "Dev",
             "TestTeg",
             "Fland",
