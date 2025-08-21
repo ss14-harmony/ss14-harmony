@@ -1,3 +1,4 @@
+using Content.Server._Harmony.Malfunction.Systems;
 using Robust.Shared.Audio;
 
 namespace Content.Server._Harmony.Malfunction.Components;
@@ -5,7 +6,7 @@ namespace Content.Server._Harmony.Malfunction.Components;
 /// <summary>
 /// Indicates that this AI has activated the Doomsday Device, which gibs all humanoid entities on the station after a countdown and guarantees a greentext for the Malf AI. Based on NukeComponent.
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, Access(typeof(DoomsdaySystem))]
 public sealed partial class DoomsdayComponent : Component
 {
     /// <summary>

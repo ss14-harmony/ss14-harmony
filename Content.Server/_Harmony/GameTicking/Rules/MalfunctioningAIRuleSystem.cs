@@ -1,94 +1,41 @@
 using Content.Server.Actions;
-using Content.Server.AlertLevel;
 using Content.Server.Antag;
-using Content.Server.Audio;
-using Content.Server.Chat.Systems;
-using Content.Server.Explosion.EntitySystems;
 using Content.Server.GameTicking.Rules;
-using Content.Server.Light.EntitySystems;
-using Content.Server.Mind;
 using Content.Server.Popups;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Power.Components;
 using Content.Server.Radio.Components;
 using Content.Server.Roles;
-using Content.Server.RoundEnd;
-using Content.Server.Silicons.StationAi;
 using Content.Server.Silicons.Laws;
-using Content.Server.Station.Systems;
 using Content.Server.Store.Systems;
-using Content.Server.VoiceMask;
 using Content.Server._Harmony.GameTicking.Rules.Components;
-using Content.Server._Harmony.Malfunction.Components;
-using Content.Shared.Audio;
-using Content.Shared.Body.Components;
-using Content.Shared.Body.Systems;
-using Content.Shared.Chat;
-using Content.Shared.DoAfter;
-using Content.Shared.Doors.Components;
-using Content.Shared.Doors.Systems;
-using Content.Shared.Electrocution;
-using Content.Shared.Humanoid;
-using Content.Shared.IdentityManagement;
-using Content.Shared.IgnitionSource;
-using Content.Shared.Light.Components;
 using Content.Shared.Popups;
-using Content.Shared.Roles;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Station.Components;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
-using Content.Shared.TurretController;
-using Content.Shared.Turrets;
 using Content.Shared.Verbs;
 using Content.Shared._Harmony.Malfunction;
 using Content.Shared._Harmony.Malfunction.Components;
 using Content.Shared._Harmony.Roles.Components;
-using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
-using Content.Server.Light.Components;
 
 namespace Content.Server._Harmony.GameTicking.Rules;
 
 public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAIRuleComponent>
 {
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly ActionsSystem _action = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly SharedStationAiSystem _sharedAi = default!;
-    [Dependency] private readonly StationAiSystem _ai = default!;
     [Dependency] private readonly SiliconLawSystem _lawSystem = default!;
     [Dependency] private readonly StoreSystem _store = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly SharedRoleSystem _roles = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly ExplosionSystem _explosion = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly AlertLevelSystem _alertLevel = default!;
-    [Dependency] private readonly ServerGlobalSoundSystem _sound = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly ChatSystem _chatSystem = default!;
-    [Dependency] private readonly SharedBodySystem _body = default!;
-    [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
     [Dependency] private readonly ApcSystem _apc = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SharedDoorSystem _door = default!;
-    [Dependency] private readonly SharedAirlockSystem _airlock = default!;
-    [Dependency] private readonly SharedIgnitionSourceSystem _sharedIgnition = default!;
-    [Dependency] private readonly LightBulbSystem _lightBulb = default!;
 
     private const string MalfShopId = "ActionMalfShop";
     private static readonly ProtoId<CurrencyPrototype> CpuCurrencyPrototype = "CPU";
-
-    /// <summary>
-    ///     Logic ripped from NukeSystem for the Doomsday device.
-    /// </summary>
-    private float _nukeSongLength;
-    private ResolvedSoundSpecifier _selectedNukeSong = String.Empty;
 
     public override void Initialize()
     {
@@ -96,21 +43,9 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
 
         SubscribeLocalEvent<MalfunctioningAIRuleComponent, AfterAntagEntitySelectedEvent>(AfterAntagSelected);
         SubscribeLocalEvent<MalfunctioningAIRoleComponent, GetBriefingEvent>(OnGetBriefing);
-        SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseOverloadMachineEvent>(OnPurchaseOverload);
-        SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseOverrideAiaEvent>(OnPurchaseOverride);
-        SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseDisableControlPanelEvent>(OnPurchaseDisableControlPanel);
-        SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseVoiceModulationEvent>(OnPurchaseVoiceModulation);
-        SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseTurretUpgradeEvent>(OnPurchaseTurretUpgrade);
-        SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseOverrideSafetyEvent>(OnPurchaseOverrideSafety);
-        SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseOverloadLightEvent>(OnPurchaseOverloadLight);
-        SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseJamFirelockEvent>(OnPurchaseJamFirelock);
-        SubscribeLocalEvent<MalfAbilitiesComponent, TransformSpeakerNameEvent>(OnModulatedVoice);
         SubscribeLocalEvent<StoreComponent, MalfShopActionEvent>(OnShop);
-        SubscribeLocalEvent<PendingOverloadComponent, MalfOverloadMachineFinishedEvent>(OnOverloadFinished);
-        SubscribeLocalEvent<MalfunctioningAIRoleComponent, MalfLockdownEvent>(OnLockdown);
-        SubscribeLocalEvent<MalfunctioningAIRoleComponent, MalfDoomsdayStartEvent>(OnDoomsdayStart);
         SubscribeLocalEvent<ApcComponent, GetVerbsEvent<AlternativeVerb>>(OnApcVerbs);
-        SubscribeLocalEvent<GetVerbsEvent<Verb>>(OnGetVerbs);
+        SubscribeLocalEvent<MalfDoomsdayActivatedEvent>(OnDoomsdayActivated);
     }
 
     public bool IsAIDeactivated(EntityUid uid)
@@ -118,59 +53,6 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
         return HasComp<IntellicardedComponent>(uid) || !HasComp<StationMemberComponent>(Transform(uid).GridUid);
     }
 
-    private void OnPurchaseOverload(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseOverloadMachineEvent args)
-    {
-        comp.MachineOverloadUses += 2;
-    }
-    private void OnPurchaseOverride(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseOverrideAiaEvent args)
-    {
-        comp.OverrideAiaUses += 1;
-    }
-    private void OnPurchaseVoiceModulation(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseVoiceModulationEvent args)
-    {
-        EnsureComp<VoiceMaskComponent>(uid, out var voice);
-        comp.VoiceModulation = true;
-        _action.AddAction(uid, ref voice.ActionEntity, voice.Action, uid);
-    }
-
-    private void OnPurchaseDisableControlPanel(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseDisableControlPanelEvent args)
-    {
-        comp.DisableControlPanelUses++;
-    }
-
-    private void OnPurchaseOverloadLight(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseOverloadLightEvent args)
-    {
-        comp.OverloadLightUses++;
-    }
-
-    private void OnPurchaseJamFirelock(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseJamFirelockEvent args)
-    {
-        comp.JamFirelockUses += 3;
-    }
-
-    private void OnPurchaseTurretUpgrade(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseTurretUpgradeEvent args)
-    {
-        var query = EntityQueryEnumerator<DeployableTurretComponent>();
-        EntProtoId upgradedTurretId = "WeaponEnergyTurretAIUpgrades";
-        while (query.MoveNext(out var turret, out _))
-        {
-            if (!_proto.TryIndex<EntityPrototype>(upgradedTurretId, out var upgradedTurret)) return;
-            EntityManager.AddComponents(turret, upgradedTurret);
-        }
-    }
-
-    private void OnPurchaseOverrideSafety(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseOverrideSafetyEvent args)
-    {
-        comp.OverrideSafetyUses += 3;
-    }
-    private void OnModulatedVoice(EntityUid uid, MalfAbilitiesComponent comp, TransformSpeakerNameEvent args)
-    {
-        if (!comp.VoiceModulation) return;
-        if (!TryComp<VoiceMaskComponent>(uid, out var voice)) return;
-
-        args.VoiceName = voice.VoiceMaskName ?? args.VoiceName;
-        args.SpeechVerb = voice.VoiceMaskSpeechVerb ?? args.SpeechVerb;
-    }
 
     // Greeting upon MalfunctioningAI activation
     private void AfterAntagSelected(Entity<MalfunctioningAIRuleComponent> mindId, ref AfterAntagEntitySelectedEvent args)
@@ -215,253 +97,15 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
         args.Handled = true;
     }
 
-    private void OnOverloadFinished(EntityUid uid, PendingOverloadComponent component, MalfOverloadMachineFinishedEvent args)
-    {
-        _explosion.QueueExplosion(uid, component.ExplosionType, component.TotalIntensity, component.Slope, component.MaxTileIntensity);
-        RemComp<PendingOverloadComponent>(uid);
-        // QueueDel(uid);
-    }
-
-    private void OnDoomsdayStart(EntityUid uid, MalfunctioningAIRoleComponent component, MalfDoomsdayStartEvent args) // a ton of Doomsday logic is ripped from nuke logic as they are very similar
-    {
-        if (HasComp<DoomsdayComponent>(uid)) return; // you can't activate multiple doomsday devices at a time
-        if (IsAIDeactivated(uid)) return;
-
-        if (args.Handled) return;
-        args.Handled = true;
-
-        var stationUid = _station.GetStationInMap(Transform(uid).MapID);
-
-        EnsureComp<DoomsdayComponent>(uid, out var doomsdayComponent);
-        doomsdayComponent.RemainingTime = doomsdayComponent.Timer;
-
-
-        doomsdayComponent.InitialGrid = _station.GetStationInMap(Transform(uid).MapID);
-        if (stationUid != null)
-            _alertLevel.SetLevel(stationUid.Value, doomsdayComponent.AlertLevelOnActivate, true, true, true, true);
-
-        // We are collapsing the randomness here, otherwise we would get separate random song picks for checking duration and when actually playing the song afterwards
-        _selectedNukeSong = _audio.ResolveSound(doomsdayComponent.ArmMusic);
-
-        var announcement = Loc.GetString("malf-doomsday-announcement",
-        ("time", (int)doomsdayComponent.RemainingTime));
-        var sender = Loc.GetString("malf-doomsday-announcement-sender");
-        _chatSystem.DispatchStationAnnouncement(stationUid ?? uid, announcement, sender, false, null, Color.Crimson);
-
-        _nukeSongLength = (float)_audio.GetAudioLength(_selectedNukeSong).TotalSeconds;
-    }
-
     public override void Update(float frameTime) // timers being held on components get ticked down
     {
         base.Update(frameTime);
-
-        var query = EntityQueryEnumerator<DoomsdayComponent>();
-        while (query.MoveNext(out var uid, out var doomsday))
-        {
-            if (IsAIDeactivated(uid))
-                AvertDoomsday(uid, doomsday); // cancel the doomsday device if the AI is detached or carded
-
-            TickTimer(uid, frameTime, doomsday);
-        }
 
         var malfQuery = EntityQueryEnumerator<MalfunctioningAIRoleComponent>();
         while (malfQuery.MoveNext(out var uid, out var malf))
         {
             if (malf.CurrentHackCooldown >= 0)
                 malf.CurrentHackCooldown -= frameTime;
-        }
-
-        var overloadQuery = EntityQueryEnumerator<PendingOverloadComponent>();
-        while (overloadQuery.MoveNext(out var uid, out var overload))
-        {
-            if (overload.TimeUntilDetonation >= 0)
-                overload.TimeUntilDetonation -= frameTime;
-            else
-            {
-                var ev = new MalfOverloadMachineFinishedEvent();
-                RaiseLocalEvent(uid, ev);
-            }
-        }
-
-        var lockdownQuery = EntityQueryEnumerator<LockdownComponent>();
-        while (lockdownQuery.MoveNext(out var uid, out var lockdown))
-        {
-            if (lockdown.RemainingTime >= 0)
-                lockdown.RemainingTime -= frameTime;
-            else
-                OnLockdownEnd(uid);
-        }
-
-    }
-
-    private void TickTimer(EntityUid uid, float frameTime, DoomsdayComponent? doomsday = null)
-    {
-        if (!Resolve(uid, ref doomsday))
-            return;
-
-        doomsday.RemainingTime -= frameTime;
-
-        // Start playing the song
-        // should play
-        if (doomsday.RemainingTime <= _nukeSongLength && !doomsday.PlayedDoomsdaySong && !ResolvedSoundSpecifier.IsNullOrEmpty(_selectedNukeSong))
-        {
-            _sound.DispatchStationEventMusic(uid, _selectedNukeSong, StationEventMusicType.Nuke);
-            doomsday.PlayedDoomsdaySong = true;
-        }
-
-        if (doomsday.RemainingTime <= 0)
-        {
-            doomsday.RemainingTime = 0;
-            DoomsdayActivate(uid);
-        }
-    }
-
-    private void DoomsdayActivate(EntityUid uid)
-    {
-        var query = EntityQueryEnumerator<MalfunctioningAIRuleComponent>();
-        while (query.MoveNext(out var comp))
-            comp.DoomsdayActivated = true;
-
-        var crewQuery = EntityQueryEnumerator<HumanoidAppearanceComponent, TransformComponent>();
-        while (crewQuery.MoveNext(out var ent, out _, out var transform))
-        {
-            if (!TryComp<BodyComponent>(ent, out var body))
-                return;
-            if (Transform(uid).MapID != transform.MapID) return;
-
-            _body.GibBody(ent, true, body); // it just instantly gibs all humanoids on the same grid
-        }
-
-        _roundEndSystem.EndRound();
-    }
-
-    private void AvertDoomsday(EntityUid uid, DoomsdayComponent component)
-    {
-        var stationUid = component.InitialGrid;
-        if (stationUid != null)
-            _alertLevel.SetLevel(stationUid.Value, component.AlertLevelOnDeactivate, true, true, true);
-
-        var announcement = Loc.GetString("malf-doomsday-aborted");
-        var sender = Loc.GetString("malf-doomsday-announcement-sender");
-        _chatSystem.DispatchStationAnnouncement(uid, announcement, sender, false);
-
-        _sound.PlayGlobalOnStation(uid, _audio.ResolveSound(component.DisarmSound));
-        _sound.StopStationEventMusic(uid, StationEventMusicType.Nuke);
-
-        RemComp<DoomsdayComponent>(uid);
-    }
-
-    // welcome to hardcoded hell, induced entirely by EntityTargetAction refusing to cooperate with me
-    // i hate this but actions don't work sooo
-    private void OnGetVerbs(GetVerbsEvent<Verb> args)
-    {
-        if (!TryComp<MalfAbilitiesComponent>(args.User, out var abilities)) return;
-        if (IsAIDeactivated(args.User)) return;
-        var isMachineOverloadTarget = TryComp<ApcPowerReceiverComponent>(args.Target, out var receiver) && receiver.Powered && abilities.MachineOverloadUses > 0 && !HasComp<PendingOverloadComponent>(args.Target) && !HasComp<StationAiCoreComponent>(args.Target); // add one of these variables to every action the malf AI gets that targets things. 
-        var isOverrideAiaTarget = TryComp<StationAiWhitelistComponent>(args.Target, out var whitelist) && !whitelist.Enabled && abilities.OverrideAiaUses > 0;
-        var isDisableControlPanelTarget = TryComp<DeployableTurretControllerComponent>(args.Target, out var controller) && abilities.DisableControlPanelUses > 0;
-        var isOverrideSafetyTarget = TryComp<AirlockComponent>(args.Target, out var airlock) && airlock.Safety && abilities.OverrideSafetyUses > 0;
-        var isOverloadLightTarget = TryComp<PoweredLightComponent>(args.Target, out var bulb) && !HasComp<IgnitionSourceComponent>(args.Target) && abilities.OverloadLightUses > 0;
-        var isJamFirelockTarget = TryComp<FirelockComponent>(args.Target, out var firelock) && !HasComp<FirelockJammedComponent>(args.Target) && abilities.JamFirelockUses > 0;
-
-        if (isMachineOverloadTarget)
-        {
-            var verb = new Verb
-            {
-                Text = abilities.MachineOverloadUses == 1 ? Loc.GetString("malf-overload-verb-singular") : Loc.GetString("malf-overload-verb", ("uses", abilities.MachineOverloadUses)),
-                Act = () =>
-                {
-                    _popup.PopupEntity(Loc.GetString("malf-machine-overloaded-others", ("machine", Identity.Entity(args.Target, EntityManager))), args.Target, PopupType.LargeCaution); // large because it should be obvious you're about to blow up
-
-                    EnsureComp<PendingOverloadComponent>(args.Target, out var overload);
-                    overload.TimeUntilDetonation = overload.DetonationDuration;
-                    _audio.PlayPvs(overload.OverloadSound, args.Target); // alarm to notify anyone nearby it's about to explode
-                    abilities.MachineOverloadUses--;
-                }
-            };
-            args.Verbs.Add(verb);
-        }
-
-        if (isOverrideAiaTarget)
-        {
-            var verb = new Verb
-            {
-                Text = abilities.OverrideAiaUses == 1 ? Loc.GetString("malf-override-aia-verb-singular") : Loc.GetString("malf-override-aia-verb", ("uses", abilities.OverrideAiaUses)),
-                Act = () =>
-                {
-                    if (whitelist is null) return;
-                    EntityManager.System<SharedStationAiSystem>()
-                    .SetWhitelistEnabled((args.Target, whitelist), true);
-                    abilities.OverrideAiaUses--;
-                }
-            };
-            args.Verbs.Add(verb);
-        }
-
-        if (isDisableControlPanelTarget)
-        {
-            var verb = new Verb
-            {
-                Text = abilities.DisableControlPanelUses == 1 ? Loc.GetString("malf-disable-control-verb-singular") : Loc.GetString("malf-disable-control-verb", ("uses", abilities.DisableControlPanelUses)),
-                Act = () =>
-                {
-                    _explosion.QueueExplosion(args.Target, "Default", (float)0.01, 1, (float)0.01); // Completely cosmetic explsion, equivalent to a snap pop. The main use is the thing that comes after this anyway.
-                    QueueDel(args.Target); // it destroys the control panel but nothing else
-
-                    abilities.DisableControlPanelUses--;
-                }
-            };
-            args.Verbs.Add(verb);
-        }
-
-        if (isOverrideSafetyTarget)
-        {
-            var verb = new Verb
-            {
-                Text = abilities.OverrideSafetyUses == 1 ? Loc.GetString("malf-override-safety-verb-singular") : Loc.GetString("malf-override-safety-verb", ("uses", abilities.OverrideSafetyUses)),
-                Act = () =>
-                {
-                    if (airlock is null) return;
-                    if (!TryComp<DoorComponent>(args.Target, out var door)) return;
-                    _airlock.SetSafety(airlock, false);
-                    _popup.PopupEntity(Loc.GetString("malf-override-safety-popup"), args.Target);
-                    _audio.PlayPvs(door.SparkSound, args.Target);
-                    abilities.OverrideSafetyUses--;
-                }
-            };
-            args.Verbs.Add(verb);
-        }
-
-        if (isOverloadLightTarget)
-        {
-            var verb = new Verb
-            {
-                Text = abilities.OverloadLightUses == 1 ? Loc.GetString("malf-overload-light-verb-singular") : Loc.GetString("malf-overload-light-verb", ("uses", abilities.OverloadLightUses)),
-                Act = () =>
-                {
-                    EnsureComp<IgnitionSourceComponent>(args.Target, out var ignition);
-                    _sharedIgnition.SetIgnited((args.Target, ignition), true);
-                    _audio.PlayPvs(new SoundCollectionSpecifier("sparks"), args.Target);
-
-                    abilities.OverloadLightUses--;
-                }
-            };
-            args.Verbs.Add(verb);
-        }
-
-        if (isJamFirelockTarget)
-        {
-            var verb = new Verb
-            {
-                Text = abilities.JamFirelockUses == 1 ? Loc.GetString("malf-jam-firelock-verb-singular") : Loc.GetString("malf-jam-firelock-verb", ("uses", abilities.JamFirelockUses)),
-                Act = () =>
-                {
-                    AddComp<FirelockJammedComponent>(args.Target);
-
-                    abilities.JamFirelockUses--;
-                }
-            };
-            args.Verbs.Add(verb);
         }
     }
 
@@ -491,41 +135,10 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
         args.Verbs.Add(verb);
     }
 
-    private void OnLockdown(EntityUid uid, MalfunctioningAIRoleComponent comp, MalfLockdownEvent args)
+    private void OnDoomsdayActivated(MalfDoomsdayActivatedEvent args)
     {
-        if (args.Handled) return;
-        if (HasComp<LockdownComponent>(uid)) return;
-        var query = EntityQueryEnumerator<DoorBoltComponent>();
-        while (query.MoveNext(out var ent, out var bolt))
-        {
-            if (!HasComp<StationMemberComponent>(Transform(ent).GridUid)) continue;
-            EnsureComp<LockedDownComponent>(ent, out var lockedDownComponent);
-
-            _door.TryClose(ent);
-            lockedDownComponent.Bolted = _door.IsBolted(ent);
-            _door.SetBoltsDown((ent, bolt), true, uid);
-            if (!TryComp<ElectrifiedComponent>(ent, out var electrified)) continue;
-            lockedDownComponent.Electrified = electrified.Enabled;
-            electrified.Enabled = true;
-            EnsureComp<LockdownComponent>(uid, out var lockdown);
-            lockdown.RemainingTime = lockdown.Duration;
-        }
-
-        args.Handled = true;
-    }
-
-    private void OnLockdownEnd(EntityUid uid)
-    {
-        var query = EntityQueryEnumerator<LockedDownComponent>();
-        while (query.MoveNext(out var ent, out var lockedDownComponent))
-        {
-            if (!TryComp<DoorBoltComponent>(ent, out var bolt)) continue;
-            _door.SetBoltsDown((ent, bolt), lockedDownComponent.Bolted, uid);
-            if (!TryComp<ElectrifiedComponent>(ent, out var electrified)) continue;
-            electrified.Enabled = lockedDownComponent.Electrified ?? false;
-            RemComp<LockedDownComponent>(ent);
-        }
-
-        RemComp<LockdownComponent>(uid);
+        var query = EntityQueryEnumerator<MalfunctioningAIRuleComponent>();
+        while (query.MoveNext(out var comp))
+            comp.DoomsdayActivated = true;
     }
 }

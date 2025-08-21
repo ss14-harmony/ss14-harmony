@@ -5,7 +5,7 @@ namespace Content.Shared._Harmony.Malfunction.Components;
 /// <summary>
 /// Marks that an entity has been targeted with Overload Machine and will soon explode.
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, Access(typeof(SharedPendingOverloadSystem))]
 public sealed partial class PendingOverloadComponent : Component
 {
     [DataField] public string ExplosionType = "Minibomb"; // these values are equivalent to a minibomb; no idea what it was like in SS13 or if this is comparable but it should work

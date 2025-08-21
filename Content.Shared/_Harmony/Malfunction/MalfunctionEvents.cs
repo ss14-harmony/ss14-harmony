@@ -20,7 +20,7 @@ public sealed partial class MalfLockdownEvent : InstantActionEvent
 {
 }
 
-public sealed partial class MalfOverloadMachineActionEvent : EntityTargetActionEvent
+public sealed partial class MalfOverloadMachineActionEvent : EntityEventArgs
 {
 }
 
@@ -64,13 +64,5 @@ public sealed partial class MalfPurchaseTurretUpgradeEvent : EntityEventArgs
 
 [Serializable, NetSerializable]
 public sealed partial class MalfOverloadMachineFinishedEvent : SimpleDoAfterEvent
-{
-}
-
-public sealed partial class MalfHackApcActionEvent : EntityEventArgs
-{
-}
-
-public sealed partial class MalfOverrideAiaActionEvent : EntityTargetActionEvent
 {
 }
