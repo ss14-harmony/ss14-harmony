@@ -42,7 +42,7 @@
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: DerelictCyborgSpawn
-    - id: WizardSpawn
+    #- id: WizardSpawn - Harmony Change, disables wizard midround
     - id: BingleSpawn # Harmony
 
 - type: entity

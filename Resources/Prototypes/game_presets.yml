@@ -83,6 +83,7 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - ExtendedHarmonyAnnouncement # harmony
 
 - type: gamePreset
   id: Greenshift

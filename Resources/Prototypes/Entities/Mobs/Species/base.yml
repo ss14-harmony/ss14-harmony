@@ -82,6 +82,7 @@
     horizontalRotation: 90
   - type: HumanoidAppearance
     species: Human
+  - type: TypingIndicator
   - type: SlowOnDamage
     speedModifierThresholds:
       60: 0.7
@@ -163,6 +164,7 @@
   - type: SleepEmitSound
   - type: SSDIndicator
   - type: StandingState
+  - type: Crawler
   - type: Dna
   - type: MindContainer
     showExamineInfo: true

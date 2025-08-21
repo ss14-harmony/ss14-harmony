@@ -32,7 +32,7 @@
   equipment:
     eyes: ClothingEyesGlassesSecurity
     id: WardenPDA
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetWarden # Harmony
     pocket1: WeaponDisabler # Harmony
   storage:
     back:

@@ -24,7 +24,7 @@
   description: Kill them, and show everyone we mean business. They only need to die once.
   components:
   - type: Objective
-    difficulty: 1.75
+    difficulty: 1.5 # Harmony 1.75 -> 1.5
     unique: false
   - type: TargetObjective
     title: objective-condition-teach-person-title
