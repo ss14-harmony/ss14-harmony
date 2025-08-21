@@ -41,3 +41,19 @@
     event: !type:MalfLockdownEvent
   - type: LimitedCharges
     maxCharges: 1
+
+- type: entity
+  parent: BaseAction
+  id: ActionMalfDestroyRCDs
+  name: Destroy RCDs
+  description: Detonate all RCDs on the station after a short delay.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Tools/rcd.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:MalfDestroyRcdsEvent
+  - type: LimitedCharges
+    maxCharges: 1

@@ -73,3 +73,7 @@ malf-doomsday-desc = Eradicates all organic life on the station and guarantees y
 malf-doomsday-announcement-sender = Station AI Doomsday Device
 malf-doomsday-announcement = The station's AI has activated a "doomsday" biohazard eradication device. All organic life aboard the station will be eradicated in {$time} seconds. If there are still Nanotrasen staff alive aboard the station, deactivate the AI to abort the doomsday device.
 malf-doomsday-aborted = The biohazard eradication protocol has been aborted by deactivating the AI.
+
+malf-destroy-rcds-name = Destroy RCDs
+malf-destroy-rcds-desc = Violently detonates all on-station RCDs after a short delay. Cyborg-fitted recharging RCDs are exempt. 1 use.
+malf-destroy-rcds-alert = The RCD beeps loudly!

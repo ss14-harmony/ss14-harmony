@@ -112,6 +112,22 @@
   - MalfAIStoreActions
 
 - type: listing
+  id: MalfDestroyRCDs
+  name: malf-destroy-rcds-name
+  description: malf-destroy-rcds-desc
+  productAction: ActionMalfDestroyRCDs
+  icon:
+    sprite: Objects/Tools/rcd.rsi
+    state: icon
+  cost:
+    CPU: 30
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  categories:
+  - MalfAIStoreActions
+
+- type: listing
   id: MalfUpgradeTurret
   name: malf-upgrade-turret-name
   description: malf-upgrade-turret-desc

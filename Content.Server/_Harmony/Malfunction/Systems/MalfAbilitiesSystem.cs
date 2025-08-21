@@ -15,6 +15,7 @@ using Content.Shared.Light.Components;
 using Content.Shared.Popups;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Station.Components;
+using Content.Shared.Trigger.Systems;
 using Content.Shared.TurretController;
 using Content.Shared.Turrets;
 using Content.Shared.Verbs;
@@ -23,6 +24,9 @@ using Content.Shared._Harmony.Malfunction.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.RCD.Components;
+using Content.Shared.Charges.Components;
+using Content.Shared.Trigger.Components;
 
 namespace Content.Server._Harmony.Malfunction.Systems;
 
@@ -38,6 +42,7 @@ public sealed class MalfAbilitiesSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ExplosionSystem _explosion = default!;
     [Dependency] private readonly SharedDoorSystem _door = default!;
+    [Dependency] private readonly TriggerSystem _trigger = default!;
 
     public override void Initialize()
     {
@@ -53,6 +58,8 @@ public sealed class MalfAbilitiesSystem : EntitySystem
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseJamFirelockEvent>(OnPurchaseJamFirelock);
         SubscribeLocalEvent<MalfAbilitiesComponent, TransformSpeakerNameEvent>(OnModulatedVoice);
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfLockdownEvent>(OnLockdown);
+        SubscribeLocalEvent<MalfAbilitiesComponent, MalfDestroyRcdsEvent>(OnDestroyRcds);
+
         SubscribeLocalEvent<GetVerbsEvent<Verb>>(OnGetVerbs);
     }
 
@@ -275,5 +282,26 @@ public sealed class MalfAbilitiesSystem : EntitySystem
         }
 
         RemComp<LockdownComponent>(uid);
+    }
+
+    private void OnDestroyRcds(EntityUid uid, MalfAbilitiesComponent comp, MalfDestroyRcdsEvent args)
+    {
+        if (args.Handled) return;
+        var query = EntityQueryEnumerator<RCDComponent>();
+        while (query.MoveNext(out var ent, out var rcd))
+        {
+            if (HasComp<AutoRechargeComponent>(ent)) continue;
+            if (Transform(ent).GridUid != Transform(uid).GridUid) continue;
+
+            EntProtoId rcdGrenadeId = "DetonatedRCD";
+            if (!_proto.TryIndex(rcdGrenadeId, out var rcdGrenade)) continue;
+            EntityManager.AddComponents(ent, rcdGrenade);
+
+            if (!TryComp<TimerTriggerComponent>(ent, out var timer)) continue;
+            _trigger.ActivateTimerTrigger((ent, timer), uid);
+            _popup.PopupEntity(Loc.GetString("malf-destroy-rcds-alert"), ent, PopupType.LargeCaution);
+        }
+
+        args.Handled = true;
     }
 }

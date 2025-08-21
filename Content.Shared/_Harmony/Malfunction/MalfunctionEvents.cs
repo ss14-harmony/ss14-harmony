@@ -12,6 +12,10 @@ public sealed partial class MalfDoomsdayStartEvent : InstantActionEvent
 {
 }
 
+public sealed partial class MalfDestroyRcdsEvent : InstantActionEvent
+{
+}
+
 public sealed partial class MalfDoomsdayActivatedEvent : EntityEventArgs
 {
 }
