@@ -67,6 +67,6 @@ public sealed partial class MalfPurchaseTurretUpgradeEvent : EntityEventArgs
 }
 
 [Serializable, NetSerializable]
-public sealed partial class MalfOverloadMachineFinishedEvent : SimpleDoAfterEvent
+public sealed partial class MalfOverloadMachineFinishedEvent : EntityEventArgs
 {
 }

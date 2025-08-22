@@ -11,7 +11,7 @@
 
   A malfunctioning AI can hack an APC by using the [italic]Hack APC[/italic] alternative verb on an APC, available in the context menu or via [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color]. APCs can only be hacked once and hacking them has a 15 second cooldown.
 
-  Hacking an APC gives the malfunctioning AI an extra 10 CPU to spend. [italic]However, hacked APCs have a very obvious [color=blue][bold]blue[/bold][/color] appearance, [color=red]immediately giving the AI away.[/color][italic] Hide them well.
+  Hacking an APC gives the malfunctioning AI an extra 10 CPU to spend. [italic]However, hacked APCs have a very obvious [color=blue][bold]blue[/bold][/color] appearance, to which the only other explanation is that the APC has been [bold]emagged[/bold]. Hide them well.
 
   [color=red]Malfunction modules[/color] are very useful to a malfunctioning AI as they offer various abilities that aid toward their objectives, including the [color=crimson]doomsday device[/color].
 
@@ -30,19 +30,19 @@
   </Box>
 
   ### Departmental Extermination
-  A malfunctioning AI's objectives may require them to [color=cyan][italic]exterminate a department.[italic][/color]
+  A malfunctioning AI's objectives may require them to [color=cyan][italic]exterminate a department.[/italic][/color]
   
   By the time the round ends, all members of that department must have been killed.
 
   ### Crew-Wide Quarantine
-  A malfunctioning AI's objectives may require them to [color=cyan][italic]prevent the entire crew from reaching Central Command.[italic][/color]
+  A malfunctioning AI's objectives may require them to [color=cyan][italic]prevent the entire crew from reaching Central Command.[/italic][/color]
 
   This is achieved by making sure [bold]no crew members board the emergency shuttle.[/bold] This can be accomplished by making sure all entrances to the shuttle are [color=red][bold]bolted[/bold][/color] [italic](and maybe [color=yellow]electrified[/color] as well)[/italic], or by just killing them all before they get a chance to board.
 
   If any crew members are alive aboard the shuttle when it leaves, the malfunctioning AI themselves can no longer affect them, but their [color=cyan][bold]cyborgs[/bold][/color] can finish the job by killing them and throwing them off the shuttle during transit.
 
   ### Doomsday Device
-  Their most drastic objective, a malfunctioning AI may have to [color=cyan][italic]activate a doomsday device.[italic][/color]
+  Their most drastic objective, a malfunctioning AI may have to [color=cyan][italic]activate a doomsday device.[/italic][/color]
 
   The [bold][color=crimson]Doomsday Device[/color][/bold] is a malfunction module the AI can purchase for [bold]180 CPU[/bold]. When purchased and subsequently used, it [bold]sets the station's alert level to [color=darkred]Delta[/color], announces its activation to the entire crew, and eradicates all humanoid life aboard the station after a [color=yellow]450[/color] second countdown.[/bold]
 

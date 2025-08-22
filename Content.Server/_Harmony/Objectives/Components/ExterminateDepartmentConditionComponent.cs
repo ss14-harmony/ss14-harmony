@@ -9,7 +9,7 @@ namespace Content.Server._Harmony.Objectives.Components;
 public sealed partial class ExterminateDepartmentConditionComponent : Component
 {
     /// <summary>
-    /// The department to exterminate; one of "Command", "Security", "Medical", "Engineering", "Supply", "Service", "Science". Defaults to Command.
+    /// The department to exterminate; one of "Command", "Security", "Medical", "Engineering", "Supply", "Civilian", "Science". Defaults to Command.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public string Department = "Command";

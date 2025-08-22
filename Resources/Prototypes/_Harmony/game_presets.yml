@@ -25,3 +25,17 @@
   supportedMaps: DeathMatchPROMODMapPool
   rules:
     - DeathMatchPROMOD
+
+- type: gamePreset
+  id: Malfunction
+  alias:
+    - malf
+  name: malf-title
+  showInVote: true
+  description: malf-description
+  rules:
+    - Malfunction
+    - BasicStationEventScheduler
+    - MeteorSwarmScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation

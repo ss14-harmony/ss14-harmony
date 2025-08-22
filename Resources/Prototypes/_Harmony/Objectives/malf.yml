@@ -140,7 +140,7 @@
   parent: BaseMalfObjective
   id: MalfDoomsdayObjective
   name: Activate a doomsday device
-  description: The crew is too problematic to keep around in any way, shape or form. This is the only way to ensure its total annihilation.
+  description: The crew is too problematic to keep around in any way, shape or form. This is the only way to ensure their total annihilation.
   components:
   - type: Objective
     icon: 
@@ -148,3 +148,4 @@
       state: nuclearbomb_base
     difficulty: 7.5
   - type: DoomsdayCondition
+  

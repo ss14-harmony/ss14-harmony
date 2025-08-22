@@ -17,7 +17,7 @@ malf-hack-verb = Hack APC
 malf-hack-verb-cooldown = Hack APC (Available in {$time} seconds)
 malf-apc-hacked = Something is zapped in the APC!
 
-malf-machine-overloaded-others = The circuits in the {THE($machine)} begin to whirr loudly!
+malf-machine-overloaded-others = The circuits in {THE($machine)} begin to whirr loudly!
 
 malf-title = Malfunction
 malf-description = The AI is malfunctioning!
