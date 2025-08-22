@@ -21,7 +21,6 @@ public sealed partial class AiInteractWireAction : ComponentWireAction<StationAi
 
     public override bool Cut(EntityUid user, Wire wire, StationAiWhitelistComponent component)
     {
-        // harmony change TODO: once space-wizards#35277 gets merged, use the introduced chatNotification system to notify a malf AI if their wires have been snipped
         return EntityManager.System<SharedStationAiSystem>()
             .SetWhitelistEnabled((wire.Owner, component), false, announce: true);
     }

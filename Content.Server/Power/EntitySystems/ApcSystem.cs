@@ -175,7 +175,7 @@ public sealed class ApcSystem : EntitySystem
 
     private ApcChargeState CalcChargeState(EntityUid uid, PowerState.Battery battery)
     {
-        if (_emag.CheckFlag(uid, EmagType.Interaction) || TryComp<ApcComponent>(uid, out var comp) && comp.Hacked)
+        if (_emag.CheckFlag(uid, EmagType.Interaction) || TryComp<ApcComponent>(uid, out var comp) && comp.Hacked) // harmony change: check if APC has been hacked by a malfunctioning AI and if so, give it the blue emagged state
             return ApcChargeState.Emag;
 
         if (battery.CurrentStorage / battery.Capacity > ApcComponent.HighPowerThreshold)
