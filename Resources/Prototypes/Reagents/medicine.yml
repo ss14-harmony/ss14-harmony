@@ -142,9 +142,12 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:EvenHealthChange
+      - !type:HealthChange # Harmony Change - EvenHealthChange > HealthChange - Reverts advanced chem rework
         damage:
-          Brute: -1.5
+# Start Harmony change - Reverts advanced chem rework
+          groups:
+            Brute: -2 # -1.5 > -2
+# End Harmony change
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
@@ -862,35 +865,25 @@
   color: "#520e30"
   metabolisms:
     Medicine:
+      # metabolismRate: 0.25 # Harmony - Revert Advanced Chem Change
       effects:
-      - !type:EvenHealthChange
-        conditions:
-        - !type:ReagentThreshold
-          min: 0
-          max: 20
-        damage:
-          Toxin: -6
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
           min: 0
-          max: 20
+          max: 30
         damage:
           groups:
-            Brute: 1.5
-      - !type:EvenHealthChange
-        conditions:
-        - !type:ReagentThreshold
-          min: 20
-        damage:
-          Toxin: -2
+            Toxin: -3 # Harmony - -1.5 > -3 - Revert Advanced Chem Change
+            Brute: 0.5 # Harmony - 0.25 > 0.5 - Revert Advanced Chem Change
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
-          min: 20
+          min: 30
         damage:
           groups:
-            Brute: 6
+            Toxin: -1 # Harmony - -0.5 > -1 - Revert Advanced Chem Change
+            Brute: 3
       - !type:AdjustReagent
         conditions:
         - !type:ReagentThreshold
@@ -999,19 +992,19 @@
   color: "#e0a5b9"
   metabolisms:
     Medicine:
-      metabolismRate: 0.25
+      # metabolismRate: 0.1 # Harmony - Revert Advanced Chem Change
       effects:
       - !type:HealthChange
         damage:
           types:
-            Caustic: -1.25 # 5 per u
+            Caustic: -3 # Harmony - -0.6 > -3 - Revert Advanced Chem Change
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
-          min: 16
+          min: 16 # Harmony - 21 > 16 - Revert Advanced Chem Change
         damage:
           types:
-            Heat: 1 # 4 per u
+            Heat: 2 # Harmony - 0.2 > 2 - Revert Advanced Chem Change
       - !type:Jitter
         conditions:
         - !type:ReagentThreshold
@@ -1055,20 +1048,19 @@
   color: "#283332"
   metabolisms:
     Medicine:
-      metabolismRate: 0.25
+      # metabolismRate: 0.1 # Harmony - Revert Advanced Chem Change
       effects:
       - !type:HealthChange
         damage:
           types:
-            Slash: -2 # 8 per u
-            Heat: 0.2 # 0.8 per u
+            Slash: -3 # Harmony - -0.6 > -3 - Revert Advanced Chem Change
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
-          min: 12
+          min: 12 # Harmony - 21 > 12 - Revert Advanced Chem Change
         damage:
           types:
-            Cold: 1.5 # 6 per u
+            Cold: 3 # Harmony - 1.5 > 3 - Revert Advanced Chem Change
 
 - type: reagent
   id: Puncturase
@@ -1080,20 +1072,20 @@
   color: "#b9bf93"
   metabolisms:
     Medicine:
-      metabolismRate: 0.25
+      # metabolismRate: 0.1 # Harmony - Revert Advanced Chem Change
       effects:
       - !type:HealthChange
         damage:
           types:
-            Piercing: -2.5 # 10 per u
-            Radiation: 0.05 # 0.2 per u, 3 for 15u
+            Piercing: -4 # Harmony - -0.6 > -4 - Revert Advanced Chem Change
+            Blunt: 0.1 # Harmony - 0.05 > 0.1 - Revert Advanced Chem Change
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
-          min: 12
+          min: 11 # Harmony - 21 > 11 - Revert Advanced Chem Change
         damage:
           types:
-            Blunt: 3 # 12 per u
+            Blunt: 5 # Harmony - 1 > 5 - Revert Advanced Chem Change
 
 - type: reagent
   id: Bruizine
@@ -1105,21 +1097,19 @@
   color: "#ff3636"
   metabolisms:
     Medicine:
-      metabolismRate: 0.25
+      # metabolismRate: 0.1 # Harmony - Revert Advanced Chem Change
       effects:
       - !type:HealthChange
         damage:
           types:
-            Blunt: -2.25 # 9 per u
-      - !type:SatiateHunger
-        factor: -1
+            Blunt: -3.5 # Harmony - -0.6 > -3.5 - Revert Advanced Chem Change
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
-          min: 10.5
+          min: 10.5 # Harmony - 19 > 10.5 - Revert Advanced Chem Change
         damage:
           types:
-            Poison: 2.5 # 10 per u
+            Poison: 4 # Harmony - 1.5 > 4 - Revert Advanced Chem Change
 
 - type: reagent
   id: Holywater
@@ -1214,34 +1204,34 @@
   color: "#8147ff"
   metabolisms:
     Medicine:
-      metabolismRate: 0.25
+      # metabolismRate: 0.25 # Harmony - Revert Advanced Chem Change
       effects:
       # heals shocks and removes shock chems
       - !type:HealthChange
         damage:
           types:
-            Shock: -1.5 # 6 per u
+            Shock: -4 # Harmony - 1.5 > 4 - Revert Advanced Chem Change
       - !type:AdjustReagent
         reagent: Licoxide
-        amount: -2
+        amount: -4
       - !type:AdjustReagent
         reagent:  Tazinide
-        amount: -2
+        amount: -4
       # makes you a little chilly when not oding
       - !type:AdjustTemperature
-        amount: -2500
+        amount: -5000
       # od makes you freeze to death
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
-          min: 12
+          min: 12 # Harmony - 15.5 > 12 - Revert Advanced Chem Change
         damage:
           types:
-            Cold: 1 # 4 per u
+            Cold: 2 # Harmony - 0.2 > 2 - Revert Advanced Chem Change
       - !type:AdjustTemperature
         conditions:
         - !type:ReagentThreshold
-          min: 12
+          min: 12 # Harmony - 15.5 > 12 - Revert Advanced Chem Change
         amount: -30000
       - !type:Jitter
         conditions:
