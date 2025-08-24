@@ -2,8 +2,8 @@
 
 ## Cargo Only
 - type: entity
-  id: IntercomSupplyCargo
   parent: Intercom
+  id: IntercomSupplyCargo
   suffix: Cargo, Harmony
   components:
   - type: ContainerFill
@@ -15,8 +15,8 @@
       - EncryptionKeyCargo
 
 - type: entity
-  id: IntercomSupplySalvage
   parent: Intercom
+  id: IntercomSupplySalvage
   suffix: Salvage, Harmony
   components:
   - type: ContainerFill

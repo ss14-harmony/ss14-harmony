@@ -216,7 +216,7 @@
 - type: entity
   parent: TelecomServer
   id: TelecomServerFilledCargo
-  suffix: Cargo, Salvage # Harmony Change, Adds Salv Comms
+  suffix: Cargo, Salvage # Harmony Change - Salv comms - Adds Salvage suffix
   components:
   - type: ContainerFill
     containers:

@@ -1,8 +1,8 @@
 - type: entity
-  name: mining radio
-  description: A handy mining radio.
   parent: [ RadioHandheld, BaseCargoContraband ]
   id: RadioHandheldMining
+  name: mining radio
+  description: A handy mining radio.
   components:
   - type: RadioMicrophone
     broadcastChannel: Salvage

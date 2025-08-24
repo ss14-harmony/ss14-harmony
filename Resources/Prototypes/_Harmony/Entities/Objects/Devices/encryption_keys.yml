@@ -3,8 +3,8 @@
   parent: [EncryptionKey, BaseCargoContraband]
   id: EncryptionKeySalvage
   name: salvage encryption key
-  description: An encryption key used by salvagers.
   suffix: Harmony
+  description: An encryption key used by salvagers.
   components:
   - type: EncryptionKey
     channels:
