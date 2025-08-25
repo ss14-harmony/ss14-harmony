@@ -15,7 +15,6 @@
     SeismicCharge: 2
     FultonBeacon: 1
     Fulton: 2
-    RadioHandheldMining: 2 # Adds salvage radio channel
 # End of Harmony change.
   contrabandInventory:
     PlushieCarp: 1
