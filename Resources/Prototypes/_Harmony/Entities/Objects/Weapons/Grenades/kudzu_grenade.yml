@@ -13,12 +13,14 @@
   - type: ScatteringGrenade
     fillPrototype: SyndicateKudzu
     distance: 4
-  - type: OnUseTimerTrigger
-    delay: 3
+  - type: TimerTrigger
+    delay: 2
     beepSound:
       path: "/Audio/Effects/beep1.ogg"
       params:
         volume: 3
+    initialBeepDelay: 0
+    beepInterval: 16
   - type: GenericVisualizer
     visuals:
       enum.Trigger.TriggerVisuals.VisualState:
