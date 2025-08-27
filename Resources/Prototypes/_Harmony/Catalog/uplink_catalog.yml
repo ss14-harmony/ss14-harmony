@@ -90,7 +90,7 @@
     whitelist:
       components:
       - SurplusBundle
-  
+
 - type: listing
   id: UplinkX4
   name: uplink-X4-name
@@ -211,6 +211,25 @@
     stock: 1
 
 # Disruption
+
+- type: listing
+  id: UplinkSuperSurplusNukieBundle
+  name: uplink-super-surplus-bundle-name
+  description: uplink-super-surplus-bundle-desc
+  productEntity: CrateSyndicateSuperSurplusBundle
+  cost:
+    Telecrystal: 80
+  categories:
+  - UplinkDisruption
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
 
 # Allies
 
