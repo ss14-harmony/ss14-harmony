@@ -14,13 +14,11 @@
     fillPrototype: SyndicateKudzu
     distance: 4
   - type: OnUseTimerTrigger
+    delay: 3
     beepSound:
       path: "/Audio/Effects/beep1.ogg"
       params:
         volume: 3
-    initialBeepDelay: 0
-    beepInterval: 0.5
-    delay: 2
   - type: GenericVisualizer
     visuals:
       enum.Trigger.TriggerVisuals.VisualState:
