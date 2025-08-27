@@ -63,7 +63,7 @@
   name: uplink-kudzu-grenade-name
   description: uplink-kudzu-grenade-desc
   productEntity: KudzuGrenade
-  discountCategory:  rareDiscounts
+  discountCategory: rareDiscounts
   discountDownTo:
     Telecrystal: 3
   cost:
