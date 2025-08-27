@@ -15,9 +15,8 @@ using Content.Shared.Popups;
 using Content.Shared.Tag;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-// Harmony refs
-using Robust.Shared.Configuration;
-using Content.Shared._Harmony.CCVars;
+using Robust.Shared.Configuration; // Harmony
+using Content.Shared._Harmony.CCVars; // Harmony
 
 namespace Content.Server.Chat;
 
@@ -31,10 +30,9 @@ public sealed class SuicideSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly GhostSystem _ghostSystem = default!;
     [Dependency] private readonly SharedSuicideSystem _suicide = default!;
-    // Harmony change. Add config manager and boolean to hold the CVar value
-    [Dependency] private readonly IConfigurationManager _configuration = default!;
+    [Dependency] private readonly IConfigurationManager _configuration = default!; // Harmony
 
-    private bool _disable_suicide;
+    private bool _disable_suicide; // Harmony
 
     private static readonly ProtoId<TagPrototype> CannotSuicideTag = "CannotSuicide";
 
@@ -45,8 +43,7 @@ public sealed class SuicideSystem : EntitySystem
         SubscribeLocalEvent<DamageableComponent, SuicideEvent>(OnDamageableSuicide);
         SubscribeLocalEvent<MobStateComponent, SuicideEvent>(OnEnvironmentalSuicide);
         SubscribeLocalEvent<MindContainerComponent, SuicideGhostEvent>(OnSuicideGhost);
-        // Harmony change. Subscribe to DisableSuicide CVar
-        Subs.CVar(_configuration, HCCVars.DisableSuicide, value => _disable_suicide = value, true);
+        Subs.CVar(_configuration, HCCVars.DisableSuicide, value => _disable_suicide = value, true); // Harmony
     }
 
     /// <summary>
@@ -80,6 +77,9 @@ public sealed class SuicideSystem : EntitySystem
         if (_disable_suicide)
             return true;
 
+        // TODO: fix this
+        // This is a handled event, but the result is never used
+        // It looks like TriggerOnMobstateChange is supposed to prevent you from suiciding
         var suicideEvent = new SuicideEvent(victim);
         RaiseLocalEvent(victim, suicideEvent);
 
