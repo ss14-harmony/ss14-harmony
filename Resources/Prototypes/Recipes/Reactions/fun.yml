@@ -244,14 +244,16 @@
     maxTotalIntensity: 250
     tileBreakScale: 0.00001
 
-- type: reaction
-  id: CorgiJuice
-  reactants:
-    UncookedAnimalProteins:
-      amount: 1
-    JuiceThatMakesYouWeh:
-      amount: 1
-    Happiness:
-      amount: 1
-  products:
-    CorgiJuice: 2
+# Start harmony change - remove corgium
+#- type: reaction
+#  id: CorgiJuice
+#  reactants:
+#    UncookedAnimalProteins:
+#      amount: 1
+#    JuiceThatMakesYouWeh:
+#      amount: 1
+#    Happiness:
+#      amount: 1
+#  products:
+#    CorgiJuice: 2
+# End harmony change
