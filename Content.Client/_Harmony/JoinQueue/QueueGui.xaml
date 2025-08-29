@@ -20,9 +20,9 @@
             <controls:HighDivider />
             <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
                 <BoxContainer Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <TextureRect Name="Logo" Stretch="KeepCentered"/>
+                    <TextureRect Name="Logo" Stretch="KeepCentered" Margin="20 0 0 0"/>
                 </BoxContainer>
-                <BoxContainer Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20 20 20 20">
+                <BoxContainer Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50 20 20 20">
                     <BoxContainer Orientation="Vertical">
                         <BoxContainer Orientation="Vertical" VerticalExpand="True">
                             <Label Text="{Loc 'queue-position'}" Align="Center" />
