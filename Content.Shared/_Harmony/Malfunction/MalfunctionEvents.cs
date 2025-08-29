@@ -57,7 +57,7 @@ public sealed partial class MalfPurchaseJamFirelockEvent : EntityEventArgs
 }
 
 [Serializable, NetSerializable]
-public sealed partial class MalfPurchaseOverrideSafetyEvent : EntityEventArgs
+public sealed partial class MalfPurchaseOverrideSafetyEvent : EntityEventArgs // this caused a test fail earlier so time to find out if it's a heisentest or not
 {
 }
 
