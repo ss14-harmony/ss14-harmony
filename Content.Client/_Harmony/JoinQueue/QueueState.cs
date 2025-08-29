@@ -1,4 +1,5 @@
 using Robust.Client.Audio;
+using Robust.Client.ResourceManagement;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -15,6 +16,7 @@ public sealed class QueueState : State
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly ILocalizationManager _loc = default!;
     [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
+    [Dependency] private readonly IResourceCache _resourceCache = default!;
 
     protected override Type? LinkedScreenType { get; } = typeof(QueueGui);
     public QueueGui? Queue;
@@ -28,7 +30,8 @@ public sealed class QueueState : State
             return;
         }
 
-        Queue = (QueueGui) _userInterfaceManager.ActiveScreen;
+        Queue = (QueueGui)_userInterfaceManager.ActiveScreen;
+        Queue.SetLogo(_resourceCache.GetResource<TextureResource>("/Textures/Logo/logo.png"));
 
         Queue.QuitButton.OnPressed += OnQuitButtonPressed;
 
