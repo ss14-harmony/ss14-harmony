@@ -12,10 +12,12 @@
         <PanelContainer StyleClasses="AngleRect" />
         <BoxContainer Orientation="Vertical" HorizontalExpand="True" MinSize="500 300">
             <BoxContainer Orientation="Horizontal">
-                <Label Margin="8 0 0 0" Text="{Loc 'queue-title'}"
-                       StyleClasses="LabelHeading" VAlign="Center" />
+                <Label Margin="8 0 0 0" Name="ServerName"
+                    StyleClasses="LabelHeading" Align="Center" />
+                <Label Margin="5 0 0 0" Text="{Loc 'queue-title'}"
+                    StyleClasses="LabelHeading" VAlign="Center" />
                 <Button Name="QuitButton" Text="{Loc 'queue-quit'}" Access="Public"
-                        HorizontalAlignment="Right" HorizontalExpand="True" />
+                    HorizontalAlignment="Right" HorizontalExpand="True" />
             </BoxContainer>
             <controls:HighDivider />
             <BoxContainer Orientation="Horizontal" HorizontalExpand="True">

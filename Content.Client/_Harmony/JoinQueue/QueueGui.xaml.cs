@@ -23,8 +23,9 @@ public sealed partial class QueueGui : UIScreen
         QueuePosition.Text = position.ToString();
     }
 
-    public void SetLogo(TextureResource logoTexture)
+    public void UpdateBranding(TextureResource logoTexture, string serverName)
     {
         Logo.Texture = logoTexture;
+        ServerName.Text = serverName;
     }
 }

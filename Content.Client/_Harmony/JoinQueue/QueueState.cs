@@ -1,9 +1,11 @@
+using Content.Shared.CCVar;
 using Robust.Client.Audio;
 using Robust.Client.ResourceManagement;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Audio;
+using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 
@@ -17,6 +19,7 @@ public sealed class QueueState : State
     [Dependency] private readonly ILocalizationManager _loc = default!;
     [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     protected override Type? LinkedScreenType { get; } = typeof(QueueGui);
     public QueueGui? Queue;
@@ -31,7 +34,9 @@ public sealed class QueueState : State
         }
 
         Queue = (QueueGui)_userInterfaceManager.ActiveScreen;
-        Queue.SetLogo(_resourceCache.GetResource<TextureResource>("/Textures/Logo/logo.png"));
+        Queue.UpdateBranding(
+            _resourceCache.GetResource<TextureResource>("/Textures/Logo/logo.png"),
+            String.IsNullOrEmpty(_cfg.GetCVar(CCVars.ServerLobbyName)) ? _cfg.GetCVar(CCVars.GameHostName) : _cfg.GetCVar(CCVars.ServerLobbyName));
 
         Queue.QuitButton.OnPressed += OnQuitButtonPressed;
 
