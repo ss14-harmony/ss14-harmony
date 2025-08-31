@@ -254,7 +254,7 @@
   - type: StorageFill
     contents:
       - id: CrayonBox
-        amount: 2 # Harmony Change
+        amount: 2 # Harmony Change. More Crayons for art.
 
 - type: entity
   id: CrateFunBoardGames
