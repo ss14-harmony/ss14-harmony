@@ -254,6 +254,7 @@
   - type: StorageFill
     contents:
       - id: CrayonBox
+        amount: 2 # Harmony Change
 
 - type: entity
   id: CrateFunBoardGames
