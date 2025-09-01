@@ -64,7 +64,7 @@
     sprite: Objects/Fun/crayons.rsi
     state: box
   product: CrateFunArtSupplies
-  cost: 1000 # Harmony Change. Crates now contain 2 boxes of crayons
+  cost: 500
   category: cargoproduct-category-name-fun
   group: market
 
