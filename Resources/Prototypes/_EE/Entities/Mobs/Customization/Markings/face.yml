@@ -2,7 +2,7 @@
   id: FaceBindi
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran, Tajaran]
   coloring:
     default:
       type:
@@ -16,7 +16,7 @@
   id: FaceFullblush
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -30,7 +30,7 @@
   id: FaceCheekspotRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -44,7 +44,7 @@
   id: FaceCheekspotLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -86,7 +86,7 @@
   id: FaceCrowRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -100,7 +100,7 @@
   id: FaceCrowLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -142,7 +142,7 @@
   id: FaceEyebrowRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -157,7 +157,7 @@
   id: FaceEyebrowLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -172,7 +172,7 @@
   id: FaceEyebrows
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -186,7 +186,7 @@
   id: FaceEyecornerRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -200,7 +200,7 @@
   id: FaceEyecornerLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -214,7 +214,7 @@
   id: FaceEyelashRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -228,7 +228,7 @@
   id: FaceEyelashLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -256,7 +256,7 @@
   id: FaceLipcornerRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -270,7 +270,7 @@
   id: FaceLipcornerLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -284,7 +284,7 @@
   id: FaceGlabella
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -298,7 +298,7 @@
   id: FaceLowercheekRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -312,7 +312,7 @@
   id: FaceLowercheekLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -369,7 +369,7 @@
   id: FaceUnibrow
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   coloring:
     default:
       type:
@@ -383,7 +383,7 @@
   id: FaceNeckSlim
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   followSkinColor: true
   sprites:
   - sprite: _EE/Mobs/Customization/face.rsi
@@ -393,7 +393,7 @@
   id: FaceNeckWide
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   followSkinColor: true
   sprites:
   - sprite: _EE/Mobs/Customization/face.rsi
@@ -403,7 +403,7 @@
   id: FaceNeckSlimThick
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   followSkinColor: true
   sprites:
   - sprite: _EE/Mobs/Customization/face.rsi
@@ -413,7 +413,7 @@
   id: FaceNeckWideThick
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Arachne, Lamia, Tajaran]
   followSkinColor: true
   sprites:
   - sprite: _EE/Mobs/Customization/face.rsi
