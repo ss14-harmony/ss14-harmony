@@ -42,7 +42,7 @@
                 <CheckBox Name="RMCEmotesRodentia" Text="{Loc 'rmc-ui-audio-emotes-rodentia'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesFeroxi" Text="{Loc 'rmc-ui-audio-emotes-feroxi'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesSkrell" Text="{Loc 'rmc-ui-audio-emotes-skrell'}" Margin="0 0 0 5" /> --> <!--Harmony, No Vulps, Rodentia, Feroxi, or Skrell-->
-                <CheckBox Name="RMCEmoteVox" Text="{Loc 'rmc-ui-audio-emotes-vox'}" Margin="0 0 0 5" /> <!--Harmony, add Vox-->
+                <CheckBox Name="RMCEmotesVox" Text="{Loc 'rmc-ui-audio-emotes-vox'}" Margin="0 0 0 5" /> <!--Harmony, add Vox-->
             </BoxContainer>
         </ScrollContainer>
         <ui:OptionsTabControlRow Name="Control" Access="Public" />
