@@ -21,8 +21,8 @@
                 <CheckBox Name="RMCVoicelinesReptilian" Text="{Loc 'rmc-ui-audio-voicelines-reptilian'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCVoicelinesSlime" Text="{Loc 'rmc-ui-audio-voicelines-slime'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCVoicelinesAvali" Text="{Loc 'rmc-ui-audio-voicelines-avali'}" Margin="0 0 0 5" />
-                <!--<CheckBox Name="RMCVoicelinesVulpkanin" Text="{Loc 'rmc-ui-audio-voicelines-vulpkanin'}" Margin="0 0 0 5" />
-                <CheckBox Name="RMCVoicelinesRodentia" Text="{Loc 'rmc-ui-audio-voicelines-rodentia'}" Margin="0 0 0 5" />
+                <CheckBox Name="RMCVoicelinesVulpkanin" Text="{Loc 'rmc-ui-audio-voicelines-vulpkanin'}" Margin="0 0 0 5" />
+                <!--<CheckBox Name="RMCVoicelinesRodentia" Text="{Loc 'rmc-ui-audio-voicelines-rodentia'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCVoicelinesFeroxi" Text="{Loc 'rmc-ui-audio-voicelines-feroxi'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCVoicelinesSkrell" Text="{Loc 'rmc-ui-audio-voicelines-skrell'}" Margin="0 0 0 5" /> --> <!--Harmony, No Vulps, Rodentia, Feroxi, or Skrell-->
                 <Label Text="{Loc 'rmc-ui-emotes'}"
@@ -37,8 +37,8 @@
                 <CheckBox Name="RMCEmotesReptilian" Text="{Loc 'rmc-ui-audio-emotes-reptilian'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesSlime" Text="{Loc 'rmc-ui-audio-emotes-slime'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesAvali" Text="{Loc 'rmc-ui-audio-emotes-avali'}" Margin="0 0 0 5" />
-                <!-- <CheckBox Name="RMCEmotesVulpkanin" Text="{Loc 'rmc-ui-audio-emotes-vulpkanin'}" Margin="0 0 0 5" />
-                <CheckBox Name="RMCEmotesRodentia" Text="{Loc 'rmc-ui-audio-emotes-rodentia'}" Margin="0 0 0 5" />
+                <CheckBox Name="RMCEmotesVulpkanin" Text="{Loc 'rmc-ui-audio-emotes-vulpkanin'}" Margin="0 0 0 5" />
+                <!-- <CheckBox Name="RMCEmotesRodentia" Text="{Loc 'rmc-ui-audio-emotes-rodentia'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesFeroxi" Text="{Loc 'rmc-ui-audio-emotes-feroxi'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesSkrell" Text="{Loc 'rmc-ui-audio-emotes-skrell'}" Margin="0 0 0 5" /> --> <!--Harmony, No Vulps, Rodentia, Feroxi, or Skrell-->
             </BoxContainer>
