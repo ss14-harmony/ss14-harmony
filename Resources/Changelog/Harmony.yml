@@ -2544,3 +2544,10 @@ Entries:
     changes:
     - type: Tweak
       message: The ChemMaster 4000 now uses the chemicals in the beaker to make pills, instead of the ones from the buffer.
+  - id: 1042
+    author: youtissoum
+    time: '2025-09-03T20:35:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1042
+    changes:
+    - type: Fix
+      message: Voxes can no longer sometimes crash the game when using magic mirrors or barber scissors.
