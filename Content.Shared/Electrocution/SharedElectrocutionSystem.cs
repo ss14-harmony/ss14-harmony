@@ -71,6 +71,10 @@ namespace Content.Shared.Electrocution
 
         private void OnInsulatedElectrocutionAttempt(EntityUid uid, InsulatedComponent insulated, ElectrocutionAttemptEvent args)
         {
+            // ES START
+            if (args.SiemensCoefficient > insulated.MaxSiemensThreshold)
+                return;
+            // ES END
             args.SiemensCoefficient *= insulated.Coefficient;
         }
     }

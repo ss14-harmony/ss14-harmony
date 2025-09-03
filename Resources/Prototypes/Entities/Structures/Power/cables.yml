@@ -92,13 +92,16 @@
         acts: [ "Destruction" ]
   - type: CableVisualizer
     statePrefix: hvcable_
-  # TODO make this change on power
-  - type: AmbientSound
-    enabled: false
-    volume: -14
-    range: 2
-    sound:
-      path: /Audio/Ambience/Objects/emf_buzz.ogg
+  # ES START
+  - type: Electrified
+    siemensCoefficient: 2
+  #- type: AmbientSound
+  #  enabled: false
+  #  volume: -14
+  #  range: 2
+  #  sound:
+  #    path: /Audio/Ambience/Objects/emf_buzz.ogg
+  # ES END
 
 - type: entity
   id: CableHVUncuttable
@@ -153,6 +156,10 @@
   - type: CableVisualizer
     statePrefix: mvcable_
     extraLayerPrefix: mvstripes_
+# ES START
+  - type: Electrified
+    siemensCoefficient: 1.5
+# ES END
 
 - type: entity
   id: CableMVUncuttable

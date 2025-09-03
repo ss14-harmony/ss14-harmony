@@ -6,6 +6,14 @@ namespace Content.Shared.Electrocution
     [Access(typeof(SharedElectrocutionSystem))]
     public sealed partial class InsulatedComponent : Component
     {
+// ES START
+        /// <summary>
+        /// The max value beyond which the insulation will fail.
+        /// </summary>
+        [DataField, AutoNetworkedField]
+        public float MaxSiemensThreshold = 1f;
+// ES END
+
         // Technically, people could cheat and figure out which budget insulated gloves are gud and which ones are bad.
         // We might want to rethink this a little bit.
         /// <summary>
