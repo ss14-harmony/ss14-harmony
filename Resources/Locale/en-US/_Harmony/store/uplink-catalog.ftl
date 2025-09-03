@@ -64,6 +64,9 @@ uplink-traitor-deathrattle-implant-desc = A box containing two syndicate deathra
 uplink-cluster-weh-name = Tactical Clusterplushie
 uplink-cluster-weh-desc = Scatters 10 lizard plushies in a circle after a short delay. Weh.
 
+uplink-syndiedrobe-flatpack-name = SyndieDrobe Flatpack
+uplink-syndiedrobe-flatpack-desc = A flatpack box containing a SyndieDrobe. Slay whilst slaying your targets.
+
 # Job Specific
 
 uplink-hyposhell-name = Box of hyposhells

@@ -25,6 +25,7 @@
                 <CheckBox Name="RMCVoicelinesRodentia" Text="{Loc 'rmc-ui-audio-voicelines-rodentia'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCVoicelinesFeroxi" Text="{Loc 'rmc-ui-audio-voicelines-feroxi'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCVoicelinesSkrell" Text="{Loc 'rmc-ui-audio-voicelines-skrell'}" Margin="0 0 0 5" /> --> <!--Harmony, No Vulps, Rodentia, Feroxi, or Skrell-->
+                <CheckBox Name="RMCVoicelinesVox" Text="{Loc 'rmc-ui-audio-voicelines-vox'}" Margin="0 0 0 5" /> <!--Harmony, add Vox-->
                 <Label Text="{Loc 'rmc-ui-emotes'}"
                        FontColorOverride="{x:Static s:StyleNano.NanoGold}"
                        StyleClasses="LabelKeyText"/>
@@ -41,6 +42,7 @@
                 <CheckBox Name="RMCEmotesRodentia" Text="{Loc 'rmc-ui-audio-emotes-rodentia'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesFeroxi" Text="{Loc 'rmc-ui-audio-emotes-feroxi'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesSkrell" Text="{Loc 'rmc-ui-audio-emotes-skrell'}" Margin="0 0 0 5" /> --> <!--Harmony, No Vulps, Rodentia, Feroxi, or Skrell-->
+                <CheckBox Name="RMCEmotesVox" Text="{Loc 'rmc-ui-audio-emotes-vox'}" Margin="0 0 0 5" /> <!--Harmony, add Vox-->
             </BoxContainer>
         </ScrollContainer>
         <ui:OptionsTabControlRow Name="Control" Access="Public" />
