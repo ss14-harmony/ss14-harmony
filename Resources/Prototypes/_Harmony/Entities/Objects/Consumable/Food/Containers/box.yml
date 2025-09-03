@@ -30,7 +30,7 @@
 
 - type: entity
   parent: BoxCardboard
-  id: FoodBoxBoxSlimJohn
+  id: FoodCartonSlimJohn
   name: carton of Slim-Johns
   description: A large box, made for 6 boxes of Slim Johns.
   components:

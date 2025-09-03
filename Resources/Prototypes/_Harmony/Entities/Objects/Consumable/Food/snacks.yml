@@ -160,7 +160,7 @@
     inhandVisuals:
       left:
       - state: trash-inhand-left
-        color: "#FF1818"
+        color: "#7BFF74"
       right:
       - state: trash-inhand-right
-        color: "#FF1818"
+        color: "#7BFF74"
