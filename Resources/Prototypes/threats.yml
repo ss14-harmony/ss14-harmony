@@ -7,7 +7,7 @@
     #Begin Harmony Change - expanded pool of spawns.
     LoneOp: 0.25
     Wizard: 0.25
-    DerelictBorg: 1
+    # DerelictBorg: 1 temporary
     ParadoxClone: 1
     Bingle: 1
     #End Harmony Change - expanded pool of spawns.
