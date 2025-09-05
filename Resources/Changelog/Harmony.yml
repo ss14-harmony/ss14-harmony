@@ -2572,13 +2572,6 @@ Entries:
     changes:
     - type: Add
       message: adds Omega Station
-  - id: 908
-    author: Ermucat
-    time: '2025-09-01T19:34:05.000000+00:00'
-    url: https://github.com/ss14-harmony/ss14-harmony/pull/908
-    changes:
-    - type: Add
-      message: Added armor penetration
   - id: 986
     author: thejMark14
     time: '2025-09-02T14:37:57.000000+00:00'
