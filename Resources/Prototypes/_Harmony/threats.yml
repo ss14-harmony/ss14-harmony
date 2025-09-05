@@ -8,10 +8,10 @@
   announcement: terror-wizard
   rule: WizardSpawn
 
-- type: ninjaHackingThreat
-  id: DerelictBorg
-  announcement: terror-space
-  rule: DerelictCyborgSpawn
+#- type: ninjaHackingThreat
+#  id: DerelictBorg
+#  announcement: terror-space
+#  rule: DerelictCyborgSpawn
 
 - type: ninjaHackingThreat
   id: ParadoxClone
