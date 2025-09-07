@@ -1,3 +1,17 @@
+#Base Flavors
+
+- type: flavor
+  id: glorp
+  flavorType: Base
+  description: flavor-base-glorp
+
+- type: flavor
+  id: pit
+  flavorType: Base
+  description: flavor-base-pit
+
+#Complex Flavors
+
 - type: flavor
   id: themojave
   flavorType: Complex
@@ -7,8 +21,3 @@
   id: regret
   flavorType: Complex
   description: flavor-complex-regret
-
-- type: flavor
-  id: glorp
-  flavorType: Base
-  description: flavor-base-glorp

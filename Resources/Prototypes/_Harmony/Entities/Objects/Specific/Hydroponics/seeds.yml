@@ -1,0 +1,9 @@
+﻿- type: entity
+  parent: SeedBase
+  name: packet of bingle berry seeds
+  id: BingleBerrySeeds
+  components:
+  - type: Seed
+    seedId: bingleberries
+  - type: Sprite
+    sprite: _Harmony/Objects/Specific/Hydroponics/bingle_berries.rsi

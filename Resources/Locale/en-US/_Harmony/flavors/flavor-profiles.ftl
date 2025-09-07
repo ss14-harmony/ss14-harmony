@@ -6,3 +6,6 @@ flavor-complex-regret = like salty, dry regret
 
 # Glorp
 flavor-base-glorp = glorpy
+
+# Pit
+flavor-base-pit = like pits
