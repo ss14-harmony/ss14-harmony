@@ -11,11 +11,15 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 11
+        maxVol: 12
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 2
         - ReagentId: Vitamin
+          Quantity: 1
+        - ReagentId: SpaceDrugs
+          Quantity: 5
+        - ReagentId: Cryptobiolin
           Quantity: 4
   - type: Sprite
     sprite: _Harmony/Objects/Specific/Hydroponics/bingle_berries.rsi
