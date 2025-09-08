@@ -2,6 +2,7 @@
   parent: MobLizard
   id: MobLizardGizard
   name: Gizard
+  suffix: Harmony
   description: Sometimes you think you're the magic potion.
   components:
   - type: Sprite

@@ -33,7 +33,7 @@
   parent: MarkerBase
   id: SpawnPointGhostGizard
   name: ghost role spawn point
-  suffix: Gizard
+  suffix: Gizard, Harmony
   components:
   - type: GhostRole
     name: ghost-role-information-gizard-name
