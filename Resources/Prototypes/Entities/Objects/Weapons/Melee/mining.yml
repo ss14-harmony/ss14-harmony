@@ -133,7 +133,7 @@
   - type: LeechOnMarker
     leech:
       groups:
-        Brute: -6
+        Brute: -10 # Harmony change, reverts mining changes -6 -> -10
   - type: Gun
     soundGunshot: /Audio/Weapons/plasma_cutter.ogg
     fireRate: 1
@@ -147,20 +147,24 @@
     capacity: 1
     count: 1
   - type: MeleeWeapon
-    attackRate: 1
+    attackRate: 1.5 # Harmony change, reverts mining changes 1 -> 1.5
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 6
-        Slash: 4
+      # Harmony change start, reverts mining changes blunt 6 -> 10, slash 4->5
+        Blunt: 10
+        Slash: 5
+      # Harmony End
     soundHit:
       collection: MetalThud
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 6
-        Slash: 2
+      # Harmony change start, reverts mining changes blunt 6 -> 2.5, slash 2->2.5
+        Blunt: 2.5
+        Slash: 2.5
+      # Harmony end
         Structural: 30
   - type: GunRequiresWield
   - type: DisarmMalus
@@ -232,10 +236,12 @@
     - suitStorage
   - type: UseDelay
     delay: 1.9
-  - type: BasicEntityAmmoProvider
-    proto: BulletChargeGlaive
-    capacity: 1
-    count: 1
+  # Harmony Start
+  #- type: BasicEntityAmmoProvider
+    #proto: BulletChargeGlaive
+    #capacity: 1
+    #count: 1
+  # Harmony End
   - type: LeechOnMarker
     leech:
       groups:
@@ -244,15 +250,17 @@
     tags:
       - Pickaxe
   - type: MeleeWeapon
-    attackRate: 1
-    wideAnimationRotation: -135
-    damage:
-      types:
-        Blunt: 3
-        Slash: 7
-  - type: IncreaseDamageOnWield
-    damage:
-      types:
-        Blunt: 2
-        Slash: 6
-        Structural: 20
+  # Harmony Start
+    #attackRate: 1
+   # wideAnimationRotation: -135
+    #damage:
+     # types:
+      #  Blunt: 3
+       # Slash: 7
+  #- type: IncreaseDamageOnWield
+   # damage:
+    #  types:
+     #   Blunt: 2
+      #  Slash: 6
+       # Structural: 20
+  # Harmony End

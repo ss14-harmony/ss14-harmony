@@ -34,7 +34,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      80: Dead
+      100: Dead # Harmony Change, reverts salvage mob health changes, 80 -> 100
   - type: Stamina
     critThreshold: 150
   - type: MovementAlwaysTouching
@@ -168,10 +168,12 @@
     spawned:
     - id: FoodMeat
       amount: 1
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      60: Dead
+  # Harmony start - reverts salvage mob changes
+  #- type: MobThresholds
+    #thresholds:
+      #0: Alive
+      #60: Dead
+  # Harmony End
 
 - type: entity
   id: MobKangarooSpaceSalvage
@@ -198,7 +200,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      45: Dead
+      90: Dead # Harmony Change, reverts salvage mob health changes, 45 -> 90
   - type: Stamina
     critThreshold: 150
   - type: DamageStateVisuals
@@ -299,7 +301,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        45: Dead
+        100: Dead # Harmony Change, reverts salvage mob health changes, 45 -> 100
     - type: Stamina
       critThreshold: 150
     - type: DamageStateVisuals
