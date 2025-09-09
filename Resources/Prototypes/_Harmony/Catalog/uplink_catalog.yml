@@ -285,6 +285,10 @@
     whitelist:
       tags:
       - NukeOpsUplink
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle # Tots shouldn't get the stealthy jetpack
 
 # Pointless
 
