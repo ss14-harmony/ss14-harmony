@@ -3,6 +3,7 @@ using Content.Shared.Movement.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization; // Harmony
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.CombatMode
@@ -49,4 +50,12 @@ namespace Content.Shared.CombatMode
         [DataField, AutoNetworkedField]
         public bool ToggleMouseRotator = true;
     }
+
+    // Harmony start
+    [Serializable, NetSerializable]
+    public enum CombatModeVisuals : byte
+    {
+        Enabled,
+    }
+    // Harmony end
 }

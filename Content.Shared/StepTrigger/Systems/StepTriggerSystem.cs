@@ -139,7 +139,7 @@ public sealed class StepTriggerSystem : EntitySystem
         // and the entity is flying or currently weightless
         // Makes sense simulation wise to have this be part of steptrigger directly IMO
         if (!component.IgnoreWeightless && TryComp<PhysicsComponent>(otherUid, out var physics) &&
-            (physics.BodyStatus == BodyStatus.InAir || _gravity.IsWeightless(otherUid, physics)))
+            (physics.BodyStatus == BodyStatus.InAir || _gravity.IsWeightless(otherUid)))
             return false;
 
         var msg = new StepTriggerAttemptEvent { Source = uid, Tripper = otherUid };
@@ -237,19 +237,19 @@ public sealed class StepTriggerSystem : EntitySystem
         Dirty(uid, component);
     }
 
-    // Goobstation
-    public void SetIgnoreWeightless(EntityUid uid, bool ignore, StepTriggerComponent? component = null)
+    // Goobstation start
+    public void SetIgnoreWeightless(Entity<StepTriggerComponent?> entity, bool ignore)
     {
-        if (!Resolve(uid, ref component))
+        if (!Resolve(entity, ref entity.Comp))
             return;
 
-        if (ignore == component.IgnoreWeightless)
+        if (ignore == entity.Comp.IgnoreWeightless)
             return;
 
-        component.IgnoreWeightless = ignore;
-        Dirty(uid, component);
+        entity.Comp.IgnoreWeightless = ignore;
+        Dirty(entity);
     }
-    // Goobstation
+    // Goobstation end
 }
 
 [ByRefEvent]

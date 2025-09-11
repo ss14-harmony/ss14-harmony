@@ -18,9 +18,9 @@
       - right_leg
       - left_leg
       organs:
-        heart: OrganHumanHeart
+        heart: OrganAvaliHeart # harmony - replaced human heart with avali heart
         lungs: OrganHumanLungs
-        stomach: OrganHumanStomach
+        stomach: OrganAvaliStomach # harmony - replaced human stomach with avali stomach
         liver: OrganHumanLiver
         kidneys: OrganHumanKidneys
     right_arm:

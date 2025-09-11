@@ -8,7 +8,6 @@
   - Gauze
   - Bloodpack # Harmony
 
-
 - type: latheRecipePack
   id: BasicChemistryStatic
   recipes:
@@ -48,6 +47,8 @@
   - DiseaseSwab
   - BodyBag
   - WhiteCane
+  - OffsetCane
+  - OffsetCaneWood
   - ClothingEyesEyepatchHudMedical # Harmony
   - ClothingEyesHudMedical # Harmony
 

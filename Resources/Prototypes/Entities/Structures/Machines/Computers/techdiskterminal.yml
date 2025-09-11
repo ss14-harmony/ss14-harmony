@@ -13,6 +13,10 @@
     - map: ["computerLayerScreen"]
       state: unshaded
   - type: DiskConsole
+# Begin harmony change - changed print sound
+    printSound:
+      path: /Audio/_Harmony/Machines/printer_harmony.ogg
+# End harmony change
   - type: ResearchClient
   - type: ActivatableUI
     key: enum.DiskConsoleUiKey.Key
