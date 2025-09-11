@@ -32,7 +32,7 @@
   parent: BoxCardboard
   id: FoodCartonSlimJohn
   name: carton of Slim-Johns
-  description: A large box, made for 6 boxes of Slim Johns.
+  description: A carton with the capacity for 6 boxes of Slim Johns.
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Storage/slimjohnbox.rsi

@@ -2,7 +2,7 @@
   parent: CrateSlimJohn
   id: CrateCargoSlimJohn
   name: crate of Slim-Johns
-  description: Over 50 Slim-Johns, for when you want to say, "OH YEAH!".
+  description: Over 50 Slim-Johns, for when you want to say "OH YEAH!".
   components:
   - type: StorageFill
     contents:
