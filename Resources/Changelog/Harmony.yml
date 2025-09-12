@@ -2628,3 +2628,24 @@ Entries:
     changes:
     - type: Add
       message: Added a kudzu bomb containing a mutated kudzu for syndicates.
+  - id: 979
+    author: kleinerstation13
+    time: '2025-09-06T02:31:05.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/979
+    changes:
+    - type: Add
+      message: Added a couple of tracks from Voices of the Void to space ambience, courtesy of Wolfeni.
+  - id: 928
+    author: Ermucat
+    time: '2025-09-08T21:10:15.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/928
+    changes:
+    - type: Remove
+      message: Removed salvage nerfs
+  - id: 1057
+    author: youtissoum
+    time: '2025-09-11T16:50:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1057
+    changes:
+    - type: Tweak
+      message: All colored lights on exo are now normal lights.
