@@ -2640,8 +2640,8 @@ Entries:
     time: '2025-09-08T21:10:15.000000+00:00'
     url: https://github.com/ss14-harmony/ss14-harmony/pull/928
     changes:
-    - type: Remove
-      message: Removed salvage nerfs
+    - type: Tweak
+      message: Reverted the overall damage reduction to salvage mobs and gear.
   - id: 1057
     author: youtissoum
     time: '2025-09-11T16:50:59.000000+00:00'
@@ -2649,3 +2649,24 @@ Entries:
     changes:
     - type: Tweak
       message: All colored lights on exo are now normal lights.
+  - id: 934
+    author: kleinerstation13
+    time: '2025-09-12T17:51:31.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/934
+    changes:
+    - type: Add
+      message: Ported PKA rework from Delta-V.
+    - type: Tweak
+      message: Reworked PKA modkits to be cost-based, you can have multiple of the same one now.
+    - type: Tweak
+      message: PKA only does 25% damage when indoors.
+    - type: Add
+      message: Added PKA indoors modkit for salvage traitors which counters indoor damage reduction.
+  - id: 946
+    author: CollectionOfBones128
+    time: '2025-09-12T17:51:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/946
+    changes:
+    - type: Tweak
+      message: The atmospheres of planets findable on Expeditions have been tweaked to accomodate the changes to the Proto-Kinetic Accelerator
+
