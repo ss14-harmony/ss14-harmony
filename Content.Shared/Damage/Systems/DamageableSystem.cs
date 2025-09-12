@@ -172,7 +172,7 @@ namespace Content.Shared.Damage
         ///     null if the user had no applicable components that can take damage.
         /// </returns>
         public DamageSpecifier? TryChangeDamage(EntityUid? uid, DamageSpecifier damage, bool ignoreResistances = false,
-            bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null, bool isReagentDamage = false) // Harmony, bool isReagentDamage added
+            bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null, float armorPenetration = 0f, bool isReagentDamage = false) // Harmony, bool isReagentDamage added
         {
             if (!uid.HasValue || !_damageableQuery.Resolve(uid.Value, ref damageable, false))
             {
@@ -191,11 +191,34 @@ namespace Content.Shared.Damage
             if (before.Cancelled)
                 return null;
 
-            // Apply resistances, start of Harmony change
-            if (damageable.DamageModifierSetId != null &&
-                _prototypeManager.TryIndex<DamageModifierSetPrototype>(damageable.DamageModifierSetId, out var modifierSet))
+            // Apply resistances
+            if (!ignoreResistances)
             {
-                if (isReagentDamage)
+                if (damageable.DamageModifierSetId != null &&
+                    _prototypeManager.TryIndex<DamageModifierSetPrototype>(damageable.DamageModifierSetId, out var modifierSet))
+                {
+                    // TODO DAMAGE PERFORMANCE
+                    // use a local private field instead of creating a new dictionary here..
+                    damage = DamageSpecifier.ApplyModifierSet(damage,
+                        DamageSpecifier.PenetrateArmor(modifierSet, armorPenetration)); // Goob edit
+                }
+
+                var ev = new DamageModifyEvent(damage, origin);
+                RaiseLocalEvent(uid.Value, ev);
+                damage = ev.Damage;
+
+                if (damage.Empty)
+                {
+                    return damage;
+                }
+            }
+
+            // Harmony, reagent damage resistance
+            if (isReagentDamage)
+            {
+                if (damageable.DamageModifierSetId != null &&
+                    _prototypeManager.TryIndex<DamageModifierSetPrototype>(damageable.DamageModifierSetId,
+                        out var modifierSet))
                 {
                     if (modifierSet.ReagentCoefficients != null && modifierSet.ReagentCoefficients.Count > 0)
                     {
@@ -213,33 +236,6 @@ namespace Content.Shared.Damage
                                 else
                                     damage.DamageDict[type] *= coeff;
                             }
-                        }
-                    }
-                    else if (!ignoreResistances)
-                    {
-                        damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet);
-                        var ev = new DamageModifyEvent(damage, origin);
-                        RaiseLocalEvent(uid.Value, ev);
-                        damage = ev.Damage;
-
-                        if (damage.Empty)
-                        {
-                            return damage;
-                        }
-                    }
-                }
-                else
-                {
-                    if (!ignoreResistances)
-                    {
-                        damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet);
-                        var ev = new DamageModifyEvent(damage, origin);
-                        RaiseLocalEvent(uid.Value, ev);
-                        damage = ev.Damage;
-
-                        if (damage.Empty)
-                        {
-                            return damage;
                         }
                     }
                 }
@@ -419,12 +415,14 @@ namespace Content.Shared.Damage
         public readonly DamageSpecifier OriginalDamage;
         public DamageSpecifier Damage;
         public EntityUid? Origin;
+        public float ArmorPenetration; // Goobstation
 
-        public DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null)
+        public DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null, float armorPenetration = 0)
         {
             OriginalDamage = damage;
             Damage = damage;
             Origin = origin;
+            ArmorPenetration = armorPenetration; // Goobstation
         }
     }
 

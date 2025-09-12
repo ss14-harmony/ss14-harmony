@@ -1,5 +1,6 @@
 using Content.Shared.Damage.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
 
 namespace Content.Shared.Damage
@@ -28,5 +29,22 @@ namespace Content.Shared.Damage
         [DataField("reagentCoefficients", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<float, DamageTypePrototype>))]
         public Dictionary<string, float> ReagentCoefficients = new();
         // End of Harmony change
+
+        [DataField(customTypeSerializer: typeof(FlagSerializer<ArmorPierceFlags>))]
+        public int IgnoreArmorPierceFlags = (int) PartialArmorPierceFlags.None;
+    }
+
+    // Goobstation start
+    public sealed class ArmorPierceFlags;
+
+    [Flags, Serializable]
+    [FlagsFor(typeof(ArmorPierceFlags))]
+    public enum PartialArmorPierceFlags
+    {
+        None = 0,
+        Positive = 1 << 0,
+        Negative = 1 << 1,
+        All = Positive | Negative,
+
     }
 }
