@@ -1,0 +1,12 @@
+## Static recipes
+
+# emagged autolathe
+- type: latheRecipePack
+  id: EmagAmmoStatic
+  recipes:
+    - BoxLethalshot
+    - BoxShotgunSlug
+    - MagazineBoxLightRifle
+    - MagazineBoxMagnum
+    - MagazineBoxPistol
+    - MagazineBoxRifle

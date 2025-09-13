@@ -135,7 +135,7 @@
     - HarmonyServiceStatic # Harmony
   - type: EmagLatheRecipes
     emagStaticPacks:
-    - SecurityAmmoStatic
+    - EmagAmmoStatic #Harmony Change: Replaced SecurityAmmoStatic with new EmagAmmoStatic
   - type: BlueprintReceiver
     whitelist:
       tags:
@@ -212,11 +212,15 @@
     - Equipment
     - FauxTiles
   - type: EmagLatheRecipes
-    emagDynamicPacks:
-    - SecurityAmmo
-    - SecurityExplosives
-    - SecurityEquipment
-    - SecurityWeapons
+    #Harmony Change Start: Replace Dynamic Packs with new Static Emag Packs
+    emagStaticPacks:
+      - EmagAmmoStatic
+    #emagDynamicPacks:
+    #- SecurityAmmo
+    #- SecurityExplosives
+    #- SecurityEquipment
+    #- SecurityWeapons
+    #Harmony Change Ends
 
 - type: entity
   id: ProtolatheHyperConvection
