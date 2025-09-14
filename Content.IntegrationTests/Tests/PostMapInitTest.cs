@@ -71,6 +71,7 @@ namespace Content.IntegrationTests.Tests
             "Prime", // Harmony, developed/revived by luckyshotpictures
             "Spire", // Harmony, Developed by Dogbone10, PenguinCodest, Jack_the_Dragon
             "Athena", // Harmony, Developed by whythelettuce
+            "Omega", // Harmony, updated from Spanky's version by OrnamentalFreak and CrimsonJupiter
             "Dev",
             "TestTeg",
             "Fland",

@@ -4,54 +4,63 @@
   storage:
     back:
     - ClothingNeckVulturePin
+  groupBy: "pins"
 
 - type: loadout
   id: ClothingNeckMirosPin
   storage:
     back:
     - ClothingNeckMirosPin
+  groupBy: "pins"
 
 - type: loadout
   id: ClothingNeckSalamanderPin
   storage:
     back:
     - ClothingNeckSalamanderPin
+  groupBy: "pins"
 
 - type: loadout
   id: ClothingNeckLizardPin
   storage:
     back:
     - ClothingNeckLizardPin
+  groupBy: "pins"
 
 - type: loadout
   id: ClothingNeckLeviathanPin
   storage:
     back:
     - ClothingNeckLeviathanPin
+  groupBy: "pins"
 
 - type: loadout
   id: ClothingNeckFrontierPin
   storage:
     back:
     - ClothingNeckFrontierPin
+  groupBy: "pins"
 
 - type: loadout
   id: ClothingNeckCosmaticDriftPin
   storage:
     back:
     - ClothingNeckCosmaticDriftPin
+  groupBy: "pins"
 
 - type: loadout
   id: ClothingNeckDeltaVPin
   storage:
     back:
     - ClothingNeckDeltaVPin
+  groupBy: "pins"
 
 - type: loadout
   id: ClothingNeckAxolotlPin
   storage:
     back:
     - ClothingNeckAxolotlPin
+  groupBy: "pins"
 
 - type: loadout
   id: ClothingNeckLanyard
