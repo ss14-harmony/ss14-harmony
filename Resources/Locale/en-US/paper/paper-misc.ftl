@@ -73,5 +73,5 @@ book-text-combat-bakery-kit = Thank you for choosing our combat bakery kit!
 
       Bungo Bomber Recipe:
       Glass x10
-      Lv wire x5
+      LV wire x5
       Bungo Fruit x1
