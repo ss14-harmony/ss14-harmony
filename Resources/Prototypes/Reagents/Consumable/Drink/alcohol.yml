@@ -163,7 +163,7 @@
   metabolisms:
     Alcohol:
       effects:
-      #Keeps characters without alcohol tolerance traits at the normal threshold for alcohol poisoning
+      # Harmony - Keeps characters without alcohol tolerance traits at the normal threshold for alcohol poisoning
       - !type:HealthChange
         conditions:
         #Harmony Change start - Checks to see if a character doesn't have any tolerance traits
@@ -332,7 +332,6 @@
           groups:
             Brute: -1
       # Harmony Change End
-
       - !type:ChemVomit
         probability: 0.04
         conditions:
