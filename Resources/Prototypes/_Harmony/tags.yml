@@ -20,6 +20,13 @@
 - type: Tag
   id: WhitelistChameleonPrideMantle
 
+#used in _Harmony/Entities/Objects/Weapons/Guns/Ammunition/Magazines/light_rifle.yml and _Harmony/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/light_rifle.yml
+- type: Tag
+  id: MagazineLightRifleCaseless
+
+- type: Tag
+  id: CartridgeLightRifleCaseless
+
 # Tags for the different levels of drinker
 - type: Tag
   id: HeavyweightDrunk
@@ -29,10 +36,3 @@
 
 - type: Tag
   id: VeryLightweightDrunk
-
-#used in _Harmony/Entities/Objects/Weapons/Guns/Ammunition/Magazines/light_rifle.yml and _Harmony/Entities/Objects/Weapons/Guns/Ammunition/Cartridges/light_rifle.yml
-- type: Tag
-  id: MagazineLightRifleCaseless
-
-- type: Tag
-  id: CartridgeLightRifleCaseless
