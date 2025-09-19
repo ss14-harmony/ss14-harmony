@@ -135,7 +135,10 @@
     - HarmonyServiceStatic # Harmony
   - type: EmagLatheRecipes
     emagStaticPacks:
-    - EmagAmmoStatic #Harmony Change: Replaced SecurityAmmoStatic with new EmagAmmoStatic
+    #Harmony Change Start: Replaced SecurityAmmoStatic with new EmagAmmoStatic
+    #- SecurityAmmoStatic
+    - EmagAmmoStatic
+    #Harmony Change End
   - type: BlueprintReceiver
     whitelist:
       tags:
