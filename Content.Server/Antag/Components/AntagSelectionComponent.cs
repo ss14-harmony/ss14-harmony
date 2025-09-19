@@ -202,12 +202,13 @@ public partial struct AntagSelectionDefinition()
     [DataField]
     public EntProtoId? SpawnerPrototype;
 
-    // harmony change: added ignoreJob field
+    // harmony change start: added ignoreJob field
     /// <summary>
     /// Determines whether the fact a player's job can't be an antagonist (i.e. Captain, Station AI) matters for the selection of this antagonist.
     /// </summary>
     [DataField]
     public bool IgnoreJob = false;
+    // harmony change end
 }
 
 /// <summary>

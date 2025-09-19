@@ -1,10 +1,9 @@
 - type: entity # components are added to turrets once they are upgraded
-  # parent: WeaponEnergyTurretAI
   id: WeaponEnergyTurretAIUpgrades
   categories: [ HideSpawnMenu, DoNotMap ]
   components:
   - type: Gun
-    fireRate: 3.75 # 2.5x firate rate
+    fireRate: 3.75 # 2.5x fire rate
     projectileSpeed: 15
     soundGunshot: 
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
