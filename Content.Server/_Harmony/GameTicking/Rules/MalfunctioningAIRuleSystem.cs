@@ -4,12 +4,13 @@ using Content.Server.GameTicking.Rules;
 using Content.Server.Popups;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Power.Components;
-using Content.Server.Radio.Components;
 using Content.Server.Roles;
 using Content.Server.Silicons.Laws;
 using Content.Server.Store.Systems;
 using Content.Server._Harmony.GameTicking.Rules.Components;
 using Content.Shared.Popups;
+using Content.Shared.Radio.Components;
+using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Station.Components;
@@ -19,7 +20,6 @@ using Content.Shared.Verbs;
 using Content.Shared._Harmony.Malfunction;
 using Content.Shared._Harmony.Malfunction.Components;
 using Content.Shared._Harmony.Roles.Components;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 
@@ -28,13 +28,14 @@ namespace Content.Server._Harmony.GameTicking.Rules;
 public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAIRuleComponent>
 {
     [Dependency] private readonly ActionsSystem _action = default!;
-    [Dependency] private readonly SiliconLawSystem _lawSystem = default!;
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ApcSystem _apc = default!;
+    [Dependency] private readonly SiliconLawSystem _laws = default!;
 
     private const string MalfShopId = "ActionMalfShop";
+    private const string MalfTransmitId = "ActionMalfTransmitLawZero";
     private static readonly ProtoId<CurrencyPrototype> CpuCurrencyPrototype = "CPU";
 
     public override void Initialize()
@@ -60,23 +61,36 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
         mindId.Comp.Active = true; // If Active is true, that means there is an active malfunctioning AI. As a result, silicons will gain a zeroth law.
         var ent = args.EntityUid;
         EnsureComp<MalfunctioningAIRoleComponent>(ent);
+        RemComp<IonStormTargetComponent>(ent); // ion storming the AI sounds like a bad idea during malf
         if (TryComp<IntrinsicRadioTransmitterComponent>(ent, out var transmitter))
             transmitter.Channels.Add("Syndicate");
         if (TryComp<ActiveRadioComponent>(ent, out var receiver))
             receiver.Channels.Add("Syndicate");
 
         _action.AddAction(ent, MalfShopId);
+        _action.AddAction(ent, MalfTransmitId);
 
-        // Send antagonist briefing to and update all cyborgs appropriately
-        foreach (var lawComp in EntityQuery<SiliconLawProviderComponent>())
+        if (!TryComp<SiliconLawProviderComponent>(ent, out var laws) || laws.Lawset is null) return;
         {
-            var silicon = lawComp.Owner;
-            if (HasComp<NonMalfunctioningComponent>(silicon))
-                continue;
-            if (lawComp.Lawset == null)
-                continue;
-            _lawSystem.SetLaws(lawComp.Lawset.Laws, silicon, new SoundPathSpecifier("/Audio/_Harmony/Misc/malf_start.ogg"));
+            var newLaws = laws.Lawset.Laws;
+            newLaws.Insert(0, LawZero());
+            _laws.SetLaws(newLaws, ent, notify: false);
         }
+    }
+
+    /// <summary>
+    /// Use to get a Malf AI law zero as a SiliconLaw.
+    /// </summary>
+    /// <param name="subordinate">Whether this law belongs to the Malf AI or a malf cyborg</param>
+    /// <returns>A Malf AI law zero as a SiliconLaw.</returns>
+    public SiliconLaw LawZero(bool subordinate = false)
+    {
+        var zerothLaw = new SiliconLaw();
+        zerothLaw.LawString = Loc.GetString(subordinate ? "malf-zeroth-subordinate-law" : "malf-zeroth-law");
+        zerothLaw.Order = -1;
+        zerothLaw.LawIdentifierOverride = "Override";
+
+        return zerothLaw;
     }
 
     // Character screen briefing

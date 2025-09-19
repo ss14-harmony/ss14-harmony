@@ -10,6 +10,8 @@ public sealed partial class MalfDoomsdayStartEvent : InstantActionEvent;
 
 public sealed partial class MalfDestroyRcdsEvent : InstantActionEvent;
 
+public sealed partial class MalfTransmitLawZeroEvent : InstantActionEvent;
+
 public sealed partial class MalfDoomsdayActivatedEvent : EntityEventArgs;
 
 public sealed partial class MalfLockdownEvent : InstantActionEvent;

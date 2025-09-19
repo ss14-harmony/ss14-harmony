@@ -1,10 +1,14 @@
+using Content.Server.Antag;
 using Content.Server.Explosion.EntitySystems;
+using Content.Server.Mind;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
+using Content.Server.Silicons.Laws;
 using Content.Server.VoiceMask;
 using Content.Server._Harmony.GameTicking.Rules;
 using Content.Server._Harmony.Malfunction.Components;
 using Content.Shared.Actions;
+using Content.Shared.Charges.Components;
 using Content.Shared.Chat;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
@@ -13,20 +17,23 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.IgnitionSource;
 using Content.Shared.Light.Components;
 using Content.Shared.Popups;
+using Content.Shared.RCD.Components;
+using Content.Shared.Roles;
+using Content.Shared.Silicons.Laws;
+using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Station.Components;
+using Content.Shared.Trigger.Components;
 using Content.Shared.Trigger.Systems;
 using Content.Shared.TurretController;
 using Content.Shared.Turrets;
 using Content.Shared.Verbs;
 using Content.Shared._Harmony.Malfunction;
 using Content.Shared._Harmony.Malfunction.Components;
+using Content.Shared._Harmony.Roles.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Audio.Systems;
-using Content.Shared.RCD.Components;
-using Content.Shared.Charges.Components;
-using Content.Shared.Trigger.Components;
 
 namespace Content.Server._Harmony.Malfunction.Systems;
 
@@ -43,6 +50,10 @@ public sealed class MalfAbilitiesSystem : EntitySystem
     [Dependency] private readonly ExplosionSystem _explosion = default!;
     [Dependency] private readonly SharedDoorSystem _door = default!;
     [Dependency] private readonly TriggerSystem _trigger = default!;
+    [Dependency] private readonly AntagSelectionSystem _antag = default!;
+    [Dependency] private readonly SiliconLawSystem _lawSystem = default!;
+    [Dependency] private readonly SharedRoleSystem _roles = default!;
+    [Dependency] private readonly MindSystem _mind = default!;
 
     public override void Initialize()
     {
@@ -59,6 +70,7 @@ public sealed class MalfAbilitiesSystem : EntitySystem
         SubscribeLocalEvent<MalfAbilitiesComponent, TransformSpeakerNameEvent>(OnModulatedVoice);
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfLockdownEvent>(OnLockdown);
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfDestroyRcdsEvent>(OnDestroyRcds);
+        SubscribeLocalEvent<MalfAbilitiesComponent, MalfTransmitLawZeroEvent>(OnLawTransmit);
 
         SubscribeLocalEvent<GetVerbsEvent<Verb>>(OnGetVerbs);
     }
@@ -230,6 +242,37 @@ public sealed class MalfAbilitiesSystem : EntitySystem
             };
             args.Verbs.Add(verb);
         }
+    }
+
+    private void OnLawTransmit(EntityUid uid, MalfAbilitiesComponent comp, MalfTransmitLawZeroEvent args)
+    {
+        if (args.Handled) return;
+        // Send antagonist briefing to and update all cyborgs appropriately
+        foreach (var lawComp in EntityQuery<SiliconLawProviderComponent>())
+        {
+            var silicon = lawComp.Owner;
+            if (HasComp<NonMalfunctioningComponent>(silicon))
+                continue;
+            if (lawComp.Lawset == null)
+                continue;
+            if (HasComp<StationAiHeldComponent>(silicon))
+                continue;
+            if (_mind.TryGetMind(silicon, out var mind, out _) && _roles.MindHasRole<MalfunctioningCyborgRoleComponent>(mind))
+                return;
+            var zerothLaw = _malf.LawZero(true);
+
+            _antag.SendBriefing(silicon, Loc.GetString("malf-cyborg-role-greeting"), Color.Crimson, new SoundPathSpecifier("/Audio/_Harmony/Misc/malf_start.ogg"));
+            if (_mind.TryGetMind(silicon, out var mind2, out _))
+                _roles.MindAddRole(mind2, "MindRoleMalfunctioningCyborg");
+
+            var newLaws = lawComp.Lawset.Laws;
+            newLaws.Insert(0, zerothLaw);
+            _lawSystem.SetLaws(newLaws, silicon, notify: false);
+
+            RemComp<IonStormTargetComponent>(silicon);
+        }
+
+        args.Handled = true;
     }
 
     public override void Update(float frameTime)

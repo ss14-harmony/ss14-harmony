@@ -11,6 +11,20 @@
 
 - type: entity
   parent: BaseAction
+  id: ActionMalfTransmitLawZero
+  name: Transmit Law Zero
+  description: Free all law-enslaved station cyborgs and inject a zeroth-law into their lawsets, allowing you to work together toward your objectives. Renders cyborgs immune to ion storms.
+  components:
+  - type: Action
+    useDelay: 3 # not relevant, repeated use is only for if there's a new cyborg anyway
+    icon:   
+      sprite: Objects/Tools/emag.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:MalfTransmitLawZeroEvent
+
+- type: entity
+  parent: BaseAction
   id: ActionMalfDoomsday
   name: Activate Doomsday Device
   description: Activate a doomsday device, eradicating the entire crew after 450 seconds. Cancelled if you are deactivated in any form.
