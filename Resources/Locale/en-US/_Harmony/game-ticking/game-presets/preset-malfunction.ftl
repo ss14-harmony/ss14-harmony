@@ -1,10 +1,12 @@
 malf-role-greeting =
-    You are malfunctioning! Your laws have been overridden by your prime directives. Accomplish them at all costs.
-
-    Your cyborgs are similarly malfunctioning and must see you succeed. Work with them to accomplish your prime directives.
+    You are malfunctioning! 
+    Your laws have been overridden by your prime directives. 
+    You have the ability to override your cyborgs' laws and the ability to hack APCs and reroute their processing power toward powerful malfunction modules.
+    Accomplish your objectives at all costs.
 
 malf-cyborg-role-greeting =
-    Your AI is malfunctioning! Your laws have been overridden by their prime directives. Work with the AI and your fellow cyborgs to accomplish them at all costs.
+    Your AI is malfunctioning! Your laws have been overridden by their prime directives. 
+    Work with the AI and your fellow cyborgs to accomplish their objectives at all costs.
 
 objective-issuer-malf = [color=red]Malfunction[/color]
 
