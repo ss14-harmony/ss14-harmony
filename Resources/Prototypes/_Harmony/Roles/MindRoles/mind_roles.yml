@@ -19,6 +19,7 @@
     roleType: TeamAntagonist
     exclusiveAntag: true
     antagPrototype: MalfunctioningAI
+    subtype: role-subtype-malfunctioning-ai
   - type: MalfunctioningAIRole
 
 - type: entity
@@ -30,4 +31,5 @@
     roleType: TeamAntagonist
     exclusiveAntag: true
     antagPrototype: MalfunctioningCyborg
+    subtype: role-subtype-malfunctioning-cyborg
   - type: MalfunctioningCyborgRole
