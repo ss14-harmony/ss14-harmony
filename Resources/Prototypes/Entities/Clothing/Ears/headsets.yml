@@ -78,10 +78,8 @@
   - type: ContainerFill
     containers:
       key_slots:
-      # Harmony Change Start - Adds Salv Comms Channel
-      # - EncryptionKeyCargo
-      - EncryptionKeySalvageCargo
-      # Harmony Change Ends
+      - EncryptionKeyCargo
+      - EncryptionKeySalvage # Harmony Change - Adds Salv Comms Channel
       - EncryptionKeyCommand
       - EncryptionKeyCommon
 
