@@ -2699,3 +2699,10 @@ Entries:
     changes:
     - type: Fix
       message: The ninja's call a threat objective will now properly spawn the new derelict variants.
+  - id: 1051
+    author: BlueMoon059
+    time: '2025-09-19T14:16:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1051
+    changes:
+    - type: Add
+      message: The HoP now starts with a physical copy of the Standard Operating Procedure in their pocket.
