@@ -2669,3 +2669,33 @@ Entries:
     changes:
     - type: Tweak
       message: The atmospheres of planets findable on Expeditions have been tweaked to accomodate the changes to the Proto-Kinetic Accelerator
+  - id: 906
+    author: BlueMoon059
+    time: '2025-09-13T15:05:57.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/906
+    changes:
+    - type: Tweak
+      message: The QM's digiboard can now link to cargo order consoles. Gambling has never been easier.
+  - id: 1032
+    author: dragydevi
+    time: '2025-09-14T14:18:52.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1032
+    changes:
+    - type: Tweak
+      message: Increased the capacity of all crayons to 100.
+    - type: Tweak
+      message: Increased the capacity of the rainbow crayon to 120.
+  - id: 922
+    author: ProbablyAta
+    time: '2025-09-14T16:50:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/922
+    changes:
+    - type: Add
+      message: Nanotrasen pyjamas are now available to purchase in the cargo request console.
+  - id: 1049
+    author: BlueMoon059
+    time: '2025-09-14T17:20:52.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1049
+    changes:
+    - type: Fix
+      message: The ninja's call a threat objective will now properly spawn the new derelict variants.

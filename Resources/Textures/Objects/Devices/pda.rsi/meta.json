@@ -235,6 +235,9 @@
     {
       "name": "pda-seniorofficer"
     },
+    {
+      "name": "pda-seniorcourier"
+    },
 	{
       "name": "pda-wizard",
       "delays": [

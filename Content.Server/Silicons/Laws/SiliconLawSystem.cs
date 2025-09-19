@@ -3,7 +3,6 @@ using Content.Server.Administration;
 using Content.Server.Antag; // harmony change
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking; // harmony change
-using Content.Server.Radio.Components;
 using Content.Server.Station.Systems;
 using Content.Server._Harmony.GameTicking.Rules.Components; // harmony change
 using Content.Shared.Administration;
@@ -12,6 +11,7 @@ using Content.Shared.Emag.Systems;
 using Content.Shared.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
+using Content.Shared.Radio.Components;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Components;
 using Content.Shared.Silicons.Laws;

@@ -830,17 +830,6 @@
     state: spines
 
 - type: marking
-  id: VoxTailSplit
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Vox ]
-  forcedColoring: true
-  followSkinColor: true
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/Vox/tail.rsi
-    state: split
-
-- type: marking
   id: VoxSunAndMoon
   bodyPart: Tail
   markingCategory: Overlay
