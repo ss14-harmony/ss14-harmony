@@ -2706,3 +2706,12 @@ Entries:
     changes:
     - type: Add
       message: The HoP now starts with a physical copy of the Standard Operating Procedure in their pocket.
+  - id: 1009
+    author: kleinerstation13
+    time: '2025-09-19T14:34:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1009
+    changes:
+    - type: Add
+      message: Syndicates and blood bounds can now get steal objectives for the HoS's energy magnum.
+    - type: Add
+      message: Syndicates, blood bounds, and thieves can now get steal objectives for the access configurator.
