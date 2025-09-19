@@ -3,7 +3,7 @@ using Content.Shared.Doors.Components;
 using Content.Shared.Examine;
 using Content.Shared.Popups;
 using Content.Shared.Prying.Components;
-using Content.Shared._Harmony.Malfunction.Components;
+using Content.Shared._Harmony.Malfunction.Components; // harmony change
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 
