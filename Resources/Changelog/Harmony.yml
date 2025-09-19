@@ -2715,3 +2715,12 @@ Entries:
       message: Syndicates and blood bounds can now get steal objectives for the HoS's energy magnum.
     - type: Add
       message: Syndicates, blood bounds, and thieves can now get steal objectives for the access configurator.
+  - id: 1082
+    author: youtissoum
+    time: '2025-09-19T20:16:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1082
+    changes:
+    - type: Fix
+      message: Hardsuit helmets will no longer show up as error sprites for reptilians and vulpkanins.
+    - type: Remove
+      message: More hardsuits with custom sprites are no longer wearable by smart corgis.
