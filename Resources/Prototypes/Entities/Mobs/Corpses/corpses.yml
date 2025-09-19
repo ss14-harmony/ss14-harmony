@@ -32,6 +32,8 @@
       - VisitorReporter
       - VisitorReporterAlt
       - VisitorZookeeper
+      - CorpseBartender
+      - CorpseBoxer
 # Harmony Change End
 
 - type: entity
