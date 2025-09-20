@@ -1,6 +1,6 @@
 ﻿cm-ui-rmc14 = RMC14
 
-# HARMONY CHANGE START - Voielines > Speech Sounds
+# HARMONY CHANGE START - Voielines > Speech Sounds, species changes
 rmc-ui-voicelines = Speech Sounds
 rmc-ui-options-tab-voicelines = Speech Sounds
 rmc-ui-audio-voicelines-yourself = Play speech sounds from yourself
@@ -17,7 +17,7 @@ rmc-ui-audio-voicelines-avali = Play speech sounds for avalis
 # rmc-ui-audio-voicelines-rodentia = Play speech sounds for rodentias
 # rmc-ui-audio-voicelines-feroxi = Play speech sounds for feroxis
 # rmc-ui-audio-voicelines-skrell = Play speech sounds for skrells
-# HARMONY CHANGE END
+rmc-ui-audio-voicelines-vox = Play speech sounds for vox
 
 rmc-ui-emotes = Emotes
 rmc-ui-audio-emotes-yourself = Play emotes from yourself
@@ -34,3 +34,5 @@ rmc-ui-audio-emotes-avali = Play emotes for avalis
 # rmc-ui-audio-emotes-rodentia = Play emotes for rodentias
 # rmc-ui-audio-emotes-feroxi = Play emotes for feroxis
 # rmc-ui-audio-emotes-skrell = Play emotes for skrells
+rmc-ui-audio-emotes-vox = Play emotes for vox
+# HARMONY CHANGE END

@@ -4,13 +4,26 @@
   weights:
     Dragon: 1
     Revenant: 1
+    #Begin Harmony Change - expanded pool of spawns.
+    LoneOp: 0.25
+    Wizard: 0.25
+    # DerelictBorg: 1 temporary
+    ParadoxClone: 1
+    Bingle: 1
+    #End Harmony Change - expanded pool of spawns.
 
 - type: ninjaHackingThreat
   id: Dragon
-  announcement: terror-dragon
+# Start Harmony change - censors dragon spawn to keep threat secret with expanded spawn pool.
+  #announcement: terror-dragon
+  announcement: terror-space 
+# End Harmony change
   rule: DragonSpawn
 
 - type: ninjaHackingThreat
   id: Revenant
-  announcement: terror-revenant
+# Start Harmony change - censors rev spawn to keep threat secret with expanded pool.
+  #announcement: terror-revenant
+  announcement: terror-otherworldly 
+# End Harmony change
   rule: RevenantSpawn

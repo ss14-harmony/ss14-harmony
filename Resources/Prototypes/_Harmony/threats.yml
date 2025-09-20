@@ -1,0 +1,24 @@
+- type: ninjaHackingThreat
+  id: LoneOp
+  announcement: terror-loneop
+  rule: LoneOpsSpawn
+
+- type: ninjaHackingThreat
+  id: Wizard
+  announcement: terror-wizard
+  rule: WizardSpawn
+
+#- type: ninjaHackingThreat
+#  id: DerelictBorg
+#  announcement: terror-space
+#  rule: DerelictCyborgSpawn
+
+- type: ninjaHackingThreat
+  id: ParadoxClone
+  announcement: terror-otherworldly
+  rule: ParadoxCloneSpawn
+
+- type: ninjaHackingThreat
+  id: Bingle
+  announcement: terror-otherworldly
+  rule: BingleSpawn

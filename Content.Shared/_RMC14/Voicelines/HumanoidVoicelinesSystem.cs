@@ -24,6 +24,7 @@ public sealed class HumanoidVoicelinesSystem : EntitySystem
     // private static readonly ProtoId<SpeciesPrototype> RodentiaSpecies = "Rodentia"; // Harmony - No Rodentia
     // private static readonly ProtoId<SpeciesPrototype> FeroxiSpecies = "Feroxi"; // Harmony - No Feroxi
     // private static readonly ProtoId<SpeciesPrototype> SkrellSpecies = "Skrell"; // Harmony - No Skrell
+    private static readonly ProtoId<SpeciesPrototype> VoxSpecies = "Vox";
 
     private readonly Dictionary<ProtoId<SpeciesPrototype>, CVarDef> _voicelineCVars = new()
     {
@@ -40,6 +41,7 @@ public sealed class HumanoidVoicelinesSystem : EntitySystem
         // [RodentiaSpecies] = RMCCVars.RMCPlayVoicelinesRodentia, // Harmony - No Rodentia
         // [FeroxiSpecies] = RMCCVars.RMCPlayVoicelinesFeroxi, // Harmony - No Feroxi
         // [SkrellSpecies] = RMCCVars.RMCPlayVoicelinesSkrell, // Harmony - No Skrell
+        [VoxSpecies] = RMCCVars.RMCPlayVoicelinesVox //Harmony - Vox
     };
 
     private readonly Dictionary<ProtoId<SpeciesPrototype>, CVarDef> _emoteCVars = new()
@@ -57,6 +59,7 @@ public sealed class HumanoidVoicelinesSystem : EntitySystem
         // [RodentiaSpecies] = RMCCVars.RMCPlayEmotesRodentia, // Harmony - No Rodentia
         // [FeroxiSpecies] = RMCCVars.RMCPlayEmotesFeroxi, // Harmony - No Feroxi
         // [SkrellSpecies] = RMCCVars.RMCPlayEmotesSkrell, // Harmony - No Skrell
+        [VoxSpecies] = RMCCVars.RMCPlayEmotesVox,
     };
 
     private EntityQuery<HumanoidAppearanceComponent> _humanoidAppearanceQuery;

@@ -543,6 +543,7 @@
   id: BeardPadovana
   bodyPart: FacialHair
   markingCategory: FacialHair
+  canBeDisplaced: false # Harmony
   speciesRestriction: [ Vox ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Vox/facialhair.rsi
@@ -552,6 +553,7 @@
   id: LargeWattle
   bodyPart: FacialHair
   markingCategory: HeadSide
+  canBeDisplaced: false # Harmony
   speciesRestriction: [ Vox ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Vox/facialhair.rsi
@@ -561,6 +563,7 @@
   id: SmallWattle
   bodyPart: FacialHair
   markingCategory: HeadSide
+  canBeDisplaced: false # Harmony
   speciesRestriction: [ Vox ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Vox/facialhair.rsi
@@ -572,6 +575,7 @@
   id: HairPadovana
   bodyPart: Hair
   markingCategory: Hair
+  canBeDisplaced: false # Harmony
   speciesRestriction: [ Vox ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Vox/hair.rsi
@@ -581,6 +585,7 @@
   id: HijabSimpleVox
   bodyPart: Hair
   markingCategory: Hair
+  canBeDisplaced: false # Harmony
   speciesRestriction: [ Vox ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Vox/hair.rsi
@@ -590,6 +595,7 @@
   id: HijabFashionableVox
   bodyPart: Hair
   markingCategory: Hair
+  canBeDisplaced: false # Harmony
   speciesRestriction: [ Vox ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Vox/hair.rsi
@@ -599,6 +605,7 @@
   id: LargeComb
   bodyPart: Hair
   markingCategory: HeadSide
+  canBeDisplaced: false # Harmony
   speciesRestriction: [ Vox ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Vox/hair.rsi
@@ -608,6 +615,7 @@
   id: TichelSimpleVox
   bodyPart: Hair
   markingCategory: Hair
+  canBeDisplaced: false # Harmony
   speciesRestriction: [ Vox ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Vox/hair.rsi
@@ -617,6 +625,7 @@
   id: TichelFashionableVox
   bodyPart: Hair
   markingCategory: Hair
+  canBeDisplaced: false # Harmony
   speciesRestriction: [ Vox ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Vox/hair.rsi
@@ -626,6 +635,7 @@
   id: VoxBald
   bodyPart: Hair
   markingCategory: Hair
+  canBeDisplaced: false # Harmony
   speciesRestriction: [ Vox ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Vox/hair.rsi
@@ -635,6 +645,7 @@
   id: VoxEmover
   bodyPart: Hair
   markingCategory: Hair
+  canBeDisplaced: false # Harmony
   speciesRestriction: [ Vox ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Vox/hair.rsi
@@ -644,6 +655,7 @@
   id: VoxPolish
   bodyPart: Hair
   markingCategory: Hair
+  canBeDisplaced: false # Harmony
   speciesRestriction: [ Vox ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Vox/hair.rsi
@@ -653,6 +665,7 @@
   id: VoxWindswept
   bodyPart: Hair
   markingCategory: Hair
+  canBeDisplaced: false # Harmony
   speciesRestriction: [ Vox ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Vox/hair.rsi

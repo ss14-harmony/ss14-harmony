@@ -172,7 +172,7 @@ namespace Content.Shared.Damage
         ///     null if the user had no applicable components that can take damage.
         /// </returns>
         public DamageSpecifier? TryChangeDamage(EntityUid? uid, DamageSpecifier damage, bool ignoreResistances = false,
-            bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null)
+            bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null, float armorPenetration = 0f)
         {
             if (!uid.HasValue || !_damageableQuery.Resolve(uid.Value, ref damageable, false))
             {
@@ -199,7 +199,8 @@ namespace Content.Shared.Damage
                 {
                     // TODO DAMAGE PERFORMANCE
                     // use a local private field instead of creating a new dictionary here..
-                    damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet);
+                    damage = DamageSpecifier.ApplyModifierSet(damage,
+                        DamageSpecifier.PenetrateArmor(modifierSet, armorPenetration)); // Goob edit
                 }
 
                 var ev = new DamageModifyEvent(damage, origin);
@@ -385,12 +386,14 @@ namespace Content.Shared.Damage
         public readonly DamageSpecifier OriginalDamage;
         public DamageSpecifier Damage;
         public EntityUid? Origin;
+        public float ArmorPenetration; // Goobstation
 
-        public DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null)
+        public DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null, float armorPenetration = 0)
         {
             OriginalDamage = damage;
             Damage = damage;
             Origin = origin;
+            ArmorPenetration = armorPenetration; // Goobstation
         }
     }
 

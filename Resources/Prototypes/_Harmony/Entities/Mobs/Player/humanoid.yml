@@ -260,3 +260,117 @@
       requirements:
       - !type:OverallPlaytimeRequirement
         time: 21600 # 6 hrs
+
+## ERP Leader
+
+- type: entity
+  id: RandomHumanoidSpawnerERPLeader
+  name: ERP leader
+  suffix: Harmony, ERPRole, Basic
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: clown
+  - type: RandomMetadata
+    nameSegments:
+    - NamesMilitaryFirstLeader
+    - NamesClown
+    nameFormat: name-format-standard
+  - type: RandomHumanoidSpawner
+    settings: ERPLeader
+
+- type: randomHumanoidSettings
+  parent: EventHumanoidCentcomm
+  id: ERPLeader
+  components:
+  - type: GhostRole
+    name: ghost-role-information-erp-leader-name
+    description: ghost-role-information-erp-leader-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: ERPLeader
+  - type: Loadout
+    prototypes: [ ERPLeaderGear ]
+    roleLoadout: [ RoleSurvivalClown ]
+  - type: RandomMetadata
+    nameSegments:
+    - NamesMilitaryFirstLeader
+    - NamesClown
+    nameFormat: name-format-standard
+
+## ERP Leader Timer
+
+- type: entity
+  parent: RandomHumanoidSpawnerERPLeader
+  id: RandomHumanoidSpawnerERPLeaderTime
+  suffix: Harmony, ERPRole, Time
+  components:
+  - type: RandomHumanoidSpawner
+    settings: ERPLeader
+
+- type: randomHumanoidSettings
+  parent: ERPLeader
+  id: ERPLeaderTime
+  components:
+  - type: GhostRole
+    requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 21600 # 6 hrs
+
+## ERP Clown
+
+- type: entity
+  id: RandomHumanoidSpawnerERPClown
+  name: ERP clown
+  suffix: Harmony, ERPRole, Basic
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: clown
+  - type: RandomMetadata
+    nameSegments:
+    - NamesMilitaryFirst
+    - NamesClown
+    nameFormat: name-format-standard
+  - type: RandomHumanoidSpawner
+    settings: ERPClown
+
+- type: randomHumanoidSettings
+  parent: EventHumanoidCentcomm
+  id: ERPClown
+  components:
+  - type: GhostRole
+    name: ghost-role-information-erp-clown-name
+    description: ghost-role-information-erp-clown-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: ERPClown
+  - type: Loadout
+    prototypes: [ ERPClownGear ]
+    roleLoadout: [ RoleSurvivalClown ]
+  - type: RandomMetadata
+    nameSegments:
+    - NamesMilitaryFirst
+    - NamesClown
+    nameFormat: name-format-standard
+
+## ERP Clown Timer
+
+- type: entity
+  parent: RandomHumanoidSpawnerERPClown
+  id: RandomHumanoidSpawnerERPClownTime
+  suffix: Harmony, ERPRole, Time
+  components:
+  - type: RandomHumanoidSpawner
+    settings: ERPClown
+
+- type: randomHumanoidSettings
+  parent: ERPClown
+  id: ERPClownTime
+  components:
+  - type: GhostRole
+    requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 10800 # 3 hrs

@@ -1,10 +1,10 @@
 ﻿using Content.Server._Harmony.Objectives.Components;
-using Content.Server._Harmony.Roles;
 using Content.Server.Mind;
 using Content.Server.Objectives.Systems;
 using Content.Server.Roles;
 using Content.Shared._Harmony.BloodBrothers.Components;
 using Content.Shared._Harmony.BloodBrothers.EntitySystems;
+using Content.Shared._Harmony.Roles.Components;
 
 namespace Content.Server._Harmony.BloodBrothers.EntitySystems;
 
