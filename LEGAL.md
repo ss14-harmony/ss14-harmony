@@ -23,7 +23,7 @@ For MIT this means you **must not** remove the copy of the MIT license from any 
 - Code created by Harmony contributors is found in `_Harmony` Namespaces.
 
 - Upstream code from [Space Station 14](https://github.com/space-wizards/space-station-14) was taken under [the MIT license](/LICENSE-MIT.txt).
-  Any code not in a specific Namespace, excluding `Nyanotrasen` subdirectories, is sublicensed as MIT plus AGPLv3 from the Space Wizards Federation.
+  Any code not in a specific Namespace is sublicensed as MIT plus AGPLv3 from the Space Wizards Federation.
 
 Below is a list of all the forks we have ported content from, their namespace, and their license:
 
