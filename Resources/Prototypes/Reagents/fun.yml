@@ -207,7 +207,7 @@
         probability: 0.3
 
 - type: reagent
-  id: Fresium
+  id: Fresium # Harmony changes this!
   name: reagent-name-fresium
   group: Toxins
   slipData:
@@ -346,7 +346,6 @@
         - !type:ReagentThreshold
           reagent: Fresium
           max: 40 # slows when less than 40, but more than 10
-          min: 10
         walkSpeedModifier: 0.6
         sprintSpeedModifier: 0.6
         time: 5
@@ -361,7 +360,7 @@
         sprintSpeedModifier: 0.00
         time: 8
         type: Add
-        refresh: true
+        refresh: true # End of Fresium Harmony change!
 
 - type: reagent
   id: Laughter
