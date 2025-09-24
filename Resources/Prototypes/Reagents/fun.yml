@@ -292,23 +292,26 @@
       - !type:HealthChange
         damage:
           types:
-             Cold: 0.5 # nips directly, other cold damage comes from the temp change
+             Cold: 1.5 # nips directly, other cold damage comes from the temp change
              Heat: -3 # heals not insignificant heat damage.
+          groups: # heals like cryox, but weaker
+            Airloss: -3
+            Brute: -3
+            Burn: -3
+            Toxin: -2
       - !type:HealthChange
           conditions:
           - !type:ReagentThreshold
             reagent: Fresium
-            min: 40 # when immobilized, gain significant healing, stronger than cryoxadone. Better hope what you're healing from doesn't come back while you're frozen solid.
+            min: 40 # when immobilized, gain significant healing, stronger than cryoxadone. ADDED TO ABOVE HEALING Better hope what you're healing from doesn't come back while you're frozen solid.
           damage:
             groups:
-              Airloss: -6
-              Brute: -8
-              Burn: -4
-              Toxin: -4
+              Brute: -6
+              Burn: -6
       - !type:ModifyBleedAmount
         amount: -0.4 # slowly stops bleeding, a bit stronger than inap.
       - !type:ExtinguishReaction
-        FireStacksAdjustment: -0.2 # slowly stops burning
+        FireStacksAdjustment: -0.01 # slowly stops burning
       - !type:PopupMessage
         conditions:
         - !type:ReagentThreshold
