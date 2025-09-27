@@ -26,7 +26,7 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
             return;
 
         // Begin Misfit - Moved CD's synth notifier to its own function
-        var notifierQuery = EntityQueryEnumerator<IonStormNotifierComponent>(); // Misfit - Change to IonStormNotifier
+        var notifierQuery = EntityQueryEnumerator<IonStormNotifierComponent>();
         while (notifierQuery.MoveNext(out var ent, out var notifierComponent))
         {
             NotifyIonStorm(ent, notifierComponent.AlertChance, notifierComponent.Loc);
@@ -44,7 +44,7 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
         }
     }
 
-    // Misfit - Move Ion Storm Notification to its own function
+    // Misfit - Move CD's ion storm notification to its own function
     private void NotifyIonStorm(EntityUid ent, float alertChance, string loc)
     {
         if (!Random.Shared.Prob(alertChance))
