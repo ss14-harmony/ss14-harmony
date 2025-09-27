@@ -22,5 +22,7 @@
   id: Synthetic
   name: trait-synth-name
   description: trait-synth-desc
+  category: Quirks
   components:
   - type: Synth
+  - type: IonStormNotifier

@@ -1,4 +1,4 @@
-using Content.Server._CD.Traits; // CD - Synth Trait
+using Content.Server._Misfit.Announcements; // Misfit - Ion Storm Notifier
 using Content.Server.Silicons.Laws;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
@@ -16,7 +16,7 @@ namespace Content.Server.StationEvents.Events;
 public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
 {
     [Dependency] private readonly IonStormSystem _ionStorm = default!;
-    [Dependency] private readonly IChatManager _chatManager = default!;
+    [Dependency] private readonly IChatManager _chatManager = default!; // CD - Synth Trait
 
     protected override void Started(EntityUid uid, IonStormRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
@@ -25,21 +25,13 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
         if (!TryGetRandomStation(out var chosenStation))
             return;
 
-        // CD Change - Go through everyone with the SynthComponent and inform them a storm is happening.
-        var synthQuery = EntityQueryEnumerator<SynthComponent>();
-        while (synthQuery.MoveNext(out var ent, out var synthComp))
+        // Begin Misfit - Moved CD's synth notifier to its own function
+        var notifierQuery = EntityQueryEnumerator<IonStormNotifierComponent>(); // Misfit - Change to IonStormNotifier
+        while (notifierQuery.MoveNext(out var ent, out var notifierComponent))
         {
-            if (Random.Shared.Prob(synthComp.AlertChance))
-                continue;
-
-            if (!TryComp<ActorComponent>(ent, out var actor))
-                continue;
-
-            var msg = Loc.GetString("station-event-ion-storm-synth");
-            var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
-            _chatManager.ChatMessageToOne(ChatChannel.Server, msg, wrappedMessage, default, false, actor.PlayerSession.Channel, colorOverride: Color.Yellow);
+            NotifyIonStorm(ent, notifierComponent.AlertChance, notifierComponent.Loc);
         }
-        // End of CD change
+        // End Misfit
 
         var query = EntityQueryEnumerator<SiliconLawBoundComponent, TransformComponent, IonStormTargetComponent>();
         while (query.MoveNext(out var ent, out var lawBound, out var xform, out var target))
@@ -50,5 +42,19 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
 
             _ionStorm.IonStormTarget((ent, lawBound, target));
         }
+    }
+
+    // Misfit - Move Ion Storm Notification to its own function
+    private void NotifyIonStorm(EntityUid ent, float alertChance, string loc)
+    {
+        if (!Random.Shared.Prob(alertChance))
+            return;
+
+        if (!TryComp<ActorComponent>(ent, out var actor))
+            return;
+
+        var msg = Loc.GetString(loc);
+        var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
+        _chatManager.ChatMessageToOne(ChatChannel.Server, msg, wrappedMessage, default, false, actor.PlayerSession.Channel, colorOverride: Color.Yellow);
     }
 }
