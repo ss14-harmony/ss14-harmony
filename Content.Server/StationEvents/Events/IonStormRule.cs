@@ -1,19 +1,22 @@
-using Content.Server._CD.Traits;
+using Content.Server._CD.Traits; // CD - Synth Trait
 using Content.Server.Silicons.Laws;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Station.Components;
-// Used in CD's System
+// Start CD - Synth Trait
 using Content.Server.Chat.Managers;
 using Content.Shared.Chat;
 using Robust.Shared.Player;
+using Robust.Shared.Random;
+// End CD - Synth Trait
 
 namespace Content.Server.StationEvents.Events;
 
 public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
 {
     [Dependency] private readonly IonStormSystem _ionStorm = default!;
+    [Dependency] private readonly IChatManager _chatManager = default!;
 
     protected override void Started(EntityUid uid, IonStormRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
@@ -26,7 +29,7 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
         var synthQuery = EntityQueryEnumerator<SynthComponent>();
         while (synthQuery.MoveNext(out var ent, out var synthComp))
         {
-            if (RobustRandom.Prob(synthComp.AlertChance))
+            if (Random.Shared.Prob(synthComp.AlertChance))
                 continue;
 
             if (!TryComp<ActorComponent>(ent, out var actor))
