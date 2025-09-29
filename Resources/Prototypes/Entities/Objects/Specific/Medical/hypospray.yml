@@ -654,11 +654,12 @@
   parent: Pen # It is just like normal pen, isn't it?
   description: A dark ink pen.
   id: Hypopen
+  #Start of Harmony Change : Hypopen Nerf
   components:
   - type: SolutionContainerManager
     solutions:
       hypospray:
-        maxVol: 10
+        maxVol: 15 #Slightly increased reservoir size
   - type: RefillableSolution
     solution: hypospray
   - type: ExaminableSolution
@@ -667,6 +668,7 @@
     exactVolume: true
   - type: Hypospray
     onlyAffectsMobs: false
+    transferAmount: 2.5 #Reduced injection amount so more time to react to being hypo'd
   - type: UseDelay
     delay: 0.5
   - type: StaticPrice # A new shitcurity meta
