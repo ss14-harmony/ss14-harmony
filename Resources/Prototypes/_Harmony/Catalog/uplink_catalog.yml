@@ -168,6 +168,20 @@
 # Chemicals
 
 - type: listing
+  id: UplinkHypospray
+  name: uplink-hypospray-name
+  description: uplink-hypospray-desc
+  icon: { sprite: /Textures/Objects/Specific/Medical/syndihypo.rsi, state: hypo }
+  productEntity: SyndiHypoTraitor
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkChemicals
+
+- type: listing
   id: UplinkDefib
   name: uplink-defib-name
   description: uplink-defib-desc

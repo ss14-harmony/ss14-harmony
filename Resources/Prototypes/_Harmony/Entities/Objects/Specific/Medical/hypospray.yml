@@ -1,0 +1,12 @@
+- type: entity
+  name: syndicate hypospray
+  parent: SyndiHypo
+  description: Using reverse engineered designs from NT, Cybersun made these hyposprays as a cheaper, less effective version of the ones they provided to Gorlex Marauders.
+  id: SyndiHypoTraitor
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        maxVol: 15
+  - type: Hypospray
+    transferAmount: 2.5
