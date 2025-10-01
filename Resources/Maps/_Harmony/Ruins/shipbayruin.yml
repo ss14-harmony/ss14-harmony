@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: harmony
   forkVersion: cadb0499b6de5686e7255c4b6d2145896dc8dfba
-  time: 09/08/2025 05:37:08
-  entityCount: 276
+  time: 09/08/2025 06:45:26
+  entityCount: 302
 maps: []
 grids:
 - 1
@@ -169,6 +169,37 @@ entities:
             25: 2,0
             26: 2,-3
             27: 2,-4
+        - node:
+            color: '#FF0000FF'
+            id: WarnLineGreyscaleN
+          decals:
+            71: 3,-1
+            72: 4,-1
+            73: 6,-1
+            74: 5,-1
+            75: 7,-1
+            76: 8,-1
+            77: 9,-1
+            78: 10,-1
+        - node:
+            color: '#FFFFFFFF'
+            id: WarnLineGreyscaleN
+          decals:
+            68: 3,-1
+            69: 4,-1
+            70: 5,-1
+        - node:
+            color: '#FF0000FF'
+            id: WarnLineGreyscaleW
+          decals:
+            79: 17,2
+            80: 17,4
+            81: 17,3
+            82: 17,5
+            83: 17,6
+            84: 17,7
+            85: 17,8
+            86: 17,9
         - node:
             color: '#FFFFFFFF'
             id: WarnLineN
@@ -509,8 +540,10 @@ entities:
   - uid: 268
     components:
     - type: Transform
-      pos: 15.583538,13.53125
-      parent: 1
+      parent: 68
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: CableApcStack1
   entities:
   - uid: 242
@@ -655,8 +688,10 @@ entities:
   - uid: 266
     components:
     - type: Transform
-      pos: 15.286663,13.46875
-      parent: 1
+      parent: 68
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: CableHVStack1
   entities:
   - uid: 221
@@ -881,8 +916,10 @@ entities:
   - uid: 267
     components:
     - type: Transform
-      pos: 15.521038,13.40625
-      parent: 1
+      parent: 68
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: CableMVStack1
   entities:
   - uid: 240
@@ -966,7 +1003,7 @@ entities:
   - uid: 269
     components:
     - type: Transform
-      pos: 7.5399294,15.453125
+      pos: 7.601832,15.549946
       parent: 1
 - proto: CrateEngineeringShuttle
   entities:
@@ -975,34 +1012,22 @@ entities:
     - type: Transform
       pos: 15.5,13.5
       parent: 1
-    - type: Lock
-      locked: False
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.4,-0.4
-            - 0.4,-0.4
-            - 0.4,0.29
-            - -0.4,0.29
-          mask:
-          - Impassable
-          - HighImpassable
-          - LowImpassable
-          layer:
-          - BulletImpassable
-          - Opaque
-          density: 50
-          hard: True
-          restitution: 0
-          friction: 0.4
-    - type: EntityStorage
-      open: True
-      removedMasks: 20
-    - type: PlaceableSurface
-      isPlaceable: True
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 266
+          - 263
+          - 268
+          - 264
+          - 267
+          - 265
+        paper_label: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: CrateMaterialGlass
   entities:
   - uid: 46
@@ -1302,6 +1327,142 @@ entities:
     - type: Transform
       pos: 21.5,8.5
       parent: 1
+- proto: MeteorRock
+  entities:
+  - uid: 57
+    components:
+    - type: Transform
+      pos: 21.5,-1.5
+      parent: 1
+  - uid: 58
+    components:
+    - type: Transform
+      pos: 18.5,-0.5
+      parent: 1
+  - uid: 277
+    components:
+    - type: Transform
+      pos: -6.5,-6.5
+      parent: 1
+  - uid: 279
+    components:
+    - type: Transform
+      pos: 18.5,6.5
+      parent: 1
+  - uid: 280
+    components:
+    - type: Transform
+      pos: 19.5,-0.5
+      parent: 1
+  - uid: 281
+    components:
+    - type: Transform
+      pos: 2.5,-4.5
+      parent: 1
+  - uid: 282
+    components:
+    - type: Transform
+      pos: -5.5,-5.5
+      parent: 1
+  - uid: 284
+    components:
+    - type: Transform
+      pos: 19.5,0.5
+      parent: 1
+  - uid: 288
+    components:
+    - type: Transform
+      pos: 14.5,-3.5
+      parent: 1
+  - uid: 289
+    components:
+    - type: Transform
+      pos: 21.5,7.5
+      parent: 1
+  - uid: 291
+    components:
+    - type: Transform
+      pos: 24.5,9.5
+      parent: 1
+  - uid: 292
+    components:
+    - type: Transform
+      pos: 9.5,13.5
+      parent: 1
+  - uid: 294
+    components:
+    - type: Transform
+      pos: -4.5,-0.5
+      parent: 1
+  - uid: 295
+    components:
+    - type: Transform
+      pos: -5.5,-1.5
+      parent: 1
+  - uid: 296
+    components:
+    - type: Transform
+      pos: 10.5,13.5
+      parent: 1
+- proto: MeteorRockDiamond
+  entities:
+  - uid: 285
+    components:
+    - type: Transform
+      pos: 18.5,0.5
+      parent: 1
+  - uid: 286
+    components:
+    - type: Transform
+      pos: 17.5,-0.5
+      parent: 1
+  - uid: 287
+    components:
+    - type: Transform
+      pos: 15.5,-3.5
+      parent: 1
+  - uid: 293
+    components:
+    - type: Transform
+      pos: -5.5,-0.5
+      parent: 1
+  - uid: 297
+    components:
+    - type: Transform
+      pos: -5.5,-6.5
+      parent: 1
+  - uid: 298
+    components:
+    - type: Transform
+      pos: 9.5,15.5
+      parent: 1
+  - uid: 299
+    components:
+    - type: Transform
+      pos: 1.5,-4.5
+      parent: 1
+- proto: MeteorRockUranium
+  entities:
+  - uid: 290
+    components:
+    - type: Transform
+      pos: 20.5,8.5
+      parent: 1
+  - uid: 300
+    components:
+    - type: Transform
+      pos: 22.5,7.5
+      parent: 1
+  - uid: 301
+    components:
+    - type: Transform
+      pos: 23.5,8.5
+      parent: 1
+  - uid: 302
+    components:
+    - type: Transform
+      pos: 18.5,4.5
+      parent: 1
 - proto: PosterBroken
   entities:
   - uid: 72
@@ -1528,14 +1689,14 @@ entities:
   - uid: 223
     components:
     - type: Transform
-      pos: 18.478527,13.319953
+      pos: 18.270363,13.314421
       parent: 1
 - proto: RCDEmpty
   entities:
   - uid: 222
     components:
     - type: Transform
-      pos: 18.697277,13.773078
+      pos: 18.598488,13.658171
       parent: 1
 - proto: ReinforcedWindow
   entities:
@@ -1696,6 +1857,20 @@ entities:
     - type: Transform
       pos: 12.5,0.5
       parent: 1
+- proto: Thruster
+  entities:
+  - uid: 278
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 0.5,0.5
+      parent: 1
+  - uid: 283
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,-1.5
+      parent: 1
 - proto: ThrusterMachineCircuitboard
   entities:
   - uid: 44
@@ -1703,39 +1878,33 @@ entities:
     - type: Transform
       pos: 19.526407,15.526526
       parent: 1
-- proto: ThrusterUnanchored
-  entities:
-  - uid: 57
-    components:
-    - type: Transform
-      pos: 20.5,13.5
-      parent: 1
-  - uid: 58
-    components:
-    - type: Transform
-      pos: 14.5,15.5
-      parent: 1
 - proto: WallmountGeneratorAPUElectronics
   entities:
   - uid: 263
     components:
     - type: Transform
-      pos: 15.521038,13.484375
-      parent: 1
+      parent: 68
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: WallmountGeneratorElectronics
   entities:
   - uid: 264
     components:
     - type: Transform
-      pos: 15.552288,13.359375
-      parent: 1
+      parent: 68
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: WallmountSubstationElectronics
   entities:
   - uid: 265
     components:
     - type: Transform
-      pos: 15.630413,13.640625
-      parent: 1
+      parent: 68
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: WallReinforced
   entities:
   - uid: 14
