@@ -297,6 +297,7 @@
              Shock: -1
              Caustic: -1
       - !type:EvenHealthChange
+          damage:
             Airloss: -3
             Brute: -3
             Toxin: -1
