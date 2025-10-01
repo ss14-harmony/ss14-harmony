@@ -2544,3 +2544,183 @@ Entries:
     changes:
     - type: Tweak
       message: The ChemMaster 4000 now uses the chemicals in the beaker to make pills, instead of the ones from the buffer.
+  - id: 788
+    author: BlueMoon059
+    time: '2025-08-18T03:53:19.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/788
+    changes:
+    - type: Tweak
+      message: Made coins scrappable again.
+  - id: 871
+    author: kleinerstation13
+    time: '2025-08-27T16:32:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/871
+    changes:
+    - type: Tweak
+      message: Resprited hypo ammo box
+  - id: 1023
+    author: BlueMoon059
+    time: '2025-08-28T22:06:12.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1023
+    changes:
+    - type: Add
+      message: Adds a new lobby song, Get That Antag! by mrjajkes.
+  - id: 1018
+    author: OrnamentalFreak
+    time: '2025-08-30T20:01:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1018
+    changes:
+    - type: Add
+      message: adds Omega Station
+  - id: 986
+    author: thejMark14
+    time: '2025-09-02T14:37:57.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/986
+    changes:
+    - type: Add
+      message: SyndieDrobe flatpack as an item and to the uplink for 3TC.
+  - id: 1026
+    author: BlueMoon059
+    time: '2025-09-02T14:40:10.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1026
+    changes:
+    - type: Tweak
+      message: Server pin trinkets now use a dropdown menu system similar to cigarettes.
+  - id: 1038
+    author: DDeegan
+    time: '2025-09-02T16:56:56.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1038
+    changes:
+    - type: Tweak
+      message: Vox emote and speech sounds can now be muted like other species
+  - id: 1039
+    author: youtissoum
+    time: '2025-09-02T17:50:53.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1039
+    changes:
+    - type: Fix
+      message: The species voicelines accessibility tab will no longer incorrectly show the options as unpressed when opened.
+  - id: 1040
+    author: SomegnihT
+    time: '2025-09-02T22:26:38.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1040
+    changes:
+    - type: Fix
+      message: Glorp can now be rolled as a steal target for Thieves
+  - id: 1042
+    author: youtissoum
+    time: '2025-09-03T21:34:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1042
+    changes:
+    - type: Fix
+      message: Voxes can no longer sometimes crash the game when using magic mirrors or barber scissors.
+  - id: 988
+    author: BlueMoon059
+    time: '2025-09-05T15:48:33.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/988
+    changes:
+    - type: Add
+      message: Adds new outcomes to a Ninja hacking a comms console. They can now call in paradox clones, bingles, ion borgs and in rare cases a lone-op or wizard.
+  - id: 513
+    author: Flarbergaster
+    time: '2025-09-05T17:25:02.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/513
+    changes:
+    - type: Add
+      message: Added a kudzu bomb containing a mutated kudzu for syndicates.
+  - id: 979
+    author: kleinerstation13
+    time: '2025-09-06T02:31:05.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/979
+    changes:
+    - type: Add
+      message: Added a couple of tracks from Voices of the Void to space ambience, courtesy of Wolfeni.
+  - id: 928
+    author: Ermucat
+    time: '2025-09-08T21:10:15.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/928
+    changes:
+    - type: Tweak
+      message: Reverted the overall damage reduction to salvage mobs and gear.
+  - id: 1057
+    author: youtissoum
+    time: '2025-09-11T16:50:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1057
+    changes:
+    - type: Tweak
+      message: All colored lights on exo are now normal lights.
+  - id: 934
+    author: kleinerstation13
+    time: '2025-09-12T17:51:31.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/934
+    changes:
+    - type: Add
+      message: Ported PKA rework from Delta-V.
+    - type: Tweak
+      message: Reworked PKA modkits to be cost-based, you can have multiple of the same one now.
+    - type: Tweak
+      message: PKA only does 25% damage when indoors.
+    - type: Add
+      message: Added PKA indoors modkit for salvage traitors which counters indoor damage reduction.
+  - id: 946
+    author: CollectionOfBones128
+    time: '2025-09-12T17:51:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/946
+    changes:
+    - type: Tweak
+      message: The atmospheres of planets findable on Expeditions have been tweaked to accomodate the changes to the Proto-Kinetic Accelerator
+  - id: 906
+    author: BlueMoon059
+    time: '2025-09-13T15:05:57.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/906
+    changes:
+    - type: Tweak
+      message: The QM's digiboard can now link to cargo order consoles. Gambling has never been easier.
+  - id: 1032
+    author: dragydevi
+    time: '2025-09-14T14:18:52.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1032
+    changes:
+    - type: Tweak
+      message: Increased the capacity of all crayons to 100.
+    - type: Tweak
+      message: Increased the capacity of the rainbow crayon to 120.
+  - id: 922
+    author: ProbablyAta
+    time: '2025-09-14T16:50:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/922
+    changes:
+    - type: Add
+      message: Nanotrasen pyjamas are now available to purchase in the cargo request console.
+  - id: 1049
+    author: BlueMoon059
+    time: '2025-09-14T17:20:52.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1049
+    changes:
+    - type: Fix
+      message: The ninja's call a threat objective will now properly spawn the new derelict variants.
+  - id: 1051
+    author: BlueMoon059
+    time: '2025-09-19T14:16:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1051
+    changes:
+    - type: Add
+      message: The HoP now starts with a physical copy of the Standard Operating Procedure in their pocket.
+  - id: 1009
+    author: SomegnihT
+    time: '2025-09-19T14:34:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1009
+    changes:
+    - type: Add
+      message: Syndicates and blood bounds can now get steal objectives for the HoS's energy magnum.
+    - type: Add
+      message: Syndicates, blood bounds, and thieves can now get steal objectives for the access configurator.
+  - id: 1082
+    author: youtissoum
+    time: '2025-09-19T20:16:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1082
+    changes:
+    - type: Fix
+      message: Hardsuit helmets will no longer show up as error sprites for reptilians and vulpkanins.
+    - type: Remove
+      message: More hardsuits with custom sprites are no longer wearable by smart corgis.

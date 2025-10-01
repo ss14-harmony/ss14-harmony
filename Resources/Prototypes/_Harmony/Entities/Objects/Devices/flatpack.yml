@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseFlatpack
+  id: SyndieDrobeFlatpack
+  name: syndiedrobe flatpack
+  description: A flatpack used for constructing a SyndieDrobe.
+  components:
+  - type: Flatpack
+    entity: VendingMachineSyndieDrobe
+  - type: Sprite
+    sprite: _Harmony/Objects/Devices/flatpack.rsi
+    layers:
+    - state: syndiedrobe

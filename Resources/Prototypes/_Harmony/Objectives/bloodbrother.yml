@@ -105,11 +105,17 @@
   parent: [BaseBloodBrotherObjective, HandTeleporterStealObjective]
   id: BloodBrotherHandTeleporterStealObjective
 
-## hos
+## warden
 
 - type: entity
   parent: [BaseBloodBrotherObjective, EnergyShotgunStealObjective]
   id: BloodBrotherEnergyShotgunStealObjective
+
+## hos
+
+- type: entity
+  parent: [BaseBloodBrotherObjective, EnergyMagnumStealObjective]
+  id: BloodBrotherEnergyMagnumStealObjective
 
 ## ce
 
@@ -146,3 +152,9 @@
 - type: entity
   parent: [BaseBloodBrotherObjective, NukeDiskStealObjective]
   id: BloodBrotherNukeDiskStealObjective
+
+## other
+
+- type: entity
+  parent: [BaseBloodBrotherObjective, AccessConfiguratorStealObjective]
+  id: BloodBrotherAccessConfiguratorStealObjective

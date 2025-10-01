@@ -155,3 +155,5 @@
     autoRechargePause: true
     autoRechargePauseTime: 10
   - type: Appearance
+  - type: StealTarget
+    stealGroup: WeaponEnergyMagnumHarmony
