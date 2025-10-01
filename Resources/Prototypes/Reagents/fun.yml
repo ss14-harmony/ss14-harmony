@@ -260,14 +260,14 @@
           min: 190.15
           max: 260.15
         walkSpeedModifier: 0.6
-        sprintSpeedModifier: 0.6
+        sprintSpeedModifier: 0.6 #not immobilized
         time: 5
         type: Add
         refresh: true
       - !type:PopupMessage
         conditions:
         - !type:Temperature
-          max: 190.15 # cold AND immobilized
+          max: 190.15 # cold AND practically immobilized
         type: Local
         visualType: LargeCaution
         messages: [ "fresium-effect-frozen"]
@@ -275,9 +275,9 @@
       - !type:MovespeedModifier
         conditions:
         - !type:Temperature
-          max: 190.15 # cold AND immobilized
-        walkSpeedModifier: 0.05
-        sprintSpeedModifier: 0.05
+          max: 190.15 # practically immobilized
+        walkSpeedModifier: 0.1
+        sprintSpeedModifier: 0.1
         time: 8
         type: Add
         refresh: true
@@ -292,26 +292,27 @@
       - !type:HealthChange
         damage:
           types:
-             Cold: 1.5 # nips directly, other cold damage comes from the temp change
-             Heat: -3 # heals not insignificant heat damage.
-          groups: # heals like cryox, but weaker
+             Cold: 0.5 # nips directly, other cold damage comes from the temp change
+             Heat: -3 # heals significant heat damage.
+             Shock: -1
+             Caustic: -1
+      - !type:EvenHealthChange
             Airloss: -3
             Brute: -3
-            Burn: -3
-            Toxin: -2
-      - !type:HealthChange
+            Toxin: -1
+      - !type:EvenHealthChange
           conditions:
           - !type:ReagentThreshold
             reagent: Fresium
-            min: 40 # when immobilized, gain significant healing, stronger than cryoxadone. ADDED TO ABOVE HEALING Better hope what you're healing from doesn't come back while you're frozen solid.
+            min: 40 # when immobilized, gain very significant healing, stronger than cryoxadone. ADDED TO ABOVE HEALING Better hope what you're healing from doesn't come back while you're frozen solid.
           damage:
-            groups:
-              Brute: -6
-              Burn: -6
+            Brute: -6
+            Burn: -6
       - !type:ModifyBleedAmount
-        amount: -0.4 # slowly stops bleeding, a bit stronger than inap.
+        amount: -0.4 # Stops bleeding, a bit stronger than inap, weaker than tranex
       - !type:ExtinguishReaction
-        FireStacksAdjustment: -0.01 # slowly stops burning
+        FireStacksAdjustment: -1
+        probability: 0.25 # has a 1/4 chance to put out fire each tick
       - !type:PopupMessage
         conditions:
         - !type:ReagentThreshold
@@ -358,7 +359,7 @@
         conditions:
         - !type:ReagentThreshold
           reagent: Fresium
-          min: 40 # your legs stop working when above 40
+          min: 40 # frozen solid above 40
         walkSpeedModifier: 0.00
         sprintSpeedModifier: 0.00
         time: 8
