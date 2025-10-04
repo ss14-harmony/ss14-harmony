@@ -30,3 +30,6 @@
 - type: Tag
   id: CartridgeLightRifleCaseless
 
+#Used for both wired and barbed wired baseball bats so they can't be reused.
+- type: Tag
+  id: WiredBat

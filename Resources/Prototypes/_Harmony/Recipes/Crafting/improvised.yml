@@ -1,0 +1,8 @@
+- type: construction
+  id: wiredbat
+  graph: WiredBat
+  startNode: start
+  targetNode: barbedbat
+  category: construction-category-weapons
+  objectType: Item
+

@@ -1,0 +1,40 @@
+- type: constructionGraph
+  id: WiredBat
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: wired
+          steps:
+            - material: CableMV
+              amount: 15
+              doAfter: 4
+            - tag: BaseballBat
+              icon:
+               sprite: Objects/Weapons/Melee/baseball_bat.rsi
+               state: icon
+              name: construction-graph-tag-bat
+        
+    - node: wired
+      entity: wiredBat
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 5
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 1
+        - to: barbedbat
+          completed:
+          - !type:AdminLog
+            message: "Construction"
+            impact: High
+          steps:
+            - tool: Cutting
+              doAfter: 4
+        
+    - node: barbedbat
+      entity: barbedWireBat

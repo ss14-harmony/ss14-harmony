@@ -1,0 +1,72 @@
+- type: entity
+  name: barbed wire bat
+  parent: BaseBallBat
+  id: barbedWireBat
+  description: You feel like you're capable of damn near anything when you hold this.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/baseball_bat.rsi
+    state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 10
+        Slash: 2
+    soundHit:
+      collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 5
+        Slash: 3
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/baseball_bat.rsi
+  - type: Construction
+    graph: WiredBat
+    node: barbedbat
+  - type: PhysicalComposition
+    materialComposition:
+      Wood: 250
+      Metal: 50
+  - type: Tag
+    tags:
+    - WiredBat
+
+- type: entity
+  name: wired bat
+  parent: BaseBallBat
+  id: wiredBat
+  description: A baseball bat with a wire wrap. It has a little more heft.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/baseball_bat.rsi
+    state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 11
+        Structural: 7
+    soundHit:
+      collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 7
+        Structural: 13
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/baseball_bat.rsi
+  - type: Construction
+    graph: WiredBat
+    node: wired
+  - type: PhysicalComposition
+    materialComposition:
+      Wood: 250
+      Metal: 50
+  - type: Tag
+    tags:
+    - WiredBat
+
