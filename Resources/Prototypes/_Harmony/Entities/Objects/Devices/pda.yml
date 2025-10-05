@@ -5,19 +5,22 @@
   name: senior salvage PDA
   description: Smells like ash and goliath plates.
   components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Devices/pda.rsi
   - type: Pda
     id: SalvageIDCard
   - type: Appearance
     appearanceDataInit:
      enum.PdaVisuals.PdaType:
        !type:String
-       harmony-pda-seniorminer
+       pda-seniorminer
   - type: PdaBorderColor
     borderColor: "#af9366"
     accentVColor: "#8900c9"
     accentHColor: "#8900c9"
   - type: Icon
-    state: pda-miner
+    sprite: _Harmony/Objects/Devices/pda.rsi
+    state: pda-seniorminer
   - type: CartridgeLoader
     uiKey: enum.PdaUiKey.Key
     preinstalled:

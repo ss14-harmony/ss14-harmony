@@ -2724,3 +2724,38 @@ Entries:
       message: Hardsuit helmets will no longer show up as error sprites for reptilians and vulpkanins.
     - type: Remove
       message: More hardsuits with custom sprites are no longer wearable by smart corgis.
+  - id: 1086
+    author: kleinerstation13
+    time: '2025-09-21T14:03:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1086
+    changes:
+    - type: Fix
+      message: The uplink offer for Bulldog magazine will no longer appear twice.
+  - id: 1071
+    author: BlueMoon059
+    time: '2025-09-24T16:49:58.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1071
+    changes:
+    - type: Add
+      message: The Salvage Vendor now has advertisement and thank you lines!
+  - id: 439
+    author: Flarbergaster
+    time: '2025-10-01T15:43:58.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/439
+    changes:
+    - type: Add
+      message: Added Gizard the Wizard Lizard! A pet for wizards.
+  - id: 1102
+    author: BlueMoon059
+    time: '2025-10-03T14:54:05.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1102
+    changes:
+    - type: Fix
+      message: Pride Mantles are no longer randomized by EMPs.
+  - id: 1066
+    author: kleinerstation13
+    time: '2025-10-03T16:03:58.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1066
+    changes:
+    - type: Tweak
+      message: Added the elite suit back to traitor uplinks.

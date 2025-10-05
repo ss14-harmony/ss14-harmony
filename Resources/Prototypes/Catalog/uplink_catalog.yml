@@ -1772,11 +1772,13 @@
     Telecrystal: 12
   categories:
   - UplinkWearables
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+# Start harmony change - adds elite suit to traitor uplink
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - NukeOpsUplink
+# End harmony change
 
 - type: listing
   id: UplinkClothingOuterHardsuitJuggernaut
