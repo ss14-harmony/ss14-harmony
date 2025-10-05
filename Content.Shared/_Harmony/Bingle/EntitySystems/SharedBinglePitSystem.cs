@@ -12,6 +12,7 @@ using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Random.Helpers;
+using Content.Shared.Sprite;
 using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Stunnable;
 using JetBrains.Annotations;
@@ -216,7 +217,7 @@ public abstract class SharedBinglePitSystem : EntitySystem
         falling.InsertIntoPitTime = _gameTiming.CurTime + entity.Comp.FallIntoPitTime;
         Dirty(tripper, falling);
 
-        _stunSystem.TryKnockdown(tripper, entity.Comp.FallIntoPitTime, true);
+        _stunSystem.TryKnockdown(tripper, entity.Comp.FallIntoPitTime, autoStand: false, force: true);
 
         if (TryComp<PullableComponent>(tripper, out var pullable))
             _pullingSystem.TryStopPull(tripper, pullable);

@@ -91,6 +91,12 @@
     <GuideEntityEmbed Entity="ClothingOuterHardsuitRd" Caption=""/>
     <GuideEntityEmbed Entity="HandTeleporter" Caption=""/>
   </Box>
+  <!-- Start Harmony Change: Adds guidebook entry for stealing the energy magnum -->
+  - Stealing the [color=#cb0000]Head of Security[/color]'s [bold]energy magnum[/bold].
+  <Box>
+    <GuideEntityEmbed Entity="WeaponEnergyMagnumHarmony" Caption=""/>
+  </Box>
+  <!-- End Harmony Change -->
 <!-- Harmony: - Stealing the [color=#cb0000]Head of Security[/color]'s [bold]energy shotgun[/bold].-->
   - Stealing the [color=#cb0000]Warden[/color]'s [bold]energy shotgun[/bold].
   <Box>
@@ -109,5 +115,11 @@
     <GuideEntityEmbed Entity="MobCorgiIan" Caption=""/>
     <GuideEntityEmbed Entity="FoodMeatCorgi" Caption=""/>
   </Box>
+  <!-- Start Harmony Change: Adds guidebook entry for stealing the access configurator -->
+  - Stealing the [color=#f39f27]Chief Engineer[/color]'s or [color=#9fed58]Head of Personnel[/color]'s [bold]access configurator[/bold].
+  <Box>
+    <GuideEntityEmbed Entity="AccessConfigurator" Caption=""/>
+  </Box>
+  <!-- End Harmony Change -->
 
 </Document>

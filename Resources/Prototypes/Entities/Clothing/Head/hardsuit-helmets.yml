@@ -33,9 +33,17 @@
       head-vox:
       - state: equipped-head-light-vox
         shader: unshaded
-      head-dog:
-      - state: equipped-head-light-dog
-        shader: unshaded
+      # Harmony start
+      # head-vulpkanin:
+      # - state: equipped-head-light-vulpkanin
+      #   shader: unshaded
+      # head-reptilian:
+      # - state: equipped-head-light-reptilian
+      #   shader: unshaded
+      # head-dog:
+      # - state: equipped-head-light-dog
+      #   shader: unshaded
+      # Harmony end
   - type: Clothing
     clothingVisuals:
       head:
@@ -46,10 +54,20 @@
       - state: equipped-head-vox
       - state: equipped-head-unshaded-vox
         shader: unshaded
-      head-dog:
-      - state: equipped-head-dog
-      - state: equipped-head-unshaded-dog
-        shader: unshaded
+      # Harmony start
+      # head-vulpkanin:
+      # - state: equipped-head-vulpkanin
+      # - state: equipped-head-unshaded-vulpkanin
+      #   shader: unshaded
+      # head-reptilian:
+      # - state: equipped-head-reptilian
+      # - state: equipped-head-unshaded-reptilian
+      #   shader: unshaded
+      # head-dog:
+      # - state: equipped-head-dog
+      # - state: equipped-head-unshaded-dog
+      #   shader: unshaded
+      # Harmony end
   - type: PointLight
     color: "#adffe6"
   - type: PressureProtection
@@ -62,7 +80,7 @@
     reduction: 0.2
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - WhitelistChameleon
 
 #Engineering Hardsuit
@@ -93,9 +111,17 @@
       head-vox:
       - state: equipped-head-light-vox
         shader: unshaded
-      head-dog:
-      - state: equipped-head-light-dog
-        shader: unshaded
+      # Harmony start
+      # head-vulpkanin:
+      # - state: equipped-head-light-vulpkanin
+      #   shader: unshaded
+      # head-reptilian:
+      # - state: equipped-head-light-reptilian
+      #   shader: unshaded
+      # head-dog:
+      # - state: equipped-head-light-dog
+      #   shader: unshaded
+      # Harmony end
   - type: Clothing
     clothingVisuals:
       head:
@@ -106,10 +132,20 @@
       - state: equipped-head-vox
       - state: equipped-head-unshaded-vox
         shader: unshaded
-      head-dog:
-      - state: equipped-head-dog
-      - state: equipped-head-unshaded-dog
-        shader: unshaded
+      # Harmony start
+      # head-vulpkanin:
+      # - state: equipped-head-vulpkanin
+      # - state: equipped-head-unshaded-vulpkanin
+      #   shader: unshaded
+      # head-reptilian:
+      # - state: equipped-head-reptilian
+      # - state: equipped-head-unshaded-reptilian
+      #   shader: unshaded
+      # head-dog:
+      # - state: equipped-head-dog
+      # - state: equipped-head-unshaded-dog
+      #   shader: unshaded
+      # Harmony end
   - type: PointLight
     color: "#adffe6" # Harmony: from #ffdbad
   - type: PressureProtection
@@ -117,7 +153,7 @@
     lowPressureMultiplier: 1000
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - WhitelistChameleon
 
 #Spationaut Hardsuit
@@ -149,9 +185,17 @@
       head-vox:
       - state: equipped-head-light-vox
         shader: unshaded
-      head-dog:
-      - state: equipped-head-light-dog
-        shader: unshaded
+      # Harmony start
+      # head-vulpkanin:
+      # - state: equipped-head-light-vulpkanin
+      #   shader: unshaded
+      # head-reptilian:
+      # - state: equipped-head-light-reptilian
+      #   shader: unshaded
+      # head-dog:
+      # - state: equipped-head-light-dog
+      #   shader: unshaded
+      # Harmony end
   - type: Clothing
     clothingVisuals:
       head:
@@ -162,10 +206,20 @@
       - state: equipped-head-vox
       - state: equipped-head-unshaded-vox
         shader: unshaded
-      head-dog:
-      - state: equipped-head-dog
-      - state: equipped-head-unshaded-dog
-        shader: unshaded
+      # Harmony start
+      # head-vulpkanin:
+      # - state: equipped-head-vulpkanin
+      # - state: equipped-head-unshaded-vulpkanin
+      #   shader: unshaded
+      # head-reptilian:
+      # - state: equipped-head-reptilian
+      # - state: equipped-head-unshaded-reptilian
+      #   shader: unshaded
+      # head-dog:
+      # - state: equipped-head-dog
+      # - state: equipped-head-unshaded-dog
+      #   shader: unshaded
+      # Harmony end
   - type: PointLight
     color: "#adffe6"     #Harmony : added a color to the flashlight to match the sprite
     radius: 6
@@ -174,7 +228,7 @@
     lowPressureMultiplier: 1000
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - WhitelistChameleon
 
 #Salvage Hardsuit
@@ -220,9 +274,10 @@
     energy: 3
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - WhitelistChameleon
 
+#Goliath Hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitGoliath
@@ -252,9 +307,14 @@
       head-vox:
       - state: equipped-head-light-vox
         shader: unshaded
-      head-dog:
-      - state: equipped-head-light-dog
-        shader: unshaded
+      # Harmony start
+      # head-reptilian:
+      # - state: equipped-head-reptilian
+      #   shader: unshaded
+      # head-dog:
+      # - state: equipped-head-light-dog
+      #   shader: unshaded
+      # Harmony end
   - type: Clothing
     clothingVisuals:
       head:
@@ -265,10 +325,16 @@
       - state: equipped-head-vox
       - state: equipped-head-unshaded-vox
         shader: unshaded
-      head-dog:
-      - state: equipped-head-dog
-      - state: equipped-head-unshaded-dog
-        shader: unshaded
+      # Harmony start
+      # head-reptilian:
+      # - state: equipped-head-reptilian
+      # - state: equipped-head-unshaded-reptilian
+      #   shader: unshaded
+      # head-dog:
+      # - state: equipped-head-dog
+      # - state: equipped-head-unshaded-dog
+      #   shader: unshaded
+      # Harmony end
   - type: PointLight
     color: "#adffe6" #Harmony : added a color to the flashlight to match the sprite
     radius: 6
@@ -277,7 +343,7 @@
     lowPressureMultiplier: 1000
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - WhitelistChameleon
 
 #Maxim Hardsuit
@@ -352,7 +418,7 @@
         Heat: 0.9
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - WhitelistChameleon
 
 #Brigmedic Hardsuit
@@ -476,9 +542,17 @@
       head-vox:
       - state: equipped-head-light-vox
         shader: unshaded
-      head-dog:
-      - state: equipped-head-light-dog
-        shader: unshaded
+      # Harmony start
+      # head-vulpkanin:
+      # - state: equipped-head-light-vulpkanin
+      #   shader: unshaded
+      # head-reptilian:
+      # - state: equipped-head-light-reptilian
+      #   shader: unshaded
+      # head-dog:
+      # - state: equipped-head-light-dog
+      #   shader: unshaded
+      # Harmony end
   - type: Clothing
     clothingVisuals:
       head:
@@ -489,10 +563,20 @@
       - state: equipped-head-vox
       - state: equipped-head-unshaded-vox
         shader: unshaded
-      head-dog:
-      - state: equipped-head-dog
-      - state: equipped-head-unshaded-dog
-        shader: unshaded
+      # Harmony start
+      # head-vulpkanin:
+      # - state: equipped-head-vulpkanin
+      # - state: equipped-head-unshaded-vulpkanin
+      #   shader: unshaded
+      # head-reptilian:
+      # - state: equipped-head-reptilian
+      # - state: equipped-head-unshaded-reptilian
+      #   shader: unshaded
+      # head-dog:
+      # - state: equipped-head-dog
+      # - state: equipped-head-unshaded-dog
+      #   shader: unshaded
+      # Harmony end
   - type: PointLight
     color: "#adffe6" # Harmony: from #daffad
   - type: PressureProtection
@@ -502,7 +586,7 @@
     reduction: 0.2
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - WhitelistChameleon
 
 #Chief Medical Officer's Hardsuit
@@ -689,7 +773,7 @@
         Heat: 0.9
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - WhitelistChameleon
 
 #Blood-red Medic Hardsuit
@@ -796,7 +880,7 @@
         Heat: 0.9
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - WhitelistChameleon
 
 #Syndicate Commander Hardsuit
@@ -849,7 +933,7 @@
         Heat: 0.9
   - type: Tag
     tags:
-    - CorgiWearable
+    # - CorgiWearable # Harmony
     - WhitelistChameleon
 
 #Cybersun Juggernaut Hardsuit
@@ -955,6 +1039,9 @@
       head-vox:
       - state: equipped-HELMET-light-vox
         shader: unshaded
+      head-reptilian:
+      - state: equipped-HELMET-light-reptilian
+        shader: unshaded
   - type: Clothing
     sprite: Clothing/Head/Hardsuits/piratecaptainhelm.rsi
     clothingVisuals:
@@ -965,6 +1052,10 @@
       head-vox:
       - state: equipped-HELMET-vox
       - state: equipped-HELMET-unshaded-vox
+        shader: unshaded
+      head-reptilian:
+      - state: equipped-HELMET-reptilian
+      - state: equipped-HELMET-unshaded-reptilian
         shader: unshaded
   - type: PointLight # Color matches visor colors, radius/energy same as mining hardsuit for the big captain.
     color: "#f3ea9c"
@@ -1138,6 +1229,14 @@
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
+        shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+      head-reptilian:
+      - state: equipped-head-reptilian
+      - state: equipped-head-unshaded-reptilian
         shader: unshaded
   - type: PointLight
     color: orange

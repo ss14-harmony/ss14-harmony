@@ -42,7 +42,6 @@
   categories:
   - UplinkWeaponry
 
-
 - type: listing
   id: UplinkRifleBandit
   name: uplink-rifle-bandit-name
@@ -58,6 +57,24 @@
   - UplinkWeaponry
 
 # Explosives
+
+- type: listing
+  id: UplinkKudzuGrenade
+  name: uplink-kudzu-grenade-name
+  description: uplink-kudzu-grenade-desc
+  productEntity: KudzuGrenade
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkExplosives
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
 
 - type: listing
   id: UplinkPizzaBomb
@@ -90,7 +107,7 @@
     whitelist:
       components:
       - SurplusBundle
-  
+
 - type: listing
   id: UplinkX4
   name: uplink-X4-name
@@ -126,35 +143,12 @@
 
 # Ammo
 
-# For the Bulldog
-- type: listing
-  id: UplinkShotgunBuckshotMagazineHarmony
-  name: uplink-shotgun-drum-pellet-name
-  description: uplink-shotgun-drum-pellet-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: pellets }
-  productEntity: MagazineShotgun
-  cost:
-    Telecrystal: 2
-  categories:
-  - UplinkAmmo
-
 # For the Blood-Red Energy Carbine
 - type: listing
   id: UplinkBloodRedCarbineAmmoHarmony
   name: uplink-blood-red-carbine-ammo-name
   description: uplink-blood-red-carbine-ammo-desc
   productEntity: EnergyCarbineCartridgeSyndicateHarmony
-  cost:
-    Telecrystal: 2
-  categories:
-  - UplinkAmmo
-
-- type: listing
-  id: UplinkShotgunSlugMagazineHarmony
-  name: uplink-shotgun-drum-slug-name
-  description: uplink-shotgun-drum-slug-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: slug }
-  productEntity: MagazineShotgunSlug
   cost:
     Telecrystal: 2
   categories:
@@ -275,6 +269,16 @@
   name: uplink-cluster-weh-name
   description: uplink-cluster-weh-desc
   productEntity: ClusterWeh
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkPointless
+
+- type: listing
+  id: UplinkSyndieDrobeFlatpack
+  name: uplink-syndiedrobe-flatpack-name
+  description: uplink-syndiedrobe-flatpack-desc
+  productEntity: SyndieDrobeFlatpack
   cost:
     Telecrystal: 3
   categories:

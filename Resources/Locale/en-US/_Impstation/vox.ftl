@@ -295,9 +295,6 @@ marking-VoxTailSmallPlume-smallplume = Small Plume
 marking-VoxTailSpines = Tail Spines
 marking-VoxTailSpines-spines = Tail Spines
 
-marking-VoxTailSplit = Twinned
-marking-VoxTailSplit-split = Twinned
-
 marking-VoxSunAndMoon = Sun and Moon
 marking-VoxSunAndMoon-sunandmoon = Sun and Moon
 
