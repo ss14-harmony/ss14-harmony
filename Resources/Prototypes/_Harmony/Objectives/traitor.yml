@@ -15,3 +15,33 @@
       - EscapeShuttleCondition
       - DieCondition
   - type: SurviveCondition
+
+# steal
+
+## hos
+
+- type: entity
+  parent: BaseTraitorStealObjective
+  id: EnergyMagnumStealObjective
+  components:
+  - type: Objective
+    # hos will have most of the time so it'll be harder to steal
+    difficulty: 3
+  - type: NotJobRequirement
+    job: HeadOfSecurity
+  - type: StealCondition
+    stealGroup: WeaponEnergyMagnumHarmony
+    owner: job-name-hos
+
+## other
+
+- type: entity
+  parent: BaseTraitorStealObjective
+  id: AccessConfiguratorStealObjective # Thief will also have this, it's called ThiefAccessConfiguratorStealObjective for them
+  components:
+  - type: NotJobRequirement # NotJobRequirement only allows one job to be stated, otherwise an error happens and the objective cannot be rolled
+    job: HeadOfPersonnel # TODO: Find a way to also have the CE unable to roll the objective in the case we allow heads to be antags
+  - type: ObjectiveLimit
+    limit: 3 # Both the CE and HOP have one, and steal objectives are +1 of the total amount that can exist for "drama"
+  - type: StealCondition
+    stealGroup: AccessConfigurator

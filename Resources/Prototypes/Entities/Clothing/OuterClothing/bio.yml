@@ -9,6 +9,11 @@
     sprite: Clothing/OuterClothing/Bio/general.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Bio/general.rsi
+# Harmony change begins - Unhides the lizard tail
+#  - type: HideLayerClothing
+#    slots:
+#    - Tail
+# Harmony change ends
   - type: Armor
     modifiers:
       coefficients:

@@ -101,6 +101,7 @@
   components:
   - type: TriggerOnCollide
     fixtureID: projectile
+    maxTriggers: 1
   - type: Projectile
     damage:
       types:
@@ -529,12 +530,13 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 15
+        Blunt: 25 # Harmony change- DeltaV PKA Rework - 15 -> 25
         Structural: 30
   # Short lifespan
   - type: TimedDespawn
     lifetime: 0.22 # roughly 5.5 tiles
   - type: GatheringProjectile
+  - type: PressureProjectile # Harmony change - DeltaV PKA Rework
 
 - type: entity
   id: BulletKineticShuttle
@@ -562,6 +564,7 @@
     color: white
     energy: 0.5
   - type: GatheringProjectile
+  - type: PressureProjectile # Harmony change - DeltaV PKA Rework
 
 - type: entity
   id: BulletCharge
@@ -906,6 +909,7 @@
     containers:
       cluster-payload: !type:Container
   - type: ProjectileGrenade
+    triggerKey: trigger
     fillPrototype: PelletClusterLessLethal
     capacity: 30
 

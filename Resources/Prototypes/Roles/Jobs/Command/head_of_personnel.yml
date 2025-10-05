@@ -67,6 +67,7 @@
     ears: ClothingHeadsetAltCommand
     belt: BoxFolderClipboardThreePapers
     eyes: ClothingEyesHudCommand
+    pocket1: BookSOP #Harmony Change
   storage:
     back:
     - Flash

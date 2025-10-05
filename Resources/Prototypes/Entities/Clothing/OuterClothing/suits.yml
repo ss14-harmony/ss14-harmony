@@ -27,6 +27,9 @@
     - WhitelistChameleon
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
+  - type: HideLayerClothing
+    slots:
+      - Tail
 
 - type: entity
   parent: ClothingOuterSuitBomb
@@ -70,6 +73,11 @@
   - type: GroupExamine
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
+# Harmony change begins - Unhides the lizard tail
+#  - type: HideLayerClothing
+#    slots:
+#    - Tail
+# Harmony change ends
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
@@ -106,6 +114,11 @@
     tags:
     - CorgiWearable
     - WhitelistChameleon
+# Harmony change begins - Unhides the lizard tail
+#  - type: HideLayerClothing
+#    slots:
+#    - Tail
+# Harmony change ends
 
 - type: entity
   parent: [ClothingOuterBaseLarge, GeigerCounterClothing, AllowSuitStorageClothing]
@@ -131,9 +144,14 @@
       toggleable-clothing: !type:ContainerSlot {}
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
+# Harmony change begins - Unhides the lizard tail
+#  - type: HideLayerClothing
+#    slots:
+#    - Tail
+# Harmony change ends
 
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseToggleClothing, BaseMajorContraband]
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseToggleClothing, BaseHighlyIllegalContraband]
   id: ClothingOuterSuitSpaceNinja
   name: space ninja suit
   description: This black technologically advanced, cybernetically-enhanced suit provides many abilities like invisibility or teleportation.
@@ -195,6 +213,11 @@
         whitelist:
           tags:
             - PowerCell
+# Harmony change begins - Unhides the lizard tail
+#  - type: HideLayerClothing
+#    slots:
+#    - Tail
+# Harmony change ends
 
 - type: entity
   parent: ClothingOuterBase
@@ -292,6 +315,11 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+# Harmony change begins - Unhides the lizard tail
+#  - type: HideLayerClothing
+#    slots:
+#    - Tail
+# Harmony change ends
 
 - type: entity
   parent: ClothingOuterSuitCarp

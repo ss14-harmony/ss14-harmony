@@ -411,3 +411,14 @@
     - HighRiskItem
   - type: StealTarget
     stealGroup: BoxFolderQmClipboard
+  #Start of Harmony Change
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSource
+    range: 200
+    ports:
+    - OrderSender
+  #End of Harmony Change
