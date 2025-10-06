@@ -2,7 +2,6 @@
   abstract: true
   id: MobHonkMotherBase
   name: Honk Mother
-  suffix: Harmony
   description: 500-foot nightmare stitched from painted clown flesh.
   components:
     - type: Sprite
