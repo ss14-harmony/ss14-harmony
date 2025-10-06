@@ -1,0 +1,56 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseConspiratorObjective
+  components:
+  - type: Objective
+    issuer: conspirator-objective-issuer
+    difficulty: 0 # uses own system for assignment
+  - type: RoleRequirement
+    roles:
+    - ConspiratorRole
+  - type: NoCompletionObjective
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorUnionObjective
+  name: Declare a part of the station an independent nation
+  description: Take over a section or department of the station and declare independence from Nanotrasen.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/stunprod.rsi
+      state: stunprod_off
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorGameshowObjective
+  name: Run a life-or-death game show
+  description: Force the crew to take part in a game show with incredible stakes.
+  components:
+  - type: Objective
+    icon:
+      sprite: Structures/Machines/computers.rsi
+      state: television
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorTechnologyObjective
+  name: Destroy all station technology
+  description: Show the crew the merits of a simpler life. Forcefully.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/baseball_bat.rsi
+      state: icon
+
+- type: entity
+  parent: BaseConspiratorObjective
+  id: ConspiratorAccessObjective
+  name: Distribute as much access as possible
+  description: Abolish the hierarchy and departmental separation and allow everyone to roam everywhere.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Misc/id_cards.rsi
+      state: ert_commander

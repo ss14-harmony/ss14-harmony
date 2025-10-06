@@ -25,6 +25,8 @@
     # Harmony start
     - id: BloodBrothers
       prob: 0.5
+    - id: Conspirators
+      prob: 0.25
     # Harmony end
     - id: SubWizard
       prob: 0.05
@@ -40,6 +42,8 @@
     # Harmony start
     - id: BloodBrothers
       prob: 0.5
+    - id: Conspirators
+      prob: 0.25
     # Harmony end
 
 - type: entity
