@@ -22,12 +22,12 @@
       head:
         sizeMaps:
           32:
-            sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
+            sprite: _Harmony/Mobs/Species/Avali/displacement.rsi
             state: head
       mask:
         sizeMaps:
           32:
-            sprite: _Harmony/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
+            sprite: _Harmony/Mobs/Species/Avali/displacement.rsi
             state: mask
 # Harmony change end
   - type: Butcherable
