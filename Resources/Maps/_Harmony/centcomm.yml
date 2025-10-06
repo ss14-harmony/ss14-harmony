@@ -50276,8 +50276,6 @@ entities:
       pos: 23.5,37.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 968
       - 7095
@@ -50288,8 +50286,6 @@ entities:
       pos: 29.5,37.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 968
       - 7095
