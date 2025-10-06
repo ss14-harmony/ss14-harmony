@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.1.0
   forkId: harmony
   forkVersion: fef66e0b086017847ba41fc5d9e017f96d794b07
-  time: 10/06/2025 16:39:25
+  time: 10/06/2025 17:29:51
   entityCount: 7609
 maps: []
 grids:
@@ -50275,12 +50275,24 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 23.5,37.5
       parent: 1
+    - type: DeviceNetwork
+      configurators:
+      - invalid
+      deviceLists:
+      - 968
+      - 7095
   - uid: 5354
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 29.5,37.5
       parent: 1
+    - type: DeviceNetwork
+      configurators:
+      - invalid
+      deviceLists:
+      - 968
+      - 7095
     - type: AccessReader
       accessListsOriginal:
       - - StationAi
@@ -50292,12 +50304,20 @@ entities:
     - type: Transform
       pos: 23.5,40.5
       parent: 1
+    - type: DeviceList
+      devices:
+      - 5353
+      - 5354
   - uid: 7095
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 30.5,40.5
       parent: 1
+    - type: DeviceList
+      devices:
+      - 5353
+      - 5354
     - type: AccessReader
       accessListsOriginal:
       - - StationAi
