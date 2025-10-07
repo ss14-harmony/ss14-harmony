@@ -222,7 +222,7 @@ public sealed partial class AdminVerbSystem
                 _antag.ForceMakeAntag<ConspiratorRuleComponent>(targetPlayer, DefaultConspiratorRule);
             },
             Impact = LogImpact.High,
-            Message = string.Join(": ", bloodBrotherName, Loc.GetString("admin-verb-make-conspirator")),
+            Message = string.Join(": ", conspiratorName, Loc.GetString("admin-verb-make-conspirator")),
         };
         args.Verbs.Add(conspirator);
         // Harmony end
