@@ -44,10 +44,7 @@ Build the server using `dotnet build`.
 
 ## License
 
-Code contributed to this repository after commit `7d6a6073f9c1a3954d17b78d535d43659307cbe9` is licensed under the **GNU Affero General Public License version 3.0** license, unless otherwise stated. See [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt).
-
-Code contributed to this repository before commit `7d6a6073f9c1a3954d17b78d535d43659307cbe9` is licensed under the **MIT** license.
-See [LICENSE-MIT.TXT](LICENSE-MIT.txt).
+Read [LEGAL.md](/LEGAL.md) for legal information regarding the code licensing.
 
 Most assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and the copyright in the metadata file. [Example](https://github.com/ss14-harmony/ss14-harmony/blob/master/Resources/Textures/_Harmony/Clothing/Uniforms/Jumpsuit/hop_turtle.rsi/meta.json).
 

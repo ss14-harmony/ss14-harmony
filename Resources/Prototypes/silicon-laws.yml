@@ -587,11 +587,9 @@
     LiveLetLiveLaws: 1
     EfficiencyLawset: 1
     RobocopLawset: 1
-    Walamalawset: 1 # harmony change - walamalawset PR
     OverlordLawset: 0.5
     GameMasterLawset: 0.5
     PainterLawset: 1
     AntimovLawset: 0.25
     NutimovLawset: 0.5
-    Drone: 0.5
     Ninja: 0.25

@@ -1,0 +1,14 @@
+- type: mapModification
+  id: ModificationExoFixLights
+  applyOn:
+  - Exo
+  replacements:
+  # Lost the colored light privileges
+  # May need to add even more lights later but we'll see what people say
+  - from:
+    - !type:EntityTagSelector
+      tags:
+      - PoweredLightColored
+    - !type:EntityPrototypeSelector
+      prototype: AlwaysPoweredlightGreen
+    newPrototype: Poweredlight

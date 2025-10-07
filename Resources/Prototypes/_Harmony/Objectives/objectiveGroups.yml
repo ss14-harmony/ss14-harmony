@@ -28,6 +28,8 @@
     BloodBrotherCaptainJetpackStealObjective: 0.5
     BloodBrotherHandTeleporterStealObjective: 0.5
     BloodBrotherEnergyShotgunStealObjective: 0.5
+    BloodBrotherEnergyMagnumStealObjective: 0.5
+    BloodBrotherAccessConfiguratorStealObjective: 1
 
 - type: weightedRandom
   id: BloodBrotherObjectiveGroupKill

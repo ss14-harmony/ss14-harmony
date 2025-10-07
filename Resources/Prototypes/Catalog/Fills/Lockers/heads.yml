@@ -150,6 +150,7 @@
     - id: RubberStampHop
     - id: WeaponDisabler
     - id: ClothingEyesHudCommand
+    - id: BookSOP # Harmony Change
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -292,6 +293,7 @@
     - id: ProtolatheMachineCircuitboard
     - id: ResearchComputerCircuitboard
     - id: CargoRequestScienceComputerCircuitboard
+    - id: StationAiFixerCircuitboard
     - id: RubberStampRd
 
 # Hardsuit table, used for suit storage as well
