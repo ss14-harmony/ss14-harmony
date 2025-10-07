@@ -60,8 +60,7 @@ public sealed class ConspiratorRuleSystem : GameRuleSystem<ConspiratorRuleCompon
         var conspirators = AllEntityQuery<ConspiratorComponent>();
         while (conspirators.MoveNext(out var id, out _))
         {
-            if (TryComp<MindComponent>(uid, out var mind) && mind.OwnedEntity != id)
-                args.Append(Loc.GetString("conspirator-name", ("name", id.ToString())));
+            args.Append(Loc.GetString("conspirator-name", ("name", Name(id))));
         }
     }
 
