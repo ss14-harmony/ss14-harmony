@@ -42,6 +42,9 @@ uplink-rifle-magazine-bandit-desc = Rifle magazine with 15 cartridges. Compatibl
 
 # Chemicals
 
+uplink-hypospray-name = Syndicate Hypospray
+uplink-hypospray-desc = A chemical hypospray capable of instantly injecting 2.5u of reagents per use. Has an internal chemical storage of 15u and starts empty.
+
 uplink-defib-name = Interdyne Defibrillator
 uplink-defib-desc = A compact defibrillator. It can be used to revive your fellow comrades, or as an effective melee weapon! You should probably throw away your acidifier if you expect to use this.
 

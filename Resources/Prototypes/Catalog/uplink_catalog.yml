@@ -639,20 +639,20 @@
           - SurplusBundle
 
 #Chemicals
-
-- type: listing
-  id: UplinkHypopen
-  name: uplink-hypopen-name
-  description: uplink-hypopen-desc
-  icon: { sprite: /Textures/Objects/Misc/pens.rsi, state: pen }
-  productEntity: HypopenBox
-  discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 2 # Harmony change
-  cost:
-    Telecrystal: 4 # Harmony change
-  categories:
-  - UplinkChemicals
+#Start of Harmony Change : Removes the hypopen from the syndicate and nukie uplinks
+#- type: listing
+#  id: UplinkHypopen
+#  name: uplink-hypopen-name
+#  description: uplink-hypopen-desc
+#  icon: { sprite: /Textures/Objects/Misc/pens.rsi, state: pen }
+#  productEntity: HypopenBox
+#  discountCategory: rareDiscounts
+#  discountDownTo:
+#    Telecrystal: 2 # Harmony change
+#  cost:
+#    Telecrystal: 4 # Harmony change
+#  categories:
+#  - UplinkChemicals
 
 - type: listing
   id: UplinkHypoDart
