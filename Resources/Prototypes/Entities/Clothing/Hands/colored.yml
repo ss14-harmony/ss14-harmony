@@ -325,7 +325,7 @@
   parent: ClothingHandsBase
   id: ClothingHandsGlovesColorYellow
   name: insulated gloves
-  description: These gloves will protect the wearer from low voltage shocks.
+  description: These gloves will protect the wearer from low voltage shocks. #Changed description Harmony
   components:
   - type: FingerprintMask
   - type: Sprite
