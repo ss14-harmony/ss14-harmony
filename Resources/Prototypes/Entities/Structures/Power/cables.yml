@@ -95,13 +95,13 @@
   # ES START
   - type: Electrified
     siemensCoefficient: 2
-  #- type: AmbientSound
-  #  enabled: false
-  #  volume: -14
-  #  range: 2
-  #  sound:
-  #    path: /Audio/Ambience/Objects/emf_buzz.ogg
   # ES END
+  - type: AmbientSound
+    enabled: false
+    volume: -14
+    range: 2
+    sound:
+      path: /Audio/Ambience/Objects/emf_buzz.ogg
 
 - type: entity
   id: CableHVUncuttable
