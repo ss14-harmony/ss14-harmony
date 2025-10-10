@@ -131,7 +131,7 @@
       briefing:
         text: conspirator-role-greeting
         color: "#724F29"
-        # TODO: add a sound
+        sound: /Audio/_Harmony/Misc/blood_brother_greeting.ogg
       components:
       - type: Conspirator
       - type: AutoImplant
@@ -139,3 +139,19 @@
         - RadioImplantConspiracy
       mindRoles:
       - MindRoleConspirator
+
+- type: entity
+  parent: Traitor
+  id: SubTraitor # used in Conspiracy game preset
+  components:
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ Traitor ]
+      max: 3
+      playerRatio: 15
+      blacklist:
+        components:
+        - AntagImmune
+      lateJoinAdditional: true
+      mindRoles:
+      - MindRoleTraitor

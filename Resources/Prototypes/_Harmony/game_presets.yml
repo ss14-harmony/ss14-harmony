@@ -36,6 +36,7 @@
   showInVote: false # secret
   rules:
     - Conspirators
+    - SubTraitor
     - SubGamemodesRule
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
