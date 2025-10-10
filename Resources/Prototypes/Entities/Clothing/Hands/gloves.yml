@@ -265,7 +265,7 @@
   parent: [ ClothingHandsGlovesColorBlack, BaseSecurityEngineeringContraband ]
   id: ClothingHandsGlovesCombat
   name: combat gloves
-  description: These tactical gloves are fireproof and shock resistant.
+  description: These tactical gloves are fireproof and shock resistant to low voltages.
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/combat.rsi
