@@ -36,7 +36,8 @@ public sealed class ExterminateDepartmentConditionSystem : EntitySystem
         var players = AllEntityQuery<HumanoidAppearanceComponent, ActorComponent>();
         while (players.MoveNext(out var uid, out _, out _))
         {
-            if (!_job.MindTryGetJobId(uid, out var jobId) || jobId is null) continue;
+            if (!_mind.TryGetMind(uid, out var mindId, out _)) continue;
+            if (!_job.MindTryGetJobId(mindId, out var jobId) || jobId is null) continue;
             if (!_job.TryGetAllDepartments(jobId, out var departmentProtos)) continue;
             foreach (DepartmentPrototype departmentProto in departmentProtos)
             {
@@ -55,17 +56,16 @@ public sealed class ExterminateDepartmentConditionSystem : EntitySystem
         var targets = GetTargets(department);
         var exterminated = 0;
 
-        foreach (EntityUid target in targets)
+        foreach (var target in targets)
         {
-            // deleted or gibbed or something, counts as dead
-            if (!TryComp<MindComponent>(target, out var mind) || mind.OwnedEntity == null)
+            // no mind, catatonic or something, counts as dead
+            if (!_mind.TryGetMind(target, out var mindId, out var mindComp))
             {
                 exterminated++;
                 continue;
             }
-            var targetDead = _mind.IsCharacterDeadIc(mind);
 
-            if (targetDead)
+            if (_mind.IsCharacterDeadIc(mindComp))
                 exterminated++;
 
         }

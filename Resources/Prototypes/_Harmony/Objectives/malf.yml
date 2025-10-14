@@ -127,7 +127,7 @@
   parent: BaseMalfObjective
   id: MalfExterminateCrewObjective
   name: Prevent the entire crew from reaching CentComm
-  description: The crew cannot be allowed to make it out of your station alive and unrestrained.
+  description: The crew cannot be allowed to make it out of your station alive.
   components:
   - type: Objective
     icon: 

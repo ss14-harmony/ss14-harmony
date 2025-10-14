@@ -13,6 +13,7 @@ namespace Content.Server._Harmony.Objectives.Systems;
 /// </summary>
 public sealed class ExterminateCrewConditionSystem : EntitySystem
 {
+    [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly EmergencyShuttleSystem _emergencyShuttle = default!;
 
     public override void Initialize()
@@ -43,18 +44,10 @@ public sealed class ExterminateCrewConditionSystem : EntitySystem
         var targets = GetTargets();
         var contained = 0;
 
-        foreach (EntityUid target in targets)
+        foreach (var target in targets)
         {
-            // deleted or gibbed or something, counts as marooned
-            if (!TryComp<MindComponent>(target, out var mind) || mind.OwnedEntity == null)
-            {
-                contained++;
-                continue;
-            }
-
             if (!_emergencyShuttle.IsTargetEscaping(target))
                 contained++;
-
         }
 
         var query = EntityQueryEnumerator<MalfunctioningAIRuleComponent>();

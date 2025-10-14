@@ -1,8 +1,9 @@
 using System.Linq;
+using Content.Server._Harmony.GameTicking.Rules; // harmony change
+using Content.Server._Harmony.Malfunction.Components; // harmony change
 using Content.Server.Administration;
 using Content.Server.Chat.Managers;
 using Content.Server.Station.Systems;
-using Content.Server._Harmony.GameTicking.Rules; // harmony change
 using Content.Shared.Administration;
 using Content.Shared.Chat;
 using Content.Shared.Emag.Systems;
@@ -14,7 +15,6 @@ using Content.Shared.Roles;
 using Content.Shared.Roles.Components;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
-using Content.Shared._Harmony.Roles.Components; // harmony change
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
@@ -310,7 +310,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
         {
             // harmony change starts
             var updatedLaws = lawset.Laws;
-            if (HasComp<MalfunctioningAIRoleComponent>(update))
+            if (HasComp<MalfAbilitiesComponent>(update))
                 updatedLaws.Insert(0, _malf.LawZero());
 
             SetLaws(updatedLaws, update, provider.LawUploadSound); // this line specifically was only changed to use updatedLaws instead of lawset.Laws

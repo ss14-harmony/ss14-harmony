@@ -1,12 +1,18 @@
+using Content.Server._Harmony.GameTicking.Rules;
+using Content.Server._Harmony.Malfunction.Components;
 using Content.Server.Antag;
+using Content.Server.Electrocution;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Mind;
 using Content.Server.Popups;
+using Content.Server.Power.EntitySystems;
 using Content.Server.Power.Components;
 using Content.Server.Silicons.Laws;
+using Content.Server.Store.Systems;
 using Content.Server.VoiceMask;
-using Content.Server._Harmony.GameTicking.Rules;
-using Content.Server._Harmony.Malfunction.Components;
+using Content.Shared._Harmony.Malfunction;
+using Content.Shared._Harmony.Malfunction.Components;
+using Content.Shared._Harmony.Roles.Components;
 using Content.Shared.Actions;
 using Content.Shared.Charges.Components;
 using Content.Shared.Chat;
@@ -19,18 +25,15 @@ using Content.Shared.Light.Components;
 using Content.Shared.Popups;
 using Content.Shared.RCD.Components;
 using Content.Shared.Roles;
-using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Station.Components;
+using Content.Shared.Store;
 using Content.Shared.Trigger.Components;
 using Content.Shared.Trigger.Systems;
 using Content.Shared.TurretController;
 using Content.Shared.Turrets;
 using Content.Shared.Verbs;
-using Content.Shared._Harmony.Malfunction;
-using Content.Shared._Harmony.Malfunction.Components;
-using Content.Shared._Harmony.Roles.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Audio.Systems;
@@ -54,7 +57,11 @@ public sealed class MalfAbilitiesSystem : EntitySystem
     [Dependency] private readonly SiliconLawSystem _lawSystem = default!;
     [Dependency] private readonly SharedRoleSystem _roles = default!;
     [Dependency] private readonly MindSystem _mind = default!;
+    [Dependency] private readonly ApcSystem _apc = default!;
+    [Dependency] private readonly StoreSystem _store = default!;
+    [Dependency] private readonly ElectrocutionSystem _electrocution = default!;
 
+    private static readonly ProtoId<CurrencyPrototype> CpuCurrencyPrototype = "CPU";
     public override void Initialize()
     {
         base.Initialize();
@@ -72,6 +79,7 @@ public sealed class MalfAbilitiesSystem : EntitySystem
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfDestroyRcdsEvent>(OnDestroyRcds);
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfTransmitLawZeroEvent>(OnLawTransmit);
 
+        SubscribeLocalEvent<ApcComponent, GetVerbsEvent<AlternativeVerb>>(OnApcVerbs);
         SubscribeLocalEvent<GetVerbsEvent<Verb>>(OnGetVerbs);
     }
 
@@ -127,6 +135,32 @@ public sealed class MalfAbilitiesSystem : EntitySystem
 
         args.VoiceName = voice.VoiceMaskName ?? args.VoiceName;
         args.SpeechVerb = voice.VoiceMaskSpeechVerb ?? args.SpeechVerb;
+    }
+
+    private void OnApcVerbs(EntityUid uid, ApcComponent apc, GetVerbsEvent<AlternativeVerb> args)
+    {
+        if (!TryComp<MalfAbilitiesComponent>(args.User, out var malfComp)
+        || !args.CanComplexInteract
+        || !args.CanInteract) return;
+        if (apc.Hacked) return;
+        if (!TryComp<StationAiWhitelistComponent>(args.Target, out var whitelist) || !whitelist.Enabled) return;
+
+        var verb = new AlternativeVerb
+        {
+            Text = malfComp.CurrentHackCooldown >= 0 ? Loc.GetString("malf-hack-verb-cooldown", ("time", Math.Ceiling(malfComp.CurrentHackCooldown))) : Loc.GetString("malf-hack-verb"),
+            Act = () =>
+            {
+                if (malfComp.CurrentHackCooldown >= 0) return;
+                _store.TryAddCurrency(new() { { CpuCurrencyPrototype, 10 } }, args.User);
+                apc.Hacked = true;
+                _popup.PopupEntity(Loc.GetString("malf-apc-hacked"), args.Target, PopupType.MediumCaution);
+
+                _apc.UpdateApcState(uid, apc);
+                _audio.PlayPvs(malfComp.HackSound, uid);
+                malfComp.CurrentHackCooldown = malfComp.HackApcTime;
+            }
+        };
+        args.Verbs.Add(verb);
     }
 
     // welcome to hardcoded hell, induced entirely by EntityTargetAction refusing to cooperate with me
@@ -287,6 +321,13 @@ public sealed class MalfAbilitiesSystem : EntitySystem
             else
                 OnLockdownEnd(uid);
         }
+
+        var malfQuery = EntityQueryEnumerator<MalfAbilitiesComponent>();
+        while (malfQuery.MoveNext(out _, out var malf))
+        {
+            if (malf.CurrentHackCooldown >= 0)
+                malf.CurrentHackCooldown -= frameTime;
+        }
     }
 
     private void OnLockdown(EntityUid uid, MalfAbilitiesComponent comp, MalfLockdownEvent args)
@@ -304,7 +345,7 @@ public sealed class MalfAbilitiesSystem : EntitySystem
             _door.SetBoltsDown((ent, bolt), true, uid);
             if (!TryComp<ElectrifiedComponent>(ent, out var electrified)) continue;
             lockedDownComponent.Electrified = electrified.Enabled;
-            electrified.Enabled = true;
+            _electrocution.SetElectrified((ent, electrified), true);
             EnsureComp<LockdownComponent>(uid, out var lockdown);
             lockdown.RemainingTime = lockdown.Duration;
         }
@@ -320,7 +361,7 @@ public sealed class MalfAbilitiesSystem : EntitySystem
             if (!TryComp<DoorBoltComponent>(ent, out var bolt)) continue;
             _door.SetBoltsDown((ent, bolt), lockedDownComponent.Bolted, uid);
             if (!TryComp<ElectrifiedComponent>(ent, out var electrified)) continue;
-            electrified.Enabled = lockedDownComponent.Electrified ?? false;
+            _electrocution.SetElectrified((ent, electrified), lockedDownComponent.Electrified ?? false);
             RemComp<LockedDownComponent>(ent);
         }
 

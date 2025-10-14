@@ -1,4 +1,5 @@
 using Content.Server._Harmony.Malfunction.Systems;
+using Robust.Shared.Audio;
 
 namespace Content.Server._Harmony.Malfunction.Components;
 
@@ -14,7 +15,13 @@ public sealed partial class MalfAbilitiesComponent : Component
     [DataField] public int OverrideSafetyUses = 0;
     [DataField] public int OverloadLightUses = 0;
     [DataField] public int JamFirelockUses = 0;
-
     [DataField] public bool VoiceModulation = false;
 
+
+
+    [DataField] public EntityUid? Action;
+    [DataField] public SoundSpecifier HackSound = new SoundCollectionSpecifier("sparks");
+    [DataField] public int HackApcTime = 15; // time taken to fully hack an APC
+
+    public float CurrentHackCooldown = 0;
 }
