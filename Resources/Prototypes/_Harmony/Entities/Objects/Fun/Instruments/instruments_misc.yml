@@ -2,6 +2,7 @@
   parent: BaseHandheldInstrument
   id: WehpetInstrument
   name: weh-pet
+  suffix: Harmony
   description: A lizard had too much time on their hands when they made this.
   components:
   - type: Instrument
