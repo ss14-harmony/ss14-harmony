@@ -8,13 +8,15 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobChemist
-      time: 9000 #2.5 hrs
+      time: 0 #0 hrs
     - !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 18000 #5 hrs
+      time: 0 #0 hrs
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 36000 #10 hrs
+      time: 28800 # Harmony: 8 hrs
+    - !type:OverallPlaytimeRequirement
+      time: 43200 # Harmony: 12 hrs
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
@@ -28,6 +30,7 @@
   - ChiefMedicalOfficer
   - Brig
   - Cryogenics
+  - External # Harmony: Paramedic has it, so cmo needs it.
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
