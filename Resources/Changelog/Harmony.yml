@@ -2759,3 +2759,31 @@ Entries:
     changes:
     - type: Tweak
       message: Added the elite suit back to traitor uplinks.
+  - id: 1021
+    author: whythelettuce
+    time: '2025-10-04T11:21:23.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1021
+    changes:
+    - type: Add
+      message: The NT-Royale casino shuttle can now spawn as part of the unknown visitor shuttle event.
+  - id: 1034
+    author: BlueMoon059
+    time: '2025-10-04T12:58:26.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1034
+    changes:
+    - type: Add
+      message: The syndicate uplink now contains the Syndiroach, a mothroach with a bomb on its back.
+  - id: 829
+    author: CollectionOfBones128
+    time: '2025-10-04T21:38:21.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/829
+    changes:
+    - type: Add
+      message: The NT Heavy Salvage Vessel has been added to the salvage ruin pool.
+  - id: 1114
+    author: kleinerstation13
+    time: '2025-10-09T13:13:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1114
+    changes:
+    - type: Fix
+      message: Saline will no longer metabolise at 0.5x efficiency

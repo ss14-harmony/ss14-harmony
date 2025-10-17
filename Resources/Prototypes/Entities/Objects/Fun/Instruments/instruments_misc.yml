@@ -48,6 +48,7 @@
   parent: BaseHandheldInstrument
   id: PhoneInstrumentUpstream # Harmony
   name: red phone
+  suffix: Prayer # Harmony - The Harmony Red Phone should be mapped instead
   description: Should anything ever go wrong...
   components:
   - type: Sprite
