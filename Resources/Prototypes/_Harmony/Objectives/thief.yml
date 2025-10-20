@@ -1,3 +1,5 @@
+# Animal
+
 - type: entity
   parent: BaseThiefStealAnimalObjective
   id: GlorpStealObjective
@@ -9,6 +11,10 @@
   - type: NotJobRequirement
     job: Scientist
 
+# steal item
+
+## Medical
+
 - type: entity
   parent: BaseThiefStealObjective
   id: CMOGogglesStealObjective
@@ -19,3 +25,16 @@
     stealGroup: ClothingEyesGlassesMedical
   - type: Objective
     difficulty: 1
+
+## Other
+
+- type: entity
+  parent: BaseThiefStealObjective
+  id: ThiefAccessConfiguratorStealObjective # Also giving this to syndis/BB, so keeping the name different from each other
+  components:
+      - type: NotJobRequirement # NotJobRequirement only allows one job to be stated, otherwise an error happens and the objective cannot be rolled
+        job: HeadOfPersonnel # TODO: Find a way to also have the CE unable to roll the objective in the case we allow heads to be antags
+      - type: StealCondition
+        stealGroup: AccessConfigurator
+      - type: Objective
+        difficulty: 1

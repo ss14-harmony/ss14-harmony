@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-NC-SA-3.0",
-    "copyright": "Originally made by the Goons, archived at commit https://github.com/nullbear/Goonstation_SS13_r4407/commit/a1ce10847a63db96ed06fe338b5811ff90d403f2. Resprited by CrimsonJupiter.",
+    "copyright": "Originally made by the Goons, archived at commit https://github.com/nullbear/Goonstation_SS13_r4407/commit/a1ce10847a63db96ed06fe338b5811ff90d403f2. Resprited by CrimsonJupiter. 'folded-equipped-INNERCLOTHING' made by @TheCrimsonJupiter (GitHub).",
     "size": {
         "x": 32,
         "y": 32
@@ -12,6 +12,10 @@
         },
         {
             "name": "equipped-INNERCLOTHING",
+            "directions": 4
+        },
+        {
+            "name": "folded-equipped-INNERCLOTHING",
             "directions": 4
         },
         {

@@ -5,6 +5,9 @@
 - type: Tag
   id: ClothingShoesDuckyGaloshes
 
+- type: Tag
+  id: PoweredLightColored
+
 # Tag used for energy weapon's energy cartridges.
 - type: Tag
   id: EnergyCarbineCartridge

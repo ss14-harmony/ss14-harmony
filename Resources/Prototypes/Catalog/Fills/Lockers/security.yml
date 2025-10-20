@@ -45,7 +45,7 @@
       amount: 2
     - id: NetworkConfigurator
     - id: Binoculars
-    - id: WeaponEnergyShotgun # Harmony Change: Gives the Warden the Energy Shotgun
+    - id: WeaponEnergyShotgun
     - id: ClothingHeadsetAltWarden # Harmony Change: Adds Warden over-ear headset
 
 - type: entityTable

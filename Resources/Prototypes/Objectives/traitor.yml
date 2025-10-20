@@ -255,7 +255,7 @@
 
 - type: entity
   parent: BaseTraitorStealObjective
-  id: EnergyShotgunStealObjective
+  id: EnergyMagnumStealObjective
   components:
   - type: Objective
     # Harmony - The Warden will have this on them a lot of the time so..
@@ -265,10 +265,8 @@
 #    job: HeadOfSecurity
     job: Warden
   - type: StealCondition
-    stealGroup: WeaponEnergyShotgun
-#    owner: job-name-hos
-    owner: job-name-warden
-# End of Harmony Change
+    stealGroup: WeaponEnergyMagnum
+    owner: job-name-hos
 
 ## ce
 

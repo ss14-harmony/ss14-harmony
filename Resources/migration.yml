@@ -654,6 +654,11 @@ SpawnHonkBot: SpawnMobHonkBot
 CrateFoodPizzaLarge: CrateFoodPizza
 CrateFoodSoftdrinksLarge: CrateFoodSoftdrinks
 
+# 2025-06-03
+FloorTileItemGCircuit4: FloorTileItemGCircuit
+FloorTileItemBCircuit4: FloorTileItemBCircuit
+FloorTileItemRCircuit4: FloorTileItemRCircuit
+
 # 2025-06-06
 MagazineLightRifleMaxim: null
 MagazineLightRiflePkBox: null
@@ -704,9 +709,42 @@ ClothingNeckHeadphones: ClothingMultipleHeadphones
 # 2025-07-06 harmony
 SpawnPointPermaPrisoner: null # harmony
 
+# 2025-07-17
+RipleyChassis: null
+HonkerChassis: null
+HamtrChassis: null
+VimChassis: null
+
 # 2025-08-01
 FoodDonutJellySlugcat: FoodDonutJellyScurret
 
 # 2025-08-11
 ClothingUniformJumpsuitChiefEngineerNT: ClothingUniformJumpsuitChiefEngineer
 ClothingUniformJumpsuitParamedicNT: ClothingUniformJumpsuitParamedic
+
+# 2025-08-29
+PrefilledSyringe: Syringe
+
+# 2025-09-29 Harmony
+RandomHumanoidSpawnerDeathSquadTime: RandomHumanoidSpawnerDeathSquad
+RandomHumanoidSpawnerERTLeaderTime: RandomHumanoidSpawnerERTLeader
+RandomHumanoidSpawnerERTLeaderEVATime: RandomHumanoidSpawnerERTLeaderEVA
+RandomHumanoidSpawnerERTLeaderEVALecterTime: RandomHumanoidSpawnerERTLeaderEVALecter
+RandomHumanoidSpawnerERTEngineerTime: RandomHumanoidSpawnerERTEngineer
+RandomHumanoidSpawnerERTEngineerEVATime: RandomHumanoidSpawnerERTEngineerEVA
+RandomHumanoidSpawnerERTSecurityTime: RandomHumanoidSpawnerERTSecurity
+RandomHumanoidSpawnerERTSecurityEVATime: RandomHumanoidSpawnerERTSecurityEVA
+RandomHumanoidSpawnerERTSecurityEVALecterTime: RandomHumanoidSpawnerERTSecurityEVALecter
+RandomHumanoidSpawnerERTMedicalTime: RandomHumanoidSpawnerERTMedical
+RandomHumanoidSpawnerERTMedicalEVATime: RandomHumanoidSpawnerERTMedicalEVA
+RandomHumanoidSpawnerCBURNUnitTime: RandomHumanoidSpawnerCBURNUnit
+RandomHumanoidSpawnerCentcomOfficialTime: RandomHumanoidSpawnerCentcomOfficial
+RandomHumanoidSpawnerERPLeaderTime: RandomHumanoidSpawnerERPLeader
+RandomHumanoidSpawnerERPClownTime: RandomHumanoidSpawnerERPClown
+
+# 2025-10-6
+BibleTanakh: null
+BibleSatanic: null
+
+# 2025-10-8
+ClothingBeltAssault: ClothingBeltMilitaryWebbing
