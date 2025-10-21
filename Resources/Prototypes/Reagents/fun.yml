@@ -236,7 +236,9 @@
             Cold: 0.05
       - !type:AdjustTemperature
         conditions:
-        - !type:Temperature #Start Harmony Change
+#Start Harmony Change: On splash it will be cool someone down much further, and also has slowdowns similar to the metabolism effects once specific thresholds are dropped below.
+        - !type:Temperature
+          #Harmony - min: 160.15, reduced to allow deepfreezing, enabling the two sepereate slowdowns to have enough seperation. The antag cooling!
           min: 60.15
           max: 300.0
         amount: -30000
@@ -244,11 +246,11 @@
         conditions:
         - !type:Temperature
           min: 300.0
-        amount: -60000
+        amount: -60000 #Harmony - if the person being splashed is SUPER hot, it cools them down WAY more. Anti-ashing juice.
       - !type:PopupMessage
         conditions:
         - !type:Temperature
-          min: 190.15 # cold, but not immobilized
+          min: 190.15 #Harmony - cold, but not immobilized
           max: 260.15
         type: Local
         visualType: LargeCaution
@@ -260,14 +262,14 @@
           min: 190.15
           max: 260.15
         walkSpeedModifier: 0.6
-        sprintSpeedModifier: 0.6 #not immobilized
+        sprintSpeedModifier: 0.6 #Harmony - not immobilized
         time: 5
         type: Add
         refresh: true
       - !type:PopupMessage
         conditions:
         - !type:Temperature
-          max: 190.15 # cold AND practically immobilized
+          max: 190.15 #Harmony - cold AND practically immobilized
         type: Local
         visualType: LargeCaution
         messages: [ "fresium-effect-frozen"]
@@ -275,45 +277,48 @@
       - !type:MovespeedModifier
         conditions:
         - !type:Temperature
-          max: 190.15 # practically immobilized
+          max: 190.15 #Harmony - practically immobilized
         walkSpeedModifier: 0.1
         sprintSpeedModifier: 0.1
         time: 8
         type: Add
-        refresh: true # End Harmony Change
+        refresh: true
+    # End Harmony Change
     Extinguish:
       methods: [ Touch ]
       effects:
       - !type:ExtinguishReaction # cold
   metabolisms:
     Medicine:
-      metabolismRate : 0.1 # Harmony Change: Reduced from 0.45 to 0.1
+    # Start Harmony change: reduced metabolism rate, and changed the metabolism types. Buffed its healing quite a bit at low doses, more severe cold damage at low doeses, and added strong healing at high doses, once immobilized.
+      metabolismRate : 0.1 # Reduced from 0.45 to 0.1
       effects:
-      - !type:HealthChange
+      - !type:HealthChange #Harmony - The burn healing effect, not even healing so its more effective against burns
         damage:
-          types: #Start Harmony Change
-             Cold: 0.5 # nips directly, other cold damage comes from the temp change
+          types:
+             Cold: 0.5 # Not insignificant cold burn damage, especially when stacked with the damage from being cold.
              Heat: -3 # heals significant heat damage.
              Shock: -1
              Caustic: -1
-      - !type:EvenHealthChange
+      - !type:EvenHealthChange #Harmony - Moderate general healing at low doses. Even healing, so meshes well with cryoxadones non-even healing.
           damage:
             Airloss: -3
             Brute: -3
             Toxin: -1
-      - !type:EvenHealthChange
+      - !type:EvenHealthChange #Harmony - Super strong healing at the immobilizing dose, does out heal its own cold damage. Make sure you are fine with not moving, though! Stacks with above healing.
           conditions:
           - !type:ReagentThreshold
             reagent: Fresium
-            min: 40 # when immobilized, gain very significant healing, stronger than cryoxadone. ADDED TO ABOVE HEALING Better hope what you're healing from doesn't come back while you're frozen solid.
+            min: 40
           damage:
             Brute: -6
             Burn: -6
       - !type:ModifyBleedAmount
-        amount: -0.4 # Stops bleeding, a bit stronger than inap, weaker than tranex
-      - !type:ExtinguishReaction
+        amount: -0.4 # Harmony- Stops bleeding, a bit stronger than inap, weaker than tranex
+      - !type:ExtinguishReaction # Harmony - Puts out active fires on the entity, at any dose, and will generally give full effective burning protection when combined with its healing, as long as the temperature rising isn't too extreme.
         FireStacksAdjustment: -1
-        probability: 0.25 # End Harmony Change
+        probability: 0.25
+        # End Harmony Change
       - !type:PopupMessage
         conditions:
         - !type:ReagentThreshold
@@ -329,11 +334,12 @@
           reagent: Fresium
           max: 35
         type: Local
+        # Harmony Change Start - Large caution for the low dose slow effect was a bit much.
         # visualType: LargeCaution
-        visualType: SmallCaution # Harmony Change
+        visualType: SmallCaution
         messages: [ "fresium-effect-slow"]
         probability: 0.2
-      - !type:PopupMessage #Start Harmony Change
+      - !type:PopupMessage
         conditions:
         - !type:ReagentThreshold
           reagent: Fresium
@@ -341,13 +347,16 @@
         type: Local
         visualType: LargeCaution
         messages: [ "fresium-effect-frozen"]
-        probability: 0.2 # End Harmony Change
+        probability: 0.2
+        # End Harmony Change
       - !type:AdjustTemperature
         conditions:
-        - !type:Temperature #Start Harmony Change
-          min: 160.15 # enough for cryo if in a hardsuit.
-        # amount: 10000 # Old value, changed to below.
-        amount: -15000 # End Harmony Change.
+        #Start Harmony Change
+        - !type:Temperature
+          min: 160.15 # Harmony - enough for cryo if in a hardsuit.
+        # amount: 10000 # Harmony - Old value, changed to below.
+        amount: -15000
+        # End Harmony Change.
       - !type:MovespeedModifier
         conditions:
         - !type:ReagentThreshold
@@ -355,9 +364,11 @@
           max: 40 # slows when less than 40
         walkSpeedModifier: 0.6
         sprintSpeedModifier: 0.6
-        time: 5 #Start Harmony Change
+        #Start Harmony Change - Prevents the slowdown from lasting forever, which it does somtimes without this. Also makes the slowdown consistent and not too punishing.
+        time: 5
         type: Add
-        refresh: true # End Harmony Change
+        refresh: true
+        # End Harmony Change
       - !type:MovespeedModifier
         conditions:
         - !type:ReagentThreshold
@@ -365,7 +376,8 @@
           min: 40 # your legs stop working when above 40
         walkSpeedModifier: 0.00
         sprintSpeedModifier: 0.00
-      #- !type:PopupMessage #Start Harmony Change
+      #Start Harmony Change - Removed this and replaced it with the one above, by the other effect. The frozen in place can trigger before you are actually frozen by a few units, as a kind of warning.
+      #- !type:PopupMessage
       #  conditions:
       #  - !type:ReagentThreshold
       #    reagent: Fresium
@@ -376,7 +388,8 @@
       #  probability: 0.4
         time: 8
         type: Add
-        refresh: true # End Harmony Change
+        refresh: true # Harmony- Added a timer to this one too, same reason as the previous slowdown effect.
+        # End Harmony Change
 
 - type: reagent
   id: Laughter
