@@ -10,12 +10,13 @@
   metabolisms:
     Drink:
       effects:
-      - !type:SatiateThirst
-        factor: 1.5
-        conditions:
-          - !type:OrganType
-            type: Human
-            shouldHave: false
+      # Misfit - Change to give same effects as uncooked proteins
+      - !type:Vomit
+        probability: 0.1
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 1
   footstepSound:
     collection: FootstepBlood
     params:
