@@ -3,7 +3,7 @@
   id: WeaponRevolverJudge
   name: Judge
   suffix: Harmony
-  description: A modernized version of the Inspector revolver, manufactured by Helion Defense. Favored among private security everywhere for its' intimidating looks and superior ergonomics over its predecessor. Loads 6 rounds of .45 magnum.
+  description: A modernized version of the Inspector revolver, manufactured by Helion Defense. Favored among veteran detectives everywhere for its' intimidating looks and superior ergonomics over its predecessor. Loads 6 rounds of .45 magnum.
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Guns/Revolvers/judge.rsi
