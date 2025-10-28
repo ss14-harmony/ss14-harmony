@@ -9,3 +9,15 @@
     exclusiveAntag: true
     roleType: TeamAntagonist
     subtype: role-subtype-blood-brother
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleInstigator
+  name: Instigator Role
+  components:
+  - type: TraitorRole
+  - type: MindRole
+    antagPrototype: Instigator
+    exclusiveAntag: true
+    roleType: SoloAntagonist
+    subtype: role-subtype-instigator

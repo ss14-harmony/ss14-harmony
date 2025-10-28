@@ -1,0 +1,10 @@
+- type: antag
+  id: Instigator
+  name: roles-antag-instigator-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-instigator-objective
+  guides: [ Traitors ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 1h
