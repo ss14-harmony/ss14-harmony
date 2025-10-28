@@ -82,14 +82,14 @@ public sealed class ConspiratorRuleSystem : GameRuleSystem<ConspiratorRuleCompon
     private bool GetRandomObjectivePrototype(ConspiratorRuleComponent comp, out EntProtoId? objectiveProto)
     {
         objectiveProto = null;
-
-        if (!_proto.TryIndex(comp.ObjectiveGroup, out var group))
-            return false;
-
+    private bool GetRandomObjectivePrototype(ConspiratorRuleComponent comp, [NotNullWhen(true)] out EntProtoId? objectiveProto)
+    {
+        objectiveProto = null;
+        if (!_proto.TryIndex(comp.ObjectiveGroup, out var group)) return false;
         var objectives = group.Weights.ShallowClone();
         while (_random.TryPickAndTake(objectives, out var proto))
         {
-            objectiveProto = proto;
+            objectiveProto = proto!;
             return true;
         }
 
