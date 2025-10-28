@@ -21,7 +21,6 @@ public sealed class ConspiratorRuleSystem : GameRuleSystem<ConspiratorRuleCompon
 {
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 
