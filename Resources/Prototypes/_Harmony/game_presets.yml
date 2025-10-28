@@ -29,8 +29,8 @@
 - type: gamePreset
   id: Conspiracy
   alias:
-    - conspirators
-    - conspirator
+  - conspirators
+  - conspirator
   name: conspiracy-title
   description: conspracy-description
   showInVote: false # secret
