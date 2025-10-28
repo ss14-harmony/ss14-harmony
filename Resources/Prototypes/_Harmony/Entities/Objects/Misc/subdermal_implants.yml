@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseSubdermalImplant
   id: RadioImplantConspiracy
+  categories: [ HideSpawnMenu ]
   name: conspiracy radio implant
   description: This implant grants access to the Conspiracy channel without a headset.
-  categories: [ HideSpawnMenu ]
   components:
   - type: SubdermalImplant
   - type: RadioImplant
