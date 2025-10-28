@@ -38,7 +38,7 @@ public sealed class ConspiratorRuleSystem : GameRuleSystem<ConspiratorRuleCompon
 
         var sessionData = _antag.GetAntagIdentifiers(uid);
         args.AddLine(Loc.GetString("conspirator-count", ("count", sessionData.Count)));
-        foreach (var (mind, data, name) in sessionData)
+        foreach (var (_, data, name) in sessionData)
         {
             args.AddLine(Loc.GetString("conspirator-name-user",
                 ("name", name),
