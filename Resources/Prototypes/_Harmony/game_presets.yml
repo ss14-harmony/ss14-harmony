@@ -25,3 +25,21 @@
   supportedMaps: DeathMatchPROMODMapPool
   rules:
     - DeathMatchPROMOD
+
+- type: gamePreset
+  id: OopsAllBloodBound
+  alias:
+  - oopsallBB
+  - oopsallbloodbound
+  - allBB
+  - tatorbrothers
+  name: oops-all-bb-title
+  description: oops-all-bb-description
+  showInVote: false
+  rules:
+  - OopsAllBloodBound
+  - SubGamemodesRuleTraitor
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation

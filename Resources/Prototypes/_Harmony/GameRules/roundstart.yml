@@ -94,7 +94,7 @@
     shoes: ClothingShoesBootsJack
     pocket1: MagazinePistol
     pocket2: MagazinePistol
-  inhand: 
+  inhand:
     - WeaponPistolMk58
 #  storage: # can't put starting gear in backpack. works for nukies, not for DM.
 #    back:
@@ -112,3 +112,32 @@
       path: /Audio/Announcements/attention.ogg
     duration: 1500 # 25 mins
   - type: EmptyRule
+
+- type: entity
+  parent: BaseTraitorRule
+  id: OopsAllBloodBound
+  components:
+  - type: GameRule
+    minPlayers: 5
+    delay:
+      min: 240
+      max: 420
+  - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
+    definitions:
+    - prefRoles: [ BloodBrother ]
+      max: 4
+      playerRatio: 8 # Slightly lower ratio than traitors because BB aren't as destructive. Maybe not a good idea to reduce this?
+      briefing:
+        text: blood-brother-initial-role-greeting
+        color: MediumVioletRed
+        sound: /Audio/_Harmony/Misc/blood_brother_greeting.ogg
+      components:
+      - type: BloodBrother
+      - type: InitialBloodBrother
+      mindRoles:
+      - MindRoleBloodBrother
+      blacklist:
+        components:
+        - AntagImmune
+      lateJoinAdditional: false

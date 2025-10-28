@@ -29,3 +29,24 @@
       - type: InitialBloodBrother
       mindRoles:
       - MindRoleBloodBrother
+
+- type: entity
+  parent: BaseTraitorRule
+  id: SubgamemodeTraitor # basically copied from upstream, can be replaced once OopsAllThieves is merged here
+  components:
+  - type: GameRule
+    minPlayers: 5
+    delay:
+      min: 240
+      max: 420
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ Traitor ]
+      max: 3
+      playerRatio: 10
+      blacklist:
+        components:
+        - AntagImmune
+      lateJoinAdditional: true
+      mindRoles:
+      - MindRoleTraitor
