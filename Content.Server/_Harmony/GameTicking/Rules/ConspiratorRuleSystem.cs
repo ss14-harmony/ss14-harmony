@@ -44,7 +44,9 @@ public sealed class ConspiratorRuleSystem : GameRuleSystem<ConspiratorRuleCompon
                 ("name", name),
                 ("username", data.UserName)));
         }
-        if (!_proto.TryIndex(component.Objective, out var objectiveProto)) return;
+
+        if (!_proto.TryIndex(component.Objective, out var objectiveProto))
+            return;
 
         args.AddLine(Loc.GetString("conspirator-objective", ("objective", objectiveProto.Name)));
     }
