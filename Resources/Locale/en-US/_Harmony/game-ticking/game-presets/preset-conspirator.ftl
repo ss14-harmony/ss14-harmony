@@ -15,4 +15,3 @@ conspirator-radio-implant = Communicate with other conspirators using your radio
 
 conspiracy-title = Conspiracy
 conspiracy-description = A conspiracy is afoot!
-
