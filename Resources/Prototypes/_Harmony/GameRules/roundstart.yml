@@ -141,3 +141,11 @@
         components:
         - AntagImmune
       lateJoinAdditional: false
+
+- type: entity
+  parent: BaseGameRule
+  id: SubGamemodesRuleTraitor
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: SubgamemodeTraitor
