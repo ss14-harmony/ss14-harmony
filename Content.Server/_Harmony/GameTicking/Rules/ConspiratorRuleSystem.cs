@@ -19,12 +19,12 @@ namespace Content.Server._Harmony.GameTicking.Rules;
 
 public sealed class ConspiratorRuleSystem : GameRuleSystem<ConspiratorRuleComponent>
 {
-
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+
     public override void Initialize()
     {
         base.Initialize();
