@@ -9,4 +9,6 @@ public sealed partial class ConspiratorComponent : Component
 {
     [DataField]
     public ProtoId<FactionIconPrototype> ConspiratorIcon = "ConspiratorFaction";
+
+    public override bool SessionSpecific => true;
 }
