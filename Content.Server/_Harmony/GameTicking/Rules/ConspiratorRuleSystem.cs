@@ -11,6 +11,7 @@ using Content.Shared.Random.Helpers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Server._Harmony.GameTicking.Rules;
 
@@ -51,7 +52,7 @@ public sealed class ConspiratorRuleSystem : GameRuleSystem<ConspiratorRuleCompon
         args.AddLine(Loc.GetString("conspirator-objective", ("objective", objectiveProto.Name)));
     }
 
-    private void OnGetBriefing(EntityUid uid, ConspiratorRoleComponent comp, ref GetBriefingEvent args)
+    private void OnGetBriefing(Entity<ConspiratorRoleComponent> ent, ref GetBriefingEvent args)
     {
         args.Append(Loc.GetString("conspirator-identities"));
 
@@ -79,9 +80,6 @@ public sealed class ConspiratorRuleSystem : GameRuleSystem<ConspiratorRuleCompon
             _mind.TryAddObjective(mindId, mind, ent.Comp.Objective);
     }
 
-    private bool GetRandomObjectivePrototype(ConspiratorRuleComponent comp, out EntProtoId? objectiveProto)
-    {
-        objectiveProto = null;
     private bool GetRandomObjectivePrototype(ConspiratorRuleComponent comp, [NotNullWhen(true)] out EntProtoId? objectiveProto)
     {
         objectiveProto = null;
