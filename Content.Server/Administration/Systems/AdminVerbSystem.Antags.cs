@@ -31,6 +31,7 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultChangelingRule = "Changeling";
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
     private static readonly EntProtoId DefaultBloodBrotherRule = "BloodBrothers"; // Harmony
+    private static readonly EntProtoId DefaultMarauderRule = "Marauder";
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
 
     // All antag verbs have names so invokeverb works.
@@ -209,6 +210,21 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", bloodBrotherName, Loc.GetString("admin-verb-make-blood-brother")),
         };
         args.Verbs.Add(bloodBrother);
+
+        var marauderName = Loc.GetString("admin-verb-text-make-marauder");
+        Verb marauder = new()
+        {
+            Text = marauderName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Objects/Weapons/Guns/LMGs/l6.rsi"), "icon"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<TraitorRuleComponent>(targetPlayer, DefaultMarauderRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", marauderName, Loc.GetString("admin-verb-make-marauder")),
+        };
+        args.Verbs.Add(marauder);
         // Harmony end
     }
 }
