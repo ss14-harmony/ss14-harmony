@@ -125,7 +125,7 @@
     objectives:
     - DieObjective
   - type: GameRule
-    minPlayers: 5
+    minPlayers: 20 # no hydrogen bombs against the coughing baby of a lowpop crew with little security
     delay:
       min: 240
       max: 420
