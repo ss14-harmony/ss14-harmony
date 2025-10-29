@@ -13,7 +13,7 @@
 - type: entity
   parent: BaseMindRoleAntag
   id: MindRoleInstigator
-  name: Instigator Role
+  name: Marauder Role
   components:
   - type: TraitorRole
   - type: MindRole
