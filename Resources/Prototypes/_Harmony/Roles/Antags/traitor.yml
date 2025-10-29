@@ -1,9 +1,9 @@
 - type: antag
-  id: Instigator
-  name: roles-antag-instigator-name
+  id: Marauder
+  name: roles-antag-marauder-name
   antagonist: true
   setPreference: true
-  objective: roles-antag-instigator-objective
+  objective: roles-antag-marauder-objective
   guides: [ Traitors ]
   requirements:
   - !type:OverallPlaytimeRequirement

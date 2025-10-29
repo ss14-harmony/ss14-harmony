@@ -147,7 +147,7 @@
   rules:
   - DummyNonAntagChance
   - Traitor
-  - InstigatorChance # harmony change, split DAGD off from regular syndie. flat 50% chance for there to be one.
+  - MarauderChance # harmony change, split DAGD off from regular syndie. flat 50% chance for there to be one.
   - SubGamemodesRule
   - BasicStationEventScheduler
   - MeteorSwarmScheduler

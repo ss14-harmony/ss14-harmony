@@ -1,2 +1,2 @@
 role-subtype-blood-brother = Blood Bound
-role-subtype-instigator = Marauder
+role-subtype-marauder = Marauder

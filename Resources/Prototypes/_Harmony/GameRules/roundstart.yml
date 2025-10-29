@@ -115,7 +115,7 @@
 
 - type: entity
   parent: BaseTraitorRule
-  id: Instigator
+  id: Marauder
   components:
   - type: TraitorRule
     giveBriefing: false # custom briefing.
@@ -132,7 +132,7 @@
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     definitions:
-    - prefRoles: [ Instigator ]
+    - prefRoles: [ Marauder ]
       max: 1
       playerRatio: 1
       blacklist:
@@ -140,17 +140,17 @@
         - AntagImmune
       lateJoinAdditional: false
       mindRoles:
-      - MindRoleInstigator
+      - MindRoleMarauder
       briefing:
-        text: instigator-role-greeting
+        text: marauder-role-greeting
         color: Crimson # make it stand out. dark, crimson, red and evil.
         sound: /Audio/Ambience/Antag/traitor_start.ogg
 
 - type: entity
   parent: BaseGameRule
-  id: InstigatorChance # for the Traitor gamemode.
+  id: MarauderChance # for the Traitor gamemode.
   components:
   - type: SubGamemodes
     rules:
-    - id: Instigator
+    - id: Marauder
       prob: 0.5
