@@ -31,7 +31,7 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultChangelingRule = "Changeling";
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
     private static readonly EntProtoId DefaultBloodBrotherRule = "BloodBrothers"; // Harmony
-    private static readonly EntProtoId DefaultMarauderRule = "Marauder";
+    private static readonly EntProtoId DefaultMarauderRule = "Marauder"; // Harmony
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
 
     // All antag verbs have names so invokeverb works.
