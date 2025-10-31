@@ -37,8 +37,7 @@
     minimumPlayers: 10
     maxOccurrences: 1 # it's less funny and more annoying the second time
     announcement: station-event-landmine-spawn-announcement
-    announcementsound:
-      path: /Audio/Announcements/attention.ogg
+    announcementsound: /Audio/Announcements/attention.ogg
     duration: 5
   - type: RandomSpawnRule
     prototype: LandMineExplosive
