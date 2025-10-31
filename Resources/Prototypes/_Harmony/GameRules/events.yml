@@ -28,16 +28,16 @@
     prototype: SpawnPointGhostBinglePrime
 
 - type: entity
-  parent: BaseStationEventShortDelay
+  parent: BaseGameRule
   id: LandmineSpawn
   components:
   - type: StationEvent
-    earliestStart: 30
+    startAnnouncement: station-event-landmine-spawn-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
     weight: 2
-    minimumPlayers: 10
-    maxOccurrences: 1 # it's less funny and more annoying the second time
-    announcement: station-event-landmine-spawn-announcement
-    announcementsound: /Audio/Announcements/attention.ogg
-    duration: 5
+    reoccurrenceDelay: 30
+    duration: 1
+    maxOccurrences: 1
   - type: RandomSpawnRule
     prototype: LandMineExplosive
