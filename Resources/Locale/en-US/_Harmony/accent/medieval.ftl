@@ -168,7 +168,7 @@ accent-medieval-words-56 = idiot
 accent-medieval-replacement-56 = fool
 
 accent-medieval-words-57 = ninja
-accent-medieval-replacement-57 = rouge
+accent-medieval-replacement-57 = rougue
 
 accent-medieval-words-58 = wizard
 accent-medieval-replacement-58 = arcane mage
