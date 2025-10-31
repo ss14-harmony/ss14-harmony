@@ -32,6 +32,7 @@
   id: LandmineSpawn
   components:
   - type: StationEvent
+    startAnnouncementColor: "#18abf5"
     startAnnouncement: station-event-landmine-spawn-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
