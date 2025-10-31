@@ -32,13 +32,12 @@
   id: LandmineSpawn
   components:
   - type: StationEvent
-    startAnnouncementColor: "#18abf5"
+    startAnnouncementColor: "#ff0000"
     startAnnouncement: station-event-landmine-spawn-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
     weight: 2
-    reoccurrenceDelay: 30
     duration: 1
     maxOccurrences: 1
   - type: RandomSpawnRule
-    prototype: LandMineExplosive
+    prototype: LandMineExplosive  
