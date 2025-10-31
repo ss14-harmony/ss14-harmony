@@ -34,15 +34,9 @@
   - type: StationEvent
     earliestStart: 30
     weight: 2
-    reoccurrenceDelay: 20
     minimumPlayers: 10
-    announcement: station-event-carp-migration-start-announcement
+    maxOccurrences: 1 # it's less funny and more annoying the second time
+    announcement: station-event-landmine-spawn-announcement
     announcementSound: /Audio/Announcements/attention.ogg
   - type: RandomSpawnRule
-    prototype: LandMineModular
-  - type: StorageFill
-    contents:
-    - id: BikeHorn
-      prob: 0.6
-    - id: ExplosivePayload
-      prob: 0.4
+    prototype: LandMineExplosive
