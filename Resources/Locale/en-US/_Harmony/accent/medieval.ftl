@@ -68,9 +68,8 @@ accent-medieval-words-23 = musician
 accent-medieval-replacement-23 = bard
 
 accent-medieval-words-24-1 = hos
-accent-medieval-replacement-24 = guard overseer
 accent-medieval-words-24-2 = head of security
-accent-medieval-replacement-25 = guard overseer
+accent-medieval-replacement-24 = guard overseer
 
 accent-medieval-words-25 = sec
 accent-medieval-replacement-25 = guards
