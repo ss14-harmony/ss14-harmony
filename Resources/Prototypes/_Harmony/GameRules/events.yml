@@ -26,3 +26,23 @@
     minimumPlayers: 20
   - type: RandomSpawnRule
     prototype: SpawnPointGhostBinglePrime
+
+- type: entity
+  parent: BaseStationEvent
+  id: LandmineSpawn
+  components:
+  - type: StationEvent
+    earliestStart: 30
+    weight: 2
+    reoccurrenceDelay: 20
+    minimumPlayers: 10
+    announcement: station-event-carp-migration-start-announcement
+    announcementSound: /Audio/Announcements/attention.ogg
+  - type: RandomSpawnRule
+    prototype: LandMineModular
+  - type: StorageFill
+    contents:
+    - id: BikeHorn
+      prob: 0.6
+    - id: ExplosivePayload
+      prob: 0.4
