@@ -25,6 +25,7 @@
     - id: SpiderSpawn
     - id: CarpMigration # Harmony Change
     - id: VentClog
+    - id: LandmineSpawn # Harmony Change
 
 - type: entityTable
   id: BasicAntagEventsTable
