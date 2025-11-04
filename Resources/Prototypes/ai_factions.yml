@@ -40,7 +40,7 @@
   hostile:
   - Mouse
   - SimpleHostile
-  - Zombie
+# - Zombie # Harmony change that should be replaced with a more elaborate solution that solves the initial-infected problem while keeping them attacking zombies as soon as possible
   - Xeno
   - AllHostile
   - Wizard

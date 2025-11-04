@@ -4,11 +4,14 @@
   description: job-description-warden
   playTimeTracker: JobWarden
   requirements:
-# Harmony Change
+    # Harmony start
+    # - !type:RoleTimeRequirement
+    #   role: JobSecurityOfficer
+    #   time: 18000 #5 hrs
+    # Harmony end
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 14400 # 4 hrs
-# End Harmony
+      time: 4h # Harmony: 10h -> 4h
   weight: 5
   startingGear: WardenGear
   icon: "JobIconWarden"
