@@ -28,7 +28,6 @@
   - ChiefMedicalOfficer
   - Brig
   - Cryogenics
-  - External # Harmony: Paramedic has it, so cmo needs it.
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
