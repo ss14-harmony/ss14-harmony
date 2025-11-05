@@ -18,21 +18,6 @@
 
 # steal
 
-## hos
-
-- type: entity
-  parent: BaseTraitorStealObjective
-  id: EnergyMagnumStealObjective
-  components:
-  - type: Objective
-    # hos will have most of the time so it'll be harder to steal
-    difficulty: 3
-  - type: NotJobRequirement
-    job: HeadOfSecurity
-  - type: StealCondition
-    stealGroup: WeaponEnergyMagnumHarmony
-    owner: job-name-hos
-
 ## other
 
 - type: entity
