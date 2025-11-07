@@ -100,7 +100,7 @@
     # Harmony change
     # DO NOT ADD MORE, USE UNIFORM DYING
   contrabandInventory:
-    ClothingOuterCoatLetterman: 1 # Harmony change - Add letterman jacket to clothesmade inventory
+    ClothingOuterCoatLetterman: 1 # Harmony change - Add letterman jacket to clothesmate inventory
     ClothingMaskNeckGaiter: 2
     ClothingUniformJumpsuitTacticool: 1
     ClothingUniformJumpskirtTacticool: 1
