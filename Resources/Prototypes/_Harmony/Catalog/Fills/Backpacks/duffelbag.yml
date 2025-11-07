@@ -69,7 +69,7 @@
   parent: ClothingBackpackDuffelSyndicateBundle
   suffix: Harmony, M10
   name: M10 "Vice" bundle
-  description: Contains an M-10 "Vice" submachine gun bundled with 2 magazines.
+  description: Leaving this world isn't as scary as it sounds. Contains an M-10 "Vice" submachine gun bundled with 2 magazines.
   components:
   - type: StorageFill
     contents:
