@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: SalvageVendAds
+  values:
+    prefix: advertisement-salvage-
+    count: 6

@@ -17,5 +17,5 @@
     intensitySlope: 5
     maxIntensity: 30
     canCreateVacuum: false
-  - type: OnUseTimerTrigger
+  - type: TimerTrigger
     beepSound: /Audio/Machines/Nuke/angry_beep.ogg

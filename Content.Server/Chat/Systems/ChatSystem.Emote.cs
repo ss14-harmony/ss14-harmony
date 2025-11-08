@@ -1,8 +1,10 @@
 using System.Collections.Frozen;
+using Content.Shared._RMC14.Voicelines; // Harmony, RMC14
 using Content.Server.Popups;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Emoting;
 using Content.Shared.Speech;
+using Robust.Shared.Player; // Harmony, RMC14
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -15,6 +17,10 @@ public partial class ChatSystem
     [Dependency] private readonly PopupSystem _popupSystem = default!;
 
     private FrozenDictionary<string, EmotePrototype> _wordEmoteDict = FrozenDictionary<string, EmotePrototype>.Empty;
+
+
+    // Harmony, RMC14 - Mute Emotes Option
+    [Dependency] private readonly HumanoidVoicelinesSystem _humanoidVoicelines = default!;
 
     protected override void OnPrototypeReload(PrototypesReloadedEventArgs obj)
     {
@@ -161,7 +167,14 @@ public partial class ChatSystem
 
         // optional override params > general params for all sounds in set > individual sound params
         var param = audioParams ?? proto.GeneralParams ?? sound.Params;
-        _audio.PlayPvs(sound, uid, param);
+        // Harmony Change Start - RMC14, Ports options to mute species sfx
+        // _audio.PlayPvs(sound, uid, param);
+        var filter = Filter.Pvs(uid).RemoveWhere(s => !_humanoidVoicelines.ShouldPlayEmote(uid, s));
+        if (filter.Count == 0)
+            return false;
+
+        _audio.PlayEntity(sound, filter, uid, true, param);
+        // Harmony Change End
         return true;
     }
     /// <summary>

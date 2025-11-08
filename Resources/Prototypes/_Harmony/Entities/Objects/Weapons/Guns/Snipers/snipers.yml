@@ -28,15 +28,15 @@
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
   - type: ChamberMagazineAmmoProvider
     autoEject: true
-    soundAutoEject: /Audio/_Harmony/Weapons/Guns/MagOut/garand-ping-rattle.wav
+    soundAutoEject: /Audio/_Harmony/Weapons/Guns/MagOut/rsc_eject.ogg
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/Clip Insertion.wav
-        ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/garand-ping-short.wav
+        insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/rsc_insert.ogg
+        ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/rsc_eject.ogg
         priority: 2
         whitelist:
           tags:

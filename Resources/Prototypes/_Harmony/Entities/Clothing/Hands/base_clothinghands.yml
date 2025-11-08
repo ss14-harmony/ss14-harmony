@@ -1,0 +1,29 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: ClothingHandsNonEdibleButcherableBase # mashed basehands and butcherablehands together into 1 prototype because it's only used for mantis gloves
+  components:
+  - type: Sprite
+    state: icon
+  - type: Clothing
+    slots: [gloves]
+  - type: Item
+    size: Small
+    storedRotation: -90
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 5
+  - type: PhysicalComposition
+    materialComposition:
+      Cloth: 50
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialCloth1
+      amount: 1

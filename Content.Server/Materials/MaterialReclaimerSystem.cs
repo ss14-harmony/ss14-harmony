@@ -186,11 +186,12 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
 
         var xform = Transform(uid);
 
-        SpawnMaterialsFromComposition(uid, item, completion * component.Efficiency, xform: xform);
+        if (component.ReclaimMaterials)
+            SpawnMaterialsFromComposition(uid, item, completion * component.Efficiency, xform: xform);
 
+        // Harmony start - reclaimer doesn't gib
         if (CanRecycleMob(uid, item, component))
         {
-            // Harmony - Recycler now deals damage instead of gibbing.
             if (component.Damage == null)
                 return;
 
@@ -200,13 +201,17 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
                 _adminLogger.Add(LogType.Damaged, logImpact, $"{ToPrettyString(item):victim} was recycled by {ToPrettyString(uid):entity}, dealing {component.Damage.GetTotal()} damage.");
                 _appearance.SetData(uid, RecyclerVisuals.Bloody, true);
             }
+            // Harmony end
         }
         else
         {
-            SpawnChemicalsFromComposition(uid, item, completion, true, component, xform);
-            QueueDel(item);
+            if (component.ReclaimSolutions)
+                SpawnChemicalsFromComposition(uid, item, completion, true, component, xform);
+
+            QueueDel(item); // Harmony - move inside the else check
         }
 
+        // QueueDel(item); Harmony
     }
 
     private void SpawnMaterialsFromComposition(EntityUid reclaimer,

@@ -76,6 +76,10 @@
     - type: ContainerContainer
       containers:
         AccessOverrider-privilegedId: !type:ContainerSlot
+    # Begin Harmony change to make the access configurator a steal target
+    - type: StealTarget
+      stealGroup: AccessConfigurator
+    # End Harmony change
 
 - type: entity
   parent: AccessConfigurator

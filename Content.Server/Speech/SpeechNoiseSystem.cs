@@ -7,6 +7,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Random;
+using Content.Shared._RMC14.Voicelines; // Harmony - Use RMC14 to mute speechsounds
 
 namespace Content.Server.Speech
 {
@@ -16,6 +17,8 @@ namespace Content.Server.Speech
         [Dependency] private readonly IPrototypeManager _protoManager = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
+        // Harmony - Use RMC14 system to give the option to mute speechsounds
+        [Dependency] private readonly HumanoidVoicelinesSystem _humanoidVoicelines = default!;
 
         public override void Initialize()
         {
@@ -72,7 +75,13 @@ namespace Content.Server.Speech
 
             var sound = GetSpeechSound((uid, component), args.Message);
             component.LastTimeSoundPlayed = currentTime;
-            _audio.PlayPvs(sound, uid);
+            // Harmony Change Start - option to toggle off speech sounds
+            //_audio.PlayPvs(sound, uid);
+            var filter = Filter.Pvs(uid).RemoveWhere(s => !_humanoidVoicelines.ShouldPlayVoicelines(uid, s));
+            if (filter.Count == 0)
+                return;
+            _audio.PlayEntity(sound, filter, uid, true);
+            // Harmony Change End
         }
     }
 }

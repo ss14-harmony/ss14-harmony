@@ -13,3 +13,7 @@
 - type: lobbyBackground
   id: HarmonyScrapbook
   background: /Textures/_Harmony/LobbyScreens/harmonyscrapbook.webp
+
+- type: lobbyBackground
+  id: HearsCargo
+  background: /Textures/_Harmony/LobbyScreens/hears-the-voices.webp
