@@ -2,6 +2,7 @@
   parent: [BaseItem, BaseSyndicateContraband]
   id: AccessConfiguratorSyndicate
   name: syndicate access configurator
+  suffix: Harmony
   description: A Cybersun branded access configurator, compatible with both NanoTrasen and Syndicate IDs. Now with quick swap functionality!
   components:
   - type: EmitSoundOnLand
