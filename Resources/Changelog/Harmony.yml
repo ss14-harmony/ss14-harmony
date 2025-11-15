@@ -2787,3 +2787,47 @@ Entries:
     changes:
     - type: Fix
       message: Saline will no longer metabolise at 0.5x efficiency
+  - id: 957
+    author: thejMark14
+    time: '2025-10-14T22:01:11.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/957
+    changes:
+    - type: Tweak
+      message: The Avali species has been resprited.
+  - id: 883
+    author: Ermucat
+    time: '2025-10-30T14:39:55.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/883
+    changes:
+    - type: Tweak
+      message: Mantis gloves can now take and inject chemicals.
+  - id: 1090
+    author: BlueMoon059
+    time: '2025-10-30T14:44:41.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1090
+    changes:
+    - type: Tweak
+      message: Goliaths and Basilisks now deal a mix of blunt and slash instead of blunt and pierce.
+  - id: 1087
+    author: BlueMoon059
+    time: '2025-10-30T14:47:55.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1087
+    changes:
+    - type: Remove
+      message: Magnet pulls and the VGroid no longer spawn salt ore.
+  - id: 1016
+    author: kleinerstation13
+    time: '2025-10-31T15:51:03.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1016
+    changes:
+    - type: Add
+      message: The Extended announcement now has a unique sound.
+  - id: 1097
+    author: SuperGDPWYL
+    time: '2025-10-31T15:52:09.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1097
+    changes:
+    - type: Remove
+      message: Shiva and Runtime will no longer attack zombies.
+    - type: Fix
+      message: Shiva and Runtime will no longer attack initial infected.
