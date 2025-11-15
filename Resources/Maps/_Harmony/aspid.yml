@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/15/2025 20:04:40
-  entityCount: 18874
+  time: 11/15/2025 20:21:15
+  entityCount: 18875
 maps:
 - 6526
 grids:
@@ -12506,6 +12506,8 @@ entities:
       pos: -15.5,-27.5
       parent: 1
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 18066
   - uid: 18291
@@ -47964,7 +47966,7 @@ entities:
   - uid: 5269
     components:
     - type: Transform
-      pos: -19.44852,42.383636
+      pos: -19.274822,43.52383
       parent: 1
 - proto: ClothingMaskGas
   entities:
@@ -102983,6 +102985,13 @@ entities:
     - type: Transform
       pos: -16.5,41.5
       parent: 1
+- proto: SpawnPointWardenWeapon
+  entities:
+  - uid: 18094
+    components:
+    - type: Transform
+      pos: -19.5,42.5
+      parent: 1
 - proto: SpawnVendingMachineRestockFoodDrink
   entities:
   - uid: 9322
@@ -120757,7 +120766,7 @@ entities:
   - uid: 5645
     components:
     - type: Transform
-      pos: -19.49436,42.77001
+      pos: -19.524822,42.90882
       parent: 1
 - proto: WeaponEnergyTurretAI
   entities:
