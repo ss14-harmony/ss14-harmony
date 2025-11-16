@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
@@ -42,12 +43,13 @@ public sealed partial class DamageableSystem
         bool interruptsDoAfters = true,
         EntityUid? origin = null,
         bool ignoreGlobalModifiers = false,
-        float armorPenetration = 0f // Goob
+        float armorPenetration = 0f, // Goob
+        bool isReagentDamage = false // Harmony
     )
     {
         //! Empty just checks if the DamageSpecifier is _literally_ empty, as in, is internal dictionary of damage types is empty.
         // If you deal 0.0 of some damage type, Empty will be false!
-        return !TryChangeDamage(ent, damage, out _, ignoreResistances, interruptsDoAfters, origin, ignoreGlobalModifiers, armorPenetration); // Goob: armor penetration
+        return !TryChangeDamage(ent, damage, out _, ignoreResistances, interruptsDoAfters, origin, ignoreGlobalModifiers, armorPenetration, isReagentDamage); // Goob: armor penetration
     }
 
     /// <summary>
@@ -69,12 +71,13 @@ public sealed partial class DamageableSystem
         bool interruptsDoAfters = true,
         EntityUid? origin = null,
         bool ignoreGlobalModifiers = false,
-        float armorPenetration = 0f // Goob
+        float armorPenetration = 0f, // Goob
+        bool isReagentDamage = false // Harmony
     )
     {
         //! Empty just checks if the DamageSpecifier is _literally_ empty, as in, is internal dictionary of damage types is empty.
         // If you deal 0.0 of some damage type, Empty will be false!
-        newDamage = ChangeDamage(ent, damage, ignoreResistances, interruptsDoAfters, origin, ignoreGlobalModifiers, armorPenetration); // Goob: armor penetration
+        newDamage = ChangeDamage(ent, damage, ignoreResistances, interruptsDoAfters, origin, ignoreGlobalModifiers, armorPenetration, isReagentDamage); // Goob: armor penetration
         return !damage.Empty;
     }
 
@@ -96,7 +99,8 @@ public sealed partial class DamageableSystem
         bool interruptsDoAfters = true,
         EntityUid? origin = null,
         bool ignoreGlobalModifiers = false,
-        float armorPenetration = 0f // Goob
+        float armorPenetration = 0f, // Goob
+        bool isReagentDamage = false // Harmony
     )
     {
         var damageDone = new DamageSpecifier();
@@ -132,6 +136,35 @@ public sealed partial class DamageableSystem
             if (damage.Empty)
                 return damageDone;
         }
+
+        // Harmony, reagent damage resistance
+        if (isReagentDamage)
+        {
+            if (ent.Comp.DamageModifierSetId != null &&
+                _prototypeManager.TryIndex(ent.Comp.DamageModifierSetId,
+                    out var modifierSet))
+            {
+                if (modifierSet.ReagentCoefficients.Count > 0)
+                {
+                    foreach (var type in damage.DamageDict.Keys.ToList())
+                    {
+                        var val = damage.DamageDict[type];
+                        // Only affect damage
+                        if (val <= 0)
+                            continue;
+
+                        if (modifierSet.ReagentCoefficients.TryGetValue(type, out var coeff))
+                        {
+                            if (coeff == 0f)
+                                damage.DamageDict[type] = FixedPoint2.Zero;
+                            else
+                                damage.DamageDict[type] *= coeff;
+                        }
+                    }
+                }
+            }
+        }
+        // End of Harmony change
 
         if (!ignoreGlobalModifiers)
             damage = ApplyUniversalAllModifiers(damage);

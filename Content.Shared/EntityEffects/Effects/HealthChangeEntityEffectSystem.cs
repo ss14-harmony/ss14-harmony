@@ -23,10 +23,11 @@ public sealed partial class HealthChangeEntityEffectSystem : EntityEffectSystem<
         damageSpec *= args.Scale;
 
         _damageable.TryChangeDamage(
-                entity.AsNullable(),
-                damageSpec,
-                args.Effect.IgnoreResistances,
-                interruptsDoAfters: false);
+            entity.AsNullable(),
+            damageSpec,
+            args.Effect.IgnoreResistances,
+            interruptsDoAfters: false,
+            isReagentDamage: true);
     }
 }
 

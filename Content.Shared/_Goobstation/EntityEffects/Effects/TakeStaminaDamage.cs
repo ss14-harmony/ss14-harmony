@@ -15,13 +15,13 @@ public sealed partial class TakeStaminaDamage : EntityEffect
     [DataField]
     public FixedPoint2 Amount = FixedPoint2.New(10); // Changed from int to FixedPoint2
 
-    /// <summary>
-    /// Whether stamina damage should be applied immediately
-    /// </summary>
+    // /// <summary>
+    // /// Whether stamina damage should be applied immediately
+    // /// </summary>
     // [DataField]
     // public bool Immediate;
 
-    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+    public override string EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
         // Start of Harmony change, colorcode for Guidebook
         var color = MathF.Sign((float) Amount) == 1 ? "red" : "green";
@@ -36,15 +36,17 @@ public sealed partial class TakeStaminaDamage : EntityEffect
     }
     // End of Harmony change
 
-    public override void Effect(EntityEffectBaseArgs args)
+    public override void RaiseEvent(
+        EntityUid target,
+        IEntityEffectRaiser raiser,
+        float scale,
+        EntityUid? user)
     {
-        if (args is EntityEffectReagentArgs reagentArgs)
-        {
-            if (reagentArgs.Scale != 1f)
-                return;
-        }
+        if (scale != 1f)
+            return;
 
-        args.EntityManager.System<SharedStaminaSystem>()
-            .TakeStaminaDamage(args.TargetEntity,(float) Amount); // visual: false, immediate: Immediate);
+        var entMan = IoCManager.Resolve<IEntityManager>();
+        var stamina = entMan.System<SharedStaminaSystem>();
+            stamina.TakeStaminaDamage(target, (float)Amount); // visual: false, immediate: Immediate);
     }
 }
