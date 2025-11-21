@@ -11,28 +11,22 @@
     - type: Item
       heldPrefix: plushieavali
     - type: EmitSoundOnUse
-      sound:
+      sound: &AvaliPlushieSound
         path: /Audio/_CD/Voice/Talk/avali_1.ogg
     - type: EmitSoundOnLand
-      sound:
-        path: /Audio/_CD/Voice/Talk/avali_1.ogg
+      sound: *AvaliPlushieSound
     - type: EmitSoundOnActivate
-      sound:
-        path: /Audio/_CD/Voice/Talk/avali_1.ogg
+      sound: *AvaliPlushieSound
     - type: EmitSoundOnTrigger
-      sound:
-        path: /Audio/_CD/Voice/Talk/avali_1.ogg
+      sound: *AvaliPlushieSound
     - type: EmitSoundOnCollide
-      sound:
-        path: /Audio/_CD/Voice/Talk/avali_1.ogg
-    - type: Food
+      sound: *AvaliPlushieSound
+    - type: Edible
       #requiresSpecialDigestion: true #Harmony: Inherits from base plushie
-      useSound:
-        path: /Audio/_CD/Voice/Avali/avali_scream.ogg
+      useSound: *AvaliPlushieSound
     - type: MeleeWeapon
       #wideAnimationRotation: 180 #Harmony: Inherits from base plushie
-      soundHit:
-        path: /Audio/_CD/Voice/Talk/avali_1.ogg
+      soundHit: *AvaliPlushieSound
     - type: Clothing
       quickEquip: false
       sprite: _Umbra/Objects/Fun/Plushies/Avali.rsi
