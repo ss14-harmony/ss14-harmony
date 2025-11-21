@@ -1,0 +1,79 @@
+- type: entity
+  parent: [BaseItem, BaseSyndicateContraband]
+  id: AccessConfiguratorSyndicate
+  name: syndicate access configurator
+  suffix: Harmony
+  description: A Cybersun branded access configurator, compatible with both NanoTrasen and Syndicate IDs. Now with quick swap functionality!
+  components:
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/multitool_drop.ogg
+  - type: Sprite
+    sprite: _Harmony/Objects/Tools/syndie_access_configurator.rsi
+    state: icon
+  - type: Item
+    size: Small
+  - type: Clothing
+    sprite: _Harmony/Objects/Tools/syndie_access_configurator.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: AccessOverrider
+    accessLevels:
+    - Armory
+    - Atmospherics
+    - Bar
+    - Brig
+    - Detective
+    - Captain
+    - Cargo
+    - Chapel
+    - Chemistry
+    - ChiefEngineer
+    - ChiefMedicalOfficer
+    - Command
+    - Engineering
+    - External
+    - HeadOfPersonnel
+    - HeadOfSecurity
+    - Hydroponics
+    - Janitor
+    - Kitchen
+    - Lawyer
+    - Maintenance
+    - Medical
+    - Quartermaster
+    - Research
+    - ResearchDirector
+    - Salvage
+    - Security
+    - Service
+    - Theatre
+    - SyndicateAgent
+    - NuclearOperative
+    privilegedIdSlot:
+      name: id-card-console-privileged-id
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+      ejectOnBreak: true
+      swap: true
+      whitelist:
+        components:
+        - IdCard
+    denialSound:
+      path: /Audio/Machines/custom_deny.ogg
+    doAfter: 0.3
+  - type: UserInterface
+    interfaces:
+      enum.AccessOverriderUiKey.Key:
+        type: AccessOverriderBoundUserInterface
+  - type: ActivatableUI
+    key: enum.AccessOverriderUiKey.Key
+    requiresComplex: true
+    requireActiveHand: false
+    singleUser: true
+    inHandsOnly: true
+  - type: ItemSlots
+  - type: ContainerContainer
+    containers:
+      AccessOverrider-privilegedId: !type:ContainerSlot

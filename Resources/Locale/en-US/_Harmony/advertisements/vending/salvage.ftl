@@ -1,0 +1,11 @@
+advertisement-salvage-1 = Rock and Stone!
+advertisement-salvage-2 = GIBTONITE!!!!
+advertisement-salvage-3 = Robusting fauna since 2125.
+advertisement-salvage-4 = Salvagers stick together.
+advertisement-salvage-5 = Back in my day, we only had a fire extinguisher.
+advertisement-salvage-6 = Cargonia's best and brightest.
+thankyou-salvage-1 = Those rocks won't know what hit 'em.
+thankyou-salvage-2 = Let me guess, borrowing the shuttle?
+thankyou-salvage-3 = Now go gamble on wrecks!
+thankyou-salvage-4 = You'll only use that on carp, right?
+thankyou-salvage-5 = If Security asks, you didn't get it from me.

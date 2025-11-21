@@ -1,0 +1,13 @@
+# List of Gearsets intended for Non-departmental Corpse Spawners
+
+- type: startingGear
+  id: CorpseFlannelJumpsuit # I would use random colorful costume, but that just seems to want to load as a white costume.
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitFlannel
+    shoes: ClothingShoesColorBlack
+
+- type: startingGear
+  id: CorpseRandomJumpsuit # I would use random colorful costume, but that just seems to want to load as a white costume.
+  equipment:
+    jumpsuit: ClothingUniformRandomStandard
+    shoes: ClothingShoesColorBlack

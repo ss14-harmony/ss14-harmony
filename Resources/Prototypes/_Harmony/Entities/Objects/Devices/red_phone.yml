@@ -2,11 +2,13 @@
 # Note: the ID is hijacked from Resources/Prototypes/Entities/Objects/Fun/Instruments/instruments_misc.yml
 # New upstream ID: PhoneInstrumentUpstream
 # Child entites also have PhoneInstrumentUpstream parent: PhoneInstrumentSyndicate, BananaPhoneInstrument
+
+# The usual 'suffix: Harmony' has been omitted due to the sniped ID, as it simply causes confusion when mapping
+
 - type: entity
   id: PhoneInstrument
   parent: [BaseItem, BaseCommandContraband]
   name: red phone
-  suffix: harmony intercom
   description: Should anything ever go wrong...
   components:
     - type: Sprite
