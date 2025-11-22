@@ -198,19 +198,21 @@
   categories:
   - UplinkWeaponry
 
-- type: listing
-  id: UplinkEstocBundle
-  name: uplink-estoc-bundle-name
-  description: uplink-estoc-bundle-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Rifles/estoc.rsi, state: icon }
-  productEntity: ClothingBackpackDuffelSyndicateFilledRifle
-  discountCategory: veryRareDiscounts
-  discountDownTo:
-    Telecrystal: 11
-  cost:
-    Telecrystal: 18
-  categories:
-  - UplinkWeaponry
+# Start Harmony Change : removes Estoc DMR from uplink
+#- type: listing
+#  id: UplinkEstocBundle
+#  name: uplink-estoc-bundle-name
+#  description: uplink-estoc-bundle-desc
+#  icon: { sprite: /Textures/Objects/Weapons/Guns/Rifles/estoc.rsi, state: icon }
+#  productEntity: ClothingBackpackDuffelSyndicateFilledRifle
+#  discountCategory: veryRareDiscounts
+#  discountDownTo:
+#    Telecrystal: 11
+#  cost:
+#    Telecrystal: 18
+#  categories:
+#  - UplinkWeaponry
+# End harmony change
 
 - type: listing
   id: UplinkBulldogBundle
@@ -798,7 +800,16 @@
           - SurplusBundle
 
 # Deception
-
+- type: listing
+  id: UplinkSyndicateIDCard
+  name: uplink-syndicate-id-card-name
+  description: uplink-syndicate-id-card-desc
+  productEntity: SyndicateIDCard
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkDeception
+  
 - type: listing
   id: UplinkAgentIDCard
   name: uplink-agent-id-card-name
@@ -1770,11 +1781,13 @@
     Telecrystal: 12
   categories:
   - UplinkWearables
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+# Start harmony change - adds elite suit to traitor uplink
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - NukeOpsUplink
+# End harmony change
 
 - type: listing
   id: UplinkClothingOuterHardsuitJuggernaut
@@ -2247,14 +2260,15 @@
   discountDownTo:
     Telecrystal: 2
   cost:
-    Telecrystal: 5
+    Telecrystal: 3
   categories:
-  - UplinkJob
-  conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - Librarian
   #Start of Harmony change
+  #- UplinkJob
+  - UplinkWeaponry #Swapped the category to weaponry. It was originally a librarian's job item upstream which is why it's listed in job specific
+  #conditions:
+  #- !type:BuyerJobCondition
+  #  whitelist:
+  #  - Librarian
   #- !type:BuyerWhitelistCondition
   #  blacklist:
   #    components:

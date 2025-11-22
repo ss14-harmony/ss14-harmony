@@ -5,6 +5,7 @@
   recipes:
   - AppraisalTool
   - Pickaxe
+  - UtilityKnife
   - BoxFolderClipboard # Harmony
 
 - type: latheRecipePack

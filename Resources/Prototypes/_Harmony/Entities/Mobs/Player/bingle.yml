@@ -70,6 +70,14 @@
   - type: StaminaDamageOnHit
     damage: 10 # 6 hits to stun
     sound: /Audio/Weapons/egloves.ogg
+  - type: InteractionPopup
+    successChance: 0.33
+    interactSuccessString: petting-success-bingle
+    interactFailureString: petting-failure-bingle
+    interactSuccessSound:
+      path: /Audio/Voice/Slime/slime_squish.ogg # ew but appropriate
+    interactFailureSound:
+      path: /Audio/Voice/Slime/slime_squish.ogg
   # Specific components
   - type: GhostRole
     name: ghost-role-information-bingle-name

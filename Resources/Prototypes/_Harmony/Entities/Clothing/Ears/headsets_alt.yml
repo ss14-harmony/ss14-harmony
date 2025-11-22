@@ -1,0 +1,10 @@
+- type: entity
+  parent: [ClothingHeadsetAltSecurity, BaseSecurityContraband]
+  id: ClothingHeadsetAltWarden
+  name: warden's over-ear headset
+  suffix: Harmony
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Ears/Headsets/warden.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Ears/Headsets/warden.rsi

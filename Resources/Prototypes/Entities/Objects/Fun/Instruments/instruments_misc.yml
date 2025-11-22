@@ -48,6 +48,7 @@
   parent: BaseHandheldInstrument
   id: PhoneInstrumentUpstream # Harmony
   name: red phone
+  suffix: Prayer # Harmony - The Harmony Red Phone should be mapped instead
   description: Should anything ever go wrong...
   components:
   - type: Sprite
@@ -134,7 +135,7 @@
   components:
   - type: Instrument
     program: 1
-    bank: 1
+    bank: 100 # Defined in space-station-14.sf2
   - type: Sprite
     sprite: Objects/Fun/Instruments/bike_horn.rsi
   - type: Tag

@@ -18,6 +18,8 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 18000 # 5 hours
+    mindRoles:
+    - MindRolePostOperator
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
