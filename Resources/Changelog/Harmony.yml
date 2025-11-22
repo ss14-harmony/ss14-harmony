@@ -2875,3 +2875,24 @@ Entries:
     changes:
     - type: Add
       message: Adds a pair of salvage-unique welding goggles for salvagers.
+  - id: 1159
+    author: Llfiend
+    time: '2025-11-21T09:18:45.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1159
+    changes:
+    - type: Remove
+      message: Tasers are no longer available to security.
+  - id: 720
+    author: TheAmazingCoder
+    time: '2025-11-21T17:06:23.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/720
+    changes:
+    - type: Add
+      message: A syndicate access configurator is now available in the uplink.
+  - id: 1161
+    author: whythelettuce
+    time: '2025-11-22T11:13:18.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1161
+    changes:
+    - type: Tweak
+      message: Jellyfish station has been updated.
