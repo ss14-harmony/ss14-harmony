@@ -16,7 +16,7 @@
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/_Harmony/Shuttles/emergency_charybdis.yml
         - type: StationCargoShuttle
-          path: /Maps/_Harmony/Shuttles/cargo_olympias.yml
+          path: /Maps/_Harmony/Shuttles/cargo_scylla.yml
         - type: StationJobs
           availableJobs:
             #command (7)
