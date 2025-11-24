@@ -2831,3 +2831,68 @@ Entries:
       message: Shiva and Runtime will no longer attack zombies.
     - type: Fix
       message: Shiva and Runtime will no longer attack initial infected.
+  - id: 1129
+    author: Skybailey-dev
+    time: '2025-11-05T23:16:05.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1129
+    changes:
+    - type: Tweak
+      message: Paramedic now has external access.
+  - id: 1153
+    author: whythelettuce
+    time: '2025-11-11T13:04:27.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1153
+    changes:
+    - type: Add
+      message: 'Jellyfish Station: new lowpop station!'
+  - id: 840
+    author: CollectionOfBones128
+    time: '2025-11-12T02:00:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/840
+    changes:
+    - type: Fix
+      message: Fixed the random space corpses not having clothes when they were supposed to resemble specific jobs.
+    - type: Fix
+      message: Fixed oversight that made an N1984 sometimes spawn on random space corpses.
+  - id: 925
+    author: Ermucat
+    time: '2025-11-12T02:18:30.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/925
+    changes:
+    - type: Tweak
+      message: The wizards grimoire is now a weapon, and knocks back people
+  - id: 1119
+    author: BlueMoon059
+    time: '2025-11-12T05:08:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1119
+    changes:
+    - type: Add
+      message: Adds a new lobby art by Mofi, depicting an unfortunate encounter with a space dragon.
+  - id: 1058
+    author: BlueMoon059
+    time: '2025-11-12T05:43:31.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1058
+    changes:
+    - type: Add
+      message: Adds a pair of salvage-unique welding goggles for salvagers.
+  - id: 1159
+    author: Llfiend
+    time: '2025-11-21T09:18:45.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1159
+    changes:
+    - type: Remove
+      message: Tasers are no longer available to security.
+  - id: 720
+    author: TheAmazingCoder
+    time: '2025-11-21T17:06:23.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/720
+    changes:
+    - type: Add
+      message: A syndicate access configurator is now available in the uplink.
+  - id: 1161
+    author: whythelettuce
+    time: '2025-11-22T11:13:18.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1161
+    changes:
+    - type: Tweak
+      message: Jellyfish station has been updated.
