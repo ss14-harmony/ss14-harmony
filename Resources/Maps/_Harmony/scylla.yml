@@ -153843,7 +153843,7 @@ entities:
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: 1.1,-62.7
+      pos: 1.2,-62.7
       parent: 3
     - type: Fixtures
       fixtures: {}
@@ -153904,7 +153904,7 @@ entities:
   - uid: 25032
     components:
     - type: Transform
-      pos: -3.6,-67.3
+      pos: -3.5,-67.3
       parent: 3
     - type: Fixtures
       fixtures: {}
@@ -153920,7 +153920,7 @@ entities:
   - uid: 25033
     components:
     - type: Transform
-      pos: -3.6,-67.5
+      pos: -3.5,-67.5
       parent: 3
     - type: Fixtures
       fixtures: {}
