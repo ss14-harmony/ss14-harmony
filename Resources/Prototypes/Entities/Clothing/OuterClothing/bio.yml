@@ -88,6 +88,8 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.95
     sprintModifier: 0.95
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.6
     
 - type: entity
   parent: ClothingOuterBioGeneral

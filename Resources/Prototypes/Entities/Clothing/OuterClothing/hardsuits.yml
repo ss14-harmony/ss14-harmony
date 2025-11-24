@@ -318,6 +318,8 @@
     # - CorgiWearable # Harmony
     - Hardsuit
     - WhitelistChameleon
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.6
 
 #Brigmedic Hardsuit
 - type: entity
@@ -358,6 +360,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitBrigmedic
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.75
 
 # Harmony change. Adjusted damage resistance values + Resprite
 #Warden's Hardsuit
@@ -398,6 +402,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitWarden
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.4
 
 #Captain's Hardsuit
 - type: entity
@@ -435,6 +441,8 @@
     - CorgiWearable
     - Hardsuit
     - WhitelistChameleon
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.6
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -597,6 +605,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurityRed
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.5
 
 #Harmony change : Hardsuit resprite
 #Luxury Mining Hardsuit
@@ -668,7 +678,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.75
+    damageCoefficient: 0.5 # harmony change: .75 -> .5
   - type: Armor
     modifiers:
       coefficients:
@@ -744,7 +754,7 @@
   - type: FireProtection
     reduction: 0.8
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.6
+    damageCoefficient: 0.2 # harmony change: .6 -> .2
   - type: Armor
     modifiers:
       coefficients:
@@ -790,7 +800,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.6
+    damageCoefficient: 0.3 # harmony change: .6 -> .3
   - type: Armor
     modifiers:
       coefficients:
@@ -888,6 +898,8 @@
     - CorgiWearable
     - Hardsuit
     - WhitelistChameleon
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.6
 
 #Ling Space Suit
 - type: entity
@@ -987,6 +999,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitPirateCap
   - type: StaticPrice
     price: 0
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.7
 
 #CENTCOMM / ERT HARDSUITS
 #ERT Leader Hardsuit
@@ -1156,6 +1170,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetCBURN
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.6
 
 #MISC. HARDSUITS
 #Clown Hardsuit

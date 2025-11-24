@@ -83,3 +83,5 @@
   - type: Construction
     graph: scraparmor
     node: scraparmorfinished
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.5

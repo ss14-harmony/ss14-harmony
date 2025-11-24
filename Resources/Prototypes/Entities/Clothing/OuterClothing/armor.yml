@@ -23,6 +23,8 @@
         Heat: 0.80
   - type: ExplosionResistance
     damageCoefficient: 0.90
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.7
 
 #Standard armor vest, allowed for security and bartenders
 - type: entity
@@ -66,6 +68,8 @@
         Heat: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.80
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.4
 
 - type: entity
   parent: ClothingOuterArmorBase
@@ -89,6 +93,8 @@
     reflects:
       - Energy
     reflectingInHands: false
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.4
 
 #Detective's vest
 - type: entity
@@ -122,6 +128,8 @@
     sprintModifier: 1.0
   - type: HeldSpeedModifier
   - type: GroupExamine
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.5
 
 - type: entity
   parent: [ClothingOuterArmorBaseCarapace, BaseCommandContraband]
@@ -171,6 +179,8 @@
     damageCoefficient: 0.9
   - type: StaticPrice
     price: 1500
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.3
 
 #Elite web vest
 - type: entity
@@ -201,6 +211,8 @@
     reduction: 0.85
   - type: StaticPrice
     price: 2500
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.3
 
 #Mercenary web vest
 - type: entity
@@ -222,6 +234,8 @@
         Heat: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.9
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.5
 
 
 # Armor covering multiple body parts including limbs
@@ -251,7 +265,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.35
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.45
+    damageCoefficient: 0.35 # harmony change: .45 -> .35
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
@@ -326,6 +340,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: GroupExamine
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.4
 
 - type: entity
   parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]
@@ -345,6 +361,8 @@
         Piercing: 0.5
         Heat: 0.5
   - type: GroupExamine
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.5
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
@@ -440,6 +458,8 @@
   - type: GroupExamine
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.5
 
 - type: entity
   parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]
@@ -469,6 +489,8 @@
     node: armor
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
+  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
+    damageCoefficient: 0.4
 
 - type: entity
   parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]
