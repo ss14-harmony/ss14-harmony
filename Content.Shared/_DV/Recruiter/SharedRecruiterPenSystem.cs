@@ -13,7 +13,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Mind;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Popups;
-using Content.Shared.Roles;
+using Content.Shared.Roles.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Timing;
 
@@ -54,7 +54,7 @@ public abstract class SharedRecruiterPenSystem : EntitySystem
         if (!Mind.TryGetMind(user, out var mindId, out var mind))
             return;
 
-        foreach (var entry in mind.MindRoles)
+        foreach (var entry in mind.MindRoleContainer.ContainedEntities)
         {
             if (HasComp<RecruiterRoleComponent>(entry))
             {
