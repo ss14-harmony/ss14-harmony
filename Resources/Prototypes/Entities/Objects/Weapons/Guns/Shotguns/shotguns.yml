@@ -28,7 +28,10 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
     soundEmpty:
-      path: /Audio/Weapons/Guns/Empty/empty.ogg
+      # Start harmony change - Add empty sound
+#     path: /Audio/Weapons/Guns/Empty/empty.ogg
+      path: /Audio/_Harmony/Weapons/Guns/Empty/shotgun_empty.ogg
+      # End harmony change
   - type: BallisticAmmoProvider
     whitelist:
       tags:
@@ -82,7 +85,10 @@
     soundGunshot:
       collection: ShotgunFire # Harmony change - Changes sound path to sound collection
     soundEmpty:
-      path: /Audio/Weapons/Guns/Empty/empty.ogg
+      # Start harmony change - Add empty sound
+#     path: /Audio/Weapons/Guns/Empty/empty.ogg
+      path: /Audio/_Harmony/Weapons/Guns/Empty/shotgun_empty.ogg
+      # End harmony change
   - type: ItemSlots
     slots:
       gun_magazine:

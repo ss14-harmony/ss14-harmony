@@ -31,6 +31,10 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/smg.ogg
     defaultDirection: 1, 0
+      # Start harmony change - Add empty sound
+    soundEmpty:
+      path: /Audio/_Harmony/Weapons/Guns/Empty/pistolsmg_empty.ogg
+      # End harmony change
   - type: ChamberMagazineAmmoProvider
     soundRack:
       # Start harmony change - Handling sounds

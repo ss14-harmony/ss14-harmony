@@ -34,11 +34,16 @@
       - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+      # Start harmony change - Add empty sound
+    soundEmpty:
+      path: /Audio/_Harmony/Weapons/Guns/Empty/pistolsmg_empty.ogg
+      # End harmony change
   - type: ChamberMagazineAmmoProvider
     soundRack:
       # Start harmony change - Changed handling sounds
 #     path: /Audio/Weapons/Guns/Cock/pistol_cock.ogg
       path: /Audio/_Harmony/Weapons/Guns/Cock/pistol_rack.ogg
+      # End harmony change
   - type: ItemSlots
     slots:
       gun_magazine:

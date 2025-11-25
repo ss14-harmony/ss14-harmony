@@ -32,8 +32,11 @@
       - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/lmg.ogg
+      # Start harmony change - Add empty sound
     soundEmpty:
-      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+#     path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+      path: /Audio/_Harmony/Weapons/Guns/Empty/rifle_empty.ogg
+      # End harmony change
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/lmg_cock.ogg

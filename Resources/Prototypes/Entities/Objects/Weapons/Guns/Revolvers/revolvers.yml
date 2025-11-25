@@ -29,11 +29,14 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      # start Harmony change - changed sound
+      # Start Harmony change - changed gunshot sound + empty sound
+#     path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
       collection: RevolverAltFire
       params:
         volume: -2
-      # end Harmony change
+    soundEmpty:
+      path: /Audio/_Harmony/Weapons/Guns/Empty/revolver_empty.ogg
+      # End Harmony change
   - type: UseDelay
     delay: 0.66
   - type: ContainerContainer
