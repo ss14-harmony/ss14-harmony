@@ -120,6 +120,7 @@ namespace Content.IntegrationTests.Tests
             "Athena", // Harmony, Developed by whythelettuce
             "Omega", // Harmony, updated from Spanky's version by OrnamentalFreak and CrimsonJupiter
             "Jellyfish", // Harmony, Developed by whythelettuce
+            "Scylla", // Harmony, Developed by tanuko, luckyshotpictures
             "Dev",
             "TestTeg",
             "Fland",

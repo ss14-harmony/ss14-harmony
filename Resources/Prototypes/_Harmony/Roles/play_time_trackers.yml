@@ -9,3 +9,6 @@
 
 - type: playTimeTracker
   id: JobERPClown
+
+- type: playTimeTracker
+  id: JobCentCommInspector
