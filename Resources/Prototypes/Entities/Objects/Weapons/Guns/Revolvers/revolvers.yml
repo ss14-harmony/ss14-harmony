@@ -57,9 +57,10 @@
       path: /Audio/_Harmony/Weapons/Guns/MagOut/revolver_magout.ogg
       params:
         volume: -1
-      # end Harmony change
     soundInsert:
-      path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
+#     path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
+      path: /Audio/_Harmony/Weapons/Guns/MagIn/speedloader_insert.ogg
+      # end Harmony change
   - type: StaticPrice
     price: 500
 
