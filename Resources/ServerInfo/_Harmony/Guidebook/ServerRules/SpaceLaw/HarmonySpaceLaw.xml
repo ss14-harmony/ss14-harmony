@@ -69,6 +69,8 @@
   - Example: A suspect has committed a 2-01 (possession of restricted gear) and a 3-01 (possession of restricted weapons). The maximum sentence here would be 10 minutes due to them being linked crimes, and 3-01 is the greater crime.
   - Example 2: A suspect commits a 3-04 (Secure trespassing) and a 3-06 (manslaughter). Those crimes stack since they are not linked crimes. You could sentence for a maximum of 20 minutes, but context matters heavily, and maximum sentences should only be used for the worst offenders.
 
+  [bold]Max Sentencing:[/bold] The maximum possible sentence for any number of crimes that are not perma-eligible is [bold]20 minutes.[/bold] If a suspect has not committed a code 5 crime or has not repeated a code 4 crime, they are still only eligible for 20 minutes maximum. Max sentences should be used seldom. If the suspect is being cooperative, you gain nothing from punishing them more harshly. <!-- missing from ingame guidebook-->
+
   [bold]Repeat Offenders:[/bold] Repeated crimes are when someone is released for a crime and then goes to commit the same crime, or a similar severity crime within the same shift. Criminals that reoffend should be charged with a one tier higher maximum sentence, this can stack all the way up to a capital offense which is required for permanent confinement.
 
   - Example: A suspect in a previous encounter was sentenced with a 3-06 (manslaughter) charge, and now they are charged with a new act of any code 3 (Major) crime, they can be sentenced as if it were a code 4 (Extreme) crime, meaning their max sentence is now 20 minutes instead of 15.
