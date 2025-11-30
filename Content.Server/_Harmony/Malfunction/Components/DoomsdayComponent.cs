@@ -25,9 +25,9 @@ public sealed partial class DoomsdayComponent : Component
     public bool PlayedDoomsdaySong = false;
 
     /// <remarks>
-    ///     There will be music in the last part of the song; for now i'm just gonna use a nuke song but in future we could use Malf AI from the BeeStation soundtrack or LAW 2, OPEN ARMORY by mrjajkes if we get permission idk how this stuff works
+    ///     Right now it's just LAW 2, OPEN ARMORY by mrjajkes
     /// </remarks>
-    [DataField] public SoundSpecifier ArmMusic = new SoundCollectionSpecifier("NukeMusic");
+    [DataField] public SoundSpecifier ArmMusic = new SoundCollectionSpecifier("DoomsdayMusic");
     [DataField] public SoundSpecifier DisarmSound = new SoundPathSpecifier("/Audio/Misc/notice2.ogg");
 
     [DataField] public string AlertLevelOnActivate = "delta";

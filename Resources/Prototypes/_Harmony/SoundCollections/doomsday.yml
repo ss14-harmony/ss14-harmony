@@ -1,0 +1,4 @@
+- type: soundCollection
+  id: DoomsdayMusic
+  files:
+  - /Audio/_Harmony/StationEvents/law_2_open_armory.ogg
