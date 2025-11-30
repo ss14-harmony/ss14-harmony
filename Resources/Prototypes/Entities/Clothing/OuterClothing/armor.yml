@@ -458,8 +458,6 @@
   - type: GroupExamine
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
-  - type: StaminaResistance # harmony change: add stamina resistance to most security and antagonist armour, based on the armour's highest lethal resistance
-    damageCoefficient: 0.5
 
 - type: entity
   parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ]
