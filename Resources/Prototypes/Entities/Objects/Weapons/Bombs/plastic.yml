@@ -77,9 +77,9 @@
     - Trigger
   - type: Explosive # Powerful explosion in a very small radius. Doesn't break underplating.
     explosionType: DemolitionCharge
-    totalIntensity: 60
+    totalIntensity: 10 # Harmony - 60 -> 10
     intensitySlope: 5
-    maxIntensity: 30
+    maxIntensity: 15 # Harmony - 30 -> 15
     canCreateVacuum: false
   - type: ExplodeOnTrigger
     keysIn:
