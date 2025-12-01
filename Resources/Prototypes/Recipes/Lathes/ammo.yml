@@ -39,13 +39,15 @@
   materials:
     Steel: 475
 
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: MagazineRifleIncendiary
-  result: MagazineRifleIncendiary
-  materials:
-    Steel: 25
-    Plastic: 450
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoRecipe
+#  id: MagazineRifleIncendiary
+#  result: MagazineRifleIncendiary
+#  materials:
+#    Steel: 25
+#    Plastic: 450
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -54,14 +56,16 @@
   materials:
     Steel: 175
 
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: MagazineRifleUranium
-  result: MagazineRifleUranium
-  materials:
-    Steel: 25
-    Plastic: 300
-    Uranium: 300
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoRecipe
+#  id: MagazineRifleUranium
+#  result: MagazineRifleUranium
+#  materials:
+#    Steel: 25
+#    Plastic: 300
+#    Uranium: 300
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseAmmoBoxRecipe
@@ -70,12 +74,14 @@
   materials:
     Steel: 750
 
-- type: latheRecipe
-  parent: BaseAmmoBoxRecipe
-  id: MagazineBoxRifleIncendiary
-  result: MagazineBoxRifleIncendiary
-  materials:
-    Plastic: 750
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoBoxRecipe
+#  id: MagazineBoxRifleIncendiary
+#  result: MagazineBoxRifleIncendiary
+#  materials:
+#    Plastic: 750
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseAmmoBoxRecipe
@@ -84,13 +90,15 @@
   materials:
     Steel: 250
 
-- type: latheRecipe
-  parent: BaseAmmoBoxRecipe
-  id: MagazineBoxRifleUranium
-  result: MagazineBoxRifleUranium
-  materials:
-    Plastic: 500
-    Uranium: 500
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoBoxRecipe
+#  id: MagazineBoxRifleUranium
+#  result: MagazineBoxRifleUranium
+#  materials:
+#    Plastic: 500
+#    Uranium: 500
+# Harmony change end
 
 # .25 Caseless
 - type: latheRecipe
@@ -115,13 +123,15 @@
   materials:
     Steel: 565
 
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: MagazineLightRifleIncendiary
-  result: MagazineLightRifleIncendiary
-  materials:
-    Steel: 25
-    Plastic: 540
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoRecipe
+#  id: MagazineLightRifleIncendiary
+#  result: MagazineLightRifleIncendiary
+#  materials:
+#    Steel: 25
+#    Plastic: 540
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -130,14 +140,16 @@
   materials:
     Steel: 205
 
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: MagazineLightRifleUranium
-  result: MagazineLightRifleUranium
-  materials:
-    Steel: 25
-    Plastic: 360
-    Uranium: 360
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoRecipe
+#  id: MagazineLightRifleUranium
+#  result: MagazineLightRifleUranium
+#  materials:
+#    Steel: 25
+#    Plastic: 360
+#    Uranium: 360
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseAmmoBoxRecipe
@@ -146,12 +158,14 @@
   materials:
     Steel: 900
 
-- type: latheRecipe
-  parent: BaseAmmoBoxRecipe
-  id: MagazineBoxLightRifleIncendiary
-  result: MagazineBoxLightRifleIncendiary
-  materials:
-    Plastic: 900
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoBoxRecipe
+#  id: MagazineBoxLightRifleIncendiary
+#  result: MagazineBoxLightRifleIncendiary
+#  materials:
+#    Plastic: 900
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseAmmoBoxRecipe
@@ -160,13 +174,15 @@
   materials:
     Steel: 300
 
-- type: latheRecipe
-  parent: BaseAmmoBoxRecipe
-  id: MagazineBoxLightRifleUranium
-  result: MagazineBoxLightRifleUranium
-  materials:
-    Plastic: 600
-    Uranium: 600
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoBoxRecipe
+#  id: MagazineBoxLightRifleUranium
+#  result: MagazineBoxLightRifleUranium
+#  materials:
+#    Plastic: 600
+#    Uranium: 600
+# Harmony change end
 
 # .35 Auto
 - type: latheRecipe
@@ -183,13 +199,15 @@
   materials:
     Steel: 145
 
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: MagazinePistolIncendiary
-  result: MagazinePistolIncendiary
-  materials:
-    Steel: 25
-    Plastic: 120
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoRecipe
+#  id: MagazinePistolIncendiary
+#  result: MagazinePistolIncendiary
+#  materials:
+#    Steel: 25
+#    Plastic: 120
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -198,14 +216,16 @@
   materials:
     Steel: 85
 
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: MagazinePistolUranium
-  result: MagazinePistolUranium
-  materials:
-    Steel: 25
-    Plastic: 65
-    Uranium: 120
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoRecipe
+#  id: MagazinePistolUranium
+#  result: MagazinePistolUranium
+#  materials:
+#    Steel: 25
+#    Plastic: 65
+#    Uranium: 120
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseEmptyAmmoRecipe
@@ -221,13 +241,15 @@
   materials:
     Steel: 300
 
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: MagazinePistolSubMachineGunIncendiary
-  result: MagazinePistolSubMachineGunIncendiary
-  materials:
-    Steel: 25
-    Plastic: 275
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoRecipe
+#  id: MagazinePistolSubMachineGunIncendiary
+#  result: MagazinePistolSubMachineGunIncendiary
+#  materials:
+#    Steel: 25
+#    Plastic: 275
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -236,14 +258,16 @@
   materials:
     Steel: 150
 
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: MagazinePistolSubMachineGunUranium
-  result: MagazinePistolSubMachineGunUranium
-  materials:
-    Steel: 25
-    Plastic: 250
-    Uranium: 250
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoRecipe
+#  id: MagazinePistolSubMachineGunUranium
+#  result: MagazinePistolSubMachineGunUranium
+#  materials:
+#    Steel: 25
+#    Plastic: 250
+#    Uranium: 250
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseEmptyAmmoRecipe
@@ -266,12 +290,14 @@
   materials:
     Steel: 600
 
-- type: latheRecipe
-  parent: BaseAmmoBoxRecipe
-  id: MagazineBoxPistolIncendiary
-  result: MagazineBoxPistolIncendiary
-  materials:
-    Plastic: 600
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoBoxRecipe
+#  id: MagazineBoxPistolIncendiary
+#  result: MagazineBoxPistolIncendiary
+#  materials:
+#    Plastic: 600
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseAmmoBoxRecipe
@@ -280,13 +306,15 @@
   materials:
     Steel: 300
 
-- type: latheRecipe
-  parent: BaseAmmoBoxRecipe
-  id: MagazineBoxPistolUranium
-  result: MagazineBoxPistolUranium
-  materials:
-    Plastic: 300
-    Uranium: 600
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoBoxRecipe
+#  id: MagazineBoxPistolUranium
+#  result: MagazineBoxPistolUranium
+#  materials:
+#    Plastic: 300
+#    Uranium: 600
+# Harmony change end
 
 # .45 Magnum
 - type: latheRecipe
@@ -303,13 +331,15 @@
   materials:
     Steel: 190
 
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: SpeedLoaderMagnumIncendiary
-  result: SpeedLoaderMagnumIncendiary
-  materials:
-    Steel: 50
-    Plastic: 150
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoRecipe
+#  id: SpeedLoaderMagnumIncendiary
+#  result: SpeedLoaderMagnumIncendiary
+#  materials:
+#    Steel: 50
+#    Plastic: 150
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -318,14 +348,16 @@
   materials:
     Steel: 90
 
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: SpeedLoaderMagnumUranium
-  result: SpeedLoaderMagnumUranium
-  materials:
-    Steel: 50
-    Plastic: 150
-    Uranium: 110
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoRecipe
+#  id: SpeedLoaderMagnumUranium
+#  result: SpeedLoaderMagnumUranium
+#  materials:
+#    Steel: 50
+#    Plastic: 150
+#    Uranium: 110
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseAmmoBoxRecipe
@@ -334,12 +366,14 @@
   materials:
     Steel: 240
 
-- type: latheRecipe
-  parent: BaseAmmoBoxRecipe
-  id: MagazineBoxMagnumIncendiary
-  result: MagazineBoxMagnumIncendiary
-  materials:
-    Plastic: 240
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoBoxRecipe
+#  id: MagazineBoxMagnumIncendiary
+#  result: MagazineBoxMagnumIncendiary
+#  materials:
+#    Plastic: 240
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseAmmoBoxRecipe
@@ -348,13 +382,15 @@
   materials:
     Steel: 60
 
-- type: latheRecipe
-  parent: BaseAmmoBoxRecipe
-  id: MagazineBoxMagnumUranium
-  result: MagazineBoxMagnumUranium
-  materials:
-    Plastic: 240
-    Uranium: 180
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoBoxRecipe
+#  id: MagazineBoxMagnumUranium
+#  result: MagazineBoxMagnumUranium
+#  materials:
+#    Plastic: 240
+#    Uranium: 180
+# Harmony change end
 
 # .50 Shell
 - type: latheRecipe
@@ -371,13 +407,15 @@
   materials:
     Steel: 240
 
-- type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: MagazineShotgunIncendiary
-  result: MagazineShotgunIncendiary
-  materials:
-    Steel: 100
-    Plastic: 190
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoRecipe
+#  id: MagazineShotgunIncendiary
+#  result: MagazineShotgunIncendiary
+#  materials:
+#    Steel: 100
+#    Plastic: 190
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -402,13 +440,15 @@
   materials:
     Steel: 320
 
-- type: latheRecipe
-  parent: BaseAmmoBoxRecipe
-  id: BoxShotgunIncendiary
-  result: BoxShotgunIncendiary
-  materials:
-    Steel: 80
-    Plastic: 320
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoBoxRecipe
+#  id: BoxShotgunIncendiary
+#  result: BoxShotgunIncendiary
+#  materials:
+#    Steel: 80
+#    Plastic: 320
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseAmmoBoxRecipe
@@ -417,13 +457,15 @@
   materials:
     Steel: 80
 
-- type: latheRecipe
-  parent: BaseAmmoBoxRecipe
-  id: BoxShotgunUranium
-  result: BoxShotgunUranium
-  materials:
-    Plastic: 320
-    Uranium: 240
+# Harmony change start - Removed special ammo
+#- type: latheRecipe
+#  parent: BaseAmmoBoxRecipe
+#  id: BoxShotgunUranium
+#  result: BoxShotgunUranium
+#  materials:
+#    Plastic: 320
+#    Uranium: 240
+# Harmony change end
 
 - type: latheRecipe
   parent: BaseAmmoBoxRecipe
