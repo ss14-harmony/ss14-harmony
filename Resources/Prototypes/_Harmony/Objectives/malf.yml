@@ -40,8 +40,8 @@
   components:
   - type: Objective
     icon: 
-      sprite: Objects/Misc/id_cards.rsi
-      state: ert_commander
+      sprite: Clothing/Head/Hats/capcap.rsi
+      state: icon
   - type: ExterminateDepartmentCondition
     department: Command
 
