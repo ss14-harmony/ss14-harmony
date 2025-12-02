@@ -142,7 +142,10 @@
   id: MagazinePistol
   name: pistol magazine (.35 auto)
   parent: BaseMagazinePistol
-  description: 10-round single-stack magazine for pistols. Intended to hold general-purpose kinetic ammunition.
+  # Harmony change start - Changed description
+  description: 15-round single-stack magazine for pistols. Intended to hold general-purpose kinetic ammunition.
+  # description: 10-round single-stack magazine for pistols. Intended to hold general-purpose kinetic ammunition.
+  # Harmony change end
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistol
@@ -164,7 +167,10 @@
   name: pistol magazine (.35 auto any)
   suffix: empty
   parent: MagazinePistol
-  description: 10-round single-stack magazine for pistols.
+  # Harmony change start - Changed description
+  description: 15-round single-stack magazine for pistols.
+  # description: 10-round single-stack magazine for pistols.
+  # Harmony change end
   components:
   - type: BallisticAmmoProvider
     proto: null
@@ -185,7 +191,10 @@
   id: MagazinePistolIncendiary
   name: pistol magazine (.35 auto incendiary)
   parent: MagazinePistol
-  description: 10-round single-stack magazine for pistols. Intended to hold self-igniting incendiary ammunition.
+  # Harmony change start - Changed description
+  description: 15-round single-stack magazine for pistols. Intended to hold self-igniting incendiary ammunition.
+  # description: 10-round single-stack magazine for pistols. Intended to hold self-igniting incendiary ammunition.
+  # Harmony change end
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolIncendiary
@@ -212,7 +221,10 @@
   id: MagazinePistolPractice
   name: pistol magazine (.35 auto practice)
   parent: BaseMagazinePistol
-  description: 10-round single-stack magazine for pistols. Intended to hold non-harmful chalk ammunition.
+  # Harmony change start - Changed description
+  description: 15-round single-stack-stack magazine for pistols. Intended to hold non-harmful chalk ammunition.
+  # description: 10-round single-stack-stack magazine for pistols. Intended to hold non-harmful chalk ammunition.
+  # Harmony change end
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolPractice
@@ -239,7 +251,10 @@
   id: MagazinePistolUranium
   name: pistol magazine (.35 auto uranium)
   parent: BaseMagazinePistol
-  description: 10-round single-stack magazine for pistols. Intended to hold exotic uranium-core ammunition.
+  # Harmony change start - Changed description
+  description: 15-round single-stack magazine for pistols. Intended to hold exotic uranium-core ammunition.
+  # description: 10-round single-stack magazine for pistols. Intended to hold exotic uranium-core ammunition.
+  # Harmony change end
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolUranium
