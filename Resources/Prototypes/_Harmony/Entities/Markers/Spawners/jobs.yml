@@ -1,0 +1,16 @@
+# SPECIAL
+# CENTCOMM
+
+- type: entity
+  id: SpawnPointCentCommInspector
+  parent: SpawnPointJobBase
+  name: CentCommInspector
+  suffix: Harmony
+  components:
+  - type: SpawnPoint
+    job_id: CentCommInspector
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Harmony/Markers/jobs.rsi
+        state: inspector
