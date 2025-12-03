@@ -64,8 +64,8 @@
     radiationReactiveGases:
       - reactantPrototype: Plasma
         powerGenerationEfficiency: 1
+#harmony change start
         reactantBreakdownRate: 0.00012
- #harmony change start
       - reactantPrototype: Tritium
         powerGenerationEfficiency: 1.5
         reactantBreakdownRate: 0.00006 
