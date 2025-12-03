@@ -64,11 +64,11 @@
     radiationReactiveGases:
       - reactantPrototype: Plasma
         powerGenerationEfficiency: 1
-        reactantBreakdownRate: 0.0001
+        reactantBreakdownRate: 0.00012
  #harmony change start
       - reactantPrototype: Tritium
         powerGenerationEfficiency: 1.5
-        reactantBreakdownRate: 0.00005 
+        reactantBreakdownRate: 0.00006 
 #harmony change end
   - type: RadiationReceiver
   - type: PowerSupplier
