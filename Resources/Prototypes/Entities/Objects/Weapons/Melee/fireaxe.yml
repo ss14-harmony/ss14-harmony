@@ -101,7 +101,7 @@
     damage:
       types:
         Slash: 10
-        Heat: 15
+        Heat: 10
         Structural: 40
   - type: Tool
     qualities:
