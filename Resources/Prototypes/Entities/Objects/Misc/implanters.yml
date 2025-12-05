@@ -47,6 +47,7 @@
     - FakeMindShieldImplant
     - RadioImplant
     - ChameleonControllerImplant
+    - HyperzineImplant # Harmony implant
     deimplantFailureDamage:
       types:
         Cellular: 50
