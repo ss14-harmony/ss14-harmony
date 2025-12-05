@@ -45,6 +45,10 @@ uplink-rifle-magazine-bandit-desc = Rifle magazine with 15 cartridges. Compatibl
 uplink-defib-name = Interdyne Defibrillator
 uplink-defib-desc = A compact defibrillator. It can be used to revive your fellow comrades, or as an effective melee weapon! You should probably throw away your acidifier if you expect to use this.
 
+uplink-stimpack-traitor-desc = The legendary chemical produced by Donk Co. for the Syndicate. Injecting yourself with this will increase your run speed and let you recover from stuns faster for 100 seconds.
+
+uplink-stimkit-traitor-desc = A medkit containing 6 hyperzine microinjectors, which each inject you with enough hyperzine to last for 50 seconds.
+
 # Deception
 
 uplink-syndicate-id-name = Syndicate ID card
@@ -59,6 +63,9 @@ uplink-reinforcement-radio-cyborg-support-desc = A lean, mean supporting machine
 
 uplink-traitor-deathrattle-implant-name = Box Of Deathrattle Implants
 uplink-traitor-deathrattle-implant-desc = A box containing two syndicate deathrattle implants. Messages are relayed over the syndicate channel, encryption keys not included.
+
+uplink-hyperzine-implanter-name = Hyperzine Implanter
+uplink-hyperzine-implanter-desc = A 3-use implant which injects you with 90 seconds worth of hyperzine, a combat stimulant. Has a lengthy cooldown.
 
 # Wearables
 # Pointless

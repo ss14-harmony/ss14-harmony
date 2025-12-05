@@ -1,0 +1,31 @@
+- type: entity
+  parent: Stimpack
+  id: StimpackTraitor
+  suffix: Traitor
+  description: Contains enough hyperzine for you to have the chemical's effect for 100 seconds. Use it when you're sure you're ready to throw down.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 50
+        reagents:
+        - ReagentId: Stimulants
+          Quantity: 50
+  - type: Hypospray
+    transferAmount: 50
+
+- type: entity
+  parent: StimpackMini
+  id: StimpackMiniTraitor
+  suffix: Traitor
+  description: A microinjector of hyperzine that give you about 50 seconds of the chemical's effects.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 25
+        reagents:
+        - ReagentId: Stimulants
+          Quantity: 25
+  - type: Hypospray
+    transferAmount: 25

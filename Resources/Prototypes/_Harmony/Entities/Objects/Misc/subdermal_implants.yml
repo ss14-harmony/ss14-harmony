@@ -1,0 +1,30 @@
+- type: entity
+  parent: BaseSubdermalImplant
+  id: HyperzineImplant
+  name: hyperzine implant
+  description: This implant grants the user 90 seconds worth of hyperzine when activated.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: ActionActivateHyperzineImplant
+  - type: TriggerOnActivateImplant
+  - type: AddSolutionOnTrigger
+    targetUser: true
+    solution: chemicals
+    addedSolution:
+      reagents:
+      - ReagentId: Stimulants
+        Quantity: 45
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 135
+        reagents:
+        - ReagentId: Stimulants
+          Quantity: 135
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Items/hypospray.ogg
+  - type: PopupOnTrigger
+    text: action-implant-use-hyperzine-user
+    quiet: true

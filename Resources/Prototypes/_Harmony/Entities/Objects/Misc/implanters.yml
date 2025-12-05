@@ -1,0 +1,7 @@
+- type: entity
+  id: HyperzineImplanter
+  name: hyperzine implanter
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: HyperzineImplant

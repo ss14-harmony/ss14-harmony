@@ -12,3 +12,21 @@
     itemIconStyle: NoItem
   - type: InstantAction
     event: !type:ToggleActionEvent
+
+- type: entity
+  parent: BaseImplantAction
+  id: ActionActivateHyperzineImplant
+  name: Inject stimulants
+  description: Injects you with 90 seconds worth of hyperzine.
+  components:
+  - type: LimitedCharges
+    maxCharges: 3
+  - type: Action
+    targetUser: true
+    checkCanInteract: false
+    useDelay: 120
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: Objects/Specific/Medical/medipen.rsi
+      state: stimpen

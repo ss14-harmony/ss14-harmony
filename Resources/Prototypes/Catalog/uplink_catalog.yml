@@ -753,6 +753,17 @@
     Telecrystal: 4
   categories:
   - UplinkChemicals
+# Start Harmony change - Separate offers for nukies and traitors
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle # you get the better hyperzine through surpluses, not the nukie version
+# End Harmony change
 
 - type: listing
   id: UplinkStimkit
@@ -766,6 +777,17 @@
     Telecrystal: 12
   categories:
   - UplinkChemicals
+# Start Harmony change - Separate offers for nukies and traitors
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle # you get the better hyperzine through surpluses, not the nukie version
+# End Harmony change
 
 - type: listing
   id: UplinkCigarettes
@@ -809,7 +831,7 @@
     Telecrystal: 1
   categories:
   - UplinkDeception
-  
+
 - type: listing
   id: UplinkAgentIDCard
   name: uplink-agent-id-card-name
