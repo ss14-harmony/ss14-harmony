@@ -147,7 +147,10 @@
   rules:
   - DummyNonAntagChance
   - Traitor
-  - SubGamemodesRuleNoWizard
+  # Harmony Start - reenableds midround
+  #- SubGamemodesRuleNoWizard
+  - SubGamemodesRule
+  # Harmony end
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
@@ -176,7 +179,10 @@
   rules:
   - Nukeops
   - DummyNonAntagChance
-  - SubGamemodesRuleNoWizard
+  # Harmony start - reactivates wizard midround
+  #- SubGamemodesRuleNoWizard
+  - SubGamemodesRule
+  # Harmony End
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
@@ -194,7 +200,10 @@
   rules:
   - DummyNonAntagChance
   - Revolutionary
-  - SubGamemodesRuleNoWizard
+  # Harmony start - reactivates wizard midround even if revs are bye bye
+  #- SubGamemodesRuleNoWizard
+  - SubGamemodesRule
+  # Harmony end
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
