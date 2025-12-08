@@ -9,5 +9,19 @@
       amount: 3
     - id: PlushieBingleSmall
     - id: PlushieBongle
-    - id: PlushieBingleYakub
     - id: PlushieBinglePony
+
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateFunNanotrasenPyjamas
+  name: nanotrasen pyjama crate
+  description: Contains a set of three NanoTrasen brand pyjamas to keep the Syndicate away at night.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingUniformJumpsuitPyjamaNanotrasenBlue
+      amount: 3
+    - id: ClothingHeadPyjamaNanotrasenBlue
+      amount: 3
+    - id: ClothingShoesSlippers
+      amount: 3

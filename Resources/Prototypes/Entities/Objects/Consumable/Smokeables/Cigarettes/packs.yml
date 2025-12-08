@@ -50,6 +50,12 @@
   - type: Storage
     grid:
     - 0,0,4,1
+    # Harmony change start
+    whitelist:
+      tags:
+      - Cigarette
+      - Lighter
+    # Harmony change end
   - type: StorageFill
     contents:
     - id: Cigarette

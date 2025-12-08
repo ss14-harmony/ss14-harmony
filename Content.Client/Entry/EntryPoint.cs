@@ -23,6 +23,7 @@ using Content.Client.Stylesheets;
 using Content.Client.UserInterface;
 using Content.Client.Viewport;
 using Content.Client.Voting;
+using Content.Shared._Harmony.JoinQueue;
 using Content.Shared.Ame.Components;
 using Content.Shared.Gravity;
 using Content.Shared.Localizations;
@@ -76,19 +77,23 @@ namespace Content.Client.Entry
         [Dependency] private readonly TitleWindowManager _titleWindowManager = default!;
         [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
         [Dependency] private readonly ClientsidePlaytimeTrackingManager _clientsidePlaytimeManager = default!;
+        [Dependency] private readonly IJoinQueueManager _joinQueue = default!; // Harmony
 
-        public override void Init()
+        public override void PreInit()
         {
-            ClientContentIoC.Register();
+            ClientContentIoC.Register(Dependencies);
 
             foreach (var callback in TestingCallbacks)
             {
                 var cast = (ClientModuleTestingCallbacks) callback;
                 cast.ClientBeforeIoC?.Invoke();
             }
+        }
 
-            IoCManager.BuildGraph();
-            IoCManager.InjectDependencies(this);
+        public override void Init()
+        {
+            Dependencies.BuildGraph();
+            Dependencies.InjectDependencies(this);
 
             _contentLoc.Initialize();
             _componentFactory.DoAutoRegistrations();
@@ -149,17 +154,15 @@ namespace Content.Client.Entry
             _configManager.SetCVar("interface.resolutionAutoScaleMinimum", 0.5f);
         }
 
-        public override void Shutdown()
-        {
-            base.Shutdown();
-            _titleWindowManager.Shutdown();
-        }
-
         public override void PostInit()
         {
             base.PostInit();
 
             _stylesheetManager.Initialize();
+
+            // Harmony Queue Start
+            _joinQueue.Initialize();
+            // Harmony Queue End
 
             // Setup key contexts
             ContentContexts.SetupContexts(_inputManager.Contexts);

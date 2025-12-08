@@ -5,6 +5,9 @@
 - type: Tag
   id: ClothingShoesDuckyGaloshes
 
+- type: Tag
+  id: PoweredLightColored
+
 # Tag used for energy weapon's energy cartridges.
 - type: Tag
   id: EnergyCarbineCartridge
@@ -26,6 +29,10 @@
 
 - type: Tag
   id: CartridgeLightRifleCaseless
+
+# Tag added to lighters to allow them to be whitelisted in cigarette packs
+- type: Tag
+  id: Lighter
 
 #used in _Harmony/Entities/Objects/Weapons/Guns/Ammunition/Magazines/anti_materiel.yml
 - type: Tag

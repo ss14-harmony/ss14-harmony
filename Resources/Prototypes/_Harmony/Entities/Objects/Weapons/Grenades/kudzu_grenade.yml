@@ -1,0 +1,29 @@
+﻿- type: entity
+  parent: [ScatteringGrenadeBase, BaseSyndicateContraband]
+  id: KudzuGrenade
+  name: kudzu grenade
+  suffix: Harmony
+  description: A diona's favorite grenade.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Grenades/kudzugrenade.rsi
+    layers:
+    - state: icon
+      map: [ "Base" ]
+  - type: ScatteringGrenade
+    fillPrototype: SyndicateKudzu
+    distance: 4
+  - type: TimerTrigger
+    delay: 2
+    beepSound:
+      path: "/Audio/Effects/beep1.ogg"
+      params:
+        volume: 3
+    initialBeepDelay: 0
+    beepInterval: 16
+  - type: GenericVisualizer
+    visuals:
+      enum.Trigger.TriggerVisuals.VisualState:
+        enum.ConstructionVisuals.Layer:
+          Primed: { state: primed }
+          Unprimed: { state: icon }

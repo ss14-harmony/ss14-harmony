@@ -1,0 +1,30 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "Taken from https://github.com/space-wizards/space-station-14/commit/14a5c86674560f46381a7d3a59ae15cdd6e95f88. Resprite and recolor by ProbablyAta (GitHub)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "equipped-INNERCLOTHING",
+            "directions": 4
+        },
+        {
+            "name": "equipped-INNERCLOTHING-monkey",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        }
+    ]
+}

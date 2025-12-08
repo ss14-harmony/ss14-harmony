@@ -10,11 +10,26 @@
   - type: Hunger
   - type: Thirst
   - type: Icon
-    sprite: _CD/Mobs/Species/Avali/parts.rsi
+    sprite: _Harmony/Mobs/Species/Avali/parts.rsi # Harmony change _CD -> _Harmony
     state: full
   - type: Body
     prototype: Avali
     requiredLegs: 2
+# Harmony change start
+  - type: Inventory
+    speciesId: moth
+    displacements:
+      head:
+        sizeMaps:
+          32:
+            sprite: _Harmony/Mobs/Species/Avali/displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _Harmony/Mobs/Species/Avali/displacement.rsi
+            state: mask
+# Harmony change end
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -100,5 +115,19 @@
   components:
   - type: HumanoidAppearance
     species: Avali
-
+# Harmony change start
+  - type: Inventory
+    speciesId: moth
+    displacements:
+      head:
+        sizeMaps:
+          32:
+            sprite: _Harmony/Species/Avali/displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _Harmony/Mobs/Species/Avali/displacement.rsi
+            state: mask
+# Harmony change end
 # Chirp!

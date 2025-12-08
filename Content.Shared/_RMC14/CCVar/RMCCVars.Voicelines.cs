@@ -45,4 +45,7 @@ public sealed partial class RMCCVars
 
     public static readonly CVarDef<bool> RMCPlayVoicelinesSkrell =
         CVarDef.Create("rmc.play_voicelines_skrell", true, CVar.REPLICATED | CVar.CLIENT | CVar.ARCHIVE);
+
+    public static readonly CVarDef<bool> RMCPlayVoicelinesVox =
+        CVarDef.Create("rmc.play_voicelines_vox", true, CVar.REPLICATED | CVar.CLIENT | CVar.ARCHIVE); // Harmony change - Vox
 }

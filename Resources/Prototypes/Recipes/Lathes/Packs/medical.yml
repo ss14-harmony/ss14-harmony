@@ -8,7 +8,6 @@
   - Gauze
   - Bloodpack # Harmony
 
-
 - type: latheRecipePack
   id: BasicChemistryStatic
   recipes:
@@ -18,6 +17,7 @@
   - PillCanister
   - HandLabeler
   - BaseChemistryEmptyVial
+  - Dropper
 
 - type: latheRecipePack
   parent: BasicChemistryStatic
@@ -48,6 +48,8 @@
   - DiseaseSwab
   - BodyBag
   - WhiteCane
+  - OffsetCane
+  - OffsetCaneWood
   - ClothingEyesEyepatchHudMedical # Harmony
   - ClothingEyesHudMedical # Harmony
 

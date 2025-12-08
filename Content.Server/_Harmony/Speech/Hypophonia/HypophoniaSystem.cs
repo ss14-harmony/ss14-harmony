@@ -6,6 +6,7 @@ using Content.Shared.Puppet;
 using Content.Shared.Speech;
 using Content.Shared.Speech.Muting;
 using Content.Shared._Harmony.Speech.Hypophonia;
+using Content.Shared.Chat;
 
 namespace Content.Server._Harmony.Speech.Hypophonia
 {
