@@ -68,10 +68,6 @@
   categories:
   - UplinkWeaponry
   conditions:
-  - !type:BuyerWhitelistCondition
-    blacklist:
-      components:
-      - SurplusBundle
   - !type:StoreWhitelistCondition
     whitelist:
       tags:
@@ -202,10 +198,6 @@
   categories:
   - UplinkAmmo
   conditions:
-  - !type:BuyerWhitelistCondition
-    blacklist:
-      components:
-      - SurplusBundle
   - !type:StoreWhitelistCondition
     whitelist:
       tags:
