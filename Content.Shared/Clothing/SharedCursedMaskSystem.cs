@@ -28,7 +28,7 @@ public abstract class SharedCursedMaskSystem : EntitySystem
         SubscribeLocalEvent<CursedMaskComponent, ExaminedEvent>(OnExamine);
 
         SubscribeLocalEvent<CursedMaskComponent, InventoryRelayedEvent<RefreshMovementSpeedModifiersEvent>>(OnMovementSpeedModifier);
-        // SubscribeLocalEvent<CursedMaskComponent, InventoryRelayedEvent<DamageModifyEvent>>(OnModifyDamage); // Harmony change
+        // SubscribeLocalEvent<CursedMaskComponent, InventoryRelayedEvent<DamageModifyEvent>>(OnModifyDamage); // Harmony change for removal of Despair mask
     }
 
     private void OnClothingEquip(Entity<CursedMaskComponent> ent, ref ClothingGotEquippedEvent args)
@@ -53,7 +53,7 @@ public abstract class SharedCursedMaskSystem : EntitySystem
             args.Args.ModifySpeed(ent.Comp.JoySpeedModifier);
     }
 
-    // Harmony change start
+    // Harmony change start, removes Despair mask systems
     /* private void OnModifyDamage(Entity<CursedMaskComponent> ent, ref InventoryRelayedEvent<DamageModifyEvent> args)
     {
         if (ent.Comp.CurrentState == CursedMaskExpression.Despair)

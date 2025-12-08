@@ -27,7 +27,7 @@ public sealed partial class CursedMaskComponent : Component
     /// <summary>
     /// Damage modifier applied when the "Despair" expression is present.
     /// </summary>
-    // Harmony change start
+    // Harmony change start, removes Despair mask
     /*[DataField]
     public DamageModifierSet DespairDamageModifier = new(); */
     // Harmony change end
@@ -62,6 +62,6 @@ public enum CursedMaskExpression : byte
 {
     Neutral,
     Joy,
-    // Despair, // Harmony change
+    // Despair, // Harmony change, removes Despair mask
     Anger
 }
