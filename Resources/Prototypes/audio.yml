@@ -204,6 +204,12 @@
     - /Audio/Ambience/spookyspace2.ogg
     - /Audio/Ambience/ambispace2.ogg
     - /Audio/Lobby/title2.ogg
+# Start harmony additions
+    - /Audio/_Harmony/Ambience/Day.ogg
+    - /Audio/_Harmony/Ambience/Evening.ogg
+    - /Audio/_Harmony/Ambience/Morning.ogg
+    - /Audio/_Harmony/Ambience/Night.ogg
+# End harmony additions
 
 - type: soundCollection
   id: AmbienceSpooky
