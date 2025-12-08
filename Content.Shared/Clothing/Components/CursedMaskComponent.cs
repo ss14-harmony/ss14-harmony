@@ -60,6 +60,6 @@ public enum CursedMaskExpression : byte
 {
     Neutral,
     Joy,
-    Despair,
+    // Despair, // Harmony change
     Anger
 }
