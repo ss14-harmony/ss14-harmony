@@ -53,7 +53,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
         var teammates = AllEntityQuery<InitialInfectedComponent>();
         while (teammates.MoveNext(out var id, out _))
         {
-            args.Append(Loc.GetString("initial-infected-name", ("name", Name(id))));
+            args.Append("\n" + Loc.GetString("initial-infected-name", ("name", Name(id))));
         }
         // Harmony change end
     }
