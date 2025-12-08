@@ -27,8 +27,10 @@ public sealed partial class CursedMaskComponent : Component
     /// <summary>
     /// Damage modifier applied when the "Despair" expression is present.
     /// </summary>
-    [DataField]
-    public DamageModifierSet DespairDamageModifier = new();
+    // Harmony change start
+    /*[DataField]
+    public DamageModifierSet DespairDamageModifier = new(); */
+    // Harmony change end
 
     /// <summary>
     /// Whether or not the mask is currently attached to an NPC.

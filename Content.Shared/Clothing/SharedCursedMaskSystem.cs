@@ -53,14 +53,16 @@ public abstract class SharedCursedMaskSystem : EntitySystem
             args.Args.ModifySpeed(ent.Comp.JoySpeedModifier);
     }
 
-    private void OnModifyDamage(Entity<CursedMaskComponent> ent, ref InventoryRelayedEvent<DamageModifyEvent> args)
+    // Harmony change start
+    /* private void OnModifyDamage(Entity<CursedMaskComponent> ent, ref InventoryRelayedEvent<DamageModifyEvent> args)
     {
         if (ent.Comp.CurrentState == CursedMaskExpression.Despair)
             args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage,
                 DamageSpecifier.PenetrateArmor(ent.Comp.DespairDamageModifier,
-                    args.Args.ArmorPenetration)); // Goob edit
-    }
-
+                    args.Args.ArmorPenetration)); // Goob edit 
+    } */
+    // Harmony change end
+    
     protected void RandomizeCursedMask(Entity<CursedMaskComponent> ent, EntityUid wearer)
     {
         var random = new System.Random((int) _timing.CurTick.Value);
