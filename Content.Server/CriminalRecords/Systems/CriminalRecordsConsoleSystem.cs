@@ -88,9 +88,9 @@ public sealed class CriminalRecordsConsoleSystem : SharedCriminalRecordsConsoleS
         // prevent malf client violating wanted/reason nullability
         if (msg.Status == SecurityStatus.Wanted != (msg.Reason != null) &&
             msg.Status == SecurityStatus.Suspected != (msg.Reason != null) &&
-            // Additional Harmony statuses
-            msg.Status == SecurityStatus.Monitor != (msg.Reason != null) &&
-            msg.Status == SecurityStatus.Search != (msg.Reason != null))
+            msg.Status == SecurityStatus.Hostile != (msg.Reason != null) &&
+            msg.Status == SecurityStatus.Monitor != (msg.Reason != null) && // Harmony
+            msg.Status == SecurityStatus.Search != (msg.Reason != null)) // Harmony
             return;
 
         if (!CheckSelected(ent, msg.Actor, out var mob, out var key))
@@ -147,6 +147,8 @@ public sealed class CriminalRecordsConsoleSystem : SharedCriminalRecordsConsoleS
         // figure out which radio message to send depending on transition
         var statusString = (oldStatus, msg.Status) switch
         {
+            (_, SecurityStatus.Hostile) => "hostile",
+            (_, SecurityStatus.Eliminated) => "eliminated",
             // person has been detained
             (_, SecurityStatus.Detained) => "detained",
             // person did something sus
@@ -157,6 +159,8 @@ public sealed class CriminalRecordsConsoleSystem : SharedCriminalRecordsConsoleS
             (_, SecurityStatus.Discharged) => "released",
             // going from any other state to wanted, AOS or prisonbreak / lazy secoff never set them to released and they reoffended
             (_, SecurityStatus.Wanted) => "wanted",
+            (SecurityStatus.Hostile, SecurityStatus.None) => "not-hostile",
+            (SecurityStatus.Eliminated, SecurityStatus.None) => "not-eliminated",
             // Additional Harmony statuses
             // person is being monitored
             (_, SecurityStatus.Monitor) => "monitor",

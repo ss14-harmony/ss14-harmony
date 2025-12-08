@@ -22,8 +22,7 @@
     CaptainGunStealObjective: 0.5
     CaptainJetpackStealObjective: 0.5
     HandTeleporterStealObjective: 0.5
-    EnergyShotgunStealObjective: 0.5
-    EnergyMagnumStealObjective: 0.5 # Harmony Objective
+    EnergyMagnumStealObjective: 0.5
     AccessConfiguratorStealObjective: 1 # Harmony Objective
 
 - type: weightedRandom

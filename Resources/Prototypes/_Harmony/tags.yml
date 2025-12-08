@@ -30,6 +30,10 @@
 - type: Tag
   id: CartridgeLightRifleCaseless
 
+# Tag added to lighters to allow them to be whitelisted in cigarette packs
+- type: Tag
+  id: Lighter
+
 #used in _Harmony/Entities/Objects/Weapons/Guns/Ammunition/SpeedLoaders/sniper.yml
 - type: Tag
   id: SpeedLoaderAM

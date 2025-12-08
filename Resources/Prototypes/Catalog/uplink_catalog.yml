@@ -800,7 +800,16 @@
           - SurplusBundle
 
 # Deception
-
+- type: listing
+  id: UplinkSyndicateIDCard
+  name: uplink-syndicate-id-card-name
+  description: uplink-syndicate-id-card-desc
+  productEntity: SyndicateIDCard
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkDeception
+  
 - type: listing
   id: UplinkAgentIDCard
   name: uplink-agent-id-card-name
@@ -1772,11 +1781,13 @@
     Telecrystal: 12
   categories:
   - UplinkWearables
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+# Start harmony change - adds elite suit to traitor uplink
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - NukeOpsUplink
+# End harmony change
 
 - type: listing
   id: UplinkClothingOuterHardsuitJuggernaut
