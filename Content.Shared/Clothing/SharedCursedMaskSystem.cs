@@ -28,7 +28,7 @@ public abstract class SharedCursedMaskSystem : EntitySystem
         SubscribeLocalEvent<CursedMaskComponent, ExaminedEvent>(OnExamine);
 
         SubscribeLocalEvent<CursedMaskComponent, InventoryRelayedEvent<RefreshMovementSpeedModifiersEvent>>(OnMovementSpeedModifier);
-        SubscribeLocalEvent<CursedMaskComponent, InventoryRelayedEvent<DamageModifyEvent>>(OnModifyDamage);
+        // SubscribeLocalEvent<CursedMaskComponent, InventoryRelayedEvent<DamageModifyEvent>>(OnModifyDamage); // Harmony change
     }
 
     private void OnClothingEquip(Entity<CursedMaskComponent> ent, ref ClothingGotEquippedEvent args)
