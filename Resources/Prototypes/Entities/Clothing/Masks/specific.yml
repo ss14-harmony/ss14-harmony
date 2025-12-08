@@ -61,18 +61,20 @@
       enum.CursedMaskVisuals.State:
         mask:
           Neutral: { state: icon }
-          Despair: { state: icon-despair }
+          # Despair: { state: icon-despair } # Harmony change
           Joy: { state: icon-joy }
           Anger: { state: icon-anger }
   - type: Tag
     tags: [] # ignore "WhitelistChameleon" tag
   - type: SelfEquipOnly
   - type: CursedMask
-    despairDamageModifier:
-      coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.4
+    # Harmony change start
+    # despairDamageModifier:
+      # coefficients:
+        # Blunt: 0.6
+        # Slash: 0.6
+        # Piercing: 0.4
+    # Harmony change end
   - type: HideLayerClothing
     slots:
     - Snout
