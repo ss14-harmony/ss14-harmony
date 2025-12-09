@@ -8,7 +8,7 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobBorg
-    time: 14400 # Harmony change: 5hrs -> 4 hrs
+    time: 4h # harmony: 5h -> 4h
   canBeAntag: false
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
@@ -23,7 +23,7 @@
   playTimeTracker: JobBorg
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 14400 # 4 hrs
+      time: 4h # harmony: 10h -> 4h
   canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd

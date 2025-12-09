@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: MobCorgiNarsi
   id: MobPitbull
   name: pitbull
@@ -24,7 +24,10 @@
       Dead:
         Base: pitbull_dead
   - type: Bloodstream
-    bloodReagent: Blood
+    bloodReagents:
+      reagents:
+        - ReagentId: Blood
+          Quantity: 1
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
