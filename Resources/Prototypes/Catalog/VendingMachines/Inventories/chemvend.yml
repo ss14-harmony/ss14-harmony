@@ -32,7 +32,6 @@
     ChemistryBottleMuteToxin: 1
   # Harmony Change End
 
-
 - type: vendingMachineInventory
   id: ChemVendInventorySyndicate
   startingInventory:
