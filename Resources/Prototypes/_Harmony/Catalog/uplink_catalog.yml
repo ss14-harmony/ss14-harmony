@@ -206,6 +206,16 @@
 
 # Disruption
 
+- type: listing
+  id: AccessConfiguratorSyndicate
+  name: uplink-syndicate-access-config-name
+  description: uplink-syndicate-access-config-desc
+  productEntity: AccessConfiguratorSyndicate
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkDisruption
+
 # Allies
 
 - type: listing

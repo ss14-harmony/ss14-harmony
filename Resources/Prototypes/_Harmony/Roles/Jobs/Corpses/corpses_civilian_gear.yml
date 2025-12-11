@@ -1,0 +1,63 @@
+# List of Gearsets intended for Civilian Corpse Spawners
+
+- type: startingGear
+  id: CorpseBartender
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBartender
+    shoes: ClothingShoesColorBlack
+    outerClothing: ClothingOuterArmorBasic
+
+- type: startingGear
+  id: CorpseBotanist
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHydroponics
+    shoes: ClothingShoesColorBrown
+    belt: ClothingBeltPlantFilled
+
+- type: startingGear
+  id: CorpseBoxer
+  equipment:
+    jumpsuit: UniformShortsRed
+    shoes: ClothingShoesColorRed
+    gloves: ClothingHandsGlovesBoxingRed
+
+
+- type: startingGear
+  id: CorpseChaplain
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChaplain
+    shoes: ClothingShoesColorBlack
+
+- type: startingGear
+  id: CorpseChef
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChef
+    shoes: ClothingShoesColorBlack
+    head: ClothingHeadHatChef
+    outerClothing: ClothingOuterJacketChef
+    belt: ClothingBeltChefFilled
+
+- type: startingGear
+  id: CorpseJanitor
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitJanitor
+    shoes: ClothingShoesColorBlack
+    head: ClothingHeadHatPurplesoft
+    gloves: ClothingHandsGlovesJanitor
+    belt: ClothingBeltJanitor
+
+- type: startingGear
+  id: CorpseLawyer
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerBlack
+    shoes: ClothingShoesBootsLaceup
+
+- type: startingGear
+  id: CorpseMime
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMime
+    shoes: ClothingShoesColorWhite
+    head: ClothingHeadHatBeret
+    mask: ClothingMaskMime
+    gloves: ClothingHandsGlovesColorWhite
+    belt: ClothingBeltSuspendersRed

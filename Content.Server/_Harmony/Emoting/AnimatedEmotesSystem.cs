@@ -5,6 +5,7 @@ using Content.Server.Chat.Systems;
 using Content.Shared.Chat.Prototypes;
 using Robust.Shared.Prototypes;
 using Content.Shared._Harmony.Emoting;
+using Content.Shared.Chat;
 
 namespace Content.Server._Harmony.Emoting;
 

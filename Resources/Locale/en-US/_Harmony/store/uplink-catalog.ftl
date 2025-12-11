@@ -50,6 +50,11 @@ uplink-defib-desc = A compact defibrillator. It can be used to revive your fello
 uplink-syndicate-id-name = Syndicate ID card
 uplink-syndicate-id-desc = A sleek black-and-red ID card with embossed Syndicate logo and syndicate access. Does not possess any Nanotrasen access. Limited to one ID per agent.
 
+# Disruption
+
+uplink-syndicate-access-config-name = Cybersun Configurator
+uplink-syndicate-access-config-desc = A competing access configurator that works with NanoTrasen and Syndicate IDs. Not to be confused with the Access Breaker.
+
 # Allies
 
 uplink-reinforcement-radio-cyborg-support-name = Syndicate Support Cyborg Teleporter
