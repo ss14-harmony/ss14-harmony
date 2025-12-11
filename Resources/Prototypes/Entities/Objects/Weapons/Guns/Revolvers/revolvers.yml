@@ -33,7 +33,7 @@
 #     path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
       collection: RevolverAltFire
       params:
-        volume: -2
+        volume: -1.5
     soundEmpty:
       path: /Audio/_Harmony/Weapons/Guns/Empty/revolver_empty.ogg
       # End Harmony change

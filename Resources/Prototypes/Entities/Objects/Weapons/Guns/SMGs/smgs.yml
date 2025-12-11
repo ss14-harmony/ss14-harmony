@@ -205,7 +205,7 @@
 #       path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
         collection: DrozdFire
         params:
-          volume: -2.5
+          volume: -1.5
         # End harmony change
       selectedMode: Burst
       availableModes:
