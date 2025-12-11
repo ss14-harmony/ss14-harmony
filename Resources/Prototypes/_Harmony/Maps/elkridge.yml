@@ -1,7 +1,7 @@
 - type: gameMap
   id: Elkridge
   mapName: 'Elkridge Depot'
-  mapPath: /Maps/elkridge.yml
+  mapPath: /Maps/_Harmony/elkridge.yml
   minPlayers: 15
   maxPlayers: 45
   stations:
@@ -14,9 +14,9 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'DS'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_elkridge.yml
+          emergencyShuttlePath: /Maps/_Harmony/Shuttles/emergency_elkridge.yml
         - type: StationCargoShuttle
-          path: /Maps/Shuttles/cargo_elkridge.yml
+          path: /Maps/_Harmony/Shuttles/cargo_elkridge.yml
         - type: StationJobs
           availableJobs: # 46 jobs total w/o latejoins & interns, 61 jobs total w/ latejoins & interns
             #command (7)

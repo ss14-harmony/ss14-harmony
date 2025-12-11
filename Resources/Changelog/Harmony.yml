@@ -2896,3 +2896,10 @@ Entries:
     changes:
     - type: Tweak
       message: Jellyfish station has been updated.
+  - id: 1165
+    author: raccoonio
+    time: '2025-11-24T23:38:28.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1165
+    changes:
+    - type: Add
+      message: Adds Scylla Station, a medium-pop station based on supernatural being Scylla from The Odyssey.

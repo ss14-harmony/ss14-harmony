@@ -121,6 +121,7 @@ namespace Content.IntegrationTests.Tests
             "Omega", // Harmony, updated from Spanky's version by OrnamentalFreak and CrimsonJupiter
             "Jellyfish", // Harmony, Developed by whythelettuce
             "Scylla", // Harmony, Developed by tanuko, luckyshotpictures
+			"Elkridge", // Harmony, Developed by deerstop, maintained by luckyshotpictures
             "Dev",
             "TestTeg",
             "Fland",
@@ -135,7 +136,6 @@ namespace Content.IntegrationTests.Tests
             "Oasis",
             "Amber",
             "Plasma",
-            "Elkridge",
             "Relic",
             "dm01-entryway",
             "Exo",
