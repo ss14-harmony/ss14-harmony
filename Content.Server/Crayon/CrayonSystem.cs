@@ -41,14 +41,10 @@ public sealed class CrayonSystem : SharedCrayonSystem
 
     private void OnMapInit(Entity<CrayonComponent> ent, ref MapInitEvent args)
     {
-<<<<<<< HEAD
-        args.State = new CrayonComponentState(component.Color, component.SelectedState, component.Charges, component.Capacity, component.Infinite); // imp
-=======
         // Get the first one from the catalog and set it as default
         var decal = _prototypeManager.EnumeratePrototypes<DecalPrototype>().FirstOrDefault(x => x.Tags.Contains("crayon"));
         ent.Comp.SelectedState = decal?.ID ?? string.Empty;
         Dirty(ent);
->>>>>>> 89072c0e799f778a6aa79c2cdc28c9a5727b7cd3
     }
 
     // Runs after IngestionSystem so it doesn't bulldoze force-feeding
@@ -81,27 +77,18 @@ public sealed class CrayonSystem : SharedCrayonSystem
         if (component.UseSound != null)
             _audio.PlayPvs(component.UseSound, uid, AudioParams.Default.WithVariation(0.125f));
 
-<<<<<<< HEAD
         // begin imp
         if (!component.Infinite)
         {
             // Decrease "Ammo"
-            component.Charges--;
-            Dirty(uid, component);
+            _charges.TryUseCharge(uid);
         }
         // end imp
-=======
-        _charges.TryUseCharge(uid);
->>>>>>> 89072c0e799f778a6aa79c2cdc28c9a5727b7cd3
 
         _adminLogger.Add(LogType.CrayonDraw, LogImpact.Low, $"{ToPrettyString(args.User):user} drew a {component.Color:color} {component.SelectedState}");
         args.Handled = true;
 
-<<<<<<< HEAD
-        if (!component.Infinite && component.DeleteEmpty && component.Charges <= 0) //Harmony - For Recruiter Port
-=======
-        if (component.DeleteEmpty && _charges.IsEmpty(uid))
->>>>>>> 89072c0e799f778a6aa79c2cdc28c9a5727b7cd3
+        if (!component.Infinite && component.DeleteEmpty && _charges.IsEmpty(uid)) //Harmony - For Recruiter Port
             UseUpCrayon(uid, args.User);
         else
             _uiSystem.ServerSendUiMessage(uid, CrayonUiKey.Key, new CrayonUsedMessage(component.SelectedState));

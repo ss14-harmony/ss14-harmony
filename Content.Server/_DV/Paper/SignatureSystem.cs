@@ -4,7 +4,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-using Content.Server.Crayon;
+using Content.Shared.Crayon;
 using Content.Shared._DV.Paper;
 using Content.Shared._DV.Traits;
 using Content.Shared.Paper;
