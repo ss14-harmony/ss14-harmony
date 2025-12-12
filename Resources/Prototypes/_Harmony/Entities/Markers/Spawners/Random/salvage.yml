@@ -109,38 +109,6 @@
       - id: ClothingOuterSuitBomb
       - id: ClothingOuterHardsuitSalvage
 
-- type: entityTable
-  id: HarmonySalvageArmoryGunSafeTable
-  table: !type:GroupSelector
-    children:
-    - id: GunSafeSalvageBase # Empty Safe
-      weight: 30
-    # Common
-    - !type:GroupSelector
-      weight: 30
-      children:
-      - id: GunSafeSalvageCrushers
-      - id: GunSafeSalvagePKA
-      - id: GunSafeSalvageFlintlock
-      - id: GunSafeSalvageImprovisedShotgun
-    # Uncommon
-    - !type:GroupSelector
-      weight: 25
-      children:
-      - id: GunSafeSalvageDoubleBarrelShotgun
-      - id: GunSafeSalvageMosin
-      - id: GunSafeSalvageBlunderbuss
-    # Rare
-    - !type:GroupSelector
-      weight: 15
-      children:
-      - id: GunSafeSalvageRSC
-      - id: GunSafeSalvageLaserCarbine
-      - id: GunSafeSalvageKammerer
-        weight: 0.1
-      - id: GunSafeSalvageDrozd
-        weight: 0.1
-
 # SPAWNERS
 
 ## Gun Spawner

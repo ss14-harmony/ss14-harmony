@@ -3,9 +3,12 @@
 # Armory - These reflect the Harmony Salvager Armory Gun Spawner items
 # Armory Entity Tables
 
-# A Crusher Offhand and a Crusher Mainhand
+# Weapon Categories
+# There is purposefully no Retro Laser or Pirate Revolver safe tables.
+
+## A Crusher Offhand and a Crusher Mainhand
 - type: entityTable
-  id: LockerSalvageCrushersTable
+  id: GunSafeSalvageTableCrushers
   table: !type:AllSelector
     children:
     - !type:GroupSelector
@@ -14,9 +17,9 @@
         - id: WeaponCrusherGlaive
     - id: WeaponCrusherDagger
 
-# PKAs in a Safe
+## PKAs in a Safe
 - type: entityTable
-  id: LockerSalvagePKATable
+  id: GunSafeSalvageTablePKA
   table: !type:GroupSelector
     children:
     - !type:AllSelector
@@ -53,133 +56,128 @@
     - id: WeaponKineticSidearmLuxury # To be replaced with a unique Kinetic Sidearm
       weight: 0.01 # weight can be rebalanced when its not the luxury kinetic sidearm
 
+## Flintlock
+- type: entityTable
+  id: GunSafeSalvageTableFlintlock
+  table: !type:AllSelector
+    children:
+    - id: WeaponPistolFlintlockEmpty
+    - id: MagazineBoxMagnum # Likely to be replaced with a smaller ammo box
+      prob: 0.8 # Chance for no Ammo
+
+## Improvised Shotgun
+- type: entityTable
+  id: GunSafeSalvageTableImprovisedShotgun
+  table: !type:AllSelector
+    children:
+    - id: ModularReceiver
+    - id: RifleStock
+    - id: MagazineShotgunBeanbag # Always spawns because weapon not guaranteed
+
+## Double Barrel Shotgun
+- type: entityTable
+  id: GunSafeSalvageTableDoubleBarrelShotgun
+  table: !type:AllSelector
+    children:
+    - id: WeaponShotgunDoubleBarreledRubber
+    - id: MagazineShotgunBeanbag
+      prob: 0.8 # Chance for no Ammo
+
+## Mosin
+- type: entityTable
+  id: GunSafeSalvageTableMosin
+  table: !type:AllSelector
+    children:
+    - id: WeaponSniperMosin
+    - id: SpeedLoaderLightRifle
+      prob: 0.8 # Chance for no Ammo
+
+## Blunderbuss
+- type: entityTable
+  id: GunSafeSalvageTableBlunderbuss
+  table: !type:AllSelector
+    children:
+    - id: WeaponShotgunBlunderbuss
+    - id: MagazineShotgunBeanbag
+      prob: 0.8 # Chance for no Ammo
+
+## RSC
+- type: entityTable
+  id: GunSafeSalvageTableRSC
+  table: !type:AllSelector
+    children:
+    - id: WeaponSniperRSC
+    - id: SpeedLoaderLightRifle
+      prob: 0.8 # Chance for no Ammo
+
+## Laser Carbine - less laser than secs, chance for practice laser
+- type: entityTable
+  id: GunSafeSalvageTableLaserCarbine
+  table: !type:GroupSelector
+    children:
+    - id: WeaponLaserCarbine
+    - id: WeaponLaserCarbinePractice
+
+## Kammerer - less weapons and ammo than secs or the cargo crate. also beanbag ammo.
+- type: entityTable
+  id: GunSafeSalvageTableKammerer
+  table: !type:AllSelector
+    children:
+    - id: WeaponShotgunKammerer
+    - id: MagazineShotgunBeanbag
+      prob: 0.8 # Chance for no Ammo
+
+## Drozd - less weapons and ammo than secs or the cargo crate.
+- type: entityTable
+  id: GunSafeSalvageTableDrozd
+  table: !type:AllSelector
+    children:
+    - id: WeaponSubMachineGunDrozd
+    - id: MagazineBoxPistol # Has more ammo than an SMG magazine, but the Drozd only accepts magazines. Requires you to eject, manually reload, and reinsert a magazine if you want to actually reload the drozd. Doable against Mobs, death sentence in a fight againts players. Hopefully, thats enough to dissuade validhunting...
+      prob: 0.8 # Chance for no Ammo
+
+# Safe Spawn Fill
+- type: entityTable
+  id: GunSafeSalvageTableLoot
+  table: !type:GroupSelector
+    children:
+    # Common
+    - !type:GroupSelector
+      weight: 30
+      children:
+      - id: GunSafeSalvageTableCrushers
+      - id: GunSafeSalvageTablePKA
+      - id: GunSafeSalvageTableFlintlock
+      - id: GunSafeSalvageTableImprovisedShotgun
+    # Uncommon
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - id: GunSafeSalvageTableDoubleBarrelShotgun
+      - id: GunSafeSalvageTableMosin
+      - id: GunSafeSalvageTableBlunderbuss
+    # Rare
+    - !type:GroupSelector
+      weight: 15
+      children:
+      - id: GunSafeSalvageTableRSC
+      - id: GunSafeSalvageTableLaserCarbine
+      - id: GunSafeSalvageTableKammerer
+        weight: 0.1
+      - id: GunSafeSalvageTableDrozd
+        weight: 0.1
+
 # Armory Lockers
 # DO NOT MAP THESE, USE THE RANDOM SAFE SPAWNER
 # There is purposefully no Retro Laser or Pirate Revolver safes.
 
-## Base Salvage Safe, as to not repeat the Suffix definition. Sec Locked safe with less and weaker guns.
+## Salvage-mapped Gun Safe. Sec Locked with less and weaker guns.
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
-  id: GunSafeSalvageBase
-  suffix: Salvage, Harmony
-
-## Crusher safe
-- type: entity
-  parent: GunSafeSalvageBase
-  id: GunSafeSalvageCrushers
-  name: crusher safe
-  components:
+  id: GunSafeSalvage
+  suffix: Salvage, Filled, Harmony
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
-        tableId: LockerSalvageCrushersTable
-
-## Flintlock safe
-- type: entity
-  parent: GunSafeSalvageBase
-  id: GunSafeSalvageFlintlock
-  name: flintlock safe
-  components:
-  - type: StorageFill
-    contents:
-    - id: WeaponPistolFlintlockEmpty
-    - id: MagazineBoxMagnum # Likely to be replaced with a smaller ammo box
-
-## PKA safe
-- type: entity
-  parent: GunSafeSalvageBase
-  id: GunSafeSalvagePKA
-  name: proto-kinetic accelerator safe
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:NestedSelector
-        tableId: LockerSalvagePKATable
-
-## Blunderbuss safe
-- type: entity
-  parent: GunSafeSalvageBase
-  id: GunSafeSalvageBlunderbuss
-  name: blunderbuss safe
-  components:
-  - type: StorageFill
-    contents:
-    - id: WeaponShotgunBlunderbuss
-    - id: MagazineShotgunBeanbag
-
-## Improvised shotgun components safe
-- type: entity
-  parent: GunSafeSalvageBase
-  id: GunSafeSalvageImprovisedShotgun
-  name: broken shotgun safe
-  components:
-  - type: StorageFill
-    contents:
-    - id: ModularReceiver
-    - id: RifleStock
-    - id: MagazineShotgunBeanbag
-
-## Double Barrel Shotgun safe
-- type: entity
-  parent: GunSafeSalvageBase
-  id: GunSafeSalvageDoubleBarrelShotgun
-  name: double barrel shotgun safe
-  components:
-  - type: StorageFill
-    contents:
-    - id: WeaponShotgunDoubleBarreledRubber
-    - id: MagazineShotgunBeanbag
-
-## Mosin safe
-- type: entity
-  parent: GunSafeSalvageBase
-  id: GunSafeSalvageMosin
-  name: kardashev-mosin safe
-  components:
-  - type: StorageFill
-    contents:
-    - id: WeaponSniperMosin
-    - id: SpeedLoaderLightRifle
-
-## RSC safe
-- type: entity
-  parent: GunSafeSalvageBase
-  id: GunSafeSalvageRSC
-  name: rsc modèle 1917 safe
-  components:
-  - type: StorageFill
-    contents:
-    - id: WeaponSniperRSC
-    - id: SpeedLoaderLightRifle
-
-## Laser Carbine Safe - less laser than secs
-- type: entity
-  parent: GunSafeSalvageBase
-  id: GunSafeSalvageLaserCarbine
-  name: laser safe
-  components:
-  - type: StorageFill
-    contents:
-    - id: WeaponLaserCarbine
-
-## Kammerer Safe - less weapons and ammo than secs or the cargo crate. also beanbag ammo.
-- type: entity
-  parent: GunSafeSalvageBase
-  id: GunSafeSalvageKammerer
-  name: kammerer safe
-  components:
-  - type: StorageFill
-    contents:
-    - id: WeaponShotgunKammerer
-    - id: MagazineShotgunBeanbag
-
-## Drozd Safe - less weapons and ammo than secs or the cargo crate.
-- type: entity
-  parent: GunSafeSalvageBase
-  id: GunSafeSalvageDrozd
-  name: drozd safe
-  components:
-  - type: StorageFill
-    contents:
-    - id: WeaponSubMachineGunDrozd
-    - id: MagazineBoxPistol # Has more ammo than an SMG magazine, but the Drozd only accepts magazines. Requires you to eject, manually reload, and reinsert a magazine if you want to actually reload the drozd. Doable against Mobs, death sentence in a fight againts players. Hopefully, thats enough to dissuade validhunting...
+        tableId: GunSafeSalvageTableLoot
+        prob: 0.7 # Chance to spawn Empty
