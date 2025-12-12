@@ -36,7 +36,7 @@
   id: TraitorObjectiveGroupState
   weights:
     EscapeShuttleObjective: 0.4 #Harmony change: 1 -> 0.4
-    #DieObjective: 0.15 # Harmony. Change: 0.05 -> 0.15. Also commented out, as DAGD has been split off into its own antagonist (the Marauder) so that you can opt into one but not the other.
+    #DieObjective: 0.15 # Harmony. Change: 0.2 -> 0.15. Also commented out, as DAGD has been split off into its own antagonist (the Marauder) so that you can opt into one but not the other.
     TraitorSurviveObjective: 0.6 #Harmony objective
     #HijackShuttleObjective: 0.02
 
