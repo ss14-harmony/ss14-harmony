@@ -141,30 +141,43 @@
   id: GunSafeSalvageTableLoot
   table: !type:GroupSelector
     children:
+    - !type:NoneSelector
+      weight: 30
     # Common
     - !type:GroupSelector
       weight: 30
       children:
-      - id: GunSafeSalvageTableCrushers
-      - id: GunSafeSalvageTablePKA
-      - id: GunSafeSalvageTableFlintlock
-      - id: GunSafeSalvageTableImprovisedShotgun
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableCrushers
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTablePKA
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableFlintlock
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableImprovisedShotgun
     # Uncommon
     - !type:GroupSelector
       weight: 25
       children:
-      - id: GunSafeSalvageTableDoubleBarrelShotgun
-      - id: GunSafeSalvageTableMosin
-      - id: GunSafeSalvageTableBlunderbuss
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableDoubleBarrelShotgun
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableMosin
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableBlunderbuss
     # Rare
     - !type:GroupSelector
       weight: 15
       children:
-      - id: GunSafeSalvageTableRSC
-      - id: GunSafeSalvageTableLaserCarbine
-      - id: GunSafeSalvageTableKammerer
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableRSC
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableLaserCarbine
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableKammerer
         weight: 0.1
-      - id: GunSafeSalvageTableDrozd
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableDrozd
         weight: 0.1
 
 # Armory Lockers
@@ -176,8 +189,8 @@
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafeSalvage
   suffix: Salvage, Filled, Harmony
+  components:
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
         tableId: GunSafeSalvageTableLoot
-        prob: 0.7 # Chance to spawn Empty

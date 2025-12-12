@@ -169,24 +169,3 @@
       - !type:NestedSelector
         tableId: HarmonySalvageArmoryWeaponsTable
         weight: 45.0
-
-## Safe Spawner
-- type: entity
-  name: random safe spawner
-  suffix: Salvage, Harmony
-  id: HarmonyRandomSafeSpawnerSalvage
-  parent: MarkerBase
-  components:
-  - type: Sprite
-    layers:
-    - state: red
-    - sprite: Structures/Storage/closet.rsi
-      state: shotguncase
-    - sprite: Structures/Storage/closet.rsi
-      state: shotguncase_door
-    - sprite: Structures/Storage/closet.rsi
-      state: locked
-  - type: EntityTableSpawner
-    offset: 0.0
-    table: !type:NestedSelector
-      tableId: HarmonySalvageArmoryGunSafeTable
