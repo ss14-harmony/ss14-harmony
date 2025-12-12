@@ -50,6 +50,7 @@
       weight: 16
       children:
       - id: WeaponShotgunBlunderbuss
+      - id: WeaponLaserCarbinePractice # Practice Laser
       # Improvised Shotgun Pieces
       - !type:AllSelector
         children:
