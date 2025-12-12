@@ -2,7 +2,6 @@ using Content.Server.Administration.Logs;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Ghost;
 using Content.Server.Popups;
-using Content.Server.Repairable;
 using Content.Server.Stack;
 using Content.Server.Wires;
 using Content.Shared.Body.Systems;
@@ -20,11 +19,14 @@ using Content.Shared.Materials;
 using Content.Shared.Mind;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Power;
+using Content.Shared.Repairable;
+using Content.Shared.Stacks;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Humanoid;
 
 namespace Content.Server.Materials;
@@ -185,11 +187,12 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
 
         var xform = Transform(uid);
 
-        SpawnMaterialsFromComposition(uid, item, completion * component.Efficiency, xform: xform);
+        if (component.ReclaimMaterials)
+            SpawnMaterialsFromComposition(uid, item, completion * component.Efficiency, xform: xform);
 
+        // Harmony start - reclaimer doesn't gib
         if (CanRecycleMob(uid, item, component))
         {
-            // Harmony - Recycler now deals damage instead of gibbing.
             if (component.Damage == null)
                 return;
 
@@ -199,13 +202,17 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
                 _adminLogger.Add(LogType.Damaged, logImpact, $"{ToPrettyString(item):victim} was recycled by {ToPrettyString(uid):entity}, dealing {component.Damage.GetTotal()} damage.");
                 _appearance.SetData(uid, RecyclerVisuals.Bloody, true);
             }
+            // Harmony end
         }
         else
         {
-            SpawnChemicalsFromComposition(uid, item, completion, true, component, xform);
-            QueueDel(item);
+            if (component.ReclaimSolutions)
+                SpawnChemicalsFromComposition(uid, item, completion, true, component, xform);
+
+            QueueDel(item); // Harmony - move inside the else check
         }
 
+        // QueueDel(item); Harmony
     }
 
     private void SpawnMaterialsFromComposition(EntityUid reclaimer,
@@ -221,9 +228,12 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
         if (!Resolve(item, ref composition, false))
             return;
 
+        // If more of these checks are needed, use an event instead
+        var modifier = CompOrNull<StackComponent>(item)?.Count ?? 1.0f;
+
         foreach (var (material, amount) in composition.MaterialComposition)
         {
-            var outputAmount = (int) (amount * efficiency);
+            var outputAmount = (int) (amount * efficiency * modifier);
             _materialStorage.TryChangeMaterialAmount(reclaimer, material, outputAmount, storage);
         }
 

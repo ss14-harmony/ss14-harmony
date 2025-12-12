@@ -69,7 +69,7 @@ public sealed class StepTriggerSystem : EntitySystem
                 if (ent == uid)
                     continue;
 
-                if (_whitelistSystem.IsBlacklistPass(component.Blacklist, ent.Value))
+                if (_whitelistSystem.IsWhitelistPass(component.Blacklist, ent.Value))
                 {
                     return false;
                 }
@@ -139,7 +139,7 @@ public sealed class StepTriggerSystem : EntitySystem
         // and the entity is flying or currently weightless
         // Makes sense simulation wise to have this be part of steptrigger directly IMO
         if (!component.IgnoreWeightless && TryComp<PhysicsComponent>(otherUid, out var physics) &&
-            (physics.BodyStatus == BodyStatus.InAir || _gravity.IsWeightless(otherUid, physics)))
+            (physics.BodyStatus == BodyStatus.InAir || _gravity.IsWeightless(otherUid)))
             return false;
 
         var msg = new StepTriggerAttemptEvent { Source = uid, Tripper = otherUid };
@@ -236,6 +236,20 @@ public sealed class StepTriggerSystem : EntitySystem
         component.Active = active;
         Dirty(uid, component);
     }
+
+    // Goobstation start
+    public void SetIgnoreWeightless(Entity<StepTriggerComponent?> entity, bool ignore)
+    {
+        if (!Resolve(entity, ref entity.Comp))
+            return;
+
+        if (ignore == entity.Comp.IgnoreWeightless)
+            return;
+
+        entity.Comp.IgnoreWeightless = ignore;
+        Dirty(entity);
+    }
+    // Goobstation end
 }
 
 [ByRefEvent]

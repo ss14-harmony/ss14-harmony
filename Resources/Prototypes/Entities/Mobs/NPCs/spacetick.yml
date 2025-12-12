@@ -41,7 +41,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      15: Dead
+      15: Dead # Harmony Change, reverts salvage mob health changes, 5 -> 15
   - type: Destructible
     thresholds:
     - trigger:
@@ -53,6 +53,7 @@
         recursive: false
   - type: Stamina
     critThreshold: 15
+    animationThreshold: 5
   - type: MovementAlwaysTouching
   - type: DamageStateVisuals
     states:

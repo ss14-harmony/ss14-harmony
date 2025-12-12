@@ -42,7 +42,39 @@
   categories:
   - UplinkWeaponry
 
+- type: listing
+  id: UplinkRifleBandit
+  name: uplink-rifle-bandit-name
+  description: uplink-rifle-bandit-desc
+  productEntity: ClothingBackpackDuffelSyndicateFilledDMR
+  icon: { sprite: /Textures/_Harmony/Objects/Weapons/Guns/Rifles/bandit.rsi, state: icon }
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 15
+  cost:
+    Telecrystal: 18
+  categories:
+  - UplinkWeaponry
+
 # Explosives
+
+- type: listing
+  id: UplinkKudzuGrenade
+  name: uplink-kudzu-grenade-name
+  description: uplink-kudzu-grenade-desc
+  productEntity: KudzuGrenade
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkExplosives
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
 
 - type: listing
   id: UplinkPizzaBomb
@@ -75,7 +107,7 @@
     whitelist:
       components:
       - SurplusBundle
-  
+
 - type: listing
   id: UplinkX4
   name: uplink-X4-name
@@ -111,18 +143,6 @@
 
 # Ammo
 
-# For the Bulldog
-- type: listing
-  id: UplinkShotgunBuckshotMagazineHarmony
-  name: uplink-shotgun-drum-pellet-name
-  description: uplink-shotgun-drum-pellet-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: pellets }
-  productEntity: MagazineShotgun
-  cost:
-    Telecrystal: 2
-  categories:
-  - UplinkAmmo
-
 # For the Blood-Red Energy Carbine
 - type: listing
   id: UplinkBloodRedCarbineAmmoHarmony
@@ -135,11 +155,11 @@
   - UplinkAmmo
 
 - type: listing
-  id: UplinkShotgunSlugMagazineHarmony
-  name: uplink-shotgun-drum-slug-name
-  description: uplink-shotgun-drum-slug-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: slug }
-  productEntity: MagazineShotgunSlug
+  id: UplinkRifleDMRMagazine
+  name: uplink-rifle-magazine-bandit-name
+  description: uplink-rifle-magazine-bandit-desc
+  icon: { sprite: /Textures/_Harmony/Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/dmr_mag.rsi, state: base }
+  productEntity: MagazineLightRifleCaseless
   cost:
     Telecrystal: 2
   categories:
@@ -186,7 +206,33 @@
 
 # Disruption
 
+- type: listing
+  id: AccessConfiguratorSyndicate
+  name: uplink-syndicate-access-config-name
+  description: uplink-syndicate-access-config-desc
+  productEntity: AccessConfiguratorSyndicate
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkDisruption
+
 # Allies
+
+- type: listing
+  id: UplinkReinforcementRadioSyndicateCyborgSupport
+  name:  uplink-reinforcement-radio-cyborg-support-name
+  description: uplink-reinforcement-radio-cyborg-support-desc
+  productEntity: ReinforcementRadioSyndicateCyborgSupport
+  icon: { sprite: _Harmony/Objects/Devices/communication.rsi, state: old-radio-borg-support }
+  cost:
+    Telecrystal: 25
+  categories:
+  - UplinkAllies
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
 
 # Implants
 
@@ -233,6 +279,16 @@
   name: uplink-cluster-weh-name
   description: uplink-cluster-weh-desc
   productEntity: ClusterWeh
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkPointless
+
+- type: listing
+  id: UplinkSyndieDrobeFlatpack
+  name: uplink-syndiedrobe-flatpack-name
+  description: uplink-syndiedrobe-flatpack-desc
+  productEntity: SyndieDrobeFlatpack
   cost:
     Telecrystal: 3
   categories:

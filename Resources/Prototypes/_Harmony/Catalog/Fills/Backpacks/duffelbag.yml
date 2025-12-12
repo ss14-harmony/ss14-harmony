@@ -33,3 +33,15 @@
     - id: WeaponShotgunHushpup
     - id: BoxLethalshot
     - id: TreasureCoinIron
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateFilledDMR
+  name: Bandit bundle
+  description: You're on your own, Noble. Contains a Bandit DMR bundled with 2 DMR magazines.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleBandit
+    - id: MagazineLightRifleCaseless
+      amount: 2

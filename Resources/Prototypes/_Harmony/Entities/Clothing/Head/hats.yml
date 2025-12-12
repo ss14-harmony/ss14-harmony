@@ -8,7 +8,7 @@
     sprite: _Harmony/Clothing/Head/Hats/hoswidebrimhat.rsi
   - type: Clothing
     sprite: _Harmony/Clothing/Head/Hats/hoswidebrimhat.rsi
-    
+
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatFedoraBlueHarmony
@@ -45,7 +45,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretSecuritySeniorOfficerHarmony
   name: senior officer's beret
-  description: 
+  description:
   components:
   - type: Sprite
     sprite: _Harmony/Clothing/Head/Hats/beret_security_senior.rsi
@@ -163,6 +163,36 @@
     sprite: _Harmony/Clothing/Head/Hats/black_bow.rsi
   - type: Clothing
     sprite: _Harmony/Clothing/Head/Hats/black_bow.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadPyjamaNanotrasenBlue
+  name: blue nanotrasen pyjama hat
+  description: A hat made with comfort in mind.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Head/Hats/pyjama_nanotrasenblue.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Head/Hats/pyjama_nanotrasenblue.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadBase, BaseCentcommContraband]
+  id: ClothingHeadPyjamaCentcomm
+  name: CentComm pyjama hat
+  description: A hat worn by CentComm officials to increase their 'work' efficiency.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Head/Hats/pyjama_centcomm.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Head/Hats/pyjama_centcomm.rsi
   - type: Tag
     tags:
     - ClothMade

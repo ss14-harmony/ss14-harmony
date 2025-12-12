@@ -1,0 +1,17 @@
+- type: entity
+  parent: ReinforcementRadio
+  id: ReinforcementRadioSyndicateCyborgSupport
+  name: syndicate support cyborg reinforcement radio
+  suffix: NukeOps
+  description: Call in a well equipped support cyborg, instantly!
+  components:
+  - type: GhostRole
+    name: ghost-role-information-syndicate-cyborg-support-name
+    description: ghost-role-information-syndicate-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleGhostRoleSilicon
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: PlayerBorgSyndicateSupportBattery

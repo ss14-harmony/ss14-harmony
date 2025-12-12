@@ -140,3 +140,25 @@
     sprite: _Harmony/Clothing/Uniforms/Jumpsuit/syndie_business.rsi
   - type: Clothing
     sprite: _Harmony/Clothing/Uniforms/Jumpsuit/syndie_business.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPyjamaNanotrasenBlue
+  name: blue nanotrasen pyjamas
+  description: Why does Nanotrasen sell pyjamas? Because they can.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/pyjama_nanotrasenblue.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/pyjama_nanotrasenblue.rsi
+
+- type: entity
+  parent: [ ClothingUniformBase, BaseCentcommContraband ]
+  id: ClothingUniformJumpsuitPyjamaCentcomm
+  name: CentComm pyjamas
+  description: A pyjama jumpsuit worn by CentComm officials while 'working'.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/pyjama_centcomm.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/pyjama_centcomm.rsi

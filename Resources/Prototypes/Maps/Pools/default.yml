@@ -1,26 +1,24 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-  - Amber
   - Bagel
   - Box
-  - Convex
-  #- Core
-  - Elkridge
   - Fland
-  #- Gate
-  #- Loop # Harmony, removed
   - Marathon
-  #- Meta # Harmony, removed
   - Oasis
-  - Omega
   - Packed
   - Plasma
   - Reach
-  #- Train
-  # Harmony
+  - Exo
+  - Snowball
+  # Harmony maps start
   - Aspid
-  - Barratry
   - Atlas
+  - Barratry
+  - Elkridge
+  - Jellyfish
   - Mira
+  - Omega
   - Prime
+  - Scylla
+  # Harmony maps end

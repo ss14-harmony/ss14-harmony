@@ -1,0 +1,63 @@
+- type: entity
+  id: BinglePit
+  name: bingle pit
+  description: The core of all bingles. Looks hungry.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    layers:
+    - sprite: _Harmony/Structures/Specific/bingle_pit.rsi
+      state: icon
+  - type: Appearance
+  - type: ScaleVisuals
+  - type: BinglePit
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.4
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+        - WallLayer
+        mask:
+        - ItemMask
+        density: 1000
+        hard: false
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 256
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CrateFunBingleLoot:
+            min: 1
+            max: 1
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Weapons/Guns/Gunshots/rocket_launcher.ogg
+  - type: RequireProjectileTarget
+  - type: SolutionContainerManager
+    solutions:
+      drainBuffer:
+        maxVol: 1000
+  - type: Drain
+    unitsPerSecond: 10
+    unitsDestroyedPerSecond: 10

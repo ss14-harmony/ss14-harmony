@@ -18,6 +18,8 @@
     - Human
     - Moth
     - Reptilian
+    - Vulpkanin
+    - Avali # Latestation
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox
@@ -75,6 +77,7 @@
     - Dwarf
     - Human
     - Reptilian
+    - Vulpkanin
 
 - type: loadoutEffectGroup
   id: OxygenBreatherMimeMoth

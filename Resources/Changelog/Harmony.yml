@@ -2148,3 +2148,758 @@ Entries:
     changes:
     - type: Add
       message: Added the staff of slipping to the wizard's grimoire.
+  - id: 781
+    author: kleinerstation13
+    time: '2025-07-02T15:58:51.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/781
+    changes:
+    - type: Tweak
+      message: Changed the hristov's firing sound.
+  - id: 508
+    author: kleinerstation13
+    time: '2025-07-04T15:38:26.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/508
+    changes:
+    - type: Add
+      message: Added a syndicate support cyborg, available to Nuclear Operatives for 25 TC.
+  - id: 545
+    author: TheSecondLord
+    time: '2025-07-04T15:38:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/545
+    changes:
+    - type: Add
+      message: Added an item curse spell to the wizard's grimoire.
+  - id: 577
+    author: kleinerstation13
+    time: '2025-07-04T15:40:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/577
+    changes:
+    - type: Add
+      message: Added a semi-auto DMR to the uplink.
+  - id: 482
+    author: Ermucat
+    time: '2025-07-05T14:40:54.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/482
+    changes:
+    - type: Add
+      message: Added bingles.
+  - id: 841
+    author: BlueMoon059
+    time: '2025-07-07T15:22:45.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/841
+    changes:
+    - type: Tweak
+      message: Bingles no longer announce their presence over the Central Command announcement console when they appear on station.
+  - id: 843
+    author: BlueMoon059
+    time: '2025-07-08T15:16:40.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/843
+    changes:
+    - type: Tweak
+      message: Fultons no longer vanish from containers when the container is damaged.
+  - id: 774
+    author: CollectionOfBones128
+    time: '2025-07-08T15:21:02.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/774
+    changes:
+    - type: Tweak
+      message: The healing-focused Nuclear Operative is now called the Nuclear Operative Medic.
+  - id: 860
+    author: kleinerstation13
+    time: '2025-07-17T01:40:19.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/860
+    changes:
+    - type: Tweak
+      message: The hushpup firerate and spread has been nerfed.
+  - id: 874
+    author: thejMark14
+    time: '2025-07-19T21:27:39.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/874
+    changes:
+    - type: Add
+      message: Many markings from Impstation, EE, and ATD have been added.
+    - type: Tweak
+      message: The marking limits have been increased.
+  - id: 882
+    author: kleinerstation13
+    time: '2025-07-23T01:06:03.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/882
+    changes:
+    - type: Tweak
+      message: The Bandit DMR has been resprited.
+  - id: 875
+    author: kleinerstation13
+    time: '2025-07-23T01:08:19.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/875
+    changes:
+    - type: Tweak
+      message: The hushpup has been resprited.
+  - id: 879
+    author: kleinerstation13
+    time: '2025-07-28T21:52:32.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/879
+    changes:
+    - type: Tweak
+      message: Tweaked pizza box description to be less ambiguous
+  - id: 523
+    author: DoggowithaKeyboard
+    time: '2025-07-29T21:20:53.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/523
+    changes:
+    - type: Add
+      message: Ported over Playing Cards from Estacao Pirata!
+  - id: 923
+    author: youtissoum
+    time: '2025-07-30T23:25:06.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/923
+    changes:
+    - type: Fix
+      message: Non-humanoids can no longer become blood brothers.
+  - id: 570
+    author: MoonlightHollow
+    time: '2025-08-02T20:35:29.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/570
+    changes:
+    - type: Add
+      message: Added Avali, chirps!
+  - id: 560
+    author: MoonlightHollow
+    time: '2025-08-03T16:56:27.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/560
+    changes:
+    - type: Add
+      message: Added more accents.
+  - id: 933
+    author: MoonlightHollow
+    time: '2025-08-04T13:58:55.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/933
+    changes:
+    - type: Add
+      message: Added 58 more Avali names.
+  - id: 940
+    author: kleinerstation13
+    time: '2025-08-04T14:15:08.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/940
+    changes:
+    - type: Add
+      message: Added a guidebook entry for Avali.
+  - id: 941
+    author: kleinerstation13
+    time: '2025-08-04T16:41:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/941
+    changes:
+    - type: Tweak
+      message: Avali can no longer recieve blood from saline or iron, they must replenish blood with copper or liquid ammonia instead.
+    - type: Tweak
+      message: Saline will now poison Avali.
+  - id: 850
+    author: youtissoum
+    time: '2025-08-05T09:34:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/850
+    changes:
+    - type: Tweak
+      message: Bingles now deal less stun damage, only stunning after 6 hits.
+    - type: Tweak
+      message: Bingles are now slightly less common.
+    - type: Tweak
+      message: Bingles can now wide-swing.
+    - type: Tweak
+      message: Bingle max health is now 80.
+    - type: Fix
+      message: Destroyed bingle pits will now correctly spawn a bingle loot crate.
+    - type: Fix
+      message: People who fell into bingle pits will now actually be unable to interact.
+  - id: 842
+    author: youtissoum
+    time: '2025-08-05T09:35:33.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/842
+    changes:
+    - type: Tweak
+      message: Converted blood brothers will now be deconverted when they are mindshielded.
+  - id: 838
+    author: youtissoum
+    time: '2025-08-05T09:36:22.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/838
+    changes:
+    - type: Tweak
+      message: Blood brothers can no longer roll the "Die A Glorious Death" objective.
+  - id: 816
+    author: youtissoum
+    time: '2025-08-05T09:36:55.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/816
+    changes:
+    - type: Tweak
+      message: Handheld lights will now only enter their dying state once they reach 5% battery capacity.
+  - id: 839
+    author: youtissoum
+    time: '2025-08-05T09:39:38.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/839
+    changes:
+    - type: Remove
+      message: The prisoner round-start job has been removed from the game.
+  - id: 947
+    author: TheCrimsonJupiter
+    time: '2025-08-05T11:46:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/947
+    changes:
+    - type: Fix
+      message: The open HoS flask will no longer show up as an error sprite.
+  - id: 950
+    author: CollectionOfBones128
+    time: '2025-08-05T18:56:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/950
+    changes:
+    - type: Tweak
+      message: Blood Brother has been renamed to Blood Bound.
+  - id: 609
+    author: Ermucat
+    time: '2025-08-06T11:48:03.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/609
+    changes:
+    - type: Add
+      message: Added a spell that summons pitbulls to the wizard grimoire.
+  - id: 891
+    author: CollectionOfBones128
+    time: '2025-08-06T12:37:31.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/891
+    changes:
+    - type: Tweak
+      message: The salvage mining hardsuit is now faster.
+  - id: 724
+    author: kleinerstation13
+    time: '2025-08-06T14:54:28.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/724
+    changes:
+    - type: Tweak
+      message: The tech disk terminal will no longer deafen the user.
+  - id: 640
+    author: kleinerstation13
+    time: '2025-08-06T16:13:08.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/640
+    changes:
+    - type: Add
+      message: The nuclear operative uplink now contains a stealth suit.
+  - id: 963
+    author: CollectionOfBones128
+    time: '2025-08-07T12:56:41.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/963
+    changes:
+    - type: Add
+      message: You can now mute species sound effects in a new options tab.
+  - id: 916
+    author: kleinerstation13
+    time: '2025-08-07T21:09:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/916
+    changes:
+    - type: Fix
+      message: Fixed incorrect hyperzine uplink descriptions.
+  - id: 865
+    author: kleinerstation13
+    time: '2025-08-07T21:12:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/865
+    changes:
+    - type: Remove
+      message: Removed the Estoc DMR from the uplink.
+  - id: 862
+    author: kleinerstation13
+    time: '2025-08-07T21:13:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/862
+    changes:
+    - type: Fix
+      message: Fixed upstream lecter sprite appearing in the rifle crate order.
+  - id: 702
+    author: Ermucat
+    time: '2025-08-08T12:20:33.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/702
+    changes:
+    - type: Add
+      message: Added a blob AI core customization option.
+  - id: 954
+    author: BlueMoon059
+    time: '2025-08-08T12:23:43.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/954
+    changes:
+    - type: Tweak
+      message: The in-game description of the blue alert has been modified to better reflect the SoP.
+  - id: 959
+    author: spanky-spanky
+    time: '2025-08-08T12:46:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/959
+    changes:
+    - type: Add
+      message: Computers now emit ambient audio.
+  - id: 837
+    author: kleinerstation13
+    time: '2025-08-08T13:22:22.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/837
+    changes:
+    - type: Tweak
+      message: The bandit DMR now does 35 damage per hit.
+  - id: 863
+    author: Ermucat
+    time: '2025-08-08T17:28:21.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/863
+    changes:
+    - type: Tweak
+      message: Wizards can no longer spawn as a midround.
+  - id: 887
+    author: superjeepboy
+    time: '2025-08-08T20:33:08.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/887
+    changes:
+    - type: Add
+      message: Added a new lobby screen of Fossa's character, Hears-The-Voices made by Baxter!
+  - id: 821
+    author: DDeegan
+    time: '2025-08-09T18:20:46.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/821
+    changes:
+    - type: Add
+      message: Added a dragon head helmet, dropped by Space Dragons.
+  - id: 910
+    author: kleinerstation13
+    time: '2025-08-09T19:39:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/910
+    changes:
+    - type: Tweak
+      message: Steal the Disk + Survive to Central Command objectives are no longer able to roll alongside eachother
+    - type: Tweak
+      message: Teach a Lesson and Maroon/Gib objectives difficulty was tweaked
+  - id: 962
+    author: MoonlightHollow
+    time: '2025-08-09T19:51:27.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/962
+    changes:
+    - type: Add
+      message: An avali plushie is now available as a trinket.
+  - id: 826
+    author: kleinerstation13
+    time: '2025-08-09T20:14:47.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/826
+    changes:
+    - type: Add
+      message: Added a headset with the command key to the Warden's locker.
+  - id: 870
+    author: kleinerstation13
+    time: '2025-08-09T20:46:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/870
+    changes:
+    - type: Tweak
+      message: Changed Bulldog and Python firing sound.
+  - id: 978
+    author: CollectionOfBones128
+    time: '2025-08-11T00:32:13.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/978
+    changes:
+    - type: Tweak
+      message: Recolored the cargo banner sprite.
+  - id: 982
+    author: kleinerstation13
+    time: '2025-08-11T12:17:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/982
+    changes:
+    - type: Tweak
+      message: Changed RSC sounds.
+  - id: 833
+    author: kleinerstation13
+    time: '2025-08-11T14:29:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/833
+    changes:
+    - type: Add
+      message: Added an announcement that plays after 25 minutes when the Extended preset is selected.
+  - id: 985
+    author: youtissoum
+    time: '2025-08-11T18:44:09.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/985
+    changes:
+    - type: Tweak
+      message: The blood bound survive objective now requires both the converted and the initial blood bound to be alive.
+    - type: Tweak
+      message: The blood bound escape to centcomm objective now requires both the converted and the initial blood bound to be on the shuttle.
+  - id: 711
+    author: dragydevi
+    time: '2025-08-14T13:33:13.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/711
+    changes:
+    - type: Add
+      message: A queue system is now available to make connecting to the server more fair.
+  - id: 992
+    author: whythelettuce
+    time: '2025-08-14T22:08:40.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/992
+    changes:
+    - type: Add
+      message: Added athena station, a station meant to be used during Teach and Learn events.
+  - id: 1000
+    author: youtissoum
+    time: '2025-08-15T17:25:13.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1000
+    changes:
+    - type: Add
+      message: Added ERP (Emergency Response Parties).
+  - id: 937
+    author: CollectionOfBones128
+    time: '2025-08-15T18:17:28.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/937
+    changes:
+    - type: Tweak
+      message: The ChemMaster 4000 now uses the chemicals in the beaker to make pills, instead of the ones from the buffer.
+  - id: 788
+    author: BlueMoon059
+    time: '2025-08-18T03:53:19.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/788
+    changes:
+    - type: Tweak
+      message: Made coins scrappable again.
+  - id: 871
+    author: kleinerstation13
+    time: '2025-08-27T16:32:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/871
+    changes:
+    - type: Tweak
+      message: Resprited hypo ammo box
+  - id: 1023
+    author: BlueMoon059
+    time: '2025-08-28T22:06:12.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1023
+    changes:
+    - type: Add
+      message: Adds a new lobby song, Get That Antag! by mrjajkes.
+  - id: 1018
+    author: OrnamentalFreak
+    time: '2025-08-30T20:01:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1018
+    changes:
+    - type: Add
+      message: adds Omega Station
+  - id: 986
+    author: thejMark14
+    time: '2025-09-02T14:37:57.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/986
+    changes:
+    - type: Add
+      message: SyndieDrobe flatpack as an item and to the uplink for 3TC.
+  - id: 1026
+    author: BlueMoon059
+    time: '2025-09-02T14:40:10.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1026
+    changes:
+    - type: Tweak
+      message: Server pin trinkets now use a dropdown menu system similar to cigarettes.
+  - id: 1038
+    author: DDeegan
+    time: '2025-09-02T16:56:56.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1038
+    changes:
+    - type: Tweak
+      message: Vox emote and speech sounds can now be muted like other species
+  - id: 1039
+    author: youtissoum
+    time: '2025-09-02T17:50:53.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1039
+    changes:
+    - type: Fix
+      message: The species voicelines accessibility tab will no longer incorrectly show the options as unpressed when opened.
+  - id: 1040
+    author: SomegnihT
+    time: '2025-09-02T22:26:38.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1040
+    changes:
+    - type: Fix
+      message: Glorp can now be rolled as a steal target for Thieves
+  - id: 1042
+    author: youtissoum
+    time: '2025-09-03T21:34:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1042
+    changes:
+    - type: Fix
+      message: Voxes can no longer sometimes crash the game when using magic mirrors or barber scissors.
+  - id: 988
+    author: BlueMoon059
+    time: '2025-09-05T15:48:33.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/988
+    changes:
+    - type: Add
+      message: Adds new outcomes to a Ninja hacking a comms console. They can now call in paradox clones, bingles, ion borgs and in rare cases a lone-op or wizard.
+  - id: 513
+    author: Flarbergaster
+    time: '2025-09-05T17:25:02.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/513
+    changes:
+    - type: Add
+      message: Added a kudzu bomb containing a mutated kudzu for syndicates.
+  - id: 979
+    author: kleinerstation13
+    time: '2025-09-06T02:31:05.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/979
+    changes:
+    - type: Add
+      message: Added a couple of tracks from Voices of the Void to space ambience, courtesy of Wolfeni.
+  - id: 928
+    author: Ermucat
+    time: '2025-09-08T21:10:15.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/928
+    changes:
+    - type: Tweak
+      message: Reverted the overall damage reduction to salvage mobs and gear.
+  - id: 1057
+    author: youtissoum
+    time: '2025-09-11T16:50:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1057
+    changes:
+    - type: Tweak
+      message: All colored lights on exo are now normal lights.
+  - id: 934
+    author: kleinerstation13
+    time: '2025-09-12T17:51:31.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/934
+    changes:
+    - type: Add
+      message: Ported PKA rework from Delta-V.
+    - type: Tweak
+      message: Reworked PKA modkits to be cost-based, you can have multiple of the same one now.
+    - type: Tweak
+      message: PKA only does 25% damage when indoors.
+    - type: Add
+      message: Added PKA indoors modkit for salvage traitors which counters indoor damage reduction.
+  - id: 946
+    author: CollectionOfBones128
+    time: '2025-09-12T17:51:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/946
+    changes:
+    - type: Tweak
+      message: The atmospheres of planets findable on Expeditions have been tweaked to accomodate the changes to the Proto-Kinetic Accelerator
+  - id: 906
+    author: BlueMoon059
+    time: '2025-09-13T15:05:57.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/906
+    changes:
+    - type: Tweak
+      message: The QM's digiboard can now link to cargo order consoles. Gambling has never been easier.
+  - id: 1032
+    author: dragydevi
+    time: '2025-09-14T14:18:52.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1032
+    changes:
+    - type: Tweak
+      message: Increased the capacity of all crayons to 100.
+    - type: Tweak
+      message: Increased the capacity of the rainbow crayon to 120.
+  - id: 922
+    author: ProbablyAta
+    time: '2025-09-14T16:50:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/922
+    changes:
+    - type: Add
+      message: Nanotrasen pyjamas are now available to purchase in the cargo request console.
+  - id: 1049
+    author: BlueMoon059
+    time: '2025-09-14T17:20:52.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1049
+    changes:
+    - type: Fix
+      message: The ninja's call a threat objective will now properly spawn the new derelict variants.
+  - id: 1051
+    author: BlueMoon059
+    time: '2025-09-19T14:16:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1051
+    changes:
+    - type: Add
+      message: The HoP now starts with a physical copy of the Standard Operating Procedure in their pocket.
+  - id: 1009
+    author: SomegnihT
+    time: '2025-09-19T14:34:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1009
+    changes:
+    - type: Add
+      message: Syndicates and blood bounds can now get steal objectives for the HoS's energy magnum.
+    - type: Add
+      message: Syndicates, blood bounds, and thieves can now get steal objectives for the access configurator.
+  - id: 1082
+    author: youtissoum
+    time: '2025-09-19T20:16:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1082
+    changes:
+    - type: Fix
+      message: Hardsuit helmets will no longer show up as error sprites for reptilians and vulpkanins.
+    - type: Remove
+      message: More hardsuits with custom sprites are no longer wearable by smart corgis.
+  - id: 1086
+    author: kleinerstation13
+    time: '2025-09-21T14:03:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1086
+    changes:
+    - type: Fix
+      message: The uplink offer for Bulldog magazine will no longer appear twice.
+  - id: 1071
+    author: BlueMoon059
+    time: '2025-09-24T16:49:58.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1071
+    changes:
+    - type: Add
+      message: The Salvage Vendor now has advertisement and thank you lines!
+  - id: 439
+    author: Flarbergaster
+    time: '2025-10-01T15:43:58.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/439
+    changes:
+    - type: Add
+      message: Added Gizard the Wizard Lizard! A pet for wizards.
+  - id: 1102
+    author: BlueMoon059
+    time: '2025-10-03T14:54:05.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1102
+    changes:
+    - type: Fix
+      message: Pride Mantles are no longer randomized by EMPs.
+  - id: 1066
+    author: kleinerstation13
+    time: '2025-10-03T16:03:58.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1066
+    changes:
+    - type: Tweak
+      message: Added the elite suit back to traitor uplinks.
+  - id: 1021
+    author: whythelettuce
+    time: '2025-10-04T11:21:23.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1021
+    changes:
+    - type: Add
+      message: The NT-Royale casino shuttle can now spawn as part of the unknown visitor shuttle event.
+  - id: 1034
+    author: BlueMoon059
+    time: '2025-10-04T12:58:26.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1034
+    changes:
+    - type: Add
+      message: The syndicate uplink now contains the Syndiroach, a mothroach with a bomb on its back.
+  - id: 829
+    author: CollectionOfBones128
+    time: '2025-10-04T21:38:21.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/829
+    changes:
+    - type: Add
+      message: The NT Heavy Salvage Vessel has been added to the salvage ruin pool.
+  - id: 1114
+    author: kleinerstation13
+    time: '2025-10-09T13:13:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1114
+    changes:
+    - type: Fix
+      message: Saline will no longer metabolise at 0.5x efficiency
+  - id: 957
+    author: thejMark14
+    time: '2025-10-14T22:01:11.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/957
+    changes:
+    - type: Tweak
+      message: The Avali species has been resprited.
+  - id: 883
+    author: Ermucat
+    time: '2025-10-30T14:39:55.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/883
+    changes:
+    - type: Tweak
+      message: Mantis gloves can now take and inject chemicals.
+  - id: 1090
+    author: BlueMoon059
+    time: '2025-10-30T14:44:41.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1090
+    changes:
+    - type: Tweak
+      message: Goliaths and Basilisks now deal a mix of blunt and slash instead of blunt and pierce.
+  - id: 1087
+    author: BlueMoon059
+    time: '2025-10-30T14:47:55.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1087
+    changes:
+    - type: Remove
+      message: Magnet pulls and the VGroid no longer spawn salt ore.
+  - id: 1016
+    author: kleinerstation13
+    time: '2025-10-31T15:51:03.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1016
+    changes:
+    - type: Add
+      message: The Extended announcement now has a unique sound.
+  - id: 1097
+    author: SuperGDPWYL
+    time: '2025-10-31T15:52:09.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1097
+    changes:
+    - type: Remove
+      message: Shiva and Runtime will no longer attack zombies.
+    - type: Fix
+      message: Shiva and Runtime will no longer attack initial infected.
+  - id: 1129
+    author: Skybailey-dev
+    time: '2025-11-05T23:16:05.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1129
+    changes:
+    - type: Tweak
+      message: Paramedic now has external access.
+  - id: 1153
+    author: whythelettuce
+    time: '2025-11-11T13:04:27.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1153
+    changes:
+    - type: Add
+      message: 'Jellyfish Station: new lowpop station!'
+  - id: 840
+    author: CollectionOfBones128
+    time: '2025-11-12T02:00:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/840
+    changes:
+    - type: Fix
+      message: Fixed the random space corpses not having clothes when they were supposed to resemble specific jobs.
+    - type: Fix
+      message: Fixed oversight that made an N1984 sometimes spawn on random space corpses.
+  - id: 925
+    author: Ermucat
+    time: '2025-11-12T02:18:30.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/925
+    changes:
+    - type: Tweak
+      message: The wizards grimoire is now a weapon, and knocks back people
+  - id: 1119
+    author: BlueMoon059
+    time: '2025-11-12T05:08:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1119
+    changes:
+    - type: Add
+      message: Adds a new lobby art by Mofi, depicting an unfortunate encounter with a space dragon.
+  - id: 1058
+    author: BlueMoon059
+    time: '2025-11-12T05:43:31.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1058
+    changes:
+    - type: Add
+      message: Adds a pair of salvage-unique welding goggles for salvagers.
+  - id: 1159
+    author: Llfiend
+    time: '2025-11-21T09:18:45.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1159
+    changes:
+    - type: Remove
+      message: Tasers are no longer available to security.
+  - id: 720
+    author: TheAmazingCoder
+    time: '2025-11-21T17:06:23.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/720
+    changes:
+    - type: Add
+      message: A syndicate access configurator is now available in the uplink.
+  - id: 1161
+    author: whythelettuce
+    time: '2025-11-22T11:13:18.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1161
+    changes:
+    - type: Tweak
+      message: Jellyfish station has been updated.
+  - id: 1165
+    author: raccoonio
+    time: '2025-11-24T23:38:28.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1165
+    changes:
+    - type: Add
+      message: Adds Scylla Station, a medium-pop station based on supernatural being Scylla from The Odyssey.

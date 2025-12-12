@@ -1,0 +1,16 @@
+# Accents that work off of full replacements rather than word replacements.
+
+- type: accent
+  id: bingle
+  fullReplacements:
+  - accent-words-bingle-1  # for the odds
+  - accent-words-bingle-1
+  - accent-words-bingle-1
+  - accent-words-bingle-1
+  - accent-words-bingle-1
+  - accent-words-bingle-1
+  - accent-words-bingle-1
+  - accent-words-bingle-2
+  - accent-words-bingle-3
+  - accent-words-bingle-4
+  - accent-words-bingle-5
