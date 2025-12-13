@@ -126,7 +126,7 @@ public abstract class SharedRecruiterPenSystem : EntitySystem
             return false; // mindless nt drone...
 
         var (uid, comp) = ent;
-        if (_whitelist.IsBlacklistPass(comp.Blacklist, user) || _whitelist.IsBlacklistPass(comp.MindBlacklist, mind))
+        if (_whitelist.IsWhitelistPass(comp.Blacklist, user) || _whitelist.IsWhitelistPass(comp.MindBlacklist, mind))
         {
             Popup.PopupPredicted(Loc.GetString($"recruiter-pen-{action}-forbidden", ("pen", uid)), user, user);
             return true;
