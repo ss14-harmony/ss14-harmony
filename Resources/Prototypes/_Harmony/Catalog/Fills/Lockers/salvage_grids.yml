@@ -48,8 +48,6 @@
     # Suits (Basic)
     - !type:GroupSelector
       children:
-      # Emergency EVA
-      - id: ClothingOuterSuitEmergency
       # EVA
       - !type:AllSelector
         children:
@@ -74,7 +72,6 @@
     # Suits (Common)
     - !type:GroupSelector
       children:
-      - id: ClothingOuterHardsuitPirateEVA
       - !type:AllSelector
         children:
           - id: ClothingOuterHardsuitSpatio
@@ -110,12 +107,7 @@
     # Suits (Rare)
     - !type:GroupSelector
       children:
-      - !type:GroupSelector
-        children:
-          - id: ClothingOuterHardsuitMime
-          - id: ClothingOuterHardsuitClown
-      - id: ClothingOuterHardsuitPirateCap
-      - id: ClothingOuterHardsuitSalvage
+      - id: ClothingOuterHardsuitSalvage # Mining Suit
     # Tanks (Rare)
     - !type:GroupSelector
       children:
@@ -161,13 +153,12 @@
         - !type:GroupSelector
           children:
           - id: ClothingOuterHardsuitLuxury
+          - id: ClothingOuterHardsuitSalvage # Mining Suit
           - !type:AllSelector
             children:
             - id: ClothingOuterEVASuitSyndicate
             - id: ClothingHeadHelmetSyndicate
-          - id: ClothingOuterHardsuitBrigmedic # Dripped out suit that only spawns on the visitor shuttle
           - id: ClothingOuterSuitCarp # Not the hardsuit one, just for drip
-          - id: ClothingOuterHardsuitLing # Creepy...
         # Tanks (Legendary)
         - !type:GroupSelector
           children:
