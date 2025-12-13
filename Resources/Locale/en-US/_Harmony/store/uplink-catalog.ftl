@@ -11,8 +11,11 @@ uplink-rifle-bandit-desc = Contains the Bandit, a reliable semi-auto bullpup whi
 
 # Explosive
 
-uplink-pizza-bomb-name = Nefarious Pizza bomb
-uplink-pizza-bomb-desc = This tech, first pioneered by terrorists, now is used by the syndicate for eliminating high value targets
+uplink-kudzu-grenade-name = Kudzu grenade
+uplink-kudzu-grenade-desc = A grenade containing mutated kudzu that spreads faster and deals damage to anyone caught inside, excluding diona.
+
+uplink-pizza-bomb-name = Pizza Bomb
+uplink-pizza-bomb-desc = This tech, first pioneered by terrorists, now is used by the Syndicate for eliminating high value targets. WARNING: Explodes after opening with a short timer. Do not attempt to throw.
 
 uplink-pizza-bomb-surplus-name = Surplus Pizza Bomb
 uplink-pizza--surplus-desc = This shouldn't be visible, report me.
@@ -47,13 +50,17 @@ uplink-defib-desc = A compact defibrillator. It can be used to revive your fello
 uplink-syndicate-id-name = Syndicate ID card
 uplink-syndicate-id-desc = A sleek black-and-red ID card with embossed Syndicate logo and syndicate access. Does not possess any Nanotrasen access. Limited to one ID per agent.
 
+# Disruption
+
+uplink-syndicate-access-config-name = Cybersun Configurator
+uplink-syndicate-access-config-desc = A competing access configurator that works with NanoTrasen and Syndicate IDs. Not to be confused with the Access Breaker.
+
 # Allies
 
 uplink-reinforcement-radio-cyborg-support-name = Syndicate Support Cyborg Teleporter
 uplink-reinforcement-radio-cyborg-support-desc = A lean, mean supporting machine with access to a Pinpointer, Echis, Cryptographic Sequencer, Energy Dagger and advanced medical treatment module.
 
 # Implants
-
 
 uplink-traitor-deathrattle-implant-name = Box Of Deathrattle Implants
 uplink-traitor-deathrattle-implant-desc = A box containing two syndicate deathrattle implants. Messages are relayed over the syndicate channel, encryption keys not included.
@@ -63,6 +70,9 @@ uplink-traitor-deathrattle-implant-desc = A box containing two syndicate deathra
 
 uplink-cluster-weh-name = Tactical Clusterplushie
 uplink-cluster-weh-desc = Scatters 10 lizard plushies in a circle after a short delay. Weh.
+
+uplink-syndiedrobe-flatpack-name = SyndieDrobe Flatpack
+uplink-syndiedrobe-flatpack-desc = A flatpack box containing a SyndieDrobe. Slay whilst slaying your targets.
 
 # Job Specific
 

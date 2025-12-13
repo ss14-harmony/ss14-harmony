@@ -39,8 +39,7 @@ namespace Content.Server.Chemistry.EntitySystems
         [Dependency] private readonly LabelSystem _labelSystem = default!;
         [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
 
-        [ValidatePrototypeId<EntityPrototype>]
-        private const string PillPrototypeId = "Pill";
+        private static readonly EntProtoId PillPrototypeId = "Pill";
 
         public override void Initialize()
         {
@@ -278,10 +277,19 @@ namespace Content.Server.Chemistry.EntitySystems
         {
             outputSolution = null;
 
-            if (!_solutionContainerSystem.TryGetSolution(chemMaster.Owner, SharedChemMaster.BufferSolutionName, out _, out var solution))
+            // Harmony Change Start - ChemMasters make pills from containers and not the buffer
+            // if (!_solutionContainerSystem.TryGetSolution(chemMaster.Owner, SharedChemMaster.BufferSolutionName, out _, out var solution))
+            // {
+            //     return false;
+            // }
+
+            var container = _itemSlotsSystem.GetItemOrNull(chemMaster, SharedChemMaster.InputSlotName);
+            if (container is null ||
+                !_solutionContainerSystem.TryGetFitsInDispenser(container.Value, out var containerSoln, out var solution))
             {
                 return false;
             }
+            // Harmony Change End
 
             if (solution.Volume == 0)
             {
@@ -299,6 +307,7 @@ namespace Content.Server.Chemistry.EntitySystems
             }
 
             outputSolution = solution.SplitSolution(neededVolume);
+            _solutionContainerSystem.UpdateChemicals(containerSoln.Value); // DeltaV
             return true;
         }
 

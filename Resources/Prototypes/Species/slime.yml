@@ -38,13 +38,13 @@
       points: 1
       required: false
     Chest:
-      points: 2
+      points: 4 # Harmony - 2->4
       required: false
     Legs:
-      points: 4
+      points: 6 # Harmony - 2->6
       required: false
     Arms:
-      points: 4
+      points: 6 # Harmony - 2->6
       required: false
 
 - type: humanoidBaseSprite
