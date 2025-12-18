@@ -89,6 +89,11 @@
     color: orange
   - type: ItemTogglePointLight
   - type: PhysicalComposition
+  # Harmony change start
+  - type: Tag
+    tags:
+      - Lighter
+  # Harmony change end
 
 - type: entity
   name: cheap lighter
@@ -211,6 +216,11 @@
   - type: UseDelay
   - type: IgnitionSource
     ignited: false
+  # Harmony change start
+  - type: Tag
+    tags:
+      - Lighter
+  # Harmony change end
 
 - type: entity
   name: flippo engraved lighter

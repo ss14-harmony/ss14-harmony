@@ -30,3 +30,6 @@
 - type: Tag
   id: CartridgeLightRifleCaseless
 
+# Tag added to lighters to allow them to be whitelisted in cigarette packs
+- type: Tag
+  id: Lighter
