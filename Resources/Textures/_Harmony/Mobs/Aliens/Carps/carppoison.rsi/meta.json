@@ -1,11 +1,11 @@
 ﻿{
     "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from https://github.com/tgstation/tgstation/blob/master/icons/mob/simple/carp.dmi, grayscale carp sprites edited by Llfiend",
     "size": {
         "x": 32,
         "y": 32
     },
-    "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from https://github.com/tgstation/tgstation/blob/master/icons/mob/simple/carp.dmi, grayscale carp sprites edited by Llfiend",
     "states": [
         {
             "name": "mouth",

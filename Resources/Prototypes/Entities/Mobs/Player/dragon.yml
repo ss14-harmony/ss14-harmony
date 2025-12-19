@@ -170,7 +170,7 @@
     speedModifier: 2.5 # fast because dragon strong
     useSound:
       path: /Audio/Items/crowbar.ogg
-  - type: AntiRottingContainer
+  - type: AntiRottingContainer # Harmony change
 
 - type: entity
   parent: BaseMobDragon

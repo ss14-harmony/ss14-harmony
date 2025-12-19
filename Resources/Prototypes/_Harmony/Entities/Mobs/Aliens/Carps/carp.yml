@@ -1,7 +1,8 @@
 ﻿- type: entity
-  id: MobCarpPoisonDragon
   parent: MobCarpDragon
+  id: MobCarpPoisonDragon
   name: Dracocarp
+  suffix: Harmony
   description: A venomous carp called forth by a poison dragon.
   components:
   - type: Sprite

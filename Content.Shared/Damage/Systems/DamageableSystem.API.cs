@@ -1,4 +1,4 @@
-using System.Linq;
+using System.Linq; // Harmony
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;

@@ -1,11 +1,11 @@
 ﻿- type: entity
   parent: BaseMobDragon
   id: MobPoisonDragon
-  suffix: "Harmony"
+  suffix: Harmony
   name: poison dragon
   components:
   - type: Dragon
-    spawnRiftAction: ActionSpawnRiftPoisonDragon
+    spawnRiftAction: ActionSpawnRiftPoison
     riftPrototype: CarpPoisonRift
   - type: RandomSprite
     available:
@@ -54,14 +54,9 @@
 
 - type: entity
   categories: [ HideSpawnMenu ]
+  parent: DragonsBreathGun
   id: DragonsPoisonBreathGun
-  name: dragon's lung
-  description: For dragon's breathing.
   components:
-  - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 5
-    rechargeSound:
-      path: /Audio/Animals/space_dragon_roar.ogg
   - type: BasicEntityAmmoProvider
     proto: ProjectileDragonsPoisonBreath
     capacity: 1
@@ -73,33 +68,18 @@
     projectileSpeed: 9
 
 - type: entity
-  parent: BaseAction
-  id: ActionSpawnRiftPoisonDragon
+  parent: ActionSpawnRift
+  id: ActionSpawnRiftPoison
   name: Summon Poison Carp Rift
   description: Summons a poison carp rift that will periodically spawn poison carp.
-  components:
-  - type: Action
-    icon:
-      sprite: Interface/Actions/carp_rift.rsi
-      state: icon
-    useDelay: 1
-    priority: 3
-  - type: InstantAction
-    event: !type:DragonSpawnRiftActionEvent
 
 - type: entity
-  parent: BaseAction
+  parent: ActionDragonsBreath
   id: ActionDragonsPoisonBreath
   name: "[color=purple]Dragon's Breath[/color]"
   description: Spew out poison at anyone foolish enough to attack you!
   components:
   - type: Action
-    # TODO: actual sprite and iconOn
     icon: { sprite : _Harmony/Objects/Weapons/Guns/Projectiles/magic.rsi, state: fireballpoison }
     itemIconStyle: BigAction
     priority: 2
-  - type: TargetAction
-    checkCanAccess: false
-    range: 0
-  - type: WorldTargetAction
-    event: !type:ActionGunShootEvent

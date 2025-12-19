@@ -1,7 +1,8 @@
-﻿- type: entity
+- type: entity
   id: CarpPoisonRift
   parent: CarpRift
   name: poison carp rift
+  suffix: Harmony
   description: A rift akin to the ones space carp use to travel long distances.
   components:
   - type: DragonRift
