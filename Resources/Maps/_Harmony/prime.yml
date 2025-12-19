@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: harmony
   forkVersion: c51cf6cdf0128751b3b39fac5640fd7eb86901fd
-  time: 12/19/2025 00:06:29
-  entityCount: 29529
+  time: 12/19/2025 02:15:56
+  entityCount: 29530
 maps:
 - 1
 grids:
@@ -155717,15 +155717,10 @@ entities:
       parent: 2
 - proto: SpawnPointCaptain
   entities:
-  - uid: 23888
+  - uid: 23910
     components:
     - type: Transform
-      pos: 6.5,28.5
-      parent: 2
-  - uid: 23889
-    components:
-    - type: Transform
-      pos: 5.5,34.5
+      pos: -9.5,30.5
       parent: 2
 - proto: SpawnPointCargoTechnician
   entities:
@@ -155792,17 +155787,17 @@ entities:
       parent: 2
 - proto: SpawnPointChiefEngineer
   entities:
-  - uid: 23902
+  - uid: 24017
     components:
     - type: Transform
-      pos: 42.5,-4.5
+      pos: -10.5,29.5
       parent: 2
 - proto: SpawnPointChiefMedicalOfficer
   entities:
   - uid: 23903
     components:
     - type: Transform
-      pos: -24.5,12.5
+      pos: -10.5,28.5
       parent: 2
 - proto: SpawnPointClown
   entities:
@@ -155820,6 +155815,11 @@ entities:
       parent: 2
 - proto: SpawnPointHeadOfPersonnel
   entities:
+  - uid: 23889
+    components:
+    - type: Transform
+      pos: -8.5,29.5
+      parent: 2
   - uid: 23907
     components:
     - type: Transform
@@ -155827,10 +155827,10 @@ entities:
       parent: 2
 - proto: SpawnPointHeadOfSecurity
   entities:
-  - uid: 23910
+  - uid: 23888
     components:
     - type: Transform
-      pos: 20.5,7.5
+      pos: -8.5,28.5
       parent: 2
 - proto: SpawnPointHeadOfSecurityWeapon
   entities:
@@ -156366,6 +156366,13 @@ entities:
     - type: Transform
       pos: 59.5,-0.5
       parent: 2
+- proto: SpawnPointQuartermaster
+  entities:
+  - uid: 23902
+    components:
+    - type: Transform
+      pos: -10.5,27.5
+      parent: 2
 - proto: SpawnPointReporter
   entities:
   - uid: 24014
@@ -156387,10 +156394,10 @@ entities:
       parent: 2
 - proto: SpawnPointResearchDirector
   entities:
-  - uid: 24017
+  - uid: 29530
     components:
     - type: Transform
-      pos: -73.5,-31.5
+      pos: -8.5,27.5
       parent: 2
 - proto: SpawnPointSalvageSpecialist
   entities:
