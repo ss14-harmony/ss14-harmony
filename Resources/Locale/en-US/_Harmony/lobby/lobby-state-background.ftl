@@ -1,5 +1,5 @@
 lobby-state-background-statoncafe-title = Station Cafe
-lobby-state-background-stationcafe-artist = Amadisaronno
+lobby-state-background-stationcafe-artist = Amatiramasu
 
 lobby-state-background-maintsslasher-title = Maints Slasher
 lobby-state-background-maintsslasher-artist = thesaladmancer
