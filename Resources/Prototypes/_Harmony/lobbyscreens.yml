@@ -1,23 +1,35 @@
 - type: lobbyBackground
   id: StationCafe
   background: /Textures/_Harmony/LobbyScreens/stationcafe.webp
+  title: lobby-state-background-stationcafe-title
+  artist: lobby-state-background-stationcafe-artist
 
 - type: lobbyBackground
   id: MaintsSlasher
   background: /Textures/_Harmony/LobbyScreens/maints-slasher.webp
+  title: lobby-state-background-maintsslasher-title
+  artist: lobby-state-background-maintsslasher-artist
 
 - type: lobbyBackground
   id: SurvivalHarmony
   background: /Textures/_Harmony/LobbyScreens/survivalharmony.webp
+  title: lobby-state-background-survivalharmony-title
+  artist: lobby-state-background-survivalharmony-artist
 
 - type: lobbyBackground
   id: HarmonyScrapbook
   background: /Textures/_Harmony/LobbyScreens/harmonyscrapbook.webp
+  title: lobby-state-background-harmonyscrapbook-title
+  artist: lobby-state-background-harmonyscrapbook-artist
 
 - type: lobbyBackground
   id: HearsCargo
   background: /Textures/_Harmony/LobbyScreens/hears-the-voices.webp
+  title: lobby-state-background-hearscargo-title
+  artist: lobby-state-background-hearscargo-artist
 
 - type: lobbyBackground
   id: Dragon-Encounter
   background: /Textures/_Harmony/LobbyScreens/Dragon-Encounter.webp
+  title: lobby-state-background-dragonencounter-title
+  artist: lobby-state-background-dragonencounter-artist
