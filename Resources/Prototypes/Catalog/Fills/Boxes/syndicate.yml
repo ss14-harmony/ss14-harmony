@@ -100,3 +100,4 @@
         - id: WeaponBaguette
         - id: SyndicateMicrowaveMachineCircuitboard
         - id: PaperWrittenCombatBakeryKit
+        - id: FoodBungo # Harmony specific change. Added to facilitate creating the Bungo Bomber

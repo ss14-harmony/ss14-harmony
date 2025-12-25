@@ -75,3 +75,4 @@ book-text-combat-bakery-kit = Thank you for choosing our combat bakery kit!
       Glass x10
       LV wire x5
       Bungo Fruit x1
+      Cook Time: 20 seconds
