@@ -6,10 +6,6 @@
   components:
   - type: Item
     size: Normal
-# Start Harmony change - Changed shape
-    shape:
-    - 0,0,1,1
-# End Harmony change
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Throwable/bola.rsi #Harmony Change: Sprite pathway changed.
     state: icon
