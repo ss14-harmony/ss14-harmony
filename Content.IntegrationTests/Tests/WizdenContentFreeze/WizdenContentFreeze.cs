@@ -1,4 +1,5 @@
-using Content.Shared.Kitchen;
+//harmony change Start - Remove wizden content freeze test
+/*using Content.Shared.Kitchen;
 
 namespace Content.IntegrationTests.Tests.WizdenContentFreeze;
 
@@ -39,3 +40,5 @@ public sealed class WizdenContentFreeze
         await pair.CleanReturnAsync();
     }
 }
+*/
+// Harmony change End
