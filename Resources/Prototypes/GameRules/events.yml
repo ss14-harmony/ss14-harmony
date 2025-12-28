@@ -14,7 +14,7 @@
     - id: IonStorm # its calm like 90% of the time smh
     - id: KudzuGrowth
     - id: MassHallucinations
-    - id: MimicVendorRule
+    # - id: MimicVendorRule # Harmony Change
     - id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
@@ -161,6 +161,10 @@
   - type: BureaucraticErrorRule
     ignoredJobs:
     - StationAi
+    - ResearchAssistant
+    - MedicalIntern
+    - SecurityCadet
+    - TechnicalAssistant
 
 - type: entity
   id: ClericalError
@@ -326,7 +330,7 @@
     duration: 1
     earliestStart: 30
     reoccurrenceDelay: 60
-    minimumPlayers: 25 # Harmony specific change. 10 -> 25
+    minimumPlayers: 30
   - type: AntagSelection
     agentName: wizard-round-end-name
     definitions:

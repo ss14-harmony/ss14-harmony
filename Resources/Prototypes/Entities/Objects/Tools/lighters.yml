@@ -89,6 +89,11 @@
     color: orange
   - type: ItemTogglePointLight
   - type: PhysicalComposition
+  # Harmony change start
+  - type: Tag
+    tags:
+      - Lighter
+  # Harmony change end
 
 - type: entity
   name: cheap lighter
@@ -211,6 +216,11 @@
   - type: UseDelay
   - type: IgnitionSource
     ignited: false
+  # Harmony change start
+  - type: Tag
+    tags:
+      - Lighter
+  # Harmony change end
 
 - type: entity
   name: flippo engraved lighter
@@ -630,7 +640,7 @@
       - cheap
   - type: ComponentToggler
     components:
-    - type: Food
+    - type: Edible # This shouldn't be component toggler, but doesn't work when it's not
   - type: PointLight
     enabled: false
     netsync: false
