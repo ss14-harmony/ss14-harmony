@@ -8,9 +8,13 @@
     sprite: _Harmony/Objects/Weapons/Guns/Kinetic/kinetic_pistol.rsi
     state: icon
   - type: Item
-    size: Large
+    size: Small
     shape:
-    - 0,0,2,1
+    - 0,0,1,0
+    - 0,1,0,1
+  - type: Tag
+    tags: 
+    - Sidearm # consistency with other L shaped weapons
   - type: Clothing
     sprite: _Harmony/Objects/Weapons/Guns/Kinetic/kinetic_pistol.rsi
     quickEquip: false
