@@ -6,3 +6,6 @@ spellbook-smashed-pitbull-desc = Warps your beloved pitbulls to be more bulky an
 
 spellbook-staff-slipping-name = staff of slipping
 spellbook-staff-slipping-desc = Shoots slipping projectiles en masse, good for destroying security morale.
+
+spellbook-staff-of-change-name = staff of change
+spellbook-staff-of-change-desc = A staff that spits bolts of coruscating energy which cause the target's very form to reshape itself.

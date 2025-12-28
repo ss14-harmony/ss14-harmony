@@ -1,0 +1,25 @@
+﻿using Robust.Shared.Prototypes;
+using Robust.Shared.Audio;
+
+namespace Content.Shared.Silicons.Laws.Components;
+
+/// <summary>
+/// This is used for an entity which grants laws to a <see cref="SiliconLawBoundComponent"/>
+/// </summary>
+[RegisterComponent, Access(typeof(SharedSiliconLawSystem))]
+public sealed partial class RandomSiliconLawsetProviderComponent : Component
+{
+    /// <summary>
+    /// Lawset created from the prototype id.
+    /// Cached when getting laws and modified during an ion storm event and when emagged.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public SiliconLawset? Lawsets;
+
+    /// <summary>
+    /// The sound that plays for the Silicon player
+    /// when the law change is processed for the provider.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? LawUploadSound = new SoundPathSpecifier("/Audio/Misc/cryo_warning.ogg");
+}

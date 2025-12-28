@@ -1,0 +1,186 @@
+﻿- type: polymorph
+  id: WizardForcedBorg
+  configuration:
+    entity: PlayerBorgBattery
+    forced: true
+    inventory: None
+    transferName: true
+    transferDamage: true
+    revertOnCrit: false
+    revertOnDeath: true
+    allowRepeatedMorphs: true
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    exitPolymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+
+- type: polymorph
+  id: WizardForcedSyndieBorg
+  configuration:
+    entity: BorgChassisSyndicateAssault
+    forced: true
+    inventory: None
+    transferName: true
+    transferDamage: true
+    revertOnCrit: false
+    revertOnDeath: true
+    allowRepeatedMorphs: true
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    exitPolymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+
+- type: polymorph
+  id: WizardSkeleton
+  configuration:
+    entity: MobSkeletonPerson
+    forced: true
+    transferName: true
+    transferHumanoidAppearance: true
+    inventory: Transfer
+    allowRepeatedMorphs: true
+
+- type: polymorph
+  id: WizardForcedPoquito
+  configuration:
+    entity: MobKoboldPoquito
+    forced: true
+    inventory: None
+    transferName: true
+    transferDamage: true
+    revertOnCrit: false
+    revertOnDeath: true
+    allowRepeatedMorphs: true
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    exitPolymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+
+- type: polymorph
+  id: WizardForcedSpaceBear
+  configuration:
+    entity: MobBearSpace
+    forced: true
+    inventory: None
+    transferName: true
+    transferDamage: true
+    revertOnCrit: false
+    revertOnDeath: true
+    allowRepeatedMorphs: true
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    exitPolymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+
+- type: polymorph
+  id: WizardForcedXeno
+  configuration:
+    entity: MobXenoDrone
+    forced: true
+    inventory: None
+    transferName: true
+    transferDamage: true
+    revertOnCrit: false
+    revertOnDeath: true
+    allowRepeatedMorphs: true
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    exitPolymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+
+- type: polymorph
+  id: WizardForcedXenoborg
+  configuration:
+    entity: XenoborgScout
+    forced: true
+    inventory: None
+    transferName: true
+    transferDamage: true
+    revertOnCrit: false
+    revertOnDeath: true
+    allowRepeatedMorphs: true
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    exitPolymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+
+- type: polymorph
+  id: WizardForcedBehonker
+  configuration:
+    entity: MobBehonkerIce
+    forced: true
+    inventory: None
+    transferName: true
+    transferDamage: true
+    revertOnCrit: false
+    revertOnDeath: true
+    allowRepeatedMorphs: true
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    exitPolymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+
+- type: polymorph
+  id: WizardForcedRegalRat
+  configuration:
+    entity: MobRatKing
+    forced: true
+    inventory: None
+    transferName: true
+    transferDamage: true
+    revertOnCrit: false
+    revertOnDeath: true
+    allowRepeatedMorphs: true
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    exitPolymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+
+
+- type: polymorph
+  id: WizardForcedMouse
+  configuration:
+    entity: MobMouse
+    forced: true
+    inventory: None
+    transferName: true
+    transferDamage: false
+    revertOnCrit: false
+    revertOnDeath: true
+    allowRepeatedMorphs: true
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    exitPolymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+
+- type: polymorph
+  id: WizardForcedPossum
+  configuration:
+    entity: MobPossum
+    forced: true
+    inventory: None
+    transferName: true
+    transferDamage: true
+    revertOnCrit: false
+    revertOnDeath: true
+    allowRepeatedMorphs: true
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    exitPolymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+
+- type: polymorph
+  id: WizardForcedSpider
+  configuration:
+    entity: MobGiantSpiderAngry
+    forced: true
+    inventory: None
+    transferName: true
+    transferDamage: true
+    revertOnCrit: false
+    revertOnDeath: true
+    allowRepeatedMorphs: true
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    exitPolymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg

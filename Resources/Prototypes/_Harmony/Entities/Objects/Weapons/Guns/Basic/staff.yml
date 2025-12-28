@@ -1,0 +1,25 @@
+﻿- type: entity
+  parent: WeaponWandBase
+  id: WeaponStaffOfChange
+  name: staff of change
+  description: Magical staff that transforms the matter around it
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Basic/staves.rsi
+    layers:
+    - state: change
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: change-inhand-left
+      right:
+      - state: change-inhand-right
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/Magic/staff_change.ogg
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileStaffOfChangeBolt
+    capacity: 10
+    count: 10
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 10

@@ -19,3 +19,48 @@
   - type: StunOnCollide
     stunAmount: 1
     knockdownAmount: 1
+
+- type: entity
+  id: ProjectileRandomPolyboltBase
+  abstract: true
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: ice
+  - type: Projectile
+  - type: TriggerOnCollide
+    fixtureID: projectile
+  - type: RandomPolymorphOnTrigger
+    targetUser: true
+
+- type: entity
+  id: ProjectileStaffOfChangeBolt
+  parent: ProjectileRandomPolyboltBase
+  name: staff of change bolt
+  description: Nooo, I don't wanna be fish!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RandomPolymorphOnTrigger
+    polymorph:
+    - WizardForcedCarp
+    - WizardForcedMonkey
+    - Jaunt
+    - WizardForcedSpider
+    - WizardForcedMouse
+    - WizardForcedPossum
+    - WizardForcedRegalRat
+    - WizardForcedBehonker
+    - WizardForcedXenoborg
+    - WizardForcedXeno
+    - WizardForcedSpaceBear
+    - WizardForcedPoquito
+    - WizardSkeleton
+    - WizardForcedSyndieBorg
+    - WizardForcedBorg
+  - type: WhitelistTriggerCondition
+    userWhitelist:
+      components:
+      - MobState
