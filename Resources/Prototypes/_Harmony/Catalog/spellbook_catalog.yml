@@ -59,4 +59,17 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+
+- type: listing
+  id: SpellbookStaffOfChange
+  name: spellbook-staff-of-change-name
+  description: spellbook-staff-of-change-desc
+  productEntity: WeaponStaffOfChange
+  cost:
+    WizCoin: 2
+  categories:
+  - SpellbookEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
 # Event
