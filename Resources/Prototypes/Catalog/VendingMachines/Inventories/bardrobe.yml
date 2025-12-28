@@ -18,3 +18,7 @@
     ClothingEyesGlassesSunglasses: 2
   contrabandInventory:
     ToyFigurineBartender: 1
+  # Harmony Change Start - Readd Emag interactions
+  emaggedInventory:
+    ShellShotgunImprovised: 5
+  # Harmony Change End
