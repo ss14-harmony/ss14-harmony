@@ -1,0 +1,25 @@
+﻿{
+    "version": 1,
+    "license": "CC0-1.0",
+    "copyright": "Taken from TGStation at https://github.com/tgstation/tgstation/blob/eddb2daf90857e2ab2753cc3ea9a49c6741db96c/icons/effects/beam.dmi",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "greenbeam",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        }
+    ]
+}

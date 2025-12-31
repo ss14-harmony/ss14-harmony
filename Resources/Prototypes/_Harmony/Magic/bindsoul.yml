@@ -1,0 +1,15 @@
+﻿- type: entity
+  parent: BaseAction
+  id: ActionBindSoul
+  name: Curse Item
+  description: Mark a held item to later unleash a curse.
+  components:
+  - type: Action
+    useDelay: 10
+    raiseOnAction: true
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Harmony/Actions/soulbind.rsi
+      state: soulbind
+  - type: InstantAction
+    event: !type:OnBindSoulActionEvent

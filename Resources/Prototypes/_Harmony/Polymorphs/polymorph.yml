@@ -19,3 +19,13 @@
     inventory: Drop
     revertOnDeath: false
     revertOnCrit: false
+
+- type: polymorph
+  id: LichPolymorph
+  configuration:
+    entity: MobSkeletonLich
+    forced: true
+    transferName: true
+    inventory: Transfer
+    revertOnDeath: false
+    revertOnCrit: false

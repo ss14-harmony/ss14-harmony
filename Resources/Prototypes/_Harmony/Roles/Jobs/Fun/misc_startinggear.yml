@@ -6,3 +6,10 @@
     head: ClothingHeadHatChef
     jumpsuit: ClothingUniformJumpsuitChef
     id: PoquitoIDcard
+
+- type: startingGear
+  id: WizardLichGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorRed
+    head: ClothingHeadHatRedwizard
+    outerClothing: ClothingOuterWizardRed

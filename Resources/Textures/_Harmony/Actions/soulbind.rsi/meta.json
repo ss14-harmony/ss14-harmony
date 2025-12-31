@@ -1,0 +1,14 @@
+﻿{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from paradisestation at commit https://github.com/Fox-McCloud/Paradise-1/blob/887ce1f37efcbcc5a69cdca69285ba32c1f7e636/icons/mob/actions.dmi",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "soulbind"
+        }
+    ]
+}
