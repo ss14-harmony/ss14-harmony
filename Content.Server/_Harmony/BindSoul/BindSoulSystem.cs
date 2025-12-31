@@ -3,6 +3,7 @@ using Content.Server.Beam;
 using Content.Server.Mind;
 using Content.Server.Polymorph.Systems;
 using Content.Shared._Harmony.BindSoul;
+using Content.Shared.Actions;
 using Content.Shared.Beam;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Mobs;
@@ -14,6 +15,7 @@ public sealed class BindSoulSystem : SharedBindSoulSystem
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly BeamSystem _beam = default!;
+    [Dependency] private readonly SharedActionsSystem _actions = default!;
 
 
     public override void Initialize()
@@ -31,6 +33,7 @@ public sealed class BindSoulSystem : SharedBindSoulSystem
         {
             var biner = AddComp<SoulBinderComponent>((EntityUid)_polymorph.PolymorphEntity(args.Performer, args.Polymorph)!);
             biner.BindedItem = args.BindedItem;
+            biner.SoulbindAction = args.BindSoulAction;
         }
 
     }
@@ -56,8 +59,11 @@ public sealed class BindSoulSystem : SharedBindSoulSystem
 
                 _mind.TransferTo(mindId, entity, ghostCheckOverride: true, mind: mind);
                 var binder = AddComp<SoulBinderComponent>(entity);
+
                 binder.BindedItem = component.BindedItem;
                 binder.DeathCount = deathcount;
+
+                _actions.RemoveAction(component.SoulbindAction);
 
                 _beam.TryCreateBeam(uid, component.BindedItem, component.LinkBeamProto);
             }

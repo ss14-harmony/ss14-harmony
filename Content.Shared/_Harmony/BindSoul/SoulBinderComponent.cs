@@ -10,6 +10,9 @@ public sealed partial class SoulBinderComponent : Component
     public EntityUid BindedItem;
 
     [DataField]
+    public EntityUid SoulbindAction;
+
+    [DataField]
     public string? BinderPrototype = "MobSkeletonLich";
 
     [DataField]

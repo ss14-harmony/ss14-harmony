@@ -63,6 +63,7 @@ public abstract class SharedBindSoulSystem : EntitySystem
         Dirty((EntityUid)markItem, bindeditem);
 
         args.BindedItem = (EntityUid)markItem;
+        args.BindSoulAction = args.Action;
 
         args.Handled = true;
 

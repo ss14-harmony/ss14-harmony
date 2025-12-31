@@ -11,4 +11,7 @@ public sealed partial class OnBindSoulActionEvent : InstantActionEvent
 
     [DataField]
     public EntityUid BindedItem;
+
+    [DataField]
+    public EntityUid BindSoulAction;
 }
