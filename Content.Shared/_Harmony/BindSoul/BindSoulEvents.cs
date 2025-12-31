@@ -10,7 +10,7 @@ public sealed partial class OnBindSoulActionEvent : InstantActionEvent
     public ProtoId<PolymorphPrototype> Polymorph = "LichPolymorph";
 
     [DataField]
-    public EntityUid BindedItem;
+    public EntityUid? BindedItem = null;
 
     [DataField]
     public EntityUid BindSoulAction;

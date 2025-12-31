@@ -38,6 +38,8 @@ public abstract class SharedBindSoulSystem : EntitySystem
 
     protected virtual void OnSoulBindActionUse(OnBindSoulActionEvent args)
     {
+        if (args.BindedItem != null)
+            return;
 
         if (!TryComp<HandsComponent>(args.Performer, out var hands))
             return;
@@ -56,7 +58,6 @@ public abstract class SharedBindSoulSystem : EntitySystem
 
         _popups.PopupClient(Loc.GetString("item-recall-item-marked", ("item", markItem.Value)), args.Performer, args.Performer);
 
-
         var bindeditem = AddComp<SoulBindedComponent>((EntityUid)markItem);
 
         bindeditem.Owner = args.Performer;
@@ -64,10 +65,7 @@ public abstract class SharedBindSoulSystem : EntitySystem
 
         args.BindedItem = (EntityUid)markItem;
         args.BindSoulAction = args.Action;
-
         args.Handled = true;
-
-        _actions.RemoveAction(args.Action!);
     }
 
     private void OnComponentStartup(EntityUid uid, SoulBindedComponent component, ComponentInit args)

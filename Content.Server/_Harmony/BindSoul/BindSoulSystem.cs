@@ -7,6 +7,7 @@ using Content.Shared.Actions;
 using Content.Shared.Beam;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Mobs;
+using Content.Shared.Station;
 
 namespace Content.Server._Harmony.BindSoul;
 
@@ -16,6 +17,7 @@ public sealed class BindSoulSystem : SharedBindSoulSystem
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly BeamSystem _beam = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private readonly SharedStationSystem _station = default!;
 
 
     public override void Initialize()
@@ -32,7 +34,7 @@ public sealed class BindSoulSystem : SharedBindSoulSystem
         if (args.Handled)
         {
             var biner = AddComp<SoulBinderComponent>((EntityUid)_polymorph.PolymorphEntity(args.Performer, args.Polymorph)!);
-            biner.BindedItem = args.BindedItem;
+            biner.BindedItem = (EntityUid)args.BindedItem!;
             biner.SoulbindAction = args.BindSoulAction;
         }
 
@@ -41,6 +43,12 @@ public sealed class BindSoulSystem : SharedBindSoulSystem
     private void OnBinderDeath(EntityUid uid, SoulBinderComponent component, MobStateChangedEvent args)
     {
         if (args.NewMobState!= MobState.Dead)
+            return;
+
+        var bindedxform = Transform(component.BindedItem);
+        var xform = Transform(uid);
+
+        if (bindedxform.GridUid != xform.GridUid)
             return;
 
         if (component.BindedItem == null)
