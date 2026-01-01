@@ -19,10 +19,10 @@
   - type: Storage
     maxItemSize: Huge
     grid:
-    - 0,0,6,4 # Harmony change - Hristov rework, changes size to fit magazines 0,0,6,3 -> 0,0,6,4
-  - type: StorageFill
-    contents:
-    - 0,0,6,3
+# Start Harmony change - Hristov rework, changes size to fit magazines
+    - 0,0,6,4
+#   - 0,0,6,3
+# End Harmony change
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
