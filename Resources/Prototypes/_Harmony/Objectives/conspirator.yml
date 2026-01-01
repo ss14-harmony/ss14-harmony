@@ -53,7 +53,7 @@
   - type: Objective
     icon:
       sprite: Objects/Misc/id_cards.rsi
-      state: ert_commander
+      state: gold
 
 - type: entity
   parent: BaseConspiratorObjective
