@@ -1,0 +1,42 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by The Goons archived at commit: https://github.com/nullbear/Goonstation_SS13_r4407/commit/a1ce10847a63db96ed06fe338b5811ff90d403f2. Equipped-EYES-secdog modified from equipped-EYES by TJohnson & Equipped-EYES-arachnid and equipped-EYES-moth modified from equipped-EYES by HTMLSystem at commit https://github.com/space-wizards/space-station-14/commit/8fc78f63d9c7fadb491987f97549c283ec702fad. equipped-EYES-dog modified from equipped-EYES by Sparlight (GitHub) at commit https://github.com/space-wizards/space-station-14/commit/af23939dbedffa3bf1a3508d42c1a9b585eea420. Modified by CollectionOfBones128 (GitHub)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "equipped-EYES",
+            "directions": 4
+        },
+        {
+            "name": "equipped-EYES-arachnid",
+            "directions": 4
+        },
+        {
+            "name": "equipped-EYES-dog",
+            "directions": 4
+        },
+        {
+            "name": "equipped-EYES-moth",
+            "directions": 4
+        },
+        {
+            "name": "equipped-EYES-secdog",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        }
+    ]
+}

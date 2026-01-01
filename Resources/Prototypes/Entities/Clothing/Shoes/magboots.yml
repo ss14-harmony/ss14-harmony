@@ -108,13 +108,14 @@
       volume: 0.75
       temperature: 293.15
       moles:
-      - 0.153853429 # oxygen
-      - 0.153853429 # nitrogen
+        Oxygen: 0.153853429 # oxygen
+        Nitrogen: 0.153853429 # nitrogen
   - type: Item
     sprite: null
     size: Normal
   - type: StaticPrice
     price: 1500
+  - type: RadarBlipStealth # Harmony - imp edit. hide this jetpack from mass scanners.
 
 - type: entity
   parent: BaseAction
