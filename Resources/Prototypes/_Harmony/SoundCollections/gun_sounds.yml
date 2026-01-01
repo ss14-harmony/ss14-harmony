@@ -59,6 +59,7 @@
   files:
   - /Audio/_Harmony/Weapons/Guns/Gunshots/revolver_fire1.ogg
   - /Audio/_Harmony/Weapons/Guns/Gunshots/revolver_fire2.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/revolver_fire3.ogg
 
 # Used in /Entities/Objects/Weapons/Guns/Pistols/pistols.yml
 - type: soundCollection

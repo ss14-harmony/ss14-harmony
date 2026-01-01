@@ -37,3 +37,8 @@
   license: "CC-BY-4.0"
   copyright: "Created by Vunsunta and Zott820 (https://freesound.org/people/Zott820/sounds/370345), modified by Halycon (kleinerstation13 on Github)"
   source: "https://freesound.org/people/Universfield/sounds/750234/"
+
+- files: ["revolver_fire1.ogg", "revolver_fire2.ogg", "revolver_fire3.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from cmss13"
+  source: "https://github.com/cmss13-devs/cmss13/blob/32730c731936c6737668ead7bde83a6cf296010f/sound/weapons/gun_cmb_1.ogg"
