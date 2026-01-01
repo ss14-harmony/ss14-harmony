@@ -27,4 +27,5 @@
   # Harmony Change - adds business uniform to emagged lawdrobe
   emaggedInventory:
     ClothingUniformJumpsuitSyndicateBusinessSuitHarmony: 1
+    CyberPen: 1
   # Harmony Change end

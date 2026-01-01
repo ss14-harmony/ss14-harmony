@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/04/2025 19:48:31
+  time: 11/05/2025 10:44:52
   entityCount: 36081
 maps:
 - 1
@@ -109230,48 +109230,6 @@ entities:
     - type: Transform
       pos: 100.508484,-43.45028
       parent: 13329
-- proto: Dresser
-  entities:
-  - uid: 1109
-    components:
-    - type: Transform
-      pos: -11.5,8.5
-      parent: 13329
-  - uid: 29244
-    components:
-    - type: Transform
-      pos: 87.5,22.5
-      parent: 13329
-  - uid: 29245
-    components:
-    - type: Transform
-      pos: 77.5,19.5
-      parent: 13329
-  - uid: 29246
-    components:
-    - type: Transform
-      pos: 77.5,25.5
-      parent: 13329
-  - uid: 31713
-    components:
-    - type: Transform
-      pos: 8.5,20.5
-      parent: 13329
-  - uid: 32288
-    components:
-    - type: Transform
-      pos: 27.5,-29.5
-      parent: 13329
-  - uid: 32597
-    components:
-    - type: Transform
-      pos: 113.5,25.5
-      parent: 13329
-  - uid: 33914
-    components:
-    - type: Transform
-      pos: 41.5,40.5
-      parent: 13329
 - proto: DresserCaptainFilled
   entities:
   - uid: 13405
@@ -109292,6 +109250,48 @@ entities:
     components:
     - type: Transform
       pos: 27.5,64.5
+      parent: 13329
+- proto: DresserFilled
+  entities:
+  - uid: 1109
+    components:
+    - type: Transform
+      pos: -11.5,8.5
+      parent: 13329
+  - uid: 10508
+    components:
+    - type: Transform
+      pos: 87.5,22.5
+      parent: 13329
+  - uid: 13601
+    components:
+    - type: Transform
+      pos: 77.5,25.5
+      parent: 13329
+  - uid: 26774
+    components:
+    - type: Transform
+      pos: 77.5,19.5
+      parent: 13329
+  - uid: 29244
+    components:
+    - type: Transform
+      pos: 8.5,20.5
+      parent: 13329
+  - uid: 29245
+    components:
+    - type: Transform
+      pos: 27.5,-29.5
+      parent: 13329
+  - uid: 29246
+    components:
+    - type: Transform
+      pos: 113.5,25.5
+      parent: 13329
+  - uid: 31713
+    components:
+    - type: Transform
+      pos: 41.5,40.5
       parent: 13329
 - proto: DresserHeadOfPersonnelFilled
   entities:

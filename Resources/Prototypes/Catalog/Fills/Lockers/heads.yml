@@ -215,11 +215,8 @@
     children:
     - id: BoxEncryptionKeyMedical
     - id: ClothingBackpackDuffelSurgeryFilled
-    - id: ClothingCloakCmo
-    - id: ClothingEyesGlassesMedical # Harmony item
-  # - id: ClothingEyesHudMedical # Replaced with Harmony item
+    - id: ClothingEyesGlassesMedical # Harmony: hud -> glasses
     - id: ClothingHandsGlovesNitrile
-    - id: ClothingHeadHatBeretCmo
     - id: ClothingHeadsetAltMedical
     - id: ClothingMaskSterile
     - id: DoorRemoteMedical
@@ -327,7 +324,6 @@
     - id: ClothingBeltSecurityFilled
     - id: ClothingEyesGlassesSecurity
     - id: ClothingHeadsetAltSecurity
-    - id: ClothingMaskNeckGaiter
     - id: ClothingOuterCoatHoSTrench
     - id: ClothingShoesBootsJack
     - id: FlashlightSeclite

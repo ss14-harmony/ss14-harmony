@@ -2903,3 +2903,61 @@ Entries:
     changes:
     - type: Add
       message: Adds Scylla Station, a medium-pop station based on supernatural being Scylla from The Odyssey.
+  - id: 1141
+    author: AreYouConfused
+    time: '2025-11-30T02:51:19.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1141
+    changes:
+    - type: Fix
+      message: Pistol magazine descriptions now say the correct capacity.
+  - id: 1176
+    author: Ermucat
+    time: '2025-12-03T15:34:50.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1176
+    changes:
+    - type: Tweak
+      message: Wizard can now roll as a subgamemode again.
+  - id: 1185
+    author: Dinoguy12349
+    time: '2025-12-06T15:04:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1185
+    changes:
+    - type: Tweak
+      message: Luxury PKAs are now shaped like most other sidearms.
+  - id: 1182
+    author: OrnamentalFreak
+    time: '2025-12-08T13:40:14.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1182
+    changes:
+    - type: Remove
+      message: Mimics can no longer roll as a random event.
+  - id: 1149
+    author: OrnamentalFreak
+    time: '2025-12-08T13:43:50.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1149
+    changes:
+    - type: Tweak
+      message: Cigarette packs now only allow cigarettes to be stored in them.
+  - id: 1112
+    author: Svetoslav228
+    time: '2025-12-08T13:51:32.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1112
+    changes:
+    - type: Add
+      message: Radiation collectors can now use tritium as fuel.
+    - type: Tweak
+      message: Radiation collectors now eat 1.2 times as much plasma as before.
+  - id: 1196
+    author: raccoonio
+    time: '2025-12-09T02:08:35.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1196
+    changes:
+    - type: Fix
+      message: Fixed Scylla's cargo shuttle, such that it spawns as a grid rather than a map.
+  - id: 1173
+    author: kleinerstation13
+    time: '2025-12-09T17:57:16.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1173
+    changes:
+    - type: Remove
+      message: Incendiary and uranium ammo is no longer craftable in lathes.
