@@ -20,7 +20,6 @@ public sealed class ToggleableGhostRoleSystem : EntitySystem
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly ISharedPlayerManager _playerManager = default!; //Harmony
 
-
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -64,6 +63,7 @@ public sealed class ToggleableGhostRoleSystem : EntitySystem
             return;
         }
         //End harmony
+
         var ghostRole = EnsureComp<GhostRoleComponent>(uid);
         EnsureComp<GhostTakeoverAvailableComponent>(uid);
 
