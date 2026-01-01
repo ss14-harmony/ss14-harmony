@@ -4,7 +4,8 @@
   id: BoxEncryptionKeySalvage
   name: salvage encryption key box
   components:
-  - type: StorageFill
-    contents:
-      - id: EncryptionKeySalvage
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: EncryptionKeySalvage
         amount: 4
