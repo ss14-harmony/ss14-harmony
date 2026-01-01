@@ -30,7 +30,7 @@
 # Start Harmony change - Hristov rework, replaces hristov ammo boxes with magazines, changes upstream Hristov prototype to harmony prototype
         - id: WeaponSniperHristovHarmony
         - id: MagazineAntiMateriel
-        amount: 2
+        - id: MagazineAntiMateriel
 #       - id: WeaponSniperHristov
 #       - id: MagazineBoxAntiMateriel
 # End Harmony change
