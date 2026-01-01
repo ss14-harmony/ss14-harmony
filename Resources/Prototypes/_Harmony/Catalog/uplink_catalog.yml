@@ -344,6 +344,28 @@
       tags:
         - NukeOpsUplink
 
+- type: listing
+  id: UplinkJetpackNukie
+  name: uplink-black-jetpack-name
+  description: uplink-stealth-jetpack-desc
+  productEntity: HarmonyJetpackBlackFilledStealth
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle # Tots shouldn't get the stealthy jetpack
+
 # Pointless
 
 - type: listing

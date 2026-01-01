@@ -19,6 +19,7 @@
   - type: Tag
     tags:
     - GPS
+  - type: RadarBlip # Harmony, makes it show up on the Mass Scanner when Offgrid
 
 - type: entity #why does this exist? Well, "global positioning system" is too long to fit in the cyborg's hand slot.
   name: integrated GPS

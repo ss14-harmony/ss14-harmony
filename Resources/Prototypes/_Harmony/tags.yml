@@ -34,6 +34,10 @@
 - type: Tag
   id: Lighter
 
+# Used for Salv comms & Telecom servers
+- type: Tag
+  id: EncryptionSalvage
+
 #used in _Harmony/Entities/Objects/Weapons/Guns/Ammunition/Magazines/anti_materiel.yml
 - type: Tag
   id: MagazineAntiMateriel

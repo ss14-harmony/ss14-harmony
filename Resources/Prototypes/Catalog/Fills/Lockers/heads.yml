@@ -12,6 +12,10 @@
     - id: DoorRemoteCargo
     - id: AstroNavCartridge
     - id: ClothingHandsKnuckleDustersQM
+    # Harmony Change Start - Adds unique salv comms
+    - id: BoxEncryptionKeySalvage
+    - id: RadioHandheldMining
+    # Harmony Change End
 
 - type: entity
   id: LockerQuarterMasterFilled

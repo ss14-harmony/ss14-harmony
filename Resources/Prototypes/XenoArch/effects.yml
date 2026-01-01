@@ -196,6 +196,7 @@
       - Security
       - Service
       - Supply
+      - Salvage # Harmony Change - Salvage Comms Channel, futureproofing
 
 - type: entity
   id: XenoArtifactBecomeRandomInstrument
