@@ -4,7 +4,7 @@
     OreIron: 1.0
     OreQuartz: 1.0
     OreCoal: 0.33
-    OreSalt: 0.25
+    #OreSalt: 0.25 #Harmony - Removes salt from magnet asteroid pools.
     OreGold: 0.25
     OreSilver: 0.25
     OrePlasma: 0.20
@@ -36,13 +36,15 @@
   minGroupSize: 5
   maxGroupSize: 7
 
-- type: oreDunGen
-  id: OreSalt
-  replacement: AsteroidRock
-  entity: AsteroidRockSalt
-  count: 3
-  minGroupSize: 5
-  maxGroupSize: 7
+# Harmony Change Start - Comments out Salt code.
+#- type: oreDunGen
+#  id: OreSalt
+#  replacement: AsteroidRock
+#  entity: AsteroidRockSalt
+#  count: 3
+#  minGroupSize: 5
+#  maxGroupSize: 7
+# Harmony Change End - Comments out Salt code.
 
 - type: oreDunGen
   id: OreGold

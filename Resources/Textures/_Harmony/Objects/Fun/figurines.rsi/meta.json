@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Inhand-left and inhand-right sprites made by the_pro_noob678 at https://github.com/space-wizards/space-station-14/commit/f611b6ea5ea875a6e760c6e8032d84fa3283649e. Inspector Figure based on lawyer figure at https://github.com/space-wizards/space-station-14/commit/9a32e4d06a700911323be20d42301e01a4752e6e. Edited and recolored by whythelettuce (GitHub).",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "inspector"
+        }
+    ]
+}

@@ -60,6 +60,9 @@
       required: false
       # defaultMarkings: [ VoxBeak ]
       # end imp, harmony changes
+    SnoutCover:
+      points: 1
+      required: false
     Arms:
       # imp, harmony: Disable default arm marking
       points: 6

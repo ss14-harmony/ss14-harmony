@@ -145,9 +145,11 @@
       flatReductions:
         Heat: 10 # the average lightbulb only does around four damage!
     slots: OUTERCLOTHING
-  - type: HideLayerClothing
-    slots:
-    - Tail
+# Harmony change begins - Unhides the lizard tail
+#  - type: HideLayerClothing
+#    slots:
+#    - Tail
+# Harmony change ends
 
 - type: entity
   abstract: true
@@ -177,10 +179,11 @@
       flatReductions:
         Heat: 10 # the average lightbulb only does around four damage!
     slots: OUTERCLOTHING
-  - type: HideLayerClothing
-    slots:
-    - Tail
-
+# Harmony change begins - Unhides the lizard tail
+#  - type: HideLayerClothing
+#    slots:
+#    - Tail
+# Harmony change ends
 - type: entity
   parent: ClothingOuterBase
   id: ClothingOuterBaseToggleable

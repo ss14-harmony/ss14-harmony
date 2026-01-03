@@ -73,9 +73,11 @@
   - type: GroupExamine
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
-  - type: HideLayerClothing
-    slots:
-    - Tail
+# Harmony change begins - Unhides the lizard tail
+#  - type: HideLayerClothing
+#    slots:
+#    - Tail
+# Harmony change ends
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
@@ -112,9 +114,11 @@
     tags:
     - CorgiWearable
     - WhitelistChameleon
-  - type: HideLayerClothing
-    slots:
-    - Tail
+# Harmony change begins - Unhides the lizard tail
+#  - type: HideLayerClothing
+#    slots:
+#    - Tail
+# Harmony change ends
 
 - type: entity
   parent: [ClothingOuterBaseLarge, GeigerCounterClothing, AllowSuitStorageClothing]
@@ -140,12 +144,14 @@
       toggleable-clothing: !type:ContainerSlot {}
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
-  - type: HideLayerClothing
-    slots:
-    - Tail
+# Harmony change begins - Unhides the lizard tail
+#  - type: HideLayerClothing
+#    slots:
+#    - Tail
+# Harmony change ends
 
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseToggleClothing, BaseMajorContraband]
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseToggleClothing, BaseHighlyIllegalContraband]
   id: ClothingOuterSuitSpaceNinja
   name: space ninja suit
   description: This black technologically advanced, cybernetically-enhanced suit provides many abilities like invisibility or teleportation.
@@ -207,9 +213,11 @@
         whitelist:
           tags:
             - PowerCell
-  - type: HideLayerClothing
-    slots:
-    - Tail
+# Harmony change begins - Unhides the lizard tail
+#  - type: HideLayerClothing
+#    slots:
+#    - Tail
+# Harmony change ends
 
 - type: entity
   parent: ClothingOuterBase
@@ -288,6 +296,8 @@
     tags:
     - CorgiWearable
     - WhitelistChameleon
+  - type: AddAccentClothing
+    accent: BarkAccent
 
 - type: entity
   parent: ClothingOuterBase
@@ -307,9 +317,11 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
-  - type: HideLayerClothing
-    slots:
-    - Tail
+# Harmony change begins - Unhides the lizard tail
+#  - type: HideLayerClothing
+#    slots:
+#    - Tail
+# Harmony change ends
 
 - type: entity
   parent: ClothingOuterSuitCarp
