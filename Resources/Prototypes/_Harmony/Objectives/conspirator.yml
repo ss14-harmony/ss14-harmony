@@ -46,20 +46,9 @@
 
 - type: entity
   parent: BaseConspiratorObjective
-  id: ConspiratorAccessObjective
-  name: Distribute as much access as possible
-  description: Abolish the hierarchy and departmental separation and allow everyone to roam everywhere.
-  components:
-  - type: Objective
-    icon:
-      sprite: Objects/Misc/id_cards.rsi
-      state: gold
-
-- type: entity
-  parent: BaseConspiratorObjective
   id: ConspiratorArmsObjective
-  name: Acquire weaponry and sell it to the crew
-  description: Get your hands on some guns or similar and sell them to anyone who can pay for them.
+  name: Disarm Security and arm yourselves instead
+  description: Take the guns from Security and give them to yourselves. They cannot be trusted with them.
   components:
   - type: Objective
     icon:
