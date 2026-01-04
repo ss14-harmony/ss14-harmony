@@ -3003,3 +3003,24 @@ Entries:
     changes:
     - type: Fix
       message: The ready manifest now shows colors again.
+  - id: 674
+    author: ProfRenderer
+    time: '2026-01-02T17:09:13.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/674
+    changes:
+    - type: Add
+      message: Added the weh-pet. It's a lizard plushie if it was fused with a trumpet. Can be found in maints lockers as rare loot.
+  - id: 990
+    author: kleinerstation13
+    time: '2026-01-02T17:21:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/990
+    changes:
+    - type: Add
+      message: Added Arnold poster. Who took him?
+  - id: 1195
+    author: Deerstop, luckyshotpictures
+    time: '2026-01-03T16:15:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1195
+    changes:
+    - type: Add
+      message: Wapiti Satellite has been added to the game, developed by Deerstop.
