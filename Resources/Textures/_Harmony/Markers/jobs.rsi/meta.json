@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Inspector sprite organized by whythelettuce (Github). CentComm Cap taken from https://github.com/tgstation/tgstation/commit/ab51593f8e9a0b8678ce603ed335115bb4bb1086, sunglasses made by The Goons archived at commit: https://github.com/nullbear/Goonstation_SS13_r4407/commit/a1ce10847a63db96ed06fe338b5811ff90d403f2, moustache taken from https://github.com/tgstation/tgstation/commit/cb2ba1a0e3c4171640cfa77bd7b00031ea197d61, CentComm Agent jumpsuit taken from https://github.com/ss14-harmony/ss14-harmony/commit/62cee0bca56449e8369312ce6a42131bd6287cba, papercut-proof gloves taken from https://github.com/space-wizards/space-station-14/commit/8b666fabd5b153b14fd5b81ea10b18b1195059d1, leather satchel taken from https://github.com/tgstation/tgstation/commit/c4ce2e965d33f3491173964fcbee3e43c0839bae, laceup shoes taken from https://github.com/tgstation/tgstation/commit/adae991ef5adec2c0fdf9a86c6aa2bfdc7e60fa8.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "inspector"
+        }
+    ]
+}

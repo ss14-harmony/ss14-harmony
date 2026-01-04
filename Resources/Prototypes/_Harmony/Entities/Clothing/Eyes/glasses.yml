@@ -32,3 +32,22 @@
       coverage: EYES
     - type: StealTarget
       stealGroup: ClothingEyesGlassesMedical
+
+- type: entity
+  parent: [ClothingEyesBase, BaseCargoContraband]
+  id: ClothingEyesGlassesSalvage
+  name: salvage goggles
+  suffix: Harmony
+  description: Tinted goggles using a proprietary polymer that provides protection from welding-related eye damage.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Eyes/Glasses/salvgoggles.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Eyes/Glasses/salvgoggles.rsi
+  - type: EyeProtection
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: Tag
+    tags:
+    - PetWearable
+    - WhitelistChameleon

@@ -7,10 +7,12 @@
     ClothingHeadsetGrey: 5
     RubberStampApproved: 1
     RubberStampDenied: 1
+    BoxFolderPlasticClipboardEmpty: 2
     Paper: 10
     Envelope: 10
     HandLabeler: 2
     EncryptionKeyCargo: 2
+    EncryptionKeySalvage: 2 # Harmony Change - Adds Salvage Comms
     EncryptionKeyEngineering: 2
     EncryptionKeyMedical: 2
     EncryptionKeyScience: 2

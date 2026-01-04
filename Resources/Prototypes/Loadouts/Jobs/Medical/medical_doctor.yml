@@ -6,17 +6,17 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChemist
-      time: 10800 # harmony: 6 hrs -> 3 hrs (~2 rounds)
+      time: 3h # Harmony: 6h -> 3h
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 10800 # harmony: 6 hrs -> 3 hrs (~2 rounds)
+      time: 3h # Harmony: 6h -> 3h
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
       department: Medical
-      time: 108000 # Harmony: 60 hrs -> 30 hrs (~20 rounds)
+      time: 30h # Harmony: 60h -> 30h
 
 # Other Timers
 
@@ -27,7 +27,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 54000 # Harmony: 30 hrs -> 15 hrs (~10 rounds)
+      time: 15h # Harmony: 30h -> 15h
 
 # Head
 

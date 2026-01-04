@@ -1,6 +1,10 @@
 ﻿using Content.Shared._Harmony.BloodBrothers.Components;
 using Content.Shared.Actions;
 using Content.Shared.Antag;
+using Content.Shared.IdentityManagement;
+using Content.Shared.Mindshield.Components;
+using Content.Shared.Popups;
+using Content.Shared.Stunnable;
 using Robust.Shared.GameStates;
 using Robust.Shared.Player;
 
@@ -9,6 +13,8 @@ namespace Content.Shared._Harmony.BloodBrothers.EntitySystems;
 public abstract class SharedBloodBrotherSystem : EntitySystem
 {
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
+    [Dependency] private readonly SharedStunSystem _stunSystem = default!;
 
     public override void Initialize()
     {
@@ -37,6 +43,24 @@ public abstract class SharedBloodBrotherSystem : EntitySystem
         ref ComponentGetStateAttemptEvent args)
     {
         args.Cancelled = !CanGetState(args.Player);
+    }
+
+    public void OnBloodBrotherMindshielded(Entity<MindShieldComponent> entity, ref MapInitEvent args)
+    {
+        if (HasComp<InitialBloodBrotherComponent>(entity))
+            return;
+
+        if (!TryComp<BloodBrotherComponent>(entity, out var bloodBrother))
+            return;
+
+        var name = Identity.Entity(entity, EntityManager);
+        RemCompDeferred<BloodBrotherComponent>(entity);
+        if (bloodBrother.DeconversionStunTime != null)
+            _stunSystem.TryUpdateParalyzeDuration(entity, bloodBrother.DeconversionStunTime);
+        _popupSystem.PopupEntity(
+            Loc.GetString("blood-brother-break-control", ("name", name)),
+            entity,
+            PopupType.MediumCaution);
     }
 
     private bool CanGetState(ICommonSession? player)

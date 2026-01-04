@@ -8,10 +8,9 @@
 - type: weightedRandom
   id: BloodBrotherObjectiveGroupState
   weights:
-    # Blood brothers are expected to be usually trying to be stealthy, so low DAGD chance.
-    BloodBrotherEscapeShuttleObjective: 0.25
-    BloodBrotherDieObjective: 0.10
-    BloodBrotherSurviveObjective: 0.65
+    # These should add up to 1
+    BloodBrotherEscapeShuttleObjective: 0.30
+    BloodBrotherSurviveObjective: 0.70
 
 # TODO: figure out how to make the converted brother holding the objective item also count towards the objective
 - type: weightedRandom
@@ -28,7 +27,8 @@
     BloodBrotherCaptainGunStealObjective: 0.5
     BloodBrotherCaptainJetpackStealObjective: 0.5
     BloodBrotherHandTeleporterStealObjective: 0.5
-    BloodBrotherEnergyShotgunStealObjective: 0.5
+    BloodBrotherEnergyMagnumStealObjective: 0.5
+    BloodBrotherAccessConfiguratorStealObjective: 1
 
 - type: weightedRandom
   id: BloodBrotherObjectiveGroupKill

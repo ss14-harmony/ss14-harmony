@@ -74,9 +74,11 @@
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobCockroach
-        weight: 0.79
+        weight: 0.72
       - id: MobMothroach
-        weight: 0.21
+        weight: 0.19
+      - id: MobMoproach
+        weight: 0.09
 
 - type: entity
   id: SnailMigrationLowPop
