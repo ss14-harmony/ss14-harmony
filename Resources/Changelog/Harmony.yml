@@ -2961,3 +2961,66 @@ Entries:
     changes:
     - type: Remove
       message: Incendiary and uranium ammo is no longer craftable in lathes.
+  - id: 1202
+    author: BoskiYourk
+    time: '2025-12-25T22:02:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1202
+    changes:
+    - type: Tweak
+      message: Command and security glasses have been resprited.
+  - id: 1154
+    author: LaOubliette
+    time: '2025-12-25T22:24:20.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1154
+    changes:
+    - type: Tweak
+      message: tweaked emag interactions with several vendors
+  - id: 1014
+    author: Jajsha
+    time: '2026-01-01T20:31:32.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1014
+    changes:
+    - type: Tweak
+      message: Positronic brains are now temporarily disabled and can be manually reactivated instead of wiped.
+  - id: 859
+    author: CollectionOfBones128
+    time: '2026-01-01T20:33:43.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/859
+    changes:
+    - type: Add
+      message: Jetpacks and handeld GPSs now show up as blips on the mass scanner. Blood-red magboots and nuclear operative jetpacks however do not.
+  - id: 902
+    author: CollectionOfBones128
+    time: '2026-01-01T23:38:57.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/902
+    changes:
+    - type: Add
+      message: Salvage now has a unique communication channel.
+  - id: 1222
+    author: youtissoum
+    time: '2026-01-02T13:45:38.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1222
+    changes:
+    - type: Fix
+      message: The ready manifest now shows colors again.
+  - id: 674
+    author: ProfRenderer
+    time: '2026-01-02T17:09:13.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/674
+    changes:
+    - type: Add
+      message: Added the weh-pet. It's a lizard plushie if it was fused with a trumpet. Can be found in maints lockers as rare loot.
+  - id: 990
+    author: kleinerstation13
+    time: '2026-01-02T17:21:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/990
+    changes:
+    - type: Add
+      message: Added Arnold poster. Who took him?
+  - id: 1195
+    author: Deerstop, luckyshotpictures
+    time: '2026-01-03T16:15:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1195
+    changes:
+    - type: Add
+      message: Wapiti Satellite has been added to the game, developed by Deerstop.

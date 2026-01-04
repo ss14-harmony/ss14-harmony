@@ -9,6 +9,7 @@
   - !type:RoleTimeRequirement
     role: JobBorg
     time: 4h # harmony: 5h -> 4h
+  weight: 10
   canBeAntag: false
   icon: JobIconStationAi
   supervisors: job-supervisors-rd

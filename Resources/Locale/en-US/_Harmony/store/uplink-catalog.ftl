@@ -3,9 +3,6 @@
 uplink-blood-red-carbine-name = Blood-Red Energy Carbine Bundle
 uplink-blood-red-carbine-desc = A bundle containing the stolen and improved Blood-Red Energy Carbine. It comes with two spare Jailbroken Energy Cartridges.
 
-uplink-hushpup-name = Hushpup
-uplink-hushpup-desc = Contains a Hushpup, a powerful silenced shotgun with a low magazine capacity, as well as a spare box of buckshot. Uses .50 shotgun ammo.
-
 uplink-rifle-bandit-name = Bandit Bundle
 uplink-rifle-bandit-desc = Contains the Bandit, a reliable semi-auto bullpup which fires devastating caseless rounds, bundled with 2 DMR magazines. Uses .30 rifle caseless ammo.
 

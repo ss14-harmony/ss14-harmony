@@ -788,8 +788,10 @@
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Boxer
+  # Harmony start
   - type: PresetIdCard
     job: Boxer
+  # Harmony end
 
 - type: entity
   parent: IDCardStandard
@@ -806,8 +808,10 @@
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Zookeeper
+  # Harmony start
   - type: PresetIdCard
     job: Zookeeper
+  # Harmony end
 
 #Supply
 
@@ -1050,6 +1054,18 @@
     tags:
     - NuclearOperative
     - SyndicateAgent
+
+- type: entity
+  parent: IDCardStandard
+  id: XenoborgIDCard
+  name: xenoborg ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+  - type: Access
+    tags:
+    - Xenoborg
 
 - type: entity
   parent: IDCardStandard

@@ -38,6 +38,9 @@
 - type: Tag
   id: EncryptionSalvage
 
+- type: Tag
+  id: SpeedLoaderRifle
+
 #used in _Harmony/Entities/Objects/Weapons/Guns/Ammunition/Magazines/anti_materiel.yml
 - type: Tag
   id: MagazineAntiMateriel
