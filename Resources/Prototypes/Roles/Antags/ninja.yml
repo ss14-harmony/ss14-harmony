@@ -24,7 +24,7 @@
     pocket2: PinpointerStation
     belt: EnergyKatana
   inhand:
-    - JetpackBlackFilled
+    - HarmonyJetpackBlackFilledStealth # Harmony Change, JetpackBlackFilled > HarmonyJetpackBlackFilledStealth, Ninja shouldn't show up on the Mass Scanner
   storage:
     back: # belt holds katana so satchel has the tools for sabotaging things
     - Crowbar

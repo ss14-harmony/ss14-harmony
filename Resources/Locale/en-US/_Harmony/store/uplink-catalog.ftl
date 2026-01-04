@@ -3,9 +3,6 @@
 uplink-blood-red-carbine-name = Blood-Red Energy Carbine Bundle
 uplink-blood-red-carbine-desc = A bundle containing the stolen and improved Blood-Red Energy Carbine. It comes with two spare Jailbroken Energy Cartridges.
 
-uplink-hushpup-name = Hushpup
-uplink-hushpup-desc = Contains a Hushpup, a powerful silenced shotgun with a low magazine capacity, as well as a spare box of buckshot. Uses .50 shotgun ammo.
-
 uplink-rifle-bandit-name = Bandit Bundle
 uplink-rifle-bandit-desc = Contains the Bandit, a reliable semi-auto bullpup which fires devastating caseless rounds, bundled with 2 DMR magazines. Uses .30 rifle caseless ammo.
 
@@ -54,6 +51,11 @@ uplink-stimkit-traitor-desc = A medkit containing 6 hyperzine microinjectors, wh
 uplink-syndicate-id-name = Syndicate ID card
 uplink-syndicate-id-desc = A sleek black-and-red ID card with embossed Syndicate logo and syndicate access. Does not possess any Nanotrasen access. Limited to one ID per agent.
 
+# Disruption
+
+uplink-syndicate-access-config-name = Cybersun Configurator
+uplink-syndicate-access-config-desc = A competing access configurator that works with NanoTrasen and Syndicate IDs. Not to be confused with the Access Breaker.
+
 # Allies
 
 uplink-reinforcement-radio-cyborg-support-name = Syndicate Support Cyborg Teleporter
@@ -68,6 +70,9 @@ uplink-hyperzine-implanter-name = Hyperzine Implanter
 uplink-hyperzine-implanter-desc = A 3-use implant which injects you with 90 seconds worth of hyperzine, a combat stimulant. Has a lengthy cooldown.
 
 # Wearables
+
+uplink-stealth-jetpack-desc = A black jetpack that doesn't appear on radar. It allows you to fly around in space. Refills not included, use your fuel wisely.
+
 # Pointless
 
 uplink-cluster-weh-name = Tactical Clusterplushie

@@ -788,8 +788,10 @@
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Boxer
+  # Harmony start
   - type: PresetIdCard
     job: Boxer
+  # Harmony end
 
 - type: entity
   parent: IDCardStandard
@@ -806,8 +808,10 @@
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Zookeeper
+  # Harmony start
   - type: PresetIdCard
     job: Zookeeper
+  # Harmony end
 
 #Supply
 
@@ -927,23 +931,14 @@
 #Antags
 
 - type: entity
-  name: passenger ID card
-  parent: [IDCardStandard, BaseChameleon]
+  parent: [PassengerIDCard, BaseChameleon]
   id: AgentIDCard
   suffix: Agent
   components:
-  - type: PresetIdCard
-    job: Passenger
   - type: Access
     tags:
     - Maintenance
     - SyndicateAgent
-  - type: Sprite
-    layers:
-    - state: default
-    - sprite: *icon-rsi
-      offset: *icon-offset
-      state: Passenger
   - type: AgentIDCard
   - type: UIRequiresLock
   - type: ActivatableUI
@@ -964,7 +959,6 @@
         type: ChameleonBoundUserInterface
 
 - type: entity
-  name: passenger ID card
   parent: AgentIDCard
   id: NukieAgentIDCard
   suffix: Nukie
@@ -1060,6 +1054,18 @@
     tags:
     - NuclearOperative
     - SyndicateAgent
+
+- type: entity
+  parent: IDCardStandard
+  id: XenoborgIDCard
+  name: xenoborg ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+  - type: Access
+    tags:
+    - Xenoborg
 
 - type: entity
   parent: IDCardStandard
