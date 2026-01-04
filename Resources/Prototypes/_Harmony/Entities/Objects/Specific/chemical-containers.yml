@@ -1,0 +1,14 @@
+- type: entity
+  parent: Jug
+  id: JugUniversalBlood
+  categories: [ HideSpawnMenu ]
+  suffix: Universal Blood Substitute, Harmony
+  components:
+  - type: Label
+    currentLabel: reagent-name-universal-blood
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: UniversalBlood
+          Quantity: 200
