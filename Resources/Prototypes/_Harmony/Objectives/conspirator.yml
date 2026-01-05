@@ -98,14 +98,3 @@
     icon:
       sprite: Mobs/Pets/corgi.rsi
       state: ian
-
-- type: entity
-  parent: BaseConspiratorObjective
-  id: ConspiratorBanquetObjective
-  name: Host a banquet for station pet meat
-  description: Find out why the Syndicate wants Ian butchered so badly.
-  components:
-  - type: Objective
-    icon:
-      sprite: Objects/Consumable/Food/meat.rsi
-      state: corgi
