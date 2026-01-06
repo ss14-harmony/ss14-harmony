@@ -119,7 +119,6 @@
   components:
   - type: GameRule
     minPlayers: 28 # minimum of 4 conspirators
-    cancelPresetOnTooFewPlayers: false
   - type: ConspiratorRule
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
