@@ -14,8 +14,8 @@
 - type: entity
   parent: BaseConspiratorObjective
   id: ConspiratorUnionObjective
-  name: Declare a part of the station an independent nation
-  description: Take over a section or department of the station and declare independence from Nanotrasen.
+  name: Forcefully seize control of a department
+  description: Assume direct control over a department and declare independence from Nanotrasen.
   components:
   - type: Objective
     icon:
@@ -36,12 +36,12 @@
 - type: entity
   parent: BaseConspiratorObjective
   id: ConspiratorTechnologyObjective
-  name: Destroy all station technology
-  description: Show the crew the merits of a simpler life. Forcefully.
+  name: Seize all station technology
+  description: Show the crew the merits of a simpler life. Because only you deserve the wonders of technology.
   components:
   - type: Objective
     icon:
-      sprite: Objects/Weapons/Melee/baseball_bat.rsi
+      sprite: Structures/Machines/autolathe.rsi
       state: icon
 
 - type: entity
@@ -76,25 +76,3 @@
     icon:
       sprite: Clothing/Hands/Gloves/KnuckleDusters/brassknuckleduster.rsi
       state: brassknuckleduster
-
-- type: entity
-  parent: BaseConspiratorObjective
-  id: ConspiratorCultObjective
-  name: Form a dangerous cult
-  description: Establish yourselves as a cult worshipping whatever you desire.
-  components:
-  - type: Objective
-    icon:
-      sprite: Objects/Weapons/Melee/cult_dagger.rsi
-      state: icon
-
-- type: entity
-  parent: BaseConspiratorObjective
-  id: ConspiratorPetObjective
-  name: Replace Command with their pets
-  description: Ian is probably more competent than the Head of Personnel anyway.
-  components:
-  - type: Objective
-    icon:
-      sprite: Mobs/Pets/corgi.rsi
-      state: ian
