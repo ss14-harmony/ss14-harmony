@@ -32,12 +32,11 @@
   - conspirators
   - conspirator
   name: conspiracy-title
-  description: conspracy-description
+  description: conspiracy-description
   showInVote: false # secret
   rules:
   - Conspirators
-  - SubTraitor
-  - SubGamemodesRule
+  - ThiefChance
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
