@@ -147,19 +147,3 @@
         - RadioImplantConspiracy
       mindRoles:
       - MindRoleConspirator
-
-- type: entity
-  parent: Traitor
-  id: SubTraitor # used in Conspiracy game preset
-  components:
-  - type: AntagSelection
-    definitions:
-    - prefRoles: [ Traitor ]
-      max: 3
-      playerRatio: 15
-      blacklist:
-        components:
-        - AntagImmune
-      lateJoinAdditional: true
-      mindRoles:
-      - MindRoleTraitor
