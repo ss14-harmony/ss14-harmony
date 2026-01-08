@@ -3024,3 +3024,31 @@ Entries:
     changes:
     - type: Add
       message: Wapiti Satellite has been added to the game, developed by Deerstop.
+  - id: 1218
+    author: AreYouConfused
+    time: '2026-01-05T23:20:46.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1218
+    changes:
+    - type: Fix
+      message: Vox now have a default beak.
+  - id: 1226
+    author: whythelettuce
+    time: '2026-01-06T11:58:12.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1226
+    changes:
+    - type: Tweak
+      message: Updated Athena Station + Evac Chariot
+  - id: 1122
+    author: SuperGDPWYL
+    time: '2026-01-08T16:13:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1122
+    changes:
+    - type: Add
+      message: Conspirators have been added to the game. They are a group of four to seven antagonists in a team with a special radio implant and a shared objective.
+  - id: 1029
+    author: dragydevi
+    time: '2026-01-08T21:19:17.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1029
+    changes:
+    - type: Add
+      message: The queue window has been updated.
