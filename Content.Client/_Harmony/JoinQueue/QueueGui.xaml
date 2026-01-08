@@ -9,7 +9,7 @@
         ScaleX="3"
         ScaleY="3"/>
     <Control HorizontalAlignment="Center" VerticalAlignment="Center" Name="MainContainer">
-        <PanelContainer StyleClasses="AngleRect" />
+        <PanelContainer StyleClasses="windowPanel" />
         <BoxContainer Orientation="Vertical" HorizontalExpand="True" MinSize="500 300">
             <BoxContainer Orientation="Horizontal">
                 <Label Margin="8 0 0 0" Name="ServerName"
