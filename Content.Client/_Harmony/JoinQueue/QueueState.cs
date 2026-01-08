@@ -4,6 +4,7 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using Robust.Shared;
 using Robust.Shared.Audio;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
@@ -36,7 +37,7 @@ public sealed class QueueState : State
         Queue = (QueueGui)_userInterfaceManager.ActiveScreen;
         Queue.UpdateBranding(
             _resourceCache.GetResource<TextureResource>("/Textures/Logo/logo.png"),
-            String.IsNullOrEmpty(_cfg.GetCVar(CCVars.ServerLobbyName)) ? _cfg.GetCVar(CCVars.GameHostName) : _cfg.GetCVar(CCVars.ServerLobbyName));
+            String.IsNullOrEmpty(_cfg.GetCVar(CCVars.ServerLobbyName)) ? _cfg.GetCVar(CVars.GameHostName) : _cfg.GetCVar(CCVars.ServerLobbyName));
 
         Queue.QuitButton.OnPressed += OnQuitButtonPressed;
 
