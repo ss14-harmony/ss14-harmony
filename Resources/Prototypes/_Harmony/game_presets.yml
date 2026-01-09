@@ -32,13 +32,28 @@
   - oopsallBB
   - oopsallbloodbound
   - allBB
-  - tatorbrothers
   name: oops-all-bb-title
   description: oops-all-bb-description
   showInVote: false
   rules:
   - OopsAllBloodBound
   - SubGamemodesRuleTraitor
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: Conspiracy
+  alias:
+  - conspirators
+  - conspirator
+  name: conspiracy-title
+  description: conspiracy-description
+  showInVote: false # secret
+  rules:
+  - Conspirators
+  - ThiefChance
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler

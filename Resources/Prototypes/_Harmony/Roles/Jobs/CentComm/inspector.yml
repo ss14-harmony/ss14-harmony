@@ -1,0 +1,43 @@
+- type: job
+  id: CentCommInspector
+  name: job-name-centcomm-inspector
+  description: job-description-centcomm-inspector
+  playTimeTracker: JobCentCommInspector
+  requirements:
+  - !type:RoleTimeRequirement
+    role: JobHeadOfPersonnel
+    time: 7200 # 2 hours of HoP
+  - !type:OverallPlaytimeRequirement
+    time: 36000 # 10 hours overall playtime (it's a fucking cc role.)
+  setPreference: false
+  startingGear: CentCommInspectorGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  access:
+  - Command
+  - Maintenance
+  - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear
+  id: CentCommInspectorGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomAgent
+    back: ClothingBackpackSatchelLeather
+    shoes: ClothingShoesBootsLaceup
+    head: ClothingHeadHatCentcomcap # I CANNOT find if the head section goes before or after the mask. ANYWHERE. so, here it goes.
+    mask: ClothingMaskInspectorMoustache
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesHop
+    id: CentCommInspectorPDA
+    ears: ClothingHeadsetCentCom
+    pocket1: BoxFolderCentComClipboardThreePapers
+    pocket2: Flash
+  storage:
+    back:
+    - RubberStampApproved
+    - RubberStampDenied
+    - OfficeCarePackage
