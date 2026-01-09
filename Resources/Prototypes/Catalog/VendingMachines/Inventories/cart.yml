@@ -12,6 +12,7 @@
     Envelope: 10
     HandLabeler: 2
     EncryptionKeyCargo: 2
+    EncryptionKeySalvage: 2 # Harmony Change - Adds Salvage Comms
     EncryptionKeyEngineering: 2
     EncryptionKeyMedical: 2
     EncryptionKeyScience: 2

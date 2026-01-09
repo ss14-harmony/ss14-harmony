@@ -305,6 +305,7 @@
       key_slots:
       - EncryptionKeyCommon
       - EncryptionKeyCargo
+      - EncryptionKeySalvage # Harmony Change - Adds Salv Comms
 
 - type: entity
   id: IntercomAll

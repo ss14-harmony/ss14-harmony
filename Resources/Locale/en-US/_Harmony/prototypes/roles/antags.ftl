@@ -4,3 +4,6 @@ roles-antag-blood-brother-objective = Collaborate with your blood bound to accom
 
 roles-antag-marauder-name = Syndicate Marauder
 roles-antag-marauder-objective = Die a glorious death. Death to Nanotrasen!
+
+roles-antag-conspirator-name = Conspirator
+roles-antag-conspirator-objective = Work with your fellow conspirators to bring the conspiracy to life.
