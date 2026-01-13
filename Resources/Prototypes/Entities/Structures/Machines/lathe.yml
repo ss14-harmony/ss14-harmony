@@ -475,6 +475,9 @@
     - HarmonyMedicalStatic # Harmony
     dynamicPacks:
     - Chemistry
+  - type: EmagLatheRecipes #Harmony change- add effects when emagged
+    emagStaticPacks: #Because Med + Evil
+    - Medieval
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget

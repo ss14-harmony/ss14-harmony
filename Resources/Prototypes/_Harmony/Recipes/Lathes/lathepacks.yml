@@ -56,6 +56,16 @@
   - ClothingEyesEyepatchHudMedical
   - ClothingEyesHudMedical
 
+## Medieval
+- type: latheRecipePack
+  id: Medieval
+  recipes:
+  - Claymore
+  - Cutlass
+  - BowImprovised
+  - ClothingHeadHelmetTemplarReal
+  - ArrowImprovised
+
 ## Security
 - type: latheRecipePack
   id: HarmonySecurityEquipmentStatic
