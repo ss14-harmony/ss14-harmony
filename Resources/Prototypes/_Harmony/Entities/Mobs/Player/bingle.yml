@@ -7,12 +7,13 @@
   components:
   # Visuals
   - type: Sprite
-    sprite: _Harmony/Mobs/Aliens/Bingles/bingle.rsi
+    sprite: _Harmony/Mobs/Aliens/Bingles/binglerevamp.rsi # Points towards the revamped sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: alive
     - map: ["enum.CombatModeVisualLayers.CombatEnabled"]
       state: combat
+      shader: unshaded
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -121,7 +122,7 @@
   description: More bingle per bingle.
   components:
   - type: Sprite
-    sprite: _Harmony/Mobs/Aliens/Bingles/bingle_upgraded.rsi
+    sprite: _Harmony/Mobs/Aliens/Bingles/binglerevamp_upgraded.rsi # Points towards the revamped sprite
   - type: Bingle
     upgraded: true
   - type: MeleeWeapon
