@@ -108,6 +108,8 @@
   suffix: Prime
   description: The most bingle per bingle.
   components:
+  - type: Sprite
+    sprite: _Harmony/Mobs/Aliens/Bingles/bingle.rsi # Prime bingles use the old sprite
   - type: Bingle
     upgradePolymorph: BinglePrimePolymorph
   - type: SpawnOnSpawn
@@ -146,3 +148,6 @@
   name: binglester
   suffix: Prime, Upgraded
   description: The most bingle per bingle.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Mobs/Aliens/Bingles/bingle_upgraded.rsi # Prime bingles use old sprites
