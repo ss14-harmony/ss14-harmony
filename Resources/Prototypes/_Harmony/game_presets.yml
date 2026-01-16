@@ -37,7 +37,7 @@
   rules:
   - Conspirators
   - ThiefChance
-  - BasicStationEventScheduler
+  - BasicStationEventSchedulerConspirators
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
