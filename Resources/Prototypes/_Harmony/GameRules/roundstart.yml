@@ -152,7 +152,7 @@
   id: BasicStationEventSchedulerConspirators
   parent: BaseGameRule
   components:
-  - type: BasicStationEventSchedulerConspirators
+  - type: BasicStationEventScheduler
     scheduledGameRules: !type:NestedSelector
       tableId: BasicGameRulesTableConspirators
 
