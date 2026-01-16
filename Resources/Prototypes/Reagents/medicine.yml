@@ -1002,7 +1002,7 @@
   color: "#b0abaa"
   metabolisms:
     Medicine:
-      metabolismRate: 0.5  # Harmony
+      metabolismRate: 0.05  # Harmony
       effects:
       - !type:ModifyStatusEffect
         effectProto: StatusEffectDrowsiness
