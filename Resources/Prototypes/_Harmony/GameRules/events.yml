@@ -26,3 +26,19 @@
     minimumPlayers: 20
   - type: RandomSpawnRule
     prototype: SpawnPointGhostBinglePrime
+
+- type: entityTable
+  id: ModerateAntagEventsTableConspirators # Seperate Antag Table for Conspirators
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+    children:
+    - id: DragonSpawn
+    - id: NinjaSpawn
+    - id: ParadoxCloneSpawn
+    # - id: SleeperAgents
+    - id: ZombieOutbreak
+    - id: LoneOpsSpawn
+    # - id: WizardSpawn - Harmony Change, disables wizard midround
+    - id: BingleSpawn # Harmony
+    - !type:NestedSelector
+      tableId: DerelictBorgEventTable
+
