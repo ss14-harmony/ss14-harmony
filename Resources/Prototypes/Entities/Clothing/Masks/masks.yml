@@ -270,6 +270,18 @@
 
 - type: entity
   parent: ClothingMaskBase
+  id: ClothingMaskMimeBase
+  components:
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Snout
+
+- type: entity
+  parent: ClothingMaskMimeBase
   id: ClothingMaskMime
   name: mime mask
   description: The traditional mime's mask. It has an eerie facial posture.
@@ -280,13 +292,20 @@
     sprite: Clothing/Mask/mime.rsi
   - type: BreathMask
   - type: IdentityBlocker
+  - type: ChameleonClothing
+    slot: Mask
+    requireTag: MimeMaskChameleon
+    default: ClothingMaskMime
+    affectedByEmp: false
+  - type: UserInterface
+    interfaces:
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface
   - type: Tag
     tags:
     - HamsterWearable
     - WhitelistChameleon
-  - type: HideLayerClothing
-    slots:
-    - Snout
+    - MimeMaskChameleon
 
 - type: entity
   parent: ClothingMaskPullableBase
@@ -626,6 +645,8 @@
     sprite: Clothing/Mask/blushingmime.rsi
   - type: Clothing
     sprite: Clothing/Mask/blushingmime.rsi
+  - type: ChameleonClothing
+    default: ClothingMaskBlushingMime
 
 - type: entity
   parent: ClothingMaskMime
@@ -637,6 +658,8 @@
     sprite: Clothing/Mask/sadmime.rsi
   - type: Clothing
     sprite: Clothing/Mask/sadmime.rsi
+  - type: ChameleonClothing
+    default: ClothingMaskSadMime
 
 - type: entity
   parent: ClothingMaskMime
@@ -648,9 +671,11 @@
     sprite: Clothing/Mask/scaredmime.rsi
   - type: Clothing
     sprite: Clothing/Mask/scaredmime.rsi
+  - type: ChameleonClothing
+    default: ClothingMaskScaredMime
 
 - type: entity
-  parent: [ClothingMaskMime, BaseSecurityContraband]
+  parent: [ClothingMaskMimeBase, BaseSecurityContraband]
   id: ClothingMaskMimeSecurity
   name: security mime mask
   description: You have the right to remain silent.

@@ -945,6 +945,9 @@
   id: MimeHappyHonk # ConstructionGraph: MimeBot
 
 - type: Tag
+  id: MimeMaskChameleon # Used to whitelist the Mime Mask chameleon options.
+
+- type: Tag
   id: MindTransferTarget # Default value in TransferMindOnGibComponent. Moves the mind of the gibed component owner to the tagged giblet.
 
 - type: Tag # Used on DungeonRoom prototypes.
