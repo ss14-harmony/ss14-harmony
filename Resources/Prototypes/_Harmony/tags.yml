@@ -40,3 +40,7 @@
 
 - type: Tag
   id: SpeedLoaderRifle
+
+# Used to whitelist the Mime Mask chameleon options.
+- type: Tag
+  id: MimeMaskChameleon 

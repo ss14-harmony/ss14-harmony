@@ -270,8 +270,16 @@
 
 - type: entity
   parent: ClothingMaskBase
-  id: ClothingMaskMimeBase
+  id: ClothingMaskMimeBase # Harmony seperated the standard mime mask from the base.
+#  name: mime mask
+#  description: The traditional mime's mask. It has an eerie facial posture.
   components:
+#  - type: Sprite
+#    sprite: Clothing/Mask/mime.rsi
+#  - type: Clothing
+#    sprite: Clothing/Mask/mime.rsi
+  - type: BreathMask
+  - type: IdentityBlocker
   - type: Tag
     tags:
     - HamsterWearable
@@ -280,8 +288,9 @@
     slots:
     - Snout
 
+# Harmony default mime mask is now its own entity, parenting from ClothingMaskMimeBase
 - type: entity
-  parent: ClothingMaskMimeBase
+  parent: ClothingMaskMimeBase # Harmony
   id: ClothingMaskMime
   name: mime mask
   description: The traditional mime's mask. It has an eerie facial posture.
@@ -290,14 +299,12 @@
     sprite: Clothing/Mask/mime.rsi
   - type: Clothing
     sprite: Clothing/Mask/mime.rsi
-  - type: BreathMask
-  - type: IdentityBlocker
-  - type: ChameleonClothing
+  - type: ChameleonClothing # Harmony adds chameleon to all of the non-sec mime masks.
     slot: Mask
-    requireTag: MimeMaskChameleon
+    requireTag: MimeMaskChameleon # Harmony new tag to restrict the mime masks to only change into each other.
     default: ClothingMaskMime
     affectedByEmp: false
-  - type: UserInterface
+  - type: UserInterface # Harmony
     interfaces:
       enum.ChameleonUiKey.Key:
         type: ChameleonBoundUserInterface
@@ -305,7 +312,7 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-    - MimeMaskChameleon
+    - MimeMaskChameleon # Harmony new tag to restrict the mime masks to only change into each other.
 
 - type: entity
   parent: ClothingMaskPullableBase
@@ -645,7 +652,7 @@
     sprite: Clothing/Mask/blushingmime.rsi
   - type: Clothing
     sprite: Clothing/Mask/blushingmime.rsi
-  - type: ChameleonClothing
+  - type: ChameleonClothing # Harmony sets defualt appearence for the chameleon mask.
     default: ClothingMaskBlushingMime
 
 - type: entity
@@ -658,7 +665,7 @@
     sprite: Clothing/Mask/sadmime.rsi
   - type: Clothing
     sprite: Clothing/Mask/sadmime.rsi
-  - type: ChameleonClothing
+  - type: ChameleonClothing # Harmony sets defualt appearence for the chameleon mask.
     default: ClothingMaskSadMime
 
 - type: entity
@@ -671,11 +678,11 @@
     sprite: Clothing/Mask/scaredmime.rsi
   - type: Clothing
     sprite: Clothing/Mask/scaredmime.rsi
-  - type: ChameleonClothing
+  - type: ChameleonClothing # Harmony sets defualt appearence for the chameleon mask.
     default: ClothingMaskScaredMime
 
 - type: entity
-  parent: [ClothingMaskMimeBase, BaseSecurityContraband]
+  parent: [ClothingMaskMimeBase, BaseSecurityContraband] # Harmony now parents off ClothingMaskMimeBase so that it doesn't inherit the chameleon component. 
   id: ClothingMaskMimeSecurity
   name: security mime mask
   description: You have the right to remain silent.
