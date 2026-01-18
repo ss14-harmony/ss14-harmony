@@ -56,8 +56,9 @@
       # end imp, harmony
     Snout:
       points: 1
-      # imp, harmony: Disable forced default beak
+      # imp, harmony: Disable forced default beak, force colorable beak instead
       required: false
+      defaultMarkings: [ VoxBeakColor ]
       # defaultMarkings: [ VoxBeak ]
       # end imp, harmony changes
     SnoutCover:

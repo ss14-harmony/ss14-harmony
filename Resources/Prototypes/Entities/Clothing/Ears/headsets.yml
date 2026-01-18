@@ -52,11 +52,18 @@
     sprite: Clothing/Ears/Headsets/cargo.rsi
 
 - type: entity
-  parent: ClothingHeadsetCargo
+  parent: ClothingHeadset # Harmony Change - ClothingHeadsetCargo > ClothingHeadset
   id: ClothingHeadsetMining
   name: mining headset
   description: Headset used by shaft miners.
   components:
+# Harmony Change Start, adds salvage channel
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeySalvageCargo
+      - EncryptionKeyCommon
+# Harmony Change End
   - type: Sprite
     sprite: Clothing/Ears/Headsets/mining.rsi
   - type: Clothing
@@ -72,6 +79,7 @@
     containers:
       key_slots:
       - EncryptionKeyCargo
+      - EncryptionKeySalvage # Harmony Change - Adds Salv Comms Channel
       - EncryptionKeyCommand
       - EncryptionKeyCommon
 

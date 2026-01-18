@@ -3,9 +3,9 @@ meta:
   category: Map
   engineVersion: 268.0.0
   forkId: harmony
-  forkVersion: c51cf6cdf0128751b3b39fac5640fd7eb86901fd
-  time: 12/19/2025 07:32:36
-  entityCount: 29530
+  forkVersion: 9e1e60bc621650b219dceb2540c4403344028efa
+  time: 01/06/2026 16:05:15
+  entityCount: 29538
 maps:
 - 1
 grids:
@@ -19972,6 +19972,16 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -1.5,54.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 29531
+    components:
+    - type: MetaData
+      name: Chemistry APC
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -23.5,11.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -40502,6 +40512,21 @@ entities:
     - type: Transform
       pos: -0.5,50.5
       parent: 2
+  - uid: 29534
+    components:
+    - type: Transform
+      pos: -22.5,10.5
+      parent: 2
+  - uid: 29535
+    components:
+    - type: Transform
+      pos: -22.5,11.5
+      parent: 2
+  - uid: 29536
+    components:
+    - type: Transform
+      pos: -23.5,11.5
+      parent: 2
 - proto: CableApcStack
   entities:
   - uid: 4908
@@ -54906,6 +54931,16 @@ entities:
     components:
     - type: Transform
       pos: 11.5,19.5
+      parent: 2
+  - uid: 29532
+    components:
+    - type: Transform
+      pos: -22.5,11.5
+      parent: 2
+  - uid: 29533
+    components:
+    - type: Transform
+      pos: -23.5,11.5
       parent: 2
 - proto: CableMVStack
   entities:
@@ -79685,13 +79720,6 @@ entities:
     components:
     - type: Transform
       pos: 5.5,27.5
-      parent: 2
-- proto: FigureSpawner
-  entities:
-  - uid: 12047
-    components:
-    - type: Transform
-      pos: 57.5,25.5
       parent: 2
 - proto: filingCabinetDrawerRandom
   entities:
@@ -133239,12 +133267,28 @@ entities:
     - type: Transform
       pos: 75.5,24.5
       parent: 2
+- proto: LockerWallMedicalDoctorFilled
+  entities:
+  - uid: 29538
+    components:
+    - type: Transform
+      pos: -14.5,17.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: LockerWallMedicalFilled
   entities:
   - uid: 19969
     components:
     - type: Transform
       pos: -31.5,33.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 29537
+    components:
+    - type: Transform
+      pos: -3.5,7.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -134757,6 +134801,13 @@ entities:
     components:
     - type: Transform
       pos: 9.5771675,-28.516392
+      parent: 2
+- proto: MechFigurineSpawner50
+  entities:
+  - uid: 12047
+    components:
+    - type: Transform
+      pos: 57.5,25.5
       parent: 2
 - proto: MedicalBed
   entities:
@@ -137509,6 +137560,13 @@ entities:
     components:
     - type: Transform
       pos: -86.087555,-32.8277
+      parent: 2
+- proto: PlushieSpawner50
+  entities:
+  - uid: 25304
+    components:
+    - type: Transform
+      pos: 50.5,7.5
       parent: 2
 - proto: PonderingOrb
   entities:
@@ -164838,13 +164896,6 @@ entities:
       name: totally a throngler
     - type: Transform
       pos: 42.703545,-0.36938596
-      parent: 2
-- proto: ToySpawner
-  entities:
-  - uid: 25304
-    components:
-    - type: Transform
-      pos: 50.5,7.5
       parent: 2
 - proto: ToySword
   entities:
