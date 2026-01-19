@@ -26,12 +26,12 @@
     ClothingEyesBlindfold: 1
     ClothingShoesBootsCombat: 1
     ClothingShoesBootsWinterSec: 2
-    ClothingUnderSocksCombat: 2 # Harmony
     ClothingHeadHelmetJustice: 1
   contrabandInventory:
     ClothingMaskClownSecurity: 1
     ClothingMaskMimeSecurity: 1
     ClothingOuterCoatAMG: 1 # Harmony
+    ClothingUnderSocksCombat: 2 # Harmony
     ToyFigurineSecurity: 1
     ToyFigurineWarden: 1
     ToyFigurineHeadOfSecurity: 1
