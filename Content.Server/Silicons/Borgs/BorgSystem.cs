@@ -2,7 +2,6 @@ using Content.Server.Administration.Managers;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Hands.Systems;
-using Content.Server.PowerCell;
 using Content.Server.Silicons.Laws; // Harmony Change
 using Content.Shared.Alert;
 using Content.Shared.Body.Events;
@@ -18,9 +17,9 @@ using Content.Shared.Emag.Systems;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Power.EntitySystems;
-using Content.Shared.PowerCell;
 using Content.Shared.Roles;
 using Content.Shared.Silicons.Borgs;
+using Content.Shared.Powercell;
 using Content.Shared.Trigger.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
@@ -38,7 +37,6 @@ public sealed partial class BorgSystem : SharedBorgSystem
     [Dependency] private readonly TriggerSystem _trigger = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly SiliconLawSystem _law = default!; // Harmony Change - adds for law syncing
     [Dependency] private readonly PredictedBatterySystem _battery = default!;
