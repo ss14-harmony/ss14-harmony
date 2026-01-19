@@ -23,8 +23,8 @@ public sealed partial class VoicelinesTab : Control
         Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesReptilian, RMCVoicelinesReptilian);
         Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesSlime, RMCVoicelinesSlime);
         Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesAvali, RMCVoicelinesAvali);
+        Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesVulpkanin, RMCVoicelinesVulpkanin);
         // Harmony change start - We don't have these species but we do have Vox
-        // Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesVulpkanin, RMCVoicelinesVulpkanin);
         // Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesRodentia, RMCVoicelinesRodentia);
         // Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesFeroxi, RMCVoicelinesFeroxi);
         // Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesSkrell, RMCVoicelinesSkrell);
@@ -40,8 +40,8 @@ public sealed partial class VoicelinesTab : Control
         Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesReptilian, RMCEmotesReptilian);
         Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesSlime, RMCEmotesSlime);
         Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesAvali, RMCEmotesAvali);
+        Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesVulpkanin, RMCEmotesVulpkanin);
         // Harmony change start - We don't have these species but we do have Vox
-        // Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesVulpkanin, RMCEmotesVulpkanin);
         // Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesRodentia, RMCEmotesRodentia);
         // Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesFeroxi, RMCEmotesFeroxi);
         // Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesSkrell, RMCEmotesSkrell);
