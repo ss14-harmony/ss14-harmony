@@ -28,7 +28,7 @@
     ClothingShoesBootsWinterSec: 2
     ClothingHeadHelmetJustice: 1
   contrabandInventory:
-    ClothingUnderSocksCombat: 2
+    ClothingUnderSocksCombat: 2 # Harmony
     ClothingMaskClownSecurity: 1
     ClothingMaskMimeSecurity: 1
     ClothingOuterCoatAMG: 1 # Harmony

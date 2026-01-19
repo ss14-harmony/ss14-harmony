@@ -29,8 +29,8 @@
   description: Protecting and serving.
   components:
   - type: Sprite
-    sprite: Clothing/Under/Socks/combat.rsi
+    sprite: _Harmony/Clothing/Under/Socks/combat.rsi
   - type: Clothing
-    sprite: Clothing/Under/Socks/combat.rsi
+    sprite: _Harmony/Clothing/Under/Socks/combat.rsi
   - type: ClothingSlowOnDamageModifier
     modifier: 0.5
