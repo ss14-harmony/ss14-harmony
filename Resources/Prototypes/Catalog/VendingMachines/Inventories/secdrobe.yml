@@ -26,6 +26,7 @@
     ClothingEyesBlindfold: 1
     ClothingShoesBootsCombat: 1
     ClothingShoesBootsWinterSec: 2
+    ClothingUnderSocksCombat: 2 # Harmony
     ClothingHeadHelmetJustice: 1
   contrabandInventory:
     ClothingMaskClownSecurity: 1
