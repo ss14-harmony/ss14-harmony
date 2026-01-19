@@ -22,6 +22,8 @@
     subtype: role-subtype-arcfiend
   - type: ArcfiendRole
 
+- type: entity
+  parent: BaseMindRoleAntag
   id: MindRoleConspirator
   name: Conspirator Role
   components:
