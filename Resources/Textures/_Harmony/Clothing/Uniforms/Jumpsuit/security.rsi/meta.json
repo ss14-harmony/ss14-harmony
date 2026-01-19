@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-NC-SA-4.0",
-    "copyright": "Created by DieselMohawk",
+    "copyright": "Created by DieselMohawk. 'folded-equipped-INNERCLOTHING' made by @TheCrimsonJupiter (GitHub)",
     "size": {
         "x": 32,
         "y": 32
@@ -12,6 +12,10 @@
         },
         {
             "name": "equipped-INNERCLOTHING",
+            "directions": 4
+        },
+        {
+            "name": "folded-equipped-INNERCLOTHING",
             "directions": 4
         },
         {

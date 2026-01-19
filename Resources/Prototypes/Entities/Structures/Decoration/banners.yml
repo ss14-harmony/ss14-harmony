@@ -54,7 +54,7 @@
   description: A banner displaying the colors of the cargo department. Not. Cargonia.
   components:
   - type: Sprite
-    sprite: Structures/Decoration/banner.rsi
+    sprite: _Harmony/Structures/Decoration/banner.rsi # Harmony change - Change sprite path to harmony namespace
     state: banner_cargo
 
 - type: entity

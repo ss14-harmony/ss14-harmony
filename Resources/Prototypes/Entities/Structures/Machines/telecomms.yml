@@ -92,7 +92,7 @@
     enabled: false
     castShadows: false
     radius: 1.5
-    energy: 1.6
+    energy: 3.0
     color: "#39b8ee"
   - type: LitOnPowered
   - type: GenericVisualizer
@@ -201,6 +201,7 @@
       - EncryptionKeySecurity
       - EncryptionKeyService
       - EncryptionKeyCommand
+      - EncryptionKeySalvage # Harmony Change, Adds Salv Comms
 
 - type: entity
   parent: TelecomServer
@@ -215,12 +216,12 @@
 - type: entity
   parent: TelecomServer
   id: TelecomServerFilledCargo
-  suffix: Cargo
+  suffix: Cargo, Salvage # Harmony Change - Salv comms - Adds Salvage suffix
   components:
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyCargo
+      - EncryptionKeySalvageCargo # Harmony Change - Salv comms - EncryptionKeyCargo > EncryptionKeySalvageCargo
 
 - type: entity
   parent: TelecomServer

@@ -15,32 +15,34 @@
                 <CheckBox Name="RMCVoicelinesArachnid" Text="{Loc 'rmc-ui-audio-voicelines-arachnid'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCVoicelinesDiona" Text="{Loc 'rmc-ui-audio-voicelines-diona'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCVoicelinesDwarf" Text="{Loc 'rmc-ui-audio-voicelines-dwarf'}" Margin="0 0 0 5" />
-                <!-- <CheckBox Name="RMCVoicelinesFelinid" Text="{Loc 'rmc-ui-audio-voicelines-felinid'}" Margin="0 0 0 5" /> --> <!--Harmony, No Felenids-->
+                <!-- <CheckBox Name="RMCVoicelinesFelinid" Text="{Loc 'rmc-ui-audio-voicelines-felinid'}" Margin="0 0 0 5" /> --> <!--Harmony, No Felinids-->
                 <CheckBox Name="RMCVoicelinesHuman" Text="{Loc 'rmc-ui-audio-voicelines-human'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCVoicelinesMoth" Text="{Loc 'rmc-ui-audio-voicelines-moth'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCVoicelinesReptilian" Text="{Loc 'rmc-ui-audio-voicelines-reptilian'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCVoicelinesSlime" Text="{Loc 'rmc-ui-audio-voicelines-slime'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCVoicelinesAvali" Text="{Loc 'rmc-ui-audio-voicelines-avali'}" Margin="0 0 0 5" />
-                <!--<CheckBox Name="RMCVoicelinesVulpkanin" Text="{Loc 'rmc-ui-audio-voicelines-vulpkanin'}" Margin="0 0 0 5" />
-                <CheckBox Name="RMCVoicelinesRodentia" Text="{Loc 'rmc-ui-audio-voicelines-rodentia'}" Margin="0 0 0 5" />
+                <CheckBox Name="RMCVoicelinesVulpkanin" Text="{Loc 'rmc-ui-audio-voicelines-vulpkanin'}" Margin="0 0 0 5" />
+                <!-- <CheckBox Name="RMCVoicelinesRodentia" Text="{Loc 'rmc-ui-audio-voicelines-rodentia'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCVoicelinesFeroxi" Text="{Loc 'rmc-ui-audio-voicelines-feroxi'}" Margin="0 0 0 5" />
-                <CheckBox Name="RMCVoicelinesSkrell" Text="{Loc 'rmc-ui-audio-voicelines-skrell'}" Margin="0 0 0 5" /> --> <!--Harmony, No Vulps, Rodentia, Feroxi, or Skrell-->
+                <CheckBox Name="RMCVoicelinesSkrell" Text="{Loc 'rmc-ui-audio-voicelines-skrell'}" Margin="0 0 0 5" /> --> <!--Harmony, No Rodentia, Feroxi, or Skrell-->
+                <CheckBox Name="RMCVoicelinesVox" Text="{Loc 'rmc-ui-audio-voicelines-vox'}" Margin="0 0 0 5" /> <!--Harmony, add Vox-->
                 <Label Text="{Loc 'rmc-ui-emotes'}"
                        FontColorOverride="{x:Static s:StyleNano.NanoGold}"
                        StyleClasses="LabelKeyText"/>
                 <CheckBox Name="RMCEmotesArachnid" Text="{Loc 'rmc-ui-audio-emotes-arachnid'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesDiona" Text="{Loc 'rmc-ui-audio-emotes-diona'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesDwarf" Text="{Loc 'rmc-ui-audio-emotes-dwarf'}" Margin="0 0 0 5" />
-                <!-- <CheckBox Name="RMCEmotesFelinid" Text="{Loc 'rmc-ui-audio-emotes-felinid'}" Margin="0 0 0 5" /> --> <!--Harmony, No Felenids-->
+                <!-- <CheckBox Name="RMCEmotesFelinid" Text="{Loc 'rmc-ui-audio-emotes-felinid'}" Margin="0 0 0 5" /> --> <!--Harmony, No Felinids-->
                 <CheckBox Name="RMCEmotesHuman" Text="{Loc 'rmc-ui-audio-emotes-human'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesMoth" Text="{Loc 'rmc-ui-audio-emotes-moth'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesReptilian" Text="{Loc 'rmc-ui-audio-emotes-reptilian'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesSlime" Text="{Loc 'rmc-ui-audio-emotes-slime'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesAvali" Text="{Loc 'rmc-ui-audio-emotes-avali'}" Margin="0 0 0 5" />
-                <!-- <CheckBox Name="RMCEmotesVulpkanin" Text="{Loc 'rmc-ui-audio-emotes-vulpkanin'}" Margin="0 0 0 5" />
-                <CheckBox Name="RMCEmotesRodentia" Text="{Loc 'rmc-ui-audio-emotes-rodentia'}" Margin="0 0 0 5" />
+                <CheckBox Name="RMCEmotesVulpkanin" Text="{Loc 'rmc-ui-audio-emotes-vulpkanin'}" Margin="0 0 0 5" />
+                <!-- <CheckBox Name="RMCEmotesRodentia" Text="{Loc 'rmc-ui-audio-emotes-rodentia'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesFeroxi" Text="{Loc 'rmc-ui-audio-emotes-feroxi'}" Margin="0 0 0 5" />
-                <CheckBox Name="RMCEmotesSkrell" Text="{Loc 'rmc-ui-audio-emotes-skrell'}" Margin="0 0 0 5" /> --> <!--Harmony, No Vulps, Rodentia, Feroxi, or Skrell-->
+                <CheckBox Name="RMCEmotesSkrell" Text="{Loc 'rmc-ui-audio-emotes-skrell'}" Margin="0 0 0 5" /> --> <!--Harmony, No Rodentia, Feroxi, or Skrell-->
+                <CheckBox Name="RMCEmotesVox" Text="{Loc 'rmc-ui-audio-emotes-vox'}" Margin="0 0 0 5" /> <!--Harmony, add Vox-->
             </BoxContainer>
         </ScrollContainer>
         <ui:OptionsTabControlRow Name="Control" Access="Public" />

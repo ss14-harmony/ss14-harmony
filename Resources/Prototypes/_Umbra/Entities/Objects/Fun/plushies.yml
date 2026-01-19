@@ -1,0 +1,35 @@
+- type: entity
+  parent: BasePlushie
+  id: PlushieAvali
+  name: avali plushie
+  suffix: Harmony # Harmony - added suffix
+  description: A cute little plush of an Avali! It's covered in feathers and appears to be based off the more common Avali color schemes. # Harmony change - fixed grammar
+  components:
+    - type: Sprite
+      sprite: _Umbra/Objects/Fun/Plushies/Avali.rsi
+      state: icon
+    - type: Item
+      heldPrefix: plushieavali
+    - type: EmitSoundOnUse
+      sound: &AvaliPlushieSound
+        path: /Audio/_CD/Voice/Talk/avali_1.ogg
+    - type: EmitSoundOnLand
+      sound: *AvaliPlushieSound
+    - type: EmitSoundOnActivate
+      sound: *AvaliPlushieSound
+    - type: EmitSoundOnTrigger
+      sound: *AvaliPlushieSound
+    - type: EmitSoundOnCollide
+      sound: *AvaliPlushieSound
+    - type: Edible
+      #requiresSpecialDigestion: true #Harmony: Inherits from base plushie
+      useSound: *AvaliPlushieSound
+    - type: MeleeWeapon
+      #wideAnimationRotation: 180 #Harmony: Inherits from base plushie
+      soundHit: *AvaliPlushieSound
+    - type: Clothing
+      quickEquip: false
+      sprite: _Umbra/Objects/Fun/Plushies/Avali.rsi
+      equippedPrefix: avali
+      slots:
+        - HEAD

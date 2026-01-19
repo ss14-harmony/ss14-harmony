@@ -4,17 +4,21 @@
   description: job-description-ce
   playTimeTracker: JobChiefEngineer
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobAtmosphericTechnician
-      time: 0 #0 hrs
-    - !type:RoleTimeRequirement
-      role: JobStationEngineer
-      time: 0 #0hrs
+    # Harmony start
+    # - !type:RoleTimeRequirement
+    #   role: JobAtmosphericTechnician
+    #   time: 2.5h
+    # - !type:RoleTimeRequirement
+    #   role: JobStationEngineer
+    #   time: 5h
+    # Harmony end
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 28800 #8 hrs
+      time: 8h # Harmony: 10h -> 8h
+  # Harmony start
     - !type:OverallPlaytimeRequirement
-      time: 43200 #12 hrs
+      time: 12h
+    # Harmony end
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"

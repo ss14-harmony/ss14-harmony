@@ -150,6 +150,11 @@ public sealed partial class MeleeWeaponComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool MustBeEquippedToUse = false;
+
+    // Harmony Start
+    [DataField, AutoNetworkedField]
+    public float ArmorPenetration;
+    // Harmony End
 }
 
 /// <summary>
