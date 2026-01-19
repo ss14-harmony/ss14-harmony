@@ -24,10 +24,10 @@
       Dead:
         Base: pitbull_dead
   - type: Bloodstream
-    bloodReagents:
+    bloodReferenceSolution:
       reagents:
         - ReagentId: Blood
-          Quantity: 1
+          Quantity: 150
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale

@@ -40,3 +40,19 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+
+- type: gamePreset
+  id: Conspiracy
+  alias:
+  - conspirators
+  - conspirator
+  name: conspiracy-title
+  description: conspiracy-description
+  showInVote: false # secret
+  rules:
+  - Conspirators
+  - ThiefChance
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation

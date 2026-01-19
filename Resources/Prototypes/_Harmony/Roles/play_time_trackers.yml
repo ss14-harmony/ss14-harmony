@@ -12,3 +12,9 @@
 
 - type: playTimeTracker
   id: JobCentCommInspector
+
+- type: playTimeTracker
+  id: JobBoxer
+
+- type: playTimeTracker
+  id: JobZookeeper
