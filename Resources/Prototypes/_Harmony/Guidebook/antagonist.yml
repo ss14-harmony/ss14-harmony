@@ -7,3 +7,9 @@
   id: Arcfiend
   name: guide-entry-arcfiends
   text: "/ServerInfo/_Harmony/Guidebook/Antagonist/Arcfiend.xml"
+
+- type: guideEntry
+  id: Conspirators
+  name: guide-entry-conspirators
+  text: "/ServerInfo/_Harmony/Guidebook/Antagonist/Conspirators.xml"
+

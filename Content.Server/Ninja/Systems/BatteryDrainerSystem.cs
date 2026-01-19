@@ -10,6 +10,7 @@ using Content.Shared.Popups;
 using Content.Shared.Strip.Components; // Harmony
 using Robust.Shared.Audio;
 using Content.Shared.Power.Components;
+using Content.Shared.Power.EntitySystems;
 using Robust.Shared.Audio.Systems;
 
 namespace Content.Server.Ninja.Systems;
@@ -20,6 +21,7 @@ namespace Content.Server.Ninja.Systems;
 public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
 {
     [Dependency] private readonly BatterySystem _battery = default!;
+    [Dependency] private readonly PredictedBatterySystem _predictedBattery = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -51,7 +53,7 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
 
         var (uid, comp) = ent;
         var target = args.Target;
-        if (args.Handled || comp.BatteryUid is not {} battery || !HasComp<PowerNetworkBatteryComponent>(target))
+        if (args.Handled || comp.BatteryUid is not { } battery || !HasComp<PowerNetworkBatteryComponent>(target))
             return;
 
         // handles even if battery is full so you can actually see the poup
@@ -84,7 +86,7 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
     {
         base.OnDoAfterAttempt(ent, ref args);
 
-        if (ent.Comp.BatteryUid is not {} battery || _battery.IsFull(battery))
+        if (ent.Comp.BatteryUid is not { } battery || _battery.IsFull(battery))
             args.Cancel();
     }
 
@@ -92,7 +94,7 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
     protected override bool TryDrainPower(Entity<BatteryDrainerComponent> ent, EntityUid target)
     {
         var (uid, comp) = ent;
-        if (comp.BatteryUid == null || !TryComp<BatteryComponent>(comp.BatteryUid.Value, out var battery))
+        if (comp.BatteryUid == null || !TryComp<PredictedBatteryComponent>(comp.BatteryUid.Value, out var battery))
             return false;
 
         if (!TryComp<BatteryComponent>(target, out var targetBattery) || !TryComp<PowerNetworkBatteryComponent>(target, out var pnb))
@@ -105,15 +107,17 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
         }
 
         var available = targetBattery.CurrentCharge;
-        var required = battery.MaxCharge - battery.CurrentCharge;
+        var required = battery.MaxCharge - _predictedBattery.GetCharge((comp.BatteryUid.Value, battery));
         // higher tier storages can charge more
         var maxDrained = pnb.MaxSupply * comp.DrainTime;
         var input = Math.Min(Math.Min(available, required / comp.DrainEfficiency), maxDrained);
-        if (!_battery.TryUseCharge(target, input, targetBattery))
+        if (!_battery.TryUseCharge((target, targetBattery), input))
             return false;
 
         var output = input * comp.DrainEfficiency;
-        _battery.SetCharge(comp.BatteryUid.Value, battery.CurrentCharge + output, battery);
+        // PowerCells use PredictedBatteryComponent
+        // SMES, substations and APCs use BatteryComponent
+        _predictedBattery.ChangeCharge((comp.BatteryUid.Value, battery), output);
         // TODO: create effect message or something
         Spawn("EffectSparks", Transform(target).Coordinates);
         _audio.PlayPvs(comp.SparkSound, target);
@@ -125,7 +129,7 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
         // Harmony End
 
         // repeat the doafter until battery is full
-        return !_battery.IsFull(comp.BatteryUid.Value, battery);
+        return !_predictedBattery.IsFull((comp.BatteryUid.Value, battery));
     }
 
     // Harmony start - adds support for alerts

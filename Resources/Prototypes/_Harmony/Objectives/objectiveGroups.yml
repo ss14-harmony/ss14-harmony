@@ -79,3 +79,15 @@
     ArcfiendKillRandomPersonObjective: 0.85
     ArcfiendKillRandomHeadObjective: 0.25
     ArcfiendTeachLessonRandomPersonObjective: 1
+
+  id: ConspiratorObjectiveGroup # if you want to add another objective, feel free
+  weights:
+    ConspiratorUnionObjective: 1
+    ConspiratorGameshowObjective: 1
+    ConspiratorTechnologyObjective: 1
+    ConspiratorArmsObjective: 1
+    ConspiratorThiefObjective: 1
+    ConspiratorMafiaObjective: 1
+    ConspiratorArrestObjective: 1
+    ConspiratorCameraObjective: 1
+
