@@ -1,0 +1,28 @@
+- type: listing
+  id: UplinkHardsuitCybersunStealth
+  name: uplink-hardsuit-cybersun-stealth-name
+  description: uplink-hardsuit-cybersun-stealth-desc
+  icon: { sprite: /Textures/_Goobstation/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateStealthHardsuitBundle
+  cost:
+    Telecrystal: 15 # Harmony - modified since goob has different TC ratio.
+  categories:
+  - UplinkWearables
+# begin Harmony change - yeah let's not give this to syndies
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+# end Harmony change
+
+- type: listing
+  id: UplinkMobRoachMicrobomb
+  name: uplink-mobroach-microbomb-name
+  description: uplink-mobroach-microbomb-desc
+  icon: { sprite: _Harmony/Objects/Devices/communication.rsi, state: old-radio-syndiroach } # Harmony - changed sprite path
+  productEntity: ReinforcementRadioSyndicateSyndiRoach
+  cost:
+    Telecrystal: 6 # Harmony Change - adjusts price to fit our TC ratios.
+  categories:
+    - UplinkAllies

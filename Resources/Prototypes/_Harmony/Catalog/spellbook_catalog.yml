@@ -1,4 +1,37 @@
 # Offensive
+- type: listing
+  id: SpellbookPitbull
+  name: spellbook-pitbull-name
+  description: spellbook-pitbull-desc
+  productAction: ActionPitbullSummon
+  productUpgradeId: SpellbookPitbullSmashed
+  cost:
+    WizCoin: 1
+  categories:
+  - SpellbookOffensive
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: SpellbookPitbullSmashed
+  productUpgradeId: SpellbookPitbullSmashed
+  name: spellbook-smashed-pitbull-name
+  description: spellbook-smashed-pitbull-desc
+  icon:
+    sprite: _Harmony/Mobs/Animals/pitbull.rsi
+    state: toadline_pitbull
+  cost:
+    WizCoin: 2
+  categories:
+  - SpellbookOffensive
+  conditions:
+  - !type:BuyBeforeCondition
+    whitelist:
+    - SpellbookPitbull
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
 # Defensive
 # Utility
 - type: listing
