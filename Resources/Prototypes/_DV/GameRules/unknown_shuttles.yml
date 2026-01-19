@@ -23,7 +23,7 @@
     duration: null
   - type: RuleGrids
   - type: LoadMapRule
-    gridPath: /Maps/_DV/Shuttles/ShuttleEvent/recruiter_ship.yml
+    gridPath: /Maps/_DV/Shuttles/ShuttleEvent/syndicate_recruiter.yml
   - type: AntagSpawner
     prototype: MobHuman
   - type: AntagObjectives

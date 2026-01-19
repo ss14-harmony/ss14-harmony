@@ -23,7 +23,7 @@
     gloves: ClothingHandsGlovesColorWhite
     outerClothing: ClothingOuterCybersunOvercoat
     shoes: ClothingShoesLeather
-    id: PassengerPDA
+    id: SyndiPDA
     ears: ClothingHeadsetGrey
     pocket1: PenRecruiter
     pocket2: RubberStampSyndicate
