@@ -1,0 +1,9 @@
+- type: entity
+  parent: BaseUnknownShuttleRule
+  id: ERPSmall
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-erp-shuttle-incoming
+    weight: 0 #  Admin only.
+  - type: LoadMapRule
+    preloadedGrid: ShuttleERPSmall

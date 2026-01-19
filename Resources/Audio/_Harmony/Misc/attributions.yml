@@ -1,4 +1,4 @@
-﻿- files: ["blood_brother_greeting.ogg"]
+- files: ["blood_brother_greeting.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from TG station as bloodcult_scribe.ogg"
   source: "https://github.com/tgstation/tgstation/commit/436ba869ebcd0b60b63973fb7562f447ee655205"
@@ -7,3 +7,9 @@
   license: "CC-BY-SA-3.0"
   copyright: "Taken from pixabay"
   source: "https://pixabay.com/sound-effects/12-shhh-47022/"
+
+- files: ["conspirator_greeting.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from TG station as heretic_gain.ogg"
+  source: "https://github.com/tgstation/tgstation/commit/436ba869ebcd0b60b63973fb7562f447ee655205"
+

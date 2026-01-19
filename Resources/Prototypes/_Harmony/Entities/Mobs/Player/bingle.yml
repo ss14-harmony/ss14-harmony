@@ -36,8 +36,10 @@
       0: Alive
       80: Dead
   - type: Bloodstream
-    bloodMaxVolume: 100
-    bloodReagent: Nitrogen
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Nitrogen
+        Quantity: 100
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 4
@@ -54,7 +56,7 @@
   - type: ReplacementAccent
     accent: bingle
   - type: Stamina
-    critThreshold: 120
+    baseCritThreshold: 120
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
@@ -70,6 +72,14 @@
   - type: StaminaDamageOnHit
     damage: 10 # 6 hits to stun
     sound: /Audio/Weapons/egloves.ogg
+  - type: InteractionPopup
+    successChance: 0.33
+    interactSuccessString: petting-success-bingle
+    interactFailureString: petting-failure-bingle
+    interactSuccessSound:
+      path: /Audio/Voice/Slime/slime_squish.ogg # ew but appropriate
+    interactFailureSound:
+      path: /Audio/Voice/Slime/slime_squish.ogg
   # Specific components
   - type: GhostRole
     name: ghost-role-information-bingle-name

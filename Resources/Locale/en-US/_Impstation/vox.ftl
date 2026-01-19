@@ -82,8 +82,6 @@ marking-VoxBeakSplit-split2 = Bottom
 marking-VoxBeakTipped = Tipped Beak
 marking-VoxBeakTipped-tipped = Tipped Beak
 
-marking-VoxBeak = Default Beak [DO NOT USE]
-
 # Eyes
 
 # RArm
@@ -294,9 +292,6 @@ marking-VoxTailSmallPlume-smallplume = Small Plume
 
 marking-VoxTailSpines = Tail Spines
 marking-VoxTailSpines-spines = Tail Spines
-
-marking-VoxTailSplit = Twinned
-marking-VoxTailSplit-split = Twinned
 
 marking-VoxSunAndMoon = Sun and Moon
 marking-VoxSunAndMoon-sunandmoon = Sun and Moon
