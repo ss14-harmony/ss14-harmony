@@ -21,3 +21,16 @@
     - ClothingShoesDuckyGaloshes
     - WhitelistChameleon
     - ClothMade
+
+- type: entity
+  parent: [ClothingShoesMilitaryBase, BaseSecurityContraband]
+  id: ClothingUnderSocksCombat
+  name: combat socks
+  description: Protecting and serving.
+  components:
+  - type: Sprite
+    sprite: Clothing/Under/Socks/combat.rsi
+  - type: Clothing
+    sprite: Clothing/Under/Socks/combat.rsi
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
