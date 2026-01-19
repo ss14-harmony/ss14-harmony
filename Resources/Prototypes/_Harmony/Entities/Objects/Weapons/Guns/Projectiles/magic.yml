@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: BaseBullet
   id: ProjectileBanana
   categories: [ HideSpawnMenu ]
@@ -21,46 +21,23 @@
     knockdownAmount: 1
 
 - type: entity
-  id: ProjectileRandomPolyboltBase
-  abstract: true
   parent: BaseBullet
+  id: ProjectileWehball
   categories: [ HideSpawnMenu ]
+  name: wehball
+  description: You better GITTAH WEH.
   components:
+  - type: PointLight
+    color: "#67CC40"
+    radius: 1.0
+    energy: 3.0
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    sprite: Objects/Fun/Plushies/lizard.rsi
     layers:
-    - state: ice
+    - state: icon
   - type: Projectile
-  - type: TriggerOnCollide
-    fixtureID: projectile
-  - type: RandomPolymorphOnTrigger
-    targetUser: true
-
-- type: entity
-  id: ProjectileStaffOfChangeBolt
-  parent: ProjectileRandomPolyboltBase
-  name: staff of change bolt
-  description: Nooo, I don't wanna be fish!
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: RandomPolymorphOnTrigger
-    polymorph:
-    - WizardForcedCarp
-    - WizardForcedMonkey
-    - Jaunt
-    - WizardForcedSpider
-    - WizardForcedMouse
-    - WizardForcedPossum
-    - WizardForcedRegalRat
-    - WizardForcedBehonker
-    - WizardForcedXenoborg
-    - WizardForcedXeno
-    - WizardForcedSpaceBear
-    - WizardForcedPoquito
-    - WizardSkeleton
-    - WizardForcedSyndieBorg
-    - WizardForcedBorg
-  - type: WhitelistTriggerCondition
-    userWhitelist:
-      components:
-      - MobState
+    damage:
+      types:
+        Piercing: 0
+    soundHit:
+      path: /Audio/Items/Toys/weh.ogg

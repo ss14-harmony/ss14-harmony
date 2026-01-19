@@ -1,4 +1,4 @@
-﻿- type: reagent
+- type: reagent
   id: GlorpExtract
   name: reagent-name-glorp-extract
   group: Narcotics
@@ -9,12 +9,10 @@
   metabolisms:
     Narcotic:
       effects:
-      - !type:GenericStatusEffect
-        key: SeeingRainbows
-        component: SeeingRainbows
-        type: Add
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
         time: 10
-        refresh: false
+        type: Add
       - !type:HealthChange
         damage:
           types:

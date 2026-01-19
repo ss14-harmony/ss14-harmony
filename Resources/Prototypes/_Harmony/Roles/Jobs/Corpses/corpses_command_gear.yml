@@ -1,0 +1,61 @@
+# List of Gearsets intended for Command Corpse Spawners
+
+- type: startingGear
+  id: CorpseCaptain
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCaptain
+    shoes: ClothingShoesBootsLaceup
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCaptain
+
+- type: startingGear
+  id: CorpseHoS
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoS
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    belt: ClothingBeltSecurity
+
+- type: startingGear
+  id: CorpseQM
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitQM
+    shoes: ClothingShoesColorBrown
+    belt: BoxFolderClipboard
+    pocket1: AppraisalTool
+
+- type: startingGear
+  id: CorpseCE
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChiefEngineer
+    shoes: ClothingShoesColorBrown
+    eyes: ClothingEyesGlassesMeson
+    gloves: ClothingHandsGlovesColorYellow
+    belt: ClothingBeltUtilityEngineering
+    pocket2: RCDAmmo
+
+- type: startingGear
+  id: CorpseCMO
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCMO
+    shoes: ClothingShoesColorBrown
+    mask: ClothingMaskSterile
+    necK: ClothingNeckStethoscope
+    gloves: ClothingHandsGlovesLatex
+    belt: ClothingBeltMedicalFilled
+
+- type: startingGear
+  id: CorpseRD
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitResearchDirector
+    shoes: ClothingShoesColorBrown
+
+- type: startingGear
+  id: CorpseHoP
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoP
+    shoes: ClothingShoesColorBrown
+    gloves: ClothingHandsGlovesHop
+    belt: BoxFolderClipboard
+    pocket1: LuxuryPen

@@ -11,3 +11,7 @@ loadout-group-librarian-neck = Librarian neck
 # Cargo
 loadout-group-salvage-specialist-neck = Salvage specialist neck
 loadout-group-salvage-specialist-id = Salvage specialist ID
+
+# Station-specific
+loadout-group-boxer-jumpsuit = Boxer jumpsuit
+loadout-group-boxer-gloves = Boxer gloves
