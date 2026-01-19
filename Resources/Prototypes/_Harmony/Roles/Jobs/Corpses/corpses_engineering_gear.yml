@@ -1,0 +1,19 @@
+# List of Gearsets intended for Engineering Corpse Spawners
+
+- type: startingGear
+  id: CorpseStationEngineer
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitEngineering
+    shoes: ClothingShoesBootsWork
+    eyes: ClothingEyesGlassesMeson
+    gloves: ClothingHandsGlovesColorYellow
+    belt: ClothingBeltUtilityEngineering
+
+
+- type: startingGear
+  id: CorpseAtmosTech
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAtmos
+    shoes: ClothingShoesColorWhite
+    eyes: ClothingEyesGlassesMeson
+    belt: ClothingBeltUtilityEngineering

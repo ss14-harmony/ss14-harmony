@@ -27,7 +27,7 @@
             Quartermaster: [ 1, 1 ]
             #service (11 - 13)
             Bartender: [ 2, 2 ]
-            Botanist: [ 2, 3 ]
+            Botanist: [ 2, 2 ] # Harmony change, - 2, 3 > 2, 2 reduced botany slots
             Chef: [ 2, 2 ]
             Janitor: [ 1, 2 ]
             Chaplain: [ 1, 1 ]
@@ -52,7 +52,6 @@
             Detective: [ 1, 1 ]
             SecurityCadet: [ 4, 4 ] #intern, not counted
             Lawyer: [ 2, 2 ]
-            PermaPrisoner: [ 1, 0 ] # HARMONY
             #supply (6)
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 3, 3 ]

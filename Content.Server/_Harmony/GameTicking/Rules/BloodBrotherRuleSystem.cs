@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server._Harmony.GameTicking.Rules.Components;
-using Content.Server._Harmony.Roles;
+using Content.Server._Harmony.Objectives.Components;
+using Content.Server.Actions;
 using Content.Server.Administration.Logs;
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules;
@@ -13,6 +14,7 @@ using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
 using Content.Server.Stunnable;
 using Content.Shared._Harmony.BloodBrothers.Components;
+using Content.Shared._Harmony.Roles.Components;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
@@ -21,7 +23,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Preferences;
-using Content.Shared.Roles;
+using Content.Shared.Roles.Components;
 using Content.Shared.Zombies;
 using Robust.Server.Player;
 using Robust.Shared.Utility;
@@ -34,6 +36,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IServerPreferencesManager _preferencesManager = default!;
+    [Dependency] private readonly ActionsSystem _actionsSystem = default!;
     [Dependency] private readonly AntagSelectionSystem _antagSystem = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
@@ -107,7 +110,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
             return;
         }
 
-        if (!_mindSystem.TryGetMind(entity, out var mindId, out _))
+        if (!_mindSystem.TryGetMind(entity, out var mindId, out var mind))
             return;
 
         if (!_mindSystem.TryGetMind(args.Target, out var targetMindId, out var targetMind))
@@ -124,7 +127,10 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
 
         originalComponent.Brother = args.Target;
         if (_roleSystem.MindHasRole<BloodBrotherRoleComponent>(mindId, out var role))
+        {
             role.Value.Comp2.Brother = args.Target;
+            Dirty(role.Value);
+        }
 
         if (!_roleSystem.MindHasRole(targetMindId, out Entity<MindRoleComponent, BloodBrotherRoleComponent>? targetRole))
         {
@@ -136,6 +142,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
 
         convertedComp.Brother = entity;
         targetRole!.Value.Comp2.Brother = entity;
+        Dirty(targetRole.Value);
 
         if (!_objectivesSystem.TryCreateObjective((targetMindId, targetMind),
                 entity.Comp.ConvertedBrotherObjective,
@@ -147,6 +154,14 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
         _targetObjectiveSystem.SetTarget(newObjective.Value, mindId, targetObjective);
 
         _mindSystem.AddObjective(targetMindId, targetMind, newObjective.Value);
+
+        foreach (var objective in mind.Objectives)
+        {
+            if (!HasComp<BloodBrotherTargetComponent>(objective))
+                continue;
+
+            _targetObjectiveSystem.SetTarget(objective, args.Target);
+        }
 
         // Visuals
         _antagSystem.SendBriefing(args.Target,
@@ -163,11 +178,13 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
             PopupType.LargeCaution);
 
         if (entity.Comp.ConvertStunTime != null)
-            _stunSystem.TryParalyze(args.Target, entity.Comp.ConvertStunTime.Value, true);
+            _stunSystem.TryUpdateParalyzeDuration(args.Target, entity.Comp.ConvertStunTime);
 
-        // Cleanup the data
-        RemCompDeferred<InitialBloodBrotherComponent>(entity);
+        // Remove the conversion actions
+        _actionsSystem.RemoveAction(entity.Comp.ConvertActionEntity);
+        _actionsSystem.RemoveAction(entity.Comp.CheckConvertActionEntity);
 
+        // Make sure the components are sent correctly
         Dirty(entity, originalComponent);
         Dirty(args.Target, convertedComp);
     }

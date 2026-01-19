@@ -1,0 +1,20 @@
+#Dragon Head Helmet
+- type: entity
+  parent: ClothingHeadEVAHelmetBase
+  id: ClothingHeadHelmetDragon
+  name: dragon head
+  description: Proof of your prowess of a hunter. You could probably wear this, if you don't mind the smell.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Head/Helmets/dragonhead.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Head/Helmets/dragonhead.rsi
+    equipDelay: 1
+    unequipDelay: 1
+  - type: Armor #Same as the basic helmet, but slightly more fireproof.
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.8

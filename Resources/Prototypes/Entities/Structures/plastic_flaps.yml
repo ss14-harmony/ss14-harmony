@@ -5,6 +5,10 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: Rotatable
   - type: Sprite
     sprite: Structures/plastic_flaps.rsi
     state: plasticflaps
@@ -35,11 +39,6 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-# Start of Harmony Change: Removes IconSmoothing
-#  - type: IconSmooth
-#    key: walls
-#    mode: NoSprite
-# End of Harmony Change
   - type: StaticPrice
     price: 100
 

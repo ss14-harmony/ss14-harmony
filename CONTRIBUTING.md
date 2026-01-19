@@ -34,6 +34,17 @@ Examples:
 - `Resources/Textures/_Harmony/Clothing/Shoes/Misc/ducky-galoshes.rsi`
 - `Resources/Locale/en-US/_Harmony/game-ticking/game-presets/preset-deathmatchpromod.ftl`
 
+Any new entity you create should contain the suffix `Harmony`.
+
+Example:
+```yaml
+- type: entity
+  parent: KitchenMicrowaveUpstream
+  id: KitchenMicrowave
+  suffix: Harmony
+...
+```
+
 # Changes to upstream files
 
 If you make a change to an upstream C# or YAML file, **you must add comments on or around the changed lines**. The comments should clarify what changed, to make conflict resolution simpler when a file is changed upstream.
@@ -44,8 +55,6 @@ For YAML specifically, if you add a new component to a prototype, add the commen
 If you only modify some fields of a component, comment the fields instead.
 
 For C# files, if you are adding a lot of code, try to put it in a partial class when it makes sense.
-
-The exception to this is the early merge of upstream cherry-picked commits that are going to be merged in the Upstream Merge by maintainers regardless. There's no harm in leaving them as-is.
 
 As an aside, fluent (.ftl) files **do not support comments on the same line** as a locale value, so be careful when changing them.
 
@@ -126,6 +135,8 @@ Example:
 If the namespace in the source fork doesn't start with `_` and there is no content in Harmony that was ported from this fork before, use your best judgment in picking the namespace folder name that will unmistakably indicate the fork the code is taken from.
 
 If you are not sure which namespace to use, ask for help in the `#harmony-contributors` channel on our Discord.
+
+If you make any changes to the code ported, please mark it the same way you would when making changes to an upstream file. This makes it easier to port any further changes by the fork.
 
 # Mapping
 

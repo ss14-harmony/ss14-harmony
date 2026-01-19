@@ -17,3 +17,13 @@
   license: "Custom"
   copyright: "Halo © Microsoft Corporation. This audio file was created under Microsoft's Game Content Usage Rules using assets from Halo:Reach, and it is not endorsed by or affiliated with Microsoft. More info here: https://www.xbox.com/en-us/developers/rules. Pulled from Halo:Reach, made by Bungie"
   source: "https://youtu.be/0SEE9n-ciUc"
+
+- files: ["bulldog_fire1.ogg", "bulldog_fire2.ogg", "bulldog_fire3.ogg"]
+  license: "Custom"
+  copyright: "Halo © Microsoft Corporation. This audio file was created under Microsoft's Game Content Usage Rules using assets from Halo:Reach, and it is not endorsed by or affiliated with Microsoft. More info here: https://www.xbox.com/en-us/developers/rules. Pulled from Halo:Reach, made by Bungie"
+  source: "https://youtu.be/0SEE9n-ciUc"
+
+- files: ["python_fire1.ogg", "python_fire2.ogg"]
+  license: "CC-BY-NC-4.0"
+  copyright: "Created by Vunsunta"
+  source: "https://www.dropbox.com/scl/fi/dd03xhdhwg9em8l1xyxtr/Vunsunta-Firearm-Sound-Pack-V2.zip?rlkey=p7cyhkgf462v2bikj8awjbugu&e=1&st=a38k4aqn&dl=0"

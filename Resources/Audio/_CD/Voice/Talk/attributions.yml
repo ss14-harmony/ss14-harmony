@@ -1,3 +1,8 @@
+- files: ["avali_1, avali_1_ask, avali_1_exclaim, avali_2, avali_2_ask, avali_2_exclaim"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Taken from Steam mod / Starbound. Made by Steam user: https://steamcommunity.com/id/Nefuki with permission."
+  source: "https://steamcommunity.com/sharedfiles/filedetails/?id=3164757879"
+
 - files: ["moth.ogg", "moth_ask.ogg", "moth_exclaim.ogg"]
   license: "CC-BY-4.0"
   copyright: "sfx_humanoid_saturn_hawkchat1.ogg (Renamed to moth.ogg), sfx_humanoid_saturn_hawkchat3b (Renamed to moth_ask.ogg), sfx_humanoid_saturn_hawkchat3 (Renamed to moth_exclaim.ogg) all taken from https://github.com/CyanSkyKnight/Cyans-Free-Stuff/tree/main/Bug%20Sounds "

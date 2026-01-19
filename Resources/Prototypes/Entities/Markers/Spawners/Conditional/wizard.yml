@@ -9,3 +9,8 @@
     - state: green
     - sprite: Clothing/Head/Hats/wizardhat.rsi
       state: icon
+  #Harmony Addition Starts
+  - type: ConditionalSpawner
+    prototypes:
+    - MobLizardGizard
+  #Harmony Addition Ends
