@@ -16,7 +16,10 @@ public sealed partial class SalvageSystem
 {
     [Dependency] private readonly IRuntimeLog _runtimeLog = default!;
 
-    private static readonly ProtoId<RadioChannelPrototype> MagnetChannel = "Supply";
+    // Harmony Change Start - Adds Salvage Comms
+    // private static readonly ProtoId<RadioChannelPrototype> MagnetChannel = "Supply";
+    private static readonly ProtoId<RadioChannelPrototype> MagnetChannel = "Salvage";
+    // Harmony Change Ends
 
     private EntityQuery<SalvageMobRestrictionsComponent> _salvMobQuery;
     private EntityQuery<MobStateComponent> _mobStateQuery;
