@@ -4,6 +4,7 @@ using Content.Server.Station.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using System.Text;
+using Content.Shared._Harmony.CCVars;
 
 namespace Content.Server.GameTicking
 {
@@ -48,7 +49,7 @@ namespace Content.Server.GameTicking
                 return string.Empty;
             }
 
-            var playerCount = $"{_playerManager.PlayerCount}";
+            var playerCount = $"{_joinQueue.ActualPlayersCount}"; // Harmony - remove queue members from player count
             var readyCount = _playerGameStatuses.Values.Count(x => x == PlayerGameStatus.ReadyToPlay);
 
             var stationNames = new StringBuilder();
@@ -61,7 +62,7 @@ namespace Content.Server.GameTicking
             {
                 foundOne = true;
                 if (stationNames.Length > 0)
-                        stationNames.Append('\n');
+                    stationNames.Append('\n');
 
                 stationNames.Append(meta.EntityName);
             }
@@ -72,8 +73,8 @@ namespace Content.Server.GameTicking
                                     Loc.GetString("game-ticker-no-map-selected"));
             }
 
-            var gmTitle = Loc.GetString(preset.ModeTitle);
-            var desc = Loc.GetString(preset.Description);
+            var gmTitle = (Decoy == null) ? Loc.GetString(preset.ModeTitle) : Loc.GetString(Decoy.ModeTitle);
+            var desc = (Decoy == null) ? Loc.GetString(preset.Description) : Loc.GetString(Decoy.Description);
             return Loc.GetString(
                 RunLevel == GameRunLevel.PreRoundLobby
                     ? "game-ticker-get-info-preround-text"
@@ -107,7 +108,7 @@ namespace Content.Server.GameTicking
 
         private TickerLobbyInfoEvent GetInfoMsg()
         {
-            return new (GetInfoText());
+            return new(GetInfoText());
         }
 
         private void UpdateLateJoinStatus()
@@ -177,7 +178,6 @@ namespace Content.Server.GameTicking
                 return;
             }
 
-            var status = ready ? PlayerGameStatus.ReadyToPlay : PlayerGameStatus.NotReadyToPlay;
             _playerGameStatuses[player.UserId] = ready ? PlayerGameStatus.ReadyToPlay : PlayerGameStatus.NotReadyToPlay;
             RaiseNetworkEvent(GetStatusMsg(player), player.Channel);
             // Harmony start - ready manifest

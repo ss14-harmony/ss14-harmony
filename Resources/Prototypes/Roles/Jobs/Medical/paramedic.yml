@@ -15,6 +15,7 @@
   access:
   - Medical
   - Maintenance
+  - External # Harmony
   extendedAccess:
   - Chemistry
 

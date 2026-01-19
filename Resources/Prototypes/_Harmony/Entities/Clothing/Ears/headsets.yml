@@ -1,0 +1,16 @@
+- type: entity
+  parent: [ClothingHeadset, BaseSecurityContraband]
+  id: ClothingHeadsetWarden
+  name: warden's headset
+  suffix: Harmony
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Ears/Headsets/warden.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Ears/Headsets/warden.rsi
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeySecurity
+      - EncryptionKeyCommand
+      - EncryptionKeyCommon

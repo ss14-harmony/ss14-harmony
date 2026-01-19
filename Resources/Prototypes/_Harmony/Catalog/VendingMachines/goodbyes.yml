@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: SalvageVendGoodbyes
+  values:
+    prefix: thankyou-salvage-
+    count: 5

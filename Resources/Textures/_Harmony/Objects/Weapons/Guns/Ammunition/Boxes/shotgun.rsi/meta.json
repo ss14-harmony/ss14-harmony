@@ -1,15 +1,12 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Hyposhell sprites by dumblenutz, base and mag sprites by SpaceRox1244",
+    "copyright": "Hyposhell sprites by dumblenutz, base and mag sprites by SpaceRox1244. Resprite by Halycon (kleinerstation13 on Github)",
     "size": {
         "x": 32,
         "y": 32
     },
     "states": [
-        {
-            "name": "hypo"
-        },
         {
             "name": "base"
         },

@@ -1,21 +1,6 @@
+# only kept so the game is happy when trying to load the playtime tracker
 - type: job
   id: PermaPrisoner
   name: job-name-prisoner
-  description: job-description-prisoner
   playTimeTracker: JobPermaPrisoner
-  startingGear: PermaPrisonerGear
-  icon: "JobIconPrisoner"
-  supervisors: job-supervisors-security
-  canBeAntag: false
-  allowRestrictedContraband: false
-
-- type: startingGear
-  id: PermaPrisonerGear
-  equipment:
-    id: PrisonerPDA
-    shoes: ClothingShoesColorBlack
-    ears: ClothingHeadsetGrey
-
-- type: chameleonOutfit
-  id: PermaPrisonerChameleonOutfit
-  job: PermaPrisoner
+  setPreference: false

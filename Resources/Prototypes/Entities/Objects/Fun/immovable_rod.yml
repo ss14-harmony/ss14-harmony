@@ -6,15 +6,19 @@
   - type: Clickable
   - type: InteractionOutline
   - type: MovementIgnoreGravity
+    weightless: true
   - type: Sprite
     sprite: Objects/Fun/immovable_rod.rsi
     state: icon
     noRot: false
   - type: ImmovableRod
-    shouldGib: false # Harmony
+    # Harmony start
+    shouldGib: false
     damage:
       types:
         Piercing: 400
+    # Harmony end
+  - type: GravityAffected
   - type: Physics
     bodyType: Dynamic
     linearDamping: 0
@@ -85,8 +89,6 @@
 #       Blunt: 190
         Piercing: 90
 # End harmony change
-  - type: MovementIgnoreGravity
-    gravityState: true
   - type: InputMover
   - type: MovementSpeedModifier
     baseWeightlessAcceleration: 5
