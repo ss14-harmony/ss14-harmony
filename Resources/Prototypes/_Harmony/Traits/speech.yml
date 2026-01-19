@@ -247,3 +247,21 @@
         Male: UnisexVox
         Female: UnisexVox
         Unsexed: UnisexVox
+
+- type: trait
+  id: IrishAccent
+  name: trait-irish-name
+  description: trait-irish-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: IrishAccent
+
+- type: trait
+  id: ScandinavianAccent
+  name: trait-scandinavian-name
+  description: trait-scandinavian-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: ScandinavianAccent

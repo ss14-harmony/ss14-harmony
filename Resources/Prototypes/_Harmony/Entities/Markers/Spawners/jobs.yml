@@ -1,13 +1,44 @@
-# Security
+# STATION SPECIFIC
 
 - type: entity
+  id: SpawnPointBoxer
   parent: SpawnPointJobBase
-  id: SpawnPointPermaPrisoner
-  name: permaprisoner
+  name: boxer
+  suffix: Harmony
   components:
   - type: SpawnPoint
-    job_id: PermaPrisoner
+    job_id: Boxer
   - type: Sprite
     layers:
-    - state: green
-    - state: prisoner
+      - state: green
+      - state: boxer
+
+- type: entity
+  id: SpawnPointZookeeper
+  parent: SpawnPointJobBase
+  name: zookeeper
+  suffix: Harmony
+  components:
+  - type: SpawnPoint
+    job_id: Zookeeper
+  - type: Sprite
+    layers:
+      - state: green
+      - state: zookeeper
+
+# SPECIAL
+# CENTCOMM
+
+- type: entity
+  id: SpawnPointCentCommInspector
+  parent: SpawnPointJobBase
+  name: CentCommInspector
+  suffix: Harmony
+  components:
+  - type: SpawnPoint
+    job_id: CentCommInspector
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Harmony/Markers/jobs.rsi
+        state: inspector

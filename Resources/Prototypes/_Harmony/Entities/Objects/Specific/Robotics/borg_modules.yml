@@ -9,11 +9,11 @@
     - state: syndicate
     - state: icon-syndicate
   - type: ItemBorgModule
-    items:
-    - HandheldHealthAnalyzerUnpowered
-    - LargeBeaker
-    - LargeBeaker
-    - BorgDropper
-    - BorgHypo
+    hands:
+    - item: HandheldHealthAnalyzerUnpowered
+    - item: LargeBeaker
+    - item: LargeBeaker
+    - item: BorgDropper
+    - item: BorgHypo
   - type: BorgModuleIcon
     icon: { sprite: _Harmony/Interface/Actions/actions_syndicate_borg.rsi, state: adv-diagnosis-module-syndicate }

@@ -96,6 +96,9 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
 
     private void OnDisable(Entity<RoboticsConsoleComponent> ent, ref RoboticsConsoleDisableMessage args)
     {
+        if (!ent.Comp.AllowBorgControl)
+            return;
+
         if (_lock.IsLocked(ent.Owner))
             return;
 
@@ -113,6 +116,9 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
 
     private void OnDestroy(Entity<RoboticsConsoleComponent> ent, ref RoboticsConsoleDestroyMessage args)
     {
+        if (!ent.Comp.AllowBorgControl)
+            return;
+
         if (_lock.IsLocked(ent.Owner))
             return;
 
@@ -159,7 +165,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
 
     private void UpdateUserInterface(Entity<RoboticsConsoleComponent> ent)
     {
-        var state = new RoboticsConsoleState(ent.Comp.Cyborgs);
+        var state = new RoboticsConsoleState(ent.Comp.Cyborgs, ent.Comp.AllowBorgControl);
         _ui.SetUiState(ent.Owner, RoboticsConsoleUiKey.Key, state);
     }
 }

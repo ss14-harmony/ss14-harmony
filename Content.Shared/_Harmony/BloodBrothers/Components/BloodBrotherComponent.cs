@@ -14,5 +14,8 @@ public sealed partial class BloodBrotherComponent : Component
     [DataField]
     public ProtoId<FactionIconPrototype> BloodBrotherIcon = "BloodBrotherFaction";
 
+    [DataField]
+    public TimeSpan? DeconversionStunTime = TimeSpan.FromSeconds(3);
+
     public override bool SessionSpecific => true;
 }

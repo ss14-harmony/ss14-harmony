@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Sprite taken from https://github.com/tgstation/tgstation/commit/18bd289d5198c4734d182f6f3c82ecdfe18a4ad0. Modified by whythelettuce (Github).",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "banner_cargo"
+        }
+    ]
+}
