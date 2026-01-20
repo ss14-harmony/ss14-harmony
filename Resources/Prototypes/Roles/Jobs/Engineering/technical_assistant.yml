@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: TechnicalAssistant
   name: job-name-technical-assistant
   description: job-description-technical-assistant
@@ -8,7 +8,7 @@
       time: 0 # 0 hr
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 18000 #5 hrs
+      time: 5h
       inverted: true # stop playing intern if you're good at engineering!
   startingGear: TechnicalAssistantGear
   icon: "JobIconTechnicalAssistant"

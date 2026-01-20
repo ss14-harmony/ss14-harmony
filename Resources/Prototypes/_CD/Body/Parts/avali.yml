@@ -7,7 +7,7 @@
   name: avali body part
   components:
   - type: Sprite
-    sprite: _CD/Mobs/Species/Avali/parts.rsi
+    sprite: _Harmony/Mobs/Species/Avali/parts.rsi # Harmony change _CD -> _Harmony
   - type: Extractable
     juiceSolution:
       reagents:
