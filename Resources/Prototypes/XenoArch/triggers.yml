@@ -243,6 +243,7 @@
     - AmmoniaBlood
     - ZombieBlood
     - Sap
+    - SynthBlood # Imp
 
 - type: xenoArchTrigger
   id: TriggerThrow

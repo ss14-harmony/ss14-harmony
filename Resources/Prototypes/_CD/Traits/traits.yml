@@ -27,4 +27,4 @@
     - type: Synth
     - type: DamagedSiliconAccent # Misfit - Add silicon accent
       enableChargeCorruption: false
-      damageAtMaxCorruption: 100
+      damageAtMaxCorruption: 200

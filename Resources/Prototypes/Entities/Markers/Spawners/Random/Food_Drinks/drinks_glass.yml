@@ -138,4 +138,7 @@
       - DrinkHoochGlass
       - DrinkBeepskySmashGlass
       - DrinkBacchusBlessing
+      # imp
+      - DrinkBatteryAcidGlass
+      - DrinkAngelsKissGlass
     rareChance: 0.05
