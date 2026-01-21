@@ -25,6 +25,6 @@
   category: Quirks
   components:
     - type: Synth
-    - type: DamagedSiliconAccent
+    - type: DamagedSiliconAccent # Misfit - Add silicon accent
       enableChargeCorruption: false
       damageAtMaxCorruption: 100
