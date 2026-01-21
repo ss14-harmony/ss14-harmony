@@ -25,7 +25,6 @@
   category: Quirks
   components:
     - type: Synth
-    - type: IonStormNotifier
     - type: DamagedSiliconAccent
       enableChargeCorruption: false
       damageAtMaxCorruption: 100
