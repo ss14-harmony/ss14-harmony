@@ -1,16 +1,16 @@
-using Content.Server.Body.Systems;
+using Content.Shared.Body.Systems; // Misfit - Move synthetic trait to shared
 using Content.Shared.Chat.TypingIndicator;
 using Content.Shared.Chemistry.Reagent;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CD.Traits;
+namespace Content.Shared._CD.Traits; // Misfit - Move synthetic trait to shared
 
 public sealed class SynthSystem : EntitySystem
 {
     private static readonly ProtoId<TypingIndicatorPrototype> RobotTypingIndicator = "robot"; // Misfit - Type safety
     private static readonly ProtoId<ReagentPrototype> SynthBlood = "SynthBlood"; // Misfit - Type safety
 
-    [Dependency] private readonly BloodstreamSystem _bloodstream = default!;
+    [Dependency] private readonly SharedBloodstreamSystem _bloodstream = default!; // Misfit - Move synthetic trait to shared
 
     public override void Initialize()
     {

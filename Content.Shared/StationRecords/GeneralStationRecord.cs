@@ -68,4 +68,10 @@ public sealed record GeneralStationRecord
     /// </summary>
     [DataField]
     public string? DNA;
+
+    /// <summary>
+    ///     Misfit - Synthetic trait for searching support
+    /// </summary>
+    [DataField]
+    public bool Synthetic;
 }

@@ -1,6 +1,7 @@
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using Content.Shared._CD.Traits; // Misfit - Add synthetic to record
 using Content.Shared.CCVar;
 using Content.Shared.Decals;
 using Content.Shared.Examine;
@@ -112,7 +113,9 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         var species = GetSpeciesRepresentation(component.Species).ToLower();
         var age = GetAgeRepresentation(component.Species, component.Age);
 
-        args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species)));
+        var syntheticSpecies = GetSyntheticRepresentation(uid, species); // Misfit - Shim synthetic prefix
+
+        args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", syntheticSpecies))); // Misfit - Shim synthetic prefix
     }
 
     /// <summary>
@@ -564,5 +567,13 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         return Loc.GetString("identity-age-old");
+    }
+
+    // Misfit - Add synthetic species examine text
+    public string GetSyntheticRepresentation(EntityUid uid, string speciesText)
+    {
+        return HasComp<SynthComponent>(uid)
+            ? Loc.GetString("synthetic-component-examine", ("species", speciesText))
+            : speciesText;
     }
 }
