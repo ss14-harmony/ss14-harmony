@@ -10,7 +10,7 @@ namespace Content.Shared.Chat.TypingIndicator;
 /// <summary>
 ///     Supports typing indicators on entities.
 /// </summary>
-public abstract class SharedTypingIndicatorSystem : EntitySystem
+public abstract partial class SharedTypingIndicatorSystem : EntitySystem
 {
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;

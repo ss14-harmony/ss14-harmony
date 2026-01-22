@@ -11,6 +11,7 @@ public sealed class SynthSystem : EntitySystem
     private static readonly ProtoId<ReagentPrototype> SynthBlood = "SynthBlood"; // Misfit - Type safety
 
     [Dependency] private readonly SharedBloodstreamSystem _bloodstream = default!; // Misfit - Move synthetic trait to shared
+    [Dependency] private readonly SharedTypingIndicatorSystem _typingIndicator = default!; // Misfit - Partial typing indicator change
 
     public override void Initialize()
     {
@@ -21,11 +22,7 @@ public sealed class SynthSystem : EntitySystem
 
     private void OnStartup(EntityUid uid, SynthComponent component, ComponentStartup args)
     {
-        if (TryComp<TypingIndicatorComponent>(uid, out var indicator))
-        {
-            indicator.TypingIndicatorPrototype = RobotTypingIndicator; // Misfit - Type safety
-            Dirty(uid, indicator);
-        }
+        _typingIndicator.SetIndicatorPrototype(uid, RobotTypingIndicator); // Misfit - Type safety and partial typing indicator change
 
         // Give them synth blood. Ion storm notif is handled in that system
         _bloodstream.ChangeBloodReagent(uid, SynthBlood); // Misfit - Type safety

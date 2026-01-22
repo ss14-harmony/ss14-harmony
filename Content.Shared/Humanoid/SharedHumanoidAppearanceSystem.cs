@@ -1,7 +1,6 @@
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using Content.Shared._CD.Traits; // Misfit - Add synthetic to record
 using Content.Shared.CCVar;
 using Content.Shared.Decals;
 using Content.Shared.Examine;
@@ -33,7 +32,7 @@ namespace Content.Shared.Humanoid;
 ///     you still need a local copy so that players can set up their
 ///     characters.
 /// </summary>
-public abstract class SharedHumanoidAppearanceSystem : EntitySystem
+public abstract partial class SharedHumanoidAppearanceSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _cfgManager = default!;
     [Dependency] private readonly INetManager _netManager = default!;
@@ -567,13 +566,5 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         return Loc.GetString("identity-age-old");
-    }
-
-    // Misfit - Add synthetic species examine text
-    public string GetSyntheticRepresentation(EntityUid uid, string speciesText)
-    {
-        return HasComp<SynthComponent>(uid)
-            ? Loc.GetString("synthetic-component-examine", ("species", speciesText))
-            : speciesText;
     }
 }

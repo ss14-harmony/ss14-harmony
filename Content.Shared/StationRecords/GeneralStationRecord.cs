@@ -7,7 +7,7 @@ namespace Content.Shared.StationRecords;
 ///     General station record. Indicates the crewmember's name and job.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed record GeneralStationRecord
+public sealed partial record GeneralStationRecord
 {
     /// <summary>
     ///     Name tied to this station record.
@@ -68,10 +68,4 @@ public sealed record GeneralStationRecord
     /// </summary>
     [DataField]
     public string? DNA;
-
-    /// <summary>
-    ///     Misfit - Synthetic trait for searching support
-    /// </summary>
-    [DataField]
-    public bool Synthetic;
 }
