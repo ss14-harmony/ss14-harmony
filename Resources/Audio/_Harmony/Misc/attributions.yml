@@ -7,3 +7,8 @@
   license: "CC-BY-SA-3.0"
   copyright: "Taken from TG station as malf.ogg"
   source: "https://github.com/tgstation/tgstation/commit/d4b30b817de06fb3fdd366a5dc83ddaf66d0651b"
+
+- files: ["conspirator_greeting.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from TG station as heretic_gain.ogg"
+  source: "https://github.com/tgstation/tgstation/commit/436ba869ebcd0b60b63973fb7562f447ee655205"

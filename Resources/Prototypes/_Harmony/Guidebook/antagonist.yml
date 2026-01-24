@@ -7,3 +7,8 @@
   id: MalfunctioningAI
   name: guide-entry-malfunctioning-ai
   text: "/ServerInfo/_Harmony/Guidebook/Antagonist/MalfunctioningAI.xml"
+
+- type: guideEntry
+  id: Conspirators
+  name: guide-entry-conspirators
+  text: "/ServerInfo/_Harmony/Guidebook/Antagonist/Conspirators.xml"

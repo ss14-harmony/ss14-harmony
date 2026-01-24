@@ -5,3 +5,6 @@ roles-antag-blood-brother-objective = Collaborate with your blood bound to accom
 roles-antag-malf-ai-name = Malfunctioning AI
 roles-antag-malf-ai-objective = Work with your cyborgs to accomplish your prime directives at all costs.
 roles-antag-malf-cyborg-name = Malfunctioning cyborg
+
+roles-antag-conspirator-name = Conspirator
+roles-antag-conspirator-objective = Work with your fellow conspirators to bring the conspiracy to life.
