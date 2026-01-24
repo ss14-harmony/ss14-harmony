@@ -102,11 +102,10 @@
       raffle:
         settings: default
     - type: Bloodstream
-      bloodMaxVolume: 200
-      bloodReagents:
+      bloodReferenceSolution:
         reagents:
           - ReagentId: ChloralHydrate
-            Quantity: 1
+            Quantity: 200
     - type: Sprite
       sprite: _Impstation/Mobs/Aliens/eeeplet.rsi
       noRot: true
@@ -185,11 +184,10 @@
       mindRoles:
         - MindRoleGhostRoleTeamAntagonist
     - type: Bloodstream
-      bloodMaxVolume: 400
-      bloodReagents:
+      bloodReferenceSolution:
         reagents:
           - ReagentId: ChloralHydrate
-            Quantity: 1
+            Quantity: 400
     - type: Electrified
       requirePower: false
       shockDamage: 4
