@@ -141,3 +141,18 @@
     stock: 1
   categories:
   - MalfAIStoreAbilities
+
+- type: listing
+  id: MalfInternalMicroreactor
+  name: malf-internal-microreactor-name
+  description: malf-internal-microreactor-desc
+  productEvent: !type:MalfPurchaseInternalMicroreactorEvent
+  raiseProductEventOnUser: true
+  icon: { sprite: Interface/Alerts/battery.rsi, state: battery-none }
+  cost:
+    CPU: 20
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  categories:
+  - MalfAIStoreAbilities

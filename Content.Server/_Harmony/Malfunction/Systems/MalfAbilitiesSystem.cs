@@ -71,6 +71,7 @@ public sealed class MalfAbilitiesSystem : EntitySystem
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseDisableControlPanelEvent>(OnPurchaseDisableControlPanel);
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseVoiceModulationEvent>(OnPurchaseVoiceModulation);
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseTurretUpgradeEvent>(OnPurchaseTurretUpgrade);
+        SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseInternalMicroreactorEvent>(OnPurchaseInternalMicroreactor);
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseOverrideSafetyEvent>(OnPurchaseOverrideSafety);
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseOverloadLightEvent>(OnPurchaseOverloadLight);
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfPurchaseJamFirelockEvent>(OnPurchaseJamFirelock);
@@ -121,6 +122,17 @@ public sealed class MalfAbilitiesSystem : EntitySystem
         {
             if (!_proto.TryIndex<EntityPrototype>(upgradedTurretId, out var upgradedTurret)) return;
             EntityManager.AddComponents(turret, upgradedTurret);
+        }
+    }
+
+    private void OnPurchaseInternalMicroreactor(EntityUid uid, MalfAbilitiesComponent comp, MalfPurchaseInternalMicroreactorEvent args)
+    {
+        var query = EntityQueryEnumerator<StationAiCoreComponent>();
+        EntProtoId microreactorId = "InternalMicroreactor";
+        while (query.MoveNext(out var aiCore, out _))
+        {
+            if (!_proto.TryIndex<EntityPrototype>(microreactorId, out var microreactor)) return;
+            EntityManager.AddComponents(aiCore, microreactor);
         }
     }
 
@@ -281,6 +293,7 @@ public sealed class MalfAbilitiesSystem : EntitySystem
     private void OnLawTransmit(EntityUid uid, MalfAbilitiesComponent comp, MalfTransmitLawZeroEvent args)
     {
         if (args.Handled) return;
+        if (HasComp<IntellicardedComponent>(uid)) return; // this is mainly to stop the bug where carded AIs get treated like borgs, but also carded AI probably shouldn't have transmit.
         // Send antagonist briefing to and update all cyborgs appropriately
         foreach (var lawComp in EntityQuery<SiliconLawProviderComponent>())
         {

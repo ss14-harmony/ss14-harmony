@@ -42,3 +42,10 @@
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: InternalMicroreactor
+  components:
+  - type: BatterySelfRecharger
+    autoRechargeRate: 25000 # this is really really strong, but it's meant to make the AI self-sufficient without a power supply.

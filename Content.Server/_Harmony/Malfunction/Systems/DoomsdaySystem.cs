@@ -12,6 +12,7 @@ using Content.Shared.Humanoid;
 using Content.Shared._Harmony.Malfunction;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.Mobs;
 
 namespace Content.Server._Harmony.Malfunction.Systems;
 
@@ -38,6 +39,7 @@ public sealed class DoomsdaySystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<MalfAbilitiesComponent, MalfDoomsdayStartEvent>(OnDoomsdayStart);
+        SubscribeLocalEvent<DoomsdayComponent, MobStateChangedEvent>(OnMobStateChanged);
     }
 
     public override void Update(float frameTime)
@@ -81,6 +83,12 @@ public sealed class DoomsdaySystem : EntitySystem
         _chatSystem.DispatchStationAnnouncement(stationUid ?? uid, announcement, sender, false, null, Color.Crimson);
 
         _nukeSongLength = (float)_audio.GetAudioLength(_selectedNukeSong).TotalSeconds;
+    }
+
+    private void OnMobStateChanged(EntityUid uid, DoomsdayComponent component, MobStateChangedEvent args)
+    {
+        if (args.NewMobState != MobState.Alive)
+            AvertDoomsday(uid, component);
     }
 
     private void TickTimer(EntityUid uid, float frameTime, DoomsdayComponent? doomsday = null)

@@ -8,6 +8,7 @@ using Content.Server.Store.Systems;
 using Content.Shared._Harmony.Malfunction;
 using Content.Shared._Harmony.Malfunction.Components;
 using Content.Shared._Harmony.Roles.Components;
+using Content.Shared.Mind;
 using Content.Shared.Radio.Components;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
@@ -21,6 +22,7 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
     [Dependency] private readonly ActionsSystem _action = default!;
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly SiliconLawSystem _laws = default!;
+    [Dependency] private readonly SharedMindSystem _mindSystem = default!;
 
     private const string MalfShopId = "ActionMalfShop";
     private const string MalfTransmitId = "ActionMalfTransmitLawZero";

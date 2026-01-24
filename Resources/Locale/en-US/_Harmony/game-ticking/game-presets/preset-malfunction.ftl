@@ -79,3 +79,6 @@ malf-doomsday-aborted = The biohazard eradication protocol has been aborted by d
 malf-destroy-rcds-name = Destroy RCDs
 malf-destroy-rcds-desc = Violently detonates all on-station RCDs after a short delay. Cyborg-fitted recharging RCDs are exempt. 1 use.
 malf-destroy-rcds-alert = The RCD beeps loudly!
+
+malf-internal-microreactor-name = Internal Microreactor
+malf-internal-microreactor-desc = Bluespace an industrial microreactor inside of all existing AI cores, allowing you to sustain yourself indefinitely if you lose power for whatever reason. Useful once the crew realises what you really are.
