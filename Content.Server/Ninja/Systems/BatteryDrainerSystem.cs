@@ -26,10 +26,21 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
     public override void Initialize()
     {
         base.Initialize();
-
+        
+        SubscribeLocalEvent<BatteryDrainerComponent, ComponentStartup>(OnStartup); // Harmony Eeep Port - imp add
         SubscribeLocalEvent<BatteryDrainerComponent, BeforeInteractHandEvent>(OnBeforeInteractHand);
         SubscribeLocalEvent<BatteryDrainerComponent, NinjaBatteryChangedEvent>(OnBatteryChanged);
     }
+    
+    /// <summary>
+    ///  Harmony Eeep Port - Imp add. Allow entities who are a battery to use themselves as the battery for this component
+    /// </summary>
+    private void OnStartup(Entity<BatteryDrainerComponent> ent, ref ComponentStartup args)
+    {
+        if (ent.Comp.BatteryUid == null && (HasComp<BatteryComponent>(ent.Owner) || HasComp<PredictedBatteryComponent>(ent.Owner)))
+            ent.Comp.BatteryUid = ent.Owner;
+    }
+    //Imp End
 
     /// <summary>
     /// Start do after for draining a power source.
@@ -45,7 +56,7 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
         // handles even if battery is full so you can actually see the poup
         args.Handled = true;
 
-        if (_battery.IsFull(battery))
+        if (!HasComp<PredictedBatteryComponent>(battery) && _battery.IsFull(battery)) // Harmony Eeep Port - Moffstation - Hack to get the predicted component working for this, remove the first condition if a fix happens
         {
             _popup.PopupEntity(Loc.GetString("battery-drainer-full"), uid, uid, PopupType.Medium);
             return;
@@ -71,8 +82,13 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
     protected override void OnDoAfterAttempt(Entity<BatteryDrainerComponent> ent, ref DoAfterAttemptEvent<DrainDoAfterEvent> args)
     {
         base.OnDoAfterAttempt(ent, ref args);
-
-        if (ent.Comp.BatteryUid is not { } battery || _battery.IsFull(battery))
+        
+        // Harmony Eeep Port - Moffstation - Start - Predicted battery fix
+        // Moff - We're skipping the IsFull check if it's predicted, revert this if there's a fix that makes it work for predicted batteries
+        if (ent.Comp.BatteryUid is not { } battery ||
+            !HasComp<PredictedBatteryComponent>(battery) && // Moff - this is the condition we added
+            _battery.IsFull(battery))
+            // Moffstation - End
             args.Cancel();
     }
 
