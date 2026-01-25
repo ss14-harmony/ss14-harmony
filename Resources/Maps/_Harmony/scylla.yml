@@ -127529,8 +127529,6 @@ entities:
       pos: 5.5,-71.5
       parent: 3
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 24885
     - type: AtmosPipeLayers
@@ -127616,8 +127614,6 @@ entities:
       pos: 2.5,-71.5
       parent: 3
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 24885
     - type: AtmosPipeLayers
