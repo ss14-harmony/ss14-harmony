@@ -47,8 +47,6 @@ public abstract class SharedRevolutionarySystem : EntitySystem
             _sharedStun.TryUpdateParalyzeDuration(uid, stunTime);
             _popupSystem.PopupEntity(Loc.GetString("rev-break-control", ("name", name)), uid);
         }
-
-        _bloodBrotherSystem.OnBloodBrotherMindshielded((uid, comp), ref init); // Harmony (who doesn't love some good old hardcoding)
     }
 
     /// <summary>
