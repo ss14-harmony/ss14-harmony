@@ -431,6 +431,10 @@
         sound: "/Audio/Ambience/Antag/zombie_start.ogg"
       components:
       - type: PendingZombie
+        # Begin Harmony changes - Increased grace period to 25 - 30 minutes
+        minInitialInfectedGrace: 1500
+        maxInitialInfectedGrace: 1800
+        # End Harmony changes
       - type: ZombifyOnDeath
       - type: IncurableZombie
       - type: InitialInfected
