@@ -1642,6 +1642,27 @@
   categories:
   - UplinkImplants
 
+# Harmony Start
+- type: listing
+  id: UplinkMicroBombImplantLite
+  name: uplink-micro-bomb-implanter-name
+  description: uplink-micro-bomb-implanter-desc
+  icon: { sprite: /Textures/Actions/Implants/implants.rsi, state: explosive }
+  productEntity: MicroBombImplanter
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 1 # I don't know why our customers never come back.
+  cost:
+    Telecrystal: 8
+  categories:
+  - UplinkImplants
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
+# Harmony End
+
 # Wearables
 
 - type: listing
