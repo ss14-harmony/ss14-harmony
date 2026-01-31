@@ -40,17 +40,19 @@
     ClothingUniformColorRainbow: 2
     ClothingUnderSocksCoder: 2
     ClothingUnderSocksBee: 2
-    ClothingUnderSocksPrideAsexual: 2 #Harmony
-    ClothingUnderSocksPrideAromantic: 2 #Harmony
-    ClothingUnderSocksPrideAroace: 2 #Harmony
-    ClothingUnderSocksPrideBisexual: 2 #Harmony
-    ClothingUnderSocksPrideGay: 2 #Harmony
-    ClothingUnderSocksPrideIntersex: 2 #Harmony
-    ClothingUnderSocksPrideLesbian: 2 #Harmony
-    ClothingUnderSocksPridePansexual: 2 #Harmony
-    ClothingUnderSocksPrideNonbinary: 2 #Harmony
-    ClothingUnderSocksPrideRainbow: 2 #Harmony
-    ClothingUnderSocksPrideTrans: 2 #Harmony
+    #Start Harmony change
+    ClothingUnderSocksPrideAsexual: 2
+    ClothingUnderSocksPrideAromantic: 2
+    ClothingUnderSocksPrideAroace: 2
+    ClothingUnderSocksPrideBisexual: 2
+    ClothingUnderSocksPrideGay: 2
+    ClothingUnderSocksPrideIntersex: 2
+    ClothingUnderSocksPrideLesbian: 2
+    ClothingUnderSocksPridePansexual: 2
+    ClothingUnderSocksPrideNonbinary: 2
+    ClothingUnderSocksPrideRainbow: 2
+    ClothingUnderSocksPrideTrans: 2
+    #End Harmony change
     ClothingNeckChameleonPride: 4 # Harmony unique pride mantles
   contrabandInventory:
     ClothingNeckScarfStripedLesbianLong: 2

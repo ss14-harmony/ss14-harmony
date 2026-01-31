@@ -1,49 +1,48 @@
-# :angle:
-
 - type: entity
   parent: ClothingShoesBase
-  id: ClothingUnderSocksWhite
-  name: white socks
-  description: A pair of plain white socks.
+  id: ClothingUnderSocksBase
+  abstract: true
   components:
   - type: Sprite
     sprite: _Harmony/Clothing/Under/Socks/color.rsi
   - type: Clothing
     sprite: _Harmony/Clothing/Under/Socks/color.rsi
+
+- type: entity
+  parent: ClothingUnderSocksBase
+  id: ClothingUnderSocksWhite
+  name: white socks
+  description: A pair of plain white socks.
     
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUnderSocksBase
   id: ClothingUnderSocksBlack
   name: black socks
   description: A pair of plain black socks.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     layers:
     - state: icon
       color: "#272727"
   - type: Clothing
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     clothingVisuals:
       shoes:
       - state: equipped-FEET
         color: "#272727"
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUnderSocksBase
   id: ClothingUnderSocksSecurity
   name: black and red socks
   description: A pair of black and red striped socks.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     layers:
     - state: icon
       color: "#272727"
     - state: icon-stripes
       color: "#c12d30"
   - type: Clothing
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     clothingVisuals:
       shoes:
       - state: equipped-FEET
@@ -52,19 +51,17 @@
         color: "#c12d30"
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUnderSocksBase
   id: ClothingUnderSocksMedical
   name: white and blue socks
   description: A pair of white and blue striped socks.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     layers:
     - state: icon
     - state: icon-stripes
       color: "#5a96bb"
   - type: Clothing
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     clothingVisuals:
       shoes:
       - state: equipped-FEET
@@ -72,19 +69,17 @@
         color: "#5a96bb"
         
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUnderSocksBase
   id: ClothingUnderSocksChemistry
   name: white and orange socks
   description: A pair of white and orange striped socks.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     layers:
     - state: icon
     - state: icon-stripes
       color: "#ff8800"
   - type: Clothing
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     clothingVisuals:
       shoes:
       - state: equipped-FEET
@@ -92,19 +87,17 @@
         color: "#ff8800"
         
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUnderSocksBase
   id: ClothingUnderSocksVirology
   name: white and green socks
   description: A pair of white and green striped socks.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     layers:
     - state: icon
     - state: icon-stripes
       color: "#21a81a"
   - type: Clothing
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     clothingVisuals:
       shoes:
       - state: equipped-FEET
@@ -112,7 +105,7 @@
         color: "#21a81a"
         
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUnderSocksBase
   id: ClothingUnderSocksEngineering
   name: hi-viz socks
   description: A pair of striped socks in hi-viz colors. Unfortunately, the yellow stripes aren't reflective.
@@ -125,7 +118,6 @@
     - state: icon-less-stripes
       color: "#f0e826"
   - type: Clothing
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     clothingVisuals:
       shoes:
       - state: equipped-FEET
@@ -134,19 +126,17 @@
         color: "#f0e826"
         
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUnderSocksBase
   id: ClothingUnderSocksScience
   name: white and purple socks
   description: A pair of white and purple striped socks. 
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     layers:
     - state: icon
     - state: icon-stripes
       color: "#8900c9"
   - type: Clothing
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     clothingVisuals:
       shoes:
       - state: equipped-FEET
@@ -154,20 +144,18 @@
         color: "#8900c9"
         
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUnderSocksBase
   id: ClothingUnderSocksBotany
   name: nature socks
   description: A pair of garish nature-themed striped socks.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     layers:
     - state: icon
       color: "#6ad427"
     - state: icon-stripes
       color: "#3164ff"
   - type: Clothing
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     clothingVisuals:
       shoes:
       - state: equipped-FEET
@@ -176,13 +164,12 @@
         color: "#3164ff"
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUnderSocksBase
   id: ClothingUnderSocksCommand
   name: red and blue socks
   description: A pair of red and blue striped socks. Makes you feel like doing paperwork.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     layers:
     - state: icon
       color: "#00648c"
@@ -198,24 +185,21 @@
         color: "#b00000"
         
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUnderSocksBase
   id: ClothingUnderSocksCargo
   name: brown and yellow socks
   description: A pair of brown and yellow striped socks. Makes you feel like declaring independence.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     layers:
     - state: icon
       color: "#ccaa37"
     - state: icon-stripes
       color: "#714711"
   - type: Clothing
-    sprite: _Harmony/Clothing/Under/Socks/color.rsi
     clothingVisuals:
       shoes:
       - state: equipped-FEET
         color: "#ccaa37"
       - state: equipped-stripes-FEET
         color: "#714711"
-        
