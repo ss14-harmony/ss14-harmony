@@ -18,6 +18,14 @@ namespace Content.Server.Guardian
         [DataField]
         public EntityUid? HostedGuardian;
 
+        // Harmony Start
+        [DataField]
+        public bool SubtleCommunicationOn = false;
+
+        [DataField]
+        public EntProtoId CommunicationAction = "ActionGuardianHostCommunicate";
+        // Harmony End
+
         /// <summary>
         /// Container which holds the guardian
         /// </summary>

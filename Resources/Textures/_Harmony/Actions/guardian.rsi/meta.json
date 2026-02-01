@@ -1,0 +1,20 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from paradise station at commit https://github.com/ParadiseSS13/Paradise/commit/c21cfa1a092d4cf4706fe88716d0332b26c1c7a1",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "GuardianCommunicate"
+      },
+      {
+        "name": "ToggleGuardianIcon"
+      },
+      {
+        "name": "ToggleGuardianIconOn"
+      }
+    ]
+}

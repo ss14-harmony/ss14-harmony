@@ -1,0 +1,13 @@
+﻿- type: entity
+  id: ActionGuardianHostCommunicate
+  name: Toggle Communication
+  description: Toggles discreet communication between host and guardian
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Harmony/Actions/guardian.rsi
+      state: GuardianCommunicate
+    priority: 1
+  - type: InstantAction
+    event: !type:GuardianCommunicationActionEvent

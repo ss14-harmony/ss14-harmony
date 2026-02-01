@@ -87,7 +87,11 @@ namespace Content.Server.Guardian
             }
 
             if (component.HostedGuardian != null)
+            {
                 ToggleGuardian(uid, component);
+                args.Toggle = true;
+            }
+
 
             args.Handled = true;
         }
@@ -121,6 +125,7 @@ namespace Content.Server.Guardian
         {
             component.GuardianContainer = _container.EnsureContainer<ContainerSlot>(uid, "GuardianContainer");
             _actionSystem.AddAction(uid, ref component.ActionEntity, component.Action);
+            _actionSystem.AddAction(uid,component.CommunicationAction); // Harmony change
         }
 
         private void OnHostShutdown(EntityUid uid, GuardianHostComponent component, ComponentShutdown args)

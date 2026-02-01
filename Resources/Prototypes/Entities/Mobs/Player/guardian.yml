@@ -271,7 +271,10 @@
   description: Either manifests the guardian or recalls it back into your body
   components:
   - type: Action
-    icon: Interface/Actions/manifest.png
+    # Harmony Start
+    icon: { sprite: _Harmony/Actions/guardian.rsi, state: "ToggleGuardianIcon" }
+    iconOn: { sprite: _Harmony/Actions/guardian.rsi, state: "ToggleGuardianIconOn" }
+    # Harmony End
     useDelay: 2
   - type: InstantAction
     event: !type:GuardianToggleActionEvent
