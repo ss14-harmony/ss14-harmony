@@ -89,7 +89,6 @@ namespace Content.Server.Guardian
             if (component.HostedGuardian != null)
             {
                 ToggleGuardian(uid, component);
-                args.Toggle = true;
             }
 
 
@@ -369,6 +368,8 @@ namespace Content.Server.Guardian
                 return;
             }
 
+            _actionSystem.SetToggled(hostComponent.ActionEntity, true); // Harmony change
+
             DebugTools.Assert(hostComponent.GuardianContainer.Contains(guardian));
             _container.Remove(guardian, hostComponent.GuardianContainer);
             DebugTools.Assert(!hostComponent.GuardianContainer.Contains(guardian));
@@ -383,6 +384,8 @@ namespace Content.Server.Guardian
                 DebugTools.Assert(hostComponent.GuardianContainer.Contains(guardian));
                 return;
             }
+
+            _actionSystem.SetToggled(hostComponent.ActionEntity, false); // Harmony change
 
             _container.Insert(guardian, hostComponent.GuardianContainer);
             DebugTools.Assert(hostComponent.GuardianContainer.Contains(guardian));
