@@ -135,6 +135,12 @@
       group: Holoparasite
     - type: TypingIndicator
       proto: holo
+    # Harmony start
+    - type: RandomSprite
+      available:
+        - enum.DamageStateVisualLayers.BaseUnshaded:
+            tech_flare: Sixteen
+      # Harmony end
     - type: Sprite
       layers:
         - state: tech_base
