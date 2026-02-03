@@ -1,0 +1,8 @@
+- type: trait
+  id: StreetpunkAccent
+  name: trait-streetpunk-accent-name
+  description: trait-streetpunk-accent-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+    - type: StreetpunkAccent

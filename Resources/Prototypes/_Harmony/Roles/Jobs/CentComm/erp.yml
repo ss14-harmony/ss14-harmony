@@ -1,0 +1,109 @@
+# Leader
+- type: job
+  id: ERPLeader
+  name: job-name-erpleader
+  description: job-description-erpleader
+  playTimeTracker: JobERPLeader
+  setPreference: false
+  startingGear: ERPLeaderGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Clumsy
+      gunShootFailDamage:
+        types: #literally just picked semi random valus. i tested this once and tweaked it.
+          Blunt: 5 # I blame whoever is above because I certainly am not going to check if the values were good
+          Piercing: 4
+        groups:
+          Burn: 3
+      catchingFailDamage:
+        types:
+          Blunt: 1
+    - type: SleepEmitSound
+      snore: /Audio/Voice/Misc/silly_snore.ogg
+      interval: 10
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm, SadTromboneImplant ]
+
+- type: startingGear
+  id: ERPLeaderGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitClownBanana
+    back: ClothingBackpackERTClown
+    shoes: ClothingShoesClownLarge
+    mask: ClothingMaskClownSecurity
+    eyes: ClothingEyesGlassesSunglasses
+    id: ERPLeaderPDA
+    ears: ClothingHeadsetAltCentCom
+    pocket1: BananiumHorn
+    pocket2: ClownRecorder
+  storage:
+    back:
+    - CrowbarRed
+    - LauncherCreamPie
+    - RubberStampClown
+    - CrayonRainbow
+    - FoodPieBananaCream
+    - FoodPieBananaCream
+    - FoodPieBananaCream
+
+# Clown
+- type: job
+  id: ERPClown
+  name: job-name-erpclown
+  description: job-description-erpclown
+  playTimeTracker: JobERPClown
+  setPreference: false
+  startingGear: ERPClownGear
+  icon: "JobIconClown"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Clumsy
+      gunShootFailDamage:
+        types: #literally just picked semi random valus. i tested this once and tweaked it.
+          Blunt: 5 # I blame whoever is above because I certainly am not going to check if the values were good
+          Piercing: 4
+        groups:
+          Burn: 3
+      catchingFailDamage:
+        types:
+          Blunt: 1
+    - type: SleepEmitSound
+      snore: /Audio/Voice/Misc/silly_snore.ogg
+      interval: 10
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm, SadTromboneImplant ]
+
+- type: startingGear
+  id: ERPClownGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitClown
+    back: ClothingBackpackERTClown
+    shoes: ClothingShoesClown
+    mask: ClothingMaskClown
+    eyes: ClothingEyesGlassesSunglasses
+    id: ERPClownPDA
+    ears: ClothingHeadsetAltCentCom
+    pocket1: BikeHorn
+    pocket2: ClownRecorder
+  storage:
+    back:
+    - CrowbarRed
+    - LauncherCreamPie
+    - RubberStampClown
+    - CrayonRainbow
+    - FoodPieBananaCream

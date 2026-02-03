@@ -18,6 +18,8 @@
     - Human
     - Moth
     - Reptilian
+    - Vulpkanin
+    - Avali # Latestation
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox
@@ -75,6 +77,7 @@
     - Dwarf
     - Human
     - Reptilian
+    - Vulpkanin
 
 - type: loadoutEffectGroup
   id: OxygenBreatherMimeMoth
@@ -185,6 +188,29 @@
   storage:
     back:
     - BoxSurvivalSyndicateNitrogen
+
+# Military / Double Extended
+- type: loadout
+  id: EmergencyOxygenMilitaryDouble
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OxygenBreather
+  equipment:
+    pocket1: DoubleEmergencyOxygenTankFilled
+  storage:
+    back:
+    - BoxSurvivalMilitaryDouble
+
+- type: loadout
+  id: EmergencyNitrogenMilitaryDouble
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: NitrogenBreather
+  equipment:
+    pocket1: DoubleEmergencyNitrogenTankFilled
+  storage:
+    back:
+    - BoxSurvivalMilitaryDoubleNitrogen
 
 # Pre-equipped species gear
 

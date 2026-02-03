@@ -69,7 +69,7 @@
   id: Hot
   desc: salvage-temperature-mod-hot
   cost: 1
-  temperature: 323.15 # 50C
+  temperature: 303.15 # 50C # Harmony Change, 323.15 > 303.15, 30C
   biomes:
     - Caves
     #- LowDesert
@@ -80,7 +80,7 @@
   id: Burning
   desc: salvage-temperature-mod-high-temperature
   cost: 2
-  temperature: 423.15 # 200C
+  temperature: 333.15 # 200C # Harmony Change, 423.15 > 333.15, 60C
   biomes:
     - Caves
     #- LowDesert
@@ -90,7 +90,7 @@
   id: Melting
   desc: salvage-temperature-mod-extreme-heat
   cost: 4
-  temperature: 1273.15 # 1000C hot hot hot
+  temperature: 408.15 # 1000C hot hot hot # Harmony Change, 1273.15 > 408.15, 135C
   biomes:
     - Lava
 
@@ -137,16 +137,16 @@
   cost: 0
   desc: salvage-air-mod-breathable-atmosphere
   gases:
-    - 21.824779 # oxygen
-    - 82.10312 # nitrogen
+    - 18.3 # oxygen # Harmony Change - Exped PKAs - 21.824779 > 18.3
+    - 18.3 # nitrogen # Harmony Change - Exped PKAs - 82.10312 > 18.3
 
 - type: salvageAirMod
   id: Sleepy
   cost: 1
   desc: salvage-air-mod-dangerous-atmosphere
   gases:
-    - 21.824779 # oxygen
-    - 72.10312 # nitrogen
+    - 10 # oxygen # Harmony Change - Exped PKAs - 21.824779 > 10
+    - 10 # nitrogen # Harmony Change - Exped PKAs - 72.10312 > 10
     - 0
     - 0
     - 0
@@ -165,8 +165,8 @@
   cost: 2
   desc: salvage-air-mod-dangerous-atmosphere
   gases:
-    - 21.824779 # oxygen
-    - 77.10312 # nitrogen
+    - 10 # oxygen # Harmony Change - Exped PKAs - 21.824779 > 10
+    - 10 # nitrogen # Harmony Change - Exped PKAs - 77.10312 > 10
     - 10 # carbon dioxide
   biomes:
     - Caves
@@ -180,9 +180,9 @@
   cost: 3
   desc: salvage-air-mod-toxic-atmosphere
   gases:
-    - 21.824779 # oxygen
+    - 18.3 # oxygen # Harmony Change - Exped PKAs - 21.824779 > 18.3
     - 0
-    - 82.10312 # carbon dioxide
+    - 18.3 # carbon dioxide # Harmony Change - Exped PKAs - 82.10312 > 18.3
   biomes:
     - Caves
     - Snow
@@ -196,7 +196,7 @@
     - 0
     - 0
     - 0
-    - 103.927899 # plasma
+    - 35 # plasma # Harmony Change - Exped PKAs - 103.927899 > 35
   biomes:
     - Caves
     - Lava
@@ -206,10 +206,10 @@
   cost: 5
   desc: salvage-air-mod-volatile-atmosphere
   gases:
-    - 21.824779 # oxygen
+    - 18.3 # oxygen # Harmony Change - Exped PKAs - 21.824779 > 18.3
     - 0
     - 0
-    - 82.10312 # plasma
+    - 18.3 # plasma # Harmony Change - Exped PKAs - 82.10312 > 18.3
   biomes:
     - Caves
     - Lava

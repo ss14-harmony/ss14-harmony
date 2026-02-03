@@ -6,3 +6,7 @@ steal-target-groups-animal-glorp = Glorp
 
 # Syndicate Steal Groups
 steal-target-groups-AI = the AI
+
+# Multi Antag single items (ex: Syndi & Thief, BB takes from syndi already)
+steal-target-groups-access-configurator = access configurator
+

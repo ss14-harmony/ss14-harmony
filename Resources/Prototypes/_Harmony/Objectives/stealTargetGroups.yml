@@ -1,9 +1,13 @@
+# Thief animals
+
 - type: stealTargetGroup
   id: AnimalGlorp
   name: steal-target-groups-animal-glorp
   sprite:
     sprite: _Harmony/Mobs/Pets/glorp.rsi
     state: glorp
+
+# Thief single items
 
 - type: stealTargetGroup
   id: ClothingEyesGlassesMedical
@@ -18,3 +22,19 @@
   sprite:
     sprite: Mobs/Silicon/holograms.rsi
     state: ai_male
+# Traitor single items
+
+- type: stealTargetGroup
+  id: WeaponEnergyMagnumHarmony
+  name: steal-target-groups-weapon-energy-magnum
+  sprite:
+    sprite: _Harmony/Objects/Weapons/Guns/Battery/energy_magnum.rsi
+    state: icon
+
+# Multi Antag single items (ex: Syndi & Thief, BB takes from syndi already)
+- type: stealTargetGroup
+  id: AccessConfigurator
+  name: steal-target-groups-access-configurator
+  sprite:
+    sprite: Objects/Tools/access_configurator.rsi
+    state: icon

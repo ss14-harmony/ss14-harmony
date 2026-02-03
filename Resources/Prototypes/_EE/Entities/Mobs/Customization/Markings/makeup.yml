@@ -1,0 +1,85 @@
+- type: marking
+  id: MakeupLips
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, SlimePerson]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#7e2727"
+  sprites:
+  - sprite: _EE/Mobs/Customization/makeup.rsi
+    state: lips
+
+- type: marking
+  id: MakeupBlush
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Dwarf, Human, Reptilian, SlimePerson]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#d39394"
+  sprites:
+  - sprite: _EE/Mobs/Customization/makeup.rsi
+    state: blush
+
+- type: marking
+  id: MakeupNailPolishRight
+  bodyPart: RHand
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#702020"
+  sprites:
+  - sprite: _EE/Mobs/Customization/makeup.rsi
+    state: nail_polish_r
+
+- type: marking
+  id: MakeupNailPolishLeft
+  bodyPart: LHand
+  markingCategory: Arms
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#702020"
+  sprites:
+  - sprite: _EE/Mobs/Customization/makeup.rsi
+    state: nail_polish_l
+
+# Moth-specific
+
+- type: marking
+  id: MakeupMothLips
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Moth]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#7e2727"
+  sprites:
+  - sprite: _EE/Mobs/Customization/makeup.rsi
+    state: moth_lips
+
+- type: marking
+  id: MakeupMothBlush
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Moth]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#d39394"
+  sprites:
+  - sprite: _EE/Mobs/Customization/makeup.rsi
+    state: moth_blush

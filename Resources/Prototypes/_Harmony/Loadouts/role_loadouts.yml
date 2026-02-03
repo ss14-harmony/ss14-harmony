@@ -1,10 +1,25 @@
-# Security
+# Wildcards
+
 - type: roleLoadout
-  id: JobPermaPrisoner
+  id: JobZookeeper
   groups:
-  - PermaPrisonerJumpsuit
-  - CommonBackpack
   - GroupTankHarness
+  - CommonBackpack
+  - Glasses
   - Survival
   - Trinkets
+  - ZookeeperJobTrinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobBoxer
+  groups:
+  - GroupTankHarness
+  - BoxerJumpsuit
+  - BoxerGloves
+  - CommonBackpack
+  - Glasses
+  - Survival
+  - Trinkets
+  - BoxerJobTrinkets
   - GroupSpeciesBreathTool

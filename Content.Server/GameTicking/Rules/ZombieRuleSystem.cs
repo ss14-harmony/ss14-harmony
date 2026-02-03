@@ -4,7 +4,6 @@ using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Popups;
 using Content.Server.Roles;
 using Content.Server.RoundEnd;
-using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Server.Zombies;
 using Content.Shared.GameTicking.Components;
@@ -14,6 +13,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Roles;
+using Content.Shared.Roles.Components;
 using Content.Shared.Zombies;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
@@ -48,6 +48,14 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
     {
         if (!_roles.MindHasRole<ZombieRoleComponent>(args.Mind.Owner))
             args.Append(Loc.GetString("zombie-patientzero-role-greeting"));
+
+        // Harmony change start: II now know each others' names
+        var teammates = AllEntityQuery<InitialInfectedComponent>();
+        while (teammates.MoveNext(out var id, out _))
+        {
+            args.Append("\n" + Loc.GetString("initial-infected-name", ("name", Name(id))));
+        }
+        // Harmony change end
     }
 
     private void OnGetBriefing(Entity<ZombieRoleComponent> role, ref GetBriefingEvent args)
@@ -106,6 +114,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
                 ("name", meta.EntityName),
                 ("username", username)));
         }
+        args.AddLine("");
     }
 
     /// <summary>
@@ -190,7 +199,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
         {
             foreach (var station in _station.GetStationsSet())
             {
-                if (TryComp<StationDataComponent>(station, out var data) && _station.GetLargestGrid(data) is { } grid)
+                if (_station.GetLargestGrid(station) is { } grid)
                     stationGrids.Add(grid);
             }
         }

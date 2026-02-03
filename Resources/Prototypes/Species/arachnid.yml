@@ -63,13 +63,13 @@
       required: true
       defaultMarkings: [ ArachnidCheliceraeDownwards ]
     Chest:
-      points: 2
+      points: 4 # Harmony - 2->4
       required: false
     Legs:
-      points: 2
+      points: 6 # Harmony - 2->6
       required: false
     Arms:
-      points: 2
+      points: 6 # Harmony - 2->6
       required: false
 
 - type: humanoidBaseSprite
