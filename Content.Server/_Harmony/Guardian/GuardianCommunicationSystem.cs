@@ -39,7 +39,7 @@ public sealed class GuardianCommunicationSystem : EntitySystem
             return;
 
         var message = Loc.GetString("guardian-speech", ("message", args.Message), ("name", guardianmeta.EntityName));
-        var messageSelf = Loc.GetString("guardian-speech-self", ("message", args.Message), ("name", guardianmeta.EntityName));
+        var messageSelf = Loc.GetString("guardian-speech-self", ("message", args.Message), ("name", hostmeta.EntityName));
         var ghostmessage = Loc.GetString("guardian-speech-ghost", ("message", args.Message), ("hostname", hostmeta.EntityName), ("guardianname", guardianmeta.EntityName));
 
         _chatManager.ChatMessageToOne(ChatChannel.Local, message, message, default, false , actor.PlayerSession.Channel, Color.CadetBlue); // Message to the host
@@ -74,7 +74,7 @@ public sealed class GuardianCommunicationSystem : EntitySystem
             return;
 
         var message = Loc.GetString("host-speech", ("message", args.Message), ("name", guardianmeta.EntityName));
-        var messageSelf = Loc.GetString("host-speech-self", ("message", args.Message), ("name", guardianmeta.EntityName));
+        var messageSelf = Loc.GetString("host-speech-self", ("message", args.Message), ("name", hostmeta.EntityName));
         var ghostmessage = Loc.GetString("host-speech-ghost", ("message", args.Message), ("hostname", hostmeta.EntityName), ("guardianname", guardianmeta.EntityName));
 
         _chatManager.ChatMessageToOne(ChatChannel.Server, message, message, default, false , actor!.PlayerSession.Channel, Color.CadetBlue); // Message to the guardian
