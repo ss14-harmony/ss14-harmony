@@ -11,6 +11,7 @@ using Content.Server.Station.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
+using Content.Shared._RMC14.CCVar; //Harmony port: RMC disable dead chat
 using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.Examine;
@@ -63,6 +64,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     private bool _deadLoocEnabled;
     private bool _critLoocEnabled;
     private readonly bool _adminLoocEnabled = true;
+    private bool _DeadchatEnabled; // Harmony port: RMC14 disable dead chat
 
     public override void Initialize()
     {
@@ -71,6 +73,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         Subs.CVar(_configurationManager, CCVars.LoocEnabled, OnLoocEnabledChanged, true);
         Subs.CVar(_configurationManager, CCVars.DeadLoocEnabled, OnDeadLoocEnabledChanged, true);
         Subs.CVar(_configurationManager, CCVars.CritLoocEnabled, OnCritLoocEnabledChanged, true);
+        Subs.CVar(_configurationManager, RMCCVars.RMCDeadChatEnabled, OnDeadChatEnabledChanged, true);  // Harmony port: RMC14 disable dead chat
 
         SubscribeLocalEvent<GameRunLevelChangedEvent>(OnGameChange);
     }
@@ -102,6 +105,18 @@ public sealed partial class ChatSystem : SharedChatSystem
         _chatManager.DispatchServerAnnouncement(
             Loc.GetString(val ? "chat-manager-crit-looc-chat-enabled-message" : "chat-manager-crit-looc-chat-disabled-message"));
     }
+    
+    // Harmony port start: RMC14 disable dead chat
+    private void OnDeadChatEnabledChanged(bool val)
+    {
+        if (_DeadchatEnabled == val)
+            return;
+        
+        _DeadchatEnabled = val;
+        _chatManager.DispatchServerAnnouncement(
+            Loc.GetString(val ? "set-dchat-command-dchat-enabled" : "set-dchat-command-dchat-disabled"));
+    }// Harmony port end: RMC14 disable dead chat
+
 
     private void OnGameChange(GameRunLevelChangedEvent ev)
     {
@@ -593,6 +608,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         var clients = GetDeadChatClients();
         var playerName = Name(source);
         string wrappedMessage;
+        if (!_adminManager.IsAdmin(player) && !_DeadchatEnabled) // Harmony Port: RMC14 - Check the status of the "rmc.dead_chat_enabled" CCvar before continuing.
+            return;
         if (_adminManager.IsAdmin(player))
         {
             wrappedMessage = Loc.GetString("chat-manager-send-admin-dead-chat-wrap-message",
