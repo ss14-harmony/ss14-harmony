@@ -141,6 +141,8 @@
 
 # social
 
+# Harmony Start
+
 # - type: entity
 #   parent: [BaseTraitorSocialObjective, BaseKeepAliveObjective]
 #   id: RandomTraitorAliveObjective
@@ -191,6 +193,8 @@
 #         components:
 #         - HelpProgressCondition
 #         - KeepAliveCondition
+
+# Harmony End
 
 # steal
 
