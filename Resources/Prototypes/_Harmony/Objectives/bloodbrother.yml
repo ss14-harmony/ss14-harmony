@@ -105,12 +105,6 @@
   parent: [BaseBloodBrotherObjective, HandTeleporterStealObjective]
   id: BloodBrotherHandTeleporterStealObjective
 
-## warden
-
-- type: entity
-  parent: [BaseBloodBrotherObjective, EnergyShotgunStealObjective]
-  id: BloodBrotherEnergyShotgunStealObjective
-
 ## hos
 
 - type: entity

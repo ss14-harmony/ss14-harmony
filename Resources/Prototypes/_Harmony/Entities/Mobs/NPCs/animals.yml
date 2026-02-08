@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: MobCorgiNarsi
   id: MobPitbull
   name: pitbull
@@ -24,11 +24,14 @@
       Dead:
         Base: pitbull_dead
   - type: Bloodstream
-    bloodReagent: Blood
+    bloodReferenceSolution:
+      reagents:
+        - ReagentId: Blood
+          Quantity: 150
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
-  - type: Temperature
+  - type: TemperatureDamage
     heatDamageThreshold: 325
   - type: Fixtures
     fixtures:

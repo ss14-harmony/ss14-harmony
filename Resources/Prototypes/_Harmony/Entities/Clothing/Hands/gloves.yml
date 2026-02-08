@@ -1,8 +1,31 @@
 - type: entity
-  parent: ClothingHandsGlovesLatex
+  abstract: true
+  parent: ClothingHandsNonEdibleButcherableBase
+  id: ClothingHandsGlovesNonEdibleLatex
+  name: latex gloves
+  description: Thin sterile latex gloves. Basic PPE for any doctor.
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/latex.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/latex.rsi
+  - type: Fiber
+    fiberMaterial: fibers-latex
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingHandsGlovesNonEdibleLatex
   id: ClothingHandsGlovesMantis
   suffix: Mantis
   components:
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 10
+  - type: RefillableSolution
+    solution: melee
+  - type: InjectableSolution
+    solution: melee
   - type: Sprite
     sprite: _Harmony/Clothing/Hands/Gloves/mantis.rsi
     layers:
@@ -38,6 +61,10 @@
   - type: MantisGloves
   - type: ComponentToggler
     components:
+    - type: MeleeChemicalInjector
+      solution: melee
+    - type: SolutionTransfer
+      maxTransferAmount: 2.5
     - type: MeleeWeapon
       attackRate: 1.5
       damage:

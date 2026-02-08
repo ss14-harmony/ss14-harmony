@@ -94,7 +94,7 @@
     shoes: ClothingShoesBootsJack
     pocket1: MagazinePistol
     pocket2: MagazinePistol
-  inhand: 
+  inhand:
     - WeaponPistolMk58
 #  storage: # can't put starting gear in backpack. works for nukies, not for DM.
 #    back:
@@ -109,6 +109,41 @@
     endAnnouncement: station-event-harmony-extended-announcement
     maxOccurrences: 1
     endAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/_Harmony/Announcements/attention_alt.ogg
     duration: 1500 # 25 mins
   - type: EmptyRule
+  
+- type: entity
+  parent: BaseGameRule
+  id: ThiefChance
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: Thief
+      prob: 0.5
+
+- type: entity
+  parent: BaseGameRule
+  id: Conspirators
+  components:
+  - type: GameRule
+    minPlayers: 28 # minimum of 4 conspirators
+  - type: ConspiratorRule
+  - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
+    definitions:
+    - prefRoles: [ Conspirator ]
+      min: 4
+      max: 7
+      playerRatio: 7
+      briefing:
+        text: conspirator-role-greeting
+        color: "#724F29"
+        sound: /Audio/_Harmony/Misc/conspirator_greeting.ogg
+      components:
+      - type: Conspirator
+      - type: AutoImplant
+        implants:
+        - RadioImplantConspiracy
+      mindRoles:
+      - MindRoleConspirator
