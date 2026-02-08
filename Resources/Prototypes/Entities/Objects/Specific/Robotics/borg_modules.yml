@@ -1117,6 +1117,26 @@
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: service-module }
 
 - type: entity
+  id: BorgModuleFreeHands
+  parent: [ BaseBorgModuleService, BaseProviderBorgModule ]
+  name: free hands cyborg module
+  description: Provides the cyborg with free hands for general manipulation.
+  components:
+  - type: Sprite
+    layers:
+    - state: service
+    - state: icon-pen 
+  - type: ItemBorgModule
+    hands:
+    - hand:
+        emptyLabel: borg-slot-free-left
+        emptyRepresentative: 
+    - hand:
+        emptyLabel: borg-slot-free-right
+        emptyRepresentative:
+
+
+- type: entity
   id: BorgModuleMusique
   parent: [ BaseBorgModuleService, BaseProviderBorgModule ]
   name: musique cyborg module
