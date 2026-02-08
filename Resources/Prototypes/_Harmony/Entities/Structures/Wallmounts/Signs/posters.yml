@@ -198,3 +198,13 @@
     - type: Sprite
       sprite: _Harmony/Structures/Wallmounts/posters.rsi
       state: harmony_poster21_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterHarmonyArnold
+  name: "Missing Dog Poster"
+  description: "A missing poster for a small white dog named Arnold. The owner appears to be extremely distraught over his disappearance."
+  components:
+  - type: Sprite
+    sprite: _Harmony/Structures/Wallmounts/posters.rsi
+    state: harmony_poster22_legit

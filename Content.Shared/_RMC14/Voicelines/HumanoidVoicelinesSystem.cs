@@ -20,7 +20,7 @@ public sealed class HumanoidVoicelinesSystem : EntitySystem
     private static readonly ProtoId<SpeciesPrototype> ReptilianSpecies = "Reptilian";
     private static readonly ProtoId<SpeciesPrototype> SlimeSpecies = "SlimePerson";
     private static readonly ProtoId<SpeciesPrototype> AvaliSpecies = "Avali";
-    // private static readonly ProtoId<SpeciesPrototype> VulpkaninSpecies = "Vulpkanin"; // Harmony - No Vulps
+    private static readonly ProtoId<SpeciesPrototype> VulpkaninSpecies = "Vulpkanin";
     // private static readonly ProtoId<SpeciesPrototype> RodentiaSpecies = "Rodentia"; // Harmony - No Rodentia
     // private static readonly ProtoId<SpeciesPrototype> FeroxiSpecies = "Feroxi"; // Harmony - No Feroxi
     // private static readonly ProtoId<SpeciesPrototype> SkrellSpecies = "Skrell"; // Harmony - No Skrell
@@ -37,7 +37,7 @@ public sealed class HumanoidVoicelinesSystem : EntitySystem
         [ReptilianSpecies] = RMCCVars.RMCPlayVoicelinesReptilian,
         [SlimeSpecies] = RMCCVars.RMCPlayVoicelinesSlime,
         [AvaliSpecies] = RMCCVars.RMCPlayVoicelinesAvali,
-        // [VulpkaninSpecies] = RMCCVars.RMCPlayVoicelinesVulpkanin, // Harmony - No Vulps
+        [VulpkaninSpecies] = RMCCVars.RMCPlayVoicelinesVulpkanin,
         // [RodentiaSpecies] = RMCCVars.RMCPlayVoicelinesRodentia, // Harmony - No Rodentia
         // [FeroxiSpecies] = RMCCVars.RMCPlayVoicelinesFeroxi, // Harmony - No Feroxi
         // [SkrellSpecies] = RMCCVars.RMCPlayVoicelinesSkrell, // Harmony - No Skrell
@@ -55,7 +55,7 @@ public sealed class HumanoidVoicelinesSystem : EntitySystem
         [ReptilianSpecies] = RMCCVars.RMCPlayEmotesReptilian,
         [SlimeSpecies] = RMCCVars.RMCPlayEmotesSlime,
         [AvaliSpecies] = RMCCVars.RMCPlayEmotesAvali,
-        // [VulpkaninSpecies] = RMCCVars.RMCPlayEmotesVulpkanin, // Harmony - No Vulps
+        [VulpkaninSpecies] = RMCCVars.RMCPlayEmotesVulpkanin,
         // [RodentiaSpecies] = RMCCVars.RMCPlayEmotesRodentia, // Harmony - No Rodentia
         // [FeroxiSpecies] = RMCCVars.RMCPlayEmotesFeroxi, // Harmony - No Feroxi
         // [SkrellSpecies] = RMCCVars.RMCPlayEmotesSkrell, // Harmony - No Skrell

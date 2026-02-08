@@ -17,3 +17,7 @@
 - type: lobbyBackground
   id: HearsCargo
   background: /Textures/_Harmony/LobbyScreens/hears-the-voices.webp
+
+- type: lobbyBackground
+  id: Dragon-Encounter
+  background: /Textures/_Harmony/LobbyScreens/Dragon-Encounter.webp
