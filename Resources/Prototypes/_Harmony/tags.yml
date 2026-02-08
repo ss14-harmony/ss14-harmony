@@ -34,6 +34,13 @@
 - type: Tag
   id: Lighter
 
+# Used for Salv comms & Telecom servers
+- type: Tag
+  id: EncryptionSalvage
+
+- type: Tag
+  id: SpeedLoaderRifle
+
 #used in _Harmony/Entities/Objects/Weapons/Guns/Ammunition/SpeedLoaders/sniper.yml
 - type: Tag
   id: SpeedLoaderAM

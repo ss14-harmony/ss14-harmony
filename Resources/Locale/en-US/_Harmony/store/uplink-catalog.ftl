@@ -3,9 +3,6 @@
 uplink-blood-red-carbine-name = Blood-Red Energy Carbine Bundle
 uplink-blood-red-carbine-desc = A bundle containing the stolen and improved Blood-Red Energy Carbine. It comes with two spare Jailbroken Energy Cartridges.
 
-uplink-hushpup-name = Hushpup
-uplink-hushpup-desc = Contains a Hushpup, a powerful silenced shotgun with a low magazine capacity, as well as a spare box of buckshot. Uses .50 shotgun ammo.
-
 uplink-rifle-bandit-name = Bandit Bundle
 uplink-rifle-bandit-desc = Contains the Bandit, a reliable semi-auto bullpup which fires devastating caseless rounds, bundled with 2 DMR magazines. Uses .30 rifle caseless ammo.
 
@@ -72,6 +69,9 @@ uplink-traitor-deathrattle-implant-name = Box Of Deathrattle Implants
 uplink-traitor-deathrattle-implant-desc = A box containing two syndicate deathrattle implants. Messages are relayed over the syndicate channel, encryption keys not included.
 
 # Wearables
+
+uplink-stealth-jetpack-desc = A black jetpack that doesn't appear on radar. It allows you to fly around in space. Refills not included, use your fuel wisely.
+
 
 uplink-recoil-gloves-name = Recoil-Dampening Gloves
 uplink-recoil-gloves-desc = Special equipment that dampens felt recoil. These gloves reduce the Anaconda's damage to the shooter, at the cost of being uninsulated!
