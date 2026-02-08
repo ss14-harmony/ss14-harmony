@@ -72,7 +72,6 @@ uplink-miami-bundle-desc = A kit containing armor and stylish clothing to help k
 
 uplink-stealth-jetpack-desc = A black jetpack that doesn't appear on radar. It allows you to fly around in space. Refills not included, use your fuel wisely.
 
-
 # Pointless
 
 uplink-cluster-weh-name = Tactical Clusterplushie
