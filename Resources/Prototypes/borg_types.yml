@@ -209,7 +209,6 @@
   - BorgModuleClowning
   - BorgModuleGardening
   - BorgModuleHarvesting
-  - BorgModuleFreeHands
   radioChannels:
   - Science
   - Service
