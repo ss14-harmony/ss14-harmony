@@ -26,7 +26,7 @@
 /Resources/Textures/_Harmony/LobbyScreens/          @TheCrimsonJupiter
 
 # Maps
-/Resources/Maps/                                    @spanky-spanky @raccoonio
-/Resources/Prototypes/Maps/                         @spanky-spanky @raccoonio
-/Resources/Prototypes/_Harmony/Maps/                @spanky-spanky @raccoonio
-/Content.IntegrationTests/Tests/PostMapInitTest.cs  @spanky-spanky @raccoonio
+/Resources/Maps/                                    @spanky-spanky @raccoonio @luckyshotpictures
+/Resources/Prototypes/Maps/                         @spanky-spanky @raccoonio @luckyshotpictures
+/Resources/Prototypes/_Harmony/Maps/                @spanky-spanky @raccoonio @luckyshotpictures
+/Content.IntegrationTests/Tests/PostMapInitTest.cs  @spanky-spanky @raccoonio @luckyshotpictures
