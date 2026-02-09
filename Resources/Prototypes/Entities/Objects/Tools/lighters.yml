@@ -89,6 +89,11 @@
     color: orange
   - type: ItemTogglePointLight
   - type: PhysicalComposition
+  # Harmony change start
+  - type: Tag
+    tags:
+      - Lighter
+  # Harmony change end
 
 - type: entity
   name: cheap lighter
@@ -211,6 +216,11 @@
   - type: UseDelay
   - type: IgnitionSource
     ignited: false
+  # Harmony change start
+  - type: Tag
+    tags:
+      - Lighter
+  # Harmony change end
 
 - type: entity
   name: flippo engraved lighter
@@ -556,7 +566,7 @@
     sprite: Objects/Tools/Lighters/honkco.rsi
   - type: Item
     sprite: Objects/Tools/Lighters/honkco.rsi
-  - type: ComponentToggler
+  - type: ComponentToggler # This is super cursed and ends up deleting the fixtures when toggled off
     components:
     - type: Slippery
     - type: StepTrigger
