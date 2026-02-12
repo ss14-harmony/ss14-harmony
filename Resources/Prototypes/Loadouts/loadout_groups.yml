@@ -1477,6 +1477,7 @@
   - MedicalBlueScrubs
   - MedicalGreenScrubs
   - MedicalPurpleScrubs
+  - MedicalNurseJumpskirt # Harmony
 
 - type: loadoutGroup
   id: MedicalDoctorOuterClothing
@@ -1486,6 +1487,7 @@
   - RegularLabCoat
   - MedicalDoctorWintercoat
   - SeniorPhysicianLabCoat
+  - MedicalNurseApron # Harmony
 
 - type: loadoutGroup
   id: MedicalBackpack
