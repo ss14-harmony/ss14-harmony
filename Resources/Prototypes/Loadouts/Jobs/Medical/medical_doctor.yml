@@ -114,6 +114,11 @@
   equipment:
     jumpsuit: UniformScrubsColorPurple
 
+- type: loadout # Harmony change
+  id: MedicalNurseJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtNurse
+
 # Back
 - type: loadout
   id: MedicalDoctorBackpack
@@ -143,6 +148,11 @@
     proto: SeniorPhysician
   equipment:
     outerClothing: ClothingOuterCoatLabSeniorPhysician
+
+- type: loadout # Harmony Change
+  id: MedicalNurseApron
+  equipment:
+    outerClothing: ClothingOuterApronNurse
 
 # Shoes
 - type: loadout
