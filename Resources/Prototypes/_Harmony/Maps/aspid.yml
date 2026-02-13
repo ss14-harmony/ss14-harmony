@@ -55,7 +55,7 @@
             Borg: [ 2, 2 ]
             #supply
             Quartermaster: [ 1, 1 ]
-            SalvageSpecialist: [ 3, 4 ]
+            SalvageSpecialist: [ 3, 3 ] # Harmony Change - From 3, 4 to 3, 3
             CargoTechnician: [ 2, 3 ]
             #civillian
             Passenger: [ -1, -1 ]
