@@ -954,9 +954,9 @@
   description: Somehow I feel I'm not supposed to leave this place.
   components:
   - type: Sprite
-    sprite: _Impstation/Clothing/Head/Hats/nursehat.rsi #Harmony change, resprite based on Imp
+    sprite: _Impstation/Clothing/Head/Hats/nursehat.rsi #Harmony change, resprite ported from Imp
   - type: Clothing
-    sprite: _Impstation/Clothing/Head/Hats/nursehat.rsi #Harmony change, resprite based on Imp
+    sprite: _Impstation/Clothing/Head/Hats/nursehat.rsi #Harmony change, resprite ported from Imp
   - type: Tag
     tags:
     - ClothMade
