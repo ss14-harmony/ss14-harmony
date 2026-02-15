@@ -22,8 +22,10 @@
     ClothingHeadHatSurgcapGreen: 4
     ClothingHeadHatSurgcapBlue: 4
     ClothingHeadHatSurgcapPurple: 4
-    ClothingUniformJumpskirtNurse: 4 # Harmony change
-    ClothingOuterApronNurse: 4 # Harmony change
+    # Harmony Change Start- add Impstation Nurse Outfit
+    ClothingUniformJumpskirtNurse: 4
+    ClothingOuterApronNurse: 4
+    # Harmony Change End
     ClothingShoesBootsWinterMed: 2
   contrabandInventory:
     ClothingUniformJumpskirtOfLife: 1
