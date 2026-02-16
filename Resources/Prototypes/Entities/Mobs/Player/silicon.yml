@@ -448,6 +448,7 @@
     - HideContextMenu
     - StationAi
     - NoConsoleSound
+    - SiliconEmotes #Harmony
   - type: StartingMindRole
     mindRole: "MindRoleSiliconBrain"
     silent: true
@@ -511,6 +512,7 @@
   - type: Tag
     tags:
     - GhostOnlyWarp
+    - SiliconEmotes # Harmony
   - type: WarpPoint
     follow: true
     blacklist:
@@ -525,6 +527,12 @@
   - type: CargoSellBlacklist
   - type: StationAiVision
     range: 20
+    # Harmony
+  - type: Emoting
+  - type: Vocal
+    sounds:
+      Unsexed: UnisexSilicon
+    # End Harmony
 
 # Borgs
 - type: entity
