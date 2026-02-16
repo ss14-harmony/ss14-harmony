@@ -79,6 +79,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtNurse
   name: nurse uniform
+  suffix: Harmony
   description: An old nursing uniform. It's probably been through the wash thousands of times, yet you can still faintly make out stains from nightmarish shifts of yore.
   components:
   - type: Sprite

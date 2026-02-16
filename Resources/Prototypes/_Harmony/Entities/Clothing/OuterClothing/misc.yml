@@ -2,6 +2,7 @@
   parent: ClothingOuterStorageBase
   id: ClothingOuterApronNurse
   name: nurse apron
+  suffix: Harmony
   description: Suprisingly clean. For now.
   components:
   - type: Sprite
