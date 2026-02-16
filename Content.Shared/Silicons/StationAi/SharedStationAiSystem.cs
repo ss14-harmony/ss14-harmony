@@ -517,6 +517,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
 
         ClearEye(ent);
         ent.Comp.Remote = true;
+        EnsureComp<InputMoverComponent>(args.Entity); // Harmony change, ensures AI has the InputMover component upon insertion so they can ghost using the move keys if their core is damaged.
 
         if (SetupEye(ent))
             AttachEye(ent);
