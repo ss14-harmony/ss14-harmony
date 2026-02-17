@@ -12,3 +12,13 @@
   license: "CC-BY-SA-4.0"
   copyright: "Soundtrack made by Jacek 'Fragik' Rogal for SCP: Secret Laboratory, modified by Halycon (Github)"
   source: "https://youtu.be/XL9Qbkl3FPE"
+
+- files: ["ephedrine_overdose.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "Made by mrjajkes"
+  source: "https://www.youtube.com/watch?v=3HC3igtVzuc"
+
+- files: ["one_against_all.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "Made by mrjajkes"
+  source: "https://www.youtube.com/watch?v=0H4dZ-sreoI"
