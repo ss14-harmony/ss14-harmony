@@ -86,7 +86,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             : Loc.GetString("health-analyzer-window-entity-unknown-species-text");
 
         var synthSpecies = _entityManager.HasComponent<SynthComponent>(target.Value)
-            ? Loc.GetString("synthetic-component-suffix", ("species", species))
+            ? Loc.GetString("synthetic-component-prefix", ("species", species))
             : species;
 
         SpeciesLabel.Text = synthSpecies;

@@ -104,7 +104,7 @@ public sealed partial class WantedListUiFragment : BoxContainer
         ));
 
         var species = record.TargetInfo.Synthetic // Misfit - Add synthetic prefix to wanted list cart
-            ? Loc.GetString("synthetic-component-suffix", ("species", record.TargetInfo.Species)).ToLower()
+            ? Loc.GetString("synthetic-component-prefix", ("species", record.TargetInfo.Species)).ToLower()
             : record.TargetInfo.Species.ToLower();
 
         TargetSpecies.SetMessage(GetLoc(

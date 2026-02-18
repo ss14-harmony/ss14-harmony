@@ -21,7 +21,7 @@ public sealed partial class GeneralRecord : Control
         var species = Loc.GetString(prototypeManager.Index<SpeciesPrototype>(record.Species).Name);
         // Misfit - Add synthetic to synths on records console
         var synthSpecies = record.Synthetic
-            ? Loc.GetString("synthetic-component-suffix", ("species", species))
+            ? Loc.GetString("synthetic-component-prefix", ("species", species))
             : species;
         Species.Text = Loc.GetString("general-station-record-console-record-species", ("species", synthSpecies));
         // End Misfit
