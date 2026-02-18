@@ -119,7 +119,7 @@
       group: PositronicBrain
     - type: DoAfter
     - type: Actions
-    # Harmony
+    # Harmony start
     - type: Emoting
     - type: Vocal
       sounds:
