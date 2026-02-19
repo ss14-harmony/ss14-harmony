@@ -48,6 +48,14 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
     {
         if (!_roles.MindHasRole<ZombieRoleComponent>(args.Mind.Owner))
             args.Append(Loc.GetString("zombie-patientzero-role-greeting"));
+
+        // Harmony change start: II now know each others' names
+        var teammates = AllEntityQuery<InitialInfectedComponent>();
+        while (teammates.MoveNext(out var id, out _))
+        {
+            args.Append("\n" + Loc.GetString("initial-infected-name", ("name", Name(id))));
+        }
+        // Harmony change end
     }
 
     private void OnGetBriefing(Entity<ZombieRoleComponent> role, ref GetBriefingEvent args)
