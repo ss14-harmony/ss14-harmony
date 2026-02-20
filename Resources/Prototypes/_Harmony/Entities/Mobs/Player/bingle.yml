@@ -2,7 +2,7 @@
   parent: MobSpaceBasic
   id: MobBingle
   name: bingle
-  suffix: Basic
+  suffix: Basic, Harmony
   description: Bingle.
   components:
   # Visuals
@@ -120,7 +120,7 @@
   parent: MobBingle
   id: MobBingleUpgraded
   name: bingler
-  suffix: Upgraded
+  suffix: Upgraded, Harmony
   description: More bingle per bingle.
   components:
   - type: Sprite
