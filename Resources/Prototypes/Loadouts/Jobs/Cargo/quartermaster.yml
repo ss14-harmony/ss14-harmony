@@ -6,7 +6,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobQuartermaster
-      time: 16200 # Harmony: 20 hrs -> 4.5 hrs (~3 rounds)
+      time: 4.5h # Harmony: 20h -> 4.5h
 
 # Jumpsuit
 - type: loadout
@@ -53,7 +53,7 @@
 
 - type: loadout
   id: QuartermasterMantle
-  equipment: 
+  equipment:
     neck: ClothingNeckMantleQM
   effects:
   - !type:GroupLoadoutEffect

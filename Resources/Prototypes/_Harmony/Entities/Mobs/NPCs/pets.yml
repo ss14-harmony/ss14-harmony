@@ -1,4 +1,4 @@
-﻿#Harmony pet
+#Harmony pet
 - type: entity
   name: Poquito
   parent: MobBaseKobold
@@ -52,8 +52,10 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: glorp
   - type: Bloodstream
-    bloodReagent: GlorpExtract
-    bloodMaxVolume: 650
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: GlorpExtract
+        Quantity: 650
   - type: DamageStateVisuals
     states:
       Alive:
