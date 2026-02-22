@@ -41,4 +41,8 @@
   contrabandInventory:
     TobaccoSeeds: 2
     FoodSnackSemki: 2
+    # FlyAmanitaSeeds: 1 # Harmony Change - Move Fly Amanita from hacking to emag
+  # Harmony Change Start  - Readd Emag interactions
+  emaggedInventory:
     FlyAmanitaSeeds: 1
+  # Harmony Change End

@@ -1,0 +1,53 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Originally made by 20kdc (github) at commit https://github.com/space-wizards/space-station-14/commit/1aceaccc275cbab38cce8612655703fc1ac55f77. Very heavily modified by UbaserB (github) at commit https://github.com/space-wizards/space-station-14/commit/fd7db8004e6d5cf442168152a0ca6af1051263eb. Modified by DieselMohawk (github) at commit https://github.com/space-wizards/space-station-14/commit/253a9fbdf1372f80dad65a80dcb8e5d169861804. Heavily modified by TheAmazingCoder (github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "equipped-BELT",
+            "directions": 4
+        }
+    ]
+}
