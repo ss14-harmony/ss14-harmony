@@ -246,7 +246,7 @@
     sprite: _Harmony/Clothing/Head/Hardsuits/salvage.rsi
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     clothingVisuals:
       head:
       - state: equipped-head-light
@@ -309,7 +309,7 @@
         shader: unshaded
       # Harmony start
       # head-reptilian:
-      # - state: equipped-head-reptilian
+      # - state: equipped-head-light-reptilian
       #   shader: unshaded
       # head-dog:
       # - state: equipped-head-light-dog
@@ -385,7 +385,7 @@
   #Modification of light layering
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     clothingVisuals:
       head:
       - state: equipped-head-light
@@ -463,7 +463,7 @@
   #Modification of light layering
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     clothingVisuals:
       head:
       - state: equipped-head-light
@@ -647,7 +647,7 @@
   #Modification of light layering
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     clothingVisuals:
       head:
       - state: equipped-head-light
@@ -695,7 +695,7 @@
     sprite: _Harmony/Clothing/Head/Hardsuits/luxury.rsi
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     clothingVisuals:
       head:
       - state: equipped-head-light
@@ -739,7 +739,7 @@
   #Modification of light layering
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     spriteLayer: light
     clothingVisuals:
       head:
@@ -792,7 +792,7 @@
   #Modification of light layering
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     spriteLayer: light
     clothingVisuals:
       head:
@@ -841,7 +841,7 @@
   #Modification of light layering
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     spriteLayer: light
     clothingVisuals:
       head:
@@ -899,7 +899,7 @@
   #Modification of light layering
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     spriteLayer: light
     clothingVisuals:
       head:

@@ -77,10 +77,11 @@
       types:
         Slash: 5
   - type: Temperature
-    heatDamageThreshold: 310
-    coldDamageThreshold: 223
     currentTemperature: 296.15
     specificHeat: 48
+  - type: TemperatureDamage
+    heatDamageThreshold: 310
+    coldDamageThreshold: 223
     coldDamage: # same damage as moths
       types:
         Cold : 0.05 #per second, scales with temperature & other constants
