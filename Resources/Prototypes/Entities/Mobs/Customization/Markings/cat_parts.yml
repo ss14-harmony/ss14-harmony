@@ -1,6 +1,6 @@
 - type: marking
   id: CatEars
-  bodyPart: HeadTop
+  bodyPart: HeadTop # Harmony
   groupWhitelist: [Human]
   coloring:
     default:
