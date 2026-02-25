@@ -2,7 +2,7 @@
 
 namespace Content.Shared.Humanoid;
 
-public abstract partial class SharedHumanoidAppearanceSystem
+public sealed partial class HumanoidProfileSystem
 {
     public string GetSyntheticRepresentation(EntityUid uid, string speciesText)
     {
