@@ -1448,7 +1448,7 @@
           - ConstructionMaterial
     - item: XenoborgMaterialBag
     - item: PinpointerMothership
-    - item: HandheldGPSBasic
+    # - item: HandheldGPSBasic # Harmony: hide xenoborgs from radar blips
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: xenoborg-basic-module }
 
@@ -1583,7 +1583,7 @@
     - state: icon-xenoborg-space-movement
   - type: ItemBorgModule
     hands:
-    - item: HandheldGPSBasic
+    # - item: HandheldGPSBasic # Harmony: hide xenoborgs from radar blips
     - item: HandHeldMassScannerBorg
     - item: PinpointerMothership
     - item: HandheldStationMapUnpowered
