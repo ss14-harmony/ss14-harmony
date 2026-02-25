@@ -12,6 +12,8 @@
     - id: DoorRemoteCargo
     - id: AstroNavCartridge
     - id: ClothingHandsKnuckleDustersQM
+    - id: PlushieLizardJobQuartermaster
+      prob: 0.02
     # Harmony Change Start - Adds unique salv comms
     - id: BoxEncryptionKeySalvage
     - id: RadioHandheldMining
@@ -57,10 +59,12 @@
     - id: SpaceCash1000
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
-    - id: HeadSkeleton # A skull to accompany your skeleton crew
+    - id: OrganSkeletonPersonHead # A skull to accompany your skeleton crew
       conditions:
       - !type:PlayerCountCondition
         max: 15
+    - id: PlushieLizardJobCaptain
+      prob: 0.02
 
 # No laser table + Laser table
 - type: entityTable
@@ -142,6 +146,8 @@
     - id: HoPIDCard
     - id: WeaponDisabler
     - id: ClothingEyesHudCommand
+    - id: PlushieLizardJobHeadofpersonnel
+      prob: 0.02
     - id: BookSOP # Harmony Change
 
 - type: entity
@@ -174,6 +180,8 @@
     - id: RPD # Harmony Change: Add RPD to locker before upstream implimentation
     - id: RubberStampCE
     - id: MetalFoamGrenade
+    - id: PlushieLizardJobChiefengineer
+      prob: 0.02
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -217,19 +225,19 @@
   id: LockerFillChiefMedicalOfficerNoHardsuit
   table: !type:AllSelector
     children:
-    - id: BoxEncryptionKeyMedical
-    - id: ClothingBackpackDuffelSurgeryFilled
     - id: ClothingEyesGlassesMedical # Harmony: hud -> glasses
-    - id: ClothingHandsGlovesNitrile
-    - id: ClothingHeadsetAltMedical
-    - id: ClothingMaskSterile
-    - id: DoorRemoteMedical
+    - id: ClothingBeltMedicalFilled
     - id: HandheldCrewMonitor
     - id: Hypospray
-    - id: BoxCMOCircuitboards
-    - id: MedkitFilled
-    - id: RubberStampCMO
     - id: MedTekCartridge
+    # Standard command gear
+    - id: RubberStampCMO
+    - id: ClothingHeadsetAltMedical
+    - id: DoorRemoteMedical
+    - id: BoxEncryptionKeyMedical
+    - id: BoxCMOCircuitboards
+    - id: PlushieLizardJobChiefmedicalofficer
+      prob: 0.02
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -279,6 +287,8 @@
     - id: DoorRemoteResearch
     - id: HandTeleporter
     - id: RubberStampRd
+    - id: PlushieLizardJobResearchdirector
+      prob: 0.02
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -339,6 +349,8 @@
     # - id: WeaponTaser # Harmony
     - id: WantedListCartridge
     - id: DrinkHosFlask
+    - id: PlushieLizardJobHeadofsecurity
+      prob: 0.02
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
