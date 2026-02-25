@@ -97,7 +97,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
 
         TryComp<FingerprintComponent>(player, out var fingerprintComponent);
         TryComp<DnaComponent>(player, out var dnaComponent);
-        // Misfit - Add synthetic to species record
+        // Start Misfit - Add synthetic to species record
         var synthetic = HasComp<SynthComponent>(player);
 
         CreateGeneralRecord(station, idUid.Value, profile.Name, profile.Age, profile.Species, profile.Gender, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, synthetic, profile, records);
