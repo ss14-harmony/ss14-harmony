@@ -64,9 +64,11 @@
       limit: 1
       required: true
       default: [ VoxTailBack ] # Imp: VoxTail -> VoxTailBack
+    # Harmony start: early merge
     enum.HumanoidVisualLayers.TailOverlay:
       limit: 4 # Imp: multiple marking options
       required: false
+    # Harmony end: early merge
     enum.HumanoidVisualLayers.UndergarmentTop:
       limit: 1
       required: false
