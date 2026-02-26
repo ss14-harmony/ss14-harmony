@@ -5,12 +5,12 @@ using System.Text.RegularExpressions;
 using YamlDotNet.RepresentationModel;
 using Content.Server.Administration.Systems;
 using Content.Server.GameTicking;
-using Content.Server.Maps;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
 using Content.Shared.CCVar;
+using Content.Shared.Maps;
 using Content.Shared.Roles;
 using Content.Shared.Station.Components;
 using Robust.Shared.Configuration;
@@ -121,6 +121,8 @@ namespace Content.IntegrationTests.Tests
             "Jellyfish", // Harmony, Developed by whythelettuce
             "Scylla", // Harmony, Developed by tanuko, luckyshotpictures
 			"Elkridge", // Harmony, Developed by deerstop, maintained by luckyshotpictures
+			"Wapiti", // Harmony, Developed by deerstop, maintained by luckyshotpictures
+            "Amber", // Harmony, Developed by Southbridge, maintained by whythelettuce
             "Dev",
             "TestTeg",
             "Fland",

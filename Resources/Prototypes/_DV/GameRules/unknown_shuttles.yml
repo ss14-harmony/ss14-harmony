@@ -17,7 +17,7 @@
   id: SyndicateRecruiter
   components:
   - type: StationEvent
-    weight: 4
+    weight: 1 # Harmony Change, adjusts weight due to move to different event pool
     minimumPlayers: 20
     maxOccurrences: 1
     duration: null
