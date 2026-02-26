@@ -423,7 +423,7 @@
     sprite: *icon-rsi
     state: Prisoner
   jobName: job-name-prisoner
-  isCrewJob: true # Harmony Change - Relasing them still causes harm though
+  isCrewJob: true # Harmony Change - Releasing them still causes harm though
 
 - type: jobIcon
   parent: JobIcon
