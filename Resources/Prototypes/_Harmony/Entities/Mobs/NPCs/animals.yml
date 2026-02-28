@@ -31,7 +31,7 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
-  - type: Temperature
+  - type: TemperatureDamage
     heatDamageThreshold: 325
   - type: Fixtures
     fixtures:
