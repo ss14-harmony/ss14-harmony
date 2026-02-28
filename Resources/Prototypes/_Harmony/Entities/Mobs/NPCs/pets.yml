@@ -52,11 +52,10 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: glorp
   - type: Bloodstream
-    bloodReagents:
+    bloodReferenceSolution:
       reagents:
-        - ReagentId: GlorpExtract
-          Quantity: 1
-    bloodMaxVolume: 650
+      - ReagentId: GlorpExtract
+        Quantity: 650
   - type: DamageStateVisuals
     states:
       Alive:
