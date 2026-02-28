@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 267.3.0
   forkId: harmony
-  forkVersion: f9664519760d8706a57ab1fc6a5445f4ce899b70
-  time: 12/01/2025 01:40:57
-  entityCount: 224
-maps:
-- 70
+  forkVersion: 0323b79669423753585d179e9c0e887fced31ef1
+  time: 12/09/2025 01:49:23
+  entityCount: 223
+maps: []
 grids:
 - 1
-orphans: []
+orphans:
+- 1
 nullspace: []
 tilemap:
   2: Space
@@ -29,7 +29,7 @@ entities:
       name: Cargo Shuttle - 'Olympias'
     - type: Transform
       pos: -2.0990233,-7.5687466
-      parent: 70
+      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -127,16 +127,6 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: CargoShuttle
-  - uid: 70
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: OccluderTree
 - proto: AirAlarm
   entities:
   - uid: 32
