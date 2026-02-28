@@ -36,8 +36,8 @@
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
             Reporter: [ 2, 2 ]
-            #engineering (7)
-            AtmosphericTechnician: [ 3, 3 ]
+            #engineering (6)
+            AtmosphericTechnician: [ 2, 2 ]
             StationEngineer: [ 4, 4 ]
             TechnicalAssistant: [ 2, 2 ] #intern, not counted
             #medical (7)
