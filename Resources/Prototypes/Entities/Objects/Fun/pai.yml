@@ -162,8 +162,6 @@
       shader: unshaded
       map: ["screen"]
   - type: Appearance
-  - type: StaticPrice
-    price: 5000
 
 - type: entity
   parent: PersonalAI
@@ -195,6 +193,8 @@
   - type: Construction
     graph: PotatoAI
     node: potatoai
+
+# PAI Actions
 
 - type: entity
   parent: ActionIntrinsicStore
