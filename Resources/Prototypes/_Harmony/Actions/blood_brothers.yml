@@ -14,7 +14,7 @@
     event: !type:BloodBrotherConvertActionEvent
     whitelist:
       components:
-      - HumanoidAppearance
+      - HumanoidProfile
     canTargetSelf: false
 
 - type: entity
@@ -31,5 +31,5 @@
     event: !type:BloodBrotherCheckConvertActionEvent
     whitelist:
       components:
-      - HumanoidAppearance
+      - HumanoidProfile
     canTargetSelf: false

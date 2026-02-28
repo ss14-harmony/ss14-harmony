@@ -7,11 +7,36 @@
   id: Wizard
   announcement: terror-wizard
   rule: WizardSpawn
+  
+- type: ninjaHackingThreat
+  id: DerelictBorgEngineering
+  announcement: terror-space
+  rule: DerelictEngineerCyborgSpawn
 
-#- type: ninjaHackingThreat
-#  id: DerelictBorg
-#  announcement: terror-space
-#  rule: DerelictCyborgSpawn
+- type: ninjaHackingThreat
+  id: DerelictBorgGeneric
+  announcement: terror-space
+  rule:  DerelictGenericCyborgSpawn
+
+- type: ninjaHackingThreat
+  id: DerelictBorgJanitor
+  announcement: terror-space
+  rule: DerelictJanitorCyborgSpawn
+
+- type: ninjaHackingThreat
+  id: DerelictBorgMedical
+  announcement: terror-space
+  rule: DerelictMedicalCyborgSpawn
+
+- type: ninjaHackingThreat
+  id: DerelictBorgSalv
+  announcement: terror-space
+  rule: DerelictMiningCyborgSpawn
+
+- type: ninjaHackingThreat
+  id: DerelictBorgSyndi
+  announcement: terror-space
+  rule: DerelictSyndicateAssaultCyborgSpawn
 
 - type: ninjaHackingThreat
   id: ParadoxClone

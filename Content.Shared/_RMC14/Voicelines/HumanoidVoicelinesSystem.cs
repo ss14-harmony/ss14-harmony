@@ -20,7 +20,7 @@ public sealed class HumanoidVoicelinesSystem : EntitySystem
     private static readonly ProtoId<SpeciesPrototype> ReptilianSpecies = "Reptilian";
     private static readonly ProtoId<SpeciesPrototype> SlimeSpecies = "SlimePerson";
     private static readonly ProtoId<SpeciesPrototype> AvaliSpecies = "Avali";
-    // private static readonly ProtoId<SpeciesPrototype> VulpkaninSpecies = "Vulpkanin"; // Harmony - No Vulps
+    private static readonly ProtoId<SpeciesPrototype> VulpkaninSpecies = "Vulpkanin";
     // private static readonly ProtoId<SpeciesPrototype> RodentiaSpecies = "Rodentia"; // Harmony - No Rodentia
     // private static readonly ProtoId<SpeciesPrototype> FeroxiSpecies = "Feroxi"; // Harmony - No Feroxi
     // private static readonly ProtoId<SpeciesPrototype> SkrellSpecies = "Skrell"; // Harmony - No Skrell
@@ -37,7 +37,7 @@ public sealed class HumanoidVoicelinesSystem : EntitySystem
         [ReptilianSpecies] = RMCCVars.RMCPlayVoicelinesReptilian,
         [SlimeSpecies] = RMCCVars.RMCPlayVoicelinesSlime,
         [AvaliSpecies] = RMCCVars.RMCPlayVoicelinesAvali,
-        // [VulpkaninSpecies] = RMCCVars.RMCPlayVoicelinesVulpkanin, // Harmony - No Vulps
+        [VulpkaninSpecies] = RMCCVars.RMCPlayVoicelinesVulpkanin,
         // [RodentiaSpecies] = RMCCVars.RMCPlayVoicelinesRodentia, // Harmony - No Rodentia
         // [FeroxiSpecies] = RMCCVars.RMCPlayVoicelinesFeroxi, // Harmony - No Feroxi
         // [SkrellSpecies] = RMCCVars.RMCPlayVoicelinesSkrell, // Harmony - No Skrell
@@ -55,21 +55,21 @@ public sealed class HumanoidVoicelinesSystem : EntitySystem
         [ReptilianSpecies] = RMCCVars.RMCPlayEmotesReptilian,
         [SlimeSpecies] = RMCCVars.RMCPlayEmotesSlime,
         [AvaliSpecies] = RMCCVars.RMCPlayEmotesAvali,
-        // [VulpkaninSpecies] = RMCCVars.RMCPlayEmotesVulpkanin, // Harmony - No Vulps
+        [VulpkaninSpecies] = RMCCVars.RMCPlayEmotesVulpkanin,
         // [RodentiaSpecies] = RMCCVars.RMCPlayEmotesRodentia, // Harmony - No Rodentia
         // [FeroxiSpecies] = RMCCVars.RMCPlayEmotesFeroxi, // Harmony - No Feroxi
         // [SkrellSpecies] = RMCCVars.RMCPlayEmotesSkrell, // Harmony - No Skrell
         [VoxSpecies] = RMCCVars.RMCPlayEmotesVox,
     };
 
-    private EntityQuery<HumanoidAppearanceComponent> _humanoidAppearanceQuery;
+    private EntityQuery<HumanoidProfileComponent> _humanoidProfileQuery;
 
     public override void Initialize()
     {
-        _humanoidAppearanceQuery = GetEntityQuery<HumanoidAppearanceComponent>();
+        _humanoidProfileQuery = GetEntityQuery<HumanoidProfileComponent>();
     }
 
-    public bool ShouldPlayVoiceline(Entity<HumanoidAppearanceComponent?> vocalizer, ICommonSession forPlayer)
+    public bool ShouldPlayVoiceline(Entity<HumanoidProfileComponent?> vocalizer, ICommonSession forPlayer)
     {
         if (forPlayer.AttachedEntity == vocalizer &&
             !_config.GetClientCVar(forPlayer.Channel, RMCCVars.RMCPlayVoicelinesYourself))
@@ -77,7 +77,7 @@ public sealed class HumanoidVoicelinesSystem : EntitySystem
             return false;
         }
 
-        if (!_humanoidAppearanceQuery.Resolve(vocalizer, ref vocalizer.Comp, false) ||
+        if (!_humanoidProfileQuery.Resolve(vocalizer, ref vocalizer.Comp, false) ||
             !_voicelineCVars.TryGetValue(vocalizer.Comp.Species, out var play))
         {
             return true;
@@ -86,7 +86,7 @@ public sealed class HumanoidVoicelinesSystem : EntitySystem
         return _config.GetClientCVar<bool>(forPlayer.Channel, play.Name);
     }
 
-    public bool ShouldPlayEmote(Entity<HumanoidAppearanceComponent?> vocalizer, ICommonSession forPlayer)
+    public bool ShouldPlayEmote(Entity<HumanoidProfileComponent?> vocalizer, ICommonSession forPlayer)
     {
         if (forPlayer.AttachedEntity == vocalizer &&
             !_config.GetClientCVar(forPlayer.Channel, RMCCVars.RMCPlayEmotesYourself))
@@ -94,7 +94,7 @@ public sealed class HumanoidVoicelinesSystem : EntitySystem
             return false;
         }
 
-        if (!_humanoidAppearanceQuery.Resolve(vocalizer, ref vocalizer.Comp, false) ||
+        if (!_humanoidProfileQuery.Resolve(vocalizer, ref vocalizer.Comp, false) ||
             !_emoteCVars.TryGetValue(vocalizer.Comp.Species, out var play))
         {
             return true;
@@ -104,7 +104,7 @@ public sealed class HumanoidVoicelinesSystem : EntitySystem
     }
 
 // Harmony Change Start
-    public bool ShouldPlayVoicelines(Entity<HumanoidAppearanceComponent?> vocalizer, ICommonSession forPlayer)
+    public bool ShouldPlayVoicelines(Entity<HumanoidProfileComponent?> vocalizer, ICommonSession forPlayer)
     {
         if (forPlayer.AttachedEntity == vocalizer &&
             !_config.GetClientCVar(forPlayer.Channel, RMCCVars.RMCPlayVoicelinesYourself))
@@ -112,7 +112,7 @@ public sealed class HumanoidVoicelinesSystem : EntitySystem
             return false;
         }
 
-        if (!_humanoidAppearanceQuery.Resolve(vocalizer, ref vocalizer.Comp, false) ||
+        if (!_humanoidProfileQuery.Resolve(vocalizer, ref vocalizer.Comp, false) ||
             !_voicelineCVars.TryGetValue(vocalizer.Comp.Species, out var play))
         {
             return true;

@@ -15,20 +15,6 @@
   - UplinkWeaponry
 
 - type: listing
-  id: UplinkHushpup
-  name: uplink-hushpup-name
-  description: uplink-hushpup-desc
-  icon: { sprite: /Textures/_Harmony/Objects/Weapons/Guns/Shotguns/hushpup.rsi, state: icon }
-  productEntity: ClothingBackpackDuffelSyndicateFilledHushpup
-  discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 8
-  cost:
-    Telecrystal: 10
-  categories:
-  - UplinkWeaponry
-
-- type: listing
   id: UplinkMantisGloves
   name: mantis-gloves-uplink-name
   description: mantis-gloves-uplink-desc
@@ -143,35 +129,12 @@
 
 # Ammo
 
-# For the Bulldog
-- type: listing
-  id: UplinkShotgunBuckshotMagazineHarmony
-  name: uplink-shotgun-drum-pellet-name
-  description: uplink-shotgun-drum-pellet-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: pellets }
-  productEntity: MagazineShotgun
-  cost:
-    Telecrystal: 2
-  categories:
-  - UplinkAmmo
-
 # For the Blood-Red Energy Carbine
 - type: listing
   id: UplinkBloodRedCarbineAmmoHarmony
   name: uplink-blood-red-carbine-ammo-name
   description: uplink-blood-red-carbine-ammo-desc
   productEntity: EnergyCarbineCartridgeSyndicateHarmony
-  cost:
-    Telecrystal: 2
-  categories:
-  - UplinkAmmo
-
-- type: listing
-  id: UplinkShotgunSlugMagazineHarmony
-  name: uplink-shotgun-drum-slug-name
-  description: uplink-shotgun-drum-slug-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: slug }
-  productEntity: MagazineShotgunSlug
   cost:
     Telecrystal: 2
   categories:
@@ -229,6 +192,16 @@
 
 # Disruption
 
+- type: listing
+  id: AccessConfiguratorSyndicate
+  name: uplink-syndicate-access-config-name
+  description: uplink-syndicate-access-config-desc
+  productEntity: AccessConfiguratorSyndicate
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkDisruption
+
 # Allies
 
 - type: listing
@@ -284,6 +257,28 @@
     blacklist:
       tags:
         - NukeOpsUplink
+
+- type: listing
+  id: UplinkJetpackNukie
+  name: uplink-black-jetpack-name
+  description: uplink-stealth-jetpack-desc
+  productEntity: HarmonyJetpackBlackFilledStealth
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle # Tots shouldn't get the stealthy jetpack
 
 # Pointless
 

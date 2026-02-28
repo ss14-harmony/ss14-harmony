@@ -44,7 +44,7 @@
       baseWalkSpeed: 2.5
       baseSprintSpeed: 3.5
     - type: Stamina
-      critThreshold: 100
+      baseCritThreshold: 100
     - type: DamageStateVisuals
       states:
         Alive:
@@ -154,7 +154,7 @@
   components:
   - type: PointLight
     radius: 1.5
-    energy: 0.5
+    energy: 2
   - type: RgbLightController
     layers: [ 0 ]
 
@@ -164,10 +164,12 @@
   suffix: "Salvage Ruleset"
   components:
     - type: SalvageMobRestrictions
-    - type: MobThresholds
-      thresholds:
-        0: Alive
-        30: Dead
+    # Harmony Start - removes threshold
+    #- type: MobThresholds
+      #thresholds:
+        #0: Alive
+        #30: Dead
+    # Harmony end
 
 - type: entity
   name: space carp
@@ -188,7 +190,12 @@
     - type: HTN
       rootTask:
         task: DragonCarpCompound
-
+    - type: Flammable
+      damage:
+       types: {}
+    - type: Temperature
+    - type: TemperatureDamage
+      heatDamageThreshold: 1200
 - type: entity
   id: MobCarpDungeon
   parent: MobCarp
@@ -208,7 +215,7 @@
 
 - type: entity
   name: sharkminnow
-  parent: BaseMobCarp
+  parent: [ BaseMobBloodsucker, BaseMobCarp ]
   id: MobShark
   description: A dangerous shark from the blackness of endless space, who loves to drink blood.
   components:
@@ -234,9 +241,9 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        82: Dead # Might seem random, but this brings up the hits to kill with a crusher mark to 3
+        150: Dead # Harmony Change, reverts salvage mob health changes, 82 -> 150
     - type: Stamina
-      critThreshold: 150
+      baseCritThreshold: 150
     - type: DamageStateVisuals
       states:
         Alive:
@@ -245,9 +252,6 @@
         Dead:
           Base: dead
           BaseUnshaded: dead_mouth
-    - type: Body
-      prototype: Bloodsucker
-      requiredLegs: 1
     - type: Butcherable
       spawned:
         - id: FoodMeatFish

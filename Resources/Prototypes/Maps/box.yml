@@ -26,7 +26,7 @@
             Quartermaster: [ 1, 1 ]
             #Service (14)
             Bartender: [ 2, 2 ]
-            Botanist: [ 3, 3 ]
+            Botanist: [ 2, 2 ] # Harmony change, - 3, 3 > 2, 2 reduced botany slots
             Chef: [ 2, 2 ]
             Janitor: [ 2, 2 ]
             Chaplain: [ 1, 1 ]

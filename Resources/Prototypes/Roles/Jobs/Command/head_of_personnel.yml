@@ -4,21 +4,26 @@
   description: job-description-hop
   playTimeTracker: JobHeadOfPersonnel
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 0 # 0 hours
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 0 # 0 hours
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 0 # 0 hrs
+    # Harmony start
+    # - !type:DepartmentTimeRequirement
+    #   department: Engineering
+    #   time: 2.5h
+    # - !type:DepartmentTimeRequirement
+    #   department: Medical
+    #   time: 2.5h
+    # - !type:DepartmentTimeRequirement
+    #   department: Science
+    #   time: 2.5h
+    # - !type:DepartmentTimeRequirement
+    #   department: Security
+    #   time: 2.5h
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 14400 # 4 hrs
+      time: 4h
+  # Harmony end
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 14400 # 4 hours
+      time: 4h # Harmony: 2.5h -> 4h
   weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
@@ -67,6 +72,7 @@
     ears: ClothingHeadsetAltCommand
     belt: BoxFolderClipboardThreePapers
     eyes: ClothingEyesHudCommand
+    pocket1: BookSOP #Harmony Change
   storage:
     back:
     - Flash
