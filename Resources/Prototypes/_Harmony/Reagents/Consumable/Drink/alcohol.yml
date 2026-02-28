@@ -17,10 +17,9 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
+    Digestion:
+      metabolites:
+        Ethanol: 0.25
       effects:
       - !type:SatiateThirst
         factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.25
