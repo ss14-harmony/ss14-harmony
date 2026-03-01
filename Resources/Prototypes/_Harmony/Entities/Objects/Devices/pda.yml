@@ -49,3 +49,13 @@
   components:
   - type: Pda
     id: ERPClownIDCard
+
+- type: entity
+  parent: CentcomPDA
+  id: CentCommInspectorPDA
+  name: CentComm Inspector PDA
+  suffix: Harmony
+  description: How many NanoTask messages does one person need?
+  components:
+  - type: Pda
+    id: CentCommInspectorIDCard

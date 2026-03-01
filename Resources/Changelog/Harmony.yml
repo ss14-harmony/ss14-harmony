@@ -2831,3 +2831,224 @@ Entries:
       message: Shiva and Runtime will no longer attack zombies.
     - type: Fix
       message: Shiva and Runtime will no longer attack initial infected.
+  - id: 1129
+    author: Skybailey-dev
+    time: '2025-11-05T23:16:05.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1129
+    changes:
+    - type: Tweak
+      message: Paramedic now has external access.
+  - id: 1153
+    author: whythelettuce
+    time: '2025-11-11T13:04:27.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1153
+    changes:
+    - type: Add
+      message: 'Jellyfish Station: new lowpop station!'
+  - id: 840
+    author: CollectionOfBones128
+    time: '2025-11-12T02:00:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/840
+    changes:
+    - type: Fix
+      message: Fixed the random space corpses not having clothes when they were supposed to resemble specific jobs.
+    - type: Fix
+      message: Fixed oversight that made an N1984 sometimes spawn on random space corpses.
+  - id: 925
+    author: Ermucat
+    time: '2025-11-12T02:18:30.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/925
+    changes:
+    - type: Tweak
+      message: The wizards grimoire is now a weapon, and knocks back people
+  - id: 1119
+    author: BlueMoon059
+    time: '2025-11-12T05:08:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1119
+    changes:
+    - type: Add
+      message: Adds a new lobby art by Mofi, depicting an unfortunate encounter with a space dragon.
+  - id: 1058
+    author: BlueMoon059
+    time: '2025-11-12T05:43:31.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1058
+    changes:
+    - type: Add
+      message: Adds a pair of salvage-unique welding goggles for salvagers.
+  - id: 1159
+    author: Llfiend
+    time: '2025-11-21T09:18:45.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1159
+    changes:
+    - type: Remove
+      message: Tasers are no longer available to security.
+  - id: 720
+    author: TheAmazingCoder
+    time: '2025-11-21T17:06:23.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/720
+    changes:
+    - type: Add
+      message: A syndicate access configurator is now available in the uplink.
+  - id: 1161
+    author: whythelettuce
+    time: '2025-11-22T11:13:18.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1161
+    changes:
+    - type: Tweak
+      message: Jellyfish station has been updated.
+  - id: 1165
+    author: raccoonio
+    time: '2025-11-24T23:38:28.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1165
+    changes:
+    - type: Add
+      message: Adds Scylla Station, a medium-pop station based on supernatural being Scylla from The Odyssey.
+  - id: 1141
+    author: AreYouConfused
+    time: '2025-11-30T02:51:19.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1141
+    changes:
+    - type: Fix
+      message: Pistol magazine descriptions now say the correct capacity.
+  - id: 1176
+    author: Ermucat
+    time: '2025-12-03T15:34:50.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1176
+    changes:
+    - type: Tweak
+      message: Wizard can now roll as a subgamemode again.
+  - id: 1185
+    author: Dinoguy12349
+    time: '2025-12-06T15:04:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1185
+    changes:
+    - type: Tweak
+      message: Luxury PKAs are now shaped like most other sidearms.
+  - id: 1182
+    author: OrnamentalFreak
+    time: '2025-12-08T13:40:14.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1182
+    changes:
+    - type: Remove
+      message: Mimics can no longer roll as a random event.
+  - id: 1149
+    author: OrnamentalFreak
+    time: '2025-12-08T13:43:50.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1149
+    changes:
+    - type: Tweak
+      message: Cigarette packs now only allow cigarettes to be stored in them.
+  - id: 1112
+    author: Svetoslav228
+    time: '2025-12-08T13:51:32.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1112
+    changes:
+    - type: Add
+      message: Radiation collectors can now use tritium as fuel.
+    - type: Tweak
+      message: Radiation collectors now eat 1.2 times as much plasma as before.
+  - id: 1196
+    author: raccoonio
+    time: '2025-12-09T02:08:35.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1196
+    changes:
+    - type: Fix
+      message: Fixed Scylla's cargo shuttle, such that it spawns as a grid rather than a map.
+  - id: 1173
+    author: kleinerstation13
+    time: '2025-12-09T17:57:16.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1173
+    changes:
+    - type: Remove
+      message: Incendiary and uranium ammo is no longer craftable in lathes.
+  - id: 1202
+    author: BoskiYourk
+    time: '2025-12-25T22:02:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1202
+    changes:
+    - type: Tweak
+      message: Command and security glasses have been resprited.
+  - id: 1154
+    author: LaOubliette
+    time: '2025-12-25T22:24:20.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1154
+    changes:
+    - type: Tweak
+      message: tweaked emag interactions with several vendors
+  - id: 1014
+    author: Jajsha
+    time: '2026-01-01T20:31:32.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1014
+    changes:
+    - type: Tweak
+      message: Positronic brains are now temporarily disabled and can be manually reactivated instead of wiped.
+  - id: 859
+    author: CollectionOfBones128
+    time: '2026-01-01T20:33:43.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/859
+    changes:
+    - type: Add
+      message: Jetpacks and handeld GPSs now show up as blips on the mass scanner. Blood-red magboots and nuclear operative jetpacks however do not.
+  - id: 902
+    author: CollectionOfBones128
+    time: '2026-01-01T23:38:57.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/902
+    changes:
+    - type: Add
+      message: Salvage now has a unique communication channel.
+  - id: 1222
+    author: youtissoum
+    time: '2026-01-02T13:45:38.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1222
+    changes:
+    - type: Fix
+      message: The ready manifest now shows colors again.
+  - id: 674
+    author: ProfRenderer
+    time: '2026-01-02T17:09:13.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/674
+    changes:
+    - type: Add
+      message: Added the weh-pet. It's a lizard plushie if it was fused with a trumpet. Can be found in maints lockers as rare loot.
+  - id: 990
+    author: kleinerstation13
+    time: '2026-01-02T17:21:48.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/990
+    changes:
+    - type: Add
+      message: Added Arnold poster. Who took him?
+  - id: 1195
+    author: Deerstop, luckyshotpictures
+    time: '2026-01-03T16:15:00.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1195
+    changes:
+    - type: Add
+      message: Wapiti Satellite has been added to the game, developed by Deerstop.
+  - id: 1218
+    author: AreYouConfused
+    time: '2026-01-05T23:20:46.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1218
+    changes:
+    - type: Fix
+      message: Vox now have a default beak.
+  - id: 1226
+    author: whythelettuce
+    time: '2026-01-06T11:58:12.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1226
+    changes:
+    - type: Tweak
+      message: Updated Athena Station + Evac Chariot
+  - id: 1122
+    author: SuperGDPWYL
+    time: '2026-01-08T16:13:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1122
+    changes:
+    - type: Add
+      message: Conspirators have been added to the game. They are a group of four to seven antagonists in a team with a special radio implant and a shared objective.
+  - id: 1029
+    author: dragydevi
+    time: '2026-01-08T21:19:17.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1029
+    changes:
+    - type: Add
+      message: The queue window has been updated.

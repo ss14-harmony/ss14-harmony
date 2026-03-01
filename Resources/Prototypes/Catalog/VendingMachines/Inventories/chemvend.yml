@@ -26,6 +26,11 @@
     DrinkLithiumFlask: 1
     StrangePill: 3
     ChemistryBottleToxin: 1
+  # Harmony Change Start - Readd Emag interactions
+  emaggedInventory:
+    ChemistryBottlePax: 1
+    ChemistryBottleMuteToxin: 1
+  # Harmony Change End
 
 - type: vendingMachineInventory
   id: ChemVendInventorySyndicate
