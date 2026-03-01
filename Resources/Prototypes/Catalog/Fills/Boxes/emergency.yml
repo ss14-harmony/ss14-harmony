@@ -13,7 +13,7 @@
         - id: EmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: NT budget changed, you now need to visit the Chef for Food
+        # Start of Harmony Change: Remove MRE from survival box
         #- id: FoodSnackNutribrick
         # End of Harmony Change
         - id: DrinkWaterBottleFull
@@ -35,7 +35,7 @@
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: NT budget changed, you now need to visit the Chef for Food
+        # Start of Harmony Change: Remove MRE from survival box
         #- id: FoodSnackNutribrick
         # End of Harmony Change
         - id: DrinkWaterBottleFull
@@ -61,7 +61,7 @@
         - id: ExtendedEmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-# Start of Harmony Change: NT budget changed, you now need to visit the Chef for Food
+# Start of Harmony Change: Remove MRE from survival box
         #- id: FoodSnackNutribrick
 # End of Harmony Change
         - id: DrinkWaterBottleFull
@@ -87,7 +87,7 @@
         - id: ExtendedEmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: NT budget changed, you now need to visit the Chef for Food
+        # Start of Harmony Change: Remove MRE from survival box
         #- id: FoodSnackNutribrick
         # End of Harmony Change
         - id: DrinkWaterBottleFull
@@ -140,7 +140,7 @@
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: NT budget changed, you now need to visit the Chef for Food
+        # Start of Harmony Change: Remove MRE from survival box
         #- id: FoodSnackNutribrick
         # End of Harmony Change
         - id: DrinkWaterBottleFull
@@ -170,7 +170,7 @@
         - id: EmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: NT budget changed, you now need to visit the Chef for Food
+        # Start of Harmony Change: Remove MRE from survival box
         #- id: FoodSnackNutribrick
         # End of Harmony Change
         - id: DrinkWaterBottleFull
@@ -195,7 +195,7 @@
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: NT budget changed, you now need to visit the Chef for Food
+        # Start of Harmony Change: Remove MRE from survival box
         #- id: FoodSnackNutribrick
         # End of Harmony Change
         - id: DrinkWaterBottleFull
@@ -230,8 +230,8 @@
         - id: EmergencyFunnyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: NT budget changed, you now need to visit the Chef for Food
-        #- id: FoodSnackNutribrick
+        # Start of Harmony Change: Remove MRE from survival box
+        - id: FoodPieBananaCream
         # End of Harmony Change
         - id: DrinkWaterBottleFull
   - type: Tag
@@ -252,8 +252,8 @@
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: NT budget changed, you now need to visit the Chef for Food
-        #- id: FoodSnackNutribrick
+        # Start of Harmony Change: Remove MRE from survival box
+        - id: FoodPieBananaCream
         # End of Harmony Change
         - id: DrinkWaterBottleFull
   - type: Label
