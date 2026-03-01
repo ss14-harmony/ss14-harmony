@@ -117,7 +117,9 @@
         - id: EmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        - id: FoodSnackNutribrick
+        # Start of Harmony Change: Remove MRE from survival box
+        #- id: FoodSnackNutribrick
+        # End of Harmony Change
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
