@@ -57,7 +57,9 @@
         - id: ExtendedEmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        - id: FoodSnackNutribrick
+# Start of Harmony Change: NT budget changed, you now need to visit the Chef for Food
+        #- id: FoodSnackNutribrick
+# End of Harmony Change
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
