@@ -13,9 +13,7 @@
         - id: EmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: Remove MRE from survival box
-        #- id: FoodSnackNutribrick
-        # End of Harmony Change
+        #- id: FoodSnackNutribrick Harmony Commit Change: Remove MRE from survival box
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -35,9 +33,7 @@
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: Remove MRE from survival box
-        #- id: FoodSnackNutribrick
-        # End of Harmony Change
+        #- id: FoodSnackNutribrick Harmony Commit Change: Remove MRE from survival box
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -61,9 +57,7 @@
         - id: ExtendedEmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-# Start of Harmony Change: Remove MRE from survival box
-        #- id: FoodSnackNutribrick
-# End of Harmony Change
+        #- id: FoodSnackNutribrick Harmony Commit Change: Remove MRE from survival box
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -87,9 +81,7 @@
         - id: ExtendedEmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: Remove MRE from survival box
-        #- id: FoodSnackNutribrick
-        # End of Harmony Change
+        #- id: FoodSnackNutribrick Harmony Commit Change: Remove MRE from survival box
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -117,9 +109,7 @@
         - id: EmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: Remove MRE from survival box
-        #- id: FoodSnackNutribrick
-        # End of Harmony Change
+        #- id: FoodSnackNutribrick Harmony Commit Change: Remove MRE from survival box
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -142,9 +132,7 @@
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: Remove MRE from survival box
-        #- id: FoodSnackNutribrick
-        # End of Harmony Change
+        #- id: FoodSnackNutribrick Harmony Commit Change: Remove MRE from survival box
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -172,9 +160,7 @@
         - id: EmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: Remove MRE from survival box
-        #- id: FoodSnackNutribrick
-        # End of Harmony Change
+        #- id: FoodSnackNutribrick Harmony Commit Change: Remove MRE from survival box
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -197,9 +183,7 @@
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: Remove MRE from survival box
-        #- id: FoodSnackNutribrick
-        # End of Harmony Change
+        #- id: FoodSnackNutribrick Harmony Commit Change: Remove MRE from survival box
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -232,9 +216,7 @@
         - id: EmergencyFunnyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: Remove MRE from survival box
-        - id: FoodPieBananaCream
-        # End of Harmony Change
+        - id: FoodPieBananaCream #Harmony Commit Change: Remove MRE from survival box
         - id: DrinkWaterBottleFull
   - type: Tag
     tags:
@@ -254,9 +236,7 @@
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: Remove MRE from survival box
-        - id: FoodPieBananaCream
-        # End of Harmony Change
+        - id: FoodPieBananaCream #Harmony Commit Change: Remove MRE from survival box
         - id: DrinkWaterBottleFull
   - type: Label
     currentLabel: reagent-name-nitrogen
