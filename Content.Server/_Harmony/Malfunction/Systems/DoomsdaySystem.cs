@@ -6,13 +6,12 @@ using Content.Server.Station.Systems;
 using Content.Server._Harmony.Malfunction.Components;
 using Content.Server._Harmony.GameTicking.Rules;
 using Content.Shared.Audio;
-using Content.Shared.Body.Components;
-using Content.Shared.Body.Systems;
+using Content.Shared.Gibbing;
 using Content.Shared.Humanoid;
+using Content.Shared.Mobs;
 using Content.Shared._Harmony.Malfunction;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Content.Shared.Mobs;
 
 namespace Content.Server._Harmony.Malfunction.Systems;
 
@@ -20,7 +19,7 @@ public sealed class DoomsdaySystem : EntitySystem
 {
     [Dependency] private readonly MalfunctioningAIRuleSystem _malf = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
-    [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private readonly GibbingSystem _gibbing = default!;
     [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
     [Dependency] private readonly AlertLevelSystem _alertLevel = default!;
     [Dependency] private readonly ServerGlobalSoundSystem _sound = default!;
@@ -118,14 +117,12 @@ public sealed class DoomsdaySystem : EntitySystem
         var ev = new MalfDoomsdayActivatedEvent();
         RaiseLocalEvent(ev);
 
-        var crewQuery = EntityQueryEnumerator<HumanoidAppearanceComponent, TransformComponent>();
+        var crewQuery = EntityQueryEnumerator<HumanoidProfileComponent, TransformComponent>();
         while (crewQuery.MoveNext(out var ent, out _, out var transform))
         {
-            if (!TryComp<BodyComponent>(ent, out var body))
-                return;
             if (Transform(uid).MapID != transform.MapID) return;
 
-            _body.GibBody(ent, true, body); // it just instantly gibs all humanoids on the same grid
+            _gibbing.Gib(ent, true); // it just instantly gibs all humanoids on the same grid
         }
 
         _roundEndSystem.EndRound();

@@ -33,7 +33,7 @@ public sealed class ExterminateDepartmentConditionSystem : EntitySystem
     private List<EntityUid> GetTargets(string department)
     {
         var targets = new List<EntityUid>();
-        var players = AllEntityQuery<HumanoidAppearanceComponent, ActorComponent>();
+        var players = AllEntityQuery<HumanoidProfileComponent, ActorComponent>();
         while (players.MoveNext(out var uid, out _, out _))
         {
             if (!_mind.TryGetMind(uid, out var mindId, out _)) continue;

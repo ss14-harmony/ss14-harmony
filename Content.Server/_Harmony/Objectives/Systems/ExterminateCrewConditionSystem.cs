@@ -31,7 +31,7 @@ public sealed class ExterminateCrewConditionSystem : EntitySystem
     private List<EntityUid> GetTargets()
     {
         var targets = new List<EntityUid>();
-        var players = AllEntityQuery<HumanoidAppearanceComponent, ActorComponent>();
+        var players = AllEntityQuery<HumanoidProfileComponent, ActorComponent>();
         while (players.MoveNext(out var uid, out _, out _))
         {
             targets.Add(uid);
