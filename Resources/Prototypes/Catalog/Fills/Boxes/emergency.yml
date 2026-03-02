@@ -13,7 +13,10 @@
         - id: EmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        #- id: FoodSnackNutribrick Harmony Commit Change: Remove MRE from survival box
+        # Start of Harmony Change: Tweaked survival kits now have food tins instead of MREs
+        #- id: FoodSnackNutribrick
+        - id: FoodTinMRE
+        # End of Harmony Change
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -33,7 +36,10 @@
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        #- id: FoodSnackNutribrick Harmony Commit Change: Remove MRE from survival box
+        # Start of Harmony Change: Tweaked survival kits now have food tins instead of MREs
+        #- id: FoodSnackNutribrick
+        - id: FoodTinMRE
+        # End of Harmony Change
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -57,7 +63,10 @@
         - id: ExtendedEmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        #- id: FoodSnackNutribrick Harmony Commit Change: Remove MRE from survival box
+        # Start of Harmony Change: Tweaked survival kits now have food tins instead of MREs
+        #- id: FoodSnackNutribrick
+        - id: FoodTinMRE
+        # End of Harmony Change
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -81,7 +90,10 @@
         - id: ExtendedEmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        #- id: FoodSnackNutribrick Harmony Commit Change: Remove MRE from survival box
+        # Start of Harmony Change: Tweaked survival kits now have food tins instead of MREs
+        #- id: FoodSnackNutribrick
+        - id: FoodTinMRE
+        # End of Harmony Change
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -109,7 +121,10 @@
         - id: EmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        #- id: FoodSnackNutribrick Harmony Commit Change: Remove MRE from survival box
+        # Start of Harmony Change: Tweaked survival kits now have food tins instead of MREs
+        #- id: FoodSnackNutribrick
+        - id: FoodTinMRE
+        # End of Harmony Change
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -132,7 +147,10 @@
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        #- id: FoodSnackNutribrick Harmony Commit Change: Remove MRE from survival box
+        # Start of Harmony Change: Tweaked survival kits now have food tins instead of MREs
+        #- id: FoodSnackNutribrick
+        - id: FoodTinMRE
+        # End of Harmony Change
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -160,7 +178,10 @@
         - id: EmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        #- id: FoodSnackNutribrick Harmony Commit Change: Remove MRE from survival box
+        # Start of Harmony Change: Tweaked survival kits now have food tins instead of MREs
+        #- id: FoodSnackNutribrick
+        - id: FoodTinMRE
+        # End of Harmony Change
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -183,7 +204,10 @@
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        #- id: FoodSnackNutribrick Harmony Commit Change: Remove MRE from survival box
+        # Start of Harmony Change: Tweaked survival kits now have food tins instead of MREs
+        #- id: FoodSnackNutribrick
+        - id: FoodTinMRE
+        # End of Harmony Change
         - id: DrinkWaterBottleFull
   - type: Sprite
     layers:
@@ -216,7 +240,7 @@
         - id: EmergencyFunnyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: Remove MRE from survival box
+        # Start of Harmony Change: Tweaked survival kits now have food tins instead of MREs
         #- id: FoodSnackNutribrick
         - id: FoodPieBananaCream
         # End of Harmony Change
@@ -239,7 +263,7 @@
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
-        # Start of Harmony Change: Remove MRE from survival box
+        # Start of Harmony Change: Tweaked survival kits now have food tins instead of MREs
         #- id: FoodSnackNutribrick
         - id: FoodPieBananaCream
         # End of Harmony Change
