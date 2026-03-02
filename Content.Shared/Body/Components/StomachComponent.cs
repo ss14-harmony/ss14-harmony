@@ -24,5 +24,5 @@ public sealed partial class StomachComponent : Component
     /// Controls whitelist behavior. If true, this stomach can digest <i>only</i> food that passes the whitelist. If false, it can digest normal food <i>and</i> any food that passes the whitelist.
     /// </summary>
     [DataField]
-    public bool IsSpecialDigestibleExclusive = true;
+    public bool IsSpecialDigestibleExclusive = false; // Harmony Change: Remove Dietary Restrictions True >> False
 }
