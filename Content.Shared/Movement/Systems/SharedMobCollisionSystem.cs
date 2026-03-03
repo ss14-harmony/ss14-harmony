@@ -240,6 +240,10 @@ public abstract class SharedMobCollisionSystem : EntitySystem
 
             if (!MobQuery.TryComp(other, out var otherComp) || !PhysicsQuery.TryComp(other, out var otherPhysics))
                 continue;
+            // Start of Harmony Changes: Enable Collisions & Disable them for Critters
+            if (!(otherComp.DoCollision && entity.Comp1.DoCollision))
+                continue;
+            // End of Harmony Changes
 
             var velocityProduct = Vector2.Dot(ourVelocity, otherPhysics.LinearVelocity);
 

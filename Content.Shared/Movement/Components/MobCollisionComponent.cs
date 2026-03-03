@@ -57,4 +57,12 @@ public sealed partial class MobCollisionComponent : Component
 
     [DataField, AutoNetworkedField]
     public Vector2 Direction;
+
+    /// <summary>
+    /// Harmony Exclusive: Enable Collisions & Disable them for Critters
+    /// Should we actually do mob collision?
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool DoCollision = true;
+
 }
