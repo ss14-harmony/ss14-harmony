@@ -1,6 +1,7 @@
 #nullable enable
 using System.Collections.Generic;
 using System.Linq;
+using Content.Shared.Body.Components;
 using Content.Shared.Coordinates;
 using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
@@ -141,7 +142,12 @@ public sealed class PrototypeSaveTest
                         }
                         else
                         {
-                            Assert.Fail($"Prototype {prototype.ID} gains a component on spawn: {compName}");
+                            // BodyPartComponent triggers BodySystem.OnBodyPartInit which adds ContainerManagerComponent
+                            // and SurgeryLayerComponent. These are expected for body parts.
+                            var isBodyPartGainedComponent = entityMan.HasComponent<BodyPartComponent>(uid)
+                                && (compName == "ContainerContainer" || compName == "SurgeryLayer");
+                            if (!isBodyPartGainedComponent)
+                                Assert.Fail($"Prototype {prototype.ID} gains a component on spawn: {compName}");
                         }
                     }
 
