@@ -10,4 +10,7 @@ public sealed partial class OrganCategoryPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;
+
+    [DataField]
+    public string? Name { get; private set; }
 }

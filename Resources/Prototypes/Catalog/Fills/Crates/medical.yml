@@ -75,6 +75,7 @@
         - id: Drill
         - id: Saw
         - id: Hemostat
+        - id: BoneGel
         - id: ClothingMaskSterile
 
 - type: entity

@@ -51,18 +51,16 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-  - type: InitialBody
-    organs:
-      Torso: OrganSkeletonPersonTorso
-      Head: OrganSkeletonPersonHead
-      ArmLeft: OrganSkeletonPersonArmLeft
-      ArmRight: OrganSkeletonPersonArmRight
-      HandRight: OrganSkeletonPersonHandRight
-      HandLeft: OrganSkeletonPersonHandLeft
-      LegLeft: OrganSkeletonPersonLegLeft
-      LegRight: OrganSkeletonPersonLegRight
-      FootLeft: OrganSkeletonPersonFootLeft
-      FootRight: OrganSkeletonPersonFootRight
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganSkeletonPersonTorso
+        - id: OrganSkeletonPersonHead
+        - id: OrganSkeletonPersonArmLeft
+        - id: OrganSkeletonPersonArmRight
+        - id: OrganSkeletonPersonLegLeft
+        - id: OrganSkeletonPersonLegRight
   - type: HumanoidProfile
     species: Skeleton
 
@@ -206,18 +204,48 @@
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganSkeletonPersonExternal ]
   id: OrganSkeletonPersonTorso
+  components:
+  - type: BodyPart
+    containerId: internal_organs
+  - type: EntityTableContainerFill
+    containers:
+      internal_organs: !type:AllSelector
+        children: []
 
 - type: entity
   parent: [ OrganBaseHead, OrganSkeletonPersonExternal ]
   id: OrganSkeletonPersonHead
+  components:
+  - type: BodyPart
+    containerId: head_organs
+  - type: EntityTableContainerFill
+    containers:
+      head_organs: !type:AllSelector
+        children: []
 
 - type: entity
   parent: [ OrganBaseArmLeft, OrganSkeletonPersonExternal ]
   id: OrganSkeletonPersonArmLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganSkeletonPersonHandLeft
 
 - type: entity
   parent: [ OrganBaseArmRight, OrganSkeletonPersonExternal ]
   id: OrganSkeletonPersonArmRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganSkeletonPersonHandRight
 
 - type: entity
   parent: [ OrganBaseHandLeft, OrganSkeletonPersonExternal ]
@@ -230,10 +258,26 @@
 - type: entity
   parent: [ OrganBaseLegLeft, OrganSkeletonPersonExternal ]
   id: OrganSkeletonPersonLegLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganSkeletonPersonFootLeft
 
 - type: entity
   parent: [ OrganBaseLegRight, OrganSkeletonPersonExternal ]
   id: OrganSkeletonPersonLegRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganSkeletonPersonFootRight
 
 - type: entity
   parent: [ OrganBaseFootLeft, OrganSkeletonPersonExternal ]

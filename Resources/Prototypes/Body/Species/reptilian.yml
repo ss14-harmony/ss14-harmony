@@ -85,28 +85,16 @@
           32:
             sprite: Mobs/Species/Reptilian/displacement.rsi
             state: mask
-  - type: InitialBody
-    organs:
-      Torso: OrganReptilianTorso
-      Head: OrganReptilianHead
-      ArmLeft: OrganReptilianArmLeft
-      ArmRight: OrganReptilianArmRight
-      HandRight: OrganReptilianHandRight
-      HandLeft: OrganReptilianHandLeft
-      LegLeft: OrganReptilianLegLeft
-      LegRight: OrganReptilianLegRight
-      FootLeft: OrganReptilianFootLeft
-      FootRight: OrganReptilianFootRight
-      Brain: OrganReptilianBrain
-      Eyes: OrganReptilianEyes
-      Tongue: OrganReptilianTongue
-      Appendix: OrganReptilianAppendix
-      Ears: OrganReptilianEars
-      Lungs: OrganReptilianLungs
-      Heart: OrganReptilianHeart
-      Stomach: OrganReptilianStomach
-      Liver: OrganReptilianLiver
-      Kidneys: OrganReptilianKidneys
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganReptilianTorso
+        - id: OrganReptilianHead
+        - id: OrganReptilianArmLeft
+        - id: OrganReptilianArmRight
+        - id: OrganReptilianLegLeft
+        - id: OrganReptilianLegRight
   - type: HumanoidProfile
     species: Reptilian
 
@@ -206,6 +194,18 @@
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganReptilianExternal ]
   id: OrganReptilianTorso
   components:
+  - type: BodyPart
+    containerId: internal_organs
+  - type: EntityTableContainerFill
+    containers:
+      internal_organs: !type:AllSelector
+        children:
+        - id: OrganReptilianLungs
+        - id: OrganReptilianHeart
+        - id: OrganReptilianStomach
+        - id: OrganReptilianLiver
+        - id: OrganReptilianKidneys
+        - id: OrganReptilianAppendix
   - type: VisualOrganMarkings
     hideableLayers:
     - enum.HumanoidVisualLayers.Tail
@@ -214,6 +214,16 @@
   parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganReptilianExternal ]
   id: OrganReptilianHead
   components:
+  - type: BodyPart
+    containerId: head_organs
+  - type: EntityTableContainerFill
+    containers:
+      head_organs: !type:AllSelector
+        children:
+        - id: OrganReptilianBrain
+        - id: OrganReptilianEyes
+        - id: OrganReptilianTongue
+        - id: OrganReptilianEars
   - type: VisualOrganMarkings
     hideableLayers:
     - enum.HumanoidVisualLayers.Snout
@@ -223,10 +233,26 @@
 - type: entity
   parent: [ OrganBaseArmLeft, OrganReptilianExternal ]
   id: OrganReptilianArmLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganReptilianHandLeft
 
 - type: entity
   parent: [ OrganBaseArmRight, OrganReptilianExternal ]
   id: OrganReptilianArmRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganReptilianHandRight
 
 - type: entity
   parent: [ OrganBaseHandLeft, OrganReptilianExternal ]
@@ -239,10 +265,26 @@
 - type: entity
   parent: [ OrganBaseLegLeft, OrganReptilianExternal ]
   id: OrganReptilianLegLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganReptilianFootLeft
 
 - type: entity
   parent: [ OrganBaseLegRight, OrganReptilianExternal ]
   id: OrganReptilianLegRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganReptilianFootRight
 
 - type: entity
   parent: [ OrganBaseFootLeft, OrganReptilianExternal ]

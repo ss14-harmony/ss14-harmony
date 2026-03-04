@@ -20,6 +20,9 @@
   parent: BaseToolSurgery
   description: A surgical tool used to cauterize open wounds.
   components:
+  - type: Tag
+    tags:
+    - HeatWeapon
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/cautery.rsi
     state: cautery
@@ -66,6 +69,9 @@
   parent: BaseToolSurgery
   description: A surgical tool used to make incisions into flesh.
   components:
+  - type: Tag
+    tags:
+    - CuttingTool
   - type: Sharp
     butcherDelayModifier: 1.5 # Butchering with a scalpel, regardless of the type, will take 50% longer
   - type: Tool
@@ -147,6 +153,10 @@
   parent: BaseToolSurgery
   description: A surgical tool used to hold open incisions.
   components:
+  - type: Tag
+    tags:
+    - ManipulatingTool
+    - PryingTool
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: retractor
@@ -160,6 +170,11 @@
   parent: Retractor
   description: A surgical tool used to compress blood vessels to prevent bleeding.
   components:
+  - type: Tag
+    tags:
+    - HemostatTool
+    - ManipulatingTool
+    - PryingTool
   - type: Sprite
     state: hemostat
   - type: Item
@@ -180,6 +195,9 @@
   parent: BaseToolSurgery
   description: For cutting wood and other objects to pieces. Or sawing bones, in case of emergency.
   components:
+  - type: Tag
+    tags:
+    - SawingTool
   - type: Sharp
   - type: Utensil
     types:
@@ -249,3 +267,22 @@
     attackRate: 1.5
   - type: Tool
     speedModifier: 2.0
+
+# Bone Gel
+
+- type: entity
+  name: bone gel
+  id: BoneGel
+  parent: BaseToolSurgery
+  description: Used to repair bone sections during surgery.
+  components:
+  - type: Tag
+    tags:
+    - SurgeryTool
+    - BoneGelTool
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/bone-gel.rsi
+    state: bone-gel
+  - type: Item
+    sprite: Objects/Specific/Medical/Surgery/bone-gel.rsi
+    size: Small

@@ -13,6 +13,11 @@ public sealed partial class HealthAnalyzerWindow : FancyWindow
         RobustXamlLoader.Load(this);
     }
 
+    public void SetOnSurgeryRequest(Action<SurgeryRequestBuiMessage> callback)
+    {
+        HealthAnalyzer.OnSurgeryRequest = callback;
+    }
+
     public void Populate(HealthAnalyzerScannedUserMessage msg)
     {
         HealthAnalyzer.Populate(msg.State);

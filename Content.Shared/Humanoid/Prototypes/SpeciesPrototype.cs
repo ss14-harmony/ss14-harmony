@@ -55,6 +55,13 @@ public sealed partial class SpeciesPrototype : IPrototype
     public EntProtoId Prototype { get; private set; } = default!;
 
     /// <summary>
+    ///     Mapping of limb/head organ category to entity prototype for limb regeneration.
+    ///     When null, limb restoration is not supported for this species.
+    /// </summary>
+    [DataField]
+    public Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId>? LimbOrganPrototypes { get; private set; }
+
+    /// <summary>
     /// Prototype used by the species for the dress-up doll in various menus.
     /// </summary>
     [DataField(required: true)]

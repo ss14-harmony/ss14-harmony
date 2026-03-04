@@ -1,0 +1,1198 @@
+# Body part surgery step configs per species and organ category.
+# Uses OrganCategoryPrototype (Torso, ArmLeft, etc.).
+# skinOpenSteps: last one gates tissue layer. skinCloseSteps: any done = skin closed.
+# tissueOpenSteps: last one gates organ layer. tissueCloseSteps: any done = tissue closed.
+# Hands and feet omit DetachLimb; only arms and legs include it.
+
+- type: bodyPartSurgerySteps
+  id: HumanTorso
+  species: Human
+  organCategory: Torso
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: HumanHead
+  species: Human
+  organCategory: Head
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: HumanArmLeft
+  species: Human
+  organCategory: ArmLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: HumanArmRight
+  species: Human
+  organCategory: ArmRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: HumanLegLeft
+  species: Human
+  organCategory: LegLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: HumanLegRight
+  species: Human
+  organCategory: LegRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+# Hands and feet - no DetachLimb (entire limb or nothing)
+- type: bodyPartSurgerySteps
+  id: HumanHandLeft
+  species: Human
+  organCategory: HandLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: HumanHandRight
+  species: Human
+  organCategory: HandRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: HumanFootLeft
+  species: Human
+  organCategory: FootLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: HumanFootRight
+  species: Human
+  organCategory: FootRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+# SlimePerson limbs - same steps as Human for amputation/reattach
+- type: bodyPartSurgerySteps
+  id: SlimePersonLegLeft
+  species: SlimePerson
+  organCategory: LegLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: SlimePersonLegRight
+  species: SlimePerson
+  organCategory: LegRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: SlimePersonArmLeft
+  species: SlimePerson
+  organCategory: ArmLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: SlimePersonArmRight
+  species: SlimePerson
+  organCategory: ArmRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+# Diona - same steps as Human
+- type: bodyPartSurgerySteps
+  id: DionaTorso
+  species: Diona
+  organCategory: Torso
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: DionaHead
+  species: Diona
+  organCategory: Head
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: DionaArmLeft
+  species: Diona
+  organCategory: ArmLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: DionaArmRight
+  species: Diona
+  organCategory: ArmRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: DionaLegLeft
+  species: Diona
+  organCategory: LegLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: DionaLegRight
+  species: Diona
+  organCategory: LegRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: DionaHandLeft
+  species: Diona
+  organCategory: HandLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: DionaHandRight
+  species: Diona
+  organCategory: HandRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: DionaFootLeft
+  species: Diona
+  organCategory: FootLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: DionaFootRight
+  species: Diona
+  organCategory: FootRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+# Vox - same steps as Human
+- type: bodyPartSurgerySteps
+  id: VoxTorso
+  species: Vox
+  organCategory: Torso
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: VoxHead
+  species: Vox
+  organCategory: Head
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: VoxArmLeft
+  species: Vox
+  organCategory: ArmLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: VoxArmRight
+  species: Vox
+  organCategory: ArmRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: VoxLegLeft
+  species: Vox
+  organCategory: LegLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: VoxLegRight
+  species: Vox
+  organCategory: LegRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: VoxHandLeft
+  species: Vox
+  organCategory: HandLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: VoxHandRight
+  species: Vox
+  organCategory: HandRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: VoxFootLeft
+  species: Vox
+  organCategory: FootLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: VoxFootRight
+  species: Vox
+  organCategory: FootRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+# Dwarf - same steps as Human
+- type: bodyPartSurgerySteps
+  id: DwarfTorso
+  species: Dwarf
+  organCategory: Torso
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: DwarfHead
+  species: Dwarf
+  organCategory: Head
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: DwarfArmLeft
+  species: Dwarf
+  organCategory: ArmLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: DwarfArmRight
+  species: Dwarf
+  organCategory: ArmRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: DwarfLegLeft
+  species: Dwarf
+  organCategory: LegLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: DwarfLegRight
+  species: Dwarf
+  organCategory: LegRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: DwarfHandLeft
+  species: Dwarf
+  organCategory: HandLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: DwarfHandRight
+  species: Dwarf
+  organCategory: HandRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: DwarfFootLeft
+  species: Dwarf
+  organCategory: FootLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: DwarfFootRight
+  species: Dwarf
+  organCategory: FootRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+# Moth - same steps as Human
+- type: bodyPartSurgerySteps
+  id: MothTorso
+  species: Moth
+  organCategory: Torso
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: MothHead
+  species: Moth
+  organCategory: Head
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: MothArmLeft
+  species: Moth
+  organCategory: ArmLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: MothArmRight
+  species: Moth
+  organCategory: ArmRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: MothLegLeft
+  species: Moth
+  organCategory: LegLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: MothLegRight
+  species: Moth
+  organCategory: LegRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: MothHandLeft
+  species: Moth
+  organCategory: HandLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: MothHandRight
+  species: Moth
+  organCategory: HandRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: MothFootLeft
+  species: Moth
+  organCategory: FootLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: MothFootRight
+  species: Moth
+  organCategory: FootRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+# Vulpkanin - same steps as Human
+- type: bodyPartSurgerySteps
+  id: VulpkaninTorso
+  species: Vulpkanin
+  organCategory: Torso
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: VulpkaninHead
+  species: Vulpkanin
+  organCategory: Head
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: VulpkaninArmLeft
+  species: Vulpkanin
+  organCategory: ArmLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: VulpkaninArmRight
+  species: Vulpkanin
+  organCategory: ArmRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: VulpkaninLegLeft
+  species: Vulpkanin
+  organCategory: LegLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: VulpkaninLegRight
+  species: Vulpkanin
+  organCategory: LegRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: VulpkaninHandLeft
+  species: Vulpkanin
+  organCategory: HandLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: VulpkaninHandRight
+  species: Vulpkanin
+  organCategory: HandRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: VulpkaninFootLeft
+  species: Vulpkanin
+  organCategory: FootLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: VulpkaninFootRight
+  species: Vulpkanin
+  organCategory: FootRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+# Reptilian - same steps as Human
+- type: bodyPartSurgerySteps
+  id: ReptilianTorso
+  species: Reptilian
+  organCategory: Torso
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: ReptilianHead
+  species: Reptilian
+  organCategory: Head
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: ReptilianArmLeft
+  species: Reptilian
+  organCategory: ArmLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: ReptilianArmRight
+  species: Reptilian
+  organCategory: ArmRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: ReptilianLegLeft
+  species: Reptilian
+  organCategory: LegLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: ReptilianLegRight
+  species: Reptilian
+  organCategory: LegRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: ReptilianHandLeft
+  species: Reptilian
+  organCategory: HandLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: ReptilianHandRight
+  species: Reptilian
+  organCategory: HandRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: ReptilianFootLeft
+  species: Reptilian
+  organCategory: FootLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: ReptilianFootRight
+  species: Reptilian
+  organCategory: FootRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+# Arachnid - same steps as Human
+- type: bodyPartSurgerySteps
+  id: ArachnidTorso
+  species: Arachnid
+  organCategory: Torso
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: ArachnidHead
+  species: Arachnid
+  organCategory: Head
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: ArachnidArmLeft
+  species: Arachnid
+  organCategory: ArmLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: ArachnidArmRight
+  species: Arachnid
+  organCategory: ArmRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: ArachnidLegLeft
+  species: Arachnid
+  organCategory: LegLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: ArachnidLegRight
+  species: Arachnid
+  organCategory: LegRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: ArachnidHandLeft
+  species: Arachnid
+  organCategory: HandLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: ArachnidHandRight
+  species: Arachnid
+  organCategory: HandRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: ArachnidFootLeft
+  species: Arachnid
+  organCategory: FootLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: ArachnidFootRight
+  species: Arachnid
+  organCategory: FootRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+# Gingerbread - same steps as Human
+- type: bodyPartSurgerySteps
+  id: GingerbreadTorso
+  species: Gingerbread
+  organCategory: Torso
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: GingerbreadHead
+  species: Gingerbread
+  organCategory: Head
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: GingerbreadArmLeft
+  species: Gingerbread
+  organCategory: ArmLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: GingerbreadArmRight
+  species: Gingerbread
+  organCategory: ArmRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: GingerbreadLegLeft
+  species: Gingerbread
+  organCategory: LegLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: GingerbreadLegRight
+  species: Gingerbread
+  organCategory: LegRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: GingerbreadHandLeft
+  species: Gingerbread
+  organCategory: HandLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: GingerbreadHandRight
+  species: Gingerbread
+  organCategory: HandRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: GingerbreadFootLeft
+  species: Gingerbread
+  organCategory: FootLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: GingerbreadFootRight
+  species: Gingerbread
+  organCategory: FootRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+# Skeleton - limb-only surgery (detach/attach arms and legs); no organ insertion
+- type: bodyPartSurgerySteps
+  id: SkeletonTorso
+  species: Skeleton
+  organCategory: Torso
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: []
+
+- type: bodyPartSurgerySteps
+  id: SkeletonHead
+  species: Skeleton
+  organCategory: Head
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: []
+
+- type: bodyPartSurgerySteps
+  id: SkeletonArmLeft
+  species: Skeleton
+  organCategory: ArmLeft
+  skinOpenSteps: []
+  skinCloseSteps: []
+  tissueOpenSteps: []
+  tissueCloseSteps: []
+  organSteps: [DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: SkeletonArmRight
+  species: Skeleton
+  organCategory: ArmRight
+  skinOpenSteps: []
+  skinCloseSteps: []
+  tissueOpenSteps: []
+  tissueCloseSteps: []
+  organSteps: [DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: SkeletonLegLeft
+  species: Skeleton
+  organCategory: LegLeft
+  skinOpenSteps: []
+  skinCloseSteps: []
+  tissueOpenSteps: []
+  tissueCloseSteps: []
+  organSteps: [DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: SkeletonLegRight
+  species: Skeleton
+  organCategory: LegRight
+  skinOpenSteps: []
+  skinCloseSteps: []
+  tissueOpenSteps: []
+  tissueCloseSteps: []
+  organSteps: [DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: SkeletonHandLeft
+  species: Skeleton
+  organCategory: HandLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: []
+
+- type: bodyPartSurgerySteps
+  id: SkeletonHandRight
+  species: Skeleton
+  organCategory: HandRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: []
+
+- type: bodyPartSurgerySteps
+  id: SkeletonFootLeft
+  species: Skeleton
+  organCategory: FootLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: []
+
+- type: bodyPartSurgerySteps
+  id: SkeletonFootRight
+  species: Skeleton
+  organCategory: FootRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: []
+
+# Cyber limbs: attach/detach only, no skin/tissue steps
+- type: bodyPartSurgerySteps
+  id: CyberLimbArmLeft
+  species: Human
+  organCategory: ArmLeft
+  skinOpenSteps: []
+  skinCloseSteps: []
+  tissueOpenSteps: []
+  tissueCloseSteps: []
+  organSteps: [DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: CyberLimbArmRight
+  species: Human
+  organCategory: ArmRight
+  skinOpenSteps: []
+  skinCloseSteps: []
+  tissueOpenSteps: []
+  tissueCloseSteps: []
+  organSteps: [DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: CyberLimbLegLeft
+  species: Human
+  organCategory: LegLeft
+  skinOpenSteps: []
+  skinCloseSteps: []
+  tissueOpenSteps: []
+  tissueCloseSteps: []
+  organSteps: [DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: CyberLimbLegRight
+  species: Human
+  organCategory: LegRight
+  skinOpenSteps: []
+  skinCloseSteps: []
+  tissueOpenSteps: []
+  tissueCloseSteps: []
+  organSteps: [DetachLimb, AttachLimb]
+
+# Avali - same structure as Vox (arms with hands, legs with feet)
+- type: bodyPartSurgerySteps
+  id: AvaliTorso
+  species: Avali
+  organCategory: Torso
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: AvaliHead
+  species: Avali
+  organCategory: Head
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: AvaliArmLeft
+  species: Avali
+  organCategory: ArmLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: AvaliArmRight
+  species: Avali
+  organCategory: ArmRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: AvaliLegLeft
+  species: Avali
+  organCategory: LegLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: AvaliLegRight
+  species: Avali
+  organCategory: LegRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: AvaliHandLeft
+  species: Avali
+  organCategory: HandLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: AvaliHandRight
+  species: Avali
+  organCategory: HandRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: AvaliFootLeft
+  species: Avali
+  organCategory: FootLeft
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: AvaliFootRight
+  species: Avali
+  organCategory: FootRight
+  skinOpenSteps: [CreateIncision, ClampVessels, RetractSkin]
+  skinCloseSteps: [ReleaseRetractor, ReconnectVessels, SealSkin]
+  tissueOpenSteps: [CutBone, MarrowBleeding, RetractTissue]
+  tissueCloseSteps: [MaintainAlignment, SealBleedPoints, RepairBoneSection]
+  organSteps: [InsertOrgan]

@@ -134,6 +134,11 @@ namespace Content.Shared.Maps
         /// </summary>
         [DataField] public bool EditorHidden { get; private set; } = false;
 
+        /// <summary>
+        /// When true, this tile provides a sterile surface for surgery (reduces unsanitary penalty).
+        /// </summary>
+        [DataField("sterileSurgerySurface")] public bool SterileSurgerySurface { get; private set; }
+
         public void AssignTileId(ushort id)
         {
             TileId = id;

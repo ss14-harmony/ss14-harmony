@@ -1,3 +1,4 @@
+using Content.Shared.Containers;
 using Content.Shared.Humanoid;
 
 namespace Content.Shared.Body;
@@ -6,7 +7,7 @@ public abstract partial class SharedVisualBodySystem
 {
     private void InitializeInitial()
     {
-        SubscribeLocalEvent<VisualBodyComponent, MapInitEvent>(OnVisualMapInit, after: [typeof(InitialBodySystem)]);
+        SubscribeLocalEvent<VisualBodyComponent, MapInitEvent>(OnVisualMapInit, after: [typeof(ContainerFillSystem)]);
     }
 
     private void OnVisualMapInit(Entity<VisualBodyComponent> ent, ref MapInitEvent args)

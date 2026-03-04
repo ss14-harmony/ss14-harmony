@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 pathetic meowmeow <uhhadd@gmail.com>
+# SPDX-License-Identifier: MIT
+
 - type: markingsGroup
   id: None
   onlyGroupWhitelisted: true
@@ -30,6 +33,7 @@
   components:
   - type: Organ
     category: Torso
+    integrityCost: 0
   - type: Sprite
     state: torso
   - type: VisualOrgan
@@ -42,7 +46,7 @@
       - Chest
       - Tail
       - Overlay
-      - TailOverlay # Harmony: early merge
+      - TailOverlay
       - UndergarmentTop
       - UndergarmentBottom
       - Special
@@ -55,6 +59,7 @@
   components:
   - type: Organ
     category: Head
+    integrityCost: 0
   - type: Sprite
     state: head
   - type: VisualOrgan
@@ -82,8 +87,10 @@
   components:
   - type: Organ
     category: ArmLeft
-  - type: Sprite
-    state: l_arm
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, DetachLimb]
+    insertionProcedures: [AttachLimb]
   - type: VisualOrgan
     layer: enum.HumanoidVisualLayers.LArm
     data:
@@ -92,6 +99,8 @@
     markingData:
       layers:
       - LArm
+  - type: Sprite
+    state: l_arm
 
 - type: entity
   parent: OrganBase
@@ -101,8 +110,10 @@
   components:
   - type: Organ
     category: ArmRight
-  - type: Sprite
-    state: r_arm
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, DetachLimb]
+    insertionProcedures: [AttachLimb]
   - type: VisualOrgan
     layer: enum.HumanoidVisualLayers.RArm
     data:
@@ -111,6 +122,8 @@
     markingData:
       layers:
       - RArm
+  - type: Sprite
+    state: r_arm
 
 - type: entity
   parent: OrganBase
@@ -120,12 +133,14 @@
   components:
   - type: Organ
     category: HandLeft
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: [OrganInsertHemostat, OrganInsertSearing, OrganInsertRetractor]
   - type: HandOrgan
     handID: left
     data:
       location: Left
-  - type: Sprite
-    state: l_hand
   - type: VisualOrgan
     layer: enum.HumanoidVisualLayers.LHand
     data:
@@ -134,6 +149,8 @@
     markingData:
       layers:
       - LHand
+  - type: Sprite
+    state: l_hand
 
 - type: entity
   parent: OrganBase
@@ -143,12 +160,14 @@
   components:
   - type: Organ
     category: HandRight
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: [OrganInsertHemostat, OrganInsertSearing, OrganInsertRetractor]
   - type: HandOrgan
     handID: right
     data:
       location: Right
-  - type: Sprite
-    state: r_hand
   - type: VisualOrgan
     layer: enum.HumanoidVisualLayers.RHand
     data:
@@ -157,6 +176,8 @@
     markingData:
       layers:
       - RHand
+  - type: Sprite
+    state: r_hand
 
 - type: entity
   parent: OrganBase
@@ -166,8 +187,10 @@
   components:
   - type: Organ
     category: LegLeft
-  - type: Sprite
-    state: l_leg
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [DetachLimb]
+    insertionProcedures: [AttachLimb]
   - type: VisualOrgan
     layer: enum.HumanoidVisualLayers.LLeg
     data:
@@ -176,6 +199,8 @@
     markingData:
       layers:
       - LLeg
+  - type: Sprite
+    state: l_leg
 
 - type: entity
   parent: OrganBase
@@ -185,8 +210,10 @@
   components:
   - type: Organ
     category: LegRight
-  - type: Sprite
-    state: r_leg
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [DetachLimb]
+    insertionProcedures: [AttachLimb]
   - type: VisualOrgan
     layer: enum.HumanoidVisualLayers.RLeg
     data:
@@ -195,6 +222,8 @@
     markingData:
       layers:
       - RLeg
+  - type: Sprite
+    state: r_leg
 
 - type: entity
   parent: OrganBase
@@ -204,8 +233,10 @@
   components:
   - type: Organ
     category: FootLeft
-  - type: Sprite
-    state: l_foot
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [DetachFoot]
+    insertionProcedures: [OrganInsertHemostat, OrganInsertSearing, OrganInsertRetractor]
   - type: VisualOrgan
     layer: enum.HumanoidVisualLayers.LFoot
     data:
@@ -214,6 +245,8 @@
     markingData:
       layers:
       - LFoot
+  - type: Sprite
+    state: l_foot
 
 - type: entity
   parent: OrganBase
@@ -223,8 +256,10 @@
   components:
   - type: Organ
     category: FootRight
-  - type: Sprite
-    state: r_foot
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [DetachFoot]
+    insertionProcedures: [OrganInsertHemostat, OrganInsertSearing, OrganInsertRetractor]
   - type: VisualOrgan
     layer: enum.HumanoidVisualLayers.RFoot
     data:
@@ -233,6 +268,8 @@
     markingData:
       layers:
       - RFoot
+  - type: Sprite
+    state: r_foot
 
 - type: entity
   parent: OrganBase
@@ -243,6 +280,10 @@
   - type: GibbableOrgan
   - type: Organ
     category: Brain
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: [OrganInsertHemostat, OrganInsertSearing, OrganInsertRetractor]
   - type: Sprite
     layers:
     - state: brain
@@ -269,10 +310,10 @@
   - type: GibbableOrgan
   - type: Organ
     category: Eyes
-  - type: Sprite
-    layers:
-    - state: eyeball-l
-    - state: eyeball-r
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: [OrganInsertHemostat, OrganInsertSearing, OrganInsertRetractor]
   - type: VisualOrgan
     layer: enum.HumanoidVisualLayers.Eyes
     data:
@@ -282,6 +323,10 @@
     markingData:
       layers:
       - Eyes
+  - type: Sprite
+    layers:
+    - state: eyeball-l
+    - state: eyeball-r
 
 - type: entity
   parent: OrganBase
@@ -292,6 +337,10 @@
   - type: GibbableOrgan
   - type: Organ
     category: Tongue
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: [OrganInsertHemostat, OrganInsertSearing, OrganInsertRetractor]
   - type: Sprite
     layers:
     - state: tongue
@@ -305,6 +354,10 @@
   - type: GibbableOrgan
   - type: Organ
     category: Appendix
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: [OrganInsertHemostat, OrganInsertSearing, OrganInsertRetractor]
   - type: Sprite
     layers:
     - state: appendix
@@ -318,6 +371,10 @@
   - type: GibbableOrgan
   - type: Organ
     category: Ears
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: [OrganInsertHemostat, OrganInsertSearing, OrganInsertRetractor]
   - type: Sprite
     layers:
     - state: ears
@@ -331,6 +388,10 @@
   - type: GibbableOrgan
   - type: Organ
     category: Lungs
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: [OrganInsertHemostat, OrganInsertSearing, OrganInsertRetractor]
   - type: Lung
   - type: Metabolizer
     stages: [ Respiration ]
@@ -355,6 +416,10 @@
   - type: GibbableOrgan
   - type: Organ
     category: Heart
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: [OrganInsertHemostat, OrganInsertSearing, OrganInsertRetractor]
   - type: Sprite
     layers:
     - state: heart-on
@@ -371,6 +436,10 @@
   - type: GibbableOrgan
   - type: Organ
     category: Stomach
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: [OrganInsertHemostat, OrganInsertSearing, OrganInsertRetractor]
   - type: Stomach
   - type: SolutionContainerManager
     solutions:
@@ -394,6 +463,10 @@
   - type: GibbableOrgan
   - type: Organ
     category: Liver
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: [OrganInsertHemostat, OrganInsertSearing, OrganInsertRetractor]
   - type: Sprite
     layers:
     - state: liver
@@ -412,6 +485,10 @@
   - type: GibbableOrgan
   - type: Organ
     category: Kidneys
+    integrityCost: 0
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: [OrganInsertHemostat, OrganInsertSearing, OrganInsertRetractor]
   - type: Sprite
     layers:
       - state: kidney-l
@@ -422,11 +499,15 @@
     maxReagents: 5
 
 - type: entity
-  id: OrganSpriteHumanInternal
-  abstract: true
+  parent: [ OrganBaseHeart, OrganSpriteHumanInternal ]
+  id: OrganBiosyntheticHeart
+  name: biosynthetic heart
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Human/organs.rsi
+  - type: Organ
+    category: Heart
+    integrityCost: 1
+  - type: Item
+    heldPrefix: biosynthetic heart
 
 - type: entity
   id: OrganBaseHeadSexed
@@ -435,6 +516,7 @@
   - type: Sprite
     state: head_m
   - type: VisualOrgan
+    layer: enum.HumanoidVisualLayers.Head
     data:
       state: head_m
     sexStateOverrides:
@@ -448,8 +530,16 @@
   - type: Sprite
     state: torso_m
   - type: VisualOrgan
+    layer: enum.HumanoidVisualLayers.Chest
     data:
       state: torso_m
     sexStateOverrides:
       Male: torso_m
       Female: torso_f
+
+- type: entity
+  id: OrganSpriteHumanInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi

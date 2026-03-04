@@ -172,6 +172,8 @@
   id: BaseSpeciesMobOrganic
   save: false
   components:
+  - type: IntegrityCapacity
+    maxIntegrity: 6
   - type: Hunger
   - type: Thirst
   - type: Barotrauma

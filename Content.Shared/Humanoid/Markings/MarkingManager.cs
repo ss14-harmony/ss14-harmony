@@ -2,6 +2,8 @@ using System.Collections.Frozen;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.Body;
+using Content.Shared.Containers;
+using Content.Shared.EntityTable.EntitySelectors;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Prototypes;
 
@@ -228,10 +230,35 @@ public sealed class MarkingManager
         var speciesPrototype = _prototype.Index(species);
         var appearancePrototype = _prototype.Index(speciesPrototype.DollPrototype);
 
-        if (!appearancePrototype.TryGetComponent<InitialBodyComponent>(out var initialBody, _component))
+        if (!appearancePrototype.TryGetComponent<EntityTableContainerFillComponent>(out var fill, _component))
             return new();
 
-        return initialBody.Organs;
+        var result = new Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>();
+        if (!fill.Containers.TryGetValue("body_organs", out var bodySelector))
+            return result;
+
+        CollectOrgansFromSelector(bodySelector, result);
+        return result;
+    }
+
+    private void CollectOrgansFromSelector(EntityTableSelector selector, Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>> result)
+    {
+        if (selector is EntSelector entSel)
+        {
+            var proto = _prototype.Index(entSel.Id);
+            if (proto.TryGetComponent<OrganComponent>(out var organ, _component) && organ.Category is { } category)
+                result[category] = new EntProtoId<OrganComponent>(entSel.Id.Id);
+            else if (proto.TryGetComponent<EntityTableContainerFillComponent>(out var fill, _component))
+            {
+                foreach (var (_, containerSel) in fill.Containers)
+                    CollectOrgansFromSelector(containerSel, result);
+            }
+        }
+        else if (selector is AllSelector allSel)
+        {
+            foreach (var child in allSel.Children)
+                CollectOrgansFromSelector(child, result);
+        }
     }
 
     public Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData> GetMarkingData(ProtoId<SpeciesPrototype> species)

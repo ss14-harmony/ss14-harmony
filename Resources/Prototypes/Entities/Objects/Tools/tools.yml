@@ -100,6 +100,7 @@
   - type: Tag
     tags:
     - Wrench
+    - AnchoringTool
   - type: Sprite
     sprite: Objects/Tools/wrench.rsi
     state: icon
@@ -246,6 +247,8 @@
   - type: Tag
     tags:
     - Powerdrill
+    - AnchoringTool
+    - Screwdriver
   - type: Sprite
     sprite: Objects/Tools/drill.rsi
     state: drill_screw

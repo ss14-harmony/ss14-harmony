@@ -9,7 +9,7 @@ public sealed partial class BodySystem
         if (!_bodyQuery.Resolve(ent, ref ent.Comp))
             return false;
 
-        foreach (var organ in ent.Comp.Organs?.ContainedEntities ?? [])
+        foreach (var organ in GetAllOrgans(ent))
         {
             if (TryComp<TComp>(organ, out var comp))
                 organs.Add((organ, comp));

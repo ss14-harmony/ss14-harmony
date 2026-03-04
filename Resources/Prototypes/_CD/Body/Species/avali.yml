@@ -80,28 +80,16 @@
           32:
             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi
             state: mask
-  - type: InitialBody
-    organs:
-      Torso: OrganAvaliTorso
-      Head: OrganAvaliHead
-      ArmLeft: OrganAvaliArmLeft
-      ArmRight: OrganAvaliArmRight
-      HandLeft: OrganAvaliHandLeft
-      HandRight: OrganAvaliHandRight
-      LegLeft: OrganAvaliLegLeft
-      LegRight: OrganAvaliLegRight
-      FootLeft: OrganAvaliFootLeft
-      FootRight: OrganAvaliFootRight
-      Brain: OrganAvaliBrain
-      Eyes: OrganAvaliEyes
-      Tongue: OrganAvaliTongue
-      Appendix: OrganAvaliAppendix
-      Ears: OrganAvaliEars
-      Lungs: OrganAvaliLungs
-      Heart: OrganAvaliHeart
-      Stomach: OrganAvaliStomach
-      Liver: OrganAvaliLiver
-      Kidneys: OrganAvaliKidneys
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganAvaliTorso
+        - id: OrganAvaliHead
+        - id: OrganAvaliArmLeft
+        - id: OrganAvaliArmRight
+        - id: OrganAvaliLegLeft
+        - id: OrganAvaliLegRight
   - type: HumanoidProfile
     species: Avali
 
@@ -211,18 +199,58 @@
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganAvaliExternal ]
   id: OrganAvaliTorso
+  components:
+  - type: BodyPart
+    containerId: internal_organs
+  - type: EntityTableContainerFill
+    containers:
+      internal_organs: !type:AllSelector
+        children:
+        - id: OrganAvaliLungs
+        - id: OrganAvaliHeart
+        - id: OrganAvaliStomach
+        - id: OrganAvaliLiver
+        - id: OrganAvaliKidneys
+        - id: OrganAvaliAppendix
 
 - type: entity
   parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganAvaliExternal ]
   id: OrganAvaliHead
+  components:
+  - type: BodyPart
+    containerId: head_organs
+  - type: EntityTableContainerFill
+    containers:
+      head_organs: !type:AllSelector
+        children:
+        - id: OrganAvaliBrain
+        - id: OrganAvaliEyes
+        - id: OrganAvaliTongue
+        - id: OrganAvaliEars
 
 - type: entity
   parent: [ OrganBaseArmLeft, OrganAvaliExternal ]
   id: OrganAvaliArmLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganAvaliHandLeft
 
 - type: entity
   parent: [ OrganBaseArmRight, OrganAvaliExternal ]
   id: OrganAvaliArmRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganAvaliHandRight
 
 - type: entity
   parent: [ OrganBaseHandLeft, OrganAvaliExternal ]
@@ -235,10 +263,26 @@
 - type: entity
   parent: [ OrganBaseLegLeft, OrganAvaliExternal ]
   id: OrganAvaliLegLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganAvaliFootLeft
 
 - type: entity
   parent: [ OrganBaseLegRight, OrganAvaliExternal ]
   id: OrganAvaliLegRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganAvaliFootRight
 
 - type: entity
   parent: [ OrganBaseFootLeft, OrganAvaliExternal ]

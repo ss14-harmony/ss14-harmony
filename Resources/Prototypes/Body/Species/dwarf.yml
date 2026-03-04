@@ -10,28 +10,16 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-  - type: InitialBody
-    organs:
-      Torso: OrganHumanTorso
-      Head: OrganHumanHead
-      ArmLeft: OrganHumanArmLeft
-      ArmRight: OrganHumanArmRight
-      HandRight: OrganHumanHandRight
-      HandLeft: OrganHumanHandLeft
-      LegLeft: OrganHumanLegLeft
-      LegRight: OrganHumanLegRight
-      FootLeft: OrganHumanFootLeft
-      FootRight: OrganHumanFootRight
-      Brain: OrganHumanBrain
-      Eyes: OrganHumanEyes
-      Tongue: OrganHumanTongue
-      Appendix: OrganHumanAppendix
-      Ears: OrganHumanEars
-      Lungs: OrganHumanLungs
-      Heart: OrganDwarfHeart
-      Stomach: OrganDwarfStomach
-      Liver: OrganDwarfLiver
-      Kidneys: OrganHumanKidneys
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganDwarfTorso
+        - id: OrganHumanHead
+        - id: OrganHumanArmLeft
+        - id: OrganHumanArmRight
+        - id: OrganHumanLegLeft
+        - id: OrganHumanLegRight
   - type: HumanoidProfile
     species: Dwarf
   - type: ScaleVisuals
@@ -72,6 +60,21 @@
   id: OrganDwarf
   abstract: true
   suffix: Dwarf
+
+- type: entity
+  parent: OrganHumanTorso
+  id: OrganDwarfTorso
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      internal_organs: !type:AllSelector
+        children:
+        - id: OrganHumanLungs
+        - id: OrganDwarfHeart
+        - id: OrganDwarfStomach
+        - id: OrganDwarfLiver
+        - id: OrganHumanKidneys
+        - id: OrganHumanAppendix
 
 - type: entity
   id: OrganDwarfMetabolizer
