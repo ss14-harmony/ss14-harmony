@@ -144,7 +144,8 @@ public sealed class PrototypeSaveTest
                         {
                             // BodyPartComponent triggers BodySystem.OnBodyPartInit which adds ContainerManagerComponent
                             // and SurgeryLayerComponent. These are expected for body parts.
-                            var isBodyPartGainedComponent = entityMan.HasComponent<BodyPartComponent>(uid)
+                            var bodyPartCompName = compFact.GetComponentName(typeof(BodyPartComponent));
+                            var isBodyPartGainedComponent = prototype.Components.ContainsKey(bodyPartCompName)
                                 && (compName == "ContainerContainer" || compName == "SurgeryLayer");
                             if (!isBodyPartGainedComponent)
                                 Assert.Fail($"Prototype {prototype.ID} gains a component on spawn: {compName}");
