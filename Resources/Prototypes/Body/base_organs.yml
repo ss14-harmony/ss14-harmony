@@ -42,6 +42,7 @@
       - Chest
       - Tail
       - Overlay
+      - TailOverlay # Harmony: early merge
       - UndergarmentTop
       - UndergarmentBottom
       - Special
