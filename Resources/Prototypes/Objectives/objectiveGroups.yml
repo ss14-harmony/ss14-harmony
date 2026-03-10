@@ -36,7 +36,7 @@
   id: TraitorObjectiveGroupState
   weights:
     EscapeShuttleObjective: 0.4 #Harmony change: 1 -> 0.4
-    DieObjective: 0.15 # Harmony. Change: 0.05 -> 0.15
+    DieObjective: 0.15 # Harmony. Change: 0.2 -> 0.15
     TraitorSurviveObjective: 0.6 #Harmony objective
     #HijackShuttleObjective: 0.02
 
@@ -89,7 +89,6 @@
     AmePartFlatpackStealObjective: 1
     ExpeditionsCircuitboardStealObjective: 1            #sup
     CargoShuttleCircuitboardStealObjective: 1
-    ClothingEyesHudBeerStealObjective: 0.5              #srv, beer goggles less common cause its so easy
     BibleStealObjective: 1
     ClothingNeckGoldmedalStealObjective: 1              #other
     ClothingNeckClownmedalStealObjective: 0.5
