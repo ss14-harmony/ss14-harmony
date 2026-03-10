@@ -17,7 +17,7 @@
   roles:
   - Bartender
   - Botanist
-  - Boxer
+  - Boxer # Harmony
   - Chaplain
   - Chef
   - Clown
@@ -30,7 +30,7 @@
   - Passenger
   - Reporter
   - Visitor
-  - Zookeeper
+  - Zookeeper # Harmony
   - ServiceWorker
 
 - type: department
@@ -139,8 +139,8 @@
   color: "#9FED58"
   weight: 10
   roles:
-  - Boxer
+  - Boxer # Harmony
   - Reporter
-  - Zookeeper
+  - Zookeeper # Harmony
   - Psychologist
   primary: false

@@ -1,6 +1,6 @@
 ﻿using System.Numerics;
-using Content.Server.Maps;
 using Content.Shared._Harmony.EntitySelector;
+using Content.Shared.Maps;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Harmony.Maps.Modifications;
@@ -15,7 +15,7 @@ namespace Content.Server._Harmony.Maps.Modifications;
 ///
 /// </remarks>
 [Prototype]
-public sealed class MapModificationPrototype : IPrototype
+public sealed partial class MapModificationPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;

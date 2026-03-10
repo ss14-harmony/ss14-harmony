@@ -22,7 +22,6 @@ using Content.Shared.Mindshield.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Popups;
-using Content.Shared.Preferences;
 using Content.Shared.Roles.Components;
 using Content.Shared.Zombies;
 using Robust.Server.Player;
@@ -141,7 +140,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
         DebugTools.AssertNotNull(targetRole, "Blood brother role was null after assigning it.");
 
         convertedComp.Brother = entity;
-        targetRole!.Value.Comp2.Brother = entity;
+        targetRole.Value.Comp2.Brother = entity;
         Dirty(targetRole.Value);
 
         if (!_objectivesSystem.TryCreateObjective((targetMindId, targetMind),
@@ -254,7 +253,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
             return false;
         }
 
-        if (!HasComp<HumanoidAppearanceComponent>(target))
+        if (!HasComp<HumanoidProfileComponent>(target))
         {
             errorMessage = "blood-brother-convert-failed-no-mind";
             return false;
@@ -277,7 +276,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
             _preferencesManager.TryGetCachedPreferences(targetMind.UserId.Value, out var preferences))
         {
 
-            var profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
+            var profile = preferences.SelectedCharacter;
 
             if (profile.AntagPreferences.Contains(entity.Comp.RequiredAntagPreference!.Value) != true)
             {
