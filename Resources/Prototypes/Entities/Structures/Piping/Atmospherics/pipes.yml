@@ -146,9 +146,12 @@
     graph: GasPipe
     node: straight
   - type: Item
-    storedSprite:
-      sprite: Structures/Piping/Atmospherics/pipe.rsi
-      state: storageStraight
+    # Begin Harmony Changes
+    # storedSprite:
+    #  sprite: Structures/Piping/Atmospherics/pipe.rsi
+    #  state: storageStraight
+    # End Harmony Changes
+    sprite: _Harmony/Structures/Piping/Atmospherics/straight.rsi
     shape:
     - 0,0,0,2
   - type: MeleeWeapon
@@ -199,10 +202,13 @@
     shape:
     - 0,0,1,0
     - 1,1,1,1
-    heldPrefix: Bend
-    storedSprite:
-      sprite: Structures/Piping/Atmospherics/pipe.rsi
-      state: storageBend
+    # Begin Harmony Changes
+    # heldPrefix: Bend
+    # storedSprite:
+    #  sprite: Structures/Piping/Atmospherics/pipe.rsi
+    #  state: storageBend
+    # End Harmony Changes
+    sprite: _Harmony/Structures/Piping/Atmospherics/bend.rsi
   - type: MeleeWeapon
     wideAnimationRotation: 180
     attackRate: 1
@@ -253,10 +259,13 @@
     graph: GasPipe
     node: tjunction
   - type: Item
-    heldPrefix: TJunction
-    storedSprite:
-      sprite: Structures/Piping/Atmospherics/pipe.rsi
-      state: storageTJunction
+  # Begin Harmony Changes
+  #  heldPrefix: TJunction
+  #  storedSprite:
+  #    sprite: Structures/Piping/Atmospherics/pipe.rsi
+  #    state: storageTJunction
+  # End Harmony Changes
+    sprite: _Harmony/Structures/Piping/Atmospherics/tjunction.rsi
   - type: MeleeWeapon
     wideAnimationRotation: 90
     attackRate: 0.75
@@ -305,10 +314,13 @@
     graph: GasPipe
     node: fourway
   - type: Item
-    heldPrefix: Fourway
-    storedSprite:
-      sprite: Structures/Piping/Atmospherics/pipe.rsi
-      state: storageFourway
+  # Begin Harmony Changes
+  #  heldPrefix: Fourway
+  #  storedSprite:
+  #    sprite: Structures/Piping/Atmospherics/pipe.rsi
+  #    state: storageFourway
+  # End Harmony Changes
+    sprite: _Harmony/Structures/Piping/Atmospherics/fourway.rsi
   - type: MeleeWeapon
     wideAnimationRotation: 90
     attackRate: 0.75
