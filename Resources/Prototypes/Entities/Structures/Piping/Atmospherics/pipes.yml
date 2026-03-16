@@ -158,11 +158,13 @@
         Blunt: 8
     soundHit:
       collection: MetalThud # this NEEDS to changed to the metal pipe falling sound effect on april first every year
+  # Begin Harmony Changes
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       types:
         Blunt: 8
+  # End Harmony Changes
   - type: GuideHelp
     guides:
     - Pipes
@@ -213,11 +215,13 @@
     damage:
       types:
         Blunt: 8 # Woe, pipe be upon ye!
+  # Begin Harmony Changes
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       types:
         Blunt: 8
+  # End Harmony Changes
   - type: GuideHelp
     guides:
     - Pipes
@@ -261,11 +265,13 @@
         Blunt: 10
     soundHit:
       collection: MetalThud
+  # Begin Harmony Changes
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       types:
         Blunt: 8
+  # End Harmony Changes
   - type: GuideHelp
     guides:
     - Pipes
@@ -311,11 +317,13 @@
         Blunt: 10
     soundHit:
       collection: MetalThud
+  # Begin Harmony Changes
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       types:
         Blunt: 8
+  # End Harmony Changes
   - type: GuideHelp
     guides:
     - Pipes
