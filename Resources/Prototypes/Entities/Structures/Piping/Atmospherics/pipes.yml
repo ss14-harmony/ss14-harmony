@@ -158,6 +158,11 @@
         Blunt: 8
     soundHit:
       collection: MetalThud # this NEEDS to changed to the metal pipe falling sound effect on april first every year
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 8
   - type: GuideHelp
     guides:
     - Pipes
@@ -208,6 +213,11 @@
     damage:
       types:
         Blunt: 8 # Woe, pipe be upon ye!
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 8
   - type: GuideHelp
     guides:
     - Pipes
@@ -251,6 +261,11 @@
         Blunt: 10
     soundHit:
       collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 8
   - type: GuideHelp
     guides:
     - Pipes
@@ -296,6 +311,11 @@
         Blunt: 10
     soundHit:
       collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 8
   - type: GuideHelp
     guides:
     - Pipes
