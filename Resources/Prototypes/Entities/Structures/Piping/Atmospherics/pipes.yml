@@ -150,8 +150,8 @@
     # storedSprite:
     #  sprite: Structures/Piping/Atmospherics/pipe.rsi
     #  state: storageStraight
-    # End Harmony Changes
     sprite: _Harmony/Structures/Piping/Atmospherics/straight.rsi
+    # End Harmony Changes
     shape:
     - 0,0,0,2
   - type: MeleeWeapon
@@ -207,8 +207,8 @@
     # storedSprite:
     #  sprite: Structures/Piping/Atmospherics/pipe.rsi
     #  state: storageBend
-    # End Harmony Changes
     sprite: _Harmony/Structures/Piping/Atmospherics/bend.rsi
+    # End Harmony Changes
   - type: MeleeWeapon
     wideAnimationRotation: 180
     attackRate: 1
@@ -264,8 +264,8 @@
   #  storedSprite:
   #    sprite: Structures/Piping/Atmospherics/pipe.rsi
   #    state: storageTJunction
-  # End Harmony Changes
     sprite: _Harmony/Structures/Piping/Atmospherics/tjunction.rsi
+  # End Harmony Changes
   - type: MeleeWeapon
     wideAnimationRotation: 90
     attackRate: 0.75
@@ -319,8 +319,8 @@
   #  storedSprite:
   #    sprite: Structures/Piping/Atmospherics/pipe.rsi
   #    state: storageFourway
-  # End Harmony Changes
     sprite: _Harmony/Structures/Piping/Atmospherics/fourway.rsi
+  # End Harmony Changes
   - type: MeleeWeapon
     wideAnimationRotation: 90
     attackRate: 0.75
