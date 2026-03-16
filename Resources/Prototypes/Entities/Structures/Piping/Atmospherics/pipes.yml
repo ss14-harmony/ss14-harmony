@@ -166,7 +166,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 8
+        Blunt: 4
   # End Harmony Changes
   - type: GuideHelp
     guides:
@@ -226,7 +226,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 8
+        Blunt: 4
   # End Harmony Changes
   - type: GuideHelp
     guides:
@@ -279,7 +279,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 8
+        Blunt: 4
   # End Harmony Changes
   - type: GuideHelp
     guides:
@@ -334,7 +334,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 8
+        Blunt: 4
   # End Harmony Changes
   - type: GuideHelp
     guides:
