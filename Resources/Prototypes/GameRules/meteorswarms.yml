@@ -18,8 +18,10 @@
   id: MeteorSwarmMildTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
-    - !type:NestedSelector
-        tableId: MeteorSwarmDustEventsTable
+  # harmony change start: remove space dust
+  # - !type:NestedSelector
+  #      tableId: MeteorSwarmDustEventsTable
+  # harmony change end
     - !type:NestedSelector
         tableId: MeteorSwarmSmallChanceEventsTable
 
@@ -27,8 +29,10 @@
   id: BasicMeteorSwarmEventsTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
-    - !type:NestedSelector
-        tableId: MeteorSwarmDustEventsTable
+  # harmony change start: remove space dust
+  # - !type:NestedSelector
+  #     tableId: MeteorSwarmDustEventsTable
+  # harmony change end
     - id: GameRuleMeteorSwarmSmall
     - id: GameRuleMeteorSwarmMedium
     - id: GameRuleMeteorSwarmLarge
