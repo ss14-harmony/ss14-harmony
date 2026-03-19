@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseStorageItem
+  parent: [BaseStorageItem, ContentsExplosionResistanceBase]
   id: BriefcaseBase
   description: Useful for carrying items in your hands.
   abstract: true
@@ -16,6 +16,7 @@
   # Start of Harmony Changes: NT Laminated Papers & Higher Quality Briefcases
   - type: ExplosionResistance
     damageCoefficient: 0.8
+    worn: False
   - type: Lock
   - type: LockedStorage
   # End of Harmony Changes

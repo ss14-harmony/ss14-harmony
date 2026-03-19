@@ -19,7 +19,7 @@
     canExtinguish: true
     damage:
       types:
-        Heat: 5 # Harmony Change: NT Laminated Papers & Higher Quality Briefcases 1 -> 5
+        Heat: 1
   - type: FireVisuals
     sprite: Effects/fire.rsi
     normalState: fire
