@@ -19,7 +19,7 @@
     canExtinguish: true
     damage:
       types:
-        Heat: 1
+        Heat: 5 # Harmony Change: NT Laminated Papers & Higher Quality Briefcases 1 -> 5
   - type: FireVisuals
     sprite: Effects/fire.rsi
     normalState: fire
@@ -34,7 +34,8 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
     - trigger:
-        !type:DamageTrigger
+        !type:DamageTypeTrigger # Harmony Fix: NT Laminated Papers & Higher Quality Briefcases... Wrong DamageTrigger Notified Upstream!
+        damageType: Heat
         damage: 15
       behaviors:
       - !type:SpawnEntitiesBehavior

@@ -13,6 +13,12 @@
     damage:
       types:
         Blunt: 8
+  # Start of Harmony Changes: NT Laminated Papers & Higher Quality Briefcases
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: Lock
+  - type: LockedStorage
+  # End of Harmony Changes
 
 - type: entity
   parent: BriefcaseBase
