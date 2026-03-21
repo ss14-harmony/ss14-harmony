@@ -15,3 +15,6 @@ lobby-state-background-hearscargo-artist = Baxtersclaws
 
 lobby-state-background-dragonencounter-title = Dragon Encounter
 lobby-state-background-dragonencounter-artist = Mofi
+
+lobby-state-background-unauthorizedentry-title = Unauthorized Entry
+lobby-state-background-unauthorizedentry-artist = Shadarrius
