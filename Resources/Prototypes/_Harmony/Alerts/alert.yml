@@ -1,0 +1,5 @@
+﻿- type: alert
+  id: ZombieHorde
+  icons: [ /Textures/Interface/Actions/zombie-turn.png ]
+  name: alerts-zombie-horde-name
+  description: alerts-zombie-horde-desc

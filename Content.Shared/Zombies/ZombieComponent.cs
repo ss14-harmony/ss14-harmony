@@ -1,3 +1,4 @@
+using Content.Shared.Alert;
 using Content.Shared.Body;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Chemistry.Components;
@@ -45,6 +46,11 @@ public sealed partial class ZombieComponent : Component
 
     [ViewVariables(VVAccess.ReadWrite)]
     public float ZombieMovementSpeedDebuff = 0.70f;
+
+    // Harmony Start
+    [ViewVariables(VVAccess.ReadWrite)]
+    public ProtoId<AlertPrototype> ZombieHordeAlert = "ZombieHorde";
+    // Harmony end
 
     /// <summary>
     /// The skin color of the zombie
