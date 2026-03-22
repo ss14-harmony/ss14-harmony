@@ -136,6 +136,7 @@
       min: 4
       max: 7
       playerRatio: 7
+      lateJoinAdditional: true
       briefing:
         text: conspirator-role-greeting
         color: "#724F29"
