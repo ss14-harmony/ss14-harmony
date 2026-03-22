@@ -33,3 +33,9 @@
   background: /Textures/_Harmony/LobbyScreens/Dragon-Encounter.webp
   title: lobby-state-background-dragonencounter-title
   artist: lobby-state-background-dragonencounter-artist
+  
+- type: lobbyBackground
+  id: decompressing
+  background: /Textures/_Harmony/LobbyScreens/decompressing.webp
+  title: lobby-state-background-decompressing-title
+  artist: lobby-state-background-decompressing-artist
