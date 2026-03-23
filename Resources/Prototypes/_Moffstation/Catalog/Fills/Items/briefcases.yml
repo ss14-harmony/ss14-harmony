@@ -1,0 +1,57 @@
+# Syndicate dead drop
+- type: entity
+  parent: MarkerBase
+  id: SyndieDeadDropSpawner
+  name: Syndicate High Command # Used for radio announcement
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTableSpawner
+    table: !type:AllSelector
+      children:
+      - id: BriefcaseSyndieDeadDrop
+      - id: EffectFlashRedspace
+
+- type: entity
+  parent: [ BaseSubfloorAnchorStorageAnchored, BriefcaseSyndie, BaseSyndicateContraband ]
+  id: BriefcaseSyndieDeadDrop
+  name: syndicate briefcase
+  suffix: Dead Drop, Do Not Map
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:GroupSelector
+        rolls: !type:RangeNumberSelector
+          range: 2, 3
+        children:
+        # Weapons
+        - id: EnergyDaggerLoud
+        - id: WeaponPistolViper
+        - id: WeaponRevolverPython
+        # Grenades
+        - id: SmokeGrenade
+        - id: EmpGrenade
+        - id: C4
+        - id: SingularityGrenade
+        # Clothing
+        - id: ClothingShoesSkatesSyndicate
+        - id: ClothingShoesBootsMagSyndie
+        - id: SyndicateIDCardAgent
+        - id: ClothingMaskGasSyndicate
+        # Tools
+        - id: ChameleonProjector
+        - id: CameraBug
+        - id: SyndicateJawsOfLife
+        - id: RadioJammer
+        - id: AccessBreaker
+        - id: CyberPen
+        - id: EncryptionKeyBinarySyndicate
+        # Chemicals
+        - id: Stimpack
+        - id: CombatMedipen
+        - id: VestineChemistryVial
+        - id: CigPackSyndicate
+        # Fun
+        - id: SyndicatePersonalAI
+        - id: RubberStampSyndicate
+        - id: UplinkLighterBox
+        - id: BalloonOperative
