@@ -1,0 +1,56 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseMagazineBoxLightPistol
+  name: ammunition box (.30 special)
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeLightPistol
+    proto: CartridgeLightPistol
+    capacity: 80
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Boxes/light_pistol.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  parent: BaseMagazineBoxLightPistol
+  id: MagazineBoxLightPistol
+  name: ammunition box (.30 Special)
+  description: A cardboard box of .30 Special rounds. Intended to hold general-purpose kinetic ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightPistol
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: BaseMagazineBoxPistol
+  id: MagazineBoxLightPistolPractice
+  name: ammunition box (.30 Special practice)
+  description: A cardboard box of .30 Special rounds. Intended to hold harmless practice ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightPistolPractice
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: practice

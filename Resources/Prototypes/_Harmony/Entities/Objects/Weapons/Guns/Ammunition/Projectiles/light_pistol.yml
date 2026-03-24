@@ -1,0 +1,22 @@
+- type: entity
+  parent: BaseBullet
+  id: BulletLightPistol
+  categories: [ HideSpawnMenu ]
+  name: bullet (.30 Special)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 10
+
+- type: entity
+  parent: BaseBulletPractice
+  id: BulletLightPistolPractice
+  categories: [ HideSpawnMenu ]
+  name: bullet (.30 Special practice)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 1.5
+

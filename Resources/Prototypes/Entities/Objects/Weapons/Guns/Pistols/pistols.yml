@@ -189,31 +189,81 @@
   - type: StaticPrice
     price: 1500
 
+#Change the mk58 to have a 20rnd fixed magazine using LightPistol ammo instead of a removable pistol magazine.
+#- type: entity
+#  name: mk 58
+#  parent: [BaseWeaponPistol, BaseSecurityContraband]
+#  id: WeaponPistolMk58
+#  description: Designed by Nanotrasen’s Small Arms Division, the Mk58 is a conventional semi-automatic pistol with a simple recoil-operated action and excellent reliability. The standard sidearm of Nanotrasen’s station security and emergency response teams. Feeds from .35 pistol magazines.
+#  components:
+#  - type: Sprite
+#    sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+#    layers:
+#    - state: base
+#      map: ["enum.GunVisualLayers.Base"]
+#    - state: mag-0
+#      map: ["enum.GunVisualLayers.Mag"]
+#  - type: Clothing
+#    sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+#  - type: Item
+#    storedOffset: 0,-2
+#  - type: Gun
+#    fireRate: 5
+#    availableModes:
+#    - SemiAuto
+#    soundGunshot:
+#      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+#  - type: StealTarget
+#    stealGroup: OfficerHandgun
+
 - type: entity
   name: mk 58
-  parent: [BaseWeaponPistol, BaseSecurityContraband]
+  parent: [BaseItem, BaseSecurityContraband]
   id: WeaponPistolMk58
-  description: Designed by Nanotrasen’s Small Arms Division, the Mk58 is a conventional semi-automatic pistol with a simple recoil-operated action and excellent reliability. The standard sidearm of Nanotrasen’s station security and emergency response teams. Feeds from .35 pistol magazines.
+  description: Designed by Nanotrasen’s Small Arms Division, the Mk58 is a semi-automatic pistol with a simple recoil-operated action and excellent reliability. The standard sidearm of Nanotrasen’s station security and emergency response teams. Feeds from a fixed 20-round .30 special magazine.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
     layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-0
-      map: ["enum.GunVisualLayers.Mag"]
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+    storedOffset: 0,-4
+  - type: Tag
+    tags:
+    - Sidearm
   - type: Clothing
     sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
-  - type: Item
-    storedOffset: 0,-2
+    quickEquip: false
+    slots:
+    - suitStorage
+    - Belt
   - type: Gun
     fireRate: 5
+    selectedMode: SemiAuto
     availableModes:
-    - SemiAuto
+      - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+  - type: AmmoCounter
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeLightPistol
+    capacity: 20
+    proto: CartridgeLightPistol
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
   - type: StealTarget
     stealGroup: OfficerHandgun
+# End harmony changes
 
 - type: entity
   name: N1984

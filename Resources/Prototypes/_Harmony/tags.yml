@@ -40,3 +40,18 @@
 
 - type: Tag
   id: SpeedLoaderRifle
+
+# Used for .30 special ammo
+- type: Tag
+  id: CartridgeLightPistol
+
+# Used for the .30 special Drozd magazines
+- type: Tag
+  id: MagazineLightPistolSubMachineGun
+
+#Used for .27 Full-Power ammo
+- type: Tag
+  id: CartridgeRifleFullPower
+
+- type: Tag
+  id: MagazineRifleFullPower

@@ -1,0 +1,58 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseMagazineBoxRifleFullPower
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeRifleFullPower
+    proto: CartridgeRifleFullPower
+    capacity: 30
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Boxes/rifle_fullpower.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: false
+  - type: Appearance
+
+# Boxes
+- type: entity
+  parent: BaseMagazineBoxRifleFullPower
+  id: MagazineBoxRifleFullPower
+  name: ammunition box (.27 full-power)
+  description: A cardboard box of .27 full-power rounds. Intended to hold general-purpose kinetic ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRifleFullPower
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: BaseMagazineBoxRifleFullPower
+  id: MagazineBoxRifleFullPowerPractice
+  name: ammunition box (.27 full-power practice)
+  description: A cardboard box of .27 full-power rounds. Intended to hold harmless practice ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRiflePractice
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: practice
+
+

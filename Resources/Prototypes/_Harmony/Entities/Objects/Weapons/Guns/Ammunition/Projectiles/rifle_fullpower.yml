@@ -1,0 +1,22 @@
+- type: entity
+  parent: BaseBullet
+  id: BulletRifleFullPower
+  categories: [ HideSpawnMenu ]
+  name: bullet (.27 full-power)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 30
+
+- type: entity
+  parent: BaseBulletPractice
+  id: BulletRifleFullPowerPractice
+  categories: [ HideSpawnMenu ]
+  name: bullet (.27 full-power)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 2
+

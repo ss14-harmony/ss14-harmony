@@ -41,7 +41,8 @@
   storage:
     back:
     - Flash
-    - MagazinePistol
+    #- MagazinePistol
+    - MagazineBoxLightPistol # Harmony change - MK58 no longer uses magazines and needs different spare ammo
     - WeaponPistolMk58
 
 - type: chameleonOutfit

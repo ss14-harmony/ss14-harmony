@@ -1,0 +1,43 @@
+- type: entity
+  abstract: true
+  parent: [ BaseCartridge, BaseSecurityContraband ]
+  id: BaseCartridgeRifleFullPower
+  name: cartridge (.27 full-power)
+  components:
+  - type: Tag
+    tags:
+      - CartridgeRifleFullPower
+  - type: CartridgeAmmo
+    proto: BulletRifleFullPower
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
+  parent: BaseCartridgeRifleFullPower
+  id: CartridgeRifleFullPower
+  name: cartridge (.27 full-power)
+  description: A modern full-power cartridge for battle rifles. Standard kinetic ammunition is common and useful in most situations.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletRifleFullPower
+
+- type: entity
+  parent: BaseCartridgeRifle
+  id: CartridgeRifleFullPowerPractice
+  name: cartridge (.27 full-power practice)
+  description: A modern full-power cartridge for battle rifles. Practice ammunition fires a chalk projectile that stings a little, but otherwise causes no lasting damage.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletRifleFullPowerPractice
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#dbdbdb"
