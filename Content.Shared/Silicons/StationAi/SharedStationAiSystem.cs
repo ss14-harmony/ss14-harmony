@@ -517,6 +517,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
 
         ClearEye(ent);
         ent.Comp.Remote = true;
+        EnsureComp<InputMoverComponent>(args.Entity); // Harmony change, ensures AI has the InputMover component upon insertion so they can ghost using the move keys if their core is damaged.
 
         if (SetupEye(ent))
             AttachEye(ent);
@@ -534,6 +535,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
 
         // Remove eye relay
         RemCompDeferred<RelayInputMoverComponent>(args.Entity);
+        RemCompDeferred<InputMoverComponent>(args.Entity); // Harmony change, ensures carded AI does not have the InputMover component, as this throws an assert and crashes the server.
 
         if (TryComp(args.Entity, out EyeComponent? eyeComp))
         {

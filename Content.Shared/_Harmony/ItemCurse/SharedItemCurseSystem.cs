@@ -1,5 +1,6 @@
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
+using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
