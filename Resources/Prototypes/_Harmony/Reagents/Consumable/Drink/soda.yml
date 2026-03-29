@@ -43,7 +43,7 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Poison:
+    Bloodstream:
       effects:
       - !type:SatiateThirst
         factor: -6 # This is basically industrial dessicant
