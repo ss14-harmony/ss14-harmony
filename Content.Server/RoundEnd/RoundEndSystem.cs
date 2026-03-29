@@ -383,7 +383,7 @@ namespace Content.Server.RoundEnd
             {
                 if (!_shuttle.EmergencyShuttleArrived && ExpectedCountdownEnd is null)
                 {
-                    RequestRoundEnd(checkCooldown: false, text: "round-end-system-shuttle-auto-called-announcement");
+                    RequestRoundEnd(checkCooldown: false, text: "round-end-system-shuttle-auto-called-announcement-uncallable", cantRecall: true); // Harmony change - disable recalling shuttle
                     _autoCalledBefore = true;
                 }
 
