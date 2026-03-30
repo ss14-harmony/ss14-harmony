@@ -1860,16 +1860,21 @@
         tags:
           - NukeOpsUplink
 
-# Harmony start - removes backpack from uplink
-#- type: listing
-  #id: UplinkBackpackSyndicate
-  #name: uplink-backpack-syndicate-name
-  #description: uplink-backpack-syndicate-desc
-  #productEntity: ClothingBackpackSyndicate
-  #cost:
-    #Telecrystal: 2
-  #categories:
-    #- UplinkWearables
+- type: listing
+  id: UplinkBackpackSyndicate
+  name: uplink-backpack-syndicate-name
+  description: uplink-backpack-syndicate-desc
+  productEntity: ClothingBackpackSyndicate
+  cost:
+    Telecrystal: 2
+  categories:
+    - UplinkWearables
+# Harmony start
+  - conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+        - NukeOpsUplink
 # Harmony end
 
  # Pointless
