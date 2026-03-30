@@ -193,24 +193,26 @@
   categories:
   - UplinkWeaponry
 
-- type: listing
-  id: UplinkC20R
-  name: uplink-c20r-name
-  description: uplink-c20r-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/SMGs/c20r.rsi, state: icon }
-  productEntity: BriefcaseWeaponC20Filled
-  discountCategory: veryRareDiscounts
-  discountDownTo:
-    Telecrystal: 10
-  cost:
-    Telecrystal: 14
-  categories:
-  - UplinkWeaponry
-  conditions:
-  - !type:StoreWhitelistCondition
-    blacklist:
-      tags:
-      - NukeOpsUplink
+# Harmony start - removes traitor c20r from uplink
+#- type: listing
+  #id: UplinkC20R
+  #name: uplink-c20r-name
+  #description: uplink-c20r-desc
+  #icon: { sprite: /Textures/Objects/Weapons/Guns/SMGs/c20r.rsi, state: icon }
+  #productEntity: BriefcaseWeaponC20Filled
+  #discountCategory: veryRareDiscounts
+  #discountDownTo:
+    #Telecrystal: 10
+  #cost:
+    #Telecrystal: 14
+  #categories:
+  #- UplinkWeaponry
+  #conditions:
+  #- !type:StoreWhitelistCondition
+    #blacklist:
+      #tags:
+      #- NukeOpsUplink
+# Harmony end
 
 - type: listing
   id: UplinkC20RBundle
@@ -231,24 +233,27 @@
       tags:
       - NukeOpsUplink
 
-- type: listing
-  id: UplinkBulldog
-  name: uplink-bulldog-name
-  description: uplink-bulldog-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Shotguns/bulldog.rsi, state: icon }
-  productEntity: BriefcaseWeaponBulldogFilled
-  discountCategory: veryRareDiscounts
-  discountDownTo:
-    Telecrystal: 10
-  cost:
-    Telecrystal: 14
-  categories:
-  - UplinkWeaponry
-  conditions:
-  - !type:StoreWhitelistCondition
-    blacklist:
-      tags:
-      - NukeOpsUplink
+# Harmony start - remvoes traitor bulldog
+#- type: listing
+  #id: UplinkBulldog
+  #ame: uplink-bulldog-name
+  #description: uplink-bulldog-desc
+  #icon: { sprite: /Textures/Objects/Weapons/Guns/Shotguns/bulldog.rsi, state: icon }
+  #productEntity: BriefcaseWeaponBulldogFilled
+  #discountCategory: veryRareDiscounts
+  #discountDownTo:
+    #Telecrystal: 10
+  #cost:
+    #Telecrystal: 14
+  #categories:
+    #- UplinkWeaponry
+  #conditions:
+  #- !type:StoreWhitelistCondition
+    #blacklist:
+      #tags:
+      #- NukeOpsUplink
+# Harmony end
+
 
 - type: listing
   id: UplinkBulldogBundle
@@ -336,6 +341,14 @@
     Telecrystal: 25 # Harmony: 30 -> 25
   categories:
   - UplinkWeaponry
+  # Harmony start - restricts L6 saw to nukie uplink
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  # Harmony end
+
 
 # Explosives
 
@@ -563,6 +576,13 @@
     Telecrystal: 2
   categories:
   - UplinkAmmo
+  # Harmony start
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  # Harmony end
 
 # For the Bulldog
 - type: listing
@@ -575,6 +595,13 @@
     Telecrystal: 2
   categories:
   - UplinkAmmo
+  # Harmony start
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  # Harmony end
 
 - type: listing
   id: UplinkMagazineShotgunSlug
@@ -586,6 +613,13 @@
     Telecrystal: 2
   categories:
   - UplinkAmmo
+  # Harmony start
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  # Harmony end
 
 # For the Cobra
 - type: listing
@@ -620,6 +654,13 @@
     Telecrystal: 2
   categories:
   - UplinkAmmo
+  # Harmony start
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  # Harmony end
 
 # for the hristov
 - type: listing
@@ -1059,15 +1100,17 @@
   categories:
     - UplinkDisruption
 
-- type: listing
-  id: UplinkSoapSyndie
-  name: uplink-soap-name
-  description: uplink-soap-desc
-  productEntity: SoapSyndie
-  cost:
-    Telecrystal: 1
-  categories:
-  - UplinkDisruption
+# Harmony start - removes the soap
+#- type: listing
+  #id: UplinkSoapSyndie
+  #name: uplink-soap-name
+  #description: uplink-soap-desc
+  #productEntity: SoapSyndie
+  #cost:
+   # Telecrystal: 1
+  #categories:
+ # - UplinkDisruption
+# Harmony end
 
 - type: listing
   id: UplinkSlipocalypseClusterSoap
@@ -1105,6 +1148,13 @@
     Telecrystal: 2
   categories:
   - UplinkDisruption
+  # Harmony start - restricts jaws of life to nukie uplink
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  # Harmony end
 
 # Note: Removed for the time being until surgery/newmed is added. Considered bloat until then.
 # - type: listing
@@ -1492,6 +1542,13 @@
     Telecrystal: 2
   categories:
   - UplinkImplants
+  # Harmony start
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  # Harmony end
 
 - type: listing
   id: UplinkMicroBombImplanter
@@ -1810,15 +1867,17 @@
         tags:
           - NukeOpsUplink
 
-- type: listing
-  id: UplinkBackpackSyndicate
-  name: uplink-backpack-syndicate-name
-  description: uplink-backpack-syndicate-desc
-  productEntity: ClothingBackpackSyndicate
-  cost:
-    Telecrystal: 2
-  categories:
-    - UplinkWearables
+# Harmony start - removes backpack from uplink
+#- type: listing
+  #id: UplinkBackpackSyndicate
+  #name: uplink-backpack-syndicate-name
+  #description: uplink-backpack-syndicate-desc
+  #productEntity: ClothingBackpackSyndicate
+  #cost:
+    #Telecrystal: 2
+  #categories:
+    #- UplinkWearables
+# Harmony end
 
  # Pointless
 
