@@ -82,7 +82,7 @@
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
   product: CrateVendingMachineRestockGamesFilled
-  cost: 1100
+  cost: 1100 # Harmony Change
   category: cargoproduct-category-name-service
   group: market
 
@@ -92,7 +92,7 @@
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
   product: CrateVendingMachineRestockHotDrinksFilled
-  cost: 1200 # Harmony Change
+  cost: 1200
   category: cargoproduct-category-name-service
   group: market
 
