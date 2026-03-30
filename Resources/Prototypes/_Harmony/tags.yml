@@ -49,9 +49,10 @@
 - type: Tag
   id: MagazineLightPistolSubMachineGun
 
-#Used for .27 Full-Power ammo
+#Used for .27 full-power ammo
 - type: Tag
   id: CartridgeRifleFullPower
 
+#Used for .27 full-power Lecter magazines
 - type: Tag
   id: MagazineRifleFullPower

@@ -51,3 +51,61 @@
     Glass: 500
     Plastic: 250
     Uranium: 300
+
+#.30 Special
+- type: latheRecipe
+  parent: BaseEmptyAmmoRecipe
+  id: MagazineLightPistolSubMachineGunEmpty
+  result: MagazineLightPistolSubMachineGunEmpty
+  materials:
+    Steel: 30
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineLightPistolSubMachineGun
+  result: MagazineLightPistolSubMachineGun
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineLightPistolSubMachineGunPractice
+  result: MagazineLightPistolSubMachineGunPractice
+  materials:
+    Steel: 150
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxLightPistol
+  result: MagazineBoxLightPistol
+  materials:
+    Steel: 600
+
+#.27 full-power
+- type: latheRecipe
+  parent: BaseEmptyAmmoRecipe
+  id: MagazineRifleFullPowerEmpty
+  result: MagazineRifleFullPowerEmpty
+  materials:
+    Steel: 30
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineRifleFullPower
+  result: MagazineRifleFullPower
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineRifleFullPowerPractice
+  result: MagazineRifleFullPowerPractice
+  materials:
+    Steel: 150
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxRifleFullPower
+  result: MagazineBoxRifleFullPower
+  materials:
+    Steel: 600

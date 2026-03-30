@@ -54,6 +54,14 @@
   - SpeedLoaderMagnumEmpty
   - StripperClip  # Harmony change - part of RSC PR
   - EnergyCarbineCartridgeHarmony # Harmony Change: Adds the heat energy carbine cartridge to the security recipe pack
+# Harmony Changes: Adds .27 full-power and .30 special to the security ammo recipe pack
+  - MagazineLightPistolSubMachineGunEmpty
+  - MagazineLightPistolSubMachineGun
+  - MagazineBoxLightPistol
+  - MagazineRifleFullPowerEmpty
+  - MagazineRifleFullPower
+  - MagazineBoxRifleFullPower
+# End harmony changes
 
 
 - type: latheRecipePack
