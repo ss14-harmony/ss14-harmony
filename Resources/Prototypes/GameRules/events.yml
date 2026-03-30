@@ -604,12 +604,13 @@
     weight: 8
     minimumPlayers: 15
     maxOccurrences: 1 # can only happen once per round
-    # Harmony start - removes sleeper annoucement and blue alert
-    #startAnnouncement: station-event-communication-interception
-    #startAudio:
-      #path: /Audio/Announcements/intercept.ogg
-    #duration: null # the rule has to last the whole round not 1 second
-    #occursDuringRoundEnd: false
+    # Harmony start - removes blue alert and delays sleeper agent annoucement
+    endAnnouncement: station-event-communication-interception-harmony
+    endAudio:
+      path: /Audio/Announcements/intercept.ogg
+    duration: 900 # 15 minutes until the annoucement
+    occursDuringRoundEnd: false
+  - type: EmptyRule # thank the lords we have this
   #- type: AlertLevelInterceptionRule
     # Harmony end
   - type: AntagSelection
