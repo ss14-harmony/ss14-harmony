@@ -1542,13 +1542,6 @@
     Telecrystal: 2
   categories:
   - UplinkImplants
-  # Harmony start
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
-  # Harmony end
 
 - type: listing
   id: UplinkMicroBombImplanter
