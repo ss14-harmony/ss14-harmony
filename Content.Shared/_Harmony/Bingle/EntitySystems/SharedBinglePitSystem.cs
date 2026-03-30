@@ -19,6 +19,7 @@ using JetBrains.Annotations;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Physics.Events;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Dependency = Robust.Shared.IoC.DependencyAttribute;
@@ -44,7 +45,7 @@ public abstract class SharedBinglePitSystem : EntitySystem
 
         SubscribeLocalEvent<BinglePitComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<BinglePitComponent, StepTriggerAttemptEvent>(OnStepTriggerAttempt);
-        SubscribeLocalEvent<BinglePitComponent, StepTriggeredOffEvent>(OnStepTriggered);
+        SubscribeLocalEvent<BinglePitComponent, StartCollideEvent>(OnCollide);
 
         SubscribeLocalEvent<BingleComponent, AttackAttemptEvent>(OnBingleAttemptAttack);
 
@@ -55,6 +56,7 @@ public abstract class SharedBinglePitSystem : EntitySystem
         SubscribeLocalEvent<BinglePitFallingComponent, EmoteAttemptEvent>(OnFallingAttempt);
         SubscribeLocalEvent<BinglePitFallingComponent, DropAttemptEvent>(OnFallingAttempt);
         SubscribeLocalEvent<BinglePitFallingComponent, PickupAttemptEvent>(OnFallingAttempt);
+        SubscribeLocalEvent<BinglePitFallingComponent, AttackAttemptEvent>(OnFallingAttempt);
 
         #endregion
     }
@@ -69,26 +71,26 @@ public abstract class SharedBinglePitSystem : EntitySystem
         args.Continue = true;
     }
 
-    private void OnStepTriggered(Entity<BinglePitComponent> entity, ref StepTriggeredOffEvent args)
+    private void OnCollide(Entity<BinglePitComponent> entity, ref StartCollideEvent args)
     {
         // don't accept anyone that is already falling.
-        if (HasComp<BinglePitFallingComponent>(args.Tripper))
+        if (HasComp<BinglePitFallingComponent>(args.OtherEntity))
             return;
 
         var currentLevel = GetCurrentLevel(entity);
 
         // don't allow anyone alive if the pit is too low.
         if (currentLevel.CanEatLiving == false &&
-            HasComp<MobStateComponent>(args.Tripper))
+            HasComp<MobStateComponent>(args.OtherEntity))
             return;
 
         // allow only dead bingles in the pit.
-        if (HasComp<BingleComponent>(args.Tripper) &&
-            TryComp<MobStateComponent>(args.Tripper, out var mobState) &&
+        if (HasComp<BingleComponent>(args.OtherEntity) &&
+            TryComp<MobStateComponent>(args.OtherEntity, out var mobState) &&
             mobState.CurrentState != MobState.Dead)
             return;
 
-        StartFalling(entity.AsNullable(), args.Tripper);
+        StartFalling(entity.AsNullable(), args.OtherEntity);
     }
 
     private void OnBingleAttemptAttack(Entity<BingleComponent> entity, ref AttackAttemptEvent args)
@@ -105,6 +107,11 @@ public abstract class SharedBinglePitSystem : EntitySystem
     }
 
     private void OnFallingAttempt(EntityUid entity, BinglePitFallingComponent component, CancellableEntityEventArgs args)
+    {
+        args.Cancel();
+    }
+
+    private void OnFallingAttempt(EntityUid entity, BinglePitFallingComponent component, AttackAttemptEvent args)
     {
         args.Cancel();
     }
