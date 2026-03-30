@@ -1870,11 +1870,11 @@
   categories:
     - UplinkWearables
 # Harmony start
-  - conditions:
+  conditions:
     - !type:StoreWhitelistCondition
       whitelist:
         tags:
-        - NukeOpsUplink
+          - NukeOpsUplink
 # Harmony end
 
  # Pointless
