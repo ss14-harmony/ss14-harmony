@@ -88,7 +88,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the Fool
+    name: tarot card of the Fool
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_0_The_Fool_tarot
@@ -100,7 +100,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the Magician
+    name: tarot card of the Magician
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_1_The_Magician_tarot
@@ -112,7 +112,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the High Priestess
+    name: tarot card of the High Priestess
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_2_The_High_Priestess_tarot
@@ -124,7 +124,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the Empress
+    name: tarot card of the Empress
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_3_The_Empress_tarot
@@ -136,7 +136,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the Emperor
+    name: tarot card of the Emperor
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_4_The_Emperor_tarot
@@ -148,7 +148,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the Hierophant
+    name: tarot card of the Hierophant
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_5_The_Hierophant_tarot
@@ -160,7 +160,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the Lovers
+    name: tarot card of the Lovers
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_6_The_Lovers_tarot
@@ -172,7 +172,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the Chariot
+    name: tarot card of the Chariot
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_7_The_Chariot_tarot
@@ -184,7 +184,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for Strength
+    name: tarot card of Strength
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_8_Strength_tarot
@@ -196,7 +196,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the Hermit
+    name: tarot card of the Hermit
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_9_The_Hermit_tarot
@@ -208,7 +208,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the Wheel of Fortune
+    name: tarot card of the Wheel of Fortune
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_10_The_Wheel_of_Fortune_tarot
@@ -221,7 +221,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for Justice
+    name: tarot card of Justice
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_11_Justice_tarot
@@ -233,7 +233,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the Hanged Man
+    name: tarot card of the Hanged Man
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_12_The_Hanged_Man_tarot
@@ -245,7 +245,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for Death
+    name: tarot card of Death
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_13_Death_tarot
@@ -257,7 +257,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for Temperance
+    name: tarot card of Temperance
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_14_Temperance_tarot
@@ -269,7 +269,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the Devil
+    name: tarot card of the Devil
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_15_The_Devil_tarot
@@ -281,7 +281,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the Tower
+    name: tarot card of the Tower
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_16_The_Tower_tarot
@@ -293,7 +293,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the Star
+    name: tarot card of the Star
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_17_The_Star_tarot
@@ -305,7 +305,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the Moon
+    name: tarot card of the Moon
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_18_The_Moon_tarot
@@ -317,7 +317,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the Sun
+    name: tarot card of the Sun
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_19_The_Sun_tarot
@@ -329,7 +329,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for Judgement
+    name: tarot card of Judgement
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_20_Judgement_tarot
@@ -341,7 +341,7 @@
   suffix: Harmony
   components:
   - type: Card
-    name: tarot card for the World
+    name: tarot card of the World
   - type: Sprite
     sprite: _Harmony/Objects/Misc/tarotcards.rsi
     state: sc_21_The_World_tarot
