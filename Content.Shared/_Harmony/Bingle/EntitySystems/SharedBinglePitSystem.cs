@@ -99,7 +99,7 @@ public abstract class SharedBinglePitSystem : EntitySystem
     private void OnCollide(Entity<BinglePitComponent> entity, ref StartCollideEvent args)
     {
         // don't accept anyone that is already falling or is currently under the effect of gravity.
-        if (HasComp<BinglePitFallingComponent>(args.OtherEntity) && !HasComp<GravityComponent>(args.OtherEntity))
+        if (HasComp<BinglePitFallingComponent>(args.OtherEntity) && !HasComp<GravityAffectedComponent>(args.OtherEntity))
             return;
 
         var currentLevel = GetCurrentLevel(entity);
