@@ -1,7 +1,9 @@
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using Content.Shared._Harmony.Bingle.Components;
+using Content.Shared.Burial.Components;
 using Content.Shared.Emoting;
+using Content.Shared.Gravity;
 using Content.Shared.Hands;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Item;
@@ -45,6 +47,7 @@ public abstract class SharedBinglePitSystem : EntitySystem
 
         SubscribeLocalEvent<BinglePitComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<BinglePitComponent, StepTriggerAttemptEvent>(OnStepTriggerAttempt);
+        SubscribeLocalEvent<BinglePitComponent, StepTriggeredOffEvent>(OnStepTriggered);
         SubscribeLocalEvent<BinglePitComponent, StartCollideEvent>(OnCollide);
 
         SubscribeLocalEvent<BingleComponent, AttackAttemptEvent>(OnBingleAttemptAttack);
@@ -71,10 +74,32 @@ public abstract class SharedBinglePitSystem : EntitySystem
         args.Continue = true;
     }
 
-    private void OnCollide(Entity<BinglePitComponent> entity, ref StartCollideEvent args)
+    private void OnStepTriggered(Entity<BinglePitComponent> entity, ref StepTriggeredOffEvent args)
     {
         // don't accept anyone that is already falling.
-        if (HasComp<BinglePitFallingComponent>(args.OtherEntity))
+        if (HasComp<BinglePitFallingComponent>(args.Tripper))
+            return;
+
+        var currentLevel = GetCurrentLevel(entity);
+
+        // don't allow anyone alive if the pit is too low.
+        if (currentLevel.CanEatLiving == false &&
+            HasComp<MobStateComponent>(args.Tripper))
+            return;
+
+        // allow only dead bingles in the pit.
+        if (HasComp<BingleComponent>(args.Tripper) &&
+            TryComp<MobStateComponent>(args.Tripper, out var mobState) &&
+            mobState.CurrentState != MobState.Dead)
+            return;
+
+        StartFalling(entity.AsNullable(), args.Tripper);
+    }
+
+    private void OnCollide(Entity<BinglePitComponent> entity, ref StartCollideEvent args)
+    {
+        // don't accept anyone that is already falling or is currently under the effect of gravity.
+        if (HasComp<BinglePitFallingComponent>(args.OtherEntity) && !HasComp<GravityComponent>(args.OtherEntity))
             return;
 
         var currentLevel = GetCurrentLevel(entity);
