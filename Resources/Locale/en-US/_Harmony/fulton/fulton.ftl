@@ -1,0 +1,1 @@
+﻿fulton-verb = Fulton

@@ -43,6 +43,7 @@ public abstract partial class SharedFultonSystem : EntitySystem
         SubscribeLocalEvent<FultonedDoAfterEvent>(OnFultonDoAfter);
 
         SubscribeLocalEvent<FultonedComponent, GetVerbsEvent<InteractionVerb>>(OnFultonedGetVerbs);
+        SubscribeLocalEvent<FultonComponent, GetVerbsEvent<UtilityVerb>>(OnFultonGetVerbs); // Harmony change
         SubscribeLocalEvent<FultonedComponent, ExaminedEvent>(OnFultonedExamine);
         SubscribeLocalEvent<FultonedComponent, EntGotInsertedIntoContainerMessage>(OnFultonContainerInserted);
 
@@ -78,6 +79,43 @@ public abstract partial class SharedFultonSystem : EntitySystem
             }
         });
     }
+
+    // Harmony start
+    private void OnFultonGetVerbs(EntityUid uid, FultonComponent component, GetVerbsEvent<UtilityVerb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract)
+            return;
+
+        if (!CanApplyFulton(args.Target, component))
+            return;
+
+        if (HasComp<FultonedComponent>(args.Target))
+            return;
+
+        args.Verbs.Add(new UtilityVerb()
+        {
+            Text = Loc.GetString("fulton-verb"),
+            Act = () =>
+            {
+                if (Deleted(component.Beacon))
+                {
+                    _popup.PopupClient(Loc.GetString("fulton-not-found"), uid, args.User);
+                    return;
+                }
+
+                var ev = new FultonedDoAfterEvent();
+                _doAfter.TryStartDoAfter(
+                    new DoAfterArgs(EntityManager, args.User, component.ApplyFultonDuration, ev, args.Target, args.Target, args.Using)
+                    {
+                        MovementThreshold = 0.5f,
+                        BreakOnMove = true,
+                        Broadcast = true,
+                        NeedHand = true,
+                    });
+            }
+        });
+    }
+    // Harmony end
 
     private void Unfulton(EntityUid uid, FultonedComponent? component = null)
     {
