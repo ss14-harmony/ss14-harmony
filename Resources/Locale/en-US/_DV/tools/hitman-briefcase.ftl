@@ -45,3 +45,6 @@ hitman-tracker-kit-description =
     A kit for those who wish to know everything.
     Provides a station master encryption key, universal pinpointer,
     And a camera bug.
+
+hitman-briefcase-window-title: hitman briefcase
+hitman-briefcase-window-description: what did you bring?
