@@ -73,8 +73,8 @@
   components:
   - type: Objective
     icon:
-      sprite: Mobs/Species/Human/organs.rsi
-      state: heart-off
+      sprite: Clothing/Hands/Gloves/Color/color.rsi
+      state: icon
     difficulty: 1 #very vauge
     unique: true
 
@@ -150,7 +150,6 @@
   id: HitmanSufferObjective
   name: Drag out your target's murder
   description: Your client would like it if your target suffers as they die. Make sure they're dying for a long time.
-  description: Your client would like that your target suffers as they die. Make your they're dieing for a long time.
   components:
   - type: Objective
     icon:
@@ -203,11 +202,11 @@
   parent: [BaseHitmanObjective, BaseFreeObjective]
   id: HitmanTrustObjective
   name: Spend a long amount of time gaining the trust of your target.
-  description: your client wants your target to feel betrayed when you kill them. spend a lot of time hanging out with them.
+  description: Your client wants your target to feel betrayed when you kill them. Spend a lot of time hanging out with them.
   components:
   - type: Objective
     icon:
-      sprite: 
-      state: 
+      sprite: Mobs/Species/Human/organs.rsi
+      state: heart-off
     difficulty: 1.75 #spend a lot of time
     unique: true
