@@ -54,7 +54,7 @@
   parent: [BaseHitmanObjective, BaseLivingObjective]
   id: EscapeShuttleObjectiveHitman
   name: Escape to centcomm alive and unrestrained.
-  description: You prepared a escape route at CentComm. Avoid being arrested.
+  description: You prepared an escape route at CentComm. Avoid being arrested.
   components:
   - type: Objective
     icon:
