@@ -118,8 +118,11 @@ uplink-pistol-magazine-caseless-desc = Pistol magazine with 10 cartridges. Compa
 uplink-speedloader-magnum-name = Speedloader (.45 magnum AP)
 uplink-speedloader-magnu-desc = Revolver speedloader with 6 armor-piercing cartridges, capable of ignoring armor entirely. Compatible with the Python.
 
-uplink-mosin-ammo-name = Ammunition box (.30 rifle)
-uplink-mosin-ammo-desc = A box of 60 cartridges for the surplus rifle.
+# Harmony change - mosin uses .27 full-power
+# uplink-mosin-ammo-name = Ammunition box (.30 rifle)
+# uplink-mosin-ammo-desc = A box of 60 cartridges for the surplus rifle.
+uplink-mosin-ammo-name = Ammunition box (.27 full-power)
+uplink-mosin-ammo-desc = A box of 30 cartridges for the surplus rifle.
 
 uplink-sniper-ammo-name = Ammunition box (.60 antimateriel)
 uplink-sniper-ammo-desc = A box of 10 cartridges for the Hristov sniper rifle.

@@ -604,7 +604,8 @@
   id: UplinkMosinAmmo
   name: uplink-mosin-ammo-name
   description: uplink-mosin-ammo-desc
-  productEntity: MagazineBoxLightRifle
+  #productEntity: MagazineBoxLightRifle
+  productEntity: MagazineBoxRifleFullPower #Harmony change - mosin now uses .27 full-power
   cost:
     Telecrystal: 1
   categories:
