@@ -48,8 +48,8 @@
   - MagazinePistolSubMachineGunEmpty
   - MagazinePistolSubMachineGunTopMounted
   - MagazinePistolSubMachineGunTopMountedEmpty
-  - MagazineRifle
-  - MagazineRifleEmpty
+#  - MagazineRifle - Harmony change: .20 rifle is unused now that the lecter uses .27 full-power
+#  - MagazineRifleEmpty - Harmony change: .20 rifle is unused now that the lecter uses .27 full-power
   - SpeedLoaderMagnum
   - SpeedLoaderMagnumEmpty
   - StripperClip  # Harmony change - part of RSC PR
