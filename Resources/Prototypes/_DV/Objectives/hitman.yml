@@ -108,7 +108,8 @@
 - type: entity
   parent: [BaseHitmanObjective, BaseFreeObjective]
   id: HitmanAccidentObjective
-  name: Make your targets death seem like a accident
+  name: Make your target's death seem like an accident
+  description: Your client would rather others not realize your target's death was an assassination. Try to frame it as an accident.
   description: your client would rather others not realize your targets death was a assassination. try to frame it as a accident
   components:
   - type: Objective
