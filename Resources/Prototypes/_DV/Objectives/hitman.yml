@@ -190,7 +190,7 @@
   parent: [BaseHitmanObjective, BaseFreeObjective]
   id: HitmanTraumaObjective
   name: Kill someone close to your target and make sure they know
-  description: your client wants your target to be broken mentaly and physicaly. Find someone close to your target and kill them. make sure your target knows they died.
+  description: Your client wants your target to be broken mentally and physically. Find someone close to your target and kill them. Make sure your target knows they died.
   components:
   - type: Objective
     icon:
