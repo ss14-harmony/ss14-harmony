@@ -60,7 +60,9 @@
 
     ##Kill someone close to your target and make sure they know.
     Your client wants to mentally harm your target by killing someone close to them.
-    - The person you kill has to be found out to be dead by your target. This can not be a silent or permanent kill.
+    - The person you kill has to be found out to be dead by your target. This cannot be a silent or permanent kill.
+    - You'll need to interact with and stalk your target to figure out who is close to them.
+    - There's no modifiers on killing the person close to them.
     - You'll need to interact with and stalk your target to figure out who is close to them.
     - Theres no modifiers on killing the person close to them.
 </Document>
