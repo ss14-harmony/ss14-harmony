@@ -8,6 +8,8 @@
     ClothingShoesJester: 2
     ClothingOuterWinterClown: 1
     ClothingOuterWinterMime: 1
+    UniformShortsRed: 1 # Harmony Change
+    UniformShortsRedWithTop: 1 # Harmony Change
     ClothingOuterWinterMusician: 1
     ClothingMaskJoy: 2
     ClothingHeadHatCardborg: 2
@@ -61,6 +63,7 @@
     ToyFigurineMusician: 1
     ClothingShoesBling: 1
     ClothingShoesBootsCowboyFancy: 1
+    ClothingShoesHighheelBoots: 1 # Harmony Change
     ClothingOuterDogi: 1
     ClothingOuterSuitCarp: 1
     ClothingMaskBlushingClown: 1
