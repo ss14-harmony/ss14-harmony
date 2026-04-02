@@ -12,10 +12,11 @@
     ClothingNeckScarfStripedPurple: 3
   contrabandInventory:
     ToyFigurineJanitor: 1
-  emaggedInventory:
-    ClothingUniformJumpskirtJanimaid: 2
+    # Harmony Change Start
+    ClothingUniformJumpskirtJanimaid: 1
     ClothingUniformJumpskirtJanimaidmini: 1
-   # Harmony Change Start - Extra emag vendor interactions
+  emaggedInventory:
+    # Extra Harmony emag vendor interactions
     ClothingUniformJumpskirtTacticalMaid: 1
     ClothingHandsTacticalMaidGloves: 1
     # Harmony Change End
