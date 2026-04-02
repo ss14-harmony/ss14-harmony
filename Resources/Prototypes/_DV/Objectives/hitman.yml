@@ -67,16 +67,15 @@
 ## modifer objectives
 - type: entity
   parent: [BaseHitmanObjective, BaseFreeObjective]
-  id: HitmanBrutalObjective
-  name: Kill your target brutally
-  description: Your client wants your target to die brutally. Try to make their death as painful as possible.
-  description: your client wants your target to die brutaly. try to make their death as painful as possible
+  id: HitmanNiceObjective
+  name: Kill your target nicely
+  description: Your client wants you to be respectful to your target. Try to be nice and courteous to them even as you kill them.
   components:
   - type: Objective
     icon:
       sprite: Mobs/Species/Human/organs.rsi
       state: heart-off
-    difficulty: 1 #not that hard, just requires doing some extra stuff to the body
+    difficulty: 1 #very vauge
     unique: true
 
 - type: entity
@@ -94,7 +93,7 @@
 
 - type: entity
   parent: [BaseHitmanObjective, BaseFreeObjective]
-  id: HitmanhumorousObjective
+  id: HitmanHumorousObjective
   name: Kill your target humorously 
   description: Your client wants to make their death a joke. Make their death funny.
   components:
@@ -110,7 +109,6 @@
   id: HitmanAccidentObjective
   name: Make your target's death seem like an accident
   description: Your client would rather others not realize your target's death was an assassination. Try to frame it as an accident.
-  description: your client would rather others not realize your targets death was a assassination. try to frame it as a accident
   components:
   - type: Objective
     icon:
@@ -124,7 +122,7 @@
   parent: [BaseHitmanObjective, BaseFreeObjective]
   id: HitmanIndirectlyObjective
   name: Kill your target indirectly
-  description: your client wants you to take no chances with getting spotted near the body. try to find a way to kill them indirectly
+  description: Your client wants you to take no chances with getting spotted near the body. Try to find a way to kill them indirectly
   components:
   - type: Objective
     icon:
@@ -138,7 +136,7 @@
   parent: [BaseHitmanObjective, BaseFreeObjective]
   id: HitmanCleanObjective
   name: Try to make your kill as clean as possible
-  description: Your client does not want this death making a mess. try to do as little damage to the outer body as you can
+  description: Your client does not want this death making a mess. Try to do as little damage to the outer body as you can
   components:
   - type: Objective
     icon:
@@ -151,7 +149,7 @@
   parent: [BaseHitmanObjective, BaseFreeObjective]
   id: HitmanSufferObjective
   name: Drag out your targets murder
-  description: your client would like that your target suffers as they die. make your theyre dieing for a long time.
+  description: Your client would like that your target suffers as they die. Make your they're dieing for a long time.
   components:
   - type: Objective
     icon:
@@ -170,7 +168,7 @@
     icon:
       sprite: Structures/Wallmounts/screen.rsi
       state: screen
-    difficulty: 2 #make it much harder to get away with
+    difficulty: 1.25 #make it much harder to get away with
     unique: true
 
 - type: entity
@@ -198,4 +196,17 @@
       sprite: Mobs/Species/Human/organs.rsi
       state: brain
     difficulty: 1.75 #forces a second tol but doesnt interact with the other objectives
+    unique: true
+
+- type: entity
+  parent: [BaseHitmanObjective, BaseFreeObjective]
+  id: HitmanTrustObjective
+  name: Spend a long amount of time gaining the trust of your target.
+  description: your client wants your target to feel betrayed when you kill them. spend a lot of time hanging out with them.
+  components:
+  - type: Objective
+    icon:
+      sprite: 
+      state: 
+    difficulty: 1.75 #spend a lot of time
     unique: true

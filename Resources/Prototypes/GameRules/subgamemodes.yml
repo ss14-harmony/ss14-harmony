@@ -130,7 +130,7 @@
     definitions:
     - prefRoles: [ Hitman ]
       max: 2
-      playerRatio: 25 #a bit more impactful than thief which harmony has at 20 so
+      playerRatio: 15 #as requested
       lateJoinAdditional: true
       allowNonHumans: true
       multiAntagSetting: NotExclusive

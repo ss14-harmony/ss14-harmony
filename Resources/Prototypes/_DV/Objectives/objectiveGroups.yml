@@ -2,9 +2,9 @@
 - type: weightedRandom
   id: HitmanObjectiveGroup
   weights:
-    HitmanObjectiveGroupBrutal: 1
+    HitmanObjectiveGroupClean: 1
     HitmanObjectiveGroupDramatic: 1
-    HitmanObjectiveGrouphumorous: 1
+    HitmanObjectiveGroupHumorous: 1
     HitmanObjectiveGroupAccident: 1
     HitmanObjectiveGroupIndirect: 1
     HitmanObjectiveGroupClean: 1
@@ -12,11 +12,13 @@
     HitmanObjectiveGroupPublic: 1
     HitmanObjectiveGroupNotice: 1
     HitmanObjectiveGroupTrauma: 1
+    HitmanObjectiveGroupTrust: 1
+
 ##time for the dumbest nonsense that i have to do
 - type: weightedRandom
-  id: HitmanObjectiveGroupBrutal
+  id: HitmanObjectiveGroupClean
   weights:
-    HitmanBrutalObjective: 1
+    HitmanCleanObjective: 1
 
 - type: weightedRandom
   id: HitmanObjectiveGroupDramatic
@@ -26,7 +28,7 @@
 - type: weightedRandom
   id: HitmanObjectiveGrouphumorous
   weights:
-    HitmanhumorousObjective: 1
+    HitmanHumorousObjective: 1
 
 - type: weightedRandom
   id: HitmanObjectiveGroupAccident
@@ -62,3 +64,8 @@
   id: HitmanObjectiveGroupTrauma
   weights:
     HitmanTraumaObjective: 1
+
+- type: weightedRandom
+  id: HitmanObjectiveGroupTrust
+  weights:
+    HitmanTrustObjective: 1
