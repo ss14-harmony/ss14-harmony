@@ -68,7 +68,8 @@
 - type: entity
   parent: [BaseHitmanObjective, BaseFreeObjective]
   id: HitmanBrutalObjective
-  name: Kill your target brutaly
+  name: Kill your target brutally
+  description: Your client wants your target to die brutally. Try to make their death as painful as possible.
   description: your client wants your target to die brutaly. try to make their death as painful as possible
   components:
   - type: Objective
