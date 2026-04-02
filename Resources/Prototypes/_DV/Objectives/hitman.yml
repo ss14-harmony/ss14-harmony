@@ -176,7 +176,7 @@
   parent: [BaseHitmanObjective, BaseFreeObjective]
   id: HitmanNoticeObjective
   name: Inform your target they are going to be killed long before it happens
-  description: Your client wants your target to know whats going on. Tell your target theyll be killed and still get away with it.
+  description: Your client wants your target to know what's going on. Tell your target they'll be killed and still get away with it.
   components:
   - type: Objective
     icon:
