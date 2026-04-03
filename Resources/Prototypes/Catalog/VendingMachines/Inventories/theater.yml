@@ -8,8 +8,10 @@
     ClothingShoesJester: 2
     ClothingOuterWinterClown: 1
     ClothingOuterWinterMime: 1
-    UniformShortsRed: 1 # Harmony Change
-    UniformShortsRedWithTop: 1 # Harmony Change
+    # Harmony Change Start
+    UniformShortsRed: 1
+    UniformShortsRedWithTop: 1
+    # Harmony Change End
     ClothingOuterWinterMusician: 1
     ClothingMaskJoy: 2
     ClothingHeadHatCardborg: 2
