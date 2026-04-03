@@ -2,7 +2,7 @@
 - type: weightedRandom
   id: HitmanObjectiveGroup
   weights:
-    HitmanObjectiveGroupClean: 1
+    HitmanObjectiveGroupNice: 1
     HitmanObjectiveGroupDramatic: 1
     HitmanObjectiveGroupHumorous: 1
     HitmanObjectiveGroupAccident: 1
@@ -16,7 +16,7 @@
 
 ##time for the dumbest nonsense that i have to do
 - type: weightedRandom
-  id: HitmanObjectiveGroupClean
+  id: HitmanObjectiveGroupNice
   weights:
     HitmanCleanObjective: 1
 
