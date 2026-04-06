@@ -54,7 +54,10 @@
     ClothingUniformTurtleneckSkirtColorLightBrown: 2
     ClothingUniformTurtleneckSkirtColorBrown: 2
     ClothingUniformTurtleneckSkirtColorMaroon: 2
-    #Harmony change end
+  contrabandInventory:
+    ClothingHeadHatUshanka: 1
   emaggedInventory:
+    ClothingOuterCoatSpaceAsshole: 1
+    #Harmony change end
     ClothingNeckScarfStripedSyndieGreen: 3
     ClothingNeckScarfStripedSyndieRed: 3
