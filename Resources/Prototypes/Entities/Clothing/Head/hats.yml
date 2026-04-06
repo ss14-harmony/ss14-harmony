@@ -669,8 +669,7 @@
   - type: Clothing
     sprite: Clothing/Head/Hats/ushanka.rsi
   - type: Appearance
-  - type: AddAccentClothing
-    accent: RussianAccent
+# Harm change. Remove russian accent from Ushanka.
   - type: Foldable
     canFoldInsideContainer: true
   - type: FoldableClothing
