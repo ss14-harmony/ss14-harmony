@@ -23,6 +23,9 @@ uplink-X4-desc = The cousin of the infamous C-4, uses experimental explosives to
 uplink-X4-bundle-name = X-4 Bundle
 uplink-X4-bundle-desc = A bag containing 4 X-4s, perfect for going all in on sabotage.
 
+uplink-emp-box-name = Box of EMP Grenades
+uplink-emp-box-desc = Comes with two EMP grenades that trigger upon impact. Useful for disrupting communications, security's energy weapons or non-lethals, and APCs when you're in a tight spot.
+
 # Ammo
 
 uplink-blood-red-carbine-ammo-name = Jailbroken Energy Cartridge

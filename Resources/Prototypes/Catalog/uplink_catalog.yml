@@ -457,9 +457,12 @@
 
 - type: listing
   id: UplinkEmpGrenade
-  name: uplink-emp-grenade-name
-  description: uplink-emp-grenade-desc
-  productEntity: EmpGrenade
+  # Harmony start
+  name: uplink-emp-box-name # was uplink-emp-grenade-name
+  description: uplink-emp-box-desc # was uplink-emp-grenade-desc
+  productEntity: EMPGrenadeKit # was EmpGrenade
+  icon: { sprite: /Textures/Objects/Weapons/Grenades/empgrenade.rsi, state: icon } # - adds sprite
+  # Harmony end
   discountCategory: usualDiscounts
   discountDownTo:
     Telecrystal: 1
@@ -1465,19 +1468,21 @@
   categories:
     - UplinkImplants
 
-- type: listing
-  id: UplinkEmpImplanter
-  name: uplink-emp-implanter-name
-  description: uplink-emp-implanter-desc
-  icon: { sprite: /Textures/Objects/Magic/magicactions.rsi, state: shield }
-  productEntity: EmpImplanter
-  discountCategory: veryRareDiscounts
-  discountDownTo:
-    Telecrystal: 1
-  cost:
-    Telecrystal: 2
-  categories:
-    - UplinkImplants
+# Harmony start - removes implant from uplink
+#- type: listing
+  #id: UplinkEmpImplanter
+  #name: uplink-emp-implanter-name
+  #description: uplink-emp-implanter-desc
+  #icon: { sprite: /Textures/Objects/Magic/magicactions.rsi, state: shield }
+  #productEntity: EmpImplanter
+  #discountCategory: veryRareDiscounts
+  #discountDownTo:
+    #Telecrystal: 1
+  #cost:
+    #Telecrystal: 2
+  #categories:
+    #- UplinkImplants
+# Harmony end
 
 - type: listing
   id: UplinkRadioImplanter

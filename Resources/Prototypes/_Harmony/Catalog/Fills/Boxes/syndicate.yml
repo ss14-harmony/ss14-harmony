@@ -16,3 +16,16 @@
     contents:
       - id: DeathRattleImplanter
         amount: 2
+
+- type: entity
+  id: EMPGrenadeKit
+  parent: [BoxCardboard, BaseSyndicateContraband]
+  name: EMP grenade box
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: EmpGrenade
+          amount: 2
