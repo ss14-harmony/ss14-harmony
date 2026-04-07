@@ -3508,7 +3508,7 @@ entities:
     - type: Transform
       pos: 3.5,-3.5
       parent: 1
-- proto: JetpackBlackFilled
+- proto: HarmonyJetpackBlackFilledStealth # Harmony Change
   entities:
   - uid: 313
     components:
