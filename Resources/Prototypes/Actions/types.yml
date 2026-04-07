@@ -90,7 +90,7 @@
   parent: BaseAction
   id: ActionOpenStorageImplant
   name: Toggle Storage Implant
-  description: Opens or closes the storage implant embedded under your skin
+  description: Opens or closes the storage implant embedded under your skin. Donk Co strickly prohibits High Value or storage items. # Harmony Change - Reminder you can't put the chief engineer's shoes in your storage pocket
   components:
   - type: Action
     itemIconStyle: BigAction
