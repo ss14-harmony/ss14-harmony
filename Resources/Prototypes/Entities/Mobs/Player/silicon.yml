@@ -450,6 +450,7 @@
     - HideContextMenu
     - StationAi
     - NoConsoleSound
+    - SiliconEmotes #Harmony
   - type: StartingMindRole
     mindRole: "MindRoleSiliconBrain"
     silent: true
