@@ -116,7 +116,7 @@
         - Hands # no use giving a mouse a storage implant, but a monkey is another story...
     - type: Storage
       grid:
-      # Harmony Update Start - Changed storage impant to be 3x3 but no center square
+      # Harmony Update Start - Changed storage impant to be 3x3
       # - 0,0,0,1
       # - 1,0,1,0
       # - 1,2,1,2
