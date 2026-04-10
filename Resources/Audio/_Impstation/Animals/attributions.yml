@@ -1,15 +1,3 @@
-- files: ["spooky_horse.ogg"]
-  license: "CC-BY-SA-3.0"
-  copyright: "Recorded by user Faithhollow1 on Freesound.org"
-  source: "https://freesound.org/people/Faithhollow1/sounds/186577/"
-
-- files:
-  - disgustingpig_f.ogg
-  - disgustingpig_m.ogg
-  license: "Custom"
-  copyright: "Ripped from Wurm Online, owned by Code Club AB."
-  source: "NA"
-
 - files: ["pleebnar_weird.ogg"]
   license: "Custom"
   copyright: "gotten off youtube from A & A studios offering it with no copyright"
