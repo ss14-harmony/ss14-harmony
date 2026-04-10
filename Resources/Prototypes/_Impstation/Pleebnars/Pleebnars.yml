@@ -36,10 +36,14 @@
     quickEquip: false
     sprite: _Impstation/Mobs/Aliens/pleebnar.rsi
     clothingVisuals:
-       head:
-        - map: ["enum.DamageStateVisualLayers.Base"]
-          state: 0-equipped-HELMET
-          offset: "0,0.5"
+      head:
+      - map: ["enum.DamageStateVisualLayers.Base"]
+        state: 0-equipped-HELMET
+        offset: "0,0.5"
+      head-ungu:
+      - state: 0-equipped-HELMET-ungu
+      head-allulalo:
+      - state: 0-equipped-HELMET-allulalo
     equippedPrefix: 0
     slots:
     - HEAD
@@ -81,8 +85,8 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 2.5
     baseSprintSpeed : 5
-  - type: Food
-  - type: Absorbable
+  - type: Edible
+  - type: GoobAbsorbable
     biomassRestored: 0.1
   - type: FlavorProfile
     flavors:
@@ -145,8 +149,10 @@
       types:
         Piercing: 0
   - type: Bloodstream
-    bloodReagent: GrayBlood
-    bloodMaxVolume: 50
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: GlorpExtract # Harmony Change, We dont have greys....
+        Quantity: 50
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
