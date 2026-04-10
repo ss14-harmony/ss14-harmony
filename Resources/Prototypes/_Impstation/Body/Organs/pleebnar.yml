@@ -19,10 +19,6 @@
   - type: FlavorProfile
     flavors:
     - cigarettes
-  - type: Tag # goob edit
-    tags:
-    - Meat
-    - Organ
 
 - type: entity
   id: BasePleebnarOrgan
@@ -42,15 +38,21 @@
     - state: lung-l
     - state: lung-r
   - type: Organ
+    category: Lungs # Harmony Change Organ
   - type: Lung
   - type: Metabolizer
-    removeEmpty: true
-    solutionOnBody: false
-    solution: "Lung"
+    # Harmony Change Start, Metabolizer is Differnt
+    # removeEmpty: true
+    #solutionOnBody: false
+    # solution: "Lung"
+    # Harmony Change End
     metabolizerTypes: [ Animal ]
-    groups:
-    - id: Gas
-      rateModifier: 100.0
+    stages: [ Respiration ]
+    # Harmony Change Start, Metabolizer is Differnt
+    # groups:
+    # - id: Gas
+    #   rateModifier: 100.0
+    # Harmony Change End
   - type: SolutionContainerManager
     solutions:
       Lung:
@@ -61,11 +63,6 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
-  - type: Tag # goob edit
-    tags:
-    - Meat
-    - Organ
-    - Lungs
   - type: Item
     size: Small
     heldPrefix: lungs
@@ -80,6 +77,7 @@
   - type: Sprite
     state: stomach
   - type: Organ
+    category: Stomach # Harmony Change Organ
   - type: SolutionContainerManager
     solutions:
       stomach:
@@ -93,14 +91,11 @@
   - type: Metabolizer
     maxReagents: 3
     metabolizerTypes: [ Animal ]
-    groups:
-    - id: Food
-    - id: Drink
-  - type: Tag # goob edit
-    tags:
-    - Meat
-    - Organ
-    - Stomach
+    # Harmony Change Start, Metabolizer is Differnt
+    # groups:
+    # - id: Food
+    # - id: Drink
+    # Harmony Change End
   - type: Item
     size: Small
     heldPrefix: stomach
@@ -116,17 +111,13 @@
   - type: Sprite
     state: liver
   - type: Organ
+    category: Liver # Harmony Change Organ
   - type: Metabolizer
     maxReagents: 1
     metabolizerTypes: [ Animal ]
     groups:
     - id: Alcohol
       rateModifier: 0.1
-  - type: Tag # goob edit
-    tags:
-    - Meat
-    - Organ
-    - Liver
   - type: Item
     size: Small
     heldPrefix: liver
@@ -140,6 +131,7 @@
   - type: Sprite
     state: heart-on
   - type: Organ
+    category: Heart # Harmony Change Organ
   - type: Metabolizer
     maxReagents: 2
     metabolizerTypes: [ Animal ]
@@ -147,11 +139,6 @@
     - id: Medicine
     - id: Poison
     - id: Narcotic
-  - type: Tag # goob edit
-    tags:
-    - Meat
-    - Organ
-    - Heart
   - type: Item
     size: Small
     heldPrefix: heart
@@ -166,15 +153,11 @@
     layers:
     - state: kidney-r
   - type: Organ
+    category: Kidneys # Harmony Change Organ
   - type: Metabolizer
     maxReagents: 5
     metabolizerTypes: [ Animal ]
-    removeEmpty: true
-  - type: Tag # goob edit
-    tags:
-    - Meat
-    - Organ
-    - Kidneys
+    #removeEmpty: true # Harmony Change, Metabolizer is Differnt
   - type: Item
     size: Small
     heldPrefix: kidneys
@@ -189,8 +172,5 @@
     layers:
     - state: eyeball-l
     - state: eyeball-r
-  - type: Tag # goob edit
-    tags:
-    - Meat
-    - Organ
-    - Eyes
+  - type: Organ
+    category: Eyes # Harmony Change Organ

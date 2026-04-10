@@ -7,6 +7,6 @@
     weight: 3
     duration: 60
   - type: VentCrittersRule
-    entries:
-    - id: MobPleebnar
-      prob: 0.05
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobPleebnar

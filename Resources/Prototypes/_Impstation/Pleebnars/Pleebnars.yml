@@ -23,7 +23,7 @@
   - type: Speech
     speechSounds: PleebnarPVC
     speechVerb: SmallMob
-    allowedEmotes: ['Squeak','Scream','Blink']
+    allowedEmotes: ['Squeak','Scream'] # Harmony change, no blink
   - type: Sprite
     drawdepth: SmallMobs
     sprite: _Impstation/Mobs/Aliens/pleebnar.rsi
