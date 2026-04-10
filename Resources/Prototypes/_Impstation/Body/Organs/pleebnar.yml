@@ -137,10 +137,12 @@
   - type: Metabolizer
     maxReagents: 2
     metabolizerTypes: [ Animal ]
-    groups:
-    - id: Medicine
-    - id: Poison
-    - id: Narcotic
+    # Harmony Change Start, Metabolizer is Differnt
+    # groups:
+    # - id: Medicine
+    # - id: Poison
+    # - id: Narcotic
+    # Harmony Change End
   - type: Item
     size: Small
     heldPrefix: heart
