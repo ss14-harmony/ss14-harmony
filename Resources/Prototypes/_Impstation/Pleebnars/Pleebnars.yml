@@ -1,15 +1,15 @@
 - type: entity
   name: pleebnar
-  parent: SimpleMobBase
+  parent: [PleebnarBase, SimpleMobBase] # Harmony Change
   id: MobPleebnar
   description: UNIDENTIFIED PISKUN THING!
   components:
   # Harmony Change Start - No Vent Crawling
   # - type: VentCrawler
   #   enterDelay: 1
+  # - type: Body
+  #   prototype: pleebnar
   # Harmony Change End
-  - type: Body
-    prototype: pleebnar
   - type: GhostRole
     makeSentient: true
     allowSpeech: true

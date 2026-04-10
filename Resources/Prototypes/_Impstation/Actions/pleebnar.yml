@@ -8,8 +8,9 @@
     useDelay: 30
     itemIconStyle: NoItem
     icon:
-      sprite: _Goobstation/Changeling/changeling_abilities.rsi
-      state: mindshield
+      #sprite: _Goobstation/Changeling/changeling_abilities.rsi
+      sprite: Objects/Weapons/Melee/armblade.rsi
+      state: icon
   - type: TargetAction
     range: 15
     interactOnMiss: false
@@ -27,8 +28,9 @@
   - type: Action
     itemIconStyle: NoItem
     icon:
-      sprite: _Goobstation/Changeling/changeling_abilities.rsi
-      state: mindshield
+      #sprite: _Goobstation/Changeling/changeling_abilities.rsi
+      sprite: Objects/Weapons/Melee/armblade.rsi
+      state: icon
   - type: InstantAction
     event: !type:PleebnarVisionEvent
 
@@ -43,8 +45,9 @@
     useDelay: 30
     itemIconStyle: NoItem
     icon:
-      sprite: _Goobstation/Heretic/abilities_heretic.rsi
-      state: mansus_link
+      #sprite: _Goobstation/Heretic/abilities_heretic.rsi
+      sprite: Objects/Weapons/Melee/armblade.rsi
+      state: icon
   - type: TargetAction
     range: 15
     interactOnMiss: false

@@ -1,22 +1,38 @@
-- type: body
-  id: pleebnar
-  name: "Pleebnar"
-  root: torso
-  slots:
-    torso:
-      part: TorsoAnimal
-      connections:
-      - legs
-      organs:
-        stomach: OrganPleebnarStomach
-        lungs: OrganPleebnarLungs
-        liver: OrganPleebnarLiver
-        heart: OrganPleebnarHeart
-        kidneys: OrganPleebnarKidneys
-        eyes: OrganPleebnarEyes
-    legs:
-      part: LegsAnimal
-      connections:
-      - feet
-    feet:
-      part: FeetAnimal
+# - type: body
+#   id: pleebnar
+#   name: "Pleebnar"
+#   root: torso
+#   slots:
+#     torso:
+#       part: TorsoAnimal
+#       connections:
+#       - legs
+#       organs:
+#         stomach: OrganPleebnarStomach
+#         lungs: OrganPleebnarLungs
+#         liver: OrganPleebnarLiver
+#         heart: OrganPleebnarHeart
+#         kidneys: OrganPleebnarKidneys
+#         eyes: OrganPleebnarEyes
+#     legs:
+#       part: LegsAnimal
+#       connections:
+#       - feet
+#     feet:
+#       part: FeetAnimal
+
+- type: entity
+  id: PleebnarBase
+  abstract: true
+  components:
+  - type: Body
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganPleebnarStomach
+        - id: OrganPleebnarLungs
+        - id: OrganPleebnarLiver
+        - id: OrganPleebnarHeart
+        - id: OrganPleebnarKidneys
+        - id: OrganPleebnarEyes
