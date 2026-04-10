@@ -523,7 +523,7 @@ pleebnar-vision-174 = A room full of furniture designed to be as uncomfortable t
 pleebnar-vision-174-name = Unwelcome
 
 pleebnar-vision-175 = A room full of people. Literally full of people. There is no empty space.
-pleebnar-vision-175-name =Crush
+pleebnar-vision-175-name = Crush
 
 pleebnar-vision-176 = New stars appearing one after another, until all you can see is white.
 pleebnar-vision-176-name = Packed
