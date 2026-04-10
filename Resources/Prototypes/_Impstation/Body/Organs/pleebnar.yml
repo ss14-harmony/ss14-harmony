@@ -115,9 +115,11 @@
   - type: Metabolizer
     maxReagents: 1
     metabolizerTypes: [ Animal ]
-    groups:
-    - id: Alcohol
-      rateModifier: 0.1
+    # Harmony Change Start, Metabolizer is Differnt
+    # groups:
+    # - id: Alcohol
+    #   rateModifier: 0.1
+    # Harmony Change End
   - type: Item
     size: Small
     heldPrefix: liver
