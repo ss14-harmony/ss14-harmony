@@ -1,7 +1,7 @@
 pleebnar-vision-none-name = none
 
-pleebnar-vision-1 = A pack of Newports.
-pleebnar-vision-1-name = Newports
+#pleebnar-vision-1 = A pack of Newports.
+#pleebnar-vision-1-name = Newports
 
 pleebnar-vision-2 = A field of flowers blooming.
 pleebnar-vision-2-name = Flowers
@@ -387,7 +387,7 @@ pleebnar-vision-128-name = Montreal
 pleebnar-vision-129 = The feeling of biting someone as hard as you physically possibly can.
 pleebnar-vision-129-name = Hunger
 
-pleebnar-vision-130 = An extended combat sequence where you shirtlessly fight your Rival by beating each other up with guitars.
+pleebnar-vision-130 = An extended combat sequence  where you shirtlessly fight your Rival by beating each other up with guitars.
 pleebnar-vision-130-name = Showdown
 
 pleebnar-vision-131 = A memory of a birthday from your childhood that you did not have. You eat foods that you do not recognize, and the presents you recieve are labled in a language you haven't seen before, and will not see again.
