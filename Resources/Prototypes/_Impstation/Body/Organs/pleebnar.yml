@@ -29,7 +29,7 @@
   parent: BasePleebnarOrganUnGibbable
   abstract: true
   components:
-  - type: Gibbable
+  - type: GibbableOrgan
 
 - type: entity
   id: OrganPleebnarLungs

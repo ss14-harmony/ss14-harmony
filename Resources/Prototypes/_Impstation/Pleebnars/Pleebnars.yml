@@ -4,8 +4,10 @@
   id: MobPleebnar
   description: UNIDENTIFIED PISKUN THING!
   components:
-  - type: VentCrawler
-    enterDelay: 1
+  # Harmony Change Start - No Vent Crawling
+  # - type: VentCrawler
+  #   enterDelay: 1
+  # Harmony Change End
   - type: Body
     prototype: pleebnar
   - type: GhostRole
@@ -86,8 +88,10 @@
     baseWalkSpeed : 2.5
     baseSprintSpeed : 5
   - type: Edible
-  - type: GoobAbsorbable
-    biomassRestored: 0.1
+  # Harmony Change Start - No... uh... Absorbable?
+  # - type: GoobAbsorbable
+  #   biomassRestored: 0.1
+  # Harmony Change End
   - type: FlavorProfile
     flavors:
     - meaty
@@ -114,7 +118,7 @@
     solutions:
       food:
         reagents:
-        - ReagentId: GrayBlood
+        - ReagentId: GlorpExtract # Harmony Change, no greys
           Quantity: 3
   - type: ReplacementAccent
     accent: pleebnar

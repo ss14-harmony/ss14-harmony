@@ -2116,13 +2116,6 @@
   - type: Tag
     tags:
     - VimPilot
-    - MultitoolDefibrillatorTarget
-  - type: NightVision # EE edit
-    isActive: true
-    toggleAction: null
-    color: "#50595C"
-    activateSound: null
-    deactivateSound: null
   - type: PleebnarGibbable # imp edit
 
 
