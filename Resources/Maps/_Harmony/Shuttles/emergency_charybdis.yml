@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 267.3.0
+  engineVersion: 268.0.0
   forkId: harmony
-  forkVersion: f9664519760d8706a57ab1fc6a5445f4ce899b70
-  time: 11/24/2025 22:44:13
+  forkVersion: 9e1e60bc621650b219dceb2540c4403344028efa
+  time: 01/06/2026 16:26:06
   entityCount: 1138
 maps: []
 grids:
@@ -555,6 +555,7 @@ entities:
       flags: HideLabel
     - type: NavMap
     - type: RadiationGridResistance
+    - type: ExplosionAirtightGrid
 - proto: AirlockBarLocked
   entities:
   - uid: 2
@@ -738,6 +739,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 56.5,-14.5
       parent: 1
+    - type: Apc
+      maxLoad: 100000
     - type: Fixtures
       fixtures: {}
   - uid: 31
@@ -746,6 +749,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 68.5,-14.5
       parent: 1
+    - type: Apc
+      maxLoad: 100000
     - type: Fixtures
       fixtures: {}
   - uid: 32
@@ -762,6 +767,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 70.5,-33.5
       parent: 1
+    - type: Apc
+      maxLoad: 100000
     - type: Fixtures
       fixtures: {}
   - uid: 34
@@ -770,6 +777,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 65.5,-35.5
       parent: 1
+    - type: Apc
+      maxLoad: 100000
     - type: Fixtures
       fixtures: {}
   - uid: 35
@@ -778,6 +787,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 58.5,-20.5
       parent: 1
+    - type: Apc
+      maxLoad: 100000
     - type: Fixtures
       fixtures: {}
   - uid: 36
@@ -786,6 +797,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 57.5,-36.5
       parent: 1
+    - type: Apc
+      maxLoad: 100000
     - type: Fixtures
       fixtures: {}
 - proto: Ashtray

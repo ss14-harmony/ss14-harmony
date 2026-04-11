@@ -151,7 +151,7 @@
   - type: StaticPrice
     price: 500
   - type: PowerCellDraw
-    drawRate: 4
+    drawRate: 80 # Harmony change 4 -> 80
   - type: ToggleCellDraw
   - type: ItemSlots
     slots:
