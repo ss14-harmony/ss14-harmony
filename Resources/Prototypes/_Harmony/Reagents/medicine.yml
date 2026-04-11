@@ -9,7 +9,7 @@
   flavor: metallic
   color: "#9188BF"
   metabolisms:
-    Drink:
+    Bloodstream:
       effects:
         - !type:SatiateThirst
           factor: 6
