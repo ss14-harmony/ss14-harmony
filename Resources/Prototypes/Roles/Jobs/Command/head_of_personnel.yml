@@ -20,7 +20,7 @@
     - !type:DepartmentTimeRequirement
       department: Civilian
       time: 8h
-  # Harmony end
+    # Harmony end
     - !type:DepartmentTimeRequirement
       department: Command
       time: 8h # Harmony: 2.5h -> 8h
