@@ -8,6 +8,9 @@
     - !type:RoleTimeRequirement
       role: JobHeadOfPersonnel
       time: 3h # two Shifts of HoP
+    - !type:DepartmentTimeRequirement
+      department: Cargo
+      time: 4h
     # Harmony Change End
     - !type:DepartmentTimeRequirement
       department: Engineering
