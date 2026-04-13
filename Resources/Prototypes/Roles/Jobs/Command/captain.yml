@@ -4,6 +4,11 @@
   description: job-description-captain
   playTimeTracker: JobCaptain
   requirements:
+    # Harmony Change Start
+    - !type:RoleTimeRequirement
+      role: JobHeadOfPersonnel
+      time: 3h # two Shifts of HoP
+    # Harmony Change End
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 4h
