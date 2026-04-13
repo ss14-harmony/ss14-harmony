@@ -19,7 +19,7 @@
       department: Security
       time: 10h
     - !type:OverallPlaytimeRequirement
-      time: 12h # Harmony: 10h -> 12h
+      time: 24h # Harmony: 10h -> 12h
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"

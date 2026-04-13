@@ -15,9 +15,9 @@
     - !type:DepartmentTimeRequirement
       department: Cargo
       time: 8h # Harmony: 10h -> 8h
-  # Harmony start
+    # Harmony start
     - !type:OverallPlaytimeRequirement
-      time: 12h
+      time: 24h # 8 total shifts
     # Harmony end
   weight: 10
   startingGear: QuartermasterGear

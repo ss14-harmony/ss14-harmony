@@ -6,19 +6,19 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 2h # Harmony: 4h -> 2h
+      time: 4h
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 2h # Harmony: 4h -> 2h
+      time: 4h
     - !type:DepartmentTimeRequirement
       department: Science
-      time: 2h # Harmony: 4h -> 2h
+      time: 4h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 2h # Harmony: 4h -> 2h
+      time: 4h
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 6h # Harmony: 4h -> 6h
+      time: 12h # Harmony: 4h -> 12h
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"
