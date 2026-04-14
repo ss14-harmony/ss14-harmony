@@ -52,10 +52,13 @@ trait-hypophonia-desc = You can only whisper.
 trait-illeism-name = Illeism
 trait-illeism-desc = You seem to only be able to refer to yourself by name.
 
-trait-irish-name = Irish accent
+trait-irish-name = Irish Accent
 trait-irish-desc = Ya sap! Seems you got a pet hate fer rubbish!
 
-trait-scandinavian-name = Scandinavian accent
+trait-russianharmony-name = Russian Accent
+trait-russianharmony-desc = You hail from the Great Motherland. Khorosho, Tovarish!
+
+trait-scandinavian-name = Scandinavian Accent
 trait-scandinavian-desc = You have to assemble the sentence yourself.
 
 trait-uncloneable-name = Uncloneable

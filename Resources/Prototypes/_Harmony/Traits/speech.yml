@@ -256,6 +256,15 @@
   cost: 1
   components:
   - type: IrishAccent
+  
+- type: trait
+  id: RussianAccentHarmony
+  name: trait-russianharmony-name
+  description: trait-russianharmony-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: RussianAccentHarmony
 
 - type: trait
   id: ScandinavianAccent
