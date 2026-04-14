@@ -1,0 +1,244 @@
+- type: latheRecipe
+  abstract: true
+  parent: BaseRoboticsRecipe
+  id: BaseCyberlimbRecipe
+  categories:
+  - Robotics
+  completetime: 3
+  materials:
+    Steel: 50
+
+# Civilian - roundstart
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberArmLeft
+  result: OrganCyberArmLeft
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberArmRight
+  result: OrganCyberArmRight
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberLegLeft
+  result: OrganCyberLegLeft
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberLegRight
+  result: OrganCyberLegRight
+
+# Civilian T1
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberArmLeftT1
+  result: OrganCyberArmLeftT1
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberArmRightT1
+  result: OrganCyberArmRightT1
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberLegLeftT1
+  result: OrganCyberLegLeftT1
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberLegRightT1
+  result: OrganCyberLegRightT1
+
+# Civilian T2
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberArmLeftT2
+  result: OrganCyberArmLeftT2
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberArmRightT2
+  result: OrganCyberArmRightT2
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberLegLeftT2
+  result: OrganCyberLegLeftT2
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberLegRightT2
+  result: OrganCyberLegRightT2
+
+# Civilian T3
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberArmLeftT3
+  result: OrganCyberArmLeftT3
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberArmRightT3
+  result: OrganCyberArmRightT3
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberLegLeftT3
+  result: OrganCyberLegLeftT3
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberLegRightT3
+  result: OrganCyberLegRightT3
+
+# Military - use Tools category for Security TechFab
+- type: latheRecipe
+  abstract: true
+  parent: BaseCyberlimbRecipe
+  id: BaseMilitaryCyberlimbRecipe
+  categories:
+  - Tools
+
+# Military T1
+- type: latheRecipe
+  parent: BaseMilitaryCyberlimbRecipe
+  id: OrganCyberArmLeftMilitaryT1
+  result: OrganCyberArmLeftMilitaryT1
+
+- type: latheRecipe
+  parent: BaseMilitaryCyberlimbRecipe
+  id: OrganCyberArmRightMilitaryT1
+  result: OrganCyberArmRightMilitaryT1
+
+- type: latheRecipe
+  parent: BaseMilitaryCyberlimbRecipe
+  id: OrganCyberLegLeftMilitaryT1
+  result: OrganCyberLegLeftMilitaryT1
+
+- type: latheRecipe
+  parent: BaseMilitaryCyberlimbRecipe
+  id: OrganCyberLegRightMilitaryT1
+  result: OrganCyberLegRightMilitaryT1
+
+# Military T2
+- type: latheRecipe
+  parent: BaseMilitaryCyberlimbRecipe
+  id: OrganCyberArmLeftMilitaryT2
+  result: OrganCyberArmLeftMilitaryT2
+
+- type: latheRecipe
+  parent: BaseMilitaryCyberlimbRecipe
+  id: OrganCyberArmRightMilitaryT2
+  result: OrganCyberArmRightMilitaryT2
+
+- type: latheRecipe
+  parent: BaseMilitaryCyberlimbRecipe
+  id: OrganCyberLegLeftMilitaryT2
+  result: OrganCyberLegLeftMilitaryT2
+
+- type: latheRecipe
+  parent: BaseMilitaryCyberlimbRecipe
+  id: OrganCyberLegRightMilitaryT2
+  result: OrganCyberLegRightMilitaryT2
+
+# Cyber organs
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberHeartBasic
+  result: OrganCyberHeartBasic
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberLungsBasic
+  result: OrganCyberLungsBasic
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberLiverBasic
+  result: OrganCyberLiverBasic
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberStomachBasic
+  result: OrganCyberStomachBasic
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberEyesBasic
+  result: OrganCyberEyesBasic
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberHeartT1
+  result: OrganCyberHeartT1
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberLungsT1
+  result: OrganCyberLungsT1
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberLiverT1
+  result: OrganCyberLiverT1
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberStomachT1
+  result: OrganCyberStomachT1
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberEyesT1
+  result: OrganCyberEyesT1
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberHeartT2
+  result: OrganCyberHeartT2
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberLungsT2
+  result: OrganCyberLungsT2
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberLiverT2
+  result: OrganCyberLiverT2
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberStomachT2
+  result: OrganCyberStomachT2
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberEyesT2
+  result: OrganCyberEyesT2
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberHeartT3
+  result: OrganCyberHeartT3
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberLungsT3
+  result: OrganCyberLungsT3
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberLiverT3
+  result: OrganCyberLiverT3
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberStomachT3
+  result: OrganCyberStomachT3
+
+- type: latheRecipe
+  parent: BaseCyberlimbRecipe
+  id: OrganCyberEyesT3
+  result: OrganCyberEyesT3

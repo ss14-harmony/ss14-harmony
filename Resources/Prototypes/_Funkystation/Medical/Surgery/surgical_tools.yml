@@ -1,0 +1,52 @@
+# Surgical tools - tag to display name for UI. Used by HealthAnalyzerControl.
+# No Hand prototype - IsHand is a boolean on PrimaryToolSpec when RequiresTool=false.
+
+- type: surgicalTool
+  id: CuttingTool
+  tag: CuttingTool
+  displayName: health-analyzer-surgery-tool-scalpel
+
+- type: surgicalTool
+  id: Wirecutter
+  tag: Wirecutter
+  displayName: health-analyzer-surgery-tool-wirecutter
+
+- type: surgicalTool
+  id: PryingTool
+  tag: PryingTool
+  displayName: health-analyzer-surgery-tool-retractor
+
+- type: surgicalTool
+  id: SawingTool
+  tag: SawingTool
+  displayName: health-analyzer-surgery-tool-saw
+
+- type: surgicalTool
+  id: HeatWeapon
+  tag: HeatWeapon
+  displayName: health-analyzer-surgery-tool-cautery
+
+- type: surgicalTool
+  id: ManipulatingTool
+  tag: ManipulatingTool
+  displayName: health-analyzer-surgery-tool-hemostat
+
+- type: surgicalTool
+  id: HemostatTool
+  tag: HemostatTool
+  displayName: health-analyzer-surgery-tool-hemostat
+
+- type: surgicalTool
+  id: AnchoringTool
+  tag: AnchoringTool
+  displayName: health-analyzer-surgery-tool-wrench
+
+- type: surgicalTool
+  id: BoneGelTool
+  tag: BoneGelTool
+  displayName: health-analyzer-surgery-tool-bone-gel
+
+- type: surgicalTool
+  id: Screwdriver
+  tag: Screwdriver
+  displayName: health-analyzer-surgery-tool-screwdriver

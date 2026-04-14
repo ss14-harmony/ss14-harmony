@@ -1,3 +1,19 @@
+// SPDX-FileCopyrightText: 2022-2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Volodius <43648983+Volotomite@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TaralGit <76408146+TaralGit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2025 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
+// SPDX-FileCopyrightText: 2026 mq <113324899+mqole@users.noreply.github.com>
+// SPDX-License-Identifier: MIT
+
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Examine;
@@ -7,6 +23,7 @@ using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Containers;
+using Robust.Shared.Map;
 
 namespace Content.Shared.Weapons.Ranged.Systems;
 
@@ -293,7 +310,7 @@ public abstract partial class SharedGunSystem
         }
     }
 
-    private bool TryTakeChamberEntity(EntityUid uid, [NotNullWhen(true)] out EntityUid? entity)
+    private bool TryTakeChamberEntity(EntityUid uid, [NotNullWhen(true)] out EntityUid? entity, EntityCoordinates? destination = null)
     {
         if (!Containers.TryGetContainer(uid, ChamberSlot, out var container) ||
             container is not ContainerSlot slot)
@@ -306,7 +323,10 @@ public abstract partial class SharedGunSystem
         if (entity == null)
             return false;
 
-        Containers.Remove(entity.Value, container);
+        // Pass destination to avoid AttachParentToContainerOrGrid - when storage is full it can
+        // fail to place the entity and it ends up in nullspace (effectively deleted). We handle
+        // cyberlimb storage insertion explicitly in GunSystem.Shoot.
+        Containers.Remove(entity.Value, container, destination: destination);
         return true;
     }
 
@@ -366,7 +386,7 @@ public abstract partial class SharedGunSystem
         // Normal behaviour for guns.
         if (component.AutoCycle)
         {
-            if (TryTakeChamberEntity(uid, out chamberEnt))
+            if (TryTakeChamberEntity(uid, out chamberEnt, args.Coordinates))
             {
                 args.Ammo.Add((chamberEnt.Value, EnsureShootable(chamberEnt.Value)));
             }

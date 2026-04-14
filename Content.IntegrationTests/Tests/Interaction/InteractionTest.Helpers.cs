@@ -567,8 +567,11 @@ public abstract partial class InteractionTest
     /// <summary>
     /// Wait for any currently active DoAfters to finish.
     /// </summary>
-    protected async Task AwaitDoAfters(int maxExpected = 1)
+    // Funkystation - CyberMed
+    protected async Task AwaitDoAfters(int maxExpected = 1, int minExpected = 0)
     {
+        Assert.That(ActiveDoAfters.Count(), Is.GreaterThanOrEqualTo(minExpected));
+
         if (!ActiveDoAfters.Any())
             return;
 
@@ -1169,11 +1172,14 @@ public abstract partial class InteractionTest
     /// <summary>
     ///     Sends a bui message using the given bui key.
     /// </summary>
-    protected async Task SendBui(Enum key, BoundUserInterfaceMessage msg, NetEntity? target = null)
+    // Funkystation - CyberMed
+    protected async Task SendBui(Enum key, BoundUserInterfaceMessage msg, NetEntity? target = null, bool fromServer = false)
     {
         if (!TryGetBui(key, out var bui, target))
             return;
 
+        // Funkystation - CyberMed
+        // Compatibility shim: this branch's BUI API does not expose server-origin send for tests.
         await Client.WaitPost(() => bui.SendMessage(msg));
 
         // allow for client -> server and server -> client messages to be sent.

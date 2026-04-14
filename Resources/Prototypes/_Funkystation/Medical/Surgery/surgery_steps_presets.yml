@@ -1,0 +1,5 @@
+# Reusable preset for limbs that skip skin/tissue layers (organ layer only).
+# Used by Skeleton arms/legs and Cyber limbs. Any species with organ-only limb surgery can reference this.
+- type: bodyPartSurgeryStepsPreset
+  id: OrganOnlyLimb
+  organSteps: [DetachLimb, AttachLimb]

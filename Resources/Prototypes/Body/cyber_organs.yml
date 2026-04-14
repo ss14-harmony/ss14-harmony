@@ -1,0 +1,260 @@
+- type: entity
+  id: OrganSpriteCyberInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _EinsteinEngines/Mobs/Species/Cybernetics/organs.rsi
+
+- type: entity
+  abstract: true
+  parent: [ OrganBaseHeart, OrganSpriteCyberInternal ]
+  id: OrganCyberHeartBase
+  name: cyber heart
+  components:
+  - type: Sprite
+    layers:
+    - state: CyberHeart
+  - type: Organ
+    category: Heart
+    integrityCost: 1
+  - type: CyberOrgan
+    effectiveness: 1.0
+  - type: Item
+    heldPrefix: cyber heart
+
+- type: entity
+  abstract: true
+  parent: [ OrganBaseLungs, OrganSpriteCyberInternal ]
+  id: OrganCyberLungsBase
+  name: cyber lungs
+  components:
+  - type: Sprite
+    layers:
+    - state: CyberLungs
+  - type: Organ
+    category: Lungs
+    integrityCost: 1
+  - type: CyberOrgan
+    effectiveness: 1.0
+  - type: Item
+    heldPrefix: cyber lungs
+
+- type: entity
+  abstract: true
+  parent: [ OrganBaseLiver, OrganSpriteCyberInternal ]
+  id: OrganCyberLiverBase
+  name: cyber liver
+  components:
+  - type: Sprite
+    layers:
+    - state: CyberLiver
+  - type: Organ
+    category: Liver
+    integrityCost: 1
+  - type: CyberOrgan
+    effectiveness: 1.0
+  - type: Item
+    heldPrefix: cyber liver
+
+- type: entity
+  abstract: true
+  parent: [ OrganBaseStomach, OrganSpriteCyberInternal ]
+  id: OrganCyberStomachBase
+  name: cyber stomach
+  components:
+  - type: Sprite
+    layers:
+    - state: CyberStomach
+  - type: Organ
+    category: Stomach
+    integrityCost: 1
+  - type: CyberOrgan
+    effectiveness: 1.0
+  - type: Item
+    heldPrefix: cyber stomach
+
+- type: entity
+  abstract: true
+  parent: [ OrganBaseEyes, OrganSpriteCyberInternal ]
+  id: OrganCyberEyesBase
+  name: cyber eyes
+  components:
+  - type: Sprite
+    layers:
+    - state: CyberEyes
+  - type: Organ
+    category: Eyes
+    integrityCost: 1
+  - type: CyberOrgan
+    effectiveness: 1.0
+  - type: VisualOrganMarkings
+    markingData:
+      group: None
+      layers:
+      - Eyes
+  - type: Item
+    heldPrefix: cyber eyes
+
+# Basic tier (80%)
+- type: entity
+  parent: OrganCyberHeartBase
+  id: OrganCyberHeartBasic
+  name: basic cyber heart
+  components:
+  - type: CyberOrgan
+    effectiveness: 0.8
+
+- type: entity
+  parent: OrganCyberLungsBase
+  id: OrganCyberLungsBasic
+  name: basic cyber lungs
+  components:
+  - type: CyberOrgan
+    effectiveness: 0.8
+
+- type: entity
+  parent: OrganCyberLiverBase
+  id: OrganCyberLiverBasic
+  name: basic cyber liver
+  components:
+  - type: CyberOrgan
+    effectiveness: 0.8
+
+- type: entity
+  parent: OrganCyberStomachBase
+  id: OrganCyberStomachBasic
+  name: basic cyber stomach
+  components:
+  - type: CyberOrgan
+    effectiveness: 0.8
+
+- type: entity
+  parent: OrganCyberEyesBase
+  id: OrganCyberEyesBasic
+  name: basic cyber eyes
+  components:
+  - type: CyberOrgan
+    effectiveness: 0.8
+
+# T1 tier (100%)
+- type: entity
+  parent: OrganCyberHeartBase
+  id: OrganCyberHeartT1
+  name: cyber heart
+  components:
+  - type: CyberOrgan
+    effectiveness: 1.0
+
+- type: entity
+  parent: OrganCyberLungsBase
+  id: OrganCyberLungsT1
+  name: cyber lungs
+  components:
+  - type: CyberOrgan
+    effectiveness: 1.0
+
+- type: entity
+  parent: OrganCyberLiverBase
+  id: OrganCyberLiverT1
+  name: cyber liver
+  components:
+  - type: CyberOrgan
+    effectiveness: 1.0
+
+- type: entity
+  parent: OrganCyberStomachBase
+  id: OrganCyberStomachT1
+  name: cyber stomach
+  components:
+  - type: CyberOrgan
+    effectiveness: 1.0
+
+- type: entity
+  parent: OrganCyberEyesBase
+  id: OrganCyberEyesT1
+  name: cyber eyes
+  components:
+  - type: CyberOrgan
+    effectiveness: 1.0
+
+# T2 tier (120%)
+- type: entity
+  parent: OrganCyberHeartBase
+  id: OrganCyberHeartT2
+  name: advanced cyber heart
+  components:
+  - type: CyberOrgan
+    effectiveness: 1.2
+
+- type: entity
+  parent: OrganCyberLungsBase
+  id: OrganCyberLungsT2
+  name: advanced cyber lungs
+  components:
+  - type: CyberOrgan
+    effectiveness: 1.2
+
+- type: entity
+  parent: OrganCyberLiverBase
+  id: OrganCyberLiverT2
+  name: advanced cyber liver
+  components:
+  - type: CyberOrgan
+    effectiveness: 1.2
+
+- type: entity
+  parent: OrganCyberStomachBase
+  id: OrganCyberStomachT2
+  name: advanced cyber stomach
+  components:
+  - type: CyberOrgan
+    effectiveness: 1.2
+
+- type: entity
+  parent: OrganCyberEyesBase
+  id: OrganCyberEyesT2
+  name: advanced cyber eyes
+  components:
+  - type: CyberOrgan
+    effectiveness: 1.2
+
+# T3 tier (140%)
+- type: entity
+  parent: OrganCyberHeartBase
+  id: OrganCyberHeartT3
+  name: elite cyber heart
+  components:
+  - type: CyberOrgan
+    effectiveness: 1.4
+
+- type: entity
+  parent: OrganCyberLungsBase
+  id: OrganCyberLungsT3
+  name: elite cyber lungs
+  components:
+  - type: CyberOrgan
+    effectiveness: 1.4
+
+- type: entity
+  parent: OrganCyberLiverBase
+  id: OrganCyberLiverT3
+  name: elite cyber liver
+  components:
+  - type: CyberOrgan
+    effectiveness: 1.4
+
+- type: entity
+  parent: OrganCyberStomachBase
+  id: OrganCyberStomachT3
+  name: elite cyber stomach
+  components:
+  - type: CyberOrgan
+    effectiveness: 1.4
+
+- type: entity
+  parent: OrganCyberEyesBase
+  id: OrganCyberEyesT3
+  name: elite cyber eyes
+  components:
+  - type: CyberOrgan
+    effectiveness: 1.4

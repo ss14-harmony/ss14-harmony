@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 pathetic meowmeow <uhhadd@gmail.com>
+// SPDX-License-Identifier: MIT
+
 namespace Content.Shared.Body;
 
 public sealed partial class BodySystem
@@ -9,7 +12,8 @@ public sealed partial class BodySystem
         if (!_bodyQuery.Resolve(ent, ref ent.Comp))
             return false;
 
-        foreach (var organ in ent.Comp.Organs?.ContainedEntities ?? [])
+        // Funkystation: Changed from ent.comp.organs contained entities. Because the organ structure has changed
+        foreach (var organ in GetAllOrgans(ent))
         {
             if (TryComp<TComp>(organ, out var comp))
                 organs.Add((organ, comp));

@@ -1,29 +1,36 @@
 <BoxContainer
     xmlns="https://spacestation14.io"
+    xmlns:ui="clr-namespace:Content.Client.HealthAnalyzer.UI"
     VerticalExpand="True"
     Orientation="Vertical">
+    <BoxContainer Name="ModeButtonContainer" Orientation="Horizontal" Margin="0 0 0 5">
+        <Button Name="HealthModeButton" Text="{Loc health-analyzer-mode-health}" />
+        <Button Name="IntegrityModeButton" Text="{Loc health-analyzer-mode-integrity}" />
+        <Button Name="SurgeryModeButton" Text="{Loc health-analyzer-mode-surgery}" />
+    </BoxContainer>
+
     <Label
         Name="NoPatientDataText"
         Text="{Loc health-analyzer-window-no-patient-data-text}" />
 
     <BoxContainer
-        Name="PatientDataContainer"
+        Name="BodyHeaderContainer"
+        Orientation="Horizontal"
         Margin="0 0 0 5"
-        Orientation="Vertical">
-        <BoxContainer Orientation="Horizontal" Margin="0 0 0 5">
-            <SpriteView OverrideDirection="South" Scale="2 2" Name="SpriteView" Access="Public" SetSize="64 64" />
-            <TextureRect Name="NoDataTex" Access="Public" SetSize="64 64" Visible="false" Stretch="KeepAspectCentered" TexturePath="/Textures/Interface/Misc/health_analyzer_out_of_range.png"/>
-            <BoxContainer Margin="5 0 0 0" Orientation="Vertical" VerticalAlignment="Top">
-                <RichTextLabel Name="NameLabel" SetWidth="150" />
-                <Label Name="SpeciesLabel" VerticalAlignment="Top" StyleClasses="LabelSubText" />
-            </BoxContainer>
-            <Label Margin="0 0 5 0" HorizontalExpand="True" HorizontalAlignment="Right" VerticalExpand="True"
-                   VerticalAlignment="Top" Name="ScanModeLabel"
-                   Text="{Loc 'health-analyzer-window-entity-unknown-text'}" />
+        Visible="False">
+        <ui:SurgeryBodyPartDiagramControl Name="BodyDiagram" Access="Public" SetSize="64 128" MinSize="64 128" MouseFilter="Stop" />
+        <TextureRect Name="NoDataTex" Access="Public" SetSize="64 128" Visible="false" Stretch="KeepAspectCentered" TexturePath="/Textures/Interface/Misc/health_analyzer_out_of_range.png"/>
+        <BoxContainer Margin="5 0 0 0" Orientation="Vertical" VerticalAlignment="Top">
+            <RichTextLabel Name="NameLabel" SetWidth="150" />
+            <Label Name="SpeciesLabel" VerticalAlignment="Top" StyleClasses="LabelSubText" />
         </BoxContainer>
+        <Label Margin="0 0 5 0" HorizontalExpand="True" HorizontalAlignment="Right" VerticalExpand="True"
+               VerticalAlignment="Top" Name="ScanModeLabel"
+               Text="{Loc 'health-analyzer-window-entity-unknown-text'}" />
+    </BoxContainer>
 
+    <BoxContainer Name="HealthContent" Visible="False" Orientation="Vertical" Margin="0 0 0 5">
         <PanelContainer StyleClasses="LowDivider" />
-
         <GridContainer Margin="0 5 0 0" Columns="2">
             <Label Text="{Loc 'health-analyzer-window-entity-status-text'}" />
             <Label Name="StatusLabel" />
@@ -39,15 +46,36 @@
     <PanelContainer Name="AlertsDivider" Visible="False" StyleClasses="LowDivider" />
 
     <BoxContainer Name="AlertsContainer" Visible="False" Margin="0 5" Orientation="Vertical" HorizontalAlignment="Center">
-
     </BoxContainer>
 
-    <PanelContainer StyleClasses="LowDivider" />
+    <PanelContainer Name="HealthDivider" StyleClasses="LowDivider" Visible="False" />
 
     <BoxContainer
         Name="GroupsContainer"
         Margin="0 5 0 5"
+        Visible="False"
         Orientation="Vertical">
+    </BoxContainer>
+
+    <BoxContainer Name="IntegrityContent" Visible="False" Orientation="Vertical" Margin="0 5 0 5">
+        <PanelContainer StyleClasses="LowDivider" />
+        <GridContainer Margin="0 5 0 0" Columns="2">
+            <Label Text="{Loc 'health-analyzer-window-entity-integrity-text'}" />
+            <Label Name="IntegrityLabel" />
+        </GridContainer>
+        <BoxContainer Name="IntegrityPenaltiesList" Orientation="Vertical" Margin="0 5 0 0" />
+    </BoxContainer>
+
+    <BoxContainer Name="SurgeryContent" Visible="False" Orientation="Vertical" Margin="0 5 0 5">
+        <PanelContainer StyleClasses="LowDivider" />
+        <Label Name="SurgeryLayerLabel" Text="Layer:" Margin="0 5 0 0" />
+        <BoxContainer Name="SurgeryLayerButtons" Orientation="Horizontal" Margin="0 2 0 5">
+            <Button Name="SkinLayerButton" Text="Skin" />
+            <Button Name="TissueLayerButton" Text="Tissue" />
+            <Button Name="OrganLayerButton" Text="Organ" />
+        </BoxContainer>
+        <Label Name="SurgeryStepsLabel" Text="Steps:" />
+        <BoxContainer Name="SurgeryStepsList" Orientation="Vertical" Margin="0 2 0 0" />
     </BoxContainer>
 
 </BoxContainer>

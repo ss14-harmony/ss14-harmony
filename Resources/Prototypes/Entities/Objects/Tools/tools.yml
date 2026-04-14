@@ -89,6 +89,25 @@
     price: 30
 
 - type: entity
+  name: precision screwdriver # Funky - CyberMed
+  parent: Screwdriver 
+  id: ScrewdriverPrecision 
+  description: A high-precision screwdriver for delicate cybernetic maintenance. Preferred by roboticists. # Funky - CyberMed
+  components:
+  - type: Tag
+    tags:
+    - Screwdriver
+    - PrecisionRepairTool 
+  - type: Tool
+    qualities:
+      - Screwing
+      - PrecisionScrewing 
+    useSound:
+      collection: Screwdriver
+  - type: StaticPrice
+    price: 50 
+
+- type: entity
   name: wrench
   parent: BaseItem
   id: Wrench

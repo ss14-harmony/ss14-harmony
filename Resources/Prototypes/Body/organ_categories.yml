@@ -1,59 +1,82 @@
+# SPDX-FileCopyrightText: 2026 pathetic meowmeow <uhhadd@gmail.com>
+# SPDX-License-Identifier: MIT
+
 - type: organCategory
   id: Torso
+  name: organ-category-torso
 
 - type: organCategory
   id: Head
+  name: organ-category-head
 
 - type: organCategory
   id: ArmLeft
+  name: organ-category-left-arm
 
 - type: organCategory
   id: ArmRight
+  name: organ-category-right-arm
 
 - type: organCategory
   id: HandRight
+  name: organ-category-right-hand
 
 - type: organCategory
   id: HandLeft
+  name: organ-category-left-hand
 
 - type: organCategory
   id: LegLeft
+  name: organ-category-left-leg
 
 - type: organCategory
   id: LegRight
+  name: organ-category-right-leg
 
 - type: organCategory
   id: FootLeft
+  name: organ-category-left-foot
 
 - type: organCategory
   id: FootRight
+  name: organ-category-right-foot
 
 - type: organCategory
   id: Brain
+  name: organ-category-brain
 
 - type: organCategory
   id: Eyes
+  name: organ-category-eyes
 
 - type: organCategory
   id: Tongue
+  name: organ-category-tongue
 
 - type: organCategory
   id: Appendix
+  name: organ-category-appendix
 
 - type: organCategory
   id: Ears
+  name: organ-category-ears
 
 - type: organCategory
   id: Lungs
+  name: organ-category-lungs
 
 - type: organCategory
   id: Heart
+  name: organ-category-heart
 
 - type: organCategory
   id: Stomach
+  name: organ-category-stomach
 
 - type: organCategory
   id: Liver
+  name: organ-category-liver
 
 - type: organCategory
   id: Kidneys
+  name: organ-category-kidneys

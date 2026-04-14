@@ -134,3 +134,16 @@ public sealed class GetEyeProtectionEvent : EntityEventArgs, IInventoryRelayEven
 
     public SlotFlags TargetSlots => SlotFlags.EYES | SlotFlags.MASK | SlotFlags.HEAD;
 }
+
+// Funkystation - CyberMed
+// Raised on an entity to get a multiplier for blindness/flash duration.
+[ByRefEvent]
+public record struct GetBlindnessDurationMultiplierEvent
+{
+    public float Multiplier;
+
+    public GetBlindnessDurationMultiplierEvent()
+    {
+        Multiplier = 1f;
+    }
+}

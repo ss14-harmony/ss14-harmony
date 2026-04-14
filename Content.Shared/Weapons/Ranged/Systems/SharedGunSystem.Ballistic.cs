@@ -1,3 +1,25 @@
+// SPDX-FileCopyrightText: 2022-2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022-2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 KIBORG04 <bossmira4@gmail.com>
+// SPDX-FileCopyrightText: 2023-2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023-2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023-2024 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TaralGit <76408146+TaralGit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Arendian <137322659+Arendian@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Centronias <me@centronias.com>
+// SPDX-FileCopyrightText: 2025 Sir Warock <67167466+SirWarock@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 mq <113324899+mqole@users.noreply.github.com>
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.DoAfter;
 using Content.Shared.Emp;
 using Content.Shared.Examine;
@@ -245,7 +267,10 @@ public abstract partial class SharedGunSystem
                 var existingEnt = ent.Comp.Entities[^1];
                 ent.Comp.Entities.RemoveAt(ent.Comp.Entities.Count - 1);
                 DirtyField(ent.AsNullable(), nameof(BallisticAmmoProviderComponent.Entities));
-                Containers.Remove(existingEnt, ent.Comp.Container);
+                // Pass destination to avoid AttachParentToContainerOrGrid - when storage is full it can
+                // fail to place the entity and it ends up in nullspace (effectively deleted). We handle
+                // cyberlimb storage insertion explicitly in GunSystem.Shoot.
+                Containers.Remove(existingEnt, ent.Comp.Container, destination: args.Coordinates);
                 ammoEntity = existingEnt;
             }
             else if (ent.Comp.UnspawnedCount > 0)
