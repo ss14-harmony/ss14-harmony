@@ -6,6 +6,7 @@ using Content.Shared.Medical.Surgery.Prototypes;
 using Content.Shared.Popups;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.MedicalScanner;
 
@@ -101,6 +102,7 @@ public sealed class SharedHealthAnalyzerSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     public override void Initialize()
     {
@@ -132,6 +134,9 @@ public sealed class SharedHealthAnalyzerSystem : EntitySystem
         var ev = new SurgeryRequestEvent(uid.Owner, user, targetUid, bodyPartUid, args.ProcedureId, args.Layer, args.IsImprovised,
             args.Organ.HasValue ? GetEntity(args.Organ.Value) : null);
         RaiseLocalEvent(targetUid, ref ev);
+
+        if (!_timing.IsFirstTimePredicted)
+            return;
 
         if (ev.Valid && ev.UsedImprovisedTool && ev.ToolUsed.HasValue && Exists(ev.ToolUsed.Value))
         {
@@ -168,7 +173,7 @@ public sealed class SharedHealthAnalyzerSystem : EntitySystem
                 _ => "health-analyzer-surgery-error-invalid-surgical-process"
             };
             var msg = Loc.GetString(msgKey);
-            _popup.PopupClient(msg, user, user, PopupType.Medium);
+            _popup.PopupPredicted(msg, user, user, PopupType.Medium);
         }
     }
 }

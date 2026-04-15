@@ -27,6 +27,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.Medical.Surgery;
 
@@ -48,6 +49,7 @@ public sealed class SurgerySystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     public override void Initialize()
     {
@@ -538,8 +540,8 @@ public sealed class SurgerySystem : EntitySystem
         var doAfterArgs = new DoAfterArgs(EntityManager, args.User, delay, doAfterEv, args.Target, args.Target, tool)
         {
             NeedHand = true,
-            BreakOnHandChange = !isOrganStep,
-            BreakOnMove = !isOrganStep,
+            BreakOnHandChange = true,
+            BreakOnMove = true,
             BreakOnDropItem = !isOrganStep,
             DistanceThreshold = isOrganStep ? 3f : 1.5f,
             RequireCanInteract = !isOrganStep,
@@ -594,7 +596,7 @@ public sealed class SurgerySystem : EntitySystem
 
             if (stepsConfig == null || !_surgeryLayer.CanPerformStep(args.ProcedureId.ToString(), stepLayer, layerComp, stepsConfig, bodyPart, organUid))
             {
-                _popup.PopupClient(Loc.GetString("health-analyzer-surgery-error-invalid-surgical-process"), args.User, args.User, PopupType.Medium);
+                PopupSurgeryFeedback(Loc.GetString("health-analyzer-surgery-error-invalid-surgical-process"), args.User);
                 return;
             }
         }
@@ -649,7 +651,7 @@ public sealed class SurgerySystem : EntitySystem
         {
             if (!TryComp<BodyPartComponent>(bodyPart, out bodyPartComp) || bodyPartComp.Body != ent.Owner)
             {
-                _popup.PopupClient(Loc.GetString("health-analyzer-surgery-error-invalid-surgical-process"), user, user, PopupType.Medium);
+                PopupSurgeryFeedback(Loc.GetString("health-analyzer-surgery-error-invalid-surgical-process"), user);
                 return;
             }
 
@@ -677,12 +679,12 @@ public sealed class SurgerySystem : EntitySystem
         {
             if (organUid is not { } organ || !Exists(organ))
             {
-                _popup.PopupClient(Loc.GetString("health-analyzer-surgery-error-organ-gone"), user, user, PopupType.Medium);
+                PopupSurgeryFeedback(Loc.GetString("health-analyzer-surgery-error-organ-gone"), user);
                 return;
             }
             if (bodyPartComp!.Organs == null || !bodyPartComp.Organs.ContainedEntities.Contains(organ))
             {
-                _popup.PopupClient(Loc.GetString("health-analyzer-surgery-error-organ-gone"), user, user, PopupType.Medium);
+                PopupSurgeryFeedback(Loc.GetString("health-analyzer-surgery-error-organ-gone"), user);
                 return;
             }
             var removeEv = new OrganRemoveRequestEvent(organ) { Destination = Transform(user).Coordinates };
@@ -719,12 +721,12 @@ public sealed class SurgerySystem : EntitySystem
         {
             if (organUid is not { } organ || !Exists(organ))
             {
-                _popup.PopupClient(Loc.GetString("health-analyzer-surgery-error-organ-not-in-hand"), user, user, PopupType.Medium);
+                PopupSurgeryFeedback(Loc.GetString("health-analyzer-surgery-error-organ-not-in-hand"), user);
                 return;
             }
             if (!_hands.IsHolding(user, organ))
             {
-                _popup.PopupClient(Loc.GetString("health-analyzer-surgery-error-organ-not-in-hand"), user, user, PopupType.Medium);
+                PopupSurgeryFeedback(Loc.GetString("health-analyzer-surgery-error-organ-not-in-hand"), user);
                 return;
             }
             if (TryComp<OrganComponent>(organ, out var organComp) && organComp.Category is { } category &&
@@ -732,7 +734,7 @@ public sealed class SurgerySystem : EntitySystem
                 bodyPartComp.Organs.ContainedEntities.Any(o =>
                     TryComp<OrganComponent>(o, out var oComp) && oComp.Category == category))
             {
-                _popup.PopupClient(Loc.GetString("health-analyzer-surgery-error-slot-filled"), user, user, PopupType.Medium);
+                PopupSurgeryFeedback(Loc.GetString("health-analyzer-surgery-error-slot-filled"), user);
                 return;
             }
             var insertEv = new OrganInsertRequestEvent(bodyPart, organ);
@@ -749,7 +751,7 @@ public sealed class SurgerySystem : EntitySystem
                 RaiseLocalEvent(ent.Owner, ref uiRefreshEv);
             }
             else
-                _popup.PopupClient(Loc.GetString("health-analyzer-surgery-error-slot-filled"), user, user, PopupType.Medium);
+                PopupSurgeryFeedback(Loc.GetString("health-analyzer-surgery-error-slot-filled"), user);
         }
         else if (stepId == "DetachLimb")
         {
@@ -806,7 +808,7 @@ public sealed class SurgerySystem : EntitySystem
         {
             if (organUid is not { } limb || !Exists(limb) || !_hands.IsHolding(user, limb))
             {
-                _popup.PopupClient(Loc.GetString("health-analyzer-surgery-error-organ-not-in-hand"), user, user, PopupType.Medium);
+                PopupSurgeryFeedback(Loc.GetString("health-analyzer-surgery-error-organ-not-in-hand"), user);
                 return;
             }
             if (TryComp<OrganComponent>(limb, out var limbOrganComp) && limbOrganComp.Category is { } attachCategory)
@@ -815,7 +817,7 @@ public sealed class SurgerySystem : EntitySystem
                     TryComp<OrganComponent>(o, out var oComp) && oComp.Category == attachCategory);
                 if (alreadyHasLimb)
                 {
-                    _popup.PopupClient(Loc.GetString("health-analyzer-surgery-error-slot-filled"), user, user, PopupType.Medium);
+                    PopupSurgeryFeedback(Loc.GetString("health-analyzer-surgery-error-slot-filled"), user);
                     return;
                 }
             }
@@ -828,14 +830,14 @@ public sealed class SurgerySystem : EntitySystem
                     Dirty(bodyPart, layerComp);
                 }
                 var limbName = Identity.Name(limb, EntityManager, user);
-                _popup.PopupClient(Loc.GetString("health-analyzer-surgery-organ-fully-attached", ("organName", limbName)), user, user, PopupType.Medium);
+                PopupSurgeryFeedback(Loc.GetString("health-analyzer-surgery-organ-fully-attached", ("organName", limbName)), user);
                 var penaltyEv = new SurgeryPenaltyAppliedEvent(limb, penalty);
                 RaiseLocalEvent(limb, ref penaltyEv);
                 var uiRefreshEv = new SurgeryUiRefreshRequestEvent();
                 RaiseLocalEvent(ent.Owner, ref uiRefreshEv);
             }
             else
-                _popup.PopupClient(Loc.GetString("health-analyzer-surgery-error-slot-filled"), user, user, PopupType.Medium);
+                PopupSurgeryFeedback(Loc.GetString("health-analyzer-surgery-error-slot-filled"), user);
         }
         else if (procedure != null && layerComp != null && organUid.HasValue && organNet.HasValue)
         {
@@ -854,7 +856,7 @@ public sealed class SurgerySystem : EntitySystem
                     {
                         RemComp<OrganRemovedSurgeryStateComponent>(organUid.Value);
                         var organName = Identity.Name(organUid.Value, EntityManager, user);
-                        _popup.PopupClient(Loc.GetString("health-analyzer-surgery-organ-fully-attached", ("organName", organName)), user, user, PopupType.Medium);
+                        PopupSurgeryFeedback(Loc.GetString("health-analyzer-surgery-organ-fully-attached", ("organName", organName)), user);
                     }
                 }
             }
@@ -867,6 +869,14 @@ public sealed class SurgerySystem : EntitySystem
             var uiRefreshEv = new SurgeryUiRefreshRequestEvent();
             RaiseLocalEvent(ent.Owner, ref uiRefreshEv);
         }
+    }
+
+    private void PopupSurgeryFeedback(string message, EntityUid user, PopupType type = PopupType.Medium)
+    {
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
+        _popup.PopupPredicted(message, user, user, type);
     }
 
     private static void AddOrganRemovalProgress(SurgeryLayerComponent comp, NetEntity organ, string stepId)

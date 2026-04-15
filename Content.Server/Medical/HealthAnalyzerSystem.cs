@@ -90,44 +90,6 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         var ev = new SurgeryRequestEvent(uid.Owner, user, targetUid, bodyPartUid, args.ProcedureId, args.Layer, args.IsImprovised,
             args.Organ.HasValue ? GetEntity(args.Organ.Value) : null);
         RaiseLocalEvent(targetUid, ref ev);
-
-        if (ev.Valid && ev.UsedImprovisedTool && ev.ToolUsed.HasValue && Exists(ev.ToolUsed.Value))
-        {
-            _popupSystem.PopupEntity(
-                Loc.GetString("health-analyzer-surgery-begin-improvised", ("tool", Identity.Name(ev.ToolUsed.Value, EntityManager))),
-                user, user, PopupType.Small);
-        }
-        else if (!ev.Valid && ev.RejectReason != null && Exists(user))
-        {
-            var msgKey = ev.RejectReason switch
-            {
-                "missing-tool" => "health-analyzer-surgery-error-incorrect-tool",
-                "already-done" => "health-analyzer-surgery-error-already-done",
-                "layer-not-open" => "health-analyzer-surgery-error-layer-not-open",
-                "doafter-failed" => "health-analyzer-surgery-error-doafter-failed",
-                "invalid-entity" => "health-analyzer-surgery-error-invalid-entity",
-                "body-part-not-in-body" => "health-analyzer-surgery-error-body-part-not-in-body",
-                "unknown-step" => "health-analyzer-surgery-error-unknown-step",
-                "layer-mismatch" => "health-analyzer-surgery-error-layer-mismatch",
-                "invalid-limb-type" => "health-analyzer-surgery-error-invalid-limb-type",
-                "unknown-species-or-category" => "health-analyzer-surgery-error-unknown-species-or-category",
-                "invalid-body-part" => "health-analyzer-surgery-error-invalid-body-part",
-                "cannot-detach-limb" => "health-analyzer-surgery-error-cannot-detach-limb",
-                "body-part-detached" => "health-analyzer-surgery-error-body-part-detached",
-                "organ-already-in-body" => "health-analyzer-surgery-error-organ-already-in-body",
-                "limb-not-in-hand" => "health-analyzer-surgery-error-limb-not-in-hand",
-                "organ-not-in-body-part" => "health-analyzer-surgery-error-organ-not-in-body-part",
-                "organ-not-in-hand" => "health-analyzer-surgery-error-organ-not-in-hand",
-                "body-part-no-container" => "health-analyzer-surgery-error-body-part-no-container",
-                "no-slot-for-organ" => "health-analyzer-surgery-error-no-slot-for-organ",
-                "slot-filled" => "health-analyzer-surgery-error-slot-filled",
-                "slime-cannot-receive-implants" => "health-analyzer-surgery-error-slime-cannot-receive-implants",
-                "skeleton-cannot-receive-organs" => "health-analyzer-surgery-error-skeleton-cannot-receive-organs",
-                _ => "health-analyzer-surgery-error-invalid-surgical-process"
-            };
-            var msg = Loc.GetString(msgKey);
-            _popupSystem.PopupEntity(msg, user, user, PopupType.Medium);
-        }
     }
 
     private void OnBodyOrganRemoved(Entity<BodyComponent> ent, ref OrganRemovedFromEvent args)

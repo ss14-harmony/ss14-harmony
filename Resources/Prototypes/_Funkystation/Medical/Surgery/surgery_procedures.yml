@@ -334,7 +334,7 @@
   name: health-analyzer-surgery-step-organ-insert-hemostat
   penalty: 0
   primaryTool:
-    tag: AnchoringTool
+    tag: HemostatTool
     doAfterDelay: 2
     sound: /Audio/Items/drill_hit.ogg
   improvisedTools:
