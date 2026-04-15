@@ -148,3 +148,15 @@
   recipes:
   - WeaponDisabler
   - WeaponDisablerSMG
+
+- type: latheRecipePack
+  id: MilitaryCybernetics
+  recipes:
+  - OrganCyberArmLeftMilitaryT1
+  - OrganCyberArmRightMilitaryT1
+  - OrganCyberLegLeftMilitaryT1
+  - OrganCyberLegRightMilitaryT1
+  - OrganCyberArmLeftMilitaryT2
+  - OrganCyberArmRightMilitaryT2
+  - OrganCyberLegLeftMilitaryT2
+  - OrganCyberLegRightMilitaryT2

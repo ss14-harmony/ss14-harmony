@@ -55,6 +55,9 @@ namespace Content.Shared.Eye.Blinding.Systems
             // how much damage they already accumulated.
             _blindingSystem.AdjustEyeDamage((args.User, blindable), 1);
             var statusTimeSpan = TimeSpan.FromSeconds(time * MathF.Sqrt(blindable.EyeDamage));
+            var durationEv = new GetBlindnessDurationMultiplierEvent { Multiplier = 1f };
+            RaiseLocalEvent(args.User, ref durationEv);
+            statusTimeSpan = TimeSpan.FromSeconds(statusTimeSpan.TotalSeconds * durationEv.Multiplier);
             _statusEffectsSystem.TryAddStatusEffect(args.User, TemporaryBlindnessSystem.BlindingStatusEffect,
                 statusTimeSpan, false, TemporaryBlindnessSystem.BlindingStatusEffect);
         }

@@ -17,6 +17,7 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
+using Content.Shared.Cybernetics.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Item.ItemToggle.Components;
@@ -315,6 +316,21 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                 weaponUid = held.Value;
                 return true;
             }
+
+            // Cyber arm virtual item: resolve to blocking entity (mirrors SharedGunSystem.TryGetGun)
+            if (TryComp(held, out VirtualItemComponent? virt) &&
+                Exists(virt.BlockingEntity) &&
+                HasComp<CyberArmVirtualItemComponent>(held) &&
+                TryComp(virt.BlockingEntity, out melee) &&
+                !melee.MustBeEquippedToUse)
+            {
+                weaponUid = virt.BlockingEntity;
+                return true;
+            }
+
+            // Funkystation: Cyber arm virtual item that isn't a melee weapon: suppress punching so the item is used via interaction instead.
+            if (HasComp<CyberArmVirtualItemComponent>(held)) 
+                return false;
 
             if (!HasComp<VirtualItemComponent>(held))
                 return false;

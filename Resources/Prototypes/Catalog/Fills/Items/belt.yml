@@ -15,6 +15,22 @@
         - id: NetworkConfigurator
 
 - type: entity
+  id: ClothingBeltRoboticistFilled
+  parent: ClothingBeltUtility
+  suffix: Roboticist
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: Crowbar
+        - id: Wrench
+        - id: ScrewdriverPrecision
+        - id: Wirecutter
+        - id: Welder
+        - id: NetworkConfigurator
+
+- type: entity
   id: ClothingBeltUtilityEngineering
   parent: ClothingBeltUtility
   suffix: Engineering

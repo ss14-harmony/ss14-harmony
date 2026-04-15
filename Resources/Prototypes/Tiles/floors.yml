@@ -37,6 +37,7 @@
   - 1.0
   - 1.0
   itemDrop: FloorTileItemSteel
+  sterileSurgerySurface: true
 
 - type: tile
   id: FloorSteelCheckerLight
@@ -224,6 +225,7 @@
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhite
+  sterileSurgerySurface: true
 
 - type: tile
   id: FloorWhiteMini
@@ -1849,6 +1851,7 @@
     collection: FootstepTile
   friction: 0.8
   itemDrop: FloorTileItemWhiteMarble
+  sterileSurgerySurface: true
 
 - type: tile
   id: FloorDarkMarble

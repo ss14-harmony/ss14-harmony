@@ -136,6 +136,21 @@
   recipeUnlocks:
   - ClothingBackpackElectropack
 
+- type: technology
+  id: MilitaryCyberneticsT1
+  name: research-technology-military-cybernetics-t1
+  icon:
+    sprite: _EinsteinEngines/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
+    state: l_arm-combined-hand
+  discipline: Arsenal
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+  - OrganCyberArmLeftMilitaryT1
+  - OrganCyberArmRightMilitaryT1
+  - OrganCyberLegLeftMilitaryT1
+  - OrganCyberLegRightMilitaryT1
+
 # Tier 2
 
 - type: technology
@@ -211,6 +226,21 @@
   cost: 10000
   recipeUnlocks:
   - ClothingBackpackHarmpack
+
+- type: technology
+  id: MilitaryCyberneticsT2
+  name: research-technology-military-cybernetics-t2
+  icon:
+    sprite: _EinsteinEngines/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
+    state: l_arm-combined-hand
+  discipline: Arsenal
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - OrganCyberArmLeftMilitaryT2
+  - OrganCyberArmRightMilitaryT2
+  - OrganCyberLegLeftMilitaryT2
+  - OrganCyberLegRightMilitaryT2
 
 # Tier 3
 

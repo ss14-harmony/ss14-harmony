@@ -1078,6 +1078,13 @@
   - SeniorResearcherJumpskirt
 
 - type: loadoutGroup
+  id: ScientistBelt
+  name: loadout-group-scientist-belt
+  minLimit: 0
+  loadouts:
+  - RoboticistBelt
+
+- type: loadoutGroup
   id: ScientistBackpack
   name: loadout-group-scientist-backpack
   loadouts:

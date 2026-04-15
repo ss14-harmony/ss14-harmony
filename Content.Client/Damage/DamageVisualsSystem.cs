@@ -276,7 +276,7 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
                             $"{layer}{group}",
                             index);
                     }
-                    damageVisComp.DisabledLayers.Add(layer, false);
+                    damageVisComp.DisabledLayers.Add(layer, DamageOverlayLayerState.AllEnabled);
                 }
                 // If we're not targeting groups, and we're still
                 // using an overlay, we instead just add a general
@@ -289,7 +289,7 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
                         $"{layer}_{damageVisComp.Thresholds[1]}",
                         $"{layer}trackDamage",
                         index);
-                    damageVisComp.DisabledLayers.Add(layer, false);
+                    damageVisComp.DisabledLayers.Add(layer, DamageOverlayLayerState.AllEnabled);
                 }
             }
         }
@@ -371,6 +371,9 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
         if (AppearanceSystem.TryGetData<bool>(uid, DamageVisualizerKeys.ForceUpdate, out var update, component)
             && update)
         {
+            // Re-apply disabled layer state (e.g. BloodDisabled for cyber limbs) before full refresh
+            if (damageVisComp.TargetLayers != null && damageVisComp.DamageOverlayGroups != null)
+                UpdateDisabledLayers(uid, spriteComponent, component, damageVisComp);
             ForceUpdateLayers((uid, damageComponent, spriteComponent, damageVisComp));
             return;
         }
@@ -400,17 +403,22 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
     {
         foreach (var layer in damageVisComp.TargetLayerMapKeys)
         {
-            // I assume this gets set by something like body system if limbs are missing???
-            // TODO is this actually used by anything anywhere?
-            AppearanceSystem.TryGetData(uid, layer, out bool disabled, component);
+            var state = DamageOverlayLayerState.AllEnabled;
+            if (AppearanceSystem.TryGetData<DamageOverlayLayerState>(uid, layer, out var layerState, component))
+                state = layerState;
+            else if (AppearanceSystem.TryGetData<bool>(uid, layer, out var oldDisabled, component) && oldDisabled)
+                state = DamageOverlayLayerState.BloodDisabled; // backwards compat: old cyber limb data
 
-            if (damageVisComp.DisabledLayers[layer] == disabled)
+            if (damageVisComp.DisabledLayers[layer] == state)
                 continue;
 
-            damageVisComp.DisabledLayers[layer] = disabled;
+            damageVisComp.DisabledLayers[layer] = state;
+            var allDisabled = state == DamageOverlayLayerState.AllDisabled;
+            var bloodDisabled = state == DamageOverlayLayerState.BloodDisabled;
+
             if (damageVisComp.TrackAllDamage)
             {
-                SpriteSystem.LayerSetVisible((uid, spriteComponent), $"{layer}trackDamage", !disabled);
+                SpriteSystem.LayerSetVisible((uid, spriteComponent), $"{layer}trackDamage", !allDisabled);
                 continue;
             }
 
@@ -419,7 +427,8 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
 
             foreach (var damageGroup in damageVisComp.DamageOverlayGroups.Keys)
             {
-                SpriteSystem.LayerSetVisible((uid, spriteComponent), $"{layer}{damageGroup}", !disabled);
+                var hide = allDisabled || (bloodDisabled && damageGroup == "Brute");
+                SpriteSystem.LayerSetVisible((uid, spriteComponent), $"{layer}{damageGroup}", !hide);
             }
         }
     }
@@ -607,7 +616,7 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
     {
         if (damageVisComp.Overlay && damageVisComp.DamageOverlayGroups != null)
         {
-            if (!damageVisComp.DisabledLayers[layerMapKey])
+            if (damageVisComp.DisabledLayers[layerMapKey] != DamageOverlayLayerState.AllDisabled)
             {
                 var layerState = damageVisComp.LayerMapKeyStates[layerMapKey];
                 SpriteSystem.LayerMapTryGet(spriteEnt.AsNullable(), $"{layerMapKey}trackDamage", out var spriteLayer, false);
@@ -640,7 +649,10 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
 
         if (damageVisComp.Overlay && damageVisComp.DamageOverlayGroups != null)
         {
-            if (damageVisComp.DamageOverlayGroups.ContainsKey(damageGroup) && !damageVisComp.DisabledLayers[layerMapKey])
+            var layerStateVal = damageVisComp.DisabledLayers[layerMapKey];
+            var skipLayer = layerStateVal == DamageOverlayLayerState.AllDisabled
+                || (layerStateVal == DamageOverlayLayerState.BloodDisabled && damageGroup == "Brute");
+            if (damageVisComp.DamageOverlayGroups.ContainsKey(damageGroup) && !skipLayer)
             {
                 var layerState = damageVisComp.LayerMapKeyStates[layerMapKey];
                 SpriteSystem.LayerMapTryGet((entity, spriteComponent), $"{layerMapKey}{damageGroup}", out var spriteLayer, false);

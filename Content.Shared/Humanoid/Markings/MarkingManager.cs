@@ -226,12 +226,22 @@ public sealed class MarkingManager
     public Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>> GetOrgans(ProtoId<SpeciesPrototype> species)
     {
         var speciesPrototype = _prototype.Index(species);
-        var appearancePrototype = _prototype.Index(speciesPrototype.DollPrototype);
-
-        if (!appearancePrototype.TryGetComponent<InitialBodyComponent>(out var initialBody, _component))
+        if (!_prototype.TryIndex(speciesPrototype.DollPrototype, out var appearancePrototype))
             return new();
 
-        return initialBody.Organs;
+        if (appearancePrototype.TryGetComponent<InitialBodyComponent>(out var initialBody, _component))
+            return initialBody.Organs;
+
+        // Fallback for species using EntityTableContainerFill instead of InitialBody
+        if (speciesPrototype.LimbOrganPrototypes != null)
+        {
+            var result = new Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>();
+            foreach (var (category, protoId) in speciesPrototype.LimbOrganPrototypes)
+                result[category] = new EntProtoId<OrganComponent>(protoId.Id);
+            return result;
+        }
+
+        return new();
     }
 
     public Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData> GetMarkingData(ProtoId<SpeciesPrototype> species)

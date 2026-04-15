@@ -27,6 +27,19 @@
   - LightHeadBorg
   - TorsoBorg
 
+- type: latheRecipePack
+  id: CyberneticsStatic
+  recipes:
+  - OrganCyberArmLeft
+  - OrganCyberArmRight
+  - OrganCyberLegLeft
+  - OrganCyberLegRight
+  - OrganCyberHeartBasic
+  - OrganCyberLungsBasic
+  - OrganCyberLiverBasic
+  - OrganCyberStomachBasic
+  - OrganCyberEyesBasic
+
 ## Dynamic
 
 - type: latheRecipePack
@@ -69,3 +82,43 @@
     - MechEquipmentGrabber
     - MechEquipmentHorn
     - MechEquipmentGrabberSmall
+
+- type: latheRecipePack
+  id: Cybernetics
+  recipes:
+  - OrganCyberArmLeft
+  - OrganCyberArmRight
+  - OrganCyberLegLeft
+  - OrganCyberLegRight
+  - OrganCyberHeartBasic
+  - OrganCyberLungsBasic
+  - OrganCyberLiverBasic
+  - OrganCyberStomachBasic
+  - OrganCyberEyesBasic
+  - OrganCyberArmLeftT1
+  - OrganCyberArmRightT1
+  - OrganCyberLegLeftT1
+  - OrganCyberLegRightT1
+  - OrganCyberArmLeftT2
+  - OrganCyberArmRightT2
+  - OrganCyberLegLeftT2
+  - OrganCyberLegRightT2
+  - OrganCyberArmLeftT3
+  - OrganCyberArmRightT3
+  - OrganCyberLegLeftT3
+  - OrganCyberLegRightT3
+  - OrganCyberHeartT1
+  - OrganCyberLungsT1
+  - OrganCyberLiverT1
+  - OrganCyberStomachT1
+  - OrganCyberEyesT1
+  - OrganCyberHeartT2
+  - OrganCyberLungsT2
+  - OrganCyberLiverT2
+  - OrganCyberStomachT2
+  - OrganCyberEyesT2
+  - OrganCyberHeartT3
+  - OrganCyberLungsT3
+  - OrganCyberLiverT3
+  - OrganCyberStomachT3
+  - OrganCyberEyesT3

@@ -147,3 +147,23 @@
   cost: 750
   category: cargoproduct-category-name-medical
   group: market
+
+- type: cargoProduct
+  id: CyberneticsCpu
+  icon:
+    sprite: Objects/Misc/module.rsi
+    state: cpu_super
+  product: CrateCyberneticsCpu
+  cost: 10000
+  category: cargoproduct-category-name-medical
+  group: market
+
+- type: cargoProduct
+  id: FullCyberneticsPackage
+  icon:
+    sprite: Structures/Storage/Crates/surgery.rsi
+    state: icon
+  product: CrateFullCyberneticsPackage
+  cost: 100000
+  category: cargoproduct-category-name-medical
+  group: market
