@@ -181,6 +181,9 @@ public sealed class SurgeryLayerSystem : EntitySystem
                         return GetOrganRemovalSteps(comp, organNet).Contains(reqId);
                     if (IsProcedureInOrganInsertion(bodyPart, organ.Value, reqId))
                         return GetOrganInsertSteps(comp, organNet).Contains(reqId);
+                    // InsertOrgan is repeatable
+                    if (reqId == "InsertOrgan")
+                        return comp.OrganInsertProgress.Any(e => e.Organ == organNet);
                 }
                 var performedList = reqLayer switch
                 {
@@ -403,6 +406,9 @@ public sealed class SurgeryLayerSystem : EntitySystem
     /// </summary>
     public bool IsStepPerformed(Entity<SurgeryLayerComponent> ent, string stepId)
     {
+        // InsertOrgan can be done multiple times (different organs / slots); availability is gated by slots + server checks.
+        if (stepId == "InsertOrgan")
+            return false;
         var comp = ent.Comp;
         return comp.PerformedSkinSteps.Contains(stepId)
             || comp.PerformedTissueSteps.Contains(stepId)

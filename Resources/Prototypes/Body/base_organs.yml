@@ -496,7 +496,8 @@
     maxReagents: 5
 
 - type: entity
-  parent: [ OrganBaseHeart, OrganSpriteHumanInternal ]
+  # Human metabolizer types for Bloodstream-stage reagent conditions (matches OrganHumanHeart / cyber heart).
+  parent: [ OrganBaseHeart, OrganHumanMetabolizer, OrganSpriteHumanInternal ]
   id: OrganBiosyntheticHeart
   name: biosynthetic heart
   components:

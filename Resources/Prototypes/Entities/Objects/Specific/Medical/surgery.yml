@@ -168,17 +168,18 @@
 - type: entity
   name: hemostat
   id: Hemostat
-  parent: Retractor
+  parent: BaseToolSurgery
   description: A surgical tool used to compress blood vessels to prevent bleeding.
   components:
   - type: Tag
     tags:
     - HemostatTool
-    - ManipulatingTool
     - PryingTool
   - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: hemostat
   - type: Item
+    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     heldPrefix: hemostat
     storedRotation: 90
 
