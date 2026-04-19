@@ -280,6 +280,7 @@
   table: !type:AllSelector
     children:
     - id: Intellicard
+    - id: ScrewdriverPrecision
     - id: BoxEncryptionKeyScience
     - id: BoxRDCircuitboards
     - id: ClothingBeltUtilityFilled

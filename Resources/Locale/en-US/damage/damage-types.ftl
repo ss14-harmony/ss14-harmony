@@ -1,6 +1,7 @@
 damage-type-asphyxiation = Asphyxiation
 damage-type-bloodloss = Bloodloss
 damage-type-blunt = Blunt
+damage-type-biorejection = Bio-Rejection
 damage-type-cellular = Cellular
 damage-type-caustic = Caustic
 damage-type-cold = Cold

@@ -1,3 +1,5 @@
+using Content.Shared.EntityEffects;
+
 namespace Content.Shared.Body.Events;
 
 /// <summary>
@@ -23,4 +25,16 @@ public readonly record struct ApplyMetabolicMultiplierEvent(float Multiplier)
     /// What the metabolism's update rate will be multiplied by.
     /// </summary>
     public readonly float Multiplier = Multiplier;
+}
+
+/// <summary>
+/// Funkystation:Raised on the body before applying a metabolism effect. Allows organs (e.g. cyber heart) to modify the scale.
+/// </summary>
+[ByRefEvent]
+public record struct GetOrganMetabolismScaleModifierEvent(EntityUid Organ, EntityEffect Effect)
+{
+    /// <summary>
+    /// Scale multiplier for the effect. Passed in as initial value; handlers multiply to apply organ-specific scaling.
+    /// </summary>
+    public float Scale;
 }

@@ -489,6 +489,27 @@
         id: PillHyronalin
         amount: 5
 
+# Funky - CyberMed
+- type: entity
+  name: pill
+  suffix: Immunosuppressant 10u
+  parent: Pill
+  id: PillImmunosuppressant
+  components:
+  - type: Pill
+    pillType: 18
+  - type: Sprite
+    state: pill19
+  - type: Label
+    currentLabel: immunosuppressant 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Immunosuppressant
+          Quantity: 10
+
 - type: entity
   name: pill
   suffix: Potassium iodide 10u

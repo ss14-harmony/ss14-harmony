@@ -1,0 +1,827 @@
+# Body part surgery step configs per species and organ category.
+# Uses OrganCategoryPrototype (Torso, ArmLeft, etc.).
+# When steps are the same as Human, configs are omitted - the system falls back to Human.
+# See commented template at end for enabling species/limb-specific procedures.
+
+# === Human (canonical - all other species fall back to this when no config exists) ===
+
+- type: bodyPartSurgerySteps
+  id: HumanTorso
+  species: Human
+  organCategory: Torso
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: ManipulatingTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: HumanHead
+  species: Human
+  organCategory: Head
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: ManipulatingTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: HumanArmLeft
+  species: Human
+  organCategory: ArmLeft
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: ManipulatingTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: HumanArmRight
+  species: Human
+  organCategory: ArmRight
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: ManipulatingTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: HumanLegLeft
+  species: Human
+  organCategory: LegLeft
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: ManipulatingTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: HumanLegRight
+  species: Human
+  organCategory: LegRight
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: ManipulatingTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: [InsertOrgan, DetachLimb, AttachLimb]
+
+- type: bodyPartSurgerySteps
+  id: HumanHandLeft
+  species: Human
+  organCategory: HandLeft
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: ManipulatingTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: HumanHandRight
+  species: Human
+  organCategory: HandRight
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: ManipulatingTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: HumanFootLeft
+  species: Human
+  organCategory: FootLeft
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: ManipulatingTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: HumanFootRight
+  species: Human
+  organCategory: FootRight
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: ManipulatingTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: [InsertOrgan]
+
+# === Skeleton - organ-only arms/legs; torso/head/hands/feet have no organ steps ===
+
+- type: bodyPartSurgerySteps
+  id: SkeletonTorso
+  species: Skeleton
+  organCategory: Torso
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: ManipulatingTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: []
+
+- type: bodyPartSurgerySteps
+  id: SkeletonHead
+  species: Skeleton
+  organCategory: Head
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: ManipulatingTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: []
+
+- type: bodyPartSurgerySteps
+  id: SkeletonArmLeft
+  species: Skeleton
+  organCategory: ArmLeft
+  organOnlyPreset: OrganOnlyLimb
+
+- type: bodyPartSurgerySteps
+  id: SkeletonArmRight
+  species: Skeleton
+  organCategory: ArmRight
+  organOnlyPreset: OrganOnlyLimb
+
+- type: bodyPartSurgerySteps
+  id: SkeletonLegLeft
+  species: Skeleton
+  organCategory: LegLeft
+  organOnlyPreset: OrganOnlyLimb
+
+- type: bodyPartSurgerySteps
+  id: SkeletonLegRight
+  species: Skeleton
+  organCategory: LegRight
+  organOnlyPreset: OrganOnlyLimb
+
+- type: bodyPartSurgerySteps
+  id: SkeletonHandLeft
+  species: Skeleton
+  organCategory: HandLeft
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: ManipulatingTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: []
+
+- type: bodyPartSurgerySteps
+  id: SkeletonHandRight
+  species: Skeleton
+  organCategory: HandRight
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: ManipulatingTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: []
+
+- type: bodyPartSurgerySteps
+  id: SkeletonFootLeft
+  species: Skeleton
+  organCategory: FootLeft
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: ManipulatingTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: []
+
+- type: bodyPartSurgerySteps
+  id: SkeletonFootRight
+  species: Skeleton
+  organCategory: FootRight
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: ManipulatingTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: []
+
+# === Cyber limbs: attach/detach only, no skin/tissue steps ===
+
+- type: bodyPartSurgerySteps
+  id: CyberLimbArmLeft
+  species: Human
+  organCategory: ArmLeft
+  organOnlyPreset: OrganOnlyLimb
+
+- type: bodyPartSurgerySteps
+  id: CyberLimbArmRight
+  species: Human
+  organCategory: ArmRight
+  organOnlyPreset: OrganOnlyLimb
+
+- type: bodyPartSurgerySteps
+  id: CyberLimbLegLeft
+  species: Human
+  organCategory: LegLeft
+  organOnlyPreset: OrganOnlyLimb
+
+- type: bodyPartSurgerySteps
+  id: CyberLimbLegRight
+  species: Human
+  organCategory: LegRight
+  organOnlyPreset: OrganOnlyLimb
+
+# === PATTERN: Species/limb-specific surgical procedures ===
+# When steps are the same as Human, configs are omitted and the system falls back to Human.
+# To enable species/limb-specific procedures, uncomment a config below and customize.
+# Example (Diona leg - same as Human, so normally omitted):
+# - type: bodyPartSurgerySteps
+#   id: DionaLegLeft
+#   species: Diona
+#   organCategory: LegLeft
+#   skinOpenStepEntries:
+#     - procedure: CreateIncision
+#       primaryTag: CuttingTool
+#       improvisedDamageType: Slash
+#     - procedure: ClampVessels
+#       primaryTag: ManipulatingTool
+#       improvisedTag: Wirecutter
+#     - procedure: RetractSkin
+#       primaryTag: PryingTool
+#       improvisedDamageType: Blunt
+#   skinCloseStepEntries:
+#     - procedure: ReleaseRetractor
+#       primaryTag: PryingTool
+#       improvisedDamageType: Blunt
+#     - procedure: ReconnectVessels
+#       primaryTag: HemostatTool
+#       improvisedTag: AnchoringTool
+#     - procedure: SealSkin
+#       primaryTag: HeatWeapon
+#       improvisedDamageType: Heat
+#   tissueOpenStepEntries:
+#     - procedure: CutBone
+#       primaryTag: SawingTool
+#       improvisedDamageType: Blunt
+#     - procedure: MarrowBleeding
+#       primaryTag: HeatWeapon
+#       improvisedDamageType: Heat
+#     - procedure: RetractTissue
+#       primaryTag: PryingTool
+#       improvisedDamageType: Blunt
+#   tissueCloseStepEntries:
+#     - procedure: MaintainAlignment
+#       primaryTag: ManipulatingTool
+#       improvisedTag: Screwdriver
+#     - procedure: SealBleedPoints
+#       primaryTag: HeatWeapon
+#       improvisedDamageType: Heat
+#     - procedure: RepairBoneSection
+#       primaryTag: BoneGelTool
+#   organSteps: [InsertOrgan, DetachLimb, AttachLimb]

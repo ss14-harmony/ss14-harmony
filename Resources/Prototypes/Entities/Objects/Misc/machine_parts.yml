@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: BaseStockPart
   name: stock part
   parent: BaseItem
@@ -11,6 +11,22 @@
       size: Tiny
     - type: Stack
       count: 1
+    - type: Tag
+      tags:
+      - ConstructionMaterial
+
+# Base for cyber limb modules that don't stack - each takes one slot.
+- type: entity
+  id: BaseNonStackingStockPart
+  name: stock part
+  parent: BaseItem
+  description: What?
+  abstract: true
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/stock_parts.rsi
+    - type: Item
+      size: Tiny
     - type: Tag
       tags:
       - ConstructionMaterial

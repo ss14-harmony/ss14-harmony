@@ -76,6 +76,17 @@
   products:
     Doxarubixadone: 2
 
+# Funky - CyberMed
+- type: reaction
+  id: Immunosuppressant
+  reactants:
+    Dylovene:
+      amount: 1
+    Doxarubixadone:
+      amount: 1
+  products:
+    Immunosuppressant: 3
+
 - type: reaction
   id: Epinephrine
   reactants:

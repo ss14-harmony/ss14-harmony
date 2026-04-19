@@ -1,4 +1,4 @@
-﻿using Content.Shared.StatusEffectNew;
+using Content.Shared.StatusEffectNew;
 using Robust.Shared.Console;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Toolshed;
@@ -11,6 +11,7 @@ public sealed class StatusEffectCompletionParser : CustomCompletionParser<EntPro
 {
     public override CompletionResult? TryAutocomplete(ParserContext ctx, CommandArgument? arg)
     {
-        return CompletionResult.FromHintOptions(StatusEffectsSystem.StatusEffectPrototypes, GetArgHint(arg));
+        // Funkystation: Fixes a minor bug, where this could return null. Should be safe to use this change in all cases.
+        return CompletionResult.FromHintOptions(StatusEffectsSystem.GetStatusEffectPrototypes(), GetArgHint(arg));
     }
 }

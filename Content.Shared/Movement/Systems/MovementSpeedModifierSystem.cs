@@ -107,22 +107,25 @@ namespace Content.Shared.Movement.Systems
 
         public void RefreshMovementSpeedModifiers(EntityUid uid, MovementSpeedModifierComponent? move = null)
         {
-            if (!Resolve(uid, ref move, false))
-                return;
-
             if (_timing.ApplyingState)
                 return;
+
+            if (!Exists(uid) || TerminatingOrDeleted(uid))
+                return;
+
+            EnsureComp<MovementSpeedModifierComponent>(uid);
+            var moveComp = Comp<MovementSpeedModifierComponent>(uid);
 
             var ev = new RefreshMovementSpeedModifiersEvent();
             RaiseLocalEvent(uid, ev);
 
-            if (MathHelper.CloseTo(ev.WalkSpeedModifier, move.WalkSpeedModifier) &&
-                MathHelper.CloseTo(ev.SprintSpeedModifier, move.SprintSpeedModifier))
+            if (MathHelper.CloseTo(ev.WalkSpeedModifier, moveComp.WalkSpeedModifier) &&
+                MathHelper.CloseTo(ev.SprintSpeedModifier, moveComp.SprintSpeedModifier))
                 return;
 
-            move.WalkSpeedModifier = ev.WalkSpeedModifier;
-            move.SprintSpeedModifier = ev.SprintSpeedModifier;
-            Dirty(uid, move);
+            moveComp.WalkSpeedModifier = ev.WalkSpeedModifier;
+            moveComp.SprintSpeedModifier = ev.SprintSpeedModifier;
+            Dirty(uid, moveComp);
         }
 
         public void ChangeBaseSpeed(EntityUid uid, float baseWalkSpeed, float baseSprintSpeed, float acceleration, MovementSpeedModifierComponent? move = null)

@@ -243,6 +243,9 @@ public sealed class MetabolizerSystem : EntitySystem
                     case AdjustReagent:
                         _entityEffects.ApplyEffect(solutionEntity.Value, effect, scale);
                         break;
+                    case AddIntegrityImmunityBoost:
+                        _entityEffects.ApplyEffect(ent, effect, scale);
+                        break;
                     default:
                         _entityEffects.ApplyEffect(actualEntity, effect, scale);
                         break;

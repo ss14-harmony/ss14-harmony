@@ -24,6 +24,7 @@ public sealed partial class StatusEffectsSystem : EntitySystem
     private EntityQuery<StatusEffectComponent> _effectQuery;
 
     public static HashSet<string> StatusEffectPrototypes = [];
+    private static readonly object StatusEffectPrototypesLock = new();
 
     public override void Initialize()
     {
@@ -78,12 +79,28 @@ public sealed partial class StatusEffectsSystem : EntitySystem
 
     private void ReloadStatusEffectsCache()
     {
-        StatusEffectPrototypes.Clear();
-
-        foreach (var ent in _proto.EnumeratePrototypes<EntityPrototype>())
+        lock (StatusEffectPrototypesLock)
         {
-            if (ent.TryGetComponent<StatusEffectComponent>(out _, _factory))
-                StatusEffectPrototypes.Add(ent.ID);
+            StatusEffectPrototypes.Clear();
+
+            foreach (var ent in _proto.EnumeratePrototypes<EntityPrototype>())
+            {
+                if (string.IsNullOrEmpty(ent.ID))
+                    continue;
+                if (ent.TryGetComponent<StatusEffectComponent>(out _, _factory))
+                    StatusEffectPrototypes.Add(ent.ID);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Thread-safe access to status effect prototypes. Use when reading from another thread (e.g. Toolshed completion).
+    /// </summary>
+    public static IEnumerable<string> GetStatusEffectPrototypes()
+    {
+        lock (StatusEffectPrototypesLock)
+        {
+            return new List<string>(StatusEffectPrototypes);
         }
     }
 

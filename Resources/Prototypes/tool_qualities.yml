@@ -20,6 +20,13 @@
   icon: { sprite: Objects/Tools/screwdriver.rsi, state: screwdriver-map }
 
 - type: tool
+  id: PrecisionScrewing
+  name: tool-quality-precision-screwing-name
+  toolName: tool-quality-precision-screwing-tool-name
+  spawn: ScrewdriverPrecision
+  icon: { sprite: Objects/Tools/screwdriver.rsi, state: screwdriver-map }
+
+- type: tool
   id: Cutting
   name: tool-quality-cutting-name
   toolName: tool-quality-cutting-tool-name

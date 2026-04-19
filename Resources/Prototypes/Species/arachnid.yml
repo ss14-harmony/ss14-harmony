@@ -11,3 +11,9 @@
   lastNames: NamesArachnidLast
   sexes:
   - Unsexed
+  limbOrganPrototypes:
+    ArmLeft: OrganArachnidArmLeft
+    ArmRight: OrganArachnidArmRight
+    LegLeft: OrganArachnidLegLeft
+    LegRight: OrganArachnidLegRight
+    Head: OrganArachnidHead

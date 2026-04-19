@@ -19,6 +19,9 @@ reagent-desc-cryoxadone = Required for the proper function of cryogenics. Heals 
 reagent-name-doxarubixadone = doxarubixadone
 reagent-desc-doxarubixadone = A cryogenics chemical. Heals cellular damage caused by dangerous gasses and chemicals.
 
+reagent-name-immunosuppressant = immunosuppressant
+reagent-desc-immunosuppressant = Suppresses bio-rejection from organ implants and cybernetics. Metabolized by the liver.
+
 reagent-name-dermaline = dermaline
 reagent-desc-dermaline = An advanced chemical that is more effective at treating burn damage than kelotane.
 

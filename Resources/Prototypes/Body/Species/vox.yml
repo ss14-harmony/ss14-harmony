@@ -142,28 +142,16 @@
         32:
           sprite: Mobs/Species/Vox/displacement.rsi
           state: hand_r
-  - type: InitialBody
-    organs:
-      Torso: OrganVoxTorso
-      Head: OrganVoxHead
-      ArmLeft: OrganVoxArmLeft
-      ArmRight: OrganVoxArmRight
-      HandRight: OrganVoxHandRight
-      HandLeft: OrganVoxHandLeft
-      LegLeft: OrganVoxLegLeft
-      LegRight: OrganVoxLegRight
-      FootLeft: OrganVoxFootLeft
-      FootRight: OrganVoxFootRight
-      Brain: OrganVoxBrain
-      Eyes: OrganVoxEyes
-      Tongue: OrganVoxTongue
-      Appendix: OrganVoxAppendix
-      Ears: OrganVoxEars
-      Lungs: OrganVoxLungs
-      Heart: OrganVoxHeart
-      Stomach: OrganVoxStomach
-      Liver: OrganVoxLiver
-      Kidneys: OrganVoxKidneys
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganVoxTorso
+        - id: OrganVoxHead
+        - id: OrganVoxArmLeft
+        - id: OrganVoxArmRight
+        - id: OrganVoxLegLeft
+        - id: OrganVoxLegRight
   - type: HumanoidProfile
     species: Vox
 
@@ -307,16 +295,52 @@
 - type: entity
   parent: [ OrganBaseTorso, OrganVoxExternal ]
   id: OrganVoxTorso
-  # Harmony start: custom torso sprite
   components:
   - type: Sprite
-    sprite: _Impstation/Mobs/Species/Vox/parts.rsi
-  # Harmony end
+    state: torso
+  - type: BodyPart
+    containerId: internal_organs
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      internal_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      internal_organs: !type:AllSelector
+        children:
+        - id: OrganVoxLungs
+        - id: OrganVoxHeart
+        - id: OrganVoxStomach
+        - id: OrganVoxLiver
+        - id: OrganVoxKidneys
+        - id: OrganVoxAppendix
 
 - type: entity
   parent: [ OrganBaseHead, OrganVoxExternal ]
   id: OrganVoxHead
   components:
+  - type: Sprite
+    state: head
+  - type: BodyPart
+    containerId: head_organs
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      head_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      head_organs: !type:AllSelector
+        children:
+        - id: OrganVoxBrain
+        - id: OrganVoxEyes
+        - id: OrganVoxTongue
+        - id: OrganVoxEars
   - type: VisualOrganMarkings
     hideableLayers:
     - enum.HumanoidVisualLayers.Snout
@@ -329,10 +353,40 @@
 - type: entity
   parent: [ OrganBaseArmLeft, OrganVoxExternal ]
   id: OrganVoxArmLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganVoxHandLeft
 
 - type: entity
   parent: [ OrganBaseArmRight, OrganVoxExternal ]
   id: OrganVoxArmRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganVoxHandRight
 
 - type: entity
   parent: [ OrganBaseHandLeft, OrganVoxExternal ]
@@ -345,10 +399,40 @@
 - type: entity
   parent: [ OrganBaseLegLeft, OrganVoxExternal ]
   id: OrganVoxLegLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganVoxFootLeft
 
 - type: entity
   parent: [ OrganBaseLegRight, OrganVoxExternal ]
   id: OrganVoxLegRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganVoxFootRight
 
 - type: entity
   parent: [ OrganBaseFootLeft, OrganVoxExternal ]

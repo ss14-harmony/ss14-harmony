@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "copyright": "Sprites created by Parorya via Discord for Funkystation",
+  "license": "CC-BY-SA-3.0",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "CyberEyes"
+    },
+    {
+      "name": "CyberHeart"
+    },
+    {
+      "name": "CyberLiver"
+    },
+    {
+      "name": "CyberLungs"
+    },
+    {
+      "name": "CyberStomach"
+    }
+  ]
+}

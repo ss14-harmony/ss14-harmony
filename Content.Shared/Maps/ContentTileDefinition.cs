@@ -129,6 +129,9 @@ namespace Content.Shared.Maps
         /// </summary>
         [DataField("indestructible")] public bool Indestructible = false;
 
+        // Funkystation - CyberMed
+        [DataField("sterileSurgerySurface")] public bool SterileSurgerySurface { get; private set; }
+
         /// <summary>
         ///     Hide this tile in the tile placement editor.
         /// </summary>

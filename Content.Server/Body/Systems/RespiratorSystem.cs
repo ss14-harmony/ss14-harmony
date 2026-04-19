@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
@@ -8,6 +9,7 @@ using Content.Shared.Atmos;
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
+using Content.Shared.Cybernetics.Components;
 using Content.Shared.Chat;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
@@ -87,8 +89,14 @@ public sealed class RespiratorSystem : EntitySystem
 
             if (_mobState.IsDead(uid))
                 continue;
-
-            UpdateSaturation(uid, -(float)respirator.UpdateInterval.TotalSeconds, respirator);
+                
+            //Funkystation: drainAmount added to support different drain rates for higher/lower quality lungs
+            var drainAmount = (float)respirator.UpdateInterval.TotalSeconds;
+            var lungs = _body.GetAllOrgans(uid).FirstOrDefault(o =>
+                TryComp<OrganComponent>(o, out var oc) && oc.Category == "Lungs");
+            if (lungs != default && TryComp<CyberOrganComponent>(lungs, out var cyberLungs))
+                drainAmount *= 1f / cyberLungs.Effectiveness;
+            UpdateSaturation(uid, -drainAmount, respirator);
 
             if (!_mobState.IsIncapacitated(uid)) // cannot breathe in crit.
             {

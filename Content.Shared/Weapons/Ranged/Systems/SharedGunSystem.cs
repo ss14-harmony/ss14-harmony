@@ -23,6 +23,8 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Whitelist;
+using Content.Shared.Cybernetics.Components;
+using Content.Shared.Inventory.VirtualItem;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -197,17 +199,29 @@ public abstract partial class SharedGunSystem : EntitySystem
     {
         gun = default;
 
-        if (_hands.GetActiveItem(entity) is { } held &&
-            TryComp(held, out GunComponent? gunComp))
+        if (_hands.GetActiveItem(entity) is { } held)
         {
-            gun = (held, gunComp);
-            return true;
+            if (TryComp(held, out GunComponent? gunComp))
+            {
+                gun = (held, gunComp);
+                return true;
+            }
+
+            // Cyber arm virtual item: resolve to blocking entity only when it's from cybernetics.
+            if (TryComp(held, out VirtualItemComponent? virt) &&
+                Exists(virt.BlockingEntity) &&
+                HasComp<CyberArmVirtualItemComponent>(held) &&
+                TryComp(virt.BlockingEntity, out GunComponent? blockingGunComp))
+            {
+                gun = (virt.BlockingEntity, blockingGunComp);
+                return true;
+            }
         }
 
         // Last resort is check if the entity itself is a gun.
-        if (TryComp(entity, out gunComp))
+        if (TryComp(entity, out GunComponent? entityGunComp))
         {
-            gun = (entity, gunComp);
+            gun = (entity, entityGunComp);
             return true;
         }
 

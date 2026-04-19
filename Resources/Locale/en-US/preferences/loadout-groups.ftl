@@ -140,6 +140,7 @@ loadout-group-research-director-shoes = Research Director shoes
 loadout-group-scientist-head = Scientist head
 loadout-group-scientist-neck = Scientist neck
 loadout-group-scientist-jumpsuit = Scientist jumpsuit
+loadout-group-scientist-belt = Scientist belt
 loadout-group-scientist-backpack = Scientist backpack
 loadout-group-scientist-outerclothing = Scientist outer clothing
 loadout-group-scientist-gloves = Scientist gloves

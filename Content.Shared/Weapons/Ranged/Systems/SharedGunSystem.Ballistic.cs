@@ -245,7 +245,10 @@ public abstract partial class SharedGunSystem
                 var existingEnt = ent.Comp.Entities[^1];
                 ent.Comp.Entities.RemoveAt(ent.Comp.Entities.Count - 1);
                 DirtyField(ent.AsNullable(), nameof(BallisticAmmoProviderComponent.Entities));
-                Containers.Remove(existingEnt, ent.Comp.Container);
+                // Pass destination to avoid AttachParentToContainerOrGrid - when storage is full it can
+                // fail to place the entity and it ends up in nullspace (effectively deleted). We handle
+                // cyberlimb storage insertion explicitly in GunSystem.Shoot.
+                Containers.Remove(existingEnt, ent.Comp.Container, destination: args.Coordinates);
                 ammoEntity = existingEnt;
             }
             else if (ent.Comp.UnspawnedCount > 0)

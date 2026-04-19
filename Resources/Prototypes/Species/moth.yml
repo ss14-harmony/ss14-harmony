@@ -9,3 +9,9 @@
   maleFirstNames: NamesMothFirstMale
   femaleFirstNames: NamesMothFirstFemale
   lastNames: NamesMothLast
+  limbOrganPrototypes:
+    ArmLeft: OrganMothArmLeft
+    ArmRight: OrganMothArmRight
+    LegLeft: OrganMothLegLeft
+    LegRight: OrganMothLegRight
+    Head: OrganMothHead

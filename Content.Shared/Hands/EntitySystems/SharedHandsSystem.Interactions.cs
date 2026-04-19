@@ -1,4 +1,6 @@
 using System.Linq;
+using Content.Shared.Cybernetics.Components;
+using Content.Shared.Cybernetics.Events;
 using Content.Shared.Examine;
 using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
@@ -63,8 +65,27 @@ public abstract partial class SharedHandsSystem : EntitySystem
 
     private void HandleActivateItemInHand(RequestActivateInHandEvent msg, EntitySessionEventArgs args)
     {
-        if (args.SenderSession.AttachedEntity != null)
-            TryActivateItemInHand(args.SenderSession.AttachedEntity.Value, null, msg.HandName);
+        if (args.SenderSession.AttachedEntity == null) // Funky - CyberMed
+            return;
+
+        var user = args.SenderSession.AttachedEntity.Value;
+        HandsComponent? handsComp = null;
+        if (!Resolve(user, ref handsComp, false))
+            return;
+
+        var hand = msg.HandName;
+        if (!TryGetHand((user, handsComp), hand, out _))
+            hand = handsComp.ActiveHandId;
+
+        if (!TryGetHeldItem((user, handsComp), hand, out _))
+        {
+            var ev = new EmptyHandActivateEvent(user, hand, AltInteract: true); // Funky - CyberMed
+            RaiseLocalEvent(user, ref ev); // Funky - CyberMed
+            if (ev.Handled)
+                return;
+        }
+
+        TryActivateItemInHand(user, null, msg.HandName);
     }
 
     private void HandleInteractUsingInHand(RequestHandInteractUsingEvent msg, EntitySessionEventArgs args)
@@ -157,7 +178,26 @@ public abstract partial class SharedHandsSystem : EntitySystem
             hand = handsComp.ActiveHandId;
 
         if (!TryGetHeldItem((uid, handsComp), hand, out var held))
-            return false;
+        {
+            if (!altInteract)
+                return false;
+            var ev = new EmptyHandActivateEvent(uid, hand, AltInteract: true); // Funky - CyberMed
+            RaiseLocalEvent(uid, ref ev); // Funky - CyberMed
+            return ev.Handled;
+        }
+
+        if (HasComp<CyberArmVirtualItemComponent>(held.Value) &&
+            TryComp<VirtualItemComponent>(held.Value, out var virt))
+        {
+            if (altInteract)
+            {
+                _virtualSystem.DeleteVirtualItem((held.Value, virt), uid); // Funky - CyberMed
+                var ev = new EmptyHandActivateEvent(uid, hand, AltInteract: true); // Funky - CyberMed
+                RaiseLocalEvent(uid, ref ev); // Funky - CyberMed
+                return ev.Handled;
+            }
+            return _interactionSystem.UseInHandInteraction(uid, virt.BlockingEntity, checkCanUse: false, checkCanInteract: false); // Funky - CyberMed
+        }
 
         if (altInteract)
             return _interactionSystem.AltInteract(uid, held.Value);

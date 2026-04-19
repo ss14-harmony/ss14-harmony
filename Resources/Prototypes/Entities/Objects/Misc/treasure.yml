@@ -74,8 +74,8 @@
 - type: entity
   parent: BaseItem
   id: TreasureCPUSupercharged
-  name: supercharged CPU
-  description: Some kind of super alien space tech. Shame all the computers already come with CPUs nowadays.
+  name: supercharged cybernetics CPU # Funky - CyberMed
+  description: A Supercharged Cybernetics Processing Unit. Improves cyberwear operation speed by 10% when installed in a cyber limb. # Funky - CyberMed
   components:
   - type: Sprite
     sprite: Objects/Misc/module.rsi
@@ -83,6 +83,8 @@
     - state: cpu_super
   - type: Item
     size: Tiny
+  - type: CyberLimbModule # Funky - CyberMed
+    moduleType: Cpu # Funky - CyberMed
   - type: StaticPrice
     price: 750
 

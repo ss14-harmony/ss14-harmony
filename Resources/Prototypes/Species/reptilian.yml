@@ -9,3 +9,9 @@
   maleFirstNames: NamesReptilianMale
   femaleFirstNames: NamesReptilianFemale
   naming: FirstDashFirst
+  limbOrganPrototypes:
+    ArmLeft: OrganReptilianArmLeft
+    ArmRight: OrganReptilianArmRight
+    LegLeft: OrganReptilianLegLeft
+    LegRight: OrganReptilianLegRight
+    Head: OrganReptilianHead

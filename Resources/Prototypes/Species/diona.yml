@@ -12,3 +12,9 @@
   naming: TheFirstofLast
   sexes:
   - Unsexed
+  limbOrganPrototypes:
+    ArmLeft: OrganDionaArmLeft
+    ArmRight: OrganDionaArmRight
+    LegLeft: OrganDionaLegLeft
+    LegRight: OrganDionaLegRight
+    Head: OrganDionaHead

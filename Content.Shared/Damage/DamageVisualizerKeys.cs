@@ -11,6 +11,15 @@ namespace Content.Shared.Damage
         ForceUpdate
     }
 
+    // Funkystation - CyberMed
+    [Serializable, NetSerializable]
+    public enum DamageOverlayLayerState : byte
+    {
+        AllEnabled = 0,
+        BloodDisabled = 1,
+        AllDisabled = 2
+    }
+
     [Serializable, NetSerializable]
     public sealed class DamageVisualizerGroupData : ICloneable
     {

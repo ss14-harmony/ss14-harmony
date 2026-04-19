@@ -5,6 +5,7 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.CombatMode;
+using Content.Shared.Cybernetics.Components;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
 using Content.Shared.Hands;
@@ -179,10 +180,15 @@ namespace Content.Shared.Interaction
 
             var range = _ui.GetUiRange(ev.Target, ev.UiKey);
 
-            // As long as range>0, the UI frame updates should have auto-closed the UI if it is out of range.
-            DebugTools.Assert(range <= 0 || UiRangeCheck(ev.Actor, ev.Target, range));
+            // When target is in a container (e.g. cyber limb in body), use container owner for range check
+            var rangeCheckTarget = ev.Target;
+            if (_containerSystem.TryGetContainingContainer(ev.Target, out var container) && container.Owner != ev.Target)
+                rangeCheckTarget = container.Owner;
 
-            if (range <= 0 && !IsAccessible(ev.Actor, ev.Target))
+            // As long as range>0, the UI frame updates should have auto-closed the UI if it is out of range.
+            DebugTools.Assert(range <= 0 || UiRangeCheck(ev.Actor, rangeCheckTarget, range));
+
+            if (range <= 0 && !IsAccessible(ev.Actor, rangeCheckTarget))
             {
                 ev.Cancel();
                 return;
@@ -360,8 +366,19 @@ namespace Content.Shared.Interaction
         public bool CombatModeCanHandInteract(EntityUid user, EntityUid? target)
         {
             // Always allow attack in these cases
-            if (target == null || !_handsQuery.TryComp(user, out var hands) || _hands.GetActiveItem((user, hands)) is not null)
+            //Funkystation: Cybernetics changes to combat mode hand interaction to use interaction instead of punching.
+            if (target == null || !_handsQuery.TryComp(user, out var hands))
                 return false;
+
+            var activeItem = _hands.GetActiveItem((user, hands));
+            if (activeItem is not null)
+            {
+                // Cyber arm virtual items should use the item via interaction instead of punching.
+                if (HasComp<CyberArmVirtualItemComponent>(activeItem.Value))
+                    return true;
+                // Having a real item in hand means we attack with it.
+                return false;
+            }
 
             // Only eat input if:
             // - Target isn't an item

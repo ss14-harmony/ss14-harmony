@@ -26,6 +26,9 @@
 
 - type: Tag
   id: Ambrosia # ConstructionGraph: flowerwreath
+  
+- type: Tag
+  id: AnchoringTool # Wrench - reconnect vessels, surgery insertion steps
 
 - type: Tag
   id: AnomalyHost # Targeting whitelist: BaseAnomalyInjector
@@ -88,6 +91,9 @@
 
 - type: Tag
   id: Boll # MaterialStorage whitelist: Sheetifier
+
+- type: Tag
+  id: BoneGelTool # Bone gel consumable for tissue bone glue step
 
 - type: Tag
   id: Book # Storage whitelist: BorgModuleService, BooksBag, Bookshelf. Blacklisting on various entities whitelisting PaperComponent
@@ -174,6 +180,9 @@
   id: Bread # CargoBounty: BountyBread. Blacklisted in BountyFruit and BountyVegetable
 
 - type: Tag
+  id: BreakingTool # Bone-related steps
+
+- type: Tag
   id: BrimFlatcapBrown # ConstructionGraph: BladedFlatcapBrown
 
 - type: Tag
@@ -194,6 +203,9 @@
 - type: Tag
   id: Burger # Food sequence key
 
+- type: Tag
+  id: BurningTool # Cauterize, welding steps
+  
 - type: Tag
   id: Burnt # Storage whitelist: ashtray. Seemingly redundant?
 
@@ -446,6 +458,9 @@
 
 - type: Tag
   id: Cutlet # MetamorphRecipe: FoodBurgerCheese, FoodBurgerChicken, FoodBurgerDuck
+ 
+- type: Tag
+  id: CuttingTool # DetachLimb, scalpel-based steps
 
 ## D ##
 
@@ -724,7 +739,13 @@
   id: Head # ConstructionGraph: RitualSeat
 
 - type: Tag
+  id: HeatWeapon # Cautery, welder - items that deal Heat damage for surgery
+
+- type: Tag
   id: HelmetEVA # ConstructionGraph: ClownHardsuit, MimeHardsuit. PartAssembly: VimHarness. ItemMapper: VimHarness
+
+- type: Tag
+  id: HemostatTool # ReconnectVessels - hemostat only (excludes retractor)
 
 - type: Tag
   id: HideContextMenu # Used by client VerbSystem to exclude tagged entities from the right click menu.
@@ -914,6 +935,9 @@
 - type: Tag # Used on DungeonRoom prototypes.
   id: Maints # RoomFill spawner whitelist for MaintsRoomMarker.
 
+- type: Tag
+  id: ManipulatingTool # ClampBleeders, retractor steps
+  
 - type: Tag
   id: Matchstick # Storage whitelist: Ashtray. ConstructionGraph: ImprovisedShotgunShellGraph
 
@@ -1159,6 +1183,9 @@
   id: Powerdrill # Storage whitelist: BaseClothingBeltEngineering. ItemMapper: BaseClothingBeltEngineering
 
 - type: Tag
+  id: PrecisionRepairTool # Cybernetics maintenance - avoids unskilled repair penalty when opening panel
+
+- type: Tag
   id: PreventAccessLogging # Tagged entities (aghost) will not be added to a device's log. Used by AccessReaderSystem.
 
 - type: Tag
@@ -1166,6 +1193,9 @@
 
 - type: Tag
   id: ProximitySensor # This tag is used as a common ingredient in the construction of various machines and bots.
+
+- type: Tag
+  id: PryingTool # Crowbar, retractor - hold open, release steps
 
 ## Q ##
 
@@ -1240,6 +1270,9 @@
 
 - type: Tag
   id: SalvageScrap # CargoBounty: BountySalvageScrap
+  
+- type: Tag
+  id: SawingTool # SawBones step: metal saw, choppa, circular saw, etc.
 
 - type: Tag
   id: Scarf # CargoBounty: BountyWarmCloth
@@ -1329,6 +1362,9 @@
   id: SpeedLoaderMagnum # Ammo: BaseWeaponRevolver, XenoArtifactGun
 
 - type: Tag
+  id: Spellbook # Storage whitelist: Bookshelf
+  
+- type: Tag
   id: SpiderCraft # Used on various ConstructionPrototypes to create exclusive recipes for tagged entity.
 
 - type: Tag
@@ -1389,8 +1425,7 @@
 - type: Tag
   id: SyringeGunAmmo # Storage whitelist: LauncherSyringe
 
-- type: Tag
-  id: Spellbook # Storage whitelist: Bookshelf
+
 
 ## T ##
 
@@ -1489,6 +1524,9 @@
 - type: Tag
   id: Wall # Tagged entity is a wall. Several systems and several targeting whitelists (BaseMobDragon) care about this.
            # .cs: SharedNavMapSystem, WallmountCondition, TileWallsCommand, DungeonJob
+
+- type: Tag
+  id: RustyWall # Rusty walls (WallSolidRust, WallReinforcedRust) for unsanitary surgery penalty
 
 - type: Tag
   id: WallmountGeneratorAPUElectronics # ConstructionGraph: WallmountGenerator

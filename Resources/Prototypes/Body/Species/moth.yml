@@ -107,28 +107,16 @@
           32:
             sprite: Mobs/Species/Moth/displacement.rsi
             state: shoes
-  - type: InitialBody
-    organs:
-      Torso: OrganMothTorso
-      Head: OrganMothHead
-      ArmLeft: OrganMothArmLeft
-      ArmRight: OrganMothArmRight
-      HandRight: OrganMothHandRight
-      HandLeft: OrganMothHandLeft
-      LegLeft: OrganMothLegLeft
-      LegRight: OrganMothLegRight
-      FootLeft: OrganMothFootLeft
-      FootRight: OrganMothFootRight
-      Brain: OrganMothBrain
-      Eyes: OrganMothEyes
-      Tongue: OrganMothTongue
-      Appendix: OrganMothAppendix
-      Ears: OrganMothEars
-      Lungs: OrganMothLungs
-      Heart: OrganMothHeart
-      Stomach: OrganMothStomach
-      Liver: OrganMothLiver
-      Kidneys: OrganMothKidneys
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganMothTorso
+        - id: OrganMothHead
+        - id: OrganMothArmLeft
+        - id: OrganMothArmRight
+        - id: OrganMothLegLeft
+        - id: OrganMothLegRight
   - type: HumanoidProfile
     species: Moth
 
@@ -145,7 +133,6 @@
     accent: zombieMoth
   - type: Speech
     speechVerb: Moth
-    speechSounds: Moth # CD Addition
     allowedEmotes: ['Chitter', 'Squeak']
   - type: TypingIndicator
     proto: moth
@@ -236,11 +223,48 @@
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganMothExternal ]
   id: OrganMothTorso
+  components:
+  - type: BodyPart
+    containerId: internal_organs
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      internal_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      internal_organs: !type:AllSelector
+        children:
+        - id: OrganMothLungs
+        - id: OrganMothHeart
+        - id: OrganMothStomach
+        - id: OrganMothLiver
+        - id: OrganMothKidneys
+        - id: OrganMothAppendix
 
 - type: entity
   parent: [ OrganBaseHead, OrganMothExternal ]
   id: OrganMothHead
   components:
+  - type: BodyPart
+    containerId: head_organs
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      head_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      head_organs: !type:AllSelector
+        children:
+        - id: OrganMothBrain
+        - id: OrganMothEyes
+        - id: OrganMothTongue
+        - id: OrganMothEars
   - type: VisualOrganMarkings
     hideableLayers:
     - enum.HumanoidVisualLayers.HeadTop
@@ -248,10 +272,40 @@
 - type: entity
   parent: [ OrganBaseArmLeft, OrganMothExternal ]
   id: OrganMothArmLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganMothHandLeft
 
 - type: entity
   parent: [ OrganBaseArmRight, OrganMothExternal ]
   id: OrganMothArmRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganMothHandRight
 
 - type: entity
   parent: [ OrganBaseHandLeft, OrganMothExternal ]
@@ -264,10 +318,40 @@
 - type: entity
   parent: [ OrganBaseLegLeft, OrganMothExternal ]
   id: OrganMothLegLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganMothFootLeft
 
 - type: entity
   parent: [ OrganBaseLegRight, OrganMothExternal ]
   id: OrganMothLegRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganMothFootRight
 
 - type: entity
   parent: [ OrganBaseFootLeft, OrganMothExternal ]

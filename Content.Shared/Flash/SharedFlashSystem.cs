@@ -2,6 +2,7 @@ using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Eye.Blinding.Components;
+using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Flash.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Events;
@@ -162,14 +163,18 @@ public abstract class SharedFlashSystem : EntitySystem
         if (attempt.Cancelled)
             return;
 
+        var durationEv = new GetBlindnessDurationMultiplierEvent { Multiplier = 1f };
+        RaiseLocalEvent(target, ref durationEv);
+        var adjustedDuration = TimeSpan.FromSeconds(flashDuration.TotalSeconds * durationEv.Multiplier);
+
         // don't paralyze, slowdown or convert to rev if the target is immune to flashes
-        if (!_statusEffectsSystem.TryAddStatusEffect<FlashedComponent>(target, FlashedKey, flashDuration, true))
+        if (!_statusEffectsSystem.TryAddStatusEffect<FlashedComponent>(target, FlashedKey, adjustedDuration, true))
             return;
 
         if (stunDuration != null)
             _stun.TryUpdateParalyzeDuration(target, stunDuration.Value);
         else
-            _movementMod.TryUpdateMovementSpeedModDuration(target, MovementModStatusSystem.FlashSlowdown, flashDuration, slowTo);
+            _movementMod.TryUpdateMovementSpeedModDuration(target, MovementModStatusSystem.FlashSlowdown, adjustedDuration, slowTo);
 
         if (displayPopup && user != null && target != user && Exists(user.Value))
         {

@@ -255,6 +255,22 @@
           min: 10
 
 - type: reagent
+  id: Immunosuppressant # Funky - CyberMed
+  name: reagent-name-immunosuppressant
+  group: Medicine
+  desc: reagent-desc-immunosuppressant
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#8B7355"
+  metabolisms: 
+    Bloodstream: 
+      metabolismRate: 0.5 
+      effects: 
+      - !type:AddIntegrityImmunityBoost 
+        amount: 1 
+        durationSeconds: 60 
+
+- type: reagent
   id: Dexalin
   name: reagent-name-dexalin
   group: Medicine
