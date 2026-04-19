@@ -103,7 +103,7 @@
   container:
     entity: WrappedParcel
     containerId: contents
-  cost: 1100 # Harmony change: 750 -> 1100
+  cost: 750
   category: cargoproduct-category-name-service
   group: market
 
