@@ -26,3 +26,4 @@
     minimumPlayers: 20
   - type: RandomSpawnRule
     prototype: SpawnPointGhostBinglePrime
+  - type: GhostPingRule # Harmony change

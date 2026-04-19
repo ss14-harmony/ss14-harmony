@@ -216,6 +216,7 @@
       pickPlayer: false
       mindRoles:
       - MindRoleDragon
+  - type: GhostPingRule # Harmony change
   - type: DynamicRuleCost
     cost: 75
 
@@ -268,6 +269,7 @@
         nameFormat: name-format-ninja
       mindRoles:
       - MindRoleNinja
+  - type: GhostPingRule # Harmony change
   - type: DynamicRuleCost
     cost: 75
 
@@ -306,6 +308,7 @@
         sound: /Audio/Misc/paradox_clone_greeting.ogg
       mindRoles:
       - MindRoleParadoxClone
+  - type: GhostPingRule # Harmony change
   - type: DynamicRuleCost
     cost: 50
 
@@ -320,6 +323,7 @@
     minimumPlayers: 20
   - type: RandomSpawnRule
     prototype: MobRevenant
+  - type: GhostPingRule # Harmony change
 
 - type: entity
   parent: BaseWizardRule
@@ -359,6 +363,7 @@
         nameFormat: name-format-wizard
       mindRoles:
       - MindRoleWizard
+  - type: GhostPingRule # Harmony change
 
 # disabled until event is rewritten to be more interesting
 #- type: entity
@@ -592,6 +597,7 @@
         - Syndicate
       mindRoles:
       - MindRoleLoneops
+  - type: GhostPingRule # Harmony change
   - type: DynamicRuleCost
     cost: 75
 
