@@ -105,6 +105,10 @@
     effectiveness: 1.0
   - type: Item
     heldPrefix: cyber eyes
+  - type: VisualOrganMarkings
+    markingData:
+      layers: [ Eyes ]
+      group: None
 
 # Basic tier (80%)
 - type: entity
