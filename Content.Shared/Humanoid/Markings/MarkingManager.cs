@@ -2,19 +2,28 @@ using System.Collections.Frozen;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.Body;
+using Content.Shared.Containers; // Funky - CyberMed
+using Content.Shared.EntityTable; // Funky - CyberMed
 using Content.Shared.Humanoid.Prototypes;
+using Robust.Shared.GameObjects; // Funky - CyberMed
+using Robust.Shared.Log; // Funky - CyberMed
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Humanoid.Markings;
 
 public sealed class MarkingManager
 {
+    private static readonly ISawmill Sawmill = Logger.GetSawmill("marking"); // Funky - CyberMed
+
     [Dependency] private readonly IComponentFactory _component = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!; // Funky - CyberMed
 
     private FrozenDictionary<HumanoidVisualLayers, FrozenDictionary<string, MarkingPrototype>> _categorizedMarkings = default!;
     private FrozenDictionary<string, MarkingPrototype> _markings = default!;
 
+    private readonly Dictionary<string, Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>> _organMapCache = new(); // Funky - CyberMed
+    
     public void Initialize()
     {
         _prototype.PrototypesReloaded += OnPrototypeReload;
@@ -88,6 +97,7 @@ public sealed class MarkingManager
 
     private void OnPrototypeReload(PrototypesReloadedEventArgs args)
     {
+        _organMapCache.Clear();
         if (args.WasModified<MarkingPrototype>())
             CachePrototypes();
     }
@@ -225,23 +235,97 @@ public sealed class MarkingManager
 
     public Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>> GetOrgans(ProtoId<SpeciesPrototype> species)
     {
+        var id = species.Id;
+        if (_organMapCache.TryGetValue(id, out var cached))
+            return new Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>(cached);
+
+        var built = BuildOrgansUncached(species);
+        _organMapCache[id] = built;
+        return new Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>(built);
+    }
+
+    /// <summary>
+    /// Builds the organ prototype map for marking metadata. Uses <see cref="InitialBodyComponent"/> only
+    /// when present; otherwise merges <c>body_organs</c> <see cref="EntityTableContainerFillComponent"/> spawns
+    /// with explicit <see cref="SpeciesPrototype.LimbOrganPrototypes"/> overrides.
+    /// </summary>
+    private Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>> BuildOrgansUncached(
+        ProtoId<SpeciesPrototype> species)
+    {
         var speciesPrototype = _prototype.Index(species);
         if (!_prototype.TryIndex(speciesPrototype.DollPrototype, out var appearancePrototype))
-            return new();
+            return new Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>();
 
         if (appearancePrototype.TryGetComponent<InitialBodyComponent>(out var initialBody, _component))
-            return initialBody.Organs;
+            return new Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>(initialBody.Organs);
 
-        // Fallback for species using EntityTableContainerFill instead of InitialBody
-        if (speciesPrototype.LimbOrganPrototypes != null)
+        var merged = new Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>();
+
+        if (TryBuildOrgansFromBodyOrgansTable(appearancePrototype, out var tableMap))
         {
-            var result = new Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>();
-            foreach (var (category, protoId) in speciesPrototype.LimbOrganPrototypes)
-                result[category] = new EntProtoId<OrganComponent>(protoId.Id);
-            return result;
+            foreach (var kvp in tableMap)
+                merged[kvp.Key] = kvp.Value;
         }
 
-        return new();
+        if (speciesPrototype.LimbOrganPrototypes != null)
+        {
+            foreach (var (category, protoId) in speciesPrototype.LimbOrganPrototypes)
+                merged[category] = new EntProtoId<OrganComponent>(protoId.Id);
+        }
+
+        return merged;
+    }
+
+    /// <summary>
+    /// Lists organ entity prototypes from the appearance doll's <c>body_organs</c> fill table.
+    /// Randomized tables may not yield a stable full set; those species should use <see cref="InitialBodyComponent"/> or explicit limb maps.
+    /// </summary>
+    private bool TryBuildOrgansFromBodyOrgansTable(
+        EntityPrototype appearancePrototype,
+        out Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>> map)
+    {
+        map = new Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>();
+
+        if (!appearancePrototype.TryGetComponent<EntityTableContainerFillComponent>(out var fill, _component))
+            return false;
+
+        if (!fill.Containers.TryGetValue(BodyComponent.ContainerID, out var selector))
+            return false;
+
+        // Fixed seed: ListSpawns only uses random for nested selectors; deterministic for typical AllSelector dolls.
+        var rand = new System.Random(42);
+        var ctx = new EntityTableContext();
+        var warnedDuplicate = new HashSet<string>();
+
+        foreach (var spawn in selector.ListSpawns(rand, _entityManager, _prototype, ctx))
+        {
+            if (!_prototype.TryIndex(spawn, out var entProto))
+                continue;
+
+            if (!entProto.TryGetComponent<OrganComponent>(out var organComp, _component))
+                continue;
+
+            if (organComp.Category is not { } category)
+                continue;
+
+            var protoId = new EntProtoId<OrganComponent>(spawn.Id);
+            if (map.TryGetValue(category, out var existing) && existing != protoId)
+            {
+                if (warnedDuplicate.Add(category.Id))
+                {
+                    Sawmill.Warning(
+                        "Multiple body_organs prototypes map to organ category {0} on appearance {1}; keeping first match.",
+                        category.Id,
+                        appearancePrototype.ID);
+                }
+
+                continue;
+            }
+
+            map[category] = protoId;
+        }
+
+        return true;
     }
 
     public Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData> GetMarkingData(ProtoId<SpeciesPrototype> species)

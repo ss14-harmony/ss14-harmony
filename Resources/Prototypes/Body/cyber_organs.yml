@@ -103,11 +103,6 @@
     integrityCost: 1
   - type: CyberOrgan
     effectiveness: 1.0
-  - type: VisualOrganMarkings
-    markingData:
-      group: None
-      layers:
-      - Eyes
   - type: Item
     heldPrefix: cyber eyes
 
