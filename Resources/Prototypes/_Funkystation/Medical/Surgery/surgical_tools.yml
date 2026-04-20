@@ -29,7 +29,7 @@
 - type: surgicalTool
   id: ManipulatingTool
   tag: ManipulatingTool
-  displayName: health-analyzer-surgery-tool-hemostat
+  displayName: health-analyzer-surgery-tool-manipulating
 
 - type: surgicalTool
   id: HemostatTool

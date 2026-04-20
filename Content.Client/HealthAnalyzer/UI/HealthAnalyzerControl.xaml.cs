@@ -495,9 +495,11 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         if (first.Tag.HasValue)
         {
             var tagStr = first.Tag.Value.ToString();
-            return stepId == "ClampVessels" && tagStr == "Wirecutter"
-                ? Loc.GetString("health-analyzer-surgery-tool-wirecutters")
-                : GetToolDisplayNameByTag(tagStr);
+            if (stepId == "ClampVessels" && tagStr == "Wirecutter")
+                return Loc.GetString("health-analyzer-surgery-tool-wirecutters");
+            if (stepId == "RetractSkin" && tagStr == "PryingTool")
+                return Loc.GetString("health-analyzer-surgery-improvised-prying");
+            return GetToolDisplayNameByTag(tagStr);
         }
         return "-";
     }

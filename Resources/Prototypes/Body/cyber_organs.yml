@@ -7,10 +7,13 @@
 
 - type: entity
   abstract: true
-  parent: [ OrganBaseHeart, OrganSpriteCyberInternal ]
+  parent: [ OrganBaseHeart, OrganHumanMetabolizer, OrganSpriteCyberInternal ]
   id: OrganCyberHeartBase
   name: cyber heart
   components:
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: []
   - type: Sprite
     layers:
     - state: CyberHeart
@@ -24,10 +27,14 @@
 
 - type: entity
   abstract: true
-  parent: [ OrganBaseLungs, OrganSpriteCyberInternal ]
+  # Human metabolizer types: gas/reagent metabolism matches OrganHumanLungs (Oxygenate and other conditions).
+  parent: [ OrganBaseLungs, OrganHumanMetabolizer, OrganSpriteCyberInternal ]
   id: OrganCyberLungsBase
   name: cyber lungs
   components:
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: []
   - type: Sprite
     layers:
     - state: CyberLungs
@@ -41,10 +48,13 @@
 
 - type: entity
   abstract: true
-  parent: [ OrganBaseLiver, OrganSpriteCyberInternal ]
+  parent: [ OrganBaseLiver, OrganHumanMetabolizer, OrganSpriteCyberInternal ]
   id: OrganCyberLiverBase
   name: cyber liver
   components:
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: []
   - type: Sprite
     layers:
     - state: CyberLiver
@@ -58,10 +68,13 @@
 
 - type: entity
   abstract: true
-  parent: [ OrganBaseStomach, OrganSpriteCyberInternal ]
+  parent: [ OrganBaseStomach, OrganHumanMetabolizer, OrganSpriteCyberInternal ]
   id: OrganCyberStomachBase
   name: cyber stomach
   components:
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: []
   - type: Sprite
     layers:
     - state: CyberStomach
@@ -79,6 +92,9 @@
   id: OrganCyberEyesBase
   name: cyber eyes
   components:
+  - type: OrganSurgeryProcedures
+    removalProcedures: [OrganClampVessels, OrganRemovalScalpel, OrganRemovalHemostat, RemoveOrgan]
+    insertionProcedures: []
   - type: Sprite
     layers:
     - state: CyberEyes
@@ -87,11 +103,6 @@
     integrityCost: 1
   - type: CyberOrgan
     effectiveness: 1.0
-  - type: VisualOrganMarkings
-    markingData:
-      group: None
-      layers:
-      - Eyes
   - type: Item
     heldPrefix: cyber eyes
 

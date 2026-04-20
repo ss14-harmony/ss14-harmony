@@ -28,7 +28,7 @@
   name: health-analyzer-surgery-step-clamp-vessels
   penalty: 1
   primaryTool:
-    tag: ManipulatingTool
+    tag: HemostatTool
     doAfterDelay: 2
     damage:
       types:
@@ -47,14 +47,14 @@
   name: health-analyzer-surgery-step-retract-skin
   penalty: 1
   primaryTool:
-    tag: PryingTool
+    tag: ManipulatingTool
     doAfterDelay: 2
     damage:
       types:
         Slash: 1
     sound: /Audio/Items/drill_hit.ogg
   improvisedTools:
-    - damageType: Blunt
+    - tag: PryingTool
       delayMultiplier: 1.5
   prerequisites:
     - type: RequireStepPerformed
@@ -68,7 +68,7 @@
   name: health-analyzer-surgery-step-release-layer
   penalty: 0
   primaryTool:
-    tag: PryingTool
+    tag: ManipulatingTool
     doAfterDelay: 2
     healAmount:
       types:
@@ -250,7 +250,7 @@
   name: health-analyzer-surgery-step-clamp-vessels
   penalty: 0
   primaryTool:
-    tag: ManipulatingTool
+    tag: HemostatTool
     doAfterDelay: 3
     sound: /Audio/Items/drill_hit.ogg
   improvisedTools:

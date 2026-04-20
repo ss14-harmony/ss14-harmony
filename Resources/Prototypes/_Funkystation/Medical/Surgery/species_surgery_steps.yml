@@ -14,14 +14,14 @@
       primaryTag: CuttingTool
       improvisedDamageType: Slash
     - procedure: ClampVessels
-      primaryTag: ManipulatingTool
+      primaryTag: HemostatTool
       improvisedTag: Wirecutter
     - procedure: RetractSkin
-      primaryTag: PryingTool
-      improvisedDamageType: Blunt
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
   skinCloseStepEntries:
     - procedure: ReleaseRetractor
-      primaryTag: PryingTool
+      primaryTag: ManipulatingTool
       improvisedDamageType: Blunt
     - procedure: ReconnectVessels
       primaryTag: HemostatTool
@@ -59,14 +59,14 @@
       primaryTag: CuttingTool
       improvisedDamageType: Slash
     - procedure: ClampVessels
-      primaryTag: ManipulatingTool
+      primaryTag: HemostatTool
       improvisedTag: Wirecutter
     - procedure: RetractSkin
-      primaryTag: PryingTool
-      improvisedDamageType: Blunt
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
   skinCloseStepEntries:
     - procedure: ReleaseRetractor
-      primaryTag: PryingTool
+      primaryTag: ManipulatingTool
       improvisedDamageType: Blunt
     - procedure: ReconnectVessels
       primaryTag: HemostatTool
@@ -104,14 +104,14 @@
       primaryTag: CuttingTool
       improvisedDamageType: Slash
     - procedure: ClampVessels
-      primaryTag: ManipulatingTool
+      primaryTag: HemostatTool
       improvisedTag: Wirecutter
     - procedure: RetractSkin
-      primaryTag: PryingTool
-      improvisedDamageType: Blunt
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
   skinCloseStepEntries:
     - procedure: ReleaseRetractor
-      primaryTag: PryingTool
+      primaryTag: ManipulatingTool
       improvisedDamageType: Blunt
     - procedure: ReconnectVessels
       primaryTag: HemostatTool
@@ -149,14 +149,14 @@
       primaryTag: CuttingTool
       improvisedDamageType: Slash
     - procedure: ClampVessels
-      primaryTag: ManipulatingTool
+      primaryTag: HemostatTool
       improvisedTag: Wirecutter
     - procedure: RetractSkin
-      primaryTag: PryingTool
-      improvisedDamageType: Blunt
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
   skinCloseStepEntries:
     - procedure: ReleaseRetractor
-      primaryTag: PryingTool
+      primaryTag: ManipulatingTool
       improvisedDamageType: Blunt
     - procedure: ReconnectVessels
       primaryTag: HemostatTool
@@ -194,14 +194,14 @@
       primaryTag: CuttingTool
       improvisedDamageType: Slash
     - procedure: ClampVessels
-      primaryTag: ManipulatingTool
+      primaryTag: HemostatTool
       improvisedTag: Wirecutter
     - procedure: RetractSkin
-      primaryTag: PryingTool
-      improvisedDamageType: Blunt
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
   skinCloseStepEntries:
     - procedure: ReleaseRetractor
-      primaryTag: PryingTool
+      primaryTag: ManipulatingTool
       improvisedDamageType: Blunt
     - procedure: ReconnectVessels
       primaryTag: HemostatTool
@@ -239,14 +239,14 @@
       primaryTag: CuttingTool
       improvisedDamageType: Slash
     - procedure: ClampVessels
-      primaryTag: ManipulatingTool
+      primaryTag: HemostatTool
       improvisedTag: Wirecutter
     - procedure: RetractSkin
-      primaryTag: PryingTool
-      improvisedDamageType: Blunt
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
   skinCloseStepEntries:
     - procedure: ReleaseRetractor
-      primaryTag: PryingTool
+      primaryTag: ManipulatingTool
       improvisedDamageType: Blunt
     - procedure: ReconnectVessels
       primaryTag: HemostatTool
@@ -284,14 +284,14 @@
       primaryTag: CuttingTool
       improvisedDamageType: Slash
     - procedure: ClampVessels
-      primaryTag: ManipulatingTool
+      primaryTag: HemostatTool
       improvisedTag: Wirecutter
     - procedure: RetractSkin
-      primaryTag: PryingTool
-      improvisedDamageType: Blunt
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
   skinCloseStepEntries:
     - procedure: ReleaseRetractor
-      primaryTag: PryingTool
+      primaryTag: ManipulatingTool
       improvisedDamageType: Blunt
     - procedure: ReconnectVessels
       primaryTag: HemostatTool
@@ -329,14 +329,14 @@
       primaryTag: CuttingTool
       improvisedDamageType: Slash
     - procedure: ClampVessels
-      primaryTag: ManipulatingTool
+      primaryTag: HemostatTool
       improvisedTag: Wirecutter
     - procedure: RetractSkin
-      primaryTag: PryingTool
-      improvisedDamageType: Blunt
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
   skinCloseStepEntries:
     - procedure: ReleaseRetractor
-      primaryTag: PryingTool
+      primaryTag: ManipulatingTool
       improvisedDamageType: Blunt
     - procedure: ReconnectVessels
       primaryTag: HemostatTool
@@ -374,14 +374,14 @@
       primaryTag: CuttingTool
       improvisedDamageType: Slash
     - procedure: ClampVessels
-      primaryTag: ManipulatingTool
+      primaryTag: HemostatTool
       improvisedTag: Wirecutter
     - procedure: RetractSkin
-      primaryTag: PryingTool
-      improvisedDamageType: Blunt
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
   skinCloseStepEntries:
     - procedure: ReleaseRetractor
-      primaryTag: PryingTool
+      primaryTag: ManipulatingTool
       improvisedDamageType: Blunt
     - procedure: ReconnectVessels
       primaryTag: HemostatTool
@@ -419,14 +419,14 @@
       primaryTag: CuttingTool
       improvisedDamageType: Slash
     - procedure: ClampVessels
-      primaryTag: ManipulatingTool
+      primaryTag: HemostatTool
       improvisedTag: Wirecutter
     - procedure: RetractSkin
-      primaryTag: PryingTool
-      improvisedDamageType: Blunt
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
   skinCloseStepEntries:
     - procedure: ReleaseRetractor
-      primaryTag: PryingTool
+      primaryTag: ManipulatingTool
       improvisedDamageType: Blunt
     - procedure: ReconnectVessels
       primaryTag: HemostatTool
@@ -466,14 +466,14 @@
       primaryTag: CuttingTool
       improvisedDamageType: Slash
     - procedure: ClampVessels
-      primaryTag: ManipulatingTool
+      primaryTag: HemostatTool
       improvisedTag: Wirecutter
     - procedure: RetractSkin
-      primaryTag: PryingTool
-      improvisedDamageType: Blunt
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
   skinCloseStepEntries:
     - procedure: ReleaseRetractor
-      primaryTag: PryingTool
+      primaryTag: ManipulatingTool
       improvisedDamageType: Blunt
     - procedure: ReconnectVessels
       primaryTag: HemostatTool
@@ -511,14 +511,14 @@
       primaryTag: CuttingTool
       improvisedDamageType: Slash
     - procedure: ClampVessels
-      primaryTag: ManipulatingTool
+      primaryTag: HemostatTool
       improvisedTag: Wirecutter
     - procedure: RetractSkin
-      primaryTag: PryingTool
-      improvisedDamageType: Blunt
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
   skinCloseStepEntries:
     - procedure: ReleaseRetractor
-      primaryTag: PryingTool
+      primaryTag: ManipulatingTool
       improvisedDamageType: Blunt
     - procedure: ReconnectVessels
       primaryTag: HemostatTool
@@ -580,14 +580,14 @@
       primaryTag: CuttingTool
       improvisedDamageType: Slash
     - procedure: ClampVessels
-      primaryTag: ManipulatingTool
+      primaryTag: HemostatTool
       improvisedTag: Wirecutter
     - procedure: RetractSkin
-      primaryTag: PryingTool
-      improvisedDamageType: Blunt
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
   skinCloseStepEntries:
     - procedure: ReleaseRetractor
-      primaryTag: PryingTool
+      primaryTag: ManipulatingTool
       improvisedDamageType: Blunt
     - procedure: ReconnectVessels
       primaryTag: HemostatTool
@@ -625,14 +625,14 @@
       primaryTag: CuttingTool
       improvisedDamageType: Slash
     - procedure: ClampVessels
-      primaryTag: ManipulatingTool
+      primaryTag: HemostatTool
       improvisedTag: Wirecutter
     - procedure: RetractSkin
-      primaryTag: PryingTool
-      improvisedDamageType: Blunt
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
   skinCloseStepEntries:
     - procedure: ReleaseRetractor
-      primaryTag: PryingTool
+      primaryTag: ManipulatingTool
       improvisedDamageType: Blunt
     - procedure: ReconnectVessels
       primaryTag: HemostatTool
@@ -670,14 +670,14 @@
       primaryTag: CuttingTool
       improvisedDamageType: Slash
     - procedure: ClampVessels
-      primaryTag: ManipulatingTool
+      primaryTag: HemostatTool
       improvisedTag: Wirecutter
     - procedure: RetractSkin
-      primaryTag: PryingTool
-      improvisedDamageType: Blunt
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
   skinCloseStepEntries:
     - procedure: ReleaseRetractor
-      primaryTag: PryingTool
+      primaryTag: ManipulatingTool
       improvisedDamageType: Blunt
     - procedure: ReconnectVessels
       primaryTag: HemostatTool
@@ -715,14 +715,14 @@
       primaryTag: CuttingTool
       improvisedDamageType: Slash
     - procedure: ClampVessels
-      primaryTag: ManipulatingTool
+      primaryTag: HemostatTool
       improvisedTag: Wirecutter
     - procedure: RetractSkin
-      primaryTag: PryingTool
-      improvisedDamageType: Blunt
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
   skinCloseStepEntries:
     - procedure: ReleaseRetractor
-      primaryTag: PryingTool
+      primaryTag: ManipulatingTool
       improvisedDamageType: Blunt
     - procedure: ReconnectVessels
       primaryTag: HemostatTool
@@ -790,14 +790,14 @@
 #       primaryTag: CuttingTool
 #       improvisedDamageType: Slash
 #     - procedure: ClampVessels
-#       primaryTag: ManipulatingTool
+#       primaryTag: HemostatTool
 #       improvisedTag: Wirecutter
 #     - procedure: RetractSkin
-#       primaryTag: PryingTool
-#       improvisedDamageType: Blunt
+#       primaryTag: ManipulatingTool
+#       improvisedTag: PryingTool
 #   skinCloseStepEntries:
 #     - procedure: ReleaseRetractor
-#       primaryTag: PryingTool
+#       primaryTag: ManipulatingTool
 #       improvisedDamageType: Blunt
 #     - procedure: ReconnectVessels
 #       primaryTag: HemostatTool

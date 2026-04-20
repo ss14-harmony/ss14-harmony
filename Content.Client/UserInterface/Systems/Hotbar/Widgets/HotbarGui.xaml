@@ -1,4 +1,4 @@
-﻿<widgets:HotbarGui
+<widgets:HotbarGui
     xmlns="https://spacestation14.io"
     xmlns:inventory="clr-namespace:Content.Client.UserInterface.Systems.Inventory.Controls"
     xmlns:hands="clr-namespace:Content.Client.UserInterface.Systems.Hands.Controls"

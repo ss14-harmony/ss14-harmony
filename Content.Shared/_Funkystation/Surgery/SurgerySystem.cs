@@ -656,7 +656,8 @@ public sealed class SurgerySystem : EntitySystem
             }
 
             layerComp = EnsureComp<SurgeryLayerComponent>(bodyPart);
-            if (layerComp.PerformedOrganSteps.Contains(stepId))
+            // InsertOrgan is repeatable; do not skip when it appears in legacy PerformedOrganSteps.
+            if (layerComp.PerformedOrganSteps.Contains(stepId) && stepId != "InsertOrgan")
                 return;
             if (organNet.HasValue && organUid.HasValue && TryComp<OrganSurgeryProceduresComponent>(organUid.Value, out var organProcs))
             {
@@ -741,10 +742,20 @@ public sealed class SurgerySystem : EntitySystem
             RaiseLocalEvent(bodyPart, ref insertEv);
             if (insertEv.Success)
             {
-                layerComp!.PerformedOrganSteps.Add(stepId);
+                // Do not add InsertOrgan to PerformedOrganSteps — it would block further insertions on this part.
+                var layer = EnsureComp<SurgeryLayerComponent>(bodyPart);
                 if (organNet.HasValue)
-                    EnsureOrganInsertEntry(layerComp, organNet.Value);
-                Dirty(bodyPart, layerComp);
+                {
+                    if (TryComp<OrganSurgeryProceduresComponent>(organ, out var osp) && osp.InsertionProcedures.Count > 0)
+                        EnsureOrganInsertEntry(layer, organNet.Value);
+                    else if (HasComp<OrganRemovedSurgeryStateComponent>(organ))
+                    {
+                        // No mend chain (e.g. cyber organs): treat insert as fully repaired for removal-state logic.
+                        RemComp<OrganRemovedSurgeryStateComponent>(organ);
+                        DirtyEntity(organ);
+                    }
+                }
+                Dirty(bodyPart, layer);
                 var penaltyEv = new SurgeryPenaltyAppliedEvent(bodyPart, penalty);
                 RaiseLocalEvent(bodyPart, ref penaltyEv);
                 var uiRefreshEv = new SurgeryUiRefreshRequestEvent();
