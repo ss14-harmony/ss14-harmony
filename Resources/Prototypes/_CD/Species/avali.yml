@@ -9,3 +9,9 @@
   maleFirstNames: names_avali_unisex
   femaleFirstNames: names_avali_unisex
   naming: First
+  limbOrganPrototypes:
+    ArmLeft: OrganAvaliArmLeft
+    ArmRight: OrganAvaliArmRight
+    LegLeft: OrganAvaliLegLeft
+    LegRight: OrganAvaliLegRight
+    Head: OrganAvaliHead

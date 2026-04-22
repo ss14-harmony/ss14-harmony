@@ -140,6 +140,7 @@
     - ElectronicsStatic
     - HarmonyCargoStatic # Harmony
     - HarmonyServiceStatic # Harmony
+    - CyberneticsPartsStatic # Funky - CyberMed
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityAmmoStatic
@@ -314,6 +315,7 @@
     - BorgModulesStatic
     - BorgLimbsStatic
     - CyberneticsStatic
+    - CyberneticsPartsStatic # Funky - CyberMed
     dynamicPacks:
     - Robotics
     - BorgModules
@@ -397,6 +399,7 @@
     - SecurityWeaponsStatic
     - HarmonySecurityEquipmentStatic # Harmony
     - HarmonySecurityAmmoStatic # Harmony
+    - CyberneticsPartsStatic # Funky - CyberMed
     dynamicPacks:
     - SalvageSecurityBoards
     - SalvageSecurityWeapons

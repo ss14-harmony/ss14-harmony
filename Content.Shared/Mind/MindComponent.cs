@@ -81,6 +81,15 @@ public sealed partial class MindComponent : Component
     public EntityUid? OwnedEntity { get; set; }
 
     /// <summary>
+	/// Funky - CyberMed
+    /// The brain organ entity this mind is anchored to. Maintained when the brain moves between body, MMI, or loose.
+    /// Used by return-to-body to resolve the player's current target independently of <see cref="OwnedEntity"/>.
+    /// Stored as <see cref="NetEntity"/> so serialization stays valid if the brain is deleted.
+    /// </summary>
+    [DataField, AutoNetworkedField, Access(typeof(SharedMindSystem))]
+    public NetEntity? BrainEntity { get; set; }
+
+    /// <summary>
     ///     An enumerable over all the objective entities this mind has.
     /// </summary>
     [ViewVariables, Obsolete("Use Objectives field")]

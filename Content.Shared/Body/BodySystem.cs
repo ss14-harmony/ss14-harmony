@@ -140,6 +140,8 @@ public sealed partial class BodySystem : EntitySystem
                     {
                         var bodyEv = new OrganRemovedFromEvent(child);
                         RaiseLocalEvent(ent, ref bodyEv);
+                        var notifyEv = new OrganRemovedFromBodyNotifyEvent(child);
+                        RaiseLocalEvent(ent, ref notifyEv);
                         var removeEv = new OrganGotRemovedEvent(ent);
                         RaiseLocalEvent(child, ref removeEv);
                         childOrgan.Body = null;
@@ -153,6 +155,8 @@ public sealed partial class BodySystem : EntitySystem
 
         var body = new OrganRemovedFromEvent(args.Entity);
         RaiseLocalEvent(ent, ref body);
+        var bodyNotify = new OrganRemovedFromBodyNotifyEvent(args.Entity);
+        RaiseLocalEvent(ent, ref bodyNotify);
 
         var ev = new OrganGotRemovedEvent(ent);
         RaiseLocalEvent(args.Entity, ref ev);
@@ -203,6 +207,8 @@ public sealed partial class BodySystem : EntitySystem
 
         var body = new OrganRemovedFromEvent(args.Entity);
         RaiseLocalEvent(rootBody.Value, ref body);
+        var bodyNotify = new OrganRemovedFromBodyNotifyEvent(args.Entity);
+        RaiseLocalEvent(rootBody.Value, ref bodyNotify);
 
         var ev = new OrganGotRemovedEvent(rootBody.Value);
         RaiseLocalEvent(args.Entity, ref ev);

@@ -24,6 +24,12 @@ public sealed class CyberneticsBatteryDrainerSystem : EntitySystem
     private const float DrainTime = 1f;
     private const float DrainEfficiency = 0.0005f;
 
+    /// <summary>
+    /// Batteries at or above this fraction of MaxCharge are considered "topped off" for recharging purposes.
+    /// Prevents endlessly trying to top off a battery that is immediately drained below 100% by passive cybernetic power draw.
+    /// </summary>
+    private const float RechargeThreshold = 0.95f;
+
     [Dependency] private readonly SharedBatterySystem _battery = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
@@ -54,7 +60,7 @@ public sealed class CyberneticsBatteryDrainerSystem : EntitySystem
         if (_combatMode.IsInCombatMode(uid) || _hands.GetActiveItem(uid) != null || !_interaction.InRangeUnobstructed(uid, target))
             return;
 
-        if (stats.BatteryRemaining >= stats.BatteryMax)
+        if (AllBatteriesAtOrAboveThreshold(uid))
         {
             // Skip popup when ninja suit battery is full (avoids double popup when ninja+cyber both full)
             if (!(TryComp<BatteryDrainerComponent>(uid, out var d) && d.BatteryUid is {} bat && _battery.IsFull(bat)))
@@ -79,14 +85,14 @@ public sealed class CyberneticsBatteryDrainerSystem : EntitySystem
     private void OnDoAfterAttempt(Entity<CyberLimbStatsComponent> ent, ref DoAfterAttemptEvent<CyberneticsDrainDoAfterEvent> args)
     {
         var stats = ent.Comp;
-        if (stats.BatteryMax <= 0 || stats.BatteryRemaining >= stats.BatteryMax)
+        if (stats.BatteryMax <= 0)
         {
             args.Cancel();
             return;
         }
 
         var batteries = _moduleSystem.GetBatteryEntities(ent.Owner);
-        if (batteries.Count == 0)
+        if (batteries.Count == 0 || AllBatteriesAtOrAboveThreshold(ent.Owner))
             args.Cancel();
     }
 
@@ -120,8 +126,17 @@ public sealed class CyberneticsBatteryDrainerSystem : EntitySystem
         var required = 0f;
         foreach (var batteryEnt in batteries)
         {
-            if (TryComp<BatteryComponent>(batteryEnt, out var batteryComp))
-                required += batteryComp.MaxCharge - _battery.GetCharge((batteryEnt, batteryComp));
+            if (!TryComp<BatteryComponent>(batteryEnt, out var batteryComp))
+                continue;
+            if (IsAtOrAboveThreshold(batteryEnt, batteryComp))
+                continue;
+            required += batteryComp.MaxCharge - _battery.GetCharge((batteryEnt, batteryComp));
+        }
+
+        if (required <= 0f)
+        {
+            args.Repeat = false;
+            return;
         }
 
         var maxDrained = pnb.MaxSupply * DrainTime;
@@ -140,6 +155,8 @@ public sealed class CyberneticsBatteryDrainerSystem : EntitySystem
                 break;
             if (!TryComp<BatteryComponent>(batteryEnt, out var batteryComp))
                 continue;
+            if (IsAtOrAboveThreshold(batteryEnt, batteryComp))
+                continue;
             var needed = batteryComp.MaxCharge - _battery.GetCharge((batteryEnt, batteryComp));
             var toAdd = Math.Min(remaining, needed);
             _battery.ChangeCharge((batteryEnt, batteryComp), toAdd);
@@ -151,15 +168,27 @@ public sealed class CyberneticsBatteryDrainerSystem : EntitySystem
         _audio.PlayPvs(new SoundCollectionSpecifier("sparks"), target);
         _popup.PopupEntity(Loc.GetString("cybernetics-drainer-success", ("target", target)), body, body);
 
-        var anyNotFull = false;
+        args.Repeat = !AllBatteriesAtOrAboveThreshold(body);
+    }
+
+    private bool IsAtOrAboveThreshold(EntityUid batteryEnt, BatteryComponent batteryComp)
+    {
+        return _battery.GetCharge((batteryEnt, batteryComp)) >= batteryComp.MaxCharge * RechargeThreshold;
+    }
+
+    private bool AllBatteriesAtOrAboveThreshold(EntityUid body)
+    {
+        var batteries = _moduleSystem.GetBatteryEntities(body);
+        if (batteries.Count == 0)
+            return false;
+
         foreach (var batteryEnt in batteries)
         {
-            if (TryComp<BatteryComponent>(batteryEnt, out var batteryComp) && !_battery.IsFull((batteryEnt, batteryComp)))
-            {
-                anyNotFull = true;
-                break;
-            }
+            if (!TryComp<BatteryComponent>(batteryEnt, out var batteryComp))
+                continue;
+            if (!IsAtOrAboveThreshold(batteryEnt, batteryComp))
+                return false;
         }
-        args.Repeat = anyNotFull;
+        return true;
     }
 }

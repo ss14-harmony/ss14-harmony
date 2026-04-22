@@ -1,5 +1,6 @@
 using Content.Shared.Body;
 using Content.Shared.Medical.Integrity.Components;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.EntityEffects.Effects.Body;
@@ -32,4 +33,10 @@ public sealed partial class AddIntegrityImmunityBoost : EntityEffectBase<AddInte
 
     [DataField]
     public float DurationSeconds { get; private set; } = 60f;
+
+    public override string EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+        => Loc.GetString("entity-effect-guidebook-add-integrity-immunity-boost",
+            ("chance", Probability),
+            ("amount", Amount),
+            ("duration", DurationSeconds));
 }

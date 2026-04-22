@@ -24,3 +24,6 @@ cyber-limb-inspection-modules = Installed modules: {$modules}
 cyber-limb-inspection-battery = Battery: {$percent}% ({$remaining})
 
 cyber-arm-cannot-wield-two-handed = You cannot wield two-handed weapons from cybernetic arm storage.
+
+cyber-limb-motors-whirring = Your cybernetic motors whirr unsteadily…
+cyber-limb-low-power = Your cybernetics stutter as power runs low…

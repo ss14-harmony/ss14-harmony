@@ -4,6 +4,7 @@ using System.Linq;
 using Content.Shared.Body;
 using Content.Shared.Containers; // Funky - CyberMed
 using Content.Shared.EntityTable; // Funky - CyberMed
+using Content.Shared.EntityTable.EntitySelectors; // Funky - CyberMed
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.GameObjects; // Funky - CyberMed
 using Robust.Shared.Log; // Funky - CyberMed
@@ -277,7 +278,10 @@ public sealed class MarkingManager
     }
 
     /// <summary>
-    /// Lists organ entity prototypes from the appearance doll's <c>body_organs</c> fill table.
+    /// Lists organ entity prototypes from the appearance doll's <c>body_organs</c> fill table,
+    /// recursively following every discovered organ's own EntityTableContainerFillComponent
+    /// so nested part-of-a-part organs (e.g. hand organs inside arm organs, foot organs inside leg
+    /// organs, eyes/brain inside head organs) are also included.
     /// Randomized tables may not yield a stable full set; those species should use <see cref="InitialBodyComponent"/> or explicit limb maps.
     /// </summary>
     private bool TryBuildOrgansFromBodyOrgansTable(
@@ -289,40 +293,57 @@ public sealed class MarkingManager
         if (!appearancePrototype.TryGetComponent<EntityTableContainerFillComponent>(out var fill, _component))
             return false;
 
-        if (!fill.Containers.TryGetValue(BodyComponent.ContainerID, out var selector))
+        if (!fill.Containers.TryGetValue(BodyComponent.ContainerID, out var rootSelector)) // Funky - CyberMed
             return false;
 
         // Fixed seed: ListSpawns only uses random for nested selectors; deterministic for typical AllSelector dolls.
         var rand = new System.Random(42);
         var ctx = new EntityTableContext();
         var warnedDuplicate = new HashSet<string>();
+        var visited = new HashSet<string>(); // Funky - CyberMed
 
-        foreach (var spawn in selector.ListSpawns(rand, _entityManager, _prototype, ctx))
+        // Funky - CyberMed
+        var pending = new Queue<EntityTableSelector>();
+        pending.Enqueue(rootSelector);
+
+        while (pending.TryDequeue(out var selector))
         {
-            if (!_prototype.TryIndex(spawn, out var entProto))
-                continue;
-
-            if (!entProto.TryGetComponent<OrganComponent>(out var organComp, _component))
-                continue;
-
-            if (organComp.Category is not { } category)
-                continue;
-
-            var protoId = new EntProtoId<OrganComponent>(spawn.Id);
-            if (map.TryGetValue(category, out var existing) && existing != protoId)
+            foreach (var spawn in selector.ListSpawns(rand, _entityManager, _prototype, ctx))
             {
-                if (warnedDuplicate.Add(category.Id))
+                if (!visited.Add(spawn.Id))
+                    continue;
+
+                if (!_prototype.TryIndex(spawn, out var entProto))
+                    continue;
+
+                if (entProto.TryGetComponent<OrganComponent>(out var organComp, _component)
+                    && organComp.Category is { } category)
                 {
-                    Sawmill.Warning(
-                        "Multiple body_organs prototypes map to organ category {0} on appearance {1}; keeping first match.",
-                        category.Id,
-                        appearancePrototype.ID);
+                    var protoId = new EntProtoId<OrganComponent>(spawn.Id);
+                    if (map.TryGetValue(category, out var existing) && existing != protoId)
+                    {
+                        if (warnedDuplicate.Add(category.Id))
+                        {
+                            Sawmill.Warning(
+                                "Multiple body_organs prototypes map to organ category {0} on appearance {1}; keeping first match.",
+                                category.Id,
+                                appearancePrototype.ID);
+                        }
+                    }
+                    else
+                    {
+                        map[category] = protoId;
+                    }
                 }
 
-                continue;
+                // Recurse into this organ's own fill containers so nested organs
+                // (e.g. hands inside arms, feet inside legs) are discovered too.
+                if (entProto.TryGetComponent<EntityTableContainerFillComponent>(out var nestedFill, _component))
+                {
+                    foreach (var nestedSelector in nestedFill.Containers.Values)
+                        pending.Enqueue(nestedSelector);
+                }
             }
-
-            map[category] = protoId;
         }
 
         return true;

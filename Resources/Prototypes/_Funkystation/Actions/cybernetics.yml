@@ -1,0 +1,15 @@
+- type: entity
+  parent: BaseAction
+  id: ActionOpenCyberArmStorage
+  name: Open Cyber Arm Storage
+  description: Open this cybernetic arm's storage compartment.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    priority: -10
+    icon:
+      sprite: _EinsteinEngines/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
+      state: l_arm-combined-hand
+    useDelay: 0.5
+  - type: InstantAction
+    event: !type:OpenCyberArmStorageActionEvent

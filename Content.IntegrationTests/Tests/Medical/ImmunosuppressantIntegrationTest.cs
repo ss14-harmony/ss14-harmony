@@ -36,7 +36,7 @@ public sealed class ImmunosuppressantIntegrationTest
     }
 
     [Test]
-    public async Task Immunosuppressant_ReducesBioRejectionDamage_WhenMetabolized()
+    public async Task Immunosuppressant_AppliesIntegrityImmunityBoost_WhenMetabolized()
     {
         await using var pair = await PoolManager.GetServerClient(new PoolSettings
         {
@@ -92,14 +92,22 @@ public sealed class ImmunosuppressantIntegrationTest
             Assert.That(bloodstreamSystem.TryAddToBloodstream((patient, entityManager.GetComponent<BloodstreamComponent>(patient)), solution), Is.True, "Add Immunosuppressant to bloodstream");
         });
 
-        await pair.RunTicksSync(1800);
+        // Run enough ticks for the Immunosuppressant to be metabolized at least once and apply the boost.
+        await pair.RunTicksSync(600);
 
         await server.WaitAssertion(() =>
         {
             Assert.That(entityManager.EntityExists(patient), Is.True);
-            Assert.That(entityManager.TryGetComponent(patient, out DamageableComponent? damageable), Is.True);
-            var damageAfter = damageable!.Damage.DamageDict.TryGetValue("BioRejection", out var d) ? d : FixedPoint2.Zero;
-            Assert.That(damageAfter, Is.LessThanOrEqualTo(damageBeforeImmunosuppressant), "Bio-rejection damage should have decreased or stayed at 0 after immunosuppressant metabolism");
+
+            // Per the recent patch, Immunosuppressant metabolism should add an IntegrityImmunityBoostComponent
+            // with Amount == 10 to an organ on the patient (instead of directly modifying bio-rejection damage).
+            Assert.That(bodySystem.TryGetOrgansWithComponent<IntegrityImmunityBoostComponent>(patient, out var boostOrgans), Is.True,
+                "At least one organ should have IntegrityImmunityBoostComponent after Immunosuppressant metabolism");
+            Assert.That(boostOrgans, Is.Not.Empty, "Boost organs list should not be empty");
+
+            var boost = boostOrgans[0].Comp;
+            Assert.That(boost.Amount, Is.EqualTo(10), "Immunosuppressant should apply an integrity boost of 10 (per the recent patch)");
+            Assert.That(boost.ExpiresAt, Is.GreaterThan(TimeSpan.Zero), "Boost should have a non-zero expiration time set while Immunosuppressant is actively metabolizing");
         });
 
         await pair.CleanReturnAsync();

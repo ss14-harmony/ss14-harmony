@@ -5,10 +5,12 @@ using Content.Shared.Cybernetics.Components;
 using Content.Shared.Cybernetics.Events;
 using Content.Shared.Emp;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Popups;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Stacks;
 using Content.Shared.Storage;
+using Robust.Shared.Localization;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
@@ -23,6 +25,7 @@ public sealed class CyberLimbStatsSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     private const float UpdateInterval = 1f;
     private TimeSpan _nextUpdate = TimeSpan.Zero;
@@ -335,7 +338,60 @@ public sealed class CyberLimbStatsSystem : EntitySystem
                 _movementSpeed.RefreshMovementSpeedModifiers(uid);
             }
 
+            MaybePopupLowService(uid, stats);
+            MaybePopupLowPower(uid, stats);
+
             Dirty(uid, stats);
         }
+    }
+
+    private void MaybePopupLowService(EntityUid body, CyberLimbStatsComponent stats)
+    {
+        if (stats.ServiceTimeMax <= TimeSpan.Zero)
+            return;
+
+        var frac = stats.ServiceTimeRemaining.TotalSeconds / stats.ServiceTimeMax.TotalSeconds;
+        if (frac >= 0.25)
+        {
+            if (stats.LowMaintenanceWarned)
+            {
+                stats.LowMaintenanceWarned = false;
+                stats.NextMaintenanceWarning = TimeSpan.Zero;
+            }
+
+            return;
+        }
+
+        if (stats.LowMaintenanceWarned && _timing.CurTime < stats.NextMaintenanceWarning)
+            return;
+
+        _popup.PopupEntity(Loc.GetString("cyber-limb-motors-whirring"), body, body, PopupType.MediumCaution);
+        stats.LowMaintenanceWarned = true;
+        stats.NextMaintenanceWarning = _timing.CurTime + TimeSpan.FromSeconds(60);
+    }
+
+    private void MaybePopupLowPower(EntityUid body, CyberLimbStatsComponent stats)
+    {
+        if (stats.BatteryMax <= 0f)
+            return;
+
+        var percent = 100f * stats.BatteryRemaining / stats.BatteryMax;
+        if (percent >= 25f)
+        {
+            if (stats.LowPowerWarned)
+            {
+                stats.LowPowerWarned = false;
+                stats.NextPowerWarning = TimeSpan.Zero;
+            }
+
+            return;
+        }
+
+        if (stats.LowPowerWarned && _timing.CurTime < stats.NextPowerWarning)
+            return;
+
+        _popup.PopupEntity(Loc.GetString("cyber-limb-low-power"), body, body, PopupType.MediumCaution);
+        stats.LowPowerWarned = true;
+        stats.NextPowerWarning = _timing.CurTime + TimeSpan.FromSeconds(60);
     }
 }

@@ -172,6 +172,7 @@
   components:
   - type: BodyPart
     containerId: internal_organs
+    slots: [ Lungs, Heart, Stomach, Liver, Kidneys, Appendix ]
   - type: SurgeryLayer
   - type: ContainerContainer
     containers:
@@ -196,6 +197,7 @@
   components:
   - type: BodyPart
     containerId: head_organs
+    slots: [ Brain, Eyes, Tongue, Ears ]
   - type: SurgeryLayer
   - type: ContainerContainer
     containers:
@@ -218,6 +220,7 @@
   components:
   - type: BodyPart
     containerId: limb_organs
+    slots: [ HandLeft ]
   - type: SurgeryLayer
   - type: ContainerContainer
     containers:
@@ -237,6 +240,7 @@
   components:
   - type: BodyPart
     containerId: limb_organs
+    slots: [ HandRight ]
   - type: SurgeryLayer
   - type: ContainerContainer
     containers:
@@ -264,6 +268,7 @@
   components:
   - type: BodyPart
     containerId: limb_organs
+    slots: [ FootLeft ]
   - type: SurgeryLayer
   - type: ContainerContainer
     containers:
@@ -283,6 +288,7 @@
   components:
   - type: BodyPart
     containerId: limb_organs
+    slots: [ FootRight ]
   - type: SurgeryLayer
   - type: ContainerContainer
     containers:

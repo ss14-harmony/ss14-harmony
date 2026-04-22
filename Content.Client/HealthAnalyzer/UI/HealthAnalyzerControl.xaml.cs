@@ -174,6 +174,16 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
                     : default(SurgeryLayerStateData);
                 if (matchingEntry.CategoryId == prevCategoryId)
                     _selectedBodyPart = matchingEntry.BodyPart;
+                else if (_state.BodyPartLayerState != null)
+                {
+                    var torsoEntry = _state.BodyPartLayerState.FirstOrDefault(s => s.CategoryId == "Torso");
+                    if (torsoEntry.BodyPart != default)
+                        _selectedBodyPart = torsoEntry.BodyPart;
+                    else if (_state.BodyParts.Count > 0)
+                        _selectedBodyPart = _state.BodyParts[0];
+                    else
+                        _selectedBodyPart = _state.TargetEntity;
+                }
                 else if (_state.BodyParts.Count > 0)
                     _selectedBodyPart = _state.BodyParts[0];
                 else

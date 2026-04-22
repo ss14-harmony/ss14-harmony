@@ -1,4 +1,6 @@
 using System.Linq;
+using Content.Shared.Actions;
+using Content.Shared.Actions.Components;
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Cybernetics.Components;
@@ -11,89 +13,150 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.PowerCell.Components;
+using Content.Shared.Storage;
 using Robust.Server.GameObjects;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server.Cybernetics.Systems;
 
 public sealed class CyberArmSelectSystem : EntitySystem
 {
+    [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly SharedCyberArmStorageSystem _cyberArmStorage = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedVirtualItemSystem _virtualItem = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
-
-    private static readonly ProtoId<OrganCategoryPrototype> ArmLeft = "ArmLeft";
-    private static readonly ProtoId<OrganCategoryPrototype> ArmRight = "ArmRight";
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<HandsComponent, EmptyHandActivateEvent>(OnEmptyHandActivateRef);
+        SubscribeLocalEvent<CyberArmStorageActionComponent, OrganGotInsertedEvent>(OnStorageActionOrganInserted);
+        SubscribeLocalEvent<CyberArmStorageActionComponent, OrganGotRemovedEvent>(OnStorageActionOrganRemoved);
+        SubscribeLocalEvent<CyberArmStorageActionComponent, OpenCyberArmStorageActionEvent>(OnStorageActionPerformed);
         Subs.BuiEvents<CyberLimbComponent>(CyberArmSelectUiKey.Key, sub => sub.Event<CyberArmSelectRequestMessage>(OnCyberArmSelectRequest));
     }
 
     private void OnEmptyHandActivateRef(Entity<HandsComponent> ent, ref EmptyHandActivateEvent ev)
     {
-        if (ev.Handled)
-            return;
-
-        if (!ev.AltInteract)
+        if (ev.Handled || !ev.AltInteract)
             return;
 
         if (!HasComp<BodyComponent>(ev.User))
             return;
 
-        // Determine which arm the activated hand belongs to - only show that arm's contents
-        var armCategory = GetArmCategoryForHand(ev.User, ev.HandName, ent.Comp);
-        // Exclude cyber modules and items that contain batteries but are not batteries themselves (e.g. flashlights with power cell slots)
-        var items = _cyberArmStorage.GetCyberArmStorageItems(ev.User, armCategory)
-            .Where(x => !HasComp<CyberLimbModuleComponent>(x.Item) && !(HasComp<PowerCellSlotComponent>(x.Item) && !HasComp<PowerCellComponent>(x.Item)))
-            .ToList();
-        if (items.Count == 0)
+        var handName = ev.HandName;
+        if (string.IsNullOrEmpty(handName) || !_hands.TryGetHand((ev.User, ent.Comp), handName, out _))
+            handName = ent.Comp.ActiveHandId;
+        if (string.IsNullOrEmpty(handName))
             return;
 
-        var targetArm = items[0].Limb;
-        if (!_ui.HasUi(targetArm, CyberArmSelectUiKey.Key))
+        if (!_cyberArmStorage.TryGetCyberArmForHand(ev.User, handName, out var arm))
             return;
 
-        var state = new CyberArmSelectBoundUserInterfaceState(
-            items.Select(x => new CyberArmSelectItemEntry(GetNetEntity(x.Item), Identity.Name(x.Item, EntityManager))).ToList());
-
-        if (_ui.TryOpenUi(targetArm, CyberArmSelectUiKey.Key, ev.User))
-        {
-            _ui.SetUiState(targetArm, CyberArmSelectUiKey.Key, state);
+        if (TryOpenArmSelectUi(arm, ev.User))
             ev.Handled = true;
-        }
     }
 
-    /// <summary>
-    /// Maps the activated hand to the corresponding arm category. Returns null to show all arms (fallback).
-    /// </summary>
-    private ProtoId<OrganCategoryPrototype>? GetArmCategoryForHand(EntityUid user, string? handName, HandsComponent handsComp)
+    private void OnStorageActionOrganInserted(Entity<CyberArmStorageActionComponent> ent, ref OrganGotInsertedEvent args)
     {
-        var hand = handName;
+        if (!HasComp<ActionsComponent>(args.Target))
+            return;
 
-        if (string.IsNullOrEmpty(hand) || !_hands.TryGetHand((user, handsComp), hand, out var handData))
-            hand = handsComp.ActiveHandId;
+        _actions.AddAction(args.Target, ref ent.Comp.ActionEntity, ent.Comp.Action, ent.Owner);
+    }
 
-        if (string.IsNullOrEmpty(hand) || !_hands.TryGetHand((user, handsComp), hand, out handData))
-            return default;
+    private void OnStorageActionOrganRemoved(Entity<CyberArmStorageActionComponent> ent, ref OrganGotRemovedEvent args)
+    {
+        if (LifeStage(args.Target) >= EntityLifeStage.Terminating)
+            return;
 
-        return handData.Value.Location switch
+        _actions.RemoveAction(args.Target, ent.Comp.ActionEntity);
+        ent.Comp.ActionEntity = null;
+    }
+
+    private void OnStorageActionPerformed(Entity<CyberArmStorageActionComponent> ent, ref OpenCyberArmStorageActionEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (!TryComp<HandsComponent>(args.Performer, out var handsComp))
+            return;
+
+        var activeHand = handsComp.ActiveHandId;
+        if (string.IsNullOrEmpty(activeHand))
+            return;
+
+        // Action should behave like active-hand alt-use: only operate when this arm owns the active hand.
+        if (!_cyberArmStorage.TryGetCyberArmForHand(args.Performer, activeHand, out var activeArm) || activeArm != ent.Owner)
+            return;
+
+        // Match alt-use behavior: pressing again while holding a cyber arm virtual item
+        // first clears the currently active virtual item.
+        if (_hands.TryGetActiveItem(args.Performer, out var held) &&
+            TryComp<VirtualItemComponent>(held, out var heldVirtual) &&
+            HasComp<CyberArmVirtualItemComponent>(held))
         {
-            HandLocation.Left => ArmLeft,
-            HandLocation.Right => ArmRight,
-            HandLocation.Middle => ArmRight, // Middle hands typically map to right side
-            _ => default
-        };
+            _virtualItem.DeleteVirtualItem((held.Value, heldVirtual), args.Performer);
+        }
+
+        if (TryOpenArmSelectUi(ent.Owner, args.Performer))
+            args.Handled = true;
+    }
+
+    public bool TryOpenArmSelectUi(EntityUid arm, EntityUid user)
+    {
+        if (!TryComp<StorageComponent>(arm, out var storage) || storage.Container == null)
+            return false;
+
+        if (!_ui.HasUi(arm, CyberArmSelectUiKey.Key))
+            return false;
+
+        var items = storage.Container.ContainedEntities
+            .Where(x => !HasComp<CyberLimbModuleComponent>(x) && !(HasComp<PowerCellSlotComponent>(x) && !HasComp<PowerCellComponent>(x)))
+            .Select(x => new CyberArmSelectItemEntry(GetNetEntity(x), Identity.Name(x, EntityManager)))
+            .ToList();
+
+        if (items.Count == 0)
+            return false;
+
+        CloseOtherCyberArmUis(user, arm);
+
+        if (!_ui.TryOpenUi(arm, CyberArmSelectUiKey.Key, user))
+            return false;
+
+        _ui.SetUiState(arm, CyberArmSelectUiKey.Key, new CyberArmSelectBoundUserInterfaceState(items));
+        return true;
+    }
+
+    private void CloseOtherCyberArmUis(EntityUid user, EntityUid keepOpen)
+    {
+        foreach (var organ in _body.GetAllOrgans(user))
+        {
+            if (organ == keepOpen || !HasComp<CyberLimbComponent>(organ))
+                continue;
+
+            if (_ui.HasUi(organ, CyberArmSelectUiKey.Key))
+                _ui.CloseUi(organ, CyberArmSelectUiKey.Key, user);
+        }
     }
 
     private void OnCyberArmSelectRequest(Entity<CyberLimbComponent> ent, ref CyberArmSelectRequestMessage msg)
     {
         var user = msg.Actor;
         if (user == default)
+            return;
+
+        // Guardrail: never allow selection from an arm that doesn't match the active hand.
+        if (!TryComp<HandsComponent>(user, out var handsComp))
+            return;
+
+        var activeHand = handsComp.ActiveHandId;
+        if (string.IsNullOrEmpty(activeHand))
+            return;
+
+        if (!_cyberArmStorage.TryGetCyberArmForHand(user, activeHand, out var activeArm) || activeArm != ent.Owner)
             return;
 
         var selectedNet = msg.SelectedItem;
@@ -107,7 +170,7 @@ public sealed class CyberArmSelectSystem : EntitySystem
         if (!items.Any(x => x.Item == selectedEntity))
             return;
 
-        if (_virtualItem.TrySpawnVirtualItemInHand(selectedEntity.Value, user, out var virtualItem, false, null, false))
+        if (_virtualItem.TrySpawnVirtualItemInHand(selectedEntity.Value, user, out var virtualItem, false, activeHand, false))
         {
             EnsureComp<CyberArmVirtualItemComponent>(virtualItem.Value);
             EnsureComp<UnremoveableComponent>(virtualItem.Value);

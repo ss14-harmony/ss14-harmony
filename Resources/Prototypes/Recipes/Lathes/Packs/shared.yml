@@ -14,6 +14,13 @@
   - MicroManipulatorStockPart
   - ConveyorBeltAssembly
 
+# Funky - CyberMed
+- type: latheRecipePack
+  id: CyberneticsPartsStatic
+  recipes:
+  - MatterBinStockPart
+  - CapacitorStockPart
+
 - type: latheRecipePack
   id: LightsStatic
   recipes:

@@ -1,13 +1,16 @@
 using Content.Server.Administration.Logs;
 using Content.Server.GameTicking;
 using Content.Server.Ghost;
+using Content.Shared.Body; // Funky - Cybermed
 using Content.Shared.Database;
 using Content.Shared.Ghost;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Players;
+using Content.Shared.Silicons.Borgs.Components; // Funky - Cybermed
 using Robust.Server.GameStates;
 using Robust.Server.Player;
+using Robust.Shared.Containers; // Funky - Cybermed
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
@@ -23,6 +26,7 @@ public sealed class MindSystem : SharedMindSystem
     [Dependency] private readonly GhostSystem _ghosts = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly PvsOverrideSystem _pvsOverride = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!; // Funky - Cybermed
 
     public override void Initialize()
     {
@@ -41,6 +45,8 @@ public sealed class MindSystem : SharedMindSystem
                 oldData.Mind = null;
             mind.UserId = null;
         }
+
+        mind.BrainEntity = null; // Funky - Cybermed
 
         if (mind.OwnedEntity != null && !TerminatingOrDeleted(mind.OwnedEntity.Value))
             TransferTo(uid, null, mind: mind, createGhost: false);
@@ -165,6 +171,54 @@ public sealed class MindSystem : SharedMindSystem
             _adminLogger.Add(LogType.Mind, LogImpact.Low,
                 $"{session.Name} returned to {ToPrettyString(owned.Value)}");
         }
+    }
+
+    /// <summary>
+    /// Funky CyberMed 
+	/// Resolves the entity the player should control when returning from a ghost: root body if the brain is in a body,
+    /// the MMI if slotted, or the brain entity if loose.
+    /// </summary>
+    public EntityUid? ResolveBrainRoot(MindComponent mind)
+    {
+        if (mind.BrainEntity is not { } netBrain)
+            return null;
+
+        var brain = GetEntity(netBrain);
+        if (!Exists(brain) || Terminating(brain))
+            return null;
+
+        if (TryComp<OrganComponent>(brain, out var organ) && organ.Body is { } body
+            && Exists(body) && !Terminating(body))
+            return body;
+
+        if (_container.TryGetContainingContainer((brain, null, null), out var container)
+            && HasComp<MMIComponent>(container.Owner)
+            && !Terminating(container.Owner))
+            return container.Owner;
+
+        return brain;
+    }
+
+    public override void ReturnToBody(ICommonSession? session)
+    {
+        if (session == null || !TryGetMind(session, out var mindId, out var mind))
+            return;
+
+        var root = ResolveBrainRoot(mind);
+
+        if (root == null)
+        {
+            UnVisit(mindId, mind);
+            return;
+        }
+
+        if (mind.OwnedEntity == root)
+        {
+            UnVisit(mindId, mind);
+            return;
+        }
+
+        TransferTo(mindId, root, ghostCheckOverride: true, mind: mind);
     }
 
     public override void TransferTo(EntityUid mindId, EntityUid? entity, bool ghostCheckOverride = false, bool createGhost = true,

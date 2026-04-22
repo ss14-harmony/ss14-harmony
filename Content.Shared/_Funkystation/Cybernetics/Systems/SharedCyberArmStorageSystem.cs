@@ -53,6 +53,33 @@ public sealed class SharedCyberArmStorageSystem : EntitySystem
     }
 
     /// <summary>
+    /// Tries to resolve the cyber arm organ that owns a given hand id.
+    /// </summary>
+    public bool TryGetCyberArmForHand(EntityUid body, string handName, out EntityUid arm)
+    {
+        arm = default;
+        if (string.IsNullOrEmpty(handName))
+            return false;
+
+        foreach (var organ in _body.GetAllOrgans(body))
+        {
+            if (!HasComp<CyberLimbComponent>(organ))
+                continue;
+
+            if (!TryComp<HandOrganComponent>(organ, out var handOrgan) || handOrgan.HandID != handName)
+                continue;
+
+            if (!TryComp<StorageComponent>(organ, out var storage) || storage.Container == null)
+                continue;
+
+            arm = organ;
+            return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
     /// Returns true if the entity is in the body's cyber arm storage.
     /// </summary>
     public bool IsInCyberArmStorage(EntityUid entity, EntityUid body)

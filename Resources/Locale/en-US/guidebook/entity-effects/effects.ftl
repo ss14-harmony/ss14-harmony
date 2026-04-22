@@ -524,3 +524,9 @@ entity-effect-guidebook-plant-mutate-chemicals =
         [1] Mutates
         *[other] mutate
     } a plant to produce {$name}
+
+entity-effect-guidebook-add-integrity-immunity-boost =
+    { $chance ->
+        [1] Increases
+        *[other] increase
+    } effective organ integrity capacity by {$amount} while being metabolized

@@ -39,3 +39,10 @@ public readonly record struct OrganInsertedIntoEvent(EntityUid Organ);
 /// </summary>
 [ByRefEvent]
 public readonly record struct OrganRemovedFromEvent(EntityUid Organ);
+
+/// <summary>
+/// Raised on the body immediately after <see cref="OrganRemovedFromEvent"/> with the same organ.
+/// Use this when you need organ-removal reactions without consuming the single directed subscription slot for <see cref="OrganRemovedFromEvent"/>.
+/// </summary>
+[ByRefEvent]
+public readonly record struct OrganRemovedFromBodyNotifyEvent(EntityUid Organ);

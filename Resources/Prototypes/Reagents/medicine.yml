@@ -264,11 +264,11 @@
   color: "#8B7355"
   metabolisms: 
     Bloodstream: 
-      metabolismRate: 0.5 
+      metabolismRate: 0.05
       effects: 
       - !type:AddIntegrityImmunityBoost 
-        amount: 1 
-        durationSeconds: 60 
+        amount: 10
+        durationSeconds: 2
 
 - type: reagent
   id: Dexalin
