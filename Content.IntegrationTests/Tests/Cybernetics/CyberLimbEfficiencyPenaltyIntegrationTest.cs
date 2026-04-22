@@ -18,25 +18,25 @@ namespace Content.IntegrationTests.Tests.Cybernetics;
 [TestOf(typeof(CyberLimbStatsSystem))]
 public sealed class CyberLimbEfficiencyPenaltyIntegrationTest
 {
-    private static EntityUid GetArmLeft(IEntityManager entityManager, EntityUid body)
+    private static EntityUid GetLegLeft(IEntityManager entityManager, EntityUid body)
     {
-        var ev = new BodyPartQueryByTypeEvent(body) { Category = new ProtoId<OrganCategoryPrototype>("ArmLeft") };
+        var ev = new BodyPartQueryByTypeEvent(body) { Category = new ProtoId<OrganCategoryPrototype>("LegLeft") };
         entityManager.EventBus.RaiseLocalEvent(body, ref ev);
         return ev.Parts[0];
     }
 
-    private static void ReplaceArmWithCyberArm(IEntityManager entityManager, BodySystem bodySystem,
+    private static void ReplaceLegWithCyberLeg(IEntityManager entityManager, BodySystem bodySystem,
         SharedContainerSystem containerSystem, EntityUid body, EntityCoordinates coords)
     {
-        var arm = GetArmLeft(entityManager, body);
-        var removeEv = new OrganRemoveRequestEvent(arm) { Destination = coords };
-        entityManager.EventBus.RaiseLocalEvent(arm, ref removeEv);
-        Assert.That(removeEv.Success, Is.True, "Remove arm should succeed");
+        var leg = GetLegLeft(entityManager, body);
+        var removeEv = new OrganRemoveRequestEvent(leg) { Destination = coords };
+        entityManager.EventBus.RaiseLocalEvent(leg, ref removeEv);
+        Assert.That(removeEv.Success, Is.True, "Remove leg should succeed");
 
-        var cyberArm = entityManager.SpawnEntity("OrganCyberArmLeft", coords);
+        var cyberLeg = entityManager.SpawnEntity("OrganCyberLegLeft", coords);
         var bodyComp = entityManager.GetComponent<BodyComponent>(body);
         Assert.That(bodyComp.Organs, Is.Not.Null, "Body should have Organs container");
-        Assert.That(containerSystem.Insert(cyberArm, bodyComp.Organs!), Is.True, "Insert cyber arm should succeed");
+        Assert.That(containerSystem.Insert(cyberLeg, bodyComp.Organs!), Is.True, "Insert cyber leg should succeed");
     }
 
     [Test]
@@ -58,13 +58,13 @@ public sealed class CyberLimbEfficiencyPenaltyIntegrationTest
             var patient = entityManager.SpawnEntity("MobHuman", mapData.GridCoords);
             var coords = entityManager.GetComponent<TransformComponent>(patient).Coordinates;
 
-            ReplaceArmWithCyberArm(entityManager, bodySystem, containerSystem, patient, coords);
+            ReplaceLegWithCyberLeg(entityManager, bodySystem, containerSystem, patient, coords);
             Assert.That(entityManager.HasComponent<CyberLimbStatsComponent>(patient), Is.True,
                 "Patient should have CyberLimbStatsComponent");
 
             var stats = entityManager.GetComponent<CyberLimbStatsComponent>(patient);
             stats.ServiceTimeRemaining = TimeSpan.Zero;
-            stats.Efficiency = 0.5f;
+            stats.LegEfficiency = 0.5f;
             entityManager.Dirty(patient, stats);
 
             movementSpeedSystem.RefreshMovementSpeedModifiers(patient);
@@ -78,7 +78,7 @@ public sealed class CyberLimbEfficiencyPenaltyIntegrationTest
                 "SprintSpeedModifier should be 0.5 when efficiency is depleted");
 
             stats = entityManager.GetComponent<CyberLimbStatsComponent>(patient);
-            stats.Efficiency = 1f;
+            stats.LegEfficiency = 1f;
             entityManager.Dirty(patient, stats);
             movementSpeedSystem.RefreshMovementSpeedModifiers(patient);
 

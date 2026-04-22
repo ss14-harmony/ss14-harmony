@@ -167,7 +167,7 @@ public sealed class CyberLimbBatteryIntegrationTest
         await server.WaitAssertion(() =>
         {
             var stats = entityManager.GetComponent<CyberLimbStatsComponent>(patient);
-            Assert.That(stats.Efficiency, Is.EqualTo(0.5f), "Efficiency should be 0.5 when battery depleted");
+            Assert.That(stats.ArmEfficiency, Is.EqualTo(0.5f), "ArmEfficiency should be 0.5 when battery depleted");
         });
 
         await pair.CleanReturnAsync();

@@ -3,6 +3,7 @@ using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Cybernetics.Components;
 using Content.Shared.Cybernetics.Events;
+using Content.Shared.DoAfter;
 using Content.Shared.Emp;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
@@ -30,6 +31,11 @@ public sealed class CyberLimbStatsSystem : EntitySystem
     private const float UpdateInterval = 1f;
     private TimeSpan _nextUpdate = TimeSpan.Zero;
 
+    private const string ArmLeft = "ArmLeft";
+    private const string ArmRight = "ArmRight";
+    private const string LegLeft = "LegLeft";
+    private const string LegRight = "LegRight";
+
     public override void Initialize()
     {
         base.Initialize();
@@ -40,8 +46,48 @@ public sealed class CyberLimbStatsSystem : EntitySystem
         SubscribeLocalEvent<BodyComponent, CyberLimbStatsRecalcEvent>(OnStatsRecalc);
         SubscribeLocalEvent<CyberLimbStatsComponent, EmpPulseEvent>(OnEmpPulse);
         SubscribeLocalEvent<CyberLimbStatsComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeed);
+        SubscribeLocalEvent<CyberLimbStatsComponent, DoAfterDelayMultiplierEvent>(OnDoAfterDelayMultiplier);
 
         _nextUpdate = _timing.CurTime + TimeSpan.FromSeconds(UpdateInterval);
+    }
+
+    /// <summary>
+    /// Returns true if the body has at least one cyber limb in either leg slot.
+    /// Used to gate leg-based penalties (movement) so a body with only cyber arms isn't slowed.
+    /// </summary>
+    public bool HasCyberLegs(EntityUid body)
+    {
+        foreach (var organ in _body.GetAllOrgans(body))
+        {
+            if (!HasComp<CyberLimbComponent>(organ))
+                continue;
+            if (!TryComp<OrganComponent>(organ, out var organComp) || organComp.Category is not { } category)
+                continue;
+            if (category.Id == LegLeft || category.Id == LegRight)
+                return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Returns true if the body has at least one cyber limb in either arm slot.
+    /// Used to gate arm-based penalties (interaction / do-after speed) so a body with only cyber legs
+    /// isn't slowed when manipulating things.
+    /// </summary>
+    public bool HasCyberArms(EntityUid body)
+    {
+        foreach (var organ in _body.GetAllOrgans(body))
+        {
+            if (!HasComp<CyberLimbComponent>(organ))
+                continue;
+            if (!TryComp<OrganComponent>(organ, out var organComp) || organComp.Category is not { } category)
+                continue;
+            if (category.Id == ArmLeft || category.Id == ArmRight)
+                return true;
+        }
+
+        return false;
     }
 
     private void OnCyberLimbAttached(Entity<BodyComponent> ent, ref CyberLimbAttachedToBodyEvent args)
@@ -112,8 +158,9 @@ public sealed class CyberLimbStatsSystem : EntitySystem
             FillMatterBinsInLimb(organ);
         }
 
-        var (_, cpuCount, _) = _moduleSystem.GetModuleCounts(body);
-        stats.Efficiency = _moduleSystem.GetLimbEfficiencyFromCpus(cpuCount);
+        var (armCpuCount, legCpuCount) = _moduleSystem.GetArmLegCpuCounts(body);
+        stats.ArmEfficiency = _moduleSystem.GetArmEfficiencyFromCpus(armCpuCount);
+        stats.LegEfficiency = _moduleSystem.GetLegEfficiencyFromCpus(legCpuCount);
 
         RecomputeAndRefresh(body);
     }
@@ -137,7 +184,28 @@ public sealed class CyberLimbStatsSystem : EntitySystem
 
     private void OnRefreshMovementSpeed(Entity<CyberLimbStatsComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
     {
-        args.ModifySpeed(ent.Comp.Efficiency);
+        // Movement speed is driven by the legs, so don't modify it when the body has no cyber legs.
+        // A body with only cyber arms should walk at normal speed regardless of maintenance/power state.
+        if (!HasCyberLegs(ent.Owner))
+            return;
+
+        args.ModifySpeed(ent.Comp.LegEfficiency);
+    }
+
+    private void OnDoAfterDelayMultiplier(Entity<CyberLimbStatsComponent> ent, ref DoAfterDelayMultiplierEvent args)
+    {
+        // Interaction speed is driven by the arms, so skip when the body has no cyber arms.
+        // A body with only cyber legs should interact at normal speed regardless of maintenance/power state.
+        if (!HasCyberArms(ent.Owner))
+            return;
+
+        // Mirror the movement modifier: delay scales by 1/ArmEfficiency. When depleted (ArmEfficiency 0.5 with no CPUs)
+        // this doubles the do-after delay - a 50% interaction slowdown symmetric with the 50% movement slowdown.
+        var efficiency = ent.Comp.ArmEfficiency;
+        if (efficiency <= 0f)
+            return;
+
+        args.Multiplier *= 1f / efficiency;
     }
 
     private void FillMatterBinsInLimb(EntityUid limb)
@@ -177,11 +245,11 @@ public sealed class CyberLimbStatsSystem : EntitySystem
             }
         }
 
-        var (_, cpuCount, _) = _moduleSystem.GetModuleCounts(body);
-        var limbEfficiency = _moduleSystem.GetLimbEfficiencyFromCpus(cpuCount);
+        var (armCpuCount, legCpuCount) = _moduleSystem.GetArmLegCpuCounts(body);
         var depleted = (stats.ServiceTimeRemaining <= TimeSpan.Zero) || (stats.BatteryMax > 0 && stats.BatteryRemaining <= 0);
-        var newEfficiency = limbEfficiency * (depleted ? 0.5f : 1f);
-        stats.Efficiency = newEfficiency;
+        var depletionMultiplier = depleted ? 0.5f : 1f;
+        stats.ArmEfficiency = _moduleSystem.GetArmEfficiencyFromCpus(armCpuCount) * depletionMultiplier;
+        stats.LegEfficiency = _moduleSystem.GetLegEfficiencyFromCpus(legCpuCount) * depletionMultiplier;
 
         Dirty(body, stats);
         _movementSpeed.RefreshMovementSpeedModifiers(body);
@@ -225,12 +293,14 @@ public sealed class CyberLimbStatsSystem : EntitySystem
             }
             Dirty(body, stats);
             var depleted = (stats.ServiceTimeRemaining <= TimeSpan.Zero) || (stats.BatteryMax > 0 && stats.BatteryRemaining <= 0);
-            var (_, cpuCount, _) = _moduleSystem.GetModuleCounts(body);
-            var limbEfficiency = _moduleSystem.GetLimbEfficiencyFromCpus(cpuCount);
-            var newEfficiency = limbEfficiency * (depleted ? 0.5f : 1f);
-            if (stats.Efficiency != newEfficiency)
+            var (armCpuCount, legCpuCount) = _moduleSystem.GetArmLegCpuCounts(body);
+            var depletionMultiplier = depleted ? 0.5f : 1f;
+            var newArmEfficiency = _moduleSystem.GetArmEfficiencyFromCpus(armCpuCount) * depletionMultiplier;
+            var newLegEfficiency = _moduleSystem.GetLegEfficiencyFromCpus(legCpuCount) * depletionMultiplier;
+            if (stats.ArmEfficiency != newArmEfficiency || stats.LegEfficiency != newLegEfficiency)
             {
-                stats.Efficiency = newEfficiency;
+                stats.ArmEfficiency = newArmEfficiency;
+                stats.LegEfficiency = newLegEfficiency;
                 _movementSpeed.RefreshMovementSpeedModifiers(body);
             }
         }
@@ -328,13 +398,16 @@ public sealed class CyberLimbStatsSystem : EntitySystem
                 }
             }
 
-            var limbEfficiency = _moduleSystem.GetLimbEfficiencyFromCpus(cpuCount);
+            var (armCpuCount, legCpuCount) = _moduleSystem.GetArmLegCpuCounts(uid);
             var depleted = (stats.ServiceTimeRemaining <= TimeSpan.Zero) || (stats.BatteryMax > 0 && stats.BatteryRemaining <= 0);
-            var newEfficiency = limbEfficiency * (depleted ? 0.5f : 1f);
+            var depletionMultiplier = depleted ? 0.5f : 1f;
+            var newArmEfficiency = _moduleSystem.GetArmEfficiencyFromCpus(armCpuCount) * depletionMultiplier;
+            var newLegEfficiency = _moduleSystem.GetLegEfficiencyFromCpus(legCpuCount) * depletionMultiplier;
 
-            if (stats.Efficiency != newEfficiency)
+            if (stats.ArmEfficiency != newArmEfficiency || stats.LegEfficiency != newLegEfficiency)
             {
-                stats.Efficiency = newEfficiency;
+                stats.ArmEfficiency = newArmEfficiency;
+                stats.LegEfficiency = newLegEfficiency;
                 _movementSpeed.RefreshMovementSpeedModifiers(uid);
             }
 

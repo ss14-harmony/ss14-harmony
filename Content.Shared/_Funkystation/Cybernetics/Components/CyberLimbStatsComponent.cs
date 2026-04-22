@@ -22,10 +22,18 @@ public sealed partial class CyberLimbStatsComponent : Component
     public TimeSpan ServiceTimeMax { get; set; }
 
     /// <summary>
-    /// Efficiency multiplier. Limb efficiency from CPUs, multiplied by external modifiers (e.g. 0.5 when depleted).
+    /// Arm efficiency multiplier. Driven by CPUs installed in cyber arms (+10% per CPU), multiplied by external modifiers (e.g. 0.5 when depleted).
+    /// Controls interaction / do-after speed.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float Efficiency { get; set; } = 1f;
+    public float ArmEfficiency { get; set; } = 1f;
+
+    /// <summary>
+    /// Leg efficiency multiplier. Driven by CPUs installed in cyber legs (+5% per CPU), multiplied by external modifiers (e.g. 0.5 when depleted).
+    /// Controls movement speed.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float LegEfficiency { get; set; } = 1f;
 
     /// <summary>
     /// Minimum service time per cyber limb. Limbs function without modules (poorly) with this base.

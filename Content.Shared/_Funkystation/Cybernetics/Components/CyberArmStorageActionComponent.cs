@@ -6,7 +6,7 @@ namespace Content.Shared.Cybernetics.Components;
 public sealed partial class CyberArmStorageActionComponent : Component
 {
     [DataField]
-    public EntProtoId Action = "ActionOpenCyberArmStorage";
+    public EntProtoId Action = "ActionOpenCyberArmStorageLeft";
 
     [DataField]
     public EntityUid? ActionEntity;

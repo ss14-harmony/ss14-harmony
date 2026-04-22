@@ -210,6 +210,20 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
             return false;
         }
 
+        // Funky - CyberMed
+        // Allow systems to scale the delay before it's baked into the DoAfter (e.g. mob status effects,
+        // cybernetics running low on maintenance/power). Skip for instant do-afters.
+        if (args.Delay > TimeSpan.Zero)
+        {
+            var delayEv = new DoAfterDelayMultiplierEvent();
+            RaiseLocalEvent(args.User, ref delayEv);
+            if (delayEv.Multiplier != 1f)
+            {
+                var scaled = Math.Max(0f, delayEv.Multiplier);
+                args.Delay = TimeSpan.FromTicks((long)(args.Delay.Ticks * scaled));
+            }
+        }
+
         // Duplicate blocking & cancellation.
         if (!ProcessDuplicates(args, comp))
         {

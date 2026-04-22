@@ -75,7 +75,7 @@
   parent: BaseItem
   id: TreasureCPUSupercharged
   name: supercharged cybernetics CPU # Funky - CyberMed
-  description: A Supercharged Cybernetics Processing Unit. Improves cyberwear operation speed by 10% when installed in a cyber limb. # Funky - CyberMed
+  description: A Supercharged Cybernetics Processing Unit. Improves cyberwear operation speed by 10% when installed in a cyber arm, or 5% when installed in a cyber leg. # Funky - CyberMed
   components:
   - type: Sprite
     sprite: Objects/Misc/module.rsi
