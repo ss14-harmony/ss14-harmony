@@ -240,7 +240,8 @@ public sealed class CyberLimbModuleSystemIntegrationTest
             statsSystem.RecomputeAndRefresh(patient);
 
             var stats = entityManager.GetComponent<CyberLimbStatsComponent>(patient);
-            Assert.That(stats.Efficiency, Is.EqualTo(1.6f).Within(0.001f), "6 CPUs = 160% limb efficiency");
+            Assert.That(stats.ArmEfficiency, Is.EqualTo(1.6f).Within(0.001f), "6 arm CPUs = 160% arm efficiency");
+            Assert.That(stats.LegEfficiency, Is.EqualTo(1f).Within(0.001f), "No leg CPUs = 100% leg efficiency");
 
             var bodyStats = entityManager.GetComponent<CyberLimbStatsComponent>(patient);
             bodyStats.BaseServiceRemaining = TimeSpan.Zero;
@@ -253,7 +254,8 @@ public sealed class CyberLimbModuleSystemIntegrationTest
 
             var statsAfterDeplete = entityManager.GetComponent<CyberLimbStatsComponent>(patient);
             Assert.That(statsAfterDeplete.ServiceTimeRemaining, Is.EqualTo(TimeSpan.Zero), "ServiceTimeRemaining should be 0 when depleted");
-            Assert.That(statsAfterDeplete.Efficiency, Is.EqualTo(0.8f).Within(0.001f), "160% * 50% depletion = 80%");
+            Assert.That(statsAfterDeplete.ArmEfficiency, Is.EqualTo(0.8f).Within(0.001f), "160% * 50% depletion = 80% arm efficiency");
+            Assert.That(statsAfterDeplete.LegEfficiency, Is.EqualTo(0.5f).Within(0.001f), "100% * 50% depletion = 50% leg efficiency");
         });
 
         await pair.CleanReturnAsync();
@@ -340,7 +342,7 @@ public sealed class CyberLimbModuleSystemIntegrationTest
         await server.WaitAssertion(() =>
         {
             var stats = entityManager.GetComponent<CyberLimbStatsComponent>(patient);
-            Assert.That(stats.Efficiency, Is.EqualTo(1.2f).Within(0.001f), "2 CPUs = 120% after repair");
+            Assert.That(stats.ArmEfficiency, Is.EqualTo(1.2f).Within(0.001f), "2 arm CPUs = 120% arm efficiency after repair");
         });
 
         await pair.CleanReturnAsync();

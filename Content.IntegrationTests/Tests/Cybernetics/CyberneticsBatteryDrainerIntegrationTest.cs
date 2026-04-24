@@ -88,7 +88,7 @@ public sealed class CyberneticsBatteryDrainerIntegrationTest
             var stats = entityManager.GetComponent<CyberLimbStatsComponent>(player);
             Assert.That(stats.BatteryRemaining, Is.LessThanOrEqualTo(1f),
                 "Battery should be depleted after EMP (allowing small float tolerance)");
-            Assert.That(stats.Efficiency, Is.EqualTo(0.5f), "Efficiency should be 0.5 when battery depleted");
+            Assert.That(stats.ArmEfficiency, Is.EqualTo(0.5f), "ArmEfficiency should be 0.5 when battery depleted");
 
             // Spawn full APC near player
             apc = entityManager.SpawnEntity("APCBasic", coords);
@@ -107,7 +107,7 @@ public sealed class CyberneticsBatteryDrainerIntegrationTest
             var stats = entityManager.GetComponent<CyberLimbStatsComponent>(player);
             Assert.That(stats.BatteryRemaining, Is.GreaterThan(0f),
                 "Battery should have charge after draining from APC");
-            Assert.That(stats.Efficiency, Is.EqualTo(1f), "Efficiency should be 1 when battery has charge");
+            Assert.That(stats.ArmEfficiency, Is.EqualTo(1f), "ArmEfficiency should be 1 when battery has charge");
         });
 
         await pair.CleanReturnAsync();

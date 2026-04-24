@@ -26,6 +26,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.PowerCell;
 using Content.Shared.Temperature.Components;
+using Content.Shared.Storage; 
 using Content.Shared.Traits.Assorted;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
@@ -210,14 +211,21 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     }
 
     /// <summary>
-    /// Turn off when placed into a storage item or moved between slots/hands
+    /// Turn off when placed into grid storage (backpack, box, etc.). Hands, pockets, belt, ID slot, and PDA
+    /// internal slots do not deactivate — continuous scan should survive normal inventory moves.
     /// </summary>
     private void OnInsertedIntoContainer(Entity<HealthAnalyzerComponent> uid, ref EntGotInsertedIntoContainerMessage args)
     {
-        if (uid.Comp.ScannedEntity is { } patient)
-        {
-            StopAnalyzingEntity(uid, patient);
-        }
+        if (uid.Comp.ScannedEntity is not { } patient)
+            return;
+
+        if (!TryComp<StorageComponent>(args.Container.Owner, out var storage) || storage.Container == null)
+            return;
+
+        if (args.Container.ID != StorageComponent.ContainerId)
+            return;
+
+        StopAnalyzingEntity(uid, patient);
     }
 
     /// <summary>

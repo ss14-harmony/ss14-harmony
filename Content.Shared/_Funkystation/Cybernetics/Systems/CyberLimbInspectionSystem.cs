@@ -107,7 +107,7 @@ public sealed class CyberLimbInspectionSystem : EntitySystem
                 armsCpus += GetCpuCount(organ);
             foreach (var organ in limbsByCategory.GetValueOrDefault(ArmRight) ?? [])
                 armsCpus += GetCpuCount(organ);
-            var efficiency = (int)(_moduleSystem.GetLimbEfficiencyFromCpus(armsCpus) * depletedMultiplier * 100);
+            var efficiency = (int)(_moduleSystem.GetArmEfficiencyFromCpus(armsCpus) * depletedMultiplier * 100);
             var labelKey = (armLeftCount > 0 && armRightCount > 0)
                 ? "cyber-limb-inspection-efficiency-hands"
                 : armLeftCount > 0 ? "cyber-limb-inspection-efficiency-left-arm" : "cyber-limb-inspection-efficiency-right-arm";
@@ -121,7 +121,7 @@ public sealed class CyberLimbInspectionSystem : EntitySystem
                 legsCpus += GetCpuCount(organ);
             foreach (var organ in limbsByCategory.GetValueOrDefault(LegRight) ?? [])
                 legsCpus += GetCpuCount(organ);
-            var efficiency = (int)(_moduleSystem.GetLimbEfficiencyFromCpus(legsCpus) * depletedMultiplier * 100);
+            var efficiency = (int)(_moduleSystem.GetLegEfficiencyFromCpus(legsCpus) * depletedMultiplier * 100);
             var labelKey = legLeftCount > 0 && legRightCount > 0
                 ? "cyber-limb-inspection-efficiency-feet"
                 : legLeftCount > 0 ? "cyber-limb-inspection-efficiency-left-leg" : "cyber-limb-inspection-efficiency-right-leg";

@@ -1,4 +1,5 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Cybernetics.Components;
 
@@ -21,10 +22,18 @@ public sealed partial class CyberLimbStatsComponent : Component
     public TimeSpan ServiceTimeMax { get; set; }
 
     /// <summary>
-    /// Efficiency multiplier. Limb efficiency from CPUs, multiplied by external modifiers (e.g. 0.5 when depleted).
+    /// Arm efficiency multiplier. Driven by CPUs installed in cyber arms (+10% per CPU), multiplied by external modifiers (e.g. 0.5 when depleted).
+    /// Controls interaction / do-after speed.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float Efficiency { get; set; } = 1f;
+    public float ArmEfficiency { get; set; } = 1f;
+
+    /// <summary>
+    /// Leg efficiency multiplier. Driven by CPUs installed in cyber legs (+5% per CPU), multiplied by external modifiers (e.g. 0.5 when depleted).
+    /// Controls movement speed.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float LegEfficiency { get; set; } = 1f;
 
     /// <summary>
     /// Minimum service time per cyber limb. Limbs function without modules (poorly) with this base.
@@ -55,4 +64,28 @@ public sealed partial class CyberLimbStatsComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public float BaseBatteryDrainPerSecond { get; set; } = 0.6f;
+
+    /// <summary>
+    /// True after a low-service (&lt;25%) warning until service recovers to at least 25%.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool LowMaintenanceWarned { get; set; }
+
+    /// <summary>
+    /// Next game time at which another low-service popup may be shown while still below threshold.
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField]
+    public TimeSpan NextMaintenanceWarning { get; set; }
+
+    /// <summary>
+    /// True after a low-battery (&lt;25%) warning until battery recovers to at least 25%.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool LowPowerWarned { get; set; }
+
+    /// <summary>
+    /// Next game time at which another low-power popup may be shown while still below threshold.
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField]
+    public TimeSpan NextPowerWarning { get; set; }
 }

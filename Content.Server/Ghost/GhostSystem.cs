@@ -283,7 +283,7 @@ namespace Content.Server.Ghost
                 return;
             }
 
-            _mind.UnVisit(actor.PlayerSession);
+            _minds.ReturnToBody(actor.PlayerSession); // Funky - Cybermed
         }
 
         #region Warp

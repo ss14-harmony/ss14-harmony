@@ -31,6 +31,8 @@
     slots: []
   - type: SurgeryLayer
   - type: CyberLimb
+  - type: CyberArmStorageAction
+    action: ActionOpenCyberArmStorageLeft
   - type: Storage
     maxItemSize: Normal
     grid:
@@ -82,6 +84,8 @@
     slots: []
   - type: SurgeryLayer
   - type: CyberLimb
+  - type: CyberArmStorageAction
+    action: ActionOpenCyberArmStorageRight
   - type: Storage
     maxItemSize: Normal
     grid:

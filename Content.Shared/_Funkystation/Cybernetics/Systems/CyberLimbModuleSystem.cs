@@ -23,6 +23,11 @@ public sealed class CyberLimbModuleSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedVirtualItemSystem _virtualItem = default!;
 
+    private const string ArmLeft = "ArmLeft";
+    private const string ArmRight = "ArmRight";
+    private const string LegLeft = "LegLeft";
+    private const string LegRight = "LegRight";
+
     public override void Initialize()
     {
         base.Initialize();
@@ -131,6 +136,44 @@ public sealed class CyberLimbModuleSystem : EntitySystem
     }
 
     /// <summary>
+    /// Returns CPU counts split by limb type. CPUs installed in cyber arms boost arm efficiency;
+    /// CPUs installed in cyber legs boost leg efficiency.
+    /// </summary>
+    public (int ArmCpuCount, int LegCpuCount) GetArmLegCpuCounts(EntityUid body)
+    {
+        var armCpuCount = 0;
+        var legCpuCount = 0;
+
+        foreach (var organ in _body.GetAllOrgans(body))
+        {
+            if (!HasComp<CyberLimbComponent>(organ) || !TryComp<StorageComponent>(organ, out var storage) || storage.Container == null)
+                continue;
+
+            if (!TryComp<OrganComponent>(organ, out var organComp) || organComp.Category is not { } category)
+                continue;
+
+            var isArm = category.Id == ArmLeft || category.Id == ArmRight;
+            var isLeg = category.Id == LegLeft || category.Id == LegRight;
+            if (!isArm && !isLeg)
+                continue;
+
+            foreach (var item in storage.Container.ContainedEntities)
+            {
+                if (!TryComp<CyberLimbModuleComponent>(item, out var module) || module.ModuleType != CyberLimbModuleType.Cpu)
+                    continue;
+
+                var count = TryComp<StackComponent>(item, out var stack) ? stack.Count : 1;
+                if (isArm)
+                    armCpuCount += count;
+                else
+                    legCpuCount += count;
+            }
+        }
+
+        return (armCpuCount, legCpuCount);
+    }
+
+    /// <summary>
     /// Returns all entities with BatteryComponent in cyber limb storage on the body.
     /// </summary>
     public List<EntityUid> GetBatteryEntities(EntityUid body)
@@ -175,11 +218,21 @@ public sealed class CyberLimbModuleSystem : EntitySystem
     }
 
     /// <summary>
-    /// Limb efficiency from CPUs. 100% base, +10% per CPU. External modifiers multiply this.
+    /// Arm efficiency from CPUs installed in cyber arms. 100% base, +10% per CPU. External modifiers multiply this.
+    /// Controls interaction / do-after speed.
     /// </summary>
-    public float GetLimbEfficiencyFromCpus(int cpuCount)
+    public float GetArmEfficiencyFromCpus(int armCpuCount)
     {
-        return 1f + 0.1f * Math.Max(0, cpuCount);
+        return 1f + 0.10f * Math.Max(0, armCpuCount);
+    }
+
+    /// <summary>
+    /// Leg efficiency from CPUs installed in cyber legs. 100% base, +5% per CPU. External modifiers multiply this.
+    /// Controls movement speed.
+    /// </summary>
+    public float GetLegEfficiencyFromCpus(int legCpuCount)
+    {
+        return 1f + 0.05f * Math.Max(0, legCpuCount);
     }
 
     /// <summary>

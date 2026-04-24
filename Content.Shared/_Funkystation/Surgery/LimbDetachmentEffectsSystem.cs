@@ -6,6 +6,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Medical.Surgery.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Popups;
 using Content.Shared.Stunnable;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
@@ -49,6 +50,7 @@ public sealed class LimbDetachmentEffectsSystem : EntitySystem
         SubscribeLocalEvent<MissingLimbMovementModifierComponent, RefreshMovementSpeedModifiersEvent>(OnMissingLimbRefreshSpeed);
         SubscribeLocalEvent<LegsMissingComponent, ComponentStartup>(OnLegsMissingStartup);
         SubscribeLocalEvent<LegsMissingComponent, ComponentShutdown>(OnLegsMissingShutdown);
+        SubscribeLocalEvent<LegsMissingComponent, StandUpAttemptEvent>(OnLegsMissingStandUpAttempt);
     }
 
     private void OnOrganRemovedFromBody(Entity<OrganComponent> ent, ref EntGotRemovedFromContainerMessage args)
@@ -139,6 +141,18 @@ public sealed class LimbDetachmentEffectsSystem : EntitySystem
             return;
 
         _stun.TryCrawling((ent.Owner, (CrawlerComponent?)null), null, refresh: true, autoStand: false, drop: false, force: true);
+        // Knockdown() only sets AutoStand on first KnockedDown add; if already knocked down, enforce no auto-stand.
+        _stun.SetAutoStand((ent.Owner, (KnockedDownComponent?)null));
+    }
+
+    private void OnLegsMissingStandUpAttempt(Entity<LegsMissingComponent> ent, ref StandUpAttemptEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        args.Cancelled = true;
+        args.Message = (Loc.GetString("legs-missing-stand-attempt"), PopupType.SmallCaution);
+        args.Autostand = false;
     }
 
     private void OnLegsMissingShutdown(Entity<LegsMissingComponent> ent, ref ComponentShutdown args)
@@ -146,7 +160,11 @@ public sealed class LimbDetachmentEffectsSystem : EntitySystem
         if (LifeStage(ent.Owner) >= EntityLifeStage.Terminating)
             return;
 
+        _stun.CancelKnockdownDoAfter((ent.Owner, (KnockedDownComponent?)null));
         _stun.ForceStandUp((ent.Owner, (KnockedDownComponent?)null));
+        // ForceStandUp can return early (empty hands, stamina, tight collision). Still clear leg-forced knockdown.
+        if (HasComp<KnockedDownComponent>(ent.Owner))
+            RemComp<KnockedDownComponent>(ent.Owner);
     }
 
     private void UpdateLegMovement(EntityUid body)
