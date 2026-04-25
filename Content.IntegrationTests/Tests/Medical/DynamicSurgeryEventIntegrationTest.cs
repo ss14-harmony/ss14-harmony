@@ -8,6 +8,7 @@ using Content.Shared.Medical.Surgery.Prototypes;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 
+#nullable enable
 namespace Content.IntegrationTests.Tests.Medical;
 
 [TestFixture]

@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Shared.Medical.Surgery.Prototypes;
 using Robust.Shared.Prototypes;
 
+#nullable enable
 namespace Content.IntegrationTests.Tests.Medical;
 
 [TestFixture]

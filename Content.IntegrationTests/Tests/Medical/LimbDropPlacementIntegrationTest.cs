@@ -14,6 +14,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 
+#nullable enable
 namespace Content.IntegrationTests.Tests.Medical;
 
 /// <summary>

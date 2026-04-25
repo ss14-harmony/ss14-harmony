@@ -4,6 +4,7 @@ using Content.Shared.Medical.Integrity;
 using Content.Shared.Medical.Integrity.Events;
 using Robust.Shared.GameObjects;
 
+#nullable enable
 namespace Content.IntegrationTests.Tests.Medical;
 
 /// <summary>

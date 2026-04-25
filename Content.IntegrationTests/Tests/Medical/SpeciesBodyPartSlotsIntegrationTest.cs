@@ -1,4 +1,3 @@
-#nullable enable
 using System.Collections.Generic;
 using System.Linq;
 using Content.IntegrationTests.Tests.Interaction;
@@ -8,6 +7,7 @@ using Content.Shared.Body.Events;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 
+#nullable enable
 namespace Content.IntegrationTests.Tests.Medical;
 
 /// <summary>

@@ -21,6 +21,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
+#nullable enable
 namespace Content.IntegrationTests.Tests.Medical;
 
 [TestFixture]
