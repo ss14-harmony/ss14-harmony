@@ -914,7 +914,9 @@ public sealed class CyberneticsMaintenanceIntegrationTest
             // Wire insertion does not add per-limb penalty. Only UnskilledRepairThisSession (+5) from opening with normal screwdriver.
             Assert.That(entityManager.HasComponent<LowQualityMaintenancePenaltyComponent>(cyberArm), Is.False,
                 "Wire insertion no longer adds LowQualityMaintenancePenaltyComponent");
+#pragma warning disable CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
             Assert.That(entityManager.TryGetComponent(patient, out CyberneticsMaintenanceComponent? maint), Is.True);
+#pragma warning restore CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
             Assert.That(maint!.UnskilledRepairThisSession, Is.True,
                 "Opening with normal screwdriver should set UnskilledRepairThisSession");
             Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.GreaterThanOrEqualTo(5),
