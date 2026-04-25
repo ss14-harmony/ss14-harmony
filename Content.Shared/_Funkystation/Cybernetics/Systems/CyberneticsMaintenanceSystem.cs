@@ -10,6 +10,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
 using Content.Shared.Stacks;
 using Content.Shared.Tag;
+using Content.Shared.Tools;
 using Content.Shared.Tools.Systems;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
@@ -33,6 +34,11 @@ public sealed class CyberneticsMaintenanceSystem : EntitySystem
     private const float ScrewdriverDelay = 2f;
     private const float WrenchDelay = 2f;
     private const float WireInsertDelay = 2.5f;
+
+    private static readonly ProtoId<ToolQualityPrototype> ScrewingQuality = "Screwing";
+    private static readonly ProtoId<ToolQualityPrototype> AnchoringQuality = "Anchoring";
+    private static readonly ProtoId<TagPrototype> PrecisionRepairToolTag = "PrecisionRepairTool";
+    private static readonly ProtoId<TagPrototype> CableCoilTag = "CableCoil";
 
     public override void Initialize()
     {
@@ -106,16 +112,16 @@ public sealed class CyberneticsMaintenanceSystem : EntitySystem
         var user = args.User;
         var used = args.Used;
 
-        if (_tool.HasQuality(used, "Screwing"))
+        if (_tool.HasQuality(used, ScrewingQuality))
         {
             if (comp.PanelSecured || comp.PanelOpen)
             {
-                args.Handled = _tool.UseTool(used, user, body, ScrewdriverDelay, "Screwing", new CyberneticsScrewdriverDoAfterEvent(_tag.HasTag(used, "PrecisionRepairTool"), GetNetEntity(used)));
+                args.Handled = _tool.UseTool(used, user, body, ScrewdriverDelay, ScrewingQuality, new CyberneticsScrewdriverDoAfterEvent(_tag.HasTag(used, PrecisionRepairToolTag), GetNetEntity(used)));
             }
             return;
         }
 
-        if (_tool.HasQuality(used, "Anchoring"))
+        if (_tool.HasQuality(used, AnchoringQuality))
         {
             if (comp.PanelOpen)
             {
@@ -128,12 +134,12 @@ public sealed class CyberneticsMaintenanceSystem : EntitySystem
                         return;
                     }
                 }
-                args.Handled = _tool.UseTool(used, user, body, WrenchDelay, "Anchoring", new CyberneticsWrenchDoAfterEvent());
+                args.Handled = _tool.UseTool(used, user, body, WrenchDelay, AnchoringQuality, new CyberneticsWrenchDoAfterEvent());
             }
             return;
         }
 
-        if (_tag.HasTag(used, "CableCoil") && TryComp<StackComponent>(used, out var stack))
+        if (_tag.HasTag(used, CableCoilTag) && TryComp<StackComponent>(used, out var stack))
         {
             if (!comp.PanelOpen)
             {
@@ -164,7 +170,7 @@ public sealed class CyberneticsMaintenanceSystem : EntitySystem
             {
                 if (held == used)
                     continue;
-                if (_tool.HasQuality(held, "Screwing"))
+                if (_tool.HasQuality(held, ScrewingQuality))
                 {
                     screwdriver = held;
                     break;
@@ -177,7 +183,7 @@ public sealed class CyberneticsMaintenanceSystem : EntitySystem
                 return;
             }
 
-            var isPrecision = _tag.HasTag(screwdriver.Value, "PrecisionRepairTool");
+            var isPrecision = _tag.HasTag(screwdriver.Value, PrecisionRepairToolTag);
             var doAfterArgs = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(WireInsertDelay), new CyberneticsWireInsertDoAfterEvent(isPrecision, GetNetEntity(screwdriver.Value)), body, body, used)
             {
                 BreakOnDropItem = true,
@@ -205,7 +211,7 @@ public sealed class CyberneticsMaintenanceSystem : EntitySystem
             var isPrecision = args.IsPrecisionRepairTool;
             if (!isPrecision && args.ToolEntity is { } netTool)
             {
-                if (TryGetEntity(netTool, out var toolEnt) && _tag.HasTag(toolEnt.Value, "PrecisionRepairTool"))
+                if (TryGetEntity(netTool, out var toolEnt) && _tag.HasTag(toolEnt.Value, PrecisionRepairToolTag))
                     isPrecision = true;
             }
             if (!isPrecision)
