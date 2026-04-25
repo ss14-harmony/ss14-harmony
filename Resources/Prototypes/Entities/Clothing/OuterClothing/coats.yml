@@ -10,7 +10,7 @@
     sprite: Clothing/OuterClothing/Coats/bomber.rsi
 
 - type: entity
-  parent: [ ClothingOuterBaseMedium, ClothingOuterStorageBase, AllowSuitStorageClothing, BaseSecurityContraband ]
+  parent: [ ClothingOuterArmorBase, ClothingOuterStorageBase, AllowSuitStorageClothing, BaseSecurityContraband ]
   id: ClothingOuterCoatDetective
   name: detective's trenchcoat # Harmony Change - Updates name.
   description: An 18th-century multi-purpose trenchcoat. Someone who wears this means serious business.
@@ -350,7 +350,7 @@
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterClownPriest
-  name: robes of the honkmother
+  name: honkmother coat
   description: Meant for a clown of the cloth.
   components:
   - type: Sprite
