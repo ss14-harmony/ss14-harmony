@@ -27,7 +27,7 @@ public sealed class MarkingManager
     private FrozenDictionary<string, MarkingPrototype> _markings = default!;
 
     private readonly Dictionary<string, Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>> _organMapCache = new(); // Funky - CyberMed
-    
+
     public void Initialize()
     {
         _prototype.PrototypesReloaded += OnPrototypeReload;
@@ -320,7 +320,7 @@ public sealed class MarkingManager
             return false;
 
         // Fixed seed: ListSpawns only uses random for nested selectors; deterministic for typical AllSelector dolls.
-        var rand = new System.Random(42);
+        //var rand = new System.Random(42);
         var ctx = new EntityTableContext();
         var warnedDuplicate = new HashSet<string>();
         var visited = new HashSet<string>(); // Funky - CyberMed
@@ -331,18 +331,18 @@ public sealed class MarkingManager
 
         while (pending.TryDequeue(out var selector))
         {
-            foreach (var spawn in selector.ListSpawns(rand, _entityManager, _prototype, ctx))
+            foreach (var spawnProb in selector.ListSpawns(_entityManager, _prototype, ctx))
             {
-                if (!visited.Add(spawn.Id))
+                if (!visited.Add(spawnProb.spawn.Id))
                     continue;
 
-                if (!_prototype.TryIndex(spawn, out var entProto))
+                if (!_prototype.TryIndex(spawnProb.spawn, out var entProto))
                     continue;
 
                 if (entProto.TryGetComponent<OrganComponent>(out var organComp, _component)
                     && organComp.Category is { } category)
                 {
-                    var protoId = new EntProtoId<OrganComponent>(spawn.Id);
+                    var protoId = new EntProtoId<OrganComponent>(spawnProb.spawn.Id);
                     if (map.TryGetValue(category, out var existing) && existing != protoId)
                     {
                         if (warnedDuplicate.Add(category.Id))

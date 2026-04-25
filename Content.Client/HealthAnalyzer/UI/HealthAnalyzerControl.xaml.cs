@@ -591,7 +591,6 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
                 organ));
         };
         SurgeryStepsList.AddChild(btn);
-        _damageable = _entityManager.System<DamageableSystem>();
     }
 
     public void Populate(HealthAnalyzerUiState state)

@@ -59,7 +59,8 @@ public sealed class BioRejectionSystem : EntitySystem
 
             var capacity = baseCapacity + immunityBoost;
             var excess = usage + penalty - capacity;
-            var current = damageable.Damage.DamageDict.TryGetValue(BioRejectionDamageType, out var d)
+            var damageSpecifier = _damageable.GetAllDamage((uid, damageable));
+            var current = damageSpecifier.DamageDict.TryGetValue(BioRejectionDamageType, out var d)
                 ? d.Float()
                 : 0f;
 
