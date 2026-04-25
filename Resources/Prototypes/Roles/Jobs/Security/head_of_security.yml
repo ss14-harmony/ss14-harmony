@@ -17,7 +17,7 @@
     # Harmony end
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 10h
+      time: 12h
     - !type:OverallPlaytimeRequirement
       time: 24h # Harmony: 10h -> 12h
   weight: 10
