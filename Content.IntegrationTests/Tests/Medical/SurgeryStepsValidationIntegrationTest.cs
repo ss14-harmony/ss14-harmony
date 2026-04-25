@@ -49,7 +49,7 @@ public sealed class SurgeryStepsValidationIntegrationTest
                 var closeProcId = BodyPartSurgeryStepsPrototype.GetProcedureForStep(closeStepId);
                 Assert.That(prototypes.TryIndex<SurgeryProcedurePrototype>(closeProcId, out var closeProc), Is.True,
                     $"{proto.ID}: Close step {closeStepId} procedure not found");
-                Assert.That(closeProc.UndoesProcedure, Is.Not.Null,
+                Assert.That(closeProc!.UndoesProcedure, Is.Not.Null,
                     $"{proto.ID}: SkinClose step {closeStepId} must have UndoesProcedure");
                 var undoesProcId = closeProc.UndoesProcedure!.Value.ToString();
                 Assert.That(skinOpen.Any(openStepId =>
@@ -85,7 +85,7 @@ public sealed class SurgeryStepsValidationIntegrationTest
                     var closeProcId = BodyPartSurgeryStepsPrototype.GetProcedureForStep(closeStepId);
                     Assert.That(prototypes.TryIndex<SurgeryProcedurePrototype>(closeProcId, out var closeProc), Is.True,
                         $"{proto.ID}: Tissue close step {closeStepId} procedure not found");
-                    Assert.That(closeProc.UndoesProcedure, Is.Not.Null,
+                    Assert.That(closeProc!.UndoesProcedure, Is.Not.Null,
                         $"{proto.ID}: TissueClose step {closeStepId} must have UndoesProcedure");
                     var undoesProcId = closeProc.UndoesProcedure!.Value.ToString();
                     Assert.That(tissueOpen.Any(openStepId =>
