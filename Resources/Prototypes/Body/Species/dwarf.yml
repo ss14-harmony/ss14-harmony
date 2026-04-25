@@ -1,6 +1,7 @@
 - type: entity
   parent: AppearanceHuman
   id: AppearanceDwarf
+  categories: [ HideSpawnMenu ]
   name: dwarf appearance
   components:
   - type: Inventory
@@ -30,7 +31,7 @@
   - AppearanceDwarf
   - MobHuman
   id: MobDwarf
-  name: Urist McHands The Dwarf
+  name: Urist McHands the Dwarf
   components:
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
@@ -51,7 +52,7 @@
       Female: FemaleDwarf
       Unsexed: UnisexDwarf
   - type: ReplacementAccent
-    accent: dwarf
+    accent: scottish
   - type: Speech
     speechSounds: Bass
 

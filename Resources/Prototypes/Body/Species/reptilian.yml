@@ -54,6 +54,7 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceReptilian
+  categories: [ HideSpawnMenu ]
   name: reptilian appearance
   components:
   - type: Inventory
@@ -103,7 +104,7 @@
   - AppearanceReptilian
   - BaseSpeciesMobOrganic
   id: MobReptilian
-  name: Urissst Mz'Hand
+  name: Urist McScales
   components:
   - type: Puller
     needsHands: false
@@ -119,6 +120,10 @@
     allowedEmotes: ['Thump']
   - type: TypingIndicator
     proto: lizard
+  - type: CreamPied
+    sprite:
+      sprite: Effects/creampie.rsi
+      state: creampie_lizard
   - type: Vocal
     sounds:
       Male: MaleReptilian

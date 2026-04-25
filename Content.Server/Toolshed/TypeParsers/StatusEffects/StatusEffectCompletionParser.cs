@@ -11,6 +11,7 @@ public sealed class StatusEffectCompletionParser : CustomCompletionParser<EntPro
 {
     public override CompletionResult? TryAutocomplete(ParserContext ctx, CommandArgument? arg)
     {
+        // return CompletionResult.FromHintOptions(IoCManager.Resolve<IEntityManager>().System<StatusEffectsSystem>().StatusEffectPrototypes, GetArgHint(arg));
         // Funkystation: Fixes a minor bug, where this could return null. Should be safe to use this change in all cases.
         return CompletionResult.FromHintOptions(StatusEffectsSystem.GetStatusEffectPrototypes(), GetArgHint(arg));
     }
