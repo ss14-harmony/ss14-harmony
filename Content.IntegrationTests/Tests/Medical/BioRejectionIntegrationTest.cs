@@ -3,6 +3,7 @@ using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Medical.Integrity;
 using Content.Shared.Medical.Integrity.Components;
@@ -45,6 +46,7 @@ public sealed class BioRejectionIntegrationTest
         var entityManager = server.ResolveDependency<IEntityManager>();
         var bodySystem = entityManager.System<BodySystem>();
         var mapData = await pair.CreateTestMap();
+        var damagableSystem = entityManager.System<DamageableSystem>();
 
         const int excess = 1;
         const int capacity = 6;
@@ -82,7 +84,7 @@ public sealed class BioRejectionIntegrationTest
             Assert.That(entityManager.EntityExists(patient), Is.True, "Patient should still exist");
             Assert.That(entityManager.TryGetComponent(patient, out DamageableComponent? damageable), Is.True, "Patient should have DamageableComponent");
 
-            var bioRejectionDamage = damageable!.Damage.DamageDict.TryGetValue("BioRejection", out var d) ? d : FixedPoint2.Zero;
+            var bioRejectionDamage = damagableSystem.GetAllDamage((patient, damageable)).DamageDict.TryGetValue("BioRejection", out var d) ? d : FixedPoint2.Zero;
 
             Assert.That(bioRejectionDamage, Is.GreaterThanOrEqualTo(FixedPoint2.New(0.1f)), "Bio-rejection damage should have ramped up from bio-rejection");
             Assert.That(bioRejectionDamage, Is.LessThanOrEqualTo(FixedPoint2.New(excess)), "Bio-rejection damage should not exceed target (excess)");

@@ -6,6 +6,7 @@ using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Medical.Integrity;
 using Content.Shared.Medical.Integrity.Components;
@@ -50,6 +51,7 @@ public sealed class ImmunosuppressantIntegrationTest
         var entityManager = server.ResolveDependency<IEntityManager>();
         var bodySystem = entityManager.System<BodySystem>();
         var bloodstreamSystem = entityManager.System<SharedBloodstreamSystem>();
+        var damagableSystem = entityManager.System<DamageableSystem>();
         var mapData = await pair.CreateTestMap();
 
         const int capacity = 6;
@@ -81,7 +83,7 @@ public sealed class ImmunosuppressantIntegrationTest
         {
             Assert.That(entityManager.EntityExists(patient), Is.True);
             Assert.That(entityManager.TryGetComponent(patient, out DamageableComponent? damageable), Is.True);
-            damageBeforeImmunosuppressant = damageable!.Damage.DamageDict.TryGetValue("BioRejection", out var d) ? d : FixedPoint2.Zero;
+            damageBeforeImmunosuppressant = damagableSystem.GetAllDamage((patient, damageable)).DamageDict.TryGetValue("BioRejection", out var d) ? d : FixedPoint2.Zero;
             Assert.That(damageBeforeImmunosuppressant, Is.GreaterThanOrEqualTo(FixedPoint2.New(0.1f)), "Bio-rejection damage should have ramped up before immunosuppressant");
         });
 
@@ -127,6 +129,7 @@ public sealed class ImmunosuppressantIntegrationTest
 
         var entityManager = server.ResolveDependency<IEntityManager>();
         var mapData = await pair.CreateTestMap();
+        var damagableSystem = entityManager.System<DamageableSystem>();
 
         EntityUid skeleton = default;
 
@@ -142,7 +145,7 @@ public sealed class ImmunosuppressantIntegrationTest
         {
             Assert.That(entityManager.EntityExists(skeleton), Is.True);
             Assert.That(entityManager.TryGetComponent(skeleton, out DamageableComponent? damageable), Is.True);
-            var bioRejectionDamage = damageable!.Damage.DamageDict.TryGetValue("BioRejection", out var d) ? d : FixedPoint2.Zero;
+            var bioRejectionDamage = damagableSystem.GetAllDamage((skeleton, damageable)).DamageDict.TryGetValue("BioRejection", out var d) ? d : FixedPoint2.Zero;
             Assert.That(bioRejectionDamage, Is.EqualTo(FixedPoint2.Zero), "Entities without BloodstreamComponent should not receive bio-rejection damage");
         });
 
