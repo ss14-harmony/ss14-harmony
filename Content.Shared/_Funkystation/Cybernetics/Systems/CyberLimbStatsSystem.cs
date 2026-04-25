@@ -20,7 +20,7 @@ namespace Content.Shared.Cybernetics.Systems;
 public sealed class CyberLimbStatsSystem : EntitySystem
 {
     [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly CyberLimbDamageProtectionSystem _damageProtection = default!;
+//    [Dependency] private readonly CyberLimbDamageProtectionSystem _damageProtection = default!;
     [Dependency] private readonly CyberLimbModuleSystem _moduleSystem = default!;
     [Dependency] private readonly SharedBatterySystem _battery = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -110,8 +110,8 @@ public sealed class CyberLimbStatsSystem : EntitySystem
             FillMatterBinsInLimb(limb);
         }
 
-        if (HasComp<MilitaryCyberLimbComponent>(limb))
-            _damageProtection.OnMilitaryLimbAttached(body);
+        // if (HasComp<MilitaryCyberLimbComponent>(limb))
+        //     _damageProtection.OnMilitaryLimbAttached(body);
 
         RecomputeAndRefresh(body);
     }
@@ -124,8 +124,8 @@ public sealed class CyberLimbStatsSystem : EntitySystem
         var body = args.Body;
         var cyberCount = _body.GetAllOrgans(body).Count(o => HasComp<CyberLimbComponent>(o));
 
-        if (HasComp<MilitaryCyberLimbComponent>(args.Limb))
-            _damageProtection.OnMilitaryLimbDetached(body);
+        // if (HasComp<MilitaryCyberLimbComponent>(args.Limb))
+        //     _damageProtection.OnMilitaryLimbDetached(body);
 
         if (cyberCount == 0)
         {
