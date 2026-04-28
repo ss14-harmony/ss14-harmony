@@ -1,5 +1,5 @@
 <controls:FancyWindow xmlns="https://spacestation14.io"
-               xmlns:controls="clr-namespace:Content.Client._DV.UserInterface.Systems.MenuPinpointer.Controls"
+               xmlns:controls="clr-namespace:Content.Client._DV.MenuPinpointer"
                Title="{Loc 'menupinpointer-target-window-title'}"
                MinSize="5 30">
     <BoxContainer Orientation="Vertical" Margin="5">
