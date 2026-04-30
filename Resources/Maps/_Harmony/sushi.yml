@@ -4,8 +4,8 @@ meta:
   engineVersion: 275.2.0
   forkId: ""
   forkVersion: ""
-  time: 04/30/2026 21:50:36
-  entityCount: 24794
+  time: 04/30/2026 22:22:17
+  entityCount: 24792
 maps:
 - 1
 grids:
@@ -62658,18 +62658,6 @@ entities:
     components:
     - type: Transform
       pos: 146.5,82.5
-      parent: 2
-- proto: DecalSpawnerBurns
-  entities:
-  - uid: 7372
-    components:
-    - type: Transform
-      pos: 16.5,56.5
-      parent: 2
-  - uid: 18545
-    components:
-    - type: Transform
-      pos: 22.5,53.5
       parent: 2
 - proto: DecalSpawnerDirtMonospace
   entities:
