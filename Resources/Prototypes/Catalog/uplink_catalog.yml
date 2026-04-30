@@ -1423,7 +1423,7 @@
   productEntity: StorageImplanter
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 2 # Harmony - was 5
+    Telecrystal: 2 # Harmony - was 4
   cost:
     Telecrystal: 4 # Harmony - was 8
   categories:
