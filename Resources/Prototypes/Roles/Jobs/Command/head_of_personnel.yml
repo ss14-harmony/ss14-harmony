@@ -19,11 +19,11 @@
     #   time: 2.5h
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 4h
-  # Harmony end
+      time: 8h
+    # Harmony end
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 4h # Harmony: 2.5h -> 4h
+      time: 8h # Harmony: 2.5h -> 8h
   weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
