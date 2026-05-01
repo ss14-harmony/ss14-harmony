@@ -16,8 +16,6 @@ using Robust.Shared.Utility;
 using System.Linq;
 using System.Numerics;
 
-
-
 // this is a list of things from the varyinng programs because i a, unsure which exactly is usefull 
 
 namespace Content.Client._DV.MenuPinpointer;
@@ -39,7 +37,7 @@ public sealed class MenuPinpointerBoundUserInterface : BoundUserInterface
         _window = this.CreateWindow<MenuPinpointerTargetWindow>();
         
         _window.OnTargetSelect += OnTargetSelected;
-        _window.OnTargetSelect += OnToggleSelected;
+        _window.OnToggleSelect += OnToggleSelected;
     }
     
     //<summary>uses the given name to find the person with that name and tracks them
@@ -63,7 +61,7 @@ public sealed class MenuPinpointerBoundUserInterface : BoundUserInterface
         }
         if (target == pinUid)
             return;
-        PinpointerSystem.SetTarget(pinUid, target, pinpointer);
+        PinpointerSystem.SetTarget(pinpointer, target);
     }
 
     //<summary> toggles the pinpointer and runs set activate without runing regular code because that 
@@ -73,6 +71,5 @@ public sealed class MenuPinpointerBoundUserInterface : BoundUserInterface
         var PinpointerSystem = _entities.System<SharedPinpointerSystem>();
         var isActive = !pinpointer.IsActive;
         PinpointerSystem.SetActive(pinpointer, isActive);
-        PinpointerSystem.UpdateAppearance(pinpointer);
     }
 }

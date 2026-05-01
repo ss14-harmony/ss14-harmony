@@ -11,12 +11,12 @@ namespace Content.Client._DV.MenuPinpointer;
 public sealed partial class MenuPinpointerTargetWindow : FancyWindow
 {
     public Action<string>? OnTargetSelect;
-    public Action? OnToggleSelected;
+    public Action? OnToggleSelect;
     public MenuPinpointerTargetWindow()
     {
         RobustXamlLoader.Load(this);
 
         TargetSetButton.OnPressed += _ => { OnTargetSelect?.Invoke(TargetWriteZone.Text); };
-        ToggleButton.OnPressed += _ => { OnToggleSelected?.Invoke(); };
+        ToggleButton.OnPressed += _ => { OnToggleSelect?.Invoke(); };
     }
 }
