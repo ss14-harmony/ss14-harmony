@@ -2,7 +2,7 @@
   id: Sushi
   mapName: 'Sushi Station'
   mapPath: /Maps/_Harmony/sushi.yml
-  minPlayers: 25
+  minPlayers: 35
   maxPlayers: 80
   stations:
     Sushi:
