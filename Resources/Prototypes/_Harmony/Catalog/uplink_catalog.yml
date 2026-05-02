@@ -318,3 +318,19 @@
     whitelist:
     - Bartender
     - Zookeeper
+
+# Objective
+
+- type: listing
+  id: uplinkHackingBeacon
+  name: uplink-hacking-beacon-name
+  description: uplink-hacking-beacon-desc
+  productEntity: HackingBeacon
+  categories:
+    - UplinkObjective
+  cooldown: 300
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink

@@ -80,3 +80,8 @@ uplink-syndiedrobe-flatpack-desc = A flatpack box containing a SyndieDrobe. Slay
 
 uplink-hyposhell-name = Box of hyposhells
 uplink-hyposhell-desc = A box containing four hyposhells, shotgun shells that can hold 7u of any chemical.
+
+# Objective
+
+uplink-hacking-beacon-name = Hacking Beacon
+uplink-hacking-beacon-desc = A syndicate-brand beacon which, when planted onto Nanotrasen infrastructure, will hack it for the Syndicate's benefit. Required in order to complete hacking objectives. Five minute cooldown upon purchase.

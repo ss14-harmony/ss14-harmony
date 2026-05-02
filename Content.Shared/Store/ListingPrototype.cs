@@ -39,6 +39,10 @@ public partial class ListingData : IEquatable<ListingData>
         other.Categories,
         other.OriginalCost,
         other.RestockTime,
+        // harmony change start: added support for cooldowns in listings
+        other.Cooldown,
+        other.TimeSinceLastPurchase,
+        // harmony change end
         other.DiscountDownTo,
         other.DisableRefund,
         other.ApplyToMob
@@ -65,6 +69,10 @@ public partial class ListingData : IEquatable<ListingData>
         HashSet<ProtoId<StoreCategoryPrototype>> categories,
         IReadOnlyDictionary<ProtoId<CurrencyPrototype>, FixedPoint2> originalCost,
         TimeSpan restockTime,
+        // harmony change start: added cooldown support to listings
+        TimeSpan cooldown,
+        TimeSpan timeSinceLastPurchase,
+        // harmony change end
         Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> dataDiscountDownTo,
         bool disableRefund,
         bool applyToMob
@@ -194,6 +202,20 @@ public partial class ListingData : IEquatable<ListingData>
     [DataField]
     public TimeSpan RestockTime = TimeSpan.Zero;
 
+    // harmony change start: added cooldown support to listings
+    /// <summary>
+    /// Used to delay repeated purchase of some items.
+    /// </summary>
+    [DataField]
+    public TimeSpan Cooldown = TimeSpan.Zero;
+
+    /// <summary>
+    /// Used internally for tracking when the last purchase of this item was made.
+    /// </summary>
+    [DataField]
+    public TimeSpan TimeSinceLastPurchase;
+    // harmony change end 
+
     /// <summary>
     /// Options for discount - from max amount down to how much item costs can be cut by discount, absolute value.
     /// </summary>
@@ -225,6 +247,7 @@ public partial class ListingData : IEquatable<ListingData>
             ProductAction != listing.ProductAction ||
             ProductEvent?.GetType() != listing.ProductEvent?.GetType() ||
             RestockTime != listing.RestockTime ||
+            Cooldown != listing.Cooldown || // harmony change: added cooldown support to listings
             DisableRefund != listing.DisableRefund ||
             ApplyToMob != listing.ApplyToMob)
             return false;
@@ -306,6 +329,10 @@ public sealed partial class ListingDataWithCostModifiers : ListingData
             listingData.Categories,
             listingData.OriginalCost,
             listingData.RestockTime,
+            // harmony change start: added cooldown support to listings
+            listingData.Cooldown,
+            listingData.TimeSinceLastPurchase,
+            // harmony change end
             listingData.DiscountDownTo,
             listingData.DisableRefund,
             listingData.ApplyToMob

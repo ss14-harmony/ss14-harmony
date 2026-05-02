@@ -329,3 +329,10 @@
   - type: GuideHelp
     guides:
     - AnomalousResearch
+  # harmony change start: add sabotage interaction to anomaly generator
+  - type: BeaconHackable 
+  - type: CreateAnomaliesOnHack
+    initialAnnouncement: anomaly-generator-hacked-initial
+    finalAnnouncement: anomaly-generator-hacked-final 
+    announcementSender: anomaly-generator-hacked-sender
+  # harmony change end

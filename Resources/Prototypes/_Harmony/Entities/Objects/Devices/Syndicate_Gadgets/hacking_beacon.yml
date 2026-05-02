@@ -1,0 +1,24 @@
+- type: entity
+  parent: [ BaseItem, BaseSyndicateContraband ]
+  id: HackingBeacon
+  name: hacking beacon
+  description: A device which, when planted onto Nanotrasen infrastructure, sabotages it for the Syndicate's benefit.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Objects/Tools/hijack_beacon.rsi
+    noRot: true
+    layers:
+    - state: extraction_point
+  - type: Sticky
+    whitelist:
+      components:
+      - BeaconHackable
+    stickDelay: 5
+    unstickDelay: 5
+    stickPopupStart: hacking-beacon-plant-start
+    stickPopupSuccess: hacking-beacon-plant-success
+    unstickPopupStart: hacking-beacon-unstick-start
+    unstickPopupSuccess: hacking-beacon-unstick-success
+  - type: HackingBeacon

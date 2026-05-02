@@ -52,6 +52,11 @@ public sealed partial class StoreListingControl : Control
         if (_data.RestockTime > stationTime)
             return false;
 
+        // harmony change start: added cooldown support to listings
+        if (_data.TimeSinceLastPurchase + _data.Cooldown > _timing.CurTime)
+            return false;
+        // harmony change end
+
         return true;
     }
 
@@ -63,6 +68,13 @@ public sealed partial class StoreListingControl : Control
             var timeLeftToBuy = stationTime - _data.RestockTime;
             StoreItemBuyButton.Text =  timeLeftToBuy.Duration().ToString(@"mm\:ss");
         }
+        // harmony change start: added cooldown support to listings
+        else if (_data.TimeSinceLastPurchase + _data.Cooldown > _timing.CurTime)
+        {
+            var timeLeftToBuy = _timing.CurTime - (_data.TimeSinceLastPurchase + _data.Cooldown);
+            StoreItemBuyButton.Text = timeLeftToBuy.Duration().ToString(@"mm\:ss");
+        }
+        // harmony change end
         else
         {
             DiscountSubText.Text = _discount;
