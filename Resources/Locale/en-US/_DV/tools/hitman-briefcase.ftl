@@ -22,7 +22,7 @@ hitman-poisoner-kit-description =
     A kit for those who enjoy chemistry.
     Provides a syring as well as a bottle of 
     toxin, mute toxin, Nocturine and pax.
-    Plus a combat medipen in case you need it.
+    Plus a Chemical Synthesis Kit to make more.
 
 hitman-infiltration-kit-name = Infiltration kit
 hitman-infiltration-kit-description =

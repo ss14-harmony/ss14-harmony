@@ -26,7 +26,7 @@
     HitmanDramaticObjective: 1
 
 - type: weightedRandom
-  id: HitmanObjectiveGroupHumorous
+  id: HitmanObjectiveGrouphumorous
   weights:
     HitmanHumorousObjective: 1
 

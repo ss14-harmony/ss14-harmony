@@ -46,7 +46,7 @@
     state: bottle
   content:
   - Syringe
-  - CombatMedipen
+  - ChemicalSynthesisKit
   - ChemistryBottlePax
   - ChemistryBottleToxin
   - ChemistryBottleMuteToxin
