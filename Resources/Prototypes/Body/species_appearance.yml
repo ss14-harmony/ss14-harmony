@@ -43,7 +43,7 @@
     - map: [ "belt" ] # Harmony Change: Moves Belt back over outerclothing
     - map: [ "back" ]
     - map: [ "neck" ]
-    - map: [ "suitstorage" ] # Harmony: early merge
+    - map: [ "suitstorage" ]
 
     # Stuff that goes in front of equipment
     - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
@@ -52,7 +52,7 @@
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
-    - map: [ "enum.HumanoidVisualLayers.TailOverlay" ] # Harmony: early merge
+    - map: [ "enum.HumanoidVisualLayers.TailOverlay" ]
 
     # Stuff that goes in front of stuff that goes in front of equipment
     - map: [ "mask" ]
@@ -65,11 +65,6 @@
       color: "#ffffff"
       sprite: Objects/Misc/handcuffs.rsi
       state: body-overlay-2
-      visible: false
-
-    - map: [ "clownedon" ] # Dynamically generated
-      sprite: "Effects/creampie.rsi"
-      state: "creampie_human"
       visible: false
 
 - type: entity

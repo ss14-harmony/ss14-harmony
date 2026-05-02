@@ -1106,6 +1106,16 @@
   categories:
   - UplinkDisruption
 
+- type: listing
+  id: UplinkTravelCamera
+  name: uplink-travel-camera-name
+  description: uplink-travel-camera-desc
+  productEntity: TravelCamera
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkDeception
+
 # Note: Removed for the time being until surgery/newmed is added. Considered bloat until then.
 # - type: listing
 #   id: UplinkDuffelSurgery
@@ -1134,10 +1144,11 @@
   - UplinkExplosives
 
 - type: listing
-  id: UplinkSyndimovCircuitBoard
+  id: UplinkSyndimovCircuitKit
   name: uplink-syndimov-law-name
   description: uplink-syndimov-law-desc
-  productEntity: SyndimovCircuitBoard
+  icon: { sprite: /Textures/Objects/Storage/boxicons.rsi, state: syndicate_circuit }
+  productEntity: SyndimovCircuitKit
   discountCategory: usualDiscounts
   discountDownTo:
     Telecrystal: 6
@@ -1407,14 +1418,14 @@
 - type: listing
   id: UplinkStorageImplanter
   name: uplink-storage-implanter-name
-  description: uplink-storage-implanter-desc
+  description: uplink-storage-implanter-harm-desc # Harmony Change - New Descrition
   icon: { sprite: /Textures/Clothing/Back/Backpacks/backpack.rsi, state: icon }
   productEntity: StorageImplanter
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 2 # Harmony - was 4
   cost:
-    Telecrystal: 8
+    Telecrystal: 4 # Harmony - was 8
   categories:
     - UplinkImplants
   conditions:
@@ -1469,7 +1480,7 @@
   id: UplinkEmpImplanter
   name: uplink-emp-implanter-name
   description: uplink-emp-implanter-desc
-  icon: { sprite: /Textures/Objects/Magic/magicactions.rsi, state: shield }
+  icon: { sprite: /Textures/Effects/emp.rsi, state: emp_disable }
   productEntity: EmpImplanter
   discountCategory: veryRareDiscounts
   discountDownTo:
@@ -2301,3 +2312,20 @@
   - !type:BuyerJobCondition
     whitelist:
     - Lawyer
+
+#Objective items
+
+- type: listing
+  id: uplinkHijackBeacon
+  name: uplink-hijack-beacon-name
+  description: uplink-hijack-beacon-desc
+  productEntity: HijackBeacon
+  categories:
+    - UplinkObjective
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerObjectiveWhitelistCondition
+    whitelist:
+      components:
+      - HijackTradeStationCondition

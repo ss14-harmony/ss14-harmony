@@ -51,7 +51,7 @@
 #          - !type:OreDunGen
 #      replacement: IronRock
 #      entity: IronRockSalt
-#      count: 50
+#      count: 25
 #      minGroupSize: 8
 #      maxGroupSize: 12
 #Harmony Change End - comments out salt spawning on the VGRoid.

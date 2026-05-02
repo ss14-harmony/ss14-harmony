@@ -8,7 +8,7 @@ namespace Content.Shared.Humanoid
     {
         Special, // for the cat ears
         Tail,
-        TailOverlay, // harmony early merge - markings that go ontop of tails
+        TailOverlay, // markings that go ontop of tails
         Hair,
         FacialHair,
         UndergarmentTop,
