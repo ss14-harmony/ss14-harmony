@@ -4,8 +4,8 @@
   source: "https://soundcloud.com/pigeonbeans/moodswings"
 
 - files: ["sponsored_by_syndicate.ogg"]
-  license: "Custom"
-  copyright: "Sponsored By Syndicate by mrjajkes is licensed under the following terms: free use and modification with proper credit to the original creator, excluding usage by FulpStation, White Dream, and any ERP/sexually-oriented servers, or for commercial use unless granted permission by the author. For commercial use (Patreon is fine). please contact the author to discuss details."
+  license: "CC-BY 3.0"
+  copyright: "Made by mrjajkes"
   source: "https://youtu.be/vO_dMp4d3ew"
 
 - files: ["parabellum.ogg"]
