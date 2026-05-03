@@ -29,7 +29,7 @@ public abstract class SharedCursedMaskSystem : EntitySystem
         SubscribeLocalEvent<CursedMaskComponent, ExaminedEvent>(OnExamine);
 
         SubscribeLocalEvent<CursedMaskComponent, InventoryRelayedEvent<RefreshMovementSpeedModifiersEvent>>(OnMovementSpeedModifier);
-        SubscribeLocalEvent<CursedMaskComponent, InventoryRelayedEvent<DamageModifyEvent>>(OnModifyDamage);
+        // SubscribeLocalEvent<CursedMaskComponent, InventoryRelayedEvent<DamageModifyEvent>>(OnModifyDamage); // Harmony change for removal of Despair mask
     }
 
     private void OnClothingEquip(Entity<CursedMaskComponent> ent, ref ClothingGotEquippedEvent args)
@@ -54,14 +54,16 @@ public abstract class SharedCursedMaskSystem : EntitySystem
             args.Args.ModifySpeed(ent.Comp.JoySpeedModifier);
     }
 
-    private void OnModifyDamage(Entity<CursedMaskComponent> ent, ref InventoryRelayedEvent<DamageModifyEvent> args)
+    // Harmony change start, removes Despair mask systems
+    /* private void OnModifyDamage(Entity<CursedMaskComponent> ent, ref InventoryRelayedEvent<DamageModifyEvent> args)
     {
         if (ent.Comp.CurrentState == CursedMaskExpression.Despair)
             args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage,
                 DamageSpecifier.PenetrateArmor(ent.Comp.DespairDamageModifier,
-                    args.Args.ArmorPenetration)); // Goob edit
-    }
-
+                    args.Args.ArmorPenetration)); // Goob edit 
+    } */
+    // Harmony change end
+    
     protected void RandomizeCursedMask(Entity<CursedMaskComponent> ent, EntityUid wearer)
     {
         var random = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(ent));
