@@ -111,8 +111,10 @@
       - !type:VomitBehavior
   - type: RadiationReceiver
   - type: Stamina
+    # harmony change start: removed stamina slowdown
     stunModifierThresholds: 
       0: 1.0
+    # harmony change end
   - type: StunVisuals
   - type: MobState
   - type: MobThresholds
