@@ -8,7 +8,7 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     layers:
     - state: tarot_box
     - state: tarot_box_open
@@ -26,7 +26,7 @@
   categories: [ HideSpawnMenu ] 
   components:
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: deck_tarot_full
   - type: CardStack
     initialContent:
@@ -64,7 +64,7 @@
     sound:
       collection: cardShove
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: singlecard_down_tarot
   - type: Rotatable
   - type: Item
@@ -73,7 +73,7 @@
     delay: 0.5
   - type: Card
     backSprite:
-    - sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    - sprite: _EstacaoPirata/Objects/Misc/cards.rsi
       state: singlecard_down_tarot
     flipped: true
   - type: StripMenuHidden
@@ -90,7 +90,7 @@
   - type: Card
     name: tarot card of the Fool
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_0_The_Fool_tarot
     
 - type: entity
@@ -102,7 +102,7 @@
   - type: Card
     name: tarot card of the Magician
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_1_The_Magician_tarot
     
 - type: entity
@@ -114,7 +114,7 @@
   - type: Card
     name: tarot card of the High Priestess
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_2_The_High_Priestess_tarot
     
 - type: entity
@@ -126,7 +126,7 @@
   - type: Card
     name: tarot card of the Empress
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_3_The_Empress_tarot
     
 - type: entity
@@ -138,7 +138,7 @@
   - type: Card
     name: tarot card of the Emperor
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_4_The_Emperor_tarot
     
 - type: entity
@@ -150,7 +150,7 @@
   - type: Card
     name: tarot card of the Hierophant
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_5_The_Hierophant_tarot
     
 - type: entity
@@ -162,7 +162,7 @@
   - type: Card
     name: tarot card of the Lovers
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_6_The_Lovers_tarot
     
 - type: entity
@@ -174,7 +174,7 @@
   - type: Card
     name: tarot card of the Chariot
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_7_The_Chariot_tarot
     
 - type: entity
@@ -186,7 +186,7 @@
   - type: Card
     name: tarot card of Strength
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_8_Strength_tarot
     
 - type: entity
@@ -198,7 +198,7 @@
   - type: Card
     name: tarot card of the Hermit
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_9_The_Hermit_tarot
     
 - type: entity
@@ -210,7 +210,7 @@
   - type: Card
     name: tarot card of the Wheel of Fortune
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_10_The_Wheel_of_Fortune_tarot
 #Nope!
 
@@ -223,7 +223,7 @@
   - type: Card
     name: tarot card of Justice
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_11_Justice_tarot
     
 - type: entity
@@ -235,7 +235,7 @@
   - type: Card
     name: tarot card of the Hanged Man
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_12_The_Hanged_Man_tarot
     
 - type: entity
@@ -247,7 +247,7 @@
   - type: Card
     name: tarot card of Death
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_13_Death_tarot
     
 - type: entity
@@ -259,7 +259,7 @@
   - type: Card
     name: tarot card of Temperance
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_14_Temperance_tarot
     
 - type: entity
@@ -271,7 +271,7 @@
   - type: Card
     name: tarot card of the Devil
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_15_The_Devil_tarot
     
 - type: entity
@@ -283,7 +283,7 @@
   - type: Card
     name: tarot card of the Tower
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_16_The_Tower_tarot
     
 - type: entity
@@ -295,7 +295,7 @@
   - type: Card
     name: tarot card of the Star
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_17_The_Star_tarot
     
 - type: entity
@@ -307,7 +307,7 @@
   - type: Card
     name: tarot card of the Moon
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_18_The_Moon_tarot
     
 - type: entity
@@ -319,7 +319,7 @@
   - type: Card
     name: tarot card of the Sun
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_19_The_Sun_tarot
     
 - type: entity
@@ -331,7 +331,7 @@
   - type: Card
     name: tarot card of Judgement
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_20_Judgement_tarot
     
 - type: entity
@@ -343,6 +343,6 @@
   - type: Card
     name: tarot card of the World
   - type: Sprite
-    sprite: _Harmony/Objects/Misc/tarotcards.rsi
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
     state: sc_21_The_World_tarot
 # end
