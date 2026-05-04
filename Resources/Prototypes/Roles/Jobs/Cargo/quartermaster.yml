@@ -4,20 +4,20 @@
   description: job-description-qm
   playTimeTracker: JobQuartermaster
   requirements:
-    # Harmony start
+    # Harmony Change start
     # - !type:RoleTimeRequirement
     #   role: JobCargoTechnician
     #   time: 5h
-    # - !type:RoleTimeRequirement
-    #   role: JobSalvageSpecialist
-    #   time: 2.5h
-    # Harmony end
+    # Harmony Change end
+    - !type:RoleTimeRequirement
+      role: JobSalvageSpecialist
+      time: 3h # Harmony Change 2.5h -> 3h, two shifts for role awareness
     - !type:DepartmentTimeRequirement
       department: Cargo
       time: 8h # Harmony: 10h -> 8h
-  # Harmony start
+    # Harmony start
     - !type:OverallPlaytimeRequirement
-      time: 12h
+      time: 24h # 8 total shifts
     # Harmony end
   weight: 10
   startingGear: QuartermasterGear

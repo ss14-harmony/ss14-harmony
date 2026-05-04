@@ -7,19 +7,19 @@
     - !type:RoleTimeRequirement
       role: JobWarden
       time: 3h # Harmony: 1h -> 3h
+    - !type:RoleTimeRequirement
+      role: JobDetective
+      time: 3h # Harmony Change 1h -> 3h, two shifts for role awareness
     # Harmony start
-    # - !type:RoleTimeRequirement
-    #   role: JobDetective
-    #   time: 3600 #1 hr, knowing how to use the tools is important
     # - !type:RoleTimeRequirement
     #   role: JobSecurityOfficer
     #   time: 18000 #5 hrs
     # Harmony end
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 10h
+      time: 12h
     - !type:OverallPlaytimeRequirement
-      time: 12h # Harmony: 10h -> 12h
+      time: 24h # Harmony: 10h -> 12h
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
