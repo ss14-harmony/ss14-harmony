@@ -48,5 +48,3 @@
     interactOnMiss: false
   - type: EntityTargetAction
     event: !type:PleebnarGibEvent
-
-
