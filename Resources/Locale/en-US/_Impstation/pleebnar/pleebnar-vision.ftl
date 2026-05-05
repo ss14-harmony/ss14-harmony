@@ -270,7 +270,7 @@ pleebnar-vision-89-name = Above
 pleebnar-vision-90 = The recently cooked flesh of a large bird, headlessly dancing -- a slow, almost sensual dance.
 pleebnar-vision-90-name = Yurkey
 
-pleebnar-vision-91 = A large red arrow above your heard, pointing directly southwest of you.
+pleebnar-vision-91 = A large red arrow above your head, pointing directly southwest of you.
 pleebnar-vision-91-name = Quest
 
 pleebnar-vision-92 = Wind-up toys marching through a black void.
@@ -436,7 +436,7 @@ pleebnar-vision-145 = You see a butcher shop, with every cut of meat replaced by
 pleebnar-vision-145-name = Carpet
 
 pleebnar-vision-146 = An animal made of liquid drinking itself.
-pleebnar-vision-146-name = Self-suck
+pleebnar-vision-146-name = Ouroboros
 
 pleebnar-vision-147 = A disembodied heart, beating beneath the floor tiles.
 pleebnar-vision-147-name = Thumping
