@@ -51,6 +51,7 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceMoth
+  categories: [ HideSpawnMenu ]
   name: moth appearance
   components:
   - type: Inventory
@@ -146,9 +147,13 @@
   - type: Speech
     speechVerb: Moth
     speechSounds: Moth # CD Addition
-    allowedEmotes: ['Chitter', 'Squeak']
+    allowedEmotes: ['Chitter', 'Squeak', 'Flap']
   - type: TypingIndicator
     proto: moth
+  - type: CreamPied
+    sprite:
+      sprite: Effects/creampie.rsi
+      state: creampie_moth
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
@@ -167,6 +172,8 @@
       Male: UnisexMoth
       Female: UnisexMoth
       Unsexed: UnisexMoth
+  - type: BodyEmotes
+    soundsId: MothBodyEmotes
   - type: MovementSpeedModifier
     baseWeightlessAcceleration: 1.5 # Move around more easily in space.
     baseWeightlessFriction: 1

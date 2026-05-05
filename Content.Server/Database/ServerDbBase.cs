@@ -224,12 +224,12 @@ namespace Content.Server.Database
             var legacyMarkings = appearance.Markings
                 .SelectMany(organ => organ.Value.Values)
                 .SelectMany(i => i)
-                .Select(marking => marking.ToString())
+                .Select(marking => marking.ToLegacyDbString())
                 .ToList();
             var flattenedMarkings = appearance.Markings.SelectMany(it => it.Value)
                 .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
-            var hairMarking = flattenedMarkings.FirstOrNull(kvp => kvp.Key == HumanoidVisualLayers.Hair)?.Value.FirstOrDefault();
-            var facialHairMarking = flattenedMarkings.FirstOrNull(kvp => kvp.Key == HumanoidVisualLayers.FacialHair)?.Value.FirstOrDefault();
+            var hairMarking = flattenedMarkings.FirstOrNull(kvp => kvp.Key == HumanoidVisualLayers.Hair)?.Value.FirstOrNull();
+            var facialHairMarking = flattenedMarkings.FirstOrNull(kvp => kvp.Key == HumanoidVisualLayers.FacialHair)?.Value.FirstOrNull();
             profile.Markings =
                 JsonSerializer.SerializeToDocument(legacyMarkings.Select(marking => marking.ToString()).ToList());
             profile.HairName = hairMarking?.MarkingId ?? HairStyles.DefaultHairStyle;
