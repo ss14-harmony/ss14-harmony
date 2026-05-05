@@ -741,7 +741,22 @@
         - !type:SatiateThirst
           factor: 6
         - !type:ModifyBloodLevel
+          # start harmony change
+          conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Avali ]
+            inverted: true
+          # end harmony change
           amount: 6
+          # start harmony change
+        - !type:HealthChange
+          conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Avali ]
+          damage:
+            types:
+              Bloodloss: 2.5
+        # end harmony change
 
 - type: reagent
   id: Siderlac
