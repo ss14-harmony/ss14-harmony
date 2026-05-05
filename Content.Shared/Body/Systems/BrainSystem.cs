@@ -28,15 +28,15 @@ public sealed class BrainSystem : EntitySystem
 
     private void OnBrainInserted(Entity<BrainComponent> brain, ref OrganGotInsertedEvent args)
     {
-        HandleMind(args.Target, brain.Owner, brain.Owner, isInsert: true);
+        HandleMind(args.Target, brain.Owner, isInsert: true);
     }
 
     private void OnBrainRemoved(Entity<BrainComponent> brain, ref OrganGotRemovedEvent args)
     {
-        HandleMind(brain.Owner, args.Target, brain.Owner, isInsert: false);
+        HandleMind(brain.Owner, args.Target, isInsert: false);
     }
 
-    private void HandleMind(EntityUid newEntity, EntityUid oldEntity, EntityUid brain, bool isInsert)
+    private void HandleMind(EntityUid newEntity, EntityUid oldEntity, bool isInsert)
     {
         if (_timing.ApplyingState)
             return;
@@ -55,8 +55,6 @@ public sealed class BrainSystem : EntitySystem
 
         if (_net.IsClient)
             return;
-
-        _mindSystem.SetBrainEntity(mindId, brain, mind);
 
         var yank = isInsert && ShouldYankOnInsert(newEntity);
         _mindSystem.TransferTo(mindId, newEntity, ghostCheckOverride: yank, mind: mind);

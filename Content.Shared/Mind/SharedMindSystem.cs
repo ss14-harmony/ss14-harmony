@@ -274,31 +274,6 @@ public abstract partial class SharedMindSystem : EntitySystem
     }
 
     /// <summary>
-	/// Funky - CyberMed
-    /// Updates the tracked brain organ entity for this mind (server authoritative).
-    /// </summary>
-    public void SetBrainEntity(EntityUid mindId, EntityUid? brain, MindComponent? mind = null)
-    {
-        if (!Resolve(mindId, ref mind))
-            return;
-
-        var net = brain == null ? null : GetNetEntity(brain);
-        if (mind.BrainEntity == net)
-            return;
-
-        mind.BrainEntity = net;
-        Dirty(mindId, mind);
-    }
-
-    /// <summary>
-    /// Returns the player from a visiting ghost to their body (or brain / MMI root per server implementation).
-    /// </summary>
-    public virtual void ReturnToBody(ICommonSession? session)
-    {
-        UnVisit(session);
-    }
-
-    /// <summary>
     /// Cleans up the VisitingEntity.
     /// </summary>
     /// <param name="mind"></param>

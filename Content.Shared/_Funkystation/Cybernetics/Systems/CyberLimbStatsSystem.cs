@@ -3,8 +3,12 @@ using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Cybernetics.Components;
 using Content.Shared.Cybernetics.Events;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.Emp;
+using Content.Shared.FixedPoint;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Power.Components;
@@ -13,6 +17,7 @@ using Content.Shared.Stacks;
 using Content.Shared.Storage;
 using Robust.Shared.Localization;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Cybernetics.Systems;
@@ -35,6 +40,12 @@ public sealed class CyberLimbStatsSystem : EntitySystem
     private const string LegLeft = "LegLeft";
     private const string LegRight = "LegRight";
 
+    private static readonly ProtoId<DamageTypePrototype> BluntDamage = "Blunt";
+    private static readonly ProtoId<DamageTypePrototype> SlashDamage = "Slash";
+    private static readonly ProtoId<DamageTypePrototype> PiercingDamage = "Piercing";
+    private static readonly ProtoId<DamageTypePrototype> HeatDamage = "Heat";
+    private const float MilitaryResistancePerLimb = 0.05f;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -46,6 +57,7 @@ public sealed class CyberLimbStatsSystem : EntitySystem
         SubscribeLocalEvent<CyberLimbStatsComponent, EmpPulseEvent>(OnEmpPulse);
         SubscribeLocalEvent<CyberLimbStatsComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeed);
         SubscribeLocalEvent<CyberLimbStatsComponent, DoAfterDelayMultiplierEvent>(OnDoAfterDelayMultiplier);
+        SubscribeLocalEvent<CyberLimbStatsComponent, DamageModifyEvent>(OnDamageModify);
 
         _nextUpdate = _timing.CurTime + TimeSpan.FromSeconds(UpdateInterval);
     }
@@ -201,6 +213,24 @@ public sealed class CyberLimbStatsSystem : EntitySystem
         args.Multiplier *= 1f / efficiency;
     }
 
+    private void OnDamageModify(Entity<CyberLimbStatsComponent> ent, ref DamageModifyEvent args)
+    {
+        var resistance = ent.Comp.CyberDamageResistance;
+        if (resistance <= 0f)
+            return;
+
+        var coeff = 1f - resistance;
+        var dict = args.Damage.DamageDict;
+        foreach (var type in dict.Keys.ToList())
+        {
+            if (dict[type] <= FixedPoint2.Zero)
+                continue;
+
+            if (type == BluntDamage || type == SlashDamage || type == PiercingDamage || type == HeatDamage)
+                dict[type] = dict[type] * coeff;
+        }
+    }
+
     private void FillMatterBinsInLimb(EntityUid limb)
     {
         if (!TryComp<StorageComponent>(limb, out var storage) || storage.Container == null)
@@ -243,6 +273,15 @@ public sealed class CyberLimbStatsSystem : EntitySystem
         var depletionMultiplier = depleted ? 0.5f : 1f;
         stats.ArmEfficiency = _moduleSystem.GetArmEfficiencyFromCpus(armCpuCount) * depletionMultiplier;
         stats.LegEfficiency = _moduleSystem.GetLegEfficiencyFromCpus(legCpuCount) * depletionMultiplier;
+
+        var militaryCount = 0;
+        foreach (var organ in _body.GetAllOrgans(body))
+        {
+            if (HasComp<MilitaryCyberLimbComponent>(organ))
+                militaryCount++;
+        }
+
+        stats.CyberDamageResistance = Math.Min(1f, MilitaryResistancePerLimb * militaryCount);
 
         Dirty(body, stats);
         _movementSpeed.RefreshMovementSpeedModifiers(body);

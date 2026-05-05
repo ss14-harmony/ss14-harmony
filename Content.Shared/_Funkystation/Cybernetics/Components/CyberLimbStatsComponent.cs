@@ -36,6 +36,14 @@ public sealed partial class CyberLimbStatsComponent : Component
     public float LegEfficiency { get; set; } = 1f;
 
     /// <summary>
+    /// Fraction of incoming Brute (Blunt/Slash/Piercing) and Heat damage reduced by attached
+    /// Military cyber limbs. 0.05 per limb, capped at 1.0 (100% reduction). Independent of
+    /// power and maintenance state - this models structural armor plating, not active electronics.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float CyberDamageResistance { get; set; } = 0f;
+
+    /// <summary>
     /// Minimum service time per cyber limb. Limbs function without modules (poorly) with this base.
     /// </summary>
     [DataField, AutoNetworkedField]

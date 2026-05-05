@@ -1191,8 +1191,6 @@
         factor: 3
       - !type:HealthChange
         conditions:
-        - !type:TotalDamageCondition
-          max: 50
         damage:
           types:
             Blunt: -0.2
@@ -1218,6 +1216,7 @@
     amount: 1
   tileReactions:
   - !type:ExtinguishTileReaction { }
+
 
 - type: reagent
   id: Pyrazine

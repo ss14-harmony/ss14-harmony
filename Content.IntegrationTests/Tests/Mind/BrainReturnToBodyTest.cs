@@ -127,7 +127,6 @@ public sealed class BrainReturnToBodyTest
             Assert.That(removeEv.Success, Is.True, "Brain removal should succeed");
 
             mind = em.GetComponent<MindComponent>(mindId);
-            Assert.That(mind.BrainEntity, Is.EqualTo(em.GetNetEntity(brain)));
             Assert.That(mind.OwnedEntity, Is.EqualTo(brain));
             Assert.That(mind.VisitingEntity, Is.Not.Null);
             Assert.That(em.HasComponent<GhostComponent>(mind.VisitingEntity!.Value));
@@ -137,7 +136,7 @@ public sealed class BrainReturnToBodyTest
 
         await server.WaitAssertion(() =>
         {
-            mindSys.ReturnToBody(session);
+            mindSys.UnVisit(session);
             var mind = em.GetComponent<MindComponent>(mindId);
             Assert.That(session.AttachedEntity, Is.EqualTo(brain));
             Assert.That(mind.VisitingEntity, Is.Null);
@@ -231,7 +230,6 @@ public sealed class BrainReturnToBodyTest
             Assert.That(mind.OwnedEntity, Is.EqualTo(recipient));
             Assert.That(session.AttachedEntity, Is.EqualTo(recipient));
             Assert.That(em.HasComponent<GhostComponent>(session.AttachedEntity!.Value), Is.False);
-            Assert.That(mindSys.ResolveBrainRoot(mind), Is.EqualTo(recipient));
         });
 
         await pair.CleanReturnAsync();
@@ -418,11 +416,9 @@ public sealed class BrainReturnToBodyTest
         await server.WaitAssertion(() =>
         {
             var mind = em.GetComponent<MindComponent>(mindId);
-            // Eject uses ghostCheckOverride: false — no visit; player controls the brain directly.
             Assert.That(mind.VisitingEntity, Is.Null);
             Assert.That(mind.OwnedEntity, Is.EqualTo(brain));
             Assert.That(session.AttachedEntity, Is.EqualTo(brain));
-            Assert.That(mindSys.ResolveBrainRoot(mind), Is.EqualTo(brain));
         });
 
         await server.WaitAssertion(() =>
@@ -437,7 +433,7 @@ public sealed class BrainReturnToBodyTest
             var mind = em.GetComponent<MindComponent>(mindId);
             Assert.That(mind.VisitingEntity, Is.Not.Null);
             Assert.That(mind.OwnedEntity, Is.EqualTo(brain));
-            mindSys.ReturnToBody(session);
+            mindSys.UnVisit(session);
             mind = em.GetComponent<MindComponent>(mindId);
             Assert.That(session.AttachedEntity, Is.EqualTo(brain));
             Assert.That(mind.VisitingEntity, Is.Null);
