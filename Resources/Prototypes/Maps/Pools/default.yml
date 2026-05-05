@@ -1,22 +1,27 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-  - Amber
   - Bagel
   - Box
-  - Elkridge
   - Fland
   - Marathon
   - Oasis
   - Packed
-  - Plasma
+ # - Plasma # Not in Harmony rotation
   - Reach
   - Exo
+  - Snowball
+  - Serpentcrest
   # Harmony maps start
   - Aspid
-  - Barratry
   - Atlas
+  - Barratry
+  - Elkridge
+  - Jellyfish
   - Mira
-  - Prime
   - Omega
+  - Prime
+  - Scylla
+  - Wapiti
+  - Amber
   # Harmony maps end

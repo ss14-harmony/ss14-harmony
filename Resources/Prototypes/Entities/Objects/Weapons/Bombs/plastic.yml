@@ -15,6 +15,7 @@
     blacklist: # can't stick it to other items
       components:
       - Item
+      - Spectral # special case for the rev since it can go incorporeal and ghost bomb you. Also, Idk, its like a ghost or something no touchy.
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -77,11 +78,9 @@
     - Trigger
   - type: Explosive # Powerful explosion in a very small radius. Doesn't break underplating.
     explosionType: DemolitionCharge
-    # Harmony Start
-    totalIntensity: 5 # 60 -> 5
+    totalIntensity: 10 # Harmony - 60 -> 10
     intensitySlope: 5
-    maxIntensity: 15 # 30 - 15
-    # Harmony End
+    maxIntensity: 15 # Harmony - 30 -> 15
     canCreateVacuum: false
   - type: ExplodeOnTrigger
     keysIn:

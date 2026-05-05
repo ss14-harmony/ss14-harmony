@@ -11,7 +11,7 @@
         - ReagentId: Zinc
           Quantity: 5
   - type: Appearance
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
 
 # Carbine
 
@@ -35,7 +35,7 @@
   - type: Battery
     maxCharge: 750
     startingCharge: 750
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: BulletLaserHarmony
     fireCost: 37
   - type: Tag
@@ -66,7 +66,7 @@
   - type: Battery
     maxCharge: 750
     startingCharge: 750
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: BulletEnergyCarbineUnstableHarmony
     fireCost: 50
   - type: Tag
@@ -93,7 +93,7 @@
   - type: Battery
     maxCharge: 750
     startingCharge: 750
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: BulletLaserXRayHarmony
     fireCost: 37
   - type: Tag
@@ -120,7 +120,7 @@
   - type: Battery
     maxCharge: 750
     startingCharge: 750
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: BulletLaserShockHarmony
     fireCost: 37
   - type: Tag

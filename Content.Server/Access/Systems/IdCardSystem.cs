@@ -6,11 +6,14 @@ using Content.Server.Popups;
 using Content.Shared.Access;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
+using Content.Shared.Chat;
 using Content.Shared.Database;
+using Content.Shared.Kitchen;
 using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Server.Kitchen.EntitySystems;
+using Content.Server.Radio.EntitySystems; //Harmony Change - For Radio Expire ID Message
 
 namespace Content.Server.Access.Systems;
 
@@ -22,6 +25,7 @@ public sealed class IdCardSystem : SharedIdCardSystem
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly MicrowaveSystem _microwave = default!;
+    [Dependency] private readonly RadioSystem _radio = default!; //Harmony Change - For Radio Expire ID Message
 
     public override void Initialize()
     {
@@ -112,5 +116,12 @@ public sealed class IdCardSystem : SharedIdCardSystem
                 ChatTransmitRange.Normal,
                 true);
         }
+        // Harmony Change Start - ID card radio system
+        if (ent.Comp.ExpireMessageRadio != null)
+        {
+            var message = Loc.GetString(ent.Comp.ExpireMessageRadio, ("name", ent.Owner));
+            _radio.SendRadioMessage(ent.Owner, message, ent.Comp.RadioChannel, ent.Owner);
+        }
+        // Harmony change end
     }
 }
