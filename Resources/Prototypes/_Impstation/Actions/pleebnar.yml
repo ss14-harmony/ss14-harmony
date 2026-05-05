@@ -8,16 +8,14 @@
     useDelay: 30
     itemIconStyle: NoItem
     icon:
-      #sprite: _Goobstation/Changeling/changeling_abilities.rsi
-      sprite: Objects/Weapons/Melee/armblade.rsi
-      state: icon
+      sprite: _Harmony/Mobs/Aliens/pleebnar.rsi
+      state: telepathy
   - type: TargetAction
     range: 15
     interactOnMiss: false
   - type: EntityTargetAction
     event: !type:PleebnarTelepathyEvent
     canTargetSelf: false
-
 
 - type: entity
   id: ActionPleebnarVision
@@ -28,12 +26,10 @@
   - type: Action
     itemIconStyle: NoItem
     icon:
-      #sprite: _Goobstation/Changeling/changeling_abilities.rsi
-      sprite: Objects/Weapons/Melee/armblade.rsi
-      state: icon
+      sprite: _Harmony/Mobs/Aliens/pleebnar.rsi
+      state: select
   - type: InstantAction
     event: !type:PleebnarVisionEvent
-
 
 - type: entity
   id: ActionPleebnarGib
@@ -45,9 +41,8 @@
     useDelay: 30
     itemIconStyle: NoItem
     icon:
-      #sprite: _Goobstation/Heretic/abilities_heretic.rsi
-      sprite: Objects/Weapons/Melee/armblade.rsi
-      state: icon
+      sprite: _Harmony/Mobs/Aliens/pleebnar.rsi
+      state: gib
   - type: TargetAction
     range: 15
     interactOnMiss: false
