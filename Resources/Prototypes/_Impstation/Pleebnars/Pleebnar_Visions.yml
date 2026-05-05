@@ -931,8 +931,28 @@
   visionString: pleebnar-vision-186
 
 - type: pleebnarVision
-  id: 187
-  name: pleebnar-vision-187-name
-  visionString: pleebnar-vision-187
+  id: 188
+  name: pleebnar-vision-188-name
+  visionString: pleebnar-vision-188
+
+- type: pleebnarVision
+  id: 189
+  name: pleebnar-vision-189-name
+  visionString: pleebnar-vision-189
+
+- type: pleebnarVision
+  id: 190
+  name: pleebnar-vision-190-name
+  visionString: pleebnar-vision-190
+
+- type: pleebnarVision
+  id: 191
+  name: pleebnar-vision-191-name
+  visionString: pleebnar-vision-191
+
+- type: pleebnarVision
+  id: 192
+  name: pleebnar-vision-192-name
+  visionString: pleebnar-vision-192
 
 # Harmony End

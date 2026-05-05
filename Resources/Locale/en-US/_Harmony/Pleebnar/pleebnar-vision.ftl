@@ -27,3 +27,18 @@ pleebnar-vision-186-name = bwoinked
 
 pleebnar-vision-187 = You're staring down a barrel of a cannon. There's a pie at the end of it.
 pleebnar-vision-187-name = pied
+
+pleebnar-vision-188 = You do not want to go back to medical. YOU DO NOT WANT TO GO BACK TO MEDICAL.
+pleebnar-vision-188-name = Go to medical
+
+pleebnar-vision-189 = A plasteel rod at the end of a shuttle tearing through the station.
+pleebnar-vision-189-name = Movable Rod
+
+pleebnar-vision-190 = A man with pink hair, staring longingly through a window at a tortilla.
+pleebnar-vision-190-name = Want it
+
+pleebnar-vision-191 = A disturbing looking figure holding what looks like creamed corn cupped in their hands.
+pleebnar-vision-191-name = Garmonbozia
+
+pleebnar-vision-192 = A man with a terrible looking device, here to remind you that you are indeed mortal.
+pleebnar-vision-192-name = Throngle
