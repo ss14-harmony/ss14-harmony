@@ -893,3 +893,46 @@
   name: pleebnar-vision-179-name
   visionString: pleebnar-vision-179
 
+# Harmony Change - Adding Harmony Visions
+
+- type: pleebnarVision
+  id: 180
+  name: pleebnar-vision-180-name
+  visionString: pleebnar-vision-180
+
+- type: pleebnarVision
+  id: 181
+  name: pleebnar-vision-181-name
+  visionString: pleebnar-vision-181
+
+- type: pleebnarVision
+  id: 182
+  name: pleebnar-vision-182-name
+  visionString: pleebnar-vision-182
+
+- type: pleebnarVision
+  id: 183
+  name: pleebnar-vision-183-name
+  visionString: pleebnar-vision-183
+
+- type: pleebnarVision
+  id: 184
+  name: pleebnar-vision-184-name
+  visionString: pleebnar-vision-184
+
+- type: pleebnarVision
+  id: 185
+  name: pleebnar-vision-185-name
+  visionString: pleebnar-vision-185
+
+- type: pleebnarVision
+  id: 186
+  name: pleebnar-vision-186-name
+  visionString: pleebnar-vision-186
+
+- type: pleebnarVision
+  id: 187
+  name: pleebnar-vision-187-name
+  visionString: pleebnar-vision-187
+
+# Harmony End
