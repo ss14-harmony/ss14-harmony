@@ -12,7 +12,6 @@ namespace Content.Server._Impstation.Pleebnar;
 /// </summary>
 public sealed class PleebnarGibSystem : SharedPleebnarGibSystem
 {
-    [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly GibbingSystem _gibbing = default!;
