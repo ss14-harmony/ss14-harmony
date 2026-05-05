@@ -339,10 +339,14 @@
 - type: entity
   parent: [ OrganBaseFootLeft, OrganDionaExternal ]
   id: OrganDionaFootLeft
+  components:
+  - type: BlocksFootWearSlot
 
 - type: entity
   parent: [ OrganBaseFootRight, OrganDionaExternal ]
   id: OrganDionaFootRight
+  components:
+  - type: BlocksFootWearSlot
 
 - type: entity
   parent: [ OrganBaseBrain, OrganDionaInternal ]

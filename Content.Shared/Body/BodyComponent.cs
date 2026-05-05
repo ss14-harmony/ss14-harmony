@@ -46,3 +46,10 @@ public readonly record struct OrganRemovedFromEvent(EntityUid Organ);
 /// </summary>
 [ByRefEvent]
 public readonly record struct OrganRemovedFromBodyNotifyEvent(EntityUid Organ);
+
+/// <summary>
+/// Raised on a body after organ insert/remove paths in <see cref="BodySystem"/> update what is attached.
+/// Used to reconcile glove/footwear inventory slots with anatomy.
+/// </summary>
+[ByRefEvent]
+public readonly record struct AppendageWearInventoryRefreshEvent;
