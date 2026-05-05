@@ -1,0 +1,449 @@
+# Surgery procedures - data-driven (primary tool, improvised tool) pairs.
+# Replaces surgery_steps.yml. Used by BodyPartSurgeryStepsPrototype and OrganSurgeryProceduresComponent.
+
+# === Skin layer (6 steps) ===
+
+- type: surgeryProcedure
+  id: CreateIncision
+  layer: Skin
+  name: health-analyzer-surgery-step-create-incision
+  penalty: 1
+  primaryTool:
+    tag: CuttingTool
+    doAfterDelay: 2
+    damage:
+      types:
+        Slash: 5
+    sound: /Audio/Weapons/bladeslice.ogg
+  improvisedTools:
+    - damageType: Slash
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireLayerClosed
+      layer: Skin
+
+- type: surgeryProcedure
+  id: ClampVessels
+  layer: Skin
+  name: health-analyzer-surgery-step-clamp-vessels
+  penalty: 1
+  primaryTool:
+    tag: HemostatTool
+    doAfterDelay: 2
+    damage:
+      types:
+        Slash: 1
+    sound: /Audio/Items/drill_hit.ogg
+  improvisedTools:
+    - tag: Wirecutter
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireStepPerformed
+      procedure: CreateIncision
+
+- type: surgeryProcedure
+  id: RetractSkin
+  layer: Skin
+  name: health-analyzer-surgery-step-retract-skin
+  penalty: 1
+  primaryTool:
+    tag: ManipulatingTool
+    doAfterDelay: 2
+    damage:
+      types:
+        Slash: 1
+    sound: /Audio/Items/drill_hit.ogg
+  improvisedTools:
+    - tag: PryingTool
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireStepPerformed
+      procedure: ClampVessels
+
+# Skin close
+- type: surgeryProcedure
+  id: ReleaseRetractor
+  layer: Skin
+  undoesProcedure: RetractSkin
+  name: health-analyzer-surgery-step-release-layer
+  penalty: 0
+  primaryTool:
+    tag: ManipulatingTool
+    doAfterDelay: 2
+    healAmount:
+      types:
+        Slash: -2
+    sound: /Audio/Effects/lightburn.ogg
+  improvisedTools:
+    - damageType: Blunt
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireStepPerformed
+      procedure: RetractSkin
+
+- type: surgeryProcedure
+  id: ReconnectVessels
+  layer: Skin
+  undoesProcedure: ClampVessels
+  name: health-analyzer-surgery-step-reconnect-vessels
+  penalty: 0
+  primaryTool:
+    tag: HemostatTool
+    doAfterDelay: 2
+    healAmount:
+      types:
+        Slash: -2
+    sound: /Audio/Effects/lightburn.ogg
+  improvisedTools:
+    - tag: AnchoringTool
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireStepPerformed
+      procedure: ClampVessels
+
+- type: surgeryProcedure
+  id: SealSkin
+  layer: Skin
+  undoesProcedure: CreateIncision
+  name: health-analyzer-surgery-step-seal-skin
+  penalty: 0
+  primaryTool:
+    tag: HeatWeapon
+    doAfterDelay: 2
+    healAmount:
+      types:
+        Slash: -2
+    sound: /Audio/Effects/lightburn.ogg
+  improvisedTools:
+    - damageType: Heat
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireStepPerformed
+      procedure: CreateIncision
+
+# === Tissue layer (6 steps) ===
+
+- type: surgeryProcedure
+  id: CutBone
+  layer: Tissue
+  name: health-analyzer-surgery-step-cut-bone
+  penalty: 8
+  primaryTool:
+    tag: SawingTool
+    doAfterDelay: 3
+    damage:
+      types:
+        Blunt: 3
+        Slash: 2
+    sound: /Audio/Items/drill_hit.ogg
+  improvisedTools:
+    - damageType: Blunt
+      delayMultiplier: 1.5
+      bluntSpeedBaseline: 20
+  prerequisites:
+    - type: RequireLayerOpen
+      layer: Skin
+
+- type: surgeryProcedure
+  id: MarrowBleeding
+  layer: Tissue
+  name: health-analyzer-surgery-step-marrow-bleeding
+  penalty: 0
+  primaryTool:
+    tag: HeatWeapon
+    doAfterDelay: 2
+    sound: /Audio/Items/drill_hit.ogg
+  improvisedTools:
+    - damageType: Heat
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireLayerOpen
+      layer: Skin
+    - type: RequireStepPerformed
+      procedure: CutBone
+
+- type: surgeryProcedure
+  id: RetractTissue
+  layer: Tissue
+  name: health-analyzer-surgery-step-retract-tissue
+  penalty: 0
+  primaryTool:
+    tag: PryingTool
+    doAfterDelay: 2
+    damage:
+      types:
+        Slash: 2
+    sound: /Audio/Items/drill_hit.ogg
+  improvisedTools:
+    - damageType: Blunt
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireLayerOpen
+      layer: Skin
+    - type: RequireStepPerformed
+      procedure: MarrowBleeding
+
+# Tissue close
+- type: surgeryProcedure
+  id: MaintainAlignment
+  layer: Tissue
+  undoesProcedure: RetractTissue
+  name: health-analyzer-surgery-step-maintain-alignment
+  penalty: 0
+  primaryTool:
+    tag: ManipulatingTool
+    doAfterDelay: 2
+    healAmount:
+      types:
+        Slash: -2
+    sound: /Audio/Effects/lightburn.ogg
+  improvisedTools:
+    - tag: Screwdriver
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireStepPerformed
+      procedure: RetractTissue
+
+- type: surgeryProcedure
+  id: SealBleedPoints
+  layer: Tissue
+  undoesProcedure: MarrowBleeding
+  name: health-analyzer-surgery-step-seal-bleed-points
+  penalty: 0
+  primaryTool:
+    tag: HeatWeapon
+    doAfterDelay: 2
+    healAmount:
+      types:
+        Slash: -2
+    sound: /Audio/Effects/lightburn.ogg
+  improvisedTools:
+    - damageType: Heat
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireStepPerformed
+      procedure: MarrowBleeding
+
+- type: surgeryProcedure
+  id: RepairBoneSection
+  layer: Tissue
+  undoesProcedure: CutBone
+  name: health-analyzer-surgery-step-repair-bone-section
+  penalty: 0
+  primaryTool:
+    tag: BoneGelTool
+    doAfterDelay: 2
+    healAmount:
+      types:
+        Slash: -2
+    sound: /Audio/Effects/lightburn.ogg
+  improvisedTools: []
+  prerequisites:
+    - type: RequireStepPerformed
+      procedure: CutBone
+
+# === Organ layer - removal (4 steps per organ) ===
+
+- type: surgeryProcedure
+  id: OrganClampVessels
+  layer: Organ
+  name: health-analyzer-surgery-step-clamp-vessels
+  penalty: 0
+  primaryTool:
+    tag: HemostatTool
+    doAfterDelay: 3
+    sound: /Audio/Items/drill_hit.ogg
+  improvisedTools:
+    - tag: Wirecutter
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireLayerOpen
+      layer: Organ
+  triggersOrganRemoval: false
+
+- type: surgeryProcedure
+  id: OrganRemovalScalpel
+  layer: Organ
+  name: health-analyzer-surgery-step-organ-removal-scalpel
+  penalty: 0
+  primaryTool:
+    tag: CuttingTool
+    doAfterDelay: 3
+    sound: /Audio/Weapons/bladeslice.ogg
+  improvisedTools:
+    - damageType: Slash
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireStepPerformed
+      procedure: OrganClampVessels
+  triggersOrganRemoval: false
+
+- type: surgeryProcedure
+  id: OrganRemovalHemostat
+  layer: Organ
+  name: health-analyzer-surgery-step-organ-removal-hemostat
+  penalty: 0
+  primaryTool:
+    tag: HeatWeapon
+    doAfterDelay: 3
+    sound: /Audio/Weapons/bladeslice.ogg
+  improvisedTools:
+    - damageType: Heat
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireStepPerformed
+      procedure: OrganRemovalScalpel
+  triggersOrganRemoval: false
+
+- type: surgeryProcedure
+  id: RemoveOrgan
+  layer: Organ
+  name: health-analyzer-surgery-step-remove-organ
+  penalty: 0
+  requiresTool: false
+  primaryTool:
+    isHand: true
+    doAfterDelay: 1
+  improvisedTools: []
+  triggersOrganRemoval: true
+  prerequisites:
+    - type: RequireStepPerformed
+      procedure: OrganRemovalHemostat
+
+# === Organ layer - insertion ===
+
+- type: surgeryProcedure
+  id: InsertOrgan
+  layer: Organ
+  name: health-analyzer-surgery-step-insert-organ
+  penalty: 0
+  requiresTool: false
+  primaryTool:
+    isHand: true
+    doAfterDelay: 3
+    sound: /Audio/Weapons/bladeslice.ogg
+  improvisedTools: []
+  prerequisites:
+    - type: RequireLayerOpen
+      layer: Organ
+
+# Organ insertion mend steps (3 steps to clear integrity penalties after InsertOrgan)
+- type: surgeryProcedure
+  id: OrganInsertHemostat
+  layer: Organ
+  name: health-analyzer-surgery-step-organ-insert-hemostat
+  penalty: 0
+  primaryTool:
+    tag: HemostatTool
+    doAfterDelay: 2
+    sound: /Audio/Items/drill_hit.ogg
+  improvisedTools:
+    - tag: AnchoringTool
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireLayerOpen
+      layer: Organ
+    - type: RequireStepPerformed
+      procedure: InsertOrgan
+
+- type: surgeryProcedure
+  id: OrganInsertSearing
+  layer: Organ
+  name: health-analyzer-surgery-step-organ-insert-searing
+  penalty: 0
+  primaryTool:
+    tag: HeatWeapon
+    doAfterDelay: 2
+    healAmount:
+      types:
+        Slash: -2
+    sound: /Audio/Effects/lightburn.ogg
+  improvisedTools:
+    - damageType: Heat
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireLayerOpen
+      layer: Organ
+    - type: RequireStepPerformed
+      procedure: InsertOrgan
+    - type: RequireStepPerformed
+      procedure: OrganInsertHemostat
+
+- type: surgeryProcedure
+  id: OrganInsertRetractor
+  layer: Organ
+  name: health-analyzer-surgery-step-organ-insert-retractor
+  penalty: 0
+  primaryTool:
+    tag: PryingTool
+    doAfterDelay: 2
+    sound: /Audio/Items/drill_hit.ogg
+  improvisedTools:
+    - tag: PryingTool
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireLayerOpen
+      layer: Organ
+    - type: RequireStepPerformed
+      procedure: InsertOrgan
+    - type: RequireStepPerformed
+      procedure: OrganInsertSearing
+
+# === Limbs ===
+
+- type: surgeryProcedure
+  id: DetachLimb
+  layer: Organ
+  name: health-analyzer-surgery-step-detach-limb
+  penalty: 0
+  primaryTool:
+    tag: CuttingTool
+    doAfterDelay: 4
+    damage:
+      types:
+        Slash: 3
+    sound: /Audio/Weapons/bladeslice.ogg
+  improvisedTools:
+    - damageType: Slash
+      delayMultiplier: 1.5
+  prerequisites:
+    - type: RequireLayerOpen
+      layer: Organ
+
+- type: surgeryProcedure
+  id: AttachLimb
+  layer: Organ
+  name: health-analyzer-surgery-step-attach-limb
+  penalty: 0
+  requiresTool: false
+  primaryTool:
+    isHand: true
+    doAfterDelay: 4
+    healAmount:
+      types:
+        Slash: -2
+    sound: /Audio/Effects/lightburn.ogg
+  improvisedTools: []
+  prerequisites:
+    - type: RequireLayerOpen
+      layer: Organ
+
+- type: surgeryProcedure
+  id: DetachFoot
+  layer: Organ
+  name: health-analyzer-surgery-step-detach-foot
+  penalty: 0
+  primaryTool:
+    tag: CuttingTool
+    doAfterDelay: 2
+    damage:
+      types:
+        Slash: 2
+    sound: /Audio/Weapons/bladeslice.ogg
+  improvisedTools:
+    - damageType: Slash
+      delayMultiplier: 1.5
+  triggersOrganRemoval: true
+  prerequisites:
+    - type: RequireLayerOpen
+      layer: Organ

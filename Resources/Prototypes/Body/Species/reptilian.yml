@@ -54,7 +54,6 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceReptilian
-  categories: [ HideSpawnMenu ]
   name: reptilian appearance
   components:
   - type: Inventory
@@ -86,28 +85,16 @@
           32:
             sprite: Mobs/Species/Reptilian/displacement.rsi
             state: mask
-  - type: InitialBody
-    organs:
-      Torso: OrganReptilianTorso
-      Head: OrganReptilianHead
-      ArmLeft: OrganReptilianArmLeft
-      ArmRight: OrganReptilianArmRight
-      HandRight: OrganReptilianHandRight
-      HandLeft: OrganReptilianHandLeft
-      LegLeft: OrganReptilianLegLeft
-      LegRight: OrganReptilianLegRight
-      FootLeft: OrganReptilianFootLeft
-      FootRight: OrganReptilianFootRight
-      Brain: OrganReptilianBrain
-      Eyes: OrganReptilianEyes
-      Tongue: OrganReptilianTongue
-      Appendix: OrganReptilianAppendix
-      Ears: OrganReptilianEars
-      Lungs: OrganReptilianLungs
-      Heart: OrganReptilianHeart
-      Stomach: OrganReptilianStomach
-      Liver: OrganReptilianLiver
-      Kidneys: OrganReptilianKidneys
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganReptilianTorso
+        - id: OrganReptilianHead
+        - id: OrganReptilianArmLeft
+        - id: OrganReptilianArmRight
+        - id: OrganReptilianLegLeft
+        - id: OrganReptilianLegRight
   - type: HumanoidProfile
     species: Reptilian
 
@@ -116,7 +103,7 @@
   - AppearanceReptilian
   - BaseSpeciesMobOrganic
   id: MobReptilian
-  name: Urist McScales
+  name: Urissst Mz'Hand
   components:
   - type: Puller
     needsHands: false
@@ -132,10 +119,6 @@
     allowedEmotes: ['Thump']
   - type: TypingIndicator
     proto: lizard
-  - type: CreamPied
-    sprite:
-      sprite: Effects/creampie.rsi
-      state: creampie_lizard
   - type: Vocal
     sounds:
       Male: MaleReptilian
@@ -211,6 +194,26 @@
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganReptilianExternal ]
   id: OrganReptilianTorso
   components:
+  - type: BodyPart
+    containerId: internal_organs
+    slots: [ Lungs, Heart, Stomach, Liver, Kidneys, Appendix ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      internal_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      internal_organs: !type:AllSelector
+        children:
+        - id: OrganReptilianLungs
+        - id: OrganReptilianHeart
+        - id: OrganReptilianStomach
+        - id: OrganReptilianLiver
+        - id: OrganReptilianKidneys
+        - id: OrganReptilianAppendix
   - type: VisualOrganMarkings
     hideableLayers:
     - enum.HumanoidVisualLayers.Tail
@@ -219,6 +222,24 @@
   parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganReptilianExternal ]
   id: OrganReptilianHead
   components:
+  - type: BodyPart
+    containerId: head_organs
+    slots: [ Brain, Eyes, Tongue, Ears ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      head_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      head_organs: !type:AllSelector
+        children:
+        - id: OrganReptilianBrain
+        - id: OrganReptilianEyes
+        - id: OrganReptilianTongue
+        - id: OrganReptilianEars
   - type: VisualOrganMarkings
     hideableLayers:
     - enum.HumanoidVisualLayers.Snout
@@ -228,10 +249,42 @@
 - type: entity
   parent: [ OrganBaseArmLeft, OrganReptilianExternal ]
   id: OrganReptilianArmLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+    slots: [ HandLeft ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganReptilianHandLeft
 
 - type: entity
   parent: [ OrganBaseArmRight, OrganReptilianExternal ]
   id: OrganReptilianArmRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+    slots: [ HandRight ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganReptilianHandRight
 
 - type: entity
   parent: [ OrganBaseHandLeft, OrganReptilianExternal ]
@@ -244,10 +297,42 @@
 - type: entity
   parent: [ OrganBaseLegLeft, OrganReptilianExternal ]
   id: OrganReptilianLegLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+    slots: [ FootLeft ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganReptilianFootLeft
 
 - type: entity
   parent: [ OrganBaseLegRight, OrganReptilianExternal ]
   id: OrganReptilianLegRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+    slots: [ FootRight ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganReptilianFootRight
 
 - type: entity
   parent: [ OrganBaseFootLeft, OrganReptilianExternal ]

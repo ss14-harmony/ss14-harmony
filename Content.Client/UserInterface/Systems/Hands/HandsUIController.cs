@@ -266,7 +266,6 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
             }
             else
             {
-                // Middle or right
                 _statusHandRight = handControl;
                 HandsGui.UpdatePanelEntityRight(heldEnt, hand.Value);
             }
@@ -331,6 +330,9 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
 
     private void UpdateVisibleStatusPanels()
     {
+        // Update hand-to-panel mapping based on button order (organic vs cyber limbs differ)
+        HandsGui?.UpdateHandOrderMapping();
+
         var leftVisible = false;
         var rightVisible = false;
 
@@ -382,6 +384,7 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
 
     private void UpdateHandStatus(HandButton hand, EntityUid? entity, Hand? handData)
     {
+        // Status panels: StatusPanelLeft shows left hand, StatusPanelRight shows right hand
         if (hand == _statusHandLeft)
             HandsGui?.UpdatePanelEntityLeft(entity, handData);
 

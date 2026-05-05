@@ -3,7 +3,6 @@ using Content.Shared.Emp;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
-using Content.Shared.Stacks;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
@@ -17,7 +16,6 @@ public abstract partial class SharedGunSystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] private readonly SharedStackSystem _stack = null!;
 
     [MustCallBase]
     protected virtual void InitializeBallistic()
@@ -36,8 +34,6 @@ public abstract partial class SharedGunSystem
 
         SubscribeLocalEvent<BallisticAmmoSelfRefillerComponent, MapInitEvent>(OnBallisticRefillerMapInit);
         SubscribeLocalEvent<BallisticAmmoSelfRefillerComponent, EmpPulseEvent>(OnRefillerEmpPulsed);
-
-        SubscribeLocalEvent<BallisticAmmoInteractLoaderComponent, AfterInteractEvent>(OnBallisticAmmoLoad);
     }
 
     private void OnBallisticRefillerMapInit(Entity<BallisticAmmoSelfRefillerComponent> entity, ref MapInitEvent _)
@@ -67,6 +63,7 @@ public abstract partial class SharedGunSystem
     {
         if (args.Handled ||
             !component.MayTransfer ||
+            !Timing.IsFirstTimePredicted ||
             args.Target == null ||
             args.Used == args.Target ||
             Deleted(args.Target) ||
@@ -248,7 +245,10 @@ public abstract partial class SharedGunSystem
                 var existingEnt = ent.Comp.Entities[^1];
                 ent.Comp.Entities.RemoveAt(ent.Comp.Entities.Count - 1);
                 DirtyField(ent.AsNullable(), nameof(BallisticAmmoProviderComponent.Entities));
-                Containers.Remove(existingEnt, ent.Comp.Container);
+                // Pass destination to avoid AttachParentToContainerOrGrid - when storage is full it can
+                // fail to place the entity and it ends up in nullspace (effectively deleted). We handle
+                // cyberlimb storage insertion explicitly in GunSystem.Shoot.
+                Containers.Remove(existingEnt, ent.Comp.Container, destination: args.Coordinates);
                 ammoEntity = existingEnt;
             }
             else if (ent.Comp.UnspawnedCount > 0)
@@ -327,20 +327,11 @@ public abstract partial class SharedGunSystem
         bool suppressInsertionSound = false
     )
     {
-        inserted = _stack.GetOne(inserted);
-        var ammoEv = new BeforeAmmoLoadedEvent();
-        RaiseLocalEvent(inserted, ref ammoEv);
-
-        if (!ammoEv.CanLoad)
+        if (!CanInsertBallistic(entity, inserted))
             return false;
 
-        var ammo = ammoEv.AmmoOverride ?? inserted;
-
-        if (!CanInsertBallistic(entity, ammo))
-            return false;
-
-        entity.Comp.Entities.Add(ammo);
-        Containers.Insert(ammo, entity.Comp.Container);
+        entity.Comp.Entities.Add(inserted);
+        Containers.Insert(inserted, entity.Comp.Container);
         if (!suppressInsertionSound)
         {
             Audio.PlayPredicted(entity.Comp.SoundInsert, entity, user);
@@ -355,8 +346,11 @@ public abstract partial class SharedGunSystem
 
     public void UpdateBallisticAppearance(Entity<BallisticAmmoProviderComponent> ent)
     {
-        Appearance.SetData(ent, AmmoVisuals.AmmoCount, GetBallisticShots(ent.Comp));
-        Appearance.SetData(ent, AmmoVisuals.AmmoMax, ent.Comp.Capacity);
+        if (!Timing.IsFirstTimePredicted || !TryComp<AppearanceComponent>(ent, out var appearance))
+            return;
+
+        Appearance.SetData(ent, AmmoVisuals.AmmoCount, GetBallisticShots(ent.Comp), appearance);
+        Appearance.SetData(ent, AmmoVisuals.AmmoMax, ent.Comp.Capacity, appearance);
     }
 
     public void SetBallisticUnspawned(Entity<BallisticAmmoProviderComponent> entity, int count)
@@ -376,21 +370,6 @@ public abstract partial class SharedGunSystem
             return;
 
         PauseSelfRefill(entity, args.Duration);
-    }
-
-    private void OnBallisticAmmoLoad(Entity<BallisticAmmoInteractLoaderComponent> ent, ref AfterInteractEvent args)
-    {
-        if (args.Handled || args.Target == null)
-            return;
-
-        if (!TryComp<BallisticAmmoProviderComponent>(ent, out var ballisticAmmoProviderComp))
-            return;
-
-        if (TryBallisticInsert(
-                (ent, ballisticAmmoProviderComp),
-                args.Target.Value,
-                args.User))
-            args.Handled = true;
     }
 
     private void UpdateBallistic(float frameTime)

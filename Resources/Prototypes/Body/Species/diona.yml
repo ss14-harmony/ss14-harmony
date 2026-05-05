@@ -28,40 +28,34 @@
       limit: 3 # Harmony: 1 -> 3
       required: false
     enum.HumanoidVisualLayers.Overlay:
-      limit: 1
+      limit: 3 # Harmony: 1 -> 3
       required: true
       default: [ DionaVineOverlay ]
 
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceDiona
-  categories: [ HideSpawnMenu ]
   name: diona appearance
   components:
   - type: Inventory
     templateId: diona
+    speciesId: diona
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-  - type: InitialBody
-    organs:
-      Torso: OrganDionaTorso
-      Head: OrganDionaHead
-      ArmLeft: OrganDionaArmLeft
-      ArmRight: OrganDionaArmRight
-      HandRight: OrganDionaHandRight
-      HandLeft: OrganDionaHandLeft
-      LegLeft: OrganDionaLegLeft
-      LegRight: OrganDionaLegRight
-      FootLeft: OrganDionaFootLeft
-      FootRight: OrganDionaFootRight
-      Brain: OrganDionaBrainNymphing
-      Eyes: OrganDionaEyes
-      Lungs: OrganDionaLungsNymphing
-      Stomach: OrganDionaStomachNymphing
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganDionaTorso
+        - id: OrganDionaHead
+        - id: OrganDionaArmLeft
+        - id: OrganDionaArmRight
+        - id: OrganDionaLegLeft
+        - id: OrganDionaLegRight
   - type: HumanoidProfile
     species: Diona
 
@@ -70,7 +64,7 @@
   - AppearanceDiona
   - BaseSpeciesMobOrganic
   id: MobDiona
-  name: Urist McPlants
+  name: McUrist Plants
   components:
   - type: Respirator
     damage:
@@ -215,18 +209,84 @@
 - type: entity
   parent: [ OrganBaseTorso, OrganDionaExternal ]
   id: OrganDionaTorso
+  components:
+  - type: BodyPart
+    containerId: internal_organs
+    slots: [ Lungs, Stomach ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      internal_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      internal_organs: !type:AllSelector
+        children:
+        - id: OrganDionaLungsNymphing
+        - id: OrganDionaStomachNymphing
 
 - type: entity
   parent: [ OrganBaseHead, OrganDionaExternal ]
   id: OrganDionaHead
+  components:
+  - type: BodyPart
+    containerId: head_organs
+    slots: [ Brain, Eyes ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      head_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      head_organs: !type:AllSelector
+        children:
+        - id: OrganDionaBrainNymphing
+        - id: OrganDionaEyes
 
 - type: entity
   parent: [ OrganBaseArmLeft, OrganDionaExternal ]
   id: OrganDionaArmLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+    slots: [ HandLeft ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganDionaHandLeft
 
 - type: entity
   parent: [ OrganBaseArmRight, OrganDionaExternal ]
   id: OrganDionaArmRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+    slots: [ HandRight ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganDionaHandRight
 
 - type: entity
   parent: [ OrganBaseHandLeft, OrganDionaExternal ]
@@ -239,10 +299,42 @@
 - type: entity
   parent: [ OrganBaseLegLeft, OrganDionaExternal ]
   id: OrganDionaLegLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+    slots: [ FootLeft ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganDionaFootLeft
 
 - type: entity
   parent: [ OrganBaseLegRight, OrganDionaExternal ]
   id: OrganDionaLegRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+    slots: [ FootRight ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganDionaFootRight
 
 - type: entity
   parent: [ OrganBaseFootLeft, OrganDionaExternal ]

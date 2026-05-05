@@ -63,31 +63,18 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceVulpkanin
-  categories: [ HideSpawnMenu ]
   name: vulpkanin appearance
   components:
-  - type: InitialBody
-    organs:
-      Torso: OrganVulpkaninTorso
-      Head: OrganVulpkaninHead
-      ArmLeft: OrganVulpkaninArmLeft
-      ArmRight: OrganVulpkaninArmRight
-      HandRight: OrganVulpkaninHandRight
-      HandLeft: OrganVulpkaninHandLeft
-      LegLeft: OrganVulpkaninLegLeft
-      LegRight: OrganVulpkaninLegRight
-      FootLeft: OrganVulpkaninFootLeft
-      FootRight: OrganVulpkaninFootRight
-      Brain: OrganVulpkaninBrain
-      Eyes: OrganVulpkaninEyes
-      Tongue: OrganVulpkaninTongue
-      Appendix: OrganVulpkaninAppendix
-      Ears: OrganVulpkaninEars
-      Lungs: OrganVulpkaninLungs
-      Heart: OrganVulpkaninHeart
-      Stomach: OrganVulpkaninStomach
-      Liver: OrganVulpkaninLiver
-      Kidneys: OrganVulpkaninKidneys
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganVulpkaninTorso
+        - id: OrganVulpkaninHead
+        - id: OrganVulpkaninArmLeft
+        - id: OrganVulpkaninArmRight
+        - id: OrganVulpkaninLegLeft
+        - id: OrganVulpkaninLegRight
   - type: HumanoidProfile
     species: Vulpkanin
   - type: Inventory
@@ -146,13 +133,6 @@
   id: MobVulpkanin
   name: Urist McArfArf
   components:
-  - type: DamageVisuals
-    damageOverlayGroups:
-      Brute:
-        sprite: Mobs/Effects/brute_damage.rsi
-        color: "#ccac1f"
-      Burn:
-        sprite: Mobs/Effects/burn_damage.rsi
   - type: MessyDrinker
     spillChance: 0.33
   - type: Speech
@@ -174,19 +154,19 @@
       types:
         Piercing: 2
         Slash: 3
-  - type: Temperature
+  - type: Temperature # Same as moth temperatures until below is solved.
     specificHeat: 44
   - type: TemperatureDamage
-    heatDamageThreshold: 320
-    coldDamageThreshold: 230
+    heatDamageThreshold: 320 # TODO: 315 when there is a way to make the temperature alert not blink to the side of the screen and disappear when you "sweat" at 39C.
+    coldDamageThreshold: 230 # TODO: 220 when the above is solved.
     coldDamage:
       types:
         Cold: 0.05 # Per second, scales with temperature & other constants
     heatDamage:
       types:
         Heat: 2.5 # Per second, scales with temperature & other constants
-  - type: Wagging
-    action: ActionToggleWaggingVulpkanin
+  # - type: Wagging TODO: Add back once we have animated tails again. Were removed due to the sprite rework, causing all of them to not fit anymore.
+  #   action: ActionToggleWaggingVulpkanin
   - type: TemperatureProtection
     heatingCoefficient: 1.2
     coolingCoefficient: 0.3
@@ -200,15 +180,6 @@
         pitch: 1.33
         volume: -5
         variation: 0.05
-  - type: Bloodstream
-    bloodReferenceSolution:
-      reagents:
-      - ReagentId: SulfurBlood
-        Quantity: 300
-  - type: CreamPied
-    sprite:
-      sprite: Effects/creampie.rsi
-      state: creampie_vulpkanin
 
 - type: entity
   parent: OrganBase
@@ -229,7 +200,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Mobs/Species/Vulpkanin/organs.rsi
+    sprite: Mobs/Species/Human/organs.rsi
 
 - type: entity
   id: OrganVulpkaninVisual
@@ -253,11 +224,50 @@
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganVulpkaninExternal ]
   id: OrganVulpkaninTorso
+  components:
+  - type: BodyPart
+    containerId: internal_organs
+    slots: [ Lungs, Heart, Stomach, Liver, Kidneys, Appendix ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      internal_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      internal_organs: !type:AllSelector
+        children:
+        - id: OrganVulpkaninLungs
+        - id: OrganVulpkaninHeart
+        - id: OrganVulpkaninStomach
+        - id: OrganVulpkaninLiver
+        - id: OrganVulpkaninKidneys
+        - id: OrganVulpkaninAppendix
 
 - type: entity
   parent: [ OrganBaseHead, OrganVulpkaninExternal ]
   id: OrganVulpkaninHead
   components:
+  - type: BodyPart
+    containerId: head_organs
+    slots: [ Brain, Eyes, Tongue, Ears ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      head_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      head_organs: !type:AllSelector
+        children:
+        - id: OrganVulpkaninBrain
+        - id: OrganVulpkaninEyes
+        - id: OrganVulpkaninTongue
+        - id: OrganVulpkaninEars
   - type: VisualOrganMarkings
     hideableLayers:
     - enum.HumanoidVisualLayers.Snout
@@ -272,10 +282,42 @@
 - type: entity
   parent: [ OrganBaseArmLeft, OrganVulpkaninExternal ]
   id: OrganVulpkaninArmLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+    slots: [ HandLeft ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganVulpkaninHandLeft
 
 - type: entity
   parent: [ OrganBaseArmRight, OrganVulpkaninExternal ]
   id: OrganVulpkaninArmRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+    slots: [ HandRight ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganVulpkaninHandRight
 
 - type: entity
   parent: [ OrganBaseHandLeft, OrganVulpkaninExternal ]
@@ -288,10 +330,42 @@
 - type: entity
   parent: [ OrganBaseLegLeft, OrganVulpkaninExternal ]
   id: OrganVulpkaninLegLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+    slots: [ FootLeft ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganVulpkaninFootLeft
 
 - type: entity
   parent: [ OrganBaseLegRight, OrganVulpkaninExternal ]
   id: OrganVulpkaninLegRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+    slots: [ FootRight ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganVulpkaninFootRight
 
 - type: entity
   parent: [ OrganBaseFootLeft, OrganVulpkaninExternal ]
@@ -314,11 +388,11 @@
   id: OrganVulpkaninTongue
 
 - type: entity
-  parent: [ OrganBaseAppendix, OrganVulpkaninInternal ]
+  parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganVulpkaninInternal ]
   id: OrganVulpkaninAppendix
 
 - type: entity
-  parent: [ OrganBaseEars, OrganVulpkaninInternal ]
+  parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganVulpkaninInternal ]
   id: OrganVulpkaninEars
 
 - type: entity
@@ -334,9 +408,9 @@
   id: OrganVulpkaninStomach
 
 - type: entity
-  parent: [ OrganBaseLiver, OrganVulpkaninInternal, OrganVulpkaninMetabolizer ]
+  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganVulpkaninInternal, OrganVulpkaninMetabolizer ]
   id: OrganVulpkaninLiver
 
 - type: entity
-  parent: [ OrganBaseKidneys, OrganVulpkaninInternal, OrganVulpkaninMetabolizer ]
+  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganVulpkaninInternal, OrganVulpkaninMetabolizer ]
   id: OrganVulpkaninKidneys

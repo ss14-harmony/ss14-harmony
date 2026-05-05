@@ -260,6 +260,7 @@
   id: BloodlossHuman
   coefficients:
     Asphyxiation: 0.0
+    BioRejection: 0.0 # Funkystation: internal rejection, not physical trauma
     Bloodloss: 0.0 # no double dipping
     Blunt: 0.08
     Caustic: 0.0
@@ -321,6 +322,12 @@
     Cellular: 0.0
     Heat: 2.5
     Caustic: 0.0
+
+# protects against radiation
+- type: damageModifierSet
+  id: PotassiumIodide
+  coefficients:
+    Radiation: 0.1
 
 - type: damageModifierSet
   id: ManifestedSpirit

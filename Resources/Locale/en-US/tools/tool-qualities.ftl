@@ -7,6 +7,9 @@ tool-quality-prying-tool-name = Crowbar
 tool-quality-screwing-name = Screwing
 tool-quality-screwing-tool-name = Screwdriver
 
+tool-quality-precision-screwing-name = Precision screwing
+tool-quality-precision-screwing-tool-name = Precision screwdriver
+
 tool-quality-cutting-name = Cutting
 tool-quality-cutting-tool-name = Wirecutter
 

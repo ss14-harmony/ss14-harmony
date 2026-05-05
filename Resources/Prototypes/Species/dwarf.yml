@@ -5,3 +5,9 @@
   prototype: MobDwarf
   dollPrototype: AppearanceDwarf
   skinColoration: HumanToned
+  limbOrganPrototypes:
+    ArmLeft: OrganHumanArmLeft
+    ArmRight: OrganHumanArmRight
+    LegLeft: OrganHumanLegLeft
+    LegRight: OrganHumanLegRight
+    Head: OrganHumanHead

@@ -21,8 +21,10 @@ using Content.Shared.Administration;
 using Content.Shared.Administration.Components;
 using Content.Shared.Administration.Systems;
 using Content.Shared.Atmos.Components;
+using Content.Server.Medical.LimbRegeneration;
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
+using Content.Shared.Body.Events;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clumsy;
 using Content.Shared.Cluwne;
@@ -31,6 +33,7 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Electrocution;
 using Content.Shared.Gibbing;
+using Content.Shared.Humanoid;
 using Content.Shared.Gravity;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory;
@@ -73,7 +76,9 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
     [Dependency] private readonly BodySystem _bodySystem = default!;
+    [Dependency] private readonly LimbRegenerationSystem _limbRegeneration = default!;
     [Dependency] private readonly CreamPieSystem _creamPieSystem = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly ElectrocutionSystem _electrocutionSystem = default!;
     [Dependency] private readonly EntityStorageSystem _entityStorageSystem = default!;
     [Dependency] private readonly ExplosionSystem _explosionSystem = default!;
@@ -96,7 +101,6 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly SuperBonkSystem _superBonkSystem = default!;
     [Dependency] private readonly SlipperySystem _slipperySystem = default!;
     [Dependency] private readonly GibbingSystem _gibbing = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
 
     private readonly EntProtoId _actionViewLawsProtoId = "ActionViewLaws";
     private readonly ProtoId<SiliconLawsetPrototype> _crewsimovLawset = "Crewsimov";
@@ -232,7 +236,6 @@ public sealed partial class AdminVerbSystem
                 Icon = new SpriteSpecifier.Rsi(new("/Textures/Clothing/Hands/Gloves/Color/yellow.rsi"), "icon"),
                 Act = () =>
                 {
-                    var totalDamage = _damageable.GetTotalDamage((args.Target, damageable));
                     int damageToDeal;
                     if (!_mobThresholdSystem.TryGetThresholdForState(args.Target, MobState.Critical, out var criticalThreshold))
                     {
@@ -240,11 +243,11 @@ public sealed partial class AdminVerbSystem
                         if (!_mobThresholdSystem.TryGetThresholdForState(args.Target, MobState.Dead,
                                 out var deadThreshold))
                             return;// whelp.
-                        damageToDeal = deadThreshold.Value.Int() - (int)totalDamage;
+                        damageToDeal = deadThreshold.Value.Int() - (int)_damageable.GetTotalDamage((args.Target, damageable));
                     }
                     else
                     {
-                        damageToDeal = criticalThreshold.Value.Int() - (int)totalDamage;
+                        damageToDeal = criticalThreshold.Value.Int() - (int)_damageable.GetTotalDamage((args.Target, damageable));
                     }
 
                     if (damageToDeal <= 0)
@@ -392,6 +395,73 @@ public sealed partial class AdminVerbSystem
                 Message = string.Join(": ", handRemovalName, Loc.GetString("admin-smite-remove-hand-description"))
             };
             args.Verbs.Add(handRemoval);
+            // Funkystation: removeAllLimbs and restoreAllLimbs and cyberneticsReplacement added
+            if (HasComp<HumanoidProfileComponent>(args.Target))
+            {
+                var removeAllLimbsName = Loc.GetString("admin-smite-remove-all-limbs-name").ToLowerInvariant();
+                Verb removeAllLimbs = new()
+                {
+                    Text = removeAllLimbsName,
+                    Category = VerbCategory.Smite,
+                    Icon = new SpriteSpecifier.Rsi(new("/Textures/Objects/Consumable/Food/Baked/nuggets.rsi"), "tendie"),
+                    Act = () =>
+                    {
+                        var baseXform = Transform(args.Target);
+                        var limbCategories = new HashSet<ProtoId<OrganCategoryPrototype>> { "ArmLeft", "ArmRight", "LegLeft", "LegRight" };
+                        _bodySystem.TryGetOrgansWithComponent<OrganComponent>((args.Target, body), out var organs);
+                        foreach (var organ in organs.Where(it => it.Comp.Category is { } category && limbCategories.Contains(category)))
+                        {
+                            var removeEv = new OrganRemoveRequestEvent(organ.Owner) { Destination = baseXform.Coordinates };
+                            RaiseLocalEvent(organ.Owner, ref removeEv);
+                        }
+                        _popupSystem.PopupEntity(Loc.GetString("admin-smite-remove-all-limbs-self"), args.Target,
+                            args.Target, PopupType.LargeCaution);
+                        _popupSystem.PopupCoordinates(Loc.GetString("admin-smite-remove-all-limbs-other", ("name", args.Target)), baseXform.Coordinates,
+                            Filter.PvsExcept(args.Target), true, PopupType.MediumCaution);
+                    },
+                    Impact = LogImpact.Extreme,
+                    Message = string.Join(": ", removeAllLimbsName, Loc.GetString("admin-smite-remove-all-limbs-description"))
+                };
+                args.Verbs.Add(removeAllLimbs);
+
+                var restoreAllLimbsName = Loc.GetString("admin-smite-restore-all-limbs-name").ToLowerInvariant();
+                Verb restoreAllLimbs = new()
+                {
+                    Text = restoreAllLimbsName,
+                    Category = VerbCategory.Smite,
+                    Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/refresh.svg.192dpi.png")),
+                    Act = () =>
+                    {
+                        _limbRegeneration.RestoreAllLimbs(args.Target);
+                        _popupSystem.PopupEntity(Loc.GetString("admin-smite-restore-all-limbs-self"), args.Target,
+                            args.Target, PopupType.Medium);
+                        _popupSystem.PopupCoordinates(Loc.GetString("admin-smite-restore-all-limbs-other", ("name", args.Target)), Transform(args.Target).Coordinates,
+                            Filter.PvsExcept(args.Target), true, PopupType.Medium);
+                    },
+                    Impact = LogImpact.High,
+                    Message = string.Join(": ", restoreAllLimbsName, Loc.GetString("admin-smite-restore-all-limbs-description"))
+                };
+                args.Verbs.Add(restoreAllLimbs);
+
+                var cyberneticsReplacementName = Loc.GetString("admin-smite-cybernetics-replacement-name").ToLowerInvariant();
+                Verb cyberneticsReplacement = new()
+                {
+                    Text = cyberneticsReplacementName,
+                    Category = VerbCategory.Smite,
+                    Icon = new SpriteSpecifier.Rsi(new("Interface/Actions/actions_borg.rsi"), "state-laws"),
+                    Act = () =>
+                    {
+                        _limbRegeneration.ReplaceAllLimbsWithCybernetics(args.Target);
+                        _popupSystem.PopupEntity(Loc.GetString("admin-smite-cybernetics-replacement-self"), args.Target,
+                            args.Target, PopupType.Medium);
+                        _popupSystem.PopupCoordinates(Loc.GetString("admin-smite-cybernetics-replacement-other", ("name", args.Target)), Transform(args.Target).Coordinates,
+                            Filter.PvsExcept(args.Target), true, PopupType.Medium);
+                    },
+                    Impact = LogImpact.High,
+                    Message = string.Join(": ", cyberneticsReplacementName, Loc.GetString("admin-smite-cybernetics-replacement-description"))
+                };
+                args.Verbs.Add(cyberneticsReplacement);
+            }
 
             var stomachRemovalName = Loc.GetString("admin-smite-stomach-removal-name").ToLowerInvariant();
             Verb stomachRemoval = new()

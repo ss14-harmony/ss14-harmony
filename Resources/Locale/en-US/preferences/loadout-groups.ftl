@@ -140,6 +140,7 @@ loadout-group-research-director-shoes = Research Director shoes
 loadout-group-scientist-head = Scientist head
 loadout-group-scientist-neck = Scientist neck
 loadout-group-scientist-jumpsuit = Scientist jumpsuit
+loadout-group-scientist-belt = Scientist belt
 loadout-group-scientist-backpack = Scientist backpack
 loadout-group-scientist-outerclothing = Scientist outer clothing
 loadout-group-scientist-gloves = Scientist gloves
@@ -203,7 +204,5 @@ loadout-group-paramedic-shoes = Paramedic shoes
 
 # Wildcards
 loadout-group-reporter-jumpsuit = Reporter jumpsuit
-loadout-group-reporter-head = Reporter hat
-loadout-group-reporter-outerclothing = Reporter vest
 
 loadout-group-psychologist-jumpsuit = Psychologist jumpsuit

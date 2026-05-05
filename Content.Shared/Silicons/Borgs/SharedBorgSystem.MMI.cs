@@ -37,6 +37,7 @@ public abstract partial class SharedBorgSystem
 
         if (_mind.TryGetMind(brain, out var mindId, out var mindComp))
         {
+            _mind.SetBrainEntity(mindId, brain, mindComp); // Funky - CyberMed
             _mind.TransferTo(mindId, ent.Owner, true, mind: mindComp);
 
             if (!_roles.MindHasRole<SiliconBrainRoleComponent>(mindId))
@@ -66,7 +67,11 @@ public abstract partial class SharedBorgSystem
 
         if (_mind.TryGetMind(ent, out var mindId, out var mindComp))
         {
-            _mind.TransferTo(mindId, args.Entity, true, mind: mindComp);
+            var brain = args.Entity; // Funky - CyberMed
+            _mind.SetBrainEntity(mindId, brain, mindComp); // Funky - CyberMed
+
+            var brainGoingAway = Terminating(brain) || Deleted(brain); // Funky - CyberMed
+            _mind.TransferTo(mindId, brain, ghostCheckOverride: brainGoingAway, mind: mindComp); // Funky - CyberMed
 
             if (_roles.MindHasRole<SiliconBrainRoleComponent>(mindId))
                 _roles.MindRemoveRole<SiliconBrainRoleComponent>(mindId);

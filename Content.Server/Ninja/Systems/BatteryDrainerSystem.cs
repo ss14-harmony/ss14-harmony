@@ -40,14 +40,13 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
         if (args.Handled || comp.BatteryUid is not { } battery || !HasComp<PowerNetworkBatteryComponent>(target))
             return;
 
-        // handles even if battery is full so you can actually see the poup
-        args.Handled = true;
-
         if (_battery.IsFull(battery))
         {
             _popup.PopupEntity(Loc.GetString("battery-drainer-full"), uid, uid, PopupType.Medium);
-            return;
+            return; // Funky: Do NOT set Handled - allow cyber drain to run
         }
+
+        args.Handled = true;
 
         var doAfterArgs = new DoAfterArgs(EntityManager, uid, comp.DrainTime, new DrainDoAfterEvent(), target: target, eventTarget: uid)
         {

@@ -20,10 +20,11 @@ public sealed partial class StatusEffectsSystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
-    [Dependency] private readonly EntityQuery<StatusEffectContainerComponent> _containerQuery = default!;
-    [Dependency] private readonly EntityQuery<StatusEffectComponent> _effectQuery = default!;
+    private EntityQuery<StatusEffectContainerComponent> _containerQuery;
+    private EntityQuery<StatusEffectComponent> _effectQuery;
 
-    public readonly HashSet<string> StatusEffectPrototypes = [];
+    public static HashSet<string> StatusEffectPrototypes = [];
+    private static readonly object StatusEffectPrototypesLock = new();
 
     public override void Initialize()
     {
@@ -39,6 +40,9 @@ public sealed partial class StatusEffectsSystem : EntitySystem
         SubscribeLocalEvent<RejuvenateRemovedStatusEffectComponent, StatusEffectRelayedEvent<RejuvenateEvent>>(OnRejuvenate);
 
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
+
+        _containerQuery = GetEntityQuery<StatusEffectContainerComponent>();
+        _effectQuery = GetEntityQuery<StatusEffectComponent>();
 
         ReloadStatusEffectsCache();
     }
@@ -75,12 +79,28 @@ public sealed partial class StatusEffectsSystem : EntitySystem
 
     private void ReloadStatusEffectsCache()
     {
-        StatusEffectPrototypes.Clear();
-
-        foreach (var ent in _proto.EnumeratePrototypes<EntityPrototype>())
+        lock (StatusEffectPrototypesLock)
         {
-            if (ent.TryGetComponent<StatusEffectComponent>(out _, _factory))
-                StatusEffectPrototypes.Add(ent.ID);
+            StatusEffectPrototypes.Clear();
+
+            foreach (var ent in _proto.EnumeratePrototypes<EntityPrototype>())
+            {
+                if (string.IsNullOrEmpty(ent.ID))
+                    continue;
+                if (ent.TryGetComponent<StatusEffectComponent>(out _, _factory))
+                    StatusEffectPrototypes.Add(ent.ID);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Thread-safe access to status effect prototypes. Use when reading from another thread (e.g. Toolshed completion).
+    /// </summary>
+    public static IEnumerable<string> GetStatusEffectPrototypes()
+    {
+        lock (StatusEffectPrototypesLock)
+        {
+            return new List<string>(StatusEffectPrototypes);
         }
     }
 
@@ -224,7 +244,7 @@ public sealed partial class StatusEffectsSystem : EntitySystem
 
         var endTime = delay == null ? _timing.CurTime + duration : _timing.CurTime + delay + duration;
         SetStatusEffectEndTime((effect.Value, effectComp), endTime);
-        var startTime = delay == null ? _timing.CurTime : _timing.CurTime + delay.Value;
+        var startTime = delay == null ? TimeSpan.Zero : _timing.CurTime + delay.Value;
         SetStatusEffectStartTime(effect.Value, startTime);
 
         TryApplyStatusEffect((statusEffect.Value, effectComp));

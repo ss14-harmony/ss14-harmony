@@ -1,0 +1,24 @@
+# Matter bins and Capacitors are non-stacking - each takes one slot in cyber limb storage.
+- type: entity
+  id: MatterBinStockPart
+  name: matter bin
+  parent: BaseNonStackingStockPart
+  description: A matter bin used in cyber limb modules. Provides service time when installed.
+  components:
+    - type: Sprite
+      state: matter_bin
+    - type: CyberLimbModule
+      moduleType: MatterBin
+    - type: CyberLimbMatterBin
+      serviceTime: 600
+
+- type: entity
+  id: CapacitorStockPart
+  name: capacitor
+  parent: BaseNonStackingStockPart
+  description: A capacitor used in cyber limb modules. Each capacitor increases effective service time by 10%.
+  components:
+    - type: Sprite
+      state: capacitor
+    - type: CyberLimbModule
+      moduleType: Capacitor

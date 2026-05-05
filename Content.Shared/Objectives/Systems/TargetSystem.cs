@@ -52,10 +52,10 @@ public sealed class TargetSystem : EntitySystem
     /// Picks a random mind from a pool after applying a list of filters.
     /// Returns null if no valid mind could be found.
     /// </summary>
-    public Entity<MindComponent>? PickFromPool(MindPool pool, List<MindFilter> filters, EntityUid? exclude = null)
+    public Entity<MindComponent>? PickFromPool(IMindPool pool, List<MindFilter> filters, EntityUid? exclude = null)
     {
         _pickingMinds.Clear();
-        pool.FindMinds(_pickingMinds, exclude, EntityManager, this);
+        pool.FindMinds(_pickingMinds, exclude, EntityManager, _mind);
         _mind.FilterMinds(_pickingMinds, filters, exclude);
 
         if (_pickingMinds.Count == 0)

@@ -2,9 +2,6 @@
   parent: Undergarments
   id: Human
   limits:
-    enum.HumanoidVisualLayers.HeadTop:
-      limit: 1
-      required: false
     enum.HumanoidVisualLayers.Hair:
       limit: 1
       required: false
@@ -51,7 +48,6 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceHuman
-  categories: [ HideSpawnMenu ]
   name: human appearance
   components:
   - type: Inventory
@@ -61,28 +57,16 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-  - type: InitialBody
-    organs:
-      Torso: OrganHumanTorso
-      Head: OrganHumanHead
-      ArmLeft: OrganHumanArmLeft
-      ArmRight: OrganHumanArmRight
-      HandRight: OrganHumanHandRight
-      HandLeft: OrganHumanHandLeft
-      LegLeft: OrganHumanLegLeft
-      LegRight: OrganHumanLegRight
-      FootLeft: OrganHumanFootLeft
-      FootRight: OrganHumanFootRight
-      Brain: OrganHumanBrain
-      Eyes: OrganHumanEyes
-      Tongue: OrganHumanTongue
-      Appendix: OrganHumanAppendix
-      Ears: OrganHumanEars
-      Lungs: OrganHumanLungs
-      Heart: OrganHumanHeart
-      Stomach: OrganHumanStomach
-      Liver: OrganHumanLiver
-      Kidneys: OrganHumanKidneys
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganHumanTorso
+        - id: OrganHumanHead
+        - id: OrganHumanArmLeft
+        - id: OrganHumanArmRight
+        - id: OrganHumanLegLeft
+        - id: OrganHumanLegRight
   - type: HumanoidProfile
     species: Human
 
@@ -136,11 +120,50 @@
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganHumanExternal ]
   id: OrganHumanTorso
+  components:
+  - type: BodyPart
+    containerId: internal_organs
+    slots: [ Lungs, Heart, Stomach, Liver, Kidneys, Appendix ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      internal_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      internal_organs: !type:AllSelector
+        children:
+        - id: OrganHumanLungs
+        - id: OrganHumanHeart
+        - id: OrganHumanStomach
+        - id: OrganHumanLiver
+        - id: OrganHumanKidneys
+        - id: OrganHumanAppendix
 
 - type: entity
   parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganHumanExternal ]
   id: OrganHumanHead
   components:
+  - type: BodyPart
+    containerId: head_organs
+    slots: [ Brain, Eyes, Tongue, Ears ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      head_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      head_organs: !type:AllSelector
+        children:
+        - id: OrganHumanBrain
+        - id: OrganHumanEyes
+        - id: OrganHumanTongue
+        - id: OrganHumanEars
   - type: VisualOrganMarkings
     hideableLayers:
     - enum.HumanoidVisualLayers.Hair
@@ -149,10 +172,42 @@
 - type: entity
   parent: [ OrganBaseArmLeft, OrganHumanExternal ]
   id: OrganHumanArmLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+    slots: [ HandLeft ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganHumanHandLeft
 
 - type: entity
   parent: [ OrganBaseArmRight, OrganHumanExternal ]
   id: OrganHumanArmRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+    slots: [ HandRight ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganHumanHandRight
 
 - type: entity
   parent: [ OrganBaseHandLeft, OrganHumanExternal ]
@@ -165,10 +220,42 @@
 - type: entity
   parent: [ OrganBaseLegLeft, OrganHumanExternal ]
   id: OrganHumanLegLeft
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+    slots: [ FootLeft ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganHumanFootLeft
 
 - type: entity
   parent: [ OrganBaseLegRight, OrganHumanExternal ]
   id: OrganHumanLegRight
+  components:
+  - type: BodyPart
+    containerId: limb_organs
+    slots: [ FootRight ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      limb_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      limb_organs: !type:AllSelector
+        children:
+        - id: OrganHumanFootRight
 
 - type: entity
   parent: [ OrganBaseFootLeft, OrganHumanExternal ]

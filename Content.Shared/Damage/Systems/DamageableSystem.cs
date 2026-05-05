@@ -63,7 +63,7 @@ public sealed partial class DamageableSystem : EntitySystem
             _appearance.SetData(
                 ent,
                 DamageVisualizerKeys.DamageUpdateGroups,
-                new DamageVisualizerGroupData(ent.Comp.DamagePerGroup.Keys.ToList()),
+                new DamageVisualizerGroupData(ent.Comp.DamagePerGroup.Keys.Select(k => k.Id).ToList()),
                 appearance
             );
         }

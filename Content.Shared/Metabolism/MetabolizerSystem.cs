@@ -14,7 +14,8 @@ using Content.Shared.EntityEffects.Effects.Body;
 using Content.Shared.EntityEffects.Effects.Solution;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Random.Helpers;
+using Robust.Shared.Collections;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -26,17 +27,22 @@ public sealed class MetabolizerSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly SharedEntityConditionsSystem _entityConditions = default!;
     [Dependency] private readonly SharedEntityEffectsSystem _entityEffects = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
-    [Dependency] private readonly EntityQuery<OrganComponent> _organQuery = default!;
-    [Dependency] private readonly EntityQuery<SolutionContainerManagerComponent> _solutionQuery = default!;
+    private EntityQuery<OrganComponent> _organQuery;
+    private EntityQuery<SolutionContainerManagerComponent> _solutionQuery;
 
     public override void Initialize()
     {
         base.Initialize();
+
+        _organQuery = GetEntityQuery<OrganComponent>();
+        _solutionQuery = GetEntityQuery<SolutionContainerManagerComponent>();
 
         SubscribeLocalEvent<MetabolizerComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<MetabolizerComponent, BodyRelayedEvent<ApplyMetabolicMultiplierEvent>>(OnApplyMetabolicMultiplier);
@@ -45,30 +51,38 @@ public sealed class MetabolizerSystem : EntitySystem
     private void OnMapInit(Entity<MetabolizerComponent> ent, ref MapInitEvent args)
     {
         ent.Comp.NextUpdate = _gameTiming.CurTime + ent.Comp.AdjustedUpdateInterval;
-        Dirty(ent);
     }
 
     private void OnApplyMetabolicMultiplier(Entity<MetabolizerComponent> ent, ref BodyRelayedEvent<ApplyMetabolicMultiplierEvent> args)
     {
         ent.Comp.UpdateIntervalMultiplier = args.Args.Multiplier;
-        Dirty(ent);
     }
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
+        // We only do this on the server to prevent the client from reshuffling metabolism during prediction.
+        // Should just be replaced with predicted random.
+        if (_net.IsClient)
+            return;
+
+        var metabolizers = new ValueList<(EntityUid Uid, MetabolizerComponent Component)>(Count<MetabolizerComponent>());
         var query = EntityQueryEnumerator<MetabolizerComponent>();
 
         while (query.MoveNext(out var uid, out var comp))
         {
+            metabolizers.Add((uid, comp));
+        }
+
+        foreach (var (uid, metab) in metabolizers)
+        {
             // Only update as frequently as it should
-            if (_gameTiming.CurTime < comp.NextUpdate)
+            if (_gameTiming.CurTime < metab.NextUpdate)
                 continue;
 
-            comp.NextUpdate += comp.AdjustedUpdateInterval;
-            TryMetabolize((uid, comp));
-            Dirty(uid, comp);
+            metab.NextUpdate += metab.AdjustedUpdateInterval;
+            TryMetabolize((uid, metab));
         }
     }
 
@@ -149,8 +163,7 @@ public sealed class MetabolizerSystem : EntitySystem
 
         // randomize the reagent list so we don't have any weird quirks
         // like alphabetical order or insertion order mattering for processing
-        var rand = SharedRandomExtensions.PredictedRandom(_gameTiming, GetNetEntity(ent), GetNetEntity(solutionOwner));
-        rand.Shuffle(list);
+        _random.Shuffle(list);
 
         var isDead = _mobStateSystem.IsDead(solutionOwner.Value);
 
@@ -208,7 +221,7 @@ public sealed class MetabolizerSystem : EntitySystem
                 if (scale < effect.MinScale)
                     continue;
 
-                if (rand.NextFloat() >= effect.Probability)
+                if (effect.Probability < 1.0f && !_random.Prob(effect.Probability))
                     continue;
 
                 // See if conditions apply
@@ -229,6 +242,9 @@ public sealed class MetabolizerSystem : EntitySystem
                         break;
                     case AdjustReagent:
                         _entityEffects.ApplyEffect(solutionEntity.Value, effect, scale);
+                        break;
+                    case AddIntegrityImmunityBoost:
+                        _entityEffects.ApplyEffect(ent, effect, scale);
                         break;
                     default:
                         _entityEffects.ApplyEffect(actualEntity, effect, scale);

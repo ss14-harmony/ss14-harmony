@@ -2,22 +2,29 @@ using System.Collections.Frozen;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.Body;
+using Content.Shared.Containers; // Funky - CyberMed
+using Content.Shared.EntityTable; // Funky - CyberMed
+using Content.Shared.EntityTable.EntitySelectors; // Funky - CyberMed
 using Content.Shared.Humanoid.Prototypes;
+using Robust.Shared.GameObjects; // Funky - CyberMed
+using Robust.Shared.Log; // Funky - CyberMed
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Humanoid.Markings;
 
-/// <summary>
-/// Manager responsible for sharing the logic of markings between in-simulation bodies and out-of-simulation profile editing
-/// </summary>
 public sealed class MarkingManager
 {
+    private static readonly ISawmill Sawmill = Logger.GetSawmill("marking"); // Funky - CyberMed
+
     [Dependency] private readonly IComponentFactory _component = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!; // Funky - CyberMed
 
     private FrozenDictionary<HumanoidVisualLayers, FrozenDictionary<string, MarkingPrototype>> _categorizedMarkings = default!;
     private FrozenDictionary<string, MarkingPrototype> _markings = default!;
 
+    private readonly Dictionary<string, Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>> _organMapCache = new(); // Funky - CyberMed
+    
     public void Initialize()
     {
         _prototype.PrototypesReloaded += OnPrototypeReload;
@@ -84,12 +91,6 @@ public sealed class MarkingManager
         return res;
     }
 
-    /// <summary>
-    /// Gets the marking prototype associated with the marking.
-    /// </summary>
-    /// <param name="marking">The marking to look up</param>
-    /// <param name="markingResult">When this method returns; will contain the marking prototype corresponding to the one specified by the marking if it exists.</param>
-    /// <returns>Whether a marking prototype exists for the given marking</returns>
     public bool TryGetMarking(Marking marking, [NotNullWhen(true)] out MarkingPrototype? markingResult)
     {
         return _markings.TryGetValue(marking.MarkingId, out markingResult);
@@ -97,17 +98,12 @@ public sealed class MarkingManager
 
     private void OnPrototypeReload(PrototypesReloadedEventArgs args)
     {
+        _organMapCache.Clear();
         if (args.WasModified<MarkingPrototype>())
             CachePrototypes();
     }
 
-    /// <summary>
-    /// Determines if a marking prototype can be applied to something with the given markings group and sex.
-    /// </summary>
-    /// <param name="group">The markings group to test</param>
-    /// <param name="sex">The sex to test</param>
-    /// <param name="prototype">The prototype to reference against</param>
-    /// <returns>True if a marking with the prototype could be applied</returns>
+
     public bool CanBeApplied(ProtoId<MarkingsGroupPrototype> group, Sex sex, MarkingPrototype prototype)
     {
         var groupProto = _prototype.Index(group);
@@ -175,16 +171,13 @@ public sealed class MarkingManager
     /// </summary>
     public void EnsureValidLayers(Dictionary<HumanoidVisualLayers, List<Marking>> markingSets, HashSet<HumanoidVisualLayers> layers)
     {
-        foreach (var (markingSet, markings) in markingSets)
+        foreach (var markings in markingSets.Values)
         {
             for (var i = markings.Count - 1; i >= 0; i--)
             {
                 if (!TryGetMarking(markings[i], out var marking) || !layers.Contains(marking.BodyPart))
                     markings.RemoveAt(i);
             }
-
-            if (markings.Count == 0)
-                markingSets.Remove(markingSet);
         }
     }
 
@@ -241,27 +234,119 @@ public sealed class MarkingManager
         }
     }
 
-    /// <summary>
-    /// Returns the expected set of organs for a species to have.
-    /// </summary>
-    /// <param name="species">The species to look up.</param>
-    /// <returns>A dictionary of organ categories to their usual organs within a species.</returns>
     public Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>> GetOrgans(ProtoId<SpeciesPrototype> species)
     {
-        var speciesPrototype = _prototype.Index(species);
-        var appearancePrototype = _prototype.Index(speciesPrototype.DollPrototype);
+        var id = species.Id;
+        if (_organMapCache.TryGetValue(id, out var cached))
+            return new Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>(cached);
 
-        if (!appearancePrototype.TryGetComponent<InitialBodyComponent>(out var initialBody, _component))
-            return new();
-
-        return initialBody.Organs;
+        var built = BuildOrgansUncached(species);
+        _organMapCache[id] = built;
+        return new Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>(built);
     }
 
     /// <summary>
-    /// Looks up the expected set of <see cref="OrganMarkingData" /> for the species to have
+    /// Builds the organ prototype map for marking metadata. Uses <see cref="InitialBodyComponent"/> only
+    /// when present; otherwise merges <c>body_organs</c> <see cref="EntityTableContainerFillComponent"/> spawns
+    /// with explicit <see cref="SpeciesPrototype.LimbOrganPrototypes"/> overrides.
     /// </summary>
-    /// <param name="species">The species to look up the usual organs of.</param>
-    /// <returns>A dictionary of organ categories to their usual organ marking data within a species.</returns>
+    private Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>> BuildOrgansUncached(
+        ProtoId<SpeciesPrototype> species)
+    {
+        var speciesPrototype = _prototype.Index(species);
+        if (!_prototype.TryIndex(speciesPrototype.DollPrototype, out var appearancePrototype))
+            return new Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>();
+
+        if (appearancePrototype.TryGetComponent<InitialBodyComponent>(out var initialBody, _component))
+            return new Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>(initialBody.Organs);
+
+        var merged = new Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>();
+
+        if (TryBuildOrgansFromBodyOrgansTable(appearancePrototype, out var tableMap))
+        {
+            foreach (var kvp in tableMap)
+                merged[kvp.Key] = kvp.Value;
+        }
+
+        if (speciesPrototype.LimbOrganPrototypes != null)
+        {
+            foreach (var (category, protoId) in speciesPrototype.LimbOrganPrototypes)
+                merged[category] = new EntProtoId<OrganComponent>(protoId.Id);
+        }
+
+        return merged;
+    }
+
+    /// <summary>
+    /// Lists organ entity prototypes from the appearance doll's <c>body_organs</c> fill table,
+    /// recursively following every discovered organ's own EntityTableContainerFillComponent
+    /// so nested part-of-a-part organs (e.g. hand organs inside arm organs, foot organs inside leg
+    /// organs, eyes/brain inside head organs) are also included.
+    /// Randomized tables may not yield a stable full set; those species should use <see cref="InitialBodyComponent"/> or explicit limb maps.
+    /// </summary>
+    private bool TryBuildOrgansFromBodyOrgansTable(
+        EntityPrototype appearancePrototype,
+        out Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>> map)
+    {
+        map = new Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>>();
+
+        if (!appearancePrototype.TryGetComponent<EntityTableContainerFillComponent>(out var fill, _component))
+            return false;
+
+        if (!fill.Containers.TryGetValue(BodyComponent.ContainerID, out var rootSelector)) // Funky - CyberMed
+            return false;
+
+        var ctx = new EntityTableContext();
+        var warnedDuplicate = new HashSet<string>();
+        var visited = new HashSet<string>(); // Funky - CyberMed
+
+        // Funky - CyberMed
+        var pending = new Queue<EntityTableSelector>();
+        pending.Enqueue(rootSelector);
+
+        while (pending.TryDequeue(out var selector))
+        {
+            foreach (var (spawn, _) in selector.ListSpawns(_entityManager, _prototype, ctx))
+            {
+                if (!visited.Add(spawn.Id))
+                    continue;
+
+                if (!_prototype.TryIndex(spawn, out var entProto))
+                    continue;
+
+                if (entProto.TryGetComponent<OrganComponent>(out var organComp, _component)
+                    && organComp.Category is { } category)
+                {
+                    var protoId = new EntProtoId<OrganComponent>(spawn.Id);
+                    if (map.TryGetValue(category, out var existing) && existing != protoId)
+                    {
+                        if (warnedDuplicate.Add(category.Id))
+                        {
+                            Sawmill.Warning(
+                                "Multiple body_organs prototypes map to organ category {0} on appearance {1}; keeping first match.",
+                                category.Id,
+                                appearancePrototype.ID);
+                        }
+                    }
+                    else
+                    {
+                        map[category] = protoId;
+                    }
+                }
+
+                // Recurse into this organ's own fill containers so nested organs
+                // (e.g. hands inside arms, feet inside legs) are discovered too.
+                if (entProto.TryGetComponent<EntityTableContainerFillComponent>(out var nestedFill, _component))
+                {
+                    foreach (var nestedSelector in nestedFill.Containers.Values)
+                        pending.Enqueue(nestedSelector);
+                }
+            }
+        }
+
+        return true;
+    }
+
     public Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData> GetMarkingData(ProtoId<SpeciesPrototype> species)
     {
         var ret = new Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData>();
@@ -277,15 +362,6 @@ public sealed class MarkingManager
         return ret;
     }
 
-    /// <summary>
-    /// Expands the provided profile data into all the categories for a species.
-    /// </summary>
-    /// <param name="species">The species the returned dictionary should be comprehensive for.</param>
-    /// <param name="sex">The sex to apply to all organs</param>
-    /// <param name="skinColor">The skin color to apply to all organs</param>
-    /// <param name="eyeColor">The eye color to apply to all organs</param>
-    /// <returns></returns>
-    /// <seealso cref="OrganProfileData" />
     public Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData> GetProfileData(ProtoId<SpeciesPrototype> species,
         Sex sex,
         Color skinColor,
@@ -306,12 +382,6 @@ public sealed class MarkingManager
         return ret;
     }
 
-    /// <summary>
-    /// Gets the <see cref="OrganMarkingData" /> for the entity prototype corresponding to an organ
-    /// </summary>
-    /// <param name="organ">The ID of the organ entity prototype to look up</param>
-    /// <param name="organData">The marking data for the organ if it exists</param>
-    /// <returns>Whether the provided entity prototype ID corresponded to organ marking data that could be returned</returns>
     public bool TryGetMarkingData(EntProtoId organ, [NotNullWhen(true)] out OrganMarkingData? organData)
     {
         organData = null;
@@ -327,12 +397,6 @@ public sealed class MarkingManager
         return true;
     }
 
-    /// <summary>
-    /// Converts a legacy flat list of markings to a structured markings dictionary for a given species
-    /// </summary>
-    /// <param name="markings">A flat list of markings</param>
-    /// <param name="species">The species to convert the markings for</param>
-    /// <returns>A dictionary with the provided markings categorized appropriately for the species</returns>
     public Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> ConvertMarkings(List<Marking> markings,
         ProtoId<SpeciesPrototype> species)
     {

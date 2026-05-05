@@ -720,6 +720,9 @@
   id: WallReinforcedRust
   suffix: rusted
   components:
+  - type: Tag
+    tags:
+    - RustyWall
   - type: Sprite
 # Start of Harmony Change: Updates Sprite Pathing
 #    sprite: Structures/Walls/solid_rust.rsi
@@ -1165,6 +1168,9 @@
   id: WallSolidRust
   suffix: rusted
   components:
+  - type: Tag
+    tags:
+    - RustyWall
   - type: Sprite
 # Start of Harmony Change: Updates Sprite Pathing
 #    sprite: Structures/Walls/solid_rust.rsi

@@ -3,6 +3,12 @@
   name: species-name-vulpkanin
   roundStart: true
   prototype: MobVulpkanin
+  limbOrganPrototypes:
+    ArmLeft: OrganVulpkaninArmLeft
+    ArmRight: OrganVulpkaninArmRight
+    LegLeft: OrganVulpkaninLegLeft
+    LegRight: OrganVulpkaninLegRight
+    Head: OrganVulpkaninHead
   defaultSkinTone: "#5a3f2d"
   dollPrototype: AppearanceVulpkanin
   skinColoration: VulpkaninColors

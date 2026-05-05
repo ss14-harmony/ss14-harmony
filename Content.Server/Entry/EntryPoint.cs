@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using Content.Server.Acz;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -92,7 +91,7 @@ namespace Content.Server.Entry
                 var cast = (ServerModuleTestingCallbacks)callback;
                 cast.ServerBeforeIoC?.Invoke();
             }
-
+			
             Dependencies.Resolve<IRobustSerializer>().FloatFlags = SerializerFloatFlags.RemoveReadNan;
         }
 
@@ -211,8 +210,8 @@ namespace Content.Server.Entry
 
             _serverApi.Shutdown();
 
-            // We don't care when or how this finishes, just spin the task off into the void.
-            _ = _discordLink.Shutdown();
+            // TODO Should this be awaited?
+            _discordLink.Shutdown();
             _discordChatLink.Shutdown();
         }
 

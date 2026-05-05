@@ -1,6 +1,6 @@
-using Content.Shared.Damage.Prototypes;
+
+using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
-using Robust.Shared.Prototypes;
 
 namespace Content.Client.Damage;
 
@@ -57,7 +57,7 @@ public sealed partial class DamageVisualsComponent : Component
     ///     (for example, Brute), and has a value
     ///     of a DamageVisualizerSprite (see below)
     /// </summary>
-    [DataField("damageOverlayGroups")] public  Dictionary<ProtoId<DamageGroupPrototype>, DamageVisualizerSprite>? DamageOverlayGroups;
+    [DataField("damageOverlayGroups")] public  Dictionary<string, DamageVisualizerSprite>? DamageOverlayGroups;
 
     /// <summary>
     ///     Sets if you want sprites to overlay the
@@ -86,7 +86,7 @@ public sealed partial class DamageVisualsComponent : Component
     ///     what kind of damage combination
     ///     you would want, on which threshold.
     /// </remarks>
-    [DataField("damageGroup")] public  ProtoId<DamageGroupPrototype>? DamageGroup;
+    [DataField("damageGroup")] public  string? DamageGroup;
 
     /// <summary>
     ///     Set this if you want incoming damage to be
@@ -121,7 +121,7 @@ public sealed partial class DamageVisualsComponent : Component
     public bool Disabled = false;
     public bool Valid = true;
     public FixedPoint2 LastDamageThreshold = FixedPoint2.Zero;
-    public readonly Dictionary<object, bool> DisabledLayers = new();
+    public readonly Dictionary<object, DamageOverlayLayerState> DisabledLayers = new();
     public readonly Dictionary<object, string> LayerMapKeyStates = new();
     public readonly Dictionary<string, FixedPoint2> LastThresholdPerGroup = new();
     public string TopMostLayerKey = default!;

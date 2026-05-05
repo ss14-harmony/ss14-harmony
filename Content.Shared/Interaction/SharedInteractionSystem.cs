@@ -5,6 +5,7 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.CombatMode;
+using Content.Shared.Cybernetics.Components;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
 using Content.Shared.Hands;
@@ -75,16 +76,16 @@ namespace Content.Shared.Interaction
         [Dependency] private readonly TagSystem _tagSystem = default!;
         [Dependency] private readonly UseDelaySystem _useDelay = default!;
 
-        [Dependency] private readonly EntityQuery<IgnoreUIRangeComponent> _ignoreUiRangeQuery = default!;
-        [Dependency] private readonly EntityQuery<FixturesComponent> _fixtureQuery = default!;
-        [Dependency] private readonly EntityQuery<ItemComponent> _itemQuery = default!;
-        [Dependency] private readonly EntityQuery<PhysicsComponent> _physicsQuery = default!;
-        [Dependency] private readonly EntityQuery<HandsComponent> _handsQuery = default!;
-        [Dependency] private readonly EntityQuery<InteractionRelayComponent> _relayQuery = default!;
-        [Dependency] private readonly EntityQuery<CombatModeComponent> _combatQuery = default!;
-        [Dependency] private readonly EntityQuery<WallMountComponent> _wallMountQuery = default!;
-        [Dependency] private readonly EntityQuery<UseDelayComponent> _delayQuery = default!;
-        [Dependency] private readonly EntityQuery<ActivatableUIComponent> _uiQuery = default!;
+        private EntityQuery<IgnoreUIRangeComponent> _ignoreUiRangeQuery;
+        private EntityQuery<FixturesComponent> _fixtureQuery;
+        private EntityQuery<ItemComponent> _itemQuery;
+        private EntityQuery<PhysicsComponent> _physicsQuery;
+        private EntityQuery<HandsComponent> _handsQuery;
+        private EntityQuery<InteractionRelayComponent> _relayQuery;
+        private EntityQuery<CombatModeComponent> _combatQuery;
+        private EntityQuery<WallMountComponent> _wallMountQuery;
+        private EntityQuery<UseDelayComponent> _delayQuery;
+        private EntityQuery<ActivatableUIComponent> _uiQuery;
 
         /// <summary>
         /// The collision mask used by default for
@@ -103,6 +104,17 @@ namespace Content.Shared.Interaction
 
         public override void Initialize()
         {
+            _ignoreUiRangeQuery = GetEntityQuery<IgnoreUIRangeComponent>();
+            _fixtureQuery = GetEntityQuery<FixturesComponent>();
+            _itemQuery = GetEntityQuery<ItemComponent>();
+            _physicsQuery = GetEntityQuery<PhysicsComponent>();
+            _handsQuery = GetEntityQuery<HandsComponent>();
+            _relayQuery = GetEntityQuery<InteractionRelayComponent>();
+            _combatQuery = GetEntityQuery<CombatModeComponent>();
+            _wallMountQuery = GetEntityQuery<WallMountComponent>();
+            _delayQuery = GetEntityQuery<UseDelayComponent>();
+            _uiQuery = GetEntityQuery<ActivatableUIComponent>();
+
             SubscribeLocalEvent<BoundUserInterfaceCheckRangeEvent>(HandleUserInterfaceRangeCheck);
 
             // TODO make this a broadcast event subscription again when engine has updated.
@@ -168,10 +180,15 @@ namespace Content.Shared.Interaction
 
             var range = _ui.GetUiRange(ev.Target, ev.UiKey);
 
-            // As long as range>0, the UI frame updates should have auto-closed the UI if it is out of range.
-            DebugTools.Assert(range <= 0 || UiRangeCheck(ev.Actor, ev.Target, range));
+            // When target is in a container (e.g. cyber limb in body), use container owner for range check
+            var rangeCheckTarget = ev.Target;
+            if (_containerSystem.TryGetContainingContainer(ev.Target, out var container) && container.Owner != ev.Target)
+                rangeCheckTarget = container.Owner;
 
-            if (range <= 0 && !IsAccessible(ev.Actor, ev.Target))
+            // As long as range>0, the UI frame updates should have auto-closed the UI if it is out of range.
+            DebugTools.Assert(range <= 0 || UiRangeCheck(ev.Actor, rangeCheckTarget, range));
+
+            if (range <= 0 && !IsAccessible(ev.Actor, rangeCheckTarget))
             {
                 ev.Cancel();
                 return;
@@ -349,8 +366,19 @@ namespace Content.Shared.Interaction
         public bool CombatModeCanHandInteract(EntityUid user, EntityUid? target)
         {
             // Always allow attack in these cases
-            if (target == null || !_handsQuery.TryComp(user, out var hands) || _hands.GetActiveItem((user, hands)) is not null)
+            //Funkystation: Cybernetics changes to combat mode hand interaction to use interaction instead of punching.
+            if (target == null || !_handsQuery.TryComp(user, out var hands))
                 return false;
+
+            var activeItem = _hands.GetActiveItem((user, hands));
+            if (activeItem is not null)
+            {
+                // Cyber arm virtual items should use the item via interaction instead of punching.
+                if (HasComp<CyberArmVirtualItemComponent>(activeItem.Value))
+                    return true;
+                // Having a real item in hand means we attack with it.
+                return false;
+            }
 
             // Only eat input if:
             // - Target isn't an item

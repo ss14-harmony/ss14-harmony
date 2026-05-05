@@ -541,7 +541,6 @@
   loadouts:
   - JesterHat
   - JesterAltHat
-  - ClownMitre
 
 - type: loadoutGroup
   id: ClownJumpsuit
@@ -1079,6 +1078,13 @@
   - SeniorResearcherJumpskirt
 
 - type: loadoutGroup
+  id: ScientistBelt
+  name: loadout-group-scientist-belt
+  minLimit: 0
+  loadouts:
+  - RoboticistBelt
+
+- type: loadoutGroup
   id: ScientistBackpack
   name: loadout-group-scientist-backpack
   loadouts:
@@ -1367,20 +1373,6 @@
   loadouts:
   - ReporterJumpsuit
   - JournalistJumpsuit
-
-- type: loadoutGroup
-  id: ReporterHead
-  name: loadout-group-reporter-head
-  minLimit: 0
-  loadouts:
-  - ReporterPressFedora
-
-- type: loadoutGroup
-  id: ReporterOuterClothing
-  name: loadout-group-reporter-outerclothing
-  minLimit: 0
-  loadouts:
-  - ReporterPressVest
 
 #- type: loadoutGroup
 #  id: ReporterJobTrinkets

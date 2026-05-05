@@ -16,7 +16,8 @@
     ClothingMaskBreathMedical: 5
     ClothingHeadHatWeldingMaskFlame: 1
     Welder: 1
-    Screwdriver: 2
+    Screwdriver: 1
+    ScrewdriverPrecision: 1
     Crowbar: 2
   contrabandInventory:
     FoodBurgerRobot: 1  

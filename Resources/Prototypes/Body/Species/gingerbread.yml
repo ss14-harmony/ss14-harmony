@@ -1,7 +1,6 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceGingerbread
-  categories: [ HideSpawnMenu ]
   name: gingerbread appearance
   components:
   - type: Inventory
@@ -11,28 +10,16 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-  - type: InitialBody
-    organs:
-      Torso: OrganGingerbreadTorso
-      Head: OrganGingerbreadHead
-      ArmLeft: OrganGingerbreadArmLeft
-      ArmRight: OrganGingerbreadArmRight
-      HandRight: OrganGingerbreadHandRight
-      HandLeft: OrganGingerbreadHandLeft
-      LegLeft: OrganGingerbreadLegLeft
-      LegRight: OrganGingerbreadLegRight
-      FootLeft: OrganGingerbreadFootLeft
-      FootRight: OrganGingerbreadFootRight
-      Brain: OrganHumanBrain
-      Eyes: OrganHumanEyes
-      Tongue: OrganHumanTongue
-      Appendix: OrganHumanAppendix
-      Ears: OrganHumanEars
-      Lungs: OrganHumanLungs
-      Heart: OrganHumanHeart
-      Stomach: OrganHumanStomach
-      Liver: OrganHumanLiver
-      Kidneys: OrganHumanKidneys
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganGingerbreadTorso
+        - id: OrganGingerbreadHead
+        - id: OrganGingerbreadArmLeft
+        - id: OrganGingerbreadArmRight
+        - id: OrganGingerbreadLegLeft
+        - id: OrganGingerbreadLegRight
   - type: HumanoidProfile
     species: Gingerbread
 
@@ -99,19 +86,19 @@
       group: None
 
 - type: entity
-  parent: [ OrganBaseTorso, OrganGingerbreadExternal ]
+  parent: OrganHumanTorso
   id: OrganGingerbreadTorso
 
 - type: entity
-  parent: [ OrganBaseHead, OrganGingerbreadExternal ]
+  parent: OrganHumanHead
   id: OrganGingerbreadHead
 
 - type: entity
-  parent: [ OrganBaseArmLeft, OrganGingerbreadExternal ]
+  parent: OrganHumanArmLeft
   id: OrganGingerbreadArmLeft
 
 - type: entity
-  parent: [ OrganBaseArmRight, OrganGingerbreadExternal ]
+  parent: OrganHumanArmRight
   id: OrganGingerbreadArmRight
 
 - type: entity
@@ -123,11 +110,11 @@
   id: OrganGingerbreadHandRight
 
 - type: entity
-  parent: [ OrganBaseLegLeft, OrganGingerbreadExternal ]
+  parent: OrganHumanLegLeft
   id: OrganGingerbreadLegLeft
 
 - type: entity
-  parent: [ OrganBaseLegRight, OrganGingerbreadExternal ]
+  parent: OrganHumanLegRight
   id: OrganGingerbreadLegRight
 
 - type: entity

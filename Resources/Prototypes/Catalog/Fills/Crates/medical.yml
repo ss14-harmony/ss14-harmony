@@ -75,7 +75,59 @@
         - id: Drill
         - id: Saw
         - id: Hemostat
+        - id: BoneGel
         - id: ClothingMaskSterile
+
+- type: entity
+  parent: CrateMedical
+  id: CrateCyberneticsCpu
+  name: cybernetics CPU crate
+  description: A crate containing a supercharged cybernetics CPU.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        id: TreasureCPUSupercharged
+
+- type: entity
+  parent: CrateSurgery
+  id: CrateFullCyberneticsPackage
+  name: full cybernetics package
+  description: A complete cybernetics kit with pre-equipped limbs, surgical duffel bag, and folding rollerbed.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: OrganCyberArmLeftPreFilled
+        - id: OrganCyberArmRightPreFilled
+        - id: OrganCyberLegLeftPreFilled
+        - id: OrganCyberLegRightPreFilled
+        - id: ClothingBackpackDuffelSurgeryFilled
+        - id: RollerBedSpawnFolded
+
+- type: entity
+  parent: CrateSurgery
+  id: CrateCyberSurgery
+  name: CyberSurgery crate
+  description: Surgical instruments and pre-equipped cyber limbs.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: Scalpel
+        - id: Retractor
+        - id: Cautery
+        - id: Drill
+        - id: Saw
+        - id: Hemostat
+        - id: BoneGel
+        - id: ClothingMaskSterile
+        - id: OrganCyberArmLeftPreFilled
+        - id: OrganCyberArmRightPreFilled
+        - id: OrganCyberLegLeftPreFilled
+        - id: OrganCyberLegRightPreFilled
 
 - type: entity
   parent: CrateMedical

@@ -480,4 +480,41 @@ public sealed partial class DamageableSystem
 
         return SupportsType(ent.Comp.DamageContainerID, type);
     }
+
+    /// <summary>
+    ///     Current stored damage for a single damage type (zero if absent).
+    /// </summary>
+    public FixedPoint2 GetDamageOfType(Entity<DamageableComponent?> ent, ProtoId<DamageTypePrototype> type)
+    {
+        if (!_damageableQuery.Resolve(ent, ref ent.Comp, false))
+            return FixedPoint2.Zero;
+
+        return ent.Comp.Damage.DamageDict.TryGetValue(type, out var amount) ? amount : FixedPoint2.Zero;
+    }
+
+    /// <summary>
+    ///     Sum of damage for types belonging to the given group.
+    /// </summary>
+    public bool TryGetDamageInGroup(Entity<DamageableComponent?> ent, ProtoId<DamageGroupPrototype> groupId, out FixedPoint2 total)
+    {
+        total = FixedPoint2.Zero;
+        if (!_damageableQuery.Resolve(ent, ref ent.Comp, false))
+            return false;
+
+        if (!_prototypeManager.TryIndex(groupId, out var group))
+            return false;
+
+        return ent.Comp.Damage.TryGetDamageInGroup(group, out total);
+    }
+
+    /// <summary>
+    ///     Snapshot of per-type damage as string keys (for UI).
+    /// </summary>
+    public Dictionary<string, FixedPoint2> GetDamageDictStringKeys(Entity<DamageableComponent?> ent)
+    {
+        if (!_damageableQuery.Resolve(ent, ref ent.Comp, false))
+            return new Dictionary<string, FixedPoint2>();
+
+        return ent.Comp.Damage.DamageDict.ToDictionary(kvp => kvp.Key.Id, kvp => kvp.Value);
+    }
 }
