@@ -7,6 +7,7 @@ using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Contraband;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Flash;
 using Content.Shared.Inventory;
 using Content.Shared.Overlays;
 using Robust.Shared.Prototypes;
@@ -27,6 +28,7 @@ public sealed class CyberEyesSystem : EntitySystem
         SubscribeLocalEvent<BodyComponent, GetBlindnessDurationMultiplierEvent>(OnGetBlindnessDurationMultiplier);
         SubscribeLocalEvent<BodyComponent, GetEyeProtectionEvent>(OnGetCyberEyesProtection);
         SubscribeLocalEvent<BodyComponent, GetBlurEvent>(OnGetCyberEyesBlur);
+        SubscribeLocalEvent<BodyComponent, GetFlashDurationReductionEvent>(OnGetFlashDurationReduction);
         SubscribeLocalEvent<BodyComponent, OrganGotInsertedEvent>(OnOrganChanged);
         SubscribeLocalEvent<BodyComponent, OrganGotRemovedEvent>(OnOrganChanged);
     }
@@ -59,6 +61,16 @@ public sealed class CyberEyesSystem : EntitySystem
             return;
 
         args.Blur += (1f - cyberEyes.Effectiveness) * LowEffectivenessBlurMagnitude;
+    }
+
+    private void OnGetFlashDurationReduction(Entity<BodyComponent> ent, ref GetFlashDurationReductionEvent args)
+    {
+        var eyes = _body.GetAllOrgans(ent).FirstOrDefault(o =>
+            TryComp<OrganComponent>(o, out var oc) && oc.Category == Eyes);
+        if (eyes == default || !TryComp<CyberOrganComponent>(eyes, out var cyberEyes) || cyberEyes.Effectiveness < 1.2f)
+            return;
+
+        args.Reduction += TimeSpan.FromSeconds(CyberEyesProtectionTime);
     }
 
     private void OnOrganChanged(Entity<BodyComponent> ent, ref OrganGotInsertedEvent args)

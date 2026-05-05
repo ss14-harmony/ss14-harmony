@@ -1,17 +1,24 @@
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
-using Robust.Shared.Prototypes;
 using Content.Shared.Cybernetics.Components;
 using Content.Shared.Damage;
+using Content.Shared.EntityEffects.Effects.Body;
 using Content.Shared.EntityEffects.Effects.Damage;
 using Content.Shared.FixedPoint;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Cybernetics.Systems;
 
-public sealed class CyberHeartSystem : EntitySystem
+/// <summary>
+/// Scales metabolism entity effects based on cyber organ tier (heart, stomach, liver, lungs).
+/// </summary>
+public sealed class CyberOrganMetabolismModifierSystem : EntitySystem
 {
     private static readonly ProtoId<OrganCategoryPrototype> Heart = "Heart";
+    private static readonly ProtoId<OrganCategoryPrototype> Stomach = "Stomach";
+    private static readonly ProtoId<OrganCategoryPrototype> Liver = "Liver";
+    private static readonly ProtoId<OrganCategoryPrototype> Lungs = "Lungs";
 
     public override void Initialize()
     {
@@ -21,13 +28,24 @@ public sealed class CyberHeartSystem : EntitySystem
 
     private void OnGetOrganMetabolismScaleModifier(Entity<BodyComponent> ent, ref GetOrganMetabolismScaleModifierEvent args)
     {
-        if (!TryComp<OrganComponent>(args.Organ, out var organComp) || organComp.Category != Heart)
+        if (!TryComp<OrganComponent>(args.Organ, out var organComp) || !organComp.Category.HasValue)
             return;
 
         if (!TryComp<CyberOrganComponent>(args.Organ, out var cyberOrgan))
             return;
 
+        var category = organComp.Category.Value;
         var effectiveness = cyberOrgan.Effectiveness;
+
+        if (category == Lungs && args.Effect is ModifyLungGas)
+        {
+            args.Scale *= effectiveness;
+            return;
+        }
+
+        if (category != Heart && category != Stomach && category != Liver)
+            return;
+
         var modifier = 1f;
 
         switch (args.Effect)

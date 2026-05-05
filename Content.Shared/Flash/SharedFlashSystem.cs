@@ -167,6 +167,12 @@ public abstract class SharedFlashSystem : EntitySystem
         RaiseLocalEvent(target, ref durationEv);
         var adjustedDuration = TimeSpan.FromSeconds(flashDuration.TotalSeconds * durationEv.Multiplier);
 
+        var reductionEv = new GetFlashDurationReductionEvent();
+        RaiseLocalEvent(target, ref reductionEv);
+        adjustedDuration -= reductionEv.Reduction;
+        if (adjustedDuration < TimeSpan.Zero)
+            adjustedDuration = TimeSpan.Zero;
+
         // don't paralyze, slowdown or convert to rev if the target is immune to flashes
         if (!_statusEffectsSystem.TryAddStatusEffect<FlashedComponent>(target, FlashedKey, adjustedDuration, true))
             return;

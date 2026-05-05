@@ -25,3 +25,13 @@ public record struct AfterFlashedEvent(EntityUid Target, EntityUid? User, Entity
 /// </summary>
 [ByRefEvent]
 public record struct AfterFlashActivatedEvent(EntityUid? Target, EntityUid? User);
+
+/// <summary>
+/// Raised on the flash target after blindness duration multiplier is applied.
+/// Handlers add to <see cref="Reduction"/> to shorten the final Flashed status duration (e.g. cyber eyes).
+/// </summary>
+[ByRefEvent]
+public record struct GetFlashDurationReductionEvent
+{
+    public TimeSpan Reduction;
+}

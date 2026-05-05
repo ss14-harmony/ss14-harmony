@@ -235,19 +235,29 @@ public sealed class MetabolizerSystem : EntitySystem
             // TODO: We should have to do this with metabolism. ReagentEffect struct needs refactoring and so does metabolism!
             void ApplyEffect(EntityEffect effect)
             {
+                var effectScale = scale;
+                if (TryComp(ent.Owner, out OrganComponent? organForMod)
+                    && organForMod.Body is { } bodyUid
+                    && Exists(bodyUid))
+                {
+                    var modEv = new GetOrganMetabolismScaleModifierEvent(ent.Owner, effect) { Scale = effectScale };
+                    RaiseLocalEvent(bodyUid, ref modEv);
+                    effectScale = modEv.Scale;
+                }
+
                 switch (effect)
                 {
                     case ModifyLungGas:
-                        _entityEffects.ApplyEffect(ent, effect, scale);
+                        _entityEffects.ApplyEffect(ent, effect, effectScale);
                         break;
                     case AdjustReagent:
-                        _entityEffects.ApplyEffect(solutionEntity.Value, effect, scale);
+                        _entityEffects.ApplyEffect(solutionEntity.Value, effect, effectScale);
                         break;
                     case AddIntegrityImmunityBoost:
-                        _entityEffects.ApplyEffect(ent, effect, scale);
+                        _entityEffects.ApplyEffect(ent, effect, effectScale);
                         break;
                     default:
-                        _entityEffects.ApplyEffect(actualEntity, effect, scale);
+                        _entityEffects.ApplyEffect(actualEntity, effect, effectScale);
                         break;
                 }
             }
