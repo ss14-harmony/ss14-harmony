@@ -106,3 +106,14 @@
   category: Disabilities
   components:
     - type: ImpairedMobility
+
+- type: trait
+  id: Paraplegic
+  name: trait-paraplegic-name
+  description: trait-paraplegic-desc
+  category: Disabilities
+  whitelist:
+    components:
+      - Body
+  components:
+    - type: PermanentParaplegia

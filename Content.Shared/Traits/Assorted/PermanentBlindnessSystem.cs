@@ -1,4 +1,6 @@
-﻿using Content.Shared.Examine;
+﻿using Content.Shared.Body;
+using Content.Shared.Cloning.Events;
+using Content.Shared.Examine;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.IdentityManagement;
@@ -6,18 +8,20 @@ using Content.Shared.IdentityManagement;
 namespace Content.Shared.Traits.Assorted;
 
 /// <summary>
-/// This handles permanent blindness, both the examine and the actual effect.
+/// Handles permanent blindness examine text, flash mitigation, cloning propagation, and cleanup when removed.
+/// Mechanical vision (<see cref="BlindableComponent"/>) uses organ trait blindness and <see cref="BodySystem.RecalculateBlindnessFromOrgans"/>.
 /// </summary>
 public sealed class PermanentBlindnessSystem : EntitySystem
 {
     [Dependency] private readonly BlindableSystem _blinding = default!;
+    [Dependency] private readonly BodySystem _body = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
     {
-        SubscribeLocalEvent<PermanentBlindnessComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<PermanentBlindnessComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<PermanentBlindnessComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<PermanentBlindnessComponent, CloningEvent>(OnCloning);
     }
 
     private void OnExamined(Entity<PermanentBlindnessComponent> blindness, ref ExaminedEvent args)
@@ -42,19 +46,13 @@ public sealed class PermanentBlindnessSystem : EntitySystem
         // Otherwise you would still be blind, but not *permanently* blind, meaning you have to heal the eye damage with oculine.
         // This is needed for changelings that transform from a blind player to a non-blind one.
         _blinding.AdjustEyeDamage((blindness.Owner, blindable), -blindable.EyeDamage);
+
+        _body.RemoveOrganTraitBlindnessFromImplantedEyes(blindness.Owner);
     }
 
-    private void OnMapInit(Entity<PermanentBlindnessComponent> blindness, ref MapInitEvent args)
+    private void OnCloning(Entity<PermanentBlindnessComponent> blindness, ref CloningEvent args)
     {
-        if (!TryComp<BlindableComponent>(blindness.Owner, out var blindable))
-            return;
-
-        if (blindness.Comp.Blindness != 0)
-            _blinding.SetMinDamage((blindness.Owner, blindable), blindness.Comp.Blindness);
-        else
-        {
-            var maxMagnitudeInt = (int)BlurryVisionComponent.MaxMagnitude;
-            _blinding.SetMinDamage((blindness.Owner, blindable), maxMagnitudeInt);
-        }
+        _body.ApplyOrganTraitBlindnessToImplantedEyes(args.CloneUid, blindness.Comp.Blindness);
+        _body.RecalculateBlindnessFromOrgans(args.CloneUid);
     }
 }

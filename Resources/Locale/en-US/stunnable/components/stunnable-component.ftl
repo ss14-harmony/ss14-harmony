@@ -5,3 +5,5 @@ knockdown-component-pushup-success = With a burst of energy you push yourself up
 knockdown-component-stand-no-room = You try to push yourself to stand up but there's not enough room!
 worm-component-stand-attempt = You try to stand up but you cannot!
 legs-missing-stand-attempt = You have no legs to stand on!
+
+feet-missing-stand-attempt = You have no feet to stand on!

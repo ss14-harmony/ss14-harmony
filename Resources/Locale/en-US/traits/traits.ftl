@@ -12,6 +12,11 @@ trait-pacifist-desc = You cannot attack or hurt any living beings.
 
 permanent-blindness-trait-examined = [color=lightblue]{CAPITALIZE(POSS-ADJ($target))} eyes are glassy and unfocused. It doesn't seem like {SUBJECT($target)} can see you well, if at all.[/color]
 
+trait-paraplegic-name = Paraplegic
+trait-paraplegic-desc = You cannot use your legs; movement depends on your feet and any mobility aids.
+
+permanent-paraplegia-trait-examined = [color=lightblue]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-BE($target)} unable to stand unassisted.[/color]
+
 trait-lightweight-name = Lightweight drunk
 trait-lightweight-desc = Alcohol has a stronger effect on you.
 

@@ -51,6 +51,17 @@ public sealed class LimbDetachmentEffectsSystem : EntitySystem
         SubscribeLocalEvent<LegsMissingComponent, ComponentStartup>(OnLegsMissingStartup);
         SubscribeLocalEvent<LegsMissingComponent, ComponentShutdown>(OnLegsMissingShutdown);
         SubscribeLocalEvent<LegsMissingComponent, StandUpAttemptEvent>(OnLegsMissingStandUpAttempt);
+        SubscribeLocalEvent<FeetMissingComponent, ComponentStartup>(OnFeetMissingStartup);
+        SubscribeLocalEvent<FeetMissingComponent, ComponentShutdown>(OnFeetMissingShutdown);
+        SubscribeLocalEvent<FeetMissingComponent, StandUpAttemptEvent>(OnFeetMissingStandUpAttempt);
+    }
+
+    /// <summary>
+    /// Recompute foot-derived movement after trait stamp/unstamp or other non-container paths.
+    /// </summary>
+    public void RefreshFootStateForBody(EntityUid body)
+    {
+        UpdateFeetMovement(body);
     }
 
     private void OnOrganRemovedFromBody(Entity<OrganComponent> ent, ref EntGotRemovedFromContainerMessage args)
@@ -88,6 +99,11 @@ public sealed class LimbDetachmentEffectsSystem : EntitySystem
         if (categoryStr is "LegLeft" or "LegRight")
         {
             UpdateLegMovement(body);
+        }
+
+        if (categoryStr is "FootLeft" or "FootRight")
+        {
+            UpdateFeetMovement(body);
         }
     }
 
@@ -128,6 +144,11 @@ public sealed class LimbDetachmentEffectsSystem : EntitySystem
         {
             UpdateLegMovement(body);
         }
+
+        if (categoryStr is "FootLeft" or "FootRight")
+        {
+            UpdateFeetMovement(body);
+        }
     }
 
     private void OnMissingLimbRefreshSpeed(Entity<MissingLimbMovementModifierComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
@@ -167,6 +188,118 @@ public sealed class LimbDetachmentEffectsSystem : EntitySystem
             RemComp<KnockedDownComponent>(ent.Owner);
     }
 
+    private void OnFeetMissingStartup(Entity<FeetMissingComponent> ent, ref ComponentStartup args)
+    {
+        if (LifeStage(ent.Owner) >= EntityLifeStage.Terminating)
+            return;
+
+        _stun.TryCrawling((ent.Owner, (CrawlerComponent?)null), null, refresh: true, autoStand: false, drop: false, force: true);
+        _stun.SetAutoStand((ent.Owner, (KnockedDownComponent?)null));
+    }
+
+    private void OnFeetMissingStandUpAttempt(Entity<FeetMissingComponent> ent, ref StandUpAttemptEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        args.Cancelled = true;
+        args.Message = (Loc.GetString("feet-missing-stand-attempt"), PopupType.SmallCaution);
+        args.Autostand = false;
+    }
+
+    private void OnFeetMissingShutdown(Entity<FeetMissingComponent> ent, ref ComponentShutdown args)
+    {
+        if (LifeStage(ent.Owner) >= EntityLifeStage.Terminating)
+            return;
+
+        _stun.CancelKnockdownDoAfter((ent.Owner, (KnockedDownComponent?)null));
+        _stun.ForceStandUp((ent.Owner, (KnockedDownComponent?)null));
+        if (HasComp<KnockedDownComponent>(ent.Owner))
+            RemComp<KnockedDownComponent>(ent.Owner);
+    }
+
+    private int CountLegs(EntityUid body)
+    {
+        var n = 0;
+        foreach (var organ in _body.GetAllOrgans(body))
+        {
+            if (TryComp<OrganComponent>(organ, out var oComp) && oComp.Category is { } cat)
+            {
+                var c = cat.ToString();
+                if (c is "LegLeft" or "LegRight")
+                    n++;
+            }
+        }
+
+        return n;
+    }
+
+    private void UpdateFeetMovement(EntityUid body)
+    {
+        if (!Exists(body) || TerminatingOrDeleted(body))
+            return;
+
+        var legCount = CountLegs(body);
+        var healthyFeet = 0;
+        foreach (var organ in _body.GetAllOrgans(body))
+        {
+            if (!TryComp<OrganComponent>(organ, out var oComp) || oComp.Category is not { } cat)
+                continue;
+
+            var c = cat.ToString();
+            if (c is not ("FootLeft" or "FootRight"))
+                continue;
+
+            if (!HasComp<FootTraitParaplegicComponent>(organ))
+                healthyFeet++;
+        }
+
+        // No legs: leg-loss path owns crawl / modifiers; don't stack FeetMissing.
+        if (legCount == 0)
+        {
+            RemComp<FeetMissingComponent>(body);
+        }
+        else if (healthyFeet == 0)
+        {
+            EnsureComp<FeetMissingComponent>(body);
+            RemComp<MissingLimbMovementModifierComponent>(body);
+        }
+        else if (healthyFeet == 1)
+        {
+            RemComp<FeetMissingComponent>(body);
+            var mod = EnsureComp<MissingLimbMovementModifierComponent>(body);
+            if (legCount == 1)
+            {
+                mod.WalkSpeedModifier = 0.6f * 0.85f;
+                mod.SprintSpeedModifier = 0.6f * 0.85f;
+            }
+            else
+            {
+                mod.WalkSpeedModifier = 0.85f;
+                mod.SprintSpeedModifier = 0.85f;
+            }
+
+            Dirty(body, mod);
+        }
+        else
+        {
+            RemComp<FeetMissingComponent>(body);
+            if (legCount >= 2)
+            {
+                RemComp<MissingLimbMovementModifierComponent>(body);
+            }
+            else
+            {
+                var mod = EnsureComp<MissingLimbMovementModifierComponent>(body);
+                mod.WalkSpeedModifier = 0.6f;
+                mod.SprintSpeedModifier = 0.6f;
+                Dirty(body, mod);
+            }
+        }
+
+        _movementSpeed.RefreshMovementSpeedModifiers(body);
+    }
+
     private void UpdateLegMovement(EntityUid body)
     {
         if (!Exists(body) || TerminatingOrDeleted(body))
@@ -203,6 +336,6 @@ public sealed class LimbDetachmentEffectsSystem : EntitySystem
             EnsureComp<LegsMissingComponent>(body);
         }
 
-        _movementSpeed.RefreshMovementSpeedModifiers(body);
+        UpdateFeetMovement(body);
     }
 }

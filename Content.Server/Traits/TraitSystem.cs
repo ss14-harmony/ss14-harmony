@@ -1,8 +1,11 @@
+using Content.Shared.Body;
 using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Medical.Surgery;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
+using Content.Shared.Traits.Assorted;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
@@ -13,6 +16,8 @@ public sealed class TraitSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedHandsSystem _sharedHandsSystem = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly BodySystem _body = default!;
+    [Dependency] private readonly LimbDetachmentEffectsSystem _limbDetachmentEffects = default!;
 
     public override void Initialize()
     {
@@ -67,6 +72,19 @@ public sealed class TraitSystem : EntitySystem
                 inhandEntity,
                 checkActionBlocker: false,
                 handsComp: handsComponent);
+        }
+
+        // Organ trait blindness is derived from implanted eyes; permanent blindness stays on the mob for examine/flash/clone.
+        if (TryComp<PermanentBlindnessComponent>(args.Mob, out var permanentBlindness))
+            _body.ApplyOrganTraitBlindnessToImplantedEyes(args.Mob, permanentBlindness.Blindness);
+
+        _body.RecalculateBlindnessFromOrgans(args.Mob);
+
+        // Foot trait paraplegia is derived from implanted feet; permanent paraplegia stays on the mob for examine/clone.
+        if (HasComp<PermanentParaplegiaComponent>(args.Mob))
+        {
+            _body.ApplyTraitParaplegiaToImplantedFeet(args.Mob);
+            _limbDetachmentEffects.RefreshFootStateForBody(args.Mob);
         }
     }
 }

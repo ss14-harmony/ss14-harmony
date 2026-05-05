@@ -122,6 +122,8 @@ public sealed partial class BodySystem : EntitySystem
 
         var refresh = new AppendageWearInventoryRefreshEvent();
         RaiseLocalEvent(ent.Owner, ref refresh);
+
+        RecalculateBlindnessFromOrgans(ent.Owner);
     }
 
     private void OnBodyEntRemoved(Entity<BodyComponent> ent, ref EntRemovedFromContainerMessage args)
@@ -172,6 +174,8 @@ public sealed partial class BodySystem : EntitySystem
 
         var refreshRemoved = new AppendageWearInventoryRefreshEvent();
         RaiseLocalEvent(ent.Owner, ref refreshRemoved);
+
+        RecalculateBlindnessFromOrgans(ent.Owner);
     }
 
     private void OnBodyPartEntInserted(Entity<BodyPartComponent> ent, ref EntInsertedIntoContainerMessage args)
@@ -200,6 +204,8 @@ public sealed partial class BodySystem : EntitySystem
 
         var refreshPartIn = new AppendageWearInventoryRefreshEvent();
         RaiseLocalEvent(rootBody.Value, ref refreshPartIn);
+
+        RecalculateBlindnessFromOrgans(rootBody.Value);
     }
 
     private void OnBodyPartEntRemoved(Entity<BodyPartComponent> ent, ref EntRemovedFromContainerMessage args)
@@ -230,6 +236,8 @@ public sealed partial class BodySystem : EntitySystem
 
         var refreshPartOut = new AppendageWearInventoryRefreshEvent();
         RaiseLocalEvent(rootBody.Value, ref refreshPartOut);
+
+        RecalculateBlindnessFromOrgans(rootBody.Value);
     }
 
     private void OnCanDrag(Entity<BodyComponent> ent, ref CanDragEvent args)
