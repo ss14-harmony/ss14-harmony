@@ -64,6 +64,11 @@
             <Label Name="IntegrityLabel" />
         </GridContainer>
         <BoxContainer Name="IntegrityPenaltiesList" Orientation="Vertical" Margin="0 5 0 0" />
+        <PanelContainer Name="IntegrityPreviewDivider" StyleClasses="LowDivider" Margin="0 5 0 0" />
+        <Label Name="IntegrityPreviewTitle"
+               Text="{Loc 'health-analyzer-integrity-conditions-preview-title'}"
+               Margin="0 5 0 0" />
+        <BoxContainer Name="IntegrityPreviewList" Orientation="Vertical" Margin="0 2 0 0" />
     </BoxContainer>
 
     <BoxContainer Name="SurgeryContent" Visible="False" Orientation="Vertical" Margin="0 5 0 5">

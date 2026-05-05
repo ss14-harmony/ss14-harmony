@@ -1,5 +1,6 @@
 # Surgery procedures - data-driven (primary tool, improvised tool) pairs.
 # Replaces surgery_steps.yml. Used by BodyPartSurgeryStepsPrototype and OrganSurgeryProceduresComponent.
+# Locale: descriptions & step popups in Resources/Locale/en-US/medical/surgery-procedures.ftl
 
 # === Skin layer (6 steps) ===
 
@@ -7,6 +8,11 @@
   id: CreateIncision
   layer: Skin
   name: health-analyzer-surgery-step-create-incision
+  description: surgery-procedure-desc-create-incision
+  emoteStartSelf: surgery-procedure-emote-create-incision-start-self
+  emoteStartOthers: surgery-procedure-emote-create-incision-start-others
+  emoteCompleteSelf: surgery-procedure-emote-create-incision-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-create-incision-complete-others
   penalty: 1
   primaryTool:
     tag: CuttingTool
@@ -26,13 +32,18 @@
   id: ClampVessels
   layer: Skin
   name: health-analyzer-surgery-step-clamp-vessels
+  description: surgery-procedure-desc-clamp-vessels
+  emoteStartSelf: surgery-procedure-emote-clamp-vessels-start-self
+  emoteStartOthers: surgery-procedure-emote-clamp-vessels-start-others
+  emoteCompleteSelf: surgery-procedure-emote-clamp-vessels-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-clamp-vessels-complete-others
   penalty: 1
   primaryTool:
     tag: HemostatTool
     doAfterDelay: 2
     damage:
       types:
-        Slash: 1
+        Slash: 4
     sound: /Audio/Items/drill_hit.ogg
   improvisedTools:
     - tag: Wirecutter
@@ -45,13 +56,18 @@
   id: RetractSkin
   layer: Skin
   name: health-analyzer-surgery-step-retract-skin
+  description: surgery-procedure-desc-retract-skin
+  emoteStartSelf: surgery-procedure-emote-retract-skin-start-self
+  emoteStartOthers: surgery-procedure-emote-retract-skin-start-others
+  emoteCompleteSelf: surgery-procedure-emote-retract-skin-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-retract-skin-complete-others
   penalty: 1
   primaryTool:
     tag: ManipulatingTool
     doAfterDelay: 2
     damage:
       types:
-        Slash: 1
+        Slash: 4
     sound: /Audio/Items/drill_hit.ogg
   improvisedTools:
     - tag: PryingTool
@@ -66,6 +82,11 @@
   layer: Skin
   undoesProcedure: RetractSkin
   name: health-analyzer-surgery-step-release-layer
+  description: surgery-procedure-desc-release-retractor
+  emoteStartSelf: surgery-procedure-emote-release-retractor-start-self
+  emoteStartOthers: surgery-procedure-emote-release-retractor-start-others
+  emoteCompleteSelf: surgery-procedure-emote-release-retractor-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-release-retractor-complete-others
   penalty: 0
   primaryTool:
     tag: ManipulatingTool
@@ -86,6 +107,11 @@
   layer: Skin
   undoesProcedure: ClampVessels
   name: health-analyzer-surgery-step-reconnect-vessels
+  description: surgery-procedure-desc-reconnect-vessels
+  emoteStartSelf: surgery-procedure-emote-reconnect-vessels-start-self
+  emoteStartOthers: surgery-procedure-emote-reconnect-vessels-start-others
+  emoteCompleteSelf: surgery-procedure-emote-reconnect-vessels-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-reconnect-vessels-complete-others
   penalty: 0
   primaryTool:
     tag: HemostatTool
@@ -106,6 +132,11 @@
   layer: Skin
   undoesProcedure: CreateIncision
   name: health-analyzer-surgery-step-seal-skin
+  description: surgery-procedure-desc-seal-skin
+  emoteStartSelf: surgery-procedure-emote-seal-skin-start-self
+  emoteStartOthers: surgery-procedure-emote-seal-skin-start-others
+  emoteCompleteSelf: surgery-procedure-emote-seal-skin-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-seal-skin-complete-others
   penalty: 0
   primaryTool:
     tag: HeatWeapon
@@ -127,14 +158,19 @@
   id: CutBone
   layer: Tissue
   name: health-analyzer-surgery-step-cut-bone
+  description: surgery-procedure-desc-cut-bone
+  emoteStartSelf: surgery-procedure-emote-cut-bone-start-self
+  emoteStartOthers: surgery-procedure-emote-cut-bone-start-others
+  emoteCompleteSelf: surgery-procedure-emote-cut-bone-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-cut-bone-complete-others
   penalty: 8
   primaryTool:
     tag: SawingTool
     doAfterDelay: 3
     damage:
       types:
-        Blunt: 3
-        Slash: 2
+        Blunt: 5
+        Slash: 5
     sound: /Audio/Items/drill_hit.ogg
   improvisedTools:
     - damageType: Blunt
@@ -148,10 +184,18 @@
   id: MarrowBleeding
   layer: Tissue
   name: health-analyzer-surgery-step-marrow-bleeding
+  description: surgery-procedure-desc-marrow-bleeding
+  emoteStartSelf: surgery-procedure-emote-marrow-bleeding-start-self
+  emoteStartOthers: surgery-procedure-emote-marrow-bleeding-start-others
+  emoteCompleteSelf: surgery-procedure-emote-marrow-bleeding-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-marrow-bleeding-complete-others
   penalty: 0
   primaryTool:
     tag: HeatWeapon
     doAfterDelay: 2
+    damage:
+      types:
+        Heat: 2
     sound: /Audio/Items/drill_hit.ogg
   improvisedTools:
     - damageType: Heat
@@ -166,13 +210,18 @@
   id: RetractTissue
   layer: Tissue
   name: health-analyzer-surgery-step-retract-tissue
+  description: surgery-procedure-desc-retract-tissue
+  emoteStartSelf: surgery-procedure-emote-retract-tissue-start-self
+  emoteStartOthers: surgery-procedure-emote-retract-tissue-start-others
+  emoteCompleteSelf: surgery-procedure-emote-retract-tissue-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-retract-tissue-complete-others
   penalty: 0
   primaryTool:
     tag: PryingTool
     doAfterDelay: 2
     damage:
       types:
-        Slash: 2
+        Slash: 4
     sound: /Audio/Items/drill_hit.ogg
   improvisedTools:
     - damageType: Blunt
@@ -189,6 +238,11 @@
   layer: Tissue
   undoesProcedure: RetractTissue
   name: health-analyzer-surgery-step-maintain-alignment
+  description: surgery-procedure-desc-maintain-alignment
+  emoteStartSelf: surgery-procedure-emote-maintain-alignment-start-self
+  emoteStartOthers: surgery-procedure-emote-maintain-alignment-start-others
+  emoteCompleteSelf: surgery-procedure-emote-maintain-alignment-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-maintain-alignment-complete-others
   penalty: 0
   primaryTool:
     tag: ManipulatingTool
@@ -209,13 +263,18 @@
   layer: Tissue
   undoesProcedure: MarrowBleeding
   name: health-analyzer-surgery-step-seal-bleed-points
+  description: surgery-procedure-desc-seal-bleed-points
+  emoteStartSelf: surgery-procedure-emote-seal-bleed-points-start-self
+  emoteStartOthers: surgery-procedure-emote-seal-bleed-points-start-others
+  emoteCompleteSelf: surgery-procedure-emote-seal-bleed-points-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-seal-bleed-points-complete-others
   penalty: 0
   primaryTool:
     tag: HeatWeapon
     doAfterDelay: 2
     healAmount:
       types:
-        Slash: -2
+        Heat: -2
     sound: /Audio/Effects/lightburn.ogg
   improvisedTools:
     - damageType: Heat
@@ -229,12 +288,18 @@
   layer: Tissue
   undoesProcedure: CutBone
   name: health-analyzer-surgery-step-repair-bone-section
+  description: surgery-procedure-desc-repair-bone-section
+  emoteStartSelf: surgery-procedure-emote-repair-bone-section-start-self
+  emoteStartOthers: surgery-procedure-emote-repair-bone-section-start-others
+  emoteCompleteSelf: surgery-procedure-emote-repair-bone-section-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-repair-bone-section-complete-others
   penalty: 0
   primaryTool:
     tag: BoneGelTool
     doAfterDelay: 2
     healAmount:
       types:
+        Blunt: -2
         Slash: -2
     sound: /Audio/Effects/lightburn.ogg
   improvisedTools: []
@@ -248,10 +313,18 @@
   id: OrganClampVessels
   layer: Organ
   name: health-analyzer-surgery-step-clamp-vessels
+  description: surgery-procedure-desc-organ-clamp-vessels
+  emoteStartSelf: surgery-procedure-emote-organ-clamp-vessels-start-self
+  emoteStartOthers: surgery-procedure-emote-organ-clamp-vessels-start-others
+  emoteCompleteSelf: surgery-procedure-emote-organ-clamp-vessels-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-organ-clamp-vessels-complete-others
   penalty: 0
   primaryTool:
     tag: HemostatTool
     doAfterDelay: 3
+    damage:
+      types:
+        Slash: 5
     sound: /Audio/Items/drill_hit.ogg
   improvisedTools:
     - tag: Wirecutter
@@ -265,10 +338,18 @@
   id: OrganRemovalScalpel
   layer: Organ
   name: health-analyzer-surgery-step-organ-removal-scalpel
+  description: surgery-procedure-desc-organ-removal-scalpel
+  emoteStartSelf: surgery-procedure-emote-organ-removal-scalpel-start-self
+  emoteStartOthers: surgery-procedure-emote-organ-removal-scalpel-start-others
+  emoteCompleteSelf: surgery-procedure-emote-organ-removal-scalpel-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-organ-removal-scalpel-complete-others
   penalty: 0
   primaryTool:
     tag: CuttingTool
     doAfterDelay: 3
+    damage:
+      types:
+        Slash: 5
     sound: /Audio/Weapons/bladeslice.ogg
   improvisedTools:
     - damageType: Slash
@@ -282,10 +363,18 @@
   id: OrganRemovalHemostat
   layer: Organ
   name: health-analyzer-surgery-step-organ-removal-hemostat
+  description: surgery-procedure-desc-organ-removal-hemostat
+  emoteStartSelf: surgery-procedure-emote-organ-removal-hemostat-start-self
+  emoteStartOthers: surgery-procedure-emote-organ-removal-hemostat-start-others
+  emoteCompleteSelf: surgery-procedure-emote-organ-removal-hemostat-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-organ-removal-hemostat-complete-others
   penalty: 0
   primaryTool:
     tag: HeatWeapon
     doAfterDelay: 3
+    damage:
+      types:
+        Heat: 2
     sound: /Audio/Weapons/bladeslice.ogg
   improvisedTools:
     - damageType: Heat
@@ -299,6 +388,11 @@
   id: RemoveOrgan
   layer: Organ
   name: health-analyzer-surgery-step-remove-organ
+  description: surgery-procedure-desc-remove-organ
+  emoteStartSelf: surgery-procedure-emote-remove-organ-start-self
+  emoteStartOthers: surgery-procedure-emote-remove-organ-start-others
+  emoteCompleteSelf: surgery-procedure-emote-remove-organ-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-remove-organ-complete-others
   penalty: 0
   requiresTool: false
   primaryTool:
@@ -316,6 +410,11 @@
   id: InsertOrgan
   layer: Organ
   name: health-analyzer-surgery-step-insert-organ
+  description: surgery-procedure-desc-insert-organ
+  emoteStartSelf: surgery-procedure-emote-insert-organ-start-self
+  emoteStartOthers: surgery-procedure-emote-insert-organ-start-others
+  emoteCompleteSelf: surgery-procedure-emote-insert-organ-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-insert-organ-complete-others
   penalty: 0
   requiresTool: false
   primaryTool:
@@ -332,6 +431,11 @@
   id: OrganInsertHemostat
   layer: Organ
   name: health-analyzer-surgery-step-organ-insert-hemostat
+  description: surgery-procedure-desc-organ-insert-hemostat
+  emoteStartSelf: surgery-procedure-emote-organ-insert-hemostat-start-self
+  emoteStartOthers: surgery-procedure-emote-organ-insert-hemostat-start-others
+  emoteCompleteSelf: surgery-procedure-emote-organ-insert-hemostat-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-organ-insert-hemostat-complete-others
   penalty: 0
   primaryTool:
     tag: HemostatTool
@@ -350,6 +454,11 @@
   id: OrganInsertSearing
   layer: Organ
   name: health-analyzer-surgery-step-organ-insert-searing
+  description: surgery-procedure-desc-organ-insert-searing
+  emoteStartSelf: surgery-procedure-emote-organ-insert-searing-start-self
+  emoteStartOthers: surgery-procedure-emote-organ-insert-searing-start-others
+  emoteCompleteSelf: surgery-procedure-emote-organ-insert-searing-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-organ-insert-searing-complete-others
   penalty: 0
   primaryTool:
     tag: HeatWeapon
@@ -373,6 +482,11 @@
   id: OrganInsertRetractor
   layer: Organ
   name: health-analyzer-surgery-step-organ-insert-retractor
+  description: surgery-procedure-desc-organ-insert-retractor
+  emoteStartSelf: surgery-procedure-emote-organ-insert-retractor-start-self
+  emoteStartOthers: surgery-procedure-emote-organ-insert-retractor-start-others
+  emoteCompleteSelf: surgery-procedure-emote-organ-insert-retractor-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-organ-insert-retractor-complete-others
   penalty: 0
   primaryTool:
     tag: PryingTool
@@ -395,6 +509,11 @@
   id: DetachLimb
   layer: Organ
   name: health-analyzer-surgery-step-detach-limb
+  description: surgery-procedure-desc-detach-limb
+  emoteStartSelf: surgery-procedure-emote-detach-limb-start-self
+  emoteStartOthers: surgery-procedure-emote-detach-limb-start-others
+  emoteCompleteSelf: surgery-procedure-emote-detach-limb-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-detach-limb-complete-others
   penalty: 0
   primaryTool:
     tag: CuttingTool
@@ -414,6 +533,11 @@
   id: AttachLimb
   layer: Organ
   name: health-analyzer-surgery-step-attach-limb
+  description: surgery-procedure-desc-attach-limb
+  emoteStartSelf: surgery-procedure-emote-attach-limb-start-self
+  emoteStartOthers: surgery-procedure-emote-attach-limb-start-others
+  emoteCompleteSelf: surgery-procedure-emote-attach-limb-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-attach-limb-complete-others
   penalty: 0
   requiresTool: false
   primaryTool:
@@ -432,6 +556,11 @@
   id: DetachFoot
   layer: Organ
   name: health-analyzer-surgery-step-detach-foot
+  description: surgery-procedure-desc-detach-foot
+  emoteStartSelf: surgery-procedure-emote-detach-foot-start-self
+  emoteStartOthers: surgery-procedure-emote-detach-foot-start-others
+  emoteCompleteSelf: surgery-procedure-emote-detach-foot-complete-self
+  emoteCompleteOthers: surgery-procedure-emote-detach-foot-complete-others
   penalty: 0
   primaryTool:
     tag: CuttingTool

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Content.Shared.Atmos;
 using Content.Shared.Body;
 using Content.Shared.Chemistry.EntitySystems;
@@ -18,6 +19,11 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Medical.Integrity;
+
+/// <summary>
+/// Integer breakdown for UI preview (unsanitary surgery).
+/// </summary>
+public readonly record struct UnsanitaryPenaltyBreakdown(int Liquids, int NonSterileSurface, int RustyWalls, int Total);
 
 public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
 {
@@ -56,7 +62,7 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
         clearEv = new IntegrityPenaltyClearedEvent(ent.Owner, IntegrityPenaltyCategory.ImproperTools);
         RaiseLocalEvent(ent.Owner, ref clearEv);
 
-        var unsanitaryPenalty = CalculateUnsanitaryPenalty(ent.Owner);
+        var unsanitaryPenalty = CalculatePreview(ent.Owner).Total;
         if (unsanitaryPenalty > 0)
         {
             var applyEv = new IntegrityPenaltyAppliedEvent(ent.Owner, unsanitaryPenalty, "health-analyzer-integrity-unsanitary-surgery", IntegrityPenaltyCategory.UnsanitarySurgery);
@@ -80,16 +86,40 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
         }
     }
 
-    private int CalculateUnsanitaryPenalty(EntityUid patient)
+    /// <summary>
+    /// Preview unsanitary surgery penalty sources for the patient's current site (same logic as surgery completion).
+    /// </summary>
+    public UnsanitaryPenaltyBreakdown CalculatePreview(EntityUid patient)
     {
+        if (!AccumulatePenaltyRawBySource(patient, out var liquidsF, out var nonSterileF, out var rustyF))
+            return default;
+
+        var sumF = liquidsF + nonSterileF + rustyF;
+        var total = (int)System.Math.Ceiling(sumF);
+        if (total <= 0)
+            return default;
+
+        AllocateSharesTotaling(total, liquidsF, nonSterileF, rustyF, sumF,
+            out var liqInt, out var nsInt, out var rustInt);
+        return new UnsanitaryPenaltyBreakdown(liqInt, nsInt, rustInt, total);
+    }
+
+    /// <summary>
+    /// Accumulates liquid, non-sterile, and rusty-wall float contributions (same as legacy single-total path).
+    /// </summary>
+    private bool AccumulatePenaltyRawBySource(EntityUid patient,
+        out float liquidsF, out float nonSterileF, out float rustyF)
+    {
+        liquidsF = 0f;
+        nonSterileF = 0f;
+        rustyF = 0f;
+
         if (!TryComp(patient, out TransformComponent? xform))
-            return 0;
+            return false;
 
         EntityUid gridUid;
         MapGridComponent grid;
 
-        // Patient may have null GridUid when parented to non-grid entity (e.g. buckled to bed).
-        // Fallback: resolve grid from patient's world position.
         if (xform.GridUid is { } directGridUid && TryComp<MapGridComponent>(directGridUid, out var directGrid))
         {
             gridUid = directGridUid;
@@ -97,7 +127,7 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
         }
         else if (!_mapManager.TryFindGridAt(_transform.GetMapCoordinates(patient), out var resolvedGridUid, out var resolvedGrid))
         {
-            return 0;
+            return false;
         }
         else
         {
@@ -109,11 +139,7 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
         var startTile = _map.CoordinatesToTile(gridUid, grid, mapCoords);
         var floodedTiles = FloodFillAtmosphere(gridUid, grid, startTile);
 
-        var totalPenalty = 0f;
         var rustyWallsCounted = new HashSet<EntityUid>();
-
-        // Get puddles in range of patient - GetEntitiesInRange<PuddleComponent> works reliably
-        // (used by DrainSystem, JuggernautBloodAbsorption). Range 4 covers ~3 tiles.
         var puddleVolume = GetPuddleVolumeInRange(xform.Coordinates, range: 4f);
 
         foreach (var tile in floodedTiles)
@@ -121,30 +147,33 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
             var tileCoords = _map.GridTileToLocal(gridUid, grid, tile);
             var mixture = _atmosphere.GetTileMixture(gridUid, xform.MapUid, tile, excite: false);
 
-            // Always check for puddles - GetAnchoredEntities is used by PuddleSystem itself when spilling
             var liquidVolume = GetTileLiquidVolume(gridUid, grid, tile);
             if (liquidVolume == 0)
                 liquidVolume = GetAnchoredPuddleVolume(gridUid, grid, tile);
 
             if (mixture == null || mixture.Pressure < VoidPressureThreshold)
             {
-                // No atmosphere - still count liquid as unsanitary
                 if (liquidVolume > 0)
-                    totalPenalty += (float)liquidVolume / 10f + 0.25f;
+                {
+                    liquidsF += (float)liquidVolume / 10f;
+                    nonSterileF += 0.25f;
+                }
+
                 continue;
             }
 
-            var tilePenalty = 0f;
             var isSterile = IsTileSterile(gridUid, grid, tile, tileCoords);
-
-            tilePenalty += (float)liquidVolume / 10f;
+            var liquidPart = (float)liquidVolume / 10f;
 
             if (!isSterile)
-                tilePenalty += 0.25f;
+            {
+                liquidsF += liquidPart;
+                nonSterileF += 0.25f;
+            }
             else
-                tilePenalty *= 0.25f;
-
-            totalPenalty += tilePenalty;
+            {
+                liquidsF += liquidPart * 0.25f;
+            }
 
             foreach (var adjDir in CardinalDirections)
             {
@@ -152,16 +181,52 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
                 foreach (var wall in GetRustyWallsInTile(gridUid, grid, adjTile))
                 {
                     if (rustyWallsCounted.Add(wall))
-                        totalPenalty += 1f;
+                        rustyF += 1f;
                 }
             }
         }
 
-        // Fallback: range-based puddle detection when tile-based logic missed it (e.g. empty map, no atmosphere)
-        if (puddleVolume > 0 && totalPenalty == 0)
-            totalPenalty = (float)puddleVolume / 10f + 0.25f;
+        if (puddleVolume > 0 && liquidsF + nonSterileF + rustyF == 0f)
+        {
+            liquidsF += (float)puddleVolume / 10f;
+            nonSterileF += 0.25f;
+        }
 
-        return (int)System.Math.Ceiling(totalPenalty);
+        return true;
+    }
+
+    /// <summary>
+    /// Distribute <paramref name="total"/> across three buckets proportionally to raw floats; integers sum exactly to <paramref name="total"/>.
+    /// </summary>
+    private static void AllocateSharesTotaling(int total,
+        float liquidsF, float nonSterileF, float rustyF, float sumF,
+        out int liquids, out int nonSterile, out int rusty)
+    {
+        liquids = nonSterile = rusty = 0;
+        if (total <= 0 || sumF <= 0f)
+            return;
+
+        var pl = total * (liquidsF / sumF);
+        var pn = total * (nonSterileF / sumF);
+        var pr = total * (rustyF / sumF);
+
+        liquids = (int)System.Math.Floor(pl);
+        nonSterile = (int)System.Math.Floor(pn);
+        rusty = (int)System.Math.Floor(pr);
+
+        var remainder = System.Math.Max(0, total - liquids - nonSterile - rusty);
+        // Largest remainder method
+        var fracs = new[] { pl - liquids, pn - nonSterile, pr - rusty };
+        var order = new[] { 0, 1, 2 }.OrderByDescending(i => fracs[i]).ThenByDescending(i => i).ToArray();
+        for (var i = 0; i < remainder; i++)
+        {
+            switch (order[i % order.Length])
+            {
+                case 0: liquids++; break;
+                case 1: nonSterile++; break;
+                default: rusty++; break;
+            }
+        }
     }
 
     private HashSet<Vector2i> FloodFillAtmosphere(EntityUid gridUid, MapGridComponent grid, Vector2i start)

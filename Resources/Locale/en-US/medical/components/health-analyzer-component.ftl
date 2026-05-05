@@ -128,6 +128,13 @@ health-analyzer-integrity-no-penalties = No penalties
 health-analyzer-integrity-improvised-tool = Improvised tool
 health-analyzer-integrity-unsanitary-surgery = Unsanitary surgery
 
+health-analyzer-integrity-conditions-preview-title = Surgical Conditions Preview
+health-analyzer-integrity-preview-unsanitary-surgery = Unsanitary surgery
+health-analyzer-integrity-preview-liquids = Liquid contamination
+health-analyzer-integrity-preview-non-sterile = Non-sterile surface
+health-analyzer-integrity-preview-rusty-walls = Rust contamination
+health-analyzer-integrity-preview-no-conditions = No surgical condition penalties detected
+
 # Organ category display names (used in integrity/surgery views)
 organ-category-torso = Torso
 organ-category-head = Head

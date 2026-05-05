@@ -34,6 +34,10 @@ public struct HealthAnalyzerUiState
     public int? IntegrityTotal;
     public int? IntegrityMax;
     public List<IntegrityPenaltyDisplayEntry> IntegrityPenaltyEntries;
+    /// <summary>
+    /// Hypothetical penalties (e.g. unsanitary surgery if a step were performed now). Not included in <see cref="IntegrityTotal"/>.
+    /// </summary>
+    public List<IntegrityPenaltyDisplayEntry> IntegrityPreviewEntries;
     public List<SurgeryLayerStateData> BodyPartLayerState;
 
     public HealthAnalyzerUiState()
@@ -41,6 +45,7 @@ public struct HealthAnalyzerUiState
         Mode = HealthAnalyzerMode.Health;
         BodyParts = new List<NetEntity>();
         IntegrityPenaltyEntries = new List<IntegrityPenaltyDisplayEntry>();
+        IntegrityPreviewEntries = new List<IntegrityPenaltyDisplayEntry>();
         BodyPartLayerState = new List<SurgeryLayerStateData>();
     }
 
@@ -55,6 +60,7 @@ public struct HealthAnalyzerUiState
         Mode = HealthAnalyzerMode.Health;
         BodyParts = new List<NetEntity>();
         IntegrityPenaltyEntries = new List<IntegrityPenaltyDisplayEntry>();
+        IntegrityPreviewEntries = new List<IntegrityPenaltyDisplayEntry>();
         BodyPartLayerState = new List<SurgeryLayerStateData>();
     }
 }

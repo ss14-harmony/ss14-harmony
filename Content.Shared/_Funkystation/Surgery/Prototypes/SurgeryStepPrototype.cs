@@ -1,6 +1,7 @@
 using Content.Shared.Damage;
 using Content.Shared.Medical.Surgery;
 using Robust.Shared.Audio;
+using Robust.Shared.Localization;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Medical.Surgery.Prototypes;
@@ -16,6 +17,18 @@ public sealed partial class SurgeryStepPrototype : IPrototype
 
     [DataField]
     public LocId? Name { get; private set; }
+
+    [DataField("emoteStartSelf")]
+    public LocId? EmoteStartSelf { get; private set; }
+
+    [DataField("emoteStartOthers")]
+    public LocId? EmoteStartOthers { get; private set; }
+
+    [DataField("emoteCompleteSelf")]
+    public LocId? EmoteCompleteSelf { get; private set; }
+
+    [DataField("emoteCompleteOthers")]
+    public LocId? EmoteCompleteOthers { get; private set; }
 
     [DataField]
     public int Penalty { get; private set; }

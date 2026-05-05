@@ -126,6 +126,28 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         {
             AddIntegrityPenaltyEntry(IntegrityPenaltiesList, entry, 0);
         }
+
+        var previewVisible = _state.TargetEntity != null;
+        IntegrityPreviewDivider.Visible = previewVisible;
+        IntegrityPreviewTitle.Visible = previewVisible;
+
+        IntegrityPreviewList.RemoveAllChildren();
+        if (!previewVisible)
+            return;
+
+        var previewEntries = _state.IntegrityPreviewEntries;
+        if (previewEntries == null || previewEntries.Count == 0)
+        {
+            IntegrityPreviewList.AddChild(new Label
+            {
+                Text = Loc.GetString("health-analyzer-integrity-preview-no-conditions"),
+                StyleClasses = { "LabelSubText" }
+            });
+            return;
+        }
+
+        foreach (var entry in previewEntries)
+            AddIntegrityPenaltyEntry(IntegrityPreviewList, entry, 0);
     }
 
     private void AddIntegrityPenaltyEntry(BoxContainer parent, IntegrityPenaltyDisplayEntry entry, int indentLevel)

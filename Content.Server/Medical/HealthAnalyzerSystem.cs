@@ -35,6 +35,7 @@ using Robust.Shared.Localization;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Server.Body.Systems;
+using Content.Server.Medical.Integrity;
 
 namespace Content.Server.Medical;
 /// <summary>
@@ -57,6 +58,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly SurgeryLayerSystem _surgeryLayer = default!;
     [Dependency] private readonly LimbRegenerationSystem _limbRegeneration = default!;
+    [Dependency] private readonly UnsanitarySurgeryCalculationSystem _unsanitary = default!;
 
     public override void Initialize()
     {
@@ -522,6 +524,27 @@ public sealed class HealthAnalyzerSystem : EntitySystem
                         state.IntegrityPenaltyEntries.Add(ConvertToDisplayEntry(entry));
                     }
                 }
+            }
+
+            state.IntegrityPreviewEntries ??= new List<IntegrityPenaltyDisplayEntry>();
+            state.IntegrityPreviewEntries.Clear();
+            var sanitaryPreview = _unsanitary.CalculatePreview(entity);
+            if (sanitaryPreview.Total > 0)
+            {
+                var previewChildren = new List<IntegrityPenaltyDisplayEntry>();
+                if (sanitaryPreview.Liquids > 0)
+                    previewChildren.Add(new IntegrityPenaltyDisplayEntry { Description = "health-analyzer-integrity-preview-liquids", Amount = sanitaryPreview.Liquids });
+                if (sanitaryPreview.NonSterileSurface > 0)
+                    previewChildren.Add(new IntegrityPenaltyDisplayEntry { Description = "health-analyzer-integrity-preview-non-sterile", Amount = sanitaryPreview.NonSterileSurface });
+                if (sanitaryPreview.RustyWalls > 0)
+                    previewChildren.Add(new IntegrityPenaltyDisplayEntry { Description = "health-analyzer-integrity-preview-rusty-walls", Amount = sanitaryPreview.RustyWalls });
+
+                state.IntegrityPreviewEntries.Add(new IntegrityPenaltyDisplayEntry
+                {
+                    Description = "health-analyzer-integrity-preview-unsanitary-surgery",
+                    Amount = sanitaryPreview.Total,
+                    Children = previewChildren.Count > 0 ? previewChildren : null
+                });
             }
 
             foreach (var part in query.Parts)
