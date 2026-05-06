@@ -463,13 +463,21 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             if (TryComp<CyberneticsMaintenanceComponent>(entity, out var maint) && (maint.PanelOpen || !maint.BoltsTight || maint.UnskilledRepairThisSession))
             {
                 var cyberCount = _body.GetAllOrgans(entity).Count(o => HasComp<CyberLimbComponent>(o));
-                var maintenancePenalty = (maint.PanelOpen ? 1 : 0) * cyberCount + (!maint.BoltsTight ? 1 : 0) * cyberCount;
-                if (maintenancePenalty > 0)
+                if (maint.PanelOpen)
                 {
                     state.IntegrityPenaltyEntries.Add(new IntegrityPenaltyDisplayEntry
                     {
-                        Description = "health-analyzer-integrity-maintenance-panel-open-indent",
-                        Amount = maintenancePenalty
+                        Description = "health-analyzer-integrity-panel-open",
+                        Amount = 5
+                    });
+                }
+                var boltsPenalty = (!maint.BoltsTight ? 1 : 0) * cyberCount;
+                if (boltsPenalty > 0)
+                {
+                    state.IntegrityPenaltyEntries.Add(new IntegrityPenaltyDisplayEntry
+                    {
+                        Description = "health-analyzer-integrity-cyber-maintenance-bolts-loose",
+                        Amount = boltsPenalty
                     });
                 }
                 if (maint.UnskilledRepairThisSession)

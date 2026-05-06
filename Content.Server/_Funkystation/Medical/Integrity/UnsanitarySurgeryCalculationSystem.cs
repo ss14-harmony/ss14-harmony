@@ -35,9 +35,9 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
     private static readonly ProtoId<TagPrototype> RustyWallTag = "RustyWall";
 
     /// <summary>
-    /// Strapped surgical fixtures that waive the no–surgery-bed integrity penalty.
+    /// Strapped surgical fixtures that waive the no-surgery-bed integrity penalty.
     /// </summary>
-    private static readonly HashSet<string> SurgeryBedPrototypeIds = new(StringComparer.Ordinal)
+    private static readonly HashSet<string> SurgeryBedPrototypeIds = new(System.StringComparer.Ordinal)
     {
         "MedicalBed",
         "OperatingTable",

@@ -39,6 +39,8 @@ public sealed class CyberneticsMaintenanceSystem : EntitySystem
     private static readonly ProtoId<ToolQualityPrototype> AnchoringQuality = "Anchoring";
     private static readonly ProtoId<TagPrototype> PrecisionRepairToolTag = "PrecisionRepairTool";
     private static readonly ProtoId<TagPrototype> CableCoilTag = "CableCoil";
+    /// <summary>LV cable coils inherit <c>CableStack</c> stack type; HV/MV use other stack types.</summary>
+    private static readonly ProtoId<StackPrototype> LvCableStackTypeId = "Cable";
 
     public override void Initialize()
     {
@@ -207,15 +209,6 @@ public sealed class CyberneticsMaintenanceSystem : EntitySystem
         {
             comp.PanelSecured = false;
             comp.PanelOpen = true;
-            // Unskilled repair: opening with non-precision tool adds flat +5 penalty (binary, once per repair)
-            var isPrecision = args.IsPrecisionRepairTool;
-            if (!isPrecision && args.ToolEntity is { } netTool)
-            {
-                if (TryGetEntity(netTool, out var toolEnt) && _tag.HasTag(toolEnt.Value, PrecisionRepairToolTag))
-                    isPrecision = true;
-            }
-            if (!isPrecision)
-                comp.UnskilledRepairThisSession = true;
             // Do not reset BoltsTight - preserve state when resuming after closing panel early
             _popup.PopupPredicted(Loc.GetString("cyber-maintenance-open-panel"), body, args.User);
         }
@@ -225,6 +218,9 @@ public sealed class CyberneticsMaintenanceSystem : EntitySystem
             comp.PanelOpen = false;
             _popup.PopupPredicted(Loc.GetString("cyber-maintenance-lock-panel"), body, args.User);
         }
+
+        if (ResolvePrecisionScrewdriver(args.IsPrecisionRepairTool, args.ToolEntity))
+            comp.UnskilledRepairThisSession = false;
 
         var ev = new CyberMaintenanceStateChangedEvent(body, PanelClosed: comp.PanelSecured);
         RaiseLocalEvent(body, ref ev);
@@ -260,7 +256,6 @@ public sealed class CyberneticsMaintenanceSystem : EntitySystem
 
             comp.BoltsTight = true;
             comp.WiresInsertedCount = 0;
-            comp.UnskilledRepairThisSession = false;
             _popup.PopupPredicted(Loc.GetString("cyber-maintenance-tighten-bolts"), body, args.User);
             var ev = new CyberMaintenanceStateChangedEvent(body, RepairCompleted: true);
             RaiseLocalEvent(body, ref ev);
@@ -303,8 +298,12 @@ public sealed class CyberneticsMaintenanceSystem : EntitySystem
         comp.WiresInsertedCount++;
         Dirty(ent, comp);
 
-        // Wire insertion does not add integrity penalty. The only penalty for non-precision tools
-        // is UnskilledRepairThisSession (+5 flat), set when opening the panel with screwdriver.
+        if (stack.StackTypeId == LvCableStackTypeId
+            && !ResolvePrecisionScrewdriver(args.IsPrecisionScrewing, args.ScrewdriverEntity))
+        {
+            comp.UnskilledRepairThisSession = true;
+            Dirty(ent, comp);
+        }
 
         if (comp.WiresInsertedCount >= cyberCount)
         {
@@ -319,5 +318,14 @@ public sealed class CyberneticsMaintenanceSystem : EntitySystem
             RaiseLocalEvent(body, ref ev);
             args.Repeat = Exists(used) && TryComp<StackComponent>(used, out var s) && s.Count > 0;
         }
+    }
+
+    private bool ResolvePrecisionScrewdriver(bool flaggedPrecision, NetEntity? netTool)
+    {
+        if (flaggedPrecision)
+            return true;
+        if (netTool is { } net && TryGetEntity(net, out var toolEnt) && _tag.HasTag(toolEnt.Value, PrecisionRepairToolTag))
+            return true;
+        return false;
     }
 }

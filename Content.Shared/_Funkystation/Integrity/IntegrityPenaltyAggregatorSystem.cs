@@ -98,11 +98,11 @@ public sealed class IntegrityPenaltyAggregatorSystem : EntitySystem
 
         if (TryComp<CyberneticsMaintenanceComponent>(ent.Owner, out var maint))
         {
-            const int MaintenancePanelOpenPenalty = 1;
+            const int MaintenancePanelOpenPenalty = 5;
             const int MaintenanceBoltsLoosePenalty = 1;
             const int UnskilledRepairPenalty = 5;
             var cyberCount = _body.GetAllOrgans(ent.Owner).Count(o => HasComp<CyberLimbComponent>(o));
-            total += (maint.PanelOpen ? MaintenancePanelOpenPenalty : 0) * cyberCount;
+            total += maint.PanelOpen ? MaintenancePanelOpenPenalty : 0;
             total += (!maint.BoltsTight ? MaintenanceBoltsLoosePenalty : 0) * cyberCount;
             total += maint.UnskilledRepairThisSession ? UnskilledRepairPenalty : 0;
         }

@@ -28,8 +28,8 @@ public sealed partial class CyberneticsMaintenanceComponent : Component
     public int WiresInsertedCount { get; set; }
 
     /// <summary>
-    /// Set when panel is opened with a non-precision tool. Adds flat +5 integrity penalty (binary, once per repair).
-    /// Cleared when repair completes (bolts tightened).
+    /// Set when LV cable is inserted during wire repair without a precision screwdriver. Adds flat +5 integrity penalty (binary).
+    /// Cleared when a precision screwdriver successfully completes on this body (open or close panel).
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool UnskilledRepairThisSession { get; set; }

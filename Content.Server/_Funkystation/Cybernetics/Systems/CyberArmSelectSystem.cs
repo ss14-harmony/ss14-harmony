@@ -13,6 +13,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.PowerCell.Components;
+using Content.Shared.Popups;
 using Content.Shared.Storage;
 using Robust.Server.GameObjects;
 
@@ -24,6 +25,7 @@ public sealed class CyberArmSelectSystem : EntitySystem
     [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly SharedCyberArmStorageSystem _cyberArmStorage = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedVirtualItemSystem _virtualItem = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
 
@@ -84,12 +86,10 @@ public sealed class CyberArmSelectSystem : EntitySystem
         if (!TryComp<HandsComponent>(args.Performer, out var handsComp))
             return;
 
-        var activeHand = handsComp.ActiveHandId;
-        if (string.IsNullOrEmpty(activeHand))
+        if (!TryGetHandForArm(args.Performer, handsComp, ent.Owner, out var storageHand))
             return;
 
-        // Action should behave like active-hand alt-use: only operate when this arm owns the active hand.
-        if (!_cyberArmStorage.TryGetCyberArmForHand(args.Performer, activeHand, out var activeArm) || activeArm != ent.Owner)
+        if (!_hands.TrySetActiveHand((args.Performer, handsComp), storageHand))
             return;
 
         // Match alt-use behavior: pressing again while holding a cyber arm virtual item
@@ -103,6 +103,21 @@ public sealed class CyberArmSelectSystem : EntitySystem
 
         if (TryOpenArmSelectUi(ent.Owner, args.Performer))
             args.Handled = true;
+    }
+
+    private bool TryGetHandForArm(EntityUid user, HandsComponent handsComp, EntityUid arm, out string handId)
+    {
+        foreach (var hand in handsComp.SortedHands)
+        {
+            if (_cyberArmStorage.TryGetCyberArmForHand(user, hand, out var handArm) && handArm == arm)
+            {
+                handId = hand;
+                return true;
+            }
+        }
+
+        handId = string.Empty;
+        return false;
     }
 
     public bool TryOpenArmSelectUi(EntityUid arm, EntityUid user)
@@ -175,6 +190,10 @@ public sealed class CyberArmSelectSystem : EntitySystem
             EnsureComp<CyberArmVirtualItemComponent>(virtualItem.Value);
             EnsureComp<UnremoveableComponent>(virtualItem.Value);
             _ui.CloseUi(ent.Owner, CyberArmSelectUiKey.Key, user);
+        }
+        else
+        {
+            _popup.PopupEntity(Loc.GetString("cyber-arm-storage-hand-full"), user, user, PopupType.SmallCaution);
         }
     }
 }

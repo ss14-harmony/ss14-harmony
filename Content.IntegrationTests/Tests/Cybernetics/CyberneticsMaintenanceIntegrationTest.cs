@@ -557,7 +557,6 @@ public sealed class CyberneticsMaintenanceIntegrationTest
 
         EntityUid technician = default;
         EntityUid patient = default;
-        EntityUid cyberArm = default;
         EntityUid screwdriver = default;
         EntityUid precisionScrewdriver = default;
         EntityUid wrench = default;
@@ -575,8 +574,6 @@ public sealed class CyberneticsMaintenanceIntegrationTest
             wireStack = entityManager.SpawnEntity("CableApcStack", coords);
 
             ReplaceArmWithCyberArm(entityManager, bodySystem, containerSystem, patient, coords);
-            cyberArm = bodySystem.GetAllOrgans(patient).First(o =>
-                entityManager.HasComponent<CyberLimbComponent>(o));
         });
 
         await server.WaitAssertion(() =>
@@ -596,8 +593,8 @@ public sealed class CyberneticsMaintenanceIntegrationTest
 
         await server.WaitAssertion(() =>
         {
-            Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(6),
-                "Screwdriver open should add +1 panel penalty and +5 unskilled repair penalty");
+            Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(5),
+                "Screwdriver open should add flat +5 panel penalty only (no unskilled until LV wire)");
         });
 
         await server.WaitPost(() =>
@@ -611,8 +608,8 @@ public sealed class CyberneticsMaintenanceIntegrationTest
 
         await server.WaitAssertion(() =>
         {
-            Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(7),
-                "Wrench loosen should add +1 more penalty (panel+bolts+unskilled)");
+            Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(6),
+                "Wrench loosen should add +1 bolts penalty (panel + bolts per limb)");
         });
 
         await server.WaitPost(() =>
@@ -636,8 +633,8 @@ public sealed class CyberneticsMaintenanceIntegrationTest
 
         await server.WaitAssertion(() =>
         {
-            Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(1),
-                "Wrench tighten should clear unskilled and bolts, leaving only panel open penalty");
+            Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(5),
+                "Wrench tighten clears bolts only; flat panel-open penalty remains until closed");
         });
 
         await server.WaitPost(() =>
@@ -652,7 +649,7 @@ public sealed class CyberneticsMaintenanceIntegrationTest
         await server.WaitAssertion(() =>
         {
             Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(0),
-                "Screwdriver lock should clear all penalties");
+                "Screwdriver lock should clear panel penalty");
         });
 
         await pair.CleanReturnAsync();
@@ -700,8 +697,8 @@ public sealed class CyberneticsMaintenanceIntegrationTest
 
             await server.WaitAssertion(() =>
             {
-                Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(6),
-                    $"Open #{i + 1}: total should be 6 (1 panel + 5 unskilled), unskilled does not accumulate");
+                Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(5),
+                    $"Open #{i + 1}: flat panel-open penalty only without LV wire repair");
             });
 
             await server.WaitPost(() =>
@@ -713,8 +710,8 @@ public sealed class CyberneticsMaintenanceIntegrationTest
 
             await server.WaitAssertion(() =>
             {
-                Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(5),
-                    $"Close #{i + 1}: total should be 5 (unskilled persists until repair complete)");
+                Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(0),
+                    $"Close #{i + 1}: no lingering penalties without LV wire insert");
             });
         }
 
@@ -764,8 +761,8 @@ public sealed class CyberneticsMaintenanceIntegrationTest
             var maint = entityManager.GetComponent<CyberneticsMaintenanceComponent>(patient);
             Assert.That(maint.UnskilledRepairThisSession, Is.False,
                 "Precision screwdriver should not set UnskilledRepairThisSession");
-            Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(1),
-                "Precision screwdriver open should add only +1 panel penalty, not +5 unskilled");
+            Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(5),
+                "Precision screwdriver open should add flat +5 panel penalty only");
         });
 
         await pair.CleanReturnAsync();
@@ -820,8 +817,8 @@ public sealed class CyberneticsMaintenanceIntegrationTest
 
         await server.WaitAssertion(() =>
         {
-            Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(7),
-                "Open panel with 2 cyber limbs should add +2 panel penalty and +5 unskilled");
+            Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(5),
+                "Open panel adds flat +5 regardless of cyber limb count");
         });
 
         await server.WaitPost(() =>
@@ -835,8 +832,8 @@ public sealed class CyberneticsMaintenanceIntegrationTest
 
         await server.WaitAssertion(() =>
         {
-            Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(9),
-                "Loosen bolts with 2 cyber limbs should add +2 panel + +2 bolts + +5 unskilled");
+            Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(7),
+                "Loosen bolts with 2 cyber limbs: +5 panel + 2 bolts loose");
         });
 
         await pair.CleanReturnAsync();
@@ -911,14 +908,13 @@ public sealed class CyberneticsMaintenanceIntegrationTest
 
         await server.WaitAssertion(() =>
         {
-            // Wire insertion does not add per-limb penalty. Only UnskilledRepairThisSession (+5) from opening with normal screwdriver.
             Assert.That(entityManager.HasComponent<LowQualityMaintenancePenaltyComponent>(cyberArm), Is.False,
-                "Wire insertion no longer adds LowQualityMaintenancePenaltyComponent");
+                "Wire insertion does not add LowQualityMaintenancePenaltyComponent");
             Assert.That(entityManager.TryGetComponent(patient, out CyberneticsMaintenanceComponent? maint), Is.True);
             Assert.That(maint!.UnskilledRepairThisSession, Is.True,
-                "Opening with normal screwdriver should set UnskilledRepairThisSession");
-            Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.GreaterThanOrEqualTo(5),
-                "Unskilled repair (opening with normal screwdriver) adds +5 penalty");
+                "LV wire insert with normal screwdriver should set UnskilledRepairThisSession");
+            Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(11),
+                "Panel + bolts + unskilled: 5 + 1 + 5");
         });
 
         await pair.CleanReturnAsync();
@@ -994,14 +990,18 @@ public sealed class CyberneticsMaintenanceIntegrationTest
         {
             Assert.That(entityManager.HasComponent<LowQualityMaintenancePenaltyComponent>(cyberArm), Is.False,
                 "Wire insertion does not add LowQualityMaintenancePenaltyComponent (precision or otherwise)");
+            Assert.That(entityManager.TryGetComponent(patient, out CyberneticsMaintenanceComponent? maint), Is.True);
+            Assert.That(maint!.UnskilledRepairThisSession, Is.False,
+                "LV wire with precision screwdriver held should not set unskilled flag");
+            Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(6),
+                "Panel + bolts only after precision LV wire insert");
         });
 
         await pair.CleanReturnAsync();
     }
 
     [Test]
-    [Ignore("Second wire insert DoAfter does not complete in integration test environment; wire-insert penalty removed - only UnskilledRepairThisSession from panel open applies")]
-    public async Task WireRepair_WithPrecisionScrewdriver_RemovesLowQualityPenalty()
+    public async Task WireRepair_WithMvCable_DoesNotSetUnskilledRepairFlag()
     {
         await using var pair = await PoolManager.GetServerClient();
         var server = pair.Server;
@@ -1016,11 +1016,9 @@ public sealed class CyberneticsMaintenanceIntegrationTest
 
         EntityUid technician = default;
         EntityUid patient = default;
-        EntityUid cyberArm = default;
         EntityUid screwdriver = default;
-        EntityUid precisionScrewdriver = default;
         EntityUid wrench = default;
-        EntityUid wireStack = default;
+        EntityUid mvWireStack = default;
         EntityCoordinates coords = default;
 
         await server.WaitPost(() =>
@@ -1029,17 +1027,13 @@ public sealed class CyberneticsMaintenanceIntegrationTest
             technician = entityManager.SpawnEntity("MobHuman", coords);
             patient = entityManager.SpawnEntity("MobHuman", coords);
             screwdriver = entityManager.SpawnEntity("Screwdriver", coords);
-            precisionScrewdriver = entityManager.SpawnEntity("ScrewdriverPrecision", coords);
             wrench = entityManager.SpawnEntity("Wrench", coords);
-            wireStack = entityManager.SpawnEntity("CableApcStack10", coords);
+            mvWireStack = entityManager.SpawnEntity("CableMVStack", coords);
 
             ReplaceArmWithCyberArm(entityManager, bodySystem, containerSystem, patient, coords);
-            cyberArm = bodySystem.GetAllOrgans(patient).First(o =>
-                entityManager.HasComponent<CyberLimbComponent>(o));
         });
 
         var doAfterTicks = 150;
-
         await pair.RunTicksSync(5);
 
         await server.WaitPost(() =>
@@ -1063,59 +1057,19 @@ public sealed class CyberneticsMaintenanceIntegrationTest
         {
             handsSystem.TryDrop(technician, targetDropLocation: null, checkActionBlocker: false);
             handsSystem.TryPickupAnyHand(technician, screwdriver, checkActionBlocker: false);
-            handsSystem.TryPickupAnyHand(technician, wireStack, checkActionBlocker: false);
-            var ev = new InteractUsingEvent(technician, wireStack, patient, coords);
+            handsSystem.TryPickupAnyHand(technician, mvWireStack, checkActionBlocker: false);
+            var ev = new InteractUsingEvent(technician, mvWireStack, patient, coords);
             entityManager.EventBus.RaiseLocalEvent(patient, ev);
         });
         await pair.RunTicksSync(doAfterTicks);
 
         await server.WaitAssertion(() =>
         {
-            Assert.That(entityManager.HasComponent<LowQualityMaintenancePenaltyComponent>(cyberArm), Is.True,
-                "Should have low-quality penalty after first repair with normal screwdriver");
-        });
-
-        await server.WaitPost(() =>
-        {
-            handsSystem.TryDrop(technician, targetDropLocation: null, checkActionBlocker: false);
-            handsSystem.TryPickupAnyHand(technician, wrench, checkActionBlocker: false);
-            var ev = new InteractUsingEvent(technician, wrench, patient, coords);
-            entityManager.EventBus.RaiseLocalEvent(patient, ev);
-        });
-        await pair.RunTicksSync(doAfterTicks);
-
-        await server.WaitPost(() =>
-        {
-            handsSystem.TryDrop(technician, targetDropLocation: null, checkActionBlocker: false);
-            handsSystem.TryPickupAnyHand(technician, screwdriver, checkActionBlocker: false);
-            var ev = new InteractUsingEvent(technician, screwdriver, patient, coords);
-            entityManager.EventBus.RaiseLocalEvent(patient, ev);
-        });
-        await pair.RunTicksSync(doAfterTicks);
-
-        await server.WaitPost(() =>
-        {
-            handsSystem.TryDrop(technician, targetDropLocation: null, checkActionBlocker: false);
-            handsSystem.TryPickupAnyHand(technician, wrench, checkActionBlocker: false);
-            var ev = new InteractUsingEvent(technician, wrench, patient, coords);
-            entityManager.EventBus.RaiseLocalEvent(patient, ev);
-        });
-        await pair.RunTicksSync(doAfterTicks);
-
-        await server.WaitPost(() =>
-        {
-            handsSystem.TryDrop(technician, targetDropLocation: null, checkActionBlocker: false);
-            handsSystem.TryPickupAnyHand(technician, precisionScrewdriver, checkActionBlocker: false);
-            handsSystem.TryPickupAnyHand(technician, wireStack, checkActionBlocker: false);
-            var ev = new InteractUsingEvent(technician, wireStack, patient, coords);
-            entityManager.EventBus.RaiseLocalEvent(patient, ev);
-        });
-        await pair.RunTicksSync(doAfterTicks);
-
-        await server.WaitAssertion(() =>
-        {
-            Assert.That(entityManager.HasComponent<LowQualityMaintenancePenaltyComponent>(cyberArm), Is.False,
-                "Precision screwdriver repair should remove LowQualityMaintenancePenaltyComponent");
+            Assert.That(entityManager.TryGetComponent(patient, out CyberneticsMaintenanceComponent? maint), Is.True);
+            Assert.That(maint!.UnskilledRepairThisSession, Is.False,
+                "MV cable insert should not set unskilled repair (LV only)");
+            Assert.That(GetIntegrityPenaltyTotal(entityManager, patient), Is.EqualTo(6),
+                "Panel + bolts only: MV wire does not add unskilled +5");
         });
 
         await pair.CleanReturnAsync();

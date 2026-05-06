@@ -137,6 +137,11 @@
   components:
   - type: OrganXenograft
     nativeSpecies: SpaceCarp
+  - type: OrganBodyComponents
+    components:
+    - type: PressureProtection
+      lowPressureMultiplier: 1000
+      lowPressureModifier: 200
 
 - type: entity
   parent: [ OrganBaseStomach, OrganAnimalInternal, OrganAnimalMetabolizer ]

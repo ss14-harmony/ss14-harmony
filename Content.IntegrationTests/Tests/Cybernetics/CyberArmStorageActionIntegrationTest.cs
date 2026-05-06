@@ -11,6 +11,7 @@ using Content.Shared.Cybernetics.Events;
 using Content.Shared.Cybernetics.UI;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Mind;
 using Content.Shared.Players;
 using Content.Shared.Storage;
@@ -94,6 +95,7 @@ public sealed class CyberArmStorageActionIntegrationTest
         EntityUid user = default;
         EntityUid leftCyberArm = default;
         EntityUid rightCyberArm = default;
+        EntityUid leftStoredItem = default;
 
         await server.WaitAssertion(() =>
         {
@@ -111,6 +113,7 @@ public sealed class CyberArmStorageActionIntegrationTest
             var rightItem = entityManager.SpawnEntity("Wrench", mapData.GridCoords);
             storageSystem.Insert(leftCyberArm, leftItem, out _, user: null, playSound: false);
             storageSystem.Insert(rightCyberArm, rightItem, out _, user: null, playSound: false);
+            leftStoredItem = leftItem;
         });
 
         await pair.RunTicksSync(5);
@@ -130,6 +133,9 @@ public sealed class CyberArmStorageActionIntegrationTest
 
         await server.WaitAssertion(() =>
         {
+            var handsComp = entityManager.GetComponent<HandsComponent>(user);
+            handsSystem.TrySetActiveHand((user, handsComp), "right");
+
             var actionsComp = entityManager.GetComponent<ActionsComponent>(user);
             actionsSystem.PerformAction((user, actionsComp), (leftAction, entityManager.GetComponent<ActionComponent>(leftAction)));
         });
@@ -137,10 +143,40 @@ public sealed class CyberArmStorageActionIntegrationTest
 
         await server.WaitAssertion(() =>
         {
+            var handsComp = entityManager.GetComponent<HandsComponent>(user);
+            Assert.That(handsComp.ActiveHandId, Is.EqualTo("left"),
+                "Left arm action should auto-switch active hand to left");
+
             Assert.That(userInterface.IsUiOpen(leftCyberArm, CyberArmSelectUiKey.Key, user), Is.True,
                 "Left arm UI should open when left action is used");
             Assert.That(userInterface.IsUiOpen(rightCyberArm, CyberArmSelectUiKey.Key, user), Is.False,
                 "Right arm UI should not open when left action is used");
+        });
+
+        await server.WaitAssertion(() =>
+        {
+            var blockingItem = entityManager.SpawnEntity("Crowbar", mapData.GridCoords);
+            var handsComp = entityManager.GetComponent<HandsComponent>(user);
+            handsSystem.TrySetActiveHand((user, handsComp), "left");
+            Assert.That(handsSystem.TryPickup(user, blockingItem, "left", checkActionBlocker: false, animate: false), Is.True,
+                "Precondition: left hand should be occupied");
+
+            var msg = new CyberArmSelectRequestMessage(entityManager.GetNetEntity(leftStoredItem))
+            {
+                Actor = user
+            };
+            userInterface.RaiseUiMessage(leftCyberArm, CyberArmSelectUiKey.Key, msg);
+        });
+        await pair.RunTicksSync(5);
+
+        await server.WaitAssertion(() =>
+        {
+            var handsComp = entityManager.GetComponent<HandsComponent>(user);
+            Assert.That(handsSystem.TryGetHeldItem((user, handsComp), "left", out var leftHeld), Is.True,
+                "Left hand should still be occupied after selecting with a full hand");
+            Assert.That(leftHeld, Is.Not.Null);
+            Assert.That(entityManager.HasComponent<VirtualItemComponent>(leftHeld.Value), Is.False,
+                "Selecting cyber arm storage with a full hand should not replace held item with a virtual item");
         });
 
         await server.WaitAssertion(() =>
