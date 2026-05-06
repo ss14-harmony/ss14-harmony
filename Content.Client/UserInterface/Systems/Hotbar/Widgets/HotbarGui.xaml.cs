@@ -10,6 +10,7 @@ namespace Content.Client.UserInterface.Systems.Hotbar.Widgets;
 public sealed partial class HotbarGui : UIWidget
 {
     /// <summary>
+    /// Funky - CyberMed
     /// When true, the leftmost hand button in the grid is the left hand (organic limbs).
     /// When false, the leftmost is the right hand (cyber limbs). Affects panel-to-hand mapping.
     /// </summary>
@@ -29,6 +30,7 @@ public sealed partial class HotbarGui : UIWidget
     }
 
     /// <summary>
+    /// Funky - CyberMed
     /// Updates the hand-to-panel mapping based on the order of hands in the grid.
     /// Organic limbs typically have left hand first (leftmost); cyber limbs have right hand first.
     /// </summary>
@@ -40,6 +42,7 @@ public sealed partial class HotbarGui : UIWidget
 
     public void UpdatePanelEntityLeft(EntityUid? entity, Hand? hand)
     {
+        // Funky - CyberMed
         // Panel positions: StatusPanelRight is left of hands, StatusPanelLeft is right (per ItemStatusPanel).
         // When leftmost hand is Right, use normal mapping. When Left, swap.
         if (_leftmostHandIsLeft)
@@ -50,6 +53,7 @@ public sealed partial class HotbarGui : UIWidget
 
     public void UpdatePanelEntityRight(EntityUid? entity, Hand? hand)
     {
+        // Funky - CyberMed
         if (_leftmostHandIsLeft)
             StatusPanelLeft.Update(entity, hand);
         else
@@ -64,6 +68,7 @@ public sealed partial class HotbarGui : UIWidget
 
     public void UpdateStatusVisibility(bool left, bool right)
     {
+        // Funky - CyberMed
         // Match UpdatePanelEntity mapping: StatusPanelRight is on left, StatusPanelLeft on right.
         if (_leftmostHandIsLeft)
         {

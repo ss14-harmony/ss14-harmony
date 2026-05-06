@@ -10,10 +10,10 @@ public sealed class DefibrillatorSystem : SharedDefibrillatorSystem
 {
     [Dependency] private readonly EuiManager _eui = default!;
     [Dependency] private readonly ISharedPlayerManager _player = default!;
-    [Dependency] private readonly SharedMindSystem _mindSystem = default!;
+    [Dependency] private readonly SharedMindSystem _mind = default!;
 
     protected override void OpenReturnToBodyEui(Entity<MindComponent> mind, ICommonSession session)
     {
-        _eui.OpenEui(new ReturnToBodyEui(mind.Comp, _mindSystem, _player), session);
+        _eui.OpenEui(new ReturnToBodyEui(mind, _mind, _player), session);
     }
 }

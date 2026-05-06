@@ -21,10 +21,10 @@ using Content.Shared.Administration;
 using Content.Shared.Administration.Components;
 using Content.Shared.Administration.Systems;
 using Content.Shared.Atmos.Components;
-using Content.Server.Medical.LimbRegeneration;
+using Content.Server.Medical.LimbRegeneration; // Funky - CyberMed
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
-using Content.Shared.Body.Events;
+using Content.Shared.Body.Events; // Funky - CyberMed
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clumsy;
 using Content.Shared.Cluwne;
@@ -33,7 +33,7 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Electrocution;
 using Content.Shared.Gibbing;
-using Content.Shared.Humanoid;
+using Content.Shared.Humanoid; // Funky - CyberMed
 using Content.Shared.Gravity;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory;
@@ -76,9 +76,8 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
     [Dependency] private readonly BodySystem _bodySystem = default!;
-    [Dependency] private readonly LimbRegenerationSystem _limbRegeneration = default!;
+    [Dependency] private readonly LimbRegenerationSystem _limbRegeneration = default!; // Funky - CyberMed
     [Dependency] private readonly CreamPieSystem _creamPieSystem = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly ElectrocutionSystem _electrocutionSystem = default!;
     [Dependency] private readonly EntityStorageSystem _entityStorageSystem = default!;
     [Dependency] private readonly ExplosionSystem _explosionSystem = default!;
@@ -101,6 +100,7 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly SuperBonkSystem _superBonkSystem = default!;
     [Dependency] private readonly SlipperySystem _slipperySystem = default!;
     [Dependency] private readonly GibbingSystem _gibbing = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
 
     private readonly EntProtoId _actionViewLawsProtoId = "ActionViewLaws";
     private readonly ProtoId<SiliconLawsetPrototype> _crewsimovLawset = "Crewsimov";
@@ -243,11 +243,11 @@ public sealed partial class AdminVerbSystem
                         if (!_mobThresholdSystem.TryGetThresholdForState(args.Target, MobState.Dead,
                                 out var deadThreshold))
                             return;// whelp.
-                        damageToDeal = deadThreshold.Value.Int() - (int)_damageable.GetTotalDamage((args.Target, damageable));
+                        damageToDeal = deadThreshold.Value.Int() - (int)_damageable.GetTotalDamage((args.Target, damageable)); // Funky - CyberMed
                     }
                     else
                     {
-                        damageToDeal = criticalThreshold.Value.Int() - (int)_damageable.GetTotalDamage((args.Target, damageable));
+                        damageToDeal = criticalThreshold.Value.Int() - (int)_damageable.GetTotalDamage((args.Target, damageable)); // Funky - CyberMed
                     }
 
                     if (damageToDeal <= 0)
@@ -395,7 +395,8 @@ public sealed partial class AdminVerbSystem
                 Message = string.Join(": ", handRemovalName, Loc.GetString("admin-smite-remove-hand-description"))
             };
             args.Verbs.Add(handRemoval);
-            // Funkystation: removeAllLimbs and restoreAllLimbs and cyberneticsReplacement added
+            // Funky - CyberMed: Start
+            // removeAllLimbs and restoreAllLimbs and cyberneticsReplacement added
             if (HasComp<HumanoidProfileComponent>(args.Target))
             {
                 var removeAllLimbsName = Loc.GetString("admin-smite-remove-all-limbs-name").ToLowerInvariant();
@@ -462,7 +463,7 @@ public sealed partial class AdminVerbSystem
                 };
                 args.Verbs.Add(cyberneticsReplacement);
             }
-
+            // Funky - CyberMed: End
             var stomachRemovalName = Loc.GetString("admin-smite-stomach-removal-name").ToLowerInvariant();
             Verb stomachRemoval = new()
             {

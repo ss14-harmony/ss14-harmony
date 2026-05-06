@@ -1,9 +1,9 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Content.Shared.Cybernetics.Components;
+using Content.Shared.Cybernetics.Components; // Funky - CyberMed
 using Content.Shared.Hands;
 using Content.Shared.Inventory.Events;
-using Content.Shared.Inventory.VirtualItem;
+using Content.Shared.Inventory.VirtualItem; // Funky - CyberMed
 using Content.Shared.Item;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -55,6 +55,7 @@ public sealed class ItemSystem : SharedItemSystem
     /// </summary>
     private void OnGetVisuals(EntityUid uid, ItemComponent item, GetInhandVisualsEvent args)
     {
+        // Funky - CyberMed: Start
         // Cyber arm virtual items get visuals from the blocking entity via CyberArmVirtualItemVisualsSystem
         if (HasComp<CyberArmVirtualItemComponent>(uid) &&
             TryComp<VirtualItemComponent>(uid, out var virt) &&
@@ -62,6 +63,7 @@ public sealed class ItemSystem : SharedItemSystem
         {
             return;
         }
+        // Funky - CyberMed: End
 
         var defaultKey = $"inhand-{args.Location.ToString().ToLowerInvariant()}";
 

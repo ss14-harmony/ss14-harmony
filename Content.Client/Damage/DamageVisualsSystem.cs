@@ -176,7 +176,7 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
             // See if that group is in our entity's damage container.
             else if (!damageVisComp.Overlay && damageVisComp.DamageGroup != null)
             {
-                if (!damageContainer.SupportedGroups.Contains(damageVisComp.DamageGroup))
+                if (!damageContainer.SupportedGroups.Contains(damageVisComp.DamageGroup)) // Funky - CyberMed
                 {
                     Log.Error($"Damage keys were invalid for entity {entity}.");
                     damageVisComp.Valid = false;
@@ -278,7 +278,7 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
                             $"{layer}{group}",
                             index);
                     }
-                    damageVisComp.DisabledLayers.Add(layer, DamageOverlayLayerState.AllEnabled);
+                    damageVisComp.DisabledLayers.Add(layer, DamageOverlayLayerState.AllEnabled); // Funky - CyberMed
                 }
                 // If we're not targeting groups, and we're still
                 // using an overlay, we instead just add a general
@@ -291,7 +291,7 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
                         $"{layer}_{damageVisComp.Thresholds[1]}",
                         $"{layer}trackDamage",
                         index);
-                    damageVisComp.DisabledLayers.Add(layer, DamageOverlayLayerState.AllEnabled);
+                    damageVisComp.DisabledLayers.Add(layer, DamageOverlayLayerState.AllEnabled); // Funky - CyberMed
                 }
             }
         }
@@ -373,7 +373,7 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
         if (AppearanceSystem.TryGetData<bool>(uid, DamageVisualizerKeys.ForceUpdate, out var update, component)
             && update)
         {
-            // Re-apply disabled layer state (e.g. BloodDisabled for cyber limbs) before full refresh
+            // Funky - CyberMed: Re-apply disabled layer state (e.g. BloodDisabled for cyber limbs) before full refresh
             if (damageVisComp.TargetLayers != null && damageVisComp.DamageOverlayGroups != null)
                 UpdateDisabledLayers(uid, spriteComponent, component, damageVisComp);
             ForceUpdateLayers((uid, damageComponent, spriteComponent, damageVisComp));
@@ -389,7 +389,7 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
         if (!AppearanceSystem.TryGetData<DamageVisualizerGroupData>(uid, DamageVisualizerKeys.DamageUpdateGroups,
                 out var data, component))
         {
-            data = new DamageVisualizerGroupData(_damageable.GetDamagePerGroup((uid, Comp<DamageableComponent>(uid))).Keys.Select(k => k.Id).ToList());
+            data = new DamageVisualizerGroupData(_damageable.GetDamagePerGroup((uid, Comp<DamageableComponent>(uid))).Keys.Select(k => k.Id).ToList()); // Funky - CyberMed
         }
 
         UpdateDamageVisuals(data.GroupList, (uid, damageComponent, spriteComponent, damageVisComp));
@@ -405,11 +405,13 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
     {
         foreach (var layer in damageVisComp.TargetLayerMapKeys)
         {
+            // Funky - CyberMed: Start
+            // Handles layer state tracking for missing limbs
             var state = DamageOverlayLayerState.AllEnabled;
             if (AppearanceSystem.TryGetData<DamageOverlayLayerState>(uid, layer, out var layerState, component))
                 state = layerState;
             else if (AppearanceSystem.TryGetData<bool>(uid, layer, out var oldDisabled, component) && oldDisabled)
-                state = DamageOverlayLayerState.BloodDisabled; // backwards compat: old cyber limb data
+                state = DamageOverlayLayerState.BloodDisabled;
 
             if (damageVisComp.DisabledLayers[layer] == state)
                 continue;
@@ -423,7 +425,7 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
                 SpriteSystem.LayerSetVisible((uid, spriteComponent), $"{layer}trackDamage", !allDisabled);
                 continue;
             }
-
+            // Funky - CyberMed: End
             if (damageVisComp.DamageOverlayGroups == null)
                 continue;
 
@@ -497,11 +499,11 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
     /// </summary>
     private void UpdateDamageVisuals(Entity<DamageableComponent, SpriteComponent, DamageVisualsComponent> entity)
     {
-        var damageComponent = entity.Comp1;
+        var damageComponent = entity.Comp1; // Funky - CyberMed
         var spriteComponent = entity.Comp2;
         var damageVisComp = entity.Comp3;
 
-        if (!CheckThresholdBoundary(_damageable.GetTotalDamage((entity, damageComponent)), damageVisComp.LastDamageThreshold, damageVisComp, out var threshold))
+        if (!CheckThresholdBoundary(_damageable.GetTotalDamage((entity, damageComponent)), damageVisComp.LastDamageThreshold, damageVisComp, out var threshold)) // Funky - CyberMed
             return;
 
         damageVisComp.LastDamageThreshold = threshold;
@@ -524,9 +526,9 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
     ///     according to the list of damage groups
     ///     passed into it.
     /// </summary>
-    private void UpdateDamageVisuals(List<string> delta, Entity<DamageableComponent, SpriteComponent, DamageVisualsComponent> entity)
+    private void UpdateDamageVisuals(List<string> delta, Entity<DamageableComponent, SpriteComponent, DamageVisualsComponent> entity) // Funky - CyberMed
     {
-        var damageComponent = entity.Comp1;
+        var damageComponent = entity.Comp1; // Funky - CyberMed
         var spriteComponent = entity.Comp2;
         var damageVisComp = entity.Comp3;
 
@@ -536,7 +538,7 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
                 continue;
 
             if (!_prototypeManager.TryIndex<DamageGroupPrototype>(damageGroup, out var damageGroupPrototype)
-                || !_damageable.TryGetDamageInGroup((entity, damageComponent), damageGroupPrototype.ID, out var damageTotal))
+                || !_damageable.TryGetDamageInGroup((entity, damageComponent), damageGroupPrototype.ID, out var damageTotal)) // Funky - CyberMed
                 continue;
 
             if (!damageVisComp.LastThresholdPerGroup.TryGetValue(damageGroup, out var lastThreshold)
@@ -616,7 +618,7 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
     /// </summary>
     private void UpdateTargetLayer(Entity<SpriteComponent> spriteEnt, DamageVisualsComponent damageVisComp, object layerMapKey, FixedPoint2 threshold)
     {
-        if (damageVisComp.Overlay && damageVisComp.DamageOverlayGroups != null)
+        if (damageVisComp.Overlay && damageVisComp.DamageOverlayGroups != null) // Funky - CyberMed
         {
             if (damageVisComp.DisabledLayers[layerMapKey] != DamageOverlayLayerState.AllDisabled)
             {
@@ -651,11 +653,13 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
 
         if (damageVisComp.Overlay && damageVisComp.DamageOverlayGroups != null)
         {
+            // Funky - CyberMed: Start
             var layerStateVal = damageVisComp.DisabledLayers[layerMapKey];
             var skipLayer = layerStateVal == DamageOverlayLayerState.AllDisabled
                 || (layerStateVal == DamageOverlayLayerState.BloodDisabled && damageGroup == "Brute");
             if (damageVisComp.DamageOverlayGroups.ContainsKey(damageGroup) && !skipLayer)
             {
+                // Funky - CyberMed: End
                 var layerState = damageVisComp.LayerMapKeyStates[layerMapKey];
                 SpriteSystem.LayerMapTryGet((entity, spriteComponent), $"{layerMapKey}{damageGroup}", out var spriteLayer, false);
 

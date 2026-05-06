@@ -21,7 +21,7 @@ namespace Content.Client.HealthAnalyzer.UI
             _window = this.CreateWindow<HealthAnalyzerWindow>();
 
             _window.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
-            _window.SetOnSurgeryRequest(msg => SendPredictedMessage(msg));
+            _window.SetOnSurgeryRequest(msg => SendPredictedMessage(msg)); // Funky - CyberMed
         }
 
         protected override void ReceiveMessage(BoundUserInterfaceMessage message)

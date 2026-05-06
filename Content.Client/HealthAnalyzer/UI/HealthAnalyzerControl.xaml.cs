@@ -32,7 +32,8 @@ namespace Content.Client.HealthAnalyzer.UI;
 
 // Health analyzer UI is split from its window because it's used by both the
 // health analyzer item and the cryo pod UI.
-
+// Funky - CyberMed: HealthAnalyzerControl mostly re-written to support surgery requests from the BUI
+// Changes to code so extensive just assume the entire file was rewritten
 [GenerateTypedNameReferences]
 public sealed partial class HealthAnalyzerControl : BoxContainer
 {

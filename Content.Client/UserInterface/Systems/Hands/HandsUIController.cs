@@ -330,6 +330,7 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
 
     private void UpdateVisibleStatusPanels()
     {
+        // Funky - CyberMed
         // Update hand-to-panel mapping based on button order (organic vs cyber limbs differ)
         HandsGui?.UpdateHandOrderMapping();
 
@@ -384,7 +385,6 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
 
     private void UpdateHandStatus(HandButton hand, EntityUid? entity, Hand? handData)
     {
-        // Status panels: StatusPanelLeft shows left hand, StatusPanelRight shows right hand
         if (hand == _statusHandLeft)
             HandsGui?.UpdatePanelEntityLeft(entity, handData);
 
