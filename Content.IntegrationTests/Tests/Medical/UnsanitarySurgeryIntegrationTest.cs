@@ -10,6 +10,7 @@ using Content.Shared.Body.Events;
 using Content.Shared.Buckle;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Inventory;
 using Content.Shared.Medical.Integrity;
 using Content.Shared.Medical.Integrity.Components;
 using Content.Shared.Medical.Integrity.Events;
@@ -51,6 +52,7 @@ public sealed class UnsanitarySurgeryIntegrationTest
         var entityManager = server.ResolveDependency<IEntityManager>();
         var handsSystem = entityManager.System<SharedHandsSystem>();
         var buckleSystem = entityManager.System<SharedBuckleSystem>();
+        var inventory = entityManager.System<InventorySystem>();
         var mapData = await pair.CreateTestMap();
 
         await pair.RunTicksSync(5);
@@ -77,6 +79,10 @@ public sealed class UnsanitarySurgeryIntegrationTest
             wirecutter = entityManager.SpawnEntity("Wirecutter", mapData.GridCoords);
             retractor = entityManager.SpawnEntity("Retractor", mapData.GridCoords);
             torso = GetTorso(entityManager, patient);
+
+            var surgeonMask = entityManager.SpawnEntity("ClothingMaskGas", mapData.GridCoords);
+            Assert.That(inventory.TryEquip(surgeon, surgeonMask, "mask", force: true), Is.True,
+                "Surgeon mask isolates environmental-only unsanitary assertion from unmasked-observer penalty.");
 
             handsSystem.TryPickupAnyHand(surgeon, analyzer, checkActionBlocker: false);
             handsSystem.TryPickupAnyHand(surgeon, scalpel, checkActionBlocker: false);
@@ -372,6 +378,39 @@ public sealed class UnsanitarySurgeryIntegrationTest
             var totalEv = new IntegrityPenaltyTotalRequestEvent(patient);
             entityManager.EventBus.RaiseLocalEvent(patient, ref totalEv);
             Assert.That(totalEv.Total, Is.EqualTo(2));
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
+    public async Task UnsanitaryPenalty_UnmaskedNearby_OnePerUnconcealedMobInRadius()
+    {
+        await using var pair = await PoolManager.GetServerClient(new PoolSettings { DummyTicker = false });
+        var server = pair.Server;
+        await server.WaitIdleAsync();
+
+        var entityManager = server.ResolveDependency<IEntityManager>();
+        var buckleSystem = entityManager.System<SharedBuckleSystem>();
+        var unsanitary = entityManager.System<UnsanitarySurgeryCalculationSystem>();
+        var mapData = await pair.CreateTestMap();
+
+        await pair.RunTicksSync(5);
+
+        await server.WaitAssertion(() =>
+        {
+            var patient = entityManager.SpawnEntity("MobHuman", mapData.GridCoords);
+            var bed = entityManager.SpawnEntity("MedicalBed", mapData.GridCoords);
+            Assert.That(buckleSystem.TryBuckle(patient, patient, bed), Is.True);
+
+            var observer = entityManager.SpawnEntity("MobHuman", mapData.GridCoords);
+
+            var preview = unsanitary.CalculatePreview(patient);
+            Assert.That(preview.UnmaskedNearby, Is.EqualTo(1),
+                "Each alive mob within 3 tiles without full identity concealment adds 1 (patient excluded).");
+            Assert.That(preview.Total, Is.GreaterThanOrEqualTo(preview.UnmaskedNearby));
+
+            _ = observer;
         });
 
         await pair.CleanReturnAsync();

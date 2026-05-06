@@ -17,6 +17,13 @@ public sealed partial class PressureProtectionComponent : Component
 
     [DataField]
     public float LowPressureModifier;
+
+    /// <summary>
+    /// Funky - CyberMed
+    /// Multiplier applied to flat low-pressure barotrauma damage when felt pressure is in the hazard range (defaults to 1).
+    /// </summary>
+    [DataField]
+    public float LowPressureDamageMultiplier = 1f;
 }
 
 /// <summary>

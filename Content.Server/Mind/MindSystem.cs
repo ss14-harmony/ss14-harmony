@@ -224,7 +224,7 @@ public sealed class MindSystem : SharedMindSystem
 
             RaiseLocalEvent(oldEntity.Value, new BeforeMindRemovedMessage(mindEnt, containerEnt, entity));
             RaiseLocalEvent(mindId, new BeforeMindGotRemovedEvent(mindEnt, containerEnt, entity));
-            
+
             oldContainer.Mind = null;
             oldContainer.HasMind = false;
             mind.OwnedEntity = null;

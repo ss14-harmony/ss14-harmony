@@ -1,0 +1,55 @@
+<Document>
+# Surgery
+Advanced procedures let medical staff **open a patient layer-by-layer**, repair or replace anatomy, and close everything back up. Surgery is precise work: use the right tools, prefer a **sterile operating surface**, and watch your patient's stability while you operate.
+
+This page covers gear, environment, and how to think through a procedure. For synthetic replacements after removal, see [textlink="Cybernetics" link="Cybernetics"].
+
+<Box>
+<GuideEntityEmbed Entity="SignSurgery" Caption="surgery"/>
+<GuideEntityEmbed Entity="HolopadMedicalSurgery" Caption="holopad"/>
+</Box>
+
+## Before you cut
+- **Assess the patient** with a health analyzer or medical PDA ([textlink="Medical Doctor" link="MedicalDoctor"]) so you know damage types, bleeding, and overall stability.
+- **Secure your workspace**: buckling a conscious patient to a table or bed reduces movement. A patient moving can interrupt surgery.
+- **Prepare the OR**: sterile masks, clean floors, surgical flooring, non-rusted-walls, and many other factors can make for an unclean operating room.
+
+## Sterile surfaces & positioning
+The gold standard is an **operating table** built for surgery.
+
+<Box>
+<GuideEntityEmbed Entity="OperatingTable" Caption="operating table"/>
+<GuideEntityEmbed Entity="MedicalBed" Caption="medical bed"/>
+</Box>
+
+Regular medical beds are excellent for stabilizing a patient, but are not as sterile. They make for a good alternative when an operating table is not available.
+
+## The surgical toolkit
+Each step expects a **specific tool quality**. Dedicated surgical instruments perform reliably; improvised substitutes often **take longer** and injure the patient.
+
+### Carrying it all
+Medical belts commonly whitelist surgical gear so you can **stay organized** during long procedures.
+
+<Box>
+<GuideEntityEmbed Entity="ClothingBeltMedical" Caption="medical belt"/>
+<GuideEntityEmbed Entity="ClothingMaskSterile" Caption="sterile mask"/>
+</Box>
+
+If you misplace your tools, cargo can provide a surgical crate to replace them. If your cargo department is extremely well funded, you may even be able to afford a Cyber Surgery Crate.
+
+<Box>
+<GuideEntityEmbed Entity="CrateMedicalSurgery" Caption="surgical crate"/>
+<GuideEntityEmbed Entity="CrateCyberSurgery" Caption="cyber surgery crate"/>
+</Box>
+
+## How procedures flow
+Each step will inform you of the proper tool, and the improvised tool. Such as (Scalpel/Cutting). Which indicates the proper tool is a scalpel, but that you can improvise any cutting tool for the step.
+
+## Organs, limbs, and grafts
+Removing damaged anatomy is only half the battle—you still need a viable replacement **before** you leave cavities exposed:
+
+- **Natural organs** harvested safely must be stored until reimplantation (remember metabolism stops helping once critical organs are gone).
+- **Cybernetic organs and limbs** must be fabricated or sourced ahead of time; installation still routes through surgery ([textlink="Cybernetics" link="Cybernetics"]).
+
+Most animal organs support xenograft of organs. These organs are most often far worse than any species employed by NT, but exceptions may exist.
+</Document>

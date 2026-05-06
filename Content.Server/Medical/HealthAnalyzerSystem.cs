@@ -582,6 +582,8 @@ public sealed class HealthAnalyzerSystem : EntitySystem
                     previewChildren.Add(new IntegrityPenaltyDisplayEntry { Description = "health-analyzer-integrity-preview-rusty-walls", Amount = sanitaryPreview.RustyWalls });
                 if (sanitaryPreview.NotOnSurgeryBed > 0)
                     previewChildren.Add(new IntegrityPenaltyDisplayEntry { Description = "health-analyzer-integrity-preview-no-surgery-bed", Amount = sanitaryPreview.NotOnSurgeryBed });
+                if (sanitaryPreview.UnmaskedNearby > 0)
+                    previewChildren.Add(new IntegrityPenaltyDisplayEntry { Description = "health-analyzer-integrity-preview-unmasked", Amount = sanitaryPreview.UnmaskedNearby });
 
                 state.IntegrityPreviewEntries.Add(new IntegrityPenaltyDisplayEntry
                 {

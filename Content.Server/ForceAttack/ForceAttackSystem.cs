@@ -76,7 +76,7 @@ public sealed class ForceAttackSystem : EntitySystem
             if (popupMessage.Length != 0)
                 _popup.PopupEntity(popupMessage, uid, uid);
 
-            _melee.AttemptLightAttack(uid, weaponUid, weapon, target.Value, false);
+            _melee.AttemptLightAttack(uid, weaponUid, weapon, target.Value);
         }
     }
 }

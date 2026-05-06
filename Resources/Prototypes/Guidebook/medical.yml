@@ -7,6 +7,8 @@
   - Chemist
   - Cloning
   - Cryogenics
+  - Surgery
+  - Cybernetics
 
 - type: guideEntry
   id: MedicalDoctor
@@ -22,6 +24,16 @@
   id: Cryogenics
   name: guide-entry-cryogenics
   text: "/ServerInfo/Guidebook/Medical/Cryogenics.xml"
+
+- type: guideEntry
+  id: Surgery
+  name: guide-entry-surgery
+  text: "/ServerInfo/Guidebook/Medical/Surgery.xml"
+
+- type: guideEntry
+  id: Cybernetics
+  name: guide-entry-cybernetics
+  text: "/ServerInfo/Guidebook/Medical/Cybernetics.xml"
 
 - type: guideEntry
   id: Chemist

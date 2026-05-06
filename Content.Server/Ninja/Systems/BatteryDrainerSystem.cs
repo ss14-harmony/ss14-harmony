@@ -43,10 +43,10 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
         if (_battery.IsFull(battery))
         {
             _popup.PopupEntity(Loc.GetString("battery-drainer-full"), uid, uid, PopupType.Medium);
-            return; // Funky: Do NOT set Handled - allow cyber drain to run
+            return;
         }
 
-        args.Handled = true;
+        args.Handled = true; // Funky - CyberMed: Setting args handled here so a ninja with cybernetics doesn't have odd drain behavior
 
         var doAfterArgs = new DoAfterArgs(EntityManager, uid, comp.DrainTime, new DrainDoAfterEvent(), target: target, eventTarget: uid)
         {

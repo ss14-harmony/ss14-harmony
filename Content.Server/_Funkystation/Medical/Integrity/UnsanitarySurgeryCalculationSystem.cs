@@ -8,12 +8,15 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Fluids.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Maps;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Medical.Integrity;
 using Content.Shared.Medical.Integrity.Components;
 using Content.Shared.Medical.Integrity.Events;
 using Content.Shared.Medical.Surgery.Prototypes;
 using Content.Shared.Tag;
 using Content.Server.Atmos.EntitySystems;
+using System.Numerics;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -24,12 +27,13 @@ namespace Content.Server.Medical.Integrity;
 /// <summary>
 /// Integer breakdown for UI preview (unsanitary surgery).
 /// </summary>
-public readonly record struct UnsanitaryPenaltyBreakdown(int Liquids, int NonSterileSurface, int RustyWalls, int NotOnSurgeryBed, int Total);
+public readonly record struct UnsanitaryPenaltyBreakdown(int Liquids, int NonSterileSurface, int RustyWalls, int NotOnSurgeryBed, int UnmaskedNearby, int Total);
 
 public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
 {
     private const float VoidPressureThreshold = 5000f; // 5 kPa - no bacteria in void
     private const int FloodFillMaxDistance = 3;
+    private const int UnmaskedMobTileRadius = 3;
     private const string WaterReagentId = "Water";
     public const int NoSurgeryBedIntegrityPenalty = 2;
     private static readonly ProtoId<TagPrototype> RustyWallTag = "RustyWall";
@@ -52,6 +56,8 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
+    [Dependency] private readonly IdentitySystem _identity = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     private static readonly AtmosDirection[] CardinalDirections =
     [
@@ -116,6 +122,8 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
             list.Add(new IntegrityPenaltyEntry("health-analyzer-integrity-preview-rusty-walls", IntegrityPenaltyCategory.UnsanitarySurgery, breakdown.RustyWalls, null));
         if (breakdown.NotOnSurgeryBed > 0)
             list.Add(new IntegrityPenaltyEntry("health-analyzer-integrity-preview-no-surgery-bed", IntegrityPenaltyCategory.UnsanitarySurgery, breakdown.NotOnSurgeryBed, null));
+        if (breakdown.UnmaskedNearby > 0)
+            list.Add(new IntegrityPenaltyEntry("health-analyzer-integrity-preview-unmasked", IntegrityPenaltyCategory.UnsanitarySurgery, breakdown.UnmaskedNearby, null));
 
         return list.Count > 0 ? list : null;
     }
@@ -154,11 +162,12 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
         }
 
         var notOnBed = PatientOnSurgeryBed(patient) ? 0 : NoSurgeryBedIntegrityPenalty;
-        var total = envTotal + notOnBed;
+        var unmaskedNearby = CountUnmaskedMobsNearby(patient);
+        var total = envTotal + notOnBed + unmaskedNearby;
         if (total <= 0)
             return default;
 
-        return new UnsanitaryPenaltyBreakdown(liqInt, nsInt, rustInt, notOnBed, total);
+        return new UnsanitaryPenaltyBreakdown(liqInt, nsInt, rustInt, notOnBed, unmaskedNearby, total);
     }
 
     /// <summary>
@@ -396,5 +405,65 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
             if (_tag.HasTag(uid, RustyWallTag))
                 yield return uid;
         }
+    }
+
+    /// <summary>
+    /// Each alive mob within Chebyshev tile distance (excluding the patient) without full identity concealment adds 1.
+    /// </summary>
+    private int CountUnmaskedMobsNearby(EntityUid patient)
+    {
+        if (!TryComp(patient, out TransformComponent? patientXform))
+            return 0;
+
+        var patientCoords = patientXform.Coordinates;
+        var tileSize = 1f;
+        var patientGridUid = patientXform.GridUid;
+
+        if (patientGridUid is { } gridUid && TryComp<MapGridComponent>(gridUid, out var grid))
+            tileSize = grid.TileSize;
+
+        // Broadphase pre-filter; exact radius uses tile Chebyshev distance or world distance fallback.
+        var lookupRange = UnmaskedMobTileRadius * tileSize + tileSize;
+        var nearby = _lookup.GetEntitiesInRange<MobStateComponent>(patientCoords, lookupRange);
+
+        var count = 0;
+        foreach (var mob in nearby)
+        {
+            var uid = mob.Owner;
+            if (uid == patient)
+                continue;
+            if (!_mobState.IsAlive(uid, mob.Comp))
+                continue;
+            if (!WithinUnmaskedCheckRadius(uid, patient, patientGridUid, tileSize))
+                continue;
+            if (_identity.IsIdentityFullyConcealed(uid))
+                continue;
+            count++;
+        }
+
+        return count;
+    }
+
+    private bool WithinUnmaskedCheckRadius(EntityUid other, EntityUid patient, EntityUid? patientGridUid, float tileSize)
+    {
+        if (!TryComp(other, out TransformComponent? otherXform) || !TryComp(patient, out TransformComponent? patientXform))
+            return false;
+
+        if (patientGridUid is { } pgUid
+            && otherXform.GridUid == patientGridUid
+            && patientXform.GridUid == patientGridUid
+            && TryComp<MapGridComponent>(pgUid, out var grid))
+        {
+            var ta = _map.CoordinatesToTile(pgUid, grid, patientXform.Coordinates);
+            var tb = _map.CoordinatesToTile(pgUid, grid, otherXform.Coordinates);
+            var dx = System.Math.Abs(ta.X - tb.X);
+            var dy = System.Math.Abs(ta.Y - tb.Y);
+            return System.Math.Max(dx, dy) <= UnmaskedMobTileRadius;
+        }
+
+        var distWorld = Vector2.Distance(
+            _transform.GetWorldPosition(otherXform),
+            _transform.GetWorldPosition(patientXform));
+        return distWorld <= UnmaskedMobTileRadius * tileSize + 0.01f;
     }
 }

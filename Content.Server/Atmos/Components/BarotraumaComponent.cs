@@ -43,6 +43,13 @@ namespace Content.Server.Atmos.Components
         public float LowPressureModifier = 0f;
 
         /// <summary>
+        /// Funky - CyberMed
+        /// Cached product of <see cref="PressureProtectionComponent.LowPressureDamageMultiplier"/> from worn gear and the body.
+        /// </summary>
+        [ViewVariables]
+        public float LowPressureDamageMultiplier = 1f;
+
+        /// <summary>
         /// Whether the entity is immuned to pressure (i.e possess the PressureImmunity component)
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]

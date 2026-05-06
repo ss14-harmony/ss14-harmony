@@ -2,10 +2,10 @@ using Content.Shared.Body;
 using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Medical.Surgery;
+using Content.Shared.Medical.Surgery; // Funky - CyberMed
 using Content.Shared.Roles;
 using Content.Shared.Traits;
-using Content.Shared.Traits.Assorted;
+using Content.Shared.Traits.Assorted; // Funky - CyberMed
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
@@ -16,8 +16,8 @@ public sealed class TraitSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedHandsSystem _sharedHandsSystem = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly LimbDetachmentEffectsSystem _limbDetachmentEffects = default!;
+    [Dependency] private readonly BodySystem _body = default!; // Funky - CyberMed
+    [Dependency] private readonly LimbDetachmentEffectsSystem _limbDetachmentEffects = default!; // Funky - CyberMed
 
     public override void Initialize()
     {
@@ -74,6 +74,7 @@ public sealed class TraitSystem : EntitySystem
                 handsComp: handsComponent);
         }
 
+        // Funky - CyberMed: Start
         // Organ trait blindness is derived from implanted eyes; permanent blindness stays on the mob for examine/flash/clone.
         if (TryComp<PermanentBlindnessComponent>(args.Mob, out var permanentBlindness))
             _body.ApplyOrganTraitBlindnessToImplantedEyes(args.Mob, permanentBlindness.Blindness);
@@ -86,5 +87,6 @@ public sealed class TraitSystem : EntitySystem
             _body.ApplyTraitParaplegiaToImplantedFeet(args.Mob);
             _limbDetachmentEffects.RefreshFootStateForBody(args.Mob);
         }
+        // Funky - CyberMed: End
     }
 }

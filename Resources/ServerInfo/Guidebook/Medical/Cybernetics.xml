@@ -1,0 +1,94 @@
+<Document>
+# Cybernetics
+Cybernetics bridges **fabrication**, **research**, and **invasive medicine**. Printed limbs and organs upgrade crew endurance, replace ruined anatomy, and occasionally raise questions when military-grade hardware appears on civilians.
+
+Nothing cybernetic magically snaps into place: every implant still requires a full [textlink="Surgery" link="Surgery"] workflow once the hardware exists.
+
+## Fabrication pipeline
+Most printable cyberware is produced at an **Exosuit Fabricator**—the same bench robotics relies on for shells and endoskeletons.
+
+Military cybernetics are produced at a **Security TechFab**, and mirror civilian cybernetics in function. They trade space for additional armor plating built into the limbs.
+
+<Box>
+<GuideEntityEmbed Entity="ExosuitFabricator" Caption="exosuit fabricator"/>
+</Box>
+
+Science unlocks new cybernetic recipies as they research them. Each additional tier of cybernetics miniaturizes components and allows for more modules and equipment to be installed inside.
+
+## Limbs
+Cyber limbs trade flesh for storage compartments. Lower tiers have less storage space due to using older technology for their critical working components; advanced tiers have expanded internal space due to miniaturization.
+
+<Box>
+<GuideEntityEmbed Entity="OrganCyberArmLeft" Caption="rudimentary arm"/>
+<GuideEntityEmbed Entity="OrganCyberLegLeft" Caption="rudimentary leg"/>
+</Box>
+
+<Box>
+<GuideEntityEmbed Entity="OrganCyberArmLeftT1" Caption="basic arm"/>
+<GuideEntityEmbed Entity="OrganCyberLegLeftT1" Caption="basic leg"/>
+</Box>
+
+Pick the matching side (left/right) before you roll a patient into the operating room. Mixing chirality wastes precious time, as the limb will not attach to an improper side.
+
+Once installed, any equipment installed in the limb can be accessed by using the "Open [limb name]" ability. Pressing Alt-Use with an empty hand will also open the storage compartment.
+
+## Internal organs
+Synthetic hearts, lungs, livers, stomachs, and eyes replace crude flesh with the strength and certainty of steel. Basic cybernetic organs are inferior to all natural organs. Advanced cybernetic organs begin working better than standard sapient organs. Experimental organs can provide the best performance spesos can buy.
+
+<Box>
+<GuideEntityEmbed Entity="OrganCyberHeartBasic" Caption="basic cyber heart"/>
+<GuideEntityEmbed Entity="OrganCyberLungsBasic" Caption="basic cyber lungs"/>
+</Box>
+
+<Box>
+<GuideEntityEmbed Entity="OrganCyberLiverBasic" Caption="basic cyber liver"/>
+<GuideEntityEmbed Entity="OrganCyberStomachBasic" Caption="basic cyber stomach"/>
+</Box>
+
+<Box>
+<GuideEntityEmbed Entity="OrganCyberEyesBasic" Caption="basic cyber eyes"/>
+</Box>
+
+Ensure the organ to be implanted is printed **before** the surgery. There's few things more embarassing than wheeling a gasping patient over to robotics for an urgent lung transplant.
+
+## CPUs & fine-tuning
+Special **cybernetics CPUs** tune limb responsiveness when socketed correctly—think of them as overclocking chips for arms and legs rather than whole-body augments.
+
+<Box>
+<GuideEntityEmbed Entity="TreasureCPUSupercharged" Caption="supercharged CPU"/>
+</Box>
+
+Cargo can acquire CPU modules from the ordering console, but the cost can make it difficult to acquire many of these modules.
+
+## Maintenance
+Anyone walking around with **cybernetic limbs** carries a single **service access panel** on their body—not per limb, but one panel routes maintenance for every synthetic limb they have.
+
+### Opening the bay
+Use a **screwdriver** on the patient to toggle the panel between secured and open. While open, internal diagnostics can run and harness work can proceed; leaving it open too long stresses overall structural **integrity**.
+
+### Servicing frayed wiring
+When limbs need cable replacement:
+
+1. **Open the panel** with a screwdriver.
+2. **Loosen the mounting bolts** with a **wrench** while the panel is still open.
+3. Hold **LV cable** in one hand and a **screwdriver** in the other, then use the cable on the patient. Each completed step consumes wire from the stack and routes one replacement segment. You need **one successful replacement per cybernetic limb** currently installed (each arm and each leg counts).
+4. **Tighten the bolts** with the **wrench**, this finalizes the repair.
+5. **Lock the panel** with another screwdriver pass when the bay is secure.
+
+<Box>
+<GuideEntityEmbed Entity="CableApcStack" Caption="LV cable"/>
+<GuideEntityEmbed Entity="ScrewdriverPrecision" Caption="precision screwdriver"/>
+<GuideEntityEmbed Entity="Screwdriver" Caption="screwdriver"/>
+<GuideEntityEmbed Entity="Wrench" Caption="wrench"/>
+</Box>
+
+### Precision tooling
+Using a **regular screwdriver** on the during a repair counts as a sloppy repair and applies a lingering **integrity penalty** until you use a **precision screwdriver** on the panel.
+
+Precision screwdrivers are rare and can only be found by visiting the **science department**.
+
+## Installation reminders
+- **Print before cut**: nothing feels worse than finishing an extraction and leaving the patient without a limb.
+- **Follow surgical prompts**: cyberware still respects layered closure rules; skipping steps invites bio-rejection.
+
+</Document>

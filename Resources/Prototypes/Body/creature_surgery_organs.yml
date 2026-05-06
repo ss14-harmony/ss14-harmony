@@ -172,8 +172,7 @@
   - type: OrganBodyComponents
     components:
     - type: PressureProtection
-      lowPressureMultiplier: 1000
-      lowPressureModifier: 200
+      lowPressureDamageMultiplier: 0.5
 
 - type: entity
   parent: [ OrganBaseStomach, OrganAnimalInternal, OrganAnimalMetabolizer ]

@@ -360,6 +360,13 @@ public sealed class SurgeryBodyPartDiagramControl : Control
         if (match.CategoryId == null)
             return;
 
+        // Creatures / non-humanoids (surgery mode only): no humanoid layer map — fallback would draw a tiny "torso" square.
+        if (_isClickable && IsNonHumanoidSurgeryTarget())
+        {
+            DrawFullSpriteHighlight(renderHandle);
+            return;
+        }
+
         if (!CategoryToLayers.TryGetValue(match.CategoryId, out var layers))
         {
             DrawFallbackRect(renderHandle, match.CategoryId);
@@ -465,6 +472,27 @@ public sealed class SurgeryBodyPartDiagramControl : Control
         var top = position.Y - localBounds.Top * scale.Y;
         var bottom = position.Y - localBounds.Bottom * scale.Y;
         return new UIBox2(left, top, right, bottom);
+    }
+
+    /// <summary>
+    /// True when the scanned patient is not a humanoid species (creature surgery, etc.).
+    /// Used so surgery selection highlight covers the whole preview sprite instead of humanoid region boxes.
+    /// </summary>
+    private bool IsNonHumanoidSurgeryTarget()
+    {
+        if (_targetEntity == null || !_entManager.TryGetEntity(_targetEntity, out var patient))
+            return false;
+
+        return !_entManager.HasComponent<HumanoidProfileComponent>(patient.Value);
+    }
+
+    private void DrawFullSpriteHighlight(IRenderHandle renderHandle)
+    {
+        var spriteRect = GetSpriteRectInPixels();
+        if (!spriteRect.HasValue)
+            return;
+
+        renderHandle.DrawingHandleScreen.DrawRect(spriteRect.Value, Color.Red.WithAlpha(0.6f));
     }
 
     private void DrawFallbackRect(IRenderHandle renderHandle, string categoryId)

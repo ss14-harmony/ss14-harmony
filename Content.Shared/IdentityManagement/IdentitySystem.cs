@@ -134,6 +134,19 @@ public sealed class IdentitySystem : EntitySystem
 
         _queuedIdentityUpdates.Add(uid);
     }
+
+    /// <summary>
+    /// Funky - CyberMed
+    /// Whether the entity's face is fully covered by mask, helmet, etc., hiding identity for the ID system
+    /// (<see cref="SeeIdentityAttemptEvent"/> cancelled).
+    /// </summary>
+    public bool IsIdentityFullyConcealed(EntityUid target)
+    {
+        var ev = new SeeIdentityAttemptEvent();
+        RaiseLocalEvent(target, ev);
+        return ev.Cancelled;
+    }
+
     #region Private API
 
     /// <summary>

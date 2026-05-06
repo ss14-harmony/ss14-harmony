@@ -33,6 +33,14 @@ namespace Content.Server.Atmos.EntitySystems
 
             SubscribeLocalEvent<PressureImmunityComponent, ComponentInit>(OnPressureImmuneInit);
             SubscribeLocalEvent<PressureImmunityComponent, ComponentRemove>(OnPressureImmuneRemove);
+
+            SubscribeLocalEvent<BarotraumaComponent, ComponentInit>(OnBarotraumaInit); // Funky - CyberMed
+        }
+
+        // Funky - CyberMed
+        private void OnBarotraumaInit(EntityUid uid, BarotraumaComponent barotrauma, ComponentInit args)
+        {
+            UpdateCachedResistances(uid, barotrauma);
         }
 
         private void OnPressureImmuneInit(EntityUid uid, PressureImmunityComponent pressureImmunity, ComponentInit args)
@@ -84,46 +92,61 @@ namespace Content.Server.Atmos.EntitySystems
         /// </summary>
         private void UpdateCachedResistances(EntityUid uid, BarotraumaComponent barotrauma)
         {
+            // Funky - CyberMed: start
+            barotrauma.LowPressureDamageMultiplier = 1f;
 
             if (barotrauma.ProtectionSlots.Count != 0)
             {
                 if (!TryComp(uid, out InventoryComponent? inv) || !TryComp(uid, out ContainerManagerComponent? contMan))
                 {
-                    return;
+                    barotrauma.HighPressureModifier = 0f;
+                    barotrauma.HighPressureMultiplier = 1f;
+                    barotrauma.LowPressureModifier = 0f;
+                    barotrauma.LowPressureMultiplier = 1f;
                 }
-                var hPModifier = float.MinValue;
-                var hPMultiplier = float.MinValue;
-                var lPModifier = float.MaxValue;
-                var lPMultiplier = float.MaxValue;
-
-                foreach (var slot in barotrauma.ProtectionSlots)
+                else
                 {
-                    if (!_inventorySystem.TryGetSlotEntity(uid, slot, out var equipment, inv, contMan)
-                        || !TryGetPressureProtectionValues(equipment.Value,
-                            out var itemHighMultiplier,
-                            out var itemHighModifier,
-                            out var itemLowMultiplier,
-                            out var itemLowModifier))
+                    var hPModifier = float.MinValue;
+                    var hPMultiplier = float.MinValue;
+                    var lPModifier = float.MaxValue;
+                    var lPMultiplier = float.MaxValue;
+                    var slotDamageMult = 1f;
+
+                    foreach (var slot in barotrauma.ProtectionSlots)
                     {
-                        // Missing protection, skin is exposed.
-                        hPModifier = 0f;
-                        hPMultiplier = 1f;
-                        lPModifier = 0f;
-                        lPMultiplier = 1f;
-                        break;
+                        if (!_inventorySystem.TryGetSlotEntity(uid, slot, out var equipment, inv, contMan)
+                            || !TryGetPressureProtectionValues(equipment.Value,
+                                out var itemHighMultiplier,
+                                out var itemHighModifier,
+                                out var itemLowMultiplier,
+                                out var itemLowModifier))
+                        {
+                            // Missing protection, skin is exposed.
+                            hPModifier = 0f;
+                            hPMultiplier = 1f;
+                            lPModifier = 0f;
+                            lPMultiplier = 1f;
+                            slotDamageMult = 1f;
+                            break;
+                        }
+
+                        // The entity is as protected as its weakest part protection
+                        hPModifier = Math.Max(hPModifier, itemHighModifier.Value);
+                        hPMultiplier = Math.Max(hPMultiplier, itemHighMultiplier.Value);
+                        lPModifier = Math.Min(lPModifier, itemLowModifier.Value);
+                        lPMultiplier = Math.Min(lPMultiplier, itemLowMultiplier.Value);
+
+                        if (TryComp<PressureProtectionComponent>(equipment.Value, out var slotProt))
+                            slotDamageMult *= slotProt.LowPressureDamageMultiplier;
                     }
 
-                    // The entity is as protected as its weakest part protection
-                    hPModifier = Math.Max(hPModifier, itemHighModifier.Value);
-                    hPMultiplier = Math.Max(hPMultiplier, itemHighMultiplier.Value);
-                    lPModifier = Math.Min(lPModifier, itemLowModifier.Value);
-                    lPMultiplier = Math.Min(lPMultiplier, itemLowMultiplier.Value);
+                    barotrauma.HighPressureModifier = hPModifier;
+                    barotrauma.HighPressureMultiplier = hPMultiplier;
+                    barotrauma.LowPressureModifier = lPModifier;
+                    barotrauma.LowPressureMultiplier = lPMultiplier;
+                    barotrauma.LowPressureDamageMultiplier *= slotDamageMult;
                 }
-
-                barotrauma.HighPressureModifier = hPModifier;
-                barotrauma.HighPressureMultiplier = hPMultiplier;
-                barotrauma.LowPressureModifier = lPModifier;
-                barotrauma.LowPressureMultiplier = lPMultiplier;
+                // Funky - CyberMed: end
             }
 
             // any innate pressure resistance ?
@@ -138,6 +161,10 @@ namespace Content.Server.Atmos.EntitySystems
                 barotrauma.LowPressureModifier += lowModifier.Value;
                 barotrauma.LowPressureMultiplier *= lowMultiplier.Value;
             }
+
+            // Funky - CyberMed
+            if (TryComp<PressureProtectionComponent>(uid, out var bodyProt))
+                barotrauma.LowPressureDamageMultiplier *= bodyProt.LowPressureDamageMultiplier;
         }
 
         /// <summary>
@@ -239,7 +266,8 @@ namespace Content.Server.Atmos.EntitySystems
                 if (pressure <= Atmospherics.HazardLowPressure)
                 {
                     // Deal damage and ignore resistances. Resistance to pressure damage should be done via pressure protection gear.
-                    _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * Atmospherics.LowPressureDamage, true, false);
+                    var lowPressureDamageFactor = Atmospherics.LowPressureDamage * barotrauma.LowPressureDamageMultiplier;
+                    _damageableSystem.TryChangeDamage(uid, barotrauma.Damage * lowPressureDamageFactor, true, false); // Funky - CyberMed
 
                     if (!barotrauma.TakingDamage)
                     {

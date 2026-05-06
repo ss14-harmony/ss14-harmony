@@ -2,12 +2,12 @@ using System.Numerics;
 using Content.Server.Cargo.Systems;
 using Content.Server.Weapons.Ranged.Components;
 using Content.Shared.Cargo;
-using Content.Shared.Cybernetics.Components;
+using Content.Shared.Cybernetics.Components; // Funky - CyberMed
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
-using Content.Shared.Storage;
-using Content.Shared.Storage.Components;
-using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Storage; // Funky - CyberMed
+using Content.Shared.Storage.Components; // Funky - CyberMed
+using Content.Shared.Storage.EntitySystems; // Funky - CyberMed
 using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Ranged;
@@ -21,6 +21,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Robust.Shared.Random;
 
 namespace Content.Server.Weapons.Ranged.Systems;
 
@@ -28,7 +29,7 @@ public sealed partial class GunSystem : SharedGunSystem
 {
     [Dependency] private readonly PricingSystem _pricing = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly SharedStorageSystem _storage = default!;
+    [Dependency] private readonly SharedStorageSystem _storage = default!; // Funky - CyberMed
 
     private const float DamagePitchVariation = 0.05f;
 
@@ -128,7 +129,8 @@ public sealed partial class GunSystem : SharedGunSystem
                     // Something like ballistic might want to leave it in the container still
                     if (!cartridge.DeleteOnSpawn && !Containers.IsEntityInContainer(ent!.Value))
                     {
-                        // Funkystation: When gun is in cyberlimb storage, try to insert spent shell into spare slots.
+                        // Funky - Cybermed
+                        // When gun is in cyberlimb storage, try to insert spent shell into spare slots.
                         // If storage is full, eject normally instead of letting it end up in nullspace.
                         if (!TryInsertSpentShellIntoCyberlimbStorage(gun, ent.Value))
                             EjectCartridge(ent.Value, angle);
@@ -259,8 +261,9 @@ public sealed partial class GunSystem : SharedGunSystem
 
     protected override void Popup(string message, EntityUid? uid, EntityUid? user) { }
 
-    /// <summary>
-    /// Funkystation: When the gun is in cyberlimb storage, tries to insert the spent shell into spare slots.
+    // Funky - CyberMed: Start
+    /// <summary>    
+    /// When the gun is in cyberlimb storage, tries to insert the spent shell into spare slots.
     /// Returns true if the shell was inserted (caller should not eject), false if it should be ejected normally.
     /// </summary>
     private bool TryInsertSpentShellIntoCyberlimbStorage(EntityUid gun, EntityUid shell)
@@ -275,6 +278,7 @@ public sealed partial class GunSystem : SharedGunSystem
         var cyberlimb = container.Owner;
         return _storage.Insert(cyberlimb, shell, out _, user: null, playSound: false);
     }
+    // Funky - CyberMed: End
 
     protected override void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? user = null)
     {

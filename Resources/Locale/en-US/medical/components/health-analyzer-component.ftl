@@ -140,6 +140,7 @@ health-analyzer-integrity-preview-unsanitary-surgery = Unsanitary surgery
 health-analyzer-integrity-preview-liquids = Liquid contamination
 health-analyzer-integrity-preview-non-sterile = Non-sterile surface
 health-analyzer-integrity-preview-rusty-walls = Rust contamination
+health-analyzer-integrity-preview-unmasked = Unmasked nearby
 health-analyzer-integrity-preview-no-conditions = No surgical condition penalties detected
 
 # Organ category display names (used in integrity/surgery views)
