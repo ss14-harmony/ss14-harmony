@@ -50,6 +50,7 @@ public sealed class UnsanitarySurgeryIntegrationTest
 
         var entityManager = server.ResolveDependency<IEntityManager>();
         var handsSystem = entityManager.System<SharedHandsSystem>();
+        var buckleSystem = entityManager.System<SharedBuckleSystem>();
         var mapData = await pair.CreateTestMap();
 
         await pair.RunTicksSync(5);
@@ -66,7 +67,11 @@ public sealed class UnsanitarySurgeryIntegrationTest
         await server.WaitPost(() =>
         {
             surgeon = entityManager.SpawnEntity("MobHuman", mapData.GridCoords);
+            var surgeryBed = entityManager.SpawnEntity("MedicalBed", mapData.GridCoords);
             patient = entityManager.SpawnEntity("MobHuman", mapData.GridCoords);
+            Assert.That(buckleSystem.TryBuckle(patient, patient, surgeryBed), Is.True,
+                "Patient should be buckled so only environmental unsanitary sources are asserted (no not-on-bed line item).");
+
             analyzer = entityManager.SpawnEntity("HandheldHealthAnalyzer", mapData.GridCoords);
             scalpel = entityManager.SpawnEntity("Scalpel", mapData.GridCoords);
             wirecutter = entityManager.SpawnEntity("Wirecutter", mapData.GridCoords);
@@ -267,7 +272,7 @@ public sealed class UnsanitarySurgeryIntegrationTest
     }
 
     [Test]
-    public async Task SurgeryPenalty_NotOnSurgeryBed_AppliesNoBedPenalty()
+    public async Task SurgeryPenalty_NotOnSurgeryBed_IncludedInUnsanitarySurgeryTotal()
     {
         await using var pair = await PoolManager.GetServerClient(new PoolSettings { DummyTicker = false });
         var server = pair.Server;
@@ -285,8 +290,12 @@ public sealed class UnsanitarySurgeryIntegrationTest
             entityManager.EventBus.RaiseLocalEvent(patient, ref ev);
 
             Assert.That(entityManager.TryGetComponent(patient, out IntegritySurgeryComponent? surgeryComp), Is.True);
-            var noBed = surgeryComp!.Entries.Where(e => e.Category == IntegrityPenaltyCategory.NoSurgeryBed).ToList();
-            Assert.That(noBed.Sum(e => e.Amount), Is.EqualTo(UnsanitarySurgeryCalculationSystem.NoSurgeryBedIntegrityPenalty));
+            var legacyNoBed = surgeryComp!.Entries.Where(e => e.Category == IntegrityPenaltyCategory.NoSurgeryBed).ToList();
+            Assert.That(legacyNoBed.Sum(e => e.Amount), Is.EqualTo(0), "No-surgery-bed should not use a separate penalty category");
+
+            var unsanitary = surgeryComp.Entries.Where(e => e.Category == IntegrityPenaltyCategory.UnsanitarySurgery).ToList();
+            Assert.That(unsanitary.Sum(e => e.Amount), Is.GreaterThanOrEqualTo(UnsanitarySurgeryCalculationSystem.NoSurgeryBedIntegrityPenalty),
+                "Not on a surgical bed contributes to the combined unsanitary surgery total");
         });
 
         await pair.CleanReturnAsync();
@@ -316,8 +325,17 @@ public sealed class UnsanitarySurgeryIntegrationTest
 
             if (entityManager.TryGetComponent(patient, out IntegritySurgeryComponent? surgeryComp))
             {
-                var noBed = surgeryComp.Entries.Where(e => e.Category == IntegrityPenaltyCategory.NoSurgeryBed).ToList();
-                Assert.That(noBed.Sum(e => e.Amount), Is.EqualTo(0), "Buckled to MedicalBed should waive no-surgery-bed penalty");
+                var legacyNoBed = surgeryComp.Entries.Where(e => e.Category == IntegrityPenaltyCategory.NoSurgeryBed).ToList();
+                Assert.That(legacyNoBed.Sum(e => e.Amount), Is.EqualTo(0), "Buckled to MedicalBed should waive additional not-on-bed unsanitary amount");
+
+                var unsanitary = surgeryComp.Entries.Where(e => e.Category == IntegrityPenaltyCategory.UnsanitarySurgery).ToList();
+                if (unsanitary.Count > 0)
+                {
+                    Assert.That(
+                        unsanitary.Any(e => e.Children?.Any(c => c.Reason == "health-analyzer-integrity-preview-no-surgery-bed") == true),
+                        Is.False,
+                        "No not-on-bed child line when buckled to a surgical bed");
+                }
             }
         });
 

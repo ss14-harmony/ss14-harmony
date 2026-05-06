@@ -3,6 +3,8 @@
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganHumanExternal ]
   id: OrganMonkeyTorso
+  name: monkey torso
+  suffix: ""
   components:
   - type: BodyPart
     containerId: internal_organs
@@ -28,6 +30,8 @@
 - type: entity
   parent: OrganBaseTorsoCreature
   id: OrganSpaceCarpTorso
+  name: space carp torso
+  suffix: ""
   components:
   - type: BodyPart
     containerId: internal_organs
@@ -77,14 +81,20 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganMonkeyLungs
+  name: monkey lungs
+  suffix: ""
   components:
   - type: OrganXenograft
     nativeSpecies: Monkey
     foreignQualityDefault: 0.6
+  - type: Item
+    heldPrefix: monkey lungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganMonkeyHeart
+  name: monkey heart
+  suffix: ""
   components:
   - type: OrganXenograft
     nativeSpecies: Monkey
@@ -93,47 +103,69 @@
 - type: entity
   parent: [ OrganBaseStomach, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganMonkeyStomach
+  name: monkey stomach
+  suffix: ""
   components:
   - type: OrganXenograft
     nativeSpecies: Monkey
     foreignQualityDefault: 0.6
+  - type: Item
+    heldPrefix: monkey stomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganMonkeyLiver
+  name: monkey liver
+  suffix: ""
   components:
   - type: OrganXenograft
     nativeSpecies: Monkey
     foreignQualityDefault: 0.6
+  - type: Item
+    heldPrefix: monkey liver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganMonkeyKidneys
+  name: monkey kidneys
+  suffix: ""
   components:
   - type: OrganXenograft
     nativeSpecies: Monkey
     foreignQualityDefault: 0.6
+  - type: Item
+    heldPrefix: monkey kidneys
 
 - type: entity
   parent: [ OrganBaseBrain, OrganAnimalInternal ]
   id: OrganMonkeyBrain
+  name: monkey brain
+  suffix: ""
   components:
   - type: OrganXenograft
     nativeSpecies: Monkey
     foreignQualityDefault: 0.6
+  - type: Item
+    heldPrefix: monkey brain
 
 # --- Space carp xenograft organs ---
 - type: entity
   parent: [ OrganBaseLungs, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganSpaceCarpLungs
+  name: space carp lungs
+  suffix: ""
   components:
   - type: OrganXenograft
     nativeSpecies: SpaceCarp
     foreignQualityDefault: 2.0
+  - type: Item
+    heldPrefix: space carp lungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganSpaceCarpHeart
+  name: space carp heart
+  suffix: ""
   components:
   - type: OrganXenograft
     nativeSpecies: SpaceCarp
@@ -146,23 +178,35 @@
 - type: entity
   parent: [ OrganBaseStomach, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganSpaceCarpStomach
+  name: space carp stomach
+  suffix: ""
   components:
   - type: OrganXenograft
     nativeSpecies: SpaceCarp
+  - type: Item
+    heldPrefix: space carp stomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganSpaceCarpLiver
+  name: space carp liver
+  suffix: ""
   components:
   - type: OrganXenograft
     nativeSpecies: SpaceCarp
+  - type: Item
+    heldPrefix: space carp liver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganSpaceCarpKidneys
+  name: space carp kidneys
+  suffix: ""
   components:
   - type: OrganXenograft
     nativeSpecies: SpaceCarp
+  - type: Item
+    heldPrefix: space carp kidneys
 
 # --- Space dragon xenograft organs ---
 - type: entity

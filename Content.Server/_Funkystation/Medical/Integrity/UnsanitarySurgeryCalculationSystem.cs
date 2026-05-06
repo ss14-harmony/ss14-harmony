@@ -24,7 +24,7 @@ namespace Content.Server.Medical.Integrity;
 /// <summary>
 /// Integer breakdown for UI preview (unsanitary surgery).
 /// </summary>
-public readonly record struct UnsanitaryPenaltyBreakdown(int Liquids, int NonSterileSurface, int RustyWalls, int Total);
+public readonly record struct UnsanitaryPenaltyBreakdown(int Liquids, int NonSterileSurface, int RustyWalls, int NotOnSurgeryBed, int Total);
 
 public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
 {
@@ -73,13 +73,15 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
         RaiseLocalEvent(ent.Owner, ref clearEv);
         clearEv = new IntegrityPenaltyClearedEvent(ent.Owner, IntegrityPenaltyCategory.ImproperTools);
         RaiseLocalEvent(ent.Owner, ref clearEv);
+        // Legacy entries used NoSurgeryBed; that amount is folded into UnsanitarySurgery now.
         clearEv = new IntegrityPenaltyClearedEvent(ent.Owner, IntegrityPenaltyCategory.NoSurgeryBed);
         RaiseLocalEvent(ent.Owner, ref clearEv);
 
-        var unsanitaryPenalty = CalculatePreview(ent.Owner).Total;
-        if (unsanitaryPenalty > 0)
+        var preview = CalculatePreview(ent.Owner);
+        if (preview.Total > 0)
         {
-            var applyEv = new IntegrityPenaltyAppliedEvent(ent.Owner, unsanitaryPenalty, "health-analyzer-integrity-unsanitary-surgery", IntegrityPenaltyCategory.UnsanitarySurgery);
+            var children = BuildUnsanitaryPenaltyChildren(preview);
+            var applyEv = new IntegrityPenaltyAppliedEvent(ent.Owner, preview.Total, "health-analyzer-integrity-unsanitary-surgery", IntegrityPenaltyCategory.UnsanitarySurgery, children);
             RaiseLocalEvent(ent.Owner, ref applyEv);
         }
 
@@ -98,13 +100,24 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
             var applyEv = new IntegrityPenaltyAppliedEvent(ent.Owner, totalAmount, bodyPartName ?? "?", IntegrityPenaltyCategory.ImproperTools, children);
             RaiseLocalEvent(ent.Owner, ref applyEv);
         }
+    }
 
-        if (!PatientOnSurgeryBed(ent.Owner))
-        {
-            var applyEv = new IntegrityPenaltyAppliedEvent(ent.Owner, NoSurgeryBedIntegrityPenalty,
-                "health-analyzer-integrity-no-surgery-bed", IntegrityPenaltyCategory.NoSurgeryBed);
-            RaiseLocalEvent(ent.Owner, ref applyEv);
-        }
+    /// <summary>
+    /// Optional line items under the unsanitary surgery total (analyzer preview and integrity entries).
+    /// </summary>
+    public static List<IntegrityPenaltyEntry>? BuildUnsanitaryPenaltyChildren(UnsanitaryPenaltyBreakdown breakdown)
+    {
+        var list = new List<IntegrityPenaltyEntry>();
+        if (breakdown.Liquids > 0)
+            list.Add(new IntegrityPenaltyEntry("health-analyzer-integrity-preview-liquids", IntegrityPenaltyCategory.UnsanitarySurgery, breakdown.Liquids, null));
+        if (breakdown.NonSterileSurface > 0)
+            list.Add(new IntegrityPenaltyEntry("health-analyzer-integrity-preview-non-sterile", IntegrityPenaltyCategory.UnsanitarySurgery, breakdown.NonSterileSurface, null));
+        if (breakdown.RustyWalls > 0)
+            list.Add(new IntegrityPenaltyEntry("health-analyzer-integrity-preview-rusty-walls", IntegrityPenaltyCategory.UnsanitarySurgery, breakdown.RustyWalls, null));
+        if (breakdown.NotOnSurgeryBed > 0)
+            list.Add(new IntegrityPenaltyEntry("health-analyzer-integrity-preview-no-surgery-bed", IntegrityPenaltyCategory.UnsanitarySurgery, breakdown.NotOnSurgeryBed, null));
+
+        return list.Count > 0 ? list : null;
     }
 
     /// <summary>
@@ -124,17 +137,28 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
     /// </summary>
     public UnsanitaryPenaltyBreakdown CalculatePreview(EntityUid patient)
     {
-        if (!AccumulatePenaltyRawBySource(patient, out var liquidsF, out var nonSterileF, out var rustyF))
-            return default;
+        var liqInt = 0;
+        var nsInt = 0;
+        var rustInt = 0;
+        var envTotal = 0;
 
-        var sumF = liquidsF + nonSterileF + rustyF;
-        var total = (int)System.Math.Ceiling(sumF);
+        if (AccumulatePenaltyRawBySource(patient, out var liquidsF, out var nonSterileF, out var rustyF))
+        {
+            var sumF = liquidsF + nonSterileF + rustyF;
+            envTotal = (int)System.Math.Ceiling(sumF);
+            if (envTotal > 0)
+            {
+                AllocateSharesTotaling(envTotal, liquidsF, nonSterileF, rustyF, sumF,
+                    out liqInt, out nsInt, out rustInt);
+            }
+        }
+
+        var notOnBed = PatientOnSurgeryBed(patient) ? 0 : NoSurgeryBedIntegrityPenalty;
+        var total = envTotal + notOnBed;
         if (total <= 0)
             return default;
 
-        AllocateSharesTotaling(total, liquidsF, nonSterileF, rustyF, sumF,
-            out var liqInt, out var nsInt, out var rustInt);
-        return new UnsanitaryPenaltyBreakdown(liqInt, nsInt, rustInt, total);
+        return new UnsanitaryPenaltyBreakdown(liqInt, nsInt, rustInt, notOnBed, total);
     }
 
     /// <summary>

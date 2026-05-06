@@ -343,7 +343,7 @@
   id: ClownRecorder # ConstructionGraph: ClownHardsuit
 
 - type: Tag
-    id: ClownShoes # ConstructionGraph: Honker, BananaClownShoes
+  id: ClownShoes # ConstructionGraph: Honker, BananaClownShoes
 
 - type: Tag
   id: ClownSuit # ConstructionGraph: BananaClownJumpsuit
@@ -508,7 +508,7 @@
   id: DoorElectronicsConfigurator # Used by ActivatableUIComponent on entity DoorElectronics to whitelist a tagged tool to open the UI.
 
 - type: Tag
-  id: DoorRemoteWhitelist # Tagged doors can be controlled by door remotes.
+  id: DoorRemoteWhitelist # Doors with this tag can be interacted with door remotes
 
 - type: Tag
   id: DrinkBottle # Storage whitelist: BoozeDispenserEmpty, SodaDispenserEmpty

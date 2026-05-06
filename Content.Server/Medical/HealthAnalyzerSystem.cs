@@ -580,21 +580,14 @@ public sealed class HealthAnalyzerSystem : EntitySystem
                     previewChildren.Add(new IntegrityPenaltyDisplayEntry { Description = "health-analyzer-integrity-preview-non-sterile", Amount = sanitaryPreview.NonSterileSurface });
                 if (sanitaryPreview.RustyWalls > 0)
                     previewChildren.Add(new IntegrityPenaltyDisplayEntry { Description = "health-analyzer-integrity-preview-rusty-walls", Amount = sanitaryPreview.RustyWalls });
+                if (sanitaryPreview.NotOnSurgeryBed > 0)
+                    previewChildren.Add(new IntegrityPenaltyDisplayEntry { Description = "health-analyzer-integrity-preview-no-surgery-bed", Amount = sanitaryPreview.NotOnSurgeryBed });
 
                 state.IntegrityPreviewEntries.Add(new IntegrityPenaltyDisplayEntry
                 {
                     Description = "health-analyzer-integrity-preview-unsanitary-surgery",
                     Amount = sanitaryPreview.Total,
                     Children = previewChildren.Count > 0 ? previewChildren : null
-                });
-            }
-
-            if (!_unsanitary.PatientOnSurgeryBed(entity))
-            {
-                state.IntegrityPreviewEntries.Add(new IntegrityPenaltyDisplayEntry
-                {
-                    Description = "health-analyzer-integrity-preview-no-surgery-bed",
-                    Amount = UnsanitarySurgeryCalculationSystem.NoSurgeryBedIntegrityPenalty
                 });
             }
 

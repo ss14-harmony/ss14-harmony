@@ -25,7 +25,7 @@
         children:
         - id: Crowbar
         - id: Wrench
-        - id: ScrewdriverPrecision
+        - id: Screwdriver
         - id: Wirecutter
         - id: Welder
         - id: NetworkConfigurator
