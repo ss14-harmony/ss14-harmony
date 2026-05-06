@@ -86,6 +86,14 @@
       interactFailureString: petting-failure-carp
       interactFailureSound:
         path: /Audio/Effects/bite.ogg
+    - type: CreatureDonorSpecies
+      species: SpaceCarp
+      previewOverride: MobCarp
+    - type: EntityTableContainerFill
+      containers:
+        body_organs: !type:AllSelector
+          children:
+          - id: OrganSpaceCarpTorso
 
 - type: entity
   parent: BaseMobCarp

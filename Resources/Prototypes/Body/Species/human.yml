@@ -87,6 +87,9 @@
   id: OrganHuman
   abstract: true
   suffix: human
+  components:
+  - type: OrganXenograft
+    nativeSpecies: Human
 
 - type: entity
   id: OrganHumanMetabolizer

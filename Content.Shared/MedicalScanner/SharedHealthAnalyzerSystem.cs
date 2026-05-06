@@ -169,6 +169,7 @@ public sealed class SharedHealthAnalyzerSystem : EntitySystem
                 "no-slot-for-organ" => "health-analyzer-surgery-error-no-slot-for-organ",
                 "slot-filled" => "health-analyzer-surgery-error-slot-filled",
                 "slime-cannot-receive-implants" => "health-analyzer-surgery-error-slime-cannot-receive-implants",
+                "slime-cannot-receive-foreign-implants" => "health-analyzer-surgery-error-slime-cannot-receive-foreign-implants",
                 "skeleton-cannot-receive-organs" => "health-analyzer-surgery-error-skeleton-cannot-receive-organs",
                 _ => "health-analyzer-surgery-error-invalid-surgical-process"
             };

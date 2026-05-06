@@ -175,6 +175,9 @@
   id: OrganSlimePerson
   abstract: true
   suffix: slime person
+  components:
+  - type: OrganXenograft
+    nativeSpecies: SlimePerson
 
 - type: entity
   id: OrganSlimePersonMetabolizer

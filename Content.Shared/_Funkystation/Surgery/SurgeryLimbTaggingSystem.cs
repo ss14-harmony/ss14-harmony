@@ -4,6 +4,7 @@ using Content.Shared.Cybernetics.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Medical.Surgery.Components;
 using Content.Shared.Medical.Surgery.Prototypes;
+using Content.Shared.Medical.Xenograft;
 using Content.Shared.Preferences;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
@@ -63,6 +64,9 @@ public sealed class SurgeryLimbTaggingSystem : EntitySystem
     {
         if (TryComp<HumanoidProfileComponent>(body, out var humanoidProfile))
             return humanoidProfile.Species;
+
+        if (TryComp<CreatureDonorSpeciesComponent>(body, out var creature))
+            return creature.Species;
 
         return HumanoidCharacterProfile.DefaultSpecies;
     }

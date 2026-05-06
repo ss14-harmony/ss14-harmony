@@ -45,7 +45,7 @@ public sealed class IntegrityPenaltyAggregatorSystem : EntitySystem
             return;
 
         comp.Penalty = System.Math.Max(0, comp.Penalty - args.Amount);
-        if (comp.Penalty <= 0)
+        if (comp.Penalty <= 0 && comp.XenograftPenalty <= 0)
             RemComp<IntegrityPenaltyComponent>(ent);
         else
             Dirty(ent, comp);
@@ -87,7 +87,7 @@ public sealed class IntegrityPenaltyAggregatorSystem : EntitySystem
         foreach (var organ in _body.GetAllOrgans(ent.Owner))
         {
             if (_penaltyQuery.TryComp(organ, out var penalty))
-                total += penalty.Penalty;
+                total += penalty.Penalty + penalty.XenograftPenalty;
         }
 
         if (TryComp<IntegritySurgeryComponent>(ent, out var surgeryComp))

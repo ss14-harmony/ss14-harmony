@@ -48,6 +48,19 @@
       - UndergarmentBottom
       - Special
 
+# Non-humanoid creatures (fish, dragons): torso without humanoid VisualOrgan/Markings layers.
+- type: entity
+  parent: OrganBase
+  id: OrganBaseTorsoCreature
+  name: torso
+  abstract: true
+  components:
+  - type: Organ
+    category: Torso
+    integrityCost: 0
+  - type: Sprite
+    state: torso
+
 - type: entity
   parent: OrganBase
   id: OrganBaseHead

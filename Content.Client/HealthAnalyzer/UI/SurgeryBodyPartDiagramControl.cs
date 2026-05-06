@@ -6,6 +6,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.MedicalScanner;
+using Content.Shared.Medical.Xenograft;
 using Content.Shared.Preferences;
 using Content.Shared.Rotation;
 using Robust.Client.Graphics;
@@ -232,15 +233,23 @@ public sealed class SurgeryBodyPartDiagramControl : Control
 
     private EntityUid SpawnStandingPreview(EntityUid patient)
     {
-        var species = HumanoidCharacterProfile.DefaultSpecies;
-        if (_entManager.TryGetComponent(patient, out HumanoidProfileComponent? humanoidProfile))
-            species = humanoidProfile.Species;
-
         EntityUid preview;
-        if (_prototypes.TryIndex<SpeciesPrototype>(species, out var speciesProto))
-            preview = _entManager.SpawnEntity(speciesProto.DollPrototype, MapCoordinates.Nullspace);
+        if (_entManager.TryGetComponent<CreatureDonorSpeciesComponent>(patient, out var creatureDonor)
+            && creatureDonor.PreviewOverride is { } previewProto)
+        {
+            preview = _entManager.SpawnEntity(previewProto, MapCoordinates.Nullspace);
+        }
         else
-            preview = _entManager.SpawnEntity("MobHuman", MapCoordinates.Nullspace);
+        {
+            var species = HumanoidCharacterProfile.DefaultSpecies;
+            if (_entManager.TryGetComponent(patient, out HumanoidProfileComponent? humanoidProfile))
+                species = humanoidProfile.Species;
+
+            if (_prototypes.TryIndex<SpeciesPrototype>(species, out var speciesProto))
+                preview = _entManager.SpawnEntity(speciesProto.DollPrototype, MapCoordinates.Nullspace);
+            else
+                preview = _entManager.SpawnEntity("MobHuman", MapCoordinates.Nullspace);
+        }
 
         var visualBody = _entManager.System<SharedVisualBodySystem>();
         if (_entManager.TryGetComponent(patient, out BodyComponent? patientBody) &&
@@ -291,6 +300,21 @@ public sealed class SurgeryBodyPartDiagramControl : Control
         var normalizedY = (relPos.Y - r.Top) / h;
 
         var point = new Vector2(normalizedX, normalizedY);
+
+        // Single surgical body part (creature surgery): whole sprite selects it.
+        var distinctParts = _bodyPartLayerState
+            .Where(s => s.BodyPart != default)
+            .Select(s => s.BodyPart)
+            .Distinct()
+            .ToList();
+        if (distinctParts.Count == 1)
+        {
+            var only = distinctParts[0];
+            _selectedBodyPart = only;
+            OnBodyPartSelected?.Invoke(only);
+            return;
+        }
+
         foreach (var (categoryId, rect) in RegionMap)
         {
             if (!rect.Contains(point))
@@ -316,7 +340,10 @@ public sealed class SurgeryBodyPartDiagramControl : Control
             return;
 
         if (!CategoryToLayers.TryGetValue(match.CategoryId, out var layers))
+        {
+            DrawFallbackRect(renderHandle, match.CategoryId);
             return;
+        }
 
         var spriteSystem = _entManager.System<SpriteSystem>();
         if (!_entManager.TryGetComponent(_previewEntity, out SpriteComponent? sprite))

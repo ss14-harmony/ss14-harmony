@@ -40,6 +40,11 @@ public struct HealthAnalyzerUiState
     public List<IntegrityPenaltyDisplayEntry> IntegrityPreviewEntries;
     public List<SurgeryLayerStateData> BodyPartLayerState;
 
+    /// <summary>
+    /// False when the target has no operable body parts (no surgery UI).
+    /// </summary>
+    public bool SurgerySupported;
+
     public HealthAnalyzerUiState()
     {
         Mode = HealthAnalyzerMode.Health;

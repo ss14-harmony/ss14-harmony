@@ -1,0 +1,25 @@
+# Non-playable donor species for xenograft / surgery resolution (roundStart: false).
+
+- type: species
+  id: Monkey
+  name: species-name-monkey
+  roundStart: false
+  prototype: MobMonkey
+  dollPrototype: AppearanceMonkey
+  skinColoration: HumanToned
+
+- type: species
+  id: SpaceCarp
+  name: species-name-space-carp
+  roundStart: false
+  prototype: MobCarp
+  dollPrototype: AppearanceHuman
+  skinColoration: HumanToned
+
+- type: species
+  id: SpaceDragon
+  name: species-name-space-dragon
+  roundStart: false
+  prototype: MobDragon
+  dollPrototype: AppearanceHuman
+  skinColoration: HumanToned

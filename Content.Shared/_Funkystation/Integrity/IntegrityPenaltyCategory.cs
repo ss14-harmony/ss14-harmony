@@ -9,4 +9,5 @@ public enum IntegrityPenaltyCategory
     DirtyRoom = 0,
     ImproperTools = 1,
     UnsanitarySurgery = 2,
+    NoSurgeryBed = 3,
 }

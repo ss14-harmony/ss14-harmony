@@ -1,0 +1,196 @@
+# Monkey / carp / dragon surgery torsos and xenograft-tagged internal organs (v2 creature surgery).
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganHumanExternal ]
+  id: OrganMonkeyTorso
+  components:
+  - type: BodyPart
+    containerId: internal_organs
+    slots: [ Lungs, Heart, Stomach, Liver, Kidneys, Brain ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      internal_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      internal_organs: !type:AllSelector
+        children:
+        - id: OrganMonkeyLungs
+        - id: OrganMonkeyHeart
+        - id: OrganMonkeyStomach
+        - id: OrganMonkeyLiver
+        - id: OrganMonkeyKidneys
+        - id: OrganMonkeyBrain
+
+- type: entity
+  parent: OrganBaseTorsoCreature
+  id: OrganSpaceCarpTorso
+  components:
+  - type: BodyPart
+    containerId: internal_organs
+    slots: [ Lungs, Heart, Stomach, Liver, Kidneys ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      internal_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      internal_organs: !type:AllSelector
+        children:
+        - id: OrganSpaceCarpLungs
+        - id: OrganSpaceCarpHeart
+        - id: OrganSpaceCarpStomach
+        - id: OrganSpaceCarpLiver
+        - id: OrganSpaceCarpKidneys
+
+- type: entity
+  parent: OrganBaseTorsoCreature
+  id: OrganSpaceDragonTorso
+  components:
+  - type: BodyPart
+    containerId: internal_organs
+    slots: [ Lungs, Heart, Stomach, Liver, Kidneys ]
+  - type: SurgeryLayer
+  - type: ContainerContainer
+    containers:
+      internal_organs: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+  - type: EntityTableContainerFill
+    containers:
+      internal_organs: !type:AllSelector
+        children:
+        - id: OrganSpaceDragonLungs
+        - id: OrganSpaceDragonHeart
+        - id: OrganSpaceDragonStomach
+        - id: OrganSpaceDragonLiver
+        - id: OrganSpaceDragonKidneys
+
+# --- Monkey xenograft organs (native species Monkey) ---
+- type: entity
+  parent: [ OrganBaseLungs, OrganAnimalInternal, OrganAnimalMetabolizer ]
+  id: OrganMonkeyLungs
+  components:
+  - type: OrganXenograft
+    nativeSpecies: Monkey
+    foreignQualityDefault: 0.6
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganAnimalInternal, OrganAnimalMetabolizer ]
+  id: OrganMonkeyHeart
+  components:
+  - type: OrganXenograft
+    nativeSpecies: Monkey
+    foreignQualityDefault: 0.6
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganAnimalInternal, OrganAnimalMetabolizer ]
+  id: OrganMonkeyStomach
+  components:
+  - type: OrganXenograft
+    nativeSpecies: Monkey
+    foreignQualityDefault: 0.6
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganAnimalInternal, OrganAnimalMetabolizer ]
+  id: OrganMonkeyLiver
+  components:
+  - type: OrganXenograft
+    nativeSpecies: Monkey
+    foreignQualityDefault: 0.6
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganAnimalInternal, OrganAnimalMetabolizer ]
+  id: OrganMonkeyKidneys
+  components:
+  - type: OrganXenograft
+    nativeSpecies: Monkey
+    foreignQualityDefault: 0.6
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganAnimalInternal ]
+  id: OrganMonkeyBrain
+  components:
+  - type: OrganXenograft
+    nativeSpecies: Monkey
+    foreignQualityDefault: 0.6
+
+# --- Space carp xenograft organs ---
+- type: entity
+  parent: [ OrganBaseLungs, OrganAnimalInternal, OrganAnimalMetabolizer ]
+  id: OrganSpaceCarpLungs
+  components:
+  - type: OrganXenograft
+    nativeSpecies: SpaceCarp
+    foreignQualityDefault: 2.0
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganAnimalInternal, OrganAnimalMetabolizer ]
+  id: OrganSpaceCarpHeart
+  components:
+  - type: OrganXenograft
+    nativeSpecies: SpaceCarp
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganAnimalInternal, OrganAnimalMetabolizer ]
+  id: OrganSpaceCarpStomach
+  components:
+  - type: OrganXenograft
+    nativeSpecies: SpaceCarp
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganAnimalInternal, OrganAnimalMetabolizer ]
+  id: OrganSpaceCarpLiver
+  components:
+  - type: OrganXenograft
+    nativeSpecies: SpaceCarp
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganAnimalInternal, OrganAnimalMetabolizer ]
+  id: OrganSpaceCarpKidneys
+  components:
+  - type: OrganXenograft
+    nativeSpecies: SpaceCarp
+
+# --- Space dragon xenograft organs ---
+- type: entity
+  parent: [ OrganBaseLungs, OrganAnimalInternal, OrganAnimalMetabolizer ]
+  id: OrganSpaceDragonLungs
+  components:
+  - type: OrganXenograft
+    nativeSpecies: SpaceDragon
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganAnimalInternal, OrganAnimalMetabolizer ]
+  id: OrganSpaceDragonHeart
+  components:
+  - type: OrganXenograft
+    nativeSpecies: SpaceDragon
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganAnimalInternal, OrganAnimalMetabolizer ]
+  id: OrganSpaceDragonStomach
+  components:
+  - type: OrganXenograft
+    nativeSpecies: SpaceDragon
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganAnimalInternal, OrganAnimalMetabolizer ]
+  id: OrganSpaceDragonLiver
+  components:
+  - type: OrganXenograft
+    nativeSpecies: SpaceDragon
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganAnimalInternal, OrganAnimalMetabolizer ]
+  id: OrganSpaceDragonKidneys
+  components:
+  - type: OrganXenograft
+    nativeSpecies: SpaceDragon

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Content.Shared.Atmos;
 using Content.Shared.Body;
+using Content.Shared.Buckle.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Fluids.Components;
@@ -30,7 +31,18 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
     private const float VoidPressureThreshold = 5000f; // 5 kPa - no bacteria in void
     private const int FloodFillMaxDistance = 3;
     private const string WaterReagentId = "Water";
+    public const int NoSurgeryBedIntegrityPenalty = 2;
     private static readonly ProtoId<TagPrototype> RustyWallTag = "RustyWall";
+
+    /// <summary>
+    /// Strapped surgical fixtures that waive the no–surgery-bed integrity penalty.
+    /// </summary>
+    private static readonly HashSet<string> SurgeryBedPrototypeIds = new(StringComparer.Ordinal)
+    {
+        "MedicalBed",
+        "OperatingTable",
+        "StasisBed",
+    };
 
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
@@ -61,6 +73,8 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
         RaiseLocalEvent(ent.Owner, ref clearEv);
         clearEv = new IntegrityPenaltyClearedEvent(ent.Owner, IntegrityPenaltyCategory.ImproperTools);
         RaiseLocalEvent(ent.Owner, ref clearEv);
+        clearEv = new IntegrityPenaltyClearedEvent(ent.Owner, IntegrityPenaltyCategory.NoSurgeryBed);
+        RaiseLocalEvent(ent.Owner, ref clearEv);
 
         var unsanitaryPenalty = CalculatePreview(ent.Owner).Total;
         if (unsanitaryPenalty > 0)
@@ -84,6 +98,25 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
             var applyEv = new IntegrityPenaltyAppliedEvent(ent.Owner, totalAmount, bodyPartName ?? "?", IntegrityPenaltyCategory.ImproperTools, children);
             RaiseLocalEvent(ent.Owner, ref applyEv);
         }
+
+        if (!PatientOnSurgeryBed(ent.Owner))
+        {
+            var applyEv = new IntegrityPenaltyAppliedEvent(ent.Owner, NoSurgeryBedIntegrityPenalty,
+                "health-analyzer-integrity-no-surgery-bed", IntegrityPenaltyCategory.NoSurgeryBed);
+            RaiseLocalEvent(ent.Owner, ref applyEv);
+        }
+    }
+
+    /// <summary>
+    /// Whether the patient is strapped to a medical bed, operating table, or stasis bed (waives no-bed penalty).
+    /// </summary>
+    public bool PatientOnSurgeryBed(EntityUid patient)
+    {
+        if (!TryComp<BuckleComponent>(patient, out var buckle) || buckle.BuckledTo is not { } strapEnt)
+            return false;
+
+        var protoId = MetaData(strapEnt).EntityPrototype?.ID;
+        return protoId != null && SurgeryBedPrototypeIds.Contains(protoId);
     }
 
     /// <summary>

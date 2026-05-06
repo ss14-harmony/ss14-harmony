@@ -15,6 +15,7 @@ using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Medical.Surgery;
 using Content.Shared.Medical.Surgery.Prototypes;
+using Content.Shared.Medical.Xenograft;
 using Content.Shared.MedicalScanner;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
@@ -255,6 +256,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
 
     private void UpdateModeButtonStates()
     {
+        SurgeryModeButton.Visible = _state.SurgerySupported;
         UpdateButtonState(HealthModeButton, _mode == HealthAnalyzerMode.Health);
         UpdateButtonState(IntegrityModeButton, _mode == HealthAnalyzerMode.Integrity);
         UpdateButtonState(SurgeryModeButton, _mode == HealthAnalyzerMode.Surgery);
@@ -631,6 +633,9 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
 
         var damageableEnt = new Entity<DamageableComponent?>(target.Value, damageable);
 
+        if (!state.SurgerySupported && _mode == HealthAnalyzerMode.Surgery)
+            SetMode(HealthAnalyzerMode.Health);
+
         // Scan Mode
 
         ScanModeLabel.Text = state.ScanMode.HasValue
@@ -654,11 +659,21 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             : Loc.GetString("health-analyzer-window-entity-unknown-text"));
         NameLabel.SetMessage(name);
 
-        SpeciesLabel.Text =
-            _entityManager.TryGetComponent<HumanoidProfileComponent>(target.Value,
-                out var humanoidComponent)
-                ? Loc.GetString(_prototypes.Index(humanoidComponent.Species).Name)
-                : Loc.GetString("health-analyzer-window-entity-unknown-species-text");
+        if (_entityManager.TryGetComponent<HumanoidProfileComponent>(target.Value,
+                out var humanoidComponent))
+        {
+            SpeciesLabel.Text = Loc.GetString(_prototypes.Index(humanoidComponent.Species).Name);
+        }
+        else if (_entityManager.TryGetComponent<CreatureDonorSpeciesComponent>(target.Value,
+                     out var creatureDonor) &&
+                 _prototypes.TryIndex(creatureDonor.Species, out SpeciesPrototype? donorSpecies))
+        {
+            SpeciesLabel.Text = Loc.GetString(donorSpecies.Name);
+        }
+        else
+        {
+            SpeciesLabel.Text = Loc.GetString("health-analyzer-window-entity-unknown-species-text");
+        }
 
         // Basic Diagnostic
 

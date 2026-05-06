@@ -13,7 +13,7 @@ namespace Content.IntegrationTests.Tests.Medical;
 
 /// <summary>
 /// Integration test for slime surgery restrictions.
-/// Slimes cannot receive organ or limb implants (design doc: Slime-Specific Systems).
+/// Slimes cannot receive foreign-species organ or limb implants (same-species implants allowed).
 /// </summary>
 [TestFixture]
 [TestOf(typeof(SurgerySystem))]
@@ -68,7 +68,7 @@ public sealed class SlimeSurgeryRestrictionsIntegrationTest
             entityManager.EventBus.RaiseLocalEvent(slime, ref ev);
 
             Assert.That(ev.Valid, Is.False, "InsertOrgan should be rejected for slime");
-            Assert.That(ev.RejectReason, Is.EqualTo("slime-cannot-receive-implants"));
+            Assert.That(ev.RejectReason, Is.EqualTo("slime-cannot-receive-foreign-implants"));
         });
 
         await pair.CleanReturnAsync();
@@ -113,7 +113,7 @@ public sealed class SlimeSurgeryRestrictionsIntegrationTest
             entityManager.EventBus.RaiseLocalEvent(slime, ref ev);
 
             Assert.That(ev.Valid, Is.False, "AttachLimb should be rejected for slime");
-            Assert.That(ev.RejectReason, Is.EqualTo("slime-cannot-receive-implants"));
+            Assert.That(ev.RejectReason, Is.EqualTo("slime-cannot-receive-foreign-implants"));
         });
 
         await pair.CleanReturnAsync();
@@ -156,7 +156,7 @@ public sealed class SlimeSurgeryRestrictionsIntegrationTest
 
             entityManager.EventBus.RaiseLocalEvent(human, ref ev);
 
-            Assert.That(ev.RejectReason, Is.Not.EqualTo("slime-cannot-receive-implants"),
+            Assert.That(ev.RejectReason, Is.Not.EqualTo("slime-cannot-receive-foreign-implants"),
                 "Human should not be rejected for slime restriction");
         });
 
@@ -194,7 +194,7 @@ public sealed class SlimeSurgeryRestrictionsIntegrationTest
 
             entityManager.EventBus.RaiseLocalEvent(slime, ref ev);
 
-            Assert.That(ev.RejectReason, Is.Not.EqualTo("slime-cannot-receive-implants"),
+            Assert.That(ev.RejectReason, Is.Not.EqualTo("slime-cannot-receive-foreign-implants"),
                 "DetachLimb should not be rejected for slime restriction (may fail for layer-not-open)");
         });
 

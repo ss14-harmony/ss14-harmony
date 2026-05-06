@@ -1,0 +1,19 @@
+# Dress-up doll / species prototype support for donor species Monkey (not round-start playable).
+
+- type: entity
+  parent: AppearanceHuman
+  id: AppearanceMonkey
+  name: monkey appearance
+  components:
+  - type: HumanoidProfile
+    species: Monkey
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganMonkeyTorso
+        - id: OrganHumanHead
+        - id: OrganHumanArmLeft
+        - id: OrganHumanArmRight
+        - id: OrganHumanLegLeft
+        - id: OrganHumanLegRight

@@ -10,6 +10,7 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Medical.Integrity.Components;
 using Content.Shared.Medical.Integrity.Events;
 using Content.Shared.Medical.Surgery.Components;
+using Content.Shared.Medical.Xenograft;
 using Robust.Shared.Localization;
 using Content.Shared.Medical.Surgery.Events;
 using Content.Shared.Humanoid;
@@ -51,6 +52,7 @@ public sealed class SurgerySystem : EntitySystem
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly OrganXenograftSystem _xenograft = default!;
 
     public override void Initialize()
     {
@@ -83,16 +85,28 @@ public sealed class SurgerySystem : EntitySystem
             return;
         }
 
-        // Slime-specific: cannot receive organ or limb implants (design doc: Slime-Specific Systems)
-        if (TryComp<HumanoidProfileComponent>(ent.Owner, out var humanoidProfile))
+        // Slime-specific: cannot receive foreign-species organ or limb implants (same-species implants allowed).
+        if (TryComp<HumanoidProfileComponent>(ent.Owner, out var humanoidProfile)
+            && humanoidProfile.Species == (ProtoId<SpeciesPrototype>)"SlimePerson"
+            && (args.ProcedureId == "InsertOrgan" || args.ProcedureId == "AttachLimb"))
         {
-            if (humanoidProfile.Species == (ProtoId<SpeciesPrototype>)"SlimePerson" &&
-                (args.ProcedureId == "InsertOrgan" || args.ProcedureId == "AttachLimb"))
+            ProtoId<SpeciesPrototype>? donorSpecies = null;
+            if (args.ProcedureId == "InsertOrgan" && args.Organ.HasValue && Exists(args.Organ.Value))
             {
-                args.RejectReason = "slime-cannot-receive-implants";
-                return;
+                if (_xenograft.TryGetNativeSpecies(args.Organ.Value, out var ns))
+                    donorSpecies = ns;
+            }
+            else if (args.ProcedureId == "AttachLimb" && args.Organ.HasValue && Exists(args.Organ.Value))
+            {
+                if (_xenograft.TryGetLimbDonorSpecies(args.Organ.Value, out var ls))
+                    donorSpecies = ls;
             }
 
+            if (donorSpecies != (ProtoId<SpeciesPrototype>)"SlimePerson")
+            {
+                args.RejectReason = "slime-cannot-receive-foreign-implants";
+                return;
+            }
         }
 
         SurgeryProcedurePrototype? procedure = null;

@@ -90,6 +90,20 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         var bodyPartUid = GetEntity(args.BodyPart);
         var user = args.Actor;
 
+        if (!TryComp<BodyComponent>(targetUid, out _))
+        {
+            _popupSystem.PopupEntity(Loc.GetString("health-analyzer-surgery-not-supported"), user, user);
+            return;
+        }
+
+        var partQuery = new BodyPartQueryEvent(targetUid);
+        RaiseLocalEvent(targetUid, ref partQuery);
+        if (partQuery.Parts.Count == 0)
+        {
+            _popupSystem.PopupEntity(Loc.GetString("health-analyzer-surgery-not-supported"), user, user);
+            return;
+        }
+
         var ev = new SurgeryRequestEvent(uid.Owner, user, targetUid, bodyPartUid, args.ProcedureId, args.Layer, args.IsImprovised,
             args.Organ.HasValue ? GetEntity(args.Organ.Value) : null);
         RaiseLocalEvent(targetUid, ref ev);
@@ -379,6 +393,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             var query = new BodyPartQueryEvent(entity);
             RaiseLocalEvent(entity, ref query);
             state.BodyParts = query.Parts.Select(e => GetNetEntity(e)).ToList();
+            state.SurgerySupported = query.Parts.Count > 0;
 
             var totalEv = new IntegrityPenaltyTotalRequestEvent(entity);
             RaiseLocalEvent(entity, ref totalEv);
@@ -511,6 +526,25 @@ public sealed class HealthAnalyzerSystem : EntitySystem
                     state.IntegrityPenaltyEntries.Add(new IntegrityPenaltyDisplayEntry { Description = desc ?? "?", Amount = penalty.Penalty });
                 }
             }
+
+            foreach (var organ in _body.GetAllOrgans(entity))
+            {
+                if (HasComp<CyberLimbComponent>(organ))
+                    continue;
+                if (!TryComp<IntegrityPenaltyComponent>(organ, out var penalty) || penalty.XenograftPenalty <= 0)
+                    continue;
+
+                var desc = TryComp<OrganComponent>(organ, out var organComp) && organComp.Category is { } cat
+                    ? GetCategoryDisplayName(cat)
+                    : Identity.Name(organ, EntityManager);
+
+                state.IntegrityPenaltyEntries.Add(new IntegrityPenaltyDisplayEntry
+                {
+                    Description = Loc.GetString("health-analyzer-integrity-xenograft-organ",
+                        ("organ", desc ?? "?")),
+                    Amount = penalty.XenograftPenalty
+                });
+            }
             if (TryComp<IntegritySurgeryComponent>(entity, out var surgeryComp))
             {
                 foreach (var entry in surgeryComp.Entries)
@@ -544,6 +578,15 @@ public sealed class HealthAnalyzerSystem : EntitySystem
                     Description = "health-analyzer-integrity-preview-unsanitary-surgery",
                     Amount = sanitaryPreview.Total,
                     Children = previewChildren.Count > 0 ? previewChildren : null
+                });
+            }
+
+            if (!_unsanitary.PatientOnSurgeryBed(entity))
+            {
+                state.IntegrityPreviewEntries.Add(new IntegrityPenaltyDisplayEntry
+                {
+                    Description = "health-analyzer-integrity-preview-no-surgery-bed",
+                    Amount = UnsanitarySurgeryCalculationSystem.NoSurgeryBedIntegrityPenalty
                 });
             }
 

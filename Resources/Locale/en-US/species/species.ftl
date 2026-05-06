@@ -11,6 +11,9 @@ species-name-skeleton = Skeleton
 species-name-vox = Vox
 species-name-gingerbread = delicious baked good
 species-name-vulpkanin = Vulpkanin
+species-name-monkey = Monkey
+species-name-space-carp = Space carp
+species-name-space-dragon = Space dragon
 
 ## Misc species things
 

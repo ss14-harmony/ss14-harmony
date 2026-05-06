@@ -6,6 +6,7 @@ using Content.Shared.Damage;
 using Content.Shared.EntityEffects.Effects.Body;
 using Content.Shared.EntityEffects.Effects.Damage;
 using Content.Shared.FixedPoint;
+using Content.Shared.Medical.Xenograft;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Cybernetics.Systems;
@@ -15,6 +16,8 @@ namespace Content.Shared.Cybernetics.Systems;
 /// </summary>
 public sealed class CyberOrganMetabolismModifierSystem : EntitySystem
 {
+    [Dependency] private readonly OrganXenograftSystem _organXenograft = default!;
+
     private static readonly ProtoId<OrganCategoryPrototype> Heart = "Heart";
     private static readonly ProtoId<OrganCategoryPrototype> Stomach = "Stomach";
     private static readonly ProtoId<OrganCategoryPrototype> Liver = "Liver";
@@ -28,15 +31,21 @@ public sealed class CyberOrganMetabolismModifierSystem : EntitySystem
 
     private void OnGetOrganMetabolismScaleModifier(Entity<BodyComponent> ent, ref GetOrganMetabolismScaleModifierEvent args)
     {
-        if (!TryComp<OrganComponent>(args.Organ, out var organComp) || !organComp.Category.HasValue)
-            return;
+        if (TryComp<OrganComponent>(args.Organ, out var organComp) && organComp.Category.HasValue
+            && TryComp<CyberOrganComponent>(args.Organ, out var cyberOrgan))
+        {
+            ApplyCyberOrganMetabolismModifier(organComp.Category.Value, cyberOrgan.Effectiveness, ref args);
+        }
 
-        if (!TryComp<CyberOrganComponent>(args.Organ, out var cyberOrgan))
-            return;
+        // Xenograft applies to any implanted organ with OrganXenograftComponent (including non-cyber).
+        _organXenograft.ApplyForeignHostMetabolismScale(ent.Owner, ref args);
+    }
 
-        var category = organComp.Category.Value;
-        var effectiveness = cyberOrgan.Effectiveness;
-
+    private void ApplyCyberOrganMetabolismModifier(
+        ProtoId<OrganCategoryPrototype> category,
+        float effectiveness,
+        ref GetOrganMetabolismScaleModifierEvent args)
+    {
         if (category == Lungs && args.Effect is ModifyLungGas)
         {
             args.Scale *= effectiveness;

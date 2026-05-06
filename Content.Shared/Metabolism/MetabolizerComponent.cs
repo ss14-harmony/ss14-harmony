@@ -1,4 +1,5 @@
 using Content.Shared.Body.Components;
+using Content.Shared.Medical.Xenograft;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -84,7 +85,7 @@ public sealed partial class MetabolizerComponent : Component
     ///     List of metabolizer types that this organ is. ex. Human, Slime, Felinid, w/e.
     /// </summary>
     [DataField]
-    [Access(typeof(MetabolizerSystem), Other = AccessPermissions.ReadExecute)] // FIXME Friends
+    [Access(typeof(MetabolizerSystem), typeof(OrganXenograftSystem), Other = AccessPermissions.ReadExecute)] // FIXME Friends
     public HashSet<ProtoId<MetabolizerTypePrototype>>? MetabolizerTypes;
 
     /// <summary>

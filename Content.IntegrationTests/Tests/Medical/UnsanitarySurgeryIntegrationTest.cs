@@ -7,6 +7,7 @@ using Content.Shared.FixedPoint;
 using Content.Server.Medical.Integrity;
 using Content.Shared.Body;
 using Content.Shared.Body.Events;
+using Content.Shared.Buckle;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Medical.Integrity;
@@ -260,6 +261,64 @@ public sealed class UnsanitarySurgeryIntegrationTest
             Assert.That(entityManager.TryGetComponent(patient, out IntegritySurgeryComponent? surgeryComp), Is.True, "Patient should have IntegritySurgeryComponent after penalty request with puddle");
             var unsanitaryEntries = surgeryComp!.Entries.Where(e => e.Category == IntegrityPenaltyCategory.UnsanitarySurgery).ToList();
             Assert.That(unsanitaryEntries.Sum(e => e.Amount), Is.GreaterThan(0), "UnsanitarySurgery penalty should be applied when puddle on tile");
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
+    public async Task SurgeryPenalty_NotOnSurgeryBed_AppliesNoBedPenalty()
+    {
+        await using var pair = await PoolManager.GetServerClient(new PoolSettings { DummyTicker = false });
+        var server = pair.Server;
+        await server.WaitIdleAsync();
+
+        var entityManager = server.ResolveDependency<IEntityManager>();
+        var mapData = await pair.CreateTestMap();
+
+        await pair.RunTicksSync(5);
+
+        await server.WaitAssertion(() =>
+        {
+            var patient = entityManager.SpawnEntity("MobHuman", mapData.GridCoords);
+            var ev = new UnsanitarySurgeryPenaltyRequestEvent(patient, GetTorso(entityManager, patient), "TestStep", SurgeryLayer.Skin, false, null, null);
+            entityManager.EventBus.RaiseLocalEvent(patient, ref ev);
+
+            Assert.That(entityManager.TryGetComponent(patient, out IntegritySurgeryComponent? surgeryComp), Is.True);
+            var noBed = surgeryComp!.Entries.Where(e => e.Category == IntegrityPenaltyCategory.NoSurgeryBed).ToList();
+            Assert.That(noBed.Sum(e => e.Amount), Is.EqualTo(UnsanitarySurgeryCalculationSystem.NoSurgeryBedIntegrityPenalty));
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    [Test]
+    public async Task SurgeryPenalty_OnMedicalBed_DoesNotApplyNoBedPenalty()
+    {
+        await using var pair = await PoolManager.GetServerClient(new PoolSettings { DummyTicker = false });
+        var server = pair.Server;
+        await server.WaitIdleAsync();
+
+        var entityManager = server.ResolveDependency<IEntityManager>();
+        var buckleSystem = entityManager.System<SharedBuckleSystem>();
+        var mapData = await pair.CreateTestMap();
+
+        await pair.RunTicksSync(5);
+
+        await server.WaitAssertion(() =>
+        {
+            var patient = entityManager.SpawnEntity("MobHuman", mapData.GridCoords);
+            var bed = entityManager.SpawnEntity("MedicalBed", mapData.GridCoords);
+            Assert.That(buckleSystem.TryBuckle(patient, patient, bed), Is.True);
+
+            var ev = new UnsanitarySurgeryPenaltyRequestEvent(patient, GetTorso(entityManager, patient), "TestStep", SurgeryLayer.Skin, false, null, null);
+            entityManager.EventBus.RaiseLocalEvent(patient, ref ev);
+
+            if (entityManager.TryGetComponent(patient, out IntegritySurgeryComponent? surgeryComp))
+            {
+                var noBed = surgeryComp.Entries.Where(e => e.Category == IntegrityPenaltyCategory.NoSurgeryBed).ToList();
+                Assert.That(noBed.Sum(e => e.Amount), Is.EqualTo(0), "Buckled to MedicalBed should waive no-surgery-bed penalty");
+            }
         });
 
         await pair.CleanReturnAsync();

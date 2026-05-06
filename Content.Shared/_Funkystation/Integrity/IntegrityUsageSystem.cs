@@ -2,6 +2,7 @@ using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Medical.Integrity.Components;
 using Content.Shared.Medical.Integrity.Events;
+using Content.Shared.Medical.Xenograft;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Medical.Integrity;
@@ -9,6 +10,7 @@ namespace Content.Shared.Medical.Integrity;
 public sealed class IntegrityUsageSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly OrganXenograftSystem _organXenograft = default!;
 
     public override void Initialize()
     {
@@ -23,6 +25,8 @@ public sealed class IntegrityUsageSystem : EntitySystem
     {
         if (_timing.ApplyingState)
             return;
+
+        _organXenograft.HandleOrganInserted(ent, ref args);
 
         var body = args.Target;
         if (!Exists(body) || !TryComp<BodyComponent>(body, out _))
@@ -41,6 +45,8 @@ public sealed class IntegrityUsageSystem : EntitySystem
     {
         if (_timing.ApplyingState)
             return;
+
+        _organXenograft.HandleOrganRemoved(ent, ref args);
 
         var body = args.Target;
         if (!Exists(body))

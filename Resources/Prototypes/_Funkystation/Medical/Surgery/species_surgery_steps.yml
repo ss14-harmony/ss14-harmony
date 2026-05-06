@@ -50,6 +50,142 @@
       primaryTag: BoneGelTool
   organSteps: [InsertOrgan]
 
+# Donor creature species (creature surgery torsos — clone HumanTorso)
+- type: bodyPartSurgerySteps
+  id: MonkeyTorso
+  species: Monkey
+  organCategory: Torso
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: HemostatTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: ManipulatingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: SpaceCarpTorso
+  species: SpaceCarp
+  organCategory: Torso
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: HemostatTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: ManipulatingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: [InsertOrgan]
+
+- type: bodyPartSurgerySteps
+  id: SpaceDragonTorso
+  species: SpaceDragon
+  organCategory: Torso
+  skinOpenStepEntries:
+    - procedure: CreateIncision
+      primaryTag: CuttingTool
+      improvisedDamageType: Slash
+    - procedure: ClampVessels
+      primaryTag: HemostatTool
+      improvisedTag: Wirecutter
+    - procedure: RetractSkin
+      primaryTag: ManipulatingTool
+      improvisedTag: PryingTool
+  skinCloseStepEntries:
+    - procedure: ReleaseRetractor
+      primaryTag: ManipulatingTool
+      improvisedDamageType: Blunt
+    - procedure: ReconnectVessels
+      primaryTag: HemostatTool
+      improvisedTag: AnchoringTool
+    - procedure: SealSkin
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+  tissueOpenStepEntries:
+    - procedure: CutBone
+      primaryTag: SawingTool
+      improvisedDamageType: Blunt
+    - procedure: MarrowBleeding
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RetractTissue
+      primaryTag: PryingTool
+      improvisedDamageType: Blunt
+  tissueCloseStepEntries:
+    - procedure: MaintainAlignment
+      primaryTag: ManipulatingTool
+      improvisedTag: Screwdriver
+    - procedure: SealBleedPoints
+      primaryTag: HeatWeapon
+      improvisedDamageType: Heat
+    - procedure: RepairBoneSection
+      primaryTag: BoneGelTool
+  organSteps: [InsertOrgan]
+
 - type: bodyPartSurgerySteps
   id: HumanHead
   species: Human
