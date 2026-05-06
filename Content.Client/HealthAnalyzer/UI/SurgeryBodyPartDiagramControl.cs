@@ -123,6 +123,27 @@ public sealed class SurgeryBodyPartDiagramControl : Control
         AddChild(container);
     }
 
+    protected override void ExitedTree()
+    {
+        base.ExitedTree();
+        CleanupPreviewFromTree();
+    }
+
+    /// <summary>
+    /// Deletes the preview entity when the control leaves the UI tree (preferred over overriding <see cref="Dispose"/>).
+    /// </summary>
+    private void CleanupPreviewFromTree()
+    {
+        if (_previewEntity != null)
+        {
+            if (!_entManager.Deleted(_previewEntity.Value))
+                _entManager.QueueDeleteEntity(_previewEntity.Value);
+            _previewEntity = null;
+        }
+
+        _spriteView?.SetEntity(null);
+    }
+
     public void SetTarget(NetEntity? target, List<SurgeryLayerStateData> bodyPartLayerState)
     {
         var prevTarget = _targetEntity;
@@ -354,7 +375,7 @@ public sealed class SurgeryBodyPartDiagramControl : Control
 
         spriteSystem.ForceUpdate(_previewEntity.Value);
 
-        var (position, layerScale, _, _) = ComputeSpriteViewTransform(sprite, spriteSystem);
+        var (position, layerScale, _, _) = ComputeSpriteViewTransform(_previewEntity.Value, sprite, spriteSystem);
         var tint = Color.Red.WithAlpha(0.6f);
         var drawnAny = false;
 
@@ -396,7 +417,7 @@ public sealed class SurgeryBodyPartDiagramControl : Control
             return null;
 
         var spriteSystem = _entManager.System<SpriteSystem>();
-        var (position, _, spriteSize, spriteScale) = ComputeSpriteViewTransform(sprite, spriteSystem);
+        var (position, _, spriteSize, spriteScale) = ComputeSpriteViewTransform(_previewEntity.Value, sprite, spriteSystem);
 
         var halfW = spriteSize.X * spriteScale / 2;
         var halfH = spriteSize.Y * spriteScale / 2;
@@ -409,9 +430,9 @@ public sealed class SurgeryBodyPartDiagramControl : Control
     /// Replicates SpriteView's transform logic for Fit mode. Matches SpriteView.Draw (Size, stretch, position, scale).
     /// Returns position (center in pixels), layerScale (converts meter bounds to pixels), spriteSize (in pixels), and spriteScale (UIScale*stretch for sprite rect).
     /// </summary>
-    private (Vector2 position, Vector2 layerScale, Vector2 spriteSize, float spriteScale) ComputeSpriteViewTransform(SpriteComponent sprite, SpriteSystem spriteSystem)
+    private (Vector2 position, Vector2 layerScale, Vector2 spriteSize, float spriteScale) ComputeSpriteViewTransform(EntityUid uid, SpriteComponent sprite, SpriteSystem spriteSystem)
     {
-        var spriteBox = sprite.CalculateRotatedBoundingBox(default, Angle.Zero, Angle.Zero).CalcBoundingBox();
+        var spriteBox = spriteSystem.GetLocalBounds((uid, sprite));
         spriteBox = spriteBox.Translated(-spriteBox.Center);
 
         var viewScale = new Vector2(2, 2);
@@ -471,16 +492,6 @@ public sealed class SurgeryBodyPartDiagramControl : Control
 
         var screenRect = new UIBox2(left, top, right, bottom);
         renderHandle.DrawingHandleScreen.DrawRect(screenRect, Color.Red.WithAlpha(0.6f));
-    }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-        if (_previewEntity != null)
-        {
-            _entManager.DeleteEntity(_previewEntity.Value);
-            _previewEntity = null;
-        }
     }
 
     public void SetSelectedBodyPart(NetEntity? bodyPart)

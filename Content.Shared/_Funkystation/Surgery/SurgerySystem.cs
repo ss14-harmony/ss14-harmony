@@ -726,7 +726,7 @@ public sealed class SurgerySystem : EntitySystem
                 return false;
 
             if (!_hands.TryPickupAnyHand(user, organ, checkActionBlocker: false))
-                Transform(organ).Coordinates = Transform(user).Coordinates;
+                _transform.SetCoordinates(organ, Transform(user).Coordinates);
             if (triggersOrganRemoval)
             {
                 // Store removal steps on the organ so re-insertion only shows repair steps

@@ -1,3 +1,5 @@
+#nullable enable
+
 using System.Linq;
 using Content.IntegrationTests;
 using Content.Server.Cybernetics.Systems;

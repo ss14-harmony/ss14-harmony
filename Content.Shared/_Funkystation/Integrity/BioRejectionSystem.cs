@@ -39,7 +39,7 @@ public sealed class BioRejectionSystem : EntitySystem
         var curTime = _timing.CurTime;
 
         var query = EntityQueryEnumerator<BodyComponent, DamageableComponent, BloodstreamComponent>();
-        while (query.MoveNext(out var uid, out var body, out var damageable, out _))
+        while (query.MoveNext(out var uid, out _, out var damageable, out _))
         {
             var usage = TryComp<IntegrityUsageComponent>(uid, out var usageComp) ? usageComp.Usage : 0;
             var penaltyEv = new IntegrityPenaltyTotalRequestEvent(uid);
@@ -48,13 +48,13 @@ public sealed class BioRejectionSystem : EntitySystem
             var baseCapacity = TryComp<IntegrityCapacityComponent>(uid, out var cap) ? cap.MaxIntegrity : 6;
 
             var immunityBoost = 0;
-            if (_body.TryGetOrgansWithComponent<IntegrityImmunityBoostComponent>((uid, body), out var boostOrgans))
+            foreach (var organUid in _body.GetAllOrgans(uid))
             {
-                foreach (var (organUid, boost) in boostOrgans)
-                {
-                    if (boost.ExpiresAt > curTime)
-                        immunityBoost += boost.Amount;
-                }
+                if (!TryComp<IntegrityImmunityBoostComponent>(organUid, out var boost))
+                    continue;
+
+                if (boost.ExpiresAt > curTime)
+                    immunityBoost += boost.Amount;
             }
 
             var capacity = baseCapacity + immunityBoost;

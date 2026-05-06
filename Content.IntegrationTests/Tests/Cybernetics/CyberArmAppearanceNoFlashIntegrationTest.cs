@@ -1,3 +1,5 @@
+#nullable enable
+
 using Content.IntegrationTests;
 using Content.Shared.Body;
 using Content.Shared.Body.Components;

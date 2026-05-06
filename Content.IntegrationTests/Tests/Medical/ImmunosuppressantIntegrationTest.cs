@@ -103,11 +103,20 @@ public sealed class ImmunosuppressantIntegrationTest
 
             // Per the recent patch, Immunosuppressant metabolism should add an IntegrityImmunityBoostComponent
             // with Amount == 10 to an organ on the patient (instead of directly modifying bio-rejection damage).
-            Assert.That(bodySystem.TryGetOrgansWithComponent<IntegrityImmunityBoostComponent>(patient, out var boostOrgans), Is.True,
-                "At least one organ should have IntegrityImmunityBoostComponent after Immunosuppressant metabolism");
-            Assert.That(boostOrgans, Is.Not.Empty, "Boost organs list should not be empty");
+            IntegrityImmunityBoostComponent? boostComp = null;
+            foreach (var organUid in bodySystem.GetAllOrgans(patient))
+            {
+                if (entityManager.TryGetComponent(organUid, out IntegrityImmunityBoostComponent? b))
+                {
+                    boostComp = b;
+                    break;
+                }
+            }
 
-            var boost = boostOrgans[0].Comp;
+            Assert.That(boostComp, Is.Not.Null,
+                "At least one organ should have IntegrityImmunityBoostComponent after Immunosuppressant metabolism");
+
+            var boost = boostComp!;
             Assert.That(boost.Amount, Is.EqualTo(10), "Immunosuppressant should apply an integrity boost of 10 (per the recent patch)");
             Assert.That(boost.ExpiresAt, Is.GreaterThan(TimeSpan.Zero), "Boost should have a non-zero expiration time set while Immunosuppressant is actively metabolizing");
         });
