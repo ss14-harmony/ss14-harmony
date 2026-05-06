@@ -116,10 +116,20 @@
         - Hands # no use giving a mouse a storage implant, but a monkey is another story...
     - type: Storage
       grid:
-      - 0,0,0,1
-      - 1,0,1,0
-      - 1,2,1,2
-      - 2,1,2,2
+      # Harmony Update Start - Changed storage impant to be 3x3
+      # - 0,0,0,1
+      # - 1,0,1,0
+      # - 1,2,1,2
+      # - 2,1,2,2
+      - 0,0,2,2
+      maxItemSize: Large
+      blacklist:
+        components:
+        - Storage
+        - SecretStash
+        tags:
+        - HighRiskItem
+      # Harmony Update End
     - type: ContainerContainer
       containers:
         storagebase: !type:Container

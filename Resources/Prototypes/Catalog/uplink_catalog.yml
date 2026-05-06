@@ -1418,14 +1418,14 @@
 - type: listing
   id: UplinkStorageImplanter
   name: uplink-storage-implanter-name
-  description: uplink-storage-implanter-desc
+  description: uplink-storage-implanter-harm-desc # Harmony Change - New Descrition
   icon: { sprite: /Textures/Clothing/Back/Backpacks/backpack.rsi, state: icon }
   productEntity: StorageImplanter
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 2 # Harmony - was 4
   cost:
-    Telecrystal: 8
+    Telecrystal: 4 # Harmony - was 8
   categories:
     - UplinkImplants
   conditions:
