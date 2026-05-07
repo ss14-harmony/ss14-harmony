@@ -955,4 +955,49 @@
   name: pleebnar-vision-192-name
   visionString: pleebnar-vision-192
 
+- type: pleebnarVision
+  id: 193
+  name: pleebnar-vision-193-name
+  visionString: pleebnar-vision-192
+
+- type: pleebnarVision
+  id: 194
+  name: pleebnar-vision-194-name
+  visionString: pleebnar-vision-194
+
+- type: pleebnarVision
+  id: 195
+  name: pleebnar-vision-195-name
+  visionString: pleebnar-vision-195
+
+- type: pleebnarVision
+  id: 196
+  name: pleebnar-vision-196-name
+  visionString: pleebnar-vision-196
+
+- type: pleebnarVision
+  id: 197
+  name: pleebnar-vision-197-name
+  visionString: pleebnar-vision-197
+
+- type: pleebnarVision
+  id: 198
+  name: pleebnar-vision-198-name
+  visionString: pleebnar-vision-198
+
+- type: pleebnarVision
+  id: 199
+  name: pleebnar-vision-199-name
+  visionString: pleebnar-vision-199
+
+- type: pleebnarVision
+  id: 200
+  name: pleebnar-vision-200-name
+  visionString: pleebnar-vision-200
+
+- type: pleebnarVision
+  id: 201
+  name: pleebnar-vision-201-name
+  visionString: pleebnar-vision-201
+
 # Harmony End

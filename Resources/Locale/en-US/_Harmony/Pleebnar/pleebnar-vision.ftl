@@ -42,3 +42,30 @@ pleebnar-vision-191-name = Garmonbozia
 
 pleebnar-vision-192 = A man with a terrible looking device, here to remind you that you are indeed mortal.
 pleebnar-vision-192-name = Throngle
+
+pleebnar-vision-193 = A suspicious noise, rhythmic, just beyond the wall catches your attention. Too late. Heat, flames, shrapnel, destruction; nothing will remain
+pleebnar-vision-193-name = Bombed
+
+pleebnar-vision-194 = A party held in a repurposed chapel. The air is filled with music and the smell of pizza.
+pleebnar-vision-194-name = Pizza Party
+
+pleebnar-vision-195 = The inside of a glowing green tube. You’re asleep. It feels… familiar.
+pleebnar-vision-195-name = Clone
+
+pleebnar-vision-196 = You see a little white dog that just doesn't look right.
+pleebnar-vision-196-name = Arnold
+
+pleebnar-vision-197 =  A woman with flowing white hair in a blood-red suit sits near the soon-to-be detonated nuke, and laughs.
+pleebnar-vision-197-name = Her
+
+pleebnar-vision-198 = An old, fat elf in a well-worn red robe, surrounded by black-clad soldiers, armed to the teeth.
+pleebnar-vision-198-name = Santa
+
+pleebnar-vision-199 = 'A marine pushing in to an area infested by a strange substance before looking upwards to see the sky above them erupt in to flames.
+pleebnar-vision-199-name = Charlie
+
+pleebnar-vision-200 = Waking up in bed to find your body has suddenly transformed in to a large beetle.
+pleebnar-vision-200-name = Cough Ka
+
+pleebnar-vision-201 = A lone cargo technician boarding the trade station. Cobalt eyes herald scraping metal and cracking bone.
+pleebnar-vision-201-name = Xenoborg
