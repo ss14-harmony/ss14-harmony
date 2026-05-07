@@ -16,16 +16,13 @@ pleebnar-vision-183-name = Vox Time
 pleebnar-vision-184 = Floating through the station. Your feet no longer touch the ground. It’s gone.
 pleebnar-vision-184-name = Its Gone
 
-pleebnar-vision-184 = Floating through the station. Your feet no longer touch the ground. It’s gone.
-pleebnar-vision-184-name = Its Gone
-
 pleebnar-vision-185 = Nuclear operatives assaulting the station. You hear the cries of your friends as blood pools around them. The worst part is you're in Detroit.
 pleebnar-vision-185-name = Barratry
 
 pleebnar-vision-186 = A computer screen with a sudden popup accompanied by a disgusting sound. The popup reads: Hey, got a moment?
 pleebnar-vision-186-name = bwoinked
 
-pleebnar-vision-187 = You're staring down a barrel of a cannon. There's a pie at the end of it.
+pleebnar-vision-187 = You're staring down a barrel of a cannon. The smell of bananas and creame hit your nostrils first.
 pleebnar-vision-187-name = pied
 
 pleebnar-vision-188 = You do not want to go back to medical. YOU DO NOT WANT TO GO BACK TO MEDICAL.
@@ -34,7 +31,7 @@ pleebnar-vision-188-name = Go to medical
 pleebnar-vision-189 = A plasteel rod at the end of a shuttle tearing through the station.
 pleebnar-vision-189-name = Movable Rod
 
-pleebnar-vision-190 = A man with pink hair, staring longingly through a window at a tortilla.
+pleebnar-vision-190 = A man with pink hair, staring longingly through a window at a flat dough based treat.
 pleebnar-vision-190-name = Want it
 
 pleebnar-vision-191 = A disturbing looking figure holding what looks like creamed corn cupped in their hands.
@@ -43,7 +40,7 @@ pleebnar-vision-191-name = Garmonbozia
 pleebnar-vision-192 = A man with a terrible looking device, here to remind you that you are indeed mortal.
 pleebnar-vision-192-name = Throngle
 
-pleebnar-vision-193 = A suspicious noise, rhythmic, just beyond the wall catches your attention. Too late. Heat, flames, shrapnel, destruction; nothing will remain
+pleebnar-vision-193 = A suspicious noise, rhythmic, just beyond the wall catches your attention. Too late. Heat, flames, shrapnel.
 pleebnar-vision-193-name = Bombed
 
 pleebnar-vision-194 = A party held in a repurposed chapel. The air is filled with music and the smell of pizza.
@@ -61,11 +58,11 @@ pleebnar-vision-197-name = Her
 pleebnar-vision-198 = An old, fat elf in a well-worn red robe, surrounded by black-clad soldiers, armed to the teeth.
 pleebnar-vision-198-name = Santa
 
-pleebnar-vision-199 = 'A marine pushing in to an area infested by a strange substance before looking upwards to see the sky above them erupt in to flames.
+pleebnar-vision-199 = A marine pushing in to an area infested by a strange substance before looking upwards to see the sky above them erupt in to flames.
 pleebnar-vision-199-name = Charlie
 
 pleebnar-vision-200 = Waking up in bed to find your body has suddenly transformed in to a large beetle.
 pleebnar-vision-200-name = Cough Ka
 
-pleebnar-vision-201 = A lone cargo technician boarding the trade station. Cobalt eyes herald scraping metal and cracking bone.
+pleebnar-vision-201 = A lone cargo technician boarding the trade station. A distinctive sound hums behind them.
 pleebnar-vision-201-name = Xenoborg
