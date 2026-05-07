@@ -66,6 +66,7 @@ health-analyzer-surgery-step-attach-limb = Attach Limb
 health-analyzer-surgery-no-steps-available = No procedures available for this layer.
 
 health-analyzer-surgery-error-organ-gone = The organ is no longer there.
+health-analyzer-surgery-error-clothing-in-the-way = The {$clothing} gets in the way of the surgery.
 health-analyzer-surgery-error-organ-not-in-hand = The organ is no longer in your hand.
 health-analyzer-surgery-error-slot-filled = That organ slot is already filled.
 health-analyzer-surgery-error-invalid-surgical-process = The surgical site is no longer valid.

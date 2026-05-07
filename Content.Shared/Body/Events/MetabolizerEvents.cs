@@ -1,4 +1,4 @@
-using Content.Shared.EntityEffects;
+using Content.Shared.EntityEffects; // Funky - CyberMed
 
 namespace Content.Shared.Body.Events;
 
@@ -28,7 +28,7 @@ public readonly record struct ApplyMetabolicMultiplierEvent(float Multiplier)
 }
 
 /// <summary>
-/// Funkystation:Raised on the body before applying a metabolism effect. Allows organs (e.g. cyber heart) to modify the scale.
+/// Funky - CyberMed: Raised on the body before applying a metabolism effect. Allows organs (e.g. cyber heart) to modify the scale.
 /// </summary>
 [ByRefEvent]
 public record struct GetOrganMetabolismScaleModifierEvent(EntityUid Organ, EntityEffect Effect)

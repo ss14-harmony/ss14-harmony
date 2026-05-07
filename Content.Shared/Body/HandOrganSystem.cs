@@ -1,11 +1,11 @@
-using Content.Shared.Body.Systems;
+using Content.Shared.Body.Systems; // Funky - CyberMed
 using Content.Shared.Hands.EntitySystems;
 
 namespace Content.Shared.Body;
 
 public sealed class HandOrganSystem : EntitySystem
 {
-    [Dependency] private readonly AppendageWearSlotSystem _appendageWearSlots = default!;
+    [Dependency] private readonly AppendageWearSlotSystem _appendageWearSlots = default!; // Funky - CyberMed
     [Dependency] private readonly SharedHandsSystem _hands = default!;
 
     public override void Initialize()
@@ -19,7 +19,7 @@ public sealed class HandOrganSystem : EntitySystem
     private void OnGotInserted(Entity<HandOrganComponent> ent, ref OrganGotInsertedEvent args)
     {
         _hands.AddHand(args.Target, ent.Comp.HandID, ent.Comp.Data);
-        _appendageWearSlots.RecomputeAppendageWearSlots(args.Target);
+        _appendageWearSlots.RecomputeAppendageWearSlots(args.Target); // Funky - CyberMed
     }
 
     private void OnGotRemoved(Entity<HandOrganComponent> ent, ref OrganGotRemovedEvent args)
@@ -29,6 +29,6 @@ public sealed class HandOrganSystem : EntitySystem
             return;
 
         _hands.RemoveHand(args.Target, ent.Comp.HandID);
-        _appendageWearSlots.RecomputeAppendageWearSlots(args.Target);
+        _appendageWearSlots.RecomputeAppendageWearSlots(args.Target); // Funky - CyberMed
     }
 }

@@ -1,9 +1,9 @@
-using System.Collections.Generic;
-using System.Linq;
-using Content.Shared.Body.Components;
-using Content.Shared.Body.Events;
+using System.Collections.Generic; // Funky - CyberMed
+using System.Linq; // Funky - CyberMed
+using Content.Shared.Body.Components; // Funky - CyberMed
+using Content.Shared.Body.Events; // Funky - CyberMed
 using Content.Shared.DragDrop;
-using Content.Shared.Medical.Surgery.Components;
+using Content.Shared.Medical.Surgery.Components; // Funky - CyberMed
 using Robust.Shared.Containers;
 
 namespace Content.Shared.Body;
@@ -12,9 +12,9 @@ public sealed partial class BodySystem : EntitySystem
 {
     [Dependency] private readonly SharedContainerSystem _container = default!;
 
-    private EntityQuery<BodyComponent> _bodyQuery;
-    private EntityQuery<OrganComponent> _organQuery;
-    private EntityQuery<BodyPartComponent> _bodyPartQuery;
+    private EntityQuery<BodyComponent> _bodyQuery; // Funky - CyberMed
+    private EntityQuery<OrganComponent> _organQuery; // Funky - CyberMed
+    private EntityQuery<BodyPartComponent> _bodyPartQuery; // Funky - CyberMed
 
     public override void Initialize()
     {
@@ -23,14 +23,15 @@ public sealed partial class BodySystem : EntitySystem
         SubscribeLocalEvent<BodyComponent, ComponentInit>(OnBodyInit);
         SubscribeLocalEvent<BodyComponent, ComponentShutdown>(OnBodyShutdown);
 
-        SubscribeLocalEvent<BodyPartComponent, ComponentInit>(OnBodyPartInit);
-        SubscribeLocalEvent<BodyPartComponent, ComponentShutdown>(OnBodyPartShutdown);
+        SubscribeLocalEvent<BodyPartComponent, ComponentInit>(OnBodyPartInit); // Funky - CyberMed
+        SubscribeLocalEvent<BodyPartComponent, ComponentShutdown>(OnBodyPartShutdown); // Funky - CyberMed
 
-        SubscribeLocalEvent<BodyComponent, CanDragEvent>(OnCanDrag);
+        SubscribeLocalEvent<BodyComponent, CanDragEvent>(OnCanDrag); // Funky - CyberMed
 
-        SubscribeLocalEvent<BodyComponent, EntInsertedIntoContainerMessage>(OnBodyEntInserted);
-        SubscribeLocalEvent<BodyComponent, EntRemovedFromContainerMessage>(OnBodyEntRemoved);
+        SubscribeLocalEvent<BodyComponent, EntInsertedIntoContainerMessage>(OnBodyEntInserted); // Funky - CyberMed
+        SubscribeLocalEvent<BodyComponent, EntRemovedFromContainerMessage>(OnBodyEntRemoved); // Funky - CyberMed
 
+        // Funky - CyberMed: Start
         SubscribeLocalEvent<BodyPartComponent, EntInsertedIntoContainerMessage>(OnBodyPartEntInserted);
         SubscribeLocalEvent<BodyPartComponent, EntRemovedFromContainerMessage>(OnBodyPartEntRemoved);
 
@@ -56,6 +57,7 @@ public sealed partial class BodySystem : EntitySystem
         if (ent.Comp.Organs is { } organs)
             _container.ShutdownContainer(organs);
     }
+    // Funky - CyberMed: End
 
     private void OnBodyInit(Entity<BodyComponent> ent, ref ComponentInit args)
     {
@@ -77,7 +79,8 @@ public sealed partial class BodySystem : EntitySystem
         if (!_organQuery.TryComp(args.Entity, out var organ))
             return;
 
-        // Funkystation: Set BodyPart.Body when a body part is inserted, and propagate to any organs already in it
+        // Funky - CyberMed: Start
+        // Set BodyPart.Body when a body part is inserted, and propagate to any organs already in it
         if (_bodyPartQuery.TryComp(args.Entity, out var bodyPart))
         {
             bodyPart.Body = ent;
@@ -107,6 +110,7 @@ public sealed partial class BodySystem : EntitySystem
                 }
             }
         }
+        // Funky - CyberMed: End
 
         var body = new OrganInsertedIntoEvent(args.Entity);
         RaiseLocalEvent(ent, ref body);
@@ -120,10 +124,10 @@ public sealed partial class BodySystem : EntitySystem
             Dirty(args.Entity, organ);
         }
 
-        var refresh = new AppendageWearInventoryRefreshEvent();
-        RaiseLocalEvent(ent.Owner, ref refresh);
+        var refresh = new AppendageWearInventoryRefreshEvent(); // Funky - CyberMed
+        RaiseLocalEvent(ent.Owner, ref refresh); // Funky - CyberMed
 
-        RecalculateBlindnessFromOrgans(ent.Owner);
+        RecalculateBlindnessFromOrgans(ent.Owner); // Funky - CyberMed
     }
 
     private void OnBodyEntRemoved(Entity<BodyComponent> ent, ref EntRemovedFromContainerMessage args)
@@ -134,6 +138,7 @@ public sealed partial class BodySystem : EntitySystem
         if (!_organQuery.TryComp(args.Entity, out var organ))
             return;
 
+        // Funky - CyberMed: Start
         // Clear BodyPart.Body and propagate removal to child organs
         if (_bodyPartQuery.TryComp(args.Entity, out var bodyPart))
         {
@@ -157,6 +162,7 @@ public sealed partial class BodySystem : EntitySystem
             bodyPart.Body = null;
             Dirty(args.Entity, bodyPart);
         }
+        // Funky - CyberMed: End
 
         var body = new OrganRemovedFromEvent(args.Entity);
         RaiseLocalEvent(ent, ref body);
@@ -172,12 +178,13 @@ public sealed partial class BodySystem : EntitySystem
         organ.Body = null;
         Dirty(args.Entity, organ);
 
-        var refreshRemoved = new AppendageWearInventoryRefreshEvent();
-        RaiseLocalEvent(ent.Owner, ref refreshRemoved);
+        var refreshRemoved = new AppendageWearInventoryRefreshEvent(); // Funky - CyberMed
+        RaiseLocalEvent(ent.Owner, ref refreshRemoved); // Funky - CyberMed
 
-        RecalculateBlindnessFromOrgans(ent.Owner);
+        RecalculateBlindnessFromOrgans(ent.Owner); // Funky - CyberMed
     }
 
+    // Funky - CyberMed: Start
     private void OnBodyPartEntInserted(Entity<BodyPartComponent> ent, ref EntInsertedIntoContainerMessage args)
     {
         if (args.Container.ID != ent.Comp.ContainerId)
@@ -239,12 +246,14 @@ public sealed partial class BodySystem : EntitySystem
 
         RecalculateBlindnessFromOrgans(rootBody.Value);
     }
+    // Funky - CyberMed: End
 
     private void OnCanDrag(Entity<BodyComponent> ent, ref CanDragEvent args)
     {
         args.Handled = true;
     }
 
+    // Funky - CyberMed: Start
     private void OnBodyPartQuery(Entity<BodyComponent> ent, ref BodyPartQueryEvent args)
     {
         if (args.Body != ent.Owner || ent.Comp.Organs == null)
@@ -327,4 +336,5 @@ public sealed partial class BodySystem : EntitySystem
         }
         return false;
     }
+    // Funky - CyberMed: End
 }

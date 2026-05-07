@@ -1,4 +1,4 @@
-using Content.Shared.Medical.Surgery.Prototypes;
+using Content.Shared.Medical.Surgery.Prototypes; // Funky - CyberMed
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Body;
@@ -12,6 +12,7 @@ public sealed partial class OrganCategoryPrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = default!;
 
+    // Funky - CyberMed: start
     /// <summary>
     /// Localized display name for this category (e.g. "Left Leg", "Left Arm").
     /// When null, falls back to ID for display.
@@ -30,4 +31,5 @@ public sealed partial class OrganCategoryPrototype : IPrototype
     /// </summary>
     [DataField]
     public List<ProtoId<SurgeryProcedurePrototype>>? DefaultInsertionProcedures { get; private set; }
+    // Funky - CyberMed: end
 }

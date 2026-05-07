@@ -482,7 +482,7 @@ public sealed partial class DamageableSystem
     }
 
     /// <summary>
-    ///     Current stored damage for a single damage type (zero if absent).
+    /// Funky - CyberMed: Current stored damage for a single damage type (zero if absent).
     /// </summary>
     public FixedPoint2 GetDamageOfType(Entity<DamageableComponent?> ent, ProtoId<DamageTypePrototype> type)
     {
@@ -493,7 +493,7 @@ public sealed partial class DamageableSystem
     }
 
     /// <summary>
-    ///     Sum of damage for types belonging to the given group.
+    /// Funky - CyberMed: Sum of damage for types belonging to the given group.
     /// </summary>
     public bool TryGetDamageInGroup(Entity<DamageableComponent?> ent, ProtoId<DamageGroupPrototype> groupId, out FixedPoint2 total)
     {
@@ -508,7 +508,7 @@ public sealed partial class DamageableSystem
     }
 
     /// <summary>
-    ///     Snapshot of per-type damage as string keys (for UI).
+    /// Funky - CyberMed: Snapshot of per-type damage as string keys (for UI).
     /// </summary>
     public Dictionary<string, FixedPoint2> GetDamageDictStringKeys(Entity<DamageableComponent?> ent)
     {

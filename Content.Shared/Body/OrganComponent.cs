@@ -3,8 +3,12 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Body;
 
+/// <summary>
+/// Marks an entity as being able to be inserted into an entity with <seealso cref="BodyComponent" />.
+/// </summary>
+/// <seealso cref="BodySystem" />
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(BodySystem), typeof(BodyPartOrganSystem))]
+[Access(typeof(BodySystem), typeof(BodyPartOrganSystem))] // Funky - CyberMed
 public sealed partial class OrganComponent : Component
 {
     /// <summary>
@@ -20,7 +24,7 @@ public sealed partial class OrganComponent : Component
     public ProtoId<OrganCategoryPrototype>? Category;
 
     /// <summary>
-    /// Integrity cost this organ consumes when installed. Natural organs use 0; biosynthetic/implants typically use 1.
+    /// Funky - CyberMed: Integrity cost this organ consumes when installed. Natural organs use 0; biosynthetic/implants typically use 1 or more.
     /// </summary>
     [DataField]
     public int IntegrityCost { get; set; }

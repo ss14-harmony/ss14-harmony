@@ -63,7 +63,7 @@ public sealed partial class DamageableSystem : EntitySystem
             _appearance.SetData(
                 ent,
                 DamageVisualizerKeys.DamageUpdateGroups,
-                new DamageVisualizerGroupData(ent.Comp.DamagePerGroup.Keys.Select(k => k.Id).ToList()),
+                new DamageVisualizerGroupData(ent.Comp.DamagePerGroup.Keys.Select(k => k.Id).ToList()), // Funky - CyberMed: Makes it pass the prototype ID of the damage type, rather than a keyed object. Makes it so this can visualize damage on limbs properly.
                 appearance
             );
         }

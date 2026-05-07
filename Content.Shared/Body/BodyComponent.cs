@@ -41,6 +41,7 @@ public readonly record struct OrganInsertedIntoEvent(EntityUid Organ);
 public readonly record struct OrganRemovedFromEvent(EntityUid Organ);
 
 /// <summary>
+/// Funky - CyberMed
 /// Raised on the body immediately after <see cref="OrganRemovedFromEvent"/> with the same organ.
 /// Use this when you need organ-removal reactions without consuming the single directed subscription slot for <see cref="OrganRemovedFromEvent"/>.
 /// </summary>
@@ -48,6 +49,7 @@ public readonly record struct OrganRemovedFromEvent(EntityUid Organ);
 public readonly record struct OrganRemovedFromBodyNotifyEvent(EntityUid Organ);
 
 /// <summary>
+/// Funky - CyberMed
 /// Raised on a body after organ insert/remove paths in <see cref="BodySystem"/> update what is attached.
 /// Used to reconcile glove/footwear inventory slots with anatomy.
 /// </summary>

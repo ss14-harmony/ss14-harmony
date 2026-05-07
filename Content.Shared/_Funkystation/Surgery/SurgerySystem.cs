@@ -16,6 +16,7 @@ using Content.Shared.Medical.Surgery.Events;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Inventory;
 using Content.Shared.Medical.Surgery.Prototypes;
 using Content.Shared.Popups;
 using Content.Shared.Standing;
@@ -43,6 +44,7 @@ public sealed class SurgerySystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedMeleeWeaponSystem _melee = default!;
@@ -82,6 +84,16 @@ public sealed class SurgerySystem : EntitySystem
         if (!isAttachLimbToEmptySlot && !query.Parts.Contains(args.BodyPart))
         {
             args.RejectReason = "body-part-not-in-body";
+            return;
+        }
+
+        if (!isAttachLimbToEmptySlot && IsBodyPartCoveredByClothing(ent.Owner, args.BodyPart, out var blockingClothing))
+        {
+            args.RejectReason = "clothing-in-the-way";
+            PopupSurgeryFeedback(
+                Loc.GetString("health-analyzer-surgery-error-clothing-in-the-way",
+                    ("clothing", Identity.Name(blockingClothing, EntityManager, args.User))),
+                args.User);
             return;
         }
 
@@ -715,11 +727,19 @@ public sealed class SurgerySystem : EntitySystem
                 PopupSurgeryFeedback(Loc.GetString("health-analyzer-surgery-error-organ-gone"), user);
                 return false;
             }
-            if (bodyPartComp!.Organs == null || !bodyPartComp.Organs.ContainedEntities.Contains(organ))
+            if (bodyPartComp == null || bodyPartComp.Organs == null || !bodyPartComp.Organs.ContainedEntities.Contains(organ))
             {
                 PopupSurgeryFeedback(Loc.GetString("health-analyzer-surgery-error-organ-gone"), user);
                 return false;
             }
+            // Safety Check - layerComp should never be null at this point.
+            if (layerComp == null)
+            {
+                PopupSurgeryFeedback(Loc.GetString("health-analyzer-surgery-error-invalid-surgical-process"), user);
+                return false;
+            }
+            // Derive the NetEntity from the validated organ so we don't rely on the (paired) args.Organ being set.
+            var organNetValue = GetNetEntity(organ);
             var removeEv = new OrganRemoveRequestEvent(organ) { Destination = Transform(user).Coordinates };
             RaiseLocalEvent(organ, ref removeEv);
             if (!removeEv.Success)
@@ -730,21 +750,20 @@ public sealed class SurgerySystem : EntitySystem
             if (triggersOrganRemoval)
             {
                 // Store removal steps on the organ so re-insertion only shows repair steps
-                var removalSteps = layerComp!.OrganRemovalProgress
-                    .FirstOrDefault(e => e.Organ == organNet!.Value)?.Steps.ToList() ?? new List<string>();
+                var removalSteps = layerComp.OrganRemovalProgress
+                    .FirstOrDefault(e => e.Organ == organNetValue)?.Steps.ToList() ?? new List<string>();
                 if (!removalSteps.Contains(stepId))
                     removalSteps.Add(stepId);
                 var stateComp = EnsureComp<OrganRemovedSurgeryStateComponent>(organ);
                 stateComp.PerformedRemovalSteps = removalSteps;
                 Dirty(organ, stateComp);
-                ClearOrganRemovalProgress(layerComp, organNet!.Value);
+                ClearOrganRemovalProgress(layerComp, organNetValue);
             }
             else
-                AddOrganRemovalProgress(layerComp!, organNet!.Value, stepId);
+                AddOrganRemovalProgress(layerComp, organNetValue, stepId);
             // Clear organ progress when organ leaves the body so re-insertion shows correct procedures
-            ClearOrganInsertProgress(layerComp!, organNet!.Value);
-            if (layerComp != null)
-                Dirty(bodyPart, layerComp);
+            ClearOrganInsertProgress(layerComp, organNetValue);
+            Dirty(bodyPart, layerComp);
             var penaltyEv = new SurgeryPenaltyAppliedEvent(bodyPart, penalty);
             RaiseLocalEvent(bodyPart, ref penaltyEv);
             var uiRefreshEv = new SurgeryUiRefreshRequestEvent();
@@ -926,6 +945,35 @@ public sealed class SurgerySystem : EntitySystem
 
         return false;
     }
+
+    private bool IsBodyPartCoveredByClothing(EntityUid patient, EntityUid bodyPart, out EntityUid clothing)
+    {
+        clothing = default;
+        string? slot = null;
+
+        if (TryComp<SurgeryBodyPartComponent>(bodyPart, out var sbp))
+            slot = SlotForCategory(sbp.OrganCategory);
+        else if (TryComp<OrganComponent>(bodyPart, out var organ) && organ.Category is { } cat)
+            slot = SlotForCategory(cat);
+
+        if (slot == null)
+            return false;
+
+        if (_inventory.TryGetSlotEntity(patient, slot, out var item))
+        {
+            clothing = item.Value;
+            return true;
+        }
+
+        return false;
+    }
+
+    private static string? SlotForCategory(ProtoId<OrganCategoryPrototype> category) => category.Id switch
+    {
+        "Torso" => "outerClothing",
+        "Head" => "head",
+        _ => null,
+    };
 
     private void PopupSurgeryProcedureEmote(LocId? selfKey, LocId? othersKey, EntityUid user, EntityUid patient, EntityUid bodyPart)
     {
