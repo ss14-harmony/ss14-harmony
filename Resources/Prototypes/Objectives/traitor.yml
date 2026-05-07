@@ -390,6 +390,7 @@
     blacklist:
       components:
       - EscapeShuttleCondition
+      - DieCondition # This prevents NukeDisk from rolling after DAGD
 # End harmony change
 
 # sabotage
