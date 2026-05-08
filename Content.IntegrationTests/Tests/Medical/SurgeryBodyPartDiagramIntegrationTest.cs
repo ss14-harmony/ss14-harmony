@@ -117,7 +117,7 @@ public sealed class SurgeryBodyPartDiagramIntegrationTest : InteractionTest
         await Server.WaitAssertion(() =>
         {
             var torsoEnt = SEntMan.GetEntity(torsoNet);
-            Assert.That(SEntMan.TryGetComponent(torsoEnt, out SurgeryLayerComponent? layer), Is.True);
+            Assert.That(SEntMan.TryGetComponent(torsoEnt, out SurgeryLayerComponent layer), Is.True);
             Assert.That(layer!.SkinRetracted, Is.True, "Skin should be retracted after DoAfter");
 
             var totalEv = new IntegrityPenaltyTotalRequestEvent(patient);

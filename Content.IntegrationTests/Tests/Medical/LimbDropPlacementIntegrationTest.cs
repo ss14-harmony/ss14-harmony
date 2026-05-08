@@ -158,7 +158,7 @@ public sealed class LimbDropPlacementIntegrationTest : InteractionTest
         await server.WaitAssertion(() =>
         {
             Assert.That(entityManager.EntityExists(leg), Is.True, "Leg entity should exist after detachment");
-            Assert.That(entityManager.TryGetComponent(leg, out BodyPartComponent? legBodyPart), Is.True);
+            Assert.That(entityManager.TryGetComponent(leg, out BodyPartComponent legBodyPart), Is.True);
             Assert.That(legBodyPart!.Body, Is.Null, "Leg should no longer be attached to body after DetachLimb");
 
             Assert.That(legBodyPart.Organs?.ContainedEntities.Count ?? 0, Is.EqualTo(0),

@@ -25,7 +25,7 @@ public sealed class FootTraitParaplegicIntegrationTest
     private static EntityUid GetFootLeft(IEntityManager entityManager, BodySystem bodySystem, EntityUid body)
     {
         return bodySystem.GetAllOrgans(body).First(o =>
-            entityManager.TryGetComponent(o, out OrganComponent? comp) && comp.Category?.Id == "FootLeft");
+            entityManager.TryGetComponent(o, out OrganComponent comp) && comp.Category?.Id == "FootLeft");
     }
 
     [Test]

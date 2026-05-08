@@ -25,13 +25,13 @@ public sealed class OrganTraitBlindnessIntegrationTest
     private static EntityUid GetEyes(IEntityManager entityManager, BodySystem bodySystem, EntityUid body)
     {
         return bodySystem.GetAllOrgans(body).First(o =>
-            entityManager.TryGetComponent(o, out OrganComponent? comp) && comp.Category?.Id == "Eyes");
+            entityManager.TryGetComponent(o, out OrganComponent comp) && comp.Category?.Id == "Eyes");
     }
 
     private static int CountEyeOrgans(IEntityManager entityManager, BodySystem bodySystem, EntityUid body)
     {
         return bodySystem.GetAllOrgans(body).Count(o =>
-            entityManager.TryGetComponent(o, out OrganComponent? comp) && comp.Category?.Id == "Eyes");
+            entityManager.TryGetComponent(o, out OrganComponent comp) && comp.Category?.Id == "Eyes");
     }
 
     [Test]
@@ -55,7 +55,7 @@ public sealed class OrganTraitBlindnessIntegrationTest
             head = GetHead(entityManager, human);
 
             entityManager.AddComponent<PermanentBlindnessComponent>(human);
-            Assert.That(entityManager.TryGetComponent(human, out BlindableComponent? blindable), Is.True);
+            Assert.That(entityManager.TryGetComponent(human, out BlindableComponent blindable), Is.True);
 
             bodySystem.ApplyOrganTraitBlindnessToImplantedEyes(human, 0);
             bodySystem.RecalculateBlindnessFromOrgans(human);
@@ -81,7 +81,7 @@ public sealed class OrganTraitBlindnessIntegrationTest
             Assert.That(CountEyeOrgans(entityManager, bodySystem, human), Is.Zero,
                 "Explant should leave no implanted eye organs");
 
-            Assert.That(entityManager.TryGetComponent(human, out BlindableComponent? blindable), Is.True);
+            Assert.That(entityManager.TryGetComponent(human, out BlindableComponent blindable), Is.True);
             Assert.That(blindable!.IsBlind, Is.True, "Should stay blind without eyes");
 
             var freshCoords = entityManager.GetComponent<TransformComponent>(human).Coordinates;

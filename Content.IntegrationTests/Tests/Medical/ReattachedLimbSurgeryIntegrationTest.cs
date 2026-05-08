@@ -173,7 +173,7 @@ public sealed class ReattachedLimbSurgeryIntegrationTest : InteractionTest
         {
             var leg = SEntMan.GetEntity(legNet);
             Assert.That(SEntMan.EntityExists(leg), Is.True);
-            Assert.That(SEntMan.TryGetComponent(leg, out BodyPartComponent? legBodyPart), Is.True);
+            Assert.That(SEntMan.TryGetComponent(leg, out BodyPartComponent legBodyPart), Is.True);
             Assert.That(legBodyPart!.Body, Is.Null, "Leg should be detached");
 
             HandSys.TryPickupAnyHand(SPlayer, leg, checkActionBlocker: false);

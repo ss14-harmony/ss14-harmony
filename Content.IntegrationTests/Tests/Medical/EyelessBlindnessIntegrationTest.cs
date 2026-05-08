@@ -24,7 +24,7 @@ public sealed class EyelessBlindnessIntegrationTest
     private static EntityUid GetEyes(IEntityManager entityManager, BodySystem bodySystem, EntityUid body)
     {
         return bodySystem.GetAllOrgans(body).First(o =>
-            entityManager.TryGetComponent(o, out OrganComponent? comp) && comp.Category?.Id == "Eyes");
+            entityManager.TryGetComponent(o, out OrganComponent comp) && comp.Category?.Id == "Eyes");
     }
 
     [Test]
@@ -45,7 +45,7 @@ public sealed class EyelessBlindnessIntegrationTest
             var head = GetHead(entityManager, human);
             var eyes = GetEyes(entityManager, bodySystem, human);
 
-            Assert.That(entityManager.TryGetComponent(human, out BlindableComponent? blindable), Is.True,
+            Assert.That(entityManager.TryGetComponent(human, out BlindableComponent blindable), Is.True,
                 "Human should have BlindableComponent");
 
             var removeEv = new OrganRemoveRequestEvent(eyes);

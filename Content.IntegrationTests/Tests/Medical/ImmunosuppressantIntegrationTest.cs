@@ -33,7 +33,7 @@ public sealed class ImmunosuppressantIntegrationTest
     private static EntityUid GetHeart(IEntityManager entityManager, BodySystem bodySystem, EntityUid body)
     {
         return bodySystem.GetAllOrgans(body).First(o =>
-            entityManager.TryGetComponent(o, out OrganComponent? comp) && comp.Category?.Id == "Heart");
+            entityManager.TryGetComponent(o, out OrganComponent comp) && comp.Category?.Id == "Heart");
     }
 
     [Test]
@@ -82,7 +82,7 @@ public sealed class ImmunosuppressantIntegrationTest
         await server.WaitAssertion(() =>
         {
             Assert.That(entityManager.EntityExists(patient), Is.True);
-            Assert.That(entityManager.TryGetComponent(patient, out DamageableComponent? damageable), Is.True);
+            Assert.That(entityManager.TryGetComponent(patient, out DamageableComponent damageable), Is.True);
             damageBeforeImmunosuppressant = damageableSys.GetDamageOfType((patient, damageable!), "BioRejection");
             Assert.That(damageBeforeImmunosuppressant, Is.GreaterThanOrEqualTo(FixedPoint2.New(0.1f)), "Bio-rejection damage should have ramped up before immunosuppressant");
         });
@@ -103,10 +103,10 @@ public sealed class ImmunosuppressantIntegrationTest
 
             // Per the recent patch, Immunosuppressant metabolism should add an IntegrityImmunityBoostComponent
             // with Amount == 10 to an organ on the patient (instead of directly modifying bio-rejection damage).
-            IntegrityImmunityBoostComponent? boostComp = null;
+            IntegrityImmunityBoostComponent boostComp = null;
             foreach (var organUid in bodySystem.GetAllOrgans(patient))
             {
-                if (entityManager.TryGetComponent(organUid, out IntegrityImmunityBoostComponent? b))
+                if (entityManager.TryGetComponent(organUid, out IntegrityImmunityBoostComponent b))
                 {
                     boostComp = b;
                     break;
@@ -153,7 +153,7 @@ public sealed class ImmunosuppressantIntegrationTest
         await server.WaitAssertion(() =>
         {
             Assert.That(entityManager.EntityExists(skeleton), Is.True);
-            Assert.That(entityManager.TryGetComponent(skeleton, out DamageableComponent? damageable), Is.True);
+            Assert.That(entityManager.TryGetComponent(skeleton, out DamageableComponent damageable), Is.True);
             var bioRejectionDamage = damageableSys.GetDamageOfType((skeleton, damageable!), "BioRejection");
             Assert.That(bioRejectionDamage, Is.EqualTo(FixedPoint2.Zero), "Entities without BloodstreamComponent should not receive bio-rejection damage");
         });

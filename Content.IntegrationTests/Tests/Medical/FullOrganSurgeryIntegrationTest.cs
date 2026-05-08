@@ -33,7 +33,7 @@ public sealed class FullOrganSurgeryIntegrationTest : InteractionTest
     private static EntityUid GetHeart(IEntityManager entityManager, BodySystem bodySystem, EntityUid body)
     {
         return bodySystem.GetAllOrgans(body).First(o =>
-            entityManager.TryGetComponent(o, out OrganComponent? comp) && comp.Category?.Id == "Heart");
+            entityManager.TryGetComponent(o, out OrganComponent comp) && comp.Category?.Id == "Heart");
     }
 
     [Test]

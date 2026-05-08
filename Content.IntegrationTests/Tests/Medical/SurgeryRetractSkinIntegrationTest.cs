@@ -107,7 +107,7 @@ public sealed class SurgeryRetractSkinIntegrationTest
 
         await server.WaitAssertion(() =>
         {
-            Assert.That(entityManager.TryGetComponent(torso, out SurgeryLayerComponent? layer), Is.True);
+            Assert.That(entityManager.TryGetComponent(torso, out SurgeryLayerComponent layer), Is.True);
             Assert.That(layer!.SkinRetracted, Is.True, "Skin should be retracted after DoAfter");
 
             var totalEv = new IntegrityPenaltyTotalRequestEvent(patient);

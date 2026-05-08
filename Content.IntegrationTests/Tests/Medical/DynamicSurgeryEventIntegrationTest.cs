@@ -147,7 +147,7 @@ public sealed class DynamicSurgeryEventIntegrationTest
 
         await server.WaitAssertion(() =>
         {
-            Assert.That(entityManager.TryGetComponent(torso, out SurgeryLayerComponent? layer), Is.True);
+            Assert.That(entityManager.TryGetComponent(torso, out SurgeryLayerComponent layer), Is.True);
             Assert.That(layer!.PerformedSkinSteps, Does.Contain("RetractSkin"), "Step application occurs via SurgeryStepCompletedEvent handler, not direct mutation");
         });
         await pair.CleanReturnAsync();

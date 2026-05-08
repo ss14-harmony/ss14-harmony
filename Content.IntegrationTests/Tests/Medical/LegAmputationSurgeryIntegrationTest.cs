@@ -180,7 +180,7 @@ public sealed class LegAmputationSurgeryIntegrationTest : InteractionTest
         {
             var leg = SEntMan.GetEntity(legNet);
             Assert.That(SEntMan.EntityExists(leg), Is.True, "Leg entity should exist after detachment");
-            Assert.That(SEntMan.TryGetComponent(leg, out BodyPartComponent? legBodyPart), Is.True);
+            Assert.That(SEntMan.TryGetComponent(leg, out BodyPartComponent legBodyPart), Is.True);
             Assert.That(legBodyPart!.Body, Is.Null, "Leg should no longer be attached to body after DetachLimb");
 
             // Foot should be detached separately, not inside the leg
@@ -247,14 +247,14 @@ public sealed class LegAmputationSurgeryIntegrationTest : InteractionTest
         {
             var leg = SEntMan.GetEntity(legNet);
             Assert.That(SEntMan.EntityExists(leg), Is.True, "Leg entity should still exist after re-attachment");
-            Assert.That(SEntMan.TryGetComponent(leg, out BodyPartComponent? legBodyPart), Is.True);
+            Assert.That(SEntMan.TryGetComponent(leg, out BodyPartComponent legBodyPart), Is.True);
             Assert.That(legBodyPart!.Body, Is.EqualTo(patient), "Leg should be re-attached to body after AttachLimb");
 
             // Re-attached leg should not have foot inside; body has at most one FootLeft (no duplicate from sprite bug)
             Assert.That(legBodyPart.Organs?.ContainedEntities.Count ?? 0, Is.EqualTo(0),
                 "Re-attached leg should not contain a foot");
             var footCount = bodySys.GetAllOrgans(patient).Count(o =>
-                SEntMan.TryGetComponent(o, out OrganComponent? oc) && oc.Category?.ToString() == "FootLeft");
+                SEntMan.TryGetComponent(o, out OrganComponent oc) && oc.Category?.ToString() == "FootLeft");
             Assert.That(footCount, Is.LessThanOrEqualTo(1), "Body should have at most one FootLeft");
         });
 

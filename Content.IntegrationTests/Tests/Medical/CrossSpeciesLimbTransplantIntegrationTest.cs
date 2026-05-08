@@ -102,13 +102,13 @@ public sealed class CrossSpeciesLimbTransplantIntegrationTest : InteractionTest
         {
             var voxArm = GetArm(SEntMan, vox);
             voxArmNet = SEntMan.GetNetEntity(voxArm);
-            if (SEntMan.TryGetComponent(voxArm, out BodyPartComponent? armBodyPart) && armBodyPart.Organs != null)
+            if (SEntMan.TryGetComponent(voxArm, out BodyPartComponent armBodyPart) && armBodyPart.Organs != null)
             {
                 foreach (var limbOrgan in armBodyPart.Organs.ContainedEntities.ToArray())
                 {
                     var ev = new OrganRemoveRequestEvent(limbOrgan);
                     SEntMan.EventBus.RaiseLocalEvent(limbOrgan, ref ev);
-                    if (ev.Success && SEntMan.TryGetComponent(limbOrgan, out OrganComponent? oc) && oc.Category?.ToString() == "HandLeft")
+                    if (ev.Success && SEntMan.TryGetComponent(limbOrgan, out OrganComponent oc) && oc.Category?.ToString() == "HandLeft")
                         voxHandNet = SEntMan.GetNetEntity(limbOrgan);
                 }
             }
@@ -123,7 +123,7 @@ public sealed class CrossSpeciesLimbTransplantIntegrationTest : InteractionTest
         {
             var voxArm = SEntMan.GetEntity(voxArmNet);
             Assert.That(SEntMan.EntityExists(voxArm), Is.True);
-            Assert.That(SEntMan.TryGetComponent(voxArm, out BodyPartComponent? armBodyPart), Is.True);
+            Assert.That(SEntMan.TryGetComponent(voxArm, out BodyPartComponent armBodyPart), Is.True);
             Assert.That(armBodyPart!.Body, Is.Null, "Vox arm should be detached");
 
             if (voxHandNet == null)
@@ -160,7 +160,7 @@ public sealed class CrossSpeciesLimbTransplantIntegrationTest : InteractionTest
         await Server.WaitAssertion(() =>
         {
             var voxArm = SEntMan.GetEntity(voxArmNet);
-            Assert.That(SEntMan.TryGetComponent(voxArm, out BodyPartComponent? armBodyPart), Is.True);
+            Assert.That(SEntMan.TryGetComponent(voxArm, out BodyPartComponent armBodyPart), Is.True);
             Assert.That(armBodyPart!.Body, Is.EqualTo(human), "Vox arm should be attached to human");
         });
 
@@ -182,7 +182,7 @@ public sealed class CrossSpeciesLimbTransplantIntegrationTest : InteractionTest
         await Server.WaitAssertion(() =>
         {
             var voxHand = SEntMan.GetEntity(voxHandNet!.Value);
-            Assert.That(SEntMan.TryGetComponent(voxHand, out OrganComponent? handOrgan), Is.True);
+            Assert.That(SEntMan.TryGetComponent(voxHand, out OrganComponent handOrgan), Is.True);
             Assert.That(handOrgan!.Body, Is.EqualTo(human), "Vox hand should be in human body");
         });
 
@@ -190,7 +190,7 @@ public sealed class CrossSpeciesLimbTransplantIntegrationTest : InteractionTest
         await Server.WaitPost(() =>
         {
             var graftedArm = SEntMan.GetEntity(graftedArmNet);
-            if (SEntMan.TryGetComponent(graftedArm, out BodyPartComponent? armBodyPart) && armBodyPart.Organs != null)
+            if (SEntMan.TryGetComponent(graftedArm, out BodyPartComponent armBodyPart) && armBodyPart.Organs != null)
             {
                 foreach (var limbOrgan in armBodyPart.Organs.ContainedEntities.ToArray())
                 {
@@ -208,7 +208,7 @@ public sealed class CrossSpeciesLimbTransplantIntegrationTest : InteractionTest
         {
             var voxArm = SEntMan.GetEntity(voxArmNet);
             Assert.That(SEntMan.EntityExists(voxArm), Is.True);
-            Assert.That(SEntMan.TryGetComponent(voxArm, out BodyPartComponent? armBodyPart), Is.True);
+            Assert.That(SEntMan.TryGetComponent(voxArm, out BodyPartComponent armBodyPart), Is.True);
             Assert.That(armBodyPart!.Body, Is.Null, "Grafted vox arm should be detached from human");
 
             var bodySys = SEntMan.System<BodySystem>();

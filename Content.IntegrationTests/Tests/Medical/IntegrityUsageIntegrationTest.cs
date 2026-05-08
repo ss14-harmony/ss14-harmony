@@ -29,7 +29,7 @@ public sealed class IntegrityUsageIntegrationTest
     private static EntityUid GetHeart(IEntityManager entityManager, BodySystem bodySystem, EntityUid body)
     {
         return bodySystem.GetAllOrgans(body).First(o =>
-            entityManager.TryGetComponent(o, out OrganComponent? comp) && comp.Category?.Id == "Heart");
+            entityManager.TryGetComponent(o, out OrganComponent comp) && comp.Category?.Id == "Heart");
     }
 
     [Test]
@@ -59,7 +59,7 @@ public sealed class IntegrityUsageIntegrationTest
             entityManager.EventBus.RaiseLocalEvent(torso, ref insertEv);
             Assert.That(insertEv.Success, Is.True, "Insert should succeed");
 
-            Assert.That(entityManager.TryGetComponent(human, out IntegrityUsageComponent? usageComp), Is.True, "Body should have IntegrityUsageComponent after inserting cost-1 organ");
+            Assert.That(entityManager.TryGetComponent(human, out IntegrityUsageComponent usageComp), Is.True, "Body should have IntegrityUsageComponent after inserting cost-1 organ");
             Assert.That(usageComp!.Usage, Is.EqualTo(1), "Usage should be 1 after inserting biosynthetic heart");
 
             var removeBiosyntheticEv = new OrganRemoveRequestEvent(biosyntheticHeart);

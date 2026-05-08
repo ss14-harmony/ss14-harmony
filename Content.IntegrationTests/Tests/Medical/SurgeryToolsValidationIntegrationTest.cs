@@ -93,7 +93,7 @@ public sealed class SurgeryToolsValidationIntegrationTest
                          .Concat(proto.TissueOpenStepEntries).Concat(proto.TissueCloseStepEntries))
             {
                 var hasPrimary = entry.PrimaryTag.HasValue || entry.PrimaryDamageType.HasValue;
-                if (!hasPrimary && prototypes.TryIndex(entry.Procedure, out SurgeryProcedurePrototype? proc) && proc != null)
+                if (!hasPrimary && prototypes.TryIndex(entry.Procedure, out SurgeryProcedurePrototype proc) && proc != null)
                 {
                     hasPrimary = proc.PrimaryTool.Tag.HasValue || proc.PrimaryTool.DamageType.HasValue
                         || proc.PrimaryTool.IsHand;

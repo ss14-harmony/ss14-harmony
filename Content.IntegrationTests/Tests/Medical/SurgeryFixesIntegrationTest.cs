@@ -359,7 +359,7 @@ public sealed class SurgeryFixesIntegrationTest : InteractionTest
         {
             var leg = SEntMan.GetEntity(legNet);
             Assert.That(SEntMan.EntityExists(leg), Is.True, "Leg entity should exist after detachment");
-            Assert.That(SEntMan.TryGetComponent(leg, out BodyPartComponent? bodyPart), Is.True);
+            Assert.That(SEntMan.TryGetComponent(leg, out BodyPartComponent bodyPart), Is.True);
             Assert.That(bodyPart!.Body, Is.Null, "Leg should no longer be attached to body after DetachLimb");
 
             // Leg and foot should be detached as separate items - leg should not contain the foot

@@ -32,7 +32,7 @@ public sealed class XenograftIntegrationTest
     private static EntityUid GetHeart(IEntityManager entityManager, BodySystem bodySystem, EntityUid body)
     {
         return bodySystem.GetAllOrgans(body).First(o =>
-            entityManager.TryGetComponent(o, out OrganComponent? comp) && comp.Category?.Id == "Heart");
+            entityManager.TryGetComponent(o, out OrganComponent comp) && comp.Category?.Id == "Heart");
     }
 
     [Test]
@@ -70,7 +70,7 @@ public sealed class XenograftIntegrationTest
             entityManager.EventBus.RaiseLocalEvent(humanTorso, ref insertEv);
             Assert.That(insertEv.Success, Is.True);
 
-            Assert.That(entityManager.TryGetComponent(heart, out IntegrityPenaltyComponent? ip) && ip.XenograftPenalty > 0,
+            Assert.That(entityManager.TryGetComponent(heart, out IntegrityPenaltyComponent ip) && ip.XenograftPenalty > 0,
                 "Foreign xenograft should add XenograftPenalty on the organ");
 
             var healSpec = new DamageSpecifier();
@@ -97,7 +97,7 @@ public sealed class XenograftIntegrationTest
             entityManager.EventBus.RaiseLocalEvent(monkey2Torso, ref insertNative);
             Assert.That(insertNative.Success, Is.True);
 
-            Assert.That(entityManager.TryGetComponent(insertedHeart, out IntegrityPenaltyComponent? ip2) && ip2.XenograftPenalty == 0,
+            Assert.That(entityManager.TryGetComponent(insertedHeart, out IntegrityPenaltyComponent ip2) && ip2.XenograftPenalty == 0,
                 "Native-species host should clear xenograft integrity penalty");
 
             var modEv2 = new GetOrganMetabolismScaleModifierEvent(insertedHeart, healEffect) { Scale = 1f };

@@ -57,17 +57,17 @@ public sealed class SpeciesBodyPartSlotsIntegrationTest : InteractionTest
 
             foreach (var bodyPart in query.Parts)
             {
-                if (!SEntMan.TryGetComponent(bodyPart, out BodyPartComponent? bodyPartComp))
+                if (!SEntMan.TryGetComponent(bodyPart, out BodyPartComponent bodyPartComp))
                     continue;
                 if (bodyPartComp.Organs == null)
                     continue;
 
-                var partCategory = SEntMan.TryGetComponent(bodyPart, out OrganComponent? partOrgan)
+                var partCategory = SEntMan.TryGetComponent(bodyPart, out OrganComponent partOrgan)
                     ? partOrgan.Category?.Id ?? "?"
                     : "?";
 
                 var childOrganCategories = bodyPartComp.Organs.ContainedEntities
-                    .Select(o => SEntMan.TryGetComponent(o, out OrganComponent? oc) ? oc.Category : null)
+                    .Select(o => SEntMan.TryGetComponent(o, out OrganComponent oc) ? oc.Category : null)
                     .Where(c => c.HasValue)
                     .Select(c => c!.Value)
                     .ToList();
@@ -117,7 +117,7 @@ public sealed class SpeciesBodyPartSlotsIntegrationTest : InteractionTest
             return;
 
         var bodyPart = ev.Parts[0];
-        Assert.That(SEntMan.TryGetComponent(bodyPart, out BodyPartComponent? bodyPartComp), Is.True,
+        Assert.That(SEntMan.TryGetComponent(bodyPart, out BodyPartComponent bodyPartComp), Is.True,
             $"{limbCategory} should have BodyPartComponent");
         Assert.That(bodyPartComp!.Slots.Select(s => s.Id), Does.Contain(expectedChildSlot),
             $"{limbCategory} must declare Slots containing '{expectedChildSlot}' so hand/foot transplant surgery validates correctly.");

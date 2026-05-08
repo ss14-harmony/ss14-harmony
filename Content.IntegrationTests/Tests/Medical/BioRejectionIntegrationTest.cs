@@ -28,7 +28,7 @@ public sealed class BioRejectionIntegrationTest
     private static EntityUid GetHeart(IEntityManager entityManager, BodySystem bodySystem, EntityUid body)
     {
         return bodySystem.GetAllOrgans(body).First(o =>
-            entityManager.TryGetComponent(o, out OrganComponent? comp) && comp.Category?.Id == "Heart");
+            entityManager.TryGetComponent(o, out OrganComponent comp) && comp.Category?.Id == "Heart");
     }
 
     [Test]
@@ -82,7 +82,7 @@ public sealed class BioRejectionIntegrationTest
         await server.WaitAssertion(() =>
         {
             Assert.That(entityManager.EntityExists(patient), Is.True, "Patient should still exist");
-            Assert.That(entityManager.TryGetComponent(patient, out DamageableComponent? damageable), Is.True, "Patient should have DamageableComponent");
+            Assert.That(entityManager.TryGetComponent(patient, out DamageableComponent damageable), Is.True, "Patient should have DamageableComponent");
 
             var bioRejectionDamage = damageableSys.GetDamageOfType((patient, damageable!), "BioRejection");
 

@@ -123,12 +123,12 @@ public sealed class UnsanitarySurgeryIntegrationTest
 
         await server.WaitAssertion(() =>
         {
-            Assert.That(entityManager.TryGetComponent(torso, out SurgeryLayerComponent? layer), Is.True, "Should have SurgeryLayerComponent on torso");
+            Assert.That(entityManager.TryGetComponent(torso, out SurgeryLayerComponent layer), Is.True, "Should have SurgeryLayerComponent on torso");
             Assert.That(layer!.SkinRetracted, Is.True, "Skin should be retracted after DoAfter");
             var totalEv = new IntegrityPenaltyTotalRequestEvent(patient);
             entityManager.EventBus.RaiseLocalEvent(patient, ref totalEv);
             Assert.That(totalEv.Total, Is.GreaterThanOrEqualTo(1), "Should have at least step penalty (1)");
-            if (entityManager.TryGetComponent(patient, out IntegritySurgeryComponent? surgeryComp))
+            if (entityManager.TryGetComponent(patient, out IntegritySurgeryComponent surgeryComp))
             {
                 var unsanitaryEntries = surgeryComp.Entries.Where(e => e.Category == IntegrityPenaltyCategory.UnsanitarySurgery).ToList();
                 Assert.That(unsanitaryEntries.Sum(e => e.Amount), Is.LessThanOrEqualTo(1), "On sterile floor, UnsanitarySurgery penalty should be minimal");
@@ -222,12 +222,12 @@ public sealed class UnsanitarySurgeryIntegrationTest
 
         await server.WaitAssertion(() =>
         {
-            Assert.That(entityManager.TryGetComponent(torso, out SurgeryLayerComponent? layer), Is.True, "Should have SurgeryLayerComponent on torso");
+            Assert.That(entityManager.TryGetComponent(torso, out SurgeryLayerComponent layer), Is.True, "Should have SurgeryLayerComponent on torso");
             Assert.That(layer!.SkinRetracted, Is.True, "Skin should be retracted after DoAfter");
             var totalEv = new IntegrityPenaltyTotalRequestEvent(patient);
             entityManager.EventBus.RaiseLocalEvent(patient, ref totalEv);
             Assert.That(totalEv.Total, Is.GreaterThanOrEqualTo(1), "Should have at least step penalty (1)");
-            Assert.That(entityManager.TryGetComponent(patient, out IntegritySurgeryComponent? surgeryComp), Is.True, "Patient should have IntegritySurgeryComponent after surgery");
+            Assert.That(entityManager.TryGetComponent(patient, out IntegritySurgeryComponent surgeryComp), Is.True, "Patient should have IntegritySurgeryComponent after surgery");
             var unsanitaryEntries = surgeryComp!.Entries.Where(e => e.Category == IntegrityPenaltyCategory.UnsanitarySurgery).ToList();
             Assert.That(unsanitaryEntries.Sum(e => e.Amount), Is.GreaterThan(0), "With puddle under patient, UnsanitarySurgery penalty should be applied");
         });
@@ -269,7 +269,7 @@ public sealed class UnsanitarySurgeryIntegrationTest
             var ev = new UnsanitarySurgeryPenaltyRequestEvent(patient, GetTorso(entityManager, patient), "TestStep", SurgeryLayer.Skin, false, null, null);
             entityManager.EventBus.RaiseLocalEvent(patient, ref ev);
 
-            Assert.That(entityManager.TryGetComponent(patient, out IntegritySurgeryComponent? surgeryComp), Is.True, "Patient should have IntegritySurgeryComponent after penalty request with puddle");
+            Assert.That(entityManager.TryGetComponent(patient, out IntegritySurgeryComponent surgeryComp), Is.True, "Patient should have IntegritySurgeryComponent after penalty request with puddle");
             var unsanitaryEntries = surgeryComp!.Entries.Where(e => e.Category == IntegrityPenaltyCategory.UnsanitarySurgery).ToList();
             Assert.That(unsanitaryEntries.Sum(e => e.Amount), Is.GreaterThan(0), "UnsanitarySurgery penalty should be applied when puddle on tile");
         });
@@ -295,7 +295,7 @@ public sealed class UnsanitarySurgeryIntegrationTest
             var ev = new UnsanitarySurgeryPenaltyRequestEvent(patient, GetTorso(entityManager, patient), "TestStep", SurgeryLayer.Skin, false, null, null);
             entityManager.EventBus.RaiseLocalEvent(patient, ref ev);
 
-            Assert.That(entityManager.TryGetComponent(patient, out IntegritySurgeryComponent? surgeryComp), Is.True);
+            Assert.That(entityManager.TryGetComponent(patient, out IntegritySurgeryComponent surgeryComp), Is.True);
             var legacyNoBed = surgeryComp!.Entries.Where(e => e.Category == IntegrityPenaltyCategory.NoSurgeryBed).ToList();
             Assert.That(legacyNoBed.Sum(e => e.Amount), Is.EqualTo(0), "No-surgery-bed should not use a separate penalty category");
 
@@ -329,7 +329,7 @@ public sealed class UnsanitarySurgeryIntegrationTest
             var ev = new UnsanitarySurgeryPenaltyRequestEvent(patient, GetTorso(entityManager, patient), "TestStep", SurgeryLayer.Skin, false, null, null);
             entityManager.EventBus.RaiseLocalEvent(patient, ref ev);
 
-            if (entityManager.TryGetComponent(patient, out IntegritySurgeryComponent? surgeryComp))
+            if (entityManager.TryGetComponent(patient, out IntegritySurgeryComponent surgeryComp))
             {
                 var legacyNoBed = surgeryComp.Entries.Where(e => e.Category == IntegrityPenaltyCategory.NoSurgeryBed).ToList();
                 Assert.That(legacyNoBed.Sum(e => e.Amount), Is.EqualTo(0), "Buckled to MedicalBed should waive additional not-on-bed unsanitary amount");
@@ -367,7 +367,7 @@ public sealed class UnsanitarySurgeryIntegrationTest
             var applyEv = new IntegrityPenaltyAppliedEvent(patient, 2, "Torso", IntegrityPenaltyCategory.ImproperTools, children);
             entityManager.EventBus.RaiseLocalEvent(patient, ref applyEv);
 
-            Assert.That(entityManager.TryGetComponent(patient, out IntegritySurgeryComponent? comp), Is.True);
+            Assert.That(entityManager.TryGetComponent(patient, out IntegritySurgeryComponent comp), Is.True);
             var improperEntries = comp!.Entries.Where(e => e.Category == IntegrityPenaltyCategory.ImproperTools).ToList();
             Assert.That(improperEntries, Has.Count.EqualTo(1));
             Assert.That(improperEntries[0].Children, Is.Not.Null);

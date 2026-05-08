@@ -35,7 +35,7 @@ public sealed class HeartRemovalSurgeryIntegrationTest : InteractionTest
     private static EntityUid GetHeart(IEntityManager entityManager, BodySystem bodySystem, EntityUid body)
     {
         return bodySystem.GetAllOrgans(body).First(o =>
-            entityManager.TryGetComponent(o, out OrganComponent? comp) && comp.Category?.Id == "Heart");
+            entityManager.TryGetComponent(o, out OrganComponent comp) && comp.Category?.Id == "Heart");
     }
 
     [Test]
@@ -224,7 +224,7 @@ public sealed class HeartRemovalSurgeryIntegrationTest : InteractionTest
         await Server.WaitAssertion(() =>
         {
             var torsoEnt = SEntMan.GetEntity(torsoNet);
-            Assert.That(SEntMan.TryGetComponent(torsoEnt, out SurgeryLayerComponent? layer), Is.True, "Torso should have SurgeryLayerComponent");
+            Assert.That(SEntMan.TryGetComponent(torsoEnt, out SurgeryLayerComponent layer), Is.True, "Torso should have SurgeryLayerComponent");
             var entry = layer!.OrganRemovalProgress.FirstOrDefault(e => e.Organ == heartNet);
             Assert.That(entry, Is.Not.Null, "OrganClampVessels should have added progress for heart");
             Assert.That(entry!.Steps, Does.Contain("OrganClampVessels"), "OrganClampVessels step should be in progress");

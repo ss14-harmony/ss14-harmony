@@ -49,7 +49,7 @@ public sealed class SlimeLimbRegenerationIntegrationTest : InteractionTest
         await Server.WaitAssertion(() =>
         {
             Assert.That(SEntMan.EntityExists(leg), Is.True, "Leg entity should exist after removal");
-            Assert.That(SEntMan.TryGetComponent(leg, out BodyPartComponent? legBodyPart), Is.True);
+            Assert.That(SEntMan.TryGetComponent(leg, out BodyPartComponent legBodyPart), Is.True);
             Assert.That(legBodyPart!.Body, Is.Null, "Leg should no longer be attached to body after removal");
         });
 
@@ -69,7 +69,7 @@ public sealed class SlimeLimbRegenerationIntegrationTest : InteractionTest
             SEntMan.EventBus.RaiseLocalEvent(patient, ref ev);
             Assert.That(ev.Parts, Has.Count.GreaterThan(0), "Slime should have regenerated a left leg");
             var newLeg = ev.Parts[0];
-            Assert.That(SEntMan.TryGetComponent(newLeg, out BodyPartComponent? bodyPartComp), Is.True);
+            Assert.That(SEntMan.TryGetComponent(newLeg, out BodyPartComponent bodyPartComp), Is.True);
             Assert.That(bodyPartComp!.Body, Is.EqualTo(patient), "Regenerated leg should be attached to slime body");
         });
     }
