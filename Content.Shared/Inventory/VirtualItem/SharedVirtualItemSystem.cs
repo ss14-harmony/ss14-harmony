@@ -1,5 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
-using Content.Shared.Cybernetics.Components;
+using Content.Shared.Cybernetics.Components; // Funky - CyberMed
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
@@ -7,7 +7,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
 using Content.Shared.Popups;
-using Content.Shared.Verbs;
+using Content.Shared.Verbs; // Funky - CyberMed
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 
@@ -103,7 +103,7 @@ public abstract class SharedVirtualItemSystem : EntitySystem
         }
     }
 
-    // Funky - CyberMed
+    // Funky - CyberMed: Start
     private void OnGetAlternativeVerbs(Entity<VirtualItemComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
         if (!HasComp<CyberArmVirtualItemComponent>(ent) || !Exists(ent.Comp.BlockingEntity))
@@ -113,6 +113,7 @@ public abstract class SharedVirtualItemSystem : EntitySystem
         RaiseLocalEvent(ent.Comp.BlockingEntity, relayArgs);
         args.Verbs.UnionWith(relayArgs.Verbs);
     }
+    // Funky - CyberMed: End
 
     #region Hands
 

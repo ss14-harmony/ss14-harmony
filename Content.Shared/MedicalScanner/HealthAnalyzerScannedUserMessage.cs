@@ -1,4 +1,4 @@
-using System.Linq;
+using System.Linq; // Funky - CyberMed
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.MedicalScanner;
@@ -29,6 +29,8 @@ public struct HealthAnalyzerUiState
     public bool? ScanMode;
     public bool? Bleeding;
     public bool? Unrevivable;
+    // Funky - CyberMed: Start
+    // HealthAnalyzerUiState mostly re-written to support surgery requests from the BUI
     public HealthAnalyzerMode Mode;
     public List<NetEntity> BodyParts;
     public int? IntegrityTotal;
@@ -160,4 +162,5 @@ public struct SurgeryLayerStateData
     public bool SkinRetracted => SkinOpen;
     public bool TissueRetracted => TissueOpen;
     public bool BonesSawed => OrganOpen;
+    // Funky - CyberMed: End
 }

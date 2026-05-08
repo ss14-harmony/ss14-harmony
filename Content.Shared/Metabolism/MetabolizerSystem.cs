@@ -14,8 +14,8 @@ using Content.Shared.EntityEffects.Effects.Body;
 using Content.Shared.EntityEffects.Effects.Solution;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs.Systems;
-using Robust.Shared.Collections;
-using Robust.Shared.Network;
+using Robust.Shared.Collections; // Funky - CyberMed
+using Robust.Shared.Network; // Funky - CyberMed
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -27,12 +27,12 @@ public sealed class MetabolizerSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IRobustRandom _random = default!; // Funky - CyberMed
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly SharedEntityConditionsSystem _entityConditions = default!;
     [Dependency] private readonly SharedEntityEffectsSystem _entityEffects = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
-    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly INetManager _net = default!; // Funky - CyberMed
 
     private EntityQuery<OrganComponent> _organQuery;
     private EntityQuery<SolutionContainerManagerComponent> _solutionQuery;

@@ -55,6 +55,7 @@ public sealed partial class SpeciesPrototype : IPrototype
     public EntProtoId Prototype { get; private set; } = default!;
 
     /// <summary>
+    ///     Funky - CyberMed
     ///     Mapping of limb/head organ category to entity prototype for limb regeneration and admin smites.
     ///     When null, limb restoration is not supported for this species.
     /// </summary>

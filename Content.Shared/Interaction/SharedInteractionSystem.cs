@@ -5,7 +5,7 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.CombatMode;
-using Content.Shared.Cybernetics.Components;
+using Content.Shared.Cybernetics.Components; // Funky - CyberMed
 using Content.Shared.Database;
 using Content.Shared.Ghost;
 using Content.Shared.Hands;
@@ -76,6 +76,7 @@ namespace Content.Shared.Interaction
         [Dependency] private readonly TagSystem _tagSystem = default!;
         [Dependency] private readonly UseDelaySystem _useDelay = default!;
 
+        // Funky - CyberMed: Start
         private EntityQuery<IgnoreUIRangeComponent> _ignoreUiRangeQuery;
         private EntityQuery<FixturesComponent> _fixtureQuery;
         private EntityQuery<ItemComponent> _itemQuery;
@@ -86,6 +87,7 @@ namespace Content.Shared.Interaction
         private EntityQuery<WallMountComponent> _wallMountQuery;
         private EntityQuery<UseDelayComponent> _delayQuery;
         private EntityQuery<ActivatableUIComponent> _uiQuery;
+        // Funky - CyberMed: End
 
         /// <summary>
         /// The collision mask used by default for
@@ -104,6 +106,7 @@ namespace Content.Shared.Interaction
 
         public override void Initialize()
         {
+            // Funky - CyberMed: Start
             _ignoreUiRangeQuery = GetEntityQuery<IgnoreUIRangeComponent>();
             _fixtureQuery = GetEntityQuery<FixturesComponent>();
             _itemQuery = GetEntityQuery<ItemComponent>();
@@ -114,6 +117,7 @@ namespace Content.Shared.Interaction
             _wallMountQuery = GetEntityQuery<WallMountComponent>();
             _delayQuery = GetEntityQuery<UseDelayComponent>();
             _uiQuery = GetEntityQuery<ActivatableUIComponent>();
+            // Funky - CyberMed: End
 
             SubscribeLocalEvent<BoundUserInterfaceCheckRangeEvent>(HandleUserInterfaceRangeCheck);
 
@@ -181,14 +185,14 @@ namespace Content.Shared.Interaction
             var range = _ui.GetUiRange(ev.Target, ev.UiKey);
 
             // When target is in a container (e.g. cyber limb in body), use container owner for range check
-            var rangeCheckTarget = ev.Target;
-            if (_containerSystem.TryGetContainingContainer(ev.Target, out var container) && container.Owner != ev.Target)
-                rangeCheckTarget = container.Owner;
+            var rangeCheckTarget = ev.Target; // Funky - CyberMed
+            if (_containerSystem.TryGetContainingContainer(ev.Target, out var container) && container.Owner != ev.Target) // Funky - CyberMed
+                rangeCheckTarget = container.Owner; // Funky - CyberMed
 
             // As long as range>0, the UI frame updates should have auto-closed the UI if it is out of range.
-            DebugTools.Assert(range <= 0 || UiRangeCheck(ev.Actor, rangeCheckTarget, range));
+            DebugTools.Assert(range <= 0 || UiRangeCheck(ev.Actor, rangeCheckTarget, range)); // Funky - CyberMed
 
-            if (range <= 0 && !IsAccessible(ev.Actor, rangeCheckTarget))
+            if (range <= 0 && !IsAccessible(ev.Actor, rangeCheckTarget)) // Funky - CyberMed
             {
                 ev.Cancel();
                 return;
@@ -366,7 +370,8 @@ namespace Content.Shared.Interaction
         public bool CombatModeCanHandInteract(EntityUid user, EntityUid? target)
         {
             // Always allow attack in these cases
-            //Funkystation: Cybernetics changes to combat mode hand interaction to use interaction instead of punching.
+            //Funky - Cybermed: Start
+            // Cybernetics changes to combat mode hand interaction to use interaction instead of punching.
             if (target == null || !_handsQuery.TryComp(user, out var hands))
                 return false;
 
@@ -379,6 +384,7 @@ namespace Content.Shared.Interaction
                 // Having a real item in hand means we attack with it.
                 return false;
             }
+            // Funky - Cybermed: End
 
             // Only eat input if:
             // - Target isn't an item

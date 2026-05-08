@@ -32,7 +32,8 @@ namespace Content.Client.HealthAnalyzer.UI;
 
 // Health analyzer UI is split from its window because it's used by both the
 // health analyzer item and the cryo pod UI.
-// Funky - CyberMed: HealthAnalyzerControl mostly re-written to support surgery requests from the BUI
+// Funky - CyberMed: Start
+//HealthAnalyzerControl mostly re-written to support surgery requests from the BUI
 // Changes to code so extensive just assume the entire file was rewritten
 [GenerateTypedNameReferences]
 public sealed partial class HealthAnalyzerControl : BoxContainer
@@ -116,17 +117,16 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         var entries = _state.IntegrityPenaltyEntries;
         if (entries == null || entries.Count == 0)
         {
-            var emptyLabel = new Label
+            IntegrityPenaltiesList.AddChild(new Label
             {
                 Text = Loc.GetString("health-analyzer-integrity-no-penalties"),
                 StyleClasses = { "LabelSubText" }
-            };
-            IntegrityPenaltiesList.AddChild(emptyLabel);
-            return;
+            });
         }
-        foreach (var entry in entries)
+        else
         {
-            AddIntegrityPenaltyEntry(IntegrityPenaltiesList, entry, 0);
+            foreach (var entry in entries)
+                AddIntegrityPenaltyEntry(IntegrityPenaltiesList, entry, 0);
         }
 
         var previewVisible = _state.TargetEntity != null;
@@ -832,4 +832,5 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
 
         return rootContainer;
     }
+// Funky - CyberMed: End. Yes, just assume it's all re-written.
 }
