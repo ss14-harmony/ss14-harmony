@@ -451,7 +451,7 @@
     grid:
     - 0,0,2,1
 
-# Pre-filled cyber limbs for CyberSurgery crate - come with capacitor, supercharged CPU, medium battery, and matter bin
+# Pre-filled cyber limbs for cyber surgery crate - come with capacitor, supercharged CPU, medium battery, and matter bin
 - type: entity
   parent: OrganCyberArmLeft
   id: OrganCyberArmLeftPreFilled

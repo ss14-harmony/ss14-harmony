@@ -109,7 +109,7 @@
 - type: entity
   parent: CrateSurgery
   id: CrateCyberSurgery
-  name: CyberSurgery crate
+  name: cyber surgery crate
   description: Surgical instruments and pre-equipped cyber limbs.
   components:
   - type: EntityTableContainerFill

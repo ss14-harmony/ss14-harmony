@@ -587,7 +587,8 @@ public sealed class SurgerySystem : EntitySystem
             procedure?.EmoteStartOthers ?? step?.EmoteStartOthers,
             args.User,
             args.Target,
-            args.BodyPart);
+            args.BodyPart,
+            suppressEmoteWhenSiteBlockedByClothing: !isAttachLimbToEmptySlot);
     }
 
     private void OnSurgeryDoAfter(Entity<BodyComponent> ent, ref SurgeryDoAfterEvent args)
@@ -975,9 +976,14 @@ public sealed class SurgerySystem : EntitySystem
         _ => null,
     };
 
-    private void PopupSurgeryProcedureEmote(LocId? selfKey, LocId? othersKey, EntityUid user, EntityUid patient, EntityUid bodyPart)
+    private void PopupSurgeryProcedureEmote(LocId? selfKey, LocId? othersKey, EntityUid user, EntityUid patient, EntityUid bodyPart, bool suppressEmoteWhenSiteBlockedByClothing = false)
     {
         if (selfKey == null || othersKey == null)
+            return;
+
+        // Match OnSurgeryRequest outerwear/helmet blocking so begin-surgery emotes do not show alongside the block feedback.
+        if (suppressEmoteWhenSiteBlockedByClothing
+            && IsBodyPartCoveredByClothing(patient, bodyPart, out _))
             return;
 
         if (!_timing.IsFirstTimePredicted)
