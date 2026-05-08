@@ -1,4 +1,3 @@
-#nullable enable
 using System.Linq;
 using Content.Shared.Medical.Surgery.Prototypes;
 using Robust.Shared.Prototypes;

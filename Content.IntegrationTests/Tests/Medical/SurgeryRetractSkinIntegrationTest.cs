@@ -1,4 +1,3 @@
-#nullable enable
 using Content.Shared.Body;
 using Content.Shared.Body.Events;
 using Content.Shared.Hands.EntitySystems;

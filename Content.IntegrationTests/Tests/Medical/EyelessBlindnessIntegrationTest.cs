@@ -1,4 +1,3 @@
-#nullable enable
 using System.Linq;
 using Content.IntegrationTests;
 using Content.Shared.Body;
