@@ -20,11 +20,11 @@ public sealed partial class StatusEffectsSystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
-    private EntityQuery<StatusEffectContainerComponent> _containerQuery;
-    private EntityQuery<StatusEffectComponent> _effectQuery;
+    private EntityQuery<StatusEffectContainerComponent> _containerQuery; // Funky - CyberMed
+    private EntityQuery<StatusEffectComponent> _effectQuery; // Funky - CyberMed
 
-    public static HashSet<string> StatusEffectPrototypes = [];
-    private static readonly object StatusEffectPrototypesLock = new();
+    public static HashSet<string> StatusEffectPrototypes = []; // Funky - CyberMed
+    private static readonly object StatusEffectPrototypesLock = new(); // Funky - CyberMed
 
     public override void Initialize()
     {
@@ -41,8 +41,8 @@ public sealed partial class StatusEffectsSystem : EntitySystem
 
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
 
-        _containerQuery = GetEntityQuery<StatusEffectContainerComponent>();
-        _effectQuery = GetEntityQuery<StatusEffectComponent>();
+        _containerQuery = GetEntityQuery<StatusEffectContainerComponent>(); // Funky - CyberMed
+        _effectQuery = GetEntityQuery<StatusEffectComponent>(); // Funky - CyberMed
 
         ReloadStatusEffectsCache();
     }
@@ -77,6 +77,7 @@ public sealed partial class StatusEffectsSystem : EntitySystem
         ReloadStatusEffectsCache();
     }
 
+    // Funky - CyberMed: Start
     private void ReloadStatusEffectsCache()
     {
         lock (StatusEffectPrototypesLock)
@@ -103,6 +104,7 @@ public sealed partial class StatusEffectsSystem : EntitySystem
             return new List<string>(StatusEffectPrototypes);
         }
     }
+    // Funky - CyberMed: End
 
     private void OnStatusContainerInit(Entity<StatusEffectContainerComponent> ent, ref ComponentInit args)
     {
@@ -244,7 +246,7 @@ public sealed partial class StatusEffectsSystem : EntitySystem
 
         var endTime = delay == null ? _timing.CurTime + duration : _timing.CurTime + delay + duration;
         SetStatusEffectEndTime((effect.Value, effectComp), endTime);
-        var startTime = delay == null ? TimeSpan.Zero : _timing.CurTime + delay.Value;
+        var startTime = delay == null ? TimeSpan.Zero : _timing.CurTime + delay.Value; // Funky - CyberMed: Not strictly necessary, but a better implementation than the existing
         SetStatusEffectStartTime(effect.Value, startTime);
 
         TryApplyStatusEffect((statusEffect.Value, effectComp));

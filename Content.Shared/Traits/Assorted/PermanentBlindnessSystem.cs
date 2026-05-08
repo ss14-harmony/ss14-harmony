@@ -8,6 +8,7 @@ using Content.Shared.IdentityManagement;
 namespace Content.Shared.Traits.Assorted;
 
 /// <summary>
+/// Funky - CyberMed: Entire function re-written to use organ trait blindness and <see cref="BodySystem.RecalculateBlindnessFromOrgans"/>.
 /// Handles permanent blindness examine text, flash mitigation, cloning propagation, and cleanup when removed.
 /// Mechanical vision (<see cref="BlindableComponent"/>) uses organ trait blindness and <see cref="BodySystem.RecalculateBlindnessFromOrgans"/>.
 /// </summary>
