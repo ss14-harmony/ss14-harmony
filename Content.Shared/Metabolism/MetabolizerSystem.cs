@@ -34,15 +34,15 @@ public sealed class MetabolizerSystem : EntitySystem
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly INetManager _net = default!; // Funky - CyberMed
 
-    private EntityQuery<OrganComponent> _organQuery;
-    private EntityQuery<SolutionContainerManagerComponent> _solutionQuery;
+    private EntityQuery<OrganComponent> _organQuery; // Funky - CyberMed
+    private EntityQuery<SolutionContainerManagerComponent> _solutionQuery; // Funky - CyberMed
 
     public override void Initialize()
     {
         base.Initialize();
 
-        _organQuery = GetEntityQuery<OrganComponent>();
-        _solutionQuery = GetEntityQuery<SolutionContainerManagerComponent>();
+        _organQuery = GetEntityQuery<OrganComponent>(); // Funky - CyberMed
+        _solutionQuery = GetEntityQuery<SolutionContainerManagerComponent>(); // Funky - CyberMed
 
         SubscribeLocalEvent<MetabolizerComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<MetabolizerComponent, BodyRelayedEvent<ApplyMetabolicMultiplierEvent>>(OnApplyMetabolicMultiplier);
@@ -61,7 +61,7 @@ public sealed class MetabolizerSystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-
+        // Funky - CyberMed: Start
         // We only do this on the server to prevent the client from reshuffling metabolism during prediction.
         // Should just be replaced with predicted random.
         if (_net.IsClient)
@@ -84,6 +84,7 @@ public sealed class MetabolizerSystem : EntitySystem
             metab.NextUpdate += metab.AdjustedUpdateInterval;
             TryMetabolize((uid, metab));
         }
+        // Funky - CyberMed: End
     }
 
     /// <summary>
@@ -163,7 +164,7 @@ public sealed class MetabolizerSystem : EntitySystem
 
         // randomize the reagent list so we don't have any weird quirks
         // like alphabetical order or insertion order mattering for processing
-        _random.Shuffle(list);
+        _random.Shuffle(list); // Funky - CyberMed
 
         var isDead = _mobStateSystem.IsDead(solutionOwner.Value);
 
@@ -221,7 +222,7 @@ public sealed class MetabolizerSystem : EntitySystem
                 if (scale < effect.MinScale)
                     continue;
 
-                if (effect.Probability < 1.0f && !_random.Prob(effect.Probability))
+                if (effect.Probability < 1.0f && !_random.Prob(effect.Probability)) // Funky - CyberMed
                     continue;
 
                 // See if conditions apply
@@ -235,6 +236,7 @@ public sealed class MetabolizerSystem : EntitySystem
             // TODO: We should have to do this with metabolism. ReagentEffect struct needs refactoring and so does metabolism!
             void ApplyEffect(EntityEffect effect)
             {
+                // Funky - CyberMed: Start
                 var effectScale = scale;
                 if (TryComp(ent.Owner, out OrganComponent? organForMod)
                     && organForMod.Body is { } bodyUid
@@ -260,6 +262,7 @@ public sealed class MetabolizerSystem : EntitySystem
                         _entityEffects.ApplyEffect(actualEntity, effect, effectScale);
                         break;
                 }
+                // Funky - CyberMed: End
             }
 
             // remove a certain amount of reagent
