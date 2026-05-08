@@ -3,8 +3,9 @@
 [SetUpFixture]
 public sealed class PoolManagerTestEventHandler
 {
-    // This value is completely arbitrary.
-    private static TimeSpan MaximumTotalTestingTimeLimit => TimeSpan.FromMinutes(20);
+    // Wall-clock limit for the entire test run before PoolManager.Shutdown() forces teardown.
+    // Raise when the full integration suite grows past this duration (see PoolManager cascade failures).
+    private static TimeSpan MaximumTotalTestingTimeLimit => TimeSpan.FromMinutes(60);
     private static TimeSpan HardStopTimeLimit => MaximumTotalTestingTimeLimit.Add(TimeSpan.FromMinutes(1));
 
     [OneTimeSetUp]
