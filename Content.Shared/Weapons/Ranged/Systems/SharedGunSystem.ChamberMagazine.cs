@@ -7,7 +7,7 @@ using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Containers;
-using Robust.Shared.Map;
+using Robust.Shared.Map; // Funky - CyberMed
 
 namespace Content.Shared.Weapons.Ranged.Systems;
 
@@ -294,7 +294,7 @@ public abstract partial class SharedGunSystem
         }
     }
 
-    private bool TryTakeChamberEntity(EntityUid uid, [NotNullWhen(true)] out EntityUid? entity, EntityCoordinates? destination = null)
+    private bool TryTakeChamberEntity(EntityUid uid, [NotNullWhen(true)] out EntityUid? entity, EntityCoordinates? destination = null) // Funky - CyberMed: Added map coordinates so it can move bullets in cyberarms
     {
         if (!Containers.TryGetContainer(uid, ChamberSlot, out var container) ||
             container is not ContainerSlot slot)
@@ -307,9 +307,7 @@ public abstract partial class SharedGunSystem
         if (entity == null)
             return false;
 
-        // Pass destination to avoid AttachParentToContainerOrGrid - when storage is full it can
-        // fail to place the entity and it ends up in nullspace (effectively deleted). We handle
-        // cyberlimb storage insertion explicitly in GunSystem.Shoot.
+        // Funky - CyberMed
         Containers.Remove(entity.Value, container, destination: destination);
         return true;
     }
@@ -370,7 +368,7 @@ public abstract partial class SharedGunSystem
         // Normal behaviour for guns.
         if (component.AutoCycle)
         {
-            if (TryTakeChamberEntity(uid, out chamberEnt, args.Coordinates))
+            if (TryTakeChamberEntity(uid, out chamberEnt, args.Coordinates)) // Funky - CyberMed: Added map coordinates so it can move bullets in cyberarms
             {
                 args.Ammo.Add((chamberEnt.Value, EnsureShootable(chamberEnt.Value)));
             }

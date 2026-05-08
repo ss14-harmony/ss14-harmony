@@ -23,8 +23,8 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Whitelist;
-using Content.Shared.Cybernetics.Components;
-using Content.Shared.Inventory.VirtualItem;
+using Content.Shared.Cybernetics.Components; // Funky - CyberMed
+using Content.Shared.Inventory.VirtualItem; // Funky - CyberMed
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -199,6 +199,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     {
         gun = default;
 
+        // Funky - CyberMed: Start
         if (_hands.GetActiveItem(entity) is { } held)
         {
             if (TryComp(held, out GunComponent? gunComp))
@@ -217,7 +218,8 @@ public abstract partial class SharedGunSystem : EntitySystem
                 return true;
             }
         }
-
+        // Funky - CyberMed: End
+        
         // Last resort is check if the entity itself is a gun.
         if (TryComp(entity, out GunComponent? entityGunComp))
         {
