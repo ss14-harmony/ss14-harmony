@@ -116,10 +116,20 @@
         - Hands # no use giving a mouse a storage implant, but a monkey is another story...
     - type: Storage
       grid:
-      - 0,0,0,1
-      - 1,0,1,0
-      - 1,2,1,2
-      - 2,1,2,2
+      # Harmony Update Start - Changed storage impant to be 3x3
+      # - 0,0,0,1
+      # - 1,0,1,0
+      # - 1,2,1,2
+      # - 2,1,2,2
+      - 0,0,2,2
+      maxItemSize: Large
+      blacklist:
+        components:
+        - Storage
+        - SecretStash
+        tags:
+        - HighRiskItem
+      # Harmony Update End
     - type: ContainerContainer
       containers:
         storagebase: !type:Container
@@ -169,9 +179,7 @@
     whitelist:
       components:
       - Hands # prevent mouse buying grenade penguin since its not telepathic
-  - type: Store
-    balance:
-      Telecrystal: 0
+  - type: RemoteStore
   - type: UserInterface
     interfaces:
       enum.StoreUiKey.Key:
@@ -250,6 +258,7 @@
     implantAction: ActionChangeVoiceMaskImplant
   - type: VoiceMask
     overrideIdentity: true
+    changeIDName: true
   - type: UserInterface
     interfaces:
       enum.VoiceMaskUIKey.Key:

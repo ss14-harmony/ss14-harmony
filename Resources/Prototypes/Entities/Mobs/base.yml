@@ -124,6 +124,7 @@
       - ActionCritSuccumb
       - ActionCritFakeDeath
       - ActionCritLastWords
+  - type: StoreDamageTakenOnMind
   - type: Deathgasp
   - type: HealthExaminable
     examinableTypes:
@@ -161,8 +162,8 @@
     soundHit:
       collection: MetalThud
     damage:
-      groups:
-        Brute: 5
+      types:
+        Blunt: 5
 
 # Used for mobs that are affected by atmospherics, pressure, and heat
 - type: entity

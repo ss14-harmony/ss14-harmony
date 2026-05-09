@@ -879,6 +879,13 @@
     expireMessage: genpop-prisoner-id-expire
     expiredAccess:
     - GenpopLeave
+    #Harmony Change Start - Adds Radio Alert Systems
+    alertRadio: true
+    expireMessageRadio: genpop-prisoner-id-expire-radio
+  - type: ActiveRadio
+    channels:
+    - Security
+    #Harmony Change End
   - type: Speech
     speechVerb: Robotic
   - type: Tag
@@ -984,6 +991,8 @@
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Syndicate
+  - type: IdCard
+    jobIcon: JobIconSyndicate
   - type: Item
     heldPrefix: black
   - type: Access
