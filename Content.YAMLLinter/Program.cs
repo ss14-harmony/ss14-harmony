@@ -18,8 +18,10 @@ namespace Content.YAMLLinter
 {
     internal static class Program
     {
-        private static readonly ExternalTestContext TestContext = new("YAML Linter", StreamWriter.Null);
-
+        // Use Console so Error-level logs are visible when ValidateClient/Server trips PoolTestLogHandler failures.
+        private static readonly ExternalTestContext TestContext = new("YAML Linter", Console.Out);
+        // Funky - CyberMed: Commented out StreamWriter.Null so Error-level logs are visible. Handy for debugging.
+        //private static readonly ExternalTestContext TestContext = new("YAML Linter", StreamWriter.Null);
         private static async Task<int> Main(string[] _)
         {
             GameDataScrounger.NoScrounging = true; // Ugly hack for YAML Linter.

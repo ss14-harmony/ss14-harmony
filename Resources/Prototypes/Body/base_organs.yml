@@ -58,8 +58,6 @@
   - type: Organ
     category: Torso
     integrityCost: 0
-  - type: Sprite
-    state: torso
 
 - type: entity
   parent: OrganBase

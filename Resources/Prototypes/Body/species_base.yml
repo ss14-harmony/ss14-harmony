@@ -187,12 +187,10 @@
   - type: PassiveDamage
     allowedStates:
     - Alive
-    damageCap: 20
     damage:
       types:
         Heat: -0.07
-      groups:
-        Brute: -0.07
+        Blunt: -0.07
   - type: Fingerprint
   - type: Blindable
   - type: Temperature

@@ -1549,3 +1549,19 @@
           reagent: Heparin
           min: 15
         amount: 0.25
+
+- type: reagent
+  id: Warfarin
+  name: reagent-name-warfarin
+  group: Medicine
+  desc: reagent-desc-warfarin
+  physicalDesc: reagent-physical-desc-crystalline
+  flavor: medicine
+  color: "#c4c9cc"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectAnticoagulant
+        time: 15
+        type: Update

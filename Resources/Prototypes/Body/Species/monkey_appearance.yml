@@ -11,7 +11,7 @@
     containers:
       body_organs: !type:AllSelector
         children:
-        - id: OrganMonkeyTorso
+        - id: OrganHumanTorso
         - id: OrganHumanHead
         - id: OrganHumanArmLeft
         - id: OrganHumanArmRight

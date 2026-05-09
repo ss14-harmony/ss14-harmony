@@ -234,25 +234,59 @@ public sealed class LimbDetachmentEffectsSystem : EntitySystem
         return n;
     }
 
-    private void UpdateFeetMovement(EntityUid body)
+    /// <summary>
+    /// Counts sides that can bear weight: non-paraplegic foot organs, or a cyber leg on that side (integrated prosthetic foot).
+    /// Replacing a leg removes the separate foot organ; cyber legs still provide mobility for that side.
+    /// </summary>
+    private int CountEffectiveMobilityFeet(EntityUid body)
     {
-        if (!Exists(body) || TerminatingOrDeleted(body))
-            return;
+        var hasLeftFoot = false;
+        var hasRightFoot = false;
+        var leftCyberLeg = false;
+        var rightCyberLeg = false;
 
-        var legCount = CountLegs(body);
-        var healthyFeet = 0;
         foreach (var organ in _body.GetAllOrgans(body))
         {
             if (!TryComp<OrganComponent>(organ, out var oComp) || oComp.Category is not { } cat)
                 continue;
 
             var c = cat.ToString();
-            if (c is not ("FootLeft" or "FootRight"))
-                continue;
-
-            if (!HasComp<FootTraitParaplegicComponent>(organ))
-                healthyFeet++;
+            switch (c)
+            {
+                case "FootLeft":
+                    if (!HasComp<FootTraitParaplegicComponent>(organ))
+                        hasLeftFoot = true;
+                    break;
+                case "FootRight":
+                    if (!HasComp<FootTraitParaplegicComponent>(organ))
+                        hasRightFoot = true;
+                    break;
+                case "LegLeft":
+                    if (HasComp<CyberLimbComponent>(organ))
+                        leftCyberLeg = true;
+                    break;
+                case "LegRight":
+                    if (HasComp<CyberLimbComponent>(organ))
+                        rightCyberLeg = true;
+                    break;
+            }
         }
+
+        var n = 0;
+        if (hasLeftFoot || leftCyberLeg)
+            n++;
+        if (hasRightFoot || rightCyberLeg)
+            n++;
+        return n;
+    }
+
+    private void UpdateFeetMovement(EntityUid body)
+    {
+        if (!Exists(body) || TerminatingOrDeleted(body))
+            return;
+
+        var legCount = CountLegs(body);
+        var healthyFeet = CountEffectiveMobilityFeet(body);
 
         // No legs: leg-loss path owns crawl / modifiers; don't stack FeetMissing.
         if (legCount == 0)

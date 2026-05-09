@@ -69,7 +69,7 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
 
     private void ApplyVisual(Entity<VisualOrganComponent> ent, EntityUid target)
     {
-        if (!_sprite.LayerMapTryGet(target, ent.Comp.Layer, out var index, true))
+        if (!_sprite.LayerMapTryGet(target, ent.Comp.Layer, out var index, false))
             return;
 
         _sprite.LayerSetData(target, index, ent.Comp.Data);
@@ -77,7 +77,7 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
 
     private void RemoveVisual(Entity<VisualOrganComponent> ent, EntityUid target)
     {
-        if (!_sprite.LayerMapTryGet(target, ent.Comp.Layer, out var index, true))
+        if (!_sprite.LayerMapTryGet(target, ent.Comp.Layer, out var index, false))
             return;
 
         _sprite.LayerSetRsiState(target, index, RSI.StateId.Invalid);
@@ -175,7 +175,7 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
             if (!_marking.TryGetMarking(marking, out var proto))
                 continue;
 
-            if (!_sprite.LayerMapTryGet(target, proto.BodyPart, out var index, true))
+            if (!_sprite.LayerMapTryGet(target, proto.BodyPart, out var index, false))
                 continue;
 
             for (var i = 0; i < proto.Sprites.Count; i++)
@@ -253,7 +253,7 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
 
                     var layerId = $"{proto.ID}-{rsi.RsiState}";
 
-                    if (!_sprite.LayerMapTryGet(args.Body.Owner, layerId, out var index, true))
+                    if (!_sprite.LayerMapTryGet(args.Body.Owner, layerId, out var index, false))
                         continue;
 
                     _sprite.LayerSetVisible(args.Body.Owner, index, args.Args.Visible);
