@@ -7,8 +7,8 @@
 /Content.*/                                         @KeldWolf @FluffMe @youtissoum @DDeegan
 
 # YML files
-/Resources/*.yml                                    @KeldWolf @FluffMe @youtissoum @DDeegan @Zap527 @kleinerstation13 @whythelettuce
-/Resources/**/*.yml                                 @KeldWolf @FluffMe @youtissoum @DDeegan @Zap527 @kleinerstation13 @whythelettuce
+/Resources/*.yml                                    @KeldWolf @FluffMe @youtissoum @DDeegan @Zap527 @kleinerstation13
+/Resources/**/*.yml                                 @KeldWolf @FluffMe @youtissoum @DDeegan @Zap527 @kleinerstation13
 
 # FTL files
 /Resources/Locale                                   @KeldWolf @FluffMe @youtissoum @DDeegan @Zap527 @kleinerstation13 @whythelettuce
