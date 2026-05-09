@@ -1,4 +1,4 @@
-# Monkey / carp / dragon surgery torsos and xenograft-tagged internal organs (v2 creature surgery).
+# Monkey / carp / dragon surgery torsos and xenograft-tagged internal organs
 
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganHumanExternal ]
