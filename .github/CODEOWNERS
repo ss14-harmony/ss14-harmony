@@ -1,7 +1,7 @@
 # Last match in file takes precedence.
 
 # Everything
-*                                                   @KeldWolf @FluffMe @youtissoum @DDeegan
+*                                                   @KeldWolf @FluffMe @youtissoum
 
 # C# code
 /Content.*/                                         @KeldWolf @FluffMe @youtissoum @DDeegan
