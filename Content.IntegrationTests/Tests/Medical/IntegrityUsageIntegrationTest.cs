@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
+using Content.Shared.Hands.Components;
 using Content.Shared.Medical.Integrity;
 using Content.Shared.Medical.Integrity.Components;
 using Content.Shared.Medical.Integrity.Events;
@@ -30,6 +31,20 @@ public sealed class IntegrityUsageIntegrationTest
     {
         return bodySystem.GetAllOrgans(body).First(o =>
             entityManager.TryGetComponent(o, out OrganComponent comp) && comp.Category?.Id == "Heart");
+    }
+
+    /// <summary>
+    /// Drops every item in the user's hands so <see cref="SharedHandsSystem.TryPickupAnyHand"/> cannot fail from full hands.
+    /// </summary>
+    private static void DropAllHeld(EntityUid user, IEntityManager entityManager, SharedHandsSystem hands)
+    {
+        if (!entityManager.TryGetComponent<HandsComponent>(user, out var handsComp))
+            return;
+
+        foreach (var item in hands.EnumerateHeld((user, handsComp)).ToList())
+        {
+            hands.TryDrop((user, handsComp), item, targetDropLocation: null, checkActionBlocker: false);
+        }
     }
 
     [Test]
@@ -175,12 +190,20 @@ public sealed class IntegrityUsageIntegrationTest
             entityManager.EventBus.RaiseLocalEvent(patient, ref ev);
             Assert.That(ev.Valid, Is.True, "RetractTissue should succeed");
         });
-        await pair.RunTicksSync(150);
+        // Slightly longer than other steps: tissue do-afters can be tight on slow CI tick budgets.
+        await pair.RunTicksSync(180);
 
         await server.WaitPost(() =>
         {
-            handsSystem.TryDrop(surgeon, analyzer, checkActionBlocker: false);
-            handsSystem.TryPickupAnyHand(surgeon, biosyntheticHeart, checkActionBlocker: false);
+            DropAllHeld(surgeon, entityManager, handsSystem);
+            Assert.That(
+                handsSystem.TryPickupAnyHand(surgeon, biosyntheticHeart, checkActionBlocker: false),
+                Is.True,
+                "Surgeon must hold the organ for InsertOrgan; empty both hands before pickup");
+            Assert.That(
+                handsSystem.IsHolding(surgeon, biosyntheticHeart),
+                Is.True,
+                "Biosynthetic heart should remain in surgeon's hand after pickup");
         });
         await pair.RunTicksSync(5);
 
@@ -189,7 +212,8 @@ public sealed class IntegrityUsageIntegrationTest
             var ev = new SurgeryRequestEvent(analyzer, surgeon, patient, torso, (ProtoId<SurgeryProcedurePrototype>)"InsertOrgan", SurgeryLayer.Organ, false, biosyntheticHeart);
             entityManager.EventBus.RaiseLocalEvent(patient, ref ev);
 
-            Assert.That(ev.Valid, Is.True, "InsertOrgan should succeed even when over capacity; bio-rejection applies instead");
+            Assert.That(ev.Valid, Is.True,
+                $"InsertOrgan should succeed even when over capacity; bio-rejection applies instead (reject: {ev.RejectReason ?? "none"})");
         });
 
         await pair.CleanReturnAsync();
