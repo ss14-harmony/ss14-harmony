@@ -148,6 +148,16 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
                 markingManager.EnsureValidLayers(actualMarkings, organData.Value.Layers);
                 markingManager.EnsureValidLimits(actualMarkings, organData.Value.Group, organData.Value.Layers, skinColor, eyeColor);
 
+                // Funky - CyberMed
+                // Canonicalize: drop layer keys whose marking list is empty after validation.
+                // EnsureValidLimits has already populated any required-with-default layers, so
+                // anything still empty here carries no data and should not persist as a key.
+                foreach (var layer in actualMarkings.Keys.ToList())
+                {
+                    if (actualMarkings[layer].Count == 0)
+                        actualMarkings.Remove(layer);
+                }
+
                 validatedMarkings[organ] = actualMarkings;
             }
         }
