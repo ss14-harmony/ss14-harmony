@@ -2,7 +2,7 @@
 - type: entity
   parent: PrefilledSyringe
   id: SyringeUniversalBlood
-  suffix: Universal Blood Substitute, Harmony
+  suffix: universal blood substitute, Harmony
   components:
   - type: Label
     currentLabel: reagent-name-universal-blood

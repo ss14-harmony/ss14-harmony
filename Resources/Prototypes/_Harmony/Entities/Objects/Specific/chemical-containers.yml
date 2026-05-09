@@ -2,13 +2,13 @@
   parent: Jug
   id: JugUniversalBlood
   categories: [ HideSpawnMenu ]
-  suffix: Universal Blood Substitute, Harmony
+  suffix: universal blood substitute, Harmony
   components:
   - type: Label
     currentLabel: reagent-name-universal-blood
   - type: SolutionContainerManager
     solutions:
-      beaker:
+      drink:
         reagents:
         - ReagentId: UniversalBlood
           Quantity: 200
