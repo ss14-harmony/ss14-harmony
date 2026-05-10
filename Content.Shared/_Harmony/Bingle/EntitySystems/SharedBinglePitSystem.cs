@@ -38,7 +38,6 @@ public abstract class SharedBinglePitSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly PullingSystem _pullingSystem = default!;
     [Dependency] private readonly SharedStunSystem _stunSystem = default!;
-    [Dependency] private readonly StepTriggerSystem _stepTriggerSystem = default!;
     [Dependency] private readonly TileSystem _tileSystem = default!;
 
     public override void Initialize()
