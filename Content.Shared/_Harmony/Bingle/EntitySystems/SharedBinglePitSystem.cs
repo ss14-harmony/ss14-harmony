@@ -48,7 +48,6 @@ public abstract class SharedBinglePitSystem : EntitySystem
         SubscribeLocalEvent<BinglePitComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<BinglePitComponent, StepTriggerAttemptEvent>(OnStepTriggerAttempt);
         SubscribeLocalEvent<BinglePitComponent, StepTriggeredOffEvent>(OnStepTriggered);
-        SubscribeLocalEvent<BinglePitComponent, StartCollideEvent>(OnCollide);
 
         SubscribeLocalEvent<BingleComponent, AttackAttemptEvent>(OnBingleAttemptAttack);
 
@@ -94,32 +93,6 @@ public abstract class SharedBinglePitSystem : EntitySystem
             return;
 
         StartFalling(entity.AsNullable(), args.Tripper);
-    }
-
-    private void OnCollide(Entity<BinglePitComponent> entity, ref StartCollideEvent args)
-    {
-        // Needs to be affected by gravity in the first place
-        if (!TryComp<GravityAffectedComponent>(args.OtherEntity, out var gravityAffected))
-            return;
-
-        // don't accept anyone that is already falling or is currently under the effect of gravity.
-        if (HasComp<BinglePitFallingComponent>(args.OtherEntity) || !gravityAffected!.Weightless)
-            return;
-
-        var currentLevel = GetCurrentLevel(entity);
-
-        // don't allow anyone alive if the pit is too low.
-        if (currentLevel.CanEatLiving == false &&
-            HasComp<MobStateComponent>(args.OtherEntity))
-            return;
-
-        // allow only dead bingles in the pit.
-        if (HasComp<BingleComponent>(args.OtherEntity) &&
-            TryComp<MobStateComponent>(args.OtherEntity, out var mobState) &&
-            mobState.CurrentState != MobState.Dead)
-            return;
-
-        StartFalling(entity.AsNullable(), args.OtherEntity);
     }
 
     private void OnBingleAttemptAttack(Entity<BingleComponent> entity, ref AttackAttemptEvent args)
@@ -188,8 +161,6 @@ public abstract class SharedBinglePitSystem : EntitySystem
         UpgradeAllBingles(entity);
 
         Dirty(entity);
-
-        _stepTriggerSystem.SetIgnoreWeightless(entity.Owner, nextLevel.IgnoreWeightless);
 
         _appearanceSystem.SetData(entity, ScaleVisuals.Scale, Vector2.One * nextLevel.Size);
     }
