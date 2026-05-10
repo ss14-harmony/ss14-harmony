@@ -1,7 +1,6 @@
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using Content.Shared._Harmony.Bingle.Components;
-using Content.Shared.Burial.Components;
 using Content.Shared.Emoting;
 using Content.Shared.Gravity;
 using Content.Shared.Hands;
