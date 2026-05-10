@@ -21,8 +21,7 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
 {
     [Dependency] private readonly ActionsSystem _action = default!;
     [Dependency] private readonly StoreSystem _store = default!;
-    [Dependency] private readonly SiliconLawSystem _laws = default!;
-    [Dependency] private readonly SharedMindSystem _mindSystem = default!;
+    [Dependency] private readonly SiliconLawSystem  = default!;
 
     private const string MalfShopId = "ActionMalfShop";
     private const string MalfTransmitId = "ActionMalfTransmitLawZero";
@@ -61,7 +60,7 @@ public sealed class MalfunctioningAIRuleSystem : GameRuleSystem<MalfunctioningAI
         {
             var newLaws = laws.Lawset.Laws;
             newLaws.Insert(0, LawZero());
-            _laws.SetLaws(newLaws, ent, notify: false);
+            .SetLaws(newLaws, ent, notify: false);
         }
     }
 
