@@ -13,7 +13,6 @@ namespace Content.Shared._DV.Paper;
 public abstract class SharedSignatureSystem : EntitySystem
 {
     [Dependency] private readonly SharedIdCardSystem _idCard = default!;
-    [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly PaperSystem _paper = default!;
 
     // The sprite used to visualize "signatures" on paper entities.
