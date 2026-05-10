@@ -133,6 +133,5 @@ public sealed partial class BinglePitLevel
         PointsPerBingle = pointsPerBingle;
         Size = size;
         TileRadius = tileRadius;
-        IgnoreWeightless = ignoreWeightless;
     }
 }
