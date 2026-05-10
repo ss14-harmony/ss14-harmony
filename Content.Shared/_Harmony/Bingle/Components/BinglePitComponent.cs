@@ -126,12 +126,6 @@ public sealed partial class BinglePitLevel
     [DataField]
     public int TileRadius;
 
-    /// <summary>
-    /// Will the pit ignore whether people are weightless or not.
-    /// </summary>
-    [DataField]
-    public bool IgnoreWeightless;
-
     public BinglePitLevel(int pointsRequired, bool canEatLiving, int pointsPerBingle, float size, int tileRadius, bool ignoreWeightless = false)
     {
         PointsRequired = pointsRequired;
