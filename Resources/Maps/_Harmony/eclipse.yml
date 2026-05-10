@@ -114803,7 +114803,7 @@ entities:
   - uid: 16764
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
+      # rot: 1.5707963267948966 rad
       pos: -25.5,-12.5
       parent: 2
 - proto: CyborgEndoskeleton

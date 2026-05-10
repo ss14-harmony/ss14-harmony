@@ -316,6 +316,7 @@
     whitelist:
       tags:
         - TrashBag
+        - TrashBagBlue
   - type: Sprite
     layers:
 # Start of Harmony Change: Updates Janitorial Box Sprite State

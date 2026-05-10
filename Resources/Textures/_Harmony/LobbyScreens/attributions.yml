@@ -27,3 +27,13 @@
   license: "CC-BY-NC-SA-4.0"
   copyright: "Mofi on Discord"
   source: "https://github.com/ss14-harmony/ss14-harmony"
+
+- files: ["unauthorized-entry.webp"]
+  license: "CC-BY-4.0"
+  copyright: "Shadarrius (Fur Affinity)"
+  source: "https://www.furaffinity.net/user/shadarrius/"
+  
+ - files: ["decompressing.webp"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Dispenser (dispenserg0inup on Discord)"
+  source: "https://github.com/ss14-harmony/ss14-harmony"

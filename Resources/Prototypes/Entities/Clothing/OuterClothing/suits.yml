@@ -112,7 +112,6 @@
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
-    - CorgiWearable
     - WhitelistChameleon
 # Harmony change begins - Unhides the lizard tail
 #  - type: HideLayerClothing
@@ -296,7 +295,6 @@
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
-    - CorgiWearable
     - WhitelistChameleon
   - type: AddAccentClothing
     accent: BarkAccent

@@ -63,19 +63,23 @@
         sizeMaps:
           32:
             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi
+            state: head
       mask:
         sizeMaps:
           32:
             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi
+            state: mask
     displacements:
       head:
         sizeMaps:
           32:
             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi
+            state: head
       mask:
         sizeMaps:
           32:
             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi
+            state: mask
   - type: InitialBody
     organs:
       Torso: OrganAvaliTorso
