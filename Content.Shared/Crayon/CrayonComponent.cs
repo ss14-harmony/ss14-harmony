@@ -46,7 +46,7 @@ public sealed partial class CrayonComponent : Component
     /// Does the crayon have infinite charges?
     /// </summary>
     [DataField, AutoNetworkedField]
-    public bool Infinite = true;
+    public bool Infinite;
 }
 
 /// <summary>
