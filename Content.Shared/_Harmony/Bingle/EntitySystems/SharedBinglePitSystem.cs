@@ -1,9 +1,7 @@
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using Content.Shared._Harmony.Bingle.Components;
-using Content.Shared.Burial.Components;
 using Content.Shared.Emoting;
-using Content.Shared.Gravity;
 using Content.Shared.Hands;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Item;
@@ -21,7 +19,6 @@ using JetBrains.Annotations;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Physics.Events;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Dependency = Robust.Shared.IoC.DependencyAttribute;
@@ -108,11 +105,6 @@ public abstract class SharedBinglePitSystem : EntitySystem
     }
 
     private void OnFallingAttempt(EntityUid entity, BinglePitFallingComponent component, CancellableEntityEventArgs args)
-    {
-        args.Cancel();
-    }
-
-    private void OnFallingAttempt(EntityUid entity, BinglePitFallingComponent component, AttackAttemptEvent args)
     {
         args.Cancel();
     }
