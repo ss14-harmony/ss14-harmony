@@ -112,11 +112,6 @@ public abstract class SharedBinglePitSystem : EntitySystem
         args.Cancel();
     }
 
-    private void OnFallingAttempt(EntityUid entity, BinglePitFallingComponent component, AttackAttemptEvent args)
-    {
-        args.Cancel();
-    }
-
     #endregion
 
     private void AddPoints(Entity<BinglePitComponent> entity, int points)
