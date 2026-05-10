@@ -20,7 +20,6 @@ using JetBrains.Annotations;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Physics.Events;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Dependency = Robust.Shared.IoC.DependencyAttribute;
