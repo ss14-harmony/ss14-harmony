@@ -68,7 +68,8 @@ public sealed partial class StampWidget : PanelContainer
                 StampedByLabel.FontColorOverride = value.StampedColor;
                 ModulateSelfOverride = value.StampedColor;
 
-                var font = prototypes.Index<FontPrototype>("Default");
+                var fontType = "Default";
+                var font = prototypes.Index<FontPrototype>(fontType);
                 if (value.StampFont != null && prototypes.TryIndex<FontPrototype>(value.StampFont, out var stampFont))
                     font = stampFont;
 
