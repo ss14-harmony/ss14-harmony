@@ -214,7 +214,7 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
         else
             return Distance.Far;
     }
-    //_DV menupinpointer
+    //_DV menupinpointer start
     /// <summary>
     ///     sets a target based on the name given
     /// </summary>
@@ -229,7 +229,8 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
         while (query.MoveNext(out var uid,out _))
         {
             var antag = _entities.GetComponent<JobStatusComponent>(uid);
-            if (!antag.IsCrew){continue;}
+            if (!antag.IsCrew)
+                continue;
             var possibleTargetName = Identity.Name(uid, _entities);
             if(possibleTargetName == targetName)
             {
@@ -247,5 +248,5 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
     {
         TogglePinpointer(ent.AsNullable());
     }
-    //_DV menupinpointer
+    //_DV menupinpointer end
 }
