@@ -5,18 +5,18 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 
-
 namespace Content.Client._DV.MenuPinpointer;
+
 [GenerateTypedNameReferences]
 public sealed partial class MenuPinpointerTargetWindow : FancyWindow
 {
-    public Action<string>? OnTargetSelect;
-    public Action? OnToggleSelect;
+    public Action<string>? OnTargetSelected;
+    public Action? OnToggleSelected;
     public MenuPinpointerTargetWindow()
     {
         RobustXamlLoader.Load(this);
 
-        TargetSetButton.OnPressed += _ => { OnTargetSelect?.Invoke(TargetWriteZone.Text); };
-        ToggleButton.OnPressed += _ => { OnToggleSelect?.Invoke(); };
+        TargetSetButton.OnPressed += _ => { OnTargetSelected?.Invoke(TargetWriteZone.Text); };
+        ToggleButton.OnPressed += _ => { OnToggleSelected?.Invoke(); };
     }
 }

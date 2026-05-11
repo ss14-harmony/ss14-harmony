@@ -1,9 +1,14 @@
 using Content.Shared.Interaction;
 using Content.Shared.Pinpointer;
+using Content.Shared.Humanoid; // _DV
+using Content.Shared.StatusIcon.Components; //_DV
+using Content.Shared.IdentityManagement; // _DV
+using Content.Shared._DV.Pinpointer; // _DV
 using System.Linq;
 using System.Numerics;
 using Robust.Shared.Utility;
 using Content.Server.Shuttles.Events;
+
 
 namespace Content.Server.Pinpointer;
 
@@ -11,6 +16,7 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
 {
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly IEntityManager _entities = default!;
 
     private EntityQuery<TransformComponent> _xformQuery;
 
@@ -21,6 +27,10 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
 
         SubscribeLocalEvent<PinpointerComponent, ActivateInWorldEvent>(OnActivate);
         SubscribeLocalEvent<FTLCompletedEvent>(OnLocateTarget);
+        //_DV menupinpointer
+        SubscribeLocalEvent<PinpointerComponent, MenuPinpointerOnTargetSelectedMessage>(OnTargetSelected);
+        SubscribeLocalEvent<PinpointerComponent, MenuPinpointerOnToggleSelectedMessage>(OnToggleSelected);
+        //_DV menupinpointer
     }
 
     public override bool TogglePinpointer(Entity<PinpointerComponent?> ent)
@@ -204,4 +214,38 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
         else
             return Distance.Far;
     }
+    //_DV menupinpointer
+    /// <summary>
+    ///     sets a target based on the name given
+    /// </summary>
+    private void OnTargetSelected(Entity<PinpointerComponent> ent, ref MenuPinpointerOnTargetSelectedMessage message)
+    {
+        var targetName = message.Name;
+        var target = ent.Comp.Target;
+        if (targetName == "")
+            return;
+        //goes through every player looking for someone with the same name whos not an antag, once they do they set the target uid to this one and 
+        var query = _entities.EntityQueryEnumerator<HumanoidProfileComponent>();
+        while (query.MoveNext(out var uid,out _))
+        {
+            var antag = _entities.GetComponent<JobStatusComponent>(uid);
+            if (!antag.IsCrew){continue;}
+            var possibleTargetName = Identity.Name(uid, _entities);
+            if(possibleTargetName == targetName)
+            {
+                target = uid;
+                break;
+            }
+            
+        }
+        SetTarget(ent.AsNullable(),target);
+    }
+    /// <summary>
+    ///     running toggle without running toggle so we can stop overlapping interaction issues.
+    /// </summary>
+    private void OnToggleSelected(Entity<PinpointerComponent> ent, ref MenuPinpointerOnToggleSelectedMessage message)
+    {
+        TogglePinpointer(ent.AsNullable());
+    }
+    //_DV menupinpointer
 }

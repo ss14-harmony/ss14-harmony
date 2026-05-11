@@ -1,0 +1,15 @@
+- type: listing
+  id: UplinkMenuPinpointer
+  name: uplink-MenuPinpointer-name
+  description: uplink-MenuPinpointer-desc
+  productEntity: MenuPinpointer
+  icon:
+    sprite: Objects/Devices/pinpointer.rsi
+    state: pinpointer-syndicate
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkDisruption
