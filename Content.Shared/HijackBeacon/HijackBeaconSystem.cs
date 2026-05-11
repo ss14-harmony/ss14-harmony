@@ -228,7 +228,7 @@ public sealed class HijackBeaconSystem : EntitySystem
     /// </summary>
     private void DeactivateBeacon(Entity<HijackBeaconComponent> ent)
     {
-        if (ent.Comp.Status != HijackBeaconStatus.Armed || ent.Comp.Status != HijackBeaconStatus.HijackWait) // Harmony Change, Allow Hijack Wait to also be disarmed
+        if (ent.Comp.Status != HijackBeaconStatus.Armed && ent.Comp.Status != HijackBeaconStatus.HijackWait) // Harmony Change, Allow Hijack Wait to also be disarmed
             return;
 
         // Put beacon on cooldown
