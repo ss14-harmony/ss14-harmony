@@ -3052,3 +3052,351 @@ Entries:
     changes:
     - type: Add
       message: The queue window has been updated.
+  - id: 1230
+    author: daseiinn
+    time: '2026-01-08T23:04:18.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1230
+    changes:
+    - type: Tweak
+      message: Reduced available botany slots on Box, Marathon, Oasis and Plasma
+  - id: 1235
+    author: whythelettuce
+    time: '2026-01-09T12:36:54.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1235
+    changes:
+    - type: Add
+      message: Amber Station returns! With a few tweaks.
+  - id: 1180
+    author: kleinerstation13
+    time: '2026-01-17T16:22:34.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1180
+    changes:
+    - type: Tweak
+      message: The C-4's destructive capability has been buffed.
+  - id: 1201
+    author: Hi-Im-Shot
+    time: '2026-01-22T21:00:45.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1201
+    changes:
+    - type: Tweak
+      message: Increased Initial Infected grace period, giving them more time before turning
+  - id: 1257
+    author: luckyshotpictures
+    time: '2026-01-29T18:37:13.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1257
+    changes:
+    - type: Tweak
+      message: Scylla's chem, and TEG burn chambers have received a do over.
+  - id: 1191
+    author: SuperGDPWYL
+    time: '2026-01-31T15:59:54.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1191
+    changes:
+    - type: Add
+      message: Initial Infected now have a list of each others' identities in the character menu.
+  - id: 853
+    author: CollectionOfBones128
+    time: '2026-02-02T22:01:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/853
+    changes:
+    - type: Tweak
+      message: Reverts Jetpack Acceleration nerf.
+  - id: 1271
+    author: liltenhead
+    time: '2026-02-12T06:02:34.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1271
+    changes:
+    - type: Tweak
+      message: Updated space law to have new sentencing guidelines and brigging procedures.
+  - id: 1275
+    author: daseiinn
+    time: '2026-02-15T07:13:01.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1275
+    changes:
+    - type: Tweak
+      message: adjusted available service job slots
+  - id: 1273
+    author: DDeegan
+    time: '2026-02-22T23:15:44.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1273
+    changes:
+    - type: Add
+      message: Ported Nurse Jumpskirt and Apron from Impstation
+  - id: 1276
+    author: daseiinn
+    time: '2026-02-23T20:49:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1276
+    changes:
+    - type: Tweak
+      message: Changed the mapped incendiary rounds on the displaced telescience ruin to a .35 magazine
+  - id: 1228
+    author: BlueMoon059
+    time: '2026-02-25T17:54:46.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1228
+    changes:
+    - type: Add
+      message: 4 New voicelines have been added to the end of round lobby pool.
+  - id: 1293
+    author: dragydevi
+    time: '2026-02-25T17:57:45.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1293
+    changes:
+    - type: Fix
+      message: Gorlex operators now have the correct Jet Pack in their lockers
+  - id: 1290
+    author: Dizzy-Eevee
+    time: '2026-02-25T20:26:16.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1290
+    changes:
+    - type: Tweak
+      message: Moved human cat ears from the Special category to the Head (Top) category.
+  - id: 1289
+    author: AreYouConfused
+    time: '2026-02-26T22:07:01.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1289
+    changes:
+    - type: Fix
+      message: Having a tail marking will no longer cause tails to disappear.
+  - id: 1298
+    author: dragydevi
+    time: '2026-02-26T22:07:53.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1298
+    changes:
+    - type: Fix
+      message: Prisoners are now crew to silicons with the crewismov lawset.
+  - id: 898
+    author: kleinerstation13
+    time: '2026-02-27T17:22:22.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/898
+    changes:
+    - type: Tweak
+      message: Removed playtime tracker comments
+  - id: 1253
+    author: SuperGDPWYL
+    time: '2026-02-27T17:45:38.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1253
+    changes:
+    - type: Tweak
+      message: You can now latejoin as a conspirator.
+  - id: 1302
+    author: youtissoum
+    time: '2026-02-27T17:46:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1302
+    changes:
+    - type: Fix
+      message: The "hostile" and "eliminated" criminal status icons will no longer show up as "ERROR" on the criminal records console.
+  - id: 1267
+    author: BoskiYourk
+    time: '2026-03-02T12:09:33.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1267
+    changes:
+    - type: Tweak
+      message: Changed the speed boots to have a much less generous power draw rate
+  - id: 1300
+    author: SpacePontif
+    time: '2026-03-02T22:12:16.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1300
+    changes:
+    - type: Fix
+      message: Headwear no longer uses the incorrect sprite when worn by avalis.
+  - id: 1282
+    author: AreYouConfused
+    time: '2026-03-02T23:16:50.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1282
+    changes:
+    - type: Tweak
+      message: mini vials no longer require wood to print
+  - id: 1212
+    author: DrWhoFan13
+    time: '2026-03-11T16:52:42.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1212
+    changes:
+    - type: Add
+      message: Harmony's lobby art now has proper credits!
+  - id: 1278
+    author: Dizzy-Eevee
+    time: '2026-03-29T11:54:17.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1278
+    changes:
+    - type: Tweak
+      message: MMIs, Positronic Brains, Intellicards, and the AI core can now perform emotes.
+  - id: 1320
+    author: Disp-Dev
+    time: '2026-03-29T11:55:09.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1320
+    changes:
+    - type: Add
+      message: A new piece of lobby art called "Decompressing" made by Dispenser can now appear.
+  - id: 1313
+    author: SpacePontif
+    time: '2026-03-29T11:58:23.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1313
+    changes:
+    - type: Fix
+      message: Fixed syndicate kudzu grenades not triggering on use
+  - id: 1277
+    author: SomegnihT
+    time: '2026-03-29T12:00:03.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1277
+    changes:
+    - type: Tweak
+      message: Screens can no longer say "KILL" when the round ends.
+  - id: 1020
+    author: BlueMoon059
+    time: '2026-03-29T12:16:25.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1020
+    changes:
+    - type: Tweak
+      message: When a genpop id's sentence ends, a radio message is now broadcast on the security channel.
+  - id: 1312
+    author: dragydevi
+    time: '2026-03-30T21:52:29.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1312
+    changes:
+    - type: Fix
+      message: Infiltrator now has the stealth jetpacks in their locker.
+  - id: 1332
+    author: Lucky
+    time: '2026-04-01T13:04:39.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1332
+    changes:
+    - type: Fix
+      message: Fixed some issues with Elkridge.
+  - id: 1331
+    author: Lucky
+    time: '2026-04-04T06:31:18.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1331
+    changes:
+    - type: Remove
+      message: Plasma is no longer in rotation.
+  - id: 1342
+    author: Terkala
+    time: '2026-04-19T16:30:22.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1342
+    changes:
+    - type: Add
+      message: Added Surgery and Cybernetics
+  - id: 1351
+    author: whythelettuce
+    time: '2026-04-30T18:14:47.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1351
+    changes:
+    - type: Tweak
+      message: Amber Station AI Core Update!
+  - id: 1341
+    author: dragydevi
+    time: '2026-04-30T18:55:43.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1341
+    changes:
+    - type: Tweak
+      message: Increased requirement for command times.
+    - type: Tweak
+      message: Increased global playtime for Security Cadet
+    - type: Tweak
+      message: added command hours for AI
+  - id: 1171
+    author: dragydevi
+    time: '2026-05-01T18:21:31.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1171
+    changes:
+    - type: Tweak
+      message: Storage implants now have 3x3 storage again but can no longer store objective items.
+  - id: 1283
+    author: dragydevi
+    time: '2026-05-05T02:37:03.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1283
+    changes:
+    - type: Add
+      message: Removed the chance that you roll a steal the nuke disk objective, when you are DAGD
+  - id: 1365
+    author: whythelettuce
+    time: '2026-05-05T19:42:43.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1365
+    changes:
+    - type: Remove
+      message: Retired Spire Station + Spire Evac
+  - id: 1360
+    author: dragydevi
+    time: '2026-05-05T19:45:22.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1360
+    changes:
+    - type: Remove
+      message: Serpentcrest from map rotation
+  - id: 1261
+    author: CollectionOfBones128
+    time: '2026-05-09T21:07:42.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1261
+    changes:
+    - type: Fix
+      message: Salvage Borgs and the Station AI can now use the Salvage Communication Channel
+  - id: 1272
+    author: kleinerstation13
+    time: '2026-05-09T22:07:12.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1272
+    changes:
+    - type: Tweak
+      message: SMG crates that spawn on Salvage wrecks now contain a Drozd and SMG magazines instead of a WT550 and top-loaded mags.
+  - id: 1221
+    author: BlueMoon059
+    time: '2026-05-09T22:09:15.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1221
+    changes:
+    - type: Tweak
+      message: Present anomalies no longer spawn unsafe presents.
+    - type: Tweak
+      message: Present anomalies critting no longer spawn extreme presents.
+  - id: 1215
+    author: SuperGDPWYL
+    time: '2026-05-09T22:11:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1215
+    changes:
+    - type: Remove
+      message: Speed boots are no longer obtainable.
+  - id: 1183
+    author: DDeegan
+    time: '2026-05-09T22:27:13.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1183
+    changes:
+    - type: Tweak
+      message: Update SOP to reflect changes in Command items
+  - id: 1362
+    author: whythelettuce
+    time: '2026-05-09T22:27:46.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1362
+    changes:
+    - type: Tweak
+      message: 'Adjusted Rule 6B: EORG for clarity.'
+  - id: 1225
+    author: CollectionOfBones128
+    time: '2026-05-10T12:39:23.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1225
+    changes:
+    - type: Add
+      message: A universal blood substitute is now availble to nuclear operatives.
+    - type: Tweak
+      message: The Combat Medkit now comes with a syringe of Universal Blood Substitute instead of a syringe of Saline.
+    - type: Tweak
+      message: Airloss Auto-Injectors now use Universal Blood Substitute instead of Saline.
+  - id: 1358
+    author: TheCrimsonJupiter
+    time: '2026-05-10T12:42:47.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1358
+    changes:
+    - type: Tweak
+      message: Headsets and glasses no longer appear behind beards.
+  - id: 1319
+    author: Tech3599
+    time: '2026-05-10T12:58:37.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1319
+    changes:
+    - type: Add
+      message: New lobby art "Unauthorized Entry" by Shadarrius
+  - id: 1350
+    author: whythelettuce
+    time: '2026-05-10T18:25:46.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1350
+    changes:
+    - type: Add
+      message: New tips specific to harmony have been added.
+    - type: Tweak
+      message: Some tips were adjusted to better match reality.

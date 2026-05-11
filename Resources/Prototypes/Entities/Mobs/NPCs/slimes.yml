@@ -172,7 +172,6 @@
       # raffle:
       #   settings: short
       # harmony end
-    - type: ForceAttack
 
 - type: entity
   name: green slime
@@ -215,7 +214,6 @@
       # raffle:
       #   settings: short
       # harmony end
-    - type: ForceAttack
 
 - type: entity
   name: yellow slime
@@ -257,4 +255,3 @@
       # raffle:
       #   settings: short
       # harmony end
-    - type: ForceAttack
