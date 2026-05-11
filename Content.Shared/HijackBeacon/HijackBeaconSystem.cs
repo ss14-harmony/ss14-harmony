@@ -317,6 +317,8 @@ public sealed class HijackBeaconSystem : EntitySystem
     private void SetToWait(Entity<HijackBeaconComponent> ent)
     {
         ent.Comp.Status = HijackBeaconStatus.HijackWait;
+
+        _popup.PopupPredicted(Loc.GetString("hijack-beacon-popup-complete"), ent, null);
         Dirty(ent);
     }
     // Harmony Change End
