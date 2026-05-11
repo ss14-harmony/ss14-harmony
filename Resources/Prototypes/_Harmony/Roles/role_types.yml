@@ -1,5 +1,5 @@
 - type: roleType
-  id: TryeNeutral
+  id: TrueNeutral
   name: role-type-neutral-name
   color: '#56585c'
   symbol: "🗡" # Should never be antag, but just in case.

@@ -21,3 +21,12 @@
     exclusiveAntag: true
     roleType: TeamAntagonist
     subtype: role-subtype-conspirator
+
+- type: entity
+  parent: [ BaseMindRoleAntag, MindRoleGhostRoleNeutral ]
+  id: MindRoleGhostRoleTrueNeutral
+  name: Ghost Role (Neutral)
+  components:
+  - type: MindRole
+    roleType: TrueNeutral
+    antagPrototype: GenericFreeAgent
