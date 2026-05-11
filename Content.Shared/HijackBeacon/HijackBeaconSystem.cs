@@ -52,7 +52,7 @@ public sealed class HijackBeaconSystem : EntitySystem
                     //Harmony Change Start - Require Manual Completion
                     //HijackFinish((uid, comp));
                     SetToWait((uid, comp));
-                    // Harnony Change End
+                    // Harmony Change End
                     Dirty(uid, comp);
                     break;
                 case HijackBeaconStatus.Cooldown:
