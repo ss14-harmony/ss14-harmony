@@ -512,7 +512,10 @@
       pen:
         maxVol: 40
         reagents:
-        - ReagentId: Saline
+        # Harmony Change - Nukie Universal Saline
+        # - ReagentId: Saline
+        - ReagentId: UniversalBlood
+        # Harmony Change End
           Quantity: 20
         - ReagentId: DexalinPlus
           Quantity: 20
