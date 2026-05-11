@@ -13,7 +13,6 @@ namespace Content.Server._Harmony.Objectives.Systems;
 /// </summary>
 public sealed class ExterminateCrewConditionSystem : EntitySystem
 {
-    [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly EmergencyShuttleSystem _emergencyShuttle = default!;
 
     public override void Initialize()
