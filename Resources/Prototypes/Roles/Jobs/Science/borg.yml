@@ -9,6 +9,11 @@
   - !type:RoleTimeRequirement
     role: JobBorg
     time: 4h # harmony: 5h -> 4h
+  # Harmony Start
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 2h
+  # Harmony End
   weight: 10
   canBeAntag: false
   icon: JobIconStationAi

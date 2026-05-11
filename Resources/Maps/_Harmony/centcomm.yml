@@ -18571,13 +18571,6 @@ entities:
     - type: Transform
       pos: 65.39252,31.738243
       parent: 1
-- proto: ChemistryBottleNecrosol
-  entities:
-  - uid: 2299
-    components:
-    - type: Transform
-      pos: 65.37169,31.51934
-      parent: 1
 - proto: ChemistryBottleOpporozidone
   entities:
   - uid: 2340
