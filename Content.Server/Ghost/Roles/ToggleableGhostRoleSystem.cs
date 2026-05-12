@@ -52,27 +52,35 @@ public sealed class ToggleableGhostRoleSystem : EntitySystem
 
         UpdateAppearance(uid, ToggleableGhostRoleStatus.Searching);
 
+        ActivateGhostRole((uid, component));
+    }
+
+    public void ActivateGhostRole(Entity<ToggleableGhostRoleComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp))
+            return;
+
         //Harmony change - If the mind can be found, put it back on reactivation
-        var mindComp = CompOrNull<MindComponent>(component.LastMind);
+        var mindComp = CompOrNull<MindComponent>(ent.Comp.LastMind);
         var hasUserId = mindComp?.UserId;
         var hasActiveSession = hasUserId != null && _playerManager.ValidSessionId(hasUserId.Value);
 
-        if (component.PriorityBoarding && hasActiveSession && component.LastMind != null)
+        if (ent.Comp.PriorityBoarding && hasActiveSession && ent.Comp.LastMind != null)
         {
-            _mind.TransferTo((EntityUid)component.LastMind, uid);
+            _mind.TransferTo((EntityUid)ent.Comp.LastMind, ent);
             return;
         }
         //End harmony
 
-        var ghostRole = EnsureComp<GhostRoleComponent>(uid);
-        EnsureComp<GhostTakeoverAvailableComponent>(uid);
+        var ghostRole = EnsureComp<GhostRoleComponent>(ent);
+        EnsureComp<GhostTakeoverAvailableComponent>(ent);
 
-        //GhostRoleComponent inherits custom settings from the ToggleableGhostRoleComponent
-        ghostRole.RoleName = Loc.GetString(component.RoleName);
-        ghostRole.RoleDescription = Loc.GetString(component.RoleDescription);
-        ghostRole.RoleRules = Loc.GetString(component.RoleRules);
-        ghostRole.JobProto = component.JobProto;
-        ghostRole.MindRoles = component.MindRoles;
+        // GhostRoleComponent inherits custom settings from the ToggleableGhostRoleComponent
+        ghostRole.RoleName = Loc.GetString(ent.Comp.RoleName);
+        ghostRole.RoleDescription = Loc.GetString(ent.Comp.RoleDescription);
+        ghostRole.RoleRules = Loc.GetString(ent.Comp.RoleRules);
+        ghostRole.JobProto = ent.Comp.JobProto;
+        ghostRole.MindRoles = ent.Comp.MindRoles;
     }
 
     private void OnExamined(EntityUid uid, ToggleableGhostRoleComponent component, ExaminedEvent args)

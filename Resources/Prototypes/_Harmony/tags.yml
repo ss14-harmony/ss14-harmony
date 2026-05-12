@@ -38,5 +38,9 @@
 - type: Tag
   id: EncryptionSalvage
 
+# ConstructionGraph: ClothingShoesDuckyGaloshes
+- type: Tag
+  id: SpaceGlue
+
 - type: Tag
   id: SpeedLoaderRifle
