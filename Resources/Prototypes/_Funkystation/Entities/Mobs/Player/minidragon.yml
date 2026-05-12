@@ -39,10 +39,10 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        200: Critical
-        250: Dead
+        150: Critical
+        200: Dead
     - type: Stamina
-      critThreshold: 200
+      baseCritThreshold: 200
     - type: DamageStateVisuals
       states:
         Alive:
@@ -66,8 +66,8 @@
         path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
       damage:
         types:
-          Piercing: 10
-          Slash: 10
+          Piercing: 8
+          Slash: 8
     - type: TypingIndicator
       proto: lizard
     - type: Tag
@@ -78,7 +78,7 @@
     - type: Speech
       speechSounds: Lizard
       speechVerb: Reptilian
-      allowedEmotes: ['Thump', 'Chirp', 'Gurgle', 'Weh']
+      allowedEmotes: ['Thump', 'Weh']
     - type: InteractionPopup
       successChance: 0.5 
       interactSuccessString: petting-success-minidragon
@@ -99,8 +99,8 @@
         - ActionCritLastWords 
     - type: SlowOnDamage
       speedModifierThresholds:
-        125: 0.85
-        175: 0.7 
+        75: 0.85
+        125: 0.7 
     - type: StatusEffects
       allowed:
       - SlowedDown
@@ -112,17 +112,16 @@
       - Drowsiness
       - Adrenaline
     - type: Metabolizer
-      solutionOnBody: false
+      solutionOnBody: true
       updateInterval: 0.25
       metabolizerTypes: [ Dragon ]
-      groups:
-      - id: Medicine
-      - id: Poison
+      stages: [ Digestion, Bloodstream ]
     - type: Flammable
       damage:
         types: {}
     - type: Temperature
-      heatDamageThreshold: 1200
+    - type: TemperatureDamage
+      heatDamageThreshold: 2400
     - type: Prying # Open door from xeno.yml.
       pryPowered: true
       force: true
@@ -133,13 +132,12 @@
       allowedStates:
       - Alive
       - Critical
-      damageCap: 250
       damage:
-        groups:
-          Brute: -0.4
-          Burn: -0.4
-          Toxin: -0.4
-          Airloss: -0.4
+        types:
+          Heat: -0.8
+          Blunt: -0.8
+          Piercing: -0.8
+          Slash: -0.8
 
 - type: entity
   name: mini dragon
