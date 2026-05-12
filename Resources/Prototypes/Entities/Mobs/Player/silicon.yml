@@ -16,6 +16,7 @@
     - Security
     - Service
     - Supply
+    - Salvage # Harmony Change - Adds Salvage Radio Channel
   - type: ActiveRadio
     channels:
     - Binary
@@ -27,6 +28,7 @@
     - Security
     - Service
     - Supply
+    - Salvage # Harmony Change - Adds Salvage Radio Channel
   - type: IgnoreUIRange
   - type: StationAiHeld
   - type: StationAiOverlay
