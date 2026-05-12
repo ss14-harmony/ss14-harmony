@@ -1,7 +1,7 @@
 - type: emote
   id: Blink
   name: chat-emote-name-blink
-  category: General
+  category: Hands
   icon: _Harmony/Interface/Emotes/blink.png # Harmony - changed path
   chatMessages: ["chat-emote-msg-blink"]
   chatTriggers:
