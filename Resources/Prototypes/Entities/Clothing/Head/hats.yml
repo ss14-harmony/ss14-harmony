@@ -388,9 +388,9 @@
   description: It has a little note stuck in the band saying "PRESS". Practically an all-access pass!
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/presshat.rsi
+    sprite: _Harmony/Clothing/Head/Hats/presshat.rsi # Harmony change, changes sprite pathing.
   - type: Clothing
-    sprite: Clothing/Head/Hats/presshat.rsi
+    sprite: _Harmony/Clothing/Head/Hats/presshat.rsi # Harmony change, changes sprite pathing.
 
 - type: entity
   parent: ClothingHeadBase
