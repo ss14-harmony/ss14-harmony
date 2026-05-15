@@ -269,24 +269,26 @@
       tags:
       - NukeOpsUplink
 
-- type: listing
-  id: UplinkEstocBundle
-  name: uplink-estoc-bundle-name
-  description: uplink-estoc-bundle-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Rifles/estoc.rsi, state: icon }
-  productEntity: ClothingBackpackDuffelSyndicateFilledRifle
-  discountCategory: veryRareDiscounts
-  discountDownTo:
-    Telecrystal: 11
-  cost:
-    Telecrystal: 18
-  categories:
-  - UplinkWeaponry
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+# Harmony Change - Remove DMR Bundle
+# - type: listing
+#   id: UplinkEstocBundle
+#   name: uplink-estoc-bundle-name
+#   description: uplink-estoc-bundle-desc
+#   icon: { sprite: /Textures/Objects/Weapons/Guns/Rifles/estoc.rsi, state: icon }
+#   productEntity: ClothingBackpackDuffelSyndicateFilledRifle
+#   discountCategory: veryRareDiscounts
+#   discountDownTo:
+#     Telecrystal: 11
+#   cost:
+#     Telecrystal: 18
+#   categories:
+#   - UplinkWeaponry
+#   conditions:
+#   - !type:StoreWhitelistCondition
+#     whitelist:
+#       tags:
+#       - NukeOpsUplink
+# Harmony Change End
 
 - type: listing
   id: UplinkGrenadeLauncher
