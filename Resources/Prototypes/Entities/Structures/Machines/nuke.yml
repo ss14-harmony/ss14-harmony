@@ -117,6 +117,13 @@
       tags:
       - GhostOnlyWarp
   - type: FTLSmashImmune
+  # Harmony change start
+  # Reason for change
+  # Make the main nuclear fission explosive survive immovable rod impacts.
+  # What change does
+  # Adds the RodIndestructible component so the Harmony rod deflection system bounces rods off this entity.
+  # Harmony change end
+  - type: RodIndestructible
 
 - type: entity
   parent: NuclearBomb
