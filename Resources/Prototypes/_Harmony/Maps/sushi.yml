@@ -14,7 +14,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'SDC'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_box.yml
+          emergencyShuttlePath: /Maps/_Harmony/Shuttles/emergency_sushi.yml
         - type: StationJobs
           availableJobs:
             Captain: [ 1, 1 ]
