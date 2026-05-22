@@ -94,6 +94,7 @@
   radioChannels:
   - Supply
   - Science
+  - Salvage # Harmony Change - Adds Salvage Radio Channel
 
   # Visual
   inventoryTemplateId: borgTall
