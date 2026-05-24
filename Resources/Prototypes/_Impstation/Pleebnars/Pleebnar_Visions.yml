@@ -1,7 +1,9 @@
-- type: pleebnarVision
-  id: 1
-  name: pleebnar-vision-1-name
-  visionString: pleebnar-vision-1
+# Harmoy Change Start
+# - type: pleebnarVision
+#   id: 1
+#   name: pleebnar-vision-1-name
+#   visionString: pleebnar-vision-1
+# Harmony Change End
 
 - type: pleebnarVision
   id: 2
@@ -443,10 +445,12 @@
   name: pleebnar-vision-89-name
   visionString: pleebnar-vision-89
 
-- type: pleebnarVision
-  id: 90
-  name: pleebnar-vision-90-name
-  visionString: pleebnar-vision-90
+# Harmoy Change Start
+# - type: pleebnarVision
+#   id: 90
+#   name: pleebnar-vision-90-name
+#   visionString: pleebnar-vision-90
+# Harmoy Change End
 
 - type: pleebnarVision
   id: 91
@@ -975,10 +979,12 @@
   name: pleebnar-vision-196-name
   visionString: pleebnar-vision-196
 
-- type: pleebnarVision
-  id: 197
-  name: pleebnar-vision-197-name
-  visionString: pleebnar-vision-197
+# Harmoy Change Start
+# - type: pleebnarVision
+#   id: 197
+#   name: pleebnar-vision-197-name
+#   visionString: pleebnar-vision-197
+# Harmoy Change End
 
 - type: pleebnarVision
   id: 198
