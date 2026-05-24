@@ -100,5 +100,5 @@ pleebnar-vision-208-name = Virtual Insanity
 pleebnar-vision-209 = Microscopic life moving. Bacteria. Creatures born from dust which will eventually return to dust.
 pleebnar-vision-209-name = Ashes to Ashes
 
-pleebnar-vision-210 = Of a cold and lonely tube. It's where they'll put you at the end of this shift.
+pleebnar-vision-210 = A cold and lonely tube. It's where they'll put you at the end of this shift.
 pleebnar-vision-210-name = Tube
