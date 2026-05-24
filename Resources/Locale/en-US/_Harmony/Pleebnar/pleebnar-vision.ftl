@@ -37,7 +37,7 @@ pleebnar-vision-186-name = Bwoinked
 pleebnar-vision-187 = You're staring down the barrel of a cannon. The smell of bananas and cream hit your nostrils first.
 pleebnar-vision-187-name = Pied
 
-pleebnar-vision-188 = Of Medical. You do not want to go back to medical. YOU DO NOT WANT TO GO BACK TO MEDICAL.
+pleebnar-vision-188 = The Medical Department. You do not want to go back to medical. YOU DO NOT WANT TO GO BACK TO MEDICAL.
 pleebnar-vision-188-name = Go to Medical
 
 pleebnar-vision-189 = A plasteel rod at the end of a shuttle, tearing through the station.
