@@ -1,7 +1,8 @@
 pleebnar-vision-none-name = none
-
+#Start Harmony change
 #pleebnar-vision-1 = A pack of Newports.
 #pleebnar-vision-1-name = Newports
+#End Harmony change
 
 pleebnar-vision-2 = A field of flowers blooming.
 pleebnar-vision-2-name = Flowers
@@ -15,8 +16,10 @@ pleebnar-vision-4-name = Tully
 pleebnar-vision-5 = A yummy looking sandwich rotating.
 pleebnar-vision-5-name = Sandwich
 
-pleebnar-vision-6 = A space battle going on above the Planet Teo.
-pleebnar-vision-6-name = War On Teo
+#Start Harmony change
+#pleebnar-vision-6 = A space battle going on above the Planet Teo.
+#pleebnar-vision-6-name = War On Teo
+#End Harmony change
 
 pleebnar-vision-7 = A clown crying over spilled milk.
 pleebnar-vision-7-name = Sadness
@@ -102,10 +105,12 @@ pleebnar-vision-33-name = Ranch Dressing
 pleebnar-vision-34 = A wheel turning unendingly.
 pleebnar-vision-34-name = Wheel
 
-pleebnar-vision-35 = A pack of Oldports.
-pleebnar-vision-35-name = Oldports
+#Start Harmony change
+#pleebnar-vision-35 = A pack of Oldports.
+#pleebnar-vision-35-name = Oldports
+#End Harmony change
 
-pleebnar-vision-36 = An ocean of blood, you see a person is floating face down in it.
+pleebnar-vision-36 = An ocean of blood, you see a person is floating face down in it.*
 pleebnar-vision-36-name = Blood
 
 pleebnar-vision-37 = An approaching train.
@@ -225,10 +230,13 @@ pleebnar-vision-74-name = Stage
 pleebnar-vision-75 = An empty cradle in a dark room; a baby can be heard crying.
 pleebnar-vision-75-name = Cradle
 
-pleebnar-vision-76 = Your mothers face covered in insects; she is smiling,
+pleebnar-vision-76 = Your mothers face covered in insects; she is smiling,*
 pleebnar-vision-76-name = Bugs
 
-pleebnar-vision-77 = A gray alien being rolled up into a Newport cigarette.
+#Start Harmony change
+#pleebnar-vision-77 = A gray alien being rolled up into a Newport cigarette.
+pleebnar-vision-77 = A gray alien being rolled up into a cigarette.
+#End Harmony change
 pleebnar-vision-77-name = Grays
 
 pleebnar-vision-78 = You, standing over your own corpse.
@@ -267,10 +275,12 @@ pleebnar-vision-88-name = Futility
 pleebnar-vision-89 = Yourself and your surroundings from a birds-eye view.
 pleebnar-vision-89-name = Above
 
-pleebnar-vision-90 = The recently cooked flesh of a large bird, headlessly dancing -- a slow, almost sensual dance.
-pleebnar-vision-90-name = Yurkey
+#Start Harmony change
+#pleebnar-vision-90 = The recently cooked flesh of a large bird, headlessly dancing -- a slow, almost sensual dance.
+#pleebnar-vision-90-name = Yurkey
+#End Harmony change
 
-pleebnar-vision-91 = A large red arrow above your head, pointing directly southwest of you.
+pleebnar-vision-91 = A large red arrow above your heard, pointing directly southwest of you.
 pleebnar-vision-91-name = Quest
 
 pleebnar-vision-92 = Wind-up toys marching through a black void.
@@ -321,8 +331,10 @@ pleebnar-vision-106-name = Reminder
 pleebnar-vision-107 = The fabric of reality tears apart; revealing something greater looking in.
 pleebnar-vision-107-name = Watcher
 
-pleebnar-vision-108 = A comic featuring an orange cat; It is being thrown out a window.
-pleebnar-vision-108-name = Garfield
+#Start Harmony change
+#pleebnar-vision-108 = A comic featuring an orange cat; It is being thrown out a window.
+#pleebnar-vision-108-name = Garfield
+#End Harmony change
 
 pleebnar-vision-109 = A small green alien painting the Mona Lisa.
 pleebnar-vision-109-name = Fame
@@ -387,10 +399,10 @@ pleebnar-vision-128-name = Montreal
 pleebnar-vision-129 = The feeling of biting someone as hard as you physically possibly can.
 pleebnar-vision-129-name = Hunger
 
-pleebnar-vision-130 = An extended combat sequence  where you shirtlessly fight your Rival by beating each other up with guitars.
+pleebnar-vision-130 = An extended combat sequence where you shirtlessly fight your Rival by beating each other up with guitars.
 pleebnar-vision-130-name = Showdown
 
-pleebnar-vision-131 = A memory of a birthday from your childhood that you did not have. You eat foods that you do not recognize, and the presents you recieve are labled in a language you haven't seen before, and will not see again.
+pleebnar-vision-131 = A memory of a birthday from your childhood that you did not have. You eat foods that you do not recognize, and the presents you recieve are labled in a language you haven't seen before, and will not see again.*
 pleebnar-vision-131-name = Celebration
 
 pleebnar-vision-132 = A golden man floats in front of you, completely emotionless.
@@ -436,12 +448,15 @@ pleebnar-vision-145 = You see a butcher shop, with every cut of meat replaced by
 pleebnar-vision-145-name = Carpet
 
 pleebnar-vision-146 = An animal made of liquid drinking itself.
+#Start Harmony change
+#pleebnar-vision-146-name = Self-suck
 pleebnar-vision-146-name = Ouroboros
+#End Harmony change
 
 pleebnar-vision-147 = A disembodied heart, beating beneath the floor tiles.
 pleebnar-vision-147-name = Thumping
 
-pleebnar-vision-148 = The corpses of a blood-god and an engine-god, in a temple, claws around each other's throats.
+pleebnar-vision-148 = The corpses of a blood-god and an engine-god, in a temple, claws around each other's throats.*
 pleebnar-vision-148-name = Conflict
 
 pleebnar-vision-149 = An unidentifiable device, studded with lights that shift through rainbow hues.
@@ -459,8 +474,10 @@ pleebnar-vision-152-name = Unleashed
 pleebnar-vision-153 = A cavernous hole in the station's hull. It's growing.
 pleebnar-vision-153-name = Decay
 
-pleebnar-vision-154 = A pack of Nowports.
-pleebnar-vision-154-name = Nowports
+#Start Harmony change
+#pleebnar-vision-154 = A pack of Nowports.
+#pleebnar-vision-154-name = Nowports
+#End Harmony change
 
 pleebnar-vision-155 = Walking through twisting hallways of rusted metal. Cables hang from the ceiling like vines. The walls creak around you.
 pleebnar-vision-155-name = Derelict
@@ -471,13 +488,15 @@ pleebnar-vision-156-name = Breadth
 pleebnar-vision-157 = A bucket of water precariously balanced against an airlock.
 pleebnar-vision-157-name = Trap
 
-pleebnar-vision-158 = A fuzzy caterpillar producing a deafening cacophony.
-pleebnar-vision-158-name = Gondal
+#Start Harmony change
+#pleebnar-vision-158 = A fuzzy caterpillar producing a deafening cacophony.
+#pleebnar-vision-158-name = Gondal
+#End Harmony change
 
 pleebnar-vision-159 = A sinister warehouse full of weaponry and teleportation devices. A laborer is piling numerous bags of pajamas into a large crate.
 pleebnar-vision-159-name = Distribution
 
-pleebnar-vision-160 = The inside your jaw, during the last verbal conversation you had. The world shakes wildly as you talk.
+pleebnar-vision-160 = The inside your jaw, during the last verbal conversation you had. The world shakes wildly as you talk.*
 pleebnar-vision-160-name = Converse
 
 pleebnar-vision-161 = A game show host shooting you with a revolver on-stage. Fanfares and prizes jump through your mind as everything fades to black.
@@ -489,7 +508,7 @@ pleebnar-vision-162-name = Rot
 pleebnar-vision-163 = You have a mansion. A grand mansion. A mansion with a vast pantry. You are walking through it, searching for canned beans. But you cannot find canned beans. There are no canned beans in your pantry. Doom washes over you.
 pleebnar-vision-163-name = Bereft
 
-pleebnar-vision-164 = A caricature of yourself, captioned in an unkown heiroglyphic language. It seems to be mocking.
+pleebnar-vision-164 = A caricature of yourself, captioned in an unkown heiroglyphic language. It seems to be mocking.*
 pleebnar-vision-164-name = Mockery
 
 pleebnar-vision-165 = Your toe falling off.
