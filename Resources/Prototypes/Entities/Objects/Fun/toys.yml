@@ -121,6 +121,11 @@
       collection: packetOpenSounds
   - type: TrashOnSolutionEmpty
     solution: drink
+  # Harmony Start - For ConstructionGraph: ClothingShoesDuckyGaloshes
+  - type: Tag
+    tags:
+    - SpaceGlue
+  # Harmony End
 
 - type: entity
   parent: DrinkBase

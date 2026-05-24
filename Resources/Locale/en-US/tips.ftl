@@ -35,7 +35,10 @@ tips-dataset-34 = As a Traitor, never underestimate the web vest. It may not pro
 tips-dataset-35 = As a Traitor, any purchased grenade penguins won't attack you, and will explode if killed.
 tips-dataset-36 = As a Traitor, be careful when using vestine from the chemical synthesis kit. If someone checks your station, they could easily out you.
 tips-dataset-37 = As a Traitor, remember that power sinks will create a loud sound and alert the crew after running for long enough. Try to hide them in a tricky-to-find spot, or reinforce the area around them so that they're harder to reach.
-tips-dataset-38 = As a Traitor, plasma gas is an excellent way to create chaos. It can be ignited to make an area extra uninhabitable, and can cause toxin damage to those that inhale it.
+# start Harmony change
+# tips-dataset-38 = As a Traitor, plasma gas is an excellent way to create chaos. It can be ignited to make an area extra uninhabitable, and can cause toxin damage to those that inhale it.
+tips-dataset-38 = As a Traitor with DAGD, plasma gas is an excellent way to create chaos. It can be ignited to make an area extra uninhabitable, and can cause toxin damage to those that inhale it.
+# end Harmony change
 tips-dataset-39 = As a Traitor, dehydrated carps are useful for killing a large hoard of people. As long as you pat it before rehydrating it, it can be used as a great distraction.
 tips-dataset-40 = As a Traitor, have you tried injecting plasma into batteries? In the case of a defibrillator, it explodes on use, hurting the user and the patient!
 tips-dataset-41 = As a Nuclear Operative, stick together! While your equipment is robust, your fellow operatives are much better at saving your life: they can drag you away from danger while stunned and provide cover fire.
@@ -43,7 +46,10 @@ tips-dataset-42 = As a Nuclear Operative, communication is key! Use your radio t
 tips-dataset-43 = As a Nuclear Operative, remember that stealth is an option. It'll be hard for the captain to fight back if he gets caught off guard by what he thinks is just a regular passenger!
 tips-dataset-44 = As an antagonist, be mindful of the power of destroying telecommunications. It'll be a lot harder for people to call you out if they can't do so effectively!
 tips-dataset-45 = You can examine your headset to see which radio channels you have available and how to speak in them.
-tips-dataset-46 = As a Salvage Specialist, always carry a GPS on you and take note of the station's coordinates in case your salvage is lost to space.
+# start Harmony change
+# tips-dataset-46 = As a Salvage Specialist, always carry a GPS on you and take note of the station's coordinates in case your salvage is lost to space.
+tips-dataset-46 = As a Salvage Specialist, your PDA works as a GPS when held in your hand! Take note of the station's coordinates in case you get turned around in space.
+# end Harmony change
 tips-dataset-47 = As a Salvage Specialist, you can use your proto-kinetic accelerator to move yourself in space when in a pinch. Just be wary that it isn't very effective.
 tips-dataset-48 = As a Salvage Specialist, never forget to mine ore! Ore can be sold to cargo for a pretty penny, be used for construction, and also be used by Scientists for fancy technology.
 tips-dataset-49 = As a Salvage Specialist, try asking science for a tethergun. It can be used to grab items off of salvage wrecks extremely efficiently!
@@ -73,7 +79,10 @@ tips-dataset-72 = As an Engineer, you can electrify grilles by placing powered c
 tips-dataset-73 = As an Engineer, always double-check when you're setting up the singularity. It is easier than you think to loose it!
 tips-dataset-74 = As an Engineer, you can use plasma glass to reinforce an area and prevent radiation. Uranium glass can also be used to prevent radiation.
 tips-dataset-75 = As the Captain, you are one of the highest-priority targets on the station. Everything from revolutions, to Nuclear Operatives, to traitors that need to rob you of your unique laser pistol or your life are things to worry about.
-tips-dataset-76 = As the Captain, always take the nuclear disk and pinpointer with you every shift. It's a good idea to give one of these to another head you can trust with keeping it safe.
+# start Harmony change
+# tips-dataset-76 = As the Captain, always take the nuclear disk and pinpointer with you every shift. It's a good idea to give one of these to another head you can trust with keeping it safe.
+tips-dataset-76 = As the Captain, always take the nuclear disk with you every shift. It's a good idea to give the pinpointer to another head you can trust with keeping it safe.
+# end Harmony change
 tips-dataset-77 = As the Captain, you have absolute access and control over the station, but this does not mean that being a horrible person won't result in mutiny.
 tips-dataset-78 = As the Captain, try to be active and patrol the station. Staying in the bridge might be tempting, but you'll just end up putting a bigger target on your back!
 tips-dataset-79 = As a Scientist, you can use the node scanner to see when an artifact is able to react to triggers, and which triggers it is currently reacting to; each number it shows corresponds to a different trigger!
@@ -106,7 +115,10 @@ tips-dataset-105 = Just because a job can't be a traitor at the beginning of a r
 tips-dataset-106 = Syndicate gas masks will both provide welding protection and block flashes. Think twice before trying to flash a Nuclear Operative!
 tips-dataset-107 = Demoman takes skill.
 tips-dataset-108 = You can spray a fire extinguisher, throw items or fire a gun while floating through space to give yourself a minor boost. Simply fire opposite to where you want to go.
-tips-dataset-109 = You can drag other players onto yourself to open the strip menu, allowing you to remove their equipment or force them to wear something. Note that exosuits or helmets will block your access to the clothing beneath them, and that certain items take longer to strip or put on than others.
+# start Harmony change
+# tips-dataset-109 = You can drag other players onto yourself to open the strip menu, allowing you to remove their equipment or force them to wear something. Note that exosuits or helmets will block your access to the clothing beneath them, and that certain items take longer to strip or put on than others.
+tips-dataset-109 = You can drag other players onto yourself to open the strip menu, allowing you to remove their equipment or force them to wear something. Note that certain items take longer to strip or put on than others.
+# end Harmony change
 tips-dataset-110 = You can climb onto a table by dragging yourself onto one.
 tips-dataset-111 = You can move an item out of the way by dragging it, and then holding CTRL + right click and moving your mouse into the direction you want it to go.
 tips-dataset-112 = When dealing with security, you can often get your sentence negated entirely through cooperation and deception.
