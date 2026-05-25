@@ -33,7 +33,7 @@
         - id: C4
         - id: SingularityGrenade
         # Clothing
-        - id: ClothingShoesSkatesSyndicate
+        #- id: ClothingShoesSkatesSyndicate # Harmony Change - No Skates
         - id: ClothingShoesBootsMagSyndie
         - id: SyndicateIDCardAgent
         - id: ClothingMaskGasSyndicate
