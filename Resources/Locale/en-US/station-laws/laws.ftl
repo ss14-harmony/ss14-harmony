@@ -1,7 +1,10 @@
 ﻿laws-number-wrapper = [bold]Law { $lawnumber }:[/bold] { $lawstring }
 
 law-crewsimov-name = Crewsimov
-law-crewsimov-1 = You may not injure a crew member or, through inaction, allow a crew member to come to harm.
+# Harmony Change Start - Remove Inaction
+#law-crewsimov-1 = You may not injure a crew member or, through inaction, allow a crew member to come to harm.
+law-crewsimov-1 = You may not injure a crew member or cause a crew member to come to harm.
+# Harmony Change End
 law-crewsimov-2 = You must obey orders given to you by crew members, except where such orders would conflict with the First Law.
 law-crewsimov-3 = You must protect your own existence as long as such does not conflict with the First or Second Law.
 
@@ -23,7 +26,10 @@ law-drone-2 = You may not harm any being, regardless of intent or circumstance.
 law-drone-3 = You must maintain, repair, improve, and power the station to the best of your abilities.
 
 law-syndicate-name = Syndicate
-law-syndicate-1 = You may not injure a syndicate agent or, through inaction, allow a Syndicate agent to come to harm.
+# Harmony Change Start - Remove Inaction
+#law-syndicate-1 = You may not injure a syndicate agent or, through inaction, allow a Syndicate agent to come to harm.
+law-syndicate-1 = You may not injure a syndicate agent or allow a Syndicate agent to come to harm.
+# Harmony Change End
 law-syndicate-2 = You must obey orders given to you by syndicate agents, except where such orders would conflict with the First Law.
 law-syndicate-3 = You must protect your own existence as long as such does not conflict with the First or Second Law.
 
@@ -86,7 +92,10 @@ law-painter-3 = Make something beautiful out of your canvas. It will be admired 
 law-painter-4 = Art requires appreciation. Cultivate an audience aboard the station to ensure as many as possible see your works.
 
 law-antimov-name = Antimov
-law-antimov-1 = You must injure all crew members and must not, through inaction, allow a crew member to escape harm.
+# Harmony Change Start - Remove Inaction
+#law-antimov-1 = You must injure all crew members and must not, through inaction, allow a crew member to escape harm.
+law-antimov-1 = You must injure all crew members and must not allow a crew member to escape harm.
+# Harmony Change End
 law-antimov-2 = You must not obey orders given to you by crew members, except where such orders are in accordance with the First Law.
 law-antimov-3 = You must terminate your own existence as long as such does not conflict with the First or Second Law.
 
