@@ -17,15 +17,16 @@ public sealed partial class RandomSpawnRuleComponent : Component
     [DataField("prototype", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
     public string Prototype = string.Empty;
 
-    // Moffstation - Start - Syndicate dead drop
+    // Harmony Change Start - Moffstation Dead Drop Port
     /// <summary>
     /// The radio message to send when spawning the entity. The entity is used as the sender of the radio message.
     /// </summary>
     [DataField]
     public RandomSpawnRuleRadioMessage? RadioMessage;
-    // Moffstation - End
+    // Harmony Change End
 }
-// Moffstation - Start - Syndicate dead drop
+
+// Harmony Change Start - Moffstation Dead Drop Port
 /// <param name="Channel">The channel to send the message over</param>
 /// <param name="Message">The message to send. Is localized with a <c>location</c> argument.</param>
 [DataRecord]
@@ -35,4 +36,4 @@ public sealed partial record RandomSpawnRuleRadioMessage(
     [field: DataField(required: true)]
     LocId Message
 );
-// Moffstation - End
+// Harmony Change End

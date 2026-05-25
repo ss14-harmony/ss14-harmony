@@ -1,20 +1,20 @@
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
-// Moffstation - Start - Syndicate dead drop
+// Harmony Change Start - Moffstation Dead Drop Port
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Pinpointer;
 using Robust.Shared.Utility;
-// Moffstation - End
+// Harmony Change End
 
 namespace Content.Server.StationEvents.Events;
 
 public sealed class RandomSpawnRule : StationEventSystem<RandomSpawnRuleComponent>
 {
-    // Moffstation - Start - Syndicate dead drop
+    // Harmony Change Start - Moffstation Dead Drop Port
     [Dependency] private readonly NavMapSystem _navMap = default!;
     [Dependency] private readonly RadioSystem _radio = default!;
-    // Moffstation - End
+    // Harmony Change End
 
     protected override void Started(EntityUid uid, RandomSpawnRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
@@ -23,7 +23,7 @@ public sealed class RandomSpawnRule : StationEventSystem<RandomSpawnRuleComponen
         if (TryFindRandomTile(out _, out _, out _, out var coords))
         {
             Sawmill.Info($"Spawning {comp.Prototype} at {coords}");
-            // Moffstation - Syndicate dead drop
+            // Harmony Change Start - Moffstation Dead Drop Port
             var ent = Spawn(comp.Prototype, coords);
 
             if (comp.RadioMessage is {} radioMessage)
@@ -31,7 +31,7 @@ public sealed class RandomSpawnRule : StationEventSystem<RandomSpawnRuleComponen
                 var message = Loc.GetString(radioMessage.Message, ("location", FormattedMessage.RemoveMarkupOrThrow(_navMap.GetNearestBeaconString(ent))));
                 _radio.SendRadioMessage(ent, message, radioMessage.Channel, ent);
             }
-            // Moffstation - End
+            // Harmony Change End
         }
     }
 }

@@ -37,7 +37,7 @@
     - id: RevenantSpawn
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
-    - id: SyndicateDeadDrop # Moffstation
+    - id: SyndicateDeadDrop # Harmony Change Start - Moffstation Dead Drop Port
 
 - type: entityTable
   id: ModerateAntagEventsTable
