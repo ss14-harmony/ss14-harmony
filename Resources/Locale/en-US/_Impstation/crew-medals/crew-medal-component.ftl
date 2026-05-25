@@ -1,5 +1,7 @@
 # interaction
-comp-crew-medal-inspection-text = Awarded to {$recipient} for {$reason}.
+# Harmony Change Start - UI Formatting Change
+#comp-crew-medal-inspection-text = Awarded to {$recipient} for {$reason}.
+# Harmony Change End
 comp-crew-medal-award-text = {$recipient} has been awarded the {$medal}.
 
 # round end screen
@@ -9,9 +11,11 @@ comp-crew-medal-round-end-result = {$count ->
     *[other] There were {$count} medals awarded:
 }
 
-comp-crew-medal-round-end-list =
-    - [color=white]{$recipient}[/color] earned the [color=white]{$medal}[/color] for
-    {"  "}{$reason}
+# Harmony Change Start - UI Formatting Change
+#comp-crew-medal-round-end-list =
+#    - [color=white]{$recipient}[/color] earned the [color=white]{$medal}[/color] for
+#    {"  "}{$reason}
+# Harmony Change End
 
 # UI
 

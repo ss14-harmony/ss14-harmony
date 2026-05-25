@@ -66,7 +66,12 @@ public sealed class CrewMedalSystem : SharedCrewMedalSystem
         result.AppendLine(Loc.GetString("comp-crew-medal-round-end-result", ("count", count)));
         foreach (var medal in medals)
         {
-            result.AppendLine(Loc.GetString("comp-crew-medal-round-end-list", ("medal", medal.Item1), ("recipient", medal.Item2), ("reason", medal.Item3)));
+            // Harmony Change Start - UI Formatting Change
+            var localString = "comp-crew-medal-round-end-list";
+            if (medal.Item3 != string.Empty)
+                localString = "comp-crew-medal-round-end-list-with-reason";
+            result.AppendLine(Loc.GetString(localString, ("medal", medal.Item1), ("recipient", medal.Item2), ("reason", medal.Item3)));
+            // Harmony Change End
         }
         ev.AddLine(result.AppendLine().ToString());
     }
