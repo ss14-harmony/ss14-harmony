@@ -16,7 +16,7 @@ public sealed partial class ContentWarningUIController : UIController, IOnStateE
 
     private void AttemptOpenContentWarningPopup()
     {
-        if (_cfg.GetCVar(HCCVars.ContentWarningDisplay) || _cfg.GetCVar(HCCVars.ContentWarningAcknowledged))
+        if (!_cfg.GetCVar(HCCVars.ContentWarningDisplay) || _cfg.GetCVar(HCCVars.ContentWarningAcknowledged))
             return;
 
         OpenContentWarningPopup();
