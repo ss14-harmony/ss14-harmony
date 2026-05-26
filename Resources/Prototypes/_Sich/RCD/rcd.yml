@@ -48,7 +48,7 @@
   delay: 30
   collisionMask: Impassable
   rotation: Camera
-  fx: EffectRCDConstruct5
+  fx: EffectRCDConstruct6
 
 - type: rcd
   id: ShuttersNormal
