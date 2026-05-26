@@ -7,7 +7,7 @@
   category: Airlocks
   sprite: /Textures/_Sich/Interface/Radial/RCD/airlock_command.png
   mode: ConstructObject
-  prototype: AirlockCommandLocked
+  prototype: SichAirlockCommandLocked
   cost: 4
   delay: 4
   collisionMask: FullTileMask
@@ -19,7 +19,7 @@
   category: Airlocks
   sprite: /Textures/_Sich/Interface/Radial/RCD/airlock_glass_command.png
   mode: ConstructObject
-  prototype: AirlockCommandGlassLocked
+  prototype: SichAirlockCommandGlassLocked
   cost: 4
   delay: 4
   collisionMask: FullTileMask
