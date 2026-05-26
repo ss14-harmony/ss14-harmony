@@ -31,7 +31,7 @@
   category: Airlocks
   sprite: /Textures/_Sich/Interface/Radial/RCD/highsec.png
   mode: ConstructObject
-  prototype: HighSecDoor
+  prototype: HighSecCommandLocked
   cost: 15
   delay: 15
   collisionMask: FullTileMask
