@@ -1,15 +1,15 @@
 - type: gameMap
-  id: Terminus
-  mapName: 'Terminus'
-  mapPath: /Maps/_Harmony/terminus.yml
+  id: Dove
+  mapName: 'Dove'
+  mapPath: /Maps/_Harmony/dove.yml
   minPlayers: 1
   maxPlayers: 25
   stations:
-    Terminus:
+    Dove:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Terminus Station {1}'
+          mapNameTemplate: '{0} Dove Station {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
