@@ -7,7 +7,7 @@
   category: Airlocks
   sprite: /Textures/_Sich/Interface/Radial/RCD/airlock_command.png
   mode: ConstructObject
-  prototype: AirlockCommand
+  prototype: AirlockCommandLocked
   cost: 4
   delay: 4
   collisionMask: FullTileMask
@@ -19,7 +19,7 @@
   category: Airlocks
   sprite: /Textures/_Sich/Interface/Radial/RCD/airlock_glass_command.png
   mode: ConstructObject
-  prototype: AirlockCommandGlass
+  prototype: AirlockCommandGlassLocked
   cost: 4
   delay: 4
   collisionMask: FullTileMask
@@ -48,7 +48,7 @@
   delay: 30
   collisionMask: Impassable
   rotation: Camera
-  fx: EffectRCDConstruct4
+  fx: EffectRCDConstruct5
 
 - type: rcd
   id: ShuttersNormal
