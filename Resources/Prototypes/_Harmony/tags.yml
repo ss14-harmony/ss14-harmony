@@ -30,6 +30,10 @@
 - type: Tag
   id: CartridgeLightRifleCaseless
 
+# Tag used for peanuts (pre-emptive prep for allergy system)
+- type: Tag
+  id: Peanut
+
 # Tag added to lighters to allow them to be whitelisted in cigarette packs
 - type: Tag
   id: Lighter
@@ -37,6 +41,10 @@
 # Used for Salv comms & Telecom servers
 - type: Tag
   id: EncryptionSalvage
+
+# ConstructionGraph: ClothingShoesDuckyGaloshes
+- type: Tag
+  id: SpaceGlue
 
 - type: Tag
   id: SpeedLoaderRifle
