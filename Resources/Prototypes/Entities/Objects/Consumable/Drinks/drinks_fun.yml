@@ -39,6 +39,11 @@
         - ReagentId: SpaceGlue
           Quantity: 30
   - type: Glue
+  # Harmony Start - For ConstructionGraph: ClothingShoesDuckyGaloshes
+  - type: Tag
+    tags:
+    - SpaceGlue
+  # Harmony End
 
 - type: entity
   parent: BaseSqueezeBottle
