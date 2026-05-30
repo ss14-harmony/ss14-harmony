@@ -11,7 +11,7 @@
         - ReagentId: Zinc
           Quantity: 5
   - type: Appearance
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
 
 # Carbine
 
@@ -35,7 +35,7 @@
   - type: Battery
     maxCharge: 750
     startingCharge: 750
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: BulletLaserHarmony
     fireCost: 37
   - type: Tag
@@ -46,7 +46,7 @@
   parent: BaseEnergyCartridgeHarmony
   id: EnergyCarbineCartridgeUnstableHarmony
   name: unstable energy cartridge (carbine)
-  description: An energy cartridge filled with extremely unstable energy. You only get one shot, make the most of it.
+  description: An energy cartridge filled with extremely unstable energy. It shoots forking energy bolts, be sure to stay close!
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Magazines/EnergyCartridges/Carbine/unstable.rsi
@@ -62,13 +62,13 @@
     energy: 1.5
   - type: MagazineVisuals
     magState: mag
-    steps: 2
+    steps: 6
   - type: Battery
-    maxCharge: 2000
-    startingCharge: 2000
-  - type: ProjectileBatteryAmmoProvider
-    proto: BulletLaserUnstableHarmony
-    fireCost: 2000
+    maxCharge: 750
+    startingCharge: 750
+  - type: BatteryAmmoProvider
+    proto: BulletEnergyCarbineUnstableHarmony
+    fireCost: 50
   - type: Tag
     tags:
       - EnergyCarbineCartridge
@@ -93,7 +93,7 @@
   - type: Battery
     maxCharge: 750
     startingCharge: 750
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: BulletLaserXRayHarmony
     fireCost: 37
   - type: Tag
@@ -120,7 +120,7 @@
   - type: Battery
     maxCharge: 750
     startingCharge: 750
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: BulletLaserShockHarmony
     fireCost: 37
   - type: Tag

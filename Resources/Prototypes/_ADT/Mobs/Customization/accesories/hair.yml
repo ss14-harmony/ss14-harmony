@@ -1,0 +1,13 @@
+- type: marking
+  id: ADTAllhonor
+  bodyPart: Hair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Hair/hair.rsi
+      state: honor
+
+- type: marking
+  id: ADTAllShavedFemale
+  bodyPart: Hair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Hair/hair.rsi
+      state: shaved_female

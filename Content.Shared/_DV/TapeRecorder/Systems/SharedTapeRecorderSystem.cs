@@ -18,6 +18,7 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Shared._DV.TapeRecorder.Systems;
 
@@ -30,7 +31,7 @@ public abstract class SharedTapeRecorderSystem : EntitySystem
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly ItemSlotsSystem _slots = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    //[Dependency] private readonly SharedPopupSystem _popup = default!; Harmony- comment out unused value to prevent test fail
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
 
     protected const string SlotName = "cassette_tape";

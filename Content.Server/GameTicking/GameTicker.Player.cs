@@ -1,5 +1,6 @@
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
+using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Content.Shared.GameWindow;
 using Content.Shared.Players;
@@ -54,22 +55,26 @@ namespace Content.Server.GameTicking
 
                     // Make the player actually join the game.
                     // timer time must be > tick length
-                    Timer.Spawn(0, () => _playerManager.JoinGame(args.Session));
+                    // Timer.Spawn(0, () => _playerManager.JoinGame(args.Session)); - Harmony Queue: Removed line, login is done by JoinQueueManager
 
-                    var record = await _db.GetPlayerRecordByUserId(args.Session.UserId);
-                    var firstConnection = record != null &&
-                                          Math.Abs((record.FirstSeenTime - record.LastSeenTime).TotalMinutes) < 1;
+                    // Harmony start - move to the ingame session status
+                    // var record = await _db.GetPlayerRecordByUserId(args.Session.UserId);
+                    // var firstConnection = record != null &&
+                    //                       Math.Abs((record.FirstSeenTime - record.LastSeenTime).TotalMinutes) < 1;
 
-                    _chatManager.SendAdminAnnouncement(firstConnection
-                        ? Loc.GetString("player-first-join-message", ("name", args.Session.Name))
-                        : Loc.GetString("player-join-message", ("name", args.Session.Name)));
+                    // _chatManager.SendAdminAnnouncement(firstConnection
+                    //     ? Loc.GetString("player-first-join-message", ("name", args.Session.Name))
+                    //     : Loc.GetString("player-join-message", ("name", args.Session.Name)));
+                    // Harmony end
 
                     RaiseNetworkEvent(GetConnectionStatusMsg(), session.Channel);
 
-                    if (firstConnection && _cfg.GetCVar(CCVars.AdminNewPlayerJoinSound))
-                        _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Effects/newplayerping.ogg"),
-                            Filter.Empty().AddPlayers(_adminManager.ActiveAdmins), false,
-                            audioParams: new AudioParams { Volume = -5f });
+                    // Harmony start - move to the ingame session status
+                    // if (firstConnection && _cfg.GetCVar(CCVars.AdminNewPlayerJoinSound))
+                    //     _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Effects/newplayerping.ogg"),
+                    //         Filter.Empty().AddPlayers(_adminManager.ActiveAdmins), false,
+                    //         audioParams: new AudioParams { Volume = -5f });
+                    // Harmony end
 
                     if (LobbyEnabled && _roundStartCountdownHasNotStartedYetDueToNoPlayers)
                     {
@@ -84,6 +89,21 @@ namespace Content.Server.GameTicking
                 {
                     _userDb.ClientConnected(session);
 
+                    // Harmony start - move join logging to the in game session status
+                    var record = await _db.GetPlayerRecordByUserId(args.Session.UserId);
+                    var firstConnection = record != null &&
+                                               Math.Abs((record.FirstSeenTime - record.LastSeenTime).TotalMinutes) < 1;
+
+                    _chatManager.SendAdminAnnouncement(firstConnection
+                        ? Loc.GetString("player-first-join-message", ("name", args.Session.Name))
+                        : Loc.GetString("player-join-message", ("name", args.Session.Name)));
+
+                    if (firstConnection && _cfg.GetCVar(CCVars.AdminNewPlayerJoinSound))
+                        _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Effects/newplayerping.ogg"),
+                            Filter.Empty().AddPlayers(_adminManager.ActiveAdmins), false,
+                            audioParams: new AudioParams { Volume = -5f });
+                    // Harmony end
+
                     if (mind == null)
                     {
                         if (LobbyEnabled)
@@ -91,6 +111,7 @@ namespace Content.Server.GameTicking
                         else
                             SpawnWaitDb();
 
+                        _adminLogger.Add(LogType.Connection, LogImpact.Low, $"User {args.Session:Player} attached to {(args.Session.AttachedEntity != null ? ToPrettyString(args.Session.AttachedEntity) : "nothing"):entity} connected to the game.");
                         break;
                     }
 
@@ -117,6 +138,8 @@ namespace Content.Server.GameTicking
                         }
                     }
 
+                    _adminLogger.Add(LogType.Connection, LogImpact.Low, $"User {args.Session:Player} attached to {(args.Session.AttachedEntity != null ? ToPrettyString(args.Session.AttachedEntity) : "nothing"):entity} connected to the game.");
+
                     break;
                 }
 
@@ -138,6 +161,8 @@ namespace Content.Server.GameTicking
                     }
 
                     _userDb.ClientDisconnected(session);
+
+                    _adminLogger.Add(LogType.Connection, LogImpact.Low, $"User {args.Session:Player} attached to {(args.Session.AttachedEntity != null ? ToPrettyString(args.Session.AttachedEntity) : "nothing"):entity} disconnected from the game.");
                     break;
                 }
             }

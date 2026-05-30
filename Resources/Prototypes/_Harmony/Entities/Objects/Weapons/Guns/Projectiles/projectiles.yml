@@ -103,32 +103,15 @@
         - Opaque
 
 - type: entity
-  name: laser bolt unstable
-  id: BulletLaserUnstableHarmony
-  parent: [BulletLaserBaseHarmony, BaseBulletTrigger]
+  parent: BulletLaserHarmony
+  id: BulletEnergyCarbineUnstableHarmony
+  name: carbine laser barrage
   categories: [ HideSpawnMenu ]
   components:
-  - type: Sprite
-    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/large_projectile.rsi
-    layers:
-    - state: icon
-      shader: unshaded
-  - type: PointLight
-    enabled: true
-    color: "#ff4300"
-    radius: 10
-    energy: 3
-  - type: Projectile
-    impactEffect: BulletImpactEffectOrangeDisabler
-    damage:
-      types:
-        Heat: 5
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: LaserBombHarmony
-    totalIntensity: 50
-    intensitySlope: 5
-    maxIntensity: 20
+  - type: ProjectileSpread
+    proto: BulletLaserHarmony
+    count: 2
+    spread: 12.5
 
 - type: entity
   name: laser bolt x-ray

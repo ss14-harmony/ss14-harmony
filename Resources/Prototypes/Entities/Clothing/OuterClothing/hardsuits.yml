@@ -40,6 +40,10 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitAtmos
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
 
 #Engineering Hardsuit
 - type: entity
@@ -76,6 +80,10 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitEngineering
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
 
 #Harmony change : Hardsuit resprite
 #Spationaut Hardsuit
@@ -162,12 +170,16 @@
   - type: ClothingSpeedModifier
 #    walkModifier: 0.75
 #    sprintModifier: 0.75
-    walkModifier: 0.70
-    sprintModifier: 0.70
+    walkModifier: 0.80
+    sprintModifier: 0.80
 # End of Harmony Change
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSalvage
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
 
 #Harmony change : Hardsuit resprite
 #Goliath Hardsuit
@@ -221,6 +233,10 @@
   - type: Construction
     graph: HardsuitGoliath
     node: hardsuitGoliath
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
 
 #Maxim Hardsuit
 - type: entity
@@ -285,11 +301,17 @@
         Heat: 0.8
         Caustic: 0.7
   - type: ClothingSpeedModifier
+    # Harmony Start - changes walk speed value, 0.75 -> 0.85
     walkModifier: 0.85
     sprintModifier: 0.85
+    # Harmony End
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurity
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
 
 #Brigmedic Hardsuit
 - type: entity
@@ -337,7 +359,7 @@
   parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
   id: ClothingOuterHardsuitWarden
   name: warden's hardsuit
-  description: The Warden's suit. Built like a tank.
+  description: The Warden's suit. Built like a tank. # Harmony change - changes description from "A specialized riot suit geared to combat low pressure environments."
   components:
   - type: Sprite
 #  start of Harmony change : Update sprite pathing
@@ -355,14 +377,18 @@
   - type: Armor
     modifiers:
       coefficients:
+        # Harmony start - changes armor values
         Blunt: 0.4
-        Slash: 0.4
-        Piercing: 0.4
-        Heat: 0.7
+        Slash: 0.4 # slash reduced, 0.5 -> 0.4
+        Piercing: 0.4 # piercing reduced, 0.6 -> 0.4
+        Heat: 0.7 # adds heat resistence, 0.8 -> 0.7
+        # Harmony End
         Caustic: 0.7
   - type: ClothingSpeedModifier
+    # Harmony start - changes value to include hundredths place
     walkModifier: 0.70
     sprintModifier: 0.70
+    # Harmony End
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitWarden
@@ -398,6 +424,10 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCap
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -431,11 +461,15 @@
         Radiation: 0.0
         Caustic: 0.7
   - type: ClothingSpeedModifier
-    walkModifier: 0.75
+    walkModifier: 0.8
     sprintModifier: 0.8
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitEngineeringWhite
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
 
 #Chief Medical Officer's Hardsuit
 - type: entity
@@ -458,11 +492,15 @@
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.4
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
+    walkModifier: 0.95
     sprintModifier: 0.95
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMedical
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
 
 #Research Director's Hardsuit
 - type: entity
@@ -501,6 +539,7 @@
     tags:
     - WhitelistChameleon
     - HighRiskItem
+    - Hardsuit
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitRd
   - type: StaticPrice
@@ -513,8 +552,10 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitSecurityRed
-  name: head of security's assault suit
-  description: A huge, looming, armored space suit. The biggest and the baddest.
+  # Harmony Start - changes name and description
+  name: head of security's assault suit # Changed from, "head of security's hardsuit"
+  description: A huge, looming, armored space suit. The biggest and the baddest. # Changed from, "A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
+  # Harmony End
   components:
   - type: Sprite
 #  start of Harmony change : Update sprite pathing
@@ -528,18 +569,21 @@
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.4
+    damageCoefficient: 0.4 # Harmony Change - reduces explosion damage, 0.5 -> 0.4
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.5
+        Blunt: 0.5 # Harmony Change - reduces blunt resistance, 0.6 -> 0.5
         Slash: 0.5
         Piercing: 0.5
-        Heat: 0.75
+        # Radiation: 0.5 - Harmony Change, removes radiation resistance
+        Heat: 0.75 # Harmony Change - adds heat resistance, 0.8 -> 0.75
         Caustic: 0.6
   - type: ClothingSpeedModifier
+    # Harmony Start - increases speed modifier and include hundredths place, 0.8 -> 0.85
     walkModifier: 0.85
     sprintModifier: 0.85
+    # Harmony End
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurityRed
@@ -582,7 +626,6 @@
 #        Caustic: 0.8
         Caustic: 0.6
   - type: ClothingSpeedModifier
-#    walkModifier: 0.85
     walkModifier: 0.9
     sprintModifier: 0.9
 # End of Harmony Change
@@ -614,8 +657,8 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
-  #- type: StaminaResistance
-  #  damageCoefficient: 0.75
+  - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
+    damageCoefficient: 0.75
   - type: Armor
     modifiers:
       coefficients:
@@ -636,6 +679,9 @@
     - MonkeyWearable
     - Hardsuit
     - WhitelistChameleon
+    # - ScurretWearable # Harmony
+  - type: StaticPrice
+    price: 5000
 
 # Harmony change. Updated sprite file path due to resprite
 # Syndicate Medic Hardsuit
@@ -686,8 +732,8 @@
     damageCoefficient: 0.2
   - type: FireProtection
     reduction: 0.8
-  #- type: StaminaResistance
-  #  damageCoefficient: 0.6
+  - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
+    damageCoefficient: 0.6
   - type: Armor
     modifiers:
       coefficients:
@@ -700,11 +746,15 @@
   - type: Item
     size: Huge
   - type: ClothingSpeedModifier
-    walkModifier: 1.0
+    walkModifier: 0.9
     sprintModifier: 0.9
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieElite
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
 
 # Harmony change. Updated sprite file path due to resprite
 #Syndicate Commander Hardsuit
@@ -727,8 +777,8 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
-  #- type: StaminaResistance
-  #  damageCoefficient: 0.6
+  - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
+    damageCoefficient: 0.6
   - type: Armor
     modifiers:
       coefficients:
@@ -744,6 +794,11 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieCommander
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
+
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
@@ -761,8 +816,7 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.3
-  #- type: StaminaResistance # Should not have stamina resistance, this is purely so people know it was not forgotten.
-  #  damageCoefficient: 0.99
+  # - type: StaminaResistance # Should not have stamina resistance, this is purely so people know it was not forgotten.
   - type: Armor
     modifiers:
       coefficients:
@@ -773,7 +827,7 @@
         Radiation: 0.2
         Caustic: 0.2
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
+    walkModifier: 0.65
     sprintModifier: 0.65
   - type: HeldSpeedModifier
   - type: ToggleableClothing
@@ -781,6 +835,7 @@
   - type: Tag
     tags:
     - MonkeyWearable
+    - Hardsuit
     - WhitelistChameleon
 
 #Wizard Hardsuit
@@ -814,6 +869,10 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitWizard
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
 
 #Ling Space Suit
 - type: entity
@@ -931,7 +990,7 @@
 
 #ERT Chaplain Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingOuterHardsuitJuggernaut ]
+  parent: [ BaseCentcommContraband, ClothingOuterHardsuitSyndie ]
   id: ClothingOuterHardsuitERTChaplain
   name: ERT chaplain's hardsuit
   description: A protective hardsuit worn by the chaplains of an Emergency Response Team.
@@ -945,7 +1004,7 @@
 
 #ERT Engineer Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitCBURN
+  parent: [ BaseCentcommContraband, ClothingOuterHardsuitSyndieElite ]
   id: ClothingOuterHardsuitERTEngineer
   name: ERT engineer's hardsuit
   description: A protective hardsuit worn by the engineers of an emergency response team.
@@ -993,7 +1052,7 @@
 
 #ERT Janitor Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitCBURN
+  parent: [ BaseCentcommContraband, ClothingOuterHardsuitSyndieElite ]
   id: ClothingOuterHardsuitERTJanitor
   name: ERT janitor's hardsuit
   description: A protective hardsuit worn by the janitors of an emergency response team.
@@ -1026,7 +1085,7 @@
     damageCoefficient: 0.2
   - type: FireProtection
     reduction: 0.8
-  - type: StaminaResistance
+  - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
     damageCoefficient: 0.15 # Needs 21 hits with a disabler to stun :godo:
   - type: Armor
     modifiers:

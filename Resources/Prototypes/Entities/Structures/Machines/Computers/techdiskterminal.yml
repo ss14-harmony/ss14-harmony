@@ -13,6 +13,10 @@
     - map: ["computerLayerScreen"]
       state: unshaded
   - type: DiskConsole
+# Begin harmony change - changed print sound
+    printSound:
+      path: /Audio/_Harmony/Machines/printer_harmony.ogg
+# End harmony change
   - type: ResearchClient
   - type: ActivatableUI
     key: enum.DiskConsoleUiKey.Key
@@ -31,6 +35,8 @@
     energy: 0.5
     color: "#b53ca1"
 
+# The value per-disk equate to an average of 1000 research points -> 100 spesos
+# Average is calculated from this table, default speso value in TechnologyDiskComponent, and default point cost in DiskConsoleComponent
 - type: weightedRandom
   id: TechDiskTierWeights
   weights:

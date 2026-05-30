@@ -1,2 +1,3 @@
 names-syndicate-prefix-dataset-1 = Operative
-names-syndicate-prefix-dataset-2 = Agent
+## Harmony Change - Nukie Corpsman > Nukie Medic, modifies nukie decoy balloon names
+names-syndicate-prefix-dataset-2 = Medic

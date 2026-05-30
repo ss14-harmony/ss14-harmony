@@ -1,0 +1,363 @@
+# Base Markings
+
+- type: marking
+  id: AvaliEarsBase
+  bodyPart: HeadSide
+  forcedColoring: true
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
+    state: ears_avalibase_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
+    state: ears_avalibase_secondary
+
+- type: marking
+  id: AvaliTailBase
+  bodyPart: Tail
+  forcedColoring: true
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
+    state: tail_avalibase
+
+# Stripe one
+
+- type: marking
+  id: AvaliEarsStripeOne
+  bodyPart: HeadSide
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
+    state: ears_avalibase_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: ears_top_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: ears_top_secondary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
+    state: ears_avalibase_secondary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: ears_bottom_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: ears_bottom_secondary
+
+- type: marking
+  id: AvaliHeadStripeOne
+  bodyPart: Head
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: head_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: head_secondary
+
+- type: marking
+  id: AvaliTorsoStripeOne
+  bodyPart: Chest
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: torso_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: torso_secondary
+
+- type: marking
+  id: AvaliLArmStripeOne
+  bodyPart: LArm
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: larm_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: larm_secondary
+
+- type: marking
+  id: AvaliRArmStripeOne
+  bodyPart: RArm
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: rarm_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: rarm_secondary
+
+- type: marking
+  id: AvaliLHandStripeOne
+  bodyPart: LHand
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: lhand_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: lhand_secondary
+
+- type: marking
+  id: AvaliRHandStripeOne
+  bodyPart: RHand
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: rhand_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: rhand_secondary
+
+- type: marking
+  id: AvaliLLegStripeOne
+  bodyPart: LLeg
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: lleg
+
+- type: marking
+  id: AvaliRLegStripeOne
+  bodyPart: RLeg
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: rleg
+
+- type: marking
+  id: AvaliTailStripeOne
+  bodyPart: Tail
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
+    state: tail_avalibase
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: tail_avali_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
+    state: tail_avali_secondary
+
+# Trim one
+
+- type: marking
+  id: AvaliEarsTrimOne
+  bodyPart: HeadSide
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
+    state: ears_avalibase_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: ears_top_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: ears_top_secondary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
+    state: ears_avalibase_secondary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: ears_bottom_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: ears_bottom_secondary
+
+- type: marking
+  id: AvaliHeadTrimOne
+  bodyPart: Head
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: head_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: head_secondary
+
+- type: marking
+  id: AvaliTorsoTrimOne
+  bodyPart: Chest
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: torso_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: torso_secondary
+
+- type: marking
+  id: AvaliLArmTrimOne
+  bodyPart: LArm
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: larm_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: larm_secondary
+
+- type: marking
+  id: AvaliRArmTrimOne
+  bodyPart: RArm
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: rarm_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: rarm_secondary
+
+- type: marking
+  id: AvaliRHandTrimOne
+  bodyPart: RHand
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: rhand_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: rhand_secondary
+
+- type: marking
+  id: AvaliLHandTrimOne
+  bodyPart: LHand
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: lhand_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: lhand_secondary
+
+- type: marking
+  id: AvaliLLegTrimOne
+  bodyPart: LLeg
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: lleg_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: lleg_secondary
+
+- type: marking
+  id: AvaliRLegTrimOne
+  bodyPart: RLeg
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: rleg_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: rleg_secondary
+
+- type: marking
+  id: AvaliTailTrimOne
+  bodyPart: Tail
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
+    state: tail_avalibase
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: tail_avali_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
+    state: tail_avali_secondary
+
+# Trim two
+
+- type: marking
+  id: AvaliEarsTrimTwo
+  bodyPart: HeadSide
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
+    state: ears_avalibase_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: ears_top_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: ears_top_secondary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
+    state: ears_avalibase_secondary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: ears_bottom_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: ears_bottom_secondary
+
+- type: marking
+  id: AvaliHeadTrimTwo
+  bodyPart: Head
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: head_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: head_secondary
+
+- type: marking
+  id: AvaliTorsoTrimTwo
+  bodyPart: Chest
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: torso_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: torso_secondary
+
+- type: marking
+  id: AvaliLArmTrimTwo
+  bodyPart: LArm
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: larm_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: larm_secondary
+
+- type: marking
+  id: AvaliRArmTrimTwo
+  bodyPart: RArm
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: rarm_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: rarm_secondary
+
+- type: marking
+  id: AvaliLHandTrimTwo
+  bodyPart: LHand
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: lhand_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: lhand_secondary
+
+- type: marking
+  id: AvaliRHandTrimTwo
+  bodyPart: RHand
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: rhand_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: rhand_secondary
+
+- type: marking
+  id: AvaliTailTrimTwo
+  bodyPart: Tail
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
+    state: tail_avalibase
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: tail_avali_primary
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
+    state: tail_avali_secondary
+
+# Begin harmony changes
+- type: marking
+  id: AvaliEyesCosmatic
+  bodyPart: Eyes
+  groupWhitelist: [ Avali ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_eyes.rsi
+    state: eyes_Cosmatic
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_eyes.rsi
+    state: eyes_Cosmatic_skin
+
+- type: marking
+  id: AvaliEyesStarlight
+  bodyPart: Eyes
+  groupWhitelist: [ Avali ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_eyes.rsi
+    state: eyes_Starlight
+  - sprite: _Harmony/Mobs/Customization/Avali/avali_eyes.rsi
+    state: eyes_Starlight_skin
+# End harmony changes

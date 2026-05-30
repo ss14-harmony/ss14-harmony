@@ -1,0 +1,23 @@
+- type: entity
+  parent: BaseAction
+  id: ActionItemCurse
+  name: Curse Item
+  description: Mark a held item to later unleash a curse.
+  components:
+  - type: Action
+    useDelay: 50
+    raiseOnAction: true
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+      params:
+        volume: -5
+        pitch: 1.2
+        maxDistance: 5
+        variation: 0.2
+    icon:
+      sprite: _Harmony/Objects/Magic/magicactions.rsi
+      state: item_curse
+  - type: InstantAction
+    event: !type:OnItemCurseActionEvent
+  - type: ItemCurse

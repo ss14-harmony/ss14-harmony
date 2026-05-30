@@ -1,0 +1,21 @@
+﻿- type: entity
+  parent: WeaponStaffBase
+  id: WeaponStaffSlipping
+  name: staff of slipping
+  description: unlock your inner clown
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Basic/staves.rsi
+    layers:
+    - state: slipping
+  - type: Item
+    heldPrefix: slipping
+  - type: Gun
+    fireRate: 0.5
+    projectileSpeed: 15
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_clown.ogg
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileBanana
+    capacity: 8
+    count: 8

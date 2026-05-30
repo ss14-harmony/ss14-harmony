@@ -1,0 +1,18 @@
+- type: marking
+  id: Malstrem
+  bodyPart: Eyes
+  groupWhitelist: [Human, Slime, Vulpkanin]
+  forcedColoring: false
+  sprites:
+  - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi
+    state: malstrem
+
+- type: marking
+  id: Beholder
+  bodyPart: Eyes
+  groupWhitelist: [Human, Slime, Vulpkanin]
+  forcedColoring: false
+  sprites:
+  - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi
+    state: beholder
+

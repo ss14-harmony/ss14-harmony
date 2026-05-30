@@ -1,0 +1,25 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from vgstation at https://github.com/vgstation-coders/vgstation13/commit/9bd459b27c73575fd5e3bf2efea13b816d0ac7c8",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "pitbull",
+            "directions": 4
+        },
+        {
+            "name": "pitbull_dead"
+        },
+        {
+            "name": "toadline_pitbull",
+            "directions": 4
+        },
+        {
+            "name": "toadline_pitbull_dead"
+        }
+    ]
+}

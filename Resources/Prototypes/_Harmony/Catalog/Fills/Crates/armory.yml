@@ -56,6 +56,8 @@
     contents:
     - id: WeaponSubMachineGunDrozd
       amount: 2
+    - id: MagazinePistolSubMachineGun
+      amount: 4
 
 - type: entity
   parent: [ CrateWeaponSecure, BaseSecurityContraband ]
@@ -68,3 +70,5 @@
     contents:
     - id: WeaponShotgunKammerer
       amount: 2
+    - id: BoxLethalshot
+      amount: 4

@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Sprites by mithrandalf at https://github.com/ParadiseSS13/Paradise/pull/10557/commits/9111cb1c22407e3bb9098812ea7727fb68726d3f",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "slipping"
+        },
+        {
+            "name": "slipping-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "slipping-inhand-right",
+            "directions": 4
+        }
+    ]
+}

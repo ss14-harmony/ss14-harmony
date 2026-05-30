@@ -1,0 +1,20 @@
+- type: entity
+  parent: BaseCartridgeLightRifle
+  id: CartridgeLightRifleCaseless
+  name: cartridge (.30 rifle caseless)
+  components:
+  - type: CartridgeAmmo
+    proto: BulletLightRifleCaseless
+    deleteOnSpawn: true
+  - type: Tag
+    tags:
+    - CartridgeLightRifleCaseless
+    - Cartridge
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+    - state: tip
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#13110a"

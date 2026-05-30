@@ -2,7 +2,7 @@
   parent: BaseAction
   id: ActionBloodBrotherConvert
   name: Convert
-  description: Convert a crewmember to your brotherhood.
+  description: Convert a crewmember to your blood oath.
   components:
   - type: Action
     icon:
@@ -14,7 +14,7 @@
     event: !type:BloodBrotherConvertActionEvent
     whitelist:
       components:
-      - HumanoidAppearance
+      - HumanoidProfile
     canTargetSelf: false
 
 - type: entity
@@ -31,5 +31,5 @@
     event: !type:BloodBrotherCheckConvertActionEvent
     whitelist:
       components:
-      - HumanoidAppearance
+      - HumanoidProfile
     canTargetSelf: false

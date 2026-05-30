@@ -1,5 +1,20 @@
 - type: entity
-  parent: ClothingHandsGlovesLatex
+  abstract: true
+  parent: ClothingHandsNonEdibleButcherableBase
+  id: ClothingHandsGlovesNonEdibleLatex
+  name: latex gloves
+  description: Thin sterile latex gloves. Basic PPE for any doctor.
+  components:
+  - type: Sprite
+    sprite: Clothing/Hands/Gloves/latex.rsi
+  - type: Clothing
+    sprite: Clothing/Hands/Gloves/latex.rsi
+  - type: Fiber
+    fiberMaterial: fibers-latex
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingHandsGlovesNonEdibleLatex
   id: ClothingHandsGlovesMantis
   suffix: Mantis
   components:

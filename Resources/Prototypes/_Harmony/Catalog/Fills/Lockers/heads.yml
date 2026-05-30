@@ -1,0 +1,19 @@
+# QM Hardsuit table
+- type: entityTable
+  id: FillQuarterMasterHardsuit
+  table: !type:AllSelector
+    children:
+    - id: ClothingMaskBreath
+    - id: ClothingOuterHardsuitQM
+    - id: OxygenTankFilled
+
+# Quartermaster locker without suit
+- type: entity
+  parent: LockerQuarterMaster
+  id: LockerQuarterMasterFilledNoSuit
+  suffix: Filled, No Suit
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillQuarterMaster

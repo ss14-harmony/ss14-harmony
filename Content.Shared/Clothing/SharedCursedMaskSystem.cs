@@ -1,8 +1,10 @@
 using Content.Shared.Clothing.Components;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Inventory;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Random.Helpers;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -55,12 +57,14 @@ public abstract class SharedCursedMaskSystem : EntitySystem
     private void OnModifyDamage(Entity<CursedMaskComponent> ent, ref InventoryRelayedEvent<DamageModifyEvent> args)
     {
         if (ent.Comp.CurrentState == CursedMaskExpression.Despair)
-            args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, ent.Comp.DespairDamageModifier);
+            args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage,
+                DamageSpecifier.PenetrateArmor(ent.Comp.DespairDamageModifier,
+                    args.Args.ArmorPenetration)); // Goob edit
     }
 
     protected void RandomizeCursedMask(Entity<CursedMaskComponent> ent, EntityUid wearer)
     {
-        var random = new System.Random((int) _timing.CurTick.Value);
+        var random = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(ent));
         ent.Comp.CurrentState = random.Pick(Enum.GetValues<CursedMaskExpression>());
         _appearance.SetData(ent, CursedMaskVisuals.State, ent.Comp.CurrentState);
         _movementSpeedModifier.RefreshMovementSpeedModifiers(wearer);

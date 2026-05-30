@@ -1,7 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Cargo.Components;
-using Content.Server.Station.Components;
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.BUI;
 using Content.Shared.Cargo.Components;
@@ -13,13 +12,14 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Labels.Components;
 using Content.Shared.Paper;
+using Content.Shared.Station.Components;
 using JetBrains.Annotations;
-using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Server.CrewManifest;
+using Robust.Shared.Random;
 
 namespace Content.Server.Cargo.Systems
 {
@@ -79,7 +79,7 @@ namespace Content.Server.Cargo.Systems
                 return;
 
             var orderId = GenerateOrderId(orderDatabase);
-            var data = new CargoOrderData(orderId, product.Product, product.Name, product.Cost, slip.OrderQuantity, slip.Requester, slip.Reason, slip.Account);
+            var data = new CargoOrderData(orderId, product, slip.OrderQuantity, slip.Requester, slip.Reason, slip.Account);
 
             if (!TryAddOrder(stationUid.Value, ent.Comp.Account, data, orderDatabase))
             {
@@ -91,7 +91,7 @@ namespace Content.Server.Cargo.Systems
             _audio.PlayPvs(ent.Comp.ScanSound, ent);
             _adminLogger.Add(LogType.Action,
                 LogImpact.Low,
-                $"{ToPrettyString(args.User):user} inserted order slip [orderId:{data.OrderId}, quantity:{data.OrderQuantity}, product:{data.ProductId}, requester:{data.Requester}, reason:{data.Reason}]");
+                $"{ToPrettyString(args.User):user} inserted order slip [orderId:{data.OrderId}, quantity:{data.OrderQuantity}, product:{data.Product}, requester:{data.Requester}, reason:{data.Reason}]");
             QueueDel(args.Used);
             args.Handled = true;
         }
@@ -102,7 +102,7 @@ namespace Content.Server.Cargo.Systems
             {
                 OnInteractUsingCash(uid, component, ref args);
             }
-            else if (TryComp<CargoSlipComponent>(args.Used, out var slip) && !component.SlipPrinter)
+            else if (TryComp<CargoSlipComponent>(args.Used, out var slip) && component.Mode == CargoOrderConsoleMode.DirectOrder)
             {
                 OnInteractUsingSlip((uid, component), ref args, slip);
             }
@@ -146,7 +146,7 @@ namespace Content.Server.Cargo.Systems
             if (args.Actor is not { Valid: true } player)
                 return;
 
-            if (component.SlipPrinter)
+            if (component.Mode != CargoOrderConsoleMode.DirectOrder)
                 return;
 
             if (!_accessReaderSystem.IsAllowed(player, uid))
@@ -170,20 +170,20 @@ namespace Content.Server.Cargo.Systems
 
             // Find our order again. It might have been dispatched or approved already
             var order = orderDatabase.Orders[component.Account].Find(order => args.OrderId == order.OrderId && !order.Approved);
-            if (order == null || !_protoMan.TryIndex(order.Account, out var account))
+            if (order == null || !_protoMan.Resolve(order.Account, out var account))
             {
                 return;
             }
 
             // Invalid order
-            if (!_protoMan.HasIndex<EntityPrototype>(order.ProductId))
+            if (!_protoMan.Resolve(order.Product, out var product))
             {
                 ConsolePopup(args.Actor, Loc.GetString("cargo-console-invalid-product"));
                 PlayDenySound(uid, component);
                 return;
             }
 
-            var amount = GetOutstandingOrderCount(orderDatabase, order.Account);
+            var amount = GetOutstandingOrderCount((station.Value, orderDatabase), order.Account);
             var capacity = orderDatabase.Capacity;
 
             // Too many orders, avoid them getting spammed in the UI.
@@ -204,7 +204,7 @@ namespace Content.Server.Cargo.Systems
                 PlayDenySound(uid, component);
             }
 
-            var cost = order.Price * order.OrderQuantity;
+            var cost = product.Cost * order.OrderQuantity;
             var accountBalance = GetBalanceFromAccount((station.Value, bank), order.Account);
 
             // Not enough balance
@@ -241,7 +241,7 @@ namespace Content.Server.Cargo.Systems
                 order.SetApproverData(tryGetIdentityShortInfoEvent.Title);
 
                 var message = Loc.GetString("cargo-console-unlock-approved-order-broadcast",
-                    ("productName", Loc.GetString(order.ProductName)),
+                    ("productName", Loc.GetString(product.Name)),
                     ("orderAmount", order.OrderQuantity),
                     ("approver", order.Approver ?? string.Empty),
                     ("cost", cost));
@@ -255,7 +255,7 @@ namespace Content.Server.Cargo.Systems
             // Log order approval
             _adminLogger.Add(LogType.Action,
                 LogImpact.Low,
-                $"{ToPrettyString(player):user} approved order [orderId:{order.OrderId}, quantity:{order.OrderQuantity}, product:{order.ProductId}, requester:{order.Requester}, reason:{order.Reason}] on account {order.Account} with balance at {accountBalance}");
+                $"{ToPrettyString(player):user} approved order [orderId:{order.OrderId}, quantity:{order.OrderQuantity}, product:{order.Product}, requester:{order.Requester}, reason:{order.Reason}] on account {order.Account} with balance at {accountBalance}");
 
             orderDatabase.Orders[component.Account].Remove(order);
             UpdateBankAccount((station.Value, bank), -cost, order.Account);
@@ -314,7 +314,7 @@ namespace Content.Server.Cargo.Systems
         {
             var station = _station.GetOwningStation(uid);
 
-            if (component.SlipPrinter)
+            if (component.Mode != CargoOrderConsoleMode.DirectOrder)
                 return;
 
             if (!TryGetOrderDatabase(station, out var orderDatabase))
@@ -325,7 +325,7 @@ namespace Content.Server.Cargo.Systems
 
         private void OnAddOrderMessageSlipPrinter(EntityUid uid, CargoOrderConsoleComponent component, CargoConsoleAddOrderMessage args, CargoProductPrototype product)
         {
-            if (!_protoMan.TryIndex(component.Account, out var account))
+            if (!_protoMan.Resolve(component.Account, out var account))
                 return;
 
             if (Timing.CurTime < component.NextPrintTime)
@@ -369,6 +369,9 @@ namespace Content.Server.Cargo.Systems
             if (!TryGetOrderDatabase(stationUid, out var orderDatabase))
                 return;
 
+            if (!TryComp<StationBankAccountComponent>(stationUid, out var bank))
+                return;
+
             if (!_protoMan.TryIndex<CargoProductPrototype>(args.CargoProductId, out var product))
             {
                 Log.Error($"Tried to add invalid cargo product {args.CargoProductId} as order!");
@@ -378,15 +381,17 @@ namespace Content.Server.Cargo.Systems
             if (!GetAvailableProducts((uid, component)).Contains(args.CargoProductId))
                 return;
 
-            if (component.SlipPrinter)
+            if (component.Mode == CargoOrderConsoleMode.PrintSlip)
             {
                 OnAddOrderMessageSlipPrinter(uid, component, args, product);
                 return;
             }
 
+            var targetAccount = component.Mode == CargoOrderConsoleMode.SendToPrimary ? bank.PrimaryAccount : component.Account;
+
             var data = GetOrderData(args, product, GenerateOrderId(orderDatabase), component.Account);
 
-            if (!TryAddOrder(stationUid.Value, component.Account, data, orderDatabase))
+            if (!TryAddOrder(stationUid.Value, targetAccount, data, orderDatabase))
             {
                 PlayDenySound(uid, component);
                 return;
@@ -395,7 +400,7 @@ namespace Content.Server.Cargo.Systems
             // Log order addition
             _adminLogger.Add(LogType.Action,
                 LogImpact.Low,
-                $"{ToPrettyString(player):user} added order [orderId:{data.OrderId}, quantity:{data.OrderQuantity}, product:{data.ProductId}, requester:{data.Requester}, reason:{data.Reason}]");
+                $"{ToPrettyString(player):user} added order [orderId:{data.OrderId}, quantity:{data.OrderQuantity}, product:{data.Product}, requester:{data.Requester}, reason:{data.Reason}]");
 
         }
 
@@ -423,14 +428,32 @@ namespace Content.Server.Cargo.Systems
                     CargoConsoleUiKey.Orders,
                     new CargoConsoleInterfaceState(
                     MetaData(station.Value).EntityName,
-                    GetOutstandingOrderCount(orderDatabase, console.Account),
+                    GetOutstandingOrderCount((station!.Value, orderDatabase), console.Account),
                     orderDatabase.Capacity,
                     GetNetEntity(station.Value),
-                    orderDatabase.Orders[console.Account],
+                    RelevantOrders((station!.Value, orderDatabase), (consoleUid, console)),
                     GetAvailableProducts((consoleUid, console)),
                     crewManifest
                 ));
             }
+        }
+
+        /// <summary>
+        /// Gets orders relevant to this account, i.e. orders on the account directly or orders on behalf of the account in the primary account.
+        /// </summary>
+        private List<CargoOrderData> RelevantOrders(Entity<StationCargoOrderDatabaseComponent> station, Entity<CargoOrderConsoleComponent> console)
+        {
+            if (!TryComp<StationBankAccountComponent>(station, out var bank))
+                return [];
+
+            var ourOrders = station.Comp.Orders[console.Comp.Account];
+
+            if (console.Comp.Account == bank.PrimaryAccount)
+                return ourOrders;
+
+            var otherOrders = station.Comp.Orders[bank.PrimaryAccount].Where(order => order.Account == console.Comp.Account);
+
+            return ourOrders.Concat(otherOrders).ToList();
         }
 
         private void ConsolePopup(EntityUid actor, string text)
@@ -449,15 +472,30 @@ namespace Content.Server.Cargo.Systems
 
         private static CargoOrderData GetOrderData(CargoConsoleAddOrderMessage args, CargoProductPrototype cargoProduct, int id, ProtoId<CargoAccountPrototype> account)
         {
-            return new CargoOrderData(id, cargoProduct.Product, cargoProduct.Name, cargoProduct.Cost, args.Amount, args.Requester, args.Reason, account);
+            return new CargoOrderData(id, cargoProduct, args.Amount, args.Requester, args.Reason, account);
         }
 
-        public static int GetOutstandingOrderCount(StationCargoOrderDatabaseComponent component, ProtoId<CargoAccountPrototype> account)
+        public int GetOutstandingOrderCount(Entity<StationCargoOrderDatabaseComponent> station, ProtoId<CargoAccountPrototype> account)
         {
             var amount = 0;
 
-            foreach (var order in component.Orders[account])
+            if (!TryComp<StationBankAccountComponent>(station, out var bank))
+                return amount;
+
+            foreach (var order in station.Comp.Orders[account])
             {
+                if (!order.Approved)
+                    continue;
+                amount += order.OrderQuantity - order.NumDispatched;
+            }
+
+            if (account == bank.PrimaryAccount)
+                return amount;
+
+            foreach (var order in station.Comp.Orders[bank.PrimaryAccount])
+            {
+                if (order.Account != account)
+                    continue;
                 if (!order.Approved)
                     continue;
                 amount += order.OrderQuantity - order.NumDispatched;
@@ -487,9 +525,7 @@ namespace Content.Server.Cargo.Systems
 
         public bool AddAndApproveOrder(
             EntityUid dbUid,
-            string spawnId,
-            string name,
-            int cost,
+            CargoProductPrototype product,
             int qty,
             string sender,
             string description,
@@ -499,10 +535,9 @@ namespace Content.Server.Cargo.Systems
             Entity<StationDataComponent> stationData
         )
         {
-            DebugTools.Assert(_protoMan.HasIndex<EntityPrototype>(spawnId));
             // Make an order
             var id = GenerateOrderId(component);
-            var order = new CargoOrderData(id, spawnId, name, cost, qty, sender, description, account);
+            var order = new CargoOrderData(id, product, qty, sender, description, account);
 
             // Approve it now
             order.SetApproverData(dest, sender);
@@ -511,7 +546,7 @@ namespace Content.Server.Cargo.Systems
             // Log order addition
             _adminLogger.Add(LogType.Action,
                 LogImpact.Low,
-                $"AddAndApproveOrder {description} added order [orderId:{order.OrderId}, quantity:{order.OrderQuantity}, product:{order.ProductId}, requester:{order.Requester}, reason:{order.Reason}]");
+                $"AddAndApproveOrder {description} added order [orderId:{order.OrderId}, quantity:{order.OrderQuantity}, product:{order.Product}, requester:{order.Requester}, reason:{order.Reason}]");
 
             // Add it to the list
             return TryAddOrder(dbUid, account, order, component) && TryFulfillOrder(stationData, account, order, component).HasValue;
@@ -586,14 +621,37 @@ namespace Content.Server.Cargo.Systems
         /// </summary>
         private bool FulfillOrder(CargoOrderData order, ProtoId<CargoAccountPrototype> account, EntityCoordinates spawn, string? paperProto)
         {
+            if (!_protoMan.Resolve(order.Product, out var product))
+                return false;
+
             // Create the item itself
-            var item = Spawn(order.ProductId, spawn);
+            var item = Spawn(product.Product, spawn);
+            var itemXForm = Transform(item);
 
             // Ensure the item doesn't start anchored
-            _transformSystem.Unanchor(item, Transform(item));
+            _transformSystem.Unanchor(item, itemXForm);
+
+            // Spawn container and insert the item into it if a container is defined.
+            if (product.Container is { } productContainer)
+            {
+                var containerEntity = Spawn(productContainer.Entity, itemXForm.Coordinates);
+                _transformSystem.SetLocalRotation(containerEntity, itemXForm.LocalRotation);
+
+                if (!_container.TryGetContainer(containerEntity, productContainer.ContainerId, out var container1) ||
+                    !_container.Insert(item, container1, force: true))
+                {
+                    DebugTools.Assert(
+                        $"Failed to insert cargo product into its specified container. This indicates an error in the cargo product definition's YAML as the product should be insertable into its container. {nameof(CargoProductPrototype)}: {(ProtoId<CargoProductPrototype>)order.Product.Id}");
+                    QueueDel(containerEntity);
+                }
+                else
+                {
+                    item = containerEntity;
+                }
+            }
 
             // Create a sheet of paper to write the order details on
-            var printed = EntityManager.SpawnEntity(paperProto, spawn);
+            var printed = Spawn(paperProto, spawn);
             if (TryComp<PaperComponent>(printed, out var paper))
             {
                 // fill in the order data
@@ -605,7 +663,7 @@ namespace Content.Server.Cargo.Systems
                     Loc.GetString(
                         "cargo-console-paper-print-text",
                         ("orderNumber", order.OrderId),
-                        ("itemName", MetaData(item).EntityName),
+                        ("itemName", product.Name),
                         ("orderQuantity", order.OrderQuantity),
                         ("requester", order.Requester),
                         ("reason", string.IsNullOrWhiteSpace(order.Reason) ? Loc.GetString("cargo-console-paper-reason-default") : order.Reason),

@@ -10,13 +10,6 @@
   - CutterMachineCircuitboard
   - BorgChargerCircuitboard
 
-- type: latheRecipePack
-  id: CircuitFloorsStatic
-  recipes:
-  - FloorGreenCircuit
-  - FloorBlueCircuit
-  - FloorRedCircuit
-
 ## Dynamic
 
 - type: latheRecipePack
@@ -30,13 +23,15 @@
   - SignallerAdvanced
   - DeviceQuantumSpinInverter
   - DeviceDesynchronizer
+  - ClothingBackpackHarmpack
 
 - type: latheRecipePack
   id: ScienceClothing
   recipes:
   - ClothingShoesBootsMagSci
   - ClothingShoesBootsMoon
-  - ClothingShoesBootsSpeed
+#  - ClothingShoesBootsSpeed # Harmony change: removed speed boots
+  - ClothingShoesBootsJump
   - ClothingBackpackHolding
   - ClothingBackpackSatchelHolding
   - ClothingBackpackDuffelHolding
@@ -59,16 +54,6 @@
   - PKAUpgradeFireRate
   - WeaponTetherGun
   - WeaponGauntletGorilla
-
-- type: latheRecipePack
-  id: FauxTiles
-  recipes:
-  - FauxTileAstroGrass
-  - FauxTileMowedAstroGrass
-  - FauxTileJungleAstroGrass
-  - FauxTileAstroIce
-  - FauxTileAstroSnow
-  - FauxTileAstroAsteroidSand
 
 # Only contains parts for making basic modular grenades, no actual explosives
 - type: latheRecipePack

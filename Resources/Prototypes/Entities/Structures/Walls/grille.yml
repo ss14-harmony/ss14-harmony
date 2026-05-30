@@ -59,6 +59,8 @@
           shape:
             !type:PhysShapeAabb
             bounds: "-0.5,-0.5,0.5,0.5"
+          mask:
+          - FullTileMask
           layer:
           - GlassLayer
     - type: Destructible
@@ -198,7 +200,7 @@
         mask:
         - FullTileMask
         layer:
-        - WallLayer
+        - GlassLayer
   - type: Construction
     graph: GrilleDiagonal
     node: grilleDiagonal
@@ -236,7 +238,7 @@
         mask:
         - FullTileMask
         layer:
-        - WallLayer
+        - GlassLayer
   - type: Construction
     graph: GrilleDiagonal
     node: clockworkGrilleDiagonal

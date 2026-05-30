@@ -13,7 +13,9 @@
     - BorgModuleScience #until sciborgs are added
 
   defaultModules:
+  - BorgModulePrying
   - BorgModuleTool
+  - BorgModuleInflatable
   - BorgModuleArtifact
   - BorgModuleAnomaly
   radioChannels:
@@ -46,6 +48,7 @@
     - BorgModuleEngineering
 
   defaultModules:
+  - BorgModulePrying
   - BorgModuleTool
   - BorgModuleConstruction
   - BorgModuleRCD
@@ -82,6 +85,7 @@
     - BorgModuleCargo
 
   defaultModules:
+  - BorgModulePrying
   - BorgModuleTool
   - BorgModuleMining
   - BorgModuleTraversal
@@ -90,6 +94,7 @@
   radioChannels:
   - Supply
   - Science
+  - Salvage # Harmony Change - Adds Salvage Radio Channel
 
   # Visual
   inventoryTemplateId: borgTall
@@ -119,7 +124,7 @@
     - BorgModuleJanitor
 
   defaultModules:
-  - BorgModuleTool
+  - BorgModulePrying
   - BorgModuleCleaning
   - BorgModuleCustodial
 
@@ -155,7 +160,7 @@
     - BorgModuleMedical
 
   defaultModules:
-  - BorgModuleTool
+  - BorgModulePrying
   - BorgModuleChemical
   - BorgModuleTopicals
   - BorgModuleRescue
@@ -205,7 +210,7 @@
     - BorgModuleService
 
   defaultModules:
-  - BorgModuleTool
+  - BorgModulePrying
   - BorgModuleMusique
   - BorgModuleService
   - BorgModuleClowning
