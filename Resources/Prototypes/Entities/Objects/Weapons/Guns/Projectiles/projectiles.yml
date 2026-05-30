@@ -63,8 +63,8 @@
       shader: unshaded
   - type: Physics
     bodyType: Dynamic
-    linearDamping: 0
-    angularDamping: 0
+  - type: TileFrictionModifier
+    modifier: 0
   - type: Fixtures
     fixtures:
       projectile:
@@ -1025,8 +1025,8 @@
   - type: Clickable
   - type: Physics
     bodyType: Dynamic
-    linearDamping: 0
-    angularDamping: 0
+  - type: TileFrictionModifier
+    modifier: 0
   - type: TimedDespawn
     lifetime: 10
   - type: Projectile
@@ -1109,8 +1109,8 @@
         - state: hook
     - type: Physics
       bodyType: Dynamic
-      linearDamping: 0
-      angularDamping: 0
+    - type: TileFrictionModifier
+      modifier: 0
     - type: Projectile
       deleteOnCollide: false
       damage:

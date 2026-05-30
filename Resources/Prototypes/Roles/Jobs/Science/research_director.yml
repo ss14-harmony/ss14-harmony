@@ -14,7 +14,7 @@
     time: 8h # Harmony: 10h -> 8h
   # Harmony start
   - !type:OverallPlaytimeRequirement
-    time: 12h
+    time: 24h
   # Harmony end
   weight: 10
   startingGear: ResearchDirectorGear

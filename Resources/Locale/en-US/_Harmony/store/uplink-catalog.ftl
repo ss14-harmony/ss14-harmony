@@ -69,6 +69,9 @@ uplink-traitor-deathrattle-implant-desc = A box containing two syndicate deathra
 uplink-hyperzine-implanter-name = Hyperzine Implanter
 uplink-hyperzine-implanter-desc = A 3-use implant which injects you with 90 seconds worth of hyperzine, a combat stimulant. Has a lengthy cooldown.
 
+uplink-storage-implanter-harm-desc = Hide goodies inside of yourself with new bluespace technology! Donk Co is not responsible for bluespace accidents involving High Risk items.
+
+
 # Wearables
 
 uplink-stealth-jetpack-desc = A black jetpack that doesn't appear on radar. It allows you to fly around in space. Refills not included, use your fuel wisely.

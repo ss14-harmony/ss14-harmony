@@ -1,0 +1,196 @@
+# Lockers for salvage grids such as Ruins and Wrecks or for spawner tables for them
+
+# Armory - These reflect the Harmony Salvager Armory Gun Spawner items
+# Armory Entity Tables
+
+# Weapon Categories
+# There is purposefully no Retro Laser or Pirate Revolver safe tables.
+
+## A Crusher Offhand and a Crusher Mainhand
+- type: entityTable
+  id: GunSafeSalvageTableCrushers
+  table: !type:AllSelector
+    children:
+    - !type:GroupSelector
+        children:
+        - id: WeaponCrusher
+        - id: WeaponCrusherGlaive
+    - id: WeaponCrusherDagger
+
+## PKAs in a Safe
+- type: entityTable
+  id: GunSafeSalvageTablePKA
+  table: !type:GroupSelector
+    children:
+    - !type:AllSelector
+      children:
+      - id: WeaponProtoKineticAccelerator
+        amount: 3
+      - !type:GroupSelector
+        prob: 0.8
+        children:
+        - id: PKAUpgradeDamage
+        - id: PKAUpgradeRange
+        - id: PKAUpgradeFireRate
+        # PKA Damage + Range
+        - !type:AllSelector
+          children:
+          - id: PKAUpgradeDamage
+          - id: PKAUpgradeRange
+        # PKA Damage + Fire Rate
+        - !type:AllSelector
+          children:
+          - id: PKAUpgradeDamage
+          - id: PKAUpgradeFireRate
+        # PKA Fire Rate + Range
+        - !type:AllSelector
+          children:
+          - id: PKAUpgradeFireRate
+          - id: PKAUpgradeRange
+        # All Modkits
+        - !type:AllSelector
+          children:
+          - id: PKAUpgradeDamage
+          - id: PKAUpgradeRange
+          - id: PKAUpgradeFireRate
+    - id: WeaponKineticSidearmLuxury # To be replaced with a unique Kinetic Sidearm
+      weight: 0.01 # weight can be rebalanced when its not the luxury kinetic sidearm
+
+## Flintlock
+- type: entityTable
+  id: GunSafeSalvageTableFlintlock
+  table: !type:AllSelector
+    children:
+    - id: WeaponPistolFlintlockEmpty
+    - id: MagazineBoxMagnum # Likely to be replaced with a smaller ammo box
+      prob: 0.8 # Chance for no Ammo
+
+## Improvised Shotgun
+- type: entityTable
+  id: GunSafeSalvageTableImprovisedShotgun
+  table: !type:AllSelector
+    children:
+    - id: ModularReceiver
+    - id: RifleStock
+    - id: MagazineShotgunBeanbag # Always spawns because weapon not guaranteed
+
+## Double Barrel Shotgun
+- type: entityTable
+  id: GunSafeSalvageTableDoubleBarrelShotgun
+  table: !type:AllSelector
+    children:
+    - id: WeaponShotgunDoubleBarreledRubber
+    - id: MagazineShotgunBeanbag
+      prob: 0.8 # Chance for no Ammo
+
+## Mosin
+- type: entityTable
+  id: GunSafeSalvageTableMosin
+  table: !type:AllSelector
+    children:
+    - id: WeaponSniperMosin
+    - id: SpeedLoaderLightRifle
+      prob: 0.8 # Chance for no Ammo
+
+## Blunderbuss
+- type: entityTable
+  id: GunSafeSalvageTableBlunderbuss
+  table: !type:AllSelector
+    children:
+    - id: WeaponShotgunBlunderbuss
+    - id: MagazineShotgunBeanbag
+      prob: 0.8 # Chance for no Ammo
+
+## RSC
+- type: entityTable
+  id: GunSafeSalvageTableRSC
+  table: !type:AllSelector
+    children:
+    - id: WeaponSniperRSC
+    - id: SpeedLoaderLightRifle
+      prob: 0.8 # Chance for no Ammo
+
+## Laser Carbine - less laser than secs, chance for practice laser
+- type: entityTable
+  id: GunSafeSalvageTableLaserCarbine
+  table: !type:GroupSelector
+    children:
+    - id: WeaponLaserCarbine
+    - id: WeaponLaserCarbinePractice
+
+## Kammerer - less weapons and ammo than secs or the cargo crate. also beanbag ammo.
+- type: entityTable
+  id: GunSafeSalvageTableKammerer
+  table: !type:AllSelector
+    children:
+    - id: WeaponShotgunKammerer
+    - id: MagazineShotgunBeanbag
+      prob: 0.8 # Chance for no Ammo
+
+## Drozd - less weapons and ammo than secs or the cargo crate.
+- type: entityTable
+  id: GunSafeSalvageTableDrozd
+  table: !type:AllSelector
+    children:
+    - id: WeaponSubMachineGunDrozd
+    - id: MagazineBoxPistol # Has more ammo than an SMG magazine, but the Drozd only accepts magazines. Requires you to eject, manually reload, and reinsert a magazine if you want to actually reload the drozd. Doable against Mobs, death sentence in a fight againts players. Hopefully, thats enough to dissuade validhunting...
+      prob: 0.8 # Chance for no Ammo
+
+# Safe Spawn Fill
+- type: entityTable
+  id: GunSafeSalvageTableLoot
+  table: !type:GroupSelector
+    children:
+    - !type:NoneSelector
+      weight: 30
+    # Common
+    - !type:GroupSelector
+      weight: 30
+      children:
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableCrushers
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTablePKA
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableFlintlock
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableImprovisedShotgun
+    # Uncommon
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableDoubleBarrelShotgun
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableMosin
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableBlunderbuss
+    # Rare
+    - !type:GroupSelector
+      weight: 15
+      children:
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableRSC
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableLaserCarbine
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableKammerer
+        weight: 0.1
+      - !type:NestedSelector
+        tableId: GunSafeSalvageTableDrozd
+        weight: 0.1
+
+# Armory Lockers
+# DO NOT MAP THESE, USE THE RANDOM SAFE SPAWNER
+# There is purposefully no Retro Laser or Pirate Revolver safes.
+
+## Salvage-mapped Gun Safe. Sec Locked with less and weaker guns.
+- type: entity
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  id: GunSafeSalvage
+  suffix: Salvage, Filled, Harmony
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: GunSafeSalvageTableLoot

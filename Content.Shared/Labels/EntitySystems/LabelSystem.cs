@@ -149,14 +149,14 @@ public sealed partial class LabelSystem : EntitySystem
         using (args.PushGroup(nameof(PaperLabelComponent)))
         {
             // UID's parent is saved to be used for localisation grammar when the label is from a lanyard, since the text is changed.
-            var user = EntityManager.GetComponent<TransformComponent>(uid).ParentUid;
+            var user = Comp<TransformComponent>(uid).ParentUid;
             if (!args.IsInDetailsRange)
             {
                 args.PushMarkup(Loc.GetString("comp-lanyard-has-lanyard-cant-read", ("user", Identity.Entity(user, EntityManager))));
                 return;
             }
 
-            if (!EntityManager.TryGetComponent(item, out PaperComponent? paper))
+            if (!TryComp(item, out PaperComponent? paper))
                 // Assuming yaml has the correct entity whitelist, this should not happen.
                 return;
 

@@ -18,11 +18,11 @@
     - id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
-    - id: SlimesSpawn
+    - id: SlimesSpawnHorde
     - id: SolarFlare
-    - id: SnakeSpawn
-    - id: SpiderClownSpawn
-    - id: SpiderSpawn
+    - id: SnakeSpawnHorde
+    - id: SpiderClownSpawnHorde
+    - id: SpiderSpawnHorde
     - id: CarpMigration # Harmony Change
     - id: VentClog
 
@@ -248,7 +248,7 @@
       pickPlayer: false
       startingGear: SpaceNinjaGear
       roleLoadout:
-      - RoleSurvivalEVA
+      - RoleSurvivalSpaceNinja
       briefing:
         text: ninja-role-greeting
         color: Green
@@ -327,7 +327,7 @@
   components:
   - type: StationEvent
     weight: 1 # rare
-    duration: 1
+    duration: null
     earliestStart: 30
     reoccurrenceDelay: 60
     minimumPlayers: 30
@@ -451,75 +451,87 @@
     duration: 50 # Delta V Change
   - type: VentClogRule
 
+# Critters
+
 - type: entity
-  id: SlimesSpawn
+  id: SlimesSpawnHorde
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAnnouncement: station-event-vent-creatures-start-horde-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
-    duration: 30 # DeltaV: was 60, used as a delay now
-  - type: VentCrittersRule
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+    duration: 5
+    maxDuration: 20
+  - type: VentHordeRule
+    table: !type:GroupSelector
+      rolls: 4, 8
       children:
       - id: MobAdultSlimesBlueAngry
       - id: MobAdultSlimesGreenAngry
       - id: MobAdultSlimesYellowAngry
 
 - type: entity
-  id: SnakeSpawn
+  id: SnakeSpawnHorde
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAnnouncement: station-event-vent-creatures-start-horde-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
-    duration: 30 # DeltaV: was 60, used as a delay now
-  - type: VentCrittersRule
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+    duration: 5
+    maxDuration: 20
+  - type: VentHordeRule
+    table: !type:GroupSelector
+      rolls: 4, 8
       children:
       - id: MobPurpleSnake
       - id: MobSmallPurpleSnake
       - id: MobCobraSpace
 
 - type: entity
-  id: SpiderSpawn
+  id: SpiderSpawnHorde
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAnnouncement: station-event-vent-creatures-start-horde-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
-    duration: 30 # DeltaV: was 60, used as a delay now
-  - type: VentCrittersRule
-    table: # DeltaV: EntityTable instead of spawn entries
-      id: MobGiantSpiderAngry
+    duration: 5
+    maxDuration: 20
+  - type: VentHordeRule
+    table: !type:GroupSelector
+      rolls: 4, 8
+      children:
+      - id: MobGiantSpiderAngry
 
 - type: entity
-  id: SpiderClownSpawn
+  id: SpiderClownSpawnHorde
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAnnouncement: station-event-vent-creatures-start-horde-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     minimumPlayers: 20
     weight: 1.5
-    duration: 30 # DeltaV: was 60, used as a delay now
-  - type: VentCrittersRule
-    table: # DeltaV: EntityTable instead of spawn entries
-      id: MobClownSpider
+    duration: 5
+    maxDuration: 20
+  - type: VentHordeRule
+    table: !type:GroupSelector
+      rolls: 4, 8
+      children:
+      - id: MobClownSpider
 
 - type: entity
   id: ZombieOutbreak
@@ -547,8 +559,8 @@
         sound: "/Audio/Ambience/Antag/zombie_start.ogg"
       components:
       - type: PendingZombie #less time to prepare than normal
-        minInitialInfectedGrace: 300
-        maxInitialInfectedGrace: 450
+        minInitialInfectedGrace: 600 #Harmony change - 300 -> 600
+        maxInitialInfectedGrace: 900 #Harmony change - 450 -> 900
       - type: ZombifyOnDeath
       - type: IncurableZombie
       - type: InitialInfected

@@ -58,6 +58,7 @@
     JugSulfur: 1
     JugWeldingFuel: 1
     PlasmaChemistryVial: 1
+    JugUniversalBlood: 1 # Harmony Change - Nukie Saline
   contrabandInventory:
     DrinkLithiumFlask: 1
     StrangePill: 3
