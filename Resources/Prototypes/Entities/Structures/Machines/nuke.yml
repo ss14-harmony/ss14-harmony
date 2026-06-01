@@ -117,6 +117,7 @@
       tags:
       - GhostOnlyWarp
   - type: FTLSmashImmune
+  - type: RodIndestructible # Harmony change / Make the main nuclear fission explosive reflect immovable rod impacts.
 
 - type: entity
   parent: NuclearBomb
