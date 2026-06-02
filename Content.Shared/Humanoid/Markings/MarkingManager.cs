@@ -12,6 +12,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Humanoid.Markings;
 
+/// <summary>
+/// Manager responsible for sharing the logic of markings between in-simulation bodies and out-of-simulation profile editing
+/// </summary>
 public sealed partial class MarkingManager
 {
     private static readonly ISawmill Sawmill = Logger.GetSawmill("marking"); // Funky - CyberMed

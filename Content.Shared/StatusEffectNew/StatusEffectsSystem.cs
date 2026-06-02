@@ -20,8 +20,8 @@ public sealed partial class StatusEffectsSystem : EntitySystem
     [Dependency] private EntityWhitelistSystem _whitelist = default!;
     [Dependency] private IPrototypeManager _proto = default!;
 
-    [Dependency] private EntityQuery<StatusEffectContainerComponent> _containerQuery; // Funky - CyberMed
-    [Dependency] private EntityQuery<StatusEffectComponent> _effectQuery; // Funky - CyberMed
+    [Dependency] private EntityQuery<StatusEffectContainerComponent> _containerQuery = default!;
+    [Dependency] private EntityQuery<StatusEffectComponent> _effectQuery = default!;
 
     public static HashSet<string> StatusEffectPrototypes = []; // Funky - CyberMed
     private static readonly object StatusEffectPrototypesLock = new(); // Funky - CyberMed

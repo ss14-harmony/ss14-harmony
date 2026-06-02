@@ -34,8 +34,8 @@ public sealed class MetabolizerSystem : EntitySystem
     [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private INetManager _net = default!; // Funky - CyberMed
 
-    [Dependency] private EntityQuery<OrganComponent> _organQuery;
-    [Dependency] private EntityQuery<SolutionContainerManagerComponent> _solutionQuery;
+    [Dependency] private EntityQuery<OrganComponent> _organQuery = default!;
+    [Dependency] private EntityQuery<SolutionContainerManagerComponent> _solutionQuery = default!;
 
     public override void Initialize()
     {
