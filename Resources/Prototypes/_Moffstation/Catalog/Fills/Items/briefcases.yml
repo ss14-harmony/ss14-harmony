@@ -24,9 +24,14 @@
           range: 2, 3
         children:
         # Weapons
-        - id: EnergyDaggerLoud
-        - id: WeaponPistolViper
-        - id: WeaponRevolverPython
+        # Harmony Change - No Guns but Add Melee
+        # - id: EnergyDaggerLoud
+        # - id: WeaponPistolViper
+        # - id: WeaponRevolverPython
+        - id: ClothingHandsKnuckleDustersSyndicate
+        - id: ThrowingKnife
+          amount: 2
+        # Harmony Change End
         # Grenades
         - id: SmokeGrenade
         - id: EmpGrenade
@@ -37,6 +42,7 @@
         - id: ClothingShoesBootsMagSyndie
         - id: SyndicateIDCardAgent
         - id: ClothingMaskGasSyndicate
+        - id: ClothingShoesChameleonNoSlips
         # Tools
         - id: ChameleonProjector
         - id: CameraBug
@@ -46,6 +52,7 @@
         - id: CyberPen
         - id: EncryptionKeyBinarySyndicate
         # Chemicals
+        - id: Hypopen # Harmony Change - added Hypopen
         - id: Stimpack
         - id: CombatMedipen
         - id: VestineChemistryVial
@@ -55,3 +62,5 @@
         - id: RubberStampSyndicate
         - id: UplinkLighterBox
         - id: BalloonOperative
+        - id: TravelCamera # Harmony Chanage - Adding more fun*
+        - id: SpaceCash5000 # Harmony Change - holla holla get dolla

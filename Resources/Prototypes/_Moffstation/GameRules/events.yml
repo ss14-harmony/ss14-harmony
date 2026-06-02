@@ -7,7 +7,7 @@
     startAnnouncement: station-syndicate-dead-drop-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    earliestStart: 0
+    earliestStart: 20
     duration: 1
     minimumPlayers: 1
     maxOccurrences: 2
