@@ -42,7 +42,7 @@ namespace Content.Server.Medical;
 /// Funkystation: HealthAnalyzerSystem mostly re-written to support surgery requests from the BUI
 /// Large changes to the code, so simply noting it up here as much of this was rewritten
 /// </summary>
-public sealed class HealthAnalyzerSystem : EntitySystem
+public sealed partial class HealthAnalyzerSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private PowerCellSystem _cell = default!;
