@@ -35,14 +35,14 @@ public sealed partial class MetabolizerSystem : EntitySystem
     [Dependency] private INetManager _net = default!; // Funky - CyberMed
 
     [Dependency] private EntityQuery<OrganComponent> _organQuery = default!;
-    [Dependency] private EntityQuery<SolutionContainerManagerComponent> _solutionQuery = default!;
+    [Dependency] private EntityQuery<SolutionManagerComponent> _solutionQuery = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         _organQuery = GetEntityQuery<OrganComponent>();
-        _solutionQuery = GetEntityQuery<SolutionContainerManagerComponent>();
+        _solutionQuery = GetEntityQuery<SolutionManagerComponent>();
 
         SubscribeLocalEvent<MetabolizerComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<MetabolizerComponent, BodyRelayedEvent<ApplyMetabolicMultiplierEvent>>(OnApplyMetabolicMultiplier);
