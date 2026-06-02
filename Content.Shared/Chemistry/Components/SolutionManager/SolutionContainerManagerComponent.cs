@@ -8,7 +8,8 @@ namespace Content.Shared.Chemistry.Components.SolutionManager;
 /// <para>A map of the solution entities contained within this entity.</para>
 /// <para>Every solution entity this maps should have a <see cref="SolutionComponent"/> to track its state and a <see cref="ContainedSolutionComponent"/> to track its container.</para>
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[Obsolete]
+[RegisterComponent]
 [Access(typeof(SharedSolutionContainerSystem))]
 public sealed partial class SolutionContainerManagerComponent : Component
 {
@@ -22,7 +23,7 @@ public sealed partial class SolutionContainerManagerComponent : Component
     /// The names of each solution container attached to this entity.
     /// Actually accessing them must be done via <see cref="ContainerManagerComponent"/>.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField]
     public HashSet<string> Containers = new(DefaultCapacity);
 
     /// <summary>
@@ -31,6 +32,6 @@ public sealed partial class SolutionContainerManagerComponent : Component
     /// <remarks>
     /// Should be null after mapinit.
     /// </remarks>
-    [DataField, AutoNetworkedField]
+    [DataField]
     public Dictionary<string, Solution>? Solutions = null;
 }
