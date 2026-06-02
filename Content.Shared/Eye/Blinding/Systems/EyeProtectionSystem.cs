@@ -1,4 +1,4 @@
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Inventory;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Tools.Components;
