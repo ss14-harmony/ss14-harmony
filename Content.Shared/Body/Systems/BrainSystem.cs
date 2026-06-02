@@ -10,7 +10,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Body.Systems;
 
-public sealed class BrainSystem : EntitySystem
+public sealed partial class BrainSystem : EntitySystem
 {
     [Dependency] private SharedMindSystem _mindSystem = default!;
     [Dependency] private IGameTiming _timing = default!;

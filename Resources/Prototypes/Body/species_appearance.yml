@@ -35,8 +35,8 @@
     # More equipment
     - map: [ "gloves" ]
     - map: [ "shoes" ]
-    - map: [ "ears" ]
-    - map: [ "eyes" ]
+    # - map: [ "ears" ] # Harmony Change: Moves ears over facialhair and headside
+    # - map: [ "eyes" ] # Harmony Change: Moves eyes over facialhair and headside
     # - map: [ "belt" ] # Harmony Change: Moves Belt back over outerclothing
     - map: [ "id" ]
     - map: [ "outerClothing" ]
@@ -55,6 +55,8 @@
     - map: [ "enum.HumanoidVisualLayers.TailOverlay" ]
 
     # Stuff that goes in front of stuff that goes in front of equipment
+    - map: [ "ears" ] # Harmony Change: Moves ears over facialhair and headside
+    - map: [ "eyes" ] # Harmony Change: Moves eyes over facialhair and headside
     - map: [ "mask" ]
     - map: [ "head" ]
     - map: [ "pocket1" ]

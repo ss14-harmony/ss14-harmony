@@ -50,7 +50,6 @@
         Asphyxiation: -1.0
     maxSaturation: 15
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Slime
   - type: Bloodstream
     bloodReferenceSolution:
@@ -172,7 +171,6 @@
       # raffle:
       #   settings: short
       # harmony end
-    - type: ForceAttack
 
 - type: entity
   name: green slime
@@ -215,7 +213,6 @@
       # raffle:
       #   settings: short
       # harmony end
-    - type: ForceAttack
 
 - type: entity
   name: yellow slime
@@ -257,4 +254,3 @@
       # raffle:
       #   settings: short
       # harmony end
-    - type: ForceAttack

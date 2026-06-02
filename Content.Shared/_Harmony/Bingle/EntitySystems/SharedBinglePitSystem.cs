@@ -25,18 +25,18 @@ using Dependency = Robust.Shared.IoC.DependencyAttribute;
 
 namespace Content.Shared._Harmony.Bingle.EntitySystems;
 
-public abstract class SharedBinglePitSystem : EntitySystem
+public abstract partial class SharedBinglePitSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly ITileDefinitionManager _tileDefinitionManager = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
-    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly PullingSystem _pullingSystem = default!;
-    [Dependency] private readonly SharedStunSystem _stunSystem = default!;
-    [Dependency] private readonly StepTriggerSystem _stepTriggerSystem = default!;
-    [Dependency] private readonly TileSystem _tileSystem = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private ITileDefinitionManager _tileDefinitionManager = default!;
+    [Dependency] private SharedAppearanceSystem _appearanceSystem = default!;
+    [Dependency] private SharedContainerSystem _containerSystem = default!;
+    [Dependency] private SharedMapSystem _mapSystem = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private PullingSystem _pullingSystem = default!;
+    [Dependency] private SharedStunSystem _stunSystem = default!;
+    [Dependency] private StepTriggerSystem _stepTriggerSystem = default!;
+    [Dependency] private TileSystem _tileSystem = default!;
 
     public override void Initialize()
     {

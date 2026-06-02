@@ -12,7 +12,7 @@ namespace Content.Shared.Traits.Assorted;
 /// Handles permanent blindness examine text, flash mitigation, cloning propagation, and cleanup when removed.
 /// Mechanical vision (<see cref="BlindableComponent"/>) uses organ trait blindness and <see cref="BodySystem.RecalculateBlindnessFromOrgans"/>.
 /// </summary>
-public sealed class PermanentBlindnessSystem : EntitySystem
+public sealed partial class PermanentBlindnessSystem : EntitySystem
 {
     [Dependency] private BlindableSystem _blinding = default!;
     [Dependency] private BodySystem _body = default!; // Funky - CyberMed

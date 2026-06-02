@@ -4,10 +4,12 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared.Chemistry.Components.SolutionManager;
 
-/// <summary>
-/// <para>A map of the solution entities contained within this entity.</para>
-/// <para>Every solution entity this maps should have a <see cref="SolutionComponent"/> to track its state and a <see cref="ContainedSolutionComponent"/> to track its container.</para>
-/// </summary>
+/// <remarks>
+/// Exists for simple backwards compatibility.
+/// On <see cref="ComponentInit"/> this component will transfer all its data where it can to a <see cref="SolutionManagerComponent"/>
+/// Then it will delete itself.
+/// This component will be deleted in the indeterminate future.
+/// </remarks>
 [Obsolete]
 [RegisterComponent]
 [Access(typeof(SharedSolutionContainerSystem))]
