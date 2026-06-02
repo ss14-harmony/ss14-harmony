@@ -11,10 +11,10 @@ using Robust.Shared.Map.Components;
 
 namespace Content.Server._DV.StationEvents.Events;
 
-public sealed class LoadFarGridRule : StationEventSystem<LoadFarGridRuleComponent>
+public sealed partial class LoadFarGridRule : StationEventSystem<LoadFarGridRuleComponent>
 {
-    [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private MapLoaderSystem _mapLoader = default!;
+    [Dependency] private TransformSystem _transform = default!;
 
     protected override void Added(EntityUid uid, LoadFarGridRuleComponent comp, GameRuleComponent rule, GameRuleAddedEvent args)
     {

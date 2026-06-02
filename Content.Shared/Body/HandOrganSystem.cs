@@ -3,7 +3,7 @@ using Content.Shared.Hands.EntitySystems;
 
 namespace Content.Shared.Body;
 
-public sealed class HandOrganSystem : EntitySystem
+public sealed partial class HandOrganSystem : EntitySystem
 {
     [Dependency] private AppendageWearSlotSystem _appendageWearSlots = default!; // Funky - CyberMed
     [Dependency] private SharedHandsSystem _hands = default!;

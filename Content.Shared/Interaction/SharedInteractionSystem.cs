@@ -87,7 +87,6 @@ namespace Content.Shared.Interaction
         [Dependency] private EntityQuery<UseDelayComponent> _delayQuery = default!;
         [Dependency] private EntityQuery<ActivatableUIComponent> _uiQuery = default!;
 
-
         /// <summary>
         /// The collision mask used by default for
         /// <see cref="InRangeUnobstructed(MapCoordinates,MapCoordinates,float,CollisionGroup,Ignored?,bool)" />
