@@ -5,8 +5,8 @@ namespace Content.Shared.Body;
 
 public sealed class HandOrganSystem : EntitySystem
 {
-    [Dependency] private readonly AppendageWearSlotSystem _appendageWearSlots = default!; // Funky - CyberMed
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private AppendageWearSlotSystem _appendageWearSlots = default!; // Funky - CyberMed
+    [Dependency] private SharedHandsSystem _hands = default!;
 
     public override void Initialize()
     {

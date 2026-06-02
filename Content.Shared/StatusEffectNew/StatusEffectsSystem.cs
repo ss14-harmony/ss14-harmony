@@ -14,14 +14,14 @@ namespace Content.Shared.StatusEffectNew;
 /// </summary>
 public sealed partial class StatusEffectsSystem : EntitySystem
 {
-    [Dependency] private readonly IComponentFactory _factory = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private IComponentFactory _factory = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
 
-    private EntityQuery<StatusEffectContainerComponent> _containerQuery; // Funky - CyberMed
-    private EntityQuery<StatusEffectComponent> _effectQuery; // Funky - CyberMed
+    [Dependency] private EntityQuery<StatusEffectContainerComponent> _containerQuery; // Funky - CyberMed
+    [Dependency] private EntityQuery<StatusEffectComponent> _effectQuery; // Funky - CyberMed
 
     public static HashSet<string> StatusEffectPrototypes = []; // Funky - CyberMed
     private static readonly object StatusEffectPrototypesLock = new(); // Funky - CyberMed

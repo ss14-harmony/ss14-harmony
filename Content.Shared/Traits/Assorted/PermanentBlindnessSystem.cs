@@ -14,8 +14,8 @@ namespace Content.Shared.Traits.Assorted;
 /// </summary>
 public sealed class PermanentBlindnessSystem : EntitySystem
 {
-    [Dependency] private readonly BlindableSystem _blinding = default!;
-    [Dependency] private readonly BodySystem _body = default!;
+    [Dependency] private BlindableSystem _blinding = default!;
+    [Dependency] private BodySystem _body = default!; // Funky - CyberMed
 
     /// <inheritdoc/>
     public override void Initialize()

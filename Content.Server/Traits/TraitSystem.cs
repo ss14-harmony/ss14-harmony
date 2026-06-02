@@ -13,11 +13,11 @@ namespace Content.Server.Traits;
 
 public sealed class TraitSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly SharedHandsSystem _sharedHandsSystem = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly BodySystem _body = default!; // Funky - CyberMed
-    [Dependency] private readonly LimbDetachmentEffectsSystem _limbDetachmentEffects = default!; // Funky - CyberMed
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private SharedHandsSystem _sharedHandsSystem = default!;
+    [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private BodySystem _body = default!; // Funky - CyberMed
+    [Dependency] private LimbDetachmentEffectsSystem _limbDetachmentEffects = default!; // Funky - CyberMed
 
     public override void Initialize()
     {

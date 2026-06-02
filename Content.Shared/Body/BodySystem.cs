@@ -12,9 +12,9 @@ public sealed partial class BodySystem : EntitySystem
 {
     [Dependency] private readonly SharedContainerSystem _container = default!;
 
-    private EntityQuery<BodyComponent> _bodyQuery; // Funky - CyberMed
-    private EntityQuery<OrganComponent> _organQuery; // Funky - CyberMed
-    private EntityQuery<BodyPartComponent> _bodyPartQuery; // Funky - CyberMed
+    private EntityQuery<BodyComponent> _bodyQuery = default!; // Funky - CyberMed
+    private EntityQuery<OrganComponent> _organQuery = default!; // Funky - CyberMed
+    private EntityQuery<BodyPartComponent> _bodyPartQuery = default!; // Funky - CyberMed
 
     public override void Initialize()
     {
