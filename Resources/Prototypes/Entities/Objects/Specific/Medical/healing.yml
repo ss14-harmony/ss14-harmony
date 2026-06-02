@@ -501,13 +501,11 @@
     state: pill19
   - type: Label
     currentLabel: immunosuppressant 10u
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Immunosuppressant
-          Quantity: 10
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Immunosuppressant
+        Quantity: 10
 
 - type: entity
   name: pill
