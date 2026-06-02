@@ -113242,7 +113242,7 @@ entities:
     - type: Transform
       pos: -51.5,-4.5
       parent: 60
-- proto: MagazineLightRifle
+- proto: MagazineRifle # Harmony Change - replaces MagazineLightRifle with MagazineRifle
   entities:
   - uid: 1138
     components:
@@ -156767,7 +156767,7 @@ entities:
     - type: DeviceList
       devices:
       - 1506
-- proto: WeaponRifleAk
+- proto: WeaponRifleLecter # Harmony change - replaced WeaponRifleAk for WeaponRifleLecter
   entities:
   - uid: 22
     components:

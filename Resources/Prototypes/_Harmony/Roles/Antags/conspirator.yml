@@ -8,3 +8,14 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 3600 # 1h
+
+- type: antagSpecifier
+  parent: RestrictedAntag
+  id: Conspirator
+  prefRoles:
+  - Conspirator
+  blacklist:
+    components:
+    - AntagImmune
+  mindRoles:
+  - MindRoleConspirator

@@ -269,24 +269,26 @@
       tags:
       - NukeOpsUplink
 
-- type: listing
-  id: UplinkEstocBundle
-  name: uplink-estoc-bundle-name
-  description: uplink-estoc-bundle-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Rifles/estoc.rsi, state: icon }
-  productEntity: ClothingBackpackDuffelSyndicateFilledRifle
-  discountCategory: veryRareDiscounts
-  discountDownTo:
-    Telecrystal: 11
-  cost:
-    Telecrystal: 18
-  categories:
-  - UplinkWeaponry
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+# Harmony Change - Remove DMR Bundle
+# - type: listing
+#   id: UplinkEstocBundle
+#   name: uplink-estoc-bundle-name
+#   description: uplink-estoc-bundle-desc
+#   icon: { sprite: /Textures/Objects/Weapons/Guns/Rifles/estoc.rsi, state: icon }
+#   productEntity: ClothingBackpackDuffelSyndicateFilledRifle
+#   discountCategory: veryRareDiscounts
+#   discountDownTo:
+#     Telecrystal: 11
+#   cost:
+#     Telecrystal: 18
+#   categories:
+#   - UplinkWeaponry
+#   conditions:
+#   - !type:StoreWhitelistCondition
+#     whitelist:
+#       tags:
+#       - NukeOpsUplink
+# Harmony Change End
 
 - type: listing
   id: UplinkGrenadeLauncher
@@ -1418,14 +1420,14 @@
 - type: listing
   id: UplinkStorageImplanter
   name: uplink-storage-implanter-name
-  description: uplink-storage-implanter-desc
+  description: uplink-storage-implanter-harm-desc # Harmony Change - New Descrition
   icon: { sprite: /Textures/Clothing/Back/Backpacks/backpack.rsi, state: icon }
   productEntity: StorageImplanter
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 2 # Harmony - was 4
   cost:
-    Telecrystal: 8
+    Telecrystal: 4 # Harmony - was 8
   categories:
     - UplinkImplants
   conditions:
