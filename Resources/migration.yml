@@ -857,3 +857,12 @@ LeftFootHuman: OrganHumanFootLeft
 TorsoHuman: OrganHumanTorso
 LeftHandHuman: OrganHumanHandLeft
 RightHandHuman: OrganHumanHandRight
+
+# 2026-03-28
+# The great solutions YAML nuke
+FoodMeatSnail: MobSnail
+
+# 2026-04-25
+CratePartsT3: null
+CratePartsT3T4: null
+CratePartsT4: null

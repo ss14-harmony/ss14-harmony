@@ -6,9 +6,8 @@
   components:
   - type: Label
     currentLabel: reagent-name-universal-blood
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: UniversalBlood
-          Quantity: 200
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: UniversalBlood
+        Quantity: 200
