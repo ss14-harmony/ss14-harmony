@@ -11,12 +11,12 @@ namespace Content.Shared._Harmony.Clothing.Gloves.Systems;
 /// Handles the activation and deactivation of mantis gloves,
 /// including their visual state and metadata changes.
 /// </summary>
-public abstract class SharedMantisGlovesSystem : EntitySystem
+public abstract partial class SharedMantisGlovesSystem : EntitySystem
 {
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly ClothingSystem _clothing = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private MetaDataSystem _metaData = default!;
+    [Dependency] private ClothingSystem _clothing = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
 
     public override void Initialize()
     {

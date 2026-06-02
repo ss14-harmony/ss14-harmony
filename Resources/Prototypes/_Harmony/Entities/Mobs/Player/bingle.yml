@@ -140,8 +140,9 @@
         Blunt: 14
         Structural: 28
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: BingleUpgraded
+  - type: Injurable
+    damageContainer: Biological
 
 - type: entity
   parent: MobBingleUpgraded

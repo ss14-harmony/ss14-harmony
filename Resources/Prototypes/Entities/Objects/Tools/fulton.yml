@@ -77,6 +77,7 @@
     state: extraction_pack
  #Start of Harmony Change - Removes Destructable status of Fultons.
 #  - type: Damageable
+#  - type: Injurable
 #    damageContainer: Inorganic
 #  - type: Destructible
 #    thresholds:
