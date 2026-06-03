@@ -29,7 +29,7 @@ namespace Content.Server.Medical.Integrity;
 /// </summary>
 public readonly record struct UnsanitaryPenaltyBreakdown(int Liquids, int NonSterileSurface, int RustyWalls, int NotOnSurgeryBed, int UnmaskedNearby, int Total);
 
-public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
+public sealed partial class UnsanitarySurgeryCalculationSystem : EntitySystem
 {
     private const float VoidPressureThreshold = 5000f; // 5 kPa - no bacteria in void
     private const int FloodFillMaxDistance = 3;
@@ -48,16 +48,16 @@ public sealed class UnsanitarySurgeryCalculationSystem : EntitySystem
         "StasisBed",
     };
 
-    [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
-    [Dependency] private readonly IdentitySystem _identity = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private AtmosphereSystem _atmosphere = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private IMapManager _mapManager = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedMapSystem _map = default!;
+    [Dependency] private TagSystem _tag = default!;
+    [Dependency] private TurfSystem _turf = default!;
+    [Dependency] private IdentitySystem _identity = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
 
     private static readonly AtmosDirection[] CardinalDirections =
     [

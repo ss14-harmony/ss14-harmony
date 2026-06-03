@@ -8,9 +8,9 @@ namespace Content.Server.Body.Systems;
 /// Server-only: inventory template swaps can add or remove glove/shoe slots after polymorph etc.
 /// Handled on the server only so we do not duplicate the client's <see cref="InventoryTemplateUpdated"/> subscription.
 /// </summary>
-public sealed class AppendageWearInventoryTemplateSystem : EntitySystem
+public sealed partial class AppendageWearInventoryTemplateSystem : EntitySystem
 {
-    [Dependency] private readonly AppendageWearSlotSystem _appendageWear = default!;
+    [Dependency] private AppendageWearSlotSystem _appendageWear = default!;
 
     public override void Initialize()
     {

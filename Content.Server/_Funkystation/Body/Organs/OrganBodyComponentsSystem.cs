@@ -9,10 +9,10 @@ namespace Content.Server._Funkystation.Body.Organs;
 /// Applies YAML-listed components from <see cref="OrganBodyComponentsComponent"/> onto the host body
 /// when the organ is inserted and removes them when it leaves (server authoritative).
 /// </summary>
-public sealed class OrganBodyComponentsSystem : EntitySystem
+public sealed partial class OrganBodyComponentsSystem : EntitySystem
 {
-    [Dependency] private readonly IComponentFactory _componentFactory = default!;
-    [Dependency] private readonly ISerializationManager _serializationManager = default!;
+    [Dependency] private IComponentFactory _componentFactory = default!;
+    [Dependency] private ISerializationManager _serializationManager = default!;
 
     public override void Initialize()
     {

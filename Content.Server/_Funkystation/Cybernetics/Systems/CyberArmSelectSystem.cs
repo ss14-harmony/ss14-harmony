@@ -19,15 +19,15 @@ using Robust.Server.GameObjects;
 
 namespace Content.Server.Cybernetics.Systems;
 
-public sealed class CyberArmSelectSystem : EntitySystem
+public sealed partial class CyberArmSelectSystem : EntitySystem
 {
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly SharedCyberArmStorageSystem _cyberArmStorage = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedVirtualItemSystem _virtualItem = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private SharedCyberArmStorageSystem _cyberArmStorage = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedVirtualItemSystem _virtualItem = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
 
     public override void Initialize()
     {

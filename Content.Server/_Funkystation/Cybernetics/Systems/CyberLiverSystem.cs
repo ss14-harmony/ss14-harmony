@@ -12,10 +12,10 @@ using Content.Shared.FixedPoint;
 
 namespace Content.Server.Cybernetics.Systems;
 
-public sealed class CyberLiverSystem : EntitySystem
+public sealed partial class CyberLiverSystem : EntitySystem
 {
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
 
     private static readonly ProtoId<OrganCategoryPrototype> Liver = "Liver";
     private static readonly ProtoId<DamageTypePrototype> Poison = "Poison";

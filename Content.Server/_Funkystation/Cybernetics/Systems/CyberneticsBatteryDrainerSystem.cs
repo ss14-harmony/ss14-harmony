@@ -19,7 +19,7 @@ namespace Content.Server.Cybernetics.Systems;
 /// <summary>
 /// Allows users with cyber limbs to recharge batteries from APCs/substations/SMESes via empty-hand interaction.
 /// </summary>
-public sealed class CyberneticsBatteryDrainerSystem : EntitySystem
+public sealed partial class CyberneticsBatteryDrainerSystem : EntitySystem
 {
     private const float DrainTime = 1f;
     private const float DrainEfficiency = 0.0005f;
@@ -30,15 +30,15 @@ public sealed class CyberneticsBatteryDrainerSystem : EntitySystem
     /// </summary>
     private const float RechargeThreshold = 0.95f;
 
-    [Dependency] private readonly SharedBatterySystem _battery = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
-    [Dependency] private readonly CyberLimbModuleSystem _moduleSystem = default!;
-    [Dependency] private readonly CyberLimbStatsSystem _cyberLimbStats = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private SharedBatterySystem _battery = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedCombatModeSystem _combatMode = default!;
+    [Dependency] private CyberLimbModuleSystem _moduleSystem = default!;
+    [Dependency] private CyberLimbStatsSystem _cyberLimbStats = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {

@@ -13,12 +13,12 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.Medical.LimbRegeneration;
 
-public sealed class LimbRegenerationSystem : EntitySystem
+public sealed partial class LimbRegenerationSystem : EntitySystem
 {
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _prototypes = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IPrototypeManager _prototypes = default!;
 
     private static readonly ProtoId<SpeciesPrototype> SlimePerson = "SlimePerson";
 

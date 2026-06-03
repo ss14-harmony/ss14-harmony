@@ -16,9 +16,9 @@ namespace Content.Client.Cybernetics;
 /// from items in cyber arm storage to the player's hand so in-hand sprites refresh
 /// when the stored item's visual state changes (e.g. toggling a lighter or energy sword).
 /// </summary>
-public sealed class CyberArmVirtualItemVisualsSystem : EntitySystem
+public sealed partial class CyberArmVirtualItemVisualsSystem : EntitySystem
 {
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
 
     public override void Initialize()
     {
