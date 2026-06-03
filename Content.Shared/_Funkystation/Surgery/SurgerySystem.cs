@@ -34,7 +34,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Medical.Surgery;
 
-public sealed class SurgerySystem : EntitySystem
+public sealed partial class SurgerySystem : EntitySystem
 {
     private static readonly string[] DetachLimbCategories = ["ArmLeft", "ArmRight", "LegLeft", "LegRight"];
 

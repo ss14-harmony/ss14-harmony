@@ -20,7 +20,7 @@ using Robust.Shared.Timing;
 namespace Content.Shared.Cybernetics.Systems;
 
 [UsedImplicitly]
-public sealed class CyberneticsMaintenanceSystem : EntitySystem
+public sealed partial class CyberneticsMaintenanceSystem : EntitySystem
 {
     [Dependency] private BodySystem _body = default!;
     [Dependency] private IGameTiming _timing = default!;

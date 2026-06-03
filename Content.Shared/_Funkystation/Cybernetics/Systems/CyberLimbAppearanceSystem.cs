@@ -10,7 +10,7 @@ namespace Content.Shared.Cybernetics.Systems;
 /// Applies cyber limb damage overlay state (BloodDisabled) when cyber limbs are attached.
 /// Limb sprite visuals come from VisualOrganComponent on the organ; VisualBodySystem applies them.
 /// </summary>
-public sealed class CyberLimbAppearanceSystem : EntitySystem
+public sealed partial class CyberLimbAppearanceSystem : EntitySystem
 {
     private static readonly IReadOnlyDictionary<string, HumanoidVisualLayers[]> CategoryToLayers = new Dictionary<string, HumanoidVisualLayers[]>
     {

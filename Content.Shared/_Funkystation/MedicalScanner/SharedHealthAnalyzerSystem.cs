@@ -98,7 +98,7 @@ internal static partial class HealthAnalyzerToolDisplay
 /// <summary>
 /// Handles surgery request BUI messages. Client: prediction. Server: HealthAnalyzerSystem handles.
 /// </summary>
-public sealed class SharedHealthAnalyzerSystem : EntitySystem
+public sealed partial class SharedHealthAnalyzerSystem : EntitySystem
 {
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private INetManager _net = default!;

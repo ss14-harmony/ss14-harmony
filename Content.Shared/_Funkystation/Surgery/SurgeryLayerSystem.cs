@@ -13,7 +13,7 @@ namespace Content.Shared.Medical.Surgery;
 /// Surgery layer state is initialized by BodySystem.OnBodyPartInit.
 /// Provides config-driven layer state and step validation.
 /// </summary>
-public sealed class SurgeryLayerSystem : EntitySystem
+public sealed partial class SurgeryLayerSystem : EntitySystem
 {
     [Dependency] private IPrototypeManager _prototypes = default!;
 

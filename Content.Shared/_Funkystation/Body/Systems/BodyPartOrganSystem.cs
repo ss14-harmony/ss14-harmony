@@ -5,7 +5,7 @@ using Robust.Shared.Log;
 
 namespace Content.Shared.Body;
 
-public sealed class BodyPartOrganSystem : EntitySystem
+public sealed partial class BodyPartOrganSystem : EntitySystem
 {
     [Dependency] private SharedContainerSystem _container = default!;
 

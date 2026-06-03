@@ -6,7 +6,7 @@ namespace Content.Shared.Cybernetics.Systems;
 /// <summary>
 /// Blocks wielding two-handed items (e.g. guns) when they are in cyber arm storage.
 /// </summary>
-public sealed class CyberArmWieldingBlockerSystem : EntitySystem
+public sealed partial class CyberArmWieldingBlockerSystem : EntitySystem
 {
     [Dependency] private SharedCyberArmStorageSystem _cyberArmStorage = default!;
 

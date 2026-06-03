@@ -11,7 +11,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Cybernetics.Systems;
 
-public sealed class CyberLimbInspectionSystem : EntitySystem
+public sealed partial class CyberLimbInspectionSystem : EntitySystem
 {
     [Dependency] private BodySystem _body = default!;
     [Dependency] private CyberLimbModuleSystem _moduleSystem = default!;

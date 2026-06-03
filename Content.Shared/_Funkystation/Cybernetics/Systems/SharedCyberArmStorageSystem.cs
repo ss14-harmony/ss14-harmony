@@ -11,9 +11,9 @@ namespace Content.Shared.Cybernetics.Systems;
 /// <summary>
 /// Shared helpers for cyber arm storage (items in cyber limb arms).
 /// </summary>
-public sealed class SharedCyberArmStorageSystem : EntitySystem
+public sealed partial class SharedCyberArmStorageSystem : EntitySystem
 {
-    [Dependency] private readonly BodySystem _body = default!;
+    [Dependency] private BodySystem _body = default!;
 
     private static readonly ProtoId<OrganCategoryPrototype> ArmLeft = "ArmLeft";
     private static readonly ProtoId<OrganCategoryPrototype> ArmRight = "ArmRight";

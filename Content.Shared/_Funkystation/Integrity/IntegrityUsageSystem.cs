@@ -7,7 +7,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Medical.Integrity;
 
-public sealed class IntegrityUsageSystem : EntitySystem
+public sealed partial class IntegrityUsageSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private OrganXenograftSystem _organXenograft = default!;

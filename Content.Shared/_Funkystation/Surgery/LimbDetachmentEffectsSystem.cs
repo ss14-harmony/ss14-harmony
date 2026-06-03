@@ -18,7 +18,7 @@ namespace Content.Shared.Medical.Surgery;
 /// Arms: hand removal is handled by HandOrganSystem via OrganGotRemovedEvent propagation.
 /// Legs: one leg = slow, both legs = crawling.
 /// </summary>
-public sealed class LimbDetachmentEffectsSystem : EntitySystem
+public sealed partial class LimbDetachmentEffectsSystem : EntitySystem
 {
     private static readonly string[] LimbCategories = ["ArmLeft", "ArmRight", "LegLeft", "LegRight"];
     private static readonly string[] HandCategories = ["HandLeft", "HandRight"];

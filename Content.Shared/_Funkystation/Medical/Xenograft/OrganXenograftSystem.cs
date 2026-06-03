@@ -16,7 +16,7 @@ namespace Content.Shared.Medical.Xenograft;
 /// <summary>
 /// Applies xenograft metabolizer retagging, effectiveness scaling, and integrity penalties when organs move between bodies.
 /// </summary>
-public sealed class OrganXenograftSystem : EntitySystem
+public sealed partial class OrganXenograftSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
 

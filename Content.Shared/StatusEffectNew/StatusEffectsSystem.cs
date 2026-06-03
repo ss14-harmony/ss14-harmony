@@ -41,9 +41,6 @@ public sealed partial class StatusEffectsSystem : EntitySystem
 
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
 
-        _containerQuery = GetEntityQuery<StatusEffectContainerComponent>(); // Funky - CyberMed
-        _effectQuery = GetEntityQuery<StatusEffectComponent>(); // Funky - CyberMed
-
         ReloadStatusEffectsCache();
     }
 

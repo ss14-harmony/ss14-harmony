@@ -22,7 +22,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Cybernetics.Systems;
 
-public sealed class CyberLimbStatsSystem : EntitySystem
+public sealed partial class CyberLimbStatsSystem : EntitySystem
 {
     [Dependency] private BodySystem _body = default!;
     [Dependency] private CyberLimbModuleSystem _moduleSystem = default!;

@@ -7,7 +7,7 @@ using Content.Shared.Medical.Integrity.Events;
 
 namespace Content.Shared.Medical.Integrity;
 
-public sealed class IntegrityPenaltyAggregatorSystem : EntitySystem
+public sealed partial class IntegrityPenaltyAggregatorSystem : EntitySystem
 {
     [Dependency] private BodySystem _body = default!;
 

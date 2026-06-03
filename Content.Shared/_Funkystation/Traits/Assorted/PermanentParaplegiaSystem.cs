@@ -10,7 +10,7 @@ namespace Content.Shared.Traits.Assorted;
 /// Mob-level paraplegia trait marker for examine and cloning; mechanical state uses foot organs and
 /// <see cref="LimbDetachmentEffectsSystem"/>.
 /// </summary>
-public sealed class PermanentParaplegiaSystem : EntitySystem
+public sealed partial class PermanentParaplegiaSystem : EntitySystem
 {
     [Dependency] private BodySystem _body = default!;
     [Dependency] private LimbDetachmentEffectsSystem _limbs = default!;

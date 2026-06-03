@@ -13,7 +13,7 @@ namespace Content.Shared.Body.Systems;
 /// <summary>
 /// Drops gloves or shoes when the body has no eligible hand or foot organs, and blocks equipping into those slots.
 /// </summary>
-public sealed class AppendageWearSlotSystem : EntitySystem
+public sealed partial class AppendageWearSlotSystem : EntitySystem
 {
     [Dependency] private InventorySystem _inventory = default!;
     [Dependency] private BodySystem _body = default!;

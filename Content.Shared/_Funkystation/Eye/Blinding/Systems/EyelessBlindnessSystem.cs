@@ -6,7 +6,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Eye.Blinding.Systems;
 
-public sealed class EyelessBlindnessSystem : EntitySystem
+public sealed partial class EyelessBlindnessSystem : EntitySystem
 {
     private static readonly ProtoId<OrganCategoryPrototype> EyesCategory = "Eyes";
     [Dependency] private BlindableSystem _blindable = default!;

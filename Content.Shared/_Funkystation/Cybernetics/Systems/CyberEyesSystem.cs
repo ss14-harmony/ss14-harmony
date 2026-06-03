@@ -14,7 +14,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Cybernetics.Systems;
 
-public sealed class CyberEyesSystem : EntitySystem
+public sealed partial class CyberEyesSystem : EntitySystem
 {
     [Dependency] private BodySystem _body = default!;
 

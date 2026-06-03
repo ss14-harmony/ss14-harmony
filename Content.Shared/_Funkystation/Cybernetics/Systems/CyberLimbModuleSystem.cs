@@ -15,7 +15,7 @@ using Robust.Shared.Containers;
 
 namespace Content.Shared.Cybernetics.Systems;
 
-public sealed class CyberLimbModuleSystem : EntitySystem
+public sealed partial class CyberLimbModuleSystem : EntitySystem
 {
     [Dependency] private BodySystem _body = default!;
     [Dependency] private SharedContainerSystem _container = default!;

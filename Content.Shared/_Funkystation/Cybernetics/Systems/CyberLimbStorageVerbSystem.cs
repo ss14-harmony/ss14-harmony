@@ -14,7 +14,7 @@ namespace Content.Shared.Cybernetics.Systems;
 /// <summary>
 /// Adds "Open [limb name]" verbs when right-clicking a body with cyber limbs, when the maintenance panel is open and bolts are tight.
 /// </summary>
-public sealed class CyberLimbStorageVerbSystem : EntitySystem
+public sealed partial class CyberLimbStorageVerbSystem : EntitySystem
 {
     [Dependency] private BodySystem _body = default!;
     [Dependency] private SharedContainerSystem _container = default!;

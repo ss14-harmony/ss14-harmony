@@ -14,7 +14,7 @@ namespace Content.Shared.Cybernetics.Systems;
 /// <summary>
 /// Scales metabolism entity effects based on cyber organ tier (heart, stomach, liver, lungs).
 /// </summary>
-public sealed class CyberOrganMetabolismModifierSystem : EntitySystem
+public sealed partial class CyberOrganMetabolismModifierSystem : EntitySystem
 {
     [Dependency] private OrganXenograftSystem _organXenograft = default!;
 

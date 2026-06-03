@@ -10,7 +10,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Medical.Integrity;
 
-public sealed class BioRejectionSystem : EntitySystem
+public sealed partial class BioRejectionSystem : EntitySystem
 {
     [Dependency] private BodySystem _body = default!;
     [Dependency] private DamageableSystem _damageable = default!;

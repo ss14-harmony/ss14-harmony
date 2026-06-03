@@ -41,9 +41,6 @@ public sealed partial class MetabolizerSystem : EntitySystem
     {
         base.Initialize();
 
-        _organQuery = GetEntityQuery<OrganComponent>();
-        _solutionQuery = GetEntityQuery<SolutionManagerComponent>();
-
         SubscribeLocalEvent<MetabolizerComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<MetabolizerComponent, BodyRelayedEvent<ApplyMetabolicMultiplierEvent>>(OnApplyMetabolicMultiplier);
     }

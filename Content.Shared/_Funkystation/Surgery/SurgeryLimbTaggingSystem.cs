@@ -15,7 +15,7 @@ namespace Content.Shared.Medical.Surgery;
 /// Tags body parts with species and organ category when inserted into body_organs.
 /// Covers both initial spawn (EntityTableContainerFill) and mid-round limb attachment.
 /// </summary>
-public sealed class SurgeryLimbTaggingSystem : EntitySystem
+public sealed partial class SurgeryLimbTaggingSystem : EntitySystem
 {
     [Dependency] private SurgeryLayerSystem _surgeryLayer = default!;
 
