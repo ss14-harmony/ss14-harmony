@@ -13,9 +13,9 @@ namespace Content.Shared.Cybernetics.Systems;
 
 public sealed class CyberLimbInspectionSystem : EntitySystem
 {
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly CyberLimbModuleSystem _moduleSystem = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private CyberLimbModuleSystem _moduleSystem = default!;
+    [Dependency] private InventorySystem _inventory = default!;
 
     private static readonly ProtoId<DamageContainerPrototype> Silicon = "Silicon";
 

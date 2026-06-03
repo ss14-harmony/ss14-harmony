@@ -38,10 +38,6 @@ public sealed partial class BodySystem : EntitySystem
         SubscribeLocalEvent<BodyComponent, BodyPartQueryEvent>(OnBodyPartQuery);
         SubscribeLocalEvent<BodyComponent, BodyPartQueryByTypeEvent>(OnBodyPartQueryByType);
 
-        _bodyQuery = GetEntityQuery<BodyComponent>();
-        _organQuery = GetEntityQuery<OrganComponent>();
-        _bodyPartQuery = GetEntityQuery<BodyPartComponent>();
-
         InitializeRelay();
     }
     // Funkystation: OnBodyPartInit added

@@ -9,9 +9,9 @@ namespace Content.Shared.Eye.Blinding.Systems;
 public sealed class EyelessBlindnessSystem : EntitySystem
 {
     private static readonly ProtoId<OrganCategoryPrototype> EyesCategory = "Eyes";
-    [Dependency] private readonly BlindableSystem _blindable = default!;
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private BlindableSystem _blindable = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
     {

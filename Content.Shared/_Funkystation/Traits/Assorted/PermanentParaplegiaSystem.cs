@@ -12,8 +12,8 @@ namespace Content.Shared.Traits.Assorted;
 /// </summary>
 public sealed class PermanentParaplegiaSystem : EntitySystem
 {
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly LimbDetachmentEffectsSystem _limbs = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private LimbDetachmentEffectsSystem _limbs = default!;
 
     public override void Initialize()
     {

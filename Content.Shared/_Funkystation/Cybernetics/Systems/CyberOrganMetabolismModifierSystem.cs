@@ -16,7 +16,7 @@ namespace Content.Shared.Cybernetics.Systems;
 /// </summary>
 public sealed class CyberOrganMetabolismModifierSystem : EntitySystem
 {
-    [Dependency] private readonly OrganXenograftSystem _organXenograft = default!;
+    [Dependency] private OrganXenograftSystem _organXenograft = default!;
 
     private static readonly ProtoId<OrganCategoryPrototype> Heart = "Heart";
     private static readonly ProtoId<OrganCategoryPrototype> Stomach = "Stomach";

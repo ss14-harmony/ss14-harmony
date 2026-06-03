@@ -15,9 +15,9 @@ namespace Content.Shared.Body.Systems;
 /// </summary>
 public sealed class AppendageWearSlotSystem : EntitySystem
 {
-    [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private InventorySystem _inventory = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private INetManager _net = default!;
 
     private static readonly ProtoId<OrganCategoryPrototype>[] HandCategories =
     [

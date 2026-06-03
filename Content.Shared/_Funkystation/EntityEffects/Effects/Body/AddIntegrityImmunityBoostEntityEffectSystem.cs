@@ -10,7 +10,7 @@ namespace Content.Shared.EntityEffects.Effects.Body;
 /// </summary>
 public sealed partial class AddIntegrityImmunityBoostEntityEffectSystem : EntityEffectSystem<OrganComponent, AddIntegrityImmunityBoost>
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     protected override void Effect(Entity<OrganComponent> entity, ref EntityEffectEvent<AddIntegrityImmunityBoost> args)
     {

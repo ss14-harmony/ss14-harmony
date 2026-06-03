@@ -24,13 +24,13 @@ namespace Content.Shared.Cybernetics.Systems;
 
 public sealed class CyberLimbStatsSystem : EntitySystem
 {
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly CyberLimbModuleSystem _moduleSystem = default!;
-    [Dependency] private readonly SharedBatterySystem _battery = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private CyberLimbModuleSystem _moduleSystem = default!;
+    [Dependency] private SharedBatterySystem _battery = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private MovementSpeedModifierSystem _movementSpeed = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     private const float UpdateInterval = 1f;
     private TimeSpan _nextUpdate = TimeSpan.Zero;

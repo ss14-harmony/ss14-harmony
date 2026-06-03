@@ -17,11 +17,11 @@ namespace Content.Shared.Cybernetics.Systems;
 
 public sealed class CyberLimbModuleSystem : EntitySystem
 {
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly SharedCyberArmStorageSystem _cyberArmStorage = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedVirtualItemSystem _virtualItem = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private SharedCyberArmStorageSystem _cyberArmStorage = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedVirtualItemSystem _virtualItem = default!;
 
     private const string ArmLeft = "ArmLeft";
     private const string ArmRight = "ArmRight";

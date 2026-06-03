@@ -17,7 +17,7 @@ namespace Content.Shared.Medical.Surgery;
 /// </summary>
 public sealed class SurgeryLimbTaggingSystem : EntitySystem
 {
-    [Dependency] private readonly SurgeryLayerSystem _surgeryLayer = default!;
+    [Dependency] private SurgeryLayerSystem _surgeryLayer = default!;
 
     private static readonly IReadOnlyDictionary<string, string> CyberLimbStepsConfigIds = new Dictionary<string, string>
     {

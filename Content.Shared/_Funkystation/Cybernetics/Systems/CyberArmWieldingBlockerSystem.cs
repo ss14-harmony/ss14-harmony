@@ -8,7 +8,7 @@ namespace Content.Shared.Cybernetics.Systems;
 /// </summary>
 public sealed class CyberArmWieldingBlockerSystem : EntitySystem
 {
-    [Dependency] private readonly SharedCyberArmStorageSystem _cyberArmStorage = default!;
+    [Dependency] private SharedCyberArmStorageSystem _cyberArmStorage = default!;
 
     public override void Initialize()
     {

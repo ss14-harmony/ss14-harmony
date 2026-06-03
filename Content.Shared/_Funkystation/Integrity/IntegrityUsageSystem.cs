@@ -9,8 +9,8 @@ namespace Content.Shared.Medical.Integrity;
 
 public sealed class IntegrityUsageSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly OrganXenograftSystem _organXenograft = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private OrganXenograftSystem _organXenograft = default!;
 
     public override void Initialize()
     {

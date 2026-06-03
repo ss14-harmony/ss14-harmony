@@ -18,7 +18,7 @@ namespace Content.Shared.Medical.Xenograft;
 /// </summary>
 public sealed class OrganXenograftSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     /// <summary>
     /// Snapshot of prototype metabolizer types before any host-specific mutation (for explant restore).

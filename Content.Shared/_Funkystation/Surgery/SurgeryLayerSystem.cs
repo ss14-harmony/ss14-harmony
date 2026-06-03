@@ -15,7 +15,7 @@ namespace Content.Shared.Medical.Surgery;
 /// </summary>
 public sealed class SurgeryLayerSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _prototypes = default!;
+    [Dependency] private IPrototypeManager _prototypes = default!;
 
     /// <summary>
     /// Resolves BodyPartSurgeryStepsPrototype for the given species and organ category.

@@ -16,7 +16,7 @@ namespace Content.Shared.Cybernetics.Systems;
 
 public sealed class CyberEyesSystem : EntitySystem
 {
-    [Dependency] private readonly BodySystem _body = default!;
+    [Dependency] private BodySystem _body = default!;
 
     private static readonly ProtoId<OrganCategoryPrototype> Eyes = "Eyes";
     private const float CyberEyesProtectionTime = 10f;

@@ -7,7 +7,7 @@ namespace Content.Shared.Body;
 
 public sealed class BodyPartOrganSystem : EntitySystem
 {
-    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
 
     private EntityQuery<OrganComponent> _organQuery;
 

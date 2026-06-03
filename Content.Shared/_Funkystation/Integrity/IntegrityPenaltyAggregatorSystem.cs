@@ -9,7 +9,7 @@ namespace Content.Shared.Medical.Integrity;
 
 public sealed class IntegrityPenaltyAggregatorSystem : EntitySystem
 {
-    [Dependency] private readonly BodySystem _body = default!;
+    [Dependency] private BodySystem _body = default!;
 
     private EntityQuery<IntegrityPenaltyComponent> _penaltyQuery;
 

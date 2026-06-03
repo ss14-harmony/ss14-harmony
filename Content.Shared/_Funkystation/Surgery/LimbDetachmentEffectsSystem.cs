@@ -36,11 +36,11 @@ public sealed class LimbDetachmentEffectsSystem : EntitySystem
         ["FootRight"] = [HumanoidVisualLayers.RFoot],
     };
 
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private MovementSpeedModifierSystem _movementSpeed = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
     {

@@ -12,9 +12,9 @@ namespace Content.Shared.Medical.Integrity;
 
 public sealed class BioRejectionSystem : EntitySystem
 {
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private const float UpdateInterval = 1f;
     private TimeSpan _nextUpdate = TimeSpan.Zero;
