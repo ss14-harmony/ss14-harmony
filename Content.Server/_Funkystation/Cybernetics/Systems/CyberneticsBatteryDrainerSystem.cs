@@ -17,7 +17,7 @@ using Robust.Shared.Audio.Systems;
 namespace Content.Server.Cybernetics.Systems;
 
 /// <summary>
-/// Allows users with cyber limbs to recharge batteries from APCs/substations/SMESes via empty-hand interaction.
+/// Allows users with cyber limbs to recharge batteries from APCs/substations/SMESes via empty-hand interaction
 /// </summary>
 public sealed partial class CyberneticsBatteryDrainerSystem : EntitySystem
 {
