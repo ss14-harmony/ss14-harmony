@@ -3,7 +3,7 @@
   mapName: 'Dove'
   mapPath: /Maps/_Harmony/dove.yml
   minPlayers: 1
-  maxPlayers: 25
+  maxPlayers: 35
   stations:
     Dove:
       stationProto: StandardNanotrasenStation
@@ -16,7 +16,7 @@
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_crimson.yml
         - type: StationJobs
-          availableJobs: # 41 jobs total w/o latejoins & interns, 53 jobs total w/ latejoins & interns
+          availableJobs: # 43 jobs total w/o latejoins & interns, 52 jobs total w/ latejoins & interns
             #command (7)
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
@@ -25,11 +25,11 @@
             ChiefEngineer: [ 1, 1 ]
             ResearchDirector: [ 1, 1 ]
             Quartermaster: [ 1, 1 ]
-            #service (9)
+            #service (10)
             Bartender: [ 1, 1 ]
             Botanist: [ 1, 1 ]
             Chef: [ 1, 1 ]
-            Janitor: [ 1, 1 ]
+            Janitor: [ 2, 2 ]
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 1, 1 ]
@@ -38,16 +38,16 @@
             #engineering (4-5)
             AtmosphericTechnician: [ 2, 2 ]
             StationEngineer: [ 2, 3 ]
-            TechnicalAssistant: [ 1, 2 ] #intern, not counted
+            TechnicalAssistant: [ 1, 1 ] #intern, not counted
             #medical (5)
             Chemist: [ 1, 1 ]
             MedicalDoctor: [ 2, 2 ]
             Paramedic: [ 1, 1 ]
             Psychologist: [ 1, 1 ]
-            MedicalIntern: [ 1, 2 ] #intern, not counted
-            #science (2)
-            Scientist: [ 2, 2 ]
-            ResearchAssistant: [ 1, 2 ] #intern, not counted
+            MedicalIntern: [ 1, 1 ] #intern, not counted
+            #science (2-3)
+            Scientist: [ 2, 3 ]
+            ResearchAssistant: [ 1, 1 ] #intern, not counted
             #security (5-6)
             Warden: [ 1, 1 ]
             SecurityOfficer: [ 2, 3 ]
