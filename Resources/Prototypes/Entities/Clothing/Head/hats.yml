@@ -393,7 +393,10 @@
     sprite: _Harmony/Clothing/Head/Hats/presshat.rsi
 # End Harmony change
   - type: Clothing
-    sprite: _Harmony/Clothing/Head/Hats/presshat.rsi # Harmony change, changes sprite pathing.
+# Start Harmony change, changes sprite pathing.
+#   sprite: Clothing/Head/Hats/presshat.rsi
+    sprite: _Harmony/Clothing/Head/Hats/presshat.rsi
+# End Harmony change
 
 - type: entity
   parent: ClothingHeadBase
