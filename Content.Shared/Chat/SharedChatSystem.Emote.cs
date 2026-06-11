@@ -13,7 +13,7 @@ public abstract partial class SharedChatSystem
     private FrozenDictionary<string, EmotePrototype> _wordEmoteDict = FrozenDictionary<string, EmotePrototype>.Empty;
 
     // Harmony, RMC14 - Mute Emotes Option
-    [Dependency] private readonly HumanoidVoicelinesSystem _humanoidVoicelines = default!;
+    [Dependency] private HumanoidVoicelinesSystem _humanoidVoicelines = default!;
 
     private void CacheEmotes()
     {
