@@ -207,6 +207,7 @@
     container: station_ai_mind_slot
   - type: Damageable
     damageModifierSet: StrongMetallic
+  - type: Injurable
   - type: Repairable
     doAfterDelay: 10
     allowSelfRepair: false
@@ -391,6 +392,7 @@
         density: 200
   - type: Damageable
     damageModifierSet: StrongMetallic
+  - type: Injurable
   - type: Destructible
     thresholds:
     - trigger:

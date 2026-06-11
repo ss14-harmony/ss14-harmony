@@ -5,9 +5,9 @@ using Robust.Shared.Containers;
 
 namespace Content.Shared._DV.Weapons.Ranged.Upgrades;
 
-public sealed class GunUpgradeCostSystem : EntitySystem
+public sealed partial class GunUpgradeCostSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {

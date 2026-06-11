@@ -6,10 +6,8 @@
   components:
   - type: Label
     currentLabel: reagent-name-universal-blood
-  - type: SolutionContainerManager
-    solutions:
-      injector:
-        maxVol: 15
-        reagents:
-          - ReagentId: UniversalBlood
-            Quantity: 15
+  - type: Solution
+    solution:
+      reagents:
+        - ReagentId: UniversalBlood
+          Quantity: 15
