@@ -4,6 +4,7 @@ using System.Linq;
 using Content.Server.GameTicking;
 using Content.Shared._Harmony.JoinQueue;
 using Content.Shared.CCVar;
+using Content.Shared.Maps;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
@@ -18,7 +19,7 @@ public sealed class GameMapManager : IGameMapManager
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    // [Dependency] private readonly IPlayerManager _playerManager = default!; Harmony- value unused due to queue
     [Dependency] private readonly IResourceManager _resMan = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IJoinQueueManager _joinQueueManager = default!; // Harmony Queue

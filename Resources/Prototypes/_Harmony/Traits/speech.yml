@@ -152,7 +152,7 @@
       speechSounds: Bass
       speechVerb: Default
     - type: ReplacementAccent
-      accent: dwarf
+      accent: scottish
     - type: Vocal
       sounds:
         Male: UnisexDwarf

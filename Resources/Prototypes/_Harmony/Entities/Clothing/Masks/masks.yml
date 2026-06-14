@@ -49,3 +49,17 @@
   - type: HideLayerClothing
     slots:
     - Snout
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskInspectorMoustache # this moustache will exist until accents are finally toggleable on clothes
+  name: inspector moustache
+  suffix: Harmony
+  description: A required part of the CentComm Inspector uniform. It comes from a long standing tradition that nobody remembers.
+  components:
+  - type: Sprite
+    sprite: Clothing/Mask/italian_moustache.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/italian_moustache.rsi
+  - type: Item
+    storedRotation: -90

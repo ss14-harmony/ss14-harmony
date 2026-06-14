@@ -244,6 +244,8 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
 
             // by popular request
             // https://discord.com/channels/310555209753690112/770682801607278632/1189989482234126356
+            // Start of Harmony change to make it so screens no longer say KILL
+            /*
             if (_random.Next(1000) == 0)
             {
                 payload.Add(ScreenMasks.Text, ShuttleTimerMasks.Kill);
@@ -251,6 +253,9 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
             }
             else
                 payload.Add(ScreenMasks.Text, ShuttleTimerMasks.Bye);
+            */
+            payload.Add(ScreenMasks.Text, ShuttleTimerMasks.Bye);
+            // End of Harmony change
 
             _deviceNetworkSystem.QueuePacket(shuttle, null, payload, net.TransmitFrequency);
         }
