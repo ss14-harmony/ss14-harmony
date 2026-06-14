@@ -159,7 +159,7 @@
       path: /Audio/_Harmony/Weapons/Guns/Gunshots/lasermusket_fire1.ogg
       params:
         volume: 3
-  - type: HitscanBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: RedHeavyLaserMusket
     fireCost: 240
   - type: UseDelay
