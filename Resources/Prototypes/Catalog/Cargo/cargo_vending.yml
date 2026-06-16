@@ -254,7 +254,7 @@
   container:
     entity: WrappedParcel
     containerId: contents
-  cost: 1000
+  cost: 1200 # Harmony Change - Adjusted price to prevent arbitrage from adding emergency tanks to the tank dispensers.
   category: cargoproduct-category-name-atmospherics
   group: market
 
