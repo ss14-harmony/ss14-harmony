@@ -81393,7 +81393,7 @@ entities:
   - uid: 18500
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
+      # rot: 1.5707963267948966 rad
       pos: -20.5,15.5
       parent: 3
     - type: TechnologyDatabase
