@@ -6,20 +6,23 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
-      time: 0 #0 hrs
-    - !type:RoleTimeRequirement
-      role: JobStationEngineer
-      time: 0 #0hrs
+      time: 3h # Harmony Change 2.5h -> 3h, two shifts for role awareness
+    # Harmony Change Start
+    # - !type:RoleTimeRequirement
+    #   role: JobStationEngineer
+    #   time: 5h
+    # Harmony Change End
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 28800 #8 hrs
+      time: 8h # Harmony: 10h -> 8h
+    # Harmony start
     - !type:OverallPlaytimeRequirement
-      time: 43200 #12 hrs
+      time: 24h
+    # Harmony end
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
   supervisors: job-supervisors-captain
-  canBeAntag: false
   access:
   - Maintenance
   - Engineering

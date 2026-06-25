@@ -4,16 +4,22 @@
   description: job-description-rd
   playTimeTracker: JobResearchDirector
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 28800 #8 hrs
-    - !type:OverallPlaytimeRequirement
-      time: 43200 #12hrs
+  # Harmony start
+  # - !type:RoleTimeRequirement
+  #   role: JobScientist
+  #   time: 5h
+  # Harmony end
+  - !type:DepartmentTimeRequirement
+    department: Science
+    time: 8h # Harmony: 10h -> 8h
+  # Harmony start
+  - !type:OverallPlaytimeRequirement
+    time: 24h
+  # Harmony end
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
   supervisors: job-supervisors-captain
-  canBeAntag: false
   access:
   - Research
   - Command

@@ -47,12 +47,14 @@
       count: 50
       minGroupSize: 10
       maxGroupSize: 15
-    - !type:OreDunGen
-      replacement: IronRock
-      entity: IronRockSalt
-      count: 50
-      minGroupSize: 8
-      maxGroupSize: 12
+#Harmony Change Start - comments out salt spawning on the VGRoid.
+#          - !type:OreDunGen
+#      replacement: IronRock
+#      entity: IronRockSalt
+#      count: 25
+#      minGroupSize: 8
+#      maxGroupSize: 12
+#Harmony Change End - comments out salt spawning on the VGRoid.
     - !type:OreDunGen
       replacement: IronRock
       entity: IronRockGold
@@ -155,21 +157,29 @@
   - !type:EntityTableDunGen
     minCount: 25
     maxCount: 40
+    perDungeon: true
+    ignoreReserved: true
     table: !type:NestedSelector
       tableId: SalvageScrapSpawnerCommon
   - !type:EntityTableDunGen
     minCount: 30
     maxCount: 40
+    perDungeon: true
+    ignoreReserved: true
     table: !type:NestedSelector
       tableId: SalvageScrapSpawnerValuable
   - !type:EntityTableDunGen
     minCount: 30
     maxCount: 45
+    perDungeon: true
+    ignoreReserved: true
     table: !type:NestedSelector
       tableId: SalvageTreasureSpawnerCommon
   - !type:EntityTableDunGen
     minCount: 30
     maxCount: 45
+    perDungeon: true
+    ignoreReserved: true
     table: !type:NestedSelector
       tableId: SalvageTreasureSpawnerValuable
   - !type:MobsDunGen

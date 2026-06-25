@@ -25,13 +25,13 @@ namespace Content.Server.GameTicking
         /// <summary>
         ///     For access to CVars in status responses.
         /// </summary>
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
+        [Dependency] private IConfigurationManager _cfg = default!;
         /// <summary>
         ///     For access to the round ID in status responses.
         /// </summary>
-        [Dependency] private readonly SharedGameTicker _gameTicker = default!;
+        [Dependency] private SharedGameTicker _gameTicker = default!;
 
-        [Dependency] private readonly IJoinQueueManager _joinQueue = default!; // Harmony Queue
+        [Dependency] private IJoinQueueManager _joinQueue = default!; // Harmony Queue
 
         private void InitializeStatusShell()
         {
@@ -64,7 +64,7 @@ namespace Content.Server.GameTicking
                 jObject["panic_bunker"] = _cfg.GetCVar(CCVars.PanicBunkerEnabled);
                 jObject["run_level"] = (int) _runLevel;
                 if (preset != null)
-                    jObject["preset"] = Loc.GetString(preset.ModeTitle);
+                    jObject["preset"] = (Decoy == null) ? Loc.GetString(preset.ModeTitle) : Loc.GetString(Decoy.ModeTitle);
                 if (_runLevel >= GameRunLevel.InRound)
                 {
                     jObject["round_start_time"] = _roundStartDateTime.ToString("o");
