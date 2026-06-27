@@ -27,6 +27,7 @@ public abstract partial class SharedDamageOtherOnHitSystem : EntitySystem
     /// </summary>
     private void OnAttemptPacifiedThrow(Entity<DamageOtherOnHitComponent> ent, ref AttemptPacifiedThrowEvent args)
     {
+        if(!ent.Comp.PacifiedCanThrow) // Harmony Change: Bool variable allows for damage dealing items to be thrown by pacifists
         args.Cancel("pacified-cannot-throw");
     }
 }
