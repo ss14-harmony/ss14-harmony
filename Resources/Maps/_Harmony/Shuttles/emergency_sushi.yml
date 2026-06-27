@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 272.0.0
+  engineVersion: 277.2.1
   forkId: ""
   forkVersion: ""
-  time: 06/16/2026 18:17:36
+  time: 06/27/2026 14:54:03
   entityCount: 1413
 maps: []
 grids:
@@ -6503,6 +6503,20 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -1.345274,18.11729
       parent: 1
+- proto: PlasmaReinforcedWindowDirectional
+  entities:
+  - uid: 1408
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -2.5,-13.5
+      parent: 1
+  - uid: 1409
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -2.5,-15.5
+      parent: 1
 - proto: PlasticFlapsAirtightClear
   entities:
   - uid: 983
@@ -9701,18 +9715,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -6.5,-16.5
-      parent: 1
-  - uid: 1408
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -2.5,-15.5
-      parent: 1
-  - uid: 1409
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -2.5,-13.5
       parent: 1
   - uid: 1410
     components:
