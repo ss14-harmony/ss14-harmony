@@ -4,17 +4,17 @@
 *                                                   @KeldWolf @FluffMe @youtissoum
 
 # C# code
-/Content.*/                                         @KeldWolf @FluffMe @youtissoum
+/Content.*/                                         @KeldWolf @FluffMe @youtissoum @DDeegan
 
 # YML files
-/Resources/*.yml                                    @KeldWolf @FluffMe @youtissoum @Zap527 @kleinerstation13
-/Resources/**/*.yml                                 @KeldWolf @FluffMe @youtissoum @Zap527 @kleinerstation13
+/Resources/*.yml                                    @KeldWolf @FluffMe @youtissoum @DDeegan @Zap527 @kleinerstation13
+/Resources/**/*.yml                                 @KeldWolf @FluffMe @youtissoum @DDeegan @Zap527 @kleinerstation13
 
 # FTL files
-/Resources/Locale                                   @KeldWolf @FluffMe @youtissoum @Zap527 @kleinerstation13
+/Resources/Locale                                   @KeldWolf @FluffMe @youtissoum @DDeegan @Zap527 @kleinerstation13
 
 # Server info and rules
-/Resources/ServerInfo                               @KeldWolf @FluffMe @youtissoum @Zap527 @spanky-spanky
+/Resources/ServerInfo                               @KeldWolf @FluffMe @youtissoum @Zap527
 
 # Sprites
 /Resources/Textures/                                @TheCrimsonJupiter @KeldWolf @FluffMe @youtissoum
@@ -26,7 +26,7 @@
 /Resources/Textures/_Harmony/LobbyScreens/          @TheCrimsonJupiter
 
 # Maps
-/Resources/Maps/                                    @spanky-spanky @raccoonio
-/Resources/Prototypes/Maps/                         @spanky-spanky @raccoonio
-/Resources/Prototypes/_Harmony/Maps/                @spanky-spanky @raccoonio
-/Content.IntegrationTests/Tests/PostMapInitTest.cs  @spanky-spanky @raccoonio
+/Resources/Maps/                                    @raccoonio @luckyshotpictures @whythelettuce
+/Resources/Prototypes/Maps/                         @raccoonio @luckyshotpictures @whythelettuce
+/Resources/Prototypes/_Harmony/Maps/                @raccoonio @luckyshotpictures @whythelettuce
+/Content.IntegrationTests/Tests/PostMapInitTest.cs  @raccoonio @luckyshotpictures @whythelettuce

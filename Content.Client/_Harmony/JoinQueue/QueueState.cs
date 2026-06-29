@@ -1,20 +1,26 @@
+using Content.Shared.CCVar;
 using Robust.Client.Audio;
+using Robust.Client.ResourceManagement;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using Robust.Shared;
 using Robust.Shared.Audio;
+using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 
 namespace Content.Client._Harmony.JoinQueue;
 
-public sealed class QueueState : State
+public sealed partial class QueueState : State
 {
-    [Dependency] private readonly IClientJoinQueueManager _joinQueueManager = default!;
-    [Dependency] private readonly IClientNetManager _netManager = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly ILocalizationManager _loc = default!;
-    [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
+    [Dependency] private IClientJoinQueueManager _joinQueueManager = default!;
+    [Dependency] private IClientNetManager _netManager = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private ILocalizationManager _loc = default!;
+    [Dependency] private IUserInterfaceManager _userInterfaceManager = default!;
+    [Dependency] private IResourceCache _resourceCache = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     protected override Type? LinkedScreenType { get; } = typeof(QueueGui);
     public QueueGui? Queue;
@@ -28,7 +34,10 @@ public sealed class QueueState : State
             return;
         }
 
-        Queue = (QueueGui) _userInterfaceManager.ActiveScreen;
+        Queue = (QueueGui)_userInterfaceManager.ActiveScreen;
+        Queue.UpdateBranding(
+            _resourceCache.GetResource<TextureResource>("/Textures/Logo/logo.png"),
+            String.IsNullOrEmpty(_cfg.GetCVar(CCVars.ServerLobbyName)) ? _cfg.GetCVar(CVars.GameHostName) : _cfg.GetCVar(CCVars.ServerLobbyName));
 
         Queue.QuitButton.OnPressed += OnQuitButtonPressed;
 

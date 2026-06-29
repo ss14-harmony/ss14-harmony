@@ -63,10 +63,12 @@ public sealed class MapModificationsTests
 
         var testMap = await pair.CreateTestMap();
 
+        var testToRun = "TestAddition";
+
         await server.WaitAssertion(() =>
         {
             mapModificationSystem.ApplyMapModification(
-                prototypeManager.Index<MapModificationPrototype>("TestAddition"),
+                prototypeManager.Index<MapModificationPrototype>(testToRun),
                 testMap.Grid);
 
             var entities = entityManager.GetEntities();
@@ -109,12 +111,14 @@ public sealed class MapModificationsTests
 
         var testMap = await pair.CreateTestMap();
 
+        var testToRun = "TestRemoval";
+
         await server.WaitAssertion(() =>
         {
             entityManager.Spawn("TestEntityToRemove", new MapCoordinates(0, 0, testMap.MapId));
 
             mapModificationSystem.ApplyMapModification(
-                prototypeManager.Index<MapModificationPrototype>("TestRemoval"),
+                prototypeManager.Index<MapModificationPrototype>(testToRun),
                 testMap.Grid);
 
             var entities = entityManager.GetEntities();
@@ -144,12 +148,14 @@ public sealed class MapModificationsTests
 
         var testMap = await pair.CreateTestMap();
 
+        var testToRun = "TestReplacement";
+
         await server.WaitAssertion(() =>
         {
             entityManager.Spawn("TestEntityToRemove", new MapCoordinates(0.5f, 0, testMap.MapId));
 
             mapModificationSystem.ApplyMapModification(
-                prototypeManager.Index<MapModificationPrototype>("TestReplacement"),
+                prototypeManager.Index<MapModificationPrototype>(testToRun),
                 testMap.Grid);
 
             var entities = entityManager.GetEntities();
