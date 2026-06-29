@@ -1,2 +1,2 @@
 #stealing of one item
-steal-target-groups-RCDElite = ellite RCD
+steal-target-groups-RCDElite = elite RCD
