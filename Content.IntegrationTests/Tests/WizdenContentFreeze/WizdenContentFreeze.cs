@@ -1,12 +1,13 @@
-//harmony change Start - Remove wizden content freeze test
-/*using Content.Shared.Kitchen;
+// Harmony Change Start - Remove WizDen Content Freeze Test
+/* using Content.IntegrationTests.Fixtures;
+using Content.Shared.Kitchen;
 
 namespace Content.IntegrationTests.Tests.WizdenContentFreeze;
 
 /// <summary>
 /// These tests are limited to adding a specific type of content, essentially freezing it. If you are a fork developer, you may want to disable these tests.
 /// </summary>
-public sealed class WizdenContentFreeze
+public sealed class WizdenContentFreeze : GameTest
 {
     /// <summary>
     /// This freeze prohibits the addition of new microwave recipes.
@@ -19,7 +20,7 @@ public sealed class WizdenContentFreeze
     [Test]
     public async Task MicrowaveRecipesFreezeTest()
     {
-        await using var pair = await PoolManager.GetServerClient();
+        var pair = Pair;
         var server = pair.Server;
 
         var protoMan = server.ProtoMan;
@@ -36,9 +37,7 @@ public sealed class WizdenContentFreeze
         {
             Assert.Fail($"Oh, you deleted the microwave recipes? YOU ARE SO COOL! Please lower the number of recipes in MicrowaveRecipesFreezeTest from {recipesLimit} to {recipesCount} so that future contributors cannot add new recipes back.");
         }
-
-        await pair.CleanReturnAsync();
     }
 }
 */
-// Harmony change End
+// Harmony Change End

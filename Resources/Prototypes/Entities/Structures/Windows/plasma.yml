@@ -13,8 +13,9 @@
     sprite: _Harmony/Structures/Windows/plasma_window.rsi
 # End of Harmony Change
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Glass
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:

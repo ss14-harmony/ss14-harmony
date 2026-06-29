@@ -5,7 +5,7 @@ namespace Content.Shared._Harmony.EntitySelector;
 [ImplicitDataDefinitionForInheritors]
 public abstract partial class EntitySelector
 {
-    [Dependency] protected readonly IEntityManager EntityManager = default!;
+    [Dependency] protected IEntityManager EntityManager = default!;
 
     public bool Initialized { get; private set; }
 
