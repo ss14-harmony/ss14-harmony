@@ -72,7 +72,6 @@ uplink-traitor-deathrattle-implant-desc = A box containing two syndicate deathra
 
 uplink-stealth-jetpack-desc = A black jetpack that doesn't appear on radar. It allows you to fly around in space. Refills not included, use your fuel wisely.
 
-
 uplink-recoil-gloves-name = Recoil-Dampening Gloves
 uplink-recoil-gloves-desc = Special equipment that dampens felt recoil. These gloves reduce the Anaconda's damage to the shooter, at the cost of being uninsulated!
 
