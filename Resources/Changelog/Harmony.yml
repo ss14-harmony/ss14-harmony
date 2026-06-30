@@ -3400,3 +3400,123 @@ Entries:
       message: New tips specific to harmony have been added.
     - type: Tweak
       message: Some tips were adjusted to better match reality.
+  - id: 1299
+    author: dragydevi
+    time: '2026-05-11T17:36:43.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1299
+    changes:
+    - type: Fix
+      message: Ducky Galoshes can now be built again.
+  - id: 1382
+    author: dragydevi
+    time: '2026-05-16T20:50:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1382
+    changes:
+    - type: Remove
+      message: Removed the Estoc again.
+  - id: 1383
+    author: TheCrimsonJupiter
+    time: '2026-05-17T02:25:45.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1383
+    changes:
+    - type: Fix
+      message: Salvage radio on Orbital Prime now works.
+  - id: 1200
+    author: whythelettuce
+    time: '2026-05-18T06:12:29.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1200
+    changes:
+    - type: Add
+      message: New Peanut plant, PBJ's, peanut butter, and more!
+  - id: 1259
+    author: BoskiYourk
+    time: '2026-05-26T01:39:26.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1259
+    changes:
+    - type: Remove
+      message: Removed the Solution Container from the Mantis Gloves.
+  - id: 1260
+    author: kleinerstation13
+    time: '2026-05-26T01:55:12.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1260
+    changes:
+    - type: Tweak
+      message: Nerfed the L6 SAW; Movement speed is now decreased while held and even more when wielded.
+  - id: 1310
+    author: BoskiYourk
+    time: '2026-06-05T01:43:55.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1310
+    changes:
+    - type: Tweak
+      message: Lone ops can now spawn 45 minutes into the shift.
+  - id: 1399
+    author: TillsterRulz
+    time: '2026-06-05T04:37:31.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1399
+    changes:
+    - type: Add
+      message: Dove Station, a lowpop station with lots of bathrooms
+  - id: 804
+    author: kleinerstation13
+    time: '2026-06-09T03:53:39.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/804
+    changes:
+    - type: Add
+      message: Added Portable Recharging technology. Unlocks the Portable Recharger
+    - type: Tweak
+      message: Moved the Portable Recharger into a separate tech unlock.
+    - type: Tweak
+      message: Adjusted the price of the Portable Microfusion research.
+  - id: 1328
+    author: Disp-Dev
+    time: '2026-06-20T05:46:59.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1328
+    changes:
+    - type: Add
+      message: Added tarot cards
+  - id: 1409
+    author: TheCrimsonJupiter
+    time: '2026-06-22T17:50:07.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1409
+    changes:
+    - type: Add
+      message: Added energy shotgun to Aspid
+  - id: 1088
+    author: 3nderall
+    time: '2026-06-25T16:45:09.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1088
+    changes:
+    - type: Tweak
+      message: Illeism now works with hyphenated names!
+  - id: 1193
+    author: kleinerstation13
+    time: '2026-06-29T05:18:22.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1193
+    changes:
+    - type: Tweak
+      message: Bolas are now faster to remove and slow targets slightly less.
+  - id: 1244
+    author: Dinoguy12349
+    time: '2026-06-29T06:24:49.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1244
+    changes:
+    - type: Tweak
+      message: Bingles now have new sprites courtesy of HST
+  - id: 1243
+    author: Svetoslav228
+    time: '2026-06-29T07:04:05.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1243
+    changes:
+    - type: Add
+      message: Added elite RCD for CE
+    - type: Add
+      message: Added new objective for a thief, stealing elite RCD
+  - id: 1131
+    author: BlueMoon059
+    time: '2026-06-29T10:46:11.000000+00:00'
+    url: https://github.com/ss14-harmony/ss14-harmony/pull/1131
+    changes:
+    - type: Tweak
+      message: The PKA's description has been adjusted to more accurately reflect its mechanics, now mentioning it's pressure-sensitive.
+    - type: Tweak
+      message: The Salvage guidebook entry has been updated to reflect changes to the PKA to make it pressure sensitive.
