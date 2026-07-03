@@ -208,13 +208,14 @@
 
 - type: reaction
   id: Ambuzol
+  minTemp: 370 # Harmony change - adjusts ambuzol recipe to require heating
   reactants:
     Dylovene:
       amount: 1
     Ammonia:
       amount: 1
-    # Harmony Change - adjusts ambuzol recipe to add stellibinin
-    Stellibinin:
+    # Harmony Change - adjusts ambuzol recipe to add sodium hydroxide
+    SodiumHydroxide:
       amount: 1
     # Harmony Change End
     ZombieBlood:
