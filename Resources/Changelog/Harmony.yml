@@ -1,4 +1,4 @@
-﻿Entries:
+Entries:
 - author: liltenhead
   changes:
   - message: Added server pins to the trinket section in character loadouts.
@@ -3608,6 +3608,11 @@
   changes:
   - message: Snowball from default map rotation.
     type: Remove
-  id: 1412
+  id: 1335
   time: '2026-07-06T06:17:38.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1425
+- author: NavySerray
+  changes:
+  - message: Many values related to crew ballistic weaponry have been temporarily tweaked as a playtest. Please provide any feedback you may have on these changes in the discord.
+  time: '2026-07-06T17:00:00.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1335
