@@ -231,8 +231,8 @@
     children:
     - id: WeaponPistolMk58
       amount: 4
-    - id: MagazinePistol
-      amount: 8
+    - id: MagazineBoxLightPistol # Harmony change - Mk58 no longer has detatchable magazines
+      amount: 4 # Harmony change - Mk58 no longer has detatchable magazines
 
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
@@ -250,7 +250,8 @@
     children:
     - id: WeaponRifleLecter
       amount: 2
-    - id: MagazineRifle
+    #- id: MagazineRifle
+    - id: MagazineRifleFullPower #Harmony change - Lecter now uses .27 full-power
       amount: 4
 
 - type: entity
@@ -269,7 +270,8 @@
     children:
     - id: WeaponSubMachineGunDrozd
       amount: 2
-    - id: MagazinePistolSubMachineGun
+    #- id: MagazinePistolSubMachineGun
+    - id: MagazineLightPistolSubMachineGun #Harmony change - Drozd now uses .30 special
       amount: 4
 
 - type: entity

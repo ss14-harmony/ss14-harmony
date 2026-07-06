@@ -47,7 +47,7 @@
         priority: 1
         whitelist:
           tags:
-            - CartridgeLightRifle
+            - CartridgeRifleFullPower
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot

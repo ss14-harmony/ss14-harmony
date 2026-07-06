@@ -1,0 +1,104 @@
+- type: entity
+  abstract: true
+  parent: [ BaseItem, BaseSecurityContraband ]
+  id: BaseMagazineLightPistolSubMachineGun  
+  name: SMG magazine (.30 Special)
+  components:
+  - type: Tag
+    tags:
+      - MagazineLightPistolSubMachineGun
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeLightPistol
+    capacity: 40
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Magazines/LightPistol/smg_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-6
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 7
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  parent: BaseMagazineLightPistolSubMachineGun
+  id: MagazineLightPistolSubMachineGun
+  name: SMG magazine (.30 special)
+  description: 40-round double-stack magazine for submachine guns. Intended to hold general-purpose kinetic ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightPistol
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      right:
+      - state: inhand-right-mag
+
+- type: entity
+  parent: BaseMagazineLightPistolSubMachineGun
+  id: MagazineLightPistolSubMachineGunEmpty
+  name: SMG magazine (.30 special any)
+  suffix: empty
+  description: 30-round double-stack magazine for submachine guns.
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      right:
+      - state: inhand-right-mag
+
+- type: entity
+  parent: BaseMagazineLightPistolSubMachineGun
+  id: MagazineLightPistolSubMachineGunPractice
+  name: SMG magazine (.30 special practice)
+  description: 30-round double-stack magazine for submachine guns. Intended to hold harmless practice ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightPistolPractice
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: stripe
+      color: "#dbdbdb"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      - state: inhand-left-stripe
+        color: "#dbdbdb"
+      right:
+      - state: inhand-right-mag
+      - state: inhand-right-stripe
+        color: "#dbdbdb"

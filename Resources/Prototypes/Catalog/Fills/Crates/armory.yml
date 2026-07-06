@@ -80,8 +80,10 @@
         children:
         - id: WeaponPistolMk58
           amount: 2
-        - id: MagazinePistol
-          amount: 4
+        #- id: MagazinePistol
+          #amount: 4
+        - id: MagazineBoxLightPistol # Harmony change - mk58 no longer uses magazines
+          amount: 2
 
 - type: entity
   parent: [ CrateWeaponSecure, BaseSecurityContraband ]
@@ -108,7 +110,8 @@
   parent: [ CrateWeaponSecure, BaseSecurityContraband ]
   id: CrateArmoryRifle
   name: rifle crate
-  description: Contains two high-powered assault rifles with four mags. Requires Armory access to open.
+  # description: Contains two high-powered assault rifles with four mags. Requires Armory access to open.
+  description: Contains two high-powered battle rifles with four mags. Requires Armory access to open. #Harmony change - assault rifle > battle rifle
   components:
   - type: EntityTableContainerFill
     containers:
@@ -116,5 +119,6 @@
         children:
         - id: WeaponRifleLecter
           amount: 2
-        - id: MagazineRifle
+        #- id: MagazineRifle
+        - id: MagazineRifleFullPower # Harmony change - lecter uses .27 full-power
           amount: 4

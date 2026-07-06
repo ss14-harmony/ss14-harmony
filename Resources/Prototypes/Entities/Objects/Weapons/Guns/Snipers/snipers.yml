@@ -42,7 +42,7 @@
   name: Kardashev-Mosin
   parent: [BaseWeaponSniper, BaseGunWieldable, SolutionDart, BaseMajorContraband]
   id: WeaponSniperMosin
-  description: A true relic, the Kardashev-Mosin has served in nearly every armed conflict since its creation 670 years ago. The bolt-action design of the rifle remains virtually identical to its original design, whether used for hunting, sniping, or endless trench warfare. Loads 10 rounds of .30 rifle.
+  description: A true relic, the Kardashev-Mosin has served in nearly every armed conflict since its creation 670 years ago. The bolt-action design of the rifle remains virtually identical to its original design, whether used for hunting, sniping, or endless trench warfare. Loads 10 rounds of .27 full-power. #Harmony - change to .27 full-power
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
@@ -84,6 +84,12 @@
   - type: GunRequiresWield
   - type: StaticPrice
     price: 500
+  - type: BallisticAmmoProvider #Harmony component - change to .27 full-power
+    capacity: 10
+    proto: CartridgeRifleFullPower
+    whitelist:
+      tags:
+      - CartridgeRifleFullPower
 
 - type: entity
   name: Hristov

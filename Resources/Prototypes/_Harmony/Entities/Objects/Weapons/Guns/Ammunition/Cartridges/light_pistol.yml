@@ -1,0 +1,63 @@
+- type: entity
+  abstract: true
+  parent: [ BaseCartridgePistol]
+  id: BaseCartridgeLightPistol
+  name: cartridge (.30 Special)
+  components:
+  - type: Tag
+    tags:
+      - CartridgeLightPistol
+  - type: CartridgeAmmo
+    proto: BulletLightPistol
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
+  parent: BaseCartridgeLightPistol
+  id: CartridgeLightPistol
+  name: cartridge (.30 Special)
+  description: A reduced-recoil pistol cartridge designed for high capacity and controllability. Standard kinetic ammunition is common and useful in most situations.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletLightPistol
+
+- type: entity
+  parent: BaseCartridgeLightPistol
+  id: CartridgeLightPistolPractice
+  name: cartridge (.30 Special practice)
+  description: A reduced-recoil pistol cartridge designed for high capacity and controllability. Practice ammunition fires a chalk projectile that stings a little, but otherwise causes no lasting damage.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletLightPistolPractice
+  -  type: Sprite
+     layers:
+       - state: base
+         map: [ "enum.AmmoVisualLayers.Base" ]
+       - state: tip
+         map: [ "enum.AmmoVisualLayers.Tip" ]
+         color: "#dbdbdb"
+
+- type: entity
+  parent: BaseCartridgeLightPistol
+  id: CartridgeLightPistolSpent
+  name: cartridge (.30 Special)
+  suffix: spent
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base-spent
+      map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+  - type: CartridgeAmmo
+    proto: BulletLightPistol
+    spent: true
+  - type: Tag
+    tags:
+    - CartridgePistol
+    - Trash

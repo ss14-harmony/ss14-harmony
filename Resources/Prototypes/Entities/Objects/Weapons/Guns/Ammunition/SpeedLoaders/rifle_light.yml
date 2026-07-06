@@ -1,7 +1,7 @@
 - type: entity
   parent: [ BaseItem, BaseSecurityContraband ]
-  id: SpeedLoaderLightRifle
-  name: "speed loader (.30 rifle)"
+  id: SpeedLoaderLightRifle #Harmony - I know it's a bit risky to keep this as is (not to mention a bit confusing) but it will avoid the need for changing some crates, ammofabs, and at least one wreck.
+  name: "speed loader (.27 full-power)" #Harmony change - Use .27 full-power
   description: 5-round 'stripper clip' for quickly reloading the Kardashev-Mosin. Intended to hold general-purpose kinetic ammunition.
   components:
   - type: SpeedLoader
@@ -9,9 +9,11 @@
     mayTransfer: true
     whitelist:
       tags:
-      - CartridgeLightRifle
+      #- CartridgeLightRifle
+      - CartridgeRifleFullPower #Harmony change - Use .27 full-power
     capacity: 5
-    proto: CartridgeLightRifle
+    #proto: CartridgeLightRifle
+    proto: CartridgeRifleFullPower #Harmony change - Use .27 full-power
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/LightRifle/light_rifle_speed_loader.rsi
     layers:
