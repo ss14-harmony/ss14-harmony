@@ -81,6 +81,13 @@
   materials:
     Steel: 600
 
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxLightPistolPractice
+  result: MagazineBoxLightPistolPractice
+  materials:
+    Steel: 600
+
 #.27 full-power
 - type: latheRecipe
   parent: BaseEmptyAmmoRecipe
@@ -109,3 +116,10 @@
   result: MagazineBoxRifleFullPower
   materials:
     Steel: 600
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxRifleFullPowerPractice
+  result: MagazineBoxRifleFullPowerPractice
+  materials:
+    Steel: 300

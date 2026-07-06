@@ -19,16 +19,22 @@
   - MagazineBoxLightRiflePractice
   - MagazineBoxMagnumPractice
   - MagazineBoxPistolPractice
-  - MagazineBoxRiflePractice
+#  - MagazineBoxRiflePractice Harmony change: .20 rifle is unused now that the lecter uses .27 full-power
   - WeaponDisablerPractice
   - WeaponLaserCarbinePractice
   - MagazineLightRiflePractice
-  - MagazineRiflePractice
+#  - MagazineRiflePractice Harmony change: .20 rifle is unused now that the lecter uses .27 full-power
   - MagazinePistolPractice
   - SpeedLoaderMagnumPractice
   - MagazinePistolSubMachineGunPractice
   - WeaponFlareGunSecurity
   - SecurityBola #Harmony Change: Adds Security Bolas
+# Harmony Changes: Adds .27 full-power and .30 special to the security ammo recipe pack
+  - MagazineLightPistolSubMachineGunPractice
+  - MagazineBoxLightPistolPractice
+  - MagazineRifleFullPowerPractice
+  - MagazineBoxRifleFullPowerPractice
+# End harmony changes
 
 # Shared between secfab and emagged autolathe
 - type: latheRecipePack
@@ -39,7 +45,7 @@
   - MagazineBoxLightRifle
   - MagazineBoxMagnum
   - MagazineBoxPistol
-  - MagazineBoxRifle
+#  - MagazineBoxRifle Harmony change: .20 rifle is unused now that the lecter uses .27 full-power
   - MagazineLightRifle
   - MagazineLightRifleEmpty
   - MagazinePistol
