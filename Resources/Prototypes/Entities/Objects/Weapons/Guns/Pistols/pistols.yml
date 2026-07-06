@@ -250,7 +250,7 @@
     availableModes:
       - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
   - type: AmmoCounter
   - type: BallisticAmmoProvider
     whitelist:
