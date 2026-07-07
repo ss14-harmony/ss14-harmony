@@ -68,7 +68,8 @@
   parent: [ CrateWeaponSecure, BaseSecurityContraband ]
   id: CrateArmoryPistols
   name: pistols crate
-  description: Contains two standard NT pistols with four mags. Requires Armory access to open.
+  #description: Contains two standard NT pistols with four mags. Requires Armory access to open.
+  description: Contains two standard NT pistols, each with a box of extra ammo. Requires Armory access to open. #Harmony change - mk58 no longer uses magazines
   components:
   - type: EntityTableContainerFill
     containers:
