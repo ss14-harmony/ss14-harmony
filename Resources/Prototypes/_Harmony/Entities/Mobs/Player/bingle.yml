@@ -2,17 +2,18 @@
   parent: MobSpaceBasic
   id: MobBingle
   name: bingle
-  suffix: Basic
+  suffix: Basic, Harmony
   description: Bingle.
   components:
   # Visuals
   - type: Sprite
-    sprite: _Harmony/Mobs/Aliens/Bingles/bingle.rsi
+    sprite: _Harmony/Mobs/Aliens/Bingles/bingle_harmony.rsi # Points towards the revamped sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: alive
     - map: ["enum.CombatModeVisualLayers.CombatEnabled"]
       state: combat
+      shader: unshaded
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -102,6 +103,7 @@
         Caustic: -0.5
   - type: FlashImmunity
   - type: Bingle
+  - type: ProtectedFromStepTriggers
 
 - type: entity
   parent: MobBingle
@@ -111,6 +113,8 @@
   suffix: Prime
   description: The most bingle per bingle.
   components:
+  - type: Sprite
+    sprite: _Harmony/Mobs/Aliens/Bingles/bingle.rsi # Prime bingles use the old sprite
   - type: Bingle
     upgradePolymorph: BinglePrimePolymorph
   - type: SpawnOnSpawn
@@ -121,11 +125,11 @@
   parent: MobBingle
   id: MobBingleUpgraded
   name: bingler
-  suffix: Upgraded
+  suffix: Upgraded, Harmony
   description: More bingle per bingle.
   components:
   - type: Sprite
-    sprite: _Harmony/Mobs/Aliens/Bingles/bingle_upgraded.rsi
+    sprite: _Harmony/Mobs/Aliens/Bingles/bingleupgraded_harmony.rsi # Points towards the revamped sprite
   - type: Bingle
     upgraded: true
   - type: MeleeWeapon
@@ -140,8 +144,9 @@
         Blunt: 14
         Structural: 28
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: BingleUpgraded
+  - type: Injurable
+    damageContainer: Biological
 
 - type: entity
   parent: MobBingleUpgraded
@@ -149,3 +154,6 @@
   name: binglester
   suffix: Prime, Upgraded
   description: The most bingle per bingle.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Mobs/Aliens/Bingles/bingle_upgraded.rsi # Prime bingles use old sprites
