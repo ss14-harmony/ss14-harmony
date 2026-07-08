@@ -13,7 +13,7 @@
         - id: WeaponSubMachineGunDrozd
           amount: 2
 #       - id: MagazinePistolSubMachineGunTopMounted
-        - id: MagazinePistolSubMachineGun
+        - id: MagazineLightPistolSubMachineGun
           amount: 4
 # End Harmony change
 
@@ -72,7 +72,7 @@
   parent: [ CrateWeaponSecure, BaseSecurityContraband ]
   id: CrateArmoryPistols
   name: pistols crate
-  description: Contains two standard NT pistols with four mags. Requires Armory access to open.
+  description: Contains two standard NT pistols with two ammo boxes. Requires Armory access to open.
   components:
   - type: EntityTableContainerFill
     containers:
