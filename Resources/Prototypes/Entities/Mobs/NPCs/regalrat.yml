@@ -205,6 +205,9 @@
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded"]
       state: eyes
       shader: unshaded
+  
+  - type: Damageable
+    damageModifierSet: ratServant #Harmony change - uses special 1.5x pierce damage multiplier to allow .30 special to one-shot servants
 
   - type: SpriteMovement
     movementLayers:
