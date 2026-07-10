@@ -56,7 +56,7 @@
     contents:
     - id: WeaponSubMachineGunDrozd
       amount: 2
-    - id: MagazinePistolSubMachineGun
+    - id: MagazineLightPistolSubMachineGun #also have to change this one for the rebalance
       amount: 4
 
 - type: entity
