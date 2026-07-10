@@ -20,7 +20,7 @@
     - suitStorage
   - type: AmmoCounter
   - type: Gun
-    fireRate: 0.75
+    fireRate: 1.25 # this thing is literally a semiauto rifle, let it shoot with a little more quickness
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto

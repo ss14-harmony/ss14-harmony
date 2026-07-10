@@ -52,6 +52,8 @@
       map: [ "enum.SolutionContainerLayers.Fill" ]
       visible: false
   - type: Appearance
+  - type: Gun #Harmony component - firerate increased from 0.75 to 1. It deserves to be a little better.
+    fireRate: 1
   - type: SolutionContainerVisuals
     maxFillLevels: 1
     fillBaseName: base
