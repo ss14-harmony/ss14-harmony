@@ -147,7 +147,8 @@
   name: Lecter
   parent: [BaseWeaponRifle, BaseSecurityContraband]
   id: WeaponRifleLecter
-  description: "Popular gas-operated battle rifle used heavily by Nanotrasen and SolGov. Operating in semi-automatic only after full-auto proved disastrous, its accuracy, stopping power, and reliability make it excel in all manner of environments.\nFeeds from .20 rifle magazines."
+  # description: "Popular gas-operated battle rifle used heavily by Nanotrasen and SolGov. Operating in semi-automatic only after full-auto proved disastrous, its accuracy, stopping power, and reliability make it excel in all manner of environments.\nFeeds from .20 rifle magazines."
+  description: "Popular gas-operated battle rifle used heavily by Nanotrasen and SolGov. Operating in semi-automatic only after full-auto proved disastrous, its accuracy, stopping power, and reliability make it excel in all manner of environments.\nFeeds from .27 full-power magazines." #Harmony - changed to reflect ammo changes
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Guns/Rifles/lecter.rsi # Harmony change: Use a custom lecter sprite.
@@ -164,7 +165,8 @@
     availableModes:
       - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+      # path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+      collection: DMRFire #Harmony change - this thing shoots high damage ammo now. it should have beefier sounds, it'll feel more powerful. I know this makes it too bandity but the only other option is sniper.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
