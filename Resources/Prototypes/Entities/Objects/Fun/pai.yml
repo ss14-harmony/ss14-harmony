@@ -107,6 +107,7 @@
     damage:
       types:
         Blunt: 0.1
+    pacifiedCanThrow: true
   # End Harmony Change
 
 - type: entity
@@ -193,6 +194,8 @@
   - type: Construction
     graph: PotatoAI
     node: potatoai
+
+# PAI Actions
 
 - type: entity
   parent: ActionIntrinsicStore

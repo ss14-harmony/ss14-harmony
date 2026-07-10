@@ -1,8 +1,7 @@
 - type: marking
   id: FaceBindi
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -15,8 +14,7 @@
 - type: marking
   id: FaceFullblush
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Vulpkanin]
   coloring:
     default:
       type:
@@ -29,8 +27,7 @@
 - type: marking
   id: FaceCheekspotRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -43,8 +40,7 @@
 - type: marking
   id: FaceCheekspotLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -57,8 +53,7 @@
 - type: marking
   id: FaceChesireRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime]
   coloring:
     default:
       type:
@@ -71,8 +66,7 @@
 - type: marking
   id: FaceChesireLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime]
   coloring:
     default:
       type:
@@ -85,8 +79,7 @@
 - type: marking
   id: FaceCrowRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -99,8 +92,7 @@
 - type: marking
   id: FaceCrowLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -113,8 +105,7 @@
 - type: marking
   id: FaceEarRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime]
   coloring:
     default:
       type:
@@ -127,8 +118,7 @@
 - type: marking
   id: FaceEarLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime]
   coloring:
     default:
       type:
@@ -141,8 +131,7 @@
 - type: marking
   id: FaceEyebrowRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -156,8 +145,7 @@
 - type: marking
   id: FaceEyebrowLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -171,8 +159,7 @@
 - type: marking
   id: FaceEyebrows
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -185,8 +172,7 @@
 - type: marking
   id: FaceEyecornerRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -199,8 +185,7 @@
 - type: marking
   id: FaceEyecornerLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -213,8 +198,7 @@
 - type: marking
   id: FaceEyelashRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -227,8 +211,7 @@
 - type: marking
   id: FaceEyelashLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -241,8 +224,7 @@
 - type: marking
   id: FaceEyestripe
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime]
   coloring:
     default:
       type:
@@ -255,8 +237,7 @@
 - type: marking
   id: FaceLipcornerRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -269,8 +250,7 @@
 - type: marking
   id: FaceLipcornerLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -283,8 +263,7 @@
 - type: marking
   id: FaceGlabella
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -297,8 +276,7 @@
 - type: marking
   id: FaceLowercheekRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -311,8 +289,7 @@
 - type: marking
   id: FaceLowercheekLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -325,8 +302,7 @@
 - type: marking
   id: FaceNosetape
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime]
   coloring:
     default:
       type:
@@ -339,8 +315,7 @@
 - type: marking
   id: FaceNosetip
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime]
   coloring:
     default:
       type:
@@ -354,8 +329,7 @@
 - type: marking
   id: FaceNosestripe
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime]
   coloring:
     default:
       type:
@@ -368,8 +342,7 @@
 - type: marking
   id: FaceUnibrow
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -382,9 +355,7 @@
 - type: marking
   id: FaceNeckSlim
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
-  followSkinColor: true
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   sprites:
   - sprite: _EE/Mobs/Customization/face.rsi
     state: neck_f
@@ -392,9 +363,7 @@
 - type: marking
   id: FaceNeckWide
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
-  followSkinColor: true
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   sprites:
   - sprite: _EE/Mobs/Customization/face.rsi
     state: neck_m
@@ -402,9 +371,7 @@
 - type: marking
   id: FaceNeckSlimThick
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
-  followSkinColor: true
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   sprites:
   - sprite: _EE/Mobs/Customization/face.rsi
     state: neck_thick_f
@@ -412,9 +379,7 @@
 - type: marking
   id: FaceNeckWideThick
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Arachne, Lamia, Tajaran]
-  followSkinColor: true
+  groupWhitelist: [Human, Slime, Reptilian, Vulpkanin]
   sprites:
   - sprite: _EE/Mobs/Customization/face.rsi
     state: neck_thick_m
@@ -422,8 +387,7 @@
 - type: marking
   id: IronJaw
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime]
   coloring:
     default:
       type:

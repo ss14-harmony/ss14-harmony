@@ -13,8 +13,9 @@
     sprite: _Harmony/Structures/Windows/reinforced_uranium_window.rsi
 # End of Harmony Change
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: RGlass
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:

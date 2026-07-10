@@ -12,3 +12,13 @@
   id: glorp
   flavorType: Base
   description: flavor-base-glorp
+
+- type: flavor
+  id: peanutbutter
+  flavorType: Complex
+  description: flavor-complex-peanut-butter
+
+- type: flavor
+  id: jellygrape
+  flavorType: Complex
+  description: flavor-complex-jelly-grape

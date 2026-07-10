@@ -39,6 +39,15 @@
     proto: robot
   - type: Speech
     speechSounds: Pai
+    # Harmony
+  - type: Tag
+    tags:
+    - SiliconEmotes
+  - type: Emoting
+  - type: Vocal
+    sounds:
+      Unsexed: UnisexSilicon
+    # End Harmony
   - type: ItemSlots
   - type: ContainerContainer
     containers:
@@ -110,6 +119,12 @@
       group: PositronicBrain
     - type: DoAfter
     - type: Actions
+    # Harmony start
+    - type: Emoting
+    - type: Vocal
+      sounds:
+        Unsexed: UnisexSilicon
+    # End Harmony
     - type: TypingIndicator
       proto: robot
     - type: Speech
@@ -123,6 +138,7 @@
     - type: Tag
       tags:
       - CannotSuicide
+      - SiliconEmotes # Harmony
     - type: GenericVisualizer
       visuals:
         enum.ToggleableGhostRoleVisuals.Status:

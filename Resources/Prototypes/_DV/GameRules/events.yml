@@ -24,25 +24,33 @@
   # TODO: funny trolling or intel related objectives
   - type: AntagLoadProfileRule
   - type: AntagSelection
-    agentName: listening-post-round-end-agent-name
-    definitions:
-    - spawnerPrototype: SpawnPointGhostSyndicateListener
-      min: 2
-      max: 2
-      pickPlayer: false
-      startingGear: SyndicateListenerGear
-      roleLoadout:
-      - RoleSurvivalStandard
-      components:
-      - type: RandomMetadata
-        nameSegments:
-        - NamesDeathCommando
-      - type: AutoImplant
-        implants:
-        - DeathAcidifierImplant
-      - type: NpcFactionMember
-        factions:
-        - Syndicate
-      mindRoles:
-      - MindRolePostOperator
+    # Harmony change- refactor to match the new antag selection code
+    antags:
+    - !type:LinearAntagCount
+      proto: ListeningPost
+      range:
+        min: 2
+        max: 2
+    #agentName: listening-post-round-end-agent-name
+    #definitions:
+    #- spawnerPrototype: SpawnPointGhostSyndicateListener
+    #  min: 2
+    #  max: 2
+    #  pickPlayer: false
+    #  startingGear: SyndicateListenerGear
+    #  roleLoadout:
+    #  - RoleSurvivalStandard
+    #  components:
+    #  - type: RandomMetadata
+    #    nameSegments:
+    #    - NamesDeathCommando
+    #  - type: AutoImplant
+    #    implants:
+    #    - DeathAcidifierImplant
+    #  - type: NpcFactionMember
+    #    factions:
+    #    - Syndicate
+    #  mindRoles:
+    #  - MindRolePostOperator
+    # End Harmony change
 
