@@ -181,13 +181,19 @@
       sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
     - type: Wieldable
       unwieldOnUse: false
+    # Begin harmony changes - drozd handling and firerate improvements to go with the lower damage ammo
     - type: GunWieldBonus
-      minAngle: -19
-      maxAngle: -16
+      # minAngle: -19
+      minAngle: -16
+      # maxAngle: -16
+      maxAngle: -20
     - type: Gun
-      minAngle: 21
-      maxAngle: 32
-      fireRate: 6
+      # minAngle: 21
+      minAngle: 18
+      # maxAngle: 32
+      maxAngle: 24
+      # fireRate: 6
+      fireRate: 7
       burstFireRate: 18
       soundGunshot:
         path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
@@ -196,8 +202,10 @@
       - Burst
       - FullAuto
       - SemiAuto
-      shotsPerBurst: 3
+      #shotsPerBurst: 3
+      shotsPerBurst: 4
       burstCooldown: 0.375
+    # End harmony changes
     - type: ItemSlots
       slots:
         gun_magazine:
