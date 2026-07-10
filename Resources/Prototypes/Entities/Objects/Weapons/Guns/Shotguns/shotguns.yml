@@ -171,7 +171,8 @@
     sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 1
+    # fireRate: 1
+    fireRate: 1.2 #Harmony change - spiced up the firerate a little, it deserves it.
     # Start of Harmony change
     soundGunshot:
       path: /Audio/_Harmony/Weapons/Guns/Gunshots/kammerer_shot.ogg

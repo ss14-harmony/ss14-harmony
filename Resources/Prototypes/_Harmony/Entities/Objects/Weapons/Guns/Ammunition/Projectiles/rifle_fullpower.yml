@@ -7,7 +7,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 30
+        Piercing: 35 #30->35
 
 - type: entity
   parent: BaseBulletPractice
