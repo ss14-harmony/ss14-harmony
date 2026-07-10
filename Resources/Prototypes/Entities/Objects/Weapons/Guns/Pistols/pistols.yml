@@ -189,7 +189,7 @@
   - type: StaticPrice
     price: 1500
 
-#Change the mk58 to have a 20rnd fixed magazine using LightPistol ammo instead of a removable pistol magazine.
+#Harmony change - Change the mk58 to have a 20rnd fixed magazine using LightPistol ammo instead of a removable pistol magazine.
 #- type: entity
 #  name: mk 58
 #  parent: [BaseWeaponPistol, BaseSecurityContraband]
@@ -250,7 +250,7 @@
     availableModes:
       - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
   - type: AmmoCounter
   - type: BallisticAmmoProvider
     whitelist:
