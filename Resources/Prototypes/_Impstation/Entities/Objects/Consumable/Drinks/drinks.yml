@@ -3,13 +3,11 @@
   id: DrinkBatteryAcidGlass
   suffix: battery acid
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
+  - type: Solution # Harmony - Update to SolutionComponent
+    solution:
+      reagents:
         - ReagentId: BatteryAcid
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Impstation/Objects/Consumable/Drinks/batteryacid.rsi
     state: icon
@@ -19,13 +17,11 @@
   id: DrinkAngelsKissGlass
   suffix: angel's kiss
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
+  - type: Solution # Harmony - Update to SolutionComponent
+    solution:
+      reagents:
         - ReagentId: AngelsKiss
-          Quantity: 30
+          Quantity: 60
   - type: Icon
     sprite: _Impstation/Objects/Consumable/Drinks/angelskiss.rsi
     state: icon

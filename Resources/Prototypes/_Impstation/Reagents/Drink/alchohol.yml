@@ -13,14 +13,14 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
+    Digestion: # Harmony - Drink>Digestion
       effects:
       - !type:SatiateThirst
         factor: 1
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.2
-    Poison:
+    Bloodstream: # Harmony - Poison>Bloodstream
       effects:
       - !type:Electrocute
         conditions:

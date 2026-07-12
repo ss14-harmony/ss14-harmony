@@ -8,7 +8,7 @@
   recognizable: true
   physicalDesc: reagent-physical-desc-reflective
   metabolisms:
-    Drink:
+    Digestion: # Harmony - Drink>Digestion
       effects:
       # Misfit - Change to give same effects as uncooked proteins
       - !type:Vomit
