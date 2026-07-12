@@ -13,12 +13,5 @@
       spawnDistance: 0
     - type: AntagSpawner
       prototype: MobEeeplet
-    - type: AntagSelection
-      agentName: ghost-role-information-eeep-name
-      definitions:
-        - spawnerPrototype: SpawnPointGhostEeeplet
-          min: 1
-          max: 1
-          pickPlayer: false
-          mindRoles:
-            - MindRoleGhostRoleTeamAntagonist
+  - type: RandomSpawnRule
+    prototype: SpawnPointGhostEeeplet
