@@ -29,3 +29,5 @@
       - MindRoleGhostRoleTeamAntagonist
     raffle:
       settings: default
+  - type: GhostRoleMobSpawner
+    prototype: MobEeeplet

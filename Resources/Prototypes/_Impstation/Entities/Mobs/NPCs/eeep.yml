@@ -79,7 +79,7 @@
         - Alive
         - Critical
       damage:
-        groups:
+        types:
           Airloss: -1
           Brute: -1
           Burn: -1
@@ -135,7 +135,7 @@
       damage:
         types:
           Shock: 5
-          Brute: 2
+          Blunt: 2
     - type: StaminaDamageOnHit
       damage: 20
     - type: SolutionContainerManager
