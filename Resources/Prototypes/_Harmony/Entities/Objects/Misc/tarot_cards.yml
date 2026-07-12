@@ -1,0 +1,348 @@
+- type: entity
+  parent: CardBoxBase
+  id: CardBoxTarot
+  name: tarot deck box
+  suffix: Harmony
+  description: The cards, the cards, the cards will tell... The past, the present, and the future as well...
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    layers:
+    - state: tarot_box
+    - state: tarot_box_open
+      map: [ "openLayer" ]
+      visible: false
+  - type: OpenTriggeredStorageFill
+    contents:
+    - id: TarotDeck
+      amount: 1
+
+- type: entity
+  parent: CardDeckBase
+  id: TarotDeck
+  name: deck of tarot cards
+  categories: [ HideSpawnMenu ] 
+  components:
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: deck_tarot_full
+  - type: CardStack
+    initialContent:
+    # All of them
+    - CardSc0TheFoolTarot
+    - CardSc1TheMagicianTarot
+    - CardSc2TheHighPriestessTarot
+    - CardSc3TheEmpressTarot
+    - CardSc4TheEmperorTarot
+    - CardSc5TheHierophantTarot
+    - CardSc6TheLoversTarot
+    - CardSc7TheChariotTarot
+    - CardSc8StrengthTarot
+    - CardSc9TheHermitTarot
+    - CardSc10TheWheelOfFortuneTarot
+    - CardSc11JusticeTarot
+    - CardSc12TheHangedManTarot
+    - CardSc13DeathTarot
+    - CardSc14TemperanceTarot
+    - CardSc15TheDevilTarot
+    - CardSc16TheTowerTarot
+    - CardSc17TheStarTarot
+    - CardSc18TheMoonTarot
+    - CardSc19TheSunTarot
+    - CardSc20JudgementTarot
+    - CardSc21TheWorldTarot
+
+- type: entity
+  parent: BaseItem
+  id: TarotCardBase
+  name: card
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EmitSoundOnLand
+    sound:
+      collection: cardShove
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: singlecard_down_tarot
+  - type: Rotatable
+  - type: Item
+    size: Small
+  - type: UseDelay
+    delay: 0.5
+  - type: Card
+    backSprite:
+    - sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+      state: singlecard_down_tarot
+    flipped: true
+  - type: StripMenuHidden
+
+# prototypes of each individual card
+# yes Strength and Justice are swapped that's how it is in the original Ryder-Waite Deck
+
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc0TheFoolTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the Fool
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_0_The_Fool_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc1TheMagicianTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the Magician
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_1_The_Magician_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc2TheHighPriestessTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the High Priestess
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_2_The_High_Priestess_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc3TheEmpressTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the Empress
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_3_The_Empress_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc4TheEmperorTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the Emperor
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_4_The_Emperor_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc5TheHierophantTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the Hierophant
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_5_The_Hierophant_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc6TheLoversTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the Lovers
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_6_The_Lovers_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc7TheChariotTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the Chariot
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_7_The_Chariot_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc8StrengthTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of Strength
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_8_Strength_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc9TheHermitTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the Hermit
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_9_The_Hermit_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc10TheWheelOfFortuneTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the Wheel of Fortune
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_10_The_Wheel_of_Fortune_tarot
+#Nope!
+
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc11JusticeTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of Justice
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_11_Justice_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc12TheHangedManTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the Hanged Man
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_12_The_Hanged_Man_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc13DeathTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of Death
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_13_Death_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc14TemperanceTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of Temperance
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_14_Temperance_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc15TheDevilTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the Devil
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_15_The_Devil_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc16TheTowerTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the Tower
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_16_The_Tower_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc17TheStarTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the Star
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_17_The_Star_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc18TheMoonTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the Moon
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_18_The_Moon_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc19TheSunTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the Sun
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_19_The_Sun_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc20JudgementTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of Judgement
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_20_Judgement_tarot
+    
+- type: entity
+  parent: TarotCardBase
+  categories: [ HideSpawnMenu ]
+  id: CardSc21TheWorldTarot
+  suffix: Harmony
+  components:
+  - type: Card
+    name: tarot card of the World
+  - type: Sprite
+    sprite: _EstacaoPirata/Objects/Misc/cards.rsi
+    state: sc_21_The_World_tarot
+# end

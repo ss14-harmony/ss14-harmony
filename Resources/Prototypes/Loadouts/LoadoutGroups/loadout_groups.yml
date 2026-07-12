@@ -274,6 +274,15 @@
   - BlackShoes
   - WinterBoots
 
+# Begin Harmony Change
+- type: loadoutGroup
+  id: PassengerPDA
+  name: loadout-group-passenger-PDA
+  loadouts:
+  - PassengerPDA
+  - ClearPDA
+# End Harmony Change
+
 #- type: loadoutGroup
 #  id: PassengerJobTrinkets
 #  name: loadout-group-jobtrinkets
@@ -541,6 +550,7 @@
   loadouts:
   - JesterHat
   - JesterAltHat
+  - ClownMitre
 
 - type: loadoutGroup
   id: ClownJumpsuit
@@ -1328,6 +1338,7 @@
   - DetectiveBlueCoatHarmony # Harmony
   - DetectiveBomberCoatHarmony # Harmony
   - DetectiveDiscoCoatHarmony # Harmony
+  - SecurityOfficerWintercoat
 
 - type: loadoutGroup
   id: DetectiveJobTrinkets
@@ -1366,6 +1377,20 @@
   loadouts:
   - ReporterJumpsuit
   - JournalistJumpsuit
+
+- type: loadoutGroup
+  id: ReporterHead
+  name: loadout-group-reporter-head
+  minLimit: 0
+  loadouts:
+  - ReporterPressFedora
+
+- type: loadoutGroup
+  id: ReporterOuterClothing
+  name: loadout-group-reporter-outerclothing
+  minLimit: 0
+  loadouts:
+  - ReporterPressVest
 
 #- type: loadoutGroup
 #  id: ReporterJobTrinkets

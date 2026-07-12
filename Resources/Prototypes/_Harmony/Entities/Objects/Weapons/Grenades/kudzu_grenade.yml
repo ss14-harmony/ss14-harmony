@@ -9,7 +9,8 @@
     sprite: _Harmony/Objects/Weapons/Grenades/kudzugrenade.rsi
     layers:
     - state: icon
-      map: [ "Base" ]
+      map: ["enum.TriggerVisualLayers.Base"]
+  - type: TriggerOnUse
   - type: ScatteringGrenade
     fillPrototype: SyndicateKudzu
     distance: 4
