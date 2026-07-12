@@ -15,19 +15,17 @@
         - MobEeeplet
 
 - type: entity
+  parent: BaseAntagSpawner
   id: SpawnPointGhostEeeplet
   name: ghost role spawn point
   suffix: eeeplet
   categories: [ HideSpawnMenu, Spawner ]
-  parent: BaseAntagSpawner
   components:
-    - type: GhostRole
-      name: ghost-role-information-eeeplet-name
-      description: ghost-role-information-eeeplet-desc
-      rules: ghost-role-information-antagonist-rules
-      mindRoles:
-        - MindRoleGhostRoleTeamAntagonist
-      raffle:
-        settings: default
-    - type: GhostRoleMobSpawner
-      prototype: MobEeeplet
+  - type: GhostRole
+    name: ghost-role-information-eeeplet-name
+    description: ghost-role-information-eeeplet-desc
+    rules: ghost-role-information-antagonist-rules
+    mindRoles:
+      - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: default
