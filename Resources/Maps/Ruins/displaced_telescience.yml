@@ -4182,7 +4182,7 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-- proto: MagazinePistolIncendiary
+- proto: MagazinePistol # Harmony Change - Changed Incendiary Round Magazine to a pistol magazine
   entities:
   - uid: 331
     components:

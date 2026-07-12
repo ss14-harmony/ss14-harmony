@@ -1,0 +1,104 @@
+- type: entity
+  abstract: true
+  id: MobHonkMotherBase
+  name: Honk Mother
+  description: 500-foot nightmare stitched from painted clown flesh.
+  components:
+    - type: Sprite
+      sprite: Mobs/Demons/honkmother.rsi
+      drawdepth: Ghosts
+      scale: 2.0,2.0
+      layers:
+        - state: honkmother
+          shader: unshaded
+
+# spawn animation, spawns actual honkmother when it ends
+- type: entity
+  parent: MobHonkMotherBase
+  id: MobHonkmotherSpawn
+  suffix: Spawn, Harmony
+  components:
+    - type: Sprite
+      layers:
+        - state: spawn
+          shader: unshaded
+    # spawn animation lasts 3 seconds
+    - type: TimedDespawn
+      lifetime: 3
+    - type: SpawnOnDespawn
+      prototype: MobHonkmother
+
+- type: entity
+  parent: [MobHonkMotherBase, BaseMob]
+  id: MobHonkmother
+  suffix: Harmony
+  components:
+    - type: AnnounceOnSpawn
+      message: honkmother-has-risen
+      sender: honkmother-has-risen-sender
+      sound:
+        path: /Audio/_Harmony/Misc/honkmother_arrival.ogg
+      color: red
+    - type: CargoSellBlacklist
+    # big honkmother needs to see the universe
+    - type: ContentEye
+      maxZoom: 2.0,2.0
+    - type: Fixtures
+      fixtures:
+        EventHorizonCollider:
+          shape:
+            !type:PhysShapeCircle
+            radius: 5
+          hard: false
+          restitution: 0.8
+          density: 1
+          mask:
+            - SingularityLayer
+          layer:
+            - SingularityLayer
+        EventHorizonConsumer:
+          shape:
+            !type:PhysShapeCircle
+            radius: 5
+          hard: false
+          mask:
+            - SingularityLayer
+          layer:
+            - SingularityLayer
+    - type: Input
+      context: "ghost"
+    - type: MovementIgnoreGravity
+    - type: IntrinsicRadioReceiver
+    - type: ActiveRadio
+      channels:
+        - Binary
+        - Common
+        - Command
+        - CentCom
+        - Engineering
+        - Medical
+        - Science
+        - Security
+        - Service
+        - Supply
+        - Syndicate
+      globalReceive: true
+    - type: Physics
+      bodyType: KinematicController
+      bodyStatus: InAir
+    - type: CanMoveInAir
+    - type: EventHorizon
+      radius: 5
+      canBreachContainment: true
+    - type: GravityWell
+      baseRadialAcceleration: 6
+      maxRange: 8
+    - type: Tag
+      tags:
+        - GhostOnlyWarp
+    - type: WarpPoint
+      follow: true
+      location: Honk Mother
+      blacklist:
+        tags:
+          - GhostOnlyWarp

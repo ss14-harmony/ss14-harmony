@@ -31,8 +31,9 @@
     energy: 3
     color: "#FFC90C"
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Wood
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
       - trigger:
@@ -53,6 +54,7 @@
   - type: IgnitionSource
     temperature: 700
     ignited: true
+  - type: RequireProjectileTarget
   # Harmony start. Bonfire improvements below
   - type: IgniteOnCollide
     fireStacks: 2
@@ -85,7 +87,7 @@
     offset: "0, 0.5"
   - type: Strap
     position: Stand
-    buckleOffset: "0, 0.5"
+    buckleOffset: "0, 0.4"
     buckleDoafterTime: 5
   - type: IgniteOnBuckle
   - type: Construction
