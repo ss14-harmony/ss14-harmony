@@ -8,6 +8,18 @@
       path: /Audio/_CD/Voice/Avali/avali_scream.ogg
     Laugh:
       path: /Audio/_CD/Voice/Avali/avali_laugh.ogg
+    Sneeze:
+      path: /Audio/_Harmony/Voice/Avali/avali_sneeze.ogg #Harm
+    Cough:
+      path: /Audio/_Starlight/Voice/Avali/avali_cough.ogg
+    Crying:
+      path: /Audio/_Starlight/Voice/Avali/avali_cry.ogg
+    Whistle:
+      path: /Audio/_Starlight/Voice/Avali/avali_whistle.ogg
+    Yawn:
+      path: /Audio/_Starlight/Voice/Avali/avali_yawn.ogg #@CrimsonJ on discord made a good point, potential same problem as vulp, reduced by 10 decibels because it was so piercing. May replace eventually
+    Sigh:
+      path: /Audio/_Starlight/Voice/Avali/avali_sigh.ogg
 
 - type: emoteSounds
   id: FemaleAvali
@@ -18,3 +30,15 @@
       path: /Audio/_CD/Voice/Avali/avali_scream.ogg
     Laugh:
       path: /Audio/_CD/Voice/Avali/avali_laugh.ogg
+    Sneeze:
+      path: /Audio/_Harmony/Voice/Avali/avali_sneeze.ogg #Harm
+    Cough:
+      path: /Audio/_Starlight/Voice/Avali/avali_cough.ogg
+    Crying:
+      path: /Audio/_Starlight/Voice/Avali/avali_cry.ogg
+    Whistle:
+      path: /Audio/_Starlight/Voice/Avali/avali_whistle.ogg
+    Yawn:
+      path: /Audio/_Starlight/Voice/Avali/avali_yawn.ogg #@CrimsonJ on discord made a good point, potential same problem as vulp, reduced by 10 decibels because it was so piercing. May replace eventually
+    Sigh:
+      path: /Audio/_Starlight/Voice/Avali/avali_sigh.ogg

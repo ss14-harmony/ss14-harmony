@@ -50,6 +50,9 @@
     enum.HumanoidVisualLayers.RFoot:
       limit: 1
       required: false
+    enum.HumanoidVisualLayers.TailOverlay: #Harm // Earrings and Tail rings share this layer, would be hidden by ears otherwise
+      limit: 5 #Lots of slots due to number of options
+      required: false
 
 - type: entity
   parent: BaseSpeciesAppearance
@@ -179,7 +182,7 @@
   abstract: true
   components:
   - type: Metabolizer
-    metabolizerTypes: [ Avali ]
+    metabolizerTypes: [ Animal ] #Harm // Avali --> Animal // yummy yummy mice
 
 - type: entity
   parent: OrganAvali
@@ -282,6 +285,16 @@
 - type: entity
   parent: [ OrganBaseStomach, OrganAvaliInternal, OrganAvaliMetabolizer ]
   id: OrganAvaliStomach
+  components: #Harm
+  - type: Stomach
+    specialDigestible:
+      tags: #Same as lizards, while keeping Avali organ name scheme intact
+      - Fruit
+      - Meat
+      - ReptilianFood
+      - Pill
+      - Crayon
+      - Paper
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganAvaliInternal, OrganHumanMetabolizer ]
