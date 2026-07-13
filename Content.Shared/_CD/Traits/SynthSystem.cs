@@ -3,6 +3,8 @@ using Content.Shared.Body.Systems; // Misfit - Move synthetic trait to shared
 using Content.Shared.Chat.TypingIndicator;
 using Content.Shared.Chemistry.Components; // Harmony
 using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Forensics; // Harmony
+using Content.Shared.Forensics.Components; // Harmony
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CD.Traits; // Misfit - Move synthetic trait to shared
@@ -37,5 +39,13 @@ public sealed partial class SynthSystem : EntitySystem
 
         // Give them synth blood. Ion storm notif is handled in that system
         _bloodstream.ChangeBloodReagents(uid, synthBloodSolution); // Misfit - Type safety // Harmony - Update to ChangeBloodReagents
+
+        // Harmony Start - Regenerate DNA
+        if (!TryComp<DnaComponent>(uid, out var dnaComp) || dnaComp.DNA == null)
+            return;
+
+        var ev = new GenerateDnaEvent { Owner = uid, DNA = dnaComp.DNA };
+        RaiseLocalEvent(uid, ref ev);
+        // Harmony End
     }
 }
