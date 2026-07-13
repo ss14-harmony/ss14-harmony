@@ -80,10 +80,17 @@
         - Critical
       damage:
         types:
-          Airloss: -1
-          Brute: -1
-          Burn: -1
-          Toxin: -1
+          Asphyxiation: -0.5
+          Bloodloss: -0.5
+          Poison: -0.5
+          Radiation: -0.5
+          Blunt: -0.33
+          Slash: -0.33
+          Piercing: -0.33
+          Heat: -0.33
+          Cold: -0.33
+          Shock: -0.33
+          Caustic: -0.33
 
 - type: entity
   parent: [ MobEeepBase ]
