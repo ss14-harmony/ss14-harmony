@@ -3611,3 +3611,46 @@
   id: 1412
   time: '2026-07-06T06:17:38.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1425
+- author: Llfiend
+  changes:
+  - message: Fixed clothing animations suddenly resetting.
+    type: Fix
+  id: 1413
+  time: '2026-07-12T05:32:26.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1219
+- author: luckyshotpictures
+  changes:
+  - message: The values of Narcolepsy medications have changed to be slower in metabolism.
+    type: Tweak
+  id: 1414
+  time: '2026-07-12T05:43:24.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1247
+- author: Meara1179
+  changes:
+  - message: Non-Security Mime masks can now change their appearance to other non-Security
+      Mime masks.
+    type: Tweak
+  id: 1415
+  time: '2026-07-12T06:01:59.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1248
+- author: Dinoguy12349
+  changes:
+  - message: Added the Bungo Bomber
+    type: Add
+  id: 1416
+  time: '2026-07-13T04:19:37.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1044
+- author: dragydevi
+  changes:
+  - message: New lobby art by Baxtersclaws
+    type: Add
+  id: 1417
+  time: '2026-07-14T01:24:33.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1431
+- author: daseiinn
+  changes:
+  - message: Gives Bingles levels of insulation based on upgrades.
+    type: Tweak
+  id: 1418
+  time: '2026-07-14T07:12:48.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1279
