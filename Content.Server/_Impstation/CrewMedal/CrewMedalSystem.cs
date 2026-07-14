@@ -10,10 +10,10 @@ using System.Text;
 
 namespace Content.Server._Impstation.CrewMedal;
 
-public sealed class CrewMedalSystem : SharedCrewMedalSystem
+public sealed partial class CrewMedalSystem : SharedCrewMedalSystem
 {
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {

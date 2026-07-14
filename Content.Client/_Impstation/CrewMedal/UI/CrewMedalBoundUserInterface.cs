@@ -6,9 +6,9 @@ namespace Content.Client._Impstation.CrewMedal.UI;
 /// <summary>
 /// Initializes a <see cref="CrewMedalWindow"/> and updates it when new server messages are received.
 /// </summary>
-public sealed class CrewMedalBoundUserInterface : BoundUserInterface
+public sealed partial class CrewMedalBoundUserInterface : BoundUserInterface
 {
-    [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private IEntityManager _entManager = default!;
 
     [ViewVariables]
     private CrewMedalWindow? _window;

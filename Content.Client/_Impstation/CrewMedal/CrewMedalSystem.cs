@@ -3,9 +3,9 @@ using Content.Shared._Impstation.CrewMedal;
 
 namespace Content.Client._Impstation.CrewMedal;
 
-public sealed class CrewMedalSystem : SharedCrewMedalSystem
+public sealed partial class CrewMedalSystem : SharedCrewMedalSystem
 {
-    [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
+    [Dependency] private SharedUserInterfaceSystem _uiSystem = default!;
     public override void Initialize()
     {
         base.Initialize();
