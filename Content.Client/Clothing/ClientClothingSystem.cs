@@ -69,7 +69,7 @@ public sealed partial class ClientClothingSystem : ClothingSystem
         if (args.Sprite == null)
             return;
 
-        UpdateAllSlots(uid, component);
+        // UpdateAllSlots(uid, component); // Harmony - doesn't fucking work for sex displacement updates anyway
 
         // No clothing equipped -> make sure the layer is hidden, though this should already be handled by on-unequip.
         if (_sprite.LayerMapTryGet((uid, args.Sprite), HumanoidVisualLayers.StencilMask, out var layer, false))
