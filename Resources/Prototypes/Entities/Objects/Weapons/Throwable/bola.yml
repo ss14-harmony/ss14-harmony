@@ -42,9 +42,11 @@
         Blunt: 5
   - type: Ensnaring
     freeTime: 2.0
-    breakoutTime: 3.5 #all bola should generally be fast to remove
-    walkSpeed: 0.5 #makeshift bola shouldn't slow too much
-    sprintSpeed: 0.5
+# Start Harmony change
+    breakoutTime: 2.5 # 3.5 -> 2.5
+    walkSpeed: 0.75 # 0.5 -> 0.75
+    sprintSpeed: 0.75 # 0.5 -> 0.75
+# End Harmony change
     staminaDamage: 0 # anything but this is gamebreaking
     canThrowTrigger: true
     canMoveBreakout: true

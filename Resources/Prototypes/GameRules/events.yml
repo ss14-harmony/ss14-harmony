@@ -500,7 +500,7 @@
   id: LoneOpsSpawn
   components:
   - type: StationEvent
-    earliestStart: 60 # Harmony 35 -> 60
+    earliestStart: 45 # Harmony Change: Increased the time for lone ops to roll 35 -> 45
     weight: 2 # Harmony 5.5 -> 2
     minimumPlayers: 35 # Harmony 20 -> 35
     duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.

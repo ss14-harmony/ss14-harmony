@@ -103,6 +103,7 @@
     CMOGogglesStealObjective: 1 # harmony change
     FireAxeStealObjective: 1                            #eng
     AmePartFlatpackStealObjective: 1
+    RCDEliteStealObjective: 1                           # Harmony objective
     ExpeditionsCircuitboardStealObjective: 1            #sup
     CargoShuttleCircuitboardStealObjective: 1
     BibleStealObjective: 1
