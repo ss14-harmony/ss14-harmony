@@ -10,10 +10,10 @@ using Content.Shared.Verbs;
 
 namespace Content.Shared._DV.Paper;
 
-public abstract class SharedSignatureSystem : EntitySystem
+public abstract partial class SharedSignatureSystem : EntitySystem
 {
-    [Dependency] private readonly SharedIdCardSystem _idCard = default!;
-    [Dependency] private readonly PaperSystem _paper = default!;
+    [Dependency] private SharedIdCardSystem _idCard = default!;
+    [Dependency] private PaperSystem _paper = default!;
 
     // The sprite used to visualize "signatures" on paper entities.
     public const string SignatureStampState = "paper_stamp-signature";

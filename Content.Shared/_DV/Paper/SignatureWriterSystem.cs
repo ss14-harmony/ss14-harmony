@@ -10,9 +10,9 @@ using System.Linq;
 
 namespace Content.Shared._DV.Paper;
 
-public sealed class SignatureWriterSystem : EntitySystem
+public sealed partial class SignatureWriterSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
