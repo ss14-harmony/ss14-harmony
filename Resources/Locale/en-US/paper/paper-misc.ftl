@@ -52,9 +52,9 @@ book-text-agrichemkit-manual = Thank you for choosing the safe-for-all-ages Nano
       Each individual plant responds to unstable mutagen differently, so you may want to use small doses on multiple crops and try to crossbreed the best traits from each of those. Applying multiple doses to one plant can stack multiple changes and make it harder to single out desirable traits.
       Unstable mutagen is entirely safe when used as a fertilizer, and NanoTrasen takes no responsibility for dead crops, excessive water bills, newly sentient plants asking existential questions, or flora-strangled farmhands that may coincidentally occur while using it.
       Do not drink unstable mutagen. Wash your hands thoroughly after handling. Wash your eyes if you have looked at unstable mutagen for over 30 minutes in a 24 hour period. Store in a dark room between 293–295K. Do not use on corporate holidays. If you begin hearing voices telling you to drink unstable mutagen, please contact your doctor, head of personnel, or exorcist.
-
+# Harmony changes - Adds bungo fruit recipe and mention of item to combat bakery kit
 book-text-combat-bakery-kit = Thank you for choosing our combat bakery kit!
-      Enclosed are two (2) CyberSun patented Throwing Croissants, and one (1) patent-pending Baguette Sword.
+      Enclosed are two (2) CyberSun patented Throwing Croissants, one (1) bungo fruit, and one (1) patent-pending Baguette Sword.
       The included Donk Co. microwave board can construct a microwave capable of baking more weapons.
       Just like the baked weapons, be sure to eat this note after use. Good luck, agent.
 
@@ -70,3 +70,9 @@ book-text-combat-bakery-kit = Thank you for choosing our combat bakery kit!
       Butter Slice x 1
       Glass Shard x 1
       Cook Time: 5 seconds
+
+      Bungo Bomber Recipe:
+      Glass x10
+      LV wire x5
+      Bungo Fruit x1
+      Cook Time: 20 seconds

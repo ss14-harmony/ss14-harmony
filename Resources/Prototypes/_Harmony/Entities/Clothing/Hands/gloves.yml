@@ -18,14 +18,6 @@
   id: ClothingHandsGlovesMantis
   suffix: Mantis
   components:
-  - type: SolutionContainerManager
-    solutions:
-      melee:
-        maxVol: 10
-  - type: RefillableSolution
-    solution: melee
-  - type: InjectableSolution
-    solution: melee
   - type: Sprite
     sprite: _Harmony/Clothing/Hands/Gloves/mantis.rsi
     layers:
@@ -61,10 +53,6 @@
   - type: MantisGloves
   - type: ComponentToggler
     components:
-    - type: MeleeChemicalInjector
-      solution: melee
-    - type: SolutionTransfer
-      maxTransferAmount: 2.5
     - type: MeleeWeapon
       attackRate: 1.5
       damage:

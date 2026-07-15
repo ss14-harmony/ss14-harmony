@@ -300,7 +300,7 @@
     - Snout
 
 - type: entity
-  parent: ClothingMaskBase
+  parent: ClothingMaskMimeBase # Harmony
   id: ClothingMaskMime
   name: mime mask
   description: The traditional mime's mask. It has an eerie facial posture.
@@ -309,15 +309,20 @@
     sprite: Clothing/Mask/mime.rsi
   - type: Clothing
     sprite: Clothing/Mask/mime.rsi
-  - type: BreathMask
-  - type: IdentityBlocker
+  - type: ChameleonClothing # Harmony adds chameleon to all of the non-sec mime masks.
+    slot: Mask
+    requireTag: MimeMaskChameleon # Harmony new tag to restrict the mime masks to only change into each other.
+    default: ClothingMaskMime
+    affectedByEmp: false
+  - type: UserInterface # Harmony
+    interfaces:
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface
   - type: Tag
     tags:
     - HamsterWearable
     - WhitelistChameleon
-  - type: HideLayerClothing
-    slots:
-    - Snout
+    - MimeMaskChameleon # Harmony new tag to restrict the mime masks to only change into each other.
 
 - type: entity
   parent: ClothingMaskPullableBase
@@ -657,6 +662,8 @@
     sprite: Clothing/Mask/blushingmime.rsi
   - type: Clothing
     sprite: Clothing/Mask/blushingmime.rsi
+  - type: ChameleonClothing # Harmony sets defualt appearence for the chameleon mask.
+    default: ClothingMaskBlushingMime
 
 - type: entity
   parent: ClothingMaskMime
@@ -668,6 +675,8 @@
     sprite: Clothing/Mask/sadmime.rsi
   - type: Clothing
     sprite: Clothing/Mask/sadmime.rsi
+  - type: ChameleonClothing # Harmony sets defualt appearence for the chameleon mask.
+    default: ClothingMaskSadMime
 
 - type: entity
   parent: ClothingMaskMime
@@ -679,9 +688,14 @@
     sprite: Clothing/Mask/scaredmime.rsi
   - type: Clothing
     sprite: Clothing/Mask/scaredmime.rsi
+  - type: ChameleonClothing # Harmony sets defualt appearence for the chameleon mask.
+    default: ClothingMaskScaredMime
 
 - type: entity
-  parent: [ClothingMaskMime, BaseSecurityContraband]
+# Harmony change start - No longer inherits the chameleon component
+# parent: [ClothingMaskMime, BaseSecurityContraband]
+  parent: [ClothingMaskMimeBase, BaseSecurityContraband] 
+# Harmony change end
   id: ClothingMaskMimeSecurity
   name: security mime mask
   description: You have the right to remain silent.

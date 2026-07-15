@@ -1,4 +1,5 @@
-using Content.IntegrationTests.Fixtures;
+// Harmony Change Start - Remove WizDen Content Freeze Test
+/* using Content.IntegrationTests.Fixtures;
 using Content.Shared.Kitchen;
 
 namespace Content.IntegrationTests.Tests.WizdenContentFreeze;
@@ -38,3 +39,5 @@ public sealed class WizdenContentFreeze : GameTest
         }
     }
 }
+*/
+// Harmony Change End

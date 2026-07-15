@@ -175,7 +175,7 @@
     - id: ClothingHeadsetAltEngineering
     - id: DoorRemoteEngineering
     - id: BoxCECircuitboards
-    - id: RCD
+    - id: RCDElite #Sich and Harmony change
     - id: RCDAmmo
     - id: RPD # Harmony Change: Add RPD to locker before upstream implimentation
     - id: RubberStampCE

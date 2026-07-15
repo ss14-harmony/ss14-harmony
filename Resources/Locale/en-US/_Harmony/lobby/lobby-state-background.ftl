@@ -16,5 +16,11 @@ lobby-state-background-hearscargo-artist = Baxtersclaws
 lobby-state-background-dragonencounter-title = Dragon Encounter
 lobby-state-background-dragonencounter-artist = Mofi
 
+lobby-state-background-unauthorizedentry-title = Unauthorized Entry
+lobby-state-background-unauthorizedentry-artist = Shadarrius
+
 lobby-state-background-decompressing-title = Decompressing
 lobby-state-background-decompressing-artist = Dispenser
+
+lobby-state-background-twoclowns-title = So two salvagers walk onto a pitch black wreck…
+lobby-state-background-twoclowns-artist = Baxtersclaws
