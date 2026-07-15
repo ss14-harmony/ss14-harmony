@@ -14,11 +14,11 @@ using Robust.Shared.Player;
 
 namespace Content.Server._DV.Paper;
 
-public sealed class SignatureSystem : SharedSignatureSystem
+public sealed partial class SignatureSystem : SharedSignatureSystem
 {
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly PaperSystem _paper = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private PaperSystem _paper = default!;
 
     public override void Initialize()
     {
