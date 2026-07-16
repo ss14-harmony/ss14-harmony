@@ -23,6 +23,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Roles.Components;
+using Content.Shared.Roles.RoleCodeword;
 using Content.Shared.Zombies;
 using Robust.Server.Player;
 using Robust.Shared.Utility;
@@ -268,6 +269,13 @@ public sealed partial class BloodBrotherRuleSystem : GameRuleSystem<BloodBrother
         if (targetMind.UserId == null)
         {
             errorMessage = "blood-brother-convert-failed-no-mind";
+            return false;
+        }
+
+        //Prevent Traitors - they have RoleCodewordComponent
+        if (HasComp<RoleCodewordComponent>(target))
+        {
+            errorMessage = "blood-brother-convert-failed-preference"; // Dont want the BB to metagame a tot with a different message
             return false;
         }
 
