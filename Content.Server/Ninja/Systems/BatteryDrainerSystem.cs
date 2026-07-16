@@ -24,7 +24,7 @@ public sealed partial class BatteryDrainerSystem : SharedBatteryDrainerSystem
     public override void Initialize()
     {
         base.Initialize();
-        
+
         SubscribeLocalEvent<BatteryDrainerComponent, ComponentStartup>(OnStartup); // Harmony Eeep Port - imp add
         SubscribeLocalEvent<BatteryDrainerComponent, BeforeInteractHandEvent>(OnBeforeInteractHand);
         SubscribeLocalEvent<BatteryDrainerComponent, NinjaBatteryChangedEvent>(OnBatteryChanged);
@@ -80,7 +80,6 @@ public sealed partial class BatteryDrainerSystem : SharedBatteryDrainerSystem
     protected override void OnDoAfterAttempt(Entity<BatteryDrainerComponent> ent, ref DoAfterAttemptEvent<DrainDoAfterEvent> args)
     {
         base.OnDoAfterAttempt(ent, ref args);
-        
         if (ent.Comp.BatteryUid is not { } battery || _battery.IsFull(battery))
             args.Cancel();
     }
