@@ -18,6 +18,7 @@ using Content.Shared._Harmony.Roles.Components;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Mind;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
@@ -26,6 +27,7 @@ using Content.Shared.Roles.Components;
 using Content.Shared.Roles.RoleCodeword;
 using Content.Shared.Zombies;
 using Robust.Server.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Server._Harmony.GameTicking.Rules;
@@ -46,6 +48,9 @@ public sealed partial class BloodBrotherRuleSystem : GameRuleSystem<BloodBrother
     [Dependency] private RoleSystem _roleSystem = default!;
     [Dependency] private StunSystem _stunSystem = default!;
     [Dependency] private TargetObjectiveSystem _targetObjectiveSystem = default!;
+
+    private static readonly ProtoId<RoleTypePrototype>[] Filter =
+        {"SoloAntagonist", "TeamAntagonist"}; // Traitors and Nukies and other team antags like... bingles?
 
     public override void Initialize()
     {
@@ -273,7 +278,7 @@ public sealed partial class BloodBrotherRuleSystem : GameRuleSystem<BloodBrother
         }
 
         //Prevent Traitors - they have RoleCodewordComponent
-        if (HasComp<RoleCodewordComponent>(target))
+        if (Filter.Contains(targetMind.RoleType))
         {
             errorMessage = "blood-brother-convert-failed-preference"; // Dont want the BB to metagame a tot with a different message
             return false;
