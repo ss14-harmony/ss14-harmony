@@ -80,6 +80,7 @@ public sealed partial class BatteryDrainerSystem : SharedBatteryDrainerSystem
     protected override void OnDoAfterAttempt(Entity<BatteryDrainerComponent> ent, ref DoAfterAttemptEvent<DrainDoAfterEvent> args)
     {
         base.OnDoAfterAttempt(ent, ref args);
+
         if (ent.Comp.BatteryUid is not { } battery || _battery.IsFull(battery))
             args.Cancel();
     }
