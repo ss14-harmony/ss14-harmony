@@ -64,7 +64,7 @@
     solution:
       reagents:
       - ReagentId: SpaceCleaner
-        Quantity: 960
+        Quantity: 6000 # Harmony Change - Originally 960 during solution change, was 5000 before the change, 6000 is 50 refills of a spray bottle
 
 - type: entity
   parent: BaseDispenser
