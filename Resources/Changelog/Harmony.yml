@@ -1,4 +1,4 @@
-﻿Entries:
+Entries:
 - author: liltenhead
   changes:
   - message: Added server pins to the trinket section in character loadouts.
@@ -3672,18 +3672,14 @@
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1329
 - author: MoonlightHollow
   changes:
-  - message: 'New midround antags: Electric Sheeps known as Eeeps'
+  - message: 'A new midround antagonist ghost role can now spawn: electric sheeps known as Eeeps.'
     type: Add
   id: 1421
   time: '2026-07-18T16:22:10.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1256
 - author: SigmaTheDragon
   changes:
-  - message: 'Added a new midround free agent ghost role: the Mini Dragon'
-    type: Add
-  - message: Added a domesticated Mini Dragon mob for admin events.
-    type: Add
-  - message: Added a minor antagonists entry for the Mini Dragon
+  - message: 'A new midround free agent ghost role can now spawn: the mini dragon.'
     type: Add
   id: 1422
   time: '2026-07-18T16:56:18.0000000+00:00'
