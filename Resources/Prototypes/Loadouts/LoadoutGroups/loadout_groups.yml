@@ -274,6 +274,15 @@
   - BlackShoes
   - WinterBoots
 
+# Begin Harmony Change
+- type: loadoutGroup
+  id: PassengerPDA
+  name: loadout-group-passenger-PDA
+  loadouts:
+  - PassengerPDA
+  - ClearPDA
+# End Harmony Change
+
 #- type: loadoutGroup
 #  id: PassengerJobTrinkets
 #  name: loadout-group-jobtrinkets
