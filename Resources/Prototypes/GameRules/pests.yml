@@ -63,12 +63,12 @@
   components:
   - type: StationEvent
     earliestStart: 15
-    weight: 3
+    weight: 2
     duration: 20
     minimumPlayers: 1
   - type: VentCrittersRule
     min: 1 # DeltaV
-    max: 3 # DeltaV
+    max: 2 # DeltaV
     playerRatio: 70 # DeltaV: Mostly ignore player scaling
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
