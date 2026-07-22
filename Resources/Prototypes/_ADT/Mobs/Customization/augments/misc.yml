@@ -1,10 +1,8 @@
 - type: marking
   id: Malstrem
   bodyPart: Eyes
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Vulpkanin]
   forcedColoring: false
-  followSkinColor: false
   sprites:
   - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi
     state: malstrem
@@ -12,10 +10,8 @@
 - type: marking
   id: Beholder
   bodyPart: Eyes
-  markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Vulpkanin, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Vulpkanin]
   forcedColoring: false
-  followSkinColor: false
   sprites:
   - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi
     state: beholder

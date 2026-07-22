@@ -63,3 +63,24 @@
     sprite: Clothing/Mask/italian_moustache.rsi
   - type: Item
     storedRotation: -90
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskMimeBase # Harmony seperated the standard mime mask from the base.
+  abstract: true
+#  name: mime mask
+#  description: The traditional mime's mask. It has an eerie facial posture.
+  components:
+#  - type: Sprite
+#    sprite: Clothing/Mask/mime.rsi
+#  - type: Clothing
+#    sprite: Clothing/Mask/mime.rsi
+  - type: BreathMask
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Snout
