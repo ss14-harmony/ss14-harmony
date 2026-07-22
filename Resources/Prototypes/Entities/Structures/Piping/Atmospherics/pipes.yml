@@ -148,9 +148,12 @@
     graph: GasPipe
     node: straight
   - type: Item
-    storedSprite:
-      sprite: Structures/Piping/Atmospherics/pipe.rsi
-      state: storageStraight
+    # Begin Harmony Changes
+    # storedSprite:
+    #  sprite: Structures/Piping/Atmospherics/pipe.rsi
+    #  state: storageStraight
+    sprite: _Harmony/Structures/Piping/Atmospherics/straight.rsi
+    # End Harmony Changes
     shape:
     - 0,0,0,2
   - type: MeleeWeapon
@@ -160,6 +163,13 @@
         Blunt: 8
     soundHit:
       collection: MetalThud # this NEEDS to changed to the metal pipe falling sound effect on april first every year
+  # Begin Harmony Changes
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 4
+  # End Harmony Changes
   - type: GuideHelp
     guides:
     - Pipes
@@ -194,10 +204,13 @@
     shape:
     - 0,0,1,0
     - 1,1,1,1
-    heldPrefix: Bend
-    storedSprite:
-      sprite: Structures/Piping/Atmospherics/pipe.rsi
-      state: storageBend
+    # Begin Harmony Changes
+    # heldPrefix: Bend
+    # storedSprite:
+    #  sprite: Structures/Piping/Atmospherics/pipe.rsi
+    #  state: storageBend
+    sprite: _Harmony/Structures/Piping/Atmospherics/bend.rsi
+    # End Harmony Changes
   - type: MeleeWeapon
     wideAnimationRotation: 180
     attackRate: 1
@@ -210,6 +223,13 @@
     damage:
       types:
         Blunt: 8 # Woe, pipe be upon ye!
+  # Begin Harmony Changes
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 4
+  # End Harmony Changes
   - type: GuideHelp
     guides:
     - Pipes
@@ -241,10 +261,13 @@
     graph: GasPipe
     node: tjunction
   - type: Item
-    heldPrefix: TJunction
-    storedSprite:
-      sprite: Structures/Piping/Atmospherics/pipe.rsi
-      state: storageTJunction
+  # Begin Harmony Changes
+  #  heldPrefix: TJunction
+  #  storedSprite:
+  #    sprite: Structures/Piping/Atmospherics/pipe.rsi
+  #    state: storageTJunction
+    sprite: _Harmony/Structures/Piping/Atmospherics/tjunction.rsi
+  # End Harmony Changes
   - type: MeleeWeapon
     wideAnimationRotation: 90
     attackRate: 0.75
@@ -253,6 +276,13 @@
         Blunt: 10
     soundHit:
       collection: MetalThud
+  # Begin Harmony Changes
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 4
+  # End Harmony Changes
   - type: GuideHelp
     guides:
     - Pipes
@@ -286,10 +316,13 @@
     graph: GasPipe
     node: fourway
   - type: Item
-    heldPrefix: Fourway
-    storedSprite:
-      sprite: Structures/Piping/Atmospherics/pipe.rsi
-      state: storageFourway
+  # Begin Harmony Changes
+  #  heldPrefix: Fourway
+  #  storedSprite:
+  #    sprite: Structures/Piping/Atmospherics/pipe.rsi
+  #    state: storageFourway
+    sprite: _Harmony/Structures/Piping/Atmospherics/fourway.rsi
+  # End Harmony Changes
   - type: MeleeWeapon
     wideAnimationRotation: 90
     attackRate: 0.75
@@ -298,6 +331,13 @@
         Blunt: 10
     soundHit:
       collection: MetalThud
+  # Begin Harmony Changes
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 4
+  # End Harmony Changes
   - type: GuideHelp
     guides:
     - Pipes
