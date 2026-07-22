@@ -215,7 +215,7 @@
       factions:
       - Passive
     - type: FactionException
-    - type: RandomMetadata # Harm
+    - type: RandomMetadata # Harm 
       nameSegments:
       - NamesMiniDragon
       nameFormat: random-metadata-name-format-default
