@@ -63,7 +63,7 @@
   components:
   - type: StationEvent
     earliestStart: 15
-    weight: 2
+    weight: 2 # Harmony
     duration: 20
     minimumPlayers: 1
   - type: VentCrittersRule
