@@ -44,7 +44,7 @@ public sealed partial class ZombieComponent : Component
     };
 
     [ViewVariables(VVAccess.ReadWrite)]
-    public float ZombieMovementSpeedDebuff = 0.90f; /// Harmony Change - changes movespeed debuff of zombies from .70 to .95
+    public float ZombieMovementSpeedDebuff = 0.90f; /// Harmony Change - changes movespeed debuff of zombies from .70 to .90
 
     /// <summary>
     /// The skin color of the zombie
