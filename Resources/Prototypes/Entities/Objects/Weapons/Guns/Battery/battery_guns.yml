@@ -871,7 +871,7 @@
     - proto: BulletLaserSpreadNarrow
       fireCost: 80
     - proto: BulletDisablerSmgSpread
-      fireCost: 48
+      fireCost: 40 # Harmony Change - cost lowered (48 -> 40)
       pacifismAllowedMode: true
   - type: Item
     size: Large
@@ -923,7 +923,7 @@
     - proto: BulletLaserWindowPiercingMagnum
       fireCost: 150
     - proto: BulletDisabler
-      fireCost: 62.5
+      fireCost: 66 # Harmony Change - cost increased (62.5 -> 66)
       pacifismAllowedMode: true
   - type: BatterySelfRecharger
     autoRechargeRate: 48
