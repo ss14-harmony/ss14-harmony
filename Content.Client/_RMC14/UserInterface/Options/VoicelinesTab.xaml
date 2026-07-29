@@ -13,7 +13,7 @@
                        FontColorOverride="{x:Static s:StyleNano.NanoGold}"
                        StyleClasses="LabelKeyText"/>
                 <CheckBox Name="RMCVoicelinesArachnid" Text="{Loc 'rmc-ui-audio-voicelines-arachnid'}" Margin="0 0 0 5" />
-                <CheckBox Name="RMCVoicelinesDiona" Text="{Loc 'rmc-ui-audio-voicelines-diona'}" Margin="0 0 0 5" />
+                <!-- <CheckBox Name="RMCVoicelinesDiona" Text="{Loc 'rmc-ui-audio-voicelines-diona'}" Margin="0 0 0 5" /> --> <!--Box Change: Dionae use human voice sounds-->
                 <CheckBox Name="RMCVoicelinesDwarf" Text="{Loc 'rmc-ui-audio-voicelines-dwarf'}" Margin="0 0 0 5" />
                 <!-- <CheckBox Name="RMCVoicelinesFelinid" Text="{Loc 'rmc-ui-audio-voicelines-felinid'}" Margin="0 0 0 5" /> --> <!--Harmony, No Felinids-->
                 <CheckBox Name="RMCVoicelinesHuman" Text="{Loc 'rmc-ui-audio-voicelines-human'}" Margin="0 0 0 5" />
@@ -22,10 +22,17 @@
                 <CheckBox Name="RMCVoicelinesSlime" Text="{Loc 'rmc-ui-audio-voicelines-slime'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCVoicelinesAvali" Text="{Loc 'rmc-ui-audio-voicelines-avali'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCVoicelinesVulpkanin" Text="{Loc 'rmc-ui-audio-voicelines-vulpkanin'}" Margin="0 0 0 5" />
-                <!-- <CheckBox Name="RMCVoicelinesRodentia" Text="{Loc 'rmc-ui-audio-voicelines-rodentia'}" Margin="0 0 0 5" />
-                <CheckBox Name="RMCVoicelinesFeroxi" Text="{Loc 'rmc-ui-audio-voicelines-feroxi'}" Margin="0 0 0 5" />
+                <CheckBox Name="RMCVoicelinesRodentia" Text="{Loc 'rmc-ui-audio-voicelines-rodentia'}" Margin="0 0 0 5" />
+                <!--<CheckBox Name="RMCVoicelinesFeroxi" Text="{Loc 'rmc-ui-audio-voicelines-feroxi'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCVoicelinesSkrell" Text="{Loc 'rmc-ui-audio-voicelines-skrell'}" Margin="0 0 0 5" /> --> <!--Harmony, No Rodentia, Feroxi, or Skrell-->
                 <CheckBox Name="RMCVoicelinesVox" Text="{Loc 'rmc-ui-audio-voicelines-vox'}" Margin="0 0 0 5" /> <!--Harmony, add Vox-->
+                <!--Start Box Change: Scurret, IPC, Thaven, Allulalo -->
+                <CheckBox Name="RMCVoicelinesScurret" Text="{Loc 'rmc-ui-audio-voicelines-scurret'}" Margin="0 0 0 5" />
+                <CheckBox Name="RMCVoicelinesIPC" Text="{Loc 'rmc-ui-audio-voicelines-ipc'}" Margin="0 0 0 5" />
+                <!--<CheckBox Name="RMCVoicelinesThaven" Text="{Loc 'rmc-ui-audio-voicelines-thaven'}" Margin="0 0 0 5" />-->
+                <CheckBox Name="RMCVoicelinesAllulalo" Text="{Loc 'rmc-ui-audio-voicelines-allulalo'}" Margin="0 0 0 5" />
+                <!--End Box Change-->
+                
                 <Label Text="{Loc 'rmc-ui-emotes'}"
                        FontColorOverride="{x:Static s:StyleNano.NanoGold}"
                        StyleClasses="LabelKeyText"/>
@@ -39,10 +46,16 @@
                 <CheckBox Name="RMCEmotesSlime" Text="{Loc 'rmc-ui-audio-emotes-slime'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesAvali" Text="{Loc 'rmc-ui-audio-emotes-avali'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesVulpkanin" Text="{Loc 'rmc-ui-audio-emotes-vulpkanin'}" Margin="0 0 0 5" />
-                <!-- <CheckBox Name="RMCEmotesRodentia" Text="{Loc 'rmc-ui-audio-emotes-rodentia'}" Margin="0 0 0 5" />
-                <CheckBox Name="RMCEmotesFeroxi" Text="{Loc 'rmc-ui-audio-emotes-feroxi'}" Margin="0 0 0 5" />
+                <CheckBox Name="RMCEmotesRodentia" Text="{Loc 'rmc-ui-audio-emotes-rodentia'}" Margin="0 0 0 5" />
+                <!--<CheckBox Name="RMCEmotesFeroxi" Text="{Loc 'rmc-ui-audio-emotes-feroxi'}" Margin="0 0 0 5" />
                 <CheckBox Name="RMCEmotesSkrell" Text="{Loc 'rmc-ui-audio-emotes-skrell'}" Margin="0 0 0 5" /> --> <!--Harmony, No Rodentia, Feroxi, or Skrell-->
                 <CheckBox Name="RMCEmotesVox" Text="{Loc 'rmc-ui-audio-emotes-vox'}" Margin="0 0 0 5" /> <!--Harmony, add Vox-->
+                <!--Start Box Change: Scurret, IPC, Thaven, Allulalo -->
+                <CheckBox Name="RMCEmotesScurret" Text="{Loc 'rmc-ui-audio-emotes-scurret'}" Margin="0 0 0 5" />
+                <CheckBox Name="RMCEmotesIPC" Text="{Loc 'rmc-ui-audio-emotes-ipc'}" Margin="0 0 0 5" />
+                <CheckBox Name="RMCEmotesThaven" Text="{Loc 'rmc-ui-audio-emotes-thaven'}" Margin="0 0 0 5" />
+                <CheckBox Name="RMCEmotesAllulalo" Text="{Loc 'rmc-ui-audio-emotes-allulalo'}" Margin="0 0 0 5" />
+                <!--End Box Change-->
             </BoxContainer>
         </ScrollContainer>
         <ui:OptionsTabControlRow Name="Control" Access="Public" />

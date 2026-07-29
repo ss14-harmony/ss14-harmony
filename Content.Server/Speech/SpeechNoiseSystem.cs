@@ -4,8 +4,10 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Shared._RMC14.Voicelines;
-using Robust.Shared.Player; // Harmony - Use RMC14 to mute speechsounds
+// Box Change: Speech sound muting
+using Content.Shared._Box.Audio;
+using Robust.Shared.Player;
+// End Box Change
 
 namespace Content.Server.Speech
 {
@@ -14,9 +16,7 @@ namespace Content.Server.Speech
         [Dependency] private IGameTiming _gameTiming = default!;
         [Dependency] private IRobustRandom _random = default!;
         [Dependency] private SharedAudioSystem _audio = default!;
-        // Harmony - Use RMC14 system to give the option to mute speechsounds
-        [Dependency] private HumanoidVoicelinesSystem _humanoidVoicelines = default!;
-
+        [Dependency] private readonly SpeciesMutingSystem _speciesMuting = default!; // Box Change: Speech sound muting
         public override void Initialize()
         {
             base.Initialize();
@@ -72,13 +72,13 @@ namespace Content.Server.Speech
 
             var sound = GetSpeechSound((uid, component), args.Message);
             component.LastTimeSoundPlayed = currentTime;
-            // Harmony Change Start - option to toggle off speech sounds
+            // Start Box Change: Speech sound muting
             //_audio.PlayPvs(sound, uid);
-            var filter = Filter.Pvs(uid).RemoveWhere(s => !_humanoidVoicelines.ShouldPlayVoicelines(uid, s));
+            var filter = Filter.Pvs(uid).RemoveWhere(s => !_speciesMuting.ShouldPlayVoicelines(uid, s));
             if (filter.Count == 0)
                 return;
             _audio.PlayEntity(sound, filter, uid, true);
-            // Harmony Change End
+            // End Box Change
         }
     }
 }
