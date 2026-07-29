@@ -13,14 +13,14 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.HijackBeacon;
 
-public sealed class HijackBeaconSystem : EntitySystem
+public sealed partial class HijackBeaconSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly AnchorableSystem _anchor = default!;
-    [Dependency] private readonly SharedChatSystem _chat = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private AnchorableSystem _anchor = default!;
+    [Dependency] private SharedChatSystem _chat = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
 
     public readonly SoundSpecifier AnnounceSound = new SoundPathSpecifier("/Audio/Misc/notice1.ogg");
     public readonly SoundSpecifier DeactivateSound = new SoundPathSpecifier("/Audio/Misc/notice2.ogg");
@@ -49,7 +49,10 @@ public sealed class HijackBeaconSystem : EntitySystem
                     if (_gameTiming.CurTime < active.CompletionTime)
                         return;
 
-                    HijackFinish((uid, comp));
+                    //Harmony Change Start - Require Manual Completion
+                    //HijackFinish((uid, comp));
+                    SetToWait((uid, comp));
+                    // Harmony Change End
                     Dirty(uid, comp);
                     break;
                 case HijackBeaconStatus.Cooldown:
@@ -122,6 +125,35 @@ public sealed class HijackBeaconSystem : EntitySystem
                 Impact = LogImpact.High,
             });
         }
+        // Harmony Change Start - Require Manual Completion
+        if (ent.Comp.Status == HijackBeaconStatus.HijackWait)
+        {
+            args.Verbs.Add(new()
+            {
+                Act = () =>
+                {
+                    HijackFinish(ent);
+                },
+                Text = Loc.GetString("hijack-beacon-verb-complete-text"),
+                Message = Loc.GetString("hijack-beacon-verb-complete-message"),
+                TextStyleClass = "InteractionVerb",
+                Impact = LogImpact.High,
+            });
+            var user = args.User;
+
+            args.Verbs.Add(new()
+            {
+                Act = () =>
+                {
+                    DeactivateBeaconDoAfter(ent, user);
+                },
+                Text = Loc.GetString("hijack-beacon-verb-deactivate-text"),
+                Message = Loc.GetString("hijack-beacon-verb-deactivate-message"),
+                TextStyleClass = "InteractionVerb",
+                Impact = LogImpact.High,
+            });
+        }
+        // Harmony Change End
     }
 
     /// <summary>
@@ -196,7 +228,7 @@ public sealed class HijackBeaconSystem : EntitySystem
     /// </summary>
     private void DeactivateBeacon(Entity<HijackBeaconComponent> ent)
     {
-        if (ent.Comp.Status != HijackBeaconStatus.Armed)
+        if (ent.Comp.Status != HijackBeaconStatus.Armed && ent.Comp.Status != HijackBeaconStatus.HijackWait) // Harmony Change, Allow Hijack Wait to also be disarmed
             return;
 
         // Put beacon on cooldown
@@ -219,7 +251,7 @@ public sealed class HijackBeaconSystem : EntitySystem
     /// </summary>
     private void HijackFinish(Entity<HijackBeaconComponent> ent)
     {
-        if (ent.Comp.Status != HijackBeaconStatus.Armed)
+        if (ent.Comp.Status != HijackBeaconStatus.HijackWait) // Harmony Change Armed -> HijackWait
             return;
 
         // Hijack is completed and can't be reattempted
@@ -276,6 +308,20 @@ public sealed class HijackBeaconSystem : EntitySystem
         // (try to) start doafter
         _doAfter.TryStartDoAfter(doAfter);
     }
+
+    // Harmony Change Start - Require Manual Completion
+    /// <summary>
+    ///     Sets the Beacon to wait for completion
+    /// </summary>
+    /// <param name="ent"></param>
+    private void SetToWait(Entity<HijackBeaconComponent> ent)
+    {
+        ent.Comp.Status = HijackBeaconStatus.HijackWait;
+
+        _popup.PopupPredicted(Loc.GetString("hijack-beacon-popup-complete"), ent, null);
+        Dirty(ent);
+    }
+    // Harmony Change End
 
     #region Helpers
 
@@ -334,6 +380,7 @@ public enum HijackBeaconStatus : byte
     AwaitActivate,
     Armed,
     Cooldown,
+    HijackWait, // Harmony Change - Require Manual Completion
     HijackComplete
 }
 

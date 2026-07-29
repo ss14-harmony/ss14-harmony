@@ -107,13 +107,21 @@
 - type: entity
   parent: [ClothingHeadHelmetBase, BaseSecurityContraband]
   id: ClothingHeadHelmetRiot
-  name: light riot helmet
-  description: It's a helmet specifically designed to protect against close range attacks.
+  # Start harmony change - changed name and description
+  #name: light riot helmet
+  name: riot helmet
+  #description: It's a helmet specifically designed to protect against close range attacks.
+  description: A reinforced helmet made from layered polycarbonate with a ballistic glass faceplate attached. Designed to absorb shock from blunt impacts and explosions. Not very effective against bullets.
+  # End harmony change
   components:
+  # Start harmony change - changed sprite path
   - type: Sprite
-    sprite: Clothing/Head/Helmets/light_riot.rsi
+    #sprite: Clothing/Head/Helmets/light_riot.rsi
+    sprite: _Harmony/Clothing/Head/Helmets/light_riot.rsi
   - type: Clothing
-    sprite: Clothing/Head/Helmets/light_riot.rsi
+    #sprite: Clothing/Head/Helmets/light_riot.rsi
+    sprite: _Harmony/Clothing/Head/Helmets/light_riot.rsi
+  # End harmony change
   - type: IngestionBlocker
   - type: Armor
     modifiers:

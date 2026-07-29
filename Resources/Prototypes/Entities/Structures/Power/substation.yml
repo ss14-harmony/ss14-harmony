@@ -30,6 +30,11 @@
     supplyRampTolerance: 5000
     supplyRampRate: 1000
   - type: StationInfiniteBatteryTarget
+  # Harmony Eeep Port - Impstation - Start
+  - type: AccessReader
+    access: [ [ "Engineering" ] ]
+  - type: ActivatableUIRequiresAccess
+  # Impstation - End
 
   # Interface
   - type: BatteryInterface
@@ -52,8 +57,9 @@
 
   # Damage
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrong
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: PacifismDangerousAttack
 
   # Guidebook
