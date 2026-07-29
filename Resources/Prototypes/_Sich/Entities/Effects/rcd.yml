@@ -1,0 +1,21 @@
+- type: entity
+  parent: EffectRCDBase
+  id: EffectRCDConstruct5
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: /Textures/_Sich/Effects/rcd.rsi
+    state: construct5
+  - type: TimedDespawn
+    lifetime: 15
+    
+- type: entity
+  parent: EffectRCDBase
+  id: EffectRCDConstruct6
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: /Textures/_Sich/Effects/rcd.rsi
+    state: construct6
+  - type: TimedDespawn
+    lifetime: 30
