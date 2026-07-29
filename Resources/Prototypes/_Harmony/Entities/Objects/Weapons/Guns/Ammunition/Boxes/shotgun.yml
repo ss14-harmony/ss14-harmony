@@ -13,3 +13,24 @@
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-1
         map: ["enum.GunVisualLayers.Mag"]
+
+
+- type: entity
+  parent: AmmoProviderShotgunShell
+  id: BoxShotgunBreaching
+  name: ammunition box (.50 breaching)
+  description: A cardboard box of .50 shotgun shells. Intended to hold specialized breaching ammunition.
+  components:
+    - type: BallisticAmmoProvider
+      proto: ShellShotgunBreaching
+    - type: MagazineVisuals
+      magState: mag-slug
+      steps: 5
+      zeroVisible: false
+    - type: Sprite
+      layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-slug-1
+        map: ["enum.GunVisualLayers.Mag"]
+      - state: slug
