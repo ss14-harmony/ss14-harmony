@@ -23,3 +23,18 @@
     maxTransferAmount: 7
   - type: SpentAmmoVisuals
     state: "hypo"
+
+- type: entity
+  parent: [ BaseShellShotgun, BaseSecurityContraband]
+  id: ShellShotgunBreaching
+  name: shell (.50 breaching)
+  description: The standard cartridge used by most modern shotguns. Breaching rounds are specialist slugs that do a lot of damage to structures but are ineffective on flesh. /n Breaks up ineffectively beyond short range.
+  components:
+  - type: Sprite
+    layers:
+      - state: slug
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    proto: PelletShotgunBreaching
+  - type: SpentAmmoVisuals
+    state: "slug"
