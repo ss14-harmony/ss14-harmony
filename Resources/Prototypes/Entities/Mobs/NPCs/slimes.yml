@@ -108,6 +108,14 @@
     speechSounds: Slime
   - type: TypingIndicator
     proto: slime
+  # Harmony Change Start - Gives vent critter slimes the ability to pry open doors
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 3
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  # Harmony change end
 
 - type: entity
   name: basic slime
