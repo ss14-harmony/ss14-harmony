@@ -12,6 +12,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Box.Audio;
 
+/// <summary>
+/// System for muting speech, emote, and interaction sounds based on user options.
+/// </summary>
 public sealed class SpeciesMutingSystem : EntitySystem
 {
     [Dependency] private readonly INetConfigurationManager _config = default!;
@@ -48,6 +51,9 @@ public sealed class SpeciesMutingSystem : EntitySystem
     private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> ThavenEmotes = ["MaleThaven"];
     private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> AllulaloEmotes = ["Allulalo"];
 
+    /// <summary>
+    /// A collection of speech sounds to mute, and their associated CVar.
+    /// </summary>
     private readonly Dictionary<ProtoId<SpeechSoundsPrototype>, CVarDef> _voicelineCVars = new()
     {
         [ArachnidVoice] = RMCCVars.RMCPlayVoicelinesArachnid,
@@ -65,6 +71,9 @@ public sealed class SpeciesMutingSystem : EntitySystem
         [AllulaloVoice] = RMCCVars.RMCPlayVoicelinesAllulalo,
     };
 
+    /// <summary>
+    /// A collection of emote sound prototypes to mute, and their associated CVar.
+    /// </summary>
     private readonly Dictionary<HashSet<ProtoId<EmoteSoundsPrototype>>, CVarDef> _emoteCVars = new()
     {
         [ArachnidEmotes] = RMCCVars.RMCPlayEmotesArachnid,
@@ -84,9 +93,24 @@ public sealed class SpeciesMutingSystem : EntitySystem
         [AllulaloEmotes] = RMCCVars.RMCPlayEmotesAllulalo,
     };
 
-    private readonly Dictionary<HashSet<String>, CVarDef> _interactCVars = new()
+    /// <summary>
+    /// A collection of interact sounds (specified as sound paths) to mute, and their associated CVar.
+    /// Copy the path used in the offending entity's yml to ensure accuracy.
+    /// </summary>
+    private readonly Dictionary<HashSet<String>, CVarDef> _interactPathCVars = new()
     {
         [["/Audio/Animals/wawa_chatter.ogg", "/Audio/Animals/wawa_chillin.ogg"]] = RMCCVars.RMCPlayEmotesScurret
+    };
+
+    /// <summary>
+    /// A collection of interact sounds (specified as sound collections) to mute, and their associated CVar.
+    /// </summary>
+    private readonly Dictionary<HashSet<ProtoId<SoundCollectionPrototype>>, CVarDef> _interactCollectionCVars = new()
+    {
+        // Nothing here for now.
+        // Example line will cause the desk bell to have its interact sounds muted if human emotes are muted.
+        // In memory of the first round with the new system where we found out I broke the desk bell due to casting issues.
+        //[["DeskBell"]] = RMCCVars.RMCPlayEmotesHuman
     };
 
     private EntityQuery<VocalComponent> _vocalQuery;
@@ -104,19 +128,14 @@ public sealed class SpeciesMutingSystem : EntitySystem
     {
         if (forPlayer.AttachedEntity == vocalizer &&
             !_config.GetClientCVar(forPlayer.Channel, RMCCVars.RMCPlayEmotesYourself))
-        {
             return false;
-        }
 
         if (!_vocalQuery.Resolve(vocalizer, ref vocalizer.Comp, false))
-        {
             return true;
-        }
 
         if (vocalizer.Comp.EmoteSounds == null)
-        {
             return true;
-        }
+
         ProtoId<EmoteSoundsPrototype> sound = (ProtoId<EmoteSoundsPrototype>)vocalizer.Comp.EmoteSounds;
         CVarDef? play = null;
         foreach (var emote in _emoteCVars)
@@ -127,10 +146,10 @@ public sealed class SpeciesMutingSystem : EntitySystem
                 break;
             }
         }
+
         if (play == null)
-        {
             return true;
-        }
+
         return _config.GetClientCVar<bool>(forPlayer.Channel, play.Name);
     }
 
@@ -138,59 +157,77 @@ public sealed class SpeciesMutingSystem : EntitySystem
     {
         if (forPlayer.AttachedEntity == vocalizer &&
             !_config.GetClientCVar(forPlayer.Channel, RMCCVars.RMCPlayVoicelinesYourself))
-        {
             return false;
-        }
 
         if (!_speechQuery.Resolve(vocalizer, ref vocalizer.Comp, false) ||
             !_voicelineCVars.TryGetValue(vocalizer.Comp.SpeechSounds ?? HumanVoice, out var play))
-        {
             return true;
-        }
 
         return _config.GetClientCVar<bool>(forPlayer.Channel, play.Name);
     }
+
     public bool ShouldPlayInteractionPopup(Entity<InteractionPopupComponent?> vocalizer, ICommonSession forPlayer)
     {
         if (forPlayer.AttachedEntity == vocalizer &&
             !_config.GetClientCVar(forPlayer.Channel, RMCCVars.RMCPlayEmotesYourself))
-        {
             return false;
-        }
+
         if (!_interactionQuery.Resolve(vocalizer, ref vocalizer.Comp, false))
-        {
             return true;
-        }
-        string? path1 = null;
-        string? path2 = null;
+
+        HashSet<string> paths = [];
+        HashSet<ProtoId<SoundCollectionPrototype>> collections = [];
         CVarDef? play = null;
+
+        //Evil type conversion section because interact sounds aren't standardized as collections
         if (vocalizer.Comp.InteractSuccessSound != null)
         {
-            var x = (SoundPathSpecifier)vocalizer.Comp.InteractSuccessSound;
-            path1 = x.Path.ToString();
+            if (vocalizer.Comp.InteractSuccessSound is SoundCollectionSpecifier specifier &&
+                specifier.Collection != null)
+            {
+                collections.Add(specifier.Collection);
+            }
+            else
+            {
+                var x = (SoundPathSpecifier)vocalizer.Comp.InteractSuccessSound;
+                paths.Add(x.Path.CanonPath);
+            }
         }
         if (vocalizer.Comp.InteractFailureSound != null)
         {
-            var x = (SoundPathSpecifier)vocalizer.Comp.InteractFailureSound;
-            path1 = x.Path.ToString();
+            if (vocalizer.Comp.InteractFailureSound is SoundCollectionSpecifier specifier &&
+                specifier.Collection != null)
+            {
+                collections.Add(specifier.Collection);
+            }
+            else
+            {
+                var x = (SoundPathSpecifier)vocalizer.Comp.InteractFailureSound;
+                paths.Add(x.Path.CanonPath);
+            }
         }
-        foreach (var interact in _interactCVars)
+
+        if (collections.Count > 0)
         {
-            if (path1 != null && interact.Key.Contains(path1))
+            foreach (var interact in _interactCollectionCVars)
             {
-                play = interact.Value;
-                break;
-            }
-            if (path2 != null && interact.Key.Contains(path2))
-            {
-                play = interact.Value;
-                break;
+                if (interact.Key.Overlaps(collections))
+                    play = interact.Value;
             }
         }
+
+        if (paths.Count > 0)
+        {
+            foreach (var interact in _interactPathCVars)
+            {
+                if (interact.Key.Overlaps(paths))
+                    play = interact.Value;
+            }
+        }
+
         if (play == null)
-        {
             return true;
-        }
+
         return _config.GetClientCVar<bool>(forPlayer.Channel, play.Name);
     }
 }
