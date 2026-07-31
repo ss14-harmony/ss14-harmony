@@ -64,6 +64,7 @@
   id: HarmonySecurityAmmoStatic
   recipes:
   - StripperClip
+  - BoxShotgunBreaching
 
 ## Service
 - type: latheRecipePack

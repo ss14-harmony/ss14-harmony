@@ -51,3 +51,11 @@
     Glass: 500
     Plastic: 250
     Uranium: 300
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: BoxShotgunBreaching
+  result: BoxShotgunBreaching
+  materials:
+    Steel: 300
+    Plastic: 200
