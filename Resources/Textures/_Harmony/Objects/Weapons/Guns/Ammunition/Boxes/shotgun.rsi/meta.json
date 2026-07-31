@@ -1,26 +1,41 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Hyposhell sprites by dumblenutz, base and mag sprites by SpaceRox1244. Resprite by Halycon (kleinerstation13 on Github)",
+    "copyright": "Hyposhell sprites by dumblenutz, base and mag sprites by SpaceRox1244. Resprite by Halycon (kleinerstation13 on Github). Breaching shell sprites are recolors by NavySerray",
     "size": {
         "x": 32,
         "y": 32
     },
     "states": [
         {
-            "name": "base"
+            "name": "hypo"
         },
         {
-            "name": "mag-1"
+            "name": "mag-hypo-1"
         },
         {
-            "name": "mag-2"
+            "name": "mag-hypo-2"
         },
         {
-            "name": "mag-3"
+            "name": "mag-hypo-3"
         },
         {
-            "name": "mag-4"
+            "name": "mag-hypo-4"
+        },
+        {
+            "name": "breaching"
+        },
+        {
+            "name": "mag-breaching-1"
+        },
+        {
+            "name": "mag-breaching-2"
+        },
+        {
+            "name": "mag-breaching-3"
+        },
+        {
+            "name": "mag-breaching-4"
         }
     ]
 }
