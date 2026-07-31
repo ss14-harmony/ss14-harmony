@@ -31,10 +31,11 @@
   description: The standard cartridge used by most modern shotguns. Breaching rounds are specialist slugs that do a lot of damage to structures but are ineffective on flesh. /n Breaks up ineffectively beyond short range.
   components:
   - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
     layers:
-      - state: slug
-        map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: breaching
+      map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunBreaching
   - type: SpentAmmoVisuals
-    state: "slug"
+    state: "breaching"
