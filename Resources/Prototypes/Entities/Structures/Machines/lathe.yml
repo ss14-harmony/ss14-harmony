@@ -148,6 +148,7 @@
     emagStaticPacks:
     - SecurityAmmoStatic
     - SyndicateAmmoStatic
+    - HarmonySecurityAmmoStatic # Harmony
   - type: BlueprintReceiver
     whitelist:
       tags:
