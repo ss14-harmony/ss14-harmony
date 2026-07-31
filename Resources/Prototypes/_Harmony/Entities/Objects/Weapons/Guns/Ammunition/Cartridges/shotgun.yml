@@ -28,7 +28,7 @@
   parent: [ BaseShellShotgun, BaseSecurityContraband]
   id: ShellShotgunBreaching
   name: shell (.50 breaching)
-  description: The standard cartridge used by most modern shotguns. Breaching rounds are specialist slugs that do a lot of damage to structures but are ineffective on flesh. /n Breaks up ineffectively beyond short range.
+  description: The standard cartridge used by most modern shotguns. Breaching rounds are specialist slugs that do a lot of damage to structures but are ineffective on flesh. Breaks up ineffectively beyond short range.
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
