@@ -16,6 +16,17 @@
       collection: BoxingHit
     animation: WeaponArcFist
     mustBeEquippedToUse: true
+  # Harmony Changes begin - add battle cry for all boxing gloves
+  - type: MeleeSpeech
+  - type: ActivatableUI
+    key: enum.MeleeSpeechUiKey.Key
+    verbOnly: true
+  - type: Actions
+  - type: UserInterface
+    interfaces:
+      enum.MeleeSpeechUiKey.Key:
+        type: MeleeSpeechBoundUserInterface
+  # Harmony Changes end
   - type: Tag
     tags:
     - Kangaroo
@@ -518,6 +529,17 @@
       collection: Punch
     animation: WeaponArcFist
     mustBeEquippedToUse: true
+  # Harmony Changes begin - add battle cry to knuckledusters
+  - type: MeleeSpeech
+  - type: ActivatableUI
+    key: enum.MeleeSpeechUiKey.Key
+    verbOnly: true
+  - type: Actions
+  - type: UserInterface
+    interfaces:
+      enum.MeleeSpeechUiKey.Key:
+        type: MeleeSpeechBoundUserInterface
+  # Harmony Changes end
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -569,6 +591,17 @@
     tags:
     - WhitelistChameleon
     - Kangaroo
+  # Harmony Changes begin - adds battle cry to QM knuckledusters
+  - type: MeleeSpeech
+  - type: ActivatableUI
+    key: enum.MeleeSpeechUiKey.Key
+    verbOnly: true
+  - type: Actions
+  - type: UserInterface
+    interfaces:
+      enum.MeleeSpeechUiKey.Key:
+        type: MeleeSpeechBoundUserInterface
+  # Harmony Changes end
   - type: StealTarget
     stealGroup: ClothingHandsKnuckleDustersQM
 
@@ -597,6 +630,17 @@
     tags:
     - WhitelistChameleon
     - Kangaroo
+  # Harmony changes begin - adds battle cry to syndicate knuckle dusters
+  - type: MeleeSpeech
+  - type: ActivatableUI
+    key: enum.MeleeSpeechUiKey.Key
+    verbOnly: true
+  - type: Actions
+  - type: UserInterface
+    interfaces:
+      enum.MeleeSpeechUiKey.Key:
+        type: MeleeSpeechBoundUserInterface
+  # Harmony changes end
   - type: StaticPrice
     price: 2000
 
