@@ -114,8 +114,8 @@
     capacity: 5
     proto: CartridgeAntiMateriel
   - type: SpeedModifiedOnWield
-    walkModifier: 0.25
-    sprintModifier: 0.25
+    walkModifier: 0.9 # Harmony Change, increased (0.25 -> 0.9)
+    sprintModifier: 0.9 # Harmony Change, increased (0.25 -> 0.9)
   - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset
     maxOffset: 3
