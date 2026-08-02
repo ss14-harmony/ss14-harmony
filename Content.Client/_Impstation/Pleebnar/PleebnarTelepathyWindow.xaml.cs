@@ -11,7 +11,7 @@ namespace Content.Client._Impstation.Pleebnar;
 [GenerateTypedNameReferences]
 public sealed partial class PleebnarTelepathyWindow : FancyWindow
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
     public Action<string?>? OnVisionSelect;
     private ProtoId<PleebnarVisionPrototype> _vision;
     private readonly List<PleebnarVisionPrototype> _visions = [];
