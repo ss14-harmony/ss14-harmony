@@ -25,9 +25,20 @@ public sealed partial class BatteryDrainerSystem : SharedBatteryDrainerSystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<BatteryDrainerComponent, ComponentStartup>(OnStartup); // Harmony Eeep Port - imp add
         SubscribeLocalEvent<BatteryDrainerComponent, BeforeInteractHandEvent>(OnBeforeInteractHand);
         SubscribeLocalEvent<BatteryDrainerComponent, NinjaBatteryChangedEvent>(OnBatteryChanged);
     }
+    
+    /// <summary>
+    ///  Harmony Eeep Port - Imp add. Allow entities who are a battery to use themselves as the battery for this component
+    /// </summary>
+    private void OnStartup(Entity<BatteryDrainerComponent> ent, ref ComponentStartup args)
+    {
+        if (ent.Comp.BatteryUid == null && (HasComp<BatteryComponent>(ent.Owner)))
+            ent.Comp.BatteryUid = ent.Owner;
+    }
+    //Imp End
 
     /// <summary>
     /// Start do after for draining a power source.
