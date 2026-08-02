@@ -10,11 +10,11 @@ namespace Content.Server._Impstation.Pleebnar;
 /// <summary>
 /// handles the behaviour of pleebnar gibbing action
 /// </summary>
-public sealed class PleebnarGibSystem : SharedPleebnarGibSystem
+public sealed partial class PleebnarGibSystem : SharedPleebnarGibSystem
 {
-    [Dependency] private readonly DoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly GibbingSystem _gibbing = default!;
+    [Dependency] private DoAfterSystem _doAfter = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private GibbingSystem _gibbing = default!;
     //init function
     public override void Initialize()
     {

@@ -13,14 +13,15 @@ namespace Content.Server._Impstation.Pleebnar;
 /// <summary>
 /// handles the behaviour of the telepathy
 /// </summary>
-public sealed class PleebnarTelepathySystem : SharedPleebnarTelepathySystem
+public sealed partial class PleebnarTelepathySystem : SharedPleebnarTelepathySystem
 {
-    [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly DoAfterSystem _doAfter = default!;
-        //init function
+    [Dependency] private SharedUserInterfaceSystem _uiSystem = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private IChatManager _chatManager = default!;
+    [Dependency] private DoAfterSystem _doAfter = default!;
+
+    //init function
     public override void Initialize()
     {
         base.Initialize();
