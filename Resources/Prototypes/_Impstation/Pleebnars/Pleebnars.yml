@@ -161,8 +161,9 @@
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Mouse
+  - type: Injurable
+    damageContainer: Biological
   - type: PointLight
     enabled: true
     color: "#8bff82"
