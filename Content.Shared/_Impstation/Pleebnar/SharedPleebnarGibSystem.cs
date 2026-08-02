@@ -10,7 +10,7 @@ namespace Content.Shared._Impstation.Pleebnar;
 public abstract partial class SharedPleebnarGibSystem : EntitySystem
 {
 
-    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private SharedActionsSystem _actionsSystem = default!;
 
     //init function
     public override void Initialize()

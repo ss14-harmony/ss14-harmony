@@ -41,7 +41,7 @@ public sealed class PleebnarTelepathyVisionMessage : BoundUserInterfaceMessage
 public abstract partial class SharedPleebnarTelepathySystem : EntitySystem
 {
 
-    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private SharedActionsSystem _actionsSystem = default!;
     //init
     public override void Initialize()
     {
