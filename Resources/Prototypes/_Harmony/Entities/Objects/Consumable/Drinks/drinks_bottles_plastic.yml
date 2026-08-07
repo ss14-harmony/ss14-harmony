@@ -2,7 +2,7 @@
   parent: CustomDrinkJug
   id: DrinkMintJuiceJug
   name: mint extract jug
-  description: May include leftover seeds.
+  description: A refreshing mixture of mint!
   components:
   - type: Solution
     solution:
