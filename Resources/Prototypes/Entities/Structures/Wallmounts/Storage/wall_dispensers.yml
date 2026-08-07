@@ -62,10 +62,10 @@
     fillBaseName: fill-
   - type: Solution
     solution:
-      maxVol: 6000 # Harmony Change - Originally 690 from parent entity
+      maxVol: 3000 # Harmony Change - Originally 690 from parent entity
       reagents:
       - ReagentId: SpaceCleaner
-        Quantity: 6000 # Harmony Change - Originally 960 during solution change, was 5000 before the change, 6000 is 50 refills of a spray bottle
+        Quantity: 3000 # Harmony Change - Originally 960 during solution change
 
 - type: entity
   parent: BaseDispenser
