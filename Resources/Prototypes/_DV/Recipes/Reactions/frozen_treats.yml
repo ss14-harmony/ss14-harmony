@@ -120,7 +120,7 @@
   reactants:
     IceCream:
       amount: 1
-    JuiceMint:
+    JuiceMint: # Harmony - Swapped reactant since we don't have bitters
       amount: 1
   products:
     IceCreamMint: 2

@@ -62,7 +62,7 @@ reagent-name-sherbet-orange = orange sherbet
 reagent-desc-sherbet-orange = Orange you glad its sherbet?
 
 reagent-name-sherbet-pineapple = pineapple sherbet
-reagent-desc-sherbet-pineapple = Not only does it look like a vacation, it taste like it too.
+reagent-desc-sherbet-pineapple = Not only does it look like a vacation, it taste like it too. <#-- Harmony: Spelling fix -->
 
 reagent-name-sherbet-raspberry = raspberry sherbert
 reagent-desc-sherbet-raspberry = Give them the old razzle dazzle!
@@ -71,7 +71,7 @@ reagent-name-slush-blue-raspberry = blue raspberry slush
 reagent-desc-slush-blue-raspberry = You can feel your teeth chattering.
 
 reagent-name-slush-cherry = cherry slush
-reagent-desc-slush-cherry = While it's rumoured to be red, it's typically white.
+reagent-desc-slush-cherry = While it's rumored to be red, it's typically white.
 
 reagent-name-slush-cola = cola slush
 reagent-desc-slush-cola = Space cola in the form of a brain freeze.
