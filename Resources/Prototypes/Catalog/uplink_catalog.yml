@@ -46,14 +46,14 @@
   icon: { sprite: /Textures/Objects/Weapons/Melee/e_sword.rsi, state: icon }
   discountCategory: veryRareDiscounts
   discountDownTo:
-  # Start of Harmony Change: Lowers esword cost to seven TC
+  # Start of HarmonyChange: Lowers esword cost to seven TC
   # Telecrystal: 4
     Telecrystal: 3
   productEntity: EnergySword
   cost:
   # Telecrystal: 8
     Telecrystal: 7
-  # End of Harmony Change
+  # End of HarmonyChange
   categories:
   - UplinkWeaponry
 
