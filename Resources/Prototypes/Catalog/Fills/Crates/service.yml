@@ -294,7 +294,6 @@
         - id: DrinkTeaJug
         - id: DrinkTonicWaterBottleFull
         - id: DrinkWaterMelonJuiceJug
-        - id: DrinkMintJuiceJug #Harmony - A way to obtain mint after roundstart
 
 - type: entity
   parent: CrateFreezer

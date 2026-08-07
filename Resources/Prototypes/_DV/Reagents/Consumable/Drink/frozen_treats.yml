@@ -209,6 +209,7 @@
     state: icon_empty
 
 - type: reagent
+  abstract: True
   parent: BaseDrinkFrozenTreat
   id: IceCreamMint
   name: reagent-name-icecream-mint
