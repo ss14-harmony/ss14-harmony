@@ -274,7 +274,7 @@
   reactants:
     IceCream:
       amount: 1
-    PeanutButter:
+    PeanutButter: # Harmony - Use PeanutButter since we have a renewable way to grow nuts
       amount: 1
   products:
     IceCreamPistachio: 2
@@ -284,7 +284,7 @@
   reactants:
     IceCreamChocolate:
       amount: 2
-    PeanutButter:
+    PeanutButter: # Harmony - Use PeanutButter since we have a renewable way to grow nuts
       amount: 1
   products:
     IceCreamRockyRoad: 3
