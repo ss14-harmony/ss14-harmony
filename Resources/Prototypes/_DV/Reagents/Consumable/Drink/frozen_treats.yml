@@ -8,6 +8,11 @@
   metamorphicChangeColor: false
   footstepSound:
     collection: FootstepSlime
+  metabolisms: #Harmony - Moved metabolism to base prototype
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
 
 - type: reagent
   parent: BaseDrink
@@ -32,20 +37,7 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: IceCreamAppleCaramel
   color: "#F9CD85"
-  recognizable: true
-  metabolisms:
-    Digestion: #Harmony - Swapped to Digestion
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:HealthChange
-        conditions:
-        - !type:ReagentCondition
-          reagent: IceCreamAppleCaramel
-          min: 20
-        damage:
-          types:
-            Cold: .25
+  recognizable: true #Harmony - Removed metabolism
   metamorphicSprite:
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-applecaramel.rsi
     state: icon_empty
@@ -71,20 +63,7 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: IceCreamCaramelFudge
   color: "#C06B20"
-  recognizable: true
-  metabolisms:
-    Digestion: #Harmony - Swapped to Digestion
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:HealthChange
-        conditions:
-        - !type:ReagentCondition
-          reagent: IceCreamCaramelFudge
-          min: 20
-        damage:
-          types:
-            Cold: .25
+  recognizable: true #Harmony - Removed metabolism
   metamorphicSprite:
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-caramelfudge.rsi
     state: icon_empty
@@ -110,13 +89,7 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: chocolate
   color: "#664300"
-  recognizable: true
-  metabolisms:
-    Digestion: #Harmony - Swapped to Digestion
-      effects:
-      - !type:AdjustReagent
-        reagent: Theobromine
-        amount: 0.05
+  recognizable: true #Harmony - Removed metabolism
   metamorphicSprite:
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-chocolate.rsi
     state: icon_empty
@@ -142,17 +115,7 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: coffee
   color: "#664300"
-  recognizable: true
-  metabolisms:
-    Digestion: #Harmony - Swapped to Digestion
-      effects:
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectDrowsiness
-        time: 2
-        type: Remove
-      - !type:AdjustReagent
-        reagent: Theobromine
-        amount: 0.05
+  recognizable: true #Harmony - Removed metabolism
   metamorphicSprite:
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-coffee.rsi
     state: icon_empty
@@ -165,20 +128,7 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: IceCreamCookieDough
   color: "#FFFBD6"
-  recognizable: true
-  metabolisms:
-    Digestion: #Harmony - Swapped to Digestion
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:HealthChange
-        conditions:
-        - !type:ReagentCondition
-          reagent: IceCreamCookieDough
-          min: 20
-        damage:
-          types:
-            Cold: .25
+  recognizable: true #Harmony - Removed metabolism
   metamorphicSprite:
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-cookiedough.rsi
     state: icon_empty
@@ -191,19 +141,6 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: tea
   color: "#7EB626"
-  metabolisms:
-    Digestion: #Harmony - Swapped to Digestion
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:HealthChange
-        conditions:
-        - !type:ReagentCondition
-          reagent: IceCreamGreenTea
-          min: 20
-        damage:
-          types:
-            Cold: .25
   metamorphicSprite:
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-greentea.rsi
     state: icon_empty
@@ -229,13 +166,7 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: IceCreamNeapolitan
   color: "#FFFBD6"
-  recognizable: true
-  metabolisms:
-    Digestion: #Harmony - Swapped to Digestion
-      effects:
-      - !type:AdjustReagent
-        reagent: Theobromine
-        amount: 0.05
+  recognizable: true #Harmony - Removed metabolism
   metamorphicSprite:
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-neapolitan.rsi
     state: icon_empty
@@ -260,23 +191,7 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: IceCreamRockyRoad
   color: "#664300"
-  recognizable: true
-  metabolisms:
-    Digestion: #Harmony - Swapped to Digestion
-      effects:
-      - !type:AdjustReagent
-        reagent: Theobromine
-        amount: 0.05
-      - !type:SatiateThirst
-        factor: 2
-      - !type:HealthChange
-        conditions:
-        - !type:ReagentCondition
-          reagent: IceCreamRockyRoad
-          min: 20
-        damage:
-          types:
-            Cold: .25
+  recognizable: true #Harmony - Removed metabolism
   metamorphicSprite:
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-rockyroad.rsi
     state: icon_empty
@@ -289,25 +204,7 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: IceCreamTower
   color: "#EDC392"
-  recognizable: true
-  metabolisms:
-    Digestion: #Harmony - Swapped to Digestion
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-      - !type:SatiateHunger
-        factor: 2
-      - !type:HealthChange
-        conditions:
-          - !type:ReagentCondition
-            reagent: IceCreamTower
-            min: 20
-        damage:
-          types:
-            Cold: .5
-      - !type:AdjustReagent
-        reagent: Theobromine
-        amount: 0.05
+  recognizable: true #Harmony - Removed metabolism
   metamorphicSprite:
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-tower.rsi
     state: icon_empty
@@ -344,22 +241,7 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: IceCreamRainbow
   color: "#D6CE58"
-  recognizable: true
-  metabolisms:
-    Digestion: #Harmony - Swapped to Digestion
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:SatiateHunger
-        factor: 1
-      - !type:HealthChange
-        conditions:
-          - !type:ReagentCondition
-            reagent: IceCreamSherbetRainbow
-            min: 20
-        damage:
-          types:
-            Cold: .25
+  recognizable: true #Harmony - Removed metabolism
   metamorphicSprite:
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/sherbet-rainbow.rsi
     state: icon_empty
@@ -477,22 +359,7 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: painkiller
   color: "#FFD376"
-  recognizable: true
-  metabolisms:
-    Digestion: #Harmony - Swapped to Digestion
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:SatiateHunger
-        factor: 1
-      - !type:HealthChange
-        conditions:
-        - !type:ReagentCondition
-          reagent: IceCreamSundaeTropical
-          min: 20
-        damage:
-          types:
-            Cold: 0.25
+  recognizable: true #Harmony - Removed metabolism
   metamorphicSprite:
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/tropicalsunday.rsi
     state: icon_empty
