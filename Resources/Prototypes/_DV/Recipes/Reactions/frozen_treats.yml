@@ -115,15 +115,15 @@
   products:
     IceCreamNeapolitan: 3
 
-#- type: reaction
-#  id: IceCreamMint
-#  reactants:
-#    IceCream:
-#      amount: 1
-#    JuiceMint:
-#      amount: 1
-#  products:
-#    IceCreamMint: 2
+- type: reaction
+  id: IceCreamMint
+  reactants:
+    IceCream:
+      amount: 1
+    JuiceMint:
+      amount: 1
+  products:
+    IceCreamMint: 2
 
 - type: reaction
   id: IceCreamTower

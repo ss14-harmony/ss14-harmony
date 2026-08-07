@@ -846,7 +846,7 @@
       amount: 1
     Rum:
       amount: 1
-    SodaWater:
+    JuiceMint: #Harmony - Replaced soda with mint
       amount: 1
     Sugar:
       amount: 1

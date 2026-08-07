@@ -1,0 +1,13 @@
+﻿- type: entity
+  parent: CustomDrinkJug
+  id: DrinkMintJuiceJug
+  name: mint extract jug
+  description: May include leftover seeds.
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: JuiceMint
+        Quantity: 120
+  - type: Label
+    currentLabel: reagent-name-juice-mint

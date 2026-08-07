@@ -1,0 +1,8 @@
+﻿- type: reagent
+  id: JuiceMint
+  name: reagent-name-juice-mint
+  parent: BaseJuice
+  desc: reagent-desc-juice-mint
+  physicalDesc: reagent-physical-desc-cloudy
+  flavor: minty
+  color: "#ADEBB3"

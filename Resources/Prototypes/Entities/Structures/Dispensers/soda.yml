@@ -52,3 +52,4 @@
         - id: DrinkTeaJug
         - id: DrinkTonicWaterBottleFull
         - id: DrinkWaterMelonJuiceJug
+        - id: DrinkMintJuiceJug #Harmony - Added mint to the soda dispenser until mint is added

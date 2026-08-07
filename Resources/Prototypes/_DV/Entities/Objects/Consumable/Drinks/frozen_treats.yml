@@ -135,7 +135,6 @@
     state: icon
 
 - type: entity
-  abstract: True
   parent: DrinkGlass
   id: DrinkIceCreamMint
   suffix: mint ice cream
