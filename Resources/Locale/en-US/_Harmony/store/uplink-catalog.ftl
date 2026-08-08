@@ -76,6 +76,9 @@ uplink-cluster-weh-desc = Scatters 10 lizard plushies in a circle after a short 
 uplink-syndiedrobe-flatpack-name = SyndieDrobe Flatpack
 uplink-syndiedrobe-flatpack-desc = A flatpack box containing a SyndieDrobe. Slay whilst slaying your targets.
 
+uplink-battle-pass = Harmony Battle Pass
+uplink-battle-pass-desc = Cybersun High Command brings you the latest in gambling technology. A unique item only given to DARING agents who do not need any support from the syndicate for their objectives.
+
 # Job Specific
 
 uplink-hyposhell-name = Box of hyposhells

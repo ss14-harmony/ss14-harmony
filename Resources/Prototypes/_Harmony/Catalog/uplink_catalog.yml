@@ -302,6 +302,16 @@
   categories:
   - UplinkPointless
 
+- type: listing
+  id: UplinkBattlePass
+  name: uplink-battle-pass
+  description: uplink-battle-pass-desc
+  productEntity: HarmonyBattlePass
+  cost:
+    Telecrystal: 0
+  categories:
+  - UplinkPointless
+
 # Job Specific
 
 - type: listing
