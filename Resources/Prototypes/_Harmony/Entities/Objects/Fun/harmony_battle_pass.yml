@@ -4,11 +4,11 @@
   parent: [ BaseItem, BaseSyndicateContraband ]
   description: Win Big. Antag tokens might be inside.
   components:
-  - type: Item
-    size: Normal
   - type: Sprite
     sprite: _Harmony/Objects/Fun/HarmonyBattlePass.rsi
     state: icon
+  - type: Item
+    size: Normal
   - type: SpawnItemsOnUse
     items:
     - id: HarmonyBattlePassCard
@@ -21,8 +21,8 @@
   parent: [ BaseItem, StorePresetUplink, BaseSyndicateContraband ]
   description: Insert TC to Continue.
   components:
-  - type: Item
-    size: Small
   - type: Sprite
     sprite: _Harmony/Objects/Fun/HarmonyBattlePass.rsi
     state: open
+  - type: Item
+    size: Small
