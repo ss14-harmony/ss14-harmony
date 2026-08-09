@@ -52,6 +52,11 @@
         mask:
         - ItemMask
   - type: Appearance
+  # Harmony Change Start - Allows you to add cash into the shop component
+  - type: Currency
+    price:
+      Spesos: 1
+  # Harmony Change End
 
 - type: material
   id: Credit

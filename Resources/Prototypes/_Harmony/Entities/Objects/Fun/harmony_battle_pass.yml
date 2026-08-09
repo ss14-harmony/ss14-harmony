@@ -18,7 +18,7 @@
 - type: entity
   id: HarmonyBattlePassCard
   name: Harmony Battle Pass Card
-  parent: [ BaseItem, StorePresetUplink, BaseSyndicateContraband ]
+  parent: [ BaseItem, BaseSyndicateContraband ]
   description: Insert TC to Continue.
   components:
   - type: Sprite
@@ -26,3 +26,15 @@
     state: open
   - type: Item
     size: Small
+  - type: Store
+    name: store-preset-name-uplink
+    currencyWhitelist:
+    - Telecrystal
+    - Spesos
+    - WizCoin
+    balance:
+      Telecrystal: 0
+      Spesos: 10
+      WizCoin: 0
+    expectedFaction:
+    - Syndicate
