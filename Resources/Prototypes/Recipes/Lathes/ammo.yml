@@ -116,6 +116,15 @@
   materials:
     Steel: 25
 
+# Harmony Change - Adds .30 Rifle Caseless
+- type: latheRecipe
+  parent: BaseEmptyAmmoRecipe
+  id: MagazineLightRifleCaseless
+  result: MagazineLightRifleCaseless
+  materials:
+    Steel: 25
+# Harmony Change end
+
 - type: latheRecipe
   parent: BaseAmmoRecipe
   id: MagazineLightRifle
