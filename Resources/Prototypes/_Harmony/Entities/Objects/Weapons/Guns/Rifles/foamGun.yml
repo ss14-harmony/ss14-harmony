@@ -1,0 +1,31 @@
+- type: entity
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSyndicateContraband]
+  id: WeaponRifleFoamGun
+  name: Donk Co. Astro Ace
+  description: A stealthy rifle of unexpectedly good quality. Its fabricated exterior feels rugged, and its mechanisms are sturdy. Some call it a toy, others call it a tool. Everyone, however...calls it a weapon. Fires .30 rifle caliber rounds.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Foam/foam_rifle.rsi
+  - type: Clothing
+    sprite: Objects/Fun/Foam/foam_rifle.rsi
+  - type: Item
+    sprite: Objects/Fun/Foam/foam_rifle_inhand_64x.rsi
+    size: Normal
+    shape:
+    - 0,0,3,0
+  - type: Gun
+    fireRate: 1.7
+    soundGunshot:
+      collection: DMRFire
+  - type: GunRequiresWield
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeLightRifle
+    capacity: 10
+    proto: CartridgeLightRifle
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
+  - type: AmmoCounter
