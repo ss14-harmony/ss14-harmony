@@ -122,7 +122,7 @@
   id: MagazineLightRifleCaseless
   result: MagazineLightRifleCaseless
   materials:
-    Steel: 25
+    Steel: 565
 # Harmony Change end
 
 - type: latheRecipe
