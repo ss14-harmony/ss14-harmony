@@ -1,0 +1,31 @@
+- type: entity
+  parent: [FragileGrenadeBase, ProjectileGrenadeBase, BaseSyndicateContraband]
+  id: FoamGrenadeShrapnel
+  name: Waffle Co. Shrapnel Grenade
+  description: Waffle Co.'s latest in weapons technology. Releases a deadly spray of shrapnel that causes severe bleeding.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Foam/foam_grenade.rsi
+    layers:
+    - state: icon
+      map: ["enum.TriggerVisualLayers.Base"]
+  - type: ProjectileGrenade
+    fillPrototype: PelletClusterLethal
+    capacity: 30
+  - type: TriggerOnUse
+  - type: TimerTrigger
+    beepSound:
+      path: "/Audio/Effects/beep1.ogg"
+      params:
+        volume: 5
+    initialBeepDelay: 0
+    beepInterval: 2
+    delay: 3.5
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
+    sound:
+      path: "/Audio/Weapons/Guns/Gunshots/batrifle.ogg"
+    positional: true
+  - type: StaticPrice
+    price: 1500
