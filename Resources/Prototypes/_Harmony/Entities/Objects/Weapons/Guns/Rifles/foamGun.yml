@@ -1,7 +1,7 @@
 - type: entity
   parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSyndicateContraband]
   id: WeaponRifleFoamGun
-  name: Donk Co. Astro Ace
+  name: Waffle Co. Astro Ace
   description: A stealthy rifle of unexpectedly good quality. Its fabricated exterior feels rugged, and its mechanisms are sturdy. Some call it a toy, others call it a tool. Everyone, however...calls it a weapon. Fires .30 rifle caliber rounds.
   components:
   - type: Sprite
