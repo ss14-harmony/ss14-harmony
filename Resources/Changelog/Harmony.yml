@@ -3745,3 +3745,18 @@
   id: 1430
   time: '2026-08-02T03:12:23.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1387
+- author: proxiwastaken
+  changes:
+  - message: Added a free hand slot to the Service Borg's Service module, It can pick
+      up food, drink, beakers, cigarettes, and other service-related goods.
+    type: Add
+  id: 1431
+  time: '2026-08-07T02:06:14.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1270
+- author: dragydevi
+  changes:
+  - message: removed the inaction clause from AI lawsets
+    type: Remove
+  id: 1432
+  time: '2026-08-07T03:36:29.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1389
