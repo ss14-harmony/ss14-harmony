@@ -3654,3 +3654,109 @@
   id: 1418
   time: '2026-07-14T07:12:48.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1279
+- author: daseiinn
+  changes:
+  - message: Added high capacity water tanks to the list of purchasable items by Cargo.
+    type: Add
+  id: 1419
+  time: '2026-07-15T06:20:03.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1281
+- author: Ermucat
+  changes:
+  - message: Bingle pits now always work while weightless.
+    type: Tweak
+  - message: Bingle pits can no longer be attacked from the inside.
+    type: Fix
+  id: 1420
+  time: '2026-07-18T16:19:38.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1329
+- author: MoonlightHollow
+  changes:
+  - message: 'A new midround antagonist ghost role can now spawn: electric sheeps
+      known as Eeeps.'
+    type: Add
+  id: 1421
+  time: '2026-07-18T16:22:10.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1256
+- author: SigmaTheDragon
+  changes:
+  - message: 'A new midround free agent ghost role can now spawn: the mini dragon.'
+    type: Add
+  id: 1422
+  time: '2026-07-18T16:56:18.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1251
+- author: ZigTag
+  changes:
+  - message: synth trait from Cosmatic Drift, plus extra features from Imp, and Misfit
+    type: Add
+  - message: drinks requiring synthetic blood!
+    type: Add
+  - message: species in criminal records console
+    type: Add
+  id: 1423
+  time: '2026-07-22T02:56:16.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1254
+- author: kleinerstation13
+  changes:
+  - message: Changed riot helmet sprite and description
+    type: Tweak
+  id: 1424
+  time: '2026-07-22T05:16:12.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1133
+- author: kleinerstation13
+  changes:
+  - message: RSC now starts loaded in crates and has better firerate
+    type: Tweak
+  id: 1425
+  time: '2026-07-22T06:12:45.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1136
+- author: youtissoum
+  changes:
+  - message: Xenoborgs no longer show up on mass scanners.
+    type: Fix
+  id: 1426
+  time: '2026-07-22T07:08:15.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1294
+- author: BoskiYourk
+  changes:
+  - message: Gives the chaplain, clown, mime, and musician service access
+    type: Tweak
+  id: 1427
+  time: '2026-07-22T07:13:43.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1308
+- author: kleinerstation13
+  changes:
+  - message: Added 3 new nuke songs, created by mrjajkes
+    type: Add
+  id: 1428
+  time: '2026-07-26T02:49:20.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1280
+- author: dragydevi
+  changes:
+  - message: Hijack Beacon requires authorization to send money to the Syndicate
+    type: Add
+  id: 1429
+  time: '2026-07-26T03:48:03.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1371
+- author: dragydevi
+  changes:
+  - message: Admins now start with the Admin Anomaly Scanner
+    type: Tweak
+  id: 1430
+  time: '2026-08-02T03:12:23.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1387
+- author: proxiwastaken
+  changes:
+  - message: Added a free hand slot to the Service Borg's Service module, It can pick
+      up food, drink, beakers, cigarettes, and other service-related goods.
+    type: Add
+  id: 1431
+  time: '2026-08-07T02:06:14.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1270
+- author: dragydevi
+  changes:
+  - message: removed the inaction clause from AI lawsets
+    type: Remove
+  id: 1432
+  time: '2026-08-07T03:36:29.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1389

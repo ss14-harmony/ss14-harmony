@@ -50,6 +50,7 @@
     - id: LoneOpsSpawn
     # - id: WizardSpawn - Harmony Change, disables wizard midround
     - id: BingleSpawn # Harmony
+    - id: EeepEvent # Harmony Eeep Port - imp
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 

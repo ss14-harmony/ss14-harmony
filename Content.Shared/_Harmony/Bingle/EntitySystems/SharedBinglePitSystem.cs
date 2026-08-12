@@ -55,6 +55,7 @@ public abstract partial class SharedBinglePitSystem : EntitySystem
         SubscribeLocalEvent<BinglePitFallingComponent, EmoteAttemptEvent>(OnFallingAttempt);
         SubscribeLocalEvent<BinglePitFallingComponent, DropAttemptEvent>(OnFallingAttempt);
         SubscribeLocalEvent<BinglePitFallingComponent, PickupAttemptEvent>(OnFallingAttempt);
+        SubscribeLocalEvent<BinglePitFallingComponent, AttackAttemptEvent>(OnFallingAttempt);
 
         #endregion
     }
@@ -152,8 +153,6 @@ public abstract partial class SharedBinglePitSystem : EntitySystem
         UpgradeAllBingles(entity);
 
         Dirty(entity);
-
-        _stepTriggerSystem.SetIgnoreWeightless(entity.Owner, nextLevel.IgnoreWeightless);
 
         _appearanceSystem.SetData(entity, ScaleVisuals.Scale, Vector2.One * nextLevel.Size);
     }

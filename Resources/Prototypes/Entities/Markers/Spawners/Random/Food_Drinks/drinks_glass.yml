@@ -141,4 +141,7 @@
         - id: DrinkHoochGlass
         - id: DrinkBeepskySmashGlass
         - id: DrinkBacchusBlessing
+        # imp
+        - id: DrinkBatteryAcidGlass
+        - id: DrinkAngelsKissGlass
     offset: 0.0
