@@ -41,3 +41,47 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+
+# Start of Harmony Changes
+
+- type: listing
+  id: PAIStationRecords
+  name: pai-station-records-name
+  description: pai-station-records-desc
+  icon: { sprite: Objects/Devices/tablets.rsi, state: generic }
+  productAction: ActionPAIStationRecords
+  cost:
+    SiliconMemory: 5
+  categories:
+  - PAIAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: PAISecHud
+  name: pai-sec-hud-name
+  description: pai-sec-hud-desc
+  icon: { sprite: Clothing/Eyes/Hud/sec.rsi, state: icon}
+  productComponents: PAISecurityHudDummy
+  cost:
+    SiliconMemory: 15
+  categories:
+  - PAIAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: PAIMedicalScanner
+  name: pai-medical-hud-name
+  description: pai-medical-hud-desc
+  icon: { sprite: Clothing/Eyes/Hud/med.rsi, state: icon}
+  productComponents: PAIMedicalHudDummy
+  cost:
+    SiliconMemory: 10
+  categories:
+  - PAIAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1

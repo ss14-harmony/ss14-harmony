@@ -26,6 +26,11 @@
       enum.StationMapUiKey.Key:
         type: StationMapBoundUserInterface
         requireInputValidation: false
+      # Start of Harmony changes:
+      enum.GeneralStationRecordConsoleKey.Key:
+        type: GeneralStationRecordConsoleBoundUserInterface
+        requireInputValidation: false
+      # End of Harmony Changes
   - type: Sprite
     sprite: Objects/Fun/pai.rsi
     layers:
@@ -102,12 +107,13 @@
   - type: Tag
     tags:
     - SiliconEmotes
-  # Start Harmony Change for comedic PAI pelting
-  - type: DamageOtherOnHit
+  # Start Harmony Changes
+  - type: DamageOtherOnHit # comedic PAI pelting
     damage:
       types:
         Blunt: 0.1
     pacifiedCanThrow: true
+  - type: GeneralStationRecordConsole # some fucking PR i'll make the name later >;b
   # End Harmony Change
 
 - type: entity
@@ -241,3 +247,34 @@
   - type: InstantAction
     event: !type:OpenUiActionEvent
       key: enum.StationMapUiKey.Key
+
+# START OF HARMONY CHANGES
+
+- type: entity
+  parent: BaseMentalAction
+  id: ActionPAIStationRecords
+  name: Station Records
+  description: Open the station records and dox your owner.
+  components:
+  - type: Action
+    icon: { sprite: Objects/Devices/tablets.rsi, state: generic }
+    itemIconStyle: NoItem
+  - type: InstantAction
+    event: !type:OpenUiActionEvent
+      key: enum.GeneralStationRecordConsoleKey.Key
+
+- type: entity
+  id: PAISecurityHudDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShowJobIcons
+  - type: ShowMindShieldIcons
+  - type: ShowCriminalRecordIcons
+  - type: ShowContrabandDetails
+
+- type: entity
+  id: PAIMedicalHudDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShowHealthBars
+  - type: ShowHealthIcons
