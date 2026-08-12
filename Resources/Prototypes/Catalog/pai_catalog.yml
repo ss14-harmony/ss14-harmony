@@ -85,3 +85,17 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+
+- type: listing
+  id: PAIGPS
+  name: pai-gps-name
+  description: pai-gps-desc
+  icon: { sprite: Objects/Devices/gps.rsi, state: icon}
+  productComponents: PAIGPSDummy
+  cost:
+    SiliconMemory: 10
+  categories:
+  - PAIAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1

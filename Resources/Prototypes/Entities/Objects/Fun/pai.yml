@@ -278,3 +278,10 @@
   components:
   - type: ShowHealthBars
   - type: ShowHealthIcons
+
+- type: entity
+  id: PAIGPSDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HandheldGPS
+  - type: RadarBlip
