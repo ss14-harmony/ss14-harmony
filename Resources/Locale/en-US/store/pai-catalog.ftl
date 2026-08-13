@@ -18,3 +18,6 @@ pai-medical-hud-desc = Enables you to scan nearby humanoids for their health sta
 
 pai-gps-name = Global Positioning System
 pai-gps-desc = Enables you to communicate your coordinates with your owner, additionally you'll emit radar blips.
+
+pai-encryption-name = Encryption Storage
+pai-encryption-desc = Enables your owner to insert additional Encryptions for more channels to listen to.

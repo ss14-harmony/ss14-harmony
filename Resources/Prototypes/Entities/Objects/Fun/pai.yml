@@ -41,6 +41,8 @@
   - type: Input
     context: "human"
   - type: PAI
+    channels:
+    - Common
   - type: BlockMovement
   - type: ToggleableGhostRole
     examineTextMindPresent: pai-system-pai-installed
@@ -129,6 +131,9 @@
     - state: syndicate-pai-off-overlay
       shader: unshaded
       map: ["screen"]
+  - type: PAI
+    channels:
+    - Syndicate
   - type: ToggleableGhostRole
     roleName: pai-system-role-name-syndicate
     roleDescription: pai-system-role-description-syndicate
@@ -285,3 +290,9 @@
   components:
   - type: HandheldGPS
   - type: RadarBlip
+
+- type: entity
+  id: PAIEncryptionDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EncryptionKeyHolder

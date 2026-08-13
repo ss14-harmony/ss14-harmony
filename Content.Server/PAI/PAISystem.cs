@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Instruments;
@@ -9,6 +10,11 @@ using Content.Shared.Popups;
 using Content.Shared.Instruments;
 using Robust.Shared.Random;
 using System.Text;
+using Content.Server.Nutrition;
+using Content.Shared.Radio;
+using Content.Shared.Radio.Components;
+using NetCord.Rest;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.PAI;
 
@@ -33,6 +39,7 @@ public sealed partial class PAISystem : EntitySystem
         SubscribeLocalEvent<PAIComponent, MindAddedMessage>(OnMindAdded);
         SubscribeLocalEvent<PAIComponent, MindRemovedMessage>(OnMindRemoved);
         SubscribeLocalEvent<PAIComponent, BeingMicrowavedEvent>(OnMicrowaved);
+        SubscribeLocalEvent<PAIComponent, EncryptionChannelsChangedEvent>(OnKeysChanged);
     }
 
     private void OnUseInHand(EntityUid uid, PAIComponent component, UseInHandEvent args)
@@ -99,6 +106,7 @@ public sealed partial class PAISystem : EntitySystem
         var val = Loc.GetString("pai-system-pai-name-raw", ("name", name.ToString()));
         _metaData.SetEntityName(uid, val);
     }
+
     public void PAITurningOff(EntityUid uid)
     {
         //  Close the instrument interface if it was open
@@ -118,5 +126,20 @@ public sealed partial class PAISystem : EntitySystem
             if (proto != null)
                 _metaData.SetEntityName(uid, proto.Name);
         }
+    }
+
+    // Start of Harmony changes
+
+    private void OnKeysChanged(EntityUid uid, PAIComponent component, EncryptionChannelsChangedEvent args)
+    {
+        UpdateRadioChannels(uid, component, args.Component);
+    }
+    private void UpdateRadioChannels(EntityUid uid, PAIComponent innate, EncryptionKeyHolderComponent keyHolder)
+    {
+        foreach (var channel in innate.Channels)
+        {
+            keyHolder.Channels.Add(channel);
+        }
+        EnsureComp<ActiveRadioComponent>(uid).Channels = keyHolder.Channels;
     }
 }
