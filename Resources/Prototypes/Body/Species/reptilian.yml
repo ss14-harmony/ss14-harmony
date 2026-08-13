@@ -17,7 +17,7 @@
       limit: 4 # Harmony: 3 -> 4
       required: false
     enum.HumanoidVisualLayers.Snout:
-      limit: 1
+      limit: 2 # Harmony: 1 -> 2
       required: true
       default: [ LizardSnoutRound ]
     enum.HumanoidVisualLayers.HeadTop:
