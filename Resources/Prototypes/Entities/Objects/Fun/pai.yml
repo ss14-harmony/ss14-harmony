@@ -30,6 +30,9 @@
       enum.GeneralStationRecordConsoleKey.Key:
         type: GeneralStationRecordConsoleBoundUserInterface
         requireInputValidation: false
+      enum.GasAnalyzerUiKey.Key:
+        type: GasAnalyzerBoundUserInterface
+        requireInputValidation: false
       # End of Harmony Changes
   - type: Sprite
     sprite: Objects/Fun/pai.rsi
@@ -269,6 +272,19 @@
       key: enum.GeneralStationRecordConsoleKey.Key
 
 - type: entity
+  parent: BaseMentalAction
+  id: ActionPAIAtmosSensor
+  name: Atmospheric Sensor
+  description: Scan the environment or any nearby containers for gas levels.
+  components:
+  - type: Action
+    icon: { sprite: Objects/Specific/Atmos/gasanalyzer.rsi, state: icon }
+    itemIconStyle: NoItem
+  - type: InstantAction
+    event: !type:OpenUiActionEvent
+      key: enum.GasAnalyzerUiKey.Key
+
+- type: entity
   id: PAISecurityHudDummy
   categories: [ HideSpawnMenu ]
   components:
@@ -296,3 +312,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: EncryptionKeyHolder
+
+- type: entity
+  id: PAIAtmosSensorDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GasAnalyzer

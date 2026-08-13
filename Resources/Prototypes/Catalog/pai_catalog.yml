@@ -113,3 +113,18 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+
+- type: listing
+  id: PAIAtmosphericSensor
+  name: pai-atmos-sensor-name
+  description: pai-atmos-sensor-desc
+  icon: { sprite: Objects/Specific/Atmos/gasanalyzer.rsi, state: icon }
+  productComponents: PAIAtmosSensorDummy
+  productAction: ActionPAIAtmosSensor
+  cost:
+    SiliconMemory: 5
+  categories:
+  - PAIAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
