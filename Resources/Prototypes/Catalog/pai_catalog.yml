@@ -48,7 +48,7 @@
   id: PAIStationRecords
   name: pai-station-records-name
   description: pai-station-records-desc
-  icon: { sprite: Objects/Devices/tablets.rsi, state: generic }
+  icon: { sprite: Objects/Misc/folders.rsi, state: folder-centcom }
   productAction: ActionPAIStationRecords
   cost:
     SiliconMemory: 5

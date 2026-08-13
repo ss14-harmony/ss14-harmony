@@ -262,7 +262,7 @@
   description: Open the station records and dox your owner.
   components:
   - type: Action
-    icon: { sprite: Objects/Devices/tablets.rsi, state: generic }
+    icon: { sprite: Objects/Misc/folders.rsi, state: folder-centcom }
     itemIconStyle: NoItem
   - type: InstantAction
     event: !type:OpenUiActionEvent
