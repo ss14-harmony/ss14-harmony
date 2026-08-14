@@ -213,7 +213,7 @@
       amount: 1
     Ammonia:
       amount: 1
-    # Harmony Change - adjusts ambuzol recipe to add sodium hydroxide
+    # Harmony Change - adjusts ambuzol recipe to add Mannitol
     Mannitol:
       amount: 1
     # Harmony Change End
