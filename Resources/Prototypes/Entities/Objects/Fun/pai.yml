@@ -26,14 +26,14 @@
       enum.StationMapUiKey.Key:
         type: StationMapBoundUserInterface
         requireInputValidation: false
-      # Start of Harmony changes:
+      # Start of Harmony Additions: Added more entries into the pAI store
       enum.GeneralStationRecordConsoleKey.Key:
         type: GeneralStationRecordConsoleBoundUserInterface
         requireInputValidation: false
       enum.GasAnalyzerUiKey.Key:
         type: GasAnalyzerBoundUserInterface
         requireInputValidation: false
-      # End of Harmony Changes
+      # End of Harmony Additions
   - type: Sprite
     sprite: Objects/Fun/pai.rsi
     layers:
@@ -44,7 +44,7 @@
   - type: Input
     context: "human"
   - type: PAI
-    channels:
+    channels: # Harmony Additions: Added more entries into the pAI store
     - Common
   - type: BlockMovement
   - type: ToggleableGhostRole
@@ -113,12 +113,12 @@
     tags:
     - SiliconEmotes
   # Start Harmony Changes
-  - type: DamageOtherOnHit # comedic PAI pelting
+  - type: DamageOtherOnHit # For comedic PAI pelting
     damage:
       types:
         Blunt: 0.1
     pacifiedCanThrow: true
-  - type: GeneralStationRecordConsole # some fucking PR i'll make the name later >;b
+  - type: GeneralStationRecordConsole # For: Added more entries into the pAI store
   # End Harmony Change
 
 - type: entity
@@ -134,7 +134,7 @@
     - state: syndicate-pai-off-overlay
       shader: unshaded
       map: ["screen"]
-  - type: PAI
+  - type: PAI # Harmony Additions: Added more entries into the pAI store
     channels:
     - Syndicate
   - type: ToggleableGhostRole
@@ -256,7 +256,7 @@
     event: !type:OpenUiActionEvent
       key: enum.StationMapUiKey.Key
 
-# START OF HARMONY CHANGES
+# Start of Harmony Additions: Added more entries into the pAI store
 
 - type: entity
   parent: BaseMentalAction
@@ -316,3 +316,4 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: GasAnalyzer
+# End of Harmony Additions: Added more entries into the pAI store

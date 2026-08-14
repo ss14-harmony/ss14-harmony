@@ -42,7 +42,7 @@
   - !type:ListingLimitedStockCondition
     stock: 1
 
-# Start of Harmony Changes
+# Start of Harmony Additions: Added more entries into the pAI store
 
 - type: listing
   id: PAIStationRecords
@@ -128,3 +128,4 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+# End of Harmony Additions: Added more entries into the pAI store

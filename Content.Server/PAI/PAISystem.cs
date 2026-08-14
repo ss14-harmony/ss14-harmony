@@ -1,4 +1,3 @@
-using System.Linq;
 using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Instruments;
@@ -10,11 +9,10 @@ using Content.Shared.Popups;
 using Content.Shared.Instruments;
 using Robust.Shared.Random;
 using System.Text;
-using Content.Server.Nutrition;
+// Start of Harmony Additions: Added more entries into the pAI store
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
-using NetCord.Rest;
-using Robust.Shared.Prototypes;
+// End of Harmony Additions
 
 namespace Content.Server.PAI;
 
@@ -39,7 +37,7 @@ public sealed partial class PAISystem : EntitySystem
         SubscribeLocalEvent<PAIComponent, MindAddedMessage>(OnMindAdded);
         SubscribeLocalEvent<PAIComponent, MindRemovedMessage>(OnMindRemoved);
         SubscribeLocalEvent<PAIComponent, BeingMicrowavedEvent>(OnMicrowaved);
-        SubscribeLocalEvent<PAIComponent, EncryptionChannelsChangedEvent>(OnKeysChanged);
+        SubscribeLocalEvent<PAIComponent, EncryptionChannelsChangedEvent>(OnKeysChanged); // Harmony Additions: Added more entries into the pAI store
     }
 
     private void OnUseInHand(EntityUid uid, PAIComponent component, UseInHandEvent args)
@@ -106,7 +104,6 @@ public sealed partial class PAISystem : EntitySystem
         var val = Loc.GetString("pai-system-pai-name-raw", ("name", name.ToString()));
         _metaData.SetEntityName(uid, val);
     }
-
     public void PAITurningOff(EntityUid uid)
     {
         //  Close the instrument interface if it was open
@@ -128,7 +125,7 @@ public sealed partial class PAISystem : EntitySystem
         }
     }
 
-    // Start of Harmony changes
+    // Start of Harmony Additions: Added more entries into the pAI store
 
     private void OnKeysChanged(EntityUid uid, PAIComponent component, EncryptionChannelsChangedEvent args)
     {
@@ -142,4 +139,5 @@ public sealed partial class PAISystem : EntitySystem
         }
         EnsureComp<ActiveRadioComponent>(uid).Channels = keyHolder.Channels;
     }
+    // End of Harmony Additions
 }

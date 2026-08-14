@@ -6,7 +6,9 @@ using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Interaction;
 using Content.Shared.NodeContainer;
+// Start of Harmony Changes: Added more entries into the pAI store
 using Content.Shared.PAI;
+// End of Harmony Changes
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 
