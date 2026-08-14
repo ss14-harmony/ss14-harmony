@@ -44,8 +44,8 @@
             MedicalIntern: [ 4, 4 ] #intern, exclude from dept count
             Psychologist: [ 1, 1 ]
             #Science (5)
-            Scientist: [ 5, 5 ]
-            ResearchAssistant: [ 4, 4 ] #intern, exclude from dept count
+            Scientist: [ 3, 4 ] # Harmony Change - Reduced from 5, 5 to 3, 4
+            ResearchAssistant: [ 2, 2 ] #intern, exclude from dept count Harmony Change - reduced from 4, 4 to 2, 2
             #Security (9 - 11)
             Warden: [ 1, 1 ]
             SecurityOfficer: [ 5, 7 ]

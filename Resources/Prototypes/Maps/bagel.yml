@@ -44,8 +44,8 @@
             Paramedic: [ 1, 1 ]
             MedicalIntern: [ 4, 4 ] #intern, not counted
             #science (5)
-            Scientist: [ 5, 5 ]
-            ResearchAssistant: [ 4, 4 ] #intern, not counted
+            Scientist: [ 3, 4 ] # Harmony Change - Reduces science slots from 5, 5 to 3, 4
+            ResearchAssistant: [ 2, 2 ] #intern, not counted - Harmony Change - reduces from 4, 4 to 2, 2
             #security (10)
             Warden: [ 1, 1 ]
             SecurityOfficer: [ 6, 6 ]

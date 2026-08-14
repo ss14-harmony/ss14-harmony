@@ -44,8 +44,8 @@
           MedicalIntern: [ 2, 2 ] #intern, not counted
           Paramedic: [ 1, 1 ]
           #science (4)
-          Scientist: [ 4, 4 ]
-          ResearchAssistant: [ 2, 2 ] #intern, not counted
+          Scientist: [ 3, 3 ] # Harmony Change - Reduced from 4, 4 to 3, 3
+          ResearchAssistant: [ 1, 1 ] #intern, not counted Harmony Change - reduced from 2, 2 to 1, 1
           #security (6)
           Warden: [ 1, 1 ]
           SecurityOfficer: [ 3, 3 ]
