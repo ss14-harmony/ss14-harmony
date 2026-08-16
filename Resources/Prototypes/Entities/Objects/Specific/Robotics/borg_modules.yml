@@ -1129,6 +1129,18 @@
           components:
           - FitsInDispenser
     - item: BarSpoon
+    - hand:
+        emptyLabel: borg-slot-free-left
+        emptyRepresentative: 
+        whitelist:
+          components:
+           - Edible
+          tags:
+            - Document
+            - Book
+            - Write
+            - Cigarette
+            - Smokable
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: service-module }
 

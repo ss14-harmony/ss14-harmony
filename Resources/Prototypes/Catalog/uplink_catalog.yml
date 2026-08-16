@@ -46,10 +46,14 @@
   icon: { sprite: /Textures/Objects/Weapons/Melee/e_sword.rsi, state: icon }
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 4
+  # Start of HarmonyChange: Lowers esword cost to seven TC
+  # Telecrystal: 4
+    Telecrystal: 3
   productEntity: EnergySword
   cost:
-    Telecrystal: 8
+  # Telecrystal: 8
+    Telecrystal: 7
+  # End of HarmonyChange
   categories:
   - UplinkWeaponry
 
@@ -108,9 +112,13 @@
   productEntity: ClothingHandsGlovesNorthStar
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 4
+  # Start of Harmony Change: Lowers northstars cost to seven TC
+  # Telecrystal: 4
+    Telecrystal: 3
   cost:
-    Telecrystal: 8
+  # Telecrystal: 8
+    Telecrystal: 7
+  # End of Harmony Change
   categories:
   - UplinkWeaponry
 
@@ -159,9 +167,13 @@
   productEntity: ClothingHandsGlovesBoxingRiggedBlue # TODO Replace this with the random spawner when it's not bugged
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 8
+  # Start of Harmony Change: Lowers rigged boxing gloves price to 6 TC
+  # Telecrystal: 8
+    Telecrystal: 3
   cost:
-    Telecrystal: 10
+  # Telecrystal: 10
+    Telecrystal: 6
+  # End of Harmony Change
   categories:
   - UplinkWeaponry
 
