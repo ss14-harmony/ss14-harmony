@@ -44,7 +44,7 @@
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 3, 3 ] # Harmony Change - reduced from 4, 4 to 3, 3
-            ResearchAssistant: [ 2, 2 ] # Harmony Change - reduced from 3, 3 to
+            ResearchAssistant: [ 2, 2 ] # Harmony Change - reduced from 3, 3 to 2,2
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
