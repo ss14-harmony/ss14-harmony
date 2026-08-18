@@ -16,9 +16,11 @@
     ClothingBeltSecurityWebbing: 5
     CombatKnife: 3
     Zipties: 12
-    RiotShield: 2
-    RiotLaserShield: 2
-    RiotBulletShield: 2
+# Harmony Change: Removes Shields from the SecTech
+#    RiotShield: 2
+#    RiotLaserShield: 2
+#    RiotBulletShield: 2
+# End of Harmony Change
     RadioHandheldSecurity: 5
     SecurityBola: 4 #Harmony Change: Security Bolas added
   # security officers need to follow a diet regimen!

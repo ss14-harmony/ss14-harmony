@@ -51,3 +51,19 @@
     Glass: 500
     Plastic: 250
     Uranium: 300
+
+- type: latheRecipe
+  parent: BaseShieldRecipe
+  id: RiotLaserShield
+  result: RiotLaserShield
+  materials:
+    Steel: 400
+    Glass: 400
+
+- type: latheRecipe
+  parent: BaseShieldRecipe
+  id: RiotBulletShield
+  result: RiotBulletShield
+  materials:
+    Steel: 400
+    Glass: 400

@@ -63,6 +63,10 @@
   - Stunbaton
   - CombatKnife
   - RiotShield
+#Start of Harmony Change: Adds the Laser and Bullet Shields to Security Research
+  - RiotLaserShield
+  - RiotBulletShield
+# End of Harmony Change
 
 ## Dynamic recipes
 

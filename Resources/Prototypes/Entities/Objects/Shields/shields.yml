@@ -90,7 +90,7 @@
   id: RiotShield
   description: A large tower shield. Good for controlling crowds.
   components:
-# Begin of Harmony Change: Shield Rework -- Suit Storage Slot
+# Begin of Harmony Change: Shield Rework -- Suit Storage Slot, Held/Worn Slowdown
     - type: Sprite
       sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-shield.rsi
       state: icon
@@ -102,6 +102,12 @@
       quickEquip: false
       slots:
       - suitStorage
+    - type: HeldSpeedModifier
+      walkModifier: 0.9
+      sprintModifier: 0.9
+    - type: ClothingSpeedModifier
+      walkModifier: 0.95
+      sprintModifier: 0.95
 # End of Harmony Change
     - type: StaticPrice
       price: 90
@@ -124,11 +130,11 @@
   id: RiotLaserShield
   description: A shield built for withstanding lasers, but not much else.
   components:
-# Begin of Harmony Change: Shield Rework -- Suit Storage Slot
+# Begin of Harmony Change: Shield Rework -- Suit Storage Slot, Held/Worn Slowdown
     - type: Sprite
       sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
       state: icon
-      #state: riot_laser-icon 
+      #state: riot_laser-icon
     - type: Item
       sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
       size: Ginormous
@@ -138,6 +144,12 @@
       quickEquip: false
       slots:
       - suitStorage
+    - type: HeldSpeedModifier
+      walkModifier: 0.9
+      sprintModifier: 0.9
+    - type: ClothingSpeedModifier
+      walkModifier: 0.95
+      sprintModifier: 0.95
 # End of Harmony Change
     - type: Blocking
       passiveBlockModifier:
@@ -155,11 +167,11 @@
   id: RiotBulletShield
   description: A shield built for protecting against ballistics, but not much else.
   components:
-# Begin of Harmony Change: Shield Rework -- Suit Storage Slot
+# Begin of Harmony Change: Shield Rework -- Suit Storage Slot, Held/Worn Slowdown
     - type: Sprite
       sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi
       state: icon
-      #state: riot_bullet-icon 
+      #state: riot_bullet-icon
     - type: Item
       sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi
       size: Ginormous
@@ -168,7 +180,13 @@
       sprite: _Harmony/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi
       quickEquip: false
       slots:
-      - suitStorage 
+      - suitStorage
+    - type: HeldSpeedModifier
+      walkModifier: 0.9
+      sprintModifier: 0.9
+    - type: ClothingSpeedModifier
+      walkModifier: 0.95
+      sprintModifier: 0.95
 # End of Harmony Change
     - type: Blocking
       passiveBlockModifier:
@@ -188,7 +206,7 @@
   id: WoodenBuckler
   description: A small round wooden makeshift shield.
   components:
-# Begin of Harmony Change: Shield Rework -- Suit Storage Slot
+# Begin of Harmony Change: Shield Rework -- Suit Storage Slot, Held/Worn Slowdown
     - type: Sprite
       sprite: _Harmony/Objects/Weapons/Melee/Shields/buckler.rsi
       state: icon
@@ -202,6 +220,12 @@
       quickEquip: false
       slots:
       - suitStorage
+    - type: HeldSpeedModifier
+      walkModifier: 0.9
+      sprintModifier: 0.9
+    - type: ClothingSpeedModifier
+      walkModifier: 0.95
+      sprintModifier: 0.95
 # End of Harmony Change
     - type: Blocking
       passiveBlockModifier:
@@ -306,9 +330,9 @@
   id: MakeshiftShield
   description: A rundown looking shield, not good for much.
   components:
-# Begin of Harmony Change: Shield Rework -- Suit Storage Slot
+# Begin of Harmony Change: Shield Rework -- Suit Storage Slot, Held/Worn Slowdown
     - type: Sprite
-      sprite: _Harmony/Objects/Weapons/Melee/Shields/makeshift-shield.rsi 
+      sprite: _Harmony/Objects/Weapons/Melee/Shields/makeshift-shield.rsi
       state: icon
       #state: makeshift-icon
     - type: Item
@@ -319,7 +343,13 @@
       sprite: _Harmony/Objects/Weapons/Melee/Shields/makeshift-shield.rsi
       quickEquip: false
       slots:
-      - suitStorage 
+      - suitStorage
+    - type: HeldSpeedModifier
+      walkModifier: 0.8
+      sprintModifier: 0.8
+    - type: ClothingSpeedModifier
+      walkModifier: 0.9
+      sprintModifier: 0.9
   # End of Harmony Change
     - type: Blocking
       passiveBlockModifier:
@@ -632,6 +662,11 @@
       components:
       - type: DisarmMalus
         malus: 0.6
+  # Harmony Change: Adds Held Slowdown
+      - type: HeldSpeedModifier
+        walkModifier: 0.9
+        sprintModifier: 0.9
+  # End of Harmony Change
     - type: ItemToggleSize
       activatedSize: Huge
     - type: Sprite
