@@ -32,11 +32,6 @@ uplink-gloves-north-star-desc = A pair of gloves that reduce your punching coold
 uplink-gloves-knuckleduster-name = Syndicate Knuckle Dusters
 uplink-gloves-knuckleduster-desc = A pair of plastitanium knuckle dusters that let you punch hard enough to break the captains jaw into pieces.
 
-# Harmony change - adds mallet of malice
-uplink-malletofmalice-name = Mallet of Malice
-uplink-malletofmalice-desc = An overwhelmingly evil mallet, capable of such devestation... Donk.Co's latest and greatest toy, meant for their most elite undercover agents.
-# Harmony Change End
-
 uplink-hushpup-name = Hushpup
 uplink-hushpup-desc = A powerful silenced shotgun with a low magazine capacity. Uses .50 shotgun ammo.
 

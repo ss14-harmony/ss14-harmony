@@ -132,22 +132,6 @@
   categories:
   - UplinkWeaponry
 
-# Harmony Change - adds Mallet of Malice
-- type: listing
-  id: UplinkMalletofMalice
-  name: uplink-malletofmalice-name
-  description: uplink-malletofmalice-desc
-  icon: { sprite: /Textures/Objects/Fun/rubber_hammer.rsi, state: icon }
-  discountCategory: veryRareDiscounts
-  discountDownTo:
-    Telecrystal: 4
-  productEntity: MaliceMallet
-  cost:
-    Telecrystal: 5
-  categories:
-  - UplinkWeaponry
-# Harmony Change End
-
 - type: listing
   id: UplinkEshield
   name: uplink-eshield-name
