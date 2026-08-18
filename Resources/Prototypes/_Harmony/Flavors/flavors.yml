@@ -1,12 +1,4 @@
-- type: flavor
-  id: themojave
-  flavorType: Complex
-  description: flavor-complex-themojave
-
-- type: flavor
-  id: regret
-  flavorType: Complex
-  description: flavor-complex-regret
+#Base Flavors
 
 - type: flavor
   id: glorp
@@ -14,11 +6,27 @@
   description: flavor-base-glorp
 
 - type: flavor
+  id: pit
+  flavorType: Base
+  description: flavor-base-pit
+
+#Complex Flavors
+- type: flavor
+  id: jellygrape
+  flavorType: Complex
+  description: flavor-complex-jelly-grape
+  
+- type: flavor
   id: peanutbutter
   flavorType: Complex
   description: flavor-complex-peanut-butter
 
 - type: flavor
-  id: jellygrape
+  id: regret
   flavorType: Complex
-  description: flavor-complex-jelly-grape
+  description: flavor-complex-regret
+
+- type: flavor
+  id: themojave
+  flavorType: Complex
+  description: flavor-complex-themojave

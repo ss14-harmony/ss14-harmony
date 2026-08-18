@@ -1,4 +1,30 @@
 - type: seed
+  id: bingleberries
+  name: seeds-bingle-berries-name
+  noun: seeds-noun-seeds
+  displayName: seeds-bingle-berries-display-name
+  plantRsi: _Harmony/Objects/Specific/Hydroponics/bingle_berries.rsi
+  packetPrototype: BingleBerrySeeds
+  productPrototypes:
+  - FoodBingleBerries
+  harvestRepeat: Repeat
+  lifespan: 40
+  maturation: 6
+  production: 4
+  yield: 3
+  idealLight: 7
+  nutrientConsumption: 0.8
+  chemicals:
+    Nutriment:
+      Min: 2
+      Max: 5
+      PotencyDivisor: 30
+    Vitamin:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 40
+      
+- type: seed
   id: peanut
   name: seeds-peanut-name
   noun: seeds-noun-seeds

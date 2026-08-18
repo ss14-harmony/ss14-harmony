@@ -1,0 +1,8 @@
+﻿- type: reagent
+  id: JuiceBingleBerry
+  name: reagent-name-juice-bingle-berry
+  parent: BaseJuice
+  desc: reagent-desc-juice-bingle-berry
+  physicalDesc: reagent-physical-desc-pits
+  flavor: bitter
+  color: "#305A85"

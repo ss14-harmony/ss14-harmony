@@ -1,5 +1,15 @@
 - type: entity
   parent: SeedBase
+  name: packet of bingle berry seeds
+  id: BingleBerrySeeds
+  components:
+  - type: Seed
+    seedId: bingleberries
+  - type: Sprite
+    sprite: _Harmony/Objects/Specific/Hydroponics/bingle_berries.rsi
+    
+- type: entity
+  parent: SeedBase
   id: PeanutSeeds
   name: packet of peanut seeds
   suffix: Harmony

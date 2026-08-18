@@ -1,4 +1,42 @@
 - type: entity
+  name: bingle berries
+  description: bing bingle
+  id: FoodBingleBerries
+  parent: ProduceBase
+  components:
+  - type: FlavorProfile
+    flavors:
+    - chewy
+    - pit
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 12
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 1
+        - ReagentId: SpaceDrugs
+          Quantity: 5
+        - ReagentId: Cryptobiolin
+          Quantity: 4
+  - type: Sprite
+    sprite: _Harmony/Objects/Specific/Hydroponics/bingle_berries.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: bingleberries
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBingleBerry
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+    
+- type: entity
   parent: FoodProduceBase
   id: FoodPeanut
   name: peanut
