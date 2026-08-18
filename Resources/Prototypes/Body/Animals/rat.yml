@@ -20,3 +20,29 @@
         - id: OrganAnimalStomach
         - id: OrganAnimalLiver
         - id: OrganAnimalKidneys
+
+# Harmony Change - Gives Ratking its own entity, ey'o see?
+- type: entity
+  id: BaseMobRatKing
+  abstract: true
+  components:
+    - type: Body
+    - type: EntityTableContainerFill
+      containers:
+        body_organs: !type:AllSelector
+          children:
+          - id: OrganHumanLungs
+          - id: OrganHumanHeart
+          - id: OrganRatKingStomach
+          - id: OrganHumanLiver
+          - id: OrganHumanKidneys
+
+# Gives ratking its own stomach, royalty capiche??
+- type: entity
+  parent: OrganRatKingStomachBase
+  id: OrganRatKingStomach
+  suffix: RatKing
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ RatKing ]
+# Harmony Change End

@@ -403,6 +403,43 @@
     solution:
       maxVol: 150 # 1.25 liters which is average for a human
 
+# Harmony Change - Gives ratking its own stomach, see?
+- type: entity
+  parent: Solution
+  id: SolutionRatKingStomach
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: stomach
+    solution:
+      maxVol: 5000
+
+- type: entity
+  parent: OrganBaseStomach
+  id: OrganRatKingStomachBase
+  name: rat king stomach
+  components:
+  - type: SolutionManager
+    solutions:
+    - SolutionRatKingStomach
+  - type: GibbableOrgan
+  - type: Organ
+    category: Stomach
+  - type: Stomach
+    specialDigestible:
+      tags:
+      - Trash
+    isSpecialDigestibleExclusive: false
+  - type: Metabolizer
+    maxReagents: 3
+    stages: [ Digestion ]
+  - type: Sprite
+    layers:
+    - state: stomach
+  - type: Item
+    heldPrefix: stomach
+# Harmony Change End
+
 - type: entity
   parent: OrganBase
   id: OrganBaseLiver

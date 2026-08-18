@@ -1,7 +1,7 @@
 - type: entity
   name: rat king
   id: MobRatKing
-  parent: [ BaseMobRat, SimpleMobBase, MobCombat ]
+  parent: [ BaseMobRatKing, SimpleMobBase, MobCombat ] # Harmony Change - from BaseMobRat to BaseMobRatking
   description: He's da rat. He make da roolz.
   components:
   - type: CombatMode
@@ -50,7 +50,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      200: Dead
+      300: Dead # Harmony change - from 200 to 300, capiche?
   - type: MeleeWeapon
     altDisarm: false
     soundHit:
@@ -63,12 +63,12 @@
         Piercing: 8
   - type: Hunger # probably should be prototyped
     thresholds:
-      Overfed: 200
+      Overfed: 500 # Harmony Change - from 200 to 500, capiche?
       Okay: 150
-      Peckish: 100
-      Starving: 50
+      Peckish: 100 # Harmony Change - 100 to 50
+      Starving: 50 # Harmony Change - 50 to 25
       Dead: 0
-    baseDecayRate: 0.01666666666
+    baseDecayRate: 0.3 # Harmony Change - from 0.01666666666 to 0.3 fuhgittabouit, see?
   - type: Thirst
     thresholds:
       OverHydrated: 600
@@ -105,8 +105,8 @@
     coefficient: 0.5 # rat king touches more wires, see?
   - type: Rummager
   - type: RatKing
-    hungerPerArmyUse: 25
-    hungerPerDomainUse: 50
+    hungerPerArmyUse: 10 # Harmony Change - from 25 to 10 nyeeeh
+    hungerPerDomainUse: 25 # Harmony Change - from 50 to 25, see?
   - type: MobsterAccent
   - type: Speech
     speechVerb: SmallMob
@@ -230,8 +230,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      15: Critical
-      30: Dead
+      30: Dead # Harmony Change - From 60 to 30
   - type: Destructible
     thresholds:
     - trigger:
