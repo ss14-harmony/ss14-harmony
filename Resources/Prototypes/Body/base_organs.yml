@@ -417,6 +417,7 @@
 - type: entity
   parent: OrganBaseStomach
   id: OrganRatKingStomachBase
+  abstract: true
   name: rat king stomach
   components:
   - type: SolutionManager

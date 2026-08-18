@@ -39,10 +39,13 @@
 
 # Gives ratking its own stomach, royalty capiche??
 - type: entity
-  parent: OrganRatKingStomachBase
+  parent: [ OrganRatKingStomachBase, OrganSpriteHumanInternal ]
   id: OrganRatKingStomach
   suffix: RatKing
   components:
   - type: Metabolizer
     metabolizerTypes: [ RatKing ]
+  - type: Sprite
+    layers:
+    - state: stomach
 # Harmony Change End
