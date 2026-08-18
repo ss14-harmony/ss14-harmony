@@ -65,8 +65,8 @@
     thresholds:
       Overfed: 500 # Harmony Change - from 200 to 500, capiche?
       Okay: 150
-      Peckish: 100 # Harmony Change - 100 to 50
-      Starving: 50 # Harmony Change - 50 to 25
+      Peckish: 100 
+      Starving: 50 
       Dead: 0
     baseDecayRate: 0.3 # Harmony Change - from 0.01666666666 to 0.3 fuhgittabouit, see?
   - type: Thirst
