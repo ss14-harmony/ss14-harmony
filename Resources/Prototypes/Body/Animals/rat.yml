@@ -41,7 +41,6 @@
 - type: entity
   parent: [ OrganRatKingStomachBase, OrganSpriteHumanInternal ]
   id: OrganRatKingStomach
-  suffix: RatKing
   components:
   - type: Metabolizer
     metabolizerTypes: [ Human ]
