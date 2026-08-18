@@ -230,7 +230,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      30: Dead # Harmony Change - From 60 to 30
+      30: Dead # Harmony Change - removes crit state
   - type: Destructible
     thresholds:
     - trigger:
