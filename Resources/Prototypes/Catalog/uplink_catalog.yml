@@ -624,16 +624,18 @@
   categories:
   - UplinkAmmo
 
+# Harmony Changes - remove lecter/estoc mag from uplink
 # For the Estoc
-- type: listing
-  id: UplinkEstocAmmo
-  name: uplink-estoc-ammo-name
-  description: uplink-estoc-ammo-desc
-  productEntity: MagazineRifle
-  cost:
-    Telecrystal: 2
-  categories:
-  - UplinkAmmo
+#- type: listing
+#  id: UplinkEstocAmmo
+#  name: uplink-estoc-ammo-name
+#  description: uplink-estoc-ammo-desc
+#  productEntity: MagazineRifle
+#  cost:
+#    Telecrystal: 2
+#  categories:
+#  - UplinkAmmo
+# End Harmony Changes
 
 # for the hristov
 - type: listing
