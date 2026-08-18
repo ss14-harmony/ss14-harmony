@@ -44,7 +44,7 @@
   suffix: RatKing
   components:
   - type: Metabolizer
-    metabolizerTypes: [ RatKing ]
+    metabolizerTypes: [ Human ]
   - type: Sprite
     layers:
     - state: stomach
