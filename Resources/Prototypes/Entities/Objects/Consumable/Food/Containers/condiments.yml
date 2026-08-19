@@ -48,7 +48,7 @@
   # Well its fixed now, but I want to share my pain.
   - type: Solution
     solution:
-      maxVol: 1 # Cheap
+      maxVol: 15 # Cheap - Harmony Change - from 1 to 15
   - type: SolutionTransfer
     maxTransferAmount: 1
   - type: Sprite
@@ -265,7 +265,7 @@
     solution:
       reagents:
       - ReagentId: TableSalt
-        Quantity: 1
+        Quantity: 15 # Harmony Change - From 1 to 15
   - type: Sprite
     layers:
       - state: packet-solid-2
