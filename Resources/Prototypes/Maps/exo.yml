@@ -40,12 +40,11 @@
             MedicalDoctor: [ 4, 4 ]
             MedicalIntern: [ 3, 3 ]
             Paramedic: [ 1, 1 ]
-            Psychologist: [ 1, 1 ]
-            #science
-            ResearchDirector: [ 1, 1 ]
-            Scientist: [ 3, 3 ] # Harmony Change - reduced from 4, 4 to 3, 3
-            ResearchAssistant: [ 2, 2 ] # Harmony Change - reduced from 3, 3 to 2, 2
-            #security
+            MedicalIntern: [ 2, 2 ]
+            #science (6-6)
+            Scientist: [ 3, 3 ] # Harmony Chance - Reduced from 4, 4 to 3, 3
+            ResearchAssistant: [ 2, 2 ]
+            #security (10-11)
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
             SecurityOfficer: [ 5, 5 ]

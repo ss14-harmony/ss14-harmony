@@ -41,12 +41,11 @@
             Chemist: [ 2, 2 ]
             MedicalDoctor: [ 4, 4 ]
             Paramedic: [ 1, 1 ]
-            MedicalIntern: [ 4, 4 ] #intern, exclude from dept count
-            Psychologist: [ 1, 1 ]
-            #Science (5)
-            Scientist: [ 3, 4 ] # Harmony Change - Reduced from 5, 5 to 3, 4
-            ResearchAssistant: [ 2, 2 ] #intern, exclude from dept count Harmony Change - reduced from 4, 4 to 2, 2
-            #Security (9 - 11)
+            MedicalIntern: [ 2, 2 ]
+            #science (6-6)
+            Scientist: [ 3, 4 ] # Harmony Chance - Reduces science slots from 4, 4 to 3, 4
+            ResearchAssistant: [ 2, 2 ]
+            #security (10-11)
             Warden: [ 1, 1 ]
             SecurityOfficer: [ 5, 7 ]
             Detective: [ 1, 1 ]
