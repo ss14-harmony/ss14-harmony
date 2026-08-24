@@ -1,7 +1,7 @@
 - type: entity
   name: rat king
   id: MobRatKing
-  parent: [ BaseMobRatKing, SimpleMobBase, MobCombat ] # Harmony Change - from BaseMobRat to BaseMobRatking
+  parent: [ BaseMobRatKing, SimpleMobBase, MobCombat, BaseSlicingRefinable, MobNightVision ] # Harmony Change - from BaseMobRat to BaseMobRatking
   description: He's da rat. He make da roolz.
   components:
   - type: CombatMode
