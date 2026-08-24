@@ -7,18 +7,21 @@ using Content.Shared.Speech;
 using Content.Shared.Speech.Muting;
 using Content.Shared._Harmony.Speech.Hypophonia;
 using Content.Shared.Chat;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Harmony.Speech.Hypophonia
 {
     public sealed partial class HypophoniaSystem : EntitySystem
     {
+        [Dependency] private IPrototypeManager _prototypeManager = default!;
+
         [Dependency] private PopupSystem _popupSystem = default!;
         public override void Initialize()
         {
             base.Initialize();
             SubscribeLocalEvent<HypophoniaComponent, SpeakAttemptEvent>(OnSpeakAttempt);
             SubscribeLocalEvent<HypophoniaComponent, EmoteEvent>(OnEmote, before: new[] { typeof(VocalSystem) });
-            SubscribeLocalEvent<HypophoniaComponent, ScreamActionEvent>(OnScreamAction, before: new[] { typeof(VocalSystem) });
+            SubscribeLocalEvent<HypophoniaComponent, EmoteActionEvent>(OnEmoteAction, before: new[] { typeof(VocalSystem) });
         }
 
         private void OnEmote(EntityUid uid, HypophoniaComponent component, ref EmoteEvent args)
@@ -35,13 +38,19 @@ namespace Content.Server._Harmony.Speech.Hypophonia
                 args.Handled = true;
         }
 
-        private void OnScreamAction(EntityUid uid, HypophoniaComponent component, ScreamActionEvent args)
+        private void OnEmoteAction(EntityUid uid, HypophoniaComponent component, EmoteActionEvent args)
         {
             if (args.Handled)
                 return;
 
             // Let MutingSystem handle the event muted characters (mimes included)
             if (HasComp<MutedComponent>(uid))
+                return;
+
+            if (!_prototypeManager.Resolve(args.Emote, out var emote))
+                return;
+
+            if (!emote.Category.HasFlag(EmoteCategory.Vocal))
                 return;
 
             // Mark the event as handled and show the popup
