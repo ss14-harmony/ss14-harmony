@@ -1,19 +1,4 @@
-- files: ["avali_cry"]
-  license: "CC-BY-NC-SA-4.0"
-  copyright: "Voice made by @lillian_industries (Discord) and editted by Huaqas (Discord)."
-  source: "https://discord.com/channels/1322447119252062260/1380861162362503371/1381604298735095921"
-
-- files: ["avali_cough.ogg, avali_sigh.ogg"]
-  copyright: "galah0X.wav by ImmergoMedia, Taken from https://freesound.org/"
-  license: "CC0-1.0"
-  source: https://freesound.org/people/ImmergoMedia/
-
 - files: ["avali_whistle.ogg"]
   copyright: "CanaryArtie-3.wav by ReadeOnly, Taken from https://freesound.org/"
   license: "CC0-1.0"
   source: https://freesound.org/s/85403/
-
-- files: ["avali_yawn.ogg"]
-  license: "CC-BY-4.0"
-  copyright: "'reinsamba_Nightingale_song_happydub1-rwrk' by 'suonho'. Mixed and edited with other Resomi SFX."
-  source: "https://freesound.org/people/suonho/sounds/59344/"
