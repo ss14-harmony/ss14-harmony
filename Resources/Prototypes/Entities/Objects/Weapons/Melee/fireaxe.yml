@@ -7,7 +7,6 @@
   - type: Tag
     tags:
     - FireAxe
-  - type: Sharp
   - type: Execution
     doAfterDuration: 4.0
   - type: Sprite
@@ -41,8 +40,10 @@
     - suitStorage
   - type: Tool
     qualities:
-      - Prying
-      - Axing # Harmony specific change for allowing the base fireaxe to rip up plating
+    - Prying
+    - Slicing
+    - Sawing
+    - Axing # Harmony specific change for allowing the base fireaxe to rip up plating
   - type: ToolTileCompatible
     delay: 5 # Harmony specific change
   - type: Prying
@@ -77,4 +78,6 @@
   - type: Tool
     qualities:
     - Prying
+    - Slicing
+    - Sawing
   # End of Harmony specific addition
