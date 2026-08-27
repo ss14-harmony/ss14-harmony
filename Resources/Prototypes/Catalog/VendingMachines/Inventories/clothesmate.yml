@@ -58,6 +58,8 @@
     ClothingUniformJumpskirtCasualGreen: 2
     # DO NOT ADD MORE, USE UNIFORM DYING
     ClothingShoesColorBlack: 8
+    ClothingShoesLeather: 3
+    ClothingShoesBootsLaceup: 3
     ClothingShoesColorBrown: 4
     ClothingShoesColorWhite: 3
     ClothingShoesColorBlue: 2
