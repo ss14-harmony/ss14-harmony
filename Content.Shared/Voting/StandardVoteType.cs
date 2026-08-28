@@ -23,7 +23,16 @@ public enum StandardVoteType : byte
     /// <summary>
     /// Vote to kick a player.
     /// </summary>
-    Votekick
+    Votekick,
+
+    // Start of Harmony additions: Change Auto evac call to OOC
+
+    /// <summary>
+    /// Auto magical evac call.
+    /// </summary>
+    AutoEvacCall
+
+    // End of Harmony additions
 }
 
 /// <summary>
