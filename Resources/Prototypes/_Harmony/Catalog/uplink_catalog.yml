@@ -325,7 +325,6 @@
   id: UplinkMalletofMalice
   name: uplink-malletofmalice-name
   description: uplink-malletofmalice-desc
-  icon: { sprite: /Textures/Objects/Fun/rubber_hammer.rsi, state: icon }
   discountCategory: veryRareDiscounts
   discountDownTo:
     Telecrystal: 4
