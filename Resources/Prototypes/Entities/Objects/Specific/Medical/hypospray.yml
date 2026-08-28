@@ -498,7 +498,7 @@
     changeColor: false
     emptySpriteName: dexpen_empty
   - type: Solution
-    solutions:
+    solution:
       reagents:
       # Harmony Change - Nukie Universal Saline
       # - ReagentId: Saline
