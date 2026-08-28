@@ -38,7 +38,10 @@ namespace Content.Server.Voting.Managers
             {StandardVoteType.Restart, CCVars.VoteRestartEnabled},
             {StandardVoteType.Preset, CCVars.VotePresetEnabled},
             {StandardVoteType.Map, CCVars.VoteMapEnabled},
-            {StandardVoteType.Votekick, CCVars.VotekickEnabled}
+            {StandardVoteType.Votekick, CCVars.VotekickEnabled},
+            // Start of Harmony additions: Change Auto evac call to OOC
+            {StandardVoteType.AutoEvacCall, CCVars.AutoEvacCallEnabled}
+            // End of Harmony additions
         };
 
         public void CreateStandardVote(ICommonSession? initiator, StandardVoteType voteType, string[]? args = null)
@@ -68,6 +71,9 @@ namespace Content.Server.Voting.Managers
                 case StandardVoteType.Votekick:
                     timeoutVote = false; // Allows the timeout to be updated manually in the create method
                     CreateVotekickVote(initiator, args);
+                    break;
+                case StandardVoteType.AutoEvacCall:
+                    CreateAutoEvacVote(initiator);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(voteType), voteType, null);
@@ -590,6 +596,62 @@ namespace Content.Server.Voting.Managers
             _standardVoteTimeout[type] = _timing.RealTime + timeout;
             DirtyCanCallVoteAll();
         }
+
+        // Start of Harmony additions: Change Auto evac call to OOC
+        private void CreateAutoEvacVote(ICommonSession? initiator)
+        {
+            var alone = _playerManager.PlayerCount == 1 && initiator != null;
+            var options = new VoteOptions
+            {
+                Title = Loc.GetString("ui-vote-autoevac-title"),
+                Options =
+                {
+                    (Loc.GetString("ui-vote-autoevac-yes"), "yes"),
+                    (Loc.GetString("ui-vote-autoevac-no"), "no"),
+                },
+                Duration = alone
+                    ? TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteAutoEvacTimerAlone))
+                    : TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteAutoEvacTimer)),
+                InitiatorTimeout = TimeSpan.FromMinutes(5)
+            };
+
+            if (alone)
+                options.InitiatorTimeout = TimeSpan.FromMinutes(1);
+
+            WirePresetVoteInitiator(options, initiator);
+
+            var vote = CreateVote(options);
+
+            vote.OnFinished += (_, _) =>
+            {
+                var votesYes = vote.VotesPerOption["yes"];
+                var votesNo = vote.VotesPerOption["no"];
+                var total = votesYes + votesNo;
+
+                var ratioRequired = _cfg.GetCVar(CCVars.VoteRestartRequiredRatio);
+                if (total > 0 && votesYes >= votesNo)
+                {
+                        _adminLogger.Add(LogType.Vote, LogImpact.Low, $"Restart vote succeeded: {votesYes}/{votesNo}");
+                        _chatManager.DispatchServerAnnouncement(Loc.GetString("ui-vote-autoevac-succeeded"));
+
+                        var roundEnd = _entityManager.EntitySysManager.GetEntitySystem<RoundEndSystem>();
+                        roundEnd.RequestRoundEnd(checkCooldown: false, text: "round-end-system-shuttle-auto-called-announcement");
+                }
+                else
+                {
+                    _adminLogger.Add(LogType.Vote, LogImpact.Low, $"Restart vote failed: {votesYes}/{votesNo}");
+                    _chatManager.DispatchServerAnnouncement(
+                        Loc.GetString("ui-vote-autoevac-failed"));
+                }
+            };
+
+            if (initiator != null)
+            {
+                // Cast yes vote if created the vote yourself.
+                vote.CastVote(initiator, 0);
+            }
+        }
+        // End of Harmony additions
 
         private Dictionary<string, string> GetGamePresets()
         {
