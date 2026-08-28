@@ -12,12 +12,10 @@
     state: icon
     noRot: false
   - type: ImmovableRod
-    # Harmony start
-    shouldGib: false
+    shouldGib: false # Harmony: disable gibbing
     damage:
       types:
-        Piercing: 400
-    # Harmony end
+        Piercing: 400 # Harmony: 190 blunt -> 400 pierce
   - type: GravityAffected
   - type: Physics
     bodyType: Dynamic
@@ -40,10 +38,7 @@
         - Opaque
   - type: WarpPoint
     follow: true
-    location: immovable rod
-    blacklist:
-      tags:
-      - GhostOnlyWarp
+    location: location-immovable-rod
 
 - type: entity
   parent: ImmovableRod
@@ -82,9 +77,6 @@
     destroyTiles: false
     randomizeVelocity: false
     shouldGib: false
-    damage:
-      types:
-        Piercing: 90 # harmony: 190 blunt -> 90 piercing
   - type: Physics
     bodyType: KinematicController
   - type: InputMover
