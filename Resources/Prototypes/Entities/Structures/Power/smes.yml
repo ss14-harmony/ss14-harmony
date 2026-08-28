@@ -103,6 +103,11 @@
       - PowerStorage
       - VoltageNetworks
       - Power
+    # Harmony Eeep Port - Impstation - Start
+    - type: AccessReader
+      access: [ [ "Engineering" ] ]
+    - type: ActivatableUIRequiresAccess
+    # Impstation - End
 
     # Interface
     - type: BatteryInterface

@@ -30,6 +30,11 @@
     supplyRampTolerance: 5000
     supplyRampRate: 1000
   - type: StationInfiniteBatteryTarget
+  # Harmony Eeep Port - Impstation - Start
+  - type: AccessReader
+    access: [ [ "Engineering" ] ]
+  - type: ActivatableUIRequiresAccess
+  # Impstation - End
 
   # Interface
   - type: BatteryInterface
@@ -102,12 +107,6 @@
     state: substation_static
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 200
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 100
@@ -195,12 +194,6 @@
     state: substation_wall_static
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 200
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 100

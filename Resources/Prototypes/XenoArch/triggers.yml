@@ -244,6 +244,7 @@
     - ZombieBlood
     - Sap
     - SulfurBlood
+    - SynthBlood # Imp
 
 - type: xenoArchTrigger
   id: TriggerThrow

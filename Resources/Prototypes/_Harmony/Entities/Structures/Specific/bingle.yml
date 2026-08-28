@@ -14,6 +14,7 @@
   - type: ScaleVisuals
   - type: BinglePit
   - type: StepTrigger
+    ignoreWeightless: true
     requiredTriggeredSpeed: 0
     intersectRatio: 0.4
   - type: Transform

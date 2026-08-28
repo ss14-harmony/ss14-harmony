@@ -5,7 +5,7 @@
   suffix: universal blood substitute, Harmony
   components:
   - type: Label
-    currentLabel: reagent-name-universal-blood
+    localizedLabel: reagent-name-universal-blood
   - type: Solution
     solution:
       reagents:

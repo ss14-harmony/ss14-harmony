@@ -1,51 +1,61 @@
 ﻿using System.Numerics;
+using Content.IntegrationTests.Fixtures;
+using Content.IntegrationTests.Fixtures.Attributes;
 using Content.Server._Harmony.Maps.Modifications;
 using Content.Server._Harmony.Maps.Modifications.Systems;
-using Content.Server.Station.Components;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Maths;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.IntegrationTests.Tests._Harmony.Maps.Modifications;
 
-[TestFixture]
-public sealed class MapModificationsTests
+[TestOf(typeof(MapModificationPrototype))]
+public sealed class MapModificationsTests : GameTest
 {
+    private const string TestEntityToAdd = "TestEntityToAdd";
+    private const string TestEntityToAddName = "TESTNAME1";
+    private const string TestEntityToAddDescription = "TESTDESCRIPTION1";
+    private const string TestEntityToRemove = "TestEntityToRemove";
+    private const string TestModificationAddition = "TestAddition";
+    private const string TestModificationRemoval = "TestRemoval";
+    private const string TestModificationReplacement = "TestReplacement";
+
     [TestPrototypes]
-    private const string Prototypes = @"
+    private const string Prototypes = $@"
 - type: entity
-  id: TestEntityToAdd
+  id: {TestEntityToAdd}
 
 - type: entity
-  id: TestEntityToRemove
+  id: {TestEntityToRemove}
 
 - type: mapModification
-  id: TestAddition
+  id: {TestModificationAddition}
   additions:
-  - prototype: TestEntityToAdd
-    name: TESTNAME1
-    description: TESTDESCRIPTION1
+  - prototype: {TestEntityToAdd}
+    name: {TestEntityToAddName}
+    description: {TestEntityToAddDescription}
     position: 1,0
     rotation: 90
 
 - type: mapModification
-  id: TestRemoval
+  id: {TestModificationRemoval}
   removals:
   - !type:EntityPrototypeSelector
-    prototype: TestEntityToRemove
+    prototype: {TestEntityToRemove}
 
 - type: mapModification
-  id: TestReplacement
+  id: {TestModificationReplacement}
   replacements:
   - from:
     - !type:EntityPrototypeSelector
-      prototype: TestEntityToRemove
-    newPrototype: TestEntityToAdd
-    newName: TESTNAME2
-    newDescription: TESTDESCRIPTION2
+      prototype: {TestEntityToRemove}
+    newPrototype: {TestEntityToAdd}
+    newName: {TestEntityToAddName}
+    newDescription: {TestEntityToAddDescription}
 ";
+
+    [SidedDependency(Side.Server)] private readonly MapModificationSystem _mapModificationSystem = null!;
 
     /// <summary>
     /// Checks that map additions correctly add entities.
@@ -53,46 +63,46 @@ public sealed class MapModificationsTests
     [Test]
     public async Task TestAddition()
     {
-        await using var pair = await PoolManager.GetServerClient();
-        var server = pair.Server;
+        var testMap = await Pair.CreateTestMap();
 
-        var entityManager = server.ResolveDependency<IEntityManager>();
-        var prototypeManager = server.ResolveDependency<IPrototypeManager>();
+        EntityUid? foundEntity = null;
 
-        var mapModificationSystem = entityManager.EntitySysManager.GetEntitySystem<MapModificationSystem>();
-
-        var testMap = await pair.CreateTestMap();
-
-        var testToRun = "TestAddition";
-
-        await server.WaitAssertion(() =>
+        await Pair.Server.WaitPost(() =>
         {
-            mapModificationSystem.ApplyMapModification(
-                prototypeManager.Index<MapModificationPrototype>(testToRun),
+            _mapModificationSystem.ApplyMapModification(
+                SProtoMan.Index<MapModificationPrototype>(TestModificationAddition),
                 testMap.Grid);
 
-            var entities = entityManager.GetEntities();
-
-            var foundEntity = entities.FirstOrNull(uid =>
-                entityManager.GetComponent<MetaDataComponent>(uid).EntityPrototype?.ID == "TestEntityToAdd");
-
-            Assert.That(foundEntity, Is.Not.Null, "Entity was not added!");
-
-            var metaData = entityManager.GetComponent<MetaDataComponent>(foundEntity!.Value);
-            var transform = entityManager.GetComponent<TransformComponent>(foundEntity!.Value);
-
-            Assert.Multiple(() =>
-            {
-                Assert.That(metaData.EntityName, Is.EqualTo("TESTNAME1"), "Name was not set correctly!");
-                Assert.That(metaData.EntityDescription,
-                    Is.EqualTo("TESTDESCRIPTION1"),
-                    "Description was not set correctly!");
-                Assert.That(transform.LocalPosition, Is.EqualTo(new Vector2(1, 0)), "Position was not set correctly!");
-                Assert.That(transform.LocalRotation, Is.EqualTo(new Angle(double.DegreesToRadians(90))), "Rotation was not set correctly!");
-            });
+            foundEntity = SEntMan
+                .GetEntities()
+                .FirstOrNull(uid =>
+                SEntMan.GetComponent<MetaDataComponent>(uid).EntityPrototype?.ID == TestEntityToAdd);
         });
 
-        await pair.CleanReturnAsync();
+        Assert.That(SEntMan.EntityExists(foundEntity), Is.True, "Entity was not added!");
+
+        var metaData = SEntMan.GetComponent<MetaDataComponent>(foundEntity!.Value);
+        var transform = SEntMan.GetComponent<TransformComponent>(foundEntity!.Value);
+
+        using (Assert.EnterMultipleScope())
+        {
+            Assert.That(
+                metaData.EntityName,
+                Is.EqualTo(TestEntityToAddName),
+                "Name was not set correctly!");
+            Assert.That(
+                metaData.EntityDescription,
+                Is.EqualTo(TestEntityToAddDescription),
+                "Description was not set correctly!");
+            Assert.That(
+                transform.LocalPosition,
+                Is.EqualTo(new Vector2(1, 0)),
+                "Position was not set correctly!");
+            Assert.That(
+                transform.LocalRotation,
+                Is.EqualTo(new Angle(double.DegreesToRadians(90))),
+                "Rotation was not set correctly!");
+        }
     }
 
     /// <summary>
@@ -101,35 +111,25 @@ public sealed class MapModificationsTests
     [Test]
     public async Task TestRemoval()
     {
-        await using var pair = await PoolManager.GetServerClient();
-        var server = pair.Server;
+        var testMap = await Pair.CreateTestMap();
 
-        var entityManager = server.ResolveDependency<IEntityManager>();
-        var prototypeManager = server.ResolveDependency<IPrototypeManager>();
+        EntityUid? foundEntity = null;
 
-        var mapModificationSystem = entityManager.EntitySysManager.GetEntitySystem<MapModificationSystem>();
-
-        var testMap = await pair.CreateTestMap();
-
-        var testToRun = "TestRemoval";
-
-        await server.WaitAssertion(() =>
+        await Pair.Server.WaitPost(() =>
         {
-            entityManager.Spawn("TestEntityToRemove", new MapCoordinates(0, 0, testMap.MapId));
+            SSpawnAtPosition(TestEntityToRemove, new EntityCoordinates(testMap.CGridUid, 0, 0));
 
-            mapModificationSystem.ApplyMapModification(
-                prototypeManager.Index<MapModificationPrototype>(testToRun),
+            _mapModificationSystem.ApplyMapModification(
+                SProtoMan.Index<MapModificationPrototype>(TestModificationRemoval),
                 testMap.Grid);
 
-            var entities = entityManager.GetEntities();
-
-            var foundEntity = entities.FirstOrNull(uid =>
-                entityManager.GetComponent<MetaDataComponent>(uid).EntityPrototype?.ID == "TestEntityToRemove");
-
-            Assert.That(foundEntity, Is.Null, "Entity was not deleted!");
+            foundEntity = SEntMan
+                .GetEntities()
+                .FirstOrNull(uid =>
+                    SEntMan.GetComponent<MetaDataComponent>(uid).EntityPrototype?.ID == TestEntityToRemove);
         });
 
-        await pair.CleanReturnAsync();
+        Assert.That(SEntMan.EntityExists(foundEntity), Is.False, "Entity was not deleted!");
     }
 
     /// <summary>
@@ -138,52 +138,53 @@ public sealed class MapModificationsTests
     [Test]
     public async Task TestReplacement()
     {
-        await using var pair = await PoolManager.GetServerClient();
-        var server = pair.Server;
+        var testMap = await Pair.CreateTestMap();
 
-        var entityManager = server.ResolveDependency<IEntityManager>();
-        var prototypeManager = server.ResolveDependency<IPrototypeManager>();
+        EntityUid? foundToAdd = null;
+        EntityUid? foundToRemove = null;
 
-        var mapModificationSystem = entityManager.EntitySysManager.GetEntitySystem<MapModificationSystem>();
-
-        var testMap = await pair.CreateTestMap();
-
-        var testToRun = "TestReplacement";
-
-        await server.WaitAssertion(() =>
+        await Pair.Server.WaitPost(() =>
         {
-            entityManager.Spawn("TestEntityToRemove", new MapCoordinates(0.5f, 0, testMap.MapId));
+            SSpawnAtPosition(TestEntityToRemove, new EntityCoordinates(testMap.CGridUid, 0, 0));
 
-            mapModificationSystem.ApplyMapModification(
-                prototypeManager.Index<MapModificationPrototype>(testToRun),
+            _mapModificationSystem.ApplyMapModification(
+                SProtoMan.Index<MapModificationPrototype>(TestModificationReplacement),
                 testMap.Grid);
 
-            var entities = entityManager.GetEntities();
-
-            var foundToRemove = entities.FirstOrNull(uid =>
-                entityManager.GetComponent<MetaDataComponent>(uid).EntityPrototype?.ID == "TestEntityToRemove");
-            var foundToAdd = entities.FirstOrNull(uid =>
-                entityManager.GetComponent<MetaDataComponent>(uid).EntityPrototype?.ID == "TestEntityToAdd");
-
-            Assert.Multiple(() =>
+            foreach (var uid in SEntMan.GetEntities())
             {
-                Assert.That(foundToRemove, Is.Null, "Entity was not deleted!");
-                Assert.That(foundToAdd, Is.Not.Null, "Entity was not added!");
-            });
+                if (foundToAdd == null &&
+                    SEntMan.GetComponent<MetaDataComponent>(uid).EntityPrototype?.ID == TestEntityToAdd)
+                {
+                    foundToAdd = uid;
+                }
 
-            var metaData = entityManager.GetComponent<MetaDataComponent>(foundToAdd!.Value);
-            var transform = entityManager.GetComponent<TransformComponent>(foundToAdd!.Value);
-
-            Assert.Multiple(() =>
-            {
-                Assert.That(metaData.EntityName, Is.EqualTo("TESTNAME2"), "Name was not set correctly!");
-                Assert.That(metaData.EntityDescription,
-                    Is.EqualTo("TESTDESCRIPTION2"),
-                    "Description was not set correctly!");
-                Assert.That(transform.LocalPosition, Is.EqualTo(new Vector2(0.5f, 0)), "Position was not set correctly!");
-            });
+                if (foundToRemove == null &&
+                    SEntMan.GetComponent<MetaDataComponent>(uid).EntityPrototype?.ID == TestEntityToRemove)
+                {
+                    foundToRemove = uid;
+                }
+            }
         });
 
-        await pair.CleanReturnAsync();
+        using (Assert.EnterMultipleScope())
+        {
+            Assert.That(SEntMan.EntityExists(foundToAdd), Is.True, "Entity was not added!");
+            Assert.That(SEntMan.EntityExists(foundToRemove), Is.False, "Entity was not removed!");
+        }
+
+        var metaData = SEntMan.GetComponent<MetaDataComponent>(foundToAdd!.Value);
+
+        using (Assert.EnterMultipleScope())
+        {
+            Assert.That(
+                metaData.EntityName,
+                Is.EqualTo(TestEntityToAddName),
+                "Name was not set correctly!");
+            Assert.That(
+                metaData.EntityDescription,
+                Is.EqualTo(TestEntityToAddDescription),
+                "Description was not set correctly!");
+        }
     }
 }

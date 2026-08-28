@@ -71,6 +71,8 @@
         params:
           volume: 3
           variation: 0.025
-    - type: Sharp
+    - type: Tool
+      qualities:
+      - Slicing
     - type: Contraband
       severity: Syndicate
