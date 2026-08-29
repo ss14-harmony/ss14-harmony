@@ -4,7 +4,7 @@
   id: UplinkBloodRedCarbineBundleHarmony
   name: uplink-blood-red-carbine-name
   description: uplink-blood-red-carbine-desc
-  icon: { sprite: _Harmony/Objects/Weapons/Guns/Battery/blood-red_energy_carbine.rsi, state: icon }
+  icon: { sprite: /Textures/_Harmony/Objects/Weapons/Guns/Battery/blood-red_energy_carbine.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateFilledBloodRedEnergyCarbineHarmony
   discountCategory: veryRareDiscounts
   discountDownTo:
