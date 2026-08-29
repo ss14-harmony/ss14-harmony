@@ -14,3 +14,8 @@
     - Structural
   - type: StaminaDamageOnCollide
     damage: 60
+# Start harmony change - monolith tracers
+  - type: Tracer
+    color: "#FFFFFFFF"
+    length: 3
+# End harmony change
