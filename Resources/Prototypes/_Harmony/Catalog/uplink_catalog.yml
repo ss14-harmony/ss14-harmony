@@ -127,6 +127,16 @@
       tags:
       - NukeOpsUplink
 
+- type: listing
+  id: UplinkFoamGrenadeShrapnel
+  name: uplink-foam-grenade-lethal-name
+  description: uplink-foam-grenade-lethal-desc
+  productEntity: FoamGrenadeShrapnel
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkExplosives
+
 # Ammo
 
 # For the Blood-Red Energy Carbine

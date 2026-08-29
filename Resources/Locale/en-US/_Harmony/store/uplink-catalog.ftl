@@ -23,6 +23,9 @@ uplink-X4-desc = The cousin of the infamous C-4, uses experimental explosives to
 uplink-X4-bundle-name = X-4 Bundle
 uplink-X4-bundle-desc = A bag containing 4 X-4s, perfect for going all in on sabotage.
 
+uplink-foam-grenade-lethal-name = Waffle Co. Shrapnel Grenade
+uplink-foam-grenade-lethal-desc = Waffle Co.'s latest in weapons technology. Releases a deadly spray of shrapnel that causes severe bleeding.
+
 # Ammo
 
 uplink-blood-red-carbine-ammo-name = Jailbroken Energy Cartridge
