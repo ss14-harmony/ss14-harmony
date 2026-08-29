@@ -172,7 +172,7 @@ public sealed partial class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponen
     /// <param name="includeOffStation">Include healthy players that are not on the station grid</param>
     /// <param name="includeDead">Should dead zombies be included in the count</param>
     /// <returns></returns>
-    private float GetInfectedFraction(bool includeOffStation = true, bool includeDead = false)
+    private float GetInfectedFraction(bool includeOffStation = true, bool includeDead = true) // Harmony Change: "Make the Autocall for Zeds Count the Dead" (includeDead: false -> true)
     {
         var players = GetHealthyHumans(includeOffStation);
         var zombieCount = 0;
