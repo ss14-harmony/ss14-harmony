@@ -589,6 +589,10 @@
         volume: -6
     Salute:
       collection: Salutes
+# Harmony start - impstation blink
+    Blink:
+      collection: Blinks
+# Harmony end
 
 - type: emoteSounds
   id: DionaBodyEmotes
@@ -606,6 +610,10 @@
       path: /Audio/Voice/Diona/diona_salute.ogg
       params:
        volume: -5
+# Harmony start - impstation blink
+    Blink:
+      collection: Blinks
+# Harmony end
 
 - type: emoteSounds
   id: ReptilianBodyEmotes
@@ -624,6 +632,10 @@
         volume: -6
     Salute:
       collection: Salutes
+# Harmony start - impstation blink
+    Blink:
+      collection: Blinks
+# Harmony end
 
 - type: emoteSounds
   id: MothBodyEmotes
