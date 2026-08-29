@@ -9,24 +9,27 @@
   - type: Item
     size: Huge
     shape:
-    - 0,0,4,3
+    - 0,0,4,4 # Harmony change - make LMGs only fit in duffel bags ( 0,0,4,3 -> 0,0,4,4 )
   - type: Clothing
     sprite: Objects/Weapons/Guns/LMGs/l6.rsi
     quickEquip: false
     slots:
     - Back
     - suitStorage
-  - type: Wieldable
-    unwieldOnUse: false
-  - type: GunWieldBonus
-    minAngle: -20
-    maxAngle: -20
+  # Begin Harmony changes - Make LMGs require wielding to shoot, remove wield bonus
+  #- type: Wieldable
+  #  unwieldOnUse: false
+  #- type: GunWieldBonus
+  #  minAngle: -20
+  #  maxAngle: -20
+  - type: GunRequiresWield
+  # End Harmony changes
   - type: Gun
     minAngle: 24
     maxAngle: 45
     angleIncrease: 4
     angleDecay: 16
-    fireRate: 8
+    fireRate: 6 # Harmony change - lowered firerate ( 8 -> 6 )
     selectedMode: FullAuto
     availableModes:
       - FullAuto
@@ -67,7 +70,7 @@
 - type: entity
   name: L6 SAW
   id: WeaponLightMachineGunL6
-  parent: [BaseWeaponLightMachineGun, BaseSyndicateContraband]
+  parent: [BaseWeaponLightMachineGun, BaseGunWieldable, BaseSyndicateContraband] # Harmony change - added BaseGunWieldable to L6
   description: Developed by Waffle Corp, the L6 Squad Automatic Weapon is a deadly light machine gun often used by the Gorlex Marauders. Although bulky and cumbersome, its heavy barrel and high ammo capacity make it perfect for suppressing combatants with a hail of bullets. Feeds from .30 ammo belts.
   components:
   - type: Sprite
@@ -84,16 +87,10 @@
   - type: Appearance
   - type: StaticPrice
     price: 10000
-# Start Harmony change
-  - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
-  - type: HeldSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+# Start Harmony change - L6 slows you down a lot when wielded
   - type: SpeedModifiedOnWield
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 0.6
+    sprintModifier: 0.6
 # End Harmony change
 
 - type: entity
