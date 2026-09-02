@@ -51,3 +51,66 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
+
+- type: entity
+  parent: [BaseWeaponRifle, BaseSyndicateContraband]
+  id: WeaponRifleTaipan
+  name: Taipan
+  suffix: Harmony
+  description: A compact and integrally silenced bullpup carbine manufactured by Cybersun's Advanced Kinetics division. Lightweight, concealable, silent. What else would a syndicate agent need? Uses .25 caseless ammo.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Rifles/taipan.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Harmony/Objects/Weapons/Guns/Rifles/taipan.rsi
+  - type: Gun
+    availableModes:
+    - Burst
+    minAngle: 21
+    maxAngle: 32
+    angleIncrease: 10
+    fireRate: 12 # full auto firerate would be 6 if this had a mode besides burst, but firerate display doesn't update for burst mode so i'm upping it to 12
+    burstFireRate: 12
+    burstCooldown: 0.5
+    shotsPerBurst: 3
+    selectedMode: Burst
+    soundGunshot:
+      path: /Audio/_Harmony/Weapons/Guns/Gunshots/taipan_fire.ogg
+      params:
+        volume: -6
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineCaselessRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineCaselessRifle
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeCaselessRifle
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeCaselessRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Item
+    shape:
+    - 0,0,2,1

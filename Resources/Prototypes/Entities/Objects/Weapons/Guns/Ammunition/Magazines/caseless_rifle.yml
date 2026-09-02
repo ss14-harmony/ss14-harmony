@@ -12,7 +12,7 @@
       tags:
       - CartridgeCaselessRifle
     proto: CartridgeCaselessRifle
-    capacity: 10
+    capacity: 12 # Harmony change - 10 -> 12
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -35,7 +35,10 @@
   parent: BaseMagazinePistolCaselessRifle
   id: MagazinePistolCaselessRifle
   name: "pistol magazine (.25 caseless)"
-  description: 10-round magazine for the Cobra pistol. Intended to hold general-purpose kinetic ammunition.
+  # Start harmony change - Changed description
+  # description: 10-round magazine for the Cobra pistol. Intended to hold general-purpose kinetic ammunition.
+  description: 12-round magazine for the Cobra pistol. Intended to hold general-purpose kinetic ammunition.
+  # End harmony change
   components:
   - type: Item
     inhandVisuals:
@@ -49,7 +52,10 @@
   parent: BaseMagazinePistolCaselessRifle
   id: MagazinePistolCaselessRiflePractice
   name: "pistol magazine (.25 caseless practice)"
-  description: 10-round magazine for the Cobra pistol. Intended to hold harmless practice ammunition.
+  # Start harmony change - Changed description
+  # description: 10-round magazine for the Cobra pistol. Intended to hold harmless practice ammunition.
+  description: 12-round magazine for the Cobra pistol. Intended to hold harmless practice ammunition.
+  # End harmony change
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRiflePractice

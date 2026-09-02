@@ -42,6 +42,25 @@
   categories:
   - UplinkWeaponry
 
+- type: listing
+  id: UplinkRifleTaipan
+  name: uplink-rifle-taipan-name
+  description: uplink-rifle-taipan-desc
+  productEntity: ClothingBackpackDuffelSyndicateFilledTaipan
+  icon: { sprite: /Textures/_Harmony/Objects/Weapons/Guns/Rifles/taipan.rsi, state: icon }
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 16
+  cost:
+    Telecrystal: 19
+  categories:
+  - UplinkWeaponry
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+
 # Explosives
 
 - type: listing
@@ -146,6 +165,17 @@
   description: uplink-rifle-magazine-bandit-desc
   icon: { sprite: /Textures/_Harmony/Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/dmr_mag.rsi, state: base }
   productEntity: MagazineLightRifleCaseless
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkRifleTaipanMagazine
+  name: uplink-rifle-magazine-taipan-name
+  description: uplink-rifle-magazine-taipan-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_rifle_mag.rsi, state: base }
+  productEntity: MagazineCaselessRifle
   cost:
     Telecrystal: 2
   categories:
@@ -333,4 +363,3 @@
     Telecrystal: 5
   categories:
   - UplinkWeaponry
- 

@@ -1,0 +1,47 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "icon, base, bolt-open and inhands taken from tgstation at commit https://github.com/tgstation/tgstation/commit/0070b9911d9d44a36bae50afd475344d4a09ac22. Created by Ausops (Github), modified by Halycon (kleinerstation 13 on Github). Mag-0 and wield sprites created by Halycon (kleinerstation13 on Github) Sling sprites taken from ss14-harmony at commit https://github.com/ss14-harmony/ss14-harmony/commit/60f0e5f534e569bc4f1bd94e3876af32de37a26f, created by Blackern5000 (Github) and modified by Halycon (kleinerstation13 on Github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "base"
+        },
+        {
+            "name": "bolt-open"
+        },
+        {
+            "name": "mag-0"
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "wielded-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "wielded-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "equipped-BACKPACK",
+            "directions": 4
+        },
+        {
+            "name": "equipped-SUITSTORAGE",
+            "directions": 4
+        }
+    ]
+}
