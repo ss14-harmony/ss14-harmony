@@ -31,7 +31,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 90
+        Piercing: 85
   - type: StaminaDamageOnCollide
     damage: 30
   - type: PointLight

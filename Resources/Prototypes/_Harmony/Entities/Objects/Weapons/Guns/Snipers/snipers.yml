@@ -78,7 +78,7 @@
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
-    fireRate: 0.6
+    fireRate: 0.5
     soundGunshot:
       collection: HristovFire
       params:
@@ -115,8 +115,8 @@
     zeroVisible: true
   - type: Appearance
   - type: SpeedModifiedOnWield
-    walkModifier: 0.40
-    sprintModifier: 0.40
+    walkModifier: 0.4
+    sprintModifier: 0.4
   - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset
     maxOffset: 3
@@ -130,7 +130,7 @@
   id: WeaponSniperHristovHarmonyNukie
   name: Hristov MK-II AMR
   suffix: Harmony, Nuke Ops
-  description: An experimental weapon, based off Cybersun's failed attempt at a service life extension program for the Hristov AMR. Developed in-house by the Gorlex Marauders, featuring lighter composites allowing for quicker movement, improved optics with a smart targeting system, and an under-barrel tactical device. Looks like the serial number has been filed off. Uses .60 anti-materiel ammo.
+  description: An experimental weapon, based off Cybersun's failed attempt at a service life extension program for the Hristov AMR. Developed in-house by the Gorlex Marauders, featuring lighter composites allowing for quicker movement, improved optics with a smart targeting system, and a sturdier bolt for faster cycling. Looks like the serial number has been filed off. Uses .60 anti-materiel ammo.
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Guns/Snipers/hristov_nukie.rsi
@@ -142,12 +142,12 @@
   - type: Clothing
     sprite: _Harmony/Objects/Weapons/Guns/Snipers/hristov_nukie.rsi
   - type: SpeedModifiedOnWield
-    walkModifier: 0.6
-    sprintModifier: 0.6
+    walkModifier: 0.5
+    sprintModifier: 0.5
   - type: Gun
     soundGunshot:
       path: /Audio/_Harmony/Weapons/Guns/Gunshots/hristov_fire_mk2.ogg
       params:
         volume: 3
         maxDistance: 30
-    fireRate: 0.75
+    fireRate: 0.6
