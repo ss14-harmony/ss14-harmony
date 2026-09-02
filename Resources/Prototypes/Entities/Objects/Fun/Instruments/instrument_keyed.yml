@@ -26,7 +26,10 @@
 - type: entity
   parent: BaseKeyedInstrument
   id: SuperSynthesizerInstrument
-  suffix: Admin
+  # Harmony change start - Not admin-exclusive
+# suffix: Admin
+  suffix: Limited
+  # Harmony change end
   name: super synthesizer
   description: Blasting the ghetto with Touhou MIDIs since 2020.
   components:
