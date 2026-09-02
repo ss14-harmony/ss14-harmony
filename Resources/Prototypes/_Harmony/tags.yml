@@ -51,4 +51,8 @@
 
 # Used to whitelist the Mime Mask chameleon options.
 - type: Tag
-  id: MimeMaskChameleon 
+  id: MimeMaskChameleon
+
+# Used for caseless rifle magazines
+- type: Tag
+  id: MagazineCaselessRifle
