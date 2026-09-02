@@ -10,6 +10,11 @@
   path: /Maps/_Harmony/Shuttles/ShuttleEvent/brigmedic.yml
   copies: 1
 
+- type: preloadedGrid
+  id: ShuttleCasino
+  path: /Maps/_Harmony/Shuttles/ShuttleEvent/casino.yml
+  copies: 1
+
 # Harmony Hostile Shuttles
 
 - type: preloadedGrid

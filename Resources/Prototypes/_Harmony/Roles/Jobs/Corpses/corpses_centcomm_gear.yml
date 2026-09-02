@@ -1,0 +1,13 @@
+# List of Gearsets intended for CentComm Corpse Spawners
+
+- type: startingGear
+  id: CorpseCentCommOfficial
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficial
+    shoes: ClothingShoesBootsCombatFilled
+    head: ClothingHeadHatCentcom
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesColorBlack
+    outerClothing: ClothingOuterArmorCentcommCarapace
+    pocket1: BoxFolderBlack
+    pocket2: LuxuryPen

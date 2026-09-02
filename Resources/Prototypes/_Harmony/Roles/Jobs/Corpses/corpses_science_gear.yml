@@ -1,0 +1,17 @@
+# List of Gearsets intended for Science Corpse Spawners
+
+- type: startingGear
+  id: CorpseScientist
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitScientist
+    shoes: ClothingShoesColorWhite
+    gloves: ClothingHandsGlovesColorPurple
+    outerClothing: ClothingOuterCoatRnd
+
+- type: startingGear
+  id: CorpseRoboticist
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitRoboticist
+    shoes: ClothingShoesColorBlack
+    gloves: ClothingHandsGlovesRobohands
+    outerClothing: ClothingOuterCoatRobo

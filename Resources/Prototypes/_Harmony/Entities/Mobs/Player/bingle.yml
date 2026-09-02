@@ -2,17 +2,18 @@
   parent: MobSpaceBasic
   id: MobBingle
   name: bingle
-  suffix: Basic
+  suffix: Basic, Harmony
   description: Bingle.
   components:
   # Visuals
   - type: Sprite
-    sprite: _Harmony/Mobs/Aliens/Bingles/bingle.rsi
+    sprite: _Harmony/Mobs/Aliens/Bingles/bingle_harmony.rsi # Points towards the revamped sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: alive
     - map: ["enum.CombatModeVisualLayers.CombatEnabled"]
       state: combat
+      shader: unshaded
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -36,8 +37,10 @@
       0: Alive
       80: Dead
   - type: Bloodstream
-    bloodMaxVolume: 100
-    bloodReagent: Nitrogen
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Nitrogen
+        Quantity: 100
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 4
@@ -54,7 +57,7 @@
   - type: ReplacementAccent
     accent: bingle
   - type: Stamina
-    critThreshold: 120
+    baseCritThreshold: 120
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
@@ -91,11 +94,18 @@
     damage:
       types:
         Poison: -0.5
-      groups:
-        Brute: -0.5
-        Burn: -0.5
+        Blunt: -0.5
+        Slash: -0.5
+        Piercing: -0.5
+        Heat: -0.5
+        Cold: -0.5
+        Shock: -0.5
+        Caustic: -0.5
   - type: FlashImmunity
   - type: Bingle
+  - type: Insulated
+    coefficient: .5
+  - type: ProtectedFromStepTriggers
 
 - type: entity
   parent: MobBingle
@@ -105,6 +115,8 @@
   suffix: Prime
   description: The most bingle per bingle.
   components:
+  - type: Sprite
+    sprite: _Harmony/Mobs/Aliens/Bingles/bingle.rsi # Prime bingles use the old sprite
   - type: Bingle
     upgradePolymorph: BinglePrimePolymorph
   - type: SpawnOnSpawn
@@ -115,11 +127,11 @@
   parent: MobBingle
   id: MobBingleUpgraded
   name: bingler
-  suffix: Upgraded
+  suffix: Upgraded, Harmony
   description: More bingle per bingle.
   components:
   - type: Sprite
-    sprite: _Harmony/Mobs/Aliens/Bingles/bingle_upgraded.rsi
+    sprite: _Harmony/Mobs/Aliens/Bingles/bingleupgraded_harmony.rsi # Points towards the revamped sprite
   - type: Bingle
     upgraded: true
   - type: MeleeWeapon
@@ -134,8 +146,11 @@
         Blunt: 14
         Structural: 28
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: BingleUpgraded
+  - type: Insulated
+    coefficient: 0
+  - type: Injurable
+    damageContainer: Biological
 
 - type: entity
   parent: MobBingleUpgraded
@@ -143,3 +158,6 @@
   name: binglester
   suffix: Prime, Upgraded
   description: The most bingle per bingle.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Mobs/Aliens/Bingles/bingle_upgraded.rsi # Prime bingles use old sprites

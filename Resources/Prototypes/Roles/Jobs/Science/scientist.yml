@@ -6,7 +6,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Science
-      time: 0 #0 hrs
+      time: 0 # 2.5h -> 0
   startingGear: ScientistGear
   icon: "JobIconScientist"
   supervisors: job-supervisors-rd

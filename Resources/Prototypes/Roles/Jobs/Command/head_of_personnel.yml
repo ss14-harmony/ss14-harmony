@@ -4,26 +4,30 @@
   description: job-description-hop
   playTimeTracker: JobHeadOfPersonnel
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 0 # 0 hours
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 0 # 0 hours
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 0 # 0 hrs
+    # Harmony start
+    # - !type:DepartmentTimeRequirement
+    #   department: Engineering
+    #   time: 2.5h
+    # - !type:DepartmentTimeRequirement
+    #   department: Medical
+    #   time: 2.5h
+    # - !type:DepartmentTimeRequirement
+    #   department: Science
+    #   time: 2.5h
+    # - !type:DepartmentTimeRequirement
+    #   department: Security
+    #   time: 2.5h
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 14400 # 4 hrs
+      time: 8h
+    # Harmony end
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 14400 # 4 hours
+      time: 8h # Harmony: 2.5h -> 8h
   weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
   supervisors: job-supervisors-captain
-  canBeAntag: false
   access:
   - Command
   - HeadOfPersonnel
@@ -51,6 +55,8 @@
   - Cargo
   - Atmospherics
   - Medical
+  - GenpopEnter
+  - GenpopLeave
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

@@ -48,8 +48,6 @@
   recipes:
   # Topicals
   - Bloodpack
-  # Chemistry
-  - BaseChemistryEmptyVial
   # Surgery
   - CircularSaw
   # Other

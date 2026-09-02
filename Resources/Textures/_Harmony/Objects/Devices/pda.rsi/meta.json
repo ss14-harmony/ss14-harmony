@@ -1,0 +1,48 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by the Goons archived at commit https://github.com/nullbear/Goonstation_SS13_r4407/commit/a1ce10847a63db96ed06fe338b5811ff90d403f2. Colors modified at commit https://github.com/tgstation/tgstation/commit/afad989abc74e6cb01e625e04953dca9aaec93f2. pda-seniorminer made by CollectionOfBones128 (GitHub) based on pda-miner.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "id_overlay"
+        },
+        {
+            "name": "id_overlay_wide"
+        },
+        {
+            "name": "equipped-BELT",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "insert_overlay"
+        },
+        {
+            "name": "light_overlay"
+        },
+        {
+            "name": "light_overlay_wide"
+        },
+        {
+            "name": "pda"
+        },
+        {
+            "name": "pda-seniorminer"
+        },
+        {
+            "name": "equipped-IDCARD",
+            "directions": 4
+        }
+    ]
+}

@@ -31,3 +31,7 @@
     ClothingHeadHatHoodCulthood: 3
     ClothingShoesCult: 4
     BedsheetCult: 4
+    # Harmony Change Start - Readd Cult Armor to Piety Emag
+    ClothingOuterArmorCult: 1 
+    ClothingHeadHelmetCult: 1 
+    # Harmony Change End

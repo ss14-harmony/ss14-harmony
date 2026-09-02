@@ -15,6 +15,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using System.Linq;
 using System.Numerics;
+using Content.Shared.Humanoid.Prototypes; // Harmony
 using Content.Shared.StatusIcon;
 using Robust.Client.GameObjects;
 
@@ -28,7 +29,7 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
     private readonly IPrototypeManager _proto;
     private readonly IRobustRandom _random;
     private readonly AccessReaderSystem _accessReader;
-    [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private IEntityManager _entManager = default!;
     private readonly SpriteSystem _spriteSystem;
 
     public readonly EntityUid Console;
@@ -233,6 +234,14 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
             PersonJobIcon.Texture = _spriteSystem.Frame0(proto.Icon);
         }
 
+        // Harmony Start - Add species (back?) to Criminal Records Console
+        var species = Loc.GetString(_proto.Index<SpeciesPrototype>(stationRecord.Species).Name);
+        var synthSpecies = stationRecord.Synthetic
+            ? Loc.GetString("synthetic-component-prefix", ("species", species))
+            : species;
+        PersonSpecies.Text = synthSpecies;
+        // Harmony End
+
         PersonPrints.Text = stationRecord.Fingerprint ??  Loc.GetString("generic-not-available-shorthand");
         PersonDna.Text = stationRecord.DNA ??  Loc.GetString("generic-not-available-shorthand");
 
@@ -276,8 +285,8 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
 
     private void SetStatus(SecurityStatus status)
     {
-        if (status == SecurityStatus.Wanted || status == SecurityStatus.Suspected
-        // Harmony additional statuses
+        if (status == SecurityStatus.Wanted || status == SecurityStatus.Suspected || status == SecurityStatus.Hostile
+            // Harmony additional statuses
             || status == SecurityStatus.Monitor || status == SecurityStatus.Search)
         {
             GetReason(status);
@@ -324,6 +333,8 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
             SecurityStatus.Detained => "hud_incarcerated",
             SecurityStatus.Discharged => "hud_discharged",
             SecurityStatus.Suspected => "hud_suspected",
+            SecurityStatus.Hostile => "hud_hostile",
+            SecurityStatus.Eliminated => "hud_eliminated",
             // Harmony Start
             SecurityStatus.Search => "hud_search",
             SecurityStatus.Monitor => "hud_monitor",

@@ -40,12 +40,6 @@
     - type: StationArrivals
 
 - type: entity
-  id: BaseStationGateway
-  abstract: true
-  components:
-    - type: GatewayGenerator
-
-- type: entity
   id: BaseStationShuttles
   abstract: true
   components:
@@ -82,6 +76,7 @@
           - /Maps/Ruins/whiteship_bluespacejumper.yml
           - /Maps/Ruins/wrecklaimer.yml
           - /Maps/Ruins/displaced_telescience.yml
+          - /Maps/_Harmony/Ruins/whiteship_heavysalvage.yml # Harmony Change - Ports NT Heavy Salvage Vessel Whiteship from SS13
         wrecks: !type:DungeonSpawnGroup
           minimumDistance: 150
           maximumDistance: 300

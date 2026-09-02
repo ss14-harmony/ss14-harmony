@@ -1,0 +1,171 @@
+# As with Upstream, NOTE! All mobs that come out of this should have Salvage rulesets.
+
+# ENTITY TABLES FOR SPAWNERS
+
+## Armory Weapon Spawner - Upstreams contains too powerful guns too readily.
+- type: entityTable
+  id: HarmonySalvageArmoryWeaponsTable
+  table: !type:GroupSelector
+    children:
+    # Very Common
+    - !type:GroupSelector
+      weight: 32
+      children:
+      - id: WeaponCrusher
+      - id: WeaponCrusherGlaive
+    # Common
+    - !type:GroupSelector
+      weight: 28
+      children:
+      - !type:GroupSelector
+        children:
+        - id: PKAUpgradeDamage
+        - id: PKAUpgradeRange
+        - id: PKAUpgradeFireRate
+        # PKA Damage + Range
+        - !type:AllSelector
+          children:
+          - id: PKAUpgradeDamage
+          - id: PKAUpgradeRange
+        # PKA Damage + Fire Rate
+        - !type:AllSelector
+          children:
+          - id: PKAUpgradeDamage
+          - id: PKAUpgradeFireRate
+        # PKA Fire Rate + Range
+        - !type:AllSelector
+          children:
+          - id: PKAUpgradeFireRate
+          - id: PKAUpgradeRange
+        # All Modkits
+        - !type:AllSelector
+          children:
+          - id: PKAUpgradeDamage
+          - id: PKAUpgradeRange
+          - id: PKAUpgradeFireRate
+      - id: ClothingHandsKnuckleDustersBrass
+      - id: WeaponPistolFlintlock
+    # Uncommon
+    - !type:GroupSelector
+      weight: 16
+      children:
+      - id: WeaponShotgunBlunderbuss
+      - id: WeaponLaserCarbinePractice # Practice Laser
+      # Improvised Shotgun Pieces
+      - !type:AllSelector
+        children:
+        - id: ModularReceiver
+        - id: RifleStock
+    # Rare
+    - !type:GroupSelector
+      weight: 14
+      children:
+      - id: WeaponShotgunDoubleBarreledRubber
+      - id: WeaponSniperMosin
+      - id: ClothingHandsKnuckleDustersSyndicate
+    # Very Rare
+    - !type:GroupSelector
+      weight: 8
+      children:
+      - id: WeaponSniperRSC
+      - id: WeaponLaserCarbine # Found in Upstreams armory spawner. Impossible to reload without the exact right charging station
+    # Legendary
+    - !type:GroupSelector
+      weight: 2
+      children:
+      - id: WeaponKineticSidearmLuxury # To be replaced with a unique Kinetic Sidearm
+      - id: WeaponLaserGun # Retro Laser, only found on salv grids, a way to map it without guaranteeing it
+      - id: WeaponRevolverPirate # Mapped on salv grids, a way to map it without guaranteeing it
+      - id: WeaponShotgunKammerer # Purchaseable at cargo, but that comes with more and ammo. Found in upstreams armory spawner
+      - id: WeaponSubMachineGunDrozd # Purchaseable at cargo, but that comes with more and ammo. Found in upstreams armory spawner
+
+## Armory Armour Spawner - Upstreams is fine. In fact, this contains more. This is more to create the combined Weapons AND Armor spawner
+- type: entityTable
+  id: HarmonySalvageArmoryArmorTable
+  table: !type:GroupSelector
+    children:
+    # Common
+    - !type:GroupSelector
+      weight: 75
+      children:
+      - id: RiotShield
+      - id: RiotLaserShield
+      - id: RiotBulletShield
+      - id: ClothingHeadHelmetRiot
+      - id: ClothingHeadHelmetBombSuit
+      - id: ClothingOuterArmorBasic
+      - !type:AllSelector
+        children:
+        - id: ClothingOuterHardsuitSpatio
+        - id: SheetPlastic10
+        - id: MaterialCloth10
+    # Rare
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - id: ClothingHeadHelmetSwat
+      - id: ClothingOuterArmorRiot
+      - id: ClothingOuterArmorBulletproof
+      - id: ClothingOuterSuitBomb
+      - id: ClothingOuterHardsuitSalvage
+
+# SPAWNERS
+
+## Gun Spawner
+- type: entity
+  name: salvage armory loot spawner
+  suffix: Guns, Harmony
+  id: HarmonyLootSpawnerSalvageArmoryWeaponsOnly
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
+        state: icon
+  - type: EntityTableSpawner
+    offset: 0.0
+    table: !type:NestedSelector
+      tableId: HarmonySalvageArmoryWeaponsTable
+
+## Armor Spawner
+- type: entity
+  name: salvage armory loot spawner
+  suffix: Armor, Harmony
+  id: HarmonyLootSpawnerSalvageArmoryArmorOnly
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Clothing/OuterClothing/Armor/security.rsi
+        state: icon
+  - type: EntityTableSpawner
+    offset: 0.0
+    table: !type:NestedSelector
+      tableId: HarmonySalvageArmoryArmorTable
+
+## Gun and Armor Spawner
+- type: entity
+  name: salvage armory loot spawner
+  suffix: Armor, Guns, Harmony
+  id: HarmonyLootSpawnerSalvageArmoryOnly
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Clothing/OuterClothing/Armor/security.rsi
+        state: icon
+      - sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
+        state: icon
+  - type: EntityTableSpawner
+    offset: 0.0
+    table: !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        tableId: HarmonySalvageArmoryArmorTable
+        weight: 55.0
+      - !type:NestedSelector
+        tableId: HarmonySalvageArmoryWeaponsTable
+        weight: 45.0

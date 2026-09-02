@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: BaseBullet
   id: ProjectileBanana
   categories: [ HideSpawnMenu ]
@@ -19,3 +19,25 @@
   - type: StunOnCollide
     stunAmount: 1
     knockdownAmount: 1
+
+- type: entity
+  parent: BaseBullet
+  id: ProjectileWehball
+  categories: [ HideSpawnMenu ]
+  name: wehball
+  description: You better GITTAH WEH.
+  components:
+  - type: PointLight
+    color: "#67CC40"
+    radius: 1.0
+    energy: 3.0
+  - type: Sprite
+    sprite: Objects/Fun/Plushies/lizard.rsi
+    layers:
+    - state: icon
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 0
+    soundHit:
+      path: /Audio/Items/Toys/weh.ogg

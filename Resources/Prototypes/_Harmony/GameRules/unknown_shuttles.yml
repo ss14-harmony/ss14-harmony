@@ -18,6 +18,15 @@
   - type: LoadMapRule
     preloadedGrid: ShuttleBrigmedic
 
+- type: entity
+  id: UnknownShuttleCasino
+  parent: BaseUnknownShuttleRule
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-unknown-shuttle-incoming #!!
+  - type: LoadMapRule
+    preloadedGrid: ShuttleCasino
+
 # Harmony Hostile Shuttles
 
 - type: entity

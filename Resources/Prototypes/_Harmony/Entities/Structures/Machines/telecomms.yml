@@ -1,0 +1,23 @@
+# Adds Salv Comms
+
+## Cargo-Only
+- type: entity
+  parent: TelecomServer
+  id: TelecomServerFilledCargoOnly
+  suffix: Cargo Only, Harmony
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCargo
+
+## Salvage Only
+- type: entity
+  parent: TelecomServer
+  id: TelecomServerFilledSalvage
+  suffix: Salvage Only, Harmony
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeySalvage

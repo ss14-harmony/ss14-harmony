@@ -1,0 +1,22 @@
+﻿- type: entity
+  parent: BaseAction
+  id: ActionWehball
+  name: Weball
+  description: Fires a weh towards the clicked location.
+  components:
+  - type: Magic
+  - type: Action
+    useDelay: 10
+    itemIconStyle: BigAction
+    raiseOnUser: true
+    icon:
+      sprite: Objects/Fun/Plushies/lizard.rsi
+      state: icon
+  - type: TargetAction
+    range: 60
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:ProjectileSpellEvent
+      prototype: ProjectileWehball
+  - type: SpeakOnAction
+    sentence: action-speech-spell-wehball

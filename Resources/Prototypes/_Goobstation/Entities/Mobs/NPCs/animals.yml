@@ -1,0 +1,32 @@
+- type: entity
+  name: syndiroach
+  id: MobMothSyndy
+  parent: MobMothroach
+  suffix: Harmony
+  description: Explosive mothroach. # Harmony change - moth -> mothroach
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Mobs/Animals/syndiroach.rsi
+  - type: Clothing
+    quickEquip: false
+    sprite: _Goobstation/Mobs/Animals/syndiroach.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+  - type: GhostRole
+    prob: 1
+    name: ghost-role-information-SyndiRoach-name
+    allowMovement: true
+    description: ghost-role-information-SyndiRoach-description
+    rules: ghost-role-information-SyndiRoach-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: AutoImplant
+    implants:
+    - MicroBombImplant
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: NpcFactionMember
+    factions:
+    - Syndicate

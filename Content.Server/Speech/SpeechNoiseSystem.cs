@@ -1,24 +1,21 @@
-using Robust.Shared.Audio;
-using Content.Server.Chat;
-using Content.Server.Chat.Systems;
+using Content.Shared.Chat;
 using Content.Shared.Speech;
+using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 using Robust.Shared.Random;
-using Content.Shared._RMC14.Voicelines; // Harmony - Use RMC14 to mute speechsounds
+using Robust.Shared.Timing;
+using Content.Shared._RMC14.Voicelines;
+using Robust.Shared.Player; // Harmony - Use RMC14 to mute speechsounds
 
 namespace Content.Server.Speech
 {
-    public sealed class SpeechSoundSystem : EntitySystem
+    public sealed partial class SpeechSoundSystem : EntitySystem
     {
-        [Dependency] private readonly IGameTiming _gameTiming = default!;
-        [Dependency] private readonly IPrototypeManager _protoManager = default!;
-        [Dependency] private readonly IRobustRandom _random = default!;
-        [Dependency] private readonly SharedAudioSystem _audio = default!;
+        [Dependency] private IGameTiming _gameTiming = default!;
+        [Dependency] private IRobustRandom _random = default!;
+        [Dependency] private SharedAudioSystem _audio = default!;
         // Harmony - Use RMC14 system to give the option to mute speechsounds
-        [Dependency] private readonly HumanoidVoicelinesSystem _humanoidVoicelines = default!;
+        [Dependency] private HumanoidVoicelinesSystem _humanoidVoicelines = default!;
 
         public override void Initialize()
         {
@@ -34,7 +31,7 @@ namespace Content.Server.Speech
 
             // Play speech sound
             SoundSpecifier? contextSound;
-            var prototype = _protoManager.Index<SpeechSoundsPrototype>(ent.Comp.SpeechSounds);
+            var prototype = ProtoMan.Index<SpeechSoundsPrototype>(ent.Comp.SpeechSounds);
 
             // Different sounds for ask/exclaim based on last character
             contextSound = message[^1] switch

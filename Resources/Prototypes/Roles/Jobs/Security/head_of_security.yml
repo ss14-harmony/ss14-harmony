@@ -6,20 +6,24 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 10800 # Harmony: 3hrs
+      time: 3h # Harmony: 1h -> 3h
     - !type:RoleTimeRequirement
-      role: JobSecurityOfficer
-      time: 0 # Harmony: 0 hrs
+      role: JobDetective
+      time: 3h # Harmony Change 1h -> 3h, two shifts for role awareness
+    # Harmony start
+    # - !type:RoleTimeRequirement
+    #   role: JobSecurityOfficer
+    #   time: 18000 #5 hrs
+    # Harmony end
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000 # Harmony: 10 hrs
+      time: 12h
     - !type:OverallPlaytimeRequirement
-      time: 43200 # Harmony: 12 hrs
+      time: 24h # Harmony: 10h -> 12h
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
   supervisors: job-supervisors-captain
-  canBeAntag: false
   access:
   - HeadOfSecurity
   - Command
@@ -27,10 +31,11 @@
   - Security
   - Armory
   - Maintenance
-  - Service
   - External
   - Detective
   - Cryogenics
+  - GenpopEnter
+  - GenpopLeave
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -57,5 +62,6 @@
   job: HeadOfSecurity
   hasMindShield: true
   equipment:
+    head: ClothingHeadHatBeretHoS
     mask: ClothingMaskGasSecurity
     neck: ClothingNeckCloakHos

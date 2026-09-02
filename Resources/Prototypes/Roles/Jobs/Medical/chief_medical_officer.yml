@@ -8,20 +8,23 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobChemist
-      time: 0 #0 hrs
-    - !type:RoleTimeRequirement
-      role: JobMedicalDoctor
-      time: 0 #0 hrs
+      time: 3h # Harmony Change 2.5h -> 3h, two shifts for role awareness
+    # Harmony Change Start
+    # - !type:RoleTimeRequirement
+    #   role: JobMedicalDoctor
+    #   time: 5h
+    # Harmony Change End
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 28800 # Harmony: 8 hrs
+      time: 8h # Harmony: 10h -> 8h
+    # Harmony start
     - !type:OverallPlaytimeRequirement
-      time: 43200 # Harmony: 12 hrs
+      time: 24h
+    # Harmony end
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
   supervisors: job-supervisors-captain
-  canBeAntag: false
   access:
   - Medical
   - Command
@@ -42,7 +45,6 @@
   equipment:
     id: CMOPDA
     ears: ClothingHeadsetCMO
-    belt: ClothingBeltMedicalFilled
   storage:
     back:
     - Flash

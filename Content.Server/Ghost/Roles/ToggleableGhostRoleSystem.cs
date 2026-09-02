@@ -1,21 +1,24 @@
 using Content.Server.Ghost.Roles.Components;
+using Content.Server.Power.EntitySystems; //Harmony
 using Content.Shared.Examine;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
+using Robust.Shared.Player; //Harmony
 
 namespace Content.Server.Ghost.Roles;
 
 /// <summary>
 /// This handles logic and interaction related to <see cref="ToggleableGhostRoleComponent"/>
 /// </summary>
-public sealed class ToggleableGhostRoleSystem : EntitySystem
+public sealed partial class ToggleableGhostRoleSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
+    [Dependency] private ISharedPlayerManager _playerManager = default!; //Harmony
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -49,15 +52,35 @@ public sealed class ToggleableGhostRoleSystem : EntitySystem
 
         UpdateAppearance(uid, ToggleableGhostRoleStatus.Searching);
 
-        var ghostRole = EnsureComp<GhostRoleComponent>(uid);
-        EnsureComp<GhostTakeoverAvailableComponent>(uid);
+        ActivateGhostRole((uid, component));
+    }
 
-        //GhostRoleComponent inherits custom settings from the ToggleableGhostRoleComponent
-        ghostRole.RoleName = Loc.GetString(component.RoleName);
-        ghostRole.RoleDescription = Loc.GetString(component.RoleDescription);
-        ghostRole.RoleRules = Loc.GetString(component.RoleRules);
-        ghostRole.JobProto = component.JobProto;
-        ghostRole.MindRoles = component.MindRoles;
+    public void ActivateGhostRole(Entity<ToggleableGhostRoleComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp))
+            return;
+
+        //Harmony change - If the mind can be found, put it back on reactivation
+        var mindComp = CompOrNull<MindComponent>(ent.Comp.LastMind);
+        var hasUserId = mindComp?.UserId;
+        var hasActiveSession = hasUserId != null && _playerManager.ValidSessionId(hasUserId.Value);
+
+        if (ent.Comp.PriorityBoarding && hasActiveSession && ent.Comp.LastMind != null)
+        {
+            _mind.TransferTo((EntityUid)ent.Comp.LastMind, ent);
+            return;
+        }
+        //End harmony
+
+        var ghostRole = EnsureComp<GhostRoleComponent>(ent);
+        EnsureComp<GhostTakeoverAvailableComponent>(ent);
+
+        // GhostRoleComponent inherits custom settings from the ToggleableGhostRoleComponent
+        ghostRole.RoleName = Loc.GetString(ent.Comp.RoleName);
+        ghostRole.RoleDescription = Loc.GetString(ent.Comp.RoleDescription);
+        ghostRole.RoleRules = Loc.GetString(ent.Comp.RoleRules);
+        ghostRole.JobProto = ent.Comp.JobProto;
+        ghostRole.MindRoles = ent.Comp.MindRoles;
     }
 
     private void OnExamined(EntityUid uid, ToggleableGhostRoleComponent component, ExaminedEvent args)
@@ -84,6 +107,12 @@ public sealed class ToggleableGhostRoleSystem : EntitySystem
         // Mind was added, shutdown the ghost role stuff so it won't get in the way
         RemCompDeferred<GhostTakeoverAvailableComponent>(uid);
         UpdateAppearance(uid, ToggleableGhostRoleStatus.On);
+
+        // Harmony start - Once a mind is added, we clear the mind data
+        //                 This is useful to prevent being unable to /ghost out of brains
+        //                 and to ensure that if someone else takes the mind, they now have priority.
+        pai.LastMind = default!;
+        // Harmony end
     }
 
     private void OnMindRemoved(EntityUid uid, ToggleableGhostRoleComponent component, MindRemovedMessage args)
@@ -116,6 +145,7 @@ public sealed class ToggleableGhostRoleSystem : EntitySystem
                     // The shutdown of the Mind should cause automatic reset of the pAI during OnMindRemoved
                     _mind.TransferTo(mindId, null, mind: mind);
                     _popup.PopupEntity(Loc.GetString(component.WipeVerbPopup), uid, args.User, PopupType.Large);
+                    component.LastMind = mindId; //Harmony
                 }
             };
             args.Verbs.Add(verb);

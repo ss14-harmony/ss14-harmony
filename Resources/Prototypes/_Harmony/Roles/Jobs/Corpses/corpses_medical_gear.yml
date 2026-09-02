@@ -1,0 +1,30 @@
+# List of Gearsets intended for Medical Corpse Spawners
+
+- type: startingGear
+  id: CorpseDoctor
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMedicalDoctor
+    shoes: ClothingShoesColorWhite
+    mask: ClothingMaskSterile
+    necK: ClothingNeckStethoscope
+    gloves: ClothingHandsGlovesLatex
+    belt: ClothingBeltMedicalFilled
+    pocket1: Syringe
+
+- type: startingGear
+  id: CorpseParamedic
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitParamedic
+    shoes: ClothingShoesColorBlue
+    head: ClothingHeadHatParamedicsoft
+    mask: ClothingMaskSterile
+    necK: ClothingNeckStethoscope
+    gloves: ClothingHandsGlovesLatex
+    belt: ClothingBeltMedicalFilled
+    pocket1: Syringe
+
+- type: startingGear
+  id: CorpsePsychologist
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPsychologist
+    shoes: ClothingShoesLeather

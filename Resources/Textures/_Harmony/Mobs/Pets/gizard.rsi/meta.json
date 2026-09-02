@@ -1,0 +1,18 @@
+﻿{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by Mithrandalf at commit https://github.com/space-wizards/space-station-14/commit/2b113187dec1e87c23feed79fe0e2276570ce7c3. Modified by Flarbergaster (GitHub)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "gizard",
+            "directions": 4
+        },
+        {
+            "name": "dead"
+        }
+    ]
+}

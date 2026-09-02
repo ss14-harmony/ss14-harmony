@@ -45,7 +45,8 @@
       amount: 2
     - id: NetworkConfigurator
     - id: Binoculars
-    - id: WeaponEnergyShotgun # Harmony Change: Gives the Warden the Energy Shotgun
+    - id: PlushieLizardJobWarden
+      prob: 0.02
     - id: ClothingHeadsetAltWarden # Harmony Change: Adds Warden over-ear headset
 
 - type: entityTable
@@ -90,6 +91,10 @@
       prob: 0.6
     - id: BookSpaceLaw
       prob: 0.5
+    - id: PlushieLizardJobSecuritycadet
+      prob: 0.02
+    - id: PlushieLizardJobSecurityofficer
+      prob: 0.02
 
 - type: entity
   id: LockerBrigmedicFilled
@@ -165,6 +170,8 @@
     - id: HoloprojectorSecurity
     - id: BoxEvidenceMarkers
     - id: HandLabeler
+    - id: PlushieLizardJobDetective
+      prob: 0.02
     - id: BoxTapeRecorder # DeltaV
 
 - type: entity

@@ -1,0 +1,27 @@
+﻿- type: entity
+  parent: DrinkGlass
+  id: DrinkBatteryAcidGlass
+  suffix: battery acid
+  components:
+  - type: Solution # Harmony - Update to SolutionComponent
+    solution:
+      reagents:
+        - ReagentId: BatteryAcid
+          Quantity: 60
+  - type: Icon
+    sprite: _Impstation/Objects/Consumable/Drinks/batteryacid.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkAngelsKissGlass
+  suffix: angel's kiss
+  components:
+  - type: Solution # Harmony - Update to SolutionComponent
+    solution:
+      reagents:
+        - ReagentId: AngelsKiss
+          Quantity: 60
+  - type: Icon
+    sprite: _Impstation/Objects/Consumable/Drinks/angelskiss.rsi
+    state: icon

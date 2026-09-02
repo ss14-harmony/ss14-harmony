@@ -15,20 +15,6 @@
   - UplinkWeaponry
 
 - type: listing
-  id: UplinkHushpup
-  name: uplink-hushpup-name
-  description: uplink-hushpup-desc
-  icon: { sprite: /Textures/_Harmony/Objects/Weapons/Guns/Shotguns/hushpup.rsi, state: icon }
-  productEntity: ClothingBackpackDuffelSyndicateFilledHushpup
-  discountCategory: rareDiscounts
-  discountDownTo:
-    Telecrystal: 8
-  cost:
-    Telecrystal: 10
-  categories:
-  - UplinkWeaponry
-
-- type: listing
   id: UplinkMantisGloves
   name: mantis-gloves-uplink-name
   description: mantis-gloves-uplink-desc
@@ -236,6 +222,16 @@
 
 # Disruption
 
+- type: listing
+  id: AccessConfiguratorSyndicate
+  name: uplink-syndicate-access-config-name
+  description: uplink-syndicate-access-config-desc
+  productEntity: AccessConfiguratorSyndicate
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkDisruption
+
 # Allies
 
 - type: listing
@@ -292,6 +288,28 @@
       tags:
         - NukeOpsUplink
 
+- type: listing
+  id: UplinkJetpackNukie
+  name: uplink-black-jetpack-name
+  description: uplink-stealth-jetpack-desc
+  productEntity: HarmonyJetpackBlackFilledStealth
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle # Tots shouldn't get the stealthy jetpack
+
 # Pointless
 
 - type: listing
@@ -330,3 +348,19 @@
     whitelist:
     - Bartender
     - Zookeeper
+
+# Weapons
+
+- type: listing
+  id: UplinkMalletofMalice
+  name: uplink-malletofmalice-name
+  description: uplink-malletofmalice-desc
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  productEntity: MaliceMallet
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkWeaponry
+ 
