@@ -30,7 +30,7 @@
         - id: Dropper
         # It would be cool to have special "syndicate" chemical analysis goggles
         - id: ClothingEyesGlassesChemical
-        - id: SyringeStimulants
+        - id: Syringe
         - id: VestineChemistryVial
           amount: 2
         - id: ChemistryEmptyVial
@@ -81,7 +81,7 @@
   components:
   - type: Storage
     grid:
-    - 0,0,3,3
+    - 0,0,4,3 # Harmony specific change. Made it slightly larger to fit a bungo fruit inside
     maxItemSize: Normal
   - type: Item
     size: Huge
@@ -95,8 +95,27 @@
     containers:
       storagebase: !type:AllSelector
         children:
+        - id: SyndicateMicrowaveFlatpack
         - id: WeaponCroissant
           amount: 2
         - id: WeaponBaguette
-        - id: SyndicateMicrowaveMachineCircuitboard
         - id: PaperWrittenCombatBakeryKit
+        - id: FoodBungo # Harmony specific change. Added to facilitate creating the Bungo Bomber
+
+- type: entity
+  parent: [BoxCardboardSmall, BaseSyndicateContraband]
+  id: SyndimovCircuitKit
+  name: syndimov circuit kit
+  description: A kit containing an electronics board with the Syndimov lawset and a Syndicate ID.
+  components:
+  - type: Sprite
+    layers:
+    - state: box_of_doom
+    - state: circuit
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: SyndimovCircuitBoard
+        - id: SyndicateIDCard
+

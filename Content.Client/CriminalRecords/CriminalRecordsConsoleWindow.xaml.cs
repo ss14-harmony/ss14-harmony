@@ -15,6 +15,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using System.Linq;
 using System.Numerics;
+using Content.Shared.Humanoid.Prototypes; // Harmony
 using Content.Shared.StatusIcon;
 using Robust.Client.GameObjects;
 
@@ -28,7 +29,7 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
     private readonly IPrototypeManager _proto;
     private readonly IRobustRandom _random;
     private readonly AccessReaderSystem _accessReader;
-    [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private IEntityManager _entManager = default!;
     private readonly SpriteSystem _spriteSystem;
 
     public readonly EntityUid Console;
@@ -232,6 +233,14 @@ public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
         {
             PersonJobIcon.Texture = _spriteSystem.Frame0(proto.Icon);
         }
+
+        // Harmony Start - Add species (back?) to Criminal Records Console
+        var species = Loc.GetString(_proto.Index<SpeciesPrototype>(stationRecord.Species).Name);
+        var synthSpecies = stationRecord.Synthetic
+            ? Loc.GetString("synthetic-component-prefix", ("species", species))
+            : species;
+        PersonSpecies.Text = synthSpecies;
+        // Harmony End
 
         PersonPrints.Text = stationRecord.Fingerprint ??  Loc.GetString("generic-not-available-shorthand");
         PersonDna.Text = stationRecord.DNA ??  Loc.GetString("generic-not-available-shorthand");

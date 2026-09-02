@@ -1,5 +1,6 @@
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
+using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
@@ -15,17 +16,17 @@ namespace Content.Shared._Harmony.ItemCurse;
 /// System for handling the ItemCurse ability for wizards.
 /// This is pretty much a copy of SharedItemRecallSystem with the resulting effect on the marked item changed.
 /// </summary>
-public abstract class SharedItemCurseSystem : EntitySystem
+public abstract partial class SharedItemCurseSystem : EntitySystem
 {
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly SharedPopupSystem _popups = default!;
-    [Dependency] private readonly SharedProjectileSystem _proj = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly ThrowingSystem _throwing = default!;
-    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private MetaDataSystem _metaData = default!;
+    [Dependency] private SharedPopupSystem _popups = default!;
+    [Dependency] private SharedProjectileSystem _proj = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private ThrowingSystem _throwing = default!;
+    [Dependency] private SharedContainerSystem _containerSystem = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     public override void Initialize()
     {

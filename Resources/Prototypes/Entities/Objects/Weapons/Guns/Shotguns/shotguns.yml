@@ -32,6 +32,9 @@
 #     path: /Audio/Weapons/Guns/Empty/empty.ogg
       path: /Audio/_Harmony/Weapons/Guns/Empty/shotgun_empty.ogg
       # End harmony change
+  - type: CustomSpriteAmmoCounter
+    loadedAmmoSprite: Interface/ItemStatus/Shotgun_Shells/not_spent.png
+    spentAmmoSprite: Interface/ItemStatus/Shotgun_Shells/spent.png
   - type: BallisticAmmoProvider
     whitelist:
       tags:
@@ -76,6 +79,9 @@
     - Back
     - suitStorage
   - type: AmmoCounter
+  - type: CustomSpriteAmmoCounter
+    loadedAmmoSprite: Interface/ItemStatus/Shotgun_Shells/not_spent.png
+    spentAmmoSprite: Interface/ItemStatus/Shotgun_Shells/spent.png
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 2
