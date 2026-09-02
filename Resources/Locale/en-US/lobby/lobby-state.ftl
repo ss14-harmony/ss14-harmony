@@ -25,11 +25,13 @@ lobby-state-background-text = Menu art: [color=white]{$backgroundTitle}[/color] 
 lobby-state-background-no-background-text = No menu art loaded.
 lobby-state-background-unknown-title = [color=dimgray]Unknown title[/color]
 lobby-state-background-unknown-artist = [color=dimgray]Unknown artist[/color]
+# Harmony change starts - Removed playtime tracker comments
 lobby-state-playtime-comment-normal =
     You've spent {$hours} {$hours ->
     [1]hour
     *[other]hours
-    } ingame today. Remember to take breaks!
-lobby-state-playtime-comment-concerning = You've played for {$hours} hours today. Please take a break.
-lobby-state-playtime-comment-grasstouchless = {$hours} hours. Consider logging off to attend to your needs.
-lobby-state-playtime-comment-selfdestructive = {$hours} hours. Really?
+    } ingame today. Remember to hydrate and take breaks!
+lobby-state-playtime-comment-concerning = You've spent {$hours} hours ingame today. Remember to hydrate and take breaks!
+lobby-state-playtime-comment-grasstouchless = You've spent {$hours} hours ingame today. Remember to hydrate and take breaks!
+lobby-state-playtime-comment-selfdestructive = You've spent {$hours} hours ingame today. Remember to hydrate and take breaks!
+# Harmony change ends

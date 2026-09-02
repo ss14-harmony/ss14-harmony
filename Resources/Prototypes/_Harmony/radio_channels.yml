@@ -1,3 +1,11 @@
+- type: radioChannel
+  id: Conspiracy
+  name: chat-radio-conspiracy
+  keycode: 'o'
+  frequency: 1174
+  color: "#724F29"
+  longRange: true
+  
 # Splits Salv comms so less cluttering overlap on supply channels
 - type: radioChannel
   id: Salvage

@@ -12,7 +12,7 @@
     whitelist:
       tags:
         - CartridgePistol
-    capacity: 15 # Harmony Change: Changes Pistol Magazine Capacity from 10 to 15
+    capacity: 10
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -45,7 +45,7 @@
     whitelist:
       tags:
         - CartridgePistol
-    capacity: 16
+    capacity: 15
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -145,10 +145,7 @@
   parent: BaseMagazinePistol
   id: MagazinePistol
   name: pistol magazine (.35 auto)
-  # Harmony change start - Changed description
-  description: 15-round single-stack magazine for pistols. Intended to hold general-purpose kinetic ammunition.
-  # description: 10-round single-stack magazine for pistols. Intended to hold general-purpose kinetic ammunition.
-  # Harmony change end
+  description: 10-round single-stack magazine for pistols. Intended to hold general-purpose kinetic ammunition.
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistol
@@ -170,10 +167,7 @@
   id: MagazinePistolEmpty
   name: pistol magazine (.35 auto any)
   suffix: empty
-  # Harmony change start - Changed description
-  description: 15-round single-stack magazine for pistols.
-  # description: 10-round single-stack magazine for pistols.
-  # Harmony change end
+  description: 10-round single-stack magazine for pistols.
   components:
   - type: BallisticAmmoProvider
     proto: null
@@ -194,10 +188,7 @@
   parent: MagazinePistol
   id: MagazinePistolIncendiary
   name: pistol magazine (.35 auto incendiary)
-  # Harmony change start - Changed description
-  description: 15-round single-stack magazine for pistols. Intended to hold self-igniting incendiary ammunition.
-  # description: 10-round single-stack magazine for pistols. Intended to hold self-igniting incendiary ammunition.
-  # Harmony change end
+  description: 10-round single-stack magazine for pistols. Intended to hold self-igniting incendiary ammunition.
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolIncendiary
@@ -224,10 +215,7 @@
   parent: BaseMagazinePistol
   id: MagazinePistolPractice
   name: pistol magazine (.35 auto practice)
-  # Harmony change start - Changed description
-  description: 15-round single-stack-stack magazine for pistols. Intended to hold non-harmful chalk ammunition.
-  # description: 10-round single-stack-stack magazine for pistols. Intended to hold non-harmful chalk ammunition.
-  # Harmony change end
+  description: 10-round single-stack magazine for pistols. Intended to hold harmless practice ammunition.
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolPractice
@@ -254,10 +242,7 @@
   parent: BaseMagazinePistol
   id: MagazinePistolUranium
   name: pistol magazine (.35 auto uranium)
-  # Harmony change start - Changed description
-  description: 15-round single-stack magazine for pistols. Intended to hold exotic uranium-core ammunition.
-  # description: 10-round single-stack magazine for pistols. Intended to hold exotic uranium-core ammunition.
-  # Harmony change end
+  description: 10-round single-stack magazine for pistols. Intended to hold exotic uranium-core ammunition.
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolUranium
@@ -411,7 +396,7 @@
   id: MagazinePistolHighCapacityEmpty
   name: machine pistol magazine (.35 auto any)
   suffix: empty
-  description: Custom 16-round double-stack magazine for the Viper pistol.
+  description: Custom 15-round double-stack magazine for the Viper pistol.
   components:
   - type: BallisticAmmoProvider
     proto: null
@@ -432,7 +417,7 @@
   parent: BaseMagazinePistolHighCapacity
   id: MagazinePistolHighCapacity
   name: machine pistol magazine (.35 auto)
-  description: Custom 16-round double-stack magazine for the Viper pistol. Intended to hold general-purpose kinetic ammunition.
+  description: Custom 15-round double-stack magazine for the Viper pistol. Intended to hold general-purpose kinetic ammunition.
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistol
@@ -453,7 +438,7 @@
   parent: BaseMagazinePistolHighCapacity
   id: MagazinePistolHighCapacityPractice
   name: machine pistol magazine (.35 auto practice)
-  description: Custom 16-round double-stack magazine for the Viper pistol. Intended to hold harmless practice ammunition.
+  description: Custom 15-round double-stack magazine for the Viper pistol. Intended to hold harmless practice ammunition.
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolPractice

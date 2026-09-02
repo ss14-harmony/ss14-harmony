@@ -5,11 +5,11 @@ using Content.Shared.Weapons.Ranged.Upgrades;
 
 namespace Content.Shared._DV.Weapons.Ranged.Upgrades;
 
-public sealed class GunUpgradeIndoorsSystem : EntitySystem
+public sealed partial class GunUpgradeIndoorsSystem : EntitySystem
 {
-    [Dependency] private readonly GunUpgradeSystem _upgrade = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedPressureProjectileSystem _pressure = default!;
+    [Dependency] private GunUpgradeSystem _upgrade = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedPressureProjectileSystem _pressure = default!;
 
     public override void Initialize()
     {

@@ -1,0 +1,25 @@
+- type: seed
+  id: peanut
+  name: seeds-peanut-name
+  noun: seeds-noun-seeds
+  displayName: seeds-peanut-display-name
+  plantRsi: _Harmony/Objects/Specific/Hydroponics/peanut.rsi
+  packetPrototype: PeanutSeeds
+  productPrototypes:
+    - FoodPeanut
+  lifespan: 25
+  maturation: 10
+  production: 3
+  yield: 4
+  potency: 10
+  growthStages: 4
+  waterConsumption: 0.60
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 5
+      PotencyDivisor: 20
+    PeanutButter: # could be the wrong capitalization. unsure for now
+      Min: 2
+      Max: 6
+      PotencyDivisor: 20
