@@ -88,14 +88,14 @@
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
-  # harmony change start - Added new sound for Viper
   - type: Gun
     selectedMode: FullAuto # Override of BaseWeaponPistol to default to full-auto
     soundGunshot:
+      # harmony change start - Added new sound for Viper
       collection: ViperFire
       params:
         volume: -1.5
-  # harmony change end - Added new sound for Viper
+      # harmony change end
   - type: ItemSlots
     slots:
       gun_magazine:
