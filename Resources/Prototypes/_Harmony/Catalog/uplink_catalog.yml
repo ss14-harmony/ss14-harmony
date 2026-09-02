@@ -49,7 +49,7 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledHristov
   icon: { sprite: /Textures/_Harmony/Objects/Weapons/Guns/Snipers/hristov_nukie.rsi, state: icon }
   cost:
-    Telecrystal: 14
+    Telecrystal: 20
   categories:
   - UplinkWeaponry
   conditions:
@@ -182,6 +182,8 @@
     whitelist:
       tags:
       - NukeOpsUplink
+  - !type:ListingLimitedStockCondition
+    stock: 1
 
 - type: listing
   id: UplinkSniperAmmoIncend
@@ -405,4 +407,3 @@
     Telecrystal: 5
   categories:
   - UplinkWeaponry
- 
