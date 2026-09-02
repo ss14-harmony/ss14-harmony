@@ -1,0 +1,48 @@
+- type: entity
+  parent: BaseBulletIncendiary
+  id: BulletAntiMaterialIncendiary
+  categories: [ HideSpawnMenu ]
+  name: bullet (.60 incendiary)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 25
+        Structural: 100
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: bullet
+      shader: unshaded
+  - type: IgniteOnCollide
+    fireStacks: 3
+  - type: PointLight
+    radius: 3.5
+    energy: 7.0
+
+
+- type: entity
+  parent: BaseBullet
+  id: BulletAntiMaterialHollowPoint
+  categories: [ HideSpawnMenu ]
+  name: bullet (.60 hollow point)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 85
+  - type: StaminaDamageOnCollide
+    damage: 30
+  - type: PointLight
+    enabled: true
+    color: "#03c6bf"
+    radius: 2.0
+    energy: 7.0
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: bullet
+      shader: unshaded
+      color: "#00e2ff"

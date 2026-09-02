@@ -20,3 +20,10 @@
   files:
   - /Audio/_Harmony/Weapons/Guns/Gunshots/python_fire1.ogg
   - /Audio/_Harmony/Weapons/Guns/Gunshots/python_fire2.ogg
+
+# Used in _Harmony/Entities/Objects/Weapons/Guns/Snipers/snipers.yml
+- type: soundCollection
+  id: HristovFire
+  files:
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/hristov_fire1.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/hristov_fire2.ogg

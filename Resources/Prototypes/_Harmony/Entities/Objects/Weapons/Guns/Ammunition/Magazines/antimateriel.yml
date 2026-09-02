@@ -1,0 +1,62 @@
+- type: entity
+  parent: BaseMagazineLightRifle
+  id: MagazineAntiMateriel
+  name: magazine (.60 anti-materiel)
+  suffix: Harmony
+  components:
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeAntiMateriel
+    capacity: 5
+    proto: CartridgeAntiMateriel
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Magazines/Sniper/hristovmag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Tag
+    tags:
+    - MagazineAntiMateriel
+
+- type: entity
+  parent: MagazineAntiMateriel
+  id: MagazineAntiMaterielIncendiary
+  name: magazine (.60 incendiary)
+  suffix: Harmony
+  components:
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeAntiMateriel
+    capacity: 5
+    proto: CartridgeAntiMaterielIncendiary
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Magazines/Sniper/hristovmag.rsi
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: MagazineAntiMateriel
+  id: MagazineAntiMaterielHollowPoint
+  name: magazine (.60 hollow point)
+  suffix: Harmony
+  components:
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeAntiMateriel
+    capacity: 5
+    proto: CartridgeAntiMaterielHollowPoint
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Magazines/Sniper/hristovmag.rsi
+    layers:
+    - state: blue
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]

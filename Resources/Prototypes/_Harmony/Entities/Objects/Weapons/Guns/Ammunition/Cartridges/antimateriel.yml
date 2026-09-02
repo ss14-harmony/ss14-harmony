@@ -1,0 +1,43 @@
+- type: entity
+  parent: [ BaseCartridge, BaseMajorContraband ]
+  id: CartridgeAntiMaterielIncendiary
+  name: cartridge (.60 incendiary)
+  suffix: Harmony
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CartridgeAntiMateriel
+  - type: CartridgeAmmo
+    proto: BulletAntiMaterialIncendiary
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Casings/inc_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  parent: [ BaseCartridge, BaseMajorContraband ]
+  id: CartridgeAntiMaterielHollowPoint
+  name: cartridge (.60 hollow point)
+  suffix: Harmony
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CartridgeAntiMateriel
+  - type: CartridgeAmmo
+    proto: BulletAntiMaterialHollowPoint
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Casings/hp_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 20

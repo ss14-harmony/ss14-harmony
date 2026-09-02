@@ -57,3 +57,97 @@
   - type: Appearance
   - type: StaticPrice
     price: 400
+
+- type: entity
+  parent: [BaseWeaponRifle, BaseGunWieldable, BaseSyndicateContraband]
+  id: WeaponSniperHristovHarmony # This gun is so fundamentally different from the upstream Hristov the code would be more convoluted if I had to parent from it
+  name: Hristov AMR
+  suffix: Harmony
+  description: Field-tested in over 20 classified operations before being disseminated among the Syndicate, the Hristov was secretly developed by Cybersun's Advanced Kinetics division after multiple complaints of conventional high-calibre firearms being unable to match modern exosuit armor in frontline combat. Uses .60 anti-materiel ammo.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Snipers/hristov.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Harmony/Objects/Weapons/Guns/Snipers/hristov.rsi
+  - type: Gun
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    fireRate: 0.5
+    soundGunshot:
+      collection: HristovFire
+      params:
+        volume: 3
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineAntiMateriel
+        insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/hristov_magin.ogg
+        ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/hristov_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineAntiMateriel
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeAntiMateriel
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeAntiMateriel
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.4
+    sprintModifier: 0.4
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 3
+    pvsIncrease: 0.3
+  - type: StaticPrice
+    price: 3500
+  - type: GunRequiresWield
+
+- type: entity
+  parent: WeaponSniperHristovHarmony
+  id: WeaponSniperHristovHarmonyNukie
+  name: Hristov MK-II AMR
+  suffix: Harmony, Nuke Ops
+  description: An experimental weapon, based off Cybersun's failed attempt at a service life extension program for the Hristov AMR. Developed in-house by the Gorlex Marauders, featuring lighter composites allowing for quicker movement, improved optics with a smart targeting system, and a sturdier bolt for faster cycling. Looks like the serial number has been filed off. Uses .60 anti-materiel ammo.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Snipers/hristov_nukie.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Harmony/Objects/Weapons/Guns/Snipers/hristov_nukie.rsi
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.5
+    sprintModifier: 0.5
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Harmony/Weapons/Guns/Gunshots/hristov_fire_mk2.ogg
+      params:
+        volume: 3
+        maxDistance: 30
+    fireRate: 0.6

@@ -18,12 +18,22 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: WeaponSniperHristov
-        - id: MagazineBoxAntiMateriel
+  # Start Harmony change - Hristov rework, replaces hristov ammo boxes with magazines, changes upstream Hristov prototype to harmony prototype
+        - id: WeaponSniperHristovHarmony
+        - id: MagazineAntiMateriel
+        - id: MagazineAntiMateriel
+  #     - id: WeaponSniperHristov
+  #     - id: MagazineBoxAntiMateriel
+  # End Harmony change
         - id: ClothingNeckTieRed
         - id: ClothingHandsGlovesLatex
         - id: ClothingUniformJumpsuitSyndicateBusinessSuitHarmony # Harmony
         - id: BarberScissors
+  # Start Harmony change - Hristov rework, changes size to fit magazines
+  - type: Storage
+    grid:
+    - 0,0,6,4
+  # End Harmony change
 
 - type: entity
   id: BriefcaseSyndieLobbyingBundleFilled
