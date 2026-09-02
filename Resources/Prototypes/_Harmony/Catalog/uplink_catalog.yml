@@ -174,7 +174,7 @@
   id: UplinkRifleTaipanMagazine
   name: uplink-rifle-magazine-taipan-name
   description: uplink-rifle-magazine-taipan-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_rifle_mag.rsi, state: base }
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/10x24.rsi, state: base }
   productEntity: MagazineCaselessRifle
   cost:
     Telecrystal: 2
