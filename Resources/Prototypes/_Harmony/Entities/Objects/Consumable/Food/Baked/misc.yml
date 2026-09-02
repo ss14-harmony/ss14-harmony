@@ -1,0 +1,28 @@
+- type: entity
+  parent: FoodBakedBase
+  id: FoodBakedPeanutButterJellySandwich
+  name: peanut butter jelly sandwich
+  suffix: Harmony
+  description: It's peanut butter jelly time.
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+  - type: FlavorProfile
+    flavors:
+      - peanutbutter
+      - jellygrape
+      - bread
+  - type: Sprite
+    sprite: _Harmony/Objects/Consumable/Food/Baked/misc.rsi
+    state: peanut-butter-jelly
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: PeanutButter
+        Quantity: 7
+      - ReagentId: JellyGrape
+        Quantity: 7
+      - ReagentId: Nutriment
+        Quantity: 7

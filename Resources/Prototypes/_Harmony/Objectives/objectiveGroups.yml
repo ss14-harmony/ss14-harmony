@@ -1,4 +1,11 @@
 - type: weightedRandom
+  id: TraitorObjectiveGroupUnique
+  weights:
+    HijackTradeStationObjective: .5
+    MailFraudObjective: 1
+    SupercritAnomaliesObjective: .25
+
+- type: weightedRandom
   id: BloodBrotherObjectiveGroups
   weights:
     BloodBrotherObjectiveGroupState: 1
@@ -36,3 +43,15 @@
     BloodBrotherKillRandomPersonObjective: 0.85
     BloodBrotherKillRandomHeadObjective: 0.25
     BloodBrotherTeachLessonRandomPersonObjective: 1
+
+- type: weightedRandom
+  id: ConspiratorObjectiveGroup # if you want to add another objective, feel free
+  weights:
+    ConspiratorUnionObjective: 1
+    ConspiratorGameshowObjective: 1
+    ConspiratorTechnologyObjective: 1
+    ConspiratorArmsObjective: 1
+    ConspiratorThiefObjective: 1
+    ConspiratorMafiaObjective: 1
+    ConspiratorArrestObjective: 1
+    ConspiratorCameraObjective: 1

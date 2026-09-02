@@ -3,6 +3,10 @@
   startingInventory:
     OxygenTankFilled: 10
     NitrogenTankFilled: 10
+    # Harmony Change Start
+    EmergencyOxygenTankFilled: 10
+    EmergencyNitrogenTankFilled: 10
+    # Harmony Change End
 
 - type: vendingMachineInventory
   id: TankDispenserEngineeringInventory

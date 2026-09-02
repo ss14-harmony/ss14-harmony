@@ -1,0 +1,24 @@
+- type: entity
+  parent: [ BaseItem, BaseToySword ]
+  id: MaliceMallet
+  name: Mallet of Malice
+  description: A brightly colored hammer made of rubber? Hey-- this one seems a bit more sturdy...
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/rubber_hammer.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: Objects/Fun/rubber_hammer.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    soundHit: &SoundRubberHammer
+      collection: RubberHammer
+      params:
+        variation: 0.03
+        volume: 3
+    damage:
+      types:
+        Blunt: 15
+  - type: StaminaDamageOnHit
+    damage: 8

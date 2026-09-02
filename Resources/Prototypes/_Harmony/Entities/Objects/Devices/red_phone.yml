@@ -26,6 +26,7 @@
       speechVerb: Robotic
     - type: EncryptionKeyHolder
       keySlots: 1
+      keysUnlocked: false
     - type: ContainerFill
       containers:
         key_slots:

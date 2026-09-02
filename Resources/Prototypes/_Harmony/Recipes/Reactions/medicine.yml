@@ -12,3 +12,14 @@
       amount: 1
   products:
     Barozine: 2
+
+## Nukie Saline
+- type: reaction
+  id: UniversalBlood
+  reactants:
+    Vestine:
+      amount: 1
+    Saline:
+      amount: 3
+  products:
+    UniversalBlood: 4

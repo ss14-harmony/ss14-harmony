@@ -8,10 +8,14 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: WeaponSubMachineGunWt550
+# Start harmony change - Change to Drozd from WT550, change WT mags to SMG mags
+#       - id: WeaponSubMachineGunWt550
+        - id: WeaponSubMachineGunDrozd
           amount: 2
-        - id: MagazinePistolSubMachineGunTopMounted
+#       - id: MagazinePistolSubMachineGunTopMounted
+        - id: MagazinePistolSubMachineGun
           amount: 4
+# End Harmony change
 
 - type: entity
   parent: [ CrateWeaponSecure, BaseSecurityContraband ]

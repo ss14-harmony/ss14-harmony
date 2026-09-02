@@ -1,0 +1,9 @@
+﻿- type: flavor
+  id: batteryacid
+  flavorType: Complex
+  description: flavor-complex-safe
+
+- type: flavor
+  id: angelskiss
+  flavorType: Complex
+  description: flavor-complex-profane

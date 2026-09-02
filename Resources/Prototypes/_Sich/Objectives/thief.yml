@@ -1,0 +1,10 @@
+- type: entity
+  parent: BaseThiefStealObjective
+  id: RCDEliteStealObjective
+  components:
+  - type: NotJobRequirement
+    jobs: [ StationEngineer, AtmosphericTechnician ]
+  - type: StealCondition
+    stealGroup: RCDElite
+  - type: Objective
+    difficulty: 1
