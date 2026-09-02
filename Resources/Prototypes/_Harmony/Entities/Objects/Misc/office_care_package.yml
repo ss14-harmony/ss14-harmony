@@ -1,0 +1,27 @@
+- type: entity
+  parent: BaseItem
+  id: OfficeCarePackage
+  name: office care package
+  suffix: Harmony
+  description: A small cardboard box containing one piece of NT branded office supplies.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Misc/office_care_package.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+      - id: MysteryFigureBoxTrash
+      - id: NewtonCradle
+        orGroup: GiftPool
+      - id: BookHowToKeepStationClean
+        orGroup: GiftPool
+      - id: NTHandyFlag
+        orGroup: GiftPool
+      - id: BookSOP
+        orGroup: GiftPool
+      - id: TowelColorNT
+        orGroup: GiftPool
+      - id: ToyFigurineInspector
+        orGroup: GiftPool
+    sound:
+      path: /Audio/Effects/unwrap.ogg

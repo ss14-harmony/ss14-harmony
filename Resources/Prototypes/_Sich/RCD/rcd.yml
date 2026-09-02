@@ -1,0 +1,75 @@
+# elite RCD
+
+#Airlocks
+
+- type: rcd
+  id: AirlockCommand
+  category: Airlocks
+  sprite: /Textures/_Sich/Interface/Radial/RCD/airlock_command.png
+  mode: ConstructObject
+  prototype: SichAirlockCommandLocked
+  cost: 4
+  delay: 4
+  collisionMask: FullTileMask
+  rotation: Camera
+  fx: EffectRCDConstruct4
+
+- type: rcd
+  id: AirlockGlassCommand
+  category: Airlocks
+  sprite: /Textures/_Sich/Interface/Radial/RCD/airlock_glass_command.png
+  mode: ConstructObject
+  prototype: SichAirlockCommandGlassLocked
+  cost: 4
+  delay: 4
+  collisionMask: FullTileMask
+  rotation: Camera
+  fx: EffectRCDConstruct4
+
+- type: rcd
+  id: HighSecDoor
+  category: Airlocks
+  sprite: /Textures/_Sich/Interface/Radial/RCD/highsec.png
+  mode: ConstructObject
+  prototype: HighSecCommandLocked
+  cost: 15
+  delay: 15
+  collisionMask: FullTileMask
+  rotation: Camera
+  fx: EffectRCDConstruct5
+
+- type: rcd
+  id: BlastDoor
+  category: Airlocks
+  sprite: /Textures/_Sich/Interface/Radial/RCD/blastdoor.png
+  mode: ConstructObject
+  prototype: BlastDoor
+  cost: 25
+  delay: 30
+  collisionMask: Impassable
+  rotation: Camera
+  fx: EffectRCDConstruct6
+
+- type: rcd
+  id: ShuttersNormal
+  category: Airlocks
+  sprite: /Textures/_Sich/Interface/Radial/RCD/shutters.png
+  mode: ConstructObject
+  prototype: ShuttersNormal
+  cost: 3
+  delay: 4
+  collisionMask: Impassable
+  rotation: Camera
+  fx: EffectRCDConstruct4
+
+- type: rcd
+  id: ShuttersWindow
+  category: Airlocks
+  sprite: /Textures/_Sich/Interface/Radial/RCD/shutters_window.png
+  mode: ConstructObject
+  prototype: ShuttersWindow
+  cost: 3
+  delay: 4
+  collisionMask: Impassable
+  rotation: Camera
+  fx: EffectRCDConstruct4

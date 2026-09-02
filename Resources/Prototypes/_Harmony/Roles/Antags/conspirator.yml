@@ -1,0 +1,21 @@
+- type: antag
+  id: Conspirator
+  name: roles-antag-conspirator-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-conspirator-objective
+  guides: [ Conspirators ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 3600 # 1h
+
+- type: antagSpecifier
+  parent: RestrictedAntag
+  id: Conspirator
+  prefRoles:
+  - Conspirator
+  blacklist:
+    components:
+    - AntagImmune
+  mindRoles:
+  - MindRoleConspirator

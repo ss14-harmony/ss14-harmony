@@ -13,16 +13,6 @@
       department: Security
       time: 30h # Harmony: 60h -> 30h
 
-#Security Star
-- type: loadoutEffectGroup
-  id: SecurityStarWorthy
-  effects:
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:DepartmentTimeRequirement
-        department: Security
-        time: 50h # Harmony: 100h -> 50h
-
 # Head
 - type: loadout
   id: SecurityHelmet
@@ -158,13 +148,3 @@
     proto: SeniorOfficer
   equipment:
     id: SeniorOfficerPDA
-
-# Misc
-- type: loadout
-  id: SecStar
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SecurityStarWorthy
-  storage:
-    back:
-    - Dinkystar

@@ -40,7 +40,7 @@
     - !type:PlantAdjustHealth
       amount: -1
   metabolisms:
-    Poison:
+    Bloodstream:
       effects:
       - !type:HealthChange
         damage:
@@ -58,38 +58,22 @@
   boilingPoint: 2595.0
   meltingPoint: 1083.0
   metabolisms:
-    Poison:
+    Bloodstream:
       metabolismRate: 0.1
       effects:
       - !type:HealthChange
         conditions:
-        # start harmony change
-        - !type:OrganType
-          type: Avali
-          shouldHave: false
-        # start harmony change
-        - !type:OrganType
-          type: Arachnid
-          shouldHave: false
+        - !type:MetabolizerTypeCondition
+          type: [ Arachnid, Avali ] # Harmony: add avali
+          inverted: true
         damage:
           types:
             Poison: 0.1
-    Medicine:
-      effects:
       - !type:ModifyBloodLevel
         conditions:
-        - !type:OrganType
-          type: Arachnid
-          shouldHave: true
+        - !type:MetabolizerTypeCondition
+          type: [ Arachnid, Avali ]
         amount: 0.4
-        # start harmony change
-      - !type:ModifyBloodLevel
-        conditions:
-        - !type:OrganType
-          type: Avali
-          shouldHave: true
-        amount: 0.4
-        # end harmony change
 
 - type: reagent
   id: Fluorine
@@ -111,7 +95,7 @@
     - !type:PlantAdjustHealth
       amount: -2
   metabolisms:
-    Poison:
+    Bloodstream:
       effects:
       - !type:HealthChange
         damage:
@@ -162,39 +146,21 @@
   boilingPoint: 2862.0
   meltingPoint: 1538.0
   metabolisms:
-    Poison:
+    Bloodstream:
       metabolismRate: 0.1
       effects:
       - !type:HealthChange
         conditions:
-        - !type:OrganType
-          type: Arachnid
-          shouldHave: true
+        - !type:MetabolizerTypeCondition
+          type: [ Arachnid, Avali ]
         damage:
           types:
             Poison: 0.1
-      # start harmony change
-      - !type:HealthChange
-        conditions:
-        - !type:OrganType
-          type: Avali
-          shouldHave: true
-        damage:
-          types:
-            Poison: 0.1
-    # end harmony change
-    Medicine:
-      effects:
       - !type:ModifyBloodLevel
         conditions:
-        # start harmony change
-        - !type:OrganType
-          type: Avali
-          shouldHave: false
-        # end harmony change
-        - !type:OrganType
-          type: Arachnid
-          shouldHave: false
+        - !type:MetabolizerTypeCondition
+          type: [ Arachnid, Avali ]
+          inverted: true
         amount: 0.4
 
 - type: reagent
@@ -208,7 +174,7 @@
   meltingPoint: 180.5
   boilingPoint: 1330.0
   metabolisms:
-    Poison:
+    Bloodstream:
       metabolismRate: 0.1
       effects:
       - !type:HealthChange
@@ -235,15 +201,15 @@
   meltingPoint: -38.83
   boilingPoint: 356.73
   metabolisms:
-    Poison:
+    Bloodstream:
       effects:
       - !type:HealthChange
         damage:
           types:
             Poison: 1
-      - !type:GenericStatusEffect
-        key: Stutter
-        component: ScrambledAccent
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectScrambled
+        type: Update
 
 - type: reagent
   id: Potassium
@@ -297,7 +263,7 @@
   boilingPoint: 3265.0
   meltingPoint: 1414.0
   metabolisms:
-    Poison:
+    Bloodstream:
       effects:
       - !type:HealthChange
         damage:
@@ -326,7 +292,7 @@
   boilingPoint: 445.0
   meltingPoint: 120.0
   metabolisms:
-    Poison:
+    Bloodstream:
       effects:
       - !type:HealthChange
         damage:
@@ -365,7 +331,7 @@
     probability: 0.2
     amount: 0.1
   metabolisms:
-    Poison:
+    Bloodstream:
       effects:
       - !type:HealthChange
         damage:

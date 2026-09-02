@@ -17,4 +17,10 @@
   # Some engineer forgot to take the multitool out the youtool when working on it, happens.
   contrabandInventory:
     Multitool: 1
-    ClothingHandsGlovesColorYellow: 1
+    # ClothingHandsGlovesColorYellow: 1 # Harmony Change - Move insuls from hacking to emag
+  # Harmony Change Start - Readd Emag interactions
+  emaggedInventory:
+      ClothingHandsGlovesColorYellow: 1
+      ClothingHandsGlovesCombat: 1
+  # Harmony Change End
+

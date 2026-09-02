@@ -18,3 +18,7 @@
     GroundTobacco: 3
     CigarGold: 2
     Igniter: 1
+  # Harmony Change Start - Readd Emag interactions
+  emaggedInventory:
+    CigPackSyndicate: 1 
+  # Harmony Change End

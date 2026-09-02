@@ -8,7 +8,11 @@ Space Station 14 is a remake of SS13 that runs on [Robust Toolbox](https://githu
 
 ## Links
 
+<div class="header" align="center">
+
 [Harmony Wiki](http://wiki.harmony14.com/) | [Website (SS14)](https://spacestation14.io/) | [Steam (SS14)](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone Download (SS14)](https://spacestation14.io/about/nightlies/) | [Builds (Harmony)](http://cdn.harmony14.com/fork/harmony/)
+
+</div>
 
 ## Documentation/Wiki
 
@@ -38,11 +42,11 @@ Exceptions to this are simple tools like Rider's single-line completion feature.
 
 1. Clone this repo:
 ```shell
-git clone https://github.com/space-wizards/space-station-14.git
+git clone https://github.com/ss14-harmony/ss14-harmony.git
 ```
 2. Go to the project folder and run `RUN_THIS.py` to initialize the submodules and load the engine:
 ```shell
-cd space-station-14
+cd ss14-harmony
 python RUN_THIS.py
 ```
 3. Compile the solution:

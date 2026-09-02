@@ -9,6 +9,7 @@
   access:
   - Theatre
   - Maintenance
+  - Service # Harmony Change: Extends service access to the rest of the service roles
   special:
   - !type:AddComponentSpecial
     components:
@@ -17,8 +18,7 @@
         types: #literally just picked semi random valus. i tested this once and tweaked it.
           Blunt: 5
           Piercing: 4
-        groups:
-          Burn: 3
+          Heat: 3
       catchingFailDamage:
         types:
           Blunt: 1
@@ -36,6 +36,8 @@
     pocket2: ClownRecorder
     id: ClownPDA
     ears: ClothingHeadsetService
+  inhand:
+  - FoolboxFilled
   storage:
     back:
     - RubberStampClown

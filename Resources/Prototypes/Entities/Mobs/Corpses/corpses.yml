@@ -5,16 +5,36 @@
   components:
   - type: Loadout
     prototypes:
-      - HoPGear
-      - ClownGear
-      - MimeGear
-      - JanitorGear
-      - ServiceWorkerGear
-      - MusicianGear
-      - BotanistGear
-      - ChefGear
-      - ChaplainGear
-      - PassengerGear
+# Harmony Change Start
+      # - HoPGear
+      # - ClownGear
+      # - MimeGear
+      # - JanitorGear
+      # - ServiceWorkerGear
+      # - MusicianGear
+      # - BotanistGear
+      # - ChefGear
+      # - ChaplainGear
+      # - PassengerGear
+      - VisitorClown
+      - CorpseMime
+      - CorpseJanitor
+      - VisitorServiceWorker
+      - VisitorServiceWorkerAlt
+      - VisitorMusicianFancyAltF
+      - CorpseBotanist
+      - CorpseChef
+      - CorpseChaplain
+      - LimitedPassengerGear
+      - CorpseRandomJumpsuit
+      - VisitorLibrarian
+      - VisitorLibrarianAlt
+      - VisitorReporter
+      - VisitorReporterAlt
+      - VisitorZookeeper
+      - CorpseBartender
+      - CorpseBoxer
+# Harmony Change End
 
 - type: entity
   parent: SalvageHumanCorpse
@@ -23,9 +43,14 @@
   components:
   - type: Loadout
     prototypes:
-    - TechnicalAssistantGear
-    - AtmosphericTechnicianGear
-    - StationEngineerGear
+# Harmony Change Start
+    # - TechnicalAssistantGear
+    # - AtmosphericTechnicianGear
+    # - StationEngineerGear
+    - CorpseStationEngineer
+    - CorpseAtmosTech
+    - VisitorAtmosTechAlt
+# Harmony Change End
 
 - type: entity
   parent: SalvageHumanCorpse
@@ -34,8 +59,12 @@
   components:
   - type: Loadout
     prototypes:
-    - CargoTechGear
-    - SalvageSpecialistGear
+# Harmony Change Start
+    # - CargoTechGear
+    # - SalvageSpecialistGear
+    - VisitorSalvageSpecialist
+    - VisitorCargoTech
+# Harmony Change End
 
 - type: entity
   parent: SalvageHumanCorpse
@@ -44,10 +73,17 @@
   components:
   - type: Loadout
     prototypes:
-    - MedicalInternGear
-    - PsychologistGear
-    - ChemistGear
-    - DoctorGear
+# Harmony Change Start
+    # - MedicalInternGear
+    # - PsychologistGear
+    # - ChemistGear
+    # - DoctorGear
+    - CorpseDoctor
+    - VisitorChemist
+    - VisitorChemistAlt
+    - CorpsePsychologist
+    - CorpseParamedic
+# Harmony Change End
 
 - type: entity
   parent: SalvageHumanCorpse
@@ -56,8 +92,12 @@
   components:
   - type: Loadout
     prototypes:
-    - ResearchAssistantGear
-    - ScientistGear
+# Harmony Change Start
+    # - ResearchAssistantGear
+    # - ScientistGear
+    - CorpseScientist
+    - CorpseRoboticist
+# Harmony Change End
 
 - type: entity
   parent: SalvageHumanCorpse
@@ -66,10 +106,15 @@
   components:
   - type: Loadout
     prototypes:
-    - SecurityCadetGear
-    - SecurityOfficerGear
-    - DetectiveGear
-    - WardenGear
+# Harmony Change Start
+    # - SecurityCadetGear
+    # - SecurityOfficerGear
+    # - DetectiveGear
+    # - WardenGear
+    - CorpseSecurityOfficer
+    - CorpseDetective
+    - CorpseWarden
+# Harmony Change End
 
 - type: entity
   parent: SalvageHumanCorpse
@@ -78,11 +123,21 @@
   components:
   - type: Loadout
     prototypes:
-    - HoPGear
-    - CentcomGear
-    - CaptainGear
-    - HoSGear
-    - ResearchDirectorGear
-    - CMOGear
-    - ChiefEngineerGear
-    - QuartermasterGear
+# Harmony Change Start
+    # - HoPGear
+    # - CentcomGear
+    # - CaptainGear
+    # - HoSGear
+    # - ResearchDirectorGear
+    # - CMOGear
+    # - ChiefEngineerGear
+    # - QuartermasterGear
+    - CorpseHoP
+    - CorpseCentCommOfficial
+    - CorpseCaptain
+    - CorpseHoS
+    - CorpseRD
+    - CorpseCMO
+    - CorpseCE
+    - CorpseQM
+# Harmony Change End

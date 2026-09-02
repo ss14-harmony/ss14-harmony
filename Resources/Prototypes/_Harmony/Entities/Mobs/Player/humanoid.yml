@@ -73,3 +73,39 @@
     - NamesMilitaryFirst
     - NamesClown
     nameFormat: name-format-standard
+
+## CentComm Inspector
+
+- type: entity
+  id: RandomHumanoidSpawnerCentCommInspector
+  name: CentComm Inspector
+  suffix: Harmony
+  components:
+  - type: Sprite
+    sprite: _Harmony/Markers/jobs.rsi
+    state: inspector
+  - type: RandomMetadata
+    nameSegments:
+    - NamesMilitaryLast
+    nameFormat: name-format-centcomm-inspector
+  - type: RandomHumanoidSpawner
+    settings: CentCommInspector
+
+- type: randomHumanoidSettings
+  parent: EventHumanoidCentcomm
+  id: CentCommInspector
+  components:
+  - type: GhostRole
+    name: ghost-role-information-centcomm-inspector-name
+    description: ghost-role-information-centcomm-inspector-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
+    job: CentCommInspector
+  - type: Loadout
+    prototypes: [ CentCommInspectorGear ]
+    roleLoadout: [ RoleSurvivalExtended ]
+  - type: RandomMetadata
+    nameSegments:
+    - NamesMilitaryLast
+    nameFormat: name-format-centcomm-inspector

@@ -11,6 +11,10 @@
   - /Audio/_Harmony/Announcements/RoundEnd/jail.ogg
   - /Audio/_Harmony/Announcements/RoundEnd/robusted.ogg
   - /Audio/_Harmony/Announcements/RoundEnd/done.ogg
+  - /Audio/_Harmony/Announcements/RoundEnd/helmet.ogg
+  - /Audio/_Harmony/Announcements/RoundEnd/WasntBad.ogg
+  - /Audio/_Harmony/Announcements/RoundEnd/everytime.ogg
+  - /Audio/_Harmony/Announcements/RoundEnd/HandsDirty.ogg
 
 - type: soundCollection
   id: PowerOn
