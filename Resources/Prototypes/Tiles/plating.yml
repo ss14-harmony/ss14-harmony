@@ -22,6 +22,7 @@
   parent: Plating
   name: tiles-rcd-plating
   baseWhitelist:
+    - Space
     - TrainLattice
     - FloorPlanetDirt
     - FloorDesert
@@ -52,10 +53,6 @@
   name: tiles-plating
   sprite: /Textures/Tiles/plating_damaged.png
   variants: 3
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
 
 - type: tile
   id: PlatingAsteroid

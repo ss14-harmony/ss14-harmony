@@ -1,4 +1,11 @@
 - type: weightedRandom
+  id: TraitorObjectiveGroupUnique
+  weights:
+    HijackTradeStationObjective: .5
+    MailFraudObjective: 1
+    SupercritAnomaliesObjective: .25
+
+- type: weightedRandom
   id: BloodBrotherObjectiveGroups
   weights:
     BloodBrotherObjectiveGroupState: 1

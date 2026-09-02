@@ -62,6 +62,8 @@ uplink-reinforcement-radio-cyborg-support-desc = A lean, mean supporting machine
 uplink-traitor-deathrattle-implant-name = Box Of Deathrattle Implants
 uplink-traitor-deathrattle-implant-desc = A box containing two syndicate deathrattle implants. Messages are relayed over the syndicate channel, encryption keys not included.
 
+uplink-storage-implanter-harm-desc = Hide goodies inside of yourself with new bluespace technology! Donk Co is not responsible for bluespace accidents involving High Risk items.
+
 # Wearables
 
 uplink-stealth-jetpack-desc = A black jetpack that doesn't appear on radar. It allows you to fly around in space. Refills not included, use your fuel wisely.
@@ -81,3 +83,8 @@ uplink-hyposhell-desc = A box containing four hyposhells, shotgun shells that ca
 
 uplink-rifle-gattar-name = Gattar Case
 uplink-rifle-gattar-desc = Contains a Gattar, contained in an appropriately themed guitar case. Mow down your foes and then play some tunes! Uses .20 rifle ammo.
+
+# Weapons
+
+uplink-malletofmalice-name = Mallet of Malice
+uplink-malletofmalice-desc = An overwhelmingly evil mallet, capable of such devestation... Donk.Co's latest and greatest toy, meant for their most elite undercover agents.

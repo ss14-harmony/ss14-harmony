@@ -18,33 +18,39 @@ using Content.Shared._Harmony.Roles.Components;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Mind;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Roles.Components;
+using Content.Shared.Roles.RoleCodeword;
 using Content.Shared.Zombies;
 using Robust.Server.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Server._Harmony.GameTicking.Rules;
 
-public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComponent>
+public sealed partial class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComponent>
 {
-    [Dependency] private readonly IAdminLogManager _adminLogManager = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IServerPreferencesManager _preferencesManager = default!;
-    [Dependency] private readonly ActionsSystem _actionsSystem = default!;
-    [Dependency] private readonly AntagSelectionSystem _antagSystem = default!;
-    [Dependency] private readonly MindSystem _mindSystem = default!;
-    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly NpcFactionSystem _npcFactionSystem = default!;
-    [Dependency] private readonly ObjectivesSystem _objectivesSystem = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly RoleSystem _roleSystem = default!;
-    [Dependency] private readonly StunSystem _stunSystem = default!;
-    [Dependency] private readonly TargetObjectiveSystem _targetObjectiveSystem = default!;
+    [Dependency] private IAdminLogManager _adminLogManager = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private IServerPreferencesManager _preferencesManager = default!;
+    [Dependency] private ActionsSystem _actionsSystem = default!;
+    [Dependency] private AntagSelectionSystem _antagSystem = default!;
+    [Dependency] private MindSystem _mindSystem = default!;
+    [Dependency] private MobStateSystem _mobStateSystem = default!;
+    [Dependency] private NpcFactionSystem _npcFactionSystem = default!;
+    [Dependency] private ObjectivesSystem _objectivesSystem = default!;
+    [Dependency] private PopupSystem _popupSystem = default!;
+    [Dependency] private RoleSystem _roleSystem = default!;
+    [Dependency] private StunSystem _stunSystem = default!;
+    [Dependency] private TargetObjectiveSystem _targetObjectiveSystem = default!;
+
+    private static readonly ProtoId<RoleTypePrototype>[] Filter =
+        {"SoloAntagonist", "TeamAntagonist"}; // Traitors and Nukies and other team antags like... bingles?
 
     public override void Initialize()
     {
@@ -268,6 +274,13 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
         if (targetMind.UserId == null)
         {
             errorMessage = "blood-brother-convert-failed-no-mind";
+            return false;
+        }
+
+        //Prevent Traitors - they have RoleCodewordComponent
+        if (Filter.Contains(targetMind.RoleType))
+        {
+            errorMessage = "blood-brother-convert-failed-preference"; // Dont want the BB to metagame a tot with a different message
             return false;
         }
 

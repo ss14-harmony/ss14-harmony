@@ -63,19 +63,23 @@
         sizeMaps:
           32:
             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi
+            state: head
       mask:
         sizeMaps:
           32:
             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi
+            state: mask
     displacements:
       head:
         sizeMaps:
           32:
             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi
+            state: head
       mask:
         sizeMaps:
           32:
             sprite: _Harmony/Mobs/Species/Avali/displacement.rsi
+            state: mask
   - type: InitialBody
     organs:
       Torso: OrganAvaliTorso
@@ -126,10 +130,7 @@
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
   - type: Vocal
-    sounds:
-      Male: MaleAvali
-      Female: FemaleAvali
-      Unsexed: MaleAvali
+    emoteSounds: MaleAvali
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Weapons/pierce.ogg

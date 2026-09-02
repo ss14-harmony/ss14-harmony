@@ -175,7 +175,7 @@
     - id: ClothingHeadsetAltEngineering
     - id: DoorRemoteEngineering
     - id: BoxCECircuitboards
-    - id: RCD
+    - id: RCDElite #Sich and Harmony change
     - id: RCDAmmo
     - id: RPD # Harmony Change: Add RPD to locker before upstream implimentation
     - id: RubberStampCE
@@ -346,7 +346,6 @@
     - id: RubberStampHos
     - id: BoxHoSCircuitboards
     - id: WeaponDisabler
-    # - id: WeaponTaser # Harmony
     - id: WantedListCartridge
     - id: DrinkHosFlask
     - id: PlushieLizardJobHeadofsecurity
