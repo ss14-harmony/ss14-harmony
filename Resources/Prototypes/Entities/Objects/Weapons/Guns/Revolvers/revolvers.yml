@@ -30,7 +30,7 @@
     - SemiAuto
     soundGunshot:
       # Start Harmony change - changed gunshot sound + empty sound
-#     path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+      #  path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
       collection: RevolverAltFire
       params:
         volume: -1.5
@@ -53,12 +53,12 @@
     ammoSlots: [ null, null, null, null, null, null ]
     soundEject:
       # start Harmony change - changed sound
-#     path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
+      # path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
       path: /Audio/_Harmony/Weapons/Guns/MagOut/revolver_magout.ogg
       params:
         volume: -1
     soundInsert:
-#     path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
+      # path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
       path: /Audio/_Harmony/Weapons/Guns/MagIn/speedloader_insert.ogg
       # end Harmony change
   - type: StaticPrice

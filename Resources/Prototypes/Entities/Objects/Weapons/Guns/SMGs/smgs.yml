@@ -38,7 +38,7 @@
   - type: ChamberMagazineAmmoProvider
     soundRack:
       # Start harmony change - Handling sounds
-#     path: /Audio/Weapons/Guns/Cock/smg_cock.ogg
+      # path: /Audio/Weapons/Guns/Cock/smg_cock.ogg
       path: /Audio/_Harmony/Weapons/Guns/Cock/smg_rack.ogg
       # End harmony change
   - type: ItemSlots
@@ -47,8 +47,8 @@
         name: Magazine
         startingItem: MagazinePistolSubMachineGun
         # Start harmony change - Handling sounds
-#       insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-#       ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        # insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        # ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/smg_magout.ogg
         # End harmony change
@@ -202,7 +202,7 @@
       burstFireRate: 18
       soundGunshot:
         # Start harmony change - add weapon sound
-#       path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+        # path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
         collection: DrozdFire
         params:
           volume: -1.5
@@ -220,8 +220,8 @@
           name: Magazine
           startingItem: MagazinePistolSubMachineGun
           # Start harmony change - Handling sounds
-#         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-#         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+          # insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+          # ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
           insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/smg_magin.ogg
           ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/smg_magout.ogg
           # End harmony change
@@ -266,10 +266,10 @@
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
-# Start harmony change - add sound to WT
+    # Start harmony change - add sound to WT
     soundGunshot:
       collection: WTFire
-# End harmony change
+    # End harmony change
     fireRate: 5.5
     minAngle: 1
     maxAngle: 6
@@ -289,8 +289,8 @@
         name: Magazine
         startingItem: MagazinePistolSubMachineGunTopMounted
         # Start harmony change - Handling sounds
-#       insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-#       ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        # insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        # ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/smg_magout.ogg
         # End harmony change

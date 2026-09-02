@@ -29,7 +29,7 @@
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
     soundEmpty:
       # Start harmony change - Add empty sound
-#     path: /Audio/Weapons/Guns/Empty/empty.ogg
+      # path: /Audio/Weapons/Guns/Empty/empty.ogg
       path: /Audio/_Harmony/Weapons/Guns/Empty/shotgun_empty.ogg
       # End harmony change
   - type: CustomSpriteAmmoCounter
@@ -43,7 +43,7 @@
     proto: ShellShotgun
     soundInsert:
       # Start harmony change - Changed to collection
-#     path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+      # path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
       collection: ShellLoad
       params:
         volume: -2
@@ -92,7 +92,7 @@
       collection: ShotgunFire # Harmony change - Changes sound path to sound collection
     soundEmpty:
       # Start harmony change - Add empty sound
-#     path: /Audio/Weapons/Guns/Empty/empty.ogg
+      # path: /Audio/Weapons/Guns/Empty/empty.ogg
       path: /Audio/_Harmony/Weapons/Guns/Empty/shotgun_empty.ogg
       # End harmony change
   - type: ItemSlots
@@ -106,8 +106,8 @@
           - MagazineShotgun
         whitelistFailPopup: gun-magazine-whitelist-fail
         # Start harmony change - Handling sounds
-#       insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-#       ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        # insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        # ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/bulldog_magin.ogg
         ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/bulldog_magout.ogg
         # End harmony change
@@ -136,10 +136,10 @@
     sprite: Objects/Weapons/Guns/Shotguns/db_shotgun_inhands_64x.rsi
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-# Start harmony change - added sound for DB
+    # Start harmony change - added sound for DB
     soundGunshot:
       path: /Audio/_Harmony/Weapons/Guns/Gunshots/db_fire1.ogg
-# End harmony change
+    # End harmony change
     fireRate: 3
   - type: GunSpreadModifier
     spread: 0.6
@@ -228,10 +228,10 @@
     sprite: Objects/Weapons/Guns/Shotguns/sawn_inhands_64x.rsi
   - type: Gun
     fireRate: 3
-# Start harmony change - added sound for DB
+    # Start harmony change - added sound for DB
     soundGunshot:
       path: /Audio/_Harmony/Weapons/Guns/Gunshots/db_fire1.ogg
-# End harmony change
+    # End harmony change
   - type: GunSpreadModifier
     spread: 1.4
   - type: BallisticAmmoProvider

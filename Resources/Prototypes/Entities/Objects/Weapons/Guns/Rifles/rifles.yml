@@ -32,7 +32,7 @@
   - type: ChamberMagazineAmmoProvider
     soundRack:
       # Start harmony change - Handling sounds
-#     path: /Audio/Weapons/Guns/Cock/sf_rifle_cock.ogg
+      # path: /Audio/Weapons/Guns/Cock/sf_rifle_cock.ogg
       path: /Audio/_Harmony/Weapons/Guns/Cock/rifle_rack.ogg
       # End harmony change
   - type: ItemSlots
@@ -41,8 +41,8 @@
         name: Magazine
         startingItem: MagazineLightRifle
         # Start harmony change - handling sounds
-#       insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
-#       ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        # insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        # ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/rifle_magin.ogg
         ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/rifle_magout.ogg
         # End harmony change
@@ -79,11 +79,14 @@
         map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
     soundGunshot:
-      collection: AKFire # Harmony - changed sound path to sound collection
+      # Start Harmony change - changed sound path to sound collection
+      collection: AKFire
+      # path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+      # End Harmony change
   - type: ChamberMagazineAmmoProvider
     soundRack:
       # Start harmony change - Handling sounds
-#     path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+      # path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
       path: /Audio/_Harmony/Weapons/Guns/Cock/rifle_rack.ogg
       # End harmony change
   - type: ItemSlots
@@ -92,8 +95,8 @@
         name: Magazine
         startingItem: MagazineLightRifle
         # Start harmony change - Handling sounds
-#       insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-#       ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        # insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        # ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/rifle_magin.ogg
         ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/rifle_magout.ogg
         # End harmony change
@@ -135,7 +138,10 @@
     sprite: _Harmony/Objects/Weapons/Guns/Rifles/lecter.rsi # Harmony change: Use a custom lecter sprite.
   - type: Gun
     soundGunshot:
-      collection: LecterFire # Harmony - changed sound path to sound collection
+      # Start harmony change  - changed sound path to sound collection
+      collection: LecterFire
+      # path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+      # End harmony change
       params:
         volume: -1.5
   - type: ItemSlots
@@ -144,8 +150,8 @@
         name: Magazine
         startingItem: MagazineRifle
         # Start harmony change - Handling sounds
-#       insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-#       ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        # insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        # ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/rifle_magin.ogg
         ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/rifle_magout.ogg
         # End harmony change

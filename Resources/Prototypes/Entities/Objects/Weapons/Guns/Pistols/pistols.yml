@@ -41,7 +41,7 @@
   - type: ChamberMagazineAmmoProvider
     soundRack:
       # Start harmony change - Changed handling sounds
-#     path: /Audio/Weapons/Guns/Cock/pistol_cock.ogg
+      # path: /Audio/Weapons/Guns/Cock/pistol_cock.ogg
       path: /Audio/_Harmony/Weapons/Guns/Cock/pistol_rack.ogg
       # End harmony change
   - type: ItemSlots
@@ -50,8 +50,8 @@
         name: Magazine
         startingItem: MagazinePistol
         # Start harmony change - Changed handling sounds
-#       insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
-#       ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        # insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        # ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/pistol_magout.ogg
         # End harmony change
@@ -88,16 +88,22 @@
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
+  # harmony change start - Added new sound for Viper
   - type: Gun
     selectedMode: FullAuto # Override of BaseWeaponPistol to default to full-auto
+    soundGunshot:
+      collection: ViperFire
+      params:
+        volume: -1.5
+  # harmony change end - Added new sound for Viper
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
         startingItem: MagazinePistolHighCapacity
         # Start harmony change - Handling sounds
-#       insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
-#       ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        # insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        # ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/pistol_magout.ogg
         # End harmony change
@@ -119,11 +125,6 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 1000
-  - type: Gun # harmony change - Added new sound for Viper
-    soundGunshot:
-      collection: ViperFire
-      params:
-        volume: -1.5
 
 - type: entity
   name: echis
@@ -196,8 +197,8 @@
         name: Magazine
         startingItem: MagazinePistolCaselessRifle
         # Start harmony change - Handling sounds
-#       insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
-#       ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        # insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        # ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/pistol_magout.ogg
         # End harmony change

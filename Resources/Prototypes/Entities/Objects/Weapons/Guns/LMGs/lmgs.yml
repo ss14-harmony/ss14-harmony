@@ -34,7 +34,7 @@
       path: /Audio/Weapons/Guns/Gunshots/lmg.ogg
       # Start harmony change - Add empty sound
     soundEmpty:
-#     path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+      # path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
       path: /Audio/_Harmony/Weapons/Guns/Empty/rifle_empty.ogg
       # End harmony change
   - type: ChamberMagazineAmmoProvider
@@ -47,8 +47,8 @@
         name: Magazine
         startingItem: MagazineLightRifleBox
         # Start harmony change - Handling sounds
-#       insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
-#       ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        # insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        # ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         insertSound:
           path: /Audio/_Harmony/Weapons/Guns/MagIn/lmg_magin.ogg
           params:
