@@ -1,0 +1,16 @@
+- type: entity
+  parent: BaseStorageItem
+  id: GattarCase
+  name: gattar case
+  suffix: Harmony
+  description: For carrying your precious "instruments" in style.
+  components:
+  - type: Item
+    sprite: _Harmony/Objects/Storage/gattarcase.rsi
+    size: Ginormous
+  - type: Storage
+    grid:
+    - 0,0,5,3
+  - type: Sprite
+    sprite: _Harmony/Objects/Storage/gattarcase.rsi
+    state: icon

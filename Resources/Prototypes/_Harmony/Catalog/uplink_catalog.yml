@@ -319,6 +319,24 @@
     - Bartender
     - Zookeeper
 
+- type: listing
+  id: UplinkRifleGattar
+  name: uplink-rifle-gattar-name
+  description: uplink-rifle-gattar-desc
+  productEntity: GattarCaseSyndicateFilledGattar
+  icon: { sprite: /Textures/_Harmony/Objects/Weapons/Guns/Rifles/gattar.rsi, state: icon }
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 12
+  cost:
+    Telecrystal: 16
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Musician
+
 # Weapons
 
 - type: listing
@@ -333,4 +351,3 @@
     Telecrystal: 5
   categories:
   - UplinkWeaponry
- 

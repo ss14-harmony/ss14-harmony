@@ -27,3 +27,8 @@
   license: "CC-BY-NC-4.0"
   copyright: "Created by Vunsunta"
   source: "https://www.dropbox.com/scl/fi/dd03xhdhwg9em8l1xyxtr/Vunsunta-Firearm-Sound-Pack-V2.zip?rlkey=p7cyhkgf462v2bikj8awjbugu&e=1&st=a38k4aqn&dl=0"
+
+- files: ["guitar_shoot.ogg"]
+  license: "Custom"
+  copyright: "Created as User Generated Content based on Counter Strike: Online (Created by Nexon) under the Nexon Game IP guide. https://playersupport.nexon.com/hc/en-us/articles/360059079812-Nexon-Game-IP-Guide-for-Content-Creators"
+  source: "https://youtu.be/apho-Z4wkAw"

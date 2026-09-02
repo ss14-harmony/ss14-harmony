@@ -81,6 +81,9 @@ uplink-syndiedrobe-flatpack-desc = A flatpack box containing a SyndieDrobe. Slay
 uplink-hyposhell-name = Box of hyposhells
 uplink-hyposhell-desc = A box containing four hyposhells, shotgun shells that can hold 7u of any chemical.
 
+uplink-rifle-gattar-name = Gattar Case
+uplink-rifle-gattar-desc = Contains a Gattar, contained in an appropriately themed guitar case. Mow down your foes and then play some tunes! Uses .20 rifle ammo.
+
 # Weapons
 
 uplink-malletofmalice-name = Mallet of Malice
