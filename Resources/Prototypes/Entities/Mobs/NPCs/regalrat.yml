@@ -105,7 +105,7 @@
     coefficient: 0.5 # rat king touches more wires, see?
   - type: Rummager
   - type: RatKing
-    hungerPerArmyUse: 10 # Harmony Change - from 25 to 10 nyeeeh
+    hungerPerArmyUse: 25
     hungerPerDomainUse: 25 # Harmony Change - from 50 to 25, see?
   - type: MobsterAccent
   - type: Speech
