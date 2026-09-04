@@ -70,7 +70,7 @@ uplink-storage-implanter-harm-desc = Hide goodies inside of yourself with new bl
 # Wearables
 
 uplink-miami-bundle-name = Miami Bundle
-uplink-miami-bundle-desc = A kit containing armor and stylish clothing to help kill people like you're a mask-wearing russian-mobster murdering killer in the 80's.
+uplink-miami-bundle-desc = A kit containing armor, a melee weapon and stylish clothing to help kill people like you're a mask-wearing russian-mobster murdering killer in the 80's.
 
 uplink-stealth-jetpack-desc = A black jetpack that doesn't appear on radar. It allows you to fly around in space. Refills not included, use your fuel wisely.
 

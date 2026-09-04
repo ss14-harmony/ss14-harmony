@@ -51,4 +51,8 @@
 
 # Used to whitelist the Mime Mask chameleon options.
 - type: Tag
-  id: MimeMaskChameleon 
+  id: MimeMaskChameleon
+
+# used in Entities/Objects/Specific/syndicate.yml
+- type: Tag
+  id: LoneOpUplink

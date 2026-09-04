@@ -47,7 +47,7 @@
       amount: 1
     - id: ClothingUniformJumpsuitOperativeShortSleeved
       amount: 1
-    - id: ClothingShoesBootsCombat
+    - id: ClothingShoesBootsCombatNoSlip
       amount: 1
     - id: ClothingHandsBloodyKnuckleDusters
       amount: 1

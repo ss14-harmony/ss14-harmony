@@ -56,7 +56,7 @@
   - !type:StoreWhitelistCondition
     whitelist:
       tags:
-      - NukeOpsUplink
+      - LoneOpUplink
   - !type:BuyerWhitelistCondition
     blacklist:
       components:
@@ -285,14 +285,14 @@
   productEntity: ClothingBackpackDuffelSyndicateMiamiBundle
   icon: { sprite: _Harmony/Clothing/Head/Misc/tony.rsi, state: icon }
   cost:
-    Telecrystal: 4
+    Telecrystal: 25
   categories:
   - UplinkWearables
   conditions:
   - !type:StoreWhitelistCondition
-    blacklist:
+    whitelist:
       tags:
-      - NukeOpsUplink
+      - LoneOpUplink
 
 - type: listing
   id: UplinkJetpackNukie
@@ -369,4 +369,3 @@
     Telecrystal: 5
   categories:
   - UplinkWeaponry
- 

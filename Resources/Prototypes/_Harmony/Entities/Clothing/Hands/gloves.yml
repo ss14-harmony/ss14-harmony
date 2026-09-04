@@ -93,8 +93,8 @@
   - type: MeleeWeapon
     attackRate: 1
     damage:
-      types: # same as regular punches, just cool flavor for non-human species to be able to punch people with this
-        Blunt: 5
+      types:
+        Blunt: 20
     soundHit:
       collection: KnuckleDuster
     animation: WeaponArcFist

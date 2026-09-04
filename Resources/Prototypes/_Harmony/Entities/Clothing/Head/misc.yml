@@ -18,6 +18,13 @@
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1.05
+  - type: Armor
+    modifiers:
+      coefficients: # Slight protection against everything. Not great, but it has speed!
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95
   - type: Tag
     tags:
     - HidesHair
