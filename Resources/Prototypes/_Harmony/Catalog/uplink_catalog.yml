@@ -280,6 +280,25 @@
       components:
       - SurplusBundle # Tots shouldn't get the stealthy jetpack
 
+- type: listing
+  id: UplinkClothingOuterVoidsuitSyndie
+  name: uplink-syndie-voidsuit-name
+  description: uplink-syndie-voidsuit-desc
+  icon: { sprite: /Textures/_Harmony/Clothing/OuterClothing/Hardsuits/syndicate-voidsuit.rsi, state: icon }
+  productEntity: ClothingBackpackSyndicateVoidsuitBundle
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 5
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
+
 # Pointless
 
 - type: listing
@@ -333,4 +352,3 @@
     Telecrystal: 5
   categories:
   - UplinkWeaponry
- 
