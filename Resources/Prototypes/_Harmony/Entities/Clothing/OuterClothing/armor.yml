@@ -11,7 +11,7 @@
     sprite: _Harmony/Clothing/OuterClothing/Vests/flakvest.rsi
   - type: Armor
     modifiers:
-      coefficients: # Great against everything. Loneops trade 20 TC and no spacing protection for this, so it should probably be a little good. Weak to stuns and explosions though!
+      coefficients: # Great against everything. Loneops trade 25 TC and no spacing protection for this, so it should probably be a little good. Weak to stuns and explosions though!
         Blunt: 0.4
         Slash: 0.4
         Piercing: 0.25
