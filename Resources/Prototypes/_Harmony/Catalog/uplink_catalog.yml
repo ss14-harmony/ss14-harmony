@@ -355,19 +355,18 @@
     - Bartender
     - Zookeeper
 
+# Weapons
+
 - type: listing
-  id: UplinkRiggedBoxingGlovesBoxer
-  name: uplink-rigged-boxing-gloves-name
-  description: uplink-rigged-boxing-gloves-desc
-  productEntity: ClothingHandsGlovesBoxingRigged
-  discountCategory: usualDiscounts
+  id: UplinkMalletofMalice
+  name: uplink-malletofmalice-name
+  description: uplink-malletofmalice-desc
+  discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 2
-  cost:
     Telecrystal: 4
+  productEntity: MaliceMallet
+  cost:
+    Telecrystal: 5
   categories:
-    - UplinkJob
-  conditions:
-    - !type:BuyerJobCondition
-      whitelist:
-        - Boxer
+  - UplinkWeaponry
+ 

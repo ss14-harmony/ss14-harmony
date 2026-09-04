@@ -12,15 +12,15 @@ using Robust.Shared.Player;
 
 namespace Content.Client._Harmony.JoinQueue;
 
-public sealed class QueueState : State
+public sealed partial class QueueState : State
 {
-    [Dependency] private readonly IClientJoinQueueManager _joinQueueManager = default!;
-    [Dependency] private readonly IClientNetManager _netManager = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly ILocalizationManager _loc = default!;
-    [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
-    [Dependency] private readonly IResourceCache _resourceCache = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private IClientJoinQueueManager _joinQueueManager = default!;
+    [Dependency] private IClientNetManager _netManager = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private ILocalizationManager _loc = default!;
+    [Dependency] private IUserInterfaceManager _userInterfaceManager = default!;
+    [Dependency] private IResourceCache _resourceCache = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     protected override Type? LinkedScreenType { get; } = typeof(QueueGui);
     public QueueGui? Queue;

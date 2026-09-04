@@ -5,11 +5,11 @@ using Robust.Shared.Network;
 
 namespace Content.Client._Harmony.JoinQueue;
 
-public sealed class JoinQueueManager : IClientJoinQueueManager
+public sealed partial class JoinQueueManager : IClientJoinQueueManager
 {
-    [Dependency] private readonly IClientNetManager _netManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IStateManager _stateManager = default!;
+    [Dependency] private IClientNetManager _netManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private IStateManager _stateManager = default!;
 
     public int PlayerInQueueCount { get; private set; }
     public int ActualPlayersCount => _playerManager.PlayerCount - PlayerInQueueCount;

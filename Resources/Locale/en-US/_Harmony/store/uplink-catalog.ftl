@@ -65,6 +65,8 @@ uplink-reinforcement-radio-cyborg-support-desc = A lean, mean supporting machine
 uplink-traitor-deathrattle-implant-name = Box Of Deathrattle Implants
 uplink-traitor-deathrattle-implant-desc = A box containing two syndicate deathrattle implants. Messages are relayed over the syndicate channel, encryption keys not included.
 
+uplink-storage-implanter-harm-desc = Hide goodies inside of yourself with new bluespace technology! Donk Co is not responsible for bluespace accidents involving High Risk items.
+
 # Wearables
 
 uplink-miami-bundle-name = Miami Bundle
@@ -84,3 +86,8 @@ uplink-syndiedrobe-flatpack-desc = A flatpack box containing a SyndieDrobe. Slay
 
 uplink-hyposhell-name = Box of hyposhells
 uplink-hyposhell-desc = A box containing four hyposhells, shotgun shells that can hold 7u of any chemical.
+
+# Weapons
+
+uplink-malletofmalice-name = Mallet of Malice
+uplink-malletofmalice-desc = An overwhelmingly evil mallet, capable of such devestation... Donk.Co's latest and greatest toy, meant for their most elite undercover agents.

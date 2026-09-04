@@ -9,6 +9,7 @@
   access:
   - Maintenance # TODO Remove maint access for all gimmick jobs once access work is completed
   - Theatre
+  - Service # Harmony Change: Extends service access to the rest of the service roles
   special:
   - !type:GiveItemOnHolidaySpecial
     holiday: MikuDay

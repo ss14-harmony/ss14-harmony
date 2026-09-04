@@ -3,6 +3,11 @@
   copyright: "Taken from TG station as bloodcult_scribe.ogg"
   source: "https://github.com/tgstation/tgstation/commit/436ba869ebcd0b60b63973fb7562f447ee655205"
 
+- files: ["honkmother_arrival.ogg"]
+  license: "Custom"
+  copyright: "No copyright. Public domain. Details on LoC. Modify by _nonagon on Discord"
+  source: "https://www.loc.gov/item/jukebox-120678/"
+  
 - files: ["conspirator_greeting.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from TG station as heretic_gain.ogg"

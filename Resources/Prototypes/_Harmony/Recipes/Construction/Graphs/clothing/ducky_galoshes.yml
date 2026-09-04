@@ -24,10 +24,11 @@
                 sprite: _Harmony/Clothing/Shoes/Specific/galoshes.rsi
                 state: icon
               doAfter: 1
-            - tag: DrinkSpaceGlue
+            - tag: SpaceGlue
               name: construction-graph-tag-glue
               icon:
                 sprite: Objects/Fun/glue.rsi
                 state: icon
+              doAfter: 1
     - node: shoes
       entity: ClothingShoesDuckyGaloshes

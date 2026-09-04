@@ -222,10 +222,10 @@
     state: icon
   discipline: Arsenal
   tier: 3
-  cost: 15000
+  cost: 12500 # Harmony - 15000 -> 12500
   recipeUnlocks:
   - WeaponAdvancedLaser
-  - PortableRecharger
+# - PortableRecharger # Harmony
 
 - type: technology
   id: ThermalWeaponry
