@@ -6,6 +6,9 @@ uplink-blood-red-carbine-desc = A bundle containing the stolen and improved Bloo
 uplink-rifle-bandit-name = Bandit Bundle
 uplink-rifle-bandit-desc = Contains the Bandit, a reliable semi-auto bullpup which fires devastating caseless rounds, bundled with 2 DMR magazines. Uses .30 rifle caseless ammo.
 
+uplink-rifle-taipan-name = Taipan Bundle
+uplink-rifle-taipan-desc = Contains the Taipan, a silenced carbine that features a deadly burst mode, bundled with 2 magazines. Uses .25 caseless ammo.
+
 # Explosive
 
 uplink-kudzu-grenade-name = Kudzu grenade
@@ -36,6 +39,9 @@ uplink-shotgun-drum-slug-desc = Shotgun drum with eight slug shells. Compatible 
 
 uplink-rifle-magazine-bandit-name = DMR Magazine (.30 rifle caseless)
 uplink-rifle-magazine-bandit-desc = Rifle magazine with 15 cartridges. Compatible with the Bandit.
+
+uplink-rifle-magazine-taipan-name = Rifle Magazine (.25 caseless)
+uplink-rifle-magazine-taipan-desc = Rifle magazine with 20 cartridges. Compatible with the Taipan.
 
 # Chemicals
 

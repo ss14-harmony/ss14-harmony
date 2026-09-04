@@ -8,6 +8,11 @@
     damage:
       types:
         Piercing: 19
+  # Harmony change start - gives .25 caseless AP bullet sprites
+  - type: Sprite
+    layers:
+    - state: piercing
+  # Harmony change end
 
 - type: entity
   parent: BaseBulletPractice

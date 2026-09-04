@@ -33,3 +33,16 @@
     - id: WeaponRifleBandit
     - id: MagazineLightRifleCaseless
       amount: 2
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateFilledTaipan
+  name: Taipan bundle
+  suffix: Harmony
+  description: Sneaky beaky like. Contains a Taipan carbine bundled with 2 magazines.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleTaipan
+    - id: MagazineCaselessRifle
+      amount: 2
