@@ -21,4 +21,13 @@ public sealed partial class DamageOtherOnHitComponent : Component
     [DataField(required: true)]
     public DamageSpecifier Damage = default!;
 
+    // Harmony Change Start:  Allow Pacifists to throw certain items even if they deal damage
+
+    /// <summary>
+    /// Whether pacifists can throw the item.
+    /// </summary>
+    [DataField]
+    public bool PacifiedCanThrow = false;
+
+    // Harmony Change End
 }

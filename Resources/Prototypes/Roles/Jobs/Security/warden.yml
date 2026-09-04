@@ -11,18 +11,20 @@
     # Harmony end
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 4h # Harmony: 10h -> 4h
+      time: 8h # Harmony: 10h -> 8h
+    # Harmony start
+    - !type:OverallPlaytimeRequirement
+      time: 24h
+    # Harmony end
   weight: 5
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
-  canBeAntag: false
   access:
   - Security
   - Brig
   - Armory
   - Maintenance
-  - Service
   - External
   - Detective
   - Cryogenics

@@ -1,0 +1,17 @@
+## Nukie Saline
+- type: reagent
+  id: UniversalBlood
+  name: reagent-name-universal-blood
+  group: Medicine
+  desc: reagent-desc-universal-blood
+  physicalDesc: reagent-physical-desc-ferrous
+  contrabandSeverity: Syndicate
+  flavor: metallic
+  color: "#9188BF"
+  metabolisms:
+    Bloodstream:
+      effects:
+        - !type:SatiateThirst
+          factor: 6
+        - !type:ModifyBloodLevel
+          amount: 6

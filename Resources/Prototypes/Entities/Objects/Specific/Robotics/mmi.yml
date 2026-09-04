@@ -15,6 +15,11 @@
   - type: Input
     context: human
   - type: MMI
+    brainSlot:
+      name: positronic-brain-slot-component-slot-name-brain
+      whitelist:
+        components:
+        - Brain
   - type: BorgBrain
   - type: BlockMovement
   - type: Examiner
@@ -34,13 +39,15 @@
     proto: robot
   - type: Speech
     speechSounds: Pai
+    # Harmony
+  - type: Tag
+    tags:
+    - SiliconEmotes
+  - type: Emoting
+  - type: Vocal
+    emoteSounds: UnisexSilicon
+    # End Harmony
   - type: ItemSlots
-    slots:
-      brain_slot:
-        name: positronic-brain-slot-component-slot-name-brain
-        whitelist:
-          components:
-          - Brain
   - type: ContainerContainer
     containers:
       brain_slot: !type:ContainerSlot
@@ -59,14 +66,13 @@
   id: MMIFilled
   suffix: Filled
   components:
-  - type: ItemSlots
-    slots:
-      brain_slot:
-        name: "Brain"
-        startingItem: OrganHumanBrain
-        whitelist:
-          components:
-            - Brain
+  - type: MMI
+    brainSlot:
+      name: positronic-brain-slot-component-slot-name-brain
+      startingItem: OrganHumanBrain
+      whitelist:
+        components:
+        - Brain
 
 - type: entity
   parent: BaseItem
@@ -91,10 +97,11 @@
       roleRules: ghost-role-information-silicon-rules
       mindRoles:
       - MindRoleGhostRoleSilicon
-      wipeVerbText: positronic-brain-wipe-device-verb-text
+      wipeVerbText: positronic-brain-disable-device-verb-text # Harmony
       wipeVerbPopup: positronic-brain-wiped-device
       stopSearchVerbText: positronic-brain-stop-searching-verb-text
       stopSearchVerbPopup: positronic-brain-stopped-searching
+      priorityBoarding: true # Harmony
       job: Borg
     - type: BlockMovement
     - type: Examiner
@@ -111,6 +118,11 @@
       group: PositronicBrain
     - type: DoAfter
     - type: Actions
+    # Harmony start
+    - type: Emoting
+    - type: Vocal
+      emoteSounds: UnisexSilicon
+    # End Harmony
     - type: TypingIndicator
       proto: robot
     - type: Speech
@@ -124,6 +136,7 @@
     - type: Tag
       tags:
       - CannotSuicide
+      - SiliconEmotes # Harmony
     - type: GenericVisualizer
       visuals:
         enum.ToggleableGhostRoleVisuals.Status:

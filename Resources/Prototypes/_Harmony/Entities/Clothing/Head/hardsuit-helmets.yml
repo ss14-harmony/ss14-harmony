@@ -9,7 +9,7 @@
     sprite: _Harmony/Clothing/Head/Hardsuits/qmsuit.rsi
   - type: HandheldLight
     addPrefix: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     clothingVisuals:
       head:
       - state: equipped-head-light

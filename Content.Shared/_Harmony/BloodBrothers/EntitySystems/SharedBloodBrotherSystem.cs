@@ -10,11 +10,11 @@ using Robust.Shared.Player;
 
 namespace Content.Shared._Harmony.BloodBrothers.EntitySystems;
 
-public abstract class SharedBloodBrotherSystem : EntitySystem
+public abstract partial class SharedBloodBrotherSystem : EntitySystem
 {
-    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedStunSystem _stunSystem = default!;
+    [Dependency] private SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private SharedStunSystem _stunSystem = default!;
 
     public override void Initialize()
     {

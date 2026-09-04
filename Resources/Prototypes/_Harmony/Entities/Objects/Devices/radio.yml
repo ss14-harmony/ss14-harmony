@@ -1,0 +1,17 @@
+- type: entity
+  parent: [ RadioHandheld, BaseCargoContraband ]
+  id: RadioHandheldMining
+  name: mining radio
+  description: A handy mining radio.
+  components:
+  - type: RadioMicrophone
+    broadcastChannel: Salvage
+    listenRange: 1
+  - type: RadioSpeaker
+    channels:
+    - Salvage
+  - type: Sprite
+    sprite: _Harmony/Objects/Devices/salvagehandy.rsi
+  - type: Item
+    sprite: _Harmony/Objects/Devices/salvagehandy.rsi
+    heldPrefix: walkietalkie

@@ -16,7 +16,8 @@
   - Syringe
   - PillCanister
   - HandLabeler
-  - BaseChemistryEmptyVial
+  - ChemistryEmptyVial
+  - ChemistryEmptyVialSmall
   - Dropper
 
 - type: latheRecipePack
@@ -26,7 +27,6 @@
   - Jug
   - ChemistryEmptyBottle01
   - ClothingEyesGlassesChemical
-  - BaseChemistryEmptyVial # Harmony
 
 - type: latheRecipePack
   id: SurgeryStatic
@@ -50,6 +50,7 @@
   - WhiteCane
   - OffsetCane
   - OffsetCaneWood
+  - JetInjector
   - ClothingEyesEyepatchHudMedical # Harmony
   - ClothingEyesHudMedical # Harmony
 
@@ -103,6 +104,7 @@
   - SyringeBluespace
   - LauncherSyringe
   - MiniSyringe
+  - AdvancedJetInjector
 
 - type: latheRecipePack
   id: MedicalBoards
