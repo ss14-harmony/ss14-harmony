@@ -25,18 +25,18 @@ using Dependency = Robust.Shared.IoC.DependencyAttribute;
 
 namespace Content.Shared._Harmony.Bingle.EntitySystems;
 
-public abstract class SharedBinglePitSystem : EntitySystem
+public abstract partial class SharedBinglePitSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly ITileDefinitionManager _tileDefinitionManager = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
-    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly PullingSystem _pullingSystem = default!;
-    [Dependency] private readonly SharedStunSystem _stunSystem = default!;
-    [Dependency] private readonly StepTriggerSystem _stepTriggerSystem = default!;
-    [Dependency] private readonly TileSystem _tileSystem = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private ITileDefinitionManager _tileDefinitionManager = default!;
+    [Dependency] private SharedAppearanceSystem _appearanceSystem = default!;
+    [Dependency] private SharedContainerSystem _containerSystem = default!;
+    [Dependency] private SharedMapSystem _mapSystem = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private PullingSystem _pullingSystem = default!;
+    [Dependency] private SharedStunSystem _stunSystem = default!;
+    [Dependency] private StepTriggerSystem _stepTriggerSystem = default!;
+    [Dependency] private TileSystem _tileSystem = default!;
 
     public override void Initialize()
     {
@@ -55,6 +55,7 @@ public abstract class SharedBinglePitSystem : EntitySystem
         SubscribeLocalEvent<BinglePitFallingComponent, EmoteAttemptEvent>(OnFallingAttempt);
         SubscribeLocalEvent<BinglePitFallingComponent, DropAttemptEvent>(OnFallingAttempt);
         SubscribeLocalEvent<BinglePitFallingComponent, PickupAttemptEvent>(OnFallingAttempt);
+        SubscribeLocalEvent<BinglePitFallingComponent, AttackAttemptEvent>(OnFallingAttempt);
 
         #endregion
     }
@@ -153,8 +154,6 @@ public abstract class SharedBinglePitSystem : EntitySystem
 
         Dirty(entity);
 
-        _stepTriggerSystem.SetIgnoreWeightless(entity.Owner, nextLevel.IgnoreWeightless);
-
         _appearanceSystem.SetData(entity, ScaleVisuals.Scale, Vector2.One * nextLevel.Size);
     }
 
@@ -186,7 +185,7 @@ public abstract class SharedBinglePitSystem : EntitySystem
             if (tile.Tile.TypeId == newTile.TileId)
                 continue;
 
-            var seed = SharedRandomExtensions.HashCodeCombine(new() { (int)_gameTiming.CurTick.Value, tile.GetHashCode() });
+            var seed = SharedRandomExtensions.HashCodeCombine((int)_gameTiming.CurTick.Value, tile.GetHashCode());
             var random = new System.Random(seed);
             if (!random.Prob(0.1f)) // 10% probability to transform tile
                 continue;

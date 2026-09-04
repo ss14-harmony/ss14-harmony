@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseFigurine
+  id: ToyFigurineInspector
+  name: inspector figure
+  suffix: Harmony
+  description: A figurine depicting a Centcomm Inspector, the hat is glued on.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Fun/figurines.rsi
+    state: inspector
+  - type: SpeakOnTrigger
+    pack: FigurinesInspector

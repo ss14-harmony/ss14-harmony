@@ -1,8 +1,7 @@
 - type: marking
   id: WristBraceletRight
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Arachnid, Reptilian, Diona, Vulpkanin]
   coloring:
     default:
       type:
@@ -16,8 +15,7 @@
 - type: marking
   id: WristBraceletLeft
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Arachnid, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -30,8 +28,7 @@
 - type: marking
   id: WristBraceletArmRight
   bodyPart: RArm
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Arachnid, Reptilian, Diona, Vulpkanin]
   coloring:
     default:
       type:
@@ -44,8 +41,7 @@
 - type: marking
   id: WristBraceletArmLeft
   bodyPart: LArm
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Arachnid, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -58,8 +54,7 @@
 - type: marking
   id: WristWatchRight
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Arachnid, Reptilian, Diona, Vulpkanin]
   coloring:
     default:
       type:
@@ -72,8 +67,7 @@
 - type: marking
   id: WristWatchLeft
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Arachnid, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -86,8 +80,7 @@
 - type: marking
   id: WristWatchSilverRight
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Arachnid, Reptilian, Diona, Vulpkanin]
   coloring:
     default:
       type:
@@ -100,8 +93,7 @@
 - type: marking
   id: WristWatchSilverLeft
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Arachnid, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -114,8 +106,7 @@
 - type: marking
   id: WristWatchGoldRight
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Arachnid, Reptilian, Diona, Vulpkanin]
   coloring:
     default:
       type:
@@ -128,8 +119,7 @@
 - type: marking
   id: WristWatchGoldLeft
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Arachnid, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -142,8 +132,7 @@
 - type: marking
   id: WristWatchHoloRight
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Arachnid, Reptilian, Diona, Vulpkanin]
   coloring:
     default:
       type:
@@ -156,8 +145,7 @@
 - type: marking
   id: WristWatchHoloLeft
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Arachnid, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -170,8 +158,7 @@
 - type: marking
   id: WristWatchLeatherRight
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Arachnid, Reptilian, Diona, Vulpkanin]
   coloring:
     default:
       type:
@@ -184,8 +171,7 @@
 - type: marking
   id: WristWatchLeatherLeft
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Arachnid, Reptilian, Vulpkanin]
   coloring:
     default:
       type:
@@ -198,8 +184,7 @@
 - type: marking
   id: WristWatchColorableRight
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Diona, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Arachnid, Reptilian, Diona, Vulpkanin]
   coloring:
     default:
       type:
@@ -214,8 +199,7 @@
 - type: marking
   id: WristWatchColorableLeft
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Reptilian, Felinid, Oni, Vulpkanin, Gingerbread, Arachne, Lamia, Tajaran]
+  groupWhitelist: [Human, Slime, Arachnid, Reptilian, Vulpkanin]
   coloring:
     default:
       type:

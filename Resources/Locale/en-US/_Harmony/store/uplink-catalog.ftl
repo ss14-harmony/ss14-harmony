@@ -3,9 +3,6 @@
 uplink-blood-red-carbine-name = Blood-Red Energy Carbine Bundle
 uplink-blood-red-carbine-desc = A bundle containing the stolen and improved Blood-Red Energy Carbine. It comes with two spare Jailbroken Energy Cartridges.
 
-uplink-hushpup-name = Hushpup
-uplink-hushpup-desc = Contains a Hushpup, a powerful silenced shotgun with a low magazine capacity, as well as a spare box of buckshot. Uses .50 shotgun ammo.
-
 uplink-rifle-bandit-name = Bandit Bundle
 uplink-rifle-bandit-desc = Contains the Bandit, a reliable semi-auto bullpup which fires devastating caseless rounds, bundled with 2 DMR magazines. Uses .30 rifle caseless ammo.
 
@@ -50,6 +47,11 @@ uplink-defib-desc = A compact defibrillator. It can be used to revive your fello
 uplink-syndicate-id-name = Syndicate ID card
 uplink-syndicate-id-desc = A sleek black-and-red ID card with embossed Syndicate logo and syndicate access. Does not possess any Nanotrasen access. Limited to one ID per agent.
 
+# Disruption
+
+uplink-syndicate-access-config-name = Cybersun Configurator
+uplink-syndicate-access-config-desc = A competing access configurator that works with NanoTrasen and Syndicate IDs. Not to be confused with the Access Breaker.
+
 # Allies
 
 uplink-reinforcement-radio-cyborg-support-name = Syndicate Support Cyborg Teleporter
@@ -60,7 +62,11 @@ uplink-reinforcement-radio-cyborg-support-desc = A lean, mean supporting machine
 uplink-traitor-deathrattle-implant-name = Box Of Deathrattle Implants
 uplink-traitor-deathrattle-implant-desc = A box containing two syndicate deathrattle implants. Messages are relayed over the syndicate channel, encryption keys not included.
 
+uplink-storage-implanter-harm-desc = Hide goodies inside of yourself with new bluespace technology! Donk Co is not responsible for bluespace accidents involving High Risk items.
+
 # Wearables
+
+uplink-stealth-jetpack-desc = A black jetpack that doesn't appear on radar. It allows you to fly around in space. Refills not included, use your fuel wisely.
 
 uplink-syndie-voidsuit-name = Tactical Voidsuit
 uplink-syndie-voidsuit-desc = A lightly-armoured voidsuit designed for covert operations. Protects well against bullets and lasers, but keep your distance from melee weapons.
@@ -77,3 +83,8 @@ uplink-syndiedrobe-flatpack-desc = A flatpack box containing a SyndieDrobe. Slay
 
 uplink-hyposhell-name = Box of hyposhells
 uplink-hyposhell-desc = A box containing four hyposhells, shotgun shells that can hold 7u of any chemical.
+
+# Weapons
+
+uplink-malletofmalice-name = Mallet of Malice
+uplink-malletofmalice-desc = An overwhelmingly evil mallet, capable of such devestation... Donk.Co's latest and greatest toy, meant for their most elite undercover agents.

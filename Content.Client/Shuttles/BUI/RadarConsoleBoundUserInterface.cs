@@ -22,6 +22,10 @@ public sealed class RadarConsoleBoundUserInterface : BoundUserInterface
         base.Open();
 
         _window = this.CreateWindow<RadarConsoleWindow>();
+        // Harmony Change Start - Radar Blip
+        _window.SetConsole(Owner); //frontier - set the owner so that this can recieve blips
+        _window.SetShowSelf(false); //imp / frontier - hide the console on it's own display
+        // Harmony Change End
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)

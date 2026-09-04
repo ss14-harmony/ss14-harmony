@@ -213,10 +213,14 @@
       amount: 1
     Ammonia:
       amount: 1
+    # Harmony Change - adjusts ambuzol recipe to add Mannitol
+    Mannitol:
+      amount: 1
+    # Harmony Change End
     ZombieBlood:
-      amount: 2
+      amount: 30 # Harmony Change - increases the amount of zombie blood you need to make Ambuzol from 2 to 30
   products:
-    Ambuzol: 4
+    Ambuzol: 2 # Harmony Change - reduces the amount of yield ambuzol creates from 4 to 2
 
 - type: reaction
   id: AmbuzolPlus
@@ -224,9 +228,9 @@
     Ambuzol:
       amount: 5
     Omnizine:
-      amount: 5
+      amount: 15 # Harmony change - increases the amount of Omnizine required to make Ambuzol+ from 5 to 15
   products:
-    AmbuzolPlus: 10
+    AmbuzolPlus: 5 # Harmony Change - reduces the amount of yield Ambuzol+ creates from 10 to 5
 
 - type: reaction
   id: Synaptizine
@@ -571,18 +575,17 @@
     Opporozidone: 3
 
 - type: reaction
-  id: Necrosol
-  impact: Medium
+  id: Arcryox
   minTemp: 370
   reactants:
-    Blood:
-      amount: 3
-    Omnizine:
+    Lithium:
+      amount: 1
+    Tricordrazine:
       amount: 1
     Cryoxadone:
-      amount: 2
+      amount: 1
   products:
-    Necrosol: 2
+    Arcryox: 3
 
 - type: reaction
   id: Aloxadone
@@ -662,3 +665,27 @@
       amount: 1
   products:
     Haloperidol: 5
+
+- type: reaction
+  id: Heparin
+  reactants:
+    SulfuricAcid:
+      amount: 1
+    Nitrogen:
+      amount: 1
+    Sodium:
+      amount: 1
+  products:
+    Heparin: 2
+
+- type: reaction
+  id: Hemorrhinol
+  reactants:
+    Heparin:
+      amount: 2
+    Razorium:
+      amount: 2
+    Plasma:
+      amount: 1
+  products:
+    Hemorrhinol: 2

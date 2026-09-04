@@ -104,29 +104,31 @@
   id: SecurityAmmo
   recipes:
   - BoxBeanbag
-  - BoxShotgunIncendiary
-  - BoxShotgunUranium
+# Start harmony changes - Remove special ammo
+#  - BoxShotgunIncendiary
+#  - BoxShotgunUranium
   - BoxShellTranquilizer
-  - MagazineBoxLightRifleIncendiary
-  - MagazineBoxLightRifleUranium
-  - MagazineBoxMagnumIncendiary
-  - MagazineBoxMagnumUranium
-  - MagazineBoxPistolIncendiary
-  - MagazineBoxPistolUranium
-  - MagazineBoxRifleIncendiary
-  - MagazineBoxRifleUranium
-  - MagazineLightRifleIncendiary
-  - MagazineLightRifleUranium
-  - MagazinePistolIncendiary
-  - MagazinePistolUranium
-  - MagazinePistolSubMachineGunIncendiary
-  - MagazinePistolSubMachineGunUranium
-  - MagazineRifleIncendiary
-  - MagazineRifleUranium
+#  - MagazineBoxLightRifleIncendiary
+#  - MagazineBoxLightRifleUranium
+#  - MagazineBoxMagnumIncendiary
+#  - MagazineBoxMagnumUranium
+#  - MagazineBoxPistolIncendiary
+#  - MagazineBoxPistolUranium
+#  - MagazineBoxRifleIncendiary
+#  - MagazineBoxRifleUranium
+#  - MagazineLightRifleIncendiary
+#  - MagazineLightRifleUranium
+#  - MagazinePistolIncendiary
+#  - MagazinePistolUranium
+#  - MagazinePistolSubMachineGunIncendiary
+#  - MagazinePistolSubMachineGunUranium
+#  - MagazineRifleIncendiary
+#  - MagazineRifleUranium
   - MagazineShotgunBeanbag
-  - MagazineShotgunIncendiary
-  - SpeedLoaderMagnumIncendiary
-  - SpeedLoaderMagnumUranium
+#  - MagazineShotgunIncendiary
+#  - SpeedLoaderMagnumIncendiary
+#  - SpeedLoaderMagnumUranium
+# End Harmony changes
   - EnergyCarbineCartridgeUnstableHarmony # Harmony Change: Adds the unstable energy carbine cartridge to the security recipe pack
   - EnergyCarbineCartridgeXRayHarmony # Harmony Change: Adds the x-ray energy carbine cartridge to the security recipe pack
 

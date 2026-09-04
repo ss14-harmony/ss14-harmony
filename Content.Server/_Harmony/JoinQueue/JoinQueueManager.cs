@@ -18,7 +18,7 @@ namespace Content.Server._Harmony.JoinQueue;
 /// <summary>
 ///     Manages new player connections when the server is full and queues them up, granting access when a slot becomes free
 /// </summary>
-public sealed class JoinQueueManager : IJoinQueueManager
+public sealed partial class JoinQueueManager : IJoinQueueManager
 {
     private static readonly Gauge QueueCount = Metrics.CreateGauge(
         "join_queue_total_count",
@@ -33,13 +33,13 @@ public sealed class JoinQueueManager : IJoinQueueManager
             Buckets = Histogram.ExponentialBuckets(1, 2, 14),
         });
 
-    [Dependency] private readonly IAdminManager _adminManager = default!;
-    [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IConnectionManager _connectionManager = default!;
-    [Dependency] private readonly ILocalizationManager _loc= default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IServerNetManager _netManager = default!;
+    [Dependency] private IAdminManager _adminManager = default!;
+    [Dependency] private IChatManager _chatManager = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IConnectionManager _connectionManager = default!;
+    [Dependency] private ILocalizationManager _loc= default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private IServerNetManager _netManager = default!;
 
     /// <summary>
     /// Queue of active player sessions
