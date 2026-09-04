@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-NC-SA-3.0",
-  "copyright": "Taken and modified by Taral from goonstation at commit https://github.com/goonstation/goonstation/pull/2816/commits/b99c5dff45a6527bbf698bc00f7d24b8ca75a806 and then further modified by EmoGarbage404. Resprite by halycon (Kleinerstation13 on Github)",
+  "copyright": "Originally made by BatElite at commit goonstation/goonstation@f4fa976. Modified by Taral and EmoGarbage404 at commit space-wizards@1c7a09b. Resprited by halcyon (Kleinerstation13 on Github)",
   "size": {
     "x": 32,
     "y": 32
