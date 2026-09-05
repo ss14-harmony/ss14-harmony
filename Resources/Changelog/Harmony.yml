@@ -3767,3 +3767,26 @@
   id: 1433
   time: '2026-08-14T03:06:19.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1390
+- author: CFrala
+  changes:
+  - message: The airloss auto-injector now has its respective chemicals inside of
+      it instead of being empty.
+    type: Fix
+  id: 1434
+  time: '2026-08-28T05:34:23.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1482
+- author: Dinoguy12349
+  changes:
+  - message: The Bungo Bomber can no longer shoot bullets
+    type: Fix
+  id: 1435
+  time: '2026-08-28T05:47:27.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1468
+- author: dragydevi
+  changes:
+  - message: Removed Blood Bound's ability to convert Traitors, Nukies and other solo
+      and team antagonists
+    type: Remove
+  id: 1436
+  time: '2026-08-28T07:19:32.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1437

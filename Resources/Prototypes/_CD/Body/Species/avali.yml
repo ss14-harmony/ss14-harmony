@@ -130,10 +130,7 @@
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
   - type: Vocal
-    sounds:
-      Male: MaleAvali
-      Female: FemaleAvali
-      Unsexed: MaleAvali
+    emoteSounds: MaleAvali
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Weapons/pierce.ogg

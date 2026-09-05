@@ -93,12 +93,6 @@
     - type: GravityWell
       baseRadialAcceleration: 6
       maxRange: 8
-    - type: Tag
-      tags:
-        - GhostOnlyWarp
     - type: WarpPoint
       follow: true
-      location: Honk Mother
-      blacklist:
-        tags:
-          - GhostOnlyWarp
+      location: location-honk-mother

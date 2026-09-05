@@ -5,76 +5,41 @@
   - type: DeathMatchRule
     gear: DeathMatchPROMODGear
     killCap: 16
-    rewardSpawns:
-    - id: MagazinePistol # guaranteed drops
-    - id: ClothingOuterArmorBasicSlim   # armor
-      orGroup: loot
-    - id: ClothingOuterArmorBasic
-      orGroup: loot
-    - id: ClothingOuterArmorBulletproof
-      orGroup: loot
-    - id: ClothingOuterArmorReflective
-      orGroup: loot
-    - id: WeaponPistolViper             # handguns
-      orGroup: loot
-    - id: WeaponPistolCobra
-      orGroup: loot
-    - id: WeaponRevolverInspector
-      orGroup: loot
-    - id: WeaponRevolverPython
-      orGroup: loot
-    - id: WeaponSubMachineGunC20r       # SMGs
-      orGroup: loot
-    - id: WeaponSubMachineGunDrozd
-      orGroup: loot
-    - id: WeaponSubMachineGunWt550
-      orGroup: loot
-    - id: WeaponShotgunDoubleBarreled   # shotguns
-      orGroup: loot
-    - id: WeaponShotgunSawn
-      orGroup: loot
-    - id: WeaponShotgunKammerer
-      orGroup: loot
-    - id: WeaponDisablerSMG             # energy weapons
-      orGroup: loot
-    - id: WeaponLaserCarbine
-      orGroup: loot
-    - id: WeaponLaserSvalinn
-      orGroup: loot
-    - id: WeaponPistolCHIMPUpgraded
-      orGroup: loot
-    #- id: MagazinePistolCaselessRifle   # ammo
-    #  orGroup: loot
-    #- id: MagazinePistol
-    #  orGroup: loot
-    #- id: SpeedLoaderMagnum
-    #  orGroup: loot
-    #- id: MagazinePistolSubMachineGun
-    #  orGroup: loot
-    #- id: MagazinePistolSubMachineGunTopMounted
-    #  orGroup: loot
-    #- id: MagazineShotgun
-    #  orGroup: loot
-    - id: GrenadeFlashBang              # grenades
-      orGroup: loot
-    - id: SmokeGrenade
-      orGroup: loot
-    - id: TearGasGrenade
-      orGroup: loot
-    - id: EmpImplanter                  # implants
-      orGroup: loot
-    - id: ScramImplanter
-      orGroup: loot
-    - id: EmergencyMedipen              # healing items
-      orGroup: loothealing
-    - id: BruteAutoInjector
-      orGroup: loothealing
-    - id: BurnAutoInjector
-      orGroup: loothealing
-    - id: Stimpack
-      orGroup: loothealing
-    - id: CombatMedipen
-      orGroup: loothealing
+    rewardSpawns: !type:AllSelector
+      children:
+      - id: MagazinePistol
+      - !type:GroupSelector
+        children:
+        - id: ClothingOuterArmorBasicSlim   # armor
+        - id: ClothingOuterArmorBasic
+        - id: ClothingOuterArmorBulletproof
+        - id: ClothingOuterArmorReflective
+        - id: WeaponPistolViper             # handguns
+        - id: WeaponPistolCobra
+        - id: WeaponRevolverInspector
+        - id: WeaponRevolverPython
+        - id: WeaponSubMachineGunC20r       # SMGs
+        - id: WeaponSubMachineGunDrozd
+        - id: WeaponSubMachineGunWt550
+        - id: WeaponShotgunDoubleBarreled   # shotguns
+        - id: WeaponShotgunSawn
+        - id: WeaponShotgunKammerer
+        - id: WeaponDisablerSMG             # energy weapons
+        - id: WeaponLaserCarbine
+        - id: WeaponLaserSvalinn
+        - id: WeaponPistolCHIMPUpgraded
+        - id: GrenadeFlashBang              # grenades
+        - id: SmokeGrenade
+        - id: TearGasGrenade
+        - id: EmpImplanter                  # implants
+        - id: ScramImplanter
+      - !type:GroupSelector
+        children:
+        - id: EmergencyMedipen              # healing items
+        - id: BruteAutoInjector
+        - id: BurnAutoInjector
+        - id: Stimpack
+        - id: CombatMedipen
   - type: KillCalloutRule
   - type: PointManager
   - type: RespawnDeadRule

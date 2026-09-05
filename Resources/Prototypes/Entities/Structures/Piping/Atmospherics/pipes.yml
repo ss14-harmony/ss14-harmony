@@ -21,6 +21,7 @@
   - type: CollideOnAnchor
   - type: Anchorable
   - type: Rotatable
+    increment: 90
   - type: RCDDeconstructable
     cost: 1 #Harmony
     delay: 2

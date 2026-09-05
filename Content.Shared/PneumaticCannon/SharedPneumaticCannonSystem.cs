@@ -20,12 +20,15 @@ public abstract partial class SharedPneumaticCannonSystem : EntitySystem
 
     private void OnAttemptShoot(EntityUid uid, PneumaticCannonComponent component, ref AttemptShootEvent args)
     {
-        // if the cannon doesn't need gas then it will always predict firing
-        if (component.GasUsage == 0f)
-            return;
+// Harmony Change start - swaps the positioning so the weapons that use 0 gas wont shoot bullets
 
         // pneumatic cannon usually doesn't shoot bullets
         args.ThrowItems = component.ThrowItems;
+
+        // if the cannon doesn't need gas then it will always predict firing
+        if (component.GasUsage == 0f)
+            return;
+// Harmony Change stop
 
         // we don't have atmos on shared, so just predict by the existence of a slot item
         // server will handle auto ejecting/not adding the slot item if it doesnt have enough gas,

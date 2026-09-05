@@ -80,3 +80,8 @@ uplink-syndiedrobe-flatpack-desc = A flatpack box containing a SyndieDrobe. Slay
 
 uplink-hyposhell-name = Box of hyposhells
 uplink-hyposhell-desc = A box containing four hyposhells, shotgun shells that can hold 7u of any chemical.
+
+# Weapons
+
+uplink-malletofmalice-name = Mallet of Malice
+uplink-malletofmalice-desc = An overwhelmingly evil mallet, capable of such devestation... Donk.Co's latest and greatest toy, meant for their most elite undercover agents.
