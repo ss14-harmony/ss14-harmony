@@ -42,6 +42,20 @@
   categories:
   - UplinkWeaponry
 
+- type: listing
+  id: UplinkRifleFoamGun
+  name: uplink-rifle-foamgun-name
+  description: uplink-rifle-foamgun-desc
+  productEntity: WeaponRifleFoamGun
+  icon: { sprite: Objects/Fun/Foam/foam_rifle.rsi, state: icon }
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 6
+  cost:
+    Telecrystal: 7
+  categories:
+  - UplinkWeaponry
+
 # Explosives
 
 - type: listing
