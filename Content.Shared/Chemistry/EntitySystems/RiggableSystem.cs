@@ -242,9 +242,6 @@ public sealed partial class RiggableSystem : EntitySystem
         if (!args.CanReach)
             return;
 
-        if (args.Target == null)
-            return;
-
         if (!entity.Comp.IsRigged)
             return;
 
@@ -255,9 +252,6 @@ public sealed partial class RiggableSystem : EntitySystem
     private void OnItemRangedInteract(Entity<RiggedItemComponent> entity, ref BeforeRangedInteractEvent args)
     {
         if (!args.CanReach)
-            return;
-
-        if (args.Target == null)
             return;
 
         if (entity.Comp.Child is not { } child || !TryComp<RiggableComponent>(child, out var riggable))
@@ -347,7 +341,7 @@ public sealed partial class RiggableSystem : EntitySystem
         if (!entity.Comp.IsRigged)
             return;
 
-        entity.Comp.LastUser = args.User;
+        args.Cancel();
 
         Explode(entity, _battery.GetCharge(entity.Owner), args.User);
     }
