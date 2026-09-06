@@ -7,3 +7,8 @@
   id: angelskiss
   flavorType: Complex
   description: flavor-complex-profane
+
+- type: flavor
+  id: cigarettes
+  flavorType: Complex
+  description: flavor-complex-cigarettes
