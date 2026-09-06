@@ -6,8 +6,11 @@
     TraitorObjectiveGroupKill: 1
     TraitorObjectiveGroupState: 1 #As in, something about your character. Alive, dead, arrested, gained an ability...
     TraitorObjectiveGroupSocial: 0.5 # Harmony. Change: 1 -> 0.5 #Involves helping/harming others without killing them or stealing their stuff\
-    TraitorObjectiveGroupSabotage: 1
-    TraitorObjectiveGroupOther: 1
+  # Start Harmony Change - Reassigns the new objectives into their own group, instead of splitting them up
+  # TraitorObjectiveGroupSabotage: 1
+  # TraitorObjectiveGroupOther: 1
+    TraitorObjectiveGroupUnique: 0.5
+  # End Harmony Change
 
 - type: weightedRandom
   id: TraitorObjectiveGroupSteal

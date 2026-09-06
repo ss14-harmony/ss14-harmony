@@ -471,7 +471,10 @@
   parent: ChemicalMedipen
   id: AirlossAutoInjector
   name: airloss auto-injector
-  description: A single-dose, non-refillable medipen containing saline and dexalin plus, used to quickly and easily treat blood loss and asphyxiation.
+  # Harmony Change - Nukie Universal Saline
+  # description: A single-dose, non-refillable medipen containing saline and dexalin plus, used to quickly and easily treat blood loss and asphyxiation.
+  description: A single-dose, non-refillable medipen containing a universal blood substitute and dexalin plus, used to quickly and easily treat blood loss and asphyxiation.
+  # Harmony Change End
   components:
   - type: Item
     inhandVisuals:
@@ -494,18 +497,16 @@
     maxFillLevels: 1
     changeColor: false
     emptySpriteName: dexpen_empty
-  - type: SolutionContainerManager
-    solutions:
-      pen:
-        maxVol: 40
-        reagents:
-        # Harmony Change - Nukie Universal Saline
-        # - ReagentId: Saline
-        - ReagentId: UniversalBlood
-        # Harmony Change End
-          Quantity: 10
-        - ReagentId: DexalinPlus
-          Quantity: 10
+  - type: Solution
+    solution:
+      reagents:
+      # Harmony Change - Nukie Universal Saline
+      # - ReagentId: Saline
+      - ReagentId: UniversalBlood
+      # Harmony Change End
+        Quantity: 10
+      - ReagentId: DexalinPlus
+        Quantity: 10
 
 - type: entity
   parent: ChemicalMedipen
