@@ -1,6 +1,6 @@
 - type: entity
   name: pleebnar
-  parent: [PleebnarBase, SimpleMobBase] # Harmony Change
+  parent: [ BaseMobPleebnarBody, SimpleMobBase ]
   id: MobPleebnar
   description: UNIDENTIFIED PISKUN THING!
   components:
@@ -137,10 +137,12 @@
       types:
         Blunt: 0.1
   - type: Vocal
-    sounds:
-      Male: Pleebnar
-      Female: Pleebnar
-      Unsexed: Pleebnar
+    # Harmony change start
+    emoteSounds: Pleebnar
+      # Male: Pleebnar
+      # Female: Pleebnar
+      # Unsexed: Pleebnar
+    # Harmony change end
     wilhelmProbability: 0.001
   # TODO: Remove CombatMode when Prototype Composition is added
   - type: CombatMode
