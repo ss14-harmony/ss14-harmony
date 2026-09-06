@@ -26,6 +26,14 @@
       enum.StationMapUiKey.Key:
         type: StationMapBoundUserInterface
         requireInputValidation: false
+      # Start of Harmony Additions: Added more entries into the pAI store
+      enum.GeneralStationRecordConsoleKey.Key:
+        type: GeneralStationRecordConsoleBoundUserInterface
+        requireInputValidation: false
+      enum.GasAnalyzerUiKey.Key:
+        type: GasAnalyzerBoundUserInterface
+        requireInputValidation: false
+      # End of Harmony Additions
   - type: Sprite
     sprite: Objects/Fun/pai.rsi
     layers:
@@ -36,6 +44,8 @@
   - type: Input
     context: "human"
   - type: PAI
+    channels: # Harmony Additions: Added more entries into the pAI store
+    - Common
   - type: BlockMovement
   - type: ToggleableGhostRole
     examineTextMindPresent: pai-system-pai-installed
@@ -101,12 +111,13 @@
   - type: Tag
     tags:
     - SiliconEmotes
-  # Start Harmony Change for comedic PAI pelting
-  - type: DamageOtherOnHit
+  # Start Harmony Changes
+  - type: DamageOtherOnHit # For comedic PAI pelting
     damage:
       types:
         Blunt: 0.1
     pacifiedCanThrow: true
+  - type: GeneralStationRecordConsole # For: Added more entries into the pAI store
   # End Harmony Change
 
 - type: entity
@@ -122,6 +133,9 @@
     - state: syndicate-pai-off-overlay
       shader: unshaded
       map: ["screen"]
+  - type: PAI # Harmony Additions: Added more entries into the pAI store
+    channels:
+    - Syndicate
   - type: ToggleableGhostRole
     roleName: pai-system-role-name-syndicate
     roleDescription: pai-system-role-description-syndicate

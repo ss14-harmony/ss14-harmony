@@ -9,6 +9,10 @@ using Content.Shared.Popups;
 using Content.Shared.Instruments;
 using Robust.Shared.Random;
 using System.Text;
+// Start of Harmony Additions: Added more entries into the pAI store
+using Content.Shared.Radio;
+using Content.Shared.Radio.Components;
+// End of Harmony Additions
 
 namespace Content.Server.PAI;
 
@@ -33,6 +37,7 @@ public sealed partial class PAISystem : EntitySystem
         SubscribeLocalEvent<PAIComponent, MindAddedMessage>(OnMindAdded);
         SubscribeLocalEvent<PAIComponent, MindRemovedMessage>(OnMindRemoved);
         SubscribeLocalEvent<PAIComponent, BeingMicrowavedEvent>(OnMicrowaved);
+        SubscribeLocalEvent<PAIComponent, EncryptionChannelsChangedEvent>(OnKeysChanged); // Harmony Additions: Added more entries into the pAI store
     }
 
     private void OnUseInHand(EntityUid uid, PAIComponent component, UseInHandEvent args)
@@ -119,4 +124,20 @@ public sealed partial class PAISystem : EntitySystem
                 _metaData.SetEntityName(uid, proto.Name);
         }
     }
+
+    // Start of Harmony Additions: Added more entries into the pAI store
+
+    private void OnKeysChanged(EntityUid uid, PAIComponent component, EncryptionChannelsChangedEvent args)
+    {
+        UpdateRadioChannels(uid, component, args.Component);
+    }
+    private void UpdateRadioChannels(EntityUid uid, PAIComponent innate, EncryptionKeyHolderComponent keyHolder)
+    {
+        foreach (var channel in innate.Channels)
+        {
+            keyHolder.Channels.Add(channel);
+        }
+        EnsureComp<ActiveRadioComponent>(uid).Channels = keyHolder.Channels;
+    }
+    // End of Harmony Additions
 }

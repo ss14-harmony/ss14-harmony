@@ -6,6 +6,9 @@ using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Interaction;
 using Content.Shared.NodeContainer;
+// Start of Harmony Changes: Added more entries into the pAI store
+using Content.Shared.PAI;
+// End of Harmony Changes
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 
@@ -61,6 +64,10 @@ public sealed partial class GasAnalyzerSystem : EntitySystem
     /// </summary>
     private void OnAfterInteract(Entity<GasAnalyzerComponent> entity, ref AfterInteractEvent args)
     {
+        // Prevents pAIs being abused as gas analyzers by their despicable owners
+        if (HasComp<PAIComponent>(args.Used) && !HasComp<PAIComponent>(args.User)) // Harmony Changes: pAI store
+            return;
+
         var target = args.Target;
         if (target != null && !_interactionSystem.InRangeUnobstructed((args.User, null), (target.Value, null)))
         {
