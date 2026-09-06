@@ -24,6 +24,7 @@ public sealed partial class RandomSpawnRule : StationEventSystem<RandomSpawnRule
         {
             Sawmill.Info($"Spawning {comp.Prototype} at {coords}");
             // Harmony Change Start - Moffstation Dead Drop Port
+            // Spawn(comp.Prototype, coords);
             var ent = Spawn(comp.Prototype, coords);
 
             if (comp.RadioMessage is {} radioMessage)
