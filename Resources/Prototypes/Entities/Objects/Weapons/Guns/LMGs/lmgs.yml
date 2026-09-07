@@ -32,8 +32,11 @@
       - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/lmg.ogg
+      # Start harmony change - Add empty sound
     soundEmpty:
-      path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+      # path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+      path: /Audio/_Harmony/Weapons/Guns/Empty/rifle_empty.ogg
+      # End harmony change
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/lmg_cock.ogg
@@ -43,8 +46,18 @@
       gun_magazine:
         name: Magazine
         startingItem: MagazineLightRifleBox
-        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        # Start harmony change - Handling sounds
+        # insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        # ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        insertSound:
+          path: /Audio/_Harmony/Weapons/Guns/MagIn/lmg_magin.ogg
+          params:
+            volume: -3
+        ejectSound:
+          path: /Audio/_Harmony/Weapons/Guns/MagOut/lmg_magout.ogg
+          params:
+            volume: -3
+        # End harmony change
         priority: 2
         whitelist:
           tags:

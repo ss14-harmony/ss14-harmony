@@ -25,6 +25,10 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+      # Start harmony change - Add empty sound
+    soundEmpty:
+      path: /Audio/_Harmony/Weapons/Guns/Empty/rifle_empty.ogg
+      # End harmony change
   - type: BallisticAmmoProvider
     capacity: 10
     proto: CartridgeLightRifle
@@ -85,6 +89,11 @@
   - type: GunRequiresWield
   - type: StaticPrice
     price: 500
+  - type: Gun # Harmony change - add sound to Mosin
+    soundGunshot:
+      path: /Audio/_Harmony/Weapons/Guns/Gunshots/mosin_fire1.ogg
+      params:
+        volume: -1.5
 
 - type: entity
   name: Hristov

@@ -22,14 +22,14 @@
       collection: DMRFire
   - type: ChamberMagazineAmmoProvider
     soundRack:
-      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+      path: /Audio/_Harmony/Weapons/Guns/Cock/rifle_rack.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
         startingItem: MagazineLightRifleCaseless
-        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/dmr_magin.ogg
+        ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/dmr_magout.ogg
         priority: 2
         whitelist:
           tags:
