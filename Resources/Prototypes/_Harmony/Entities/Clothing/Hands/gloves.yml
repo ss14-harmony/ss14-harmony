@@ -76,3 +76,31 @@
       - Slicing
     - type: Contraband
       severity: Syndicate
+
+- type: entity
+  parent: [ClothingHandsBase, BaseSyndicateContraband]
+  id: ClothingHandsBloodyKnuckleDusters
+  name: bloody knuckle dusters
+  suffix: Harmony
+  description: You get a certain rush wearing these gloves while tearing flesh off with each swing. They are very bloody.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Hands/Gloves/KnuckleDusters/knuckleduster.rsi
+    state: icon
+  - type: Clothing
+    unequipDelay: 1 # no sound spam
+    sprite: _Harmony/Clothing/Hands/Gloves/KnuckleDusters/knuckleduster.rsi
+  - type: MeleeWeapon
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 20
+    soundHit:
+      collection: KnuckleDuster
+    animation: WeaponArcFist
+    mustBeEquippedToUse: true
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Harmony/Weapons/Melee/pickupweapon.ogg
