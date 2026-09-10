@@ -42,13 +42,15 @@
   parent: [ OrganPleebnarInternal, OrganAnimalStomach ]
   id: OrganPleebnarStomach
   name: sluumi
-  components:
-  - type: SolutionContainerManager #imp edit, needs fixing when solutions refactor is merged. something scary is happening here.
-    solutions:
-      stomach:
-          maxVol: 50
-      food:
-        maxVol: 15
+  # Harmony Change Start - Removed SolutionContainerManager: its not on wizden organs
+  # components:
+  # - type: SolutionContainerManager #imp edit, needs fixing when solutions refactor is merged. something scary is happening here.
+  #   solutions:
+  #     stomach:
+  #         maxVol: 50
+  #     food:
+  #       maxVol: 15
+  # Harmony Change End
 
 - type: entity
   parent: [ OrganPleebnarInternal, OrganAnimalLiver ]
