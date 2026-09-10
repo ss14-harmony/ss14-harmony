@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: liltenhead
-  changes:
-  - message: Added server pins to the trinket section in character loadouts.
-    type: Add
-  id: 2
-  time: '2024-07-01T02:43:36.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/2
 - author: KeldWolf
   changes:
   - message: Added the lobby art made by Amatiramasu
@@ -3790,3 +3783,17 @@
   id: 1436
   time: '2026-08-28T07:19:32.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1437
+- author: mMikulas
+  changes:
+  - message: Fixed windoors being unable to close when placed adjacent to walls.
+    type: Fix
+  id: 1437
+  time: '2026-09-06T16:45:26.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1489
+- author: youtissoum
+  changes:
+  - message: Emagged recyclers no longer delete players.
+    type: Fix
+  id: 1438
+  time: '2026-09-06T16:45:11.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1490

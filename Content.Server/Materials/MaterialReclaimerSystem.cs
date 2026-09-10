@@ -159,6 +159,8 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
 
         var playSound = true;
 
+        var shouldDestroy = true; // Harmony
+
         if (CanDamageAndGib(uid, item, component))
         {
             var didBloody = false;
@@ -180,12 +182,15 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
 
             if (didBloody)
                 _appearance.SetData(uid, RecyclerVisuals.Bloody, true);
+
+            shouldDestroy = false; // Harmony
         }
 
         if (_destructible.CanDestroy(item) && component.ReclaimSolutions)
             SpawnChemicalsFromComposition(uid, item, completion, playSound, component, xform);
 
-        _destructible.DestroyEntity(item);
+        if (shouldDestroy) // Harmony
+            _destructible.DestroyEntity(item);
     }
 
     private void SpawnMaterialsFromComposition(EntityUid reclaimer,
