@@ -1,14 +1,6 @@
 ﻿Entries:
 - author: KeldWolf
   changes:
-  - message: Reduced clothing timers and brought honk and syndi evac shuttles back
-      into rotation
-    type: Tweak
-  id: 22
-  time: '2024-09-01T19:53:38.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/22
-- author: KeldWolf
-  changes:
   - message: Added 2 new shuttles by spanky to load (for admins)
     type: Add
   id: 25
@@ -3794,3 +3786,10 @@
   id: 1441
   time: '2026-09-11T05:04:02.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1444
+- author: TillsterRulz
+  changes:
+  - message: Removed harmonicas from non-musician loadouts
+    type: Remove
+  id: 1442
+  time: '2026-09-11T05:15:20.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1450
