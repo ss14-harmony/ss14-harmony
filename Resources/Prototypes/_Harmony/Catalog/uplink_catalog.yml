@@ -42,6 +42,22 @@
   categories:
   - UplinkWeaponry
 
+- type: listing
+  id: UplinkSniperBundleNukie
+  name: uplink-sniper-bundle-nukie-name
+  description: uplink-sniper-bundle-nukie-desc
+  productEntity: ClothingBackpackDuffelSyndicateFilledHristov
+  icon: { sprite: /Textures/_Harmony/Objects/Weapons/Guns/Snipers/hristov_nukie.rsi, state: icon }
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkWeaponry
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+
 # Explosives
 
 - type: listing
@@ -150,6 +166,64 @@
     Telecrystal: 2
   categories:
   - UplinkAmmo
+
+- type: listing
+  id: UplinkAmmoBundleHristov
+  name: uplink-sniper-ammo-bundle-name
+  description: uplink-sniper-ammo-bundle-desc
+  productEntity: ClothingBackpackDuffelSyndicateAmmoHristovFilled
+  icon: { sprite: /Textures/_Harmony/Objects/Weapons/Guns/Ammunition/Magazines/Sniper/hristovmag.rsi, state: uplink }
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkSniperAmmoIncend
+  name: uplink-sniper-ammo-incend-name
+  description: uplink-sniper-ammo-incend-desc
+  productEntity: MagazineAntiMaterielIncendiary
+  icon: { sprite: /Textures/_Harmony/Objects/Weapons/Guns/Ammunition/Magazines/Sniper/hristovmag.rsi, state: red-icon }
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkAmmo
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+
+- type: listing
+  id: UplinkSniperAmmoHP
+  name: uplink-sniper-ammo-hp-name
+  description: uplink-sniper-ammo-hp-desc
+  productEntity: MagazineAntiMaterielHollowPoint
+  icon: { sprite: /Textures/_Harmony/Objects/Weapons/Guns/Ammunition/Magazines/Sniper/hristovmag.rsi, state: blue-icon }
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkAmmo
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
 
 # Chemicals
 
@@ -333,4 +407,3 @@
     Telecrystal: 5
   categories:
   - UplinkWeaponry
- 

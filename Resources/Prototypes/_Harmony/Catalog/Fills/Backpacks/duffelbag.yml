@@ -33,3 +33,30 @@
     - id: WeaponRifleBandit
     - id: MagazineLightRifleCaseless
       amount: 2
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateFilledHristov
+  name: Hristov bundle
+  suffix: Harmony
+  description: Commander get the camera! Contains a Hristov bundled with 2 sniper magazines.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSniperHristovHarmonyNukie
+    - id: MagazineAntiMateriel
+      amount: 2
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateAmmo
+  id: ClothingBackpackDuffelSyndicateAmmoHristovFilled
+  name: Hristov ammo bundle
+  suffix: Harmony
+  description: Now you're cooking with gas! Contains 2 incendiary magazines and 2 hollow point magazines compatible with the Hristov.
+  components:
+  - type: StorageFill
+    contents:
+    - id: MagazineAntiMaterielHollowPoint
+      amount: 2
+    - id: MagazineAntiMaterielIncendiary
+      amount: 2

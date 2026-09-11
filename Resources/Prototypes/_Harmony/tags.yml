@@ -51,4 +51,8 @@
 
 # Used to whitelist the Mime Mask chameleon options.
 - type: Tag
-  id: MimeMaskChameleon 
+  id: MimeMaskChameleon
+
+#used in _Harmony/Entities/Objects/Weapons/Guns/Ammunition/Magazines/anti_materiel.yml
+- type: Tag
+  id: MagazineAntiMateriel
