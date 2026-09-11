@@ -1,0 +1,10 @@
+- type: entity
+  parent: GattarCase
+  id: GattarCaseSyndicateFilledGattar
+  suffix: Harmony, Bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleGattar
+    - id: MagazineRifle
+      amount: 3
