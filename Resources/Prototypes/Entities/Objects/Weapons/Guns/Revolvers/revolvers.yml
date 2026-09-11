@@ -29,7 +29,14 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+      # Start Harmony change - changed gunshot sound + empty sound
+      #  path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+      collection: RevolverAltFire
+      params:
+        volume: -1.5
+    soundEmpty:
+      path: /Audio/_Harmony/Weapons/Guns/Empty/revolver_empty.ogg
+      # End Harmony change
   - type: UseDelay
     delay: 0.66
   - type: ContainerContainer
@@ -45,9 +52,15 @@
     chambers: [ True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null ]
     soundEject:
-      path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
+      # start Harmony change - changed sound
+      # path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
+      path: /Audio/_Harmony/Weapons/Guns/MagOut/revolver_magout.ogg
+      params:
+        volume: -1
     soundInsert:
-      path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
+      # path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
+      path: /Audio/_Harmony/Weapons/Guns/MagIn/speedloader_insert.ogg
+      # end Harmony change
   - type: StaticPrice
     price: 500
 

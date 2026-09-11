@@ -25,7 +25,7 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+      path: /Audio/_Harmony/Weapons/Guns/Gunshots/rsc_fire1.ogg
   - type: ChamberMagazineAmmoProvider
     autoEject: true
     soundAutoEject: /Audio/_Harmony/Weapons/Guns/MagOut/rsc_eject.ogg

@@ -2,3 +2,33 @@
   license: "CC-BY-SA-3.0"
   copyright: "Recorded by spanky-spanky (GitHub) and edited by Nonagon44 (GitHub)"
   source: "https://github.com/ss14-harmony/ss14-harmony/pull/644"
+
+- files: ["pistol_magout.ogg"]
+  license: "CC0-1.0"
+  copyright: "Created by serotonin"
+  source: "https://freesound.org/people/ser%C3%B8t%C5%8Dnin/sounds/693124/"
+
+- files: ["revolver_magout.ogg"]
+  license: "CC0-1.0"
+  copyright: "Created by serotonin"
+  source: "https://freesound.org/people/ser%C3%B8t%C5%8Dnin/sounds/693125/"
+
+- files: ["smg_magout.ogg"]
+  license: "CC0-1.0"
+  copyright: "Created by serotonin"
+  source: "https://freesound.org/people/ser%C3%B8t%C5%8Dnin/sounds/693125/"
+
+- files: ["rifle_magout.ogg"]
+  license: "CC0-1.0"
+  copyright: "Created by serotonin"
+  source: "https://freesound.org/people/ser%C3%B8t%C5%8Dnin/sounds/674742/"
+
+- files: ["lmg_magout.ogg"]
+  license: "Custom"
+  copyright: "Under CC SAMPLING+ 1.0. Created by SpartanX109."
+  source: "https://freesound.org/people/SpartanX109/sounds/89149/"
+
+- files: ["dmr_magout.ogg", "bulldog_magout.ogg"]
+  license: "Custom"
+  copyright: "Halo © Microsoft Corporation. This audio file was created under Microsoft's Game Content Usage Rules using assets from Halo:Reach, and it is not endorsed by or affiliated with Microsoft. More info here: https://www.xbox.com/en-us/developers/rules. Pulled from Halo:Reach, made by Bungie"
+  source: "https://youtu.be/0SEE9n-ciUc"
