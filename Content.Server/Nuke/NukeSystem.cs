@@ -45,6 +45,7 @@ public sealed partial class NukeSystem : EntitySystem
     [Dependency] private AppearanceSystem _appearance = default!;
     [Dependency] private TurfSystem _turf = default!;
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private AmbientSoundSystem _ambient = default!; // Harmony change - adds ambient sound system to the nuke system
 
     /// <summary>
     ///     Used to calculate when the nuke song should start playing for maximum kino with the nuke sfx
@@ -513,6 +514,8 @@ public sealed partial class NukeSystem : EntitySystem
         _pointLight.SetEnabled(uid, true);
         // enable the navmap beacon for people to find it
         _navMap.SetBeaconEnabled(uid, true);
+        // Harmony Change - turn on ticking after arm
+        _ambient.SetAmbience(uid, true);
 
         _itemSlots.SetLock(uid, component.DiskSlot, true);
         if (!nukeXform.Anchored)
@@ -561,6 +564,8 @@ public sealed partial class NukeSystem : EntitySystem
         _pointLight.SetEnabled(uid, false);
         // disable the navmap beacon now that its disarmed
         _navMap.SetBeaconEnabled(uid, false);
+        // Harmony Change - turn off ticking after disarm
+        _ambient.SetAmbience(uid, false);
 
         // start bomb cooldown
         _itemSlots.SetLock(uid, component.DiskSlot, false);
@@ -690,4 +695,3 @@ public sealed class NukeDisarmSuccessEvent : EntityEventArgs
 {
 
 }
-
