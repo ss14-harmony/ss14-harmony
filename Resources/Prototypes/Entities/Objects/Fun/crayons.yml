@@ -48,6 +48,8 @@
         Quantity: 5
       - ReagentId: MindbreakerToxin
         Quantity: 10
+  - type: SignatureWriter # imp
+    font: ComicNeueBold
 
 # special crayons
 
@@ -88,7 +90,7 @@
 - type: entity
   parent: CrayonRainbow
   id: CrayonInfinite # should not be player available to prevent decal spam
-  categories: [ DoNotMap ]
+  categories: [DoNotMap]
   name: infinite crayon
   components:
   - type: Crayon
