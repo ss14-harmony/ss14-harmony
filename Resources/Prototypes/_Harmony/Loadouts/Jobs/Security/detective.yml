@@ -1,3 +1,13 @@
+# Special items for detective mains
+- type: loadoutEffectGroup
+  id: MasterDetective
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobDetective
+      time: 20h # 10 ish shifts (det is hard to master this should be hard to get!!)
+
 # Head
 - type: loadout
   id: DetectiveFedoraBlueHarmony
@@ -30,4 +40,26 @@
   id: DetectiveDiscoCoatHarmony
   equipment:
     outerClothing: ClothingOuterCoatDetectiveLoadoutDiscoHarmony
-    
+
+# Firearms
+- type: loadout
+  id: SecurityRevolverInspector
+  storage:
+    belt:
+    - WeaponRevolverInspector
+
+- type: loadout
+  id: SecurityRevolverJudge
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MasterDetective
+  storage:
+    belt:
+    - WeaponRevolverJudge
+
+# Ammo
+- type: loadout
+  id: SecurityFirearmSpeedLoaderMagnum
+  storage:
+    back:
+    - SpeedLoaderMagnum
