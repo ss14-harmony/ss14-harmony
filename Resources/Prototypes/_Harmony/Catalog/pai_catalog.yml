@@ -1,0 +1,42 @@
+﻿
+- type: listing
+  id: PAIStationRecords
+  name: pai-station-records-name
+  description: pai-station-records-desc
+  icon: { sprite: Objects/Misc/folders.rsi, state: folder-centcom }
+  productAction: ActionPAIStationRecords
+  cost:
+    SiliconMemory: 5
+  categories:
+  - PAIAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: PAIMedicalScanner
+  name: pai-medical-hud-name
+  description: pai-medical-hud-desc
+  icon: { sprite: Clothing/Eyes/Hud/med.rsi, state: icon}
+  productComponents: PAIMedicalHudDummy
+  cost:
+    SiliconMemory: 10
+  categories:
+  - PAIAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: PAIGPS
+  name: pai-gps-name
+  description: pai-gps-desc
+  icon: { sprite: Objects/Devices/gps.rsi, state: icon}
+  productComponents: PAIGPSDummy
+  cost:
+    SiliconMemory: 10
+  categories:
+  - PAIAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1

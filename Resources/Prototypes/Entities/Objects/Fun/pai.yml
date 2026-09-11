@@ -26,6 +26,11 @@
       enum.StationMapUiKey.Key:
         type: StationMapBoundUserInterface
         requireInputValidation: false
+      # Start of Harmony changes:
+      enum.GeneralStationRecordConsoleKey.Key:
+        type: GeneralStationRecordConsoleBoundUserInterface
+        requireInputValidation: false
+      # End of Harmony Changes
   - type: Sprite
     sprite: Objects/Fun/pai.rsi
     layers:
@@ -101,12 +106,13 @@
   - type: Tag
     tags:
     - SiliconEmotes
-  # Start Harmony Change for comedic PAI pelting
-  - type: DamageOtherOnHit
+  # Start Harmony Changes
+  - type: DamageOtherOnHit # comedic PAI pelting
     damage:
       types:
         Blunt: 0.1
     pacifiedCanThrow: true
+  - type: GeneralStationRecordConsole # YAML Pai Store Entries
   # End Harmony Change
 
 - type: entity
