@@ -1,8 +1,8 @@
 - type: entity
-  id: BulletLaserBaseHarmony
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
   abstract: true
+  parent: BaseBullet
+  id: BulletEnergyBaseHarmony
+  categories: [ HideSpawnMenu ]
   components:
   - type: Reflective
     reflective:
@@ -35,60 +35,121 @@
   - type: Ammo
   - type: Projectile
 
-- type: entity
-  name: laser bolt medium
-  id: BulletLaserHarmony
-  parent: BulletLaserBaseHarmony
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/laser_projectile.rsi
-    layers:
-    - state: icon
-      shader: unshaded
-  - type: PointLight
-    enabled: true
-    color: "#ff4300"
-  - type: Projectile
-    impactEffect: BulletImpactEffectOrangeDisabler
-    damage:
-      types:
-        Heat: 15
+# Carbine
 
 - type: entity
-  name: magnum laser bolt
-  id: BulletLaserMagnumHarmony
-  parent: BulletLaserBaseHarmony
+  parent: BulletEnergyBaseHarmony
+  id: BulletEnergyCarbineHarmony
+  categories: [ HideSpawnMenu ]
+  name: energy bolt (carbine)
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Guns/Projectiles/laser_projectile.rsi
     layers:
-    - state: icon
+    - state: small
       shader: unshaded
   - type: PointLight
     enabled: true
-    color: "#ff4300"
+    color: "#ff0000"
   - type: Projectile
-    impactEffect: BulletImpactEffectOrangeDisabler
+    impactEffect: BulletImpactEffectLaserHarmony
+    damage:
+      types:
+        Heat: 10
+
+- type: entity
+  parent: BulletEnergyCarbineHarmony
+  id: BulletEnergyCarbineUnstableHarmony
+  categories: [ HideSpawnMenu ]
+  name: carbine laser barrage
+  components:
+  - type: ProjectileSpread
+    proto: BulletEnergyCarbineHarmony
+    count: 2
+    spread: 12.5
+
+- type: entity
+  parent: BulletEnergyBaseHarmony
+  id: BulletEnergyCarbineXRayHarmony
+  categories: [ HideSpawnMenu ]
+  name: energy bolt x-ray (carbine)
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/xray_projectile.rsi
+    layers:
+    - state: small
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#15cb2a"
+  - type: Projectile
+    impactEffect: BulletImpactEffectXRayHarmony
+    damage:
+      types:
+        Heat: 6
+        Radiation: 4
+
+- type: entity
+  parent: BulletEnergyBaseHarmony
+  id: BulletEnergyCarbineShockHarmony
+  categories: [ HideSpawnMenu ]
+  name: energy bolt shock (carbine)
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/shock_projectile.rsi
+    layers:
+    - state: small
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#AA00FF"
+  - type: Projectile
+    impactEffect: BulletImpactShockHarmony
+    damage:
+      types:
+        Shock: 14
+    ignoreResistances: true
+  - type: StaminaDamageOnCollide
+    damage: 14
+
+# Magnum
+
+- type: entity
+  parent: BulletEnergyBaseHarmony
+  id: BulletEnergyMagnumHarmony
+  categories: [ HideSpawnMenu ]
+  name: energy bolt (magnum)
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/laser_projectile.rsi
+    layers:
+    - state: medium
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#ff0000"
+  - type: Projectile
+    impactEffect: BulletImpactEffectLaserHarmony
     damage:
       types:
         Heat: 30
 
 - type: entity
-  name: magnum window-piercing bolt
-  id: BulletLaserWindowPiercingMagnumHarmony
-  parent: BulletLaserBaseHarmony
+  parent: BulletEnergyBaseHarmony
+  id: BulletEnergyMagnumWindowPiercingHarmony
+  categories: [ HideSpawnMenu ]
+  name: window-piercing bolt (magnum)
   components:
   - type: Sprite
-    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/piercing_projectile.rsi
+    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/laser_projectile.rsi
     layers:
-    - state: icon
+    - state: pierce
       shader: unshaded
   - type: PointLight
     enabled: true
-    color: "#ff4300"
+    color: "#ff0000"
   - type: Projectile
-    impactEffect: BulletImpactEffectOrangeDisabler
+    impactEffect: BulletImpactEffectLaserHarmony
     damage:
       types:
         Heat: 20
@@ -101,57 +162,3 @@
         hard: false
         mask:
         - Opaque
-
-- type: entity
-  parent: BulletLaserHarmony
-  id: BulletEnergyCarbineUnstableHarmony
-  name: carbine laser barrage
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: ProjectileSpread
-    proto: BulletLaserHarmony
-    count: 2
-    spread: 12.5
-
-- type: entity
-  name: laser bolt x-ray
-  id: BulletLaserXRayHarmony
-  parent: BulletLaserBaseHarmony
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/xray_projectile.rsi
-    layers:
-    - state: icon
-      shader: unshaded
-  - type: PointLight
-    enabled: true
-    color: "#15cb2a"
-  - type: Projectile
-    impactEffect: BulletImpactEffectXRayHarmony
-    damage:
-      types:
-        Heat: 10
-        Radiation: 6
-
-- type: entity
-  name: laser bolt shock
-  id: BulletLaserShockHarmony
-  parent: BulletLaserBaseHarmony
-  components:
-  - type: Sprite
-    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/shock_projectile.rsi
-    layers:
-    - state: icon
-      shader: unshaded
-  - type: PointLight
-    enabled: true
-    color: "#AA00FF"
-  - type: Projectile
-    impactEffect: BulletImpactShockHarmony
-    damage:
-      types:
-        Shock: 9
-    ignoreResistances: true
-  - type: StaminaDamageOnCollide
-    damage: 5
