@@ -84,4 +84,4 @@ uplink-hyposhell-desc = A box containing four hyposhells, shotgun shells that ca
 # Weapons
 
 uplink-malletofmalice-name = Mallet of Malice
-uplink-malletofmalice-desc = An overwhelmingly evil mallet, capable of such devestation... Donk.Co's latest and greatest toy, meant for their most elite undercover agents.
+uplink-malletofmalice-desc = An overwhelmingly evil mallet, capable of such devastation... Donk.Co's latest and greatest toy, meant for their most elite undercover agents.
