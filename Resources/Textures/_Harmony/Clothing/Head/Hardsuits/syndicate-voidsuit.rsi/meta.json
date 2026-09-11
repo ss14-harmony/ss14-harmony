@@ -1,0 +1,53 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "Created by Palourde89 (Github) at commit https://github.com/ss14-harmony/ss14-harmony/commit/ae674b965b9fa8a7fb023187f66876285fae7848. Modified by Deerstop (github) at commit https://github.com/ss14-harmony/ss14-harmony/pull/631/commits/14bd71741ca6865ed8d522d1eeb959e4ca8cd27d. Full resprite by halycon (kleinerstation13 on Github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "icon-flash"
+        },
+        {
+            "name": "equipped-head",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-light",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-unshaded",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-vox",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-light-vox",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-unshaded-vox",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-light-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-unshaded-reptilian",
+            "directions": 4
+        }
+    ]
+}

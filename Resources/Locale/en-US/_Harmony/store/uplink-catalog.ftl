@@ -68,6 +68,9 @@ uplink-storage-implanter-harm-desc = Hide goodies inside of yourself with new bl
 
 uplink-stealth-jetpack-desc = A black jetpack that doesn't appear on radar. It allows you to fly around in space. Refills not included, use your fuel wisely.
 
+uplink-syndie-voidsuit-name = Tactical Voidsuit
+uplink-syndie-voidsuit-desc = A lightly-armoured voidsuit designed for covert operations. Protects well against bullets and lasers, but keep your distance from melee weapons.
+
 # Pointless
 
 uplink-cluster-weh-name = Tactical Clusterplushie
