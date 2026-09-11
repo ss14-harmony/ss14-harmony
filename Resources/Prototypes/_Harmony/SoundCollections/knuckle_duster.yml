@@ -1,0 +1,5 @@
+- type: soundCollection
+  id: KnuckleDuster
+  files:
+  - /Audio/_Harmony/Weapons/Melee/punch.ogg
+  - /Audio/_Harmony/Weapons/Melee/hit.ogg

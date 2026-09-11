@@ -1,0 +1,20 @@
+- type: entity
+  parent: ClothingOuterArmorBase
+  id: ClothingOuterVestFlak
+  name: flak vest
+  suffix: Harmony
+  description: Looks like it could take a beating. Too bad you can't.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/OuterClothing/Vests/flakvest.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/OuterClothing/Vests/flakvest.rsi
+  - type: Armor
+    modifiers:
+      coefficients: # Great against everything. Loneops trade 25 TC and no spacing protection for this, so it should probably be a little good. Weak to stuns and explosions though!
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.25
+        Heat: 0.5
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Harmony/Weapons/Melee/pickupweapon.ogg
