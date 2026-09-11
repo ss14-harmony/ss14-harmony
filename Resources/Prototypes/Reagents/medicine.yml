@@ -1349,8 +1349,8 @@
         - !type:TemperatureCondition
           max: 213.0
         damage:
-          Brute: -3
-          Burn: -3
+          Brute: -4.5 #Harmony change - -3 to -4.5
+          #Harmony change - removed Burn: -3
 
 - type: reagent
   id : Aloxadone
