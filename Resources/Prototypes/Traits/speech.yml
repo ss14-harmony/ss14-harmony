@@ -27,6 +27,16 @@
   components:
   - type: SouthernAccent
 
+# Harmony - Add back the pirate accent
+- type: trait
+  id: PirateAccent
+  name: trait-pirate-accent-name
+  description: trait-pirate-accent-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: PirateAccent
+
 - type: trait
   id: GermanAccent
   name: trait-german-name
