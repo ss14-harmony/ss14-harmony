@@ -68,6 +68,9 @@ uplink-storage-implanter-harm-desc = Hide goodies inside of yourself with new bl
 
 uplink-stealth-jetpack-desc = A black jetpack that doesn't appear on radar. It allows you to fly around in space. Refills not included, use your fuel wisely.
 
+uplink-chameleon-eva-bundle-name = Chameleon EVA Bundle
+uplink-chameleon-eva-bundle-desc = A chameleon EVA suit and helmet for blending in without breathing vacuum. Comes with a chameleon gas mask and double emergency tanks.
+
 # Pointless
 
 uplink-cluster-weh-name = Tactical Clusterplushie
