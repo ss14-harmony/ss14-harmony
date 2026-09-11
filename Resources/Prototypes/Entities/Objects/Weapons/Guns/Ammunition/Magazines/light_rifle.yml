@@ -47,6 +47,7 @@
     proto: CartridgeLightRifle
     capacity: 100
   - type: Item
+    size: Normal # Harmony change - increased size of L6 mag ( Small - > Normal )
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_box.rsi
   - type: MagazineVisuals
