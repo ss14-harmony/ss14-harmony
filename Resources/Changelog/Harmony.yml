@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: KeldWolf
-  changes:
-  - message: Added 2 new shuttles by spanky to load (for admins)
-    type: Add
-  id: 25
-  time: '2024-09-04T06:57:35.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/25
 - author: SlamBamActionman
   changes:
   - message: Xeno map Beta is available for playtest on Harmony.
@@ -3793,3 +3786,11 @@
   id: 1442
   time: '2026-09-11T05:15:20.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1450
+- author: daseiinn
+  changes:
+  - message: Removed ammo tech fab boards from the procedurally generated salvage
+      loot pool!
+    type: Remove
+  id: 1443
+  time: '2026-09-11T05:29:07.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1449
