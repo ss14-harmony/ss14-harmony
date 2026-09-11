@@ -199,6 +199,15 @@
   materials:
     Steel: 145
 
+# Harmony Change - Adds high capacity viper mags to emagged lathes
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolHighCapacity
+  result: MagazinePistolHighCapacity
+  materials:
+    Steel: 200
+# Harmony Change End
+
 # Harmony change start - Removed special ammo
 #- type: latheRecipe
 #  parent: BaseAmmoRecipe
