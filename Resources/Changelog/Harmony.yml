@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: DieselMohawk
-  changes:
-  - message: Resprited the Vulture Pins
-    type: Tweak
-  id: 17
-  time: '2024-08-24T05:21:55.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/17
 - author: KeldWolf
   changes:
   - message: Reduced clothing timers and brought honk and syndi evac shuttles back
@@ -3794,3 +3787,10 @@
   id: 1440
   time: '2026-09-11T03:34:49.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1440
+- author: daseiinn
+  changes:
+  - message: Increased minimum Initial Infected to two!
+    type: Tweak
+  id: 1441
+  time: '2026-09-11T05:04:02.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1444
