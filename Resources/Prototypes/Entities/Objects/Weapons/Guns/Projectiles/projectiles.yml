@@ -301,7 +301,7 @@
       fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
-    damage: 30  # Harmony Change - Reverts to Pre-Buff (33 -> 30)
+    damage: 20  # Harmony Change - Lowered from Pre-Buff (33 -> 30 -> 20)
   - type: Projectile
     impactEffect: BulletImpactEffectDisabler
     damage:
@@ -1170,7 +1170,7 @@
       fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
-    damage: 15
+    damage: 10 # Harmony Change - lowered (15 -> 10)
   - type: Projectile
     impactEffect: BulletImpactEffectDisabler
     damage:
@@ -1245,7 +1245,7 @@
     - state: omnilaser
       shader: unshaded
   - type: StaminaDamageOnCollide
-    damage: 30
+    damage: 20 # Harmony Change - lowered (30 -> 20)
   - type: Projectile
     impactEffect: BulletImpactEffectDisabler
     damage:
