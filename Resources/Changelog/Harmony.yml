@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: SlamBamActionman
-  changes:
-  - message: Xeno map Beta is available for playtest on Harmony.
-    type: Add
-  id: 27
-  time: '2024-10-06T15:32:34.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/27
 - author: KeldWolf
   changes:
   - message: Added more shuttles by spanky to load (for admins)
@@ -3794,3 +3787,10 @@
   id: 1443
   time: '2026-09-11T05:29:07.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1449
+- author: TillsterRulz
+  changes:
+  - message: You now move moderately faster when wielding a Hristov
+    type: Tweak
+  id: 1444
+  time: '2026-09-11T05:35:00.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1447
