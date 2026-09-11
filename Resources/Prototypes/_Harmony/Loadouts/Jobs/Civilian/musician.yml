@@ -1,0 +1,19 @@
+# for possibly more admeme instruments
+- type: loadoutEffectGroup
+  id: MasterMusician
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMusician
+      time: 30h # should be pretty exclusive
+
+# supersynth
+- type: loadout
+  id: SuperSynth
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MasterMusician
+  storage:
+    back:
+    - SuperSynthesizerInstrument
