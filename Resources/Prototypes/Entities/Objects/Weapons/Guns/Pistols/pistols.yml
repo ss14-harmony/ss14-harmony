@@ -158,8 +158,20 @@
     sprite: Objects/Weapons/Guns/Pistols/cobra.rsi
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
+    # Harmony change start - lowers cocking volume
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/pistol_cock.ogg
+      params:
+        volume: -5
+    # Harmony change end
   - type: Gun
-    fireRate: 4
+    # Harmony change start - buffs firerate and lowers empty volume
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+      params:
+        volume: -14
+    fireRate: 5 # 4 -> 5
+    # Harmony change end
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
       params:
