@@ -57,8 +57,11 @@
 - type: entity
   id: FireAxeFlaming
   name: fire axe
-  parent: [ BaseSyndicateContraband, FireAxe ]
-  description: Why fight fire with an axe when you can fight with fire and axe? Now featuring rugged rubberized handle!
+  parent: [BaseSyndicateContraband, FireAxe]
+  # Start Harmony change - changed description
+  # description: Why fight fire with an axe when you can fight with fire and axe? Now featuring rugged rubberized handle!
+  description: Everything except the handle is scalding to the touch. Throwing this could probably deal massive damage to your foes.
+  # End Harmony change
   components:
   - type: MeleeWeapon
     wideAnimationRotation: 135
@@ -66,18 +69,46 @@
   - type: IgniteOnMeleeHit
     fireStacks: 1
   - type: Sprite
-    sprite: Objects/Weapons/Melee/fireaxeflaming.rsi
+    # Harmony change - Changed sprite path
+    sprite: _Harmony/Objects/Weapons/Melee/fireaxeflaming.rsi
+    # End Harmony change
     state: icon
   - type: Clothing
-    sprite: Objects/Weapons/Melee/fireaxeflaming.rsi
+    # Harmony change - Changed sprite path
+    sprite: _Harmony/Objects/Weapons/Melee/fireaxeflaming.rsi
+    # End Harmony change
     quickEquip: false
     slots:
     - back
+    # Start of Harmony specific additions
     - suitStorage
-  # Harmony specific addition, to prevent the Syndicate fire axe from ripping up plating
+  - type: StaminaDamageOnEmbed
+    damage: 60
+  - type: EmbeddableProjectile
+    sound: /Audio/_Harmony/Weapons/axe_hit.ogg
+    params:
+      pitch: 1
+      volume: 3
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 50 # ignores resistances
+  - type: EmitSoundOnThrow
+    sound:
+      path: /Audio/Weapons/bolathrow.ogg
+      params:
+        pitch: 0.8
+        volume: -3
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Slash: 10
+        Heat: 10
+        Structural: 40
   - type: Tool
     qualities:
     - Prying
     - Slicing
     - Sawing
-  # End of Harmony specific addition
+  # End of Harmony specific additions
