@@ -51,3 +51,11 @@
     Glass: 500
     Plastic: 250
     Uranium: 300
+
+- type: latheRecipe
+  id: WeaponSecurityBolaCannonHarmony
+  result: WeaponSecurityBolaCannonHarmony
+  completetime: 4
+  materials:
+    Steel: 1000
+    Plastic: 500
