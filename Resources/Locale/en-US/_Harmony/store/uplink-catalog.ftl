@@ -70,9 +70,6 @@ uplink-stealth-jetpack-desc = A black jetpack that doesn't appear on radar. It a
 
 # Pointless
 
-uplink-cluster-weh-name = Tactical Clusterplushie
-uplink-cluster-weh-desc = Scatters 10 lizard plushies in a circle after a short delay. Weh.
-
 uplink-syndiedrobe-flatpack-name = SyndieDrobe Flatpack
 uplink-syndiedrobe-flatpack-desc = A flatpack box containing a SyndieDrobe. Slay whilst slaying your targets.
 
