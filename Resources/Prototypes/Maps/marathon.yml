@@ -38,11 +38,11 @@
             TechnicalAssistant: [ 2, 2 ]
             #medical (8-8)
             Chemist: [ 2, 2 ]
-            MedicalDoctor: [ 3, 3 ]
+            MedicalDoctor: [ 4, 4 ]
             Paramedic: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ]
             #science (6-6)
-            Scientist: [ 4, 4 ]
+            Scientist: [ 3, 3 ] # Harmony Chance - Reduced from 4, 4 to 3, 3
             ResearchAssistant: [ 2, 2 ]
             #security (10-11)
             Warden: [ 1, 1 ]
