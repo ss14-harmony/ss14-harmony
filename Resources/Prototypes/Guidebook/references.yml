@@ -15,6 +15,8 @@
   name: guide-entry-drinks
   text: "/ServerInfo/Guidebook/ReferenceTables/Drinks.xml"
   filterEnabled: True
+  children: # DeltaV port - Ice cream entries for quicker searching
+  - FrozenTreats
 
 - type: guideEntry
   id: FoodRecipes
