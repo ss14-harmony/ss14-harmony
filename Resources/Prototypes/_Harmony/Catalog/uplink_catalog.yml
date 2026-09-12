@@ -318,3 +318,19 @@
     whitelist:
     - Bartender
     - Zookeeper
+
+# Weapons
+
+- type: listing
+  id: UplinkMalletofMalice
+  name: uplink-malletofmalice-name
+  description: uplink-malletofmalice-desc
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  productEntity: MaliceMallet
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkWeaponry
+ 
