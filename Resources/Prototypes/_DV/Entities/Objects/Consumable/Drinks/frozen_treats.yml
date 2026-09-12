@@ -4,12 +4,11 @@
   id: DrinkIceCreamAppleCaramel
   suffix: apple caramel ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamAppleCaramel
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamAppleCaramel
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-applecaramel.rsi
     state: icon
@@ -19,12 +18,11 @@
   id: DrinkIceCreamCaramel
   suffix: caramel ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamCaramel
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamCaramel
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-caramel.rsi
     state: icon
@@ -34,12 +32,11 @@
   id: DrinkIceCreamCaramelFudge
   suffix: caramel fudge ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamCaramelFudge
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamCaramelFudge
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-caramelfudge.rsi
     state: icon
@@ -49,12 +46,11 @@
   id: DrinkIceCreamCherry
   suffix: cherry ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamCherry
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamCherry
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-cherry.rsi
     state: icon
@@ -64,12 +60,11 @@
   id: DrinkIceCreamChocolate
   suffix: chocolate ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamChocolate
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamChocolate
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-chocolate.rsi
     state: icon
@@ -79,12 +74,11 @@
   id: DrinkIceCreamBerryCobbler
   suffix: cobbler's ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamBerryCobbler
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamBerryCobbler
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-cobblers.rsi
     state: icon
@@ -94,12 +88,11 @@
   id: DrinkIceCreamCoffee
   suffix: coffee ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamCoffee
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamCoffee
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-coffee.rsi
     state: icon
@@ -109,12 +102,11 @@
   id: DrinkIceCreamCookieDough
   suffix: cookie dough ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamCookieDough
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamCookieDough
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-cookiedough.rsi
     state: icon
@@ -124,12 +116,11 @@
   id: DrinkIceCreamGreenTea
   suffix: green tea ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamGreenTea
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamGreenTea
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-greentea.rsi
     state: icon
@@ -140,12 +131,11 @@
   id: DrinkIceCreamMint
   suffix: mint ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamMint
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamMint
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-mint.rsi
     state: icon
@@ -155,12 +145,11 @@
   id: DrinkIceCreamNeapolitan
   suffix: neapolitan ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamNeapolitan
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamNeapolitan
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-neapolitan.rsi
     state: icon
@@ -170,12 +159,11 @@
   id: DrinkIceCreamPistachio
   suffix: pistachio ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamPistachio
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamPistachio
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-pistachio.rsi
     state: icon
@@ -185,12 +173,11 @@
   id: DrinkIceCreamRockyRoad
   suffix: rocky road ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamRockyRoad
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamRockyRoad
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-rockyroad.rsi
     state: icon
@@ -200,12 +187,11 @@
   id: DrinkIceCreamTower
   suffix: tower of ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamTower
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamTower
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-tower.rsi
     state: icon
@@ -215,12 +201,11 @@
   id: DrinkIceCreamVegan
   suffix: vegan ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamVegan
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamVegan
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-vegan.rsi
     state: icon
@@ -230,12 +215,11 @@
   id: DrinkIceCreamWatermelon
   suffix: watermelon ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamWatermelon
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamWatermelon
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/icecream-watermelon.rsi
     state: icon
@@ -245,12 +229,11 @@
   id: DrinkSherbetRainbow
   suffix: rainbow sherbet
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamSherbetRainbow
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamSherbetRainbow
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/sherbet-rainbow.rsi
     state: icon
@@ -260,12 +243,11 @@
   id: DrinkIceCreamSherbetlemon
   suffix: lemon sherbet
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamSherbetLemon
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamSherbetLemon
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/sherbet-lemon.rsi
     state: icon
@@ -275,12 +257,11 @@
   id: DrinkSherbetLime
   suffix: lime sherbet
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamSherbetLime
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamSherbetLime
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/sherbet-lime.rsi
     state: icon
@@ -290,12 +271,11 @@
   id: DrinkSherbetOrange
   suffix: orange sherbet
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamSherbetOrange
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamSherbetOrange
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/sherbet-orange.rsi
     state: icon
@@ -305,12 +285,11 @@
   id: DrinkSherbetPineapple
   suffix: pineapple sherbet
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamSherbetPineapple
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamSherbetPineapple
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/sherbet-pineapple.rsi
     state: icon
@@ -320,12 +299,11 @@
   id: DrinkSherbetRaspberry
   suffix: raspberry sherbet
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamSherbetRaspberry
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamSherbetRaspberry
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/sherbet-raspberry.rsi
     state: icon
@@ -335,12 +313,11 @@
   id: DrinkSlushBlueRaspberry
   suffix: blue raspberry slush
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: SlushBlueRaspberry
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: SlushBlueRaspberry
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/slush-blueraspberry.rsi
     state: icon
@@ -350,12 +327,11 @@
   id: DrinkSlushCherry
   suffix: cherry slush
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: SlushCherry
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: SlushCherry
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/slush-cherry.rsi
     state: icon
@@ -365,12 +341,11 @@
   id: DrinkSlushCola
   suffix: cola slush
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: SlushCola
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: SlushCola
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/slush-cola.rsi
     state: icon
@@ -380,12 +355,27 @@
   id: IceCreamSundaeTropical
   suffix: tropical sundae
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: IceCreamSundaeTropical
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IceCreamSundaeTropical
+        Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/frozen_treats/tropicalsunday.rsi
     state: icon
+
+- type: entity
+  parent: [DrinkVisualsOpenable, DrinkBottlePlasticSmallBaseFull]
+  id: DrinkCaramelBottleFull
+  name: caramel bottle
+  description: A bottle of what is essentially molten sugar with enough water to keep it somewhat fluid.
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Caramel
+        Quantity: 50
+  - type: Sprite
+    sprite: _DV/Objects/Consumable/Drinks/frozen_treats/caramel-bottle.rsi
+  - type: Label
+    currentLabel: reagent-name-caramel
