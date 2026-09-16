@@ -166,11 +166,11 @@ public sealed partial class ZombieComponent : Component
     /// HARMONY ADDITION!!!!!!!!
     /// </summary>
     /// <remarks>
-    /// Currently set to revive at 105 HP for humanoids
+    /// Default set to revive at 110 HP for humanoids
     /// Can't set it to a float or butterflies won't revive (very important)
     /// </remarks>
     [ViewVariables(VVAccess.ReadWrite)]
-    public float ZombieReviveThreshold = 0.525f;
+    public float ZombieReviveThreshold = 0.55f;
 
     // End of Harmony Changes
 }
