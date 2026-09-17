@@ -480,9 +480,9 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    earliestStart: 50 # Change: Reinforcing the Zombie Hoard | 90 -> 50
+    earliestStart: 55 # Change: Reinforcing the Zombie Hoard | 90 -> 55
     minimumPlayers: 40
-    weight: 2 # Zombies was happening basically every single survival round, so now it's super rare | Change: Reinforcing the Zombie Hoard 1 -> 2 HOPEFULLY not too common but it's so hard to gauge
+    weight: 2 # Zombies was happening basically every single survival round, so now it's super rare | Change: Reinforcing the Zombie Hoard 1 -> 2 HOPEFULLY not too common but it's so hard to gauge with how it used to be
     duration: 1
     occursDuringRoundEnd: false
     maxOccurrences: 1 # Change: Reinforcing the Zombie Hoard | WHAT DO YOU MEAN YOU COULD ROLL THIS SEVERAL TIMES WTF???
