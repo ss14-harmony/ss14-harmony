@@ -162,7 +162,7 @@ public sealed partial class ZombieComponent : Component
     // Start of Harmony Changes: Reinforcing the Zombie Horde
 
     /// <summary>
-    /// The percent threshold at which a zombie gets revived if they're dead
+    /// The percent threshold at which a zombie gets revived taken from the DEAD threshold
     /// HARMONY ADDITION!!!!!!!!
     /// </summary>
     /// <remarks>
