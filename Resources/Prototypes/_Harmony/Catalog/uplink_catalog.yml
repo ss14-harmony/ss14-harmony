@@ -128,12 +128,15 @@
       - NukeOpsUplink
 
 - type: listing
-  id: UplinkFoamGrenadeShrapnel
-  name: uplink-foam-grenade-lethal-name
-  description: uplink-foam-grenade-lethal-desc
-  productEntity: FoamGrenadeShrapnel
+  id: UplinkFoamGrenadeStinger
+  name: uplink-foam-grenade-stinger-name
+  description: uplink-foam-grenade-stinger-desc
+  productEntity: FoamGrenadeStinger
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 1
   cost:
-    Telecrystal: 4
+    Telecrystal: 2
   categories:
   - UplinkExplosives
 
