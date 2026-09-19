@@ -16,7 +16,6 @@
     - !type:OverallPlaytimeRequirement
       time: 24h
     # Harmony end
-  weight: 5
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos

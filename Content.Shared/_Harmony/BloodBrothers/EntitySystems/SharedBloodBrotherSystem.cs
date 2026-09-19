@@ -45,7 +45,7 @@ public abstract partial class SharedBloodBrotherSystem : EntitySystem
         args.Cancelled = !CanGetState(args.Player);
     }
 
-    public void OnBloodBrotherMindshielded(Entity<MindShieldComponent> entity, ref MapInitEvent args)
+    public void OnBloodBrotherMindshielded(Entity<MindShieldImplantComponent> entity)
     {
         if (HasComp<InitialBloodBrotherComponent>(entity))
             return;

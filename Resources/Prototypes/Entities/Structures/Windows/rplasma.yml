@@ -1,28 +1,28 @@
 - type: entity
+  parent: [BaseDeltaPressureReinforcedPlasma, BaseWindowStructure, BaseRCDResistant, StructureHealthBarrierStrong]
   id: ReinforcedPlasmaWindow
   name: reinforced plasma window
-  parent: [BaseDeltaPressureReinforcedPlasma, WindowRCDResistant]
   components:
   - type: Sprite
-    drawdepth: WallTops
-# Start of Harmony Change: Updates Sprite Pathing
-#    sprite: Structures/Windows/reinforced_plasma_window.rsi
-    sprite: _Harmony/Structures/Windows/reinforced_plasma_window.rsi
-  - type: Icon
-#    sprite: Structures/Windows/reinforced_plasma_window.rsi
-    sprite: _Harmony/Structures/Windows/reinforced_plasma_window.rsi
+# Start of Harmony Change: Updates Sprite Pathing. Commented out for now due to the Respritening.
+#    drawdepth: WallTops
+#    sprite: _Harmony/Structures/Windows/reinforced_plasma_window.rsi
+#  - type: Icon
+#    sprite: _Harmony/Structures/Windows/reinforced_plasma_window.rsi
 # End of Harmony Change
+    sprite: Structures/Windows/window-plasma-reinf.rsi
+  - type: Icon
+    sprite: Structures/Windows/window-plasma-reinf.rsi
+    state: full
   - type: Damageable
-    damageModifierSet: RGlass
-  - type: Injurable
-    damageContainer: StructuralInorganic
+    damageModifierSet: GlassReinforcedPlasmaMod
   - type: RadiationBlocker
     resistance: 4
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 120
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -35,8 +35,6 @@
           PartRodMetal:
             min: 1
             max: 2
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: IconSmooth
     base: rpwindow
   - type: Construction
@@ -53,14 +51,9 @@
     price: 132
 
 - type: entity
+  parent: [BaseDeltaPressureReinforcedPlasmaQuarter, BaseWindowStructureDirectional, BaseRCDResistant, StructureHealthBarrier]
   id: PlasmaReinforcedWindowDirectional
-  parent: [BaseDeltaPressureReinforcedPlasmaQuarter, WindowDirectionalRCDResistant]
   name: directional reinforced plasma window
-  description: Don't smudge up the glass down there.
-  placement:
-    mode: SnapgridCenter
-    snap:
-    - Window
   components:
   - type: Sprite
 # Start of Harmony Change: Updates Sprite Pathing
@@ -83,14 +76,14 @@
     damageOverlay:
       sprite: Structures/Windows/cracks_directional.rsi
   - type: Damageable
-    damageModifierSet: RGlass
+    damageModifierSet: GlassReinforcedPlasmaMod
   - type: RadiationBlocker
     resistance: 2
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 75
+        damage: 80
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -103,10 +96,39 @@
           PartRodMetal:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: StaticPrice
     price: 66
+
+- type: entity
+  parent: PlasmaReinforcedWindowDirectional
+  id: PlasmaReinforcedWindowDirectionalCorner
+  suffix: Corner
+  components:
+  - type: Sprite
+    sprite: Structures/Windows/directional.rsi
+    state: plasma_reinforced_window_corner
+  - type: Icon
+    sprite: Structures/Windows/directional.rsi
+    state: plasma_reinforced_window_corner
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,-0.28125,-0.28125"
+        density: 1500
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
+  - type: Construction
+    graph: WindowDirectionalCorner
+    node: plasmaReinforcedWindowDirectionalCorner
+  - type: DamageVisuals
+    thresholds: [5, 10, 20]
+    trackAllDamage: true
+    damageOverlay:
+      sprite: Structures/Windows/cracks_directional_corner.rsi
 
 - type: entity
   parent: ReinforcedPlasmaWindow
@@ -119,10 +141,14 @@
   components:
   - type: Sprite
     drawdepth: WallTops
+<<<<<<< HEAD
 # Start of Harmony Change: Updates Sprite Pathing
 #    sprite: Structures/Windows/reinforced_plasma_diagonal.rsi
     sprite: _Harmony/Structures/Windows/reinforced_plasma_diagonal.rsi
 # End of Harmony Change
+=======
+    sprite: Structures/Windows/window-diagonal-plasma-reinf.rsi
+>>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
     state: state0
   - type: Tag
     tags:
@@ -130,6 +156,7 @@
     - Window
   - type: IconSmooth
     mode: Diagonal
+<<<<<<< HEAD
 # Start of Harmony Change: Updates IconSmooth key
 #    key: windows
     key: station
@@ -140,6 +167,12 @@
 #    sprite: Structures/Windows/reinforced_plasma_diagonal.rsi
     sprite: _Harmony/Structures/Windows/reinforced_plasma_diagonal.rsi
 # End of Harmony Change
+=======
+    key: walls
+    base: state
+  - type: Icon
+    sprite: Structures/Windows/window-diagonal-plasma-reinf.rsi
+>>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
     state: state0
   - type: Fixtures
     fixtures:
@@ -162,7 +195,7 @@
     - East
   - type: DamageVisuals
     damageOverlay:
-      sprite: Structures/Windows/cracks_diagonal.rsi
+      sprite: Structures/Windows/cracks-diagonal.rsi
   - type: Construction
     graph: WindowDiagonal
     node: reinforcedPlasmaWindowDiagonal

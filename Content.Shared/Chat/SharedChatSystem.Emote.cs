@@ -161,14 +161,19 @@ public abstract partial class SharedChatSystem
 
         // optional override params > general params for all sounds in set > individual sound params
         var param = audioParams ?? proto.GeneralParams ?? sound.Params;
+
+        if (_net.IsServer) // TODO: replace this call with PlayPredicted when chat is predicted.
         // Harmony Change Start - RMC14, Ports options to mute species sfx
         // _audio.PlayPvs(sound, uid, param);
-        var filter = Filter.Pvs(uid).RemoveWhere(s => !_humanoidVoicelines.ShouldPlayEmote(uid, s));
-        if (filter.Count == 0)
-            return false;
+        {
+            var filter = Filter.Pvs(uid).RemoveWhere(s => !_humanoidVoicelines.ShouldPlayEmote(uid, s));
+            if (filter.Count == 0)
+                return false;
 
-        _audio.PlayEntity(sound, filter, uid, true, param);
+            _audio.PlayEntity(sound, filter, uid, true, param);
+        }
         // Harmony Change End
+
         return true;
     }
     /// <summary>
@@ -234,10 +239,6 @@ public abstract partial class SharedChatSystem
 
         if (beforeEv.Cancelled)
         {
-            // Chat is not predicted anyways, so no need to predict this popup either.
-            if (_net.IsClient)
-                return false;
-
             if (beforeEv.Blocker != null)
             {
                 _popup.PopupEntity(
@@ -263,7 +264,7 @@ public abstract partial class SharedChatSystem
             return false;
         }
 
-        var ev = new EmoteEvent(proto);
+        var ev = new EmoteEvent(GetNetEntity(uid), proto);
         // Harmony start - broadcast if animated
         if (proto.Animated)
             RaiseLocalEvent(uid, ref ev, true);
