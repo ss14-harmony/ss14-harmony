@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using Content.Server.Worldgen.Components;
-using Content.Shared.Ghost;
+using Content.Shared.Ghost.Components;
 using Content.Shared.Mind.Components;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
