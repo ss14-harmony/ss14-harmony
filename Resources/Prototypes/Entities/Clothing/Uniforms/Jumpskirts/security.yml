@@ -105,7 +105,6 @@
     sprite: Clothing/Uniforms/Jumpskirts/Security/hos_parade.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
   parent: [ClothingUniformSkirtBase, BaseSecurityContraband] # Harmony Change: Added Contraband Level
   name: brigmedic jumpskirt
   description: This uniform is issued to qualified personnel who have been trained. No one cares that the training took half a day.

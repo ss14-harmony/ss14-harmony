@@ -149,16 +149,13 @@
         - id: ClothingMaskBreathMedical
         - id: EmergencyOxygenTankFilled
         - id: EmergencyMedipen
-<<<<<<< HEAD
+        - id: Flare
   # Harmony start: custom medical survival box sprites
   - type: Sprite
     layers:
     - state: box_medical
     - state: emergencytank
   # Harmony end
-=======
-        - id: Flare
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
 
 - type: entity
   parent: BoxSurvivalNitrogen

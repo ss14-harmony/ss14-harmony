@@ -13,7 +13,6 @@
   description: A special hardsuit helmet designed for working in low-pressure, high thermal environments.
   components:
   - type: Sprite
-<<<<<<< HEAD
     sprite: _Harmony/Clothing/Head/Hardsuits/atmospherics.rsi # Harmony
     layers:
     - state: icon
@@ -62,11 +61,6 @@
       # - state: equipped-head-unshaded-reptilian
       #   shader: unshaded
       # Harmony end
-=======
-    sprite: Clothing/Head/Hardsuits/atmospherics.rsi
-  - type: HandheldLight
-    addPrefix: false
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
   - type: PointLight
     color: "#adffe6"
   - type: PressureProtection
@@ -86,7 +80,6 @@
   description: An engineering hardsuit helmet designed for working in low-pressure, high radioactive environments.
   components:
   - type: Sprite
-<<<<<<< HEAD
     sprite: _Harmony/Clothing/Head/Hardsuits/engineering.rsi # Harmony
     layers:
     - state: icon
@@ -135,11 +128,6 @@
       # - state: equipped-head-unshaded-reptilian
       #   shader: unshaded
       # Harmony end
-=======
-    sprite: Clothing/Head/Hardsuits/engineering.rsi
-  - type: HandheldLight
-    addPrefix: false
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
   - type: PointLight
     color: "#adffe6" # Harmony: from #ffdbad
   - type: PressureProtection
@@ -157,7 +145,6 @@
   description: A sturdy helmet designed for complex industrial operations in space.
   components:
   - type: Sprite
-<<<<<<< HEAD
 #start of Harmony change
     sprite: _Harmony/Clothing/Head/Hardsuits/spatiohelm.rsi
     #layers:
@@ -207,11 +194,6 @@
       # - state: equipped-head-unshaded-reptilian
       #   shader: unshaded
       # Harmony end
-=======
-    sprite: Clothing/Head/Hardsuits/spatiohelm.rsi
-  - type: HandheldLight
-    addPrefix: false
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
   - type: PointLight
     color: "#adffe6"     #Harmony : added a color to the flashlight to match the sprite
     radius: 6
@@ -273,7 +255,6 @@
   description: A sturdy hardsuit helmet, infused with a goliath's hide and an eerie, unblinking eye cut from its mass.
   components:
   - type: Sprite
-<<<<<<< HEAD
 #start of Harmony change
     #sprite: Clothing/Head/Hardsuits/goliathhelm.rsi
     sprite: _Harmony/Clothing/Head/Hardsuits/goliathhelm.rsi
@@ -317,11 +298,6 @@
       # - state: equipped-head-unshaded-reptilian
       #   shader: unshaded
       # Harmony end
-=======
-    sprite: Clothing/Head/Hardsuits/goliathhelm.rsi
-  - type: HandheldLight
-    addPrefix: false
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
   - type: PointLight
     color: "#adffe6" #Harmony : added a color to the flashlight to match the sprite
     radius: 6
@@ -361,7 +337,6 @@
   description: Armored hardsuit helmet for security needs.
   components:
   - type: Sprite
-<<<<<<< HEAD
 #start of harmony change
 #    sprite: Clothing/Head/Hardsuits/security.rsi
 #  - type: Clothing
@@ -389,9 +364,6 @@
       - state: equipped-head-unshaded-vox
         shader: unshaded
 #end of Harmony change
-=======
-    sprite: Clothing/Head/Hardsuits/security.rsi
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
   - type: PointLight
     color: "#ffeead"
   - type: PressureProtection
@@ -416,13 +388,9 @@
   description: The lightweight helmet of the brigmedic hardsuit. Protects against viruses, and clowns.
   components:
   - type: Sprite
-<<<<<<< HEAD
     sprite: _Harmony/Clothing/Head/Hardsuits/brigmedic.rsi # Harmony
   - type: Clothing
     sprite: _Harmony/Clothing/Head/Hardsuits/brigmedic.rsi # Harmony
-=======
-    sprite: Clothing/Head/Hardsuits/brigmedic.rsi
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
   - type: PointLight
     color: "#00FFFF"
   - type: Armor
@@ -446,7 +414,6 @@
   description: A modified riot helmet. Oddly comfortable.
   components:
   - type: Sprite
-<<<<<<< HEAD
 #start of harmony change
 #    sprite: Clothing/Head/Hardsuits/security-warden.rsi
 #  - type: Clothing
@@ -474,9 +441,6 @@
       - state: equipped-head-unshaded-vox
         shader: unshaded
 #end of Harmony change
-=======
-    sprite: Clothing/Head/Hardsuits/security-warden.rsi
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
   - type: PointLight
     color: "#ffeead"
   - type: PressureProtection
@@ -514,7 +478,6 @@
   description: Special hardsuit helmet, made for the chief engineer of the station.
   components:
   - type: Sprite
-<<<<<<< HEAD
     sprite: _Harmony/Clothing/Head/Hardsuits/engineering-white.rsi # Harmony
     layers:
     - state: icon
@@ -563,11 +526,6 @@
       # - state: equipped-head-unshaded-reptilian
       #   shader: unshaded
       # Harmony end
-=======
-    sprite: Clothing/Head/Hardsuits/engineering-white.rsi
-  - type: HandheldLight
-    addPrefix: false
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
   - type: PointLight
     color: "#adffe6" # Harmony: from #daffad
   - type: PressureProtection
@@ -623,7 +581,6 @@
   description: Security hardsuit helmet with the latest top secret NT-HUD software. Belongs to the HoS.
   components:
   - type: Sprite
-<<<<<<< HEAD
 #start of harmony change
 #    sprite: Clothing/Head/Hardsuits/security-red.rsi
 #  - type: Clothing
@@ -651,9 +608,6 @@
       - state: equipped-head-unshaded-vox
         shader: unshaded
 #end of Harmony change
-=======
-    sprite: Clothing/Head/Hardsuits/security-red.rsi
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
   - type: PointLight
     color: "#ffeead"
   - type: PressureProtection
@@ -676,7 +630,6 @@
   categories: [ DoNotMap ]
   components:
   - type: Sprite
-<<<<<<< HEAD
 #start of Harmony change
     #sprite: Clothing/Head/Hardsuits/luxury.rsi
   #- type: Clothing
@@ -703,9 +656,6 @@
       - state: equipped-head-unshaded-vox
         shader: unshaded
 #end of Harmony change
-=======
-    sprite: Clothing/Head/Hardsuits/luxury.rsi
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
@@ -723,7 +673,6 @@
   description: A heavily armored helmet designed for work in special operations. Property of Gorlex Marauders.
   components:
   - type: Sprite
-<<<<<<< HEAD
 #start of harmony change
     #sprite: Clothing/Head/Hardsuits/syndicate.rsi
     #-type: Clothing
@@ -752,9 +701,6 @@
       - state: equipped-head-unshaded-vox
         shader: unshaded
 #end of Harmony change
-=======
-    sprite: Clothing/Head/Hardsuits/syndicate.rsi
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
   - type: PointLight
     color: green
     radius: 5
@@ -781,7 +727,6 @@
   description: An advanced red hardsuit helmet specifically designed for field medic operations.
   components:
   - type: Sprite
-<<<<<<< HEAD
 #start of harmony change
     #sprite: Clothing/Head/Hardsuits/syndiemedic.rsi
     #-type: Clothing
@@ -810,9 +755,6 @@
       - state: equipped-head-unshaded-vox
         shader: unshaded
 #end of Harmony change
-=======
-    sprite: Clothing/Head/Hardsuits/syndiemedic.rsi
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
   - type: PointLight
     color: green
     radius: 5
@@ -836,7 +778,6 @@
   description: An elite version of the blood-red hardsuit's helmet, with improved radiation resistance and fireproofing. Property of Gorlex Marauders.
   components:
   - type: Sprite
-<<<<<<< HEAD
     #start of harmony change
     #sprite: Clothing/Head/Hardsuits/syndieelite.rsi
     #-type: Clothing
@@ -865,9 +806,6 @@
       - state: equipped-head-unshaded-vox
         shader: unshaded
   #end of Harmony change
-=======
-    sprite: Clothing/Head/Hardsuits/syndieelite.rsi
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
   - type: PointLight
     color: red
     radius: 5
@@ -896,7 +834,6 @@
   description: A bulked up version of the blood-red hardsuit's helmet, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.
   components:
   - type: Sprite
-<<<<<<< HEAD
     #start of harmony change
     #sprite: Clothing/Head/Hardsuits/syndiecommander.rsi
     #-type: Clothing
@@ -925,9 +862,6 @@
       - state: equipped-head-unshaded-vox
         shader: unshaded
   #end of Harmony change
-=======
-    sprite: Clothing/Head/Hardsuits/syndiecommander.rsi
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
   - type: PointLight
     color: green
     radius: 5
