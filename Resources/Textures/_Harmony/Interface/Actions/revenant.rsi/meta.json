@@ -1,0 +1,14 @@
+﻿{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/0a32812982bfeaa7cf7b0094c09ec49fd82de91c",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name":"ghostly_whisper"
+        }
+    ]
+}
