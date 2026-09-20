@@ -1,14 +1,6 @@
 ﻿Entries:
 - author: KeldWolf
   changes:
-  - message: 'Re-enabled role timers: 3 hours for command and sensitive roles and
-      3 hours of command for Captain.'
-    type: Tweak
-  id: 30
-  time: '2024-09-07T04:39:41.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/30
-- author: KeldWolf
-  changes:
   - message: Tweaks on shuttles made by Spanky.
     type: Tweak
   id: 31
@@ -3796,3 +3788,10 @@
   id: 1445
   time: '2026-09-20T22:11:55.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1486
+- author: daseiinn
+  changes:
+  - message: Changed condiment packets back to 15u!
+    type: Tweak
+  id: 1446
+  time: '2026-09-20T22:54:10.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1471
