@@ -26,7 +26,7 @@ uplink-X4-bundle-desc = A bag containing 4 X-4s, perfect for going all in on sab
 # Ammo
 
 uplink-blood-red-carbine-ammo-name = Jailbroken Energy Cartridge
-uplink-blood-red-carbine-ammo-desc = An energy cartridge that holds twenty charges of electric bolts.
+uplink-blood-red-carbine-ammo-desc = An energy cartridge that holds thirty charges of electric bolts.
 
 uplink-shotgun-drum-pellet-name = Shotgun Magazine (.50 pellet)
 uplink-shotgun-drum-pellet-desc = Shotgun drum with eight pellet shells. Compatible with the Bulldog.
