@@ -40,6 +40,13 @@ public sealed partial class CrayonComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool DeleteEmpty = true;
+
+    ///Start Harmony changes, based on Impstation
+    /// <summary>
+    /// Does the crayon have infinite charges?
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool Infinite;
 }
 
 /// <summary>
