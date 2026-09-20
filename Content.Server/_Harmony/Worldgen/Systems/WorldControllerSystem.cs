@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Content.Server.Worldgen.Components;
+using Content.Server._Harmony.Worldgen.Components;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Mind.Components;
 using JetBrains.Annotations;
@@ -7,7 +7,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
 
-namespace Content.Server.Worldgen.Systems;
+namespace Content.Server._Harmony.Worldgen.Systems;
 
 /// <summary>
 ///     This handles putting together chunk entities and notifying them about important changes.

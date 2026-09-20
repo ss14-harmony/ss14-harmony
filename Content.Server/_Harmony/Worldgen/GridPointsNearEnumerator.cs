@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
 
-namespace Content.Server.Worldgen;
+namespace Content.Server._Harmony.Worldgen;
 
 /// <summary>
 ///     A struct enumerator of points on a grid within the given radius.

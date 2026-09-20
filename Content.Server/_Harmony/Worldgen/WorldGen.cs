@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.Contracts;
 using System.Numerics;
 
-namespace Content.Server.Worldgen;
+namespace Content.Server._Harmony.Worldgen;
 
 /// <summary>
 ///     Contains a few world-generation related constants and static functions.

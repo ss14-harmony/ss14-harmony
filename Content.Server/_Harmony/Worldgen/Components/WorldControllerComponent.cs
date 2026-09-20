@@ -1,8 +1,8 @@
-﻿using Content.Server.Worldgen.Systems;
+﻿using Content.Server._Harmony.Worldgen.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
-namespace Content.Server.Worldgen.Components;
+namespace Content.Server._Harmony.Worldgen.Components;
 
 /// <summary>
 ///     This is used for controlling overall world loading, containing an index of all chunks in the map.

@@ -1,10 +1,10 @@
 ﻿using System.Numerics;
-using Content.Server.Worldgen.Components;
-using Content.Server.Worldgen.Prototypes;
+using Content.Server._Harmony.Worldgen.Components;
+using Content.Server._Harmony.Worldgen.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Server.Worldgen.Systems;
+namespace Content.Server._Harmony.Worldgen.Systems;
 
 /// <summary>
 ///     This handles the noise index.

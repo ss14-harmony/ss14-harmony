@@ -1,11 +1,11 @@
 using System.Linq;
-using Content.Server.Worldgen.Components.Debris;
+using Content.Server._Harmony.Worldgen.Components.Debris;
 using Content.Shared.Maps;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
 
-namespace Content.Server.Worldgen.Systems.Debris;
+namespace Content.Server._Harmony.Worldgen.Systems.Debris;
 
 /// <summary>
 ///     This handles building the floor plans for "blobby" debris.

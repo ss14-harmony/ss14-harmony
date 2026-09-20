@@ -1,8 +1,8 @@
 using Content.Server.Administration;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
-using Content.Server.Worldgen.Components;
-using Content.Server.Worldgen.Prototypes;
+using Content.Server._Harmony.Worldgen.Components;
+using Content.Server._Harmony.Worldgen.Prototypes;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
@@ -12,7 +12,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
 
-namespace Content.Server.Worldgen.Systems;
+namespace Content.Server._Harmony.Worldgen.Systems;
 
 /// <summary>
 ///     This handles configuring world generation during round start.

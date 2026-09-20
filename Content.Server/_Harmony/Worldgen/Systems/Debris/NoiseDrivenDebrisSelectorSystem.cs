@@ -1,9 +1,9 @@
-using Content.Server.Worldgen.Components.Debris;
+using Content.Server._Harmony.Worldgen.Components.Debris;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics;
 using Robust.Shared.Random;
 
-namespace Content.Server.Worldgen.Systems.Debris;
+namespace Content.Server._Harmony.Worldgen.Systems.Debris;
 
 /// <summary>
 ///     This handles selecting debris with probability decided by a noise channel.

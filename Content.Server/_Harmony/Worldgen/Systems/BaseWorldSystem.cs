@@ -1,8 +1,8 @@
 using System.Numerics;
-using Content.Server.Worldgen.Components;
+using Content.Server._Harmony.Worldgen.Components;
 using JetBrains.Annotations;
 
-namespace Content.Server.Worldgen.Systems;
+namespace Content.Server._Harmony.Worldgen.Systems;
 
 /// <summary>
 ///     This provides some additional functions for world generation systems.

@@ -1,8 +1,8 @@
 using System.Linq;
 using System.Numerics;
-using Content.Server.Worldgen.Components;
-using Content.Server.Worldgen.Components.Debris;
-using Content.Server.Worldgen.Tools;
+using Content.Server._Harmony.Worldgen.Components;
+using Content.Server._Harmony.Worldgen.Components.Debris;
+using Content.Server._Harmony.Worldgen.Tools;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
@@ -10,7 +10,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
-namespace Content.Server.Worldgen.Systems.Debris;
+namespace Content.Server._Harmony.Worldgen.Systems.Debris;
 
 /// <summary>
 ///     This handles placing debris within the world evenly with rng, primarily for structures like asteroid fields.

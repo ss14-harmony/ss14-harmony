@@ -1,8 +1,8 @@
-﻿using Content.Server.Worldgen.Systems.Debris;
+﻿using Content.Server._Harmony.Worldgen.Systems.Debris;
 using Content.Shared.Maps;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.Worldgen.Components.Debris;
+namespace Content.Server._Harmony.Worldgen.Components.Debris;
 
 /// <summary>
 ///     This is used for constructing asteroid debris.

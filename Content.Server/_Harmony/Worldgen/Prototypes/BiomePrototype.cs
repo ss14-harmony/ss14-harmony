@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 
-namespace Content.Server.Worldgen.Prototypes;
+namespace Content.Server._Harmony.Worldgen.Prototypes;
 
 /// <summary>
 ///     This is a prototype for biome selection, allowing the component list of a chunk to be amended based on the output

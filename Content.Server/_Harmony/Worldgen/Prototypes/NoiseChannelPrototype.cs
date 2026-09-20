@@ -3,7 +3,7 @@ using Robust.Shared.Noise;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 
-namespace Content.Server.Worldgen.Prototypes;
+namespace Content.Server._Harmony.Worldgen.Prototypes;
 
 /// <summary>
 ///     This is a config for noise channels, used by worldgen.

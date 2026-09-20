@@ -1,6 +1,6 @@
-﻿using Content.Server.Worldgen.Systems;
+﻿using Content.Server._Harmony.Worldgen.Systems;
 
-namespace Content.Server.Worldgen.Components;
+namespace Content.Server._Harmony.Worldgen.Components;
 
 /// <summary>
 ///     This is used for marking an entity as being a world chunk.

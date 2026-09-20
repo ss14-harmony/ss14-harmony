@@ -1,6 +1,6 @@
-﻿using Content.Server.Worldgen.Systems;
+﻿using Content.Server._Harmony.Worldgen.Systems;
 
-namespace Content.Server.Worldgen.Components;
+namespace Content.Server._Harmony.Worldgen.Components;
 
 /// <summary>
 ///     This is used for sending a signal to the entity it's on to load contents whenever a loader gets close enough.

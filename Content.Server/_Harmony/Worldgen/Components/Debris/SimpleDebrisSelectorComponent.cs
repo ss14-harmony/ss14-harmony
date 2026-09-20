@@ -1,8 +1,8 @@
-﻿using Content.Server.Worldgen.Systems.Debris;
-using Content.Server.Worldgen.Tools;
+﻿using Content.Server._Harmony.Worldgen.Systems.Debris;
+using Content.Server._Harmony.Worldgen.Tools;
 using Content.Shared.Storage;
 
-namespace Content.Server.Worldgen.Components.Debris;
+namespace Content.Server._Harmony.Worldgen.Components.Debris;
 
 /// <summary>
 ///     This is used for a very simple debris selection for simple biomes. Just uses a spawn table.

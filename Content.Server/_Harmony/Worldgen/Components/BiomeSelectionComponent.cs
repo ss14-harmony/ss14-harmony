@@ -1,8 +1,8 @@
-﻿using Content.Server.Worldgen.Prototypes;
-using Content.Server.Worldgen.Systems.Biomes;
+﻿using Content.Server._Harmony.Worldgen.Prototypes;
+using Content.Server._Harmony.Worldgen.Systems.Biomes;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.Worldgen.Components;
+namespace Content.Server._Harmony.Worldgen.Components;
 
 /// <summary>
 ///     This is used for selecting the biome(s) to be used during world generation.

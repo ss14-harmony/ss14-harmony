@@ -1,7 +1,7 @@
-using Content.Server.Worldgen.Components.Carvers;
-using Content.Server.Worldgen.Systems.Debris;
+using Content.Server._Harmony.Worldgen.Components.Carvers;
+using Content.Server._Harmony.Worldgen.Systems.Debris;
 
-namespace Content.Server.Worldgen.Systems.Carvers;
+namespace Content.Server._Harmony.Worldgen.Systems.Carvers;
 
 /// <summary>
 ///     This handles carving out holes in world generation according to a noise channel.

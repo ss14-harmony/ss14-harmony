@@ -1,7 +1,7 @@
-﻿using Content.Server.Worldgen.Components;
+﻿using Content.Server._Harmony.Worldgen.Components;
 using Robust.Server.GameObjects;
 
-namespace Content.Server.Worldgen.Systems;
+namespace Content.Server._Harmony.Worldgen.Systems;
 
 /// <summary>
 ///     This handles loading in objects based on distance from player, using some metadata on chunks.

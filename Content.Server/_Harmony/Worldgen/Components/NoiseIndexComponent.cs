@@ -1,7 +1,7 @@
-﻿using Content.Server.Worldgen.Prototypes;
-using Content.Server.Worldgen.Systems;
+﻿using Content.Server._Harmony.Worldgen.Prototypes;
+using Content.Server._Harmony.Worldgen.Systems;
 
-namespace Content.Server.Worldgen.Components;
+namespace Content.Server._Harmony.Worldgen.Components;
 
 /// <summary>
 ///     This is used for containing configured noise generators.

@@ -1,9 +1,9 @@
 ﻿using System.Numerics;
-using Content.Server.Worldgen.Prototypes;
-using Content.Server.Worldgen.Systems.Carvers;
+using Content.Server._Harmony.Worldgen.Prototypes;
+using Content.Server._Harmony.Worldgen.Systems.Carvers;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.Worldgen.Components.Carvers;
+namespace Content.Server._Harmony.Worldgen.Components.Carvers;
 
 /// <summary>
 ///     This is used for carving out empty space in the game world, providing byways through the debris field.

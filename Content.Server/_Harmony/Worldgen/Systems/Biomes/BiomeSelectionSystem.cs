@@ -1,10 +1,10 @@
 using System.Linq;
-using Content.Server.Worldgen.Components;
-using Content.Server.Worldgen.Prototypes;
+using Content.Server._Harmony.Worldgen.Components;
+using Content.Server._Harmony.Worldgen.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 
-namespace Content.Server.Worldgen.Systems.Biomes;
+namespace Content.Server._Harmony.Worldgen.Systems.Biomes;
 
 /// <summary>
 ///     This handles biome selection, evaluating which biome to apply to a chunk based on noise channels.

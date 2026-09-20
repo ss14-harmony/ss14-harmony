@@ -1,11 +1,11 @@
 ﻿using System.Linq;
-using Content.Server.Worldgen.Systems.Debris;
-using Content.Server.Worldgen.Tools;
+using Content.Server._Harmony.Worldgen.Systems.Debris;
+using Content.Server._Harmony.Worldgen.Tools;
 using Content.Shared.Maps;
 using Content.Shared.Storage;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.Worldgen.Components.Debris;
+namespace Content.Server._Harmony.Worldgen.Components.Debris;
 
 /// <summary>
 ///     This is used for populating a grid with random entities automatically.

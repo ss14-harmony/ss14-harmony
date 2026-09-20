@@ -1,7 +1,7 @@
 ﻿using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 
-namespace Content.Server.Worldgen.Prototypes;
+namespace Content.Server._Harmony.Worldgen.Prototypes;
 
 /// <summary>
 ///     This is a prototype for controlling overall world generation.
