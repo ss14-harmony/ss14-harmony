@@ -99,6 +99,7 @@
 
 - type: reagent
   id: IceCream
+  group: FrozenTreats # Harmony - Ice cream should be added to the frozen treat guidebook
   name: reagent-name-ice-cream
   parent: BaseSoda
   desc: reagent-desc-ice-cream
