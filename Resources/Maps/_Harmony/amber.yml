@@ -117724,7 +117724,7 @@ entities:
     - type: Transform
       pos: -30.366573,17.260607
       parent: 2
-- proto: LightReplacerEmpty
+- proto: LightReplacer
   entities:
   - uid: 9366
     components:
