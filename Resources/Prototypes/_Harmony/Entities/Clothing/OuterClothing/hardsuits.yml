@@ -32,3 +32,43 @@
     - WhitelistChameleon
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitQM
+
+#Tactical Voidsuit
+- type: entity
+  parent: [ ClothingOuterHardsuitBase, BaseSyndicateContraband ]
+  id: ClothingOuterVoidsuitSyndie
+  name: tactical voidsuit
+  suffix: Harmony
+  description: A flexible voidsuit produced by a subsidiary of Cybersun Industries. It has been lined with a carbon composite to protect against conventional ranged weaponry. The fragile ceramic plating combined with some design compromises to allow for EVA capability have lead to decreased effectiveness against blunt weapons.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/syndicate-voidsuit.rsi
+  - type: Item
+    size: Large
+  - type: Clothing
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/syndicate-voidsuit.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.7 # 30% - Worse than bloodred (50%)
+  - type: StaminaResistance
+    damageCoefficient: 0.85
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85    # 15% - Terrible against melee
+        Slash: 0.85    # 15% - Terrible against melee
+        Piercing: 0.6  # 40% - Same as security EVA (40%).     Worse than bloodred (50%)
+        Heat: 0.6      # 40% - Better than security EVA (20%). Worse than bloodred (50%)
+        Radiation: 0.7 # 30% - Better than security EVA (25%). Worse than bloodred (50%)
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetVoidsuitSyndie
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
