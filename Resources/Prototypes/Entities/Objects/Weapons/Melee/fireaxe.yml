@@ -60,7 +60,7 @@
   parent: [BaseSyndicateContraband, FireAxe]
   # Start Harmony change - changed description
   # description: Why fight fire with an axe when you can fight with fire and axe? Now featuring rugged rubberized handle!
-  description: Everything except the handle is scalding to the touch. Throwing this could probably deal massive damage to your foes.
+  description: An improved version of a standard Nanotrasen Fireaxe™. While originally kitbashed by the Gorlex Marauders from various Syndicate equipment, it was further retrofitted with modern technology by Waffle Corp. engineers and is now issued as a breaching tool to Syndicate strike teams. The scalding blade allows it not only to melt through walls, but also most armor when thrown at a high enough speed!
   # End Harmony change
   components:
   - type: MeleeWeapon
@@ -85,10 +85,11 @@
   - type: StaminaDamageOnEmbed
     damage: 60
   - type: EmbeddableProjectile
-    sound: /Audio/_Harmony/Weapons/axe_hit.ogg
-    params:
-      pitch: 1
-      volume: 3
+    sound:
+      path: /Audio/_Harmony/Weapons/axe_hit.ogg
+      params:
+        pitch: 1
+        volume: 3
   - type: LandAtCursor
   - type: DamageOtherOnHit
     damage:
