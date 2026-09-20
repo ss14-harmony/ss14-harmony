@@ -159,16 +159,23 @@
 - type: listing
   id: UplinkSniperBundle
   name: uplink-sniper-bundle-name
-  description: uplink-sniper-bundle-desc
+  description: uplink-sniper-bundle-harmony-desc # Harmony change - Hristov rework, updates description to match
   icon: { sprite: /Textures/Objects/Weapons/Guns/Snipers/heavy_sniper.rsi, state: base }
   productEntity: BriefcaseSyndieSniperBundleFilled
-  discountCategory: usualDiscounts
+  discountCategory: rareDiscounts # Harmony - Hristov rework, Usual -> Rare. Nerfed discount to compensate for buff
   discountDownTo:
     Telecrystal: 6
   cost:
-    Telecrystal: 10
+    Telecrystal: 12
   categories:
   - UplinkWeaponry
+  # Start Harmony change - Hristov rework, splits Hristov bundle into nukie and traitor versions
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
+# End harmony change
 
 - type: listing
   id: UplinkHushpup
