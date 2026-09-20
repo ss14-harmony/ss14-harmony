@@ -34,16 +34,27 @@
       - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+      # Start harmony change - Add empty sound
+    soundEmpty:
+      path: /Audio/_Harmony/Weapons/Guns/Empty/pistolsmg_empty.ogg
+      # End harmony change
   - type: ChamberMagazineAmmoProvider
     soundRack:
-      path: /Audio/Weapons/Guns/Cock/pistol_cock.ogg
+      # Start harmony change - Changed handling sounds
+      # path: /Audio/Weapons/Guns/Cock/pistol_cock.ogg
+      path: /Audio/_Harmony/Weapons/Guns/Cock/pistol_rack.ogg
+      # End harmony change
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
         startingItem: MagazinePistol
-        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        # Start harmony change - Changed handling sounds
+        # insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        # ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/pistol_magout.ogg
+        # End harmony change
         priority: 2
         whitelist:
           tags:
@@ -79,13 +90,23 @@
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
   - type: Gun
     selectedMode: FullAuto # Override of BaseWeaponPistol to default to full-auto
+    soundGunshot:
+      # harmony change start - Added new sound for Viper
+      collection: ViperFire
+      params:
+        volume: -1.5
+      # harmony change end
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
         startingItem: MagazinePistolHighCapacity
-        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        # Start harmony change - Handling sounds
+        # insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        # ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/pistol_magout.ogg
+        # End harmony change
         priority: 2
         whitelist:
           tags:
@@ -118,7 +139,11 @@
     - SemiAuto
     - FullAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+      # Harmony change start - Changed sound
+      collection: ViperFire
+      params:
+        volume: -1.5
+      # Harmony change end
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
     layers:
@@ -171,8 +196,12 @@
       gun_magazine:
         name: Magazine
         startingItem: MagazinePistolCaselessRifle
-        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        # Start harmony change - Handling sounds
+        # insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        # ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/pistol_magout.ogg
+        # End harmony change
         priority: 2
         whitelist:
           tags:
@@ -213,7 +242,11 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+    # Harmony change start - changed sound
+      collection: MKFire
+      params:
+        volume: -1.5
+    # Harmony change end - changed sound
   - type: StealTarget
     stealGroup: OfficerHandgun
 

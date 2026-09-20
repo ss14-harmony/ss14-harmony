@@ -40,7 +40,9 @@
       - FullAuto
       - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+      path: /Audio/_Harmony/Weapons/Guns/Gunshots/laser_fire1.ogg
+      params:
+        pitch: 0.85
   - type: MagazineAmmoProvider
   - type: ItemSlots
     slots:
@@ -101,7 +103,7 @@
     selectedMode: FullAuto
     fireRate: 3.5
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+      path: /Audio/_Harmony/Weapons/Guns/Gunshots/laser_fire1.ogg
     minAngle: 15
     maxAngle: 26
   - type: GunWieldBonus
