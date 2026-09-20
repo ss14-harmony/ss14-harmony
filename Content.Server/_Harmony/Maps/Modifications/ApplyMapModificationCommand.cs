@@ -11,11 +11,11 @@ using Robust.Shared.Prototypes;
 namespace Content.Server._Harmony.Maps.Modifications;
 
 [AdminCommand(AdminFlags.Fun)] // I'm not sure if this is the right flag but it should be fine
-public sealed class ApplyMapModificationCommand : LocalizedCommands
+public sealed partial class ApplyMapModificationCommand : LocalizedCommands
 {
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
 
     public override string Command => "applymapmodification";
 

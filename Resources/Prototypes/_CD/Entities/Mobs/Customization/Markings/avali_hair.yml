@@ -1,8 +1,7 @@
 - type: marking
   id: AvaliHairBigPonytail
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
     - sprite: _Harmony/Mobs/Customization/Avali/avali_crests.rsi # Harmony change _CD -> _Harmony
       state: avali_crest_bigponytail_primary
@@ -14,8 +13,7 @@
 - type: marking
   id: AvaliHairCockatiel
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
     - sprite: _Harmony/Mobs/Customization/Avali/avali_crests.rsi # Harmony change _CD -> _Harmony
       state: avali_crest_cockatiel_primary
@@ -25,8 +23,7 @@
 - type: marking
   id: AvaliHairCockatoo
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
     - sprite: _Harmony/Mobs/Customization/Avali/avali_crests.rsi # Harmony change _CD -> _Harmony
       state: avali_crest_cockatoo_primary
@@ -36,8 +33,7 @@
 - type: marking
   id: AvaliHairDuelFeather
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
     - sprite: _Harmony/Mobs/Customization/Avali/avali_crests.rsi # Harmony change _CD -> _Harmony
       state: avali_crest_dualfeather_primary
@@ -47,8 +43,7 @@
 - type: marking
   id: AvaliHairHooked
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
     - sprite: _Harmony/Mobs/Customization/Avali/avali_crests.rsi # Harmony change _CD -> _Harmony
       state: avali_crest_hooked_primary
@@ -58,8 +53,7 @@
 - type: marking
   id: AvaliHairJay
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
     - sprite: _Harmony/Mobs/Customization/Avali/avali_crests.rsi # Harmony change _CD -> _Harmony
       state: avali_crest_jay_primary
@@ -69,8 +63,7 @@
 - type: marking
   id: AvaliHairLongFeather
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
     - sprite: _Harmony/Mobs/Customization/Avali/avali_crests.rsi # Harmony change _CD -> _Harmony
       state: avali_crest_longfeather_primary
@@ -80,8 +73,7 @@
 - type: marking
   id: AvaliHairPunk
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
     - sprite: _Harmony/Mobs/Customization/Avali/avali_crests.rsi # Harmony change _CD -> _Harmony
       state: avali_crest_punk_primary

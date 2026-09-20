@@ -13,12 +13,12 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Harmony.ReadyManifest;
 
-public sealed class ReadyManifestSystem : SharedReadyManifestSystem
+public sealed partial class ReadyManifestSystem : SharedReadyManifestSystem
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IServerPreferencesManager _prefsManager = default!;
-    [Dependency] private readonly EuiManager _euiManager = default!;
-    [Dependency] private readonly GameTicker _gameTicker = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IServerPreferencesManager _prefsManager = default!;
+    [Dependency] private EuiManager _euiManager = default!;
+    [Dependency] private GameTicker _gameTicker = default!;
 
     private readonly Dictionary<ICommonSession, ReadyManifestEui> _openEuis = new();
     private Dictionary<ProtoId<JobPrototype>, ReadyManifestJobData> _jobCounts = new();

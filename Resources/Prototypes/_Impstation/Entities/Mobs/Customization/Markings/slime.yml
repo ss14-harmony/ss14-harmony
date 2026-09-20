@@ -1,10 +1,8 @@
 - type: marking
   id: SlimeNose
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [SlimePerson]
+  groupWhitelist: [Slime]
   forcedColoring: true
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/slime_parts.rsi
     state: nose
@@ -12,9 +10,7 @@
 - type: marking
   id: SlimeMouth
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [SlimePerson]
-  followSkinColor: true
+  groupWhitelist: [Slime]
   sprites:
   - sprite: _Impstation/Mobs/Customization/slime_parts.rsi
     state: mouth
@@ -22,9 +18,7 @@
 - type: marking
   id: SlimeBrain
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [SlimePerson]
-  followSkinColor: true
+  groupWhitelist: [Slime]
   sprites:
   - sprite: _Impstation/Mobs/Customization/slime_parts.rsi
     state: brain
@@ -32,8 +26,7 @@
 - type: marking
   id: SlimeEyeglow
   bodyPart: Eyes
-  markingCategory: Head
-  speciesRestriction: [SlimePerson]
+  groupWhitelist: [Slime]
   coloring:
     default:
       type:
@@ -47,9 +40,7 @@
 - type: marking
   id: SlimeLungs
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [SlimePerson]
-  followSkinColor: true
+  groupWhitelist: [Slime]
   sprites:
   - sprite: _Impstation/Mobs/Customization/slime_parts.rsi
     state: lungs
@@ -57,9 +48,7 @@
 - type: marking
   id: SlimeCore
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [SlimePerson]
-  followSkinColor: true
+  groupWhitelist: [Slime]
   sprites:
   - sprite: _Impstation/Mobs/Customization/slime_parts.rsi
     state: core
@@ -67,9 +56,7 @@
 - type: marking
   id: SlimeBonehead
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [SlimePerson]
-  followSkinColor: false
+  groupWhitelist: [Slime]
   coloring:
     default:
       type:
@@ -82,9 +69,7 @@
 - type: marking
   id: SlimeBonechest
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [SlimePerson]
-  followSkinColor: false
+  groupWhitelist: [Slime]
   coloring:
     default:
       type:
@@ -97,9 +82,7 @@
 - type: marking
   id: SlimeBonearmleft
   bodyPart: LArm
-  markingCategory: Arms
-  speciesRestriction: [SlimePerson]
-  followSkinColor: false
+  groupWhitelist: [Slime]
   coloring:
     default:
       type:
@@ -112,9 +95,7 @@
 - type: marking
   id: SlimeBonearmright
   bodyPart: RArm
-  markingCategory: Arms
-  speciesRestriction: [SlimePerson]
-  followSkinColor: false
+  groupWhitelist: [Slime]
   coloring:
     default:
       type:
@@ -127,9 +108,7 @@
 - type: marking
   id: SlimeBonefootleft
   bodyPart: LFoot
-  markingCategory: Legs
-  speciesRestriction: [SlimePerson]
-  followSkinColor: false
+  groupWhitelist: [Slime]
   coloring:
     default:
       type:
@@ -142,9 +121,7 @@
 - type: marking
   id: SlimeBonefootright
   bodyPart: RFoot
-  markingCategory: Legs
-  speciesRestriction: [SlimePerson]
-  followSkinColor: false
+  groupWhitelist: [Slime]
   coloring:
     default:
       type:
@@ -157,9 +134,7 @@
 - type: marking
   id: SlimeBonehandleft
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [SlimePerson]
-  followSkinColor: false
+  groupWhitelist: [Slime]
   coloring:
     default:
       type:
@@ -172,9 +147,7 @@
 - type: marking
   id: SlimeBonehandright
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [SlimePerson]
-  followSkinColor: false
+  groupWhitelist: [Slime]
   coloring:
     default:
       type:
@@ -187,9 +160,7 @@
 - type: marking
   id: SlimeBonelegleft
   bodyPart: LLeg
-  markingCategory: Legs
-  speciesRestriction: [SlimePerson]
-  followSkinColor: false
+  groupWhitelist: [Slime]
   coloring:
     default:
       type:
@@ -202,9 +173,7 @@
 - type: marking
   id: SlimeBonelegright
   bodyPart: RLeg
-  markingCategory: Legs
-  speciesRestriction: [SlimePerson]
-  followSkinColor: false
+  groupWhitelist: [Slime]
   coloring:
     default:
       type:
@@ -217,10 +186,8 @@
 - type: marking
   id: fizz
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ Slime ]
   forcedColoring: false
-  followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
     state: fizz
@@ -228,10 +195,8 @@
 - type: marking
   id: bubble
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ Slime ]
   forcedColoring: false
-  followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
     state: bubble
@@ -239,10 +204,8 @@
 - type: marking
   id: fishbowl
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ Slime ]
   forcedColoring: false
-  followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
     state: fishbowl1
@@ -252,10 +215,8 @@
 - type: marking
   id: FadingStars
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [ SlimePerson ]
+  groupWhitelist: [ Slime ]
   forcedColoring: false
-  followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
     state: fadingstars1

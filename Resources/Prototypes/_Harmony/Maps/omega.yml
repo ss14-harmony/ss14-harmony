@@ -16,7 +16,7 @@
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_omega.yml
         - type: StationJobs
-          availableJobs: # 48 jobs total w/o latejoins & interns, 57 jobs total w/ latejoins & interns
+          availableJobs: # 48 jobs total without interns, 56 jobs total with interns
             #command (7)
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
@@ -25,11 +25,11 @@
             ChiefEngineer: [ 1, 1 ]
             ResearchDirector: [ 1, 1 ]
             Quartermaster: [ 1, 1 ]
-            #service (9 - 10)
+            #service (10)
             Bartender: [ 1, 1 ]
             Botanist: [ 2, 2 ]
             Chef: [ 1, 1 ]
-            Janitor: [ 1, 2 ]
+            Janitor: [ 2, 2 ]
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
@@ -42,8 +42,8 @@
             MedicalDoctor: [ 3, 3 ]
             Paramedic: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ] #intern, not counted
-            #science (4)
-            Scientist: [ 4, 4 ]
+            #science (3)
+            Scientist: [ 3, 3 ]
             ResearchAssistant: [ 2, 2 ] #intern, not counted
             #security (7)
             Warden: [ 1, 1 ]

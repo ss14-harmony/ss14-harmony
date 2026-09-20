@@ -20,7 +20,7 @@
     - suitStorage
   - type: AmmoCounter
   - type: Gun
-    fireRate: 0.75
+    fireRate: 1.25 # Slightly better than a mosin (0.75)
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -35,6 +35,7 @@
     slots:
       gun_magazine:
         name: Magazine
+        startingItem: SpeedLoaderLightRifle
         insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/rsc_insert.ogg
         ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/rsc_eject.ogg
         priority: 2
@@ -44,6 +45,7 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
+        startingItem: CartridgeLightRifle
         priority: 1
         whitelist:
           tags:

@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: MobLizard
   id: MobLizardGizard
   name: Gizard
@@ -34,7 +34,7 @@
     tags:
     - Wizard
   - type: MindContainer
-    showExamineInfo: true
+  - type: MindExaminable
   - type: NpcFactionMember
     factions:
     - Wizard

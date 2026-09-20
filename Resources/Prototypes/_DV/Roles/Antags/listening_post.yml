@@ -6,3 +6,27 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 36000 # 10 hours
+
+# Harmony change- refactor to match the new antag selection code
+- type: antagSpecifier
+  parent: RestrictedAntag
+  id: ListeningPost
+  spawnerPrototype: SpawnPointGhostSyndicateListener
+  pickPlayer: false
+  startingGear: SyndicateListenerGear
+  roleLoadout:
+  - RoleSurvivalStandard
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - NamesDeathCommandoFirst
+    - NamesDeathCommandoLast
+  - type: AutoImplant
+    implants:
+    - DeathAcidifierImplant
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  mindRoles:
+  - MindRolePostOperator
+# End Harmony change

@@ -7,7 +7,7 @@
   flavor: glorp
   color: "#09ff00"
   metabolisms:
-    Narcotic:
+    Bloodstream:
       effects:
       - !type:ModifyStatusEffect
         effectProto: StatusEffectSeeingRainbow

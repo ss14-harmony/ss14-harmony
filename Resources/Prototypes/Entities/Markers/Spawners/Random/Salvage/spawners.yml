@@ -407,17 +407,28 @@
   table: !type:GroupSelector
     children:
     - !type:GroupSelector # normal theats
-      weight: 95
+      weight: 50 # Harmony change - adjusted weight
       children:
       - id: MobCarpSalvage
         weight: 2
+      # Harmony Change - Removes landmines from salvage spawners
+      # - !type:AllSelector
+        # weight: 1
+        # children:
+        #- id: LandMineExplosive
+        #- !type:NestedSelector # what's that thing underneath the scrap?
+        #  prob: 0.33
+        #  tableId: SalvageScrapSpawnerCommon
+      # Harmony Change End
+      # Harmony Change - Adds more mobs to the magnet pull pool
+    - !type:GroupSelector # nice sprites
+      weight: 45
+      children:
       - !type:AllSelector
-        weight: 1
         children:
-        - id: LandMineExplosive
-        - !type:NestedSelector # what's that thing underneath the scrap?
-          prob: 0.33
-          tableId: SalvageScrapSpawnerCommon
+        - !type:NestedSelector
+          tableId: SalvageMagnetMobFauna
+      # Harmony change end
     - !type:GroupSelector # scary monsters
       weight: 5
       children:
@@ -434,6 +445,20 @@
           tableId: TreasureCoinPileRare
       #- id: MobHivebot (solo hivebot spawn)
 
+# Harmony Change - table for extra fauna
+- type: entityTable
+  id: SalvageMagnetMobFauna
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: SpawnMobBearSalvage
+      - id: SpawnMobCobraSalvage
+      - id: SpawnMobKangarooSalvage
+      - id: MobTickSalvage
+        amount: 3
+      - id: SpawnMobSpiderSalvage
+# Harmony change end
 
 - type: entity
   parent: MarkerBase

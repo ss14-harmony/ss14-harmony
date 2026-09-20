@@ -1,8 +1,7 @@
 - type: marking
   id: EarringsStudLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -15,8 +14,7 @@
 - type: marking
   id: EarringsStudRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -29,8 +27,7 @@
 - type: marking
   id: EarringsHeavyLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -43,8 +40,7 @@
 - type: marking
   id: EarringsHeavyRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -57,8 +53,7 @@
 - type: marking
   id: EarringsDropBasicLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -71,8 +66,7 @@
 - type: marking
   id: EarringsDropBasicRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -85,8 +79,7 @@
 - type: marking
   id: EarringsDropColoredLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -101,8 +94,7 @@
 - type: marking
   id: EarringsDropColoredRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -117,8 +109,7 @@
 - type: marking
   id: EarringsDropLongLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -133,8 +124,7 @@
 - type: marking
   id: EarringsDropLongRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -149,8 +139,7 @@
 - type: marking
   id: EarringsCrescentLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -163,8 +152,7 @@
 - type: marking
   id: EarringsCrescentRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -177,8 +165,7 @@
 - type: marking
   id: EarringsBangleLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -191,8 +178,7 @@
 - type: marking
   id: EarringsBangleRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -205,8 +191,7 @@
 - type: marking
   id: EarringsHoopBasicLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -219,8 +204,7 @@
 - type: marking
   id: EarringsHoopBasicRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -233,8 +217,7 @@
 - type: marking
   id: EarringsHoopMiniLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -247,8 +230,7 @@
 - type: marking
   id: EarringsHoopMiniRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -261,8 +243,7 @@
 - type: marking
   id: EarringsCrossBasicLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -275,8 +256,7 @@
 - type: marking
   id: EarringsCrossBasicRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -289,8 +269,7 @@
 - type: marking
   id: EarringsCrossSaintPeterLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -303,8 +282,7 @@
 - type: marking
   id: EarringsCrossSaintPeterRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -317,8 +295,7 @@
 - type: marking
   id: EarringsGemstoneBasicLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -333,8 +310,7 @@
 - type: marking
   id: EarringsGemstoneBasicRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -349,8 +325,7 @@
 - type: marking
   id: EarringsGemstoneLongLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -365,8 +340,7 @@
 - type: marking
   id: EarringsGemstoneLongRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -381,8 +355,7 @@
 - type: marking
   id: EarringsGemstoneDoubleLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -399,8 +372,7 @@
 - type: marking
   id: EarringsGemstoneDoubleRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -417,8 +389,7 @@
 - type: marking
   id: EarringsDangleBasicLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -433,8 +404,7 @@
 - type: marking
   id: EarringsDangleBasicRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -449,8 +419,7 @@
 - type: marking
   id: EarringsDangleLongLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -465,8 +434,7 @@
 - type: marking
   id: EarringsDangleLongRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -481,8 +449,7 @@
 - type: marking
   id: EarringsEightLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -495,8 +462,7 @@
 - type: marking
   id: EarringsEightRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -509,8 +475,7 @@
 - type: marking
   id: EarringsCrystalBasicLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -525,8 +490,7 @@
 - type: marking
   id: EarringsCrystalBasicRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -541,8 +505,7 @@
 - type: marking
   id: EarringsCrystalLongLeft
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:
@@ -557,8 +520,7 @@
 - type: marking
   id: EarringsCrystalLongRight
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Diona, Dwarf, Human, Moth, Reptilian, SlimePerson, Vox]
+  groupWhitelist: [Arachnid, Diona, Human, Moth, Reptilian, Slime, Vox]
   coloring:
     default:
       type:

@@ -12,14 +12,14 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._Harmony.Bingle.EntitySystems;
 
-public sealed class BinglePitSystem : SharedBinglePitSystem
+public sealed partial class BinglePitSystem : SharedBinglePitSystem
 {
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly AudioSystem _audioSystem = default!;
-    [Dependency] private readonly ContainerSystem _containerSystem = default!;
-    [Dependency] private readonly PolymorphSystem _polymorphSystem = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly StunSystem _stunSystem = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private AudioSystem _audioSystem = default!;
+    [Dependency] private ContainerSystem _containerSystem = default!;
+    [Dependency] private PolymorphSystem _polymorphSystem = default!;
+    [Dependency] private PopupSystem _popupSystem = default!;
+    [Dependency] private StunSystem _stunSystem = default!;
 
     public override void Initialize()
     {

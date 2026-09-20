@@ -5,15 +5,14 @@
   playTimeTracker: JobSecurityCadet
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 1h # Harmony: 10h -> 1h
+      time: 3h # Harmony: 10h -> 3h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 5h
+      time: 10h
       inverted: true # stop playing intern if you're good at security!
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
-  canBeAntag: false
   access:
   - Security
   - Brig

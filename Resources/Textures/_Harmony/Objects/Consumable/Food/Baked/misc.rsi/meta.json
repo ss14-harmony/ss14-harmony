@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Modified by whythelettuce (GitHub), original bread slice sprite made by AdipemDragon (GitHub) at commit https://github.com/tgstation/tgstation/commit/716c6db05ab9df28fee81ceb7cf2b6c25f21176d.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "peanut-butter-jelly"
+        }
+    ]
+}

@@ -1,7 +1,7 @@
-conspirator-objective-issuer = [color=#724F29]Conspiracy[/color]
+objective-issuer-conspirator = [color=#724F29]Conspiracy[/color]
 
-conspirator-role-greeting = 
-    You are a conspirator. 
+conspirator-role-greeting =
+    You are a conspirator.
     You start knowing the identities of the other conspirators and have been implanted with a radio to communicate with them.
     Work together and stop at nothing to bring the conspiracy to life.
 

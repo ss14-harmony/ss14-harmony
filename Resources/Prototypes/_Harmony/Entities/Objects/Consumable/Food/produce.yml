@@ -1,0 +1,37 @@
+- type: entity
+  parent: FoodProduceBase
+  id: FoodPeanut
+  name: peanut
+  suffix: Harmony
+  description: An earthy ground nut, usually processed for peanut butter.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - peanut
+  - type: Tag
+    tags:
+    - Peanut
+    - Vegetable # this hurts me. legume moment.
+    - Fruit # technically a dry fruit + i want lizards to be able to eat it
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: PeanutButter
+        Quantity: 5
+      - ReagentId: Nutriment
+        Quantity: 5
+  - type: Sprite
+    sprite: _Harmony/Objects/Specific/Hydroponics/peanut.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: peanut
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: PeanutButter
+        Quantity: 10
+#  - type: FoodSequenceElement       in case i need it later
+#    entries:
+#      Burger: CarrotBurger
+#      Taco: Carrot

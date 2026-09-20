@@ -3,7 +3,7 @@
   parent: [BaseItem, BaseSecurityContraband]
   id: BaseEnergyCartridgeHarmony
   components:
-  - type: PredictedBattery
+  - type: Battery
     pricePerJoule: 0.15
   - type: Extractable
     juiceSolution:
@@ -32,7 +32,7 @@
   - type: MagazineVisuals
     magState: mag
     steps: 4
-  - type: PredictedBattery
+  - type: Battery
     maxCharge: 750
     startingCharge: 750
   - type: BatteryAmmoProvider
@@ -63,7 +63,7 @@
   - type: MagazineVisuals
     magState: mag
     steps: 6
-  - type: PredictedBattery
+  - type: Battery
     maxCharge: 750
     startingCharge: 750
   - type: BatteryAmmoProvider
@@ -90,7 +90,7 @@
   - type: MagazineVisuals
     magState: mag
     steps: 4
-  - type: PredictedBattery
+  - type: Battery
     maxCharge: 750
     startingCharge: 750
   - type: BatteryAmmoProvider
@@ -117,7 +117,7 @@
   - type: MagazineVisuals
     magState: mag
     steps: 4
-  - type: PredictedBattery
+  - type: Battery
     maxCharge: 750
     startingCharge: 750
   - type: BatteryAmmoProvider

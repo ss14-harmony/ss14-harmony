@@ -1,0 +1,35 @@
+# Harmony recipes:
+- type: microwaveMealRecipe
+  id: RecipeBungoBomber
+  name: bungobomber recipe
+  result: BungoBomber
+  time: 20
+  secretRecipe: true
+  group: Secret
+  solids:
+    CableApcStack1: 5
+    SheetGlass1: 10
+    FoodBungo: 1
+
+- type: microwaveMealRecipe
+  id: RecipePeanutButterJellySandwich
+  name: peanut butter jelly sandwich recipe
+  result: FoodBakedPeanutButterJellySandwich
+  time: 10
+  group: Dessert
+  reagents:
+    PeanutButter: 5
+    JellyGrape: 5
+  solids:
+    FoodBreadPlainSlice: 2
+
+- type: microwaveMealRecipe
+  id: RecipeJellyToastAlt
+  name: jelly toast alternate recipe
+  result: FoodBreadJellySlice
+  time: 5
+  group: Breads
+  reagents:
+    JellyGrape: 5
+  solids:
+    FoodBreadPlainSlice: 1

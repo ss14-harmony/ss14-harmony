@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "copyright": "Cards, Decks and Hands Sprites were originally from Paradise Station (https://github.com/ParadiseSS13/Paradise) and modified by VictorJob. Boxes are from VictorJob.",
+  "copyright": "Cards, Decks and Hands Sprites were originally from Paradise Station (https://github.com/ParadiseSS13/Paradise) and modified by VictorJob. Boxes are from VictorJob. Tarot Cards, Decks and Deck Box Sprites by DispenserG0inUp",
   "license": "CC-BY-SA-3.0",
   "size": {
     "x": 32,
@@ -537,6 +537,84 @@
     },
     {
       "name": "nanotrasen_box_open"
+    },
+	{
+      "name": "deck_tarot_full"
+    },
+	{
+      "name": "tarot_box"
+    },
+	{
+      "name": "tarot_box_open"
+    },
+	{
+      "name": "singlecard_down_tarot"
+    },
+	{
+      "name": "sc_0_The_Fool_tarot"
+    },
+	{
+      "name": "sc_1_The_Magician_tarot"
+    },
+	{
+      "name": "sc_2_The_High_Priestess_tarot"
+    },
+	{
+      "name": "sc_3_The_Empress_tarot"
+    },
+	{
+      "name": "sc_4_The_Emperor_tarot"
+    },
+	{
+      "name": "sc_5_The_Hierophant_tarot"
+    },
+	{
+      "name": "sc_6_The_Lovers_tarot"
+    },
+	{
+      "name": "sc_7_The_Chariot_tarot"
+    },
+	{
+      "name": "sc_8_Strength_tarot"
+    },
+	{
+      "name": "sc_9_The_Hermit_tarot"
+    },
+	{
+      "name": "sc_10_The_Wheel_of_Fortune_tarot"
+    },
+	{
+      "name": "sc_11_Justice_tarot"
+    },
+	{
+      "name": "sc_12_The_Hanged_Man_tarot"
+    },
+	{
+      "name": "sc_13_Death_tarot"
+    },
+	{
+      "name": "sc_14_Temperance_tarot"
+    },
+	{
+      "name": "sc_15_The_Devil_tarot"
+    },
+	{
+      "name": "sc_16_The_Tower_tarot"
+    },
+	{
+      "name": "sc_17_The_Star_tarot"
+    },
+	{
+      "name": "sc_18_The_Moon_tarot"
+    },
+	{
+      "name": "sc_19_The_Sun_tarot"
+    },
+	{
+      "name": "sc_20_Judgement_tarot"
+    },
+	{
+      "name": "sc_21_The_World_tarot"
     }
   ]
 }

@@ -36,6 +36,7 @@
   All Salvage Specialists must be armed, in case they need to defend themselves from hostiles.
 
   - [color=cyan]Proto-Kinetic Accelerator[/color]: This gun has infinite ammunition, allowing you to slowly mine and fly through space. Science can print upgrades to make it hit harder, shoot farther, and cycle faster.
+<!-- Harmony Change - Atmospheric-sensitive PKAs -->- The [color=cyan]Proto-Kinetic Accelerator[/color] is sensitive to atmospheric conditions, and will do considerably less damage in a pressurized enviroment. Use it in space for the best results.
 
   <Box>
     <GuideEntityEmbed Entity="Pickaxe"/>

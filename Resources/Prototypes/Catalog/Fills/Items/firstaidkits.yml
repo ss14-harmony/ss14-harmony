@@ -112,7 +112,10 @@
         - id: MedicatedSuture
         - id: RegenerativeMesh
         - id: SyringeEphedrine
-        - id: SyringeSaline
+        # Harmony Change Start - Nukie Universal Saline
+        # - id: SyringeSaline
+        - id: SyringeUniversalBlood # Nukie Medics spawn with a Combat Medkit, and CMOs are no longer mapped with them. A tasty treat for those rare few maps...
+        # Harmony Change End
         - id: BruteAutoInjector
         - id: BurnAutoInjector
 

@@ -7,6 +7,16 @@
     jumpsuit: ClothingUniformJumpsuitWorkaday
 
 - type: loadout
+  id: MedicalNurseJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtNurse
+
+- type: loadout
+  id: MedicalNurseApron
+  equipment:
+    outerClothing: ClothingOuterApronNurse
+
+- type: loadout
   id: Stethoscope
   equipment:
     neck: ClothingNeckStethoscope

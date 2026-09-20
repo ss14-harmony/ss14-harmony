@@ -7,6 +7,7 @@
     - id: SnailMigrationLowPop
     - id: CockroachMigration
     - id: MouseMigration
+    - id: RandomCritterHorde
 
 - type: entityTable
   id: SpicyPestEventsTable
@@ -14,6 +15,7 @@
     children:
     - id: KingRatMigration
     - id: SnailMigration
+    - id: MiniDragonMigration #Funky
 
 # events
 
@@ -22,9 +24,6 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6
     duration: 30 # DeltaV: was 50, used as a delay now
@@ -42,12 +41,10 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6
     duration: 30 # DeltaV: was 50, used as a delay now
+    occursDuringRoundEnd: false
     minimumPlayers: 30 # Hopefully this is enough for the Rat King's potential Army (it was not, raised from 15 -> 30)
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -60,14 +57,30 @@
     - id: SpawnPointGhostRatKing
       prob: 0.001
 
+# Funky Start
+- type: entity
+  id: MiniDragonMigration
+  parent: BaseStationEventLongDelay #funky
+  components:
+  - type: StationEvent
+    earliestStart: 15
+    weight: 3
+    duration: 20
+    minimumPlayers: 1
+  - type: VentCrittersRule
+    min: 1 # DeltaV
+    max: 3 # DeltaV
+    playerRatio: 70 # DeltaV: Mostly ignore player scaling
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: SpawnPointGhostMiniDragon
+# Funky End
+
 - type: entity
   id: CockroachMigration
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     weight: 6
     duration: 30 # DeltaV: was 50, used as a delay now
   - type: VentCrittersRule
@@ -85,9 +98,6 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     weight: 6
     duration: 30 # DeltaV: was 50, used as a delay now
   - type: VentCrittersRule
@@ -102,9 +112,6 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
     earliestStart: 15
     weight: 6
     duration: 30 # DeltaV: was 50, used as a delay now
@@ -119,3 +126,37 @@
       - id: MobSnailMoth
         weight: 0.08
       #- id: MobSnailInstantDeath DeltaV - No
+
+- type: entity
+  parent: BaseStationEventShortDelay
+  id: RandomCritterHorde # My deepest apologies, Mr. Secoff. You just wasted your time :)
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-horde-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    earliestStart: 15
+    weight: 6 # Slightly more common than other hordes
+    duration: 5
+    maxDuration: 20
+    reoccurrenceDelay: 15 # Shorter because this event is basically a nat zero on the round. It only exists to potentially confuse security or the crew
+  - type: VentHordeRule
+    table: !type:GroupSelector
+      rolls: 3,5
+      children:
+      - !type:GroupSelector
+        children: # Increased chances for special snails on purpose. Makes it a bit more interesting.
+        - id: MobSnail
+        - id: MobSnailSpeed
+        - id: MobSnailMoth
+      - !type:GroupSelector
+        children: # Increased chances for special roaches on purpose. Makes it a bit more interesting.
+        - id: MobCockroach
+        - id: MobMothroach
+        - id: MobMoproach
+          weight: 0.5
+      - !type:GroupSelector
+        children:
+        - id: MobMouse
+        - id: MobMouse1
+        - id: MobMouse2

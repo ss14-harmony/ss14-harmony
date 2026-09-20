@@ -13,7 +13,6 @@
   startingGear: CentCommInspectorGear
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom
-  canBeAntag: false
   access:
   - Command
   - Maintenance

@@ -1,0 +1,21 @@
+- type: reaction
+  id: JellyGrape
+  minTemp: 340
+  reactants:
+    GrapeSoda:
+      amount: 1
+    Sugar:
+      amount: 1
+  products:
+    JellyGrape: 2
+
+- type: reaction
+  id: JellyGrapeAlt
+  minTemp: 340
+  reactants:
+    JuiceGrape:
+      amount: 1
+    Sugar:
+      amount: 1
+  products:
+    JellyGrape: 2

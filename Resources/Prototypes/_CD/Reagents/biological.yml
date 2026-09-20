@@ -1,0 +1,23 @@
+- type: reagent
+  id: SynthBlood
+  name: reagent-name-synth-blood
+  group: Biological
+  desc: reagent-desc-synth-blood
+  flavor: metallic
+  color: "#00b8f5"
+  recognizable: true
+  physicalDesc: reagent-physical-desc-reflective
+  metabolisms:
+    Digestion: # Harmony - Drink>Digestion
+      effects:
+      # Misfit - Change to give same effects as uncooked proteins
+      - !type:Vomit
+        probability: 0.1
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 1
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6

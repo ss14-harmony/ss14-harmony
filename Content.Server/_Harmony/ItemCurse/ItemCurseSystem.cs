@@ -7,12 +7,12 @@ using Content.Shared.Popups;
 namespace Content.Server._Harmony.ItemCurse;
 
 /// <inheritdoc />
-public sealed class ItemCurseSystem : SharedItemCurseSystem
+public sealed partial class ItemCurseSystem : SharedItemCurseSystem
 {
-    [Dependency] private readonly LightningSystem _lightning = default!;
-    [Dependency] private readonly ElectrocutionSystem _electrocution = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly SharedPopupSystem _popups = default!;
+    [Dependency] private LightningSystem _lightning = default!;
+    [Dependency] private ElectrocutionSystem _electrocution = default!;
+    [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private SharedPopupSystem _popups = default!;
 
     // The curse system is mostly handled by SharedItemCurseSystem, this is just overrides for anything which must happen server-side.
 

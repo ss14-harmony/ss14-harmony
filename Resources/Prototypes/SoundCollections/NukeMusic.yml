@@ -1,7 +1,7 @@
 - type: soundCollection
   id: NukeMusic
   files:
-    - /Audio/StationEvents/running_out.ogg
+  #    - /Audio/StationEvents/running_out.ogg # Harmony change
     - /Audio/StationEvents/countdown.ogg
     - /Audio/StationEvents/sound_station_14.ogg
     - /Audio/StationEvents/blatantly_nuclear.ogg
@@ -9,3 +9,6 @@
     - /Audio/_Harmony/StationEvents/moodswings.ogg
     - /Audio/_Harmony/StationEvents/sponsored_by_syndicate.ogg
     - /Audio/_Harmony/StationEvents/parabellum.ogg
+    - /Audio/_Harmony/StationEvents/ephedrine_overdose.ogg
+    - /Audio/_Harmony/StationEvents/one_against_all.ogg
+    - /Audio/_Harmony/StationEvents/running_out_of_cover.ogg

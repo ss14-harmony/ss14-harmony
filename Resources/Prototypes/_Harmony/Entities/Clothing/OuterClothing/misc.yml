@@ -1,0 +1,11 @@
+- type: entity # Ported from Impstation with slightly modified sprites
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterApronNurse
+  name: nurse apron
+  suffix: Harmony
+  description: Suprisingly clean. For now.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/OuterClothing/Misc/apronnurse.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/OuterClothing/Misc/apronnurse.rsi

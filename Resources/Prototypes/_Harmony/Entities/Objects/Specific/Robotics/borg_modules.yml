@@ -10,7 +10,7 @@
     - state: icon-syndicate
   - type: ItemBorgModule
     hands:
-    - item: HandheldHealthAnalyzerUnpowered
+    - item: HandheldHealthAnalyzer
     - item: LargeBeaker
     - item: LargeBeaker
     - item: BorgDropper

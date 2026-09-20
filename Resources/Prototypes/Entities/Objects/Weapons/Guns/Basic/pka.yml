@@ -2,7 +2,10 @@
   name: proto-kinetic accelerator
   id: WeaponProtoKineticAccelerator
   parent: [WeaponProtoKineticAcceleratorBase, BaseCargoContraband]
-  description: Fires low-damage kinetic bolts at a short range.
+  #Begin Harmony Change - Updates description to accomodate changes to pka atmos mechanics.
+  #description: Fires low-damage kinetic bolts at a short range.
+  description: Fires pressure-sensitive kinetic bolts at a short range. Use in vacuum for best results.
+  #End Harmony Change - Updates description to accomodate changes to pka atmos mechanics.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi

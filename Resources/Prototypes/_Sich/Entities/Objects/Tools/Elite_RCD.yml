@@ -1,0 +1,46 @@
+- type: entity
+  id: RCDElite
+  parent: [RCD, BaseGrandTheftContraband]
+  name: elite RCD
+  description: Elite RCD, given to professional engineers. Equipped with a mini-RTG flashlight that can work for the next 100 years. Also has an extended charge reserve and new blueprints!
+  components:
+  - type: UnpoweredFlashlight
+  - type: PointLight
+    color: "#b9ffbc"
+    enabled: false
+    radius: 4.5
+  - type: Sprite
+    sprite: _Sich/Objects/Tools/ellite_rcd.rsi
+  - type: Clothing
+    sprite: _Sich/Objects/Tools/ellite_rcd.rsi
+  - type: LimitedCharges
+    maxCharges: 40
+  - type: StealTarget
+    stealGroup: RCDElite
+  - type: RCD
+    availablePrototypes:
+    - AirlockCommand
+    - AirlockGlassCommand
+    - HighSecDoor
+    - BlastDoor
+    - ShuttersNormal
+    - ShuttersWindow
+    - WallSolid
+    - FloorSteel
+    - Plating
+    - Catwalk
+    - Grille
+    - Window
+    - WindowDirectional
+    - WindowReinforcedDirectional
+    - ReinforcedWindow
+    - Airlock
+    - AirlockGlass
+    - Firelock
+    - TubeLight
+    - BulbLight
+    - LVCable
+    - MVCable
+    - HVCable
+    - CableTerminal
+    - Deconstruct

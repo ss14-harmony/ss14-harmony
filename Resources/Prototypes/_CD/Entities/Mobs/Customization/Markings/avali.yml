@@ -3,10 +3,8 @@
 - type: marking
   id: AvaliEarsBase
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
     state: ears_avalibase_primary
@@ -16,10 +14,8 @@
 - type: marking
   id: AvaliTailBase
   bodyPart: Tail
-  markingCategory: Tail
-  followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
     state: tail_avalibase
@@ -29,8 +25,7 @@
 - type: marking
   id: AvaliEarsStripeOne
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
     state: ears_avalibase_primary
@@ -48,8 +43,7 @@
 - type: marking
   id: AvaliHeadStripeOne
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
     state: head_primary
@@ -59,8 +53,7 @@
 - type: marking
   id: AvaliTorsoStripeOne
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
     state: torso_primary
@@ -70,8 +63,7 @@
 - type: marking
   id: AvaliLArmStripeOne
   bodyPart: LArm
-  markingCategory: Arms
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
     state: larm_primary
@@ -81,8 +73,7 @@
 - type: marking
   id: AvaliRArmStripeOne
   bodyPart: RArm
-  markingCategory: Arms
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
     state: rarm_primary
@@ -92,8 +83,7 @@
 - type: marking
   id: AvaliLHandStripeOne
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
     state: lhand_primary
@@ -103,8 +93,7 @@
 - type: marking
   id: AvaliRHandStripeOne
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
     state: rhand_primary
@@ -114,8 +103,7 @@
 - type: marking
   id: AvaliLLegStripeOne
   bodyPart: LLeg
-  markingCategory: Legs
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
     state: lleg
@@ -123,8 +111,7 @@
 - type: marking
   id: AvaliRLegStripeOne
   bodyPart: RLeg
-  markingCategory: Legs
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_stripes_one.rsi # Harmony change _CD -> _Harmony
     state: rleg
@@ -132,8 +119,7 @@
 - type: marking
   id: AvaliTailStripeOne
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
     state: tail_avalibase
@@ -147,8 +133,7 @@
 - type: marking
   id: AvaliEarsTrimOne
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
     state: ears_avalibase_primary
@@ -166,8 +151,7 @@
 - type: marking
   id: AvaliHeadTrimOne
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
     state: head_primary
@@ -177,8 +161,7 @@
 - type: marking
   id: AvaliTorsoTrimOne
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
     state: torso_primary
@@ -188,8 +171,7 @@
 - type: marking
   id: AvaliLArmTrimOne
   bodyPart: LArm
-  markingCategory: Arms
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
     state: larm_primary
@@ -199,8 +181,7 @@
 - type: marking
   id: AvaliRArmTrimOne
   bodyPart: RArm
-  markingCategory: Arms
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
     state: rarm_primary
@@ -210,8 +191,7 @@
 - type: marking
   id: AvaliRHandTrimOne
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
     state: rhand_primary
@@ -221,8 +201,7 @@
 - type: marking
   id: AvaliLHandTrimOne
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
     state: lhand_primary
@@ -232,8 +211,7 @@
 - type: marking
   id: AvaliLLegTrimOne
   bodyPart: LLeg
-  markingCategory: Legs
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
     state: lleg_primary
@@ -243,8 +221,7 @@
 - type: marking
   id: AvaliRLegTrimOne
   bodyPart: RLeg
-  markingCategory: Legs
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_one.rsi # Harmony change _CD -> _Harmony
     state: rleg_primary
@@ -254,8 +231,7 @@
 - type: marking
   id: AvaliTailTrimOne
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
     state: tail_avalibase
@@ -269,8 +245,7 @@
 - type: marking
   id: AvaliEarsTrimTwo
   bodyPart: HeadSide
-  markingCategory: HeadSide
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
     state: ears_avalibase_primary
@@ -288,8 +263,7 @@
 - type: marking
   id: AvaliHeadTrimTwo
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
     state: head_primary
@@ -299,8 +273,7 @@
 - type: marking
   id: AvaliTorsoTrimTwo
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
     state: torso_primary
@@ -310,8 +283,7 @@
 - type: marking
   id: AvaliLArmTrimTwo
   bodyPart: LArm
-  markingCategory: Arms
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
     state: larm_primary
@@ -321,8 +293,7 @@
 - type: marking
   id: AvaliRArmTrimTwo
   bodyPart: RArm
-  markingCategory: Arms
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
     state: rarm_primary
@@ -332,8 +303,7 @@
 - type: marking
   id: AvaliLHandTrimTwo
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
     state: lhand_primary
@@ -343,8 +313,7 @@
 - type: marking
   id: AvaliRHandTrimTwo
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_trim_two.rsi # Harmony change _CD -> _Harmony
     state: rhand_primary
@@ -354,8 +323,7 @@
 - type: marking
   id: AvaliTailTrimTwo
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   sprites:
   - sprite: _Harmony/Mobs/Customization/Avali/avali_parts.rsi # Harmony change _CD -> _Harmony
     state: tail_avalibase
@@ -368,8 +336,7 @@
 - type: marking
   id: AvaliEyesCosmatic
   bodyPart: Eyes
-  markingCategory: Head
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   coloring:
     default:
       type:
@@ -383,8 +350,7 @@
 - type: marking
   id: AvaliEyesStarlight
   bodyPart: Eyes
-  markingCategory: Head
-  speciesRestriction: [ Avali ]
+  groupWhitelist: [ Avali ]
   coloring:
     default:
       type:
