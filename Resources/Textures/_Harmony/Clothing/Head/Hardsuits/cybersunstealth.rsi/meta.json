@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "Made by Palourde89 (Github) at commit https://github.com/ss14-harmony/ss14-harmony/commit/26cf2921234014a05e88d1dd35ea502da5e0698e. Resprite by Halycon (kleinerstation13 on Github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "icon-flash"
+        },
+        {
+            "name": "equipped-head",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-light",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-unshaded",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-vox",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-light-vox",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-unshaded-vox",
+            "directions": 4
+        }
+    ]
+}
