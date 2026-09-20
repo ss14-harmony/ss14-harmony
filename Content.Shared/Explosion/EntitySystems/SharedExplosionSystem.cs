@@ -46,7 +46,7 @@ public abstract class SharedExplosionSystem : EntitySystem
     ///     specified in the yaml / by the component, but determined dynamically (e.g., by the quantity of a
     ///     solution in a reaction).
     /// </remarks>
-    public virtual void TriggerExplosive(EntityUid uid, ExplosiveComponent? explosive = null, bool delete = true, float? totalIntensity = null, float? radius = null, EntityUid? user = null)
+    public virtual void TriggerExplosive(EntityUid uid, ExplosiveComponent? explosive = null, bool delete = true, float? totalIntensity = null, float? radius = null, EntityUid? user = null, EntityUid? ignoreCauseRes = null) // Harmony, optional AP for the cause of the explosion
     {
     }
 
@@ -66,6 +66,7 @@ public abstract class SharedExplosionSystem : EntitySystem
                                         int maxTileBreak = int.MaxValue,
                                         bool canCreateVacuum = true,
                                         EntityUid? user = null,
+                                        EntityUid? ignoreCauseRes = null, // Harmony, optional AP for the cause of the explosion
                                         bool addLog = true)
     {
     }
