@@ -1,0 +1,27 @@
+﻿
+- type: entity
+  parent: BaseMentalAction
+  id: ActionPAIStationRecords
+  name: Station Records
+  description: Open the station records and dox your owner.
+  components:
+  - type: Action
+    icon: { sprite: Objects/Misc/folders.rsi, state: folder-centcom }
+    itemIconStyle: NoItem
+  - type: InstantAction
+    event: !type:OpenUiActionEvent
+      key: enum.GeneralStationRecordConsoleKey.Key
+
+- type: entity
+  id: PAIMedicalHudDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ShowHealthBars
+  - type: ShowHealthIcons
+
+- type: entity
+  id: PAIGPSDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HandheldGPS
+  - type: RadarBlip
