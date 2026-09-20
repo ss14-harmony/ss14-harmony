@@ -1,0 +1,34 @@
+- type: entity
+  parent: [FragileGrenadeBase, ProjectileGrenadeBase, BaseSyndicateContraband]
+  id: FoamGrenadeStinger
+  name: Waffle Co. Stinger Grenade
+  description: Waffle Co.'s latest in weapons technology. Disperse your foes!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Foam/foam_grenade.rsi
+    layers:
+    - state: icon
+      map: ["enum.TriggerVisualLayers.Base"]
+  - type: ProjectileGrenade
+    fillPrototype: PelletClusterRubber
+    capacity: 30
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
+    sound:
+      path: "/Audio/Effects/beep1.ogg"
+    positional: true
+  - type: SpawnOnTrigger
+    keysIn:
+    - timer
+    proto: GrenadeFlashEffect
+    predicted: true
+  - type: TriggerOnUse
+  - type: TimerTrigger
+    beepSound:
+      path: "/Audio/Effects/beep1.ogg"
+      params:
+        volume: 5
+    initialBeepDelay: 0
+    beepInterval: 2
+    delay: 3.5

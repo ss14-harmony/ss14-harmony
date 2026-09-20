@@ -23,6 +23,9 @@ uplink-X4-desc = The cousin of the infamous C-4, uses experimental explosives to
 uplink-X4-bundle-name = X-4 Bundle
 uplink-X4-bundle-desc = A bag containing 4 X-4s, perfect for going all in on sabotage.
 
+uplink-foam-grenade-stinger-name = Waffle Co. Stinger Grenade
+uplink-foam-grenade-stinger-desc = Waffle Co.'s latest in deceptive weapons technology. Decieve your foes with this stealthy stinger grenade!
+
 # Ammo
 
 uplink-blood-red-carbine-ammo-name = Jailbroken Energy Cartridge
