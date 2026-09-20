@@ -80,7 +80,7 @@
 - type: entity
   parent: [ClothingHandsBase, BaseSyndicateContraband]
   id: ClothingHandsBloodyKnuckleDusters
-  name: bloody knuckle dusters
+  name: bloody gloves
   suffix: Harmony
   description: You get a certain rush wearing these gloves while tearing flesh off with each swing. They are very bloody.
   components:
