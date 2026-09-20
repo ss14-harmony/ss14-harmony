@@ -1,26 +1,19 @@
 using Content.Server._NF.Speech.Components;
 using Content.Server.Speech.EntitySystems;
 using System.Text.RegularExpressions;
-using Content.Shared.Speech;
+using Content.Shared.Speech.EntitySystems;
 
 namespace Content.Server._NF.Speech.EntitySystems;
 
-public sealed partial class StreetpunkAccentSystem : EntitySystem
+public sealed partial class StreetpunkAccentSystem : RelayAccentSystem<StreetpunkAccentComponent>
 {
     [Dependency] private ReplacementAccentSystem _replacement = default!;
     private static readonly Regex RegexIng = new(@"ing\b");
     private static readonly Regex RegexAnd = new(@"\band\b");
     private static readonly Regex RegexDve = new("d've");
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<StreetpunkAccentComponent, AccentGetEvent>(OnAccentGet);
-    }
-
     // converts left word when typed into the right word. For example typing you becomes ye.
-    public string Accentuate(string message, StreetpunkAccentComponent component)
+    public override string Accentuate(string message, Entity<StreetpunkAccentComponent>? ent = null)
     {
         var msg = message;
 
@@ -31,12 +24,6 @@ public sealed partial class StreetpunkAccentSystem : EntitySystem
 
         msg = _replacement.ApplyReplacements(msg, "streetpunk");
 
-
         return msg;
-    }
-
-    private void OnAccentGet(EntityUid uid, StreetpunkAccentComponent component, AccentGetEvent args)
-    {
-        args.Message = Accentuate(args.Message, component);
     }
 }
