@@ -88,9 +88,9 @@
   description: It's an assault suit worn by those strong and disciplined enough to achieve the position of Head of Security.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hos_alt.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/hos_alt.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/hos_alt.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/Security/hos_alt.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
