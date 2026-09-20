@@ -4,6 +4,7 @@
 - type: latheRecipePack
   id: SyndicateAmmoStatic
   recipes:
+  - MagazinePistolHighCapacity # Harmony Change - Adds high capacity pistol mags
   - MagazineShotgun
   - MagazineShotgunEmpty
   - MagazineShotgunSlug
