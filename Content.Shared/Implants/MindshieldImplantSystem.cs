@@ -51,7 +51,7 @@ public sealed partial class MindshieldImplantSystem : EntitySystem
             _popup.PopupEntity(Loc.GetString("rev-break-control", ("name", name)), uid);
         }
 
-        _bloodBrotherSystem.OnBloodBrotherMindshielded(ent); // Harmony (who doesn't love some good old hardcoding)
+        _bloodBrotherSystem.OnBloodBrotherMindshielded(uid); // Harmony (who doesn't love some good old hardcoding)
 
     }
 }

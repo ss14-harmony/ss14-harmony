@@ -45,21 +45,21 @@ public abstract partial class SharedBloodBrotherSystem : EntitySystem
         args.Cancelled = !CanGetState(args.Player);
     }
 
-    public void OnBloodBrotherMindshielded(Entity<MindShieldImplantComponent> entity)
+    public void OnBloodBrotherMindshielded(EntityUid implanted)
     {
-        if (HasComp<InitialBloodBrotherComponent>(entity))
+        if (HasComp<InitialBloodBrotherComponent>(implanted))
             return;
 
-        if (!TryComp<BloodBrotherComponent>(entity, out var bloodBrother))
+        if (!TryComp<BloodBrotherComponent>(implanted, out var bloodBrother))
             return;
 
-        var name = Identity.Entity(entity, EntityManager);
-        RemCompDeferred<BloodBrotherComponent>(entity);
+        var name = Identity.Entity(implanted, EntityManager);
+        RemCompDeferred<BloodBrotherComponent>(implanted);
         if (bloodBrother.DeconversionStunTime != null)
-            _stunSystem.TryUpdateParalyzeDuration(entity, bloodBrother.DeconversionStunTime);
+            _stunSystem.TryUpdateParalyzeDuration(implanted, bloodBrother.DeconversionStunTime);
         _popupSystem.PopupEntity(
             Loc.GetString("blood-brother-break-control", ("name", name)),
-            entity,
+            implanted,
             PopupType.MediumCaution);
     }
 
