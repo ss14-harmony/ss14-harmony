@@ -42,6 +42,26 @@
   categories:
   - UplinkWeaponry
 
+- type: listing
+  id: UplinkM10Bundle
+  name: uplink-smg-m10-name
+  description: uplink-smg-m10-desc
+  productEntity: ClothingBackpackDuffelSyndicateFilledM10
+  icon: { sprite: _Harmony/Objects/Weapons/Guns/SMGs/m10.rsi, state: icon }
+  cost:
+    Telecrystal: 14
+  categories:
+  - UplinkWeaponry
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - LoneOpUplink
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+
 # Explosives
 
 - type: listing
@@ -259,6 +279,22 @@
         - NukeOpsUplink
 
 - type: listing
+  id: UplinkMiamiBundle
+  name: uplink-miami-bundle-name
+  description: uplink-miami-bundle-desc
+  productEntity: ClothingBackpackDuffelSyndicateMiamiBundle
+  icon: { sprite: _Harmony/Clothing/Head/Misc/tony.rsi, state: icon }
+  cost:
+    Telecrystal: 25
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - LoneOpUplink
+
+- type: listing
   id: UplinkJetpackNukie
   name: uplink-black-jetpack-name
   description: uplink-stealth-jetpack-desc
@@ -333,4 +369,3 @@
     Telecrystal: 5
   categories:
   - UplinkWeaponry
- 
