@@ -8,7 +8,7 @@
   - type: PlantData
     name: seeds-wheat-name
     packetPrototype: PeanutSeeds
-    productPrototypes: [FoodPeanuts]
+    productPrototypes: [FoodPeanut]
   - type: Plant
     lifespan: 25
     maturation: 10
