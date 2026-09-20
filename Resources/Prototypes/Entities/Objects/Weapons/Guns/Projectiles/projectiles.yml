@@ -93,6 +93,11 @@
       path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
   - type: TimedDespawn
     lifetime: 10
+  # Start harmony change - monolith tracers
+  - type: Tracer
+    color: "#FFFFFFFF"
+    length: 2
+# End harmony change
 
 - type: entity
   id: BaseBulletTrigger # Trigger-on-collide bullets
@@ -132,6 +137,11 @@
     damage:
       types:
         Blunt: 1
+  # Start harmony change - monolith tracers
+  - type: Tracer
+    color: "#E98C23FF"
+    length: 2
+# End harmony change
 
 - type: entity
   id: BaseBulletIncendiary
@@ -151,6 +161,11 @@
     energy: 7.0
   - type: IgniteOnCollide
     fireStacks: 0.25
+# Start harmony change - monolith tracers
+  - type: Tracer
+    color: "#ff4300"
+    length: 2
+# End harmony change
 
 - type: entity
   id: BaseBulletAP
@@ -167,6 +182,11 @@
       types:
         Piercing: 11 # 20% decrease
     ignoreResistances: true
+# Start harmony change - monolith tracers
+  - type: Tracer
+    color: "#000000FF"
+    length: 1.5
+# End harmony change
 
 - type: entity
   id: BaseBulletUranium
@@ -187,6 +207,11 @@
     damage:
       types:
         Radiation: 11
+# Start harmony change - monolith tracers
+  - type: Tracer
+    color: "#9BE792FF"
+    length: 2
+# End harmony change
 
 # Energy projectiles
 - type: entity
