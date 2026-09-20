@@ -4,21 +4,16 @@
   name: reinforced window
   components:
   - type: Sprite
-<<<<<<< HEAD
-    drawdepth: WallTops
-# Start of Harmony Change: Updates Sprite Pathing
-#    sprite: Structures/Windows/reinforced_window.rsi
-    sprite: _Harmony/Structures/Windows/reinforced_window.rsi
-  - type: Icon
-#    sprite: Structures/Windows/reinforced_window.rsi
-    sprite: _Harmony/Structures/Windows/reinforced_window.rsi
+# Start of Harmony Change: Updates Sprite Pathing. Commented out for now due to the Respritening.
+#    drawdepth: WallTops
+#    sprite: _Harmony/Structures/Windows/reinforced_window.rsi
+#  - type: Icon
+#    sprite: _Harmony/Structures/Windows/reinforced_window.rsi
 # End of Harmony Change
-=======
     sprite: Structures/Windows/window-base-reinf.rsi
   - type: Icon
     sprite: Structures/Windows/window-base-reinf.rsi
     state: full
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
   - type: Repairable
     fuelCost: 10
     doAfterDelay: 2

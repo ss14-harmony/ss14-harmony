@@ -54,14 +54,10 @@
     fx: EffectRCDDeconstruct4
   - type: Airtight
   - type: IconSmooth
-<<<<<<< HEAD
-# Start of Harmony Change: Updates IconSmooth key
-#    key: windows
-    key: station
+# Start of Harmony Change: Updates IconSmooth key. Commented out for now due to the Respritening.
+#    key: station
 # End of Harmony Change
-=======
     key: walls
->>>>>>> 4afa06d5b4be4c553d974d3b2cb07c6448791ba6
     base: window
   - type: PlacementReplacement
     key: walls

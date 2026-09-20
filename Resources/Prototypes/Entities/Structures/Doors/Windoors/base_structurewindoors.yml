@@ -239,7 +239,7 @@
   components:
   - type: Sprite
 # Start of Harmony Change: Updates Sprite Pathing. commented out for now due to Respritening
-    sprite: _Harmony/Structures/Doors/Windoors/uranium.rsi
+#     sprite: _Harmony/Structures/Doors/Windoors/uranium.rsi
 # End of Harmony Change
     sprite: Structures/Doors/Windoors/uranium.rsi
   - type: Destructible
