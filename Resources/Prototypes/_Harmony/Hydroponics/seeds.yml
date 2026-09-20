@@ -1,7 +1,7 @@
 - type: entity
   parent: BasePlant
   id: PeanutPlant
-  name: seeds-peanut-display-name
+  name: peanut bush
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Specific/Hydroponics/peanut.rsi
