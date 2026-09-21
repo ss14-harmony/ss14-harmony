@@ -148,8 +148,8 @@
 #start of Harmony change
     sprite: _Harmony/Clothing/Head/Hardsuits/spatiohelm.rsi
     layers:
-    - type: icon
-    - type: icon-flash
+    - state: icon
+    - state: icon-flash
       visible: false
       map: [ "light" ]
     #layers:
@@ -221,8 +221,8 @@
     #sprite: Clothing/Head/Hardsuits/salvage.rsi
     sprite: _Harmony/Clothing/Head/Hardsuits/salvage.rsi
     layers:
-    - type: icon
-    - type: icon-flash
+    - state: icon
+    - state: icon-flash
       visible: false
       map: [ "light" ]
   - type: HandheldLight
@@ -269,8 +269,8 @@
     #sprite: Clothing/Head/Hardsuits/goliathhelm.rsi
     sprite: _Harmony/Clothing/Head/Hardsuits/goliathhelm.rsi
     layers:
-    - type: icon
-    - type: icon-flash
+    - state: icon
+    - state: icon-flash
       visible: false
       map: [ "light" ]
     #layers:
@@ -358,8 +358,8 @@
 #    sprite: Clothing/Head/Hardsuits/security.rsi
     sprite: _Harmony/Clothing/Head/Hardsuits/security.rsi
     layers:
-    - type: icon
-    - type: icon-flash
+    - state: icon
+    - state: icon-flash
       visible: false
       map: [ "light" ]
   #Modification of light layering
@@ -410,8 +410,8 @@
   - type: Sprite
     sprite: _Harmony/Clothing/Head/Hardsuits/brigmedic.rsi # Harmony
     layers:
-    - type: icon
-    - type: icon-flash
+    - state: icon
+    - state: icon-flash
       visible: false
       map: [ "light" ]
   - type: Clothing
@@ -445,8 +445,8 @@
 #    sprite: Clothing/Head/Hardsuits/security-warden.rsi
     sprite: _Harmony/Clothing/Head/Hardsuits/security-warden.rsi
     layers:
-    - type: icon
-    - type: icon-flash
+    - state: icon
+    - state: icon-flash
       visible: false
       map: [ "light" ]
   #Modification of light layering
@@ -615,8 +615,8 @@
 #    sprite: Clothing/Head/Hardsuits/security-red.rsi
     sprite: _Harmony/Clothing/Head/Hardsuits/security-red.rsi
     layers:
-    - type: icon
-    - type: icon-flash
+    - state: icon
+    - state: icon-flash
       visible: false
       map: [ "light" ]
 #  - type: Clothing
@@ -672,8 +672,8 @@
     #sprite: Clothing/Head/Hardsuits/luxury.rsi
     sprite: _Harmony/Clothing/Head/Hardsuits/luxury.rsi
     layers:
-    - type: icon
-    - type: icon-flash
+    - state: icon
+    - state: icon-flash
       visible: false
       map: [ "light" ]
   - type: HandheldLight
@@ -720,8 +720,8 @@
     #sprite: Clothing/Head/Hardsuits/syndicate.rsi
     sprite: _Harmony/Clothing/Head/Hardsuits/syndicate.rsi
     layers:
-    - type: icon
-    - type: icon-flash
+    - state: icon
+    - state: icon-flash
       visible: false
       map: [ "light" ]
   #Modification of light layering
@@ -779,8 +779,8 @@
     #sprite: Clothing/Head/Hardsuits/syndiemedic.rsi
     sprite: _Harmony/Clothing/Head/Hardsuits/syndiemedic.rsi
     layers:
-    - type: icon
-    - type: icon-flash
+    - state: icon
+    - state: icon-flash
       visible: false
       map: [ "light" ]
   #Modification of light layering
@@ -835,8 +835,8 @@
     #sprite: Clothing/Head/Hardsuits/syndieelite.rsi
     sprite: _Harmony/Clothing/Head/Hardsuits/syndieelite.rsi
     layers:
-    - type: icon
-    - type: icon-flash
+    - state: icon
+    - state: icon-flash
       visible: false
       map: [ "light" ]
   #Modification of light layering
@@ -896,8 +896,8 @@
     #sprite: Clothing/Head/Hardsuits/syndiecommander.rsi
     sprite: _Harmony/Clothing/Head/Hardsuits/syndiecommander.rsi
     layers:
-    - type: icon
-    - type: icon-flash
+    - state: icon
+    - state: icon-flash
       visible: false
       map: [ "light" ]
   #Modification of light layering

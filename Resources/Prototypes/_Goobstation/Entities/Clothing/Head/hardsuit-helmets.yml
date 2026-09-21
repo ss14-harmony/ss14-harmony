@@ -8,8 +8,8 @@
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Hardsuits/cybersunstealth.rsi
     layers:
-    - type: icon
-    - type: icon-flash
+    - state: icon
+    - state: icon-flash
       visible: false
       map: [ "light" ]
   - type: Clothing
