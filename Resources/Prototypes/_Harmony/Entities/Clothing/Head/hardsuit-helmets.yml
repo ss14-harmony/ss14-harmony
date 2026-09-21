@@ -7,6 +7,11 @@
   components:
   - type: Sprite
     sprite: _Harmony/Clothing/Head/Hardsuits/qmsuit.rsi
+    layers:
+    - type: icon
+    - type: icon-flash
+      visible: false
+      map: [ "light" ]
   - type: HandheldLight
     addPrefix: false
   - type: ToggleableVisuals
