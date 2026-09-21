@@ -25,7 +25,7 @@
   - type: Item
     heldPrefix: produce
   - type: Produce
-    seedId: peanut
+    plantId: PeanutPlant
   - type: Extractable
     juiceSolution:
       reagents:
