@@ -1,21 +1,6 @@
 ﻿Entries:
 - author: KeldWolf
   changes:
-  - message: Added more shuttles by spanky to load (for admins)
-    type: Add
-  id: 28
-  time: '2024-09-06T15:26:28.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/28
-- author: KeldWolf
-  changes:
-  - message: 'Re-enabled role timers: 3 hours for command and sensitive roles and
-      3 hours of command for Captain.'
-    type: Tweak
-  id: 30
-  time: '2024-09-07T04:39:41.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/30
-- author: KeldWolf
-  changes:
   - message: Tweaks on shuttles made by Spanky.
     type: Tweak
   id: 31
@@ -3794,3 +3779,19 @@
   id: 1444
   time: '2026-09-11T05:35:00.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1447
+- author: daseiinn
+  changes:
+  - message: Added the Mallet of Malice! A lethal version of the toy hammer for traitors.
+    type: Add
+  - message: Fixed a typo in Mallet of Malice's uplink entry! Oops!
+    type: Fix
+  id: 1445
+  time: '2026-09-20T22:11:55.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1486
+- author: daseiinn
+  changes:
+  - message: Changed condiment packets back to 15u!
+    type: Tweak
+  id: 1446
+  time: '2026-09-20T22:54:10.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1471
