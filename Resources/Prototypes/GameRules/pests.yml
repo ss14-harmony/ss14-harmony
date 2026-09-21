@@ -69,7 +69,7 @@
     minimumPlayers: 1
   - type: VentCrittersRule
     min: 1 # DeltaV
-    max: 3 # DeltaV
+    max: 2 # Harmony
     playerRatio: 70 # DeltaV: Mostly ignore player scaling
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
