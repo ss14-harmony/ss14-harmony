@@ -16,8 +16,8 @@ public sealed partial class NoiseRangeCarverComponent : Component
     ///     The noise channel to use as a density controller.
     /// </summary>
     /// <remarks>This noise channel should be mapped to exactly the range [0, 1] unless you want a lot of warnings in the log.</remarks>
-    [DataField]
-    public EntProtoId NoiseChannel { get; private set; } = default!;
+    [DataField("noiseChannel")]
+    public string NoiseChannel { get; private set; } = default!;
 
     /// <summary>
     ///     The index of ranges in which to cut debris generation.
