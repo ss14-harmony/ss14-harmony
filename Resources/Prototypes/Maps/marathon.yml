@@ -38,7 +38,7 @@
             TechnicalAssistant: [ 2, 2 ]
             #medical (8-8)
             Chemist: [ 2, 2 ]
-            MedicalDoctor: [ 4, 4 ]
+            MedicalDoctor: [ 3, 3 ]
             Paramedic: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ]
             #science (6-6)
