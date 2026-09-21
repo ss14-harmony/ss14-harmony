@@ -44,9 +44,6 @@
           - id: WallRockUranium
             prob: 0.02
             orGroup: rock
-          - id: WallRockBananium
-            prob: 0.02
-            orGroup: rock
           - id: WallRockArtifactFragment
             prob: 0.01
             orGroup: rock
