@@ -6,7 +6,7 @@
   - type: Sprite
     sprite: _Harmony/Objects/Specific/Hydroponics/peanut.rsi
   - type: PlantData
-    name: seeds-wheat-name
+    name: seeds-peanut-name
     packetPrototype: PeanutSeeds
     productPrototypes: [FoodPeanut]
   - type: Plant
@@ -15,6 +15,7 @@
     production: 3
     yield: 4
     potency: 10
+    growthStages: 4
   - type: PlantGrowth
     waterConsumption: 0.6
   - type: PlantChemicals
