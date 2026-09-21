@@ -417,12 +417,12 @@
   name: reinforced wall
   components:
   - type: Sprite
-# Start of Harmony Change: Updates Sprite Pathing
-#    sprite: Structures/Walls/solid.rsi
-    sprite: _Harmony/Structures/Walls/solid.rsi
+# Start of Harmony Change: Updates Sprite Pathing. Commented out for now due to the Respritening.
+    sprite: Structures/Walls/solid.rsi
+#    sprite: _Harmony/Structures/Walls/solid.rsi
   - type: Icon
-#    sprite: Structures/Walls/solid.rsi
-    sprite: _Harmony/Structures/Walls/solid.rsi
+    sprite: Structures/Walls/solid.rsi
+#     sprite: _Harmony/Structures/Walls/solid.rsi
 # End of Harmony Change
     state: rgeneric
   - type: Construction
@@ -745,18 +745,18 @@
   name: solid wall
   components:
   - type: Sprite
-# Start of Harmony Change: Updates Sprite Pathing
-#    sprite: Structures/Walls/solid.rsi
-    sprite: _Harmony/Structures/Walls/solid.rsi
+# Start of Harmony Change: Updates Sprite Pathing. Commented out for now due to the Respritening.
+    sprite: Structures/Walls/solid.rsi
+#    sprite: _Harmony/Structures/Walls/solid.rsi
 # End of Harmony Change
   - type: WallReplacementMarker
   - type: Construction
     graph: Girder
     node: wall
   - type: Icon
-# Start of Harmony Change: Updates Sprite Pathing
-#    sprite: Structures/Walls/solid.rsi
-    sprite: _Harmony/Structures/Walls/solid.rsi
+# Start of Harmony Change: Updates Sprite Pathing. Commented out for now due to the Respritening.
+    sprite: Structures/Walls/solid.rsi
+#    sprite: _Harmony/Structures/Walls/solid.rsi
 # End of Harmony Change
   - type: RCDDeconstructable
     cost: 6
