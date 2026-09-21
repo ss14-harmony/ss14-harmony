@@ -125,9 +125,11 @@
     damageContainers:
     - HumanoidSilicon
     damage:
-      groups:
-        Brute: -30
       types:
+        Blunt: -10
+        Piercing: -10
+        Slash: -10
+
         Cold: -10
         Caustic: -5
   - type: Stack

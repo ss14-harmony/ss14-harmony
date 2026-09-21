@@ -233,7 +233,7 @@
     bloodReferenceSolution:
       reagents:
         - ReagentId: IPCOil # IPC blood effectively
-          Quantity: 300
+          Quantity: 600
     bleedReductionAmount: 0.25 # Less than an organic (no clotting), but still there
     bleedPuddleThreshold: 3
     bloodRefreshAmount: 0
@@ -315,12 +315,11 @@
   abstract: true
   suffix: IPC
   components:
-  - type: SolutionContainerManager
-    solutions:
-      organ:
-        reagents:
-        - ReagentId: IPCOil
-          Quantity: 10
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IPCOil
+        Quantity: 10
 
 - type: entity
   parent: OrganIPC
@@ -419,17 +418,16 @@
      sprite: _Box/Mobs/Species/IPC/organs.rsi
      layers:
      - state: ipc-brain-on
-   - type: SolutionContainerManager
-     solutions:
-       organ:
-         reagents:
-         - ReagentId: IPCOil
-           Quantity: 10
+   - type: Solution
+     solution:
+       reagents:
+       - ReagentId: IPCOil
+         Quantity: 10
        food:
-         maxVol: 5
-         reagents:
-         - ReagentId: GreyMatter
-           Quantity: 5
+        maxVol: 5
+        reagents:
+        - ReagentId: GreyMatter
+          Quantity: 5
 
 - type: entity
   parent: [OrganIPCVisual, OrganBaseEyes, OrganIPCInternal]
@@ -480,7 +478,7 @@
     category: Heart
 
 - type: entity
-  parent: [OrganIPCInternal, OrganIPCMetabolizer]
+  parent: [OrganIPCInternal, OrganIPCMetabolizer, OrganBaseStomach]
   id: OrganIPCStomach
   name: catalytic processor
   description: A miniature chemical manipulator and biofuel generator.
@@ -488,24 +486,19 @@
   - type: Sprite
     sprite: _Box/Mobs/Species/IPC/organs.rsi
     state: ipc-stomach
-  - type: Metabolizer
-    maxReagents: 3
-    stages: [Digestion]
-  - type: Organ
-    category: Stomach
-  - type: Stomach
     specialDigestible:
       tags:
       - IPCFood
       - ClothMade
       - Trash
     isSpecialDigestibleExclusive: false
-  - type: SolutionContainerManager
-    solutions:
-      stomach:
-        maxVol: 50
-      organ:
-        reagents:
-        - ReagentId: IPCOil
-          Quantity: 10
-  - type: GibbableOrgan
+
+- type: entity
+  parent: Solution
+  id: SolutionIPCStomach
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: ipcstomach
+    solution:
+      maxVol: 150 # same as humans

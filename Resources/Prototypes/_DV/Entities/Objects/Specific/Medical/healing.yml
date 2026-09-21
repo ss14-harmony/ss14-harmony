@@ -16,10 +16,16 @@
     - HumanoidSilicon
     # - Silicon # Box Change, as long as Borgs are immune to Radiation, trying to remove radiation damage from them crashes the game
     damage:
-      groups:
-        Burn: -120 # Box Change - -60 > -120 - 30 per
-        Brute: -90 # Box Change - -60 > -90 - 30 per
       types:
+        Heat: -30
+        Cold: -30
+        Shock: -30
+        Caustic: -30
+
+        Blunt: -30
+        Piercing: -30
+        Slash: -30
+
         Radiation: -30 # Box Change, IPC Omnizine # Box Change - -20 > -30
     modifyBloodLevel: 45 # restores a lot of blood for IPCs. # Box Change - 25 > 45
     bloodlossModifier: -20 # DeltaV - IPCs bleed
