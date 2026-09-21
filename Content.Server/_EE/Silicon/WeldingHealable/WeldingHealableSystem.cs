@@ -113,7 +113,7 @@ public sealed class WeldingHealableSystem : SharedWeldingHealableSystem
             return false;
 
         foreach (var type in healable.Damage.DamageDict)
-            if (damageable.Comp.Damage.DamageDict[type.Key].Value > 0)
+            if (_damageableSystem.GetAllDamage((user, damageable)).DamageDict[type.Key].Value > 0)
                 return true;
 
         // In case the healer is a humanoid entity with targeting, we run the check on the targeted parts.

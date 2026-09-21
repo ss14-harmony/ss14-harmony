@@ -111,11 +111,10 @@
     damage:
       types:
         Blunt: 0.5
-        Heat: 0.1 # represents internal fluids, like coolant and lubricant, boiling away\
+        Heat: 0.3 # represents internal fluids, like coolant and lubricant, boiling away\
   - type: PassiveDamage # IPCs can heal their own bloodloss (to an extent)
     allowedStates:
     - Alive
-    damageCap: 20
     damage:
       types:
         Heat: -0.02
@@ -145,6 +144,9 @@
     thermalRegulationTemperatureThreshold: 2
   - type: FireVisuals
   - type: StunVisuals
+  - type: Emoting
+  - type: BodyEmotes
+    soundsId: GeneralBodyEmotes
   # No more Mirroring from this point on
   - type: Tag # Mirrored from BaseSpeciesMob (i lied)
     tags:
@@ -154,8 +156,9 @@
       - AnomalyHost # IPCs can be anomaly hosts
       - SiliconEmotes # added
   - type: Damageable
-    damageContainer: HumanoidSilicon
     damageModifierSet: IPC
+  - type: Injurable
+    damageContainer: HumanoidSilicon
   - type: DamageVisuals
     thresholds: [ 10, 20, 30, 50, 70, 100 ]
     targetLayers:
@@ -199,10 +202,7 @@
     speechSounds: Pai
   - type: Vocal
     wilhelm: "/Audio/_EE/Voice/IPC/wilhelm.ogg"
-    sounds:
-      Male: UnisexIPC
-      Female: UnisexIPC
-      Unsexed: UnisexIPC
+    emotesounds: UnisexIPC
   # stuff that makes the IPC do IPC things
   - type: Silicon
     entityType: enum.SiliconType.Player

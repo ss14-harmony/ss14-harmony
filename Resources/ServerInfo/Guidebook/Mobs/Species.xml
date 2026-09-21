@@ -18,6 +18,7 @@
   </Box>
   <Box>
     <GuideEntityEmbed Entity="AppearanceVulpkanin" Caption="Vulpkanin"/>
+    <GuideEntityEmbed Entity="AppearanceIPC" Caption="I.P.C."/> <!--Box-->
   </Box>
 
 </Document>

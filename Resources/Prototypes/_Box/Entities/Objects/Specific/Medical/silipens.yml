@@ -3,7 +3,7 @@
 
 # Medical
 - type: entity
-  parent: ChemicalMedipen
+  parent: [SolutionToolTiny, ChemicalMedipen]
   id: Silipen
   name: Silipen
   suffix: BoxStation
@@ -18,10 +18,8 @@
     maxFillLevels: 1
     changeColor: false
     emptySpriteName: silipen_empty
-  - type: SolutionContainerManager
-    solutions:
-      pen:
-        maxVol: 15
+  - type: Solution
+    solution:
         reagents:
         - ReagentId: RoutineMaintenance
           Quantity: 10
@@ -29,7 +27,7 @@
           Quantity: 5
 
 - type: entity
-  parent: ChemicalMedipen
+  parent: [SolutionToolTiny, ChemicalMedipen]
   id: EmergencySilipen
   name: Emergency Silipen
   suffix: BoxStation
@@ -44,10 +42,8 @@
     maxFillLevels: 1
     changeColor: false
     emptySpriteName: emergencysilipen_empty
-  - type: SolutionContainerManager
-    solutions:
-      pen:
-        maxVol: 15
+  - type: Solution
+    solution:
         reagents:
         - ReagentId: Overclocker
           Quantity: 12
@@ -56,7 +52,7 @@
 
 # Syndicate stuff
 - type: entity
-  parent: ChemicalMedipen
+  parent: SyndicateMedipen
   id: MechazineSilipen
   name: Mechazine Silipen
   suffix: BoxStation
@@ -71,10 +67,8 @@
     maxFillLevels: 1
     changeColor: false
     emptySpriteName: mechapen_empty
-  - type: SolutionContainerManager
-    solutions:
-      pen:
-        maxVol: 30
+  - type: Solution
+    solution:
         reagents:
         - ReagentId: Mechazine
           Quantity: 30

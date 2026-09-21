@@ -116,8 +116,9 @@
           reagent: Overclocker
           min: 0
           max: 15
-        - !type:TotalDamageCondition
-          min: 80
+        # - !type:TotalDamageCondition
+        #   min: 80
+        # Readd this once upstream provides a way to only heal past certain thresholds again
         damage:
           types:
             Heat: -3
@@ -283,9 +284,10 @@
     Bloodstream:
       effects:
       - !type:HealthChange
-        conditions:
-        - !type:TotalDamageCondition
-          max: 60
+        # conditions:
+        # - !type:TotalDamageCondition
+        #   max: 60 
+        # Readd this once upstream provides a way to only heal past certain thresholds again
         damage:
           groups:
             Brute: -0.6

@@ -16,3 +16,9 @@
   naming: FirstDashLast
   sexes:
   - Unsexed
+  defaultSoundsBySex:
+  - UnisexIPC
+  - UnisexIPC
+  - UnisexIPC
+  voices:
+  - UnisexIPC

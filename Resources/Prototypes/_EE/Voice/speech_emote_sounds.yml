@@ -1,5 +1,6 @@
 - type: emoteSounds
   id: UnisexIPC
+  voiceSelectorName: humanoid-profile-editor-voice-cybernetic
   params:
     variation: 0
   sounds:
