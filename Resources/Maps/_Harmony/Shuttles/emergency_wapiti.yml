@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 290.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/20/2026 05:33:13
-  entityCount: 728
-maps:
-- 724
+  time: 09/21/2026 04:16:20
+  entityCount: 727
+maps: []
 grids:
 - 1
-orphans: []
+orphans:
+- 1
 nullspace:
 - 725
 - 726
@@ -32,7 +32,7 @@ entities:
     - type: MetaData
       name: NT Evac Log
     - type: Transform
-      parent: 724
+      parent: invalid
       pos: -0.42093527,-0.86894274
     - type: MapGrid
       chunks:
@@ -167,18 +167,6 @@ entities:
     - type: TileHistory
       chunkHistory: {}
     - type: ExplosionAirtightGrid
-  - uid: 724
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: ChunkContainer
-      chunkEntities: []
-    - type: OccluderTree
 - proto: ActionToggleLight
   entities:
   - uid: 594

@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 290.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/20/2026 05:38:51
-  entityCount: 1032
-maps:
-- 3
+  time: 09/21/2026 04:25:15
+  entityCount: 1031
+maps: []
 grids:
 - 1
-orphans: []
+orphans:
+- 1
 nullspace:
 - 1029
 - 1030
@@ -37,7 +37,7 @@ entities:
     - type: MetaData
       name: NT-Hygieia
     - type: Transform
-      parent: 3
+      parent: invalid
     - type: MapGrid
       chunks:
         -1,0:
@@ -192,18 +192,6 @@ entities:
       chunkHistory: {}
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
-  - uid: 3
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: ChunkContainer
-      chunkEntities: []
-    - type: OccluderTree
 - proto: AirAlarm
   entities:
   - uid: 399

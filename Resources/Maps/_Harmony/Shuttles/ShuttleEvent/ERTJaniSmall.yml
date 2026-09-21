@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 290.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/20/2026 05:37:58
-  entityCount: 238
-maps:
-- 87
+  time: 09/21/2026 04:24:28
+  entityCount: 237
+maps: []
 grids:
 - 1
-orphans: []
+orphans:
+- 1
 nullspace:
 - 89
 - 90
@@ -31,7 +31,7 @@ entities:
     - type: MetaData
       name: NT-Saviour
     - type: Transform
-      parent: 87
+      parent: invalid
       pos: 0.5,0.5
     - type: MapGrid
       chunks:
@@ -280,18 +280,6 @@ entities:
         reagents: []
     - type: ContainedSolution
       container: 49
-  - uid: 87
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: ChunkContainer
-      chunkEntities: []
-    - type: OccluderTree
 - proto: AdvMopItem
   entities:
   - uid: 53

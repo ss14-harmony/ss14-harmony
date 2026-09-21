@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 290.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/20/2026 05:26:52
-  entityCount: 225
-maps:
-- 70
+  time: 09/21/2026 04:13:16
+  entityCount: 224
+maps: []
 grids:
 - 1
-orphans: []
+orphans:
+- 1
 nullspace:
 - 225
 tilemap:
@@ -29,7 +29,7 @@ entities:
     - type: MetaData
       name: Cargo Shuttle - 'Olympias'
     - type: Transform
-      parent: 70
+      parent: invalid
       pos: -2.0990233,-7.5687466
     - type: MapGrid
       chunks:
@@ -112,18 +112,6 @@ entities:
     - type: TileHistory
       chunkHistory: {}
     - type: ExplosionAirtightGrid
-  - uid: 70
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: ChunkContainer
-      chunkEntities: []
-    - type: OccluderTree
 - proto: AirAlarm
   entities:
   - uid: 32

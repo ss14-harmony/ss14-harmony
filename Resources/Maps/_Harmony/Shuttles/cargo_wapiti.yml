@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 290.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/20/2026 05:27:44
-  entityCount: 202
-maps:
-- 198
+  time: 09/21/2026 04:13:48
+  entityCount: 201
+maps: []
 grids:
 - 1
-orphans: []
+orphans:
+- 1
 nullspace:
 - 199
 - 200
@@ -30,7 +30,7 @@ entities:
     - type: MetaData
       name: Cargo shuttle
     - type: Transform
-      parent: 198
+      parent: invalid
       pos: -0.453125,-0.53125
     - type: MapGrid
       chunks:
@@ -118,18 +118,6 @@ entities:
       - 202
     - type: TileHistory
       chunkHistory: {}
-  - uid: 198
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: ChunkContainer
-      chunkEntities: []
-    - type: OccluderTree
 - proto: AirlockCargoLocked
   entities:
   - uid: 25

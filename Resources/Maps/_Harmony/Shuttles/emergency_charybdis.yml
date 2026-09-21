@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 290.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/20/2026 05:30:54
-  entityCount: 1146
-maps:
-- 1140
+  time: 09/21/2026 04:15:00
+  entityCount: 1145
+maps: []
 grids:
 - 1
-orphans: []
+orphans:
+- 1
 nullspace:
 - 1141
 - 1142
@@ -80,7 +80,7 @@ entities:
     - type: MetaData
       name: NT Evac Charybdis
     - type: Transform
-      parent: 1140
+      parent: invalid
       pos: -62.605476,23.348541
     - type: MapGrid
       chunks:
@@ -281,18 +281,6 @@ entities:
       - 1144
       - 1145
       - 1146
-  - uid: 1140
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: ChunkContainer
-      chunkEntities: []
-    - type: OccluderTree
 - proto: AirlockBarLocked
   entities:
   - uid: 2

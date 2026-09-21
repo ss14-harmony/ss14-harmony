@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 290.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/20/2026 05:31:54
-  entityCount: 670
-maps:
-- 667
+  time: 09/21/2026 04:15:29
+  entityCount: 669
+maps: []
 grids:
 - 1
-orphans: []
+orphans:
+- 1
 nullspace:
 - 668
 - 669
@@ -38,7 +38,7 @@ entities:
     - type: MetaData
       name: NT-Evac Jeremiah
     - type: Transform
-      parent: 667
+      parent: invalid
       pos: -4.3957214,6.3308363
     - type: MapGrid
       chunks:
@@ -168,18 +168,6 @@ entities:
     - type: TileHistory
       chunkHistory: {}
     - type: ExplosionAirtightGrid
-  - uid: 667
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: ChunkContainer
-      chunkEntities: []
-    - type: OccluderTree
 - proto: AirCanister
   entities:
   - uid: 2

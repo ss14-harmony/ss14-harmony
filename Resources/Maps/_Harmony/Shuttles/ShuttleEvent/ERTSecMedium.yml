@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 290.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/20/2026 05:39:36
-  entityCount: 615
-maps:
-- 611
+  time: 09/21/2026 04:27:50
+  entityCount: 614
+maps: []
 grids:
 - 1
-orphans: []
+orphans:
+- 1
 nullspace:
 - 612
 - 613
@@ -34,7 +34,7 @@ entities:
     - type: MetaData
       name: NT-Salus
     - type: Transform
-      parent: 611
+      parent: invalid
     - type: MapGrid
       chunks:
         -1,0:
@@ -139,18 +139,6 @@ entities:
       chunkHistory: {}
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
-  - uid: 611
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: ChunkContainer
-      chunkEntities: []
-    - type: OccluderTree
 - proto: ActionToggleInternals
   entities:
   - uid: 100

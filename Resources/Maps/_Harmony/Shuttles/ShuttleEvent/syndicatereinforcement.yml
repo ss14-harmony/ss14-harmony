@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 290.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/20/2026 05:40:28
-  entityCount: 126
-maps:
-- 122
+  time: 09/21/2026 04:28:08
+  entityCount: 125
+maps: []
 grids:
 - 1
-orphans: []
+orphans:
+- 1
 nullspace:
 - 123
 - 124
@@ -31,7 +31,7 @@ entities:
     - type: MetaData
       name: Unknown
     - type: Transform
-      parent: 122
+      parent: invalid
       pos: -0.47916666,-0.47394118
     - type: MapGrid
       chunks:
@@ -99,18 +99,6 @@ entities:
       chunkHistory: {}
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
-  - uid: 122
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: ChunkContainer
-      chunkEntities: []
-    - type: OccluderTree
 - proto: AirlockExternalShuttleSyndicateLocked
   entities:
   - uid: 8

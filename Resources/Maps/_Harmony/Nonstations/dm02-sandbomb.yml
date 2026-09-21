@@ -4,7 +4,7 @@ meta:
   engineVersion: 290.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/20/2026 05:22:25
+  time: 09/21/2026 04:46:47
   entityCount: 6820
 maps:
 - 1
@@ -76,17 +76,15 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: dm02-sandbomb
+      name: Map Entity
     - type: Transform
     - type: Map
       mapPaused: True
     - type: GridTree
     - type: Broadphase
-    - type: OccluderTree
-    - type: MapLight
-      ambientLightColor: '#D8B059FF'
     - type: ChunkContainer
       chunkEntities: []
+    - type: OccluderTree
   - uid: 2
     components:
     - type: MetaData

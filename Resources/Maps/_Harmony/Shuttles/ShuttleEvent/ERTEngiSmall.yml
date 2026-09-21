@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 290.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/20/2026 05:37:36
-  entityCount: 308
-maps:
-- 306
+  time: 09/21/2026 04:21:23
+  entityCount: 307
+maps: []
 grids:
 - 1
-orphans: []
+orphans:
+- 1
 nullspace:
 - 307
 - 308
@@ -32,7 +32,7 @@ entities:
     - type: MetaData
       name: NT-Demiurge
     - type: Transform
-      parent: 306
+      parent: invalid
     - type: MapGrid
       chunks:
         -1,0:
@@ -127,18 +127,6 @@ entities:
       chunkHistory: {}
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
-  - uid: 306
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: ChunkContainer
-      chunkEntities: []
-    - type: OccluderTree
 - proto: AirCanister
   entities:
   - uid: 126

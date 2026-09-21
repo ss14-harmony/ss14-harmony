@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 290.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/20/2026 05:30:29
-  entityCount: 733
-maps:
-- 727
+  time: 09/21/2026 04:14:28
+  entityCount: 732
+maps: []
 grids:
 - 1
-orphans: []
+orphans:
+- 1
 nullspace:
 - 728
 - 729
@@ -35,7 +35,7 @@ entities:
     - type: MetaData
       name: Evac Chariot
     - type: Transform
-      parent: 727
+      parent: invalid
       pos: 0.390625,0.3671875
     - type: MapGrid
       chunks:
@@ -181,18 +181,6 @@ entities:
       - 731
     - type: TileHistory
       chunkHistory: {}
-  - uid: 727
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: ChunkContainer
-      chunkEntities: []
-    - type: OccluderTree
 - proto: ActionToggleInternals
   entities:
   - uid: 671
