@@ -1,0 +1,285 @@
+# Harmony Change - Updates sprite pathing, contraband level, names, and descriptions.
+# - type: entity
+#   parent: ClothingUniformBase
+#   id: ClothingUniformJumpsuitDetective
+#   name: hard-worn suit
+#   description: Someone who wears this means business.
+#   components:
+#   - type: Sprite
+#     sprite: Clothing/Uniforms/Jumpsuits/Security/detective.rsi
+#   - type: Clothing
+#     sprite: Clothing/Uniforms/Jumpsuits/Security/detective.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformJumpsuitDetective
+  name: detective's hard-worn suit
+  description: This suit used to really catch the light. The tie is god awful.
+  components:
+    - type: Sprite
+      sprite: _Harmony/Clothing/Uniforms/Jumpsuit/detective.rsi
+    - type: Clothing
+      sprite: _Harmony/Clothing/Uniforms/Jumpsuit/detective.rsi
+
+# - type: entity
+#   parent: ClothingUniformBase
+#   id: ClothingUniformJumpsuitDetectiveGrey
+#   name: noir suit
+#   description: A hard-boiled private investigator's grey suit, complete with tie clip.
+#   components:
+#   - type: Sprite
+#     sprite: Clothing/Uniforms/Jumpsuits/Security/detective_grey.rsi
+#   - type: Clothing
+#     sprite: Clothing/Uniforms/Jumpsuits/Security/detective_grey.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformJumpsuitDetectiveGrey
+  name: detective's noir suit
+  description: Beyond the shadow of a doubt, this is the epitome of impeccable tailoring.
+  components:
+    - type: Sprite
+      sprite: _Harmony/Clothing/Uniforms/Jumpsuit/detective_grey.rsi
+    - type: Clothing
+      sprite: _Harmony/Clothing/Uniforms/Jumpsuit/detective_grey.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpsuitHoS
+  name: head of security's jumpsuit
+  description: It's bright red and rather crisp, much like security's victims tend to be.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/hos.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/hos.rsi
+  # - type: Sprite
+  #   sprite: Clothing/Uniforms/Jumpsuits/Security/hos.rsi
+  # - type: Item
+  #   inhandVisuals:
+  #     left:
+  #     - state: inhand-left
+  #       color: "#C12D30"
+  #       sprite: Clothing/Uniforms/Jumpsuits/Color/color.rsi
+  #     - state: overlay-inhand-left
+  #     right:
+  #     - state: inhand-right
+  #       color: "#C12D30"
+  #       sprite: Clothing/Uniforms/Jumpsuits/Color/color.rsi
+  #     - state: overlay-inhand-right
+  # - type: Clothing
+  #   sprite: Clothing/Uniforms/Jumpsuits/Security/hos.rsi
+
+# - type: entity
+#   parent: [ClothingUniformBase, BaseCommandContraband]
+#   id: ClothingUniformJumpsuitHoSAlt
+#   name: head of security's turtleneck
+#   description: It's a turtleneck worn by those strong and disciplined enough to achieve the position of Head of Security.
+#   components:
+#   - type: Sprite
+#     sprite: Clothing/Uniforms/Jumpsuits/Security/hos_alt.rsi
+#   - type: Clothing
+#     sprite: Clothing/Uniforms/Jumpsuits/Security/hos_alt.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpsuitHoSAlt
+  name: head of security's assault jumpsuit
+  description: It's an assault suit worn by those strong and disciplined enough to achieve the position of Head of Security.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuits/Security/hos_alt.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/Security/hos_alt.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpsuitHoSBlue
+  name: head of security's blue suit # head of security's blue jumpsuit
+  description: A blue jumpsuit of Head of Security.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/hos_blue.rsi # Clothing/Uniforms/Jumpsuits/Security/hos_blue.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/hos_blue.rsi # Clothing/Uniforms/Jumpsuits/Security/hos_blue.rsi
+
+# End Harmony changes
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpsuitHoSGrey
+  name: head of security's grey jumpsuit
+  description: A grey jumpsuit of Head of Security, which make him look somewhat like a passenger.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuits/Security/hos_grey.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuits/Security/hos_grey.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpsuitHoSParadeMale
+  name: head of security's parade uniform
+  description: A male head of security's luxury-wear, for special occasions.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuits/Security/hos_parade.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuits/Security/hos_parade.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband] # Harmony Change: Added Contraband Level
+  id: ClothingUniformJumpsuitBrigmedic
+  name: brigmedic jumpsuit
+  description: This uniform is issued to qualified personnel who have been trained. No one cares that the training took half a day.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/brigmedic.rsi # Harmony resprite Clothing/Uniforms/Jumpsuits/Security/brigmedic.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/brigmedic.rsi # Harmony resprite Clothing/Uniforms/Jumpsuits/Security/brigmedic.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPrisoner
+  name: prisoner jumpsuit
+  description: A jumpsuit used for prisoners. It has suit sensors automatically enabled at all times.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuits/Color/color.rsi
+    layers:
+    - state: icon
+      color: "#ff8300"
+    - state: prisoner-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ff8300"
+      - state: prisoner-inhand-left
+      right:
+      - state: inhand-right
+        color: "#ff8300"
+      - state: prisoner-inhand-right
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuits/Color/color.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#ff8300"
+      - state: prisoner-equipped-INNERCLOTHING
+  - type: SuitSensor
+    controlsLocked: true
+    randomMode: false
+    mode: SensorCords
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - PrisonUniform
+    - WhitelistChameleon
+
+#Harmony Change Start: Updated Pathing and Name for security resprite update
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband, ClothingUniformFoldableBase]
+  id: ClothingUniformJumpsuitSec
+  name: security jumpsuit
+  description: A jumpsuit made of strong material, providing robust protection.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/security.rsi # Clothing/Uniforms/Jumpsuits/Security/security.rsi
+  # - type: Item
+  #   inhandVisuals:
+  #     left:
+  #     - state: inhand-left
+  #      color: "#C12D30"
+  #       sprite: Clothing/Uniforms/Jumpsuits/Color/color.rsi
+  #     - state: overlay-inhand-left
+  #     right:
+  #     - state: inhand-right
+  #       color: "#C12D30"
+  #       sprite: Clothing/Uniforms/Jumpsuits/Color/color.rsi
+  #     - state: overlay-inhand-right
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSecBlue
+  name: security blue suit # blue shirt and tie
+  description: I'm a little busy right now, Calhoun.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/security_blue.rsi # Clothing/Uniforms/Jumpsuits/Security/security_blue.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/security_blue.rsi # Clothing/Uniforms/Jumpsuits/Security/security_blue.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformJumpsuitSecGrey
+  name: grey security jumpsuit
+  description: A tactical relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuits/Security/security_grey.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuits/Security/security_grey.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformSecurityTrooper
+  name: trooper uniform
+  description: A formal uniform issued to the Nanotrasen Troopers, usually it comes with a car.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuits/Security/security_trooper.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuits/Security/security_trooper.rsi
+
+#Harmony Change: Updated Pathing and Name for security resprite update
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformJumpsuitWarden
+  name: warden's jumpsuit # warden's uniform
+  description: A formal security suit for officers complete with Nanotrasen belt buckle.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/warden.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/warden.rsi
+  # - type: Sprite
+  #   sprite: Clothing/Uniforms/Jumpsuits/Security/warden.rsi
+  # - type: Item
+  #   inhandVisuals:
+  #     left:
+  #     - state: inhand-left
+  #       color: "#C12D30"
+  #       sprite: Clothing/Uniforms/Jumpsuits/Color/color.rsi
+  #     - state: overlay-inhand-left
+  #     right:
+  #     - state: inhand-right
+  #       color: "#C12D30"
+  #       sprite: Clothing/Uniforms/Jumpsuits/Color/color.rsi
+  #     - state: overlay-inhand-right
+  # - type: Clothing
+  #   sprite: Clothing/Uniforms/Jumpsuits/Security/warden.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpsuitHosFormal
+  name: hos's formal suit
+  description: A suit for special occasions.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuits/Security/hosformal.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuits/Security/hosformal.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformJumpsuitSeniorOfficer
+  name: senior officer jumpsuit
+  description: A sign of skill and prestige within the security department.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/senior_officer.rsi # Harmony Resprite Clothing/Uniforms/Jumpsuits/Security/senior_officer.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/senior_officer.rsi # Harmony Resprite Clothing/Uniforms/Jumpsuits/Security/senior_officer.rsi

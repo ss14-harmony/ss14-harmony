@@ -17,10 +17,11 @@
     # Harmony end
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 12h
+      time: 12h # Harmony: 10h -> 12h
+    # Harmony start
     - !type:OverallPlaytimeRequirement
-      time: 24h # Harmony: 10h -> 12h
-  weight: 10
+      time: 24h
+    # Harmony end
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
   supervisors: job-supervisors-captain

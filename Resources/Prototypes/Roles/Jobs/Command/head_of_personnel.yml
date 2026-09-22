@@ -24,8 +24,6 @@
     - !type:DepartmentTimeRequirement
       department: Command
       time: 8h # Harmony: 2.5h -> 8h
-  weight: 20
-  startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
   supervisors: job-supervisors-captain
   access:

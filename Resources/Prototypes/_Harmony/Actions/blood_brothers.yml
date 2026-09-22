@@ -5,10 +5,10 @@
   description: Convert a crewmember to your blood oath.
   components:
   - type: Action
-    icon:
-      sprite: /Textures/Interface/Alerts/bleed.rsi
-      state: bleed10
-    itemIconStyle: BigAction
+  - type: Sprite
+    sprite: /Textures/Interface/Alerts/bleed.rsi
+    layers:
+    - state: bleed10
   - type: TargetAction
   - type: EntityTargetAction
     event: !type:BloodBrotherConvertActionEvent
@@ -24,8 +24,9 @@
   description: Check if a crewmember is susceptible to conversion.
   components:
   - type: Action
-    icon: Interface/VerbIcons/vv.svg.192dpi.png # eye icon
-    itemIconStyle: BigAction
+  - type: Sprite
+    layers:
+    - texture: Interface/VerbIcons/vv.svg.192dpi.png
   - type: TargetAction
   - type: EntityTargetAction
     event: !type:BloodBrotherCheckConvertActionEvent

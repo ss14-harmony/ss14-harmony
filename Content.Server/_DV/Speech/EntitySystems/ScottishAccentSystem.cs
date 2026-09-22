@@ -1,5 +1,5 @@
 using Content.Server.DeltaV.Speech.Components;
-using Content.Server.Speech.EntitySystems;
+using Content.Shared.Speech.EntitySystems; //Harmony change, update to Shared
 using System.Text.RegularExpressions;
 using Content.Shared.Speech;
 
