@@ -29,7 +29,7 @@
     maxAngle: 45
     angleIncrease: 4
     angleDecay: 16
-    fireRate: 6 # Harmony change - lowered firerate ( 8 -> 6 )
+    fireRate: 8
     selectedMode: FullAuto
     availableModes:
       - FullAuto
@@ -87,10 +87,10 @@
   - type: Appearance
   - type: StaticPrice
     price: 10000
-# Start Harmony change - L6 slows you down a lot when wielded
+# Start Harmony change - L6 slows you down when wielded
   - type: SpeedModifiedOnWield
-    walkModifier: 0.6
-    sprintModifier: 0.6
+    walkModifier: 0.9
+    sprintModifier: 0.9
 # End Harmony change
 
 - type: entity
