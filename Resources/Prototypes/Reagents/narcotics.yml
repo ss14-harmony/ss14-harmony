@@ -328,7 +328,7 @@
           min: 8
         effectProto: StatusEffectForcedSleeping
         time: 9
-        delay: 5
+        delay: 2 # Harmony Change, lowered (5 -> 2)
 
 - type: reagent
   id: MuteToxin

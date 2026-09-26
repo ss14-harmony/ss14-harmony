@@ -78,7 +78,7 @@
 # One of the few syndie bombs that should punch holes in space.
 - type: entity
   name: syndicate minibomb
-  description: A syndicate-manufactured explosive used to stow destruction and cause chaos.
+  description: A syndicate-manufactured explosive used to stow destruction and cause chaos. Count to 10 and watch an unarmored body disappear. # Harmony change, mention 10 second delay and gibbing
   parent: [VolatileGrenadeBase, TimerGrenadeBase, BaseSyndicateContraband]
   id: SyndieMiniBomb
   components:
@@ -87,7 +87,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.1
   - type: TimerTrigger
-    delay: 5
+    delay: 10 # Harmony change, increased (5 -> 10)
   - type: ExplodeOnTrigger
     keysIn:
     - timer
