@@ -2,7 +2,7 @@
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 
-namespace Content.Server.pAI;
+namespace Content.Server._Harmony.pAI;
 
 public sealed class PAISystem : EntitySystem
 {
@@ -10,7 +10,7 @@ public sealed class PAISystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<PAIComponent, EncryptionChannelsChangedEvent>(OnKeysChanged); // Harmony Additions: Added more entries into the pAI store
+        SubscribeLocalEvent<PAIComponent, EncryptionChannelsChangedEvent>(OnKeysChanged);
     }
 
     private void OnKeysChanged(EntityUid uid, PAIComponent component, EncryptionChannelsChangedEvent args)
