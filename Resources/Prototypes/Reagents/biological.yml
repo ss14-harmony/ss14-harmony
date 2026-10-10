@@ -170,6 +170,13 @@
             Poison: 4
       - !type:Vomit
         probability: 0.25
+      # Start of Harmony changes - Zed blood now infects
+      - !type:CauseZombieInfection
+        conditions:
+        - !type:ReagentCondition
+          reagent: ZombieBlood
+          min: 5
+      # End of Harmony changes
 
 - type: reagent
   id: Ichor
