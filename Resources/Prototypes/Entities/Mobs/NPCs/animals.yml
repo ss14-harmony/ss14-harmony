@@ -2126,6 +2126,8 @@
       - Mouse
     offspring:
     - id: MobMouse
+    minBreedAttemptInterval: 15
+    maxBreedAttemptInterval: 30
     capacity: 12
     breedChance: .3 # doubled chance
     hungerPerBirth: 25 # wouldn't be possible to ranch unless Lowered
@@ -2187,6 +2189,14 @@
         Base: splat-1
   - type: Item
     heldPrefix: 1
+  # Start of Harmony Changes: RAT RANCHING!!!
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - Mouse
+    offspring:
+    - id: MobMouse1
+  # End of Harmony Changes
 
 - type: entity
   parent: MobMouse
@@ -2215,6 +2225,14 @@
         Base: splat-2
   - type: Item
     heldPrefix: 2
+  # Start of Harmony Changes: RAT RANCHING!!!
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - Mouse
+    offspring:
+    - id: MobMouse2
+  # End of Harmony Changes
 
 - type: entity
   name: cancer mouse
@@ -2254,7 +2272,7 @@
     refineResult:
     - id: FoodMeatRat
       amount: 1
-    - id: SheetUranium1
+    - id: SheetUranium5 # Harmony Change: RAT RANCHING | Might aswell make it "profitable" (SheetUranium1 -> SheetUranium5)
       amount: 1
   - type: Damageable
     damageModifierSet: Zombie
