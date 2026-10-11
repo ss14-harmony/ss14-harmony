@@ -45,8 +45,10 @@
   components:
   - type: LimitedCharges
     maxCharges: 5
-  - type: AutoRecharge
-    rechargeDuration: 30
+  # Start of Harmony Changes - Staff of Animation no longer auto charges
+  #- type: AutoRecharge
+  #  rechargeDuration: 30
+  # End of Harmony Changes
   - type: Sprite
     sprite: Objects/Weapons/Guns/Basic/staves.rsi
     layers:
