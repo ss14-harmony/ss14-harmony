@@ -2039,7 +2039,7 @@
       Peckish: 15
       Starving: 10
       Dead: 0
-    baseDecayRate: 0.5 # I'm very hungry! Give me. The cheese.
+    baseDecayRate: 0.13 # I'm very hungry! Give me. The cheese. # Start of Harmony Changes: RAT RANCHING!!! .5 -> .13 actually impossible to ranch unless lowered
   - type: Extractable
     grindableSolutionName: food
   - type: ToolRefinable
@@ -2119,7 +2119,19 @@
   - type: EmitSoundOnLand
     sound:
       collection: WeakHit
-# End of Harmony Change
+# Start of Harmony Changes: RAT RANCHING!!!
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - Mouse
+    offspring:
+    - id: MobMouse
+    capacity: 12
+    breedChance: .3 # doubled chance
+    hungerPerBirth: 25 # wouldn't be possible to ranch unless Lowered
+    gestationDuration: .5
+  - type: ReproductivePartner
+# End of Harmony Changes
 
 - type: entity
   abstract: true
