@@ -2258,6 +2258,14 @@
       amount: 1
   - type: Damageable
     damageModifierSet: Zombie
+# Start of Harmony Changes: RAT RANCHING!!!
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - Mouse
+    offspring:
+    - id: MobMouseCancer
+# End of Harmony Changes
 
 - type: entity
   name: lizard #Weh
