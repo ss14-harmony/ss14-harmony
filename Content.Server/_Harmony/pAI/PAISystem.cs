@@ -17,6 +17,7 @@ public sealed class PAISystem : EntitySystem
     {
         UpdateRadioChannels(uid, component, args.Component);
     }
+
     private void UpdateRadioChannels(EntityUid uid, PAIComponent innate, EncryptionKeyHolderComponent keyHolder)
     {
         foreach (var channel in innate.Channels)

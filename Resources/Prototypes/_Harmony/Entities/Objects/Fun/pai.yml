@@ -1,17 +1,4 @@
-﻿
-- type: entity
-  parent: BaseMentalAction
-  id: ActionPAIStationRecords
-  name: Station Records
-  description: Open the station records and dox your owner.
-  components:
-  - type: Action
-    icon: { sprite: Objects/Misc/folders.rsi, state: folder-centcom }
-    itemIconStyle: NoItem
-  - type: InstantAction
-    event: !type:OpenUiActionEvent
-      key: enum.GeneralStationRecordConsoleKey.Key
-
+﻿# Added by pAI Encryption and Atmospheric sensor
 - type: entity
   parent: BaseMentalAction
   id: ActionPAIAtmosSensor
@@ -24,27 +11,6 @@
   - type: InstantAction
     event: !type:OpenUiActionEvent
       key: enum.GasAnalyzerUiKey.Key
-
-- type: entity
-  id: PAISecurityHudDummy
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: ShowJobIcons
-  - type: ShowCriminalRecordIcons
-
-- type: entity
-  id: PAIMedicalHudDummy
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: ShowHealthBars
-  - type: ShowHealthIcons
-
-- type: entity
-  id: PAIGPSDummy
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: HandheldGPS
-  - type: RadarBlip
 
 - type: entity
   id: PAIEncryptionDummy

@@ -26,10 +26,7 @@
       enum.StationMapUiKey.Key:
         type: StationMapBoundUserInterface
         requireInputValidation: false
-      # Start of Harmony Additions: Added more entries into the pAI store
-      enum.GeneralStationRecordConsoleKey.Key:
-        type: GeneralStationRecordConsoleBoundUserInterface
-        requireInputValidation: false
+      # Harmony Additions: pAI Encryption and Atmospheric sensor
       enum.GasAnalyzerUiKey.Key:
         type: GasAnalyzerBoundUserInterface
         requireInputValidation: false
@@ -44,8 +41,10 @@
   - type: Input
     context: "human"
   - type: PAI
-    channels: # Harmony Additions: Added more entries into the pAI store
+    # Harmony Addition: pAI Encryption and Atmospheric sensor
+    channels:
     - Common
+    # End of Harmony Addition
   - type: BlockMovement
   - type: ToggleableGhostRole
     examineTextMindPresent: pai-system-pai-installed
@@ -118,7 +117,6 @@
       types:
         Blunt: 0.1
     pacifiedCanThrow: true
-  - type: GeneralStationRecordConsole # For: Added more entries into the pAI store
   # End Harmony Change
 
 - type: entity
@@ -134,9 +132,11 @@
     - state: syndicate-pai-off-overlay
       shader: unshaded
       map: ["screen"]
-  - type: PAI # Harmony Additions: Added more entries into the pAI store
+  - type: PAI
+    # Harmony Addition: pAI Encryption and Atmospheric sensor
     channels:
     - Syndicate
+    # End of Harmony Addition
   - type: ToggleableGhostRole
     roleName: pai-system-role-name-syndicate
     roleDescription: pai-system-role-description-syndicate
