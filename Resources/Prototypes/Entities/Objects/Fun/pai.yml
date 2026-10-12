@@ -112,7 +112,7 @@
       types:
         Blunt: 0.1
     pacifiedCanThrow: true
-  - type: GeneralStationRecordConsole # YAML Pai Store Entries
+  - type: GeneralStationRecordConsole # Medhud, GPS, and Crew Records for the pAI
   # End Harmony Change
 
 - type: entity

@@ -1,4 +1,5 @@
-﻿pai-station-records-name = Station Records
+﻿//Added by: Medhud, GPS, and Crew Records for the pAI
+pai-station-records-name = Station Records
 pai-station-records-desc = Enables you to browse the station records.
 
 pai-medical-hud-name = Medical Hud
