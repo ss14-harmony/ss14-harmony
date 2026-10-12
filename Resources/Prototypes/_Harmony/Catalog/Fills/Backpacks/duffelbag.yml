@@ -33,3 +33,34 @@
     - id: WeaponRifleBandit
     - id: MagazineLightRifleCaseless
       amount: 2
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelSyndicateMiamiBundle
+  suffix: Harmony, Miami Bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatTony
+      amount: 1
+    - id: ClothingOuterVestFlak
+      amount: 1
+    - id: ClothingUniformJumpsuitOperativeShortSleeved
+      amount: 1
+    - id: ClothingShoesBootsCombatNoSlip
+      amount: 1
+    - id: ClothingHandsBloodyKnuckleDusters
+      amount: 1
+
+- type: entity
+  id: ClothingBackpackDuffelSyndicateFilledM10
+  parent: ClothingBackpackDuffelSyndicateBundle
+  suffix: Harmony, M10
+  name: M10 "Vice" bundle
+  description: Leaving this world isn't as scary as it sounds. Contains an M-10 "Vice" submachine gun bundled with 2 magazines.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSubMachineGunM10
+    - id: MagazinePistolSubMachineGun
+      amount: 2

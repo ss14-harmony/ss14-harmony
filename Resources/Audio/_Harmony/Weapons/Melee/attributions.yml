@@ -1,0 +1,4 @@
+- files: ["hit.ogg", "punch.ogg", "pickupweapon.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "Taken from Delta-V, made by Dennaton Games for the Hotline Miami game franchise."
+  source: "https://github.com/DeltaV-Station/Delta-v/pull/633/commits/55005819d48810484a6a92d845dc755c64e2946f"
