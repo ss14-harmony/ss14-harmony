@@ -1349,9 +1349,9 @@
         - !type:TemperatureCondition
           max: 213.0
         damage:
-          # Start Harmony change: Increased brute, removed burn healing
-          Brute: -4.5 # -3 -> -4.5
-          # Burn: -3
+          # Start Harmony change: Reduced Brute and Burn healing
+          Brute: -2 # -3 -> -2
+          Burn: -2 # -3 -> -2
           # End Harmony change
 
 - type: reagent
