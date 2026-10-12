@@ -23,3 +23,17 @@
       amount: 3
   products:
     UniversalBlood: 4
+
+## Aloxadone but it heals Brute damage
+- type: reaction
+  id: Stelloxidone
+  impact: Medium
+  reactants:
+    Cryoxadone:
+      amount: 2
+    Stellibinin:
+      amount: 1
+    Bicaridine:
+      amount: 2
+  products:
+      Stelloxidone: 4
