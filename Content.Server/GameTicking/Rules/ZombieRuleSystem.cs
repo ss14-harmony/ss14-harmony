@@ -128,7 +128,7 @@ public sealed partial class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponen
         if (healthy.Count == 1) // Only one human left. spooky
             _popup.PopupEntity(Loc.GetString("zombie-alone"), healthy[0], healthy[0]);
 
-        if (GetInfectedFraction(false) > zombieRuleComponent.ZombieShuttleCallPercentage && !_roundEnd.IsRoundEndRequested())
+        if (GetInfectedFraction(false, true) > zombieRuleComponent.ZombieShuttleCallPercentage && !_roundEnd.IsRoundEndRequested()) // Harmony Change: "Make the Autocall for Zeds Count the Dead" (includeDead: false -> true)
         {
             foreach (var station in _station.GetStations())
             {
@@ -172,7 +172,7 @@ public sealed partial class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponen
     /// <param name="includeOffStation">Include healthy players that are not on the station grid</param>
     /// <param name="includeDead">Should dead zombies be included in the count</param>
     /// <returns></returns>
-    private float GetInfectedFraction(bool includeOffStation = true, bool includeDead = true) // Harmony Change: "Make the Autocall for Zeds Count the Dead" (includeDead: false -> true)
+    private float GetInfectedFraction(bool includeOffStation = true, bool includeDead = false)
     {
         var players = GetHealthyHumans(includeOffStation);
         var zombieCount = 0;
