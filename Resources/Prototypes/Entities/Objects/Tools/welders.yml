@@ -97,18 +97,19 @@
   - type: IgnitionSource
     temperature: 700
 # Box Change Start, Makes welding a brutepack for IPCs
-  - type: WeldingHealing
-    damageContainers:
-      - Silicon
-      - HumanoidSilicon # DeltaV
-    fuelCost: 15
-    damage:
-      types:
-        Blunt: -5 # 5 for each, like a bruise pack
-        Slash: -5
-        Pierce: -5
-        Cold: -1 # Structural Repair
-    bleedingModifier: -2 # Weak but does something, should take 5 doafters to stop full bleedstacks
+# Commented out pending fixes, see weldinghealable system
+  # - type: WeldingHealing
+  #   damageContainers:
+  #     - Silicon
+  #     - HumanoidSilicon # DeltaV
+  #   fuelCost: 15
+  #   damage:
+  #     types:
+  #       Blunt: -5 # 5 for each, like a bruise pack
+  #       Slash: -5
+  #       Pierce: -5
+  #       Cold: -1 # Structural Repair
+  #   bleedingModifier: -2 # Weak but does something, should take 5 doafters to stop full bleedstacks
 # Box Change Ends
 
 - type: entity

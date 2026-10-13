@@ -225,7 +225,7 @@
   - type: SiliconDownOnDead
   - type: EmitBuzzWhileDamaged
   - type: CanHostGuardian
-  - type: WeldingHealable
+  # - type: WeldingHealable # Commented out pending damageable system fixes
   - type: CombatMode # DeltaV - let IPCs disarm
     canDisarm: true
   - type: Bloodstream
