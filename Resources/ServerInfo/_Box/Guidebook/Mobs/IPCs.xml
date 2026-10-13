@@ -35,7 +35,7 @@
 
   <Box HorizontalAlignment="Stretch">
     <GuideEntityEmbed Entity="WelderIndustrialAdvanced" Caption="Welder"/>
-    Welders can be used to repair [color=yellow]Minor Brute Damage[/color], alongside [color=yellow]Miniscule Cold Damage[/color]. They can be found in Tools, Maintenance Tunnels, and in the hands of Station Engineers and Roboticists. Welding without eye protection causes [color=yellow]Blindness[/color], even to IPCs.
+    Welders (CURRENTLY BROKEN) can be used to repair [color=yellow]Minor Brute Damage[/color], alongside [color=yellow]Miniscule Cold Damage[/color]. They can be found in Tools, Maintenance Tunnels, and in the hands of Station Engineers and Roboticists. Welding without eye protection causes [color=yellow]Blindness[/color], even to IPCs.
   </Box>
   <Box HorizontalAlignment="Stretch">
     <GuideEntityEmbed Entity="ChassisPatch" Caption="Chassis Patches"/>

@@ -3,13 +3,11 @@
   id: DrinkIPCAGlass
   suffix: IPCA, BoxStation
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: IPCA
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IPCA
+        Quantity: 30
   - type: Icon
     sprite: _Box/Objects/Consumable/Drinks/ipca.rsi
     state: synthanolglass
@@ -19,13 +17,11 @@
   id: DrinkRobotTearsGlass
   suffix: robot tears, BoxStation
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: RobotTears
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: RobotTears
+        Quantity: 30
   - type: Icon
     sprite: _Box/Objects/Consumable/Drinks/robottears.rsi
     state: robottearsglass
@@ -35,13 +31,11 @@
   id: DrinkTrinaryGlass
   suffix: trinary, BoxStation
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Trinary
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Trinary
+        Quantity: 30
   - type: Icon
     sprite: _Box/Objects/Consumable/Drinks/trinary.rsi
     state: trinaryglass
@@ -51,13 +45,11 @@
   id: DrinkServoGlass
   suffix: servo, BoxStation
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Servo
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Servo
+        Quantity: 30
   - type: Icon
     sprite: _Box/Objects/Consumable/Drinks/servo.rsi
     state: servoglass
@@ -67,13 +59,11 @@
   id: DrinkSynthNSodaGlass
   suffix: synth 'n soda, BoxStation
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: SynthNSoda
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: SynthNSoda
+        Quantity: 30
   - type: Icon
     sprite: _Box/Objects/Consumable/Drinks/synthnsoda.rsi
     state: synthnsodaglass
@@ -83,13 +73,11 @@
   id: DrinkSynthignonGlass
   suffix: synthignon, BoxStation
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Synthignon
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Synthignon
+        Quantity: 30
   - type: Icon
     sprite: _Box/Objects/Consumable/Drinks/synthignon.rsi
     state: synthignonglass
@@ -99,13 +87,11 @@
   id: DrinkUplinkGlass
   suffix: uplink, BoxStation
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Uplink
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Uplink
+        Quantity: 30
   - type: Icon
     sprite: _Box/Objects/Consumable/Drinks/uplink.rsi
     state: uplinkglass

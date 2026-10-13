@@ -485,7 +485,8 @@
   components:
   - type: Sprite
     sprite: _Box/Mobs/Species/IPC/organs.rsi
-    state: ipc-stomach
+    layers:
+    - state: ipc-stomach
     specialDigestible:
       tags:
       - IPCFood

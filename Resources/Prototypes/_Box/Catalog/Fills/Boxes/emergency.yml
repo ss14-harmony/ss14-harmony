@@ -8,10 +8,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: IPCOilPack1
-        - id: CablePack
         - id: ChassisPatch1
-        - id: WelderMini
-        - id: Flare
+        - id: Flare # Replace with miniwelder when welding healing is fixed
         - id: EmergencySilipen
 

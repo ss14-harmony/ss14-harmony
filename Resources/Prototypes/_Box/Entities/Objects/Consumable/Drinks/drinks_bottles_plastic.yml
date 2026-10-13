@@ -5,13 +5,11 @@
   suffix: Full, BoxStation
   description: The most common synthanolic drink.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 150
-        reagents:
-        - ReagentId: IPCA
-          Quantity: 150
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IPCA
+        Quantity: 120
   - type: Label
     currentLabel: reagent-name-ipca
 
@@ -22,12 +20,10 @@
   suffix: Full, BoxStation
   description: A synthanolic drink that appeals to refined silicons.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 150
-        reagents:
-        - ReagentId: Synthignon
-          Quantity: 150
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Synthignon
+        Quantity: 120
   - type: Label
     currentLabel: reagent-name-synthignon

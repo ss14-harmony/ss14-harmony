@@ -99,6 +99,7 @@
   - EmergencyNitrogen
   - EmergencyOxygen
   - LoadoutSpeciesVoxNitrogen
+  - EmergencyIPCBox # Box change: adds ipc survival boxes
 
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup

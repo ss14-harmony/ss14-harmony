@@ -5,13 +5,11 @@
   suffix: Full, BoxStation
   description: Small joy, big taste, no worries!
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: IPCA
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IPCA
+        Quantity: 40
       grindable:
         reagents:
         - ReagentId: Aluminium

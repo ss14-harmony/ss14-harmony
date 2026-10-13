@@ -5,10 +5,8 @@
   components:
   - type: Label
     currentLabel: reagent-name-synthanol
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Synthanol
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Synthanol
+        Quantity: 30
