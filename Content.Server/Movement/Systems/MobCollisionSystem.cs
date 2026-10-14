@@ -30,10 +30,10 @@ public sealed partial class MobCollisionSystem : SharedMobCollisionSystem
 
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (_actorQuery.HasComp(uid) || !PhysicsQuery.TryComp(uid, out var physics))
+            if (_actorQuery.HasComp(uid) || !PhysicsQuery.TryComp(uid, out var physics) || !FixturesQuery.TryComp(uid, out var fixtures)) // Harmony addition | Mob collision: added FixtureQuery
                 continue;
 
-            HandleCollisions((uid, comp, physics), frameTime);
+            HandleCollisions((uid, comp, physics, fixtures), frameTime); // Harmony addition | Mob collision: Added Fixtures
         }
 
         base.Update(frameTime);

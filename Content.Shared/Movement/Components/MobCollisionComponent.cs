@@ -52,8 +52,12 @@ public sealed partial class MobCollisionComponent : Component
     /// <summary>
     /// Fixture to listen to for mob collisions.
     /// </summary>
+    /// <remarks>
+    ///  Harmony change | Enable Mob Collision: flammable -> fix1
+    ///  fix1 because it handles collision between structures and i can reuse it for fixture searching
+    /// </remarks>
     [DataField, AutoNetworkedField]
-    public string FixtureId = "flammable";
+    public string FixtureId = "fix1";
 
     [DataField, AutoNetworkedField]
     public Vector2 Direction;
