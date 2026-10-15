@@ -33,7 +33,8 @@ public sealed partial class MobCollisionSystem : SharedMobCollisionSystem
             if (_actorQuery.HasComp(uid) || !PhysicsQuery.TryComp(uid, out var physics) || !FixturesQuery.TryComp(uid, out var fixtures)) // Harmony addition | Mob collision: added FixtureQuery
                 continue;
 
-            HandleCollisions((uid, comp, physics, fixtures), frameTime); // Harmony addition | Mob collision: Added Fixtures
+            //HandleCollisions((uid, comp, physics), frameTime); // Harmony addition | Mob collision Harmony exclusive Method
+            HandleHarmonyCollisions((uid, comp, physics, fixtures), frameTime);
         }
 
         base.Update(frameTime);

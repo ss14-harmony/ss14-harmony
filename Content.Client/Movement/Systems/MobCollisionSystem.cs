@@ -22,7 +22,8 @@ public sealed partial class MobCollisionSystem : SharedMobCollisionSystem
 
             if (MobQuery.TryComp(player, out var comp) && PhysicsQuery.TryComp(player, out var physics) && FixturesQuery.TryComp(player, out var fixtures)) // Harmony Addition | Enable Mob Collision: Added FixtureQuery
             {
-                HandleCollisions((player.Value, comp, physics, fixtures), frameTime); // Harmony Addition | Enable Mob Collision: Added fixtures
+                //HandleCollisions((player.Value, comp, physics), frameTime); // Harmony Addition | Enable Mob Collision: Added fixtures
+                HandleHarmonyCollisions((player.Value, comp, physics, fixtures), frameTime);
             }
         }
 
