@@ -323,7 +323,7 @@
     - !type:LinearAntagCount
       proto: InitialInfected
       range:
-        min: 1
+        min: 2 # Harmony Change - from 1 to 2
         max: 6
   - type: DynamicRuleCost
     cost: 200
