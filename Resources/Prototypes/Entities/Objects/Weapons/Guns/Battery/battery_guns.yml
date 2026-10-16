@@ -889,7 +889,9 @@
   description: A high powered self-charging energy pistol designed for elite security personnel. It has has three firing modes allowing for either high damage, window piercing, or non-lethal disabling.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/energy_magnum.rsi
+# Harmony Change: Reverts the energy magnum back to the Harmony sprites
+#    sprite: Objects/Weapons/Guns/Battery/energy_magnum.rsi
+    sprite: _Harmony/Objects/Weapons/Guns/Battery/energy_magnum.rsi
     layers:
     - state: base
       map: [ "enum.GunVisualLayers.Base" ]
@@ -903,7 +905,9 @@
     zeroVisible: true
   - type: Appearance
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Battery/energy_magnum.rsi
+#    sprite: Objects/Weapons/Guns/Battery/energy_magnum.rsi
+    sprite: _Harmony/Objects/Weapons/Guns/Battery/energy_magnum.rsi
+  # End of Harmony Change
   - type: Tag
     tags:
     - HighRiskItem
@@ -913,14 +917,19 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  # Harmony Change: Reverts the energy magnum's bullet projectiles to the Harmony versions
   - type: BatteryAmmoProvider
-    proto: BulletLaserMagnum
+#    proto: BulletLaserMagnum
+    proto: BulletEnergyMagnumHarmony
     fireCost: 150
   - type: BatteryWeaponFireModes
     fireModes:
-    - proto: BulletLaserMagnum
+#    - proto: BulletLaserMagnum
+    - proto: BulletEnergyMagnumHarmony
       fireCost: 150
-    - proto: BulletLaserWindowPiercingMagnum
+#    - proto: BulletLaserWindowPiercingMagnum
+    - proto: BulletEnergyMagnumWindowPiercingHarmony
+# End of Harmony Change
       fireCost: 150
     - proto: BulletDisabler
       fireCost: 62.5

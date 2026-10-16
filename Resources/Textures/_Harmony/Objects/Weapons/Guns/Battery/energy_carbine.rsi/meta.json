@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-NC-SA-3.0",
-    "copyright": "Created by BoskiYourk at commit https://github.com/ss14-harmony/ss14-harmony/commit/160f309246efd6f9476c0fe841407316c38a4f52. Inhand states modified by CrimsonJupiter.",
+    "copyright": "Created by BoskiYourk (GitHub/Discord)",
     "size": {
         "x": 32,
         "y": 32
@@ -14,6 +14,18 @@
             "name": "base"
         },
         {
+            "name": "mag-0"
+        },
+        {
+            "name": "mag-1"
+        },
+        {
+            "name": "mag-2"
+        },
+        {
+            "name": "mag-3"
+        },
+        {
             "name": "mag-unshaded-0"
         },
         {
@@ -24,9 +36,6 @@
         },
         {
             "name": "mag-unshaded-3"
-        },
-        {
-            "name": "mag-unshaded-4"
         },
         {
             "name": "inhand-left",
