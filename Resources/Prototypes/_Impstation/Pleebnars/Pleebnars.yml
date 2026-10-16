@@ -1,6 +1,6 @@
 - type: entity
   name: pleebnar
-  parent: [ BaseMobPleebnarBody, SimpleMobBase ]
+  parent: [ SolutionFood, SolutionTiny, BaseMobPleebnarBody, SimpleMobBase ] #Harmony Change, Bee refactor included SolutionFood, SolutionTiny
   id: MobPleebnar
   description: UNIDENTIFIED PISKUN THING!
   components:
@@ -114,12 +114,19 @@
     baseDecayRate: 0.01
   - type: Extractable
     grindableSolutionName: food
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: GlorpExtract # Harmony Change, no greys
-          Quantity: 3
+  #Harmony Change - For Grinding purposes
+  # - type: SolutionContainerManager
+  #   solutions:
+  #     food:
+  #       reagents:
+  #       - ReagentId: GlorpExtract # Harmony Change, no greys. Greyblood would go here
+  #         Quantity: 3
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: GlorpExtract
+        Quantity: 1
+  #Harmony Change End
   - type: ReplacementAccent
     accent: pleebnar
   - type: Tag
