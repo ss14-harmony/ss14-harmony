@@ -1,6 +1,8 @@
+using System.Linq; // Harmony Addition | Enable Mob Collision
 using System.Numerics;
 using Content.Shared.CCVar;
 using Content.Shared.Movement.Components;
+using Content.Shared.Physics; // Harmony Addition | Enable Mob Collision
 using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Physics;
@@ -22,6 +24,7 @@ public abstract partial class SharedMobCollisionSystem : EntitySystem
 
     [Dependency] protected EntityQuery<MobCollisionComponent> MobQuery = default!;
     [Dependency] protected EntityQuery<PhysicsComponent> PhysicsQuery = default!;
+    [Dependency] protected EntityQuery<FixturesComponent> FixturesQuery = default!; // Harmony Addition | Enable Mob Collision
 
     /// <summary>
     /// <see cref="CCVars.MovementPushingCap"/>
@@ -192,6 +195,10 @@ public abstract partial class SharedMobCollisionSystem : EntitySystem
         DirtyField(entity.Owner, entity.Comp1, nameof(MobCollisionComponent.Direction));
     }
 
+    /// <remarks>
+    ///  Harmony note | Tweaks for mob collision: All uses of this method should be commented out.
+    ///  If this is changed it should be fine to put it back
+    /// </remarks>
     protected bool HandleCollisions(Entity<MobCollisionComponent, PhysicsComponent> entity, float frameTime)
     {
         var physics = entity.Comp2;
@@ -236,7 +243,7 @@ public abstract partial class SharedMobCollisionSystem : EntitySystem
 
             var other = contact.OtherEnt(entity.Owner);
 
-            if (!MobQuery.TryComp(other, out var otherComp) || !PhysicsQuery.TryComp(other, out var otherPhysics))
+            if (!MobQuery.TryComp(other, out var otherComp) || !PhysicsQuery.TryComp(other, out var otherPhysics) || !FixturesQuery.TryComp(other, out var otherFixtures)) // Harmony addition: Added FixtureQuery
                 continue;
 
             var velocityProduct = Vector2.Dot(ourVelocity, otherPhysics.LinearVelocity);
