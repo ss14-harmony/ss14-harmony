@@ -3,14 +3,23 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
-    lifetime: 0.4
+    lifetime: 0.2 # Harmony - 0.4 -> 0.2 - Impstation projectile port
   - type: Sprite
     drawdepth: BelowMobs
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
-      state: muzzle_bullet
+# Begin harmony change - impstation projectile port
+#     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+#     state: muzzle_bullet
+      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi
+      state: kinetic
+  - type: PointLight
+    enabled: true
+    color: "#ffa223"
+    radius: 1.4
+    energy: 5.0
+# End harmony change
   - type: EffectVisuals
   - type: Tag
     tags:
@@ -28,8 +37,17 @@
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-      state: omnilaser_flash
+# Begin harmony change - impstation projectile port
+#     sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+#     state: omnilaser_flash
+      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi
+      state: energystun
+  - type: PointLight
+    enabled: true
+    color: "#0ab8c4"
+    radius: 1.4
+    energy: 5.0
+# End harmony change
 
 - type: entity
   parent: MuzzleFlashEffect
@@ -42,8 +60,17 @@
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-      state: heavylaser_flash
+# Begin harmony change - impstation projectile port
+#     sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+#     state: heavylaser_flash
+      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi
+      state: energy
+  - type: PointLight
+    enabled: true
+    color: "#d63b28"
+    radius: 1.4
+    energy: 5.0
+# End harmony change
 
 # One bullet to bring them all into the darkness and bind them
 - type: entity
@@ -201,11 +228,15 @@
       params:
         volume: 5
   - type: Sprite
-    noRot: true
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    color: "#ffff33"
+# Begin Harmony change - impstation projectile port
+#   noRot: true
+#   sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+#   color: "#ffff33"
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: spark
+#   - state: spark
+    - state: lightgold
+# End Harmony change
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -282,9 +313,13 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+# Begin Harmony change - impstation projectile port
+#   sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: omnilaser
+#   - state: omnilaser
+    - state: mediumstun
+# End Harmony change
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -300,6 +335,7 @@
         - BulletImpassable
       fly-by: *flybyfixture
   - type: Ammo
+    muzzleFlash: MuzzleFlashEffectOmnilaser # Harmony change - Impstation projectile port
   - type: StaminaDamageOnCollide
     damage: 30  # Harmony Change - Reverts to Pre-Buff (33 -> 30)
   - type: Projectile
@@ -323,9 +359,13 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+# Begin Harmony change - impstation projectile port
+#   sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi #imp
     layers:
-    - state: omnilaser
+#   - state: omnilaser
+    - state: mediumsynd # harmony - mediumstun -> mediumsynd
+# End Harmony change
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -341,10 +381,11 @@
         - BulletImpassable
       fly-by: *flybyfixture
   - type: Ammo
+    muzzleFlash: MuzzleFlashEffectSyndLaser # Harmony change - added MuzzleFlashEffectOmnilaser for Impstation port and changed to MuzzleFlashEffectSyndLaser
   - type: StaminaDamageOnCollide
     damage: 1
   - type: Projectile
-    impactEffect: BulletImpactEffectDisabler
+    impactEffect: BulletImpactEffectSyndicate # Harmony change - BulletImpactEffectDisabler -> BulletImpactEffectSyndicate
     damage:
       types:
         Heat: 0
@@ -359,12 +400,17 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: Structures/Power/Generation/Singularity/emitter.rsi
+# Begin Harmony change - impstation projectile port
+#    sprite: Structures/Power/Generation/Singularity/emitter.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-      - state: projectile
-        shader: unshaded
+    - state: mediumsynd
+      shader: unshaded
+#     - state: projectile
+#       shader: unshaded
+# End Harmony change
   - type: Ammo
-    muzzleFlash: null
+    muzzleFlash: MuzzleFlashEffectSyndLaser # Harmony change - null -> MuzzleFlashEffectSyndLaser - Impstation projectile port
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -442,7 +488,7 @@
     - Energy
   - type: Projectile
     #   soundHit:  Waiting on serv3
-    impactEffect: BulletImpactEffectDisabler
+    impactEffect: BulletImpactEffectCold # Harmony change -  BulletImpactEffectOrangeDisabler -> BulletImpactEffectCold
     damage:
       types:
         Cold: 10
@@ -450,6 +496,15 @@
     lifetime: 3
   - type: ChangeTemperatureOnCollide
     heat: -100000
+# harmony change end - Impstation projectile port
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectTempCold
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: mediumtemp2
+      shader: unshaded
+# Harmony change end
 
 - type: entity
   name: magmawing watcher bolt
@@ -485,12 +540,21 @@
     - Energy
   - type: Projectile
     #   soundHit:  Waiting on serv3
-    impactEffect: BulletImpactEffectOrangeDisabler
+    impactEffect: BulletImpactEffectHot # Harmony change -  BulletImpactEffectOrangeDisabler -> BulletImpactEffectHot
     damage:
       types:
         Heat: 10
   - type: ChangeTemperatureOnCollide
     heat: 100000 #This may be a bit underpowered, but in testing, 130000 was RIDICULOUS and killed in seconds.
+# harmony change end - Impstation projectile port
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectTempHot
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: mediumtemp
+      shader: unshaded
+# Harmony change end
 
 - type: entity
   parent: BaseBullet
@@ -1151,9 +1215,13 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+# Begin Harmony change - impstation projectile port
+#    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: omnilaser
+#   - state: omnilaser
+    - state: lightstun
+# End Harmony change
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -1169,6 +1237,7 @@
         - BulletImpassable
       fly-by: *flybyfixture
   - type: Ammo
+    muzzleFlash: MuzzleFlashEffectOmnilaser # Harmony change - Impstation projectile port
   - type: StaminaDamageOnCollide
     damage: 15
   - type: Projectile
@@ -1195,9 +1264,13 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+# Begin Harmony change - impstation projectile port
+#   sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi #imp
     layers:
-    - state: heavylaser
+#   - state: heavylaser
+    - state: medium
+# End Harmony change
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -1221,9 +1294,13 @@
   - type: Ammo
     muzzleFlash: MuzzleFlashEffectHeavyLaser
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+# Begin Harmony change - impstation projectile port
+#   sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: heavylaser
+#   - state: heavylaser
+    - state: medium
+# End Harmony change
       shader: unshaded
   - type: Projectile
     impactEffect: BulletImpactEffectOrangeDisabler
@@ -1240,9 +1317,13 @@
   - type: Ammo
     muzzleFlash: MuzzleFlashEffectOmnilaser
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+# Begin Harmony change - impstation projectile port
+#   sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: omnilaser
+#   - state: omnilaser
+    - state: mediumstun
+# End Harmony change
       shader: unshaded
   - type: StaminaDamageOnCollide
     damage: 30
@@ -1303,9 +1384,13 @@
       params:
         volume: 5
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+# Begin Harmony change - impstation projectile port
+#   sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi #imp
     layers:
-    - state: heavylaser
+#   - state: heavylaser
+    - state: light
+# End Harmony change
       shader: unshaded
   - type: Physics
   - type: Fixtures
@@ -1321,6 +1406,7 @@
         - BulletImpassable
       fly-by: *flybyfixture
   - type: Ammo
+    muzzleFlash: MuzzleFlashEffectHeavyLaser # Harmony change - Impstation projectile port
   - type: Projectile
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:

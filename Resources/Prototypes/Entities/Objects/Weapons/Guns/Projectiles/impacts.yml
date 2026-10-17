@@ -27,8 +27,12 @@
       layers:
         - shader: unshaded
           map: ["enum.EffectLayers.Unshaded"]
-          sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-          state: impact_laser_blue
+# Begin harmony change - impstation projectile port
+#         sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+#         state: impact_laser_blue
+          sprite: _Impstation/Objects/Weapons/Guns/Projectiles/impacts.rsi
+          state: stun
+# Harmony change end
     - type: EffectVisuals
     - type: Tag
       tags:
@@ -45,9 +49,13 @@
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-      state: impact_laser_greyscale
-      color: orangered
+# Begin harmony change - impstation projectile port
+#     sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+#     state: impact_laser_greyscale
+#     color: orangered
+      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/impacts.rsi
+      state: red
+# Harmony change end
   - type: EffectVisuals
   - type: Tag
     tags:
