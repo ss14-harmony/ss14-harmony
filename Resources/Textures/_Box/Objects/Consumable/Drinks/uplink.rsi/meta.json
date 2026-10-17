@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "uplinkglass taken from Paradise at https://github.com/ParadiseSS13/Paradise/commit/74838a86f801c1ae3c9c1fc8c31d68ee779677d2. icon_empty and fill levels modified from uplinkglass by CollectionOfBones128 (GitHub)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "uplinkglass"
+        },
+        {
+            "name": "icon_empty"
+        },
+        {
+            "name": "fill-1"
+        },
+        {
+            "name": "fill-2"
+        },
+        {
+            "name": "fill-3"
+        },
+        {
+            "name": "fill-4"
+        }
+    ]
+}

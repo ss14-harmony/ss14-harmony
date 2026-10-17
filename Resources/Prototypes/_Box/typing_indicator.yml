@@ -1,0 +1,5 @@
+- type: typingIndicator
+  id: ipc
+  spritePath: /Textures/_Box/Effects/speech.rsi
+  typingState: ipc0
+  idleState: ipc3

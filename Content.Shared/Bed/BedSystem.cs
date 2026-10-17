@@ -11,6 +11,7 @@ using Content.Shared.Power;
 using Content.Shared.Power.EntitySystems;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared._EE.Silicon.Components; //  Box Change - Goobstation - IPCs
 
 namespace Content.Shared.Bed;
 
@@ -148,7 +149,7 @@ public sealed partial class BedSystem : EntitySystem
 
             foreach (var healedEntity in strapComponent.BuckledEntities)
             {
-                if (_mobStateSystem.IsDead(healedEntity))
+                if (_mobStateSystem.IsDead(healedEntity) || HasComp<SiliconComponent>(healedEntity)) //  Box Change - Goobstation - IPCs
                     continue;
 
                 var damage = bedComponent.Damage;

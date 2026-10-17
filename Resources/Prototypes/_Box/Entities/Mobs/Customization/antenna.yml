@@ -1,0 +1,55 @@
+- type: marking
+  id: RobotAntennaTv
+  bodyPart: HeadTop
+  groupWhitelist: [IPC]
+  sprites:
+    - sprite: _EE/Mobs/Customization/ipc_antenna.rsi
+      state: ipc_antenna_tv
+
+- type: marking
+  id: RobotAntennaTesla
+  bodyPart: HeadTop
+  groupWhitelist: [IPC]
+  sprites:
+    - sprite: _EE/Mobs/Customization/ipc_antenna.rsi
+      state: ipc_antenna_tesla
+
+- type: marking
+  id: RobotAntennaCyberhead
+  bodyPart: HeadTop
+  groupWhitelist: [IPC]
+  sprites:
+    - sprite: _EE/Mobs/Customization/ipc_antenna.rsi
+      state: ipc_antenna_cyberhead
+
+- type: marking
+  id: RobotAntennaAntlers
+  bodyPart: HeadTop
+  groupWhitelist: [IPC]
+  sprites:
+    - sprite: _EE/Mobs/Customization/ipc_antenna.rsi
+      state: ipc_antenna_antlers
+
+- type: marking
+  id: RobotAntennaDroneeyes  
+  bodyPart: HeadTop
+  groupWhitelist: [IPC]
+  sprites:
+    - sprite: _EE/Mobs/Customization/ipc_antenna.rsi
+      state: ipc_antenna_droneeyes
+
+- type: marking
+  id: RobotAntennaCrowned
+  bodyPart: HeadTop
+  groupWhitelist: [IPC]
+  sprites:
+    - sprite: _EE/Mobs/Customization/ipc_antenna.rsi
+      state: ipc_antenna_crowned
+
+- type: marking
+  id: RobotAntennaTowers
+  bodyPart: HeadTop  
+  groupWhitelist: [IPC]
+  sprites:
+    - sprite: _EE/Mobs/Customization/ipc_antenna.rsi
+      state: ipc_antenna_towers

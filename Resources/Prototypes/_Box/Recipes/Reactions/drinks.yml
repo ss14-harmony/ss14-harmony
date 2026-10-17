@@ -1,0 +1,85 @@
+- type: reaction
+  id: IPCA
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Synthanol:
+      amount: 1
+    Beer:
+      amount: 9
+  products:
+    IPCA: 2
+
+- type: reaction
+  id: Synthignon
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Synthanol:
+      amount: 1
+    Wine:
+      amount: 9
+  products:
+    Synthignon: 2
+
+- type: reaction
+  id: RobotTears
+  reactants:
+    IPCA:
+      amount: 1
+    SodaWater:
+      amount: 1
+    Oil:
+      amount: 1
+  products:
+    RobotTears: 3
+
+- type: reaction
+  id: Trinary
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    IPCA:
+      amount: 1
+    JuiceLime:
+      amount: 1
+    JuiceOrange:
+      amount: 1
+  products:
+    Trinary: 3
+
+- type: reaction
+  id: Servo
+  reactants:
+    IPCA:
+      amount: 2
+    Cream:
+      amount: 1
+    HotCocoa:
+      amount: 1
+  products:
+    Servo: 4
+
+- type: reaction
+  id: Uplink
+  reactants:
+    IPCA:
+      amount: 1
+    Rum:
+      amount: 1
+    Vodka:
+      amount: 1
+    Whiskey:
+      amount: 1
+  products:
+    Uplink: 4
+
+- type: reaction
+  id: SynthNSoda
+  reactants:
+    IPCA:
+      amount: 1
+    Cola:
+      amount: 1
+  products:
+    SynthNSoda: 2

@@ -1,0 +1,139 @@
+- type: microwaveMealRecipe
+  id: RecipeIPCOilPack
+  result: IPCOilPack
+  time: 10
+  group: Medicinal
+  reagents:
+    IndustrialLubricant: 10
+    ComputerCoolant: 10
+
+- type: microwaveMealRecipe
+  id: RecipeOmniPatch
+  result: OmniPatch
+  time: 10
+  group: Medicinal
+  solids:
+    IPCOilPack: 1
+  reagents:
+    ActivatedSilicon: 20
+    Omnizine: 5
+
+- type: microwaveMealRecipe
+  id: RecipeRobotBurnPatch
+  result: RobotBurnPatch
+  time: 10
+  group: Medicinal
+  solids:
+    IPCOilPack: 1
+  reagents:
+    ActivatedSilicon: 5
+    Copper: 5
+    Dermaline: 20
+
+- type: microwaveMealRecipe
+  id: RecipeRobotTraumaPatch
+  result: RobotTraumaPatch
+  time: 10
+  group: Medicinal
+  solids:
+    IPCOilPack: 1
+  reagents:
+    ActivatedSilicon: 5
+    Bicaridine: 10
+    Tricordrazine: 20
+
+- type: microwaveMealRecipe
+  id: RecipeAcidNeutralizationPatch
+  result: AcidNeutralizationPatch
+  time: 10
+  group: Medicinal
+  solids:
+    IPCOilPack: 1
+  reagents:
+    ActivatedSilicon: 10
+    Sigynate: 20
+
+- type: microwaveMealRecipe
+  id: RecipeCoolingPatch
+  result: CoolingPatch
+  time: 10
+  group: Medicinal
+  solids:
+    IPCOilPack: 1
+  reagents:
+    ActivatedSilicon: 5
+    Water: 25
+    Pyrazine: 20
+
+- type: microwaveMealRecipe
+  id: RecipeDentRepairPatch
+  result: DentRepairPatch
+  time: 10
+  group: Medicinal
+  solids:
+    IPCOilPack: 1
+  reagents:
+    ActivatedSilicon: 5
+    Iron: 5
+    Bruizine: 20
+
+- type: microwaveMealRecipe
+  id: RecipeElectronicRepairPatch
+  result: ElectronicRepairPatch
+  time: 10
+  group: Medicinal
+  solids:
+    IPCOilPack: 1
+  reagents:
+    ActivatedSilicon: 10
+    Copper: 10
+    Insuzine: 20
+
+- type: microwaveMealRecipe
+  id: RecipePunctureRepairPatch
+  result: PunctureRepairPatch
+  time: 10
+  group: Medicinal
+  solids:
+    IPCOilPack: 1
+  reagents:
+    ActivatedSilicon: 5
+    Aluminium: 15
+    Puncturase: 20
+
+- type: microwaveMealRecipe
+  id: RecipeShieldingPatch
+  result: ShieldingPatch
+  time: 10
+  group: Medicinal
+  solids:
+    IPCOilPack: 1
+  reagents:
+    ActivatedSilicon: 10
+    Leporazine: 10
+    Insuzine: 10
+    Arithrazine: 20
+
+- type: microwaveMealRecipe
+  id: RecipeGashRepairPatch
+  result: GashRepairPatch
+  time: 10
+  group: Medicinal
+  solids:
+    IPCOilPack: 1
+  reagents:
+    ActivatedSilicon: 5
+    FoamingAgent: 15
+    Lacerinol: 20
+
+- type: microwaveMealRecipe
+  id: RecipeThawingPatch
+  result: ThawingPatch
+  time: 10
+  group: Medicinal
+  solids:
+    IPCOilPack: 1
+  reagents:
+    ActivatedSilicon: 5
+    Leporazine: 20
+    Phosphorus: 5

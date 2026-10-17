@@ -144,6 +144,10 @@
   - type: StaticPrice
     price: 500
   - type: PowerGridCheckNotify
+  # Box Change Start, IPC Sippy Cup
+  - type: BatteryDrinkerSource # EE IPCs
+    maxAmount: 10000
+  # Box Change End
   - type: GuideHelp
     guides:
     - VoltageNetworks

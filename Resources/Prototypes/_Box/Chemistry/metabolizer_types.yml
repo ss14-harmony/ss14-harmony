@@ -1,0 +1,17 @@
+# Overarching
+- type: metabolizerType
+  id: Synthetic
+  name: metabolizer-type-synthetic
+
+- type: metabolizerType
+  id: Cyber
+  name: metabolizer-type-cyber
+
+# Species
+- type: metabolizerType
+  id: IPC
+  name: metabolizer-type-ipc
+
+- type: metabolizerType
+  id: Synth
+  name: metabolizer-type-synth

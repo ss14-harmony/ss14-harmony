@@ -7,6 +7,7 @@
       weight: 5
       reagents:
       - Stimulants
+      - Mechazine # Box Change - Box Change - adds Synthchems to world reagent spawners
     - quantity: 10
       weight: 5
       reagents:
@@ -30,6 +31,9 @@
       - Vitamin
       - PolypyryliumOligomers
       - Charcoal
+      - SmartMetal
+      - RoutineMaintenance
+      - Nanoweldite
   # Neutral - weight: 20
     - quantity: 20
       weight: 17.5
@@ -47,6 +51,14 @@
       - MindbreakerToxin
       - Mustard
       - HorseradishSauce
+      - WeedDotExe
+      - SOISapphire
+      - ECCMemory
+      - Polydimethylsiloxane
+      - Degreaser
+      - ThermalPaste
+      - ComputerCoolant
+      - Bitflipper
     - quantity: 5
       weight: 2.5
       reagents:
@@ -67,10 +79,12 @@
       - Razorium
       - Potassium
       - Phlogiston
+      - Bootloop  #Box Change - adds Synthchems to world reagent spawners
     - quantity: 5
       weight: 4
       reagents:
       - Toxin
+      - CIH #Box Change - adds Synthchems to world reagent spawners
   # Very Bad - weight: 15
     - quantity: 20
       weight: 2.5
@@ -84,6 +98,7 @@
       - BuzzochloricBees
       - Amatoxin
       - Tazinide
+      - ZipBomb #Box Change - adds Synthchems to world reagent spawners
     - quantity: 5
       weight: 2.5
       reagents:

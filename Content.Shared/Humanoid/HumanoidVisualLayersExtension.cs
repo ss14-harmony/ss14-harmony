@@ -32,6 +32,7 @@ namespace Content.Shared.Humanoid
             switch (layer)
             {
                 case HumanoidVisualLayers.Head:
+                    yield return HumanoidVisualLayers.HeadBase; // Starcup: Added for IPCs
                     yield return HumanoidVisualLayers.Head;
                     yield return HumanoidVisualLayers.Eyes;
                     yield return HumanoidVisualLayers.HeadSide;

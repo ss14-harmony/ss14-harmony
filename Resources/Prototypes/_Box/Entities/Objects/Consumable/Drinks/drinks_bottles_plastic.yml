@@ -1,0 +1,29 @@
+- type: entity
+  parent: [DrinkVisualsOpenable, DrinkBottlePlasticBaseFull]
+  id: DrinkIPCAJug
+  name: IPCA jug
+  suffix: Full, BoxStation
+  description: The most common synthanolic drink.
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IPCA
+        Quantity: 120
+  - type: Label
+    currentLabel: reagent-name-ipca
+
+- type: entity
+  parent: [DrinkVisualsOpenable, DrinkBottlePlasticBaseFull]
+  id: DrinkSynthignonJug
+  name: Synthignon jug
+  suffix: Full, BoxStation
+  description: A synthanolic drink that appeals to refined silicons.
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Synthignon
+        Quantity: 120
+  - type: Label
+    currentLabel: reagent-name-synthignon

@@ -37,4 +37,12 @@ public sealed partial class CCVars : CVars
     /// </summary>
     public static readonly CVarDef<bool> DebugPow3rDisableParallel =
         CVarDef.Create("debug.pow3r_disable_parallel", false, CVar.SERVERONLY);
+
+    // Box Change Start - Can this be in its owm file?
+    /// <summary>
+    ///     Goobstation: The amount of time between NPC Silicons draining their battery in seconds.
+    /// </summary>
+    public static readonly CVarDef<float> SiliconNpcUpdateTime =
+        CVarDef.Create("silicon.npcupdatetime", 1.5f, CVar.SERVERONLY);
+    // Box Change End
 }

@@ -1,0 +1,41 @@
+- type: reaction
+  id: ActivatedSilicon
+  reactants:
+    VoltaicAcid:
+      amount: 4
+    Copper:
+      amount: 4
+    Silicon:
+      amount: 1
+    Plasma:
+      amount: 1
+      catalyst: true
+  products:
+    ActivatedSilicon: 9
+
+- type: reaction
+  id: ActivatedSiliconDuplication
+  requiredMixerCategories:
+  - Stir
+  minTemp: 500
+  reactants:
+    ActivatedSilicon:
+      amount: 1
+    Silicon:
+      amount: 1
+    Plasma:
+      amount: 1
+      catalyst: true
+  products:
+    ActivatedSilicon: 2
+
+- type: reaction
+  id: Synthanol
+  reactants:
+    Plasma:
+      amount: 1
+      catalyst: true
+    Ethanol:
+      amount: 1
+  products:
+    Synthanol: 1

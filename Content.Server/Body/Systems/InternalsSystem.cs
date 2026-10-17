@@ -5,6 +5,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Internals;
 using Content.Shared.Roles;
+using Content.Server.Body.Components; // Box Change: Stop TryStopNukeOpsFromConstantlyFailing from occasionally failing due to IPCs not having RespiratorComponent
 
 namespace Content.Server.Body.Systems;
 
@@ -14,9 +15,14 @@ public sealed partial class InternalsSystem : SharedInternalsSystem
     [Dependency] private GasTankSystem _gasTank = default!;
     [Dependency] private RespiratorSystem _respirator = default!;
 
+    private EntityQuery<RespiratorComponent> _respiratorQuery; // Box Change: Stop TryStopNukeOpsFromConstantlyFailing from occasionally failing due to IPCs not having RespiratorComponent
+
     public override void Initialize()
     {
         base.Initialize();
+
+        _respiratorQuery = GetEntityQuery<RespiratorComponent>();// Box Change: Stop TryStopNukeOpsFromConstantlyFailing from occasionally failing due to IPCs not having RespiratorComponent
+
         SubscribeLocalEvent<InternalsComponent, InhaleLocationEvent>(OnInhaleLocation);
         SubscribeLocalEvent<InternalsComponent, StartingGearEquippedEvent>(OnStartingGear);
     }
@@ -28,6 +34,11 @@ public sealed partial class InternalsSystem : SharedInternalsSystem
 
         if (component.GasTankEntity != null)
             return; // already connected
+
+        // Start Box Change: Stop TryStopNukeOpsFromConstantlyFailing from occasionally failing due to IPCs not having RespiratorComponent
+        if (!_respiratorQuery.HasComp(uid))
+            return;
+        // End Box Change
 
         // Can the entity breathe the air it is currently exposed to?
         if (_respirator.CanMetabolizeInhaledAir(uid))

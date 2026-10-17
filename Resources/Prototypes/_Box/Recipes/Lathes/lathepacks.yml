@@ -1,0 +1,15 @@
+## IPC Repair
+- type: latheRecipePack
+  id: BoxIPCRepairStatic # Need to re-evaluate this...
+  recipes:
+  - CablePack
+  - ComponentPack
+  - RobotStructPack
+
+- type: latheRecipePack
+  id: BoxIPCMedicalStatic # Allows these two to also be made in the MediFab
+  recipes:
+  - ReplacementLenses
+  - ChassisPatch
+  - CablePack
+  - RobotStructPack

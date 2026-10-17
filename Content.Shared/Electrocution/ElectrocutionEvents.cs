@@ -24,8 +24,9 @@ namespace Content.Shared.Electrocution
         public readonly EntityUid TargetUid;
         public readonly EntityUid? SourceUid;
         public readonly float SiemensCoefficient;
+        public readonly float? ShockDamage = null; // Box Change - Goobstation - IPCs
 
-        public ElectrocutedEvent(EntityUid targetUid, EntityUid? sourceUid, float siemensCoefficient)
+        public ElectrocutedEvent(EntityUid targetUid, EntityUid? sourceUid, float siemensCoefficient, float shockDamage) // Box Change - Goobstation
         {
             TargetUid = targetUid;
             SourceUid = sourceUid;
