@@ -21,6 +21,9 @@
   - type: StatusEffects
     allowed:
     - Corporeal
+  - type: Hands # imp start
+    showInHands: false
+    disableExplosionRecursion: true # imp end
   - type: Damageable
     damageModifierSet: ManifestedSpirit
   - type: Injurable
