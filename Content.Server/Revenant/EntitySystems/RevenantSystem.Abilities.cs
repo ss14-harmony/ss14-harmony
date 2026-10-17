@@ -155,8 +155,10 @@ public sealed partial class RevenantSystem
             _popup.PopupEntity(Loc.GetString("revenant-soul-harvested"), target, uid, PopupType.SmallCaution);
             return;
         }
-
-        if (_mobStateQuery.TryComp(target, out var mobstate) && mobstate.CurrentState == MobState.Alive && !HasComp<SleepingComponent>(target))
+    //  Harmony change start - make revnants not able to harvest from sleeping players
+    //  if (_mobStateQuery.TryComp(target, out var mobstate) && mobstate.CurrentState == MobState.Alive && !HasComp<SleepingComponent>(target))
+        if (_mobStateQuery.TryComp(target, out var mobstate) && mobstate.CurrentState == MobState.Alive)
+    //  Harmony change end
         {
             _popup.PopupEntity(Loc.GetString("revenant-soul-too-powerful"), target, uid);
             return;
