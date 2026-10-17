@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: NamesMiniDragon
+  values:
+    prefix: names-mini-dragon-dataset-
+    count: 75
