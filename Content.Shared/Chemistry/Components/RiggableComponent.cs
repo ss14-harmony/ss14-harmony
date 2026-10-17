@@ -36,4 +36,21 @@ public sealed partial class RiggableComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public ReagentQuantity Reagent = new("Plasma", FixedPoint2.New(5), null);
+
+    /// <summary>
+    /// Harmony - Last user that activated or used this entity.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public EntityUid? LastUser;
+}
+
+
+/// <summary>
+/// Harmony - An entity with a currently rigged entity inside.
+/// </summary>
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+public sealed partial class RiggedItemComponent : Component
+{
+    [DataField, AutoNetworkedField]
+    public EntityUid? Child;
 }

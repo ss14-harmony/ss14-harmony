@@ -135,7 +135,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
     }
 
     /// <inheritdoc/>
-    public override void TriggerExplosive(EntityUid uid, ExplosiveComponent? explosive = null, bool delete = true, float? totalIntensity = null, float? radius = null, EntityUid? user = null)
+    public override void TriggerExplosive(EntityUid uid, ExplosiveComponent? explosive = null, bool delete = true, float? totalIntensity = null, float? radius = null, EntityUid? user = null, EntityUid? ignoreCauseRes = null) // Harmony, optional AP for the cause of the explosion
     {
         // log missing: false, because some entities (e.g. liquid tanks) attempt to trigger explosions when damaged,
         // but may not actually be explosive.
@@ -161,7 +161,8 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
             explosive.TileBreakScale,
             explosive.MaxTileBreak,
             explosive.CanCreateVacuum,
-            user);
+            user,
+            ignoreCauseRes); // Harmony - ignoreCauseRes
 
         if (explosive.DeleteAfterExplosion ?? delete)
             QueueDel(uid);
@@ -229,6 +230,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
         int maxTileBreak = int.MaxValue,
         bool canCreateVacuum = true,
         EntityUid? user = null,
+        EntityUid? ignoreCauseRes = null, // Harmony, optional AP for the cause of the explosion
         bool addLog = true)
     {
         var pos = Transform(uid);
@@ -237,7 +239,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
 
         var posFound = _transformSystem.TryGetMapOrGridCoordinates(uid, out var gridPos, pos);
 
-        QueueExplosion(mapPos, typeId, totalIntensity, slope, maxTileIntensity, uid, tileBreakScale, maxTileBreak, canCreateVacuum, addLog: false);
+        QueueExplosion(mapPos, typeId, totalIntensity, slope, maxTileIntensity, uid, ignoreCauseRes, tileBreakScale, maxTileBreak, canCreateVacuum, addLog: false); // Harmony - ignoreCauseRes
 
         if (!addLog)
             return;
@@ -270,6 +272,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
         float slope,
         float maxTileIntensity,
         EntityUid? cause,
+        EntityUid? ignoreCauseRes = null, // Harmony, optional AP for the cause of the explosion
         float tileBreakScale = 1f,
         int maxTileBreak = int.MaxValue,
         bool canCreateVacuum = true,
@@ -313,7 +316,8 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
             TileBreakScale = tileBreakScale,
             MaxTileBreak = maxTileBreak,
             CanCreateVacuum = canCreateVacuum,
-            Cause = cause
+            Cause = cause,
+            IgnoreCauseRes =  ignoreCauseRes, // Harmony, optional AP for the cause of the explosion
         };
         _explosionQueue.Enqueue(boom);
         _queuedExplosions.Add(boom);
@@ -388,6 +392,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
             EntityManager,
             visualEnt,
             queued.Cause,
+            queued.IgnoreCauseRes, // Harmony, optional AP for the cause of the explosion
             _map,
             _damageableSystem,
             _tileHistoryQuery);

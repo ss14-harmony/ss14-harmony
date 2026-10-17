@@ -1,5 +1,6 @@
 using Content.Server.Actions;
 using Content.Server.Popups;
+using Content.Shared._Harmony.Light; // Harmony
 using Content.Shared.Actions;
 using Content.Shared.Interaction;
 using Content.Shared.Light;
@@ -214,6 +215,9 @@ namespace Content.Server.Light.EntitySystems
             _lights.SetEnabled(uid, true, pointLightComponent);
             SetActivated(uid, true, component, true);
             _activeLights.Add(uid);
+
+            var ev = new HandheldLightTurnedOnEvent(user); // Harmony, handheld lights mirror ItemToggle instead of using it so
+            RaiseLocalEvent(uid, ref ev); // Harmony
 
             return true;
         }
