@@ -1,6 +1,6 @@
 - type: entity
   name: pleebnar
-  parent: [ SolutionFood, SolutionTiny, BaseMobPleebnarBody, SimpleMobBase ] #Harmony Change, Bee refactor included SolutionFood, SolutionTiny
+  parent: [ SolutionFood, SolutionTiny, BaseMobPleebnarBody, SimpleMobBase ] #Harmony Change, Solution refactor included SolutionFood, SolutionTiny
   id: MobPleebnar
   description: UNIDENTIFIED PISKUN THING!
   components:
