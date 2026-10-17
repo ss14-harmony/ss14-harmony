@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ScatteringGrenadeBase, BaseSyndicateContraband]
+  parent: [ScatteringGrenadeBase]
   id: ClusterWeh
   name: tactical clusterplushie
   description: Deploy the Wehs!!
