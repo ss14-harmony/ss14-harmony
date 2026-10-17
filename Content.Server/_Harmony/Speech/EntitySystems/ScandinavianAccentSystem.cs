@@ -1,8 +1,8 @@
 using System.Text;
 using Robust.Shared.Random;
-using Content.Server.Speech.EntitySystems;
+using Content.Shared.Speech.EntitySystems;
 using Content.Server._Harmony.Speech.Components;
-using Content.Server.Speech.Prototypes;
+using Content.Shared.Speech.Prototypes;
 using Content.Shared.Speech;
 using Robust.Shared.Prototypes;
 
