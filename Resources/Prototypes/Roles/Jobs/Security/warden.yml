@@ -45,7 +45,7 @@
     back:
     - Flash
     - MagazinePistol
-    - WeaponPistolMk58
+#   - WeaponPistolMk58 # Harmony - moved to loadouts
 
 - type: chameleonOutfit
   id: WardenChameleonOutfit

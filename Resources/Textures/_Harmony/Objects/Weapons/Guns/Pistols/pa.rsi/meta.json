@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "license": "CC0-1.0",
+    "copyright": "Taken from Delta-V at commit https://github.com/DeltaV-Station/Delta-v/commit/e6b7c50b3b0f5982fe90b428490ae03a3824d7d9. Modified by halycon (Kleinerstation13 on Github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "base"
+        },
+        {
+            "name": "mag-0"
+        },
+        {
+            "name": "bolt-open"
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "equipped-BELT",
+            "directions": 4
+        }
+    ]
+}

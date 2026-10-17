@@ -44,6 +44,43 @@
   - SalvagePDA
   - SeniorSalvagePDA
 
+# Security Guns
+- type: loadoutGroup
+  id: SecurityRevolverFirearm
+  name: loadout-group-revolver-gun
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - SecurityRevolverInspector
+  - SecurityRevolverJudge
+
+- type: loadoutGroup
+  id: SecurityFirearm
+  name: loadout-group-security-gun
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - SecurityFirearmWeaponPistolPA57
+  - SecurityFirearmWeaponPistolNSP
+  - SecurityFirearmWeaponPistolMk58
+
+# Security Ammo
+- type: loadoutGroup
+  id: SecurityRevolverAmmo # only one choice but its here incase somebody wants to add more
+  name: loadout-group-revolver-ammo
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - SecurityFirearmSpeedLoaderMagnum
+
+- type: loadoutGroup
+  id: SecurityFirearmAmmo # only one choice but its here incase somebody wants to add more
+  name: loadout-group-security-gun-ammo
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - SecurityFirearmMagazinePistol
+
 # Wildcards
 
 - type: loadoutGroup
