@@ -1,0 +1,19 @@
+- files: ["pistolsmg_empty.ogg"]
+  license: "CC0-1.0"
+  copyright: "Created by serotonin, modified by kleinerstation13 (Github)"
+  source: "https://freesound.org/people/ser%C3%B8t%C5%8Dnin/sounds/674568/"
+
+- files: ["revolver_empty.ogg"]
+  license: "CC0-1.0"
+  copyright: "Created by serotonin, modified by kleinerstation13 (Github)"
+  source: "https://freesound.org/people/ser%C3%B8t%C5%8Dnin/sounds/677159/"
+
+- files: ["rifle_empty.ogg"]
+  license: "CC0-1.0"
+  copyright: "Created by serotonin, modified by kleinerstation13 (Github)"
+  source: "https://freesound.org/people/ser%C3%B8t%C5%8Dnin/sounds/725402/"
+
+- files: ["shotgun_empty.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Created by DrinkingWindGames, modified by kleinerstation13 (Github)"
+  source: "https://freesound.org/people/DrinkingWindGames/sounds/789658/"

@@ -2,3 +2,38 @@
   license: "CC-BY-SA-3.0"
   copyright: "Recorded by spanky-spanky (GitHub) and edited by Nonagon44 (GitHub)"
   source: "https://github.com/ss14-harmony/ss14-harmony/pull/644"
+
+- files: ["shotgunload_1.ogg", "shotgunload_2.ogg", "shotgunload_3.ogg", "shotgunload_4.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Created by DrinkingWindGames"
+  source: "https://freesound.org/people/DrinkingWindGames/sounds/789646/"
+
+- files: ["pistol_magin.ogg"]
+  license: "CC0-1.0"
+  copyright: "Created by serotonin"
+  source: "https://freesound.org/people/ser%C3%B8t%C5%8Dnin/sounds/693124/"
+
+- files: ["smg_magin.ogg"]
+  license: "CC0-1.0"
+  copyright: "Created by serotonin"
+  source: "https://freesound.org/people/ser%C3%B8t%C5%8Dnin/sounds/677160/"
+
+- files: ["rifle_magin.ogg"]
+  license: "CC0-1.0"
+  copyright: "Created by serotonin"
+  source: "https://freesound.org/people/ser%C3%B8t%C5%8Dnin/sounds/674742/"
+
+- files: ["lmg_magin.ogg"]
+  license: "Custom"
+  copyright: "Under CC SAMPLING+ 1.0. Created by SpartanX109."
+  source: "https://freesound.org/people/SpartanX109/sounds/89149/"
+
+- files: ["dmr_magin.ogg", "bulldog_magin.ogg"]
+  license: "Custom"
+  copyright: "Halo © Microsoft Corporation. This audio file was created under Microsoft's Game Content Usage Rules using assets from Halo:Reach, and it is not endorsed by or affiliated with Microsoft. More info here: https://www.xbox.com/en-us/developers/rules. Pulled from Halo:Reach, made by Bungie"
+  source: "https://youtu.be/0SEE9n-ciUc"
+
+- files: ["speedloader_insert.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from cmss13"
+  source: "https://github.com/cmss13-devs/cmss13/blob/db16154cb71e98060169230d7902d776d9b522f9/sound/weapons/gun_44mag_speed_loader.wav"
