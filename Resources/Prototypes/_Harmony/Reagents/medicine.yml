@@ -15,3 +15,23 @@
           factor: 6
         - !type:ModifyBloodLevel
           amount: 6
+
+## Aloxadone but it heals Brute damage
+- type: reagent
+  id : Stelloxidone
+  name: reagent-name-stelloxidone
+  group: Medicine
+  desc: reagent-desc-stelloxidone
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: medicine
+  color: "#ffe869"
+  worksOnTheDead: true
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        conditions:
+        - !type:TemperatureCondition
+          max: 213.0
+        damage:
+          Brute: -4.5
