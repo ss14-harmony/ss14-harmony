@@ -1,7 +1,7 @@
 - type: entity
   id: ShellHypo
   name: shell (.50 hypo)
-  parent: [BaseSyndicateContraband, BaseShellShotgun]
+  parent: [SolutionAmmo, BaseSyndicateContraband, BaseShellShotgun]
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
@@ -11,10 +11,9 @@
   - type: CartridgeAmmo
     proto: PelletShotgunTranquilizer
   - type: ChemicalAmmo
-  - type: SolutionContainerManager
-    solutions:
-      ammo:
-        maxVol: 7
+  - type: Solution
+    solution:
+      maxVol: 7
   - type: RefillableSolution
     solution: ammo
   - type: InjectableSolution
