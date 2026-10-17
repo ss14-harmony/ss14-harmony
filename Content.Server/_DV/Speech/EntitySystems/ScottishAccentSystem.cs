@@ -1,33 +1,21 @@
 using Content.Server.DeltaV.Speech.Components;
+using Content.Server.Speech.Components;
 using Content.Server.Speech.EntitySystems;
-using System.Text.RegularExpressions;
-using Content.Shared.Speech;
+using Content.Shared.Speech.EntitySystems;
 
 namespace Content.Server.DeltaV.Speech.EntitySystems;
 
-public sealed partial class ScottishAccentSystem : EntitySystem
+public sealed partial class ScottishAccentSystem : RelayAccentSystem<ScottishAccentComponent>
 {
     [Dependency] private ReplacementAccentSystem _replacement = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<ScottishAccentComponent, AccentGetEvent>(OnAccentGet);
-    }
-
     // converts left word when typed into the right word. For example typing you becomes ye.
-    public string Accentuate(string message, ScottishAccentComponent component)
+    public override string Accentuate(string message, Entity<ScottishAccentComponent>? ent = null)
     {
         var msg = message;
 
         msg = _replacement.ApplyReplacements(msg, "scottish");
 
         return msg;
-    }
-
-    private void OnAccentGet(EntityUid uid, ScottishAccentComponent component, AccentGetEvent args)
-    {
-        args.Message = Accentuate(args.Message, component);
     }
 }
