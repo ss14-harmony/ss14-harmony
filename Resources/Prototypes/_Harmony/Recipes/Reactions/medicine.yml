@@ -26,7 +26,7 @@
 
 ## Aloxadone but it heals Brute damage
 - type: reaction
-  id: Stelloxidone
+  id: Traumoxidone
   impact: Medium
   reactants:
     Cryoxadone:
@@ -36,4 +36,4 @@
     Bicaridine:
       amount: 2
   products:
-      Stelloxidone: 4
+      Traumoxidone: 4

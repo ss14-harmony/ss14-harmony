@@ -18,10 +18,10 @@
 
 ## Aloxadone but it heals Brute damage
 - type: reagent
-  id : Stelloxidone
-  name: reagent-name-stelloxidone
+  id : Traumoxidone
+  name: reagent-name-traumoxidone
   group: Medicine
-  desc: reagent-desc-stelloxidone
+  desc: reagent-desc-traumoxidone
   physicalDesc: reagent-physical-desc-opaque
   flavor: medicine
   color: "#ffe869"
