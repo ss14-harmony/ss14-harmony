@@ -1,101 +1,4 @@
 ﻿Entries:
-- author: liltenhead
-  changes:
-  - message: Added server pins to the trinket section in character loadouts.
-    type: Add
-  id: 2
-  time: '2024-07-01T02:43:36.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/2
-- author: KeldWolf
-  changes:
-  - message: Added the lobby art made by Amatiramasu
-    type: Add
-  - message: Removed Revolutionaries from secret rotation
-    type: Remove
-  id: 6
-  time: '2024-07-28T19:19:10.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/6
-- author: KeldWolf
-  changes:
-  - message: Syndicate evac pod and clown shuttle mid round events have had their
-      weights set to 0.
-    type: Tweak
-  id: 7
-  time: '2024-08-09T05:28:35.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/7
-- author: DieselMohawk
-  changes:
-  - message: Resprited the Vulture Pins
-    type: Tweak
-  id: 17
-  time: '2024-08-24T05:21:55.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/17
-- author: KeldWolf
-  changes:
-  - message: Reduced clothing timers and brought honk and syndi evac shuttles back
-      into rotation
-    type: Tweak
-  id: 22
-  time: '2024-09-01T19:53:38.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/22
-- author: KeldWolf
-  changes:
-  - message: Added 2 new shuttles by spanky to load (for admins)
-    type: Add
-  id: 25
-  time: '2024-09-04T06:57:35.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/25
-- author: SlamBamActionman
-  changes:
-  - message: Xeno map Beta is available for playtest on Harmony.
-    type: Add
-  id: 27
-  time: '2024-10-06T15:32:34.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/27
-- author: KeldWolf
-  changes:
-  - message: Added more shuttles by spanky to load (for admins)
-    type: Add
-  id: 28
-  time: '2024-09-06T15:26:28.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/28
-- author: KeldWolf
-  changes:
-  - message: 'Re-enabled role timers: 3 hours for command and sensitive roles and
-      3 hours of command for Captain.'
-    type: Tweak
-  id: 30
-  time: '2024-09-07T04:39:41.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/30
-- author: KeldWolf
-  changes:
-  - message: Tweaks on shuttles made by Spanky.
-    type: Tweak
-  id: 31
-  time: '2024-09-07T05:29:00.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/31
-- author: TheCrimsonJupiter
-  changes:
-  - message: Reduced the likelihood of mid-round round-ending antagonists to appear.
-    type: Tweak
-  id: 33
-  time: '2024-09-09T21:35:20.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/33
-- author: Tsawodi
-  changes:
-  - message: Added the instructor mantle for teach-and-learn events. Can only spawned
-      in through the entity menu.
-    type: Add
-  id: 43
-  time: '2024-09-12T19:17:52.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/43
-- author: spanky-spanky
-  changes:
-  - message: Added 14 ERT shuttles, credit to TsjipTsjip, luckyshotpictures, & IProduceWidgets.
-    type: Add
-  id: 47
-  time: '2024-09-12T18:49:42.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/47
 - author: FluffMe
   changes:
   - message: 'Added 5 button frames to "Construction" menu: grey, exit, caution, danger,
@@ -3767,3 +3670,129 @@
   id: 1433
   time: '2026-08-14T03:06:19.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1390
+- author: CFrala
+  changes:
+  - message: The airloss auto-injector now has its respective chemicals inside of
+      it instead of being empty.
+    type: Fix
+  id: 1434
+  time: '2026-08-28T05:34:23.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1482
+- author: Dinoguy12349
+  changes:
+  - message: The Bungo Bomber can no longer shoot bullets
+    type: Fix
+  id: 1435
+  time: '2026-08-28T05:47:27.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1468
+- author: dragydevi
+  changes:
+  - message: Removed Blood Bound's ability to convert Traitors, Nukies and other solo
+      and team antagonists
+    type: Remove
+  id: 1436
+  time: '2026-08-28T07:19:32.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1437
+- author: mMikulas
+  changes:
+  - message: Fixed windoors being unable to close when placed adjacent to walls.
+    type: Fix
+  id: 1437
+  time: '2026-09-06T16:45:26.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1489
+- author: youtissoum
+  changes:
+  - message: Emagged recyclers no longer delete players.
+    type: Fix
+  id: 1438
+  time: '2026-09-06T16:45:11.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1490
+- author: dragydevi
+  changes:
+  - message: Increased the capacity of wall mounted space cleaner dispensers to 6000
+    type: Tweak
+  id: 1439
+  time: '2026-09-11T03:21:02.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1439
+- author: daseiinn
+  changes:
+  - message: Zombie movespeed has been increased and bite damage increased
+    type: Tweak
+  id: 1440
+  time: '2026-09-11T03:34:49.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1440
+- author: daseiinn
+  changes:
+  - message: Increased minimum Initial Infected to two!
+    type: Tweak
+  id: 1441
+  time: '2026-09-11T05:04:02.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1444
+- author: TillsterRulz
+  changes:
+  - message: Removed harmonicas from non-musician loadouts
+    type: Remove
+  id: 1442
+  time: '2026-09-11T05:15:20.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1450
+- author: daseiinn
+  changes:
+  - message: Removed ammo tech fab boards from the procedurally generated salvage
+      loot pool!
+    type: Remove
+  id: 1443
+  time: '2026-09-11T05:29:07.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1449
+- author: TillsterRulz
+  changes:
+  - message: You now move moderately faster when wielding a Hristov
+    type: Tweak
+  id: 1444
+  time: '2026-09-11T05:35:00.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1447
+- author: daseiinn
+  changes:
+  - message: Added the Mallet of Malice! A lethal version of the toy hammer for traitors.
+    type: Add
+  - message: Fixed a typo in Mallet of Malice's uplink entry! Oops!
+    type: Fix
+  id: 1445
+  time: '2026-09-20T22:11:55.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1486
+- author: daseiinn
+  changes:
+  - message: Changed condiment packets back to 15u!
+    type: Tweak
+  id: 1446
+  time: '2026-09-20T22:54:10.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1471
+- author: daseiinn
+  changes:
+  - message: Added .30 caseless magazines to emagged lathes!
+    type: Add
+  id: 1447
+  time: '2026-10-12T02:51:01.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1455
+- author: TheFlyingSentry
+  changes:
+  - message: Emergency shuttle call for Zombies now count the dead zombies
+    type: Tweak
+  id: 1448
+  time: '2026-10-12T07:42:08.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1457
+- author: daseiinn
+  changes:
+  - message: Adds the Waffle Co. Astro Ace, a lethal version of the foam toy gun for
+      7 tc!
+    type: Add
+  id: 1449
+  time: '2026-10-16T06:31:14.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1456
+- author: daseiinn
+  changes:
+  - message: Added the Waffle Co. Stinger Grenade, a stealthy stinger grenade in the
+      uplink for traitors!
+    type: Add
+  id: 1450
+  time: '2026-10-17T06:16:30.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1458

@@ -4,7 +4,7 @@
   id: BaseBloodBrotherObjective
   components:
   - type: Objective
-    issuer: objective-issuer-blood-brother
+    issuer: BloodBrother
   - type: RoleRequirement
     roles:
     - BloodBrotherRole
@@ -18,7 +18,6 @@
   components:
   - type: Objective
     difficulty: 0 # never given randomly anyways
-    issuer: objective-issuer-blood-brother
     icon:
       sprite: /Textures/Interface/Alerts/bleed.rsi
       state: bleed10

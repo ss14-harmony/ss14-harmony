@@ -12,3 +12,6 @@ flavor-complex-peanut-butter = like peanuts
 
 # Grape Jelly Flavor
 flavor-complex-jelly-grape = like grape jelly
+
+# Peanut
+flavor-complex-peanut = like peanuts

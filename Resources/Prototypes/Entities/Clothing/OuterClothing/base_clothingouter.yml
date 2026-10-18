@@ -66,7 +66,6 @@
   parent: [ClothingOuterStorageBase, BaseFoldable]
   id: ClothingOuterStorageFoldableBase
   components:
-  - type: Appearance
   - type: Foldable
     canFoldInsideContainer: true
     unfoldVerbText: fold-zip-verb
@@ -148,6 +147,8 @@
         Radiation: 0.25
   - type: ToggleableClothing
     slot: head
+    verbText: toggle-clothing-verb-helmet
+    action: ActionToggleSuitPiece
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
@@ -203,6 +204,19 @@
 #    - Tail
 # Harmony change ends
 - type: entity
+  parent: ClothingOuterEVASuitBase
+  id: ClothingOuterEVASuitBaseToggleable
+  abstract: true
+  components:
+  - type: ToggleableClothing
+    slot: head
+    verbText: toggle-clothing-verb-helmet
+    action: ActionToggleSuitPiece
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+
+- type: entity
   parent: ClothingOuterBase
   id: ClothingOuterBaseToggleable
   name: hoodie with hood
@@ -211,6 +225,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterDefault
     slot: head
+    verbText: toggle-clothing-verb-hood
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}

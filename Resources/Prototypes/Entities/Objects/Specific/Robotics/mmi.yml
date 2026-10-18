@@ -45,8 +45,7 @@
     - SiliconEmotes
   - type: Emoting
   - type: Vocal
-    sounds:
-      Unsexed: UnisexSilicon
+    emoteSounds: UnisexSilicon
     # End Harmony
   - type: ItemSlots
   - type: ContainerContainer
@@ -122,8 +121,7 @@
     # Harmony start
     - type: Emoting
     - type: Vocal
-      sounds:
-        Unsexed: UnisexSilicon
+      emoteSounds: UnisexSilicon
     # End Harmony
     - type: TypingIndicator
       proto: robot
