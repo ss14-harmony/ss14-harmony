@@ -10,12 +10,14 @@ namespace Content.Shared.Movement.Systems;
 
 public abstract partial class SharedMobCollisionSystem
 {
-
+    /// <remarks>
+    /// Used in place of the NonHarmony version if something changes in the NonHarmony version of this method it's probably best to switch back to that one
+    /// </remarks>
     protected bool HandleHarmonyCollisions(Entity<MobCollisionComponent, PhysicsComponent, FixturesComponent> entity, float frameTime)
     {
         var physics = entity.Comp2;
 
-        var mobFixtures = entity.Comp3.Fixtures.Last().Value;
+        var mobFixtures = entity.Comp3.Fixtures.First().Value;
 
         foreach (var fixture in entity.Comp3.Fixtures)
         {
@@ -68,7 +70,7 @@ public abstract partial class SharedMobCollisionSystem
             if (!MobQuery.TryComp(other, out var otherComp) || !PhysicsQuery.TryComp(other, out var otherPhysics) || !FixturesQuery.TryComp(other, out var otherFixtures)) // Harmony addition: Added FixtureQuery
                 continue;
 
-            var otherMobFixtures = otherFixtures.Fixtures.Last().Value;
+            var otherMobFixtures = otherFixtures.Fixtures.First().Value;
 
             foreach (var fixture in otherFixtures.Fixtures)
             {
