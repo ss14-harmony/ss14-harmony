@@ -4,10 +4,8 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-// Box Change: Speech sound muting
-using Content.Shared._Box.Audio;
-using Robust.Shared.Player;
-// End Box Change
+using Robust.Shared.Player; // Harmony - Use RMC14 to mute speechsounds
+using Content.Shared._Box.Audio; // Box Change: Speech sound muting
 
 namespace Content.Server.Speech
 {

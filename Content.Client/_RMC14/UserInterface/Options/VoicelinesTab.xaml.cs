@@ -24,17 +24,13 @@ public sealed partial class VoicelinesTab : Control
         Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesSlime, RMCVoicelinesSlime);
         Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesAvali, RMCVoicelinesAvali);
         Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesVulpkanin, RMCVoicelinesVulpkanin);
-        Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesRodentia, RMCVoicelinesRodentia);
         // Harmony change start - We don't have these species but we do have Vox
+        //Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesRodentia, RMCVoicelinesRodentia);
         // Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesFeroxi, RMCVoicelinesFeroxi);
         // Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesSkrell, RMCVoicelinesSkrell);
         Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesVox, RMCVoicelinesVox);
         // Harmony Change end
-        // Start Box Change: Scurret, IPC, Allulalo 
-        Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesScurret, RMCVoicelinesScurret);
-        Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesIPC, RMCVoicelinesIPC);
-        Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesAllulalo, RMCVoicelinesAllulalo);
-        // End Box Change
+        Control.AddOptionCheckBox(RMCCVars.RMCPlayVoicelinesScurret, RMCVoicelinesScurret); // Box Change: Scurret
 
         Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesArachnid, RMCEmotesArachnid);
         Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesDiona, RMCEmotesDiona);
@@ -46,18 +42,13 @@ public sealed partial class VoicelinesTab : Control
         Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesSlime, RMCEmotesSlime);
         Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesAvali, RMCEmotesAvali);
         Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesVulpkanin, RMCEmotesVulpkanin);
-        Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesRodentia, RMCEmotesRodentia);
         // Harmony change start - We don't have these species but we do have Vox
+        //Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesRodentia, RMCEmotesRodentia);
         // Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesFeroxi, RMCEmotesFeroxi);
         // Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesSkrell, RMCEmotesSkrell);
         Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesVox, RMCEmotesVox);
         // Harmony Change end
-        // Start Box Change: Scurret, IPC, Thaven, Allulalo 
-        Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesScurret, RMCEmotesScurret);
-        Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesIPC, RMCEmotesIPC);
-        Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesThaven, RMCEmotesThaven);
-        Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesAllulalo, RMCEmotesAllulalo);
-        // End Box Change
+        Control.AddOptionCheckBox(RMCCVars.RMCPlayEmotesScurret, RMCEmotesScurret); // Box Change: Scurret
 
         Control.Initialize(); // Harmony
     }

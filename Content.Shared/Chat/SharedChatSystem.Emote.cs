@@ -1,12 +1,10 @@
 using System.Collections.Frozen;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Speech;
+using Robust.Shared.Player; // Harmony, RMC14
 using Robust.Shared.Audio;
 using Robust.Shared.Random;
-// Start Box Change: Emote sound muting
-using Robust.Shared.Player;
-using Content.Shared._Box.Audio;
-// End Box Change
+using Content.Shared._Box.Audio; // Box Change: Emote sound muting
 
 namespace Content.Shared.Chat;
 

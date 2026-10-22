@@ -28,12 +28,12 @@ public sealed class SpeciesMutingSystem : EntitySystem
     private static readonly ProtoId<SpeechSoundsPrototype> SlimeVoice = "Slime";
     private static readonly ProtoId<SpeechSoundsPrototype> AvaliVoice = "MaleAvali";
     private static readonly ProtoId<SpeechSoundsPrototype> VulpkaninVoice = "Vulpkanin";
-    private static readonly ProtoId<SpeechSoundsPrototype> RodentiaVoice = "Squeak";
+    //private static readonly ProtoId<SpeechSoundsPrototype> RodentiaVoice = "Squeak"; // Harmony - Remove Box species
     private static readonly ProtoId<SpeechSoundsPrototype> VoxVoice = "Vox";
     private static readonly ProtoId<SpeechSoundsPrototype> ScurretVoice = "Wawa";
-    private static readonly ProtoId<SpeechSoundsPrototype> IPCVoice = "Pai";
+    // private static readonly ProtoId<SpeechSoundsPrototype> IPCVoice = "Pai"; // Harmony - Remove Box species
     //Thaven use human speech sounds.
-    private static readonly ProtoId<SpeechSoundsPrototype> AllulaloVoice = "Allulalo";
+    //private static readonly ProtoId<SpeechSoundsPrototype> AllulaloVoice = "Allulalo"; // Harmony - Remove Box species
 
     private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> ArachnidEmotes = ["UnisexArachnid"];
     private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> DionaEmotes = ["UnisexDiona"];
@@ -44,12 +44,14 @@ public sealed class SpeciesMutingSystem : EntitySystem
     private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> SlimeEmotes = ["FemaleSlime", "MaleSlime"];
     private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> AvaliEmotes = ["FemaleAvali", "MaleAvali"];
     private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> VulpkaninEmotes = ["FemaleVulpkanin", "MaleVulpkanin"];
-    private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> RodentiaEmotes = ["FemaleRodentia", "MaleRodentia"];
+    //private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> RodentiaEmotes = ["FemaleRodentia", "MaleRodentia"]; // Harmony - Remove Box species
     private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> VoxEmotes = ["UnisexVox"];
     private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> ScurretEmotes = ["Scurret"];
-    private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> IPCEmotes = ["UnisexIPC"];
-    private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> ThavenEmotes = ["MaleThaven"];
-    private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> AllulaloEmotes = ["Allulalo"];
+    // Harmony Start - Remove Box Species
+    //private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> IPCEmotes = ["UnisexIPC"];
+    //private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> ThavenEmotes = ["MaleThaven"];
+    //private static readonly HashSet<ProtoId<EmoteSoundsPrototype>> AllulaloEmotes = ["Allulalo"];
+    // Harmony End
 
     /// <summary>
     /// A collection of speech sounds to mute, and their associated CVar.
@@ -64,11 +66,11 @@ public sealed class SpeciesMutingSystem : EntitySystem
         [SlimeVoice] = RMCCVars.RMCPlayVoicelinesSlime,
         [AvaliVoice] = RMCCVars.RMCPlayVoicelinesAvali,
         [VulpkaninVoice] = RMCCVars.RMCPlayVoicelinesVulpkanin,
-        [RodentiaVoice] = RMCCVars.RMCPlayVoicelinesRodentia,
+        //[RodentiaVoice] = RMCCVars.RMCPlayVoicelinesRodentia, // Harmony - Remove Box species
         [VoxVoice] = RMCCVars.RMCPlayVoicelinesVox,
         [ScurretVoice] = RMCCVars.RMCPlayVoicelinesScurret,
-        [IPCVoice] = RMCCVars.RMCPlayVoicelinesIPC,
-        [AllulaloVoice] = RMCCVars.RMCPlayVoicelinesAllulalo,
+        //[IPCVoice] = RMCCVars.RMCPlayVoicelinesIPC, // Harmony - Remove Box species
+        //[AllulaloVoice] = RMCCVars.RMCPlayVoicelinesAllulalo, // Harmony - Remove Box species
     };
 
     /// <summary>
@@ -85,12 +87,12 @@ public sealed class SpeciesMutingSystem : EntitySystem
         [SlimeEmotes] = RMCCVars.RMCPlayEmotesSlime,
         [AvaliEmotes] = RMCCVars.RMCPlayEmotesAvali,
         [VulpkaninEmotes] = RMCCVars.RMCPlayEmotesVulpkanin,
-        [RodentiaEmotes] = RMCCVars.RMCPlayEmotesRodentia,
+        //[RodentiaEmotes] = RMCCVars.RMCPlayEmotesRodentia, // Harmony - Remove Box species
         [VoxEmotes] = RMCCVars.RMCPlayEmotesVox,
         [ScurretEmotes] = RMCCVars.RMCPlayEmotesScurret,
-        [IPCEmotes] = RMCCVars.RMCPlayEmotesIPC,
-        [ThavenEmotes] = RMCCVars.RMCPlayEmotesThaven,
-        [AllulaloEmotes] = RMCCVars.RMCPlayEmotesAllulalo,
+        //[IPCEmotes] = RMCCVars.RMCPlayEmotesIPC, // Harmony - Remove Box species
+        //[ThavenEmotes] = RMCCVars.RMCPlayEmotesThaven, // Harmony - Remove Box species
+        //[AllulaloEmotes] = RMCCVars.RMCPlayEmotesAllulalo, // Harmony - Remove Box species
     };
 
     /// <summary>
