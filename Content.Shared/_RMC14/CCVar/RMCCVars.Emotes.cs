@@ -48,4 +48,9 @@ public sealed partial class RMCCVars
 
     public static readonly CVarDef<bool> RMCPlayEmotesVox =
         CVarDef.Create("rmc.play_emotes_vox", true, CVar.REPLICATED | CVar.CLIENT | CVar.ARCHIVE); // Harmony change - Vox
+
+    // Start Box Change: Scurret
+    public static readonly CVarDef<bool> RMCPlayEmotesScurret =
+        CVarDef.Create("rmc.play_emotes_scurret", true, CVar.REPLICATED | CVar.CLIENT | CVar.ARCHIVE);
+    // End Box Change
 }
