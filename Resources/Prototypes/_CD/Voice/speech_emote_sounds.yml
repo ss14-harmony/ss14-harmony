@@ -9,6 +9,18 @@
       path: /Audio/_CD/Voice/Avali/avali_scream.ogg
     Laugh:
       path: /Audio/_CD/Voice/Avali/avali_laugh.ogg
+    Cough: #Harm
+      path: /Audio/_Harmony/Voice/Avali/avali_cough.ogg
+    Whistle:
+      path: /Audio/_Starlight/Voice/Avali/avali_whistle.ogg
+    Yawn:
+      path: /Audio/_Moffstation/Voice/Avali/avali_yawn.ogg
+    Sneeze:
+      path: /Audio/_Moffstation/Voice/Avali/avali_sneeze.ogg
+    Gasp:
+      path: /Audio/_Moffstation/Voice/Avali/avali_gasp.ogg
+    DefaultDeathgasp:
+      path: /Audio/_Moffstation/Voice/Avali/avali_deathgasp.ogg
 
 - type: emoteSounds
   id: FemaleAvali
@@ -20,3 +32,15 @@
       path: /Audio/_CD/Voice/Avali/avali_scream.ogg
     Laugh:
       path: /Audio/_CD/Voice/Avali/avali_laugh.ogg
+    Cough: #Harm
+      path: /Audio/_Harmony/Voice/Avali/avali_cough.ogg
+    Whistle:
+      path: /Audio/_Starlight/Voice/Avali/avali_whistle.ogg
+    Yawn:
+      path: /Audio/_Moffstation/Voice/Avali/avali_yawn.ogg
+    Sneeze:
+      path: /Audio/_Moffstation/Voice/Avali/avali_sneeze.ogg
+    Gasp:
+      path: /Audio/_Moffstation/Voice/Avali/avali_gasp.ogg
+    DefaultDeathgasp:
+      path: /Audio/_Moffstation/Voice/Avali/avali_deathgasp.ogg
