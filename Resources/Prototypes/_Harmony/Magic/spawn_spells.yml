@@ -7,9 +7,10 @@
   - type: Action
     useDelay: 15
     itemIconStyle: BigAction
-    icon:
-      sprite: _Harmony/Mobs/Animals/pitbull.rsi
-      state: pitbull
+  - type: Sprite
+    sprite: _Harmony/Mobs/Animals/pitbull.rsi
+    layers:
+    - state: pitbull
   - type: InstantAction
     event: !type:InstantSpawnSpellEvent
       prototype: MobPitbullWizard
@@ -27,9 +28,10 @@
   description: Summons three SMASHED pitbulls.
   components:
   - type: Action
-    icon:
-      sprite: _Harmony/Mobs/Animals/pitbull.rsi
-      state: toadline_pitbull
+  - type: Sprite
+    sprite: _Harmony/Mobs/Animals/pitbull.rsi
+    layers:
+    - state: toadline_pitbull
   - type: InstantAction
     event: !type:InstantSpawnSpellEvent
       prototype: MobSmashedPitbullWizard

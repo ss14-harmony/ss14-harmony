@@ -21,5 +21,6 @@
       metabolites:
         Ethanol: 0.25
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 2

@@ -9,9 +9,10 @@
     useDelay: 10
     itemIconStyle: BigAction
     raiseOnUser: true
-    icon:
-      sprite: Objects/Fun/Plushies/lizard.rsi
-      state: icon
+  - type: Sprite
+    sprite: Objects/Fun/Plushies/lizard.rsi
+    layers:
+    - state: icon
   - type: TargetAction
     range: 60
     checkCanAccess: false

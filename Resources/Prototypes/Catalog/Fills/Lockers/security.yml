@@ -74,6 +74,8 @@
     - id: FlashlightSeclite
       prob: 0.8
     # - id: WeaponDisabler # Harmony
+    - id: SecurityBola
+      amount: 2
     - id: ClothingUniformJumpsuitSecGrey
       prob: 0.3
     - id: ClothingHeadHelmetBasic
