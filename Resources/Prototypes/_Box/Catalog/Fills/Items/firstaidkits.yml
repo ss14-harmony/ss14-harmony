@@ -1,0 +1,26 @@
+- type: entity
+  parent: MedkitIPC
+  id: MedkitIPCFilled
+  # name: General IPC Repair Kit
+  suffix: Filled, BoxStation
+  components:
+  - type: StorageFill
+    contents:
+    - id: ChassisPatch
+    - id: CablePack
+    - id: RobotStructPack
+    - id: IPCOilPack
+
+- type: entity
+  parent: MedkitIPCAdvanced
+  id: MedkitIPCAdvancedFilled
+  # name: Specialized IPC Repair Kit
+  suffix: Filled, BoxStation
+  components:
+  - type: StorageFill
+    contents:
+    - id: IPCOilPack
+    - id: Silipen
+      amount: 2
+    - id: RobotBurnPatch
+    - id: RobotTraumaPatch

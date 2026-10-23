@@ -17,6 +17,7 @@
   color: "#E7EA91"
   boilingPoint: 55.5
   meltingPoint: -50.0
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem
   metabolisms:
     Bloodstream:
       effects:
@@ -83,6 +84,7 @@
   allowedDepartments:
   - Science
   color: "#776291"
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem
   metabolisms:
     Bloodstream:
       effects:
@@ -206,6 +208,7 @@
   flavor: tingly
   physicalDesc: reagent-physical-desc-refreshing
   color: "#bf1365"
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem
   metabolisms:
     Bloodstream:
       effects:

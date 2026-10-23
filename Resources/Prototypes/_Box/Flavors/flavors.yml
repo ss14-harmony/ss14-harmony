@@ -1,0 +1,39 @@
+- type: flavor
+  id: recal
+  flavorType: Complex
+  description: flavor-complex-recal
+
+- type: flavor
+  id: ipca
+  flavorType: Complex
+  description: flavor-complex-ipca
+
+- type: flavor
+  id: robottears
+  flavorType: Complex
+  description: flavor-complex-robottears
+
+- type: flavor
+  id: trinary
+  flavorType: Complex
+  description: flavor-complex-trinary
+
+- type: flavor
+  id: servo
+  flavorType: Complex
+  description: flavor-complex-servo
+
+- type: flavor
+  id: synthnsoda
+  flavorType: Complex
+  description: flavor-complex-servo
+
+- type: flavor
+  id: synthignon
+  flavorType: Complex
+  description: flavor-complex-synthignon
+
+- type: flavor
+  id: uplink
+  flavorType: Complex
+  description: flavor-complex-uplink

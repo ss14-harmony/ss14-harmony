@@ -51,6 +51,7 @@
   contrabandSeverity: Minor
   flavor: bee
   color: "#FFD35D"
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: MobBee
@@ -98,6 +99,11 @@
         - !type:TagCondition
           inverted: true
           tag: Bee
+        # Box Change Start - IPCs
+        - !type:MetabolizerTypeCondition
+          type: [IPC]
+          inverted: true
+        # Box Change End
       - !type:PopupMessage
         type: Local
         visualType: Medium
@@ -162,6 +168,7 @@
   contrabandSeverity: Minor
   flavor: shocking
   color: "#FDD023"
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem
   metabolisms:
     Bloodstream:
       metabolismRate: 2.0
@@ -169,6 +176,15 @@
       - !type:Electrocute
         siemensCoefficient: 0.5
         probability: 0.5
+      # Box Change Start - SynthChem
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+        damage:
+          types:
+            Shock: 0.1
+      # Box Change End
 
 - type: reagent
   id: Razorium
@@ -180,6 +196,7 @@
   physicalDesc: reagent-physical-desc-reflective
   flavor: sharp
   color: "#e3fffb"
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem
   reactiveEffects:
     Acidic:
       methods: [ Touch ]
@@ -190,6 +207,12 @@
           types:
             Slash: 0.25
       - !type:Emote
+        # Box Change Start - IPCs
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [IPC]
+          inverted: true
+        # Box Change End
         emote: Scream
         probability: 0.7
   metabolisms:
@@ -223,6 +246,7 @@
   color: "#b3f1ff"
   boilingPoint: 50.0
   meltingPoint: 45.0
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: IceCrust

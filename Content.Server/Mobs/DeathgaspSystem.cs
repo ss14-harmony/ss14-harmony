@@ -3,6 +3,7 @@ using Content.Server.Speech.Muting;
 using Content.Shared.Mobs;
 using Content.Shared.Speech.Muting;
 using Robust.Shared.Prototypes;
+using Content.Shared._EE.Silicon.Components; // Box Change - For IPC Deathgasps
 
 namespace Content.Server.Mobs;
 
@@ -20,6 +21,12 @@ public sealed partial class DeathgaspSystem: EntitySystem
 
     private void OnMobStateChanged(EntityUid uid, DeathgaspComponent component, MobStateChangedEvent args)
     {
+
+        // Box Change Start - Allows IPCs to deathgasp
+        if (HasComp<SiliconComponent>(uid) && args.NewMobState == MobState.Dead)
+            Deathgasp(uid, component);
+        // Box Change End - Allows IPCs to deathgasp
+
         // don't deathgasp if they arent going straight from crit to dead
         if (args.NewMobState != MobState.Dead || args.OldMobState != MobState.Critical)
             return;

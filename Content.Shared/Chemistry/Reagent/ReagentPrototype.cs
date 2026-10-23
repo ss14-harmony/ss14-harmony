@@ -17,6 +17,7 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Generic;
 using Robust.Shared.Utility;
+using Content.Shared._Box.Metabolism; // Box Change - SynthChem Metabolism
 
 namespace Content.Shared.Chemistry.Reagent
 {
@@ -169,6 +170,15 @@ namespace Content.Shared.Chemistry.Reagent
         [DataField]
         public bool WorksOnTheDead;
 
+        // Box Change Start - SynthMetabolism
+        /// <summary>
+        /// List of Metabolizer Categories this Reagent falls under
+        /// Defaults to Organic
+        /// </summary>
+        [DataField]
+        public HashSet<ProtoId<MetabolismCategoryPrototype>> MetabolismCategories = ["Organic"];
+        // Box Change End
+
         [DataField, AlwaysPushInheritance]
         public ReagentMetabolisms? Metabolisms;
 
@@ -247,6 +257,8 @@ namespace Content.Shared.Chemistry.Reagent
 
         public List<string>? PlantMetabolisms = null;
 
+        public List<ProtoId<MetabolismCategoryPrototype>> MetabolismCategories; // Box Change - SyntChem metabolism categories
+
         public ReagentGuideEntry(ReagentPrototype proto, IPrototypeManager prototype, IEntitySystemManager entSys)
         {
             ReagentPrototype = proto.ID;
@@ -258,6 +270,7 @@ namespace Content.Shared.Chemistry.Reagent
                 PlantMetabolisms =
                     new List<string>(proto.GuidebookReagentEffectsDescription(prototype, entSys, proto.PlantMetabolisms, FixedPoint2.New(1f)));
             }
+            MetabolismCategories = proto.MetabolismCategories.ToList(); // Box Change - SynthChem metabolism categories
         }
     }
 

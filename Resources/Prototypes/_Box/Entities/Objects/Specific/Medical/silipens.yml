@@ -1,0 +1,79 @@
+# These all are meant to make a welding noise on use but doing that requires messing with injector groups and stuff,
+# so thats a for a future PR or for whoever is reading this to do (if they want to)
+
+# Medical
+- type: entity
+  parent: [SolutionToolTiny, ChemicalMedipen]
+  id: Silipen
+  name: Silipen
+  suffix: BoxStation
+  description: A mixture of chemicals designed to treat IPC injuries, comes with two mini lasers to boot!
+  components:
+  - type: Sprite
+    sprite: _Box/Objects/Specific/Medical/silipens.rsi
+    layers:
+    - state: silipen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: silipen_empty
+  - type: Solution
+    solution:
+        reagents:
+        - ReagentId: RoutineMaintenance
+          Quantity: 10
+        - ReagentId: Nanoweldite
+          Quantity: 5
+
+- type: entity
+  parent: [SolutionToolTiny, ChemicalMedipen]
+  id: EmergencySilipen
+  name: Emergency Silipen
+  suffix: BoxStation
+  description: A mixture of chemicals designed to rapidly stabilize severely injured IPCs.
+  components:
+  - type: Sprite
+    sprite: _Box/Objects/Specific/Medical/silipens.rsi
+    layers:
+    - state: emergency_silipen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: emergencysilipen_empty
+  - type: Solution
+    solution:
+        reagents:
+        - ReagentId: Overclocker
+          Quantity: 12
+        - ReagentId: Polydimethylsiloxane
+          Quantity: 3
+
+# Syndicate stuff
+- type: entity
+  parent: SyndicateMedipen
+  id: MechazineSilipen
+  name: Mechazine Silipen
+  suffix: BoxStation
+  description: A collaboratory Silipen that provides synthetic agents with effects similar to hyperzine.
+  components:
+  - type: Sprite
+    sprite: _Box/Objects/Specific/Medical/silipens.rsi
+    layers:
+    - state: mechapen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: mechapen_empty
+  - type: Solution
+    solution:
+        reagents:
+        - ReagentId: Mechazine
+          Quantity: 30
+  - type: Injector
+    currentTransferAmount: null
+    activeModeProtoId: HyposprayInjectMode
+    allowedModes:
+    - HyposprayInjectMode

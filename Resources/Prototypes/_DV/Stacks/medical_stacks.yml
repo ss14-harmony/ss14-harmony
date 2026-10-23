@@ -1,0 +1,6 @@
+- type: stack
+  id: OmniPatch
+  name: stack-omni-patch
+  icon: { sprite: "/Textures/_DV/Objects/Medical/Omnipatch.rsi", state: icon }
+  spawn: OmniPatch
+  maxCount: 10

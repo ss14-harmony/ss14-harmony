@@ -34,4 +34,12 @@ Knowing different types of chemicals and their effects is important for being ab
 
 ## Other
 <GuideReagentGroupEmbed Group="Unknown"/>
+
+<!--Box Change Start - SynthChem-->
+
+## Synthetics
+<GuideReagentGroupEmbed Group="Synthetic"/>
+
+<!--Box Change End - SynthChem-->
+
 </Document>

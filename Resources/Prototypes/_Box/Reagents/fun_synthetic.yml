@@ -1,0 +1,163 @@
+# Weed.exe
+- type: reagent
+  id: WeedDotExe
+  name: reagent-name-weed-dot-exe
+  group: Narcotics
+  desc: reagent-desc-weed-dot-exe
+  physicalDesc: reagent-physical-desc-electric
+  flavor: bitter
+  flavorMinimum: 0.05
+  color: "#30FB3E"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
+        time: 16
+        type: Add
+
+# Bitflipper
+- type: reagent
+  id: Bitflipper
+  name: reagent-name-bitflipper
+  group: Narcotics
+  desc: reagent-desc-bitflipper
+  physicalDesc: reagent-physical-desc-electric
+  flavor: shocking
+  color: "#115D33"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Shock: 0.75
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Bitflipper
+          min: 30
+        damage:
+          types:
+            Shock: 2
+            Radiation: 2
+      - !type:Emote
+        emote: Scream
+        showInChat: true
+        probability: 0.1
+        conditions:
+        - !type:ReagentCondition
+          reagent: Bitflipper
+          max: 30
+      - !type:Emote
+        emote: Laugh
+        showInChat: true
+        probability: 0.1
+      - !type:Emote
+        emote: Crying
+        showInChat: true
+        probability: 0.1
+      - !type:Emote
+        emote: Scream
+        showInChat: true
+        probability: 0.2
+        conditions:
+        - !type:ReagentCondition
+          reagent: Bitflipper
+          min: 30
+      - !type:Emote
+        emote: Sigh
+        showInChat: true
+        probability: 0.2
+        conditions:
+        - !type:ReagentCondition
+          reagent: Bitflipper
+          min: 30
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
+        type: Add
+        time: 5
+
+# Surge - From SS13 Paradise
+- type: reagent
+  id: Surge
+  name: reagent-name-surge
+  group: Narcotics
+  desc: reagent-desc-surge
+  physicalDesc: reagent-physical-desc-metallic
+  flavor: shocking
+  color: "#6DD16D"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Shock: 2
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: StutteringAccent
+      - !type:Jitter
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectStunned
+        time: 3
+        type: Remove
+      - !type:ModifyKnockdown
+        time: 3
+        type: Remove
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectStimulantsStamina # You are on meth. You keep going.
+        time: 3
+
+# Mechazine - Surge+
+- type: reagent
+  id: Mechazine
+  name: reagent-name-mechazine
+  group: Narcotics
+  desc: reagent-desc-mechazine
+  physicalDesc: reagent-physical-desc-energizing
+  flavor: shocking
+  color: "#C7BC1C"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Mechazine
+          min: 50
+        damage:
+          types:
+            Shock: 2
+      - !type:MovementSpeedModifier
+        walkSpeedModifier: 1.1
+        sprintSpeedModifier: 1.1
+      - !type:Jitter
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectStunned
+        time: 3
+        type: Remove
+      - !type:ModifyKnockdown
+        time: 3
+        type: Remove
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDesoxyStamina # You are on meth. You keep going.
+        time: 3
+      - !type:ResetNarcolepsy
+      # - !type:HealthChange
+      #   conditions:
+      #   - !type:TotalDamageCondition
+      #     min: 80 # only heals when you're more dead than alive
+      #   damage:
+      #     types: # No Shock No Rad
+      #       Blunt: -0.2
+      #       Slash: -0.2
+      #       Piercing: -0.2
+      #       Heat: -0.2
+      #       Cold: -0.2
+      #       Caustic: -0.2
+# Readd this once upstream provides a way to only heal past certain thresholds again

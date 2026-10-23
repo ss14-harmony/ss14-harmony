@@ -275,7 +275,8 @@
   abstract: true
   components:
   - type: Metabolizer
-    metabolizerTypes: [ Vox ]
+    metabolismCategories: [Organic, Artificial] # Box Change - SynthChem
+    metabolizerTypes: [ Synthetic, Vox ] # Box Change - Add Synthetic metab type - SynthChem
 
 - type: entity
   parent: OrganVox

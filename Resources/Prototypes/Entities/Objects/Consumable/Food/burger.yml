@@ -970,7 +970,7 @@
         Quantity: 15
       - ReagentId: Vitamin
         Quantity: 5
-      - ReagentId: SulfuricAcid
+      - ReagentId: Polydimethylsiloxane # Box Change - Sulfuric Acid > Polydimethylsiloxane - IPC Food and Drink
         Quantity: 5
       - ReagentId: Oil
         Quantity: 5

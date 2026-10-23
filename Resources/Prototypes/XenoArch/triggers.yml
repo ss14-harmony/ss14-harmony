@@ -245,6 +245,7 @@
     - Sap
     - SulfurBlood
     - SynthBlood # Imp
+    - IPCOil # Box
 
 - type: xenoArchTrigger
   id: TriggerThrow

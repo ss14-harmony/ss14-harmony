@@ -1,0 +1,26 @@
+- type: entity
+  parent: Medkit
+  id: MedkitIPC
+  name: Basic IPC Repair Kit
+  suffix: BoxStation
+  description: It's an emergency repair kit for IPC chassis damage.
+  components:
+  - type: Sprite
+    sprite: _starcup/Objects/Specific/Medical/firstaidkits.rsi
+    state: siliconkit
+  - type: Item
+    sprite: _starcup/Objects/Specific/Medical/firstaidkits.rsi
+    heldPrefix: siliconkit
+
+- type: entity
+  parent: MedkitIPC
+  id: MedkitIPCAdvanced
+  name: Advanced IPC Repair Kit
+  description: A specialized repair kit for serious IPC damage.
+  components:
+  - type: Sprite
+    sprite: _Box/Objects/Specific/Medical/advipcmedkit.rsi
+    state: siliconkit
+  - type: Item
+    sprite: _Box/Objects/Specific/Medical/advipcmedkit.rsi
+    heldPrefix: siliconkit
