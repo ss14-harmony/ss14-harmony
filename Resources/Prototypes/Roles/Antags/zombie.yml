@@ -23,8 +23,8 @@
     sound: "/Audio/Ambience/Antag/zombie_start.ogg"
   components:
   - type: PendingZombie #less time to prepare than normal
-    minInitialInfectedGrace: 600 #Harmony change - 300 -> 600
-    maxInitialInfectedGrace: 900 #Harmony change - 450 -> 900
+    minInitialInfectedGrace: 300
+    maxInitialInfectedGrace: 450
   - type: ZombifyOnDeath
   - type: IncurableZombie
   - type: InitialInfected
