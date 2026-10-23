@@ -1,4 +1,3 @@
-﻿// Harmony Additions: pAI Encryption and Atmospheric sensor
 pai-encryption-name = Encryption Storage
 pai-encryption-desc = Enables your owner to insert additional Encryptions for more channels to listen to.
 

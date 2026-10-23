@@ -45,8 +45,8 @@ public sealed partial class PAIComponent : Component
     public string ScramblePopup = "pai-system-scramble-popup";
 
     /// <summary>
-    /// Radio channels that the pAI should innately have
     /// Harmony Addition: pAI Encryption and Atmospheric sensor
+    /// Radio channels that the pAI should innately have
     /// </summary>
     [DataField]
     public HashSet<ProtoId<RadioChannelPrototype>> Channels = new();

@@ -132,8 +132,8 @@
     - state: syndicate-pai-off-overlay
       shader: unshaded
       map: ["screen"]
-  - type: PAI
     # Harmony Addition: pAI Encryption and Atmospheric sensor
+  - type: PAI
     channels:
     - Syndicate
     # End of Harmony Addition
