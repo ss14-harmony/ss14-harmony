@@ -100,11 +100,13 @@
   - type: Wieldable
     unwieldOnUse: false
   - type: GunWieldBonus
-    minAngle: -19
-    maxAngle: -16
+    minAngle: -20
+    maxAngle: -18
   - type: Gun
-    minAngle: 21
-    maxAngle: 32
+    minAngle: 20
+    maxAngle: 30
+    angleincrease: 10
+    angledecay: 8
     shotsPerBurst: 5
     availableModes:
     - Burst
