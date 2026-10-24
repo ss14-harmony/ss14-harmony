@@ -59,6 +59,7 @@ public sealed partial class RevenantSystem : EntitySystem
         SubscribeLocalEvent<RevenantComponent, GetVisMaskEvent>(OnRevenantGetVis);
 
         InitializeAbilities();
+        InitializeHarmonyAbilities(); // Harmony Addition: Revenant Whispering
     }
 
     private void OnRevenantGetVis(Entity<RevenantComponent> ent, ref GetVisMaskEvent args)
