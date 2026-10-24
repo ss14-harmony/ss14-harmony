@@ -2,3 +2,8 @@
   license: "CC-BY-NC-SA-4.0"
   copyright: "Created by spanky-spanky (GitHub)"
   source: "https://github.com/ss14-harmony/ss14-harmony/commit/0b5e90cdcf09f0089f3d6d36967cc8dac93ab3e7"
+
+- files: ["blink.png"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Taken from space-wizards, created by Sarahon, modified by halycon (kleinerstation13 on Github)"
+  source: "https://github.com/space-wizards/space-station-14/commit/34a1e2c07307b4f3738c28cc816389d499697d35"
