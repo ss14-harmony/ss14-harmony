@@ -6,7 +6,7 @@
   - /Audio/_Harmony/Weapons/Guns/Gunshots/dmr_fire2.ogg
   - /Audio/_Harmony/Weapons/Guns/Gunshots/dmr_fire3.ogg
 
-# Used in _Harmony/Entities/Objects/Weapons/Guns/Rifles/shotguns.yml
+# Used in /Entities/Objects/Weapons/Guns/Shotguns/shotguns.yml
 - type: soundCollection
   id: ShotgunFire
   files:
@@ -20,3 +20,76 @@
   files:
   - /Audio/_Harmony/Weapons/Guns/Gunshots/python_fire1.ogg
   - /Audio/_Harmony/Weapons/Guns/Gunshots/python_fire2.ogg
+
+# Used in /Entities/Objects/Weapons/Guns/Rifles/rifles.yml
+- type: soundCollection
+  id: AKFire
+  files:
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/ak_fire1.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/ak_fire2.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/ak_fire3.ogg
+
+# Used in /Entities/Objects/Weapons/Guns/Rifles/rifles.yml
+- type: soundCollection
+  id: LecterFire
+  files:
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/lecter_fire1.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/lecter_fire2.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/lecter_fire3.ogg
+
+# Used in /Entities/Objects/Weapons/Guns/Pistols/pistols.yml
+- type: soundCollection
+  id: MKFire
+  files:
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/mk_fire1.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/mk_fire2.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/mk_fire3.ogg
+
+# Used in /Entities/Objects/Weapons/Guns/Shotguns/shotguns.yml
+- type: soundCollection
+  id: EnforcerFire
+  files:
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/enforcer_fire1.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/enforcer_fire2.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/enforcer_fire3.ogg
+
+# Used in /Entities/Objects/Weapons/Guns/Revolvers/revolvers.yml
+- type: soundCollection
+  id: RevolverAltFire
+  files:
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/revolver_fire1.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/revolver_fire2.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/revolver_fire3.ogg
+
+# Used in /Entities/Objects/Weapons/Guns/Pistols/pistols.yml
+- type: soundCollection
+  id: ViperFire
+  files:
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/viper_fire1.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/viper_fire2.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/viper_fire3.ogg
+
+# Used in /Entities/Objects/Weapons/Guns/SMGs/smgs.yml
+- type: soundCollection
+  id: DrozdFire
+  files:
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/drozd_fire1.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/drozd_fire2.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/drozd_fire3.ogg
+
+# Used in /Entities/Objects/Weapons/Guns/Revolvers/smgs.yml
+- type: soundCollection
+  id: WTFire
+  files:
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/wt_fire1.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/wt_fire2.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/wt_fire3.ogg
+
+# Used in /Entities/Objects/Weapons/Guns/Shotguns/shotguns.yml
+- type: soundCollection
+  id: ShellLoad
+  files:
+  - /Audio/_Harmony/Weapons/Guns/MagIn/shotgunload_1.ogg
+  - /Audio/_Harmony/Weapons/Guns/MagIn/shotgunload_2.ogg
+  - /Audio/_Harmony/Weapons/Guns/MagIn/shotgunload_3.ogg
+  - /Audio/_Harmony/Weapons/Guns/MagIn/shotgunload_4.ogg
