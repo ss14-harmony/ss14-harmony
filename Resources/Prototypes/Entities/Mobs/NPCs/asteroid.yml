@@ -164,10 +164,10 @@
     bodyType: Static
     canCollide: false
   - type: Sprite
-    sprite: Mobs/Aliens/Asteroid/goliath.rsi
+    sprite: _Harmony/Mobs/Aliens/Asteroid/goliath.rsi # harmony - changed path
   - type: InteractionOutline
   - type: TimedDespawn
-    lifetime: 0.7
+    lifetime: 1.25 # Harmony change 0.7 -> 1.25
 
 - type: entity
   id: EffectGoliathTentacleSpawn
