@@ -33,3 +33,18 @@
     - id: WeaponRifleBandit
     - id: MagazineLightRifleCaseless
       amount: 2
+
+- type: entity
+  parent: ClothingBackpackChameleon
+  id: ClothingBackpackChameleonEVAFillAgentHarmony
+  suffix: Chameleon, EVA, Harmony
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingOuterEVASuitChameleonHarmony
+        - id: ClothingHeadHelmetEVAChameleonHarmony
+        - id: ClothingMaskGasChameleon
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: DoubleEmergencyNitrogenTankFilled
