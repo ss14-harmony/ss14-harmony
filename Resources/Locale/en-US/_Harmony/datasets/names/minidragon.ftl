@@ -1,0 +1,82 @@
+#ores, stones, minerals and gems
+names-mini-dragon-dataset-1 = Granite
+names-mini-dragon-dataset-2 = Onyx
+names-mini-dragon-dataset-3 = Emerald
+names-mini-dragon-dataset-4 = Quartz
+names-mini-dragon-dataset-5 = Diamond
+names-mini-dragon-dataset-6 = Ruby
+names-mini-dragon-dataset-7 = Magnetite
+names-mini-dragon-dataset-8 = Pyrite
+names-mini-dragon-dataset-9 = Tantalum
+names-mini-dragon-dataset-10 = Osmium
+names-mini-dragon-dataset-11 = Cadmium
+names-mini-dragon-dataset-12 = Iridium
+names-mini-dragon-dataset-13 = Rubidium
+names-mini-dragon-dataset-14 = Zirconium
+names-mini-dragon-dataset-15 = Thallium
+names-mini-dragon-dataset-16 = Agate
+names-mini-dragon-dataset-17 = Amethyst
+names-mini-dragon-dataset-18 = Aquamarine
+names-mini-dragon-dataset-19 = Adamantium
+names-mini-dragon-dataset-20 = Celestine
+names-mini-dragon-dataset-21 = Cobalt
+names-mini-dragon-dataset-22 = Peridot
+names-mini-dragon-dataset-23 = Fluorite
+names-mini-dragon-dataset-24 = Garnet
+names-mini-dragon-dataset-25 = Galena
+names-mini-dragon-dataset-26 = Hematite
+names-mini-dragon-dataset-27 = Langite
+names-mini-dragon-dataset-28 = Mimetite
+names-mini-dragon-dataset-29 = Neptunite
+names-mini-dragon-dataset-30 = Opal
+names-mini-dragon-dataset-31 = Obsidian
+names-mini-dragon-dataset-32 = Pyroxene
+names-mini-dragon-dataset-33 = Sapphire
+names-mini-dragon-dataset-34 = Titanite
+names-mini-dragon-dataset-35 = Tungsten
+names-mini-dragon-dataset-36 = Wavelite
+names-mini-dragon-dataset-37 = Zircon
+
+#random things
+names-mini-dragon-dataset-38 = Cheese
+names-mini-dragon-dataset-39 = Spike
+names-mini-dragon-dataset-40 = Flame
+names-mini-dragon-dataset-41 = Ember
+names-mini-dragon-dataset-42 = Storm
+names-mini-dragon-dataset-43 = Dusk
+names-mini-dragon-dataset-44 = Wave
+names-mini-dragon-dataset-45 = Wimbleston
+names-mini-dragon-dataset-46 = Jim
+names-mini-dragon-dataset-47 = Bob
+names-mini-dragon-dataset-48 = Bean
+names-mini-dragon-dataset-49 = Nugget
+names-mini-dragon-dataset-50 = Aldragh the Destroyer of Worlds and Conqueror of the Multiverse
+
+#tea dragons
+names-mini-dragon-dataset-51 = Chamomile
+names-mini-dragon-dataset-52 = Hibiscus
+names-mini-dragon-dataset-53 = Blackcurrant
+names-mini-dragon-dataset-54 = Jasmine
+names-mini-dragon-dataset-55 = Marshmallow
+names-mini-dragon-dataset-56 = Earl Grey
+names-mini-dragon-dataset-57 = Peppermint
+names-mini-dragon-dataset-58 = Fennel
+names-mini-dragon-dataset-59 = Rooibos
+names-mini-dragon-dataset-60 = Ginger
+names-mini-dragon-dataset-61 = Ginseng
+
+#warrior cat-style
+names-mini-dragon-dataset-62 = Starfang Darkpaw III
+names-mini-dragon-dataset-63 = Bloodclaw
+names-mini-dragon-dataset-64 = Firetail
+names-mini-dragon-dataset-65 = Wrathscale
+names-mini-dragon-dataset-66 = Darkbite
+names-mini-dragon-dataset-67 = Bloodfang
+names-mini-dragon-dataset-68 = Grayclaw
+names-mini-dragon-dataset-69 = Speedtail
+names-mini-dragon-dataset-70 = Shadowscale
+names-mini-dragon-dataset-71 = Flamebite
+names-mini-dragon-dataset-72 = Sharpfang
+names-mini-dragon-dataset-73 = Starclaw
+names-mini-dragon-dataset-74 = Darktail
+names-mini-dragon-dataset-75 = Bloodscale
