@@ -1,0 +1,66 @@
+# Syndicate dead drop
+- type: entity
+  parent: MarkerBase
+  id: SyndieDeadDropSpawner
+  name: Syndicate High Command # Used for radio announcement
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTableSpawner
+    table: !type:AllSelector
+      children:
+      - id: BriefcaseSyndieDeadDrop
+      - id: EffectFlashRedspace
+
+- type: entity
+  parent: [ BaseSubfloorAnchorStorageAnchored, BriefcaseSyndie, BaseSyndicateContraband ]
+  id: BriefcaseSyndieDeadDrop
+  name: syndicate briefcase
+  suffix: Dead Drop, Do Not Map
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:GroupSelector
+        rolls: !type:RangeNumberSelector
+          range: 2, 3
+        children:
+        # Weapons
+        # Harmony Change - No Guns but Add Melee
+        # - id: EnergyDaggerLoud
+        # - id: WeaponPistolViper
+        # - id: WeaponRevolverPython
+        - id: ClothingHandsKnuckleDustersSyndicate
+        - id: ThrowingKnife
+          amount: 2
+        # Harmony Change End
+        # Grenades
+        - id: SmokeGrenade
+        - id: EmpGrenade
+        - id: C4
+        - id: SingularityGrenade
+        # Clothing
+        #- id: ClothingShoesSkatesSyndicate # Harmony Change - No Skates
+        - id: ClothingShoesBootsMagSyndie
+        - id: SyndicateIDCardAgent
+        - id: ClothingMaskGasSyndicate
+        - id: ClothingShoesChameleonNoSlips
+        # Tools
+        - id: ChameleonProjector
+        - id: CameraBug
+        - id: SyndicateJawsOfLife
+        - id: RadioJammer
+        - id: AccessBreaker
+        - id: CyberPen
+        - id: EncryptionKeyBinarySyndicate
+        # Chemicals
+        - id: Hypopen # Harmony Change - added Hypopen
+        - id: Stimpack
+        - id: CombatMedipen
+        - id: VestineChemistryVial
+        - id: CigPackSyndicate
+        # Fun
+        - id: SyndicatePersonalAI
+        - id: RubberStampSyndicate
+        - id: UplinkLighterBox
+        - id: BalloonOperative
+        - id: TravelCamera # Harmony Chanage - Adding more fun*
+        - id: SpaceCash5000 # Harmony Change - holla holla get dolla
