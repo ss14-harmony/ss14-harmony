@@ -3,11 +3,11 @@ using Content.Server.Speech.EntitySystems;
 using Content.Server._Latestation.Speech.Components;
 using Robust.Shared.Random;
 using System.Linq;
-using Content.Shared.Speech;
+using Content.Shared.Speech.EntitySystems;
 
 namespace Content.Server._Latestation.Speech.EntitySystems;
 
-public sealed partial class ValleyGirlAccentSystem : EntitySystem
+public sealed partial class ValleyGirlAccentSystem : RelayAccentSystem<ValleyGirlAccentComponent>
 {
     //Words ending in -ing = in'. Bein', Darlin', etc.
     //Taken from mobster accent.
@@ -15,15 +15,9 @@ public sealed partial class ValleyGirlAccentSystem : EntitySystem
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private ReplacementAccentSystem _replacement = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-        SubscribeLocalEvent<ValleyGirlAccentComponent, AccentGetEvent>(OnAccent);
-    }
 
-    private void OnAccent(Entity<ValleyGirlAccentComponent> ent, ref AccentGetEvent args)
+    public override string Accentuate(string message, Entity<ValleyGirlAccentComponent>? ent = null)
     {
-        var message = args.Message;
 
         //The main word replacement is done through replacement accent system
         message = _replacement.ApplyReplacements(message, "valleygirl");
@@ -66,6 +60,6 @@ public sealed partial class ValleyGirlAccentSystem : EntitySystem
         }
 
 
-        args.Message = message;
+        return message;
     }
 }
