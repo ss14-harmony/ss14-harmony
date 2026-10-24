@@ -10,10 +10,10 @@
 
 # Tag used for energy weapon's energy cartridges.
 - type: Tag
-  id: EnergyCarbineCartridge
+  id: EnergyCartridgeCarbine
 
 - type: Tag
-  id: EnergyCarbineCartridgeSyndicate
+  id: EnergyCartridgeCarbineSyndicate
 
 # Tag used for escape pod landing.
 - type: Tag

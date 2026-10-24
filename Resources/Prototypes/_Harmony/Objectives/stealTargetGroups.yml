@@ -16,15 +16,6 @@
     sprite: _Harmony/Clothing/Eyes/Glasses/cmo.rsi
     state: icon
 
-# Traitor single items
-
-- type: stealTargetGroup
-  id: WeaponEnergyMagnumHarmony
-  name: steal-target-groups-weapon-energy-magnum
-  sprite:
-    sprite: _Harmony/Objects/Weapons/Guns/Battery/energy_magnum.rsi
-    state: icon
-
 # Multi Antag single items (ex: Syndi & Thief, BB takes from syndi already)
 
 - type: stealTargetGroup

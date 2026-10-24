@@ -12,7 +12,9 @@
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
-    - state: mag-unshaded-4
+    - state: mag-3
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: mag-unshaded-3
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
   - type: Clothing
@@ -24,23 +26,24 @@
   - type: AmmoCounter
   - type: Wieldable
     unwieldOnUse: false
-  - type: GunWieldBonus
-    minAngle: -14
-    maxAngle: -12
   - type: MagazineVisuals
     magState: mag
-    steps: 5
+    steps: 4
     zeroVisible: true
   - type: Gun
     minAngle: 21
     maxAngle: 32
     selectedMode: FullAuto
-    fireRate: 3
+    fireRate: 9
     availableModes:
       - FullAuto
       - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: GunWieldBonus
+    minAngle: -10
+    maxAngle: -7
   - type: MagazineAmmoProvider
   - type: ItemSlots
     slots:
@@ -51,7 +54,7 @@
         priority: 1
         whitelist:
           tags:
-            - EnergyCarbineCartridge
+            - EnergyCartridgeCarbine
         whitelistFailPopup: gun-magazine-whitelist-fail
   - type: Appearance
   - type: StaticPrice
@@ -75,7 +78,7 @@
         priority: 1
         whitelist:
           tags:
-            - EnergyCarbineCartridge
+            - EnergyCartridgeCarbine
         whitelistFailPopup: gun-magazine-whitelist-fail
 
 - type: entity
@@ -92,18 +95,20 @@
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
-    - state: mag-unshaded-4
+    - state: mag-3
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: mag-unshaded-3
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
   - type: Clothing
     sprite: _Harmony/Objects/Weapons/Guns/Battery/blood-red_energy_carbine.rsi
   - type: Gun
     selectedMode: FullAuto
-    fireRate: 3.5
+    fireRate: 6
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
-    minAngle: 15
-    maxAngle: 26
+    minAngle: 9
+    maxAngle: 20
   - type: GunWieldBonus
     minAngle: -8
     maxAngle: -6
@@ -117,8 +122,8 @@
         priority: 1
         whitelist:
           tags:
-          - EnergyCarbineCartridgeSyndicate
-          - EnergyCarbineCartridge
+          - EnergyCartridgeCarbineSyndicate
+          - EnergyCartridgeCarbine
         whitelistFailPopup: gun-magazine-whitelist-fail
   - type: MagazineVisuals
     magState: mag
