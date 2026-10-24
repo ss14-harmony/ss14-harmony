@@ -151,7 +151,7 @@
     impactEffect: BulletImpactShockHarmony
     damage:
       types:
-        Shock: 9
+        Shock: 20
     ignoreResistances: true
   - type: StaminaDamageOnCollide
     damage: 5
