@@ -75,12 +75,17 @@ public sealed partial class CrayonSystem : SharedCrayonSystem
         if (component.UseSound != null)
             _audio.PlayPvs(component.UseSound, uid, AudioParams.Default.WithVariation(0.125f));
 
-        _charges.TryUseCharge(uid);
+        // begin imp
+        if (!component.Infinite)
+        {
+            _charges.TryUseCharge(uid);
+        }
+        // end imp
 
         _adminLogger.Add(LogType.CrayonDraw, LogImpact.Low, $"{ToPrettyString(args.User):user} drew a {component.Color:color} {component.SelectedState}");
         args.Handled = true;
 
-        if (component.DeleteEmpty && _charges.IsEmpty(uid))
+        if (!component.Infinite && component.DeleteEmpty && _charges.IsEmpty(uid)) //Harmony - For Revenant Bloodwriting Port
             UseUpCrayon(uid, args.User);
         else
             _uiSystem.ServerSendUiMessage(uid, CrayonUiKey.Key, new CrayonUsedMessage(component.SelectedState));

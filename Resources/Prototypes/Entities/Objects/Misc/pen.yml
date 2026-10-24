@@ -26,6 +26,7 @@
         maxDistance: 2
   - type: UseDelay
     delay: 1.5
+  - type: SignatureWriter #imp
   - type: Fixtures
     fixtures:
       fix1:
@@ -69,6 +70,12 @@
     state: luxury_pen
   - type: Item
     heldPrefix: luxury_pen
+  - type: SignatureWriter # imp
+    colorList:
+      black: "#2f4f4f"
+      blue: "#284283"
+      green: "#108473"
+      red: "#ac3235"
 
 - type: entity
   id: BaseAdvancedPen
@@ -103,6 +110,23 @@
     state: overpriced_pen
   - type: Item
     heldPrefix: overpriced_pen
+  - type: SignatureWriter # imp start
+    fontList:
+      Noto Sans: Default
+      Comic Neue: ComicNeue
+      Hachi Maru Pop: HachiMaruPop
+      Kode Mono: KodeMono
+      Reenie Beanie: ReenieBeanie
+      Tangerine: Tangerine
+      UnifrakturMaguntia: UnifrakturMaguntia
+      Wahroonga: Wahroonga
+    colorList:
+      black: "#2f4f4f"
+      blue: "#284283"
+      green: "#108473"
+      red: "#ac3235"
+      command blue: "#1b67a5"
+      CentComm green: "#009100" # imp end
   - type: StaticPrice
     price: 500
 
@@ -116,6 +140,8 @@
     state: pen_centcom
   - type: Item
     heldPrefix: pen_centcom
+  - type: SignatureWriter # imp
+    color: "#009100"
 
 - type: entity
   name: captain's fountain pen
@@ -125,6 +151,8 @@
   components:
   - type: Sprite
     state: pen_cap
+  - type: SignatureWriter # imp
+    color: "#1b67a5"
 
 - type: entity
   name: HoP's fountain pen
@@ -134,6 +162,8 @@
   components:
   - type: Sprite
     state: pen_hop
+  - type: SignatureWriter # imp
+    color: "#1b67a5"
 
 - type: entity
   name: wizard's magical pen

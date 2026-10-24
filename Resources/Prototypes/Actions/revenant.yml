@@ -54,3 +54,17 @@
     itemIconStyle: BigAction
   - type: InstantAction
     event: !type:RevenantMalfunctionActionEvent
+
+# begin imp
+- type: entity
+  parent: BaseAction
+  id: ActionRevenantBloodWriting
+  name: Blood Writing
+  description: Costs 2 Essence per glyph.
+  components:
+    - type: Action
+      useDelay: 1
+      icon: Interface/Actions/blood-writing.png
+    - type: InstantAction
+      event: !type:RevenantBloodWritingEvent
+# end imp
