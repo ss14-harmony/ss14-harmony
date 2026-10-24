@@ -13,6 +13,12 @@ loadout-group-passenger-PDA = Passenger ID
 loadout-group-salvage-specialist-neck = Salvage specialist neck
 loadout-group-salvage-specialist-id = Salvage specialist ID
 
+# Security
+loadout-group-security-gun = Security Sidearm
+loadout-group-revolver-gun = Security Revolver
+loadout-group-security-gun-ammo = Ammunition
+loadout-group-revolver-ammo = Ammunition
+
 # Station-specific
 loadout-group-boxer-jumpsuit = Boxer jumpsuit
 loadout-group-boxer-gloves = Boxer gloves

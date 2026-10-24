@@ -1,0 +1,48 @@
+- type: entity
+  parent: [WeaponPistolMk58, BaseSecurityContraband]
+  id: WeaponPistolNSP
+  name: HD-NSP
+  suffix: Harmony
+  description: Manufactured by Helion Defense, the NSP is a semi-automatic pistol with unmatched controllability, featuring a reinforced slide assembly and an improved trigger over competing models. The firearm of choice for private security teams galaxywide. Feeds from .35 pistol magazines.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Pistols/nsp.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Harmony/Objects/Weapons/Guns/Pistols/nsp.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Harmony/Weapons/Guns/Gunshots/hsp_fire1.ogg
+      params:
+        volume: -3
+
+- type: entity
+  parent: [WeaponPistolMk58, BaseSecurityContraband]
+  id: WeaponPistolPA57
+  name: PA-57
+  suffix: Harmony
+  description: A semi-automatic pistol manufactured by Pallas Arms. The shorter barrel length lends itself to lower accuracy, but it is renowned by settlers and military forces alike for its superb reliability. Feeds from .35 pistol magazines.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Pistols/pa.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Harmony/Objects/Weapons/Guns/Pistols/pa.rsi
+  - type: Gun
+    minAngle: 0 # Copied accuracy stats from delta-v because I hope they have their pistol balance figured out
+    maxAngle: 30
+    angleIncrease: 10
+    angleDecay: 100
+    fireRate: 6
+    soundGunshot:
+      path: /Audio/_Harmony/Weapons/Guns/Gunshots/pa_fire1.ogg
+      params:
+        volume: -3
