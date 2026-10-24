@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ BaseItem, BaseToySword ]
+  parent: [ BaseItem, BaseSyndicateContraband ]
   id: MaliceMallet
   name: Mallet of Malice
   description: A brightly colored hammer made of rubber? Hey-- this one seems a bit more sturdy...
@@ -7,6 +7,10 @@
   - type: Sprite
     sprite: Objects/Fun/rubber_hammer.rsi
     state: icon
+  - type: WeaponRandom # lets go gambling!
+    damageBonus:
+      types:
+        Blunt: 200
   - type: Item
     size: Small
     sprite: Objects/Fun/rubber_hammer.rsi
