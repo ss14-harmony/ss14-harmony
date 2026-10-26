@@ -30,7 +30,7 @@
   id: BoxBaseSmall
   components:
   - type: Item
-    size: Small
+    size: Normal
     shape:
     - 0,0,1,1
   - type: Storage
@@ -41,7 +41,7 @@
 
 - type: entity
   abstract: true
-  parent: BoxBaseSmall
+  parent: BaseBoxSurvival
   id: BoxBaseHug
   components:
   - type: Item

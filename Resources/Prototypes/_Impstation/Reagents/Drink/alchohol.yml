@@ -15,7 +15,8 @@
   metabolisms:
     Digestion: # Harmony - Drink>Digestion
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 1
       - !type:AdjustReagent
         reagent: Ethanol

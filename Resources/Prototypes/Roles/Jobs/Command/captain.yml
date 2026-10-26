@@ -27,7 +27,6 @@
     - !type:DepartmentTimeRequirement
       department: Command
       time: 12h # Harmony: 4h -> 12h
-  weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"
   joinNotifyCrew: true
