@@ -19,6 +19,7 @@
 - type: antagSpecifier
   parent: RestrictedAntag
   id: Wizard
+  prefRoles: [ Wizard ] # Harmony fix: ROUNDSTART WIZNERDS
   spawnerPrototype: SpawnPointGhostWizard
   startingGear: WizardBlueGear
   roleLoadout:
