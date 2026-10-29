@@ -9,6 +9,9 @@ uplink-rifle-bandit-desc = Contains the Bandit, a reliable semi-auto bullpup whi
 uplink-rifle-foamgun-name = Waffle Co. Astro Ace
 uplink-rifle-foamgun-desc = A stealthy rifle of unexpectedly good quality. Its fabricated exterior feels rugged, and its mechanisms are sturdy. Some call it a toy, others call it a tool. Everyone, however...calls it a weapon. Fires .30 rifle caliber rounds.
 
+uplink-smg-m10-name = M-10 "Vice"
+uplink-smg-m10-desc = Contains an M10 submachine gun, the ultimate spray-and-pray machine. The only thing that will stop you is the click of your magazine emptying. Bundled with 2 spare magazines. Uses .35 auto ammo.
+
 # Explosive
 
 uplink-kudzu-grenade-name = Kudzu grenade
@@ -71,6 +74,9 @@ uplink-traitor-deathrattle-implant-desc = A box containing two syndicate deathra
 uplink-storage-implanter-harm-desc = Hide goodies inside of yourself with new bluespace technology! Donk Co is not responsible for bluespace accidents involving High Risk items.
 
 # Wearables
+
+uplink-miami-bundle-name = Miami Bundle
+uplink-miami-bundle-desc = A kit containing armor, a melee weapon and stylish clothing to help kill people like you're a mask-wearing russian-mobster murdering killer in the 80's.
 
 uplink-stealth-jetpack-desc = A black jetpack that doesn't appear on radar. It allows you to fly around in space. Refills not included, use your fuel wisely.
 

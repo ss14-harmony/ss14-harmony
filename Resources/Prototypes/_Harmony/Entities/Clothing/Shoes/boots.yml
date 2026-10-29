@@ -1,0 +1,7 @@
+- type: entity
+  parent: ClothingShoesBootsCombat
+  id: ClothingShoesBootsCombatNoSlip
+  name: reinforced combat boots # currently only given to loneops, has slowdown mitigation and noslips
+  description: Sturdy combat boots for intense and unforgiving combat. All murder, all the time.
+  components:
+  - type: NoSlip

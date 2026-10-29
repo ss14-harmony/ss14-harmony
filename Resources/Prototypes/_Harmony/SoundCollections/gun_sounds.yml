@@ -20,3 +20,10 @@
   files:
   - /Audio/_Harmony/Weapons/Guns/Gunshots/python_fire1.ogg
   - /Audio/_Harmony/Weapons/Guns/Gunshots/python_fire2.ogg
+
+# Used in /Entities/Objects/Weapons/Guns/SMGs/smgs.yml
+- type: soundCollection
+  id: M10Fire
+  files:
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/m10_fire1.ogg
+  - /Audio/_Harmony/Weapons/Guns/Gunshots/m10_fire2.ogg
