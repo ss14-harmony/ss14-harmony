@@ -70,18 +70,20 @@
     fireStacks: 1
   - type: Sprite
     # Harmony change - Changed sprite path
+    # sprite: Objects/Weapons/Melee/fireaxeflaming.rsi
     sprite: _Harmony/Objects/Weapons/Melee/fireaxeflaming.rsi
     # End Harmony change
     state: icon
   - type: Clothing
     # Harmony change - Changed sprite path
+    # sprite: Objects/Weapons/Melee/fireaxeflaming.rsi
     sprite: _Harmony/Objects/Weapons/Melee/fireaxeflaming.rsi
     # End Harmony change
     quickEquip: false
     slots:
     - back
-    # Start of Harmony specific additions
     - suitStorage
+  # Start of Harmony specific additions
   - type: StaminaDamageOnEmbed
     damage: 60
   - type: EmbeddableProjectile
