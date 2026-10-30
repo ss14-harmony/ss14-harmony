@@ -8,7 +8,7 @@ namespace Content.Shared._Harmony.Conspirators.Components;
 public sealed partial class ConspiratorComponent : Component
 {
     [DataField]
-    public ProtoId<FactionIconPrototype> ConspiratorIcon = "ConspiratorFaction";
+    public ProtoId<StatusIconPrototype> ConspiratorIcon = "ConspiratorFaction";
 
     public override bool SessionSpecific => true;
 }
