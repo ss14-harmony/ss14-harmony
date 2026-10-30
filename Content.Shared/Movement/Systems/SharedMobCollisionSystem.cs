@@ -1,6 +1,8 @@
+using System.Linq; // Harmony Addition | Enable Mob Collision
 using System.Numerics;
 using Content.Shared.CCVar;
 using Content.Shared.Movement.Components;
+using Content.Shared.Physics; // Harmony Addition | Enable Mob Collision
 using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Physics;
@@ -22,6 +24,7 @@ public abstract partial class SharedMobCollisionSystem : EntitySystem
 
     [Dependency] protected EntityQuery<MobCollisionComponent> MobQuery = default!;
     [Dependency] protected EntityQuery<PhysicsComponent> PhysicsQuery = default!;
+    [Dependency] protected EntityQuery<FixturesComponent> FixturesQuery = default!; // Harmony Addition | Enable Mob Collision
 
     /// <summary>
     /// <see cref="CCVars.MovementPushingCap"/>
@@ -192,9 +195,19 @@ public abstract partial class SharedMobCollisionSystem : EntitySystem
         DirtyField(entity.Owner, entity.Comp1, nameof(MobCollisionComponent.Direction));
     }
 
-    protected bool HandleCollisions(Entity<MobCollisionComponent, PhysicsComponent> entity, float frameTime)
+    protected bool HandleCollisions(Entity<MobCollisionComponent, PhysicsComponent, FixturesComponent> entity, float frameTime)
     {
         var physics = entity.Comp2;
+
+        var mobFixtures = entity.Comp3.Fixtures.First().Value;
+
+        foreach (var fixture in entity.Comp3.Fixtures)
+        {
+            if (fixture.Key == entity.Comp1.FixtureId)
+            {
+                mobFixtures = fixture.Value;
+            }
+        }
 
         if (physics.ContactCount == 0)
             return false;
@@ -236,7 +249,21 @@ public abstract partial class SharedMobCollisionSystem : EntitySystem
 
             var other = contact.OtherEnt(entity.Owner);
 
-            if (!MobQuery.TryComp(other, out var otherComp) || !PhysicsQuery.TryComp(other, out var otherPhysics))
+            if (!MobQuery.TryComp(other, out var otherComp) || !PhysicsQuery.TryComp(other, out var otherPhysics) || !FixturesQuery.TryComp(other, out var otherFixtures)) // Harmony addition: Added FixtureQuery
+                continue;
+
+            var otherMobFixtures = otherFixtures.Fixtures.First().Value;
+
+            foreach (var fixture in otherFixtures.Fixtures)
+            {
+                if (fixture.Key == entity.Comp1.FixtureId)
+                {
+                    otherMobFixtures = fixture.Value;
+                }
+            }
+
+            // If we're both blocked by airlocks OR we're both NOT blocked by them
+            if (((otherMobFixtures.CollisionMask & (int)CollisionGroup.HumanoidBlockLayer) == (int)CollisionGroup.HumanoidBlockLayer) ^ ((mobFixtures.CollisionMask & (int)CollisionGroup.HumanoidBlockLayer) == (int)CollisionGroup.HumanoidBlockLayer))
                 continue;
 
             var velocityProduct = Vector2.Dot(ourVelocity, otherPhysics.LinearVelocity);
