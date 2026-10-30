@@ -195,13 +195,19 @@ public abstract partial class SharedMobCollisionSystem : EntitySystem
         DirtyField(entity.Owner, entity.Comp1, nameof(MobCollisionComponent.Direction));
     }
 
-    /// <remarks>
-    ///  Harmony note | Tweaks for mob collision: All uses of this method should be commented out.
-    ///  If this is changed it should be fine to put it back
-    /// </remarks>
-    protected bool HandleCollisions(Entity<MobCollisionComponent, PhysicsComponent> entity, float frameTime)
+    protected bool HandleCollisions(Entity<MobCollisionComponent, PhysicsComponent, FixturesComponent> entity, float frameTime)
     {
         var physics = entity.Comp2;
+
+        var mobFixtures = entity.Comp3.Fixtures.First().Value;
+
+        foreach (var fixture in entity.Comp3.Fixtures)
+        {
+            if (fixture.Key == entity.Comp1.FixtureId)
+            {
+                mobFixtures = fixture.Value;
+            }
+        }
 
         if (physics.ContactCount == 0)
             return false;
@@ -244,6 +250,20 @@ public abstract partial class SharedMobCollisionSystem : EntitySystem
             var other = contact.OtherEnt(entity.Owner);
 
             if (!MobQuery.TryComp(other, out var otherComp) || !PhysicsQuery.TryComp(other, out var otherPhysics) || !FixturesQuery.TryComp(other, out var otherFixtures)) // Harmony addition: Added FixtureQuery
+                continue;
+
+            var otherMobFixtures = otherFixtures.Fixtures.First().Value;
+
+            foreach (var fixture in otherFixtures.Fixtures)
+            {
+                if (fixture.Key == entity.Comp1.FixtureId)
+                {
+                    otherMobFixtures = fixture.Value;
+                }
+            }
+
+            // If we're both blocked by airlocks OR we're both NOT blocked by them
+            if (((otherMobFixtures.CollisionMask & (int)CollisionGroup.HumanoidBlockLayer) == (int)CollisionGroup.HumanoidBlockLayer) ^ ((mobFixtures.CollisionMask & (int)CollisionGroup.HumanoidBlockLayer) == (int)CollisionGroup.HumanoidBlockLayer))
                 continue;
 
             var velocityProduct = Vector2.Dot(ourVelocity, otherPhysics.LinearVelocity);
