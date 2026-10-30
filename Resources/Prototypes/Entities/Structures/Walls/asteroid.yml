@@ -18,10 +18,11 @@
   # - type: SmoothEdge
 #End of Harmony change
     key: stone
-    additionalKeys:
-    - doors
-    index: 0
-    base: stone
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ stone, doors ]
+      base: stone
+      index: 0
   - type: Icon
     state: full
   - type: Sprite
@@ -459,7 +460,7 @@
   id: IronRockArtifactFragment
 
 - type: entity
-  parent: [ BaseRockGibtonite, BaseIronRockVisuals, IronRock ]
+  parent: [ BaseRockGibtonite, BaseIronRockVisuals, BaseAsteroidRock ]
   id: IronRockGibtonite
 
 - type: entity
@@ -497,8 +498,11 @@
     # key: rock
 # End of Harmony Change
     key: stone
-    index: 0
-    base: stone
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ stone, doors ]
+      base: stone
+      index: 0
   - type: Icon
     sprite: Structures/Walls/stone-dirt.rsi
     state: full

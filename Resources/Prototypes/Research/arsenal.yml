@@ -31,7 +31,6 @@
 #  - MagazinePistolSubMachineGunIncendiary
 #  - MagazineLightRifleIncendiary
 #  - SpeedLoaderMagnumIncendiary
-#  - MagazineShotgunIncendiary
 #  - MagazineBoxPistolIncendiary
 #  - MagazineBoxMagnumIncendiary
 #  - MagazineBoxLightRifleIncendiary
@@ -55,16 +54,16 @@
   id: NonlethalAmmunition
   name: research-technology-nonlethal-ammunition
   icon:
-    sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
-    state: beanbag
+    sprite: Objects/Weapons/Guns/Battery/disabler_smg.rsi
+    state: icon
   discipline: Arsenal
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - MagazineShotgunBeanbag
   - BoxShellTranquilizer
   - BoxBeanbag
   - WeaponDisabler
+  - WeaponDisablerSMG
 
 # Harmony change start - Remove special ammo types
 #- type: technology
@@ -88,21 +87,6 @@
 #  - MagazineBoxRifleUranium
 #  - BoxShotgunUranium
 # Harmony change end
-
-- type: technology
-  id: AdvancedRiotControl
-  name: research-technology-advanced-riot-control
-  icon:
-    sprite: Objects/Weapons/Melee/truncheon.rsi
-    state: icon
-  discipline: Arsenal
-  tier: 1
-  cost: 8000
-  recipeUnlocks:
-  - Truncheon
-  - TelescopicShield
-  - HoloprojectorSecurity
-  - WeaponDisablerSMG
 
 - type: technology
   id: ExplosiveTechnology
@@ -137,6 +121,20 @@
   - ClothingBackpackElectropack
 
 # Tier 2
+
+- type: technology
+  id: AdvancedRiotControl
+  name: research-technology-advanced-riot-control
+  icon:
+    sprite: Objects/Weapons/Melee/truncheon.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 2
+  cost: 8000
+  recipeUnlocks:
+  - Truncheon
+  - TelescopicShield
+  - HoloprojectorSecurity
 
 - type: technology
   id: ConcentratedLaserWeaponry

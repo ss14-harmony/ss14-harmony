@@ -27,3 +27,9 @@ uplink-sniper-ammo-desc = A box of 10 cartridges for the Hristov sniper rifle.
 uplink-ammo-bundle-name = Ammo Bundle
 ## Harmony - changed ammo bundle description
 uplink-ammo-bundle-desc = Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, 2 ammo boxes for the L6 SAW, and 3 magazines for the Bandit.
+
+uplink-ammo-frag-name = Frag Grenade
+uplink-ammo-frag-desc = A spare frag grenade for your China Lake grenade launcher.
+
+uplink-ammo-blast-name = Blast Grenade
+uplink-ammo-blast-desc = A spare blast grenade for your China Lake grenade launcher.

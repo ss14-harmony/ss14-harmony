@@ -1,4 +1,4 @@
-﻿- type: guideEntry
+- type: guideEntry
   id: Security
   name: guide-entry-security
   text: "/ServerInfo/Guidebook/Security/Security.xml"
@@ -6,7 +6,6 @@
   - Forensics
   - Defusal
   - CriminalRecords
-  - SpaceLaw
 
 - type: guideEntry
   id: Forensics
@@ -22,6 +21,7 @@
   id: CriminalRecords
   name: guide-entry-criminal-records
   text: "/ServerInfo/Guidebook/Security/CriminalRecords.xml"
+<<<<<<< HEAD
 
 # Harmony change - use custom space law.
 # - type: guideEntry
@@ -36,3 +36,5 @@
 #   name: guide-entry-rules-sl-crime-list
 #   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
 # End harmony
+=======
+>>>>>>> 107b6552856df306ba03f95334e0819b6b2be627

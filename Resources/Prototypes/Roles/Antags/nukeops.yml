@@ -131,7 +131,7 @@
     ears: ClothingHeadsetAltSyndicate
     gloves: ClothingHandsGlovesCombat
 #    outerClothing: ClothingOuterHardsuitSyndie Harmony Change: Makes nuclear operatives no longer start with the blood-red hardsuit
-    shoes: ClothingShoesBootsCombatFilled
+    shoes: ClothingShoesBootsMagSyndie
     id: SyndiOperativePDA
     pocket2: PlushieCarp
     belt: ClothingBeltMilitaryWebbing
@@ -184,7 +184,6 @@
   equipment:
     eyes: ClothingEyesHudSyndicateAgent
     outerClothing: ClothingOuterHardsuitSyndieMedic
-    shoes: ClothingShoesBootsMagSyndie
     id: SyndiCorpsmanPDA
     belt: ClothingBeltMilitaryWebbingMedFilled
   storage:

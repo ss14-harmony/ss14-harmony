@@ -5,8 +5,9 @@
   text: "/ServerInfo/Guidebook/SpaceStation14.xml"
   children:
   - Jobs
-  - Survival
   - Antagonists
+  - SpaceLaw
+  - Survival
   - Glossary
 
 - type: guideEntry
@@ -15,6 +16,20 @@
   text: "/ServerInfo/Guidebook/Glossary.xml"
 
 - type: guideEntry
-  id: Survival
-  name: guide-entry-survival
-  text: "/ServerInfo/Guidebook/Survival.xml"
+  id: SpaceLaw
+  name: guide-entry-rules-space-law
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
+  children:
+  - SpaceLawCrimeList
+
+# Harmony Change- User Custom Space Law
+#- type: guideEntry
+#  id: SpaceLawCrimeList
+#  name: guide-entry-rules-sl-crime-list
+#  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
+#
+#- type: guideEntry
+#  id: Survival
+#  name: guide-entry-survival
+#  text: "/ServerInfo/Guidebook/Survival.xml"
+# End Harmony Change

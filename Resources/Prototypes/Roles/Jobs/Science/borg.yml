@@ -30,5 +30,6 @@
       time: 4h # harmony: 10h -> 4h
   icon: JobIconBorg
   supervisors: job-supervisors-rd
+  guides: [ Cyborgs ]
   jobEntity: PlayerBorgBattery
   applyTraits: false

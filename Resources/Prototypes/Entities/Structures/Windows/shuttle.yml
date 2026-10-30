@@ -31,8 +31,34 @@
             min: 1
             max: 2
   - type: IconSmooth
-    key: shuttle # Harmony Change: Adds IconSmoothing Key
-    base: swindow
+  # Harmony Change: Adds IconSmoothing Key. Commented out for now due to the Respritening.
+  #  key: shuttle
+  #  base: swindow
+  # End Harmony Change
+    key: windows-shuttle
+    states:
+    - !type:CardinalCornerSpriteSmoothing
+      mask: [ windows-shuttle ]
+      altMask:
+      - windows
+      - windows-reinf
+      - windows-tinted
+      - windows-plasma
+      - windows-plasma-reinf
+      - windows-uranium
+      - windows-uranium-reinf
+      - windows-exo
+      - windows-plastitanium
+      - windows-regal
+      - walls-exo
+      - walls-shuttle
+      - walls-plastitanium
+      - walls-material
+      - walls-marble
+      - walls
+      - grilles
+      - doors
+      base: window
   - type: Construction
     graph: Window
     node: shuttleWindow
@@ -58,18 +84,25 @@
   - type: Sprite
     drawdepth: WallTops
     sprite: Structures/Windows/window-diagonal-shuttle.rsi
-    state: state0
   - type: Tag
     tags:
     - Diagonal
     - Window
   - type: IconSmooth
-    mode: Diagonal
 # Start of Harmony Change: Updates IconSmooth key. Commented out for now due to the Respritening.
+#    mode: Diagonal
 #    key: shuttle
+#    base: state
 # End of Harmony Change
-    key: walls
-    base: state
+    states:
+    - !type:DiagonalSpriteSmoothing
+      mask:
+      - walls
+      - windows
+      - grilles
+      - marble
+      - doors
+      base: state
   - type: Icon
     sprite: Structures/Windows/window-diagonal-shuttle.rsi
     state: state0

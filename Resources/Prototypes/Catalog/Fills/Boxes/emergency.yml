@@ -24,6 +24,7 @@
         - id: EmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
+        - id: PillPotassiumIodide
   - type: Sprite
     layers:
     - state: internals
@@ -43,6 +44,7 @@
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
+        - id: PillPotassiumIodide
   - type: Sprite
     layers:
     - state: internals
@@ -62,6 +64,7 @@
         - id: ExtendedEmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
+        - id: PillPotassiumIodide
   - type: Sprite
     layers:
 # Start of Harmony Change: Updates Engineering Survival Box Sprite States
@@ -85,6 +88,7 @@
         - id: ExtendedEmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
+        - id: PillPotassiumIodide
   - type: Sprite
     layers:
 # Start of Harmony Change: Updates Engineering Survival Box Sprite States
@@ -107,6 +111,7 @@
         - id: EmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
+        - id: PillPotassiumIodide
   # Harmony start: custom security survival box sprite
   - type: Sprite
     layers:
@@ -128,6 +133,7 @@
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
+        - id: PillPotassiumIodide
   - type: Sprite
     layers:
 # Start of Harmony Change: Updates Security Survival Box Sprite States
@@ -150,6 +156,7 @@
         - id: EmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
+        - id: PillPotassiumIodide
   # Harmony start: custom medical survival box sprites
   - type: Sprite
     layers:
@@ -171,6 +178,7 @@
         - id: EmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare
+        - id: PillPotassiumIodide
   - type: Sprite
     layers:
 # Start of Harmony Change: Updates Medical Survival Box Sprite States
@@ -192,6 +200,7 @@
         - id: EmergencyFunnyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
+        - id: PillPotassiumIodide
 
 - type: entity
   parent: BoxSurvivalHug
@@ -206,6 +215,7 @@
         - id: EmergencyNitrogenTankFilled # This should probably be replaced by an equivalent to the funny emergency oxygen tank, once that exists
         - id: EmergencyMedipen
         - id: Flare
+        - id: PillPotassiumIodide
 
 # Primarily intended for antagonists that spawn outside the station (e.g ninjas, wizards)
 # Contains food and water because, unlike normal crew, we don't want to force them to seek food mid-round.

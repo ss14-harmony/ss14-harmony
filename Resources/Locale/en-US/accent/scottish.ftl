@@ -1,4 +1,4 @@
-﻿#Harmony change- replaced with DeltaV's Scottish Accent
+#Harmony change- replaced with DeltaV's Scottish Accent
 #accent-scottish-words-1 = do
 #accent-scottish-words-replace-1 = dae
 

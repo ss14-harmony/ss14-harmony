@@ -1,4 +1,4 @@
-﻿laws-number-wrapper = [bold]Law { $lawnumber }:[/bold] { $lawstring }
+laws-number-wrapper = [bold]Law { $lawnumber }:[/bold] { $lawstring }
 
 law-crewsimov-name = Crewsimov
 # Harmony Change Start - Remove Inaction

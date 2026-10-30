@@ -33,10 +33,13 @@
     deviceNetId: Wireless
     transmitFrequencyId: CrewMonitor
     receiveFrequencyId: SuitSensor
+    prefix: device-address-prefix-crew-monitoring-server
     autoConnect: false
-  - type: WirelessNetworkConnection
-    range: 10000 # Delta-V Maximises the range for the Crew Monitor Server to make it work for Listening Post
+  - type: WirelessNetwork
+    range: 10000 # Delta-V 500 -> 10000, Maximises the range for the Crew Monitor Server to make it work for Listening Post
   - type: StationLimitedNetwork
+  - type: StationTracker
+    examinable: true
   - type: ApcPowerReceiver
     powerLoad: 200
   - type: ExtensionCableReceiver

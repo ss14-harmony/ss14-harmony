@@ -1,9 +1,8 @@
-using Content.Server.Antag;
-using Content.Server.GameTicking.Rules.Components;
-using Content.Server.Pinpointer;
+using Content.Shared.Antag;
+using Content.Shared.GameTicking.Components;
+using Content.Shared.Pinpointer;
 using Content.Server.StationEvents.Components;
 using Content.Shared.EntityTable;
-using Content.Shared.GameTicking.Components;
 using Content.Shared.Station.Components;
 using Content.Shared.Storage;
 using Robust.Shared.Map;
@@ -53,37 +52,37 @@ public sealed partial class VentCrittersRule : StationEventSystem<VentCrittersRu
         base.Added(uid, comp, gameRule, args);
     }
 
-    protected override void Ended(EntityUid uid, VentCrittersRuleComponent comp, GameRuleComponent gameRule, GameRuleEndedEvent args)
+    protected override void Ended(Entity<VentCrittersRuleComponent> rule, ref GameRuleEndedEvent args)
     {
-        base.Ended(uid, comp, gameRule, args);
+        base.Ended(rule, ref args);
 
-        if (comp.Location is not {} coords)
+        if (rule.Comp.Location is not {} coords)
             return;
 
         var players = _antag.GetActivePlayerCount(_player.Sessions);
-        var min = comp.Min * players / comp.PlayerRatio;
-        var max = comp.Max * players / comp.PlayerRatio;
+        var min = rule.Comp.Min * players / rule.Comp.PlayerRatio;
+        var max = rule.Comp.Max * players / rule.Comp.PlayerRatio;
         var count = Math.Max(RobustRandom.Next(min, max), 1);
-        Log.Info($"Spawning {count} critters for {ToPrettyString(uid):rule}");
+        Log.Info($"Spawning {count} critters for {ToPrettyString(rule)}");
         for (int i = 0; i < count; i++)
         {
-            foreach (var spawn in _entityTable.GetSpawns(comp.Table))
+            foreach (var spawn in _entityTable.GetSpawns(rule.Comp.Table))
             {
                 Spawn(spawn, coords);
             }
         }
 
-        if (comp.SpecialEntries.Count == 0)
+        if (rule.Comp.SpecialEntries.Count == 0)
             return;
 
         // guaranteed spawn
-        var specialEntry = RobustRandom.Pick(comp.SpecialEntries);
+        var specialEntry = RobustRandom.Pick(rule.Comp.SpecialEntries);
         Spawn(specialEntry.PrototypeId, coords);
     }
 
     private void PickLocation(VentCrittersRuleComponent comp)
     {
-        if (!TryGetRandomStation(out var station))
+        if (!Station.TryGetRandomStation<StationEventEligibleComponent>(out var station))
             return;
 
         var locations = EntityQueryEnumerator<VentCritterSpawnLocationComponent, TransformComponent>();

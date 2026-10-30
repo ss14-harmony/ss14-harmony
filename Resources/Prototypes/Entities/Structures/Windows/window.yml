@@ -56,9 +56,32 @@
   - type: IconSmooth
 # Start of Harmony Change: Updates IconSmooth key. Commented out for now due to the Respritening.
 #    key: station
+#    base: window
 # End of Harmony Change
-    key: walls
-    base: window
+    key: windows
+    states:
+    - !type:CardinalCornerSpriteSmoothing
+      mask: [ windows ]
+      altMask:
+      - windows-reinf
+      - windows-tinted
+      - windows-plasma
+      - windows-plasma-reinf
+      - windows-uranium
+      - windows-uranium-reinf
+      - windows-exo
+      - windows-shuttle
+      - windows-plastitanium
+      - windows-regal
+      - walls-exo
+      - walls-shuttle
+      - walls-plastitanium
+      - walls-material
+      - walls-marble
+      - walls
+      - grilles
+      - doors
+      base: window
   - type: PlacementReplacement
     key: walls
   - type: InteractionPopup
@@ -126,7 +149,30 @@
   - type: Icon
     sprite: Structures/Windows/window-tinted.rsi
   - type: IconSmooth
-    base: twindow
+    key: windows-tinted
+    states:
+    - !type:CardinalCornerSpriteSmoothing
+      mask: [ windows-tinted ]
+      altMask:
+      - windows
+      - windows-reinf
+      - windows-plasma
+      - windows-plasma-reinf
+      - windows-uranium
+      - windows-uranium-reinf
+      - windows-exo
+      - windows-shuttle
+      - windows-plastitanium
+      - windows-regal
+      - walls-exo
+      - walls-shuttle
+      - walls-plastitanium
+      - walls-material
+      - walls-marble
+      - walls
+      - grilles
+      - doors
+      base: window
   - type: Construction
     graph: Window
     node: tintedWindow
@@ -344,7 +390,6 @@
 #    sprite: _Harmony/Structures/Windows/window_diagonal.rsi
 # End of Harmony Change
     sprite: Structures/Windows/window-base-diagonal.rsi
-    state: state0
   - type: Tag
     tags:
     - Diagonal
@@ -357,8 +402,15 @@
 #  - type: Icon
 #    sprite: _Harmony/Structures/Windows/window_diagonal.rsi
 # End of Harmony Change
-    key: walls
-    base: state
+    states:
+    - !type:DiagonalSpriteSmoothing
+      mask:
+      - walls
+      - windows
+      - grilles
+      - marble
+      - doors
+      base: state
   - type: Icon
     sprite: Structures/Windows/window-base-diagonal.rsi
     state: state0
