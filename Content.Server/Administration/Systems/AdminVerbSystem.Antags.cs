@@ -46,10 +46,10 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId NinjaRule = "NinjaSpawn";
     private static readonly ProtoId<AntagSpecifierPrototype> NinjaSpec = "SpaceNinja";
     //Start Harmony change: Conspirators and Blood Bound
-    private static readonly EntProtoId DefaultBloodBrotherRule = "BloodBrothers";
-    private static readonly ProtoId<AntagSpecifierPrototype> NinjaSpec = "BloodBrother";
-    private static readonly EntProtoId DefaultConspiratorRule = "Conspirators";
-    private static readonly ProtoId<AntagSpecifierPrototype> NinjaSpec = "Conspirator";
+    private static readonly EntProtoId BloodBrotherRule = "BloodBrothers";
+    private static readonly ProtoId<AntagSpecifierPrototype> BloodBrotherSpec = "BloodBrother";
+    private static readonly EntProtoId ConspiratorRule = "Conspirators";
+    private static readonly ProtoId<AntagSpecifierPrototype> ConspiratorSpec = "Conspirator";
     //End Harmony change
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
 
@@ -258,7 +258,7 @@ public sealed partial class AdminVerbSystem
             Icon = new SpriteSpecifier.Rsi(new("/Textures/_Harmony/Interface/Misc/job_icons.rsi"), "BloodBrother"),
             Act = () =>
             {
-                _antag.ForceMakeAntag<BloodBrotherRuleComponent>(targetPlayer, DefaultBloodBrotherRule);
+                _antag.ForceMakeAntag<BloodBrotherRuleComponent>(targetPlayer, BloodBrotherRule, BloodBrotherSpec);
             },
             Impact = LogImpact.High,
             Message = string.Join(": ", bloodBrotherName, Loc.GetString("admin-verb-make-blood-brother")),
@@ -273,7 +273,7 @@ public sealed partial class AdminVerbSystem
             Icon = new SpriteSpecifier.Rsi(new("/Textures/_Harmony/Interface/Misc/job_icons.rsi"), "Conspirator"),
             Act = () =>
             {
-                _antag.ForceMakeAntag<ConspiratorRuleComponent>(targetPlayer, DefaultConspiratorRule);
+                _antag.ForceMakeAntag<ConspiratorRuleComponent>(targetPlayer, ConspiratorRule, ConspiratorSpec);
             },
             Impact = LogImpact.High,
             Message = string.Join(": ", conspiratorName, Loc.GetString("admin-verb-make-conspirator")),

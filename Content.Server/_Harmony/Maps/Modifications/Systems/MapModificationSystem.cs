@@ -1,5 +1,5 @@
 ﻿using Content.Server.GameTicking;
-using Content.Server.Station.Systems;
+using Content.Shared.Station.Systems;
 using Content.Shared._Harmony.EntitySelector;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;

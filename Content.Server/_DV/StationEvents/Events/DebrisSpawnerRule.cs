@@ -4,7 +4,7 @@
 * See AGPLv3.txt for details.
 */
 
-using Content.Server.GameTicking.Rules;
+using Content.Shared.GameTicking;
 using Content.Server.Station.Components;
 using Content.Server.StationEvents.Components;
 using Content.Shared.CCVar;

@@ -19,7 +19,7 @@
                 <Button Name="QuitButton" Text="{Loc 'queue-quit'}" Access="Public"
                     HorizontalAlignment="Right" HorizontalExpand="True" />
             </BoxContainer>
-            <controls:HighDivider />
+            <controls:Separator StyleClasses="HighDivider" />
             <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
                 <BoxContainer Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextureRect Name="Logo" Stretch="KeepCentered" Margin="20 0 0 0"/>
