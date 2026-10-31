@@ -1,4 +1,4 @@
-- type: factionIcon
+- type: statusIcon
   id: BloodBrotherFaction
   isShaded: true
   priority: 11
@@ -10,7 +10,7 @@
     sprite: /Textures/_Harmony/Interface/Misc/job_icons.rsi
     state: BloodBrother
 
-- type: factionIcon
+- type: statusIcon
   id: ConspiratorFaction
   isShaded: true
   priority: 11

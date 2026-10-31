@@ -21,7 +21,7 @@ public sealed partial class CrewMedalSystem : SharedCrewMedalSystem
 
         SubscribeLocalEvent<CrewMedalComponent, ClothingGotEquippedEvent>(OnEquipped);
         SubscribeLocalEvent<CrewMedalComponent, CrewMedalReasonChangedMessage>(OnReasonChanged);
-        SubscribeLocalEvent<RoundEndTextAppendEvent>(OnRoundEndText);
+        // SubscribeLocalEvent<RoundEndTextAppendEvent>(OnRoundEndText);
     }
 
     private void OnEquipped(Entity<CrewMedalComponent> medal, ref ClothingGotEquippedEvent args)

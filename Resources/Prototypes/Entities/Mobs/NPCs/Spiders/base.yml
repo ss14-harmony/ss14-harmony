@@ -38,7 +38,7 @@
     solutions:
     - SolutionVenomSpider
   - type: MeleeChemicalInjector
-    transferAmount: 0.75
+    transferAmount: 1.5 # harmony change - part of tarantula buff PR 0.75 -> 1.5
     solution: melee
   - type: ReplacementAccent
     accent: xeno

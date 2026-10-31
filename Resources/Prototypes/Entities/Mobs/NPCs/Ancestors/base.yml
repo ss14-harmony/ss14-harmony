@@ -10,7 +10,8 @@
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: monkey
-      sprite: Mobs/Animals/Ancestors/monkey.rsi
+      # sprite: Mobs/Animals/Ancestors/monkey.rsi
+      sprite: _Harmony/Mobs/Animals/monkey.rsi # Harmony Change: Updates Monkey Sprite Pathing
     - map: [ "jumpsuit" ]
     - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
       color: "#ffffff"

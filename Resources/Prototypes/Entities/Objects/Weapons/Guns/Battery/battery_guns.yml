@@ -659,13 +659,8 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
   - type: BatteryAmmoProvider
-<<<<<<< HEAD
-    proto: BulletDisablerSmg
-    fireCost: 33 # Harmony Change - Reverts to Pre-Buff (25 -> 33)
-=======
     proto: BulletDisablerSmgSlowing
     fireCost: 15.6 # 64 shots, 2 stamcrits, +7 miss buffer per stamcrit (256 stam damage total)
->>>>>>> 107b6552856df306ba03f95334e0819b6b2be627
   - type: MagazineVisuals
     magState: mag
     steps: 5

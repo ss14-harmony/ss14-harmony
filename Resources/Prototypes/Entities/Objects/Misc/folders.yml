@@ -558,10 +558,6 @@
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: BasicDevice
-  - type: WirelessNetworkConnection
+  - type: WirelessNetwork
     range: 200
-  - type: DeviceLinkSource
-    range: 200
-    ports:
-    - OrderSender
   #End of Harmony Change

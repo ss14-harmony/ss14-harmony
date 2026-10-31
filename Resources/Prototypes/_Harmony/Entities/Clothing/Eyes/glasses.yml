@@ -31,7 +31,8 @@
     - type: IdentityBlocker
       coverage: EYES
     - type: StealTarget
-      stealGroup: ClothingEyesGlassesMedical
+      stealGroup:
+      - ClothingEyesGlassesMedical
 
 - type: entity
   parent: [ClothingEyesBase, BaseCargoContraband]

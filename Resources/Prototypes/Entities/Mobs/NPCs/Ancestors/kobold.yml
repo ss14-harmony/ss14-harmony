@@ -143,3 +143,12 @@
   suffix: NukeOps
   components:
   - type: NukeOperative
+# Harmony Change - Gives nukie kobolds nukie access
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: Access
+    tags:
+    - NuclearOperative
+    - SyndicateAgent
+# Harmony Change End

@@ -65,6 +65,15 @@
   suffix: NukeOps
   components:
   - type: NukeOperative
+  # Harmony Change - Gives nukie monkey nukie access
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: Access
+    tags:
+    - NuclearOperative
+    - SyndicateAgent
+  # Harmony Change End
 
 - type: entity
   parent: MobMonkey

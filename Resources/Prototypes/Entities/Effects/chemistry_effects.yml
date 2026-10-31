@@ -178,7 +178,6 @@
         - WallLayer
   - type: Occluder
   - type: Appearance
-  - type: SmoothEdge
 # Start of Harmony Change: Removes IconSmoothing
 #  - type: IconSmooth
 #    key: foam

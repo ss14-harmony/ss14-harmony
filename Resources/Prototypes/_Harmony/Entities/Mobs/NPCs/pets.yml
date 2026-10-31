@@ -77,4 +77,5 @@
     - CannotSuicide
     - VimPilot
   - type: StealTarget
-    stealGroup: AnimalGlorp
+    stealGroup:
+    - AnimalGlorp
