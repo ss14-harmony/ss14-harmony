@@ -1,5 +1,5 @@
 using Content.Server._DV.StationEvents.Components;
-using Content.Server.GameTicking.Rules;
+using Content.Shared.GameTicking;
 using Content.Server.StationEvents.Events;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Station.Components;
@@ -20,7 +20,7 @@ public sealed partial class LoadFarGridRule : StationEventSystem<LoadFarGridRule
     {
         base.Added(uid, comp, rule, args);
 
-        if (!TryGetRandomStation(out var station) || !TryComp<StationDataComponent>(station, out var data))
+        if (!Station.TryGetRandomStation(out var station) || !TryComp<StationDataComponent>(station, out var data))
         {
             Log.Error($"{ToPrettyString(uid):rule} failed to find a station!");
             ForceEndSelf(uid, rule);

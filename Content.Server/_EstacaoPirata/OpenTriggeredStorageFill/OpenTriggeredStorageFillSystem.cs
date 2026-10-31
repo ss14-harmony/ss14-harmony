@@ -44,7 +44,7 @@ public sealed partial class OpenTriggeredStorageFillSystem : EntitySystem
         foreach (var item in spawnItems)
         {
             DebugTools.Assert(!_prototype.Index<EntityPrototype>(item)
-                .HasComponent(typeof(RandomSpawnerComponent)));
+                .HasComp<RandomSpawnerComponent>(Factory));
             var ent = Spawn(item, coordinates);
 
             if (!TryComp<ItemComponent>(ent, out var itemComp))

@@ -397,7 +397,7 @@ namespace Content.Server.Connection
         {
             var isAdmin = await _db.GetAdminDataForAsync(userId) != null;
             var hasBypass = isAdmin && _cfg.GetCVar(CCVars.AdminBypassMaxPlayers);
-            _ticker ??= _entityManager.SystemOrNull<GameTicker>();
+            _ticker ??= _entityManager.SystemOrNull<ServerGameTicker>();
             var wasInGame = _ticker != null &&
                             _ticker.PlayerGameStatuses.TryGetValue(userId, out var status) &&
                             status == PlayerGameStatus.JoinedGame;

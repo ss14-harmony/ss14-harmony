@@ -31,7 +31,7 @@ public sealed partial class ServerGameTicker
     {
         var preset = CurrentPreset ?? Preset;
         // Harmony start
-        var playerCountAdminAdjustment = _cfg.GetCVar(CCVars.AdminsCountInReportedPlayerCount)
+        var playerCountAdminAdjustment = Cfg.GetCVar(CCVars.AdminsCountInReportedPlayerCount)
             ? 0
             : _adminManager.ActiveAdmins.Count();
         var playerCount = _joinQueue.ActualPlayersCount - playerCountAdminAdjustment;

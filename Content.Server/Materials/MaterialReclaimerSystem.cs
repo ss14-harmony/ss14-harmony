@@ -173,8 +173,8 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
         if (_destructible.CanDestroy(item) && component.ReclaimSolutions)
             SpawnChemicalsFromComposition(uid, item, completion, true, component, xform);
 
-        if (shouldDestroy) // Harmony
-            _destructible.DestroyEntity(item);
+        // if (shouldDestroy) // Harmony BINGO TEST
+        _destructible.DestroyEntity(item);
     }
 
     private void SpawnMaterialsFromComposition(EntityUid reclaimer,

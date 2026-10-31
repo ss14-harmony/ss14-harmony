@@ -98,8 +98,8 @@ namespace Content.Server.GameTicking
                         ? Loc.GetString("player-first-join-message", ("name", args.Session.Name))
                         : Loc.GetString("player-join-message", ("name", args.Session.Name)));
 
-                    if (firstConnection && _cfg.GetCVar(CCVars.AdminNewPlayerJoinSound))
-                        _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Effects/newplayerping.ogg"),
+                    if (firstConnection && Cfg.GetCVar(CCVars.AdminNewPlayerJoinSound))
+                        Audio.PlayGlobal(new SoundPathSpecifier("/Audio/Effects/newplayerping.ogg"),
                             Filter.Empty().AddPlayers(_adminManager.ActiveAdmins), false,
                             audioParams: new AudioParams { Volume = -5f });
                     // Harmony end
