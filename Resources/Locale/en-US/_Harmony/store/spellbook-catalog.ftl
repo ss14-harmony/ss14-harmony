@@ -6,6 +6,9 @@ spellbook-pitbull-desc = Conjures three pitbulls to attack nearby bystanders, po
 spellbook-item-curse-name = Item Curse
 spellbook-item-curse-desc = Place an electrifying hex on a held item and activate it on command! You are not immune to the power of your own curse.
 
+spellbook-gizard-name = Summon Gizard
+spellbook-gizard-desc = Summons Gizard the Mighty Wizard Lizard from Willoughby!
+
 # Equipment
 
 spellbook-staff-slipping-name = Staff of Slipping

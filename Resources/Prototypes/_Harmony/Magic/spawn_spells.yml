@@ -34,3 +34,20 @@
     event: !type:InstantSpawnSpellEvent
       prototype: MobSmashedPitbullWizard
       posData: !type:TargetInFront
+
+- type: entity
+  parent: BaseAction
+  id: ActionGizardSummon
+  name: Summon Gizard
+  description: Summons the mighty Gizard, the Lizard Wizard
+  components:
+  - type: Action
+    useDelay: 10
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Harmony/Objects/Magic/magicactions.rsi
+      state: gizard_spell
+  - type: InstantAction
+    event: !type:InstantSpawnSpellEvent
+    prototype: MobLizardGizard
+    posData: !type:TargetInFront
