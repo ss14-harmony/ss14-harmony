@@ -37,17 +37,20 @@
 
 - type: entity
   parent: BaseAction
-  id: ActionGizardSummon
-  name: Summon Gizard
-  description: Summons the mighty Gizard, the Lizard Wizard
+  id: ActionGizzardSummon
+  name: Summon Gizzard
+  description: Summons the mighty Gizzard, the Lizard Wizard
   components:
   - type: Action
     useDelay: 10
     itemIconStyle: BigAction
     icon:
       sprite: _Harmony/Objects/Magic/magicactions.rsi
-      state: gizard_spell
+      state: gizzard_spell
   - type: InstantAction
     event: !type:InstantSpawnSpellEvent
-    prototype: MobLizardGizard
-    posData: !type:TargetInFront
+      prototype: SpawnPointGhostGizzard
+  - type: SpeakOnAction
+    sentence: action-speech-spell-gizzard
+  - type: LimitedCharges
+    maxCharges: 1

@@ -48,10 +48,10 @@
     stock: 1
 
 - type: listing
-  id: SpellbookGizard
-  name: spellbook-gizard-name
-  description: spellbook-gizard-desc
-  productAction: ActionGizardSummon
+  id: SpellbookGizzard
+  name: spellbook-gizzard-name
+  description: spellbook-gizzard-desc
+  productAction: ActionGizzardSummon
   cost:
     WizCoin: 0
   categories:

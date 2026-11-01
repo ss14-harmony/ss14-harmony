@@ -41,3 +41,5 @@
         Piercing: 0
     soundHit:
       path: /Audio/Items/Toys/weh.ogg
+  - type: StaminaDamageOnCollide
+    damage: 30
