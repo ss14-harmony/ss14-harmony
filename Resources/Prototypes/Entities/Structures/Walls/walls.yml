@@ -957,7 +957,6 @@
 # Start of Harmony Change: Adds IconSmooth key
   - type: IconSmooth
     key: shuttle
-    base: state
 # End of Harmony Change
 
 - type: entity

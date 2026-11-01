@@ -1,7 +1,6 @@
 # Harmony recipes:
 - type: microwaveMealRecipe
   id: RecipeBungoBomber
-  name: bungobomber recipe
   result: BungoBomber
   time: 20
   secretRecipe: true
@@ -13,7 +12,6 @@
 
 - type: microwaveMealRecipe
   id: RecipePeanutButterJellySandwich
-  name: peanut butter jelly sandwich recipe
   result: FoodBakedPeanutButterJellySandwich
   time: 10
   group: Dessert
@@ -25,7 +23,6 @@
 
 - type: microwaveMealRecipe
   id: RecipeJellyToastAlt
-  name: jelly toast alternate recipe
   result: FoodBreadJellySlice
   time: 5
   group: Breads

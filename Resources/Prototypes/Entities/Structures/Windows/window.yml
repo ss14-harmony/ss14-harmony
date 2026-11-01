@@ -395,8 +395,8 @@
     - Diagonal
     - Window
   - type: IconSmooth
-    mode: Diagonal
 # Start of Harmony Change: Updates IconSmooth key and sprite pathing. Commented out for now due to the Respritening.
+#    mode: Diagonal
 #    key: station
 #    base: state
 #  - type: Icon
