@@ -205,6 +205,8 @@
     - type: Item
       sprite: _Harmony/Objects/Weapons/Melee/Shields/buckler.rsi
       size: Ginormous
+      shape:
+      - 0,0,2,2
       #heldPrefix: buckler
     - type: Clothing
       sprite: _Harmony/Objects/Weapons/Melee/Shields/buckler.rsi
@@ -212,9 +214,6 @@
       slots:
       - suitStorage
 # End of Harmony Change
-      heldPrefix: buckler
-      shape:
-      - 0,0,2,2
     - type: Blocking
       passiveBlockModifier:
         flatReductions:
