@@ -47,8 +47,8 @@ public sealed partial class SafetyNetSystem : EntitySystem
     public float MaxDistance = 2000f;
     public float PlayerCheck = 12f;
     public float WallCheck = 3f;
-    public TimeSpan SafetyNetInitialDelay = TimeSpan.FromMinutes(.5);
-    public TimeSpan SafetyNetDelay = TimeSpan.FromSeconds(5);
+    public TimeSpan SafetyNetInitialDelay = TimeSpan.FromMinutes(3);
+    public TimeSpan SafetyNetDelay = TimeSpan.FromSeconds(45);
     public SoundSpecifier DefaultSafetyNetSfx = new SoundPathSpecifier("/Audio/Effects/space_wind.ogg");
 
     public override void Initialize()
@@ -119,7 +119,7 @@ public sealed partial class SafetyNetSystem : EntitySystem
                     if (fixtures.Fixtures.Values.First().CollisionLayer == (int)CollisionGroup.WallLayer)
                     {
                         Queued.Remove(uid);
-                        Queued.Add(uid, queueTime); // in case what they're close to was a shuttle
+                        Queued.Add(uid, queueTime); // in case what they were close to was a shuttle
                         return;
                     }
                 }
@@ -192,12 +192,12 @@ public sealed partial class SafetyNetSystem : EntitySystem
 
     private void OnTrackedIncapacitation(MobStateChangedEvent ev)
     {
+        if(!Tracked.Contains(ev.Target))
+            return;
+
         if (_mobState.IsIncapacitated(ev.Target))
         {
-            if (!Tracked.Contains(ev.Target) || Queued.ContainsKey(ev.Target))
-                return;
-
-            if (!CanSafetyNet(ev.Target))
+            if (Queued.ContainsKey(ev.Target))
                 return;
 
             var queueTime = _timing.CurTime + SafetyNetInitialDelay;
@@ -206,7 +206,7 @@ public sealed partial class SafetyNetSystem : EntitySystem
         }
         else
         {
-            if (!Tracked.Contains(ev.Target) || !Queued.ContainsKey(ev.Target))
+            if (!Queued.ContainsKey(ev.Target))
                 return;
 
             Queued.Remove(ev.Target);
