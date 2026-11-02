@@ -17,6 +17,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: EncryptionKeyHolder
+  - type: ContainerContainer
+    containers:
+      key_slots: !type:Container
 
 - type: entity
   id: PAIAtmosSensorDummy
