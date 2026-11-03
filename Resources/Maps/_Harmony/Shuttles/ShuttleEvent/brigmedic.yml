@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
-  engineVersion: 290.0.0
+  category: Grid
+  engineVersion: 294.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/20/2026 05:35:55
-  entityCount: 292
-maps:
-- 131
+  time: 11/03/2026 05:41:47
+  entityCount: 291
+maps: []
 grids:
 - 1
-orphans: []
+orphans:
+- 1
 nullspace:
 - 289
 - 290
@@ -33,7 +33,7 @@ entities:
     - type: MetaData
       name: NT-Boxcar
     - type: Transform
-      parent: 131
+      parent: invalid
       pos: -0.46875,0.14441329
     - type: MapGrid
       chunks:
@@ -145,18 +145,6 @@ entities:
       chunkHistory: {}
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
-  - uid: 131
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: ChunkContainer
-      chunkEntities: []
-    - type: OccluderTree
 - proto: AirlockGlassShuttle
   entities:
   - uid: 54
@@ -1502,11 +1490,11 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         59:
-        - - Pressed
-          - DoorBolt
+        - source: Pressed
+          sink: DoorBolt
         60:
-        - - Pressed
-          - DoorBolt
+        - source: Pressed
+          sink: DoorBolt
 - proto: ShuttleWindow
   entities:
   - uid: 19
@@ -1575,11 +1563,11 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         59:
-        - - Pressed
-          - DoorBolt
+        - source: Pressed
+          sink: DoorBolt
         60:
-        - - Pressed
-          - DoorBolt
+        - source: Pressed
+          sink: DoorBolt
 - proto: SMESBasic
   entities:
   - uid: 192

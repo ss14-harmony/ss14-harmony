@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
-  engineVersion: 290.0.0
+  category: Grid
+  engineVersion: 294.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/20/2026 05:36:38
-  entityCount: 152
-maps:
-- 148
+  time: 11/03/2026 05:37:21
+  entityCount: 151
+maps: []
 grids:
 - 1
-orphans: []
+orphans:
+- 1
 nullspace:
 - 149
 - 150
@@ -32,7 +32,7 @@ entities:
     - type: MetaData
       name: RV-Fleetwood Bounder
     - type: Transform
-      parent: 148
+      parent: invalid
       pos: -0.5208333,-0.567756
     - type: MapGrid
       chunks:
@@ -110,18 +110,6 @@ entities:
       chunkHistory: {}
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
-  - uid: 148
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: ChunkContainer
-      chunkEntities: []
-    - type: OccluderTree
 - proto: AirlockShuttle
   entities:
   - uid: 3

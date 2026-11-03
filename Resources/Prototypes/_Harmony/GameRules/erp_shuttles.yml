@@ -6,4 +6,4 @@
     startAnnouncement: station-event-erp-shuttle-incoming
     weight: 0 #  Admin only.
   - type: LoadMapRule
-    preloadedGrid: ShuttleERPSmall
+    gridPath: /Maps/_Harmony/Shuttles/ShuttleEvent/ERPSmall.yml
