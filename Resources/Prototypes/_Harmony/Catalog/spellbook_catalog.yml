@@ -53,7 +53,7 @@
   description: spellbook-gizzard-desc
   productAction: ActionGizzardSummon
   cost:
-    WizCoin: 0
+    WizCoin: 2
   categories:
   - SpellbookUtility
   conditions:

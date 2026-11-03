@@ -42,7 +42,6 @@
   description: Summons the mighty Gizzard, the Lizard Wizard
   components:
   - type: Action
-    useDelay: 10
     itemIconStyle: BigAction
     icon:
       sprite: _Harmony/Objects/Magic/magicactions.rsi
