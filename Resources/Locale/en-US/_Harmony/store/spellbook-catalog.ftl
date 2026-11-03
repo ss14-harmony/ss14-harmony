@@ -7,7 +7,7 @@ spellbook-item-curse-name = Item Curse
 spellbook-item-curse-desc = Place an electrifying hex on a held item and activate it on command! You are not immune to the power of your own curse.
 
 spellbook-gizzard-name = Summon Gizzard
-spellbook-gizzard-desc = Summons Gizzard the Mighty Wizard Lizard from Willoughby!
+spellbook-gizzard-desc = Summons Gizzard the Mighty Wizard Lizard from Willoughby! He can stun enemy and inject you his healing venom.
 
 # Equipment
 
