@@ -2,7 +2,7 @@
   parent: BaseAction
   id: ActionWehball
   name: Weball
-  description: Forcibly fires a lizard plushy at your target.
+  description: Forcibly fires a lizard plushie at your target.
   components:
   - type: Magic
   - type: Action

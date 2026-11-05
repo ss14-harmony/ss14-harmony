@@ -54,7 +54,7 @@
     actions:
     - ActionBlink
     - ActionWehball
-    - ActionHealingVenomSpell
+    - ActionHealingBiteSpell
   - type: Puller
     needsHands: false
   - type: MovementSpeedModifier
