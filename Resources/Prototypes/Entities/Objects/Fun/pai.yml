@@ -26,7 +26,11 @@
       enum.StationMapUiKey.Key:
         type: StationMapBoundUserInterface
         requireInputValidation: false
-      # Harmony Additions: pAI Encryption and Atmospheric sensor
+      # Start of Harmony changes:
+      enum.GeneralStationRecordConsoleKey.Key:
+        type: GeneralStationRecordConsoleBoundUserInterface
+        requireInputValidation: false
+      # Harmony Addition: pAI Encryption and Atmospheric sensor
       enum.GasAnalyzerUiKey.Key:
         type: GasAnalyzerBoundUserInterface
         requireInputValidation: false
@@ -111,11 +115,12 @@
     tags:
     - SiliconEmotes
   # Start Harmony Changes
-  - type: DamageOtherOnHit # For comedic PAI pelting
+  - type: DamageOtherOnHit # comedic PAI pelting
     damage:
       types:
         Blunt: 0.1
     pacifiedCanThrow: true
+  - type: GeneralStationRecordConsole # Medhud, GPS, and Crew Records for the pAI
   # End Harmony Change
 
 - type: entity
