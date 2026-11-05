@@ -1,4 +1,3 @@
-﻿# Added by: Medhud, GPS, and Crew Records for the pAI
 - type: listing
   id: PAIStationRecords
   name: pai-station-records-name
@@ -28,6 +27,20 @@
     stock: 1
 
 - type: listing
+  id: PAIEncryption
+  name: pai-encryption-name
+  description: pai-encryption-desc
+  icon: { sprite: Objects/Devices/encryption_keys.rsi, state: crypt_silver}
+  productComponents: PAIEncryptionDummy
+  cost:
+    SiliconMemory: 10
+  categories:
+  - PAIAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
   id: PAIGPS
   name: pai-gps-name
   description: pai-gps-desc
@@ -35,6 +48,21 @@
   productComponents: PAIGPSDummy
   cost:
     SiliconMemory: 10
+  categories:
+  - PAIAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: PAIAtmosphericSensor
+  name: pai-atmos-sensor-name
+  description: pai-atmos-sensor-desc
+  icon: { sprite: Objects/Specific/Atmos/gasanalyzer.rsi, state: icon }
+  productComponents: PAIAtmosSensorDummy
+  productAction: ActionPAIAtmosSensor
+  cost:
+    SiliconMemory: 5
   categories:
   - PAIAbilities
   conditions:

@@ -16,7 +16,7 @@
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_crimson.yml
         - type: StationJobs
-          availableJobs: # 43 jobs total w/o latejoins & interns, 51 jobs total w/ latejoins & interns
+          availableJobs: # 43 jobs total w/o latejoins & interns, 50 jobs total w/ latejoins & interns
             #command (7)
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
@@ -45,8 +45,8 @@
             Paramedic: [ 1, 1 ]
             Psychologist: [ 1, 1 ]
             MedicalIntern: [ 1, 1 ] #intern, not counted
-            #science (2-3)
-            Scientist: [ 2, 3 ]
+            #science (2)
+            Scientist: [ 2, 2 ]
             ResearchAssistant: [ 1, 1 ] #intern, not counted
             #security (5-6)
             Warden: [ 1, 1 ]

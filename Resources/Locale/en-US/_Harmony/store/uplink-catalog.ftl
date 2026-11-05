@@ -6,6 +6,9 @@ uplink-blood-red-carbine-desc = A bundle containing the stolen and improved Bloo
 uplink-rifle-bandit-name = Bandit Bundle
 uplink-rifle-bandit-desc = Contains the Bandit, a reliable semi-auto bullpup which fires devastating caseless rounds, bundled with 2 DMR magazines. Uses .30 rifle caseless ammo.
 
+uplink-rifle-foamgun-name = Waffle Co. Astro Ace
+uplink-rifle-foamgun-desc = A stealthy rifle of unexpectedly good quality. Its fabricated exterior feels rugged, and its mechanisms are sturdy. Some call it a toy, others call it a tool. Everyone, however...calls it a weapon. Fires .30 rifle caliber rounds.
+
 # Explosive
 
 uplink-kudzu-grenade-name = Kudzu grenade
@@ -22,6 +25,9 @@ uplink-X4-desc = The cousin of the infamous C-4, uses experimental explosives to
 
 uplink-X4-bundle-name = X-4 Bundle
 uplink-X4-bundle-desc = A bag containing 4 X-4s, perfect for going all in on sabotage.
+
+uplink-foam-grenade-stinger-name = Waffle Co. Stinger Grenade
+uplink-foam-grenade-stinger-desc = Waffle Co.'s latest in deceptive weapons technology. Decieve your foes with this stealthy stinger grenade!
 
 # Ammo
 
@@ -84,4 +90,4 @@ uplink-hyposhell-desc = A box containing four hyposhells, shotgun shells that ca
 # Weapons
 
 uplink-malletofmalice-name = Mallet of Malice
-uplink-malletofmalice-desc = An overwhelmingly evil mallet, capable of such devestation... Donk.Co's latest and greatest toy, meant for their most elite undercover agents.
+uplink-malletofmalice-desc = An overwhelmingly evil mallet, capable of such devastation... Donk.Co's latest and greatest toy, meant for their most elite undercover agents.

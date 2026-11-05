@@ -1,0 +1,118 @@
+# Harmony Specific Grenades
+
+# Cluster Weh
+
+- type: entity
+  parent: [ScatteringGrenadeBase, BaseSyndicateContraband]
+  id: ClusterWeh
+  name: tactical clusterplushie
+  description: Deploy the Wehs!!
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Grenades/clusterweh.rsi
+    layers:
+    - state: icon
+      map: ["enum.TriggerVisualLayers.Base"]
+  - type: ScatteringGrenade
+    fillPrototype: PlushieLizard
+    capacity: 10
+    randomDistance: true
+    randomThrowDistanceMax: 3
+  - type: LandAtCursor
+  - type: TriggerOnUse
+  - type: TimerTrigger
+    beepSound:
+      path: "/Audio/Effects/beep1.ogg"
+      params:
+        volume: 5
+    initialBeepDelay: 0
+    beepInterval: 0.5
+    delay: 3.0
+  - type: EmitSoundOnTrigger
+    sound:
+      path: "/Audio/Items/Toys/weh.ogg"
+    keysIn:
+    - timer
+  - type: TriggerOnSignal
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
+  - type: Appearance
+  - type: AnimationPlayer
+  - type: TimerTriggerVisuals
+  - type: GenericVisualizer
+    visuals:
+      enum.Trigger.TriggerVisuals.VisualState:
+        enum.ConstructionVisuals.Layer:
+          Primed: { state: primed }
+          Unprimed: { state: icon }
+
+# Foam Stinger Grenade
+
+- type: entity
+  parent: [FragileGrenadeBase, ProjectileGrenadeBase, BaseSyndicateContraband]
+  id: FoamGrenadeStinger
+  name: Waffle Co. Stinger Grenade
+  description: Waffle Co.'s latest in weapons technology. Disperse your foes!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Foam/foam_grenade.rsi
+    layers:
+    - state: icon
+      map: ["enum.TriggerVisualLayers.Base"]
+  - type: ProjectileGrenade
+    fillPrototype: PelletClusterRubber
+    capacity: 30
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
+    sound:
+      path: "/Audio/Effects/beep1.ogg"
+    positional: true
+  - type: SpawnOnTrigger
+    keysIn:
+    - timer
+    proto: GrenadeFlashEffect
+    predicted: true
+  - type: TriggerOnUse
+  - type: TimerTrigger
+    beepSound:
+      path: "/Audio/Effects/beep1.ogg"
+      params:
+        volume: 5
+    initialBeepDelay: 0
+    beepInterval: 2
+    delay: 3.5
+
+# Kudzu Grenade
+
+- type: entity
+  parent: [ScatteringGrenadeBase, BaseSyndicateContraband]
+  id: KudzuGrenade
+  name: kudzu grenade
+  suffix: Harmony
+  description: A diona's favorite grenade.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Grenades/kudzugrenade.rsi
+    layers:
+    - state: icon
+      map: ["enum.TriggerVisualLayers.Base"]
+  - type: TriggerOnUse
+  - type: ScatteringGrenade
+    fillPrototype: SyndicateKudzu
+    distance: 4
+  - type: TimerTrigger
+    delay: 2
+    beepSound:
+      path: "/Audio/Effects/beep1.ogg"
+      params:
+        volume: 3
+    initialBeepDelay: 0
+    beepInterval: 16
+  - type: GenericVisualizer
+    visuals:
+      enum.Trigger.TriggerVisuals.VisualState:
+        enum.ConstructionVisuals.Layer:
+          Primed: { state: primed }
+          Unprimed: { state: icon }

@@ -1,4 +1,3 @@
-﻿# Added by: Medhud, GPS, and Crew Records for the pAI
 - type: entity
   parent: BaseMentalAction
   id: ActionPAIStationRecords
@@ -25,3 +24,28 @@
   components:
   - type: HandheldGPS
   - type: RadarBlip
+
+- type: entity
+  parent: BaseMentalAction
+  id: ActionPAIAtmosSensor
+  name: Atmospheric Sensor
+  description: Scan the environment or any nearby containers for gas levels.
+  components:
+  - type: Action
+    icon: { sprite: Objects/Specific/Atmos/gasanalyzer.rsi, state: icon }
+    itemIconStyle: NoItem
+  - type: InstantAction
+    event: !type:OpenUiActionEvent
+      key: enum.GasAnalyzerUiKey.Key
+
+- type: entity
+  id: PAIEncryptionDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EncryptionKeyHolder
+
+- type: entity
+  id: PAIAtmosSensorDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GasAnalyzer
