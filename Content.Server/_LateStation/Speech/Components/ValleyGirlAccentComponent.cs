@@ -1,8 +1,7 @@
-using Content.Server._Latestation.Speech.EntitySystems;
+using Content.Shared.Speech.Components;
 
 namespace Content.Server._Latestation.Speech.Components;
 
 [RegisterComponent]
-[Access(typeof(ValleyGirlAccentSystem))]
-public sealed partial class ValleyGirlAccentComponent : Component
+public sealed partial class ValleyGirlAccentComponent : BaseAccentComponent
 { }

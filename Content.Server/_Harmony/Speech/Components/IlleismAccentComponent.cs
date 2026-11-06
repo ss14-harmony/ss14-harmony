@@ -1,8 +1,6 @@
-using Content.Server._Harmony.Speech.EntitySystems;
+using Content.Shared.Speech.Components;
 
 namespace Content.Server._Harmony.Speech.Components;
 
 [RegisterComponent]
-[Access(typeof(IlleismAccentSystem))]
-public sealed partial class IlleismAccentComponent : Component
-{ }
+public sealed partial class IlleismAccentComponent : BaseAccentComponent;
