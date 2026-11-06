@@ -158,4 +158,19 @@ public sealed partial class ZombieComponent : Component
     /// </summary>
     [DataField("newBloodReagents")]
     public Solution NewBloodReagents = new([new("ZombieBlood", 1)]);
+
+    // Start of Harmony Changes: Reinforcing the Zombie Horde
+
+    /// <summary>
+    /// The percent threshold at which a zombie gets revived taken from the DEAD threshold
+    /// HARMONY ADDITION!!!!!!!!
+    /// </summary>
+    /// <remarks>
+    /// Default set to revive at 110 HP for humanoids
+    /// Can't set it to a float or butterflies won't revive (very important)
+    /// </remarks>
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float ZombieReviveThreshold = 0.55f;
+
+    // End of Harmony Changes
 }
