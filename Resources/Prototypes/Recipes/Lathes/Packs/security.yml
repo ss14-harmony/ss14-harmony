@@ -142,9 +142,10 @@
   - WeaponXrayCannon
   - WeaponEnergyCarbineHarmony # Harmony Change: Adds the energy carbine to the security recipe pack
   - WeaponTemperatureGun
+  - WeaponSecurityBolaCannonHarmony # Harmony Change: Adds the security bola cannon to the security recipe pack
 
 - type: latheRecipePack
   id: SecurityDisablers
   recipes:
   - WeaponDisabler
-  - WeaponDisablerSMG
+#  - WeaponDisablerSMG Harmony change: Removes the disabler SMG from security recipe pack
