@@ -1,4 +1,13 @@
 - type: speechSounds
+  id: PleebnarPVC
+  saySound:
+    path: /Audio/_Impstation/Animals/pleebnar_speak.ogg
+  askSound:
+    path: /Audio/_Impstation/Animals/pleebnar_speak.ogg
+  exclaimSound:
+    path: /Audio/_Impstation/Animals/pleebnar_speak.ogg
+
+- type: speechSounds
   id: Pop
   saySound:
     path: /Audio/Effects/pop.ogg

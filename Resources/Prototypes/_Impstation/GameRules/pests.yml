@@ -1,0 +1,12 @@
+- type: entity
+  id: PleebnarMigration
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    earliestStart: 15
+    weight: 3
+    duration: 60
+  - type: VentCrittersRule
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobPleebnar
