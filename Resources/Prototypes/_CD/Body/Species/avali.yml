@@ -50,6 +50,9 @@
     enum.HumanoidVisualLayers.RFoot:
       limit: 1
       required: false
+    enum.HumanoidVisualLayers.TailOverlay: #Harm // Earrings and Tail rings share this layer, would be hidden by ears otherwise
+      limit: 5 #Lots of slots due to number of options
+      required: false
 
 - type: entity
   parent: BaseSpeciesAppearance
@@ -176,7 +179,7 @@
   abstract: true
   components:
   - type: Metabolizer
-    metabolizerTypes: [ Avali ]
+    metabolizerTypes: [ Avali, Animal ] #Harmony // Added animal tag, can eat mice. Caffeine and Theobromine gives poison damage
 
 - type: entity
   parent: OrganAvali
@@ -279,6 +282,19 @@
 - type: entity
   parent: [ OrganBaseStomach, OrganAvaliInternal, OrganAvaliMetabolizer ]
   id: OrganAvaliStomach
+  components: #Harmony
+  - type: Stomach
+    specialDigestible: #Fluffy space raptors primarily carnivores according to lore. Can also eat fruit and bread.
+      tags: #Only food that is excluded is vegetables
+      - Fruit
+      - Meat
+      - Bread
+      - ReptilianFood #Could be redundant? Didnt want to go through every food yml to check, but everything works as intended in testing
+      - FoodSnack #Most snacks are bread based, cannot eat most vending machine snacks without tag
+      - Donut #Chocolate donuts give poison damage
+      - Paper
+      - Crayon
+      - Pill
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganAvaliInternal, OrganHumanMetabolizer ]
