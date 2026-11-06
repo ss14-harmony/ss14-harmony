@@ -11,8 +11,8 @@ ghost-role-information-erp-leader-description = Lead a team of specialists to re
 ghost-role-information-erp-clown-name = ERP Clown
 ghost-role-information-erp-clown-description = Assist with party efforts to resolve the station's issues.
 
-ghost-role-information-gizard-name = Gizard the Wizard Lizard
-ghost-role-information-gizard-description = Follow and obey your wizard. Maybe even cast a vizard for the foolish wizard.
+ghost-role-information-gizzard-name = Gizzard the Wizard Lizard
+ghost-role-information-gizzard-description = Follow and obey your wizard. Maybe even cast a vizard for the foolish wizard.
 
 ghost-role-information-Poquito-name = Poquito
 ghost-role-information-Poquito-description = The chef's goon, here to help with their evil schemes.

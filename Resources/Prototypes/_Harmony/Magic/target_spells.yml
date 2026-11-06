@@ -1,0 +1,48 @@
+- type: entity
+  parent: BaseAction
+  id: ActionItemCurse
+  name: Curse Item
+  description: Mark a held item to later unleash a curse.
+  components:
+  - type: Action
+    useDelay: 50
+    raiseOnAction: true
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+      params:
+        volume: -5
+        pitch: 1.2
+        maxDistance: 5
+        variation: 0.2
+    icon:
+      sprite: _Harmony/Objects/Magic/magicactions.rsi
+      state: item_curse
+  - type: InstantAction
+    event: !type:OnItemCurseActionEvent
+  - type: ItemCurse
+
+- type: entity
+  parent: BaseActionChangelingSting
+  id: ActionHealingBiteSpell
+  name: Healing Bite
+  description: Let you venom heal your allies.
+  components:
+  - type: Action
+    useDelay: 30
+    raiseOnAction: true
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Harmony/Objects/Magic/magicactions.rsi
+      state: healing_bite
+  - type: EntityEffectAction
+    effects:
+    - !type:AddReagentToBloodstream
+      reagent: Omnizine
+      quantity: 8
+  - type: DoAfterArgs
+    delay: 3
+    breakOnDamage: true
+    breakOnMove: true
+  - type: PopupOnAction
+    selfMessage: gizzard-bite-success
