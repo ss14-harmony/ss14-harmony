@@ -1,50 +1,4 @@
 ﻿Entries:
-- author: KeldWolf
-  changes:
-  - message: Tweaks on shuttles made by Spanky.
-    type: Tweak
-  id: 31
-  time: '2024-09-07T05:29:00.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/31
-- author: TheCrimsonJupiter
-  changes:
-  - message: Reduced the likelihood of mid-round round-ending antagonists to appear.
-    type: Tweak
-  id: 33
-  time: '2024-09-09T21:35:20.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/33
-- author: Tsawodi
-  changes:
-  - message: Added the instructor mantle for teach-and-learn events. Can only spawned
-      in through the entity menu.
-    type: Add
-  id: 43
-  time: '2024-09-12T19:17:52.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/43
-- author: spanky-spanky
-  changes:
-  - message: Added 14 ERT shuttles, credit to TsjipTsjip, luckyshotpictures, & IProduceWidgets.
-    type: Add
-  id: 47
-  time: '2024-09-12T18:49:42.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/47
-- author: FluffMe
-  changes:
-  - message: 'Added 5 button frames to "Construction" menu: grey, exit, caution, danger,
-      janitor.'
-    type: Add
-  - message: Added lockable button to "Construction" menu.
-    type: Add
-  id: 48
-  time: '2024-09-12T19:20:38.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/48
-- author: spanky-spanky
-  changes:
-  - message: Added a Deathsquad shuttle, and renamed other custom shuttles to date.
-    type: Add
-  id: 49
-  time: '2024-09-13T03:20:18.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/49
 - author: spanky-spanky
   changes:
   - message: Lowered the minimum population of several mid-pop maps.
@@ -3795,3 +3749,47 @@
   id: 1446
   time: '2026-09-20T22:54:10.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1471
+- author: daseiinn
+  changes:
+  - message: Added .30 caseless magazines to emagged lathes!
+    type: Add
+  id: 1447
+  time: '2026-10-12T02:51:01.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1455
+- author: TheFlyingSentry
+  changes:
+  - message: Emergency shuttle call for Zombies now count the dead zombies
+    type: Tweak
+  id: 1448
+  time: '2026-10-12T07:42:08.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1457
+- author: daseiinn
+  changes:
+  - message: Adds the Waffle Co. Astro Ace, a lethal version of the foam toy gun for
+      7 tc!
+    type: Add
+  id: 1449
+  time: '2026-10-16T06:31:14.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1456
+- author: daseiinn
+  changes:
+  - message: Added the Waffle Co. Stinger Grenade, a stealthy stinger grenade in the
+      uplink for traitors!
+    type: Add
+  id: 1450
+  time: '2026-10-17T06:16:30.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1458
+- author: TheFlyingSentry
+  changes:
+  - message: Added an Encryption holder and Atmospheric sensor to the pAI's store!
+    type: Add
+  id: 1451
+  time: '2026-10-23T03:01:43.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1461
+- author: TheFlyingSentry
+  changes:
+  - message: Removed pAI encryption listing.
+    type: Remove
+  id: 1452
+  time: '2026-11-06T06:26:17.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1525
