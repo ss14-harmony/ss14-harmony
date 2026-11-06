@@ -23,7 +23,22 @@
   copyright: "Halo © Microsoft Corporation. This audio file was created under Microsoft's Game Content Usage Rules using assets from Halo:Reach, and it is not endorsed by or affiliated with Microsoft. More info here: https://www.xbox.com/en-us/developers/rules. Pulled from Halo:Reach, made by Bungie"
   source: "https://youtu.be/0SEE9n-ciUc"
 
-- files: ["python_fire1.ogg", "python_fire2.ogg"]
+- files: ["python_fire1.ogg", "python_fire2.ogg", "ak_fire1", "ak_fire2", "ak_fire3", "lecter_fire1", "lecter_fire2", "lecter_fire3", "mk_fire1", "mk_fire2", "mk_fire3", "enforcer_fire1", "enforcer_fire2", "enforcer_fire3", "db_fire1", "viper_fire1", "viper_fire2", "viper_fire3", "drozd_fire1", "drozd_fire2", "drozd_fire3", "wt_fire1", "wt_fire2", "wt_fire3", "rsc_fire1"]
   license: "CC-BY-NC-4.0"
-  copyright: "Created by Vunsunta"
+  copyright: "Created by Vunsunta, modified by Halycon (kleinerstation13 on Github)"
   source: "https://www.dropbox.com/scl/fi/dd03xhdhwg9em8l1xyxtr/Vunsunta-Firearm-Sound-Pack-V2.zip?rlkey=p7cyhkgf462v2bikj8awjbugu&e=1&st=a38k4aqn&dl=0"
+
+- files: ["laser_fire1"]
+  license: "CC-BY-4.0"
+  copyright: "Created by Universfield"
+  source: "https://freesound.org/people/Universfield/sounds/750234/"
+
+- files: ["mosin_fire1"]
+  license: "CC-BY-4.0"
+  copyright: "Created by Vunsunta and Zott820 (https://freesound.org/people/Zott820/sounds/370345), modified by Halycon (kleinerstation13 on Github)"
+  source: "https://freesound.org/people/Universfield/sounds/750234/"
+
+- files: ["revolver_fire1.ogg", "revolver_fire2.ogg", "revolver_fire3.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from cmss13"
+  source: "https://github.com/cmss13-devs/cmss13/blob/32730c731936c6737668ead7bde83a6cf296010f/sound/weapons/gun_cmb_1.ogg"
