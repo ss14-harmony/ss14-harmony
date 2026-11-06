@@ -1,13 +1,6 @@
 ﻿Entries:
 - author: spanky-spanky
   changes:
-  - message: Added a Deathsquad shuttle, and renamed other custom shuttles to date.
-    type: Add
-  id: 49
-  time: '2024-09-13T03:20:18.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/49
-- author: spanky-spanky
-  changes:
   - message: Lowered the minimum population of several mid-pop maps.
     type: Tweak
   id: 51
@@ -3793,3 +3786,10 @@
   id: 1451
   time: '2026-10-23T03:01:43.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1461
+- author: TheFlyingSentry
+  changes:
+  - message: Removed pAI encryption listing.
+    type: Remove
+  id: 1452
+  time: '2026-11-06T06:26:17.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1525
