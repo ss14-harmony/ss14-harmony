@@ -87,7 +87,8 @@ public sealed partial class CriminalRecordsConsoleSystem : SharedCriminalRecords
             msg.Status == SecurityStatus.Suspected != (msg.Reason != null) &&
             msg.Status == SecurityStatus.Hostile != (msg.Reason != null) &&
             msg.Status == SecurityStatus.Monitor != (msg.Reason != null) && // Harmony
-            msg.Status == SecurityStatus.Search != (msg.Reason != null)) // Harmony
+            msg.Status == SecurityStatus.Search != (msg.Reason != null) && // Harmony
+            msg.Status == SecurityStatus.Detained != (msg.Reason != null)) // Totally not Harmony from Status Changes sync Crime History
             return;
 
         if (!CheckSelected(ent, msg.Actor, out var mob, out var key))
@@ -109,15 +110,15 @@ public sealed partial class CriminalRecordsConsoleSystem : SharedCriminalRecords
 
         var officer = _identity.GetIdentityShortInfo(mob.Value, ent)
                       ?? Loc.GetString("criminal-records-console-unknown-officer");
-
+        // Harmony Change: Commented out by Status Sync for Crime History moved later down the code
         // when arresting someone add it to history automatically
         // fallback exists if the player was not set to wanted beforehand
-        if (msg.Status == SecurityStatus.Detained)
-        {
-            var oldReason = record.Reason ?? Loc.GetString("criminal-records-console-unspecified-reason");
-            var history = Loc.GetString("criminal-records-console-auto-history", ("reason", oldReason));
-            _criminalRecords.TryAddHistory(key.Value, history, officer);
-        }
+        //if (msg.Status == SecurityStatus.Detained)
+        //{
+        //    var oldReason = record.Reason ?? Loc.GetString("criminal-records-console-unspecified-reason");
+        //    var history = Loc.GetString("criminal-records-console-auto-history", ("reason", oldReason));
+        //    _criminalRecords.TryAddHistory(key.Value, history, officer);
+        //}
 
         // will probably never fail given the checks above
         var name = _records.RecordName(key.Value);
@@ -172,6 +173,7 @@ public sealed partial class CriminalRecordsConsoleSystem : SharedCriminalRecords
             // person no longer needs to be searched
             (SecurityStatus.Search, SecurityStatus.None) => "not-search",
             // End of Additional Harmony statuses
+            (SecurityStatus.Discharged, SecurityStatus.None) => "not-discharged", // Added by Status sync for Crime history | status update upstream didn't consider would happen lol
             // this is impossible
             _ => "not-wanted"
         };
@@ -179,6 +181,11 @@ public sealed partial class CriminalRecordsConsoleSystem : SharedCriminalRecords
             Loc.GetString($"criminal-records-console-{statusString}", args),
             ent.Comp.SecurityChannel,
             ent);
+
+        // Harmony addition: Status Sync for Crime History
+        var reasonCool = reason ?? Loc.GetString("criminal-records-console-unspecified-reason");
+        _criminalRecords.TryAddHistory(key.Value, Loc.GetString($"criminal-records-auto-history-{statusString}", ("reason", reasonCool)), officer);
+        // End of Harmony Additions
 
         _adminLogger.Add(LogType.Identity, LogImpact.Low, $"{ToPrettyString(mob.Value):name} changed criminal status for {name} to \"{statusString}\"");
 
