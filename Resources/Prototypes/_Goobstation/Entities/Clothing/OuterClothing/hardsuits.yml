@@ -6,11 +6,17 @@
   description: A hardsuit with stealth plating for operations, the shielding doesn't work while you're moving though! Needs the helmet on to finish the stealth field.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi
+# Begin harmony change - changed sprite path
+#   sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi
+# End harmony change
   - type: Item
     size: Huge
   - type: Clothing
-    sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi
+# Begin harmony change - changed sprite path
+#   sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi
+    sprite: _Harmony/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi
+# End harmony change
   - type: PressureProtection
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000
