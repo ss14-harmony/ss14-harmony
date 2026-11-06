@@ -2039,7 +2039,7 @@
       Peckish: 15
       Starving: 10
       Dead: 0
-    baseDecayRate: 0.5 # I'm very hungry! Give me. The cheese.
+    baseDecayRate: 0.13 # I'm very hungry! Give me. The cheese. # Start of Harmony Changes: RAT RANCHING!!! .5 -> .13 actually impossible to ranch unless lowered
   - type: Extractable
     grindableSolutionName: food
   - type: ToolRefinable
@@ -2119,7 +2119,21 @@
   - type: EmitSoundOnLand
     sound:
       collection: WeakHit
-# End of Harmony Change
+# Start of Harmony Changes: RAT RANCHING!!!
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - Mouse
+    offspring:
+    - id: MobMouse
+    minBreedAttemptInterval: 15
+    maxBreedAttemptInterval: 30
+    capacity: 12
+    breedChance: .3 # doubled chance
+    hungerPerBirth: 25 # wouldn't be possible to ranch unless Lowered
+    gestationDuration: .5
+  - type: ReproductivePartner
+# End of Harmony Changes
 
 - type: entity
   abstract: true
@@ -2175,6 +2189,14 @@
         Base: splat-1
   - type: Item
     heldPrefix: 1
+  # Start of Harmony Changes: RAT RANCHING!!!
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - Mouse
+    offspring:
+    - id: MobMouse1
+  # End of Harmony Changes
 
 - type: entity
   parent: MobMouse
@@ -2203,6 +2225,14 @@
         Base: splat-2
   - type: Item
     heldPrefix: 2
+  # Start of Harmony Changes: RAT RANCHING!!!
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - Mouse
+    offspring:
+    - id: MobMouse2
+  # End of Harmony Changes
 
 - type: entity
   name: cancer mouse
@@ -2242,10 +2272,18 @@
     refineResult:
     - id: FoodMeatRat
       amount: 1
-    - id: SheetUranium1
+    - id: SheetUranium5 # Harmony Change: RAT RANCHING | Might aswell make it "profitable" (SheetUranium1 -> SheetUranium5)
       amount: 1
   - type: Damageable
     damageModifierSet: Zombie
+# Start of Harmony Changes: RAT RANCHING!!!
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - Mouse
+    offspring:
+    - id: MobMouseCancer
+# End of Harmony Changes
 
 - type: entity
   name: lizard #Weh
