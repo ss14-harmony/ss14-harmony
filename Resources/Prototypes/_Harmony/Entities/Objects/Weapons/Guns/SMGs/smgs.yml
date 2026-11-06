@@ -1,0 +1,31 @@
+- type: entity
+  parent: [BaseWeaponSubMachineGun, BaseMajorContraband]
+  id: WeaponSubMachineGunM10
+  name: M-10 "Vice"
+  suffix: Harmony
+  description: A compact 10mm submachine gun with a blistering rate of fire. Extremely hard to control, but devastating up close. The paint scheme reminds you of the 80's. Feeds from .35 SMG magazines.
+  components:
+  - type: Clothing
+    sprite: _Harmony/Objects/Weapons/Guns/SMGs/m10.rsi
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/SMGs/m10.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    minAngle: 24
+    maxAngle: 40
+    angleIncrease: 4
+    angleDecay: 16
+    fireRate: 10
+    soundGunshot:
+      collection: M10Fire
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: EmitSoundOnPickup
+    sound: /Audio/_Harmony/Weapons/Melee/pickupweapon.ogg

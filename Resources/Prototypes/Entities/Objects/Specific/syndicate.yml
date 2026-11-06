@@ -124,8 +124,11 @@
       Telecrystal: 65
 # End of Harmony Change
   - type: Tag
+# Start of Harmony Change: Add loneop uplink tag for exclusive loneop offers
     tags:
     - NukeOpsUplink
+    - LoneOpUplink
+# End of Harmony Change
 
 - type: entity
   parent: BaseUplinkRadio

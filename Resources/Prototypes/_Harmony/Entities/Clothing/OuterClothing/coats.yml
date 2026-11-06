@@ -30,4 +30,23 @@
     sprite: _Harmony/Clothing/OuterClothing/Coats/detective_disco.rsi
   - type: Clothing
     sprite: _Harmony/Clothing/OuterClothing/Coats/detective_disco.rsi
-    
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatLetterman
+  name: brown letterman jacket
+  suffix: Harmony
+  description: It's a brown letterman jacket.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/OuterClothing/Coats/letterman.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/OuterClothing/Coats/letterman.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.9
+        Heat: 0.75

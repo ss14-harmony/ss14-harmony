@@ -162,3 +162,15 @@
     sprite: _Harmony/Clothing/Uniforms/Jumpsuit/pyjama_centcomm.rsi
   - type: Clothing
     sprite: _Harmony/Clothing/Uniforms/Jumpsuit/pyjama_centcomm.rsi
+
+- type: entity
+  parent: [ClothingUniformJumpsuitOperative, BaseSyndicateContraband]
+  id: ClothingUniformJumpsuitOperativeShortSleeved
+  name: short-sleeved jumpsuit
+  suffix: Harmony
+  description: Uniform for mask-wearing operatives performing russian mobster murder in deep space.
+  components:
+  - type: Sprite
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/operative.rsi
+  - type: Clothing
+    sprite: _Harmony/Clothing/Uniforms/Jumpsuit/operative.rsi
