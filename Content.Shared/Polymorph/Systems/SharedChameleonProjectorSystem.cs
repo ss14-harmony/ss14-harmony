@@ -16,6 +16,7 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
+using Content.Shared.Movement.Components;
 
 namespace Content.Shared.Polymorph.Systems;
 
@@ -245,6 +246,15 @@ public abstract partial class SharedChameleonProjectorSystem : EntitySystem
 
         var disguised = EnsureComp<ChameleonDisguisedComponent>(user);
         disguised.Disguise = disguise;
+
+        // Harmony Additions: Mob Collision
+        if (TryComp<MobCollisionComponent>(user, out var mobCollisionComp))
+        {
+            disguised.HadMobCollision = true;
+            RemComp(user, mobCollisionComp);
+        }
+        // End of Harmony Additions
+
         Dirty(user, disguised);
 
         // make disguise look real (for simple things at least)
@@ -276,6 +286,11 @@ public abstract partial class SharedChameleonProjectorSystem : EntitySystem
         if (!TryComp<ChameleonDisguiseComponent>(ent.Comp.Disguise, out var disguise)
             || !TryComp<ChameleonProjectorComponent>(disguise.Projector, out var proj))
             return false;
+
+        // Harmony Addition: Mob Collision
+        if (ent.Comp.HadMobCollision)
+            AddComp<MobCollisionComponent>(ent);
+        // End of Harmony Additions
 
         ClearDisguise((disguise.Projector, proj), ent);
         _toggle.TryDeactivate(disguise.Projector);

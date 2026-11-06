@@ -22,4 +22,14 @@ public sealed partial class ChameleonDisguisedComponent : Component
     /// </summary>
     [DataField]
     public bool WasVisible;
+
+    /// <summary>
+    /// If the player previously had mob collision
+    /// </summary>
+    /// <remarks>
+    /// Harmony Addition | Enable Mob Collision
+    /// Have to fix this or Chameleon projectors would be worthless
+    /// </remarks>
+    [DataField]
+    public bool HadMobCollision = false;
 }
