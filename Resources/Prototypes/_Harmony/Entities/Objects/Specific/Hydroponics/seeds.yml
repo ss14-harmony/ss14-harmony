@@ -5,6 +5,6 @@
   suffix: Harmony
   components:
     - type: Seed
-      seedId: peanut
+      plantId: PeanutPlant
     - type: Sprite
       sprite: _Harmony/Objects/Specific/Hydroponics/peanut.rsi

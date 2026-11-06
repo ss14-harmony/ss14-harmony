@@ -38,7 +38,7 @@
     damage:
       types:
         Blunt: 10
-        #Structural: 15 # DeltaV - SS13 parity, 10 blunt per shot only
+        #Structural: 10 # DeltaV - SS13 parity, 10 blunt per shot only
 
 - type: entity
   id: PKAUpgradeRange

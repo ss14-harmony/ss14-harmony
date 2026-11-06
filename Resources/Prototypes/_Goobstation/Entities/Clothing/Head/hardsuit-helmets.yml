@@ -7,6 +7,11 @@
   components:
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Hardsuits/cybersunstealth.rsi
+    layers:
+    - state: icon
+    - state: icon-flash
+      visible: false
+      map: [ "light" ]
   - type: Clothing
     sprite: _Goobstation/Clothing/Head/Hardsuits/cybersunstealth.rsi
   - type: PointLight

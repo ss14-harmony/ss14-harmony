@@ -16,7 +16,6 @@
   - !type:OverallPlaytimeRequirement
     time: 24h
   # Harmony end
-  weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
   supervisors: job-supervisors-captain

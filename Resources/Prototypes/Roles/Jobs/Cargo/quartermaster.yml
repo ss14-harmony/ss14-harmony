@@ -19,7 +19,6 @@
     - !type:OverallPlaytimeRequirement
       time: 24h # 8 total shifts
     # Harmony end
-  weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
   supervisors: job-supervisors-captain

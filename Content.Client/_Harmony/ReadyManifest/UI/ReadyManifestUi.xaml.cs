@@ -59,7 +59,7 @@ public sealed partial class ReadyManifestUi : FancyWindow
                 .Where(job => job.SetPreference)
                 .ToArray();
 
-            Array.Sort(jobs, JobUIComparer.Instance);
+            // Array.Sort(jobs, JobUIComparer.Instance);
 
             foreach (var job in jobs)
             {

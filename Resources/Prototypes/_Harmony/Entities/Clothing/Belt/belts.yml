@@ -34,8 +34,8 @@
         - DiscreteHealthAnalyzer
         - SurgeryTool
         - Dropper
-      components:
         - Stunbaton
+      components:
         - FlashOnTrigger
         - SmokeOnTrigger
         - Flash
@@ -52,7 +52,7 @@
     mapLayers:
       stunbaton:
         whitelist:
-          components:
+          tags:
           - Stunbaton
       bottle:
         whitelist:

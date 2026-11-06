@@ -1,6 +1,6 @@
 using Content.Server.Chat.Systems;
 using Content.Server.Popups;
-using Content.Server.Speech.EntitySystems;
+using Content.Shared.Speech.EntitySystems;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Puppet;
 using Content.Shared.Speech;
@@ -30,7 +30,7 @@ namespace Content.Server._Harmony.Speech.Hypophonia
                 return;
 
             // Let MutingSystem handle the event for muted characters (mimes included)
-            if (HasComp<MutedComponent>(uid))
+            if (HasComp<MutedStatusEffectComponent>(uid))
                 return;
 
             //still leaves the text so it looks like they are pantomiming a laugh
@@ -44,7 +44,7 @@ namespace Content.Server._Harmony.Speech.Hypophonia
                 return;
 
             // Let MutingSystem handle the event muted characters (mimes included)
-            if (HasComp<MutedComponent>(uid))
+            if (HasComp<MutedStatusEffectComponent>(uid))
                 return;
 
             if (!_prototypeManager.Resolve(args.Emote, out var emote))
@@ -62,7 +62,7 @@ namespace Content.Server._Harmony.Speech.Hypophonia
         private void OnSpeakAttempt(EntityUid uid, HypophoniaComponent component, SpeakAttemptEvent args)
         {
             // Let MutingSystem handle the event for puppets and muted characters (mimes included)
-            if (HasComp<VentriloquistPuppetComponent>(uid) || HasComp<MutedComponent>(uid))
+            if (HasComp<VentriloquistPuppetComponent>(uid) || HasComp<MutedStatusEffectComponent>(uid))
                 return;
 
             // If the entity is whispering, let them speak

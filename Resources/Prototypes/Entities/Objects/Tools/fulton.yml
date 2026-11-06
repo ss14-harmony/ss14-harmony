@@ -50,10 +50,10 @@
           map: ["foldedLayer"]
 
 - type: entity
+  parent: BaseItem # Harmony Change - Removes BaseItemDestructable parent of Fultons.
   id: Fulton
-  parent: BaseItem
-  suffix: Full
   name: fulton
+  suffix: Full
   description: Used to extract containers, items, or forcibly recruit people into your base of operations.
   components:
   - type: Fulton
@@ -71,19 +71,6 @@
     drawdepth: SmallObjects
     sprite: Objects/Tools/fulton.rsi
     state: extraction_pack
- #Start of Harmony Change - Removes Destructable status of Fultons.
-#  - type: Damageable
-#  - type: Injurable
-#    damageContainer: Inorganic
-#  - type: Destructible
-#    thresholds:
-#    - trigger:
-#        !type:DamageTrigger
-#        damage: 100
-#      behaviors:
-#        - !type:DoActsBehavior
-#          acts: [ "Destruction" ]
-#End of Harmony Change - Removes Destructable status of Fultons.
 - type: entity
   id: Fulton1
   parent: Fulton

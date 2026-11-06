@@ -283,9 +283,7 @@
   - type: Storage
     whitelist:
       tags:
-      - PlantSampleTaker
       - BotanyShovel
-      - BotanyHoe
       - BotanyHatchet
       - PlantBGone
       - Bottle
@@ -293,6 +291,8 @@
       - CigPack
       - Dropper
       components:
+      - BotanySampleTaker
+      - BotanyHoe
       - Seed
       - Smokable
       - HandLabeler
@@ -305,7 +305,7 @@
           - BotanyHatchet
       hoe:
         whitelist:
-          tags:
+          components:
           - BotanyHoe
       secateurs: # We don't have secateurs and this looks similar enough.
         whitelist:
@@ -423,12 +423,12 @@
       - CombatKnife
       - Truncheon
       - HandGrenade
+      - Stunbaton
 # Harmony Change: Adds the Energy Cartridges to the security belt whitelist
       - EnergyCarbineCartridge
       - EnergyCarbineCartridgeSyndicate
 # End of Harmony Change
       components:
-      - Stunbaton
       - FlashOnTrigger
       - SmokeOnTrigger
       - Flash
@@ -448,7 +448,7 @@
           - FlashOnTrigger
       stunbaton:
         whitelist:
-          components:
+          tags:
           - Stunbaton
       tear_gas_grenade:
         whitelist:
