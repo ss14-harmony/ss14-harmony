@@ -25,5 +25,31 @@
 # Jumpsuit
 - type: loadout
   id: JumpsuitSecBlue
-  equipment: 
+  equipment:
     jumpsuit: ClothingUniformJumpsuitSecBlue
+
+# Firearms
+- type: loadout
+  id: SecurityFirearmWeaponPistolPA57
+  equipment:
+    pocket1: WeaponPistolPA57
+
+- type: loadout
+  id: SecurityFirearmWeaponPistolNSP
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorOfficer
+  equipment:
+    pocket1: WeaponPistolNSP
+
+- type: loadout
+  id: SecurityFirearmWeaponPistolMk58
+  equipment:
+    pocket1: WeaponPistolMk58
+
+# Ammo
+- type: loadout
+  id: SecurityFirearmMagazinePistol
+  storage:
+    back:
+    - MagazinePistol

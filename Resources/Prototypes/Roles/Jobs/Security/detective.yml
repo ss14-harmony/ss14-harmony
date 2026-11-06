@@ -27,7 +27,10 @@
     eyes: ClothingEyesGlassesSecurity
     id: DetectivePDA
     ears: ClothingHeadsetSecurity
-    belt: ClothingBeltHolsterFilled
+    # Start harmony change - moved to loadouts
+#   belt: ClothingBeltHolsterFilled
+    belt: ClothingBeltHolster
+    # End harmony change
   storage:
     back:
     - Flash
