@@ -1,0 +1,17 @@
+﻿# Syndicate dead drop
+- type: entity
+  parent: BaseGameRule
+  id: SyndicateDeadDrop
+  components:
+  - type: StationEvent
+    startAnnouncement: station-syndicate-dead-drop-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    earliestStart: 20
+    duration: 1
+    minimumPlayers: 1
+    maxOccurrences: 2
+    weight: 10
+  - type: RandomSpawnRule
+    prototype: SyndieDeadDropSpawner
+    radioMessage: {channel: Syndicate, message: "syndicate-dead-drop-announcement"}
