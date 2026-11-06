@@ -60,9 +60,9 @@
       - !type:ExplodeBehavior
   - type: Explosive # Powerful explosion in a very small radius. Doesn't break underplating.
     explosionType: DemolitionCharge
-    totalIntensity: 10 # Harmony - 60 -> 10
-    intensitySlope: 5
-    maxIntensity: 15 # Harmony - 30 -> 15
+    totalIntensity: 60
+    intensitySlope: 3
+    maxIntensity: 30
     canCreateVacuum: false
   - type: StickyVisualizer
   - type: Appearance
