@@ -44,7 +44,7 @@
         angle: 0.0
         damage:
           types:
-            Blunt: 10
+            Blunt: 5 # Harmony Changes - Nerf Staff of Animation damage 10 -> 5
       - type: NpcFactionMember
         factions:
         - Wizard
