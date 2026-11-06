@@ -202,7 +202,8 @@ public sealed partial class ExplosionSystem
         float? fireStacks,
         float? temperature,
         float currentIntensity,
-        EntityUid? cause)
+        EntityUid? cause,
+        EntityUid? ignoreCauseRes) // Harmony, optional AP for the cause of the explosion
     {
         var size = grid.Comp.TileSize;
         var gridBox = new Box2(tile * size, (tile + 1) * size);
@@ -231,7 +232,7 @@ public sealed partial class ExplosionSystem
         // process those entities
         foreach (var (uid, xform) in list)
         {
-            ProcessEntity(uid, epicenter, damage, throwForce, id, xform, fireStacks, cause);
+            ProcessEntity(uid, epicenter, damage, throwForce, id, xform, fireStacks, cause, ignoreCauseRes); // Harmony - ignoreCauseRes
         }
 
         // heat the atmosphere
@@ -251,7 +252,7 @@ public sealed partial class ExplosionSystem
         foreach (var entity in _anchored)
         {
             processed.Add(entity);
-            ProcessEntity(entity, epicenter, damage, throwForce, id, null, fireStacks, cause);
+            ProcessEntity(entity, epicenter, damage, throwForce, id, null, fireStacks, cause, ignoreCauseRes); // Harmony - ignoreCauseRes
             tileBlocked |= IsBlockingTurf(entity);
         }
         _anchored.Clear();
@@ -275,7 +276,7 @@ public sealed partial class ExplosionSystem
         {
             // Here we only throw, no dealing damage. Containers n such might drop their entities after being destroyed, but
             // they should handle their own damage pass-through, with their own damage reduction calculation.
-            ProcessEntity(uid, epicenter, null, throwForce, id, xform, null, cause);
+            ProcessEntity(uid, epicenter, null, throwForce, id, xform, null, cause, ignoreCauseRes); // Harmony - ignoreCauseRes
         }
 
         return !tileBlocked;
@@ -312,7 +313,8 @@ public sealed partial class ExplosionSystem
         HashSet<EntityUid> processed,
         string id,
         float? fireStacks,
-        EntityUid? cause)
+        EntityUid? cause,
+        EntityUid? ignoreCauseRes) // Harmony, optional AP for the cause of the explosion
     {
         var gridBox = Box2.FromDimensions(tile * DefaultTileSize, new Vector2(DefaultTileSize, DefaultTileSize));
         var worldBox = spaceMatrix.TransformBox(gridBox);
@@ -328,7 +330,7 @@ public sealed partial class ExplosionSystem
         foreach (var (uid, xform) in state.Item1)
         {
             processed.Add(uid);
-            ProcessEntity(uid, epicenter, damage, throwForce, id, xform, fireStacks, cause);
+            ProcessEntity(uid, epicenter, damage, throwForce, id, xform, fireStacks, cause, ignoreCauseRes); // Harmony - ignoreCauseRes
         }
 
         if (throwForce <= 0)
@@ -342,7 +344,7 @@ public sealed partial class ExplosionSystem
 
         foreach (var (uid, xform) in list)
         {
-            ProcessEntity(uid, epicenter, null, throwForce, id, xform, fireStacks, cause);
+            ProcessEntity(uid, epicenter, null, throwForce, id, xform, fireStacks, cause, ignoreCauseRes); // Harmony - ignoreCauseRes
         }
     }
 
@@ -381,8 +383,13 @@ public sealed partial class ExplosionSystem
     }
 
     private DamageSpecifier GetDamage(EntityUid uid,
-        string id, DamageSpecifier damage)
+        string id,
+        DamageSpecifier damage,
+        EntityUid? ignoreCauseRes) // Harmony, 'ignoreCauseRes' / optional AP for the cause of the explosion
     {
+        if (uid == ignoreCauseRes) // Harmony, return true damage if uid matches the ignored user
+            return damage;
+
         // TODO Explosion Performance
         // Cache this? I.e., instead of raising an event, check for a component?
         var resistanceEv = new GetExplosionResistanceEvent(id);
@@ -396,12 +403,12 @@ public sealed partial class ExplosionSystem
         return damage;
     }
 
-    private void GetEntitiesToDamage(EntityUid uid, DamageSpecifier originalDamage, string prototype)
+    private void GetEntitiesToDamage(EntityUid uid, DamageSpecifier originalDamage, string prototype, EntityUid? ignoreCauseRes) // Harmony - ignoreCauseRes
     {
         _toDamage.Clear();
 
         // don't raise BeforeExplodeEvent if the entity is completely immune to explosions
-        var thisDamage = GetDamage(uid, prototype, originalDamage);
+        var thisDamage = GetDamage(uid, prototype, originalDamage, ignoreCauseRes); // Harmony - ignoreCauseRes
         if (thisDamage.Empty)
             return;
 
@@ -424,7 +431,7 @@ public sealed partial class ExplosionSystem
             _toDamage.EnsureCapacity(_toDamage.Count + _containedEntities.Count);
             foreach (var contained in _containedEntities)
             {
-                var newDamage = GetDamage(contained, prototype, damage);
+                var newDamage = GetDamage(contained, prototype, damage, ignoreCauseRes); // Harmony - ignoreCauseRes
                 _toDamage.Add((contained, newDamage));
             }
         }
@@ -441,11 +448,12 @@ public sealed partial class ExplosionSystem
         string id,
         TransformComponent? xform,
         float? fireStacksOnIgnite,
-        EntityUid? cause)
+        EntityUid? cause,
+        EntityUid? ignoreCauseRes) // Harmony - ignoreCauseRes
     {
         if (originalDamage is not null)
         {
-            GetEntitiesToDamage(uid, originalDamage, id);
+            GetEntitiesToDamage(uid, originalDamage, id, ignoreCauseRes); // Harmony - ignoreCauseRes
             foreach (var (entity, damage) in _toDamage)
             {
                 if (!_damageableQuery.TryComp(entity, out var damageable))
@@ -712,6 +720,8 @@ sealed class Explosion
 
     public readonly EntityUid? Cause;
 
+    public readonly EntityUid? IgnoreCauseRes; // Harmony, optional AP for the cause of the explosion
+
     /// <summary>
     ///     Initialize a new instance for processing
     /// </summary>
@@ -729,12 +739,14 @@ sealed class Explosion
         IEntityManager entMan,
         EntityUid visualEnt,
         EntityUid? cause,
+        EntityUid? ignoreCauseRes, // Harmony - ignoreCauseRes
         SharedMapSystem mapSystem,
         DamageableSystem damageable,
         EntityQuery<TileHistoryComponent> historyQuery)
     {
         VisualEnt = visualEnt;
         Cause = cause;
+        IgnoreCauseRes = ignoreCauseRes; // Harmony - ignoreCauseRes
         _system = system;
         _mapSystem = mapSystem;
         ExplosionType = explosionType;
@@ -901,8 +913,8 @@ sealed class Explosion
                     ExplosionType.FireStacks,
                     ExplosionType.Temperature,
                     _currentIntensity,
-                    Cause);
-
+                    Cause,
+                    IgnoreCauseRes); // Harmony - ignoreCauseRes
                 // If the floor is not blocked by some dense object, damage the floor tiles.
                 if (canDamageFloor)
                 {
@@ -937,7 +949,8 @@ sealed class Explosion
                     ProcessedEntities,
                     ExplosionType.ID,
                     ExplosionType.FireStacks,
-                    Cause);
+                    Cause,
+                    IgnoreCauseRes); // Harmony - ignoreCauseRes
             }
 
             if (!MoveNext())
@@ -981,4 +994,5 @@ public sealed class QueuedExplosion(ExplosionPrototype proto)
     public int MaxTileBreak;
     public bool CanCreateVacuum;
     public EntityUid? Cause; // The entity that exploded, for logging purposes.
+    public EntityUid? IgnoreCauseRes; // Harmony, optional AP for the cause of the explosion
 }
