@@ -70,6 +70,7 @@
   - type: ActionGrant
     actions:
     - ActionRevenantShop
+    - ActionRevenantWhisper # Harmony Addition: Revenant Whispering
   - type: Store
     categories:
     - RevenantAbilities
