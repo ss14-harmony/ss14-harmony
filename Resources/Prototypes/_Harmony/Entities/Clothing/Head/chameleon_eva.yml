@@ -1,0 +1,16 @@
+- type: entity
+  parent: [ClothingHeadEVAHelmetBase, BaseChameleon]
+  id: ClothingHeadHelmetEVAChameleonHarmony
+  name: EVA helmet
+  description: An old-but-gold helmet designed for extravehicular activites. Infamous for making security officers paranoid.
+  suffix: Chameleon, Harmony
+  components:
+  - type: Tag
+    tags: []
+  - type: Sprite
+    sprite: Clothing/Head/Helmets/eva.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Helmets/eva.rsi
+  - type: ChameleonClothing
+    slot: [HEAD]
+    default: ClothingHeadHelmetEVA
