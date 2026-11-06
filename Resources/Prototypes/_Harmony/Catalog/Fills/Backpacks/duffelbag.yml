@@ -33,3 +33,17 @@
     - id: WeaponRifleBandit
     - id: MagazineLightRifleCaseless
       amount: 2
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackSyndicateVoidsuitBundle
+  name: syndicate voidsuit bundle
+  suffix: Harmony
+  description: Contains a syndicate tactical voidsuit and some EVA equipment.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingOuterVoidsuitSyndie
+    - id: ClothingMaskGasSyndicate
+    - id: DoubleEmergencyOxygenTankFilled
+    - id: DoubleEmergencyNitrogenTankFilled
