@@ -30,6 +30,10 @@ trait-unrevivable-desc = You are unable to be revived by defibrillators.
 trait-accentless-name = Accentless
 trait-accentless-desc = You don't have the accent that your species would usually have.
 
+# Harmony - Add back the pirate accent
+trait-pirate-accent-name = Pirate accent
+trait-pirate-accent-desc = You can't stop speaking like a pirate!
+
 trait-frontal-lisp-name = Frontal lisp
 trait-frontal-lisp-desc = You thpeak with a lithp.
 
