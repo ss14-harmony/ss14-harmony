@@ -2,6 +2,7 @@ using Content.Server.Popups;
 using Content.Shared._EE.Silicon.EmitBuzzWhileDamaged;
 using Content.Shared.Audio;
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Audio.Systems;
@@ -14,7 +15,7 @@ namespace Content.Server._EE.Silicon.EmitBuzzOnCrit;
 /// <summary>
 /// This handles the buzzing popup and sound of a silicon based race when it is pretty damaged.
 /// </summary>
-public sealed class EmitBuzzWhileDamagedSystem : EntitySystem
+public sealed partial class EmitBuzzWhileDamagedSystem : EntitySystem
 {
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
@@ -23,6 +24,7 @@ public sealed class EmitBuzzWhileDamagedSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
 
+    [Dependency] private readonly DamageableSystem _damageable = default!;
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -34,7 +36,7 @@ public sealed class EmitBuzzWhileDamagedSystem : EntitySystem
 
             if (_mobState.IsDead(uid, mobStateComponent)
                 || !_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var threshold, thresholdsComponent)
-                || damageableComponent.TotalDamage < threshold / 2)
+                || _damageable.GetTotalDamage(uid) < threshold / 2)
                 continue;
 
             emitBuzzOnCritComponent.AccumulatedFrametime += frameTime;
