@@ -41,7 +41,6 @@ public sealed partial class SafetyNetSystem : EntitySystem
     [Dependency] private IRobustRandom _robustRandom = default!;
 
     private Dictionary<EntityUid, TimeSpan> Queued = new();
-    private HashSet<EntityUid> Tracked = new();
 
     public float MaxSafetyVelocity = 30f;
     public float MaxDistance = 2000f;
@@ -56,7 +55,6 @@ public sealed partial class SafetyNetSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<FixturesComponent, EntParentChangedMessage>(OnGridChanged);
-        SubscribeLocalEvent<MobStateChangedEvent>(OnTrackedIncapacitation);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(ClearCache);
     }
 
@@ -136,23 +134,8 @@ public sealed partial class SafetyNetSystem : EntitySystem
     private bool CanSafetyNet(EntityUid uid)
     {
         if (!HasComp<StealTargetComponent>(uid))
-        {
-            if (!TryComp<MindContainerComponent>(uid, out var mindcomp))
-                return false;
-
-            if (!mindcomp.HasMind)
-                return false;
-
-            // Anything that's player controlled that can add to the round meaningfully should be added here
-            if (HasComp<ZombieComponent>(uid) ||
-                HasComp<SiliconLawBoundComponent>(uid) ||
-                HasComp<PAIComponent>(uid) || // pAI's with laws when?
-                HasComp<BingleComponent>(uid) ||
-                HasComp<HumanoidProfileComponent>(uid))
-                return true;
-
             return false;
-        }
+
         return true;
     }
 
@@ -171,45 +154,14 @@ public sealed partial class SafetyNetSystem : EntitySystem
             if (!CanSafetyNet(args.Entity))
                 return;
 
-            Tracked.Add(args.Entity);
+            var queueTime = _timing.CurTime + SafetyNetInitialDelay;
+            Queued.Add(args.Entity, queueTime);
 
-            if (_mobState.IsIncapacitated(args.Entity) || HasComp<StealTargetComponent>(ent.Owner)) // In case someone chucks a body or objective into space
-            {
-                var queueTime = _timing.CurTime + SafetyNetInitialDelay;
-                Queued.Add(args.Entity, queueTime);
-            }
         }
         else
         {
-            // Now that they're safe, no point tracking them
-            if (Tracked.Contains(ent.Owner))
-                Tracked.Remove(ent.Owner);
-
             if(Queued.ContainsKey(ent.Owner))
                 Queued.Remove(ent.Owner);
-        }
-    }
-
-    private void OnTrackedIncapacitation(MobStateChangedEvent ev)
-    {
-        if(!Tracked.Contains(ev.Target))
-            return;
-
-        if (_mobState.IsIncapacitated(ev.Target))
-        {
-            if (Queued.ContainsKey(ev.Target))
-                return;
-
-            var queueTime = _timing.CurTime + SafetyNetInitialDelay;
-
-            Queued.Add(ev.Target, queueTime);
-        }
-        else
-        {
-            if (!Queued.ContainsKey(ev.Target))
-                return;
-
-            Queued.Remove(ev.Target);
         }
     }
 
@@ -239,6 +191,5 @@ public sealed partial class SafetyNetSystem : EntitySystem
     private void ClearCache(RoundRestartCleanupEvent ev)
     {
         Queued.Clear();
-        Tracked.Clear();
     }
 }
