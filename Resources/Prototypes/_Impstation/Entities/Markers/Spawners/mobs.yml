@@ -26,7 +26,7 @@
     description: ghost-role-information-eeeplet-desc
     rules: ghost-role-information-antagonist-rules
     mindRoles:
-      - MindRoleGhostRoleTeamAntagonist
+      - MindRoleGhostRoleSoloAntagonist # fixes issue #1529
     raffle:
       settings: default
   - type: GhostRoleMobSpawner
