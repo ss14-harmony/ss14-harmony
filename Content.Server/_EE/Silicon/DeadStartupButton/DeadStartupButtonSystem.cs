@@ -6,6 +6,7 @@ using Content.Server._EE.Silicon.Charge;
 using Content.Shared._EE.Silicon.DeadStartupButton;
 using Content.Shared.Audio;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Electrocution;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
@@ -34,6 +35,7 @@ public sealed class DeadStartupButtonSystem : SharedDeadStartupButtonSystem
     [Dependency] private readonly SiliconChargeSystem _siliconChargeSystem = default!;
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!; // Box Change Start: Added DamageableSystem dependency
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -62,7 +64,7 @@ public sealed class DeadStartupButtonSystem : SharedDeadStartupButtonSystem
             _popup.PopupEntity(Loc.GetString("dead-startup-system-reboot-unrevivable", ("target", MetaData(uid).EntityName)), uid, PopupType.MediumCaution);
             Spawn("EffectSparks", Transform(uid).Coordinates);
         }
-        else if (damageable.TotalDamage < criticalThreshold)
+        else if (_damageable.GetTotalDamage(uid) < criticalThreshold)
         // End of Box Change
             _mobState.ChangeMobState(uid, MobState.Alive, mobStateComponent);
         else

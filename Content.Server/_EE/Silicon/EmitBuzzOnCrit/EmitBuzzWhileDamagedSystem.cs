@@ -2,7 +2,7 @@ using Content.Server.Popups;
 using Content.Shared._EE.Silicon.EmitBuzzWhileDamaged;
 using Content.Shared.Audio;
 using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Systems;
+using Content.Shared.Damage.Systems; // Box Change Start: Added DamageableSystem dependency
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Audio.Systems;
@@ -23,8 +23,7 @@ public sealed partial class EmitBuzzWhileDamagedSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
-
-    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!; // Box Change Start: Added DamageableSystem dependency
     public override void Update(float frameTime)
     {
         base.Update(frameTime);

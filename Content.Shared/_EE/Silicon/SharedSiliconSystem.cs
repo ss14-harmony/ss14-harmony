@@ -9,10 +9,11 @@ using Content.Shared.PowerCell.Components;
 namespace Content.Shared._EE.Silicon.Systems;
 
 
-public sealed class SharedSiliconChargeSystem : EntitySystem
+public sealed partial class SharedSiliconChargeSystem : EntitySystem
 {
-    [Dependency] private readonly AlertsSystem _alertsSystem = default!;
-    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
+    [Dependency] private AlertsSystem _alertsSystem = default!;
+
+//    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!; Box Change: Kills testfail
 
     public override void Initialize()
     {
