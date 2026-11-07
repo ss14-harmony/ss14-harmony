@@ -1,0 +1,191 @@
+# Base
+
+- type: reagent
+  id: BaseSynthanol
+  group: Drinks
+  abstract: true
+  slipData:
+    requiredSlipSpeed: 3.5
+  friction: 0.4
+  metabolismCategories: [ Organic, Artificial ]
+  metabolisms:
+    Digestion:
+      metabolites:
+        Synthanol: 0.12
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+  reactiveEffects:
+    Flammable:
+      methods: [ Touch ]
+      effects:
+      - !type:Flammable
+  tileReactions:
+  - !type:FlammableTileReaction
+    temperatureMultiplier: 1.35
+
+- type: reagent
+  id: Synthanol
+  name: reagent-name-synthanol
+  parent: BaseSynthanol
+  desc: reagent-desc-synthanol
+  physicalDesc: reagent-physical-desc-strong-smelling # Needs a custom one
+  flavor: alcohol # Needs a custom one
+  color: "#59768c"
+  metabolismCategories: [ Organic, Artificial ]
+  metabolisms:
+    Metabolites:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Synthanol
+          min: 15
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+        damage:
+          types:
+            Shock: 0.1
+      - !type:Drunk
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+        boozePower: 2 # TODO: Unique IPC slurred speech. Figure that out. Probably reuse Borg Damage accent?
+      - !type:PopupMessage # no sanity/mood
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+          inverted: true # For organics only
+        - !type:ReagentCondition
+          reagent: Synthanol
+          min: 0.5 # takes a bit to get going
+          max: 15 # Having too much of a good thing and all that...
+        type: Local
+        visualType: Medium
+        messages:
+        - "synthanol-effect-buzz"
+        - "synthanol-effect-courageous"
+        - "synthanol-effect-no-anxiety"
+        - "synthanol-effect-social"
+        probability: 0.05
+
+# Drinks
+
+- type: reagent
+  id: IPCA
+  name: reagent-name-ipca
+  parent: BaseSynthanol
+  desc: reagent-desc-ipca
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: ipca
+  color: "#1BB1FF"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _Box/Objects/Consumable/Drinks/ipca.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  fizziness: 0.6
+
+- type: reagent
+  id: RobotTears
+  name: reagent-name-robot-tears
+  parent: BaseSynthanol
+  desc: reagent-desc-robot-tears
+  physicalDesc: reagent-physical-desc-oily
+  flavor: robottears
+  color: "#363636"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _Box/Objects/Consumable/Drinks/robottears.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  fizziness: 0.6
+
+- type: reagent
+  id: Trinary
+  name: reagent-name-trinary
+  parent: BaseSynthanol
+  desc: reagent-desc-trinary
+  physicalDesc: reagent-physical-desc-vibrant
+  flavor: trinary
+  color: "#adb21f"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _Box/Objects/Consumable/Drinks/trinary.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+
+- type: reagent
+  id: Servo
+  name: reagent-name-servo
+  parent: BaseSynthanol
+  desc: reagent-desc-servo
+  physicalDesc: reagent-physical-desc-creamy
+  flavor: servo
+  color: "#5b3210"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _Box/Objects/Consumable/Drinks/servo.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 2 # 1 fill level doesn't work
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+
+- type: reagent
+  id: SynthNSoda
+  name: reagent-name-synth-n-soda
+  parent: BaseSynthanol
+  desc: reagent-desc-synth-n-soda
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: synthnsoda
+  color: "#7204e7"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _Box/Objects/Consumable/Drinks/synthnsoda.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 2
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+
+- type: reagent
+  id: Synthignon
+  name: reagent-name-synthignon
+  parent: BaseSynthanol
+  desc: reagent-desc-synthignon
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: synthignon
+  color: "#d004e7"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _Box/Objects/Consumable/Drinks/synthignon.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+
+- type: reagent
+  id: Uplink
+  name: reagent-name-uplink
+  parent: BaseSynthanol
+  desc: reagent-desc-uplink
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: uplink
+  color: "#e7ae04"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _Box/Objects/Consumable/Drinks/uplink.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      metabolites:
+        Synthanol: 0.4

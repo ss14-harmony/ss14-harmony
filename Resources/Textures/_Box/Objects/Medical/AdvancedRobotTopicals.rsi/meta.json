@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by CollectionOfBones128 (GitHub)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "acid-neutralization"
+        },
+        {
+            "name": "cooling"
+        },
+        {
+            "name": "dent-repair"
+        },
+        {
+            "name": "electronic-repair"
+        },
+        {
+            "name": "puncture-repair"
+        },
+        {
+            "name": "robot-burn"
+        },
+        {
+            "name": "robot-trauma"
+        },
+        {
+            "name": "shielding"
+        },
+        {
+            "name": "gash-repair"
+        },
+        {
+            "name": "thawing"
+        }
+    ]
+}

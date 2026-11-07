@@ -85,6 +85,7 @@
   color: "#ba85cc"
   boilingPoint: -188.11
   meltingPoint: -219.67
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem
   plantMetabolism:
     - !type:PlantAdjustWater
       amount: -0.5
@@ -291,6 +292,7 @@
   color: "#fff385"
   boilingPoint: 445.0
   meltingPoint: 120.0
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem
   metabolisms:
     Bloodstream:
       effects:
@@ -320,6 +322,7 @@
   color: "#8fa191"
   meltingPoint: 1133.0
   boilingPoint: 4131.0
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem
   plantMetabolism:
   - !type:PlantAdjustMutationLevel
     amount: 0.6

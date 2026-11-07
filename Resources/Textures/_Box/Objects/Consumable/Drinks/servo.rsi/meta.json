@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "servoglass taken from Paradise at https://github.com/ParadiseSS13/Paradise/commit/f97ee28c0d57c3fc169d87acb43451cffd5729e2. icon_empty and fill levels modified from servoglass by CollectionOfBones128 (GitHub)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "servoglass"
+        },
+        {
+            "name": "icon_empty"
+        },
+        {
+            "name": "fill-1"
+        },
+        {
+            "name": "fill-2"
+        }
+    ]
+}

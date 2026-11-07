@@ -1,0 +1,355 @@
+# Advanced IPC Topicals
+- type: entity
+  abstract: true
+  parent: BaseHealingItem
+  id: BaseAdvancedRobotTopical # Store the sprite path here for easy use
+  components:
+  - type: Sprite
+    sprite: _Box/Objects/Medical/AdvancedRobotTopicals.rsi
+  - type: Item
+    size: Small
+    sprite: _Box/Objects/Medical/AdvancedRobotTopicals.rsi
+    heldPrefix: acid-neutralization
+  - type: Tag
+    tags:
+    - IPCTopical
+
+# Multiheal
+
+## Burns
+- type: entity
+  parent: BaseAdvancedRobotTopical
+  id: RobotBurnPatch
+  name: robot burn patch
+  suffix: Full, BoxStation
+  description: A carefully calibrated pneumatic device capable of treating terrible burns on mechanical entities.
+  components:
+  - type: Sprite
+    state: robot-burn
+  - type: Item
+    heldPrefix: robot-burn
+  - type: Healing
+    damageContainers:
+    - HumanoidSilicon
+    damage:
+      types:
+        Heat: -20
+        Cold: -20
+        Shock: -20
+        Caustic: -20
+  - type: Stack
+    stackType: RobotBurnPatch
+    count: 10
+  - type: StackPrice
+    price: 10
+
+- type: entity
+  parent: RobotBurnPatch
+  id: RobotBurnPatch1
+  suffix: Single, BoxStation
+  components:
+  - type: Stack
+    stackType: RobotBurnPatch
+    count: 1
+
+## Brute
+- type: entity
+  parent: BaseAdvancedRobotTopical
+  id: RobotTraumaPatch
+  name: robot trauma patch
+  suffix: Full, BoxStation
+  description: An electric welder capable of vaporizing metallically-charged medicinal compounds in the name of robot repair.
+  components:
+  - type: Sprite
+    state: robot-trauma
+  - type: Item
+    heldPrefix: robot-trauma
+  - type: Healing
+    damageContainers:
+    - HumanoidSilicon
+    damage:
+      types:
+        Blunt: -20
+        Piercing: -20
+        Slash: -20
+    bloodlossModifier: -5
+  - type: Stack
+    stackType: RobotTraumaPatch
+    count: 10
+  - type: StackPrice
+    price: 10
+
+- type: entity
+  parent: RobotTraumaPatch
+  id: RobotTraumaPatch1
+  suffix: Singe, BoxStation
+  components:
+  - type: Stack
+    stackType: RobotTraumaPatch
+    count: 1
+
+# Single Heal
+
+## Caustic
+- type: entity
+  parent: BaseAdvancedRobotTopical
+  id: AcidNeutralizationPatch
+  name: acid neutralization patch
+  suffix: Full, BoxStation
+  description: A transmetallodermal patch infused with an alkaline agent capable of neutralizing acids and reconstructing the damaged elements.
+  components:
+  - type: Sprite
+    state: acid-neutralization
+  - type: Item
+    heldPrefix: acid-neutralization
+  - type: Healing
+    damageContainers:
+    - HumanoidSilicon
+    damage:
+      types:
+        Caustic: -30
+  - type: Stack
+    stackType: AcidNeutralizationPatch
+    count: 10
+  - type: StackPrice
+    price: 10
+
+- type: entity
+  parent: AcidNeutralizationPatch
+  id: AcidNeutralizationPatch1
+  suffix: Singe, BoxStation
+  components:
+  - type: Stack
+    stackType: AcidNeutralizationPatch
+    count: 1
+
+## Heat
+- type: entity
+  parent: BaseAdvancedRobotTopical
+  id: CoolingPatch
+  name: cooling patch
+  suffix: Full, BoxStation
+  description: A medicinally-infused device capable of boosting a machine's cooling systems and repairing the damage of overheating
+  components:
+  - type: Sprite
+    state: cooling
+  - type: Item
+    heldPrefix: cooling
+  - type: Healing
+    damageContainers:
+    - HumanoidSilicon
+    damage:
+      types:
+        Heat: -30
+  - type: Stack
+    stackType: CoolingPatch
+    count: 10
+  - type: StackPrice
+    price: 10
+
+- type: entity
+  parent: CoolingPatch
+  id: CoolingPatch1
+  suffix: Singe, BoxStation
+  components:
+  - type: Stack
+    stackType: CoolingPatch
+    count: 1
+
+## Blunt
+- type: entity
+  parent: BaseAdvancedRobotTopical
+  id: DentRepairPatch
+  name: dent repair patch
+  suffix: Full, BoxStation
+  description: A suction cup infused with a medicinal agent capable of removing dents from metal exteriors.
+  components:
+  - type: Sprite
+    state: dent-repair
+  - type: Item
+    heldPrefix: dent-repair
+  - type: Healing
+    damageContainers:
+    - HumanoidSilicon
+    damage:
+      types:
+        Blunt: -30
+  - type: Stack
+    stackType: DentRepairPatch
+    count: 10
+  - type: StackPrice
+    price: 10
+
+- type: entity
+  parent: DentRepairPatch
+  id: DentRepairPatch1
+  suffix: Singe, BoxStation
+  components:
+  - type: Stack
+    stackType: DentRepairPatch
+    count: 1
+
+## Shock
+- type: entity
+  parent: BaseAdvancedRobotTopical
+  id: ElectronicRepairPatch
+  name: electronic repair patch
+  suffix: Full, BoxStation
+  description: A medicinally infused tool capable of repairing damage caused to components by unexpected short circuiting.
+  components:
+  - type: Sprite
+    state: electronic-repair
+  - type: Item
+    heldPrefix: electronic-repair
+  - type: Healing
+    damageContainers:
+    - HumanoidSilicon
+    damage:
+      types:
+        Shock: -30
+  - type: Stack
+    stackType: ElectronicRepairPatch
+    count: 10
+  - type: StackPrice
+    price: 10
+
+- type: entity
+  parent: ElectronicRepairPatch
+  id: ElectronicRepairPatch1
+  suffix: Singe, BoxStation
+  components:
+  - type: Stack
+    stackType: ElectronicRepairPatch
+    count: 1
+
+## Pierce
+- type: entity
+  parent: BaseAdvancedRobotTopical
+  id: PunctureRepairPatch
+  name: puncture repair patch
+  suffix: Full, BoxStation
+  description: A transmetallodermal patch capable of repairing both the surface wounds and internal damaged associated with puncture wounds, such as those caused by bullets.
+  components:
+  - type: Sprite
+    state: puncture-repair
+  - type: Item
+    heldPrefix: puncture-repair
+  - type: Healing
+    damageContainers:
+    - HumanoidSilicon
+    damage:
+      types:
+        Piercing: -30
+  - type: Stack
+    stackType: PunctureRepairPatch
+    count: 10
+  - type: StackPrice
+    price: 10
+
+- type: entity
+  parent: PunctureRepairPatch
+  id: PunctureRepairPatch1
+  suffix: Singe, BoxStation
+  components:
+  - type: Stack
+    stackType: PunctureRepairPatch
+    count: 1
+
+## Rads
+- type: entity
+  parent: BaseAdvancedRobotTopical
+  id: ShieldingPatch
+  name: shielding patch
+  suffix: Full, BoxStation
+  description: A medicated shielded pcb capable of replacing and repairing components damaged by strong sources of radiation.
+  components:
+  - type: Sprite
+    state: shielding
+  - type: Item
+    heldPrefix: shielding
+  - type: Healing
+    damageContainers:
+    - HumanoidSilicon
+    damage:
+      types:
+        Radiation: -30
+  - type: Stack
+    stackType: ShieldingPatch
+    count: 10
+  - type: StackPrice
+    price: 10
+
+- type: entity
+  parent: ShieldingPatch
+  id: ShieldingPatch1
+  suffix: Singe, BoxStation
+  components:
+  - type: Stack
+    stackType: ShieldingPatch
+    count: 1
+
+## Slash
+- type: entity
+  parent: BaseAdvancedRobotTopical
+  id: GashRepairPatch
+  name: gash repair patch
+  suffix: Full, BoxStation
+  description: A medicinal metallic foam applicator capable of securely sealing lacerations in mechanical entities.
+  components:
+  - type: Sprite
+    state: gash-repair
+  - type: Item
+    heldPrefix: gash-repar
+  - type: Healing
+    damageContainers:
+    - HumanoidSilicon
+    damage:
+      types:
+        Slash: -30
+  - type: Stack
+    stackType: GashRepairPatch
+    count: 10
+  - type: StackPrice
+    price: 10
+
+- type: entity
+  parent: GashRepairPatch
+  id: GashRepairPatch1
+  suffix: Singe, BoxStation
+  components:
+  - type: Stack
+    stackType: GashRepairPatch
+    count: 1
+
+## Cold
+- type: entity
+  parent: BaseAdvancedRobotTopical
+  id: ThawingPatch
+  name: thawing patch
+  suffix: Full, BoxStation
+  description: An ointment capable of reversing the damage on structural plastics caused by freezing temperatures.
+  components:
+  - type: Sprite
+    state: thawing
+  - type: Item
+    heldPrefix: thawing
+  - type: Healing
+    damageContainers:
+    - HumanoidSilicon
+    damage:
+      types:
+        Cold: -30
+  - type: Stack
+    stackType: ThawingPatch
+    count: 10
+  - type: StackPrice
+    price: 10
+
+- type: entity
+  parent: ThawingPatch
+  id: ThawingPatch1
+  suffix: Singe, BoxStation
+  components:
+  - type: Stack
+    stackType: ThawingPatch
+    count: 1

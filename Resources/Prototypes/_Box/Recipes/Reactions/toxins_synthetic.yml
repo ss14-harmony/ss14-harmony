@@ -1,0 +1,29 @@
+- type: reaction
+  id: ZipBomb
+  reactants:
+    Overclocker:
+      amount: 1
+    Vestine:
+      amount: 1
+  products:
+    ZipBomb: 2
+
+- type: reaction
+  id: CIH
+  reactants:
+    Bitflipper:
+      amount: 1
+    MindbreakerToxin:
+      amount: 1
+  products:
+    CIH: 1
+
+- type: reaction
+  id: Bootloop
+  reactants:
+    ChloralHydrate:
+      amount: 1
+    ActivatedSilicon:
+      amount: 1
+  products:
+    Bootloop: 1

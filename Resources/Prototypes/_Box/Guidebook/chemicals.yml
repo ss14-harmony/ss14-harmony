@@ -1,0 +1,5 @@
+- type: guideEntry
+  id: Synthetic
+  name: guide-entry-synthetic
+  text: "/ServerInfo/_Box/Guidebook/ChemicalTabs/Synthetic.xml"
+  filterEnabled: True

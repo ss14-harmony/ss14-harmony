@@ -13,6 +13,7 @@
   - Biological
   - Special
   - Others
+  - Synthetic # Box Change - SynthChem
   filterEnabled: True
 
 - type: guideEntry

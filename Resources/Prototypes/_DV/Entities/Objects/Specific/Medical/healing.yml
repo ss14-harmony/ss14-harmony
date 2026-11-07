@@ -1,0 +1,45 @@
+- type: entity
+  parent: BaseHealingItem # Box Change, parent DV called for wasn't ported
+  id: OmniPatch
+  suffix: Full, Box
+  name: omni patch
+  description: A topical patch of specially grown silica microbots, curated to heal machine entities. Smells of ozone.
+  components:
+  - type: Sprite
+    sprite: _DV/Objects/Medical/Omnipatch.rsi
+    state: icon # Box Change, broken if not here for some reason, probably parent change
+  - type: Item
+    sprite: _DV/Objects/Medical/Omnipatch.rsi
+    heldPrefix: icon # Box Change, broken if not here for some reason, probably parent change
+  - type: Healing
+    damageContainers:
+    - HumanoidSilicon
+    # - Silicon # Box Change, as long as Borgs are immune to Radiation, trying to remove radiation damage from them crashes the game
+    damage:
+      types:
+        Heat: -30
+        Cold: -30
+        Shock: -30
+        Caustic: -30
+
+        Blunt: -30
+        Piercing: -30
+        Slash: -30
+
+        Radiation: -30 # Box Change, IPC Omnizine # Box Change - -20 > -30
+    modifyBloodLevel: 45 # restores a lot of blood for IPCs. # Box Change - 25 > 45
+    bloodlossModifier: -20 # DeltaV - IPCs bleed
+  - type: Stack
+    stackType: OmniPatch
+    count: 10
+  - type: Tag # Box Change - Allow IPC Topicals in Medical Belts
+    tags:
+    - IPCTopical
+
+- type: entity
+  id: Omnipatch1
+  parent: OmniPatch
+  suffix: Single, Box
+  components:
+  - type: Stack
+    count: 1

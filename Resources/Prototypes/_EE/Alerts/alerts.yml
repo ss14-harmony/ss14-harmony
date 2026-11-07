@@ -1,0 +1,10 @@
+# starcup: temporary, kill once rewritten # Box: If we can fix this later, We Should (probably)
+- type: alert
+  parent: BorgBattery
+  id: IpcBattery
+  clientHandled: false
+
+- type: alert
+  parent: BorgBatteryNone
+  id: IpcBatteryNone
+  clientHandled: false

@@ -296,6 +296,7 @@
   physicalDesc: reagent-physical-desc-powdery
   flavor: bitter
   color: "#ffff00"
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem - Sure, clown weed works for IPCs. Why not.
   metabolisms:
     Bloodstream:
       effects:

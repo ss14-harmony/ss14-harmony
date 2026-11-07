@@ -1,0 +1,140 @@
+- type: reagent
+  id: IndustrialLubricant
+  name: reagent-name-industrial-lubricant
+  group: Synthetic
+  desc: reagent-desc-industrial-lubricant
+  physicalDesc: reagent-physical-desc-oily
+  slipData:
+    requiredSlipSpeed: 3.5
+  flavor: oily
+  flavorMinimum: 0.01
+  color: "#7A8C63"
+  recognizable: true
+  boilingPoint: 300 # Oil, Close Enough
+  meltingPoint: -16 # Oil, Close Enough
+  friction: 0.4
+  metabolismCategories: [ Organic, Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:SatiateThirst
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Vox]
+          inverted: true
+        factor: -0.2
+      - !type:SatiateThirst
+        factor: 1
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Vox]
+      - !type:ModifyBloodLevel
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [IPC]
+        amount: 3
+
+- type: reagent
+  id: ComputerCoolant
+  name: reagent-name-computer-coolant
+  group: Synthetic
+  desc: reagent-desc-computer-coolant
+  physicalDesc: reagent-physical-desc-translucent
+  slipData:
+    requiredSlipSpeed: 4
+  flavor: sweet
+  flavorMinimum: 0.01
+  color: "#D9EAFB"
+  boilingPoint: 100 # Water, Close enough
+  meltingPoint: -30 # Freezing point of some Glycol-Water Compter Coolants
+  friction: 0.4
+  metabolismCategories: [ Organic, Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+          inverted: true
+        damage:
+          types:
+            Poison: 0.5
+      - !type:ModifyBloodLevel
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [IPC]
+        amount: 3
+      - !type:SatiateThirst
+        factor: 1
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Vox]
+
+- type: reagent
+  id: EthyleneGlycol
+  name: reagent-name-ethylene-glycol
+  desc: reagent-desc-ethylene-glycol
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: sweet
+  flavorMinimum: 0.01
+  color: "#F2F8FE"
+  boilingPoint: 197.3 # Accurate boiling point
+  meltingPoint: -12.9 # Accurate melting point
+  friction: 0.4
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 1
+
+# Voltaic Acid - Synthetics/Silicon Component
+- type: reagent
+  id: VoltaicAcid
+  name: reagent-name-voltaic-acid
+  desc: reagent-desc-voltaic-acid
+  physicalDesc: reagent-physical-desc-electric
+  flavor: shocking
+  color: "#FDD023"
+  metabolismCategories: [ Organic, Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:Electrocute
+        probability: 0.10
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+        damage:
+          types:
+            Shock: 0.1
+
+# Hydrogen Chloride
+- type: reagent
+  id: HydrogenChloride
+  name: reagent-name-hydrogen-chloride
+  desc: reagent-desc-hydrogen-chloride
+  physicalDesc: reagent-physical-desc-gaseous
+  flavor: sour
+  color: "#cccccc"
+
+# Chloromethane
+- type: reagent
+  id: Chloromethane
+  name: reagent-name-chloromethane
+  desc: reagent-desc-chloromethane
+  physicalDesc: reagent-physical-desc-gaseous
+  flavor: sweet
+  color: "#cccccc"
+
+# Dimethyldichlorosilane
+- type: reagent
+  id: Dimethyldichlorosilane
+  name: reagent-name-dimethyldichlorosilane
+  desc: reagent-desc-dimethyldichlorosilane
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: sour
+  color: "#cccccc"

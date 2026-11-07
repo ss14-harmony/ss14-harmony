@@ -1,0 +1,7 @@
+- type: construction
+  id: ChassisPatch
+  graph: ChassisPatch
+  startNode: start
+  targetNode: icon
+  category: construction-category-tools
+  objectType: Item

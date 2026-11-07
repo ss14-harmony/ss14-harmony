@@ -1,0 +1,15 @@
+# Chemicals
+
+- type: listing
+  id: UplinkMechazineSilipenBox
+  name: uplink-mechazine-injector-name
+  description: uplink-mechazine-injector-desc
+  icon: { sprite: _Box/Objects/Specific/Medical/silipens.rsi, state: mechapen }
+  productEntity: MechazineSilipen
+  discountCategory: usualDiscounts # same as Hyperzine
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 4 # same price as Hyperzine for parity
+  categories:
+  - UplinkChemicals

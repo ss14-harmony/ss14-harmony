@@ -1,0 +1,10 @@
+# IPC Topical Tag for Medical Belt
+- type: Tag
+  id: IPCTopical
+
+- type: Tag
+  id: IPCFood
+
+# IPC Mask Tag for smoking
+- type: Tag
+  id: IPCMaskWearable

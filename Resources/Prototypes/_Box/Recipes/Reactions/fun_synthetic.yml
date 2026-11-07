@@ -1,0 +1,53 @@
+- type: reaction
+  id: WeedDotExe
+  reactants:
+    Radium:
+      amount: 1
+    THC:
+      amount: 1
+    Plasma:
+      amount: 1.1
+  products:
+    WeedDotExe: 1
+    Plasma: 1
+
+- type: reaction
+  id: Bitflipper
+  reactants:
+    Radium:
+      amount: 1
+    ActivatedSilicon:
+      amount: 1
+    Sugar:
+      amount: 1
+  products:
+    Bitflipper: 1
+
+- type: reaction
+  id: Surge
+  reactants:
+    Thermite:
+      amount: 3
+    Uranium:
+      amount: 1
+    Fluorosurfactant:
+      amount: 1
+    SulfuricAcid:
+      amount: 1
+    Overclocker:
+      amount: 1
+    ActivatedSilicon:
+      amount: 1
+  products:
+    Surge: 4
+
+- type: reaction
+  id: Mechazine
+  minTemp: 300
+  reactants:
+    Surge:
+      amount: 1
+    Vestine:
+      amount: 1
+  products:
+    Mechazine: 1

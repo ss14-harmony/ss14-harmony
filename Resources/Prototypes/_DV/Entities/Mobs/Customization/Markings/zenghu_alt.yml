@@ -1,0 +1,95 @@
+- type: marking
+  id: CyberLimbsMarkingZenghuHeadAlt
+  bodyPart: Head
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_head-1
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_head-2
+
+- type: marking
+  id: CyberLimbsMarkingZenghuChestAlt
+  bodyPart: Chest
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_chest-1
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_chest-2
+
+- type: marking
+  id: CyberLimbsMarkingZenghuLArmAlt
+  bodyPart: LArm
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_l_arm-1
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_l_arm-2
+
+- type: marking
+  id: CyberLimbsMarkingZenghuLHandAlt
+  bodyPart: LHand
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_l_hand-1
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_l_hand-2
+
+- type: marking
+  id: CyberLimbsMarkingZenghuLLegAlt
+  bodyPart: LLeg
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_l_leg-1
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_l_leg-2
+
+- type: marking
+  id: CyberLimbsMarkingZenghuLFootAlt
+  bodyPart: LFoot
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_l_foot
+
+- type: marking
+  id: CyberLimbsMarkingZenghuRArmAlt
+  bodyPart: RArm
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_r_arm-1
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_r_arm-2
+
+- type: marking
+  id: CyberLimbsMarkingZenghuRHandAlt
+  bodyPart: RHand
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_r_hand-1
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_r_hand-2
+
+- type: marking
+  id: CyberLimbsMarkingZenghuRLegAlt
+  bodyPart: RLeg
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_r_leg-1
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_r_leg-2
+
+- type: marking
+  id: CyberLimbsMarkingZenghuRFootAlt
+  bodyPart: RFoot
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_r_foot

@@ -1,0 +1,4 @@
+- type: guideEntry
+  id: IPC
+  name: species-name-ipc
+  text: "/ServerInfo/_Box/Guidebook/Mobs/IPCs.xml"

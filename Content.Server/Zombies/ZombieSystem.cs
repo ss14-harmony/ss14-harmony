@@ -27,6 +27,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Server.Ghost.Roles.Components;
+using Content.Shared._EE.Silicon.Components; // Box Change Start: IPCs take caustic damage when infected
 
 namespace Content.Server.Zombies
 {
@@ -132,13 +133,32 @@ namespace Content.Server.Zombies
                     continue;
 
                 if (_random.Prob(comp.InfectionWarningChance))
-                    _popup.PopupEntity(Loc.GetString(_random.Pick(comp.InfectionWarnings)), uid, uid);
+                // Box Change Start: IPCs get different infection warnings than humans
+                {
+                    if (HasComp<SiliconComponent>(uid))
+                    {
+                        _popup.PopupEntity(Loc.GetString(_random.Pick(comp.IPCInfectionWarnings)), uid, uid);
+                    }
+                    else
+                    {
+                        _popup.PopupEntity(Loc.GetString(_random.Pick(comp.InfectionWarnings)), uid, uid);
+                    }
+                }
+                // Box Change End
 
                 var multiplier = _mobState.IsCritical(uid, mobState)
                     ? comp.CritDamageMultiplier
                     : 1f;
-
-                _damageable.ChangeDamage((uid, damage), comp.Damage * multiplier, true, false);
+                // Box Change Start: IPCs take caustic damage when infected
+                if (HasComp<SiliconComponent>(uid))
+                {
+                    _damageable.ChangeDamage((uid, damage), comp.IPCDamage * multiplier, true, false);
+                }
+                else
+                {
+                    _damageable.ChangeDamage((uid, damage), comp.Damage * multiplier, true, false);
+                }
+                // Box Change End
             }
 
             // Heal the zombified

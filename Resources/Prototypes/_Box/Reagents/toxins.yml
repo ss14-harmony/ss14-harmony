@@ -1,0 +1,83 @@
+# Hydrochloric Acid
+- type: reagent
+  id: HydrochloricAcid
+  name: reagent-name-hydrochloric-acid
+  group: Toxins
+  desc: reagent-desc-hydrochloric-acid
+  physicalDesc: reagent-physical-desc-pungent
+  flavor: sour
+  color: "#cccccc"
+  metabolismCategories: [ Organic, Artificial ]
+  reactiveEffects:
+    Acidic:
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        ignoreResistances: false
+        damage:
+          types:
+            Caustic: 0.1
+      - !type:Emote
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [IPC]
+          inverted: true
+        emote: Scream
+        probability: 0.1
+  metabolisms:
+    Bloodstream:
+      metabolismRate: 3.00 # Okay damage, high metabolism rate. You need a lot of units to crit. Simulates acid burning through you fast.
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Caustic: 4
+      - !type:PopupMessage
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [IPC]
+          inverted: true
+        type: Local
+        visualType: Large
+        messages: [ "generic-reagent-effect-burning-insides" ]
+        probability: 0.33
+      - !type:Emote
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [IPC]
+          inverted: true
+        emote: Scream
+        probability: 0.2
+
+# Methanol
+- type: reagent
+  id: Methanol
+  name: reagent-name-methanol
+  group: Toxins
+  desc: reagent-desc-methanol
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: alcohol
+  color: "#b05b3c"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 1
+
+# Carbon Monoxide
+- type: reagent
+  id: CarbonMonoxide
+  name: reagent-name-carbon-monoxide
+  desc: reagent-desc-carbon-monoxide
+  physicalDesc: reagent-physical-desc-gaseous
+  flavor: bitter
+  color: "#1D2C20"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: 0.8

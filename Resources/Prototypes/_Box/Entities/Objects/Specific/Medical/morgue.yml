@@ -1,0 +1,20 @@
+- type: entity
+  parent: BaseItem
+  id: MoltenIPCScrap
+  name: molten ipc scrap
+  suffix: BoxStation
+  description: The melted remains of a IPC.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _Box/Objects/Materials/materials.rsi
+    state: molten_ipc_scrap
+  - type: Tag
+    tags:
+    - Burnt
+    - Recyclable
+    - Trash
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 1500 # 15 sheets

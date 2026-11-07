@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "orignal medipen sprites made by ghost(GitHub) at commit https://github.com/tgstation/tgstation/commit/23651b54f004f81c7221b02838685ccfe2130334, Modifications by Dinoguy12349 (GitHub)",
+    "size": {
+        "x":32,
+        "y":32
+    },
+    "states": [
+        {
+            "name":"silipen"
+        },
+        {
+            "name":"silipen_empty"
+        },
+        {
+            "name":"emergency_silipen"
+        },
+        {
+            "name": "emergencysilipen_empty"
+        },
+        {
+            "name": "mechapen"    
+        },
+        {
+            "name":"mechapen_empty"
+        }
+    ]
+}

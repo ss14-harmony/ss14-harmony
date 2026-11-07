@@ -1,0 +1,100 @@
+<Document>
+  # I.P.C.
+  <GuideEntityEmbed Entity="AppearanceIPC" Caption="I.P.C."/>
+  An IPC (short for Integrated Positronic Chassis) is a type of sentient robot and is considered an [color=yellow]independent individual[/color], meaning [color=red]they are not guided by any laws of robotics[/color]. IPCs cannot be hacked by Emags because they do not have to follow any predefined directives in their system. [color=red]IPCs are silicon-based beings, so they are healed differently to organic species.[/color]
+
+  They take [color=#1e90ff]15% less Blunt and Slash, 10% less Piercing, and 50% less Radiation damage[/color] but [color=#ffa500]30% more Heat damage, and 100% more Shock Damage.[/color] As they are Inorganic, they do not take Poison, Asphyxiation, Bloodloss, or Genetic damage, and have unique ways to metabolize Reagents.
+
+  An IPC's punch deals 6 blunt damage.
+
+  ## Recharging an IPC
+   <Box>
+    <GuideEntityEmbed Entity="APCBasic" Caption="APC Terminal"/>
+    <GuideEntityEmbed Entity="BorgCharger" Caption="Borg Charger"/>
+    <GuideEntityEmbed Entity="PowerCellMedium" Caption="Power Cell"/>
+  </Box>
+  IPCs can be recharged in three different ways:
+
+  [bold]APC Terminal:[/bold] IPCs can use APC terminals to recharge. Press [color=yellow]Alt + left click[/color] on a terminal as many times as needed to fully recharge.
+
+  [bold]Borg Rechargers:[/bold] IPCs can use borg rechargers to recharge. Always prioritize the ones outside of the Sci area to avoid headaches.
+
+  [bold]Power Cell:[/bold] IPCs have an internal power cell that serves as their battery. They can simply swap it out by opening the hatch and manually replacing it.
+
+  ## Repairing
+    IPCs can be repaired by a wide variety of tools, depending on the damage. The station's Medical bay should have these tools on hand.
+
+    In the event an IPC dies, after being fully repaired, it should be restarted using the [color=yellow]"Restart"[/color] button (located by right-clicking).
+
+    [color=red][bold]NEVER ELECTROCUTE AN IPC with a defibrillator[/bold] or in any other way while it is dead, as this will cause the battery to discharge energy rays outward![/color]
+
+  ### Basic Tools
+    Basic Tools are more common with Medical starting with a healthy supply of them and some starting in an IPCs [color=yellow]Survival Kit[/color].
+
+    These are simple and useable options, however they lack the potency of the Advanced Tools.
+
+  <Box HorizontalAlignment="Stretch">
+    <GuideEntityEmbed Entity="WelderIndustrialAdvanced" Caption="Welder"/>
+   [bold][color=red]CURRENTLY BROKEN:[/bold][/color] Welders can be used to repair [color=yellow]Minor Brute Damage[/color], alongside [color=yellow]Miniscule Cold Damage[/color]. They can be found in Tools, Maintenance Tunnels, and in the hands of Station Engineers and Roboticists. Welding without eye protection causes [color=yellow]Blindness[/color], even to IPCs.
+  </Box>
+  <Box HorizontalAlignment="Stretch">
+    <GuideEntityEmbed Entity="ChassisPatch" Caption="Chassis Patches"/>
+    Chassis Patches stop [color=yellow]Bleeding[/color] and heal [color=yellow]Piercing Damage[/color], [color=yellow]Minor Slash Damage[/color], and [color=yellow]Miniscule Blunt Damage[/color]. They can be crafted with Durathread and Steel by hand or in the Medical TechFab. Durathread is made with Plastic and Cloth.
+  </Box>
+  <Box HorizontalAlignment="Stretch">
+    <GuideEntityEmbed Entity="CablePack" Caption="Robot Rewiring Kits"/>
+    Robot Rewiring Kits heal [color=yellow]Heat Damage[/color] and [color=yellow]Shock Damage[/color].
+  </Box>
+  <Box HorizontalAlignment="Stretch">
+    <GuideEntityEmbed Entity="RobotStructPack" Caption="Robot Structural Repair Kits"/>
+    Robot Structural Repair Kits heal [color=yellow]Brute Damage[/color], [color=yellow]Cold Damage[/color], and [color=yellow]Minor Caustic Damage[/color].
+  </Box>
+  <Box HorizontalAlignment="Stretch">
+    <GuideEntityEmbed Entity="IPCOilPack" Caption="IPC Oil Packs"/>
+    IPC Oil Packs [color=yellow]Replenish the Bloodstream[/color] of an IPC with specialized Coolant and Lubricant, and heal [color=yellow]Miniscule Heat Damage[/color] and [color=yellow]Miniscule Blunt Damage[/color]. They can be made in a Microwave with specific reagents.
+  </Box>
+
+  ### Specialized
+  Specialized Tools tackle more complex damage, and are thus harder to obtain. They cannot be found naturally on the Station and must be crafted to meet demand.
+
+  <Box HorizontalAlignment="Stretch">
+    <GuideEntityEmbed Entity="ComponentPack" Caption="Component Replacement Kits"/>
+    Component Replacement Kits heal [color=yellow] Major Radiation Damage[/color] alongside [color=yellow]Shock Damage[/color].
+  </Box>
+  <Box HorizontalAlignment="Stretch">
+    <GuideEntityEmbed Entity="ReplacementLenses" Caption="Replacement Lenses"/>
+    Replacement Lenses can be used to repair [color=yellow]Blindness[/color]. They can be made in the Medical Techfab.
+  </Box>
+  ### Advanced Tools
+  All Advanced Tools require advanced medicinal reagents, and provide the most healing of all IPC Repair Tools. The tools that heal one damage at a time are the most effective, with Omni Patches being the most effective for all damages.
+
+  <Box HorizontalAlignment="Stretch">
+    <GuideEntityEmbed Entity="OmniPatch" Caption="Omni Patches"/>
+    Omni Patches heal [color=yellow]All Damage[/color], as well as [color=yellow]Replenishing the Bloodstream[/color] and stopping [color=yellow]Bleeding[/color]. They can also be obtained from a Syndicate Agent's Uplink.
+  </Box>
+  <Box HorizontalAlignment="Stretch">
+    <GuideEntityEmbed Entity="RobotTraumaPatch" Caption="Robot Trauma Patch"/>
+    Robot Trauma Patches heal [color=yellow]Major Blunt Damage[/color], as well stopping [color=yellow]Bleeding[/color].
+  </Box>
+  <Box HorizontalAlignment="Stretch">
+    <GuideEntityEmbed Entity="RobotBurnPatch" Caption="Robot Burn Patch"/>
+    Robot Burn Patches heal [color=yellow]Major Burn Damage[/color].
+  </Box>
+
+  The following are the remaining advanced tools, and what they heal.
+
+  <Box>
+    <GuideEntityEmbed Entity="DentRepairPatch" Caption="Dent Repair Patch (Blunt)"/>
+    <GuideEntityEmbed Entity="PunctureRepairPatch" Caption="Puncture Repair Patch (Piercing)"/>
+    <GuideEntityEmbed Entity="GashRepairPatch" Caption="Gash Repair Patch (Slash)"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="CoolingPatch" Caption="Cooling Patch (Heat)"/>
+    <GuideEntityEmbed Entity="ThawingPatch" Caption="ThawingPatch (Cold)"/>
+    <GuideEntityEmbed Entity="ElectronicRepairPatch" Caption="Electronic Repair Patch (Shock)"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="AcidNeutralizationPatch" Caption="Acid Neutralization Patch (Caustic)"/>
+    <GuideEntityEmbed Entity="ShieldingPatch" Caption="Shielding Patch (Radiation)"/>
+  </Box>
+</Document>

@@ -15,6 +15,7 @@ namespace Content.Shared.Humanoid
         UndergarmentBottom,
         Chest,
         Head,
+        HeadBase, // Starcup: added for IPCs
         Snout,
         SnoutCover, // things layered over snouts (i.e. noses)
         HeadSide, // side parts (i.e., frills)

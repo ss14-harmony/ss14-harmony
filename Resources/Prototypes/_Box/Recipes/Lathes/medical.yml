@@ -1,0 +1,42 @@
+## IPC Repair
+- type: latheRecipe
+  id: CablePack
+  result: CablePack1
+  completetime: 1
+  materials:
+    Steel: 100
+
+- type: latheRecipe
+  id: ComponentPack
+  result: ComponentPack1
+  completetime: 1
+  materials:
+    Steel: 120
+    Plastic: 120
+    Glass: 80
+    Plasma: 50 # It heals Rads
+
+- type: latheRecipe
+  id: RobotStructPack
+  result: RobotStructPack1
+  completetime: 1
+  materials:
+    Steel: 50
+    Plastic: 25
+    Plasteel: 100
+
+- type: latheRecipe
+  id: ReplacementLenses
+  result: ReplacementLenses
+  completetime: 3
+  materials:
+    Steel: 120
+    Glass: 160
+
+- type: latheRecipe
+  id: ChassisPatch
+  result: ChassisPatch1
+  completetime: 1
+  materials: # Lathe more efficient than handcrafting
+    Steel: 100
+    Durathread: 100

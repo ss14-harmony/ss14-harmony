@@ -1,0 +1,22 @@
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkIPCACan
+  name: IPCA can
+  suffix: Full, BoxStation
+  description: Small joy, big taste, no worries!
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IPCA
+        Quantity: 40
+      grindable:
+        reagents:
+        - ReagentId: Aluminium
+          Quantity: 4
+        - ReagentId: Iron
+          Quantity: 1
+  - type: Sprite
+    sprite: _Box/Objects/Consumable/Drinks/ipca_can.rsi
+  - type: Item
+    sprite: _Box/Objects/Consumable/Drinks/ipca_can.rsi

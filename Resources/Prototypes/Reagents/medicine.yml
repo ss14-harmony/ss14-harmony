@@ -655,6 +655,7 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: medicine
   color: "#86caf7"
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem - Lets IPCs metabolize Ambuzol
   metabolisms:
     Bloodstream:
       effects:
@@ -679,6 +680,7 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: medicine
   color: "#1274b5"
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem - Lets IPCs metabolize Ambuzol+
   metabolisms:
     Bloodstream:
       effects:
