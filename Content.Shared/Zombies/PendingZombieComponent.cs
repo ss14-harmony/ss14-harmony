@@ -20,6 +20,19 @@ public sealed partial class PendingZombieComponent : Component
             { "Poison", 0.3 },
         }
     };
+    // Box Change Start: IPCs take caustic damage when infected
+
+    /// <summary>
+    /// Damage dealt every second to infected IPCs.
+    /// </summary>
+    [DataField("IPCdamage")] public DamageSpecifier IPCDamage = new()
+    {
+        DamageDict = new ()
+        {
+            { "Caustic", 0.3 },
+        }
+    };
+    // Box Change End
 
     /// <summary>
     /// A multiplier for <see cref="Damage"/> applied when the entity is in critical condition.
@@ -63,4 +76,16 @@ public sealed partial class PendingZombieComponent : Component
         "zombie-infection-warning",
         "zombie-infection-underway"
     };
+    /// Box Change Start: IPCs have unique infection warnings
+    [DataField("IPCinfectionWarnings")]
+    /// <summary>
+    /// Infection warnings shown as popups
+    /// </summary>
+    public List<string> IPCInfectionWarnings = new()
+    {
+        "ipc-zombie-infection-warning",
+        "ipc-zombie-infection-underway",
+        "ipc-zombie-infection-continues"
+    };
+    // Box Change End
 }
