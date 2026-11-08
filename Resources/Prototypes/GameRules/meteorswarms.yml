@@ -196,8 +196,8 @@
       min: 3
       max: 3
     meteorsPerWave:
-      min: 10
-      max: 10
+      min: 3 # Harmony Change, 10 -> 3
+      max: 6 # Harmony Change, 10 -> 6
 
 - type: entity
   id: ImmovableRodSpawn
@@ -257,8 +257,8 @@
       min: 3
       max: 3
     meteorsPerWave:
-      min: 10
-      max: 10
+      min: 3 # Harmony Change, 10 -> 3
+      max: 6 # Harmony Change, 10 -> 6
 
 - type: entity
   parent: MeteorSwarm
@@ -275,8 +275,8 @@
       min: 3
       max: 3
     meteorsPerWave:
-      min: 10
-      max: 10
+      min: 3 # Harmony Change, 10 -> 3
+      max: 6 # Harmony Change, 10 -> 6
 
 - type: entity
   parent: MeteorSwarm
@@ -293,8 +293,8 @@
       min: 3
       max: 3
     meteorsPerWave:
-      min: 10
-      max: 10
+      min: 3 # Harmony Change, 10 -> 3
+      max: 6 # Harmony Change, 10 -> 6
 
 - type: entity
   parent: MeteorSwarm
@@ -314,5 +314,5 @@
       min: 3
       max: 3
     meteorsPerWave:
-      min: 8
-      max: 12
+      min: 5 # Harmony Change, 8 -> 5
+      max: 8 # Harmony Change, 12 -> 8
