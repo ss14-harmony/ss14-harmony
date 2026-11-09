@@ -105,7 +105,7 @@
       description: ghost-role-information-eeeplet-desc
       rules: ghost-role-information-antagonist-rules
       mindRoles:
-        - MindRoleGhostRoleTeamAntagonist
+        - MindRoleGhostRoleSoloAntagonist # Harmony change TeamAntag -> SoloAntag
       raffle:
         settings: default
     - type: Bloodstream
@@ -189,7 +189,7 @@
       description: ghost-role-information-eeep-desc
       rules: ghost-role-information-antagonist-rules
       mindRoles:
-        - MindRoleGhostRoleTeamAntagonist
+        - MindRoleGhostRoleSoloAntagonist # Harmony change TeamAntag -> SoloAntag
     - type: Bloodstream
       bloodReferenceSolution:
         reagents:
