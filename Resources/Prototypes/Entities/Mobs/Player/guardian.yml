@@ -250,6 +250,7 @@
           Blunt: 5
     - type: Loadout
       prototypes: [ HoloClownGear ]
+    - type: CreamPieStunner # Harmony Additions: Cream Pies only stun when thrown by a Clown | More clown than the troupe
     - type: RandomMetadata
       nameSegments:
       - NamesClown
