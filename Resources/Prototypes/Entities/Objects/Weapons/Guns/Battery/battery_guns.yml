@@ -681,7 +681,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: BatteryAmmoProvider
-    proto: RedMediumLaser
+    proto: LaserBulletAntiqueHarmony # Harmony change: Antique Laser is no longer hitscan RedMediumLaser -> LaserBulletAntique
     fireCost: 100
   - type: BatterySelfRecharger
     autoRechargeRate: 40
