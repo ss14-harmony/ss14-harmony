@@ -59,6 +59,7 @@
   name: magnum laser bolt
   id: BulletLaserMagnumHarmony
   parent: BulletLaserBaseHarmony
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Guns/Projectiles/laser_projectile.rsi
@@ -78,6 +79,7 @@
   name: magnum window-piercing bolt
   id: BulletLaserWindowPiercingMagnumHarmony
   parent: BulletLaserBaseHarmony
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Guns/Projectiles/piercing_projectile.rsi
@@ -138,6 +140,7 @@
   name: laser bolt shock
   id: BulletLaserShockHarmony
   parent: BulletLaserBaseHarmony
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Harmony/Objects/Weapons/Guns/Projectiles/shock_projectile.rsi
@@ -155,3 +158,23 @@
     ignoreResistances: true
   - type: StaminaDamageOnCollide
     damage: 5
+
+- type: entity
+  name: laser bolt medium
+  id: LaserBulletAntiqueHarmony
+  parent: BulletLaserHarmony
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Heat: 12
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask:
+        - Opaque
