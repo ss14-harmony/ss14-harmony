@@ -358,7 +358,6 @@
   conditions:
   - !type:BuyerJobCondition
     whitelist:
-    - Mime
     - Clown
 
 # Weapons
