@@ -346,6 +346,21 @@
     - Bartender
     - Zookeeper
 
+- type: listing
+  id: UplinkPieBox
+  name: uplink-piebox-name
+  description: uplink-piebox-desc
+  productEntity: FoodBoxDonkPies
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Mime
+    - Clown
+
 # Weapons
 
 - type: listing
@@ -360,4 +375,3 @@
     Telecrystal: 5
   categories:
   - UplinkWeaponry
- 
