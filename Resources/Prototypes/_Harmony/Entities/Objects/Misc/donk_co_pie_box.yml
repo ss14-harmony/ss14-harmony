@@ -2,7 +2,7 @@
   parent: [BoxCardboard, BaseSyndicateContraband]
   id: FoodBoxDonkPies
   name: Pies by Donk Co
-  description: 'Donk Co is not responsible for banana cream effects lasting more than one shift. Consult a water bottle should effects persist'
+  description: 'Donk Co is not responsible for banana cream effects lasting more than one shift. Consult a water bottle should effects persist.'
   components:
   - type: Sprite
     sprite: Objects/Consumable/Food/Baked/donkpocket.rsi
