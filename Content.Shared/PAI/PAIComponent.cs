@@ -1,4 +1,8 @@
 using Robust.Shared.GameStates;
+// Start of Harmony Additions: Added more entries into the pAI store
+using Robust.Shared.Prototypes;
+using Content.Shared.Radio;
+// End of Harmony Additions
 
 namespace Content.Shared.PAI;
 
@@ -39,4 +43,11 @@ public sealed partial class PAIComponent : Component
     /// </summary>
     [DataField]
     public string ScramblePopup = "pai-system-scramble-popup";
+
+    /// <summary>
+    /// Harmony Addition: pAI Encryption and Atmospheric sensor
+    /// Radio channels that the pAI should innately have
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<RadioChannelPrototype>> Channels = new();
 }
