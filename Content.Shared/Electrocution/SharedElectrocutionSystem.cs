@@ -1,8 +1,6 @@
-using Content.Shared._Harmony.EntityEffects.Effects.StatusEffects.Components;
 using Content.Shared.Inventory;
 using Content.Shared.StatusEffect;
 using Content.Shared.StatusEffectNew;
-using Content.Shared.StatusEffectNew.Components;
 
 namespace Content.Shared.Electrocution
 {
@@ -17,7 +15,7 @@ namespace Content.Shared.Electrocution
             SubscribeLocalEvent<InsulatedComponent, ElectrocutionAttemptEvent>(OnInsulatedElectrocutionAttempt);
             // as long as legally distinct electric-mice are never added, this should be fine (otherwise a mouse-hat will transfer it's power to the wearer).
             SubscribeLocalEvent<InsulatedComponent, InventoryRelayedEvent<ElectrocutionAttemptEvent>>((e, c, ev) => OnInsulatedElectrocutionAttempt(e, c, ev.Args));
-            SubscribeLocalEvent<InsulatedComponent, StatusEffectRelayedEvent<ElectrocutionAttemptEvent>>(OnStatusEffectElectrocutionAttempt);
+            SubscribeLocalEvent<InsulatedComponent, StatusEffectRelayedEvent<ElectrocutionAttemptEvent>>(OnStatusEffectElectrocutionAttempt); // Harmony addition: Insulating Drinks
         }
 
         /// <summary>
