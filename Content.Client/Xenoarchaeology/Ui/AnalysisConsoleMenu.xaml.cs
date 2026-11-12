@@ -4,6 +4,7 @@ using Content.Client.Resources;
 using Content.Client.UserInterface.Controls;
 using Content.Client.Xenoarchaeology.Artifact;
 using Content.Client.Xenoarchaeology.Equipment;
+using Content.Shared._NF.Xenoarchaeology.Artifact.Components; // Frontier
 using Content.Shared.Xenoarchaeology.Artifact.Components;
 using Content.Shared.Xenoarchaeology.Equipment.Components;
 using Robust.Client.Audio;
@@ -13,6 +14,7 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Audio;
+using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -188,23 +190,40 @@ public sealed partial class AnalysisConsoleMenu : FancyWindow
 
         LockedValueLabel.SetMarkup(Loc.GetString("analysis-console-info-locked-value", ("state", lockedState)));
 
-        var percent = (float) node.Value.Comp.Durability / node.Value.Comp.MaxDurability;
-        var color = percent switch
+        // Frontier: handle zero max durability
+        if (node.Value.Comp.MaxDurability <= 1)
         {
-            >= 0.75f => Color.Lime,
-            >= 0.50f => Color.Yellow,
-            _ => Color.Red
-        };
-        DurabilityValueLabel.SetMarkup(Loc.GetString("analysis-console-info-durability-value",
-            ("color", color),
-            ("current", node.Value.Comp.Durability),
-            ("max", node.Value.Comp.MaxDurability)));
+            DurabilityValueLabel.SetMarkup(Loc.GetString("analysis-console-info-durability-triggered",
+                ("current", node.Value.Comp.Durability)));
+        }
+        else
+        {
+            var percent = node.Value.Comp.MaxDurability <= 0 ? 0f : (float)node.Value.Comp.Durability / node.Value.Comp.MaxDurability;
+            var color = percent switch
+            {
+                >= 0.75f => Color.Lime,
+                >= 0.50f => Color.Yellow,
+                _ => Color.Red
+            };
+            DurabilityValueLabel.SetMarkup(Loc.GetString("analysis-console-info-durability-value",
+                ("color", color),
+                ("current", node.Value.Comp.Durability),
+                ("max", node.Value.Comp.MaxDurability)));
+        }
+        // End Frontier
 
         var hasInfo = _xenoArtifact.HasUnlockedPredecessor(artifact.Value, node.Value);
 
+        // Frontier: vague hints for locked nodes
+        var description = (lockedState == 0) ?
+            Loc.GetString(
+                _ent.GetComponentOrNull<NFXenoArtifactHintComponent>(node.Value)?.Hint ??
+                    "analysis-console-info-effect-unknown") :
+            _ent.GetComponentOrNull<MetaDataComponent>(node.Value)?.EntityDescription ?? string.Empty;
         EffectValueLabel.SetMarkup(Loc.GetString("analysis-console-info-effect-value",
             ("state", hasInfo),
-            ("info", _ent.GetComponentOrNull<MetaDataComponent>(node.Value)?.EntityDescription ?? string.Empty)));
+            ("info", description)));
+        // End Frontier: vague hints for locked nodes
 
         var predecessorNodes = _xenoArtifact.GetPredecessorNodes(artifact.Value.Owner, node.Value);
         if (!hasInfo)
