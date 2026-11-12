@@ -1916,6 +1916,12 @@
           effectProto: StatusEffectDrowsiness
           time: 1
           type: Remove
+          # Start of Harmony additions: Insulating Drinks
+        - !type:ModifyStatusEffect
+          effectProto: StatusEffectInsulated
+          time: 1
+          type: Add
+          # End of Harmony additions
   fizziness: 0.25
 
 - type: reagent

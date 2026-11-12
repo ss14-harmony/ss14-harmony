@@ -1,0 +1,9 @@
+﻿# Make the Target temporarily immune to electrocution
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectInsulated
+  name: insulated
+  components:
+  - type: Insulated
+  - type: StatusEffectAlert
+    alert: InsulatedAlert
