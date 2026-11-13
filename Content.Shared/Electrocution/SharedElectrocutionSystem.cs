@@ -84,12 +84,14 @@ namespace Content.Shared.Electrocution
         private void OnInsulatedElectrocutionAttempt(EntityUid uid, InsulatedComponent insulated, ElectrocutionAttemptEvent args)
         {
             args.SiemensCoefficient *= insulated.Coefficient;
+            args.ArcInsulation = insulated.ArcInsulation; // Harmony additions: Insulating Drinks
         }
 
         // Start of Harmony additions: Insulating Drinks
         private void OnStatusEffectElectrocutionAttempt(Entity<InsulatedComponent> insulated, ref StatusEffectRelayedEvent<ElectrocutionAttemptEvent> args)
         {
             args.Args.SiemensCoefficient *= insulated.Comp.Coefficient;
+            args.Args.ArcInsulation = insulated.Comp.ArcInsulation;
         }
         // End of Harmony additions
     }

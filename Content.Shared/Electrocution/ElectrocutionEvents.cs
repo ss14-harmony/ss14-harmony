@@ -9,6 +9,7 @@ namespace Content.Shared.Electrocution
         public readonly EntityUid TargetUid;
         public readonly EntityUid? SourceUid;
         public float SiemensCoefficient = 1f;
+        public bool ArcInsulation = false; // Harmony Addition: Insulating Drinks!
 
         public ElectrocutionAttemptEvent(EntityUid targetUid, EntityUid? sourceUid, float siemensCoefficient, SlotFlags targetSlots)
         {
