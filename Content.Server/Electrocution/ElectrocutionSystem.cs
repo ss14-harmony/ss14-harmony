@@ -1,5 +1,6 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Doors.Systems;
+using Content.Server.Lightning.Components;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
@@ -385,7 +386,13 @@ public sealed partial class ElectrocutionSystem : SharedElectrocutionSystem
         if (attemptEvent.Cancelled)
             return false;
 
-        siemensCoefficient = attemptEvent.SiemensCoefficient;
+        // Start of Harmony additions: Insulating Drinks
+        // siemensCoefficient = attemptEvent.SiemensCoefficient
+        siemensCoefficient = HasComp<LightningComponent>(sourceUid) && !attemptEvent.ArcInsulation
+            ? siemensCoefficient >= 1f ? siemensCoefficient : 1f
+            : attemptEvent.SiemensCoefficient;
+        // End of Harmony additions
+
         return true;
     }
 

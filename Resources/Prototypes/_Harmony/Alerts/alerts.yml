@@ -1,0 +1,13 @@
+﻿- type: alert
+  id: InsulatedAlert
+  icons:
+  - sprite: Clothing/Hands/Gloves/Color/yellow.rsi
+    state: icon
+  name: alerts-insulated-name
+  description: alerts-insulated-desc
+
+- type: alert
+  id: BudgetInsulatedAlert
+  parent: InsulatedAlert
+  name: alerts-budget-insulated-name
+  description: alerts-budget-insulated-desc
