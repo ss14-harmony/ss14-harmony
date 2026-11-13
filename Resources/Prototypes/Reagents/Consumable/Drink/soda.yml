@@ -91,7 +91,7 @@
         conditions:
         - !type:ReagentCondition
           reagent: EnergyDrink
-          min: 30
+          min: 35
         effectProto: StatusEffectInsulated
         time: 40
         type: set

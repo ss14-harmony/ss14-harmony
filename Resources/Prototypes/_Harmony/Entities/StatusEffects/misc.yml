@@ -2,9 +2,32 @@
 - type: entity
   parent: MobStatusEffectBase
   id: StatusEffectInsulated
-  name: insulated
+  name: insulation
   components:
   - type: Insulated
     arcInsulation: False
   - type: StatusEffectAlert
     alert: InsulatedAlert
+
+- type: entity
+  parent: [StatusEffectInsulated, MobStatusEffectDebuff]
+  id: StatusEffectBudgetInsulated
+  name: budget insulation
+  components:
+  - type: RandomInsulation
+    list:
+    - 0
+    - 0
+    - 0.5
+    - 0.5
+    - 0.5
+    - 1.5
+    - 1.5
+    - 2
+    - 2.5
+    - 2.5
+    - 3
+    - 3.5
+    - 4
+  - type: StatusEffectAlert
+    alert: BudgetInsulatedAlert

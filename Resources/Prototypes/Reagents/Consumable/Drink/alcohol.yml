@@ -1921,8 +1921,8 @@
           conditions:
           - !type:ReagentCondition
             reagent: BudgetInsulsDrink
-            min: 30
-          effectProto: StatusEffectInsulated
+            min: 25
+          effectProto: StatusEffectBudgetInsulated
           time: 40
           type: set
           # End of Harmony additions
