@@ -63,7 +63,20 @@ public abstract partial class SharedDoorRemoteSystem : EntitySystem
             return;
         }
 
+        // Harmony: signal jamming blocks every door remote mode at either end (signal jammer)
+        if (IsSignalJammed(args.Used, args.Target.Value))
+        {
+            args.Handled = true;
+            return;
+        }
+        // Harmony change end
+
         args.Handled = true;
+
+        // Harmony: avoid a predicted door or bolt change with the jammar (signal jammer)
+        if (!_signalJammerNet.IsServer)
+            return;
+        // Harmony change end
 
         if (!_powerReceiver.IsPowered(args.Target.Value))
         {

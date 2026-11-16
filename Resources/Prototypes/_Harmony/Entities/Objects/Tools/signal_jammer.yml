@@ -1,0 +1,40 @@
+- type: entity
+  id: SignalJammer
+  name: signal jammer
+  description: Disrupts surveillance cameras, station AI vision, and remote door controls nearby.
+  suffix: Harmony
+  parent: [BaseItem, PowerCellSlotMediumItem, BaseSyndicateContraband]
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Devices/signal_jammer.rsi
+    layers:
+    - state: signal_jammer
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: Item
+  - type: SignalJammer
+    settings:
+    - wattage: 2
+      cameraRange: 2
+      aiRange: 2
+      doorRange: 3
+      remoteRange: 3
+      name: harmony-signal-jammer-setting-low
+      message: harmony-signal-jammer-message-low
+    - wattage: 12
+      cameraRange: 6
+      aiRange: 5
+      doorRange: 6
+      remoteRange: 6
+      name: harmony-signal-jammer-setting-high
+      message: harmony-signal-jammer-message-high
+  - type: ItemToggle
+  - type: ToggleCellDraw
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { state: signal_jammer_on }
+          False: { state: signal_jammer }
+  - type: StaticPrice
+    price: 1500

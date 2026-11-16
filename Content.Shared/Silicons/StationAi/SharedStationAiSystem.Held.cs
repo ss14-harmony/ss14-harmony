@@ -114,12 +114,25 @@ public abstract partial class SharedStationAiSystem
         if (!TryGetEntity(ev.Entity, out var target))
             return;
 
+        // Harmony: a jammed door cannot receive any AI radial command (signal jammer)
+        if (IsSignalJammedDoor(target))
+            return;
+        // Harmony change end
+
         ev.Event.User = ev.Actor;
         RaiseLocalEvent(target.Value, (object) ev.Event);
     }
 
     private void OnMessageAttempt(Entity<StationAiWhitelistComponent> ent, ref BoundUserInterfaceMessageAttempt ev)
     {
+        // Harmony: suppress AI door control UI without giving feedback (signal jammer)
+        if (HasComp<StationAiHeldComponent>(ev.Actor) && IsSignalJammedDoor(ev.Target))
+        {
+            ev.Cancel();
+            return;
+        }
+        // Harmony change end
+
         if (ev.Actor == ev.Target)
             return;
 
@@ -146,6 +159,14 @@ public abstract partial class SharedStationAiSystem
 
     private void OnHeldInteraction(Entity<StationAiHeldComponent> ent, ref InteractionAttemptEvent args)
     {
+        // Harmony: AI clicks on jammed doors fail (signal jammer)
+        if (IsSignalJammedDoor(args.Target))
+        {
+            args.Cancelled = true;
+            return;
+        }
+        // Harmony change end
+
         // Cancel if it's not us or something with a whitelist, or whitelist is disabled.
         args.Cancelled = (!TryComp(args.Target, out StationAiWhitelistComponent? whitelistComponent)
                           || !whitelistComponent.Enabled)

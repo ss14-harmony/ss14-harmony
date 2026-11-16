@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by CFrala (GitHub)",
+  "size": { "x": 32, "y": 32 },
+  "states": [
+    { "name": "signal_jammer", "directions": 1 },
+    { "name": "signal_jammer_on", "directions": 1 }
+  ]
+}
