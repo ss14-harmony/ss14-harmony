@@ -202,13 +202,15 @@ public sealed partial class AnalysisConsoleMenu : FancyWindow
 
         var hasInfo = _xenoArtifact.HasUnlockedPredecessor(artifact.Value, node.Value);
 
+        // Start of Harmony changes
         var effectDesc = _xenoArtifact.IsNodeActive(artifact.Value, node.Value)
             ? _ent.GetComponentOrNull<MetaDataComponent>(node.Value)?.EntityDescription ?? string.Empty
             : Loc.GetString("analysis-console-info-effect-unknown");
+        // End of Harmony (rip)
 
         EffectValueLabel.SetMarkup(Loc.GetString("analysis-console-info-effect-value",
             ("state", hasInfo),
-            ("info", effectDesc))); // Harmony change
+            ("info", effectDesc))); // Harmony change replaced [ _ent.GetComponentOrNull<MetaDataComponent>(node.Value)?.EntityDescription ?? string.Empty ] with effectDesc
 
         var predecessorNodes = _xenoArtifact.GetPredecessorNodes(artifact.Value.Owner, node.Value);
         if (!hasInfo)
