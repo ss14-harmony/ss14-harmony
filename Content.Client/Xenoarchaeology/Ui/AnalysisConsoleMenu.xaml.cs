@@ -190,27 +190,17 @@ public sealed partial class AnalysisConsoleMenu : FancyWindow
 
         LockedValueLabel.SetMarkup(Loc.GetString("analysis-console-info-locked-value", ("state", lockedState)));
 
-        // Frontier: handle zero max durability
-        if (node.Value.Comp.MaxDurability <= 1)
+        var percent = (float)node.Value.Comp.Durability / node.Value.Comp.MaxDurability;
+        var color = percent switch
         {
-            DurabilityValueLabel.SetMarkup(Loc.GetString("analysis-console-info-durability-triggered",
-                ("current", node.Value.Comp.Durability)));
-        }
-        else
-        {
-            var percent = node.Value.Comp.MaxDurability <= 0 ? 0f : (float)node.Value.Comp.Durability / node.Value.Comp.MaxDurability;
-            var color = percent switch
-            {
-                >= 0.75f => Color.Lime,
-                >= 0.50f => Color.Yellow,
-                _ => Color.Red
-            };
-            DurabilityValueLabel.SetMarkup(Loc.GetString("analysis-console-info-durability-value",
-                ("color", color),
-                ("current", node.Value.Comp.Durability),
-                ("max", node.Value.Comp.MaxDurability)));
-        }
-        // End Frontier
+            >= 0.75f => Color.Lime,
+            >= 0.50f => Color.Yellow,
+            _ => Color.Red
+        };
+        DurabilityValueLabel.SetMarkup(Loc.GetString("analysis-console-info-durability-value",
+            ("color", color),
+            ("current", node.Value.Comp.Durability),
+            ("max", node.Value.Comp.MaxDurability)));
 
         var hasInfo = _xenoArtifact.HasUnlockedPredecessor(artifact.Value, node.Value);
 

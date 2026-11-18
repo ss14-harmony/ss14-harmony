@@ -739,7 +739,6 @@
       movementVisibilityRate: 0.10
 
 - type: entity
-  parent: BaseXenoArtifactEffect
   id: XenoArtifactRareMaterialSpawnSilver
   parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   description: Create rare materials
@@ -889,8 +888,8 @@
           prob: 0.03
 
 - type: entity
-  parent: BaseXenoArtifactEffect
-  id: XenoArtifactHostileFaunaSpawn # TODO: meow
+  id: XenoArtifactHostileFaunaSpawn
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Harmony: added NFXenoArtifactHintMatterCreation | Wasn't included in port
   description: Create hostile fauna
   components:
   - type: XenoArtifactNode
@@ -916,7 +915,6 @@
         - id: MobKangarooSpace
 
 - type: entity
-  parent: BaseXenoArtifactEffect
   id: XenoArtifactCashSpawn
   parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   description: Create money
