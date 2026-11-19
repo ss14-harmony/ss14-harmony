@@ -34,8 +34,8 @@
   - type: StaticPrice
     price: 40
   - type: LimitedCharges
-    maxCharges: 15
-    lastCharges: 15
+    maxCharges: 30 # Harmony change: 15 -> 30
+    lastCharges: 30 # Harmony change: 15 -> 30
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
@@ -73,6 +73,7 @@
   description: A cartridge of highly compressed paint, commonly used in spray painters.
   components:
   - type: SprayPainterAmmo
+    charges: 30 # Harmony change: it's 15 -> 30 base amount is handled in the comp for whatever reason
   - type: Sprite
     sprite: Objects/Tools/spray_painter.rsi
     state: ammo
