@@ -17,13 +17,13 @@
 /Resources/ServerInfo                               @KeldWolf @FluffMe @youtissoum @Zap527
 
 # Sprites
-/Resources/Textures/                                @TheCrimsonJupiter @KeldWolf @FluffMe @youtissoum
+/Resources/Textures/                                @KeldWolf @FluffMe @youtissoum
 
 # Lobby art and music
 /Resources/Audio/Lobby/                             @KeldWolf
 /Resources/Audio/_Harmony/Lobby/                    @KeldWolf
-/Resources/Textures/LobbyScreens/                   @TheCrimsonJupiter
-/Resources/Textures/_Harmony/LobbyScreens/          @TheCrimsonJupiter
+/Resources/Textures/LobbyScreens/                   @KeldWolf @FluffMe 
+/Resources/Textures/_Harmony/LobbyScreens/          @KeldWolf @FluffMe 
 
 # Maps
 /Resources/Maps/                                    @raccoonio @luckyshotpictures @whythelettuce
