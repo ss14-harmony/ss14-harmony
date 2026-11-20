@@ -43,6 +43,7 @@ namespace Content.Server.Zombies
         [Dependency] private MobStateSystem _mobState = default!;
         [Dependency] private SharedPopupSystem _popup = default!;
         [Dependency] private SharedRoleSystem _role = default!;
+        [Dependency] private MobThresholdSystem _mobThreshold = default!; // Harmony Change: Reinforcing the Zombie Horde
 
         public readonly ProtoId<NpcFactionPrototype> Faction = "Zombie";
 
@@ -151,15 +152,25 @@ namespace Content.Server.Zombies
 
                 comp.NextTick = curTime;
 
-                if (_mobState.IsDead(uid, mobState))
-                    continue;
+                //if (_mobState.IsDead(uid, mobState)) // Harmony Removal: Reinforcing the Zombie Horde
+                //    continue;
 
-                var multiplier = _mobState.IsCritical(uid, mobState)
+                var multiplier = _mobState.IsCritical(uid, mobState) || _mobState.IsDead(uid, mobState) // Harmony Change: Reinforcing the Zombie Horde | Added IsDead to the check
                     ? comp.PassiveHealingCritMultiplier
                     : 1f;
 
                 // Gradual healing for living zombies.
                 _damageable.ChangeDamage((uid, damage), comp.PassiveHealing * multiplier, true, false);
+                // Start of Harmony Changes: Reinforcing the Zombie Horde
+
+                if (!_mobState.IsDead(uid, mobState))
+                    continue;
+
+                if (_damageable.GetTotalDamage(uid) >= _mobThreshold.GetThresholdForState(uid, MobState.Dead) * comp.ZombieReviveThreshold)
+                    continue;
+
+                _mobState.ChangeMobState(uid, MobState.Critical);
+                // End of Harmony Changes
             }
         }
 
