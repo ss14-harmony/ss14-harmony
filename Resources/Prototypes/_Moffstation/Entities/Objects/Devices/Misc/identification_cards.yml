@@ -1,0 +1,8 @@
+# Syndicate Agent ID without chameleon, for non-nukies
+- type: entity
+  parent: SyndicateIDCard
+  id: SyndicateIDCardAgent
+  description: A card necessary to access various areas aboard the station. Comes with access duplication functionality.
+  suffix: Agent
+  components:
+  - type: AgentIDCard

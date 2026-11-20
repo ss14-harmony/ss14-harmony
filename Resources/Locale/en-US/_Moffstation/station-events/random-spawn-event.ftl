@@ -1,0 +1,6 @@
+﻿# Default
+random-spawn-default-announcement = This entity has been placed near {$location}.
+
+# Syndicate dead drop
+syndicate-dead-drop-announcement = A dead drop has been bluespaced near {$location}. Collect these tools at your convenience.
+station-syndicate-dead-drop-announcement = Attention. Bluespace signatures detected, illegal teleportation of material likely. Please cooperate with your local security department to secure these unauthorized devices.
