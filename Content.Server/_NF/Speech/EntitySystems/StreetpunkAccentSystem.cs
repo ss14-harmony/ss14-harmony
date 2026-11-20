@@ -5,7 +5,7 @@ using Content.Shared.Speech.EntitySystems;
 
 namespace Content.Server._NF.Speech.EntitySystems;
 
-public sealed partial class StreetpunkAccentSystem : RelayAccentSystem<StreetpunkAccentComponent>
+public sealed partial class StreetpunkAccentSystem : RelayAccentSystem<StreetpunkAccentComponent> // Harmony Fix: EntitySystem -> RelayAccentSystem<StreetpunkAccentComponent>
 {
     [Dependency] private ReplacementAccentSystem _replacement = default!;
     private static readonly Regex RegexIng = new(@"ing\b");

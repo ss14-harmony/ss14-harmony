@@ -5,7 +5,7 @@ using Content.Shared.Speech.EntitySystems;
 
 namespace Content.Server.DeltaV.Speech.EntitySystems;
 
-public sealed partial class ScottishAccentSystem : RelayAccentSystem<ScottishAccentComponent>
+public sealed partial class ScottishAccentSystem : RelayAccentSystem<ScottishAccentComponent> // Harmony Fix: EntitySystem -> RelayAccentSystem<ScottishAccentComponent>
 {
     [Dependency] private ReplacementAccentSystem _replacement = default!;
 

@@ -7,7 +7,7 @@ using Content.Shared.Speech.EntitySystems;
 
 namespace Content.Server._Latestation.Speech.EntitySystems;
 
-public sealed partial class ValleyGirlAccentSystem : RelayAccentSystem<ValleyGirlAccentComponent>
+public sealed partial class ValleyGirlAccentSystem : RelayAccentSystem<ValleyGirlAccentComponent> // Harmony Fix: EntitySystem -> RelayAccentSystem<ValleyGirlAccentComponent>
 {
     //Words ending in -ing = in'. Bein', Darlin', etc.
     //Taken from mobster accent.
