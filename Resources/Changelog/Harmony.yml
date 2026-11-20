@@ -1,20 +1,6 @@
 ﻿Entries:
 - author: spanky-spanky
   changes:
-  - message: Lowered the minimum population of several mid-pop maps.
-    type: Tweak
-  id: 51
-  time: '2024-09-13T05:01:16.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/51
-- author: FluffMe
-  changes:
-  - message: Clipboard can now be printed in Autolathe.
-    type: Add
-  id: 53
-  time: '2024-09-14T05:13:57.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/53
-- author: spanky-spanky
-  changes:
   - message: QOL improvements to Omega.
     type: Tweak
   id: 55
@@ -3793,3 +3779,19 @@
   id: 1452
   time: '2026-11-06T06:26:17.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1525
+- author: daseiinn
+  changes:
+  - message: Removes sentient vending machines.
+    type: Remove
+  - message: Gives random sentience to Firebots, Cleanbots and Medibots!
+    type: Add
+  id: 1453
+  time: '2026-11-20T02:37:24.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1465
+- author: ZyinkNotAvailable
+  changes:
+  - message: Arcyox heals less brute and burn damage.
+    type: Tweak
+  id: 1454
+  time: '2026-11-20T07:38:30.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1472

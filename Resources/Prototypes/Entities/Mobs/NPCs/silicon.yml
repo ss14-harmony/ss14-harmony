@@ -149,6 +149,11 @@
   - type: Vocalizer
   - type: DatasetVocalizer
     dataset: FirebotAd
+# Harmony Change - Allows FireBots to be sentience through the sentience event
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-mechanical
+    weight: 0.025
+# Harmony Change End
 
 - type: entity
   parent: MobSiliconBase
@@ -289,6 +294,11 @@
     interactFailureString: petting-failure-cleanbot
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
+# Harmony Change - Allows CleanBots to be sentience through the sentience event
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-mechanical
+    weight: 0.025
+# Harmony Change End
 
 - type: entity
   parent:
@@ -338,6 +348,11 @@
   - type: Inventory
     templateId: medibot
   - type: DoAfter
+  # Harmony Change - Allows Medibots to be sentience through the sentience event
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-mechanical
+    weight: 0.025
+# Harmony Change End
 
 - type: entity
   parent:
