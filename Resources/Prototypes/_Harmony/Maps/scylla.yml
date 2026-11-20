@@ -47,7 +47,7 @@
             Psychologist: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ] #intern, not counted
             #science (4)
-            Scientist: [ 4, 4 ]
+            Scientist: [ 3, 4 ]
             ResearchAssistant: [ 2, 2 ] #intern, not counted
             #security (7)
             Warden: [ 1, 1 ]
