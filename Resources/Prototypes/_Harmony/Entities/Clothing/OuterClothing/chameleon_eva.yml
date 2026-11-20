@@ -1,0 +1,19 @@
+- type: entity
+  parent: [ClothingOuterEVASuitBase, BaseChameleon]
+  id: ClothingOuterEVASuitChameleonHarmony
+  name: EVA suit
+  description: A lightweight space suit with the basic ability to protect the wearer from the vacuum of space.
+  suffix: Chameleon, Harmony
+  components:
+  - type: Tag
+    tags: []
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Suits/eva.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Suits/eva.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: ChameleonClothing
+    slot: [outerClothing]
+    default: ClothingOuterHardsuitEVA
