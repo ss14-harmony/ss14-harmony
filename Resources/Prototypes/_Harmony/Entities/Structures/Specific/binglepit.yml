@@ -37,7 +37,7 @@
   - type: InteractionOutline
   - type: Clickable
   - type: Damageable
-    damageModifierSet: Slime
+    damageModifierSet: Metallic
   - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
