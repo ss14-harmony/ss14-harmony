@@ -23,6 +23,11 @@ public abstract partial class SharedStationAiSystem
     /// </summary>
     private void OnAirlockBolt(EntityUid ent, DoorBoltComponent component, StationAiBoltEvent args)
     {
+        // Harmony: jammed AI door commands fail silently (signal jammer)
+        if (IsSignalJammedDoor(ent))
+            return;
+        // Harmony change end
+
         if (component.BoltWireCut || !PowerReceiver.IsPowered(ent))
         {
             ShowDeviceNotRespondingPopup(args.User);
@@ -57,6 +62,11 @@ public abstract partial class SharedStationAiSystem
     /// </summary>
     private void OnAirlockEmergencyAccess(EntityUid ent, AirlockComponent component, StationAiEmergencyAccessEvent args)
     {
+        // Harmony: jammed AI door commands fail silently (signal jammer)
+        if (IsSignalJammedDoor(ent))
+            return;
+        // Harmony change end
+
         if (!PowerReceiver.IsPowered(ent))
         {
             ShowDeviceNotRespondingPopup(args.User);
@@ -82,6 +92,11 @@ public abstract partial class SharedStationAiSystem
     /// </summary>
     private void OnElectrified(EntityUid ent, ElectrifiedComponent component, StationAiElectrifiedEvent args)
     {
+        // Harmony: jammed AI door commands fail silently (signal jammer)
+        if (IsSignalJammedDoor(ent))
+            return;
+        // Harmony change end
+
         if (component.IsWireCut || !PowerReceiver.IsPowered(ent))
         {
             ShowDeviceNotRespondingPopup(args.User);

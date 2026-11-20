@@ -295,6 +295,11 @@ public sealed partial class SurveillanceCameraSystem : SharedSurveillanceCameraS
 
     public void AddActiveViewer(EntityUid camera, EntityUid player, EntityUid? monitor = null, SurveillanceCameraComponent? component = null, ActorComponent? actor = null)
     {
+        // Harmony: a jammed camera cannot let a new person see camera things (signal jammer)
+        if (IsSignalJammed(camera))
+            return;
+        // Harmony change end
+
         if (!Resolve(camera, ref component)
             || !component.Active
             || !Resolve(player, ref actor))
@@ -316,6 +321,11 @@ public sealed partial class SurveillanceCameraSystem : SharedSurveillanceCameraS
 
     public void AddActiveViewers(EntityUid camera, HashSet<EntityUid> players, EntityUid? monitor = null, SurveillanceCameraComponent? component = null)
     {
+        // Harmony: a jammed camera cannot show to a monitor (signal jammer)
+        if (IsSignalJammed(camera))
+            return;
+        // Harmony change end
+
         if (!Resolve(camera, ref component) || !component.Active)
         {
             return;

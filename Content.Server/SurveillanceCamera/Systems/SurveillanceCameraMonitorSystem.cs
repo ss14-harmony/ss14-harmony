@@ -43,6 +43,9 @@ public sealed partial class SurveillanceCameraMonitorSystem : EntitySystem
         var query = EntityQueryEnumerator<ActiveSurveillanceCameraMonitorComponent, SurveillanceCameraMonitorComponent>();
         while (query.MoveNext(out var uid, out _, out var monitor))
         {
+            // Harmony: replace live feeds with static (signal jammer)
+            UpdateSignalJamming(uid, monitor);
+            // Harmony change end
             monitor.LastHeartbeatSent += frameTime;
             SendHeartbeat(uid, monitor);
             monitor.LastHeartbeat += frameTime;
@@ -193,6 +196,9 @@ public sealed partial class SurveillanceCameraMonitorSystem : EntitySystem
 
     private void OnShutdown(EntityUid uid, SurveillanceCameraMonitorComponent component, ComponentShutdown args)
     {
+        // Harmony: forget temporary jamming (signal jammer)
+        _signalJammedMonitors.Remove(uid);
+        // Harmony change end
         RemoveActiveCamera(uid, component);
     }
 
@@ -495,7 +501,10 @@ public sealed partial class SurveillanceCameraMonitorSystem : EntitySystem
             return;
         }
 
-        var state = new SurveillanceCameraMonitorUiState(GetNetEntity(monitor.ActiveCamera), monitor.KnownSubnets.Keys.ToHashSet(), monitor.ActiveCameraAddress, monitor.ActiveSubnet, monitor.KnownCameras);
+        // Harmony: a jammed feed uses the monitor's static while letting you still see the camera because it's really really funny (signal jammer)
+        var visibleCamera = CameraIsSignalJammed(monitor) ? null : monitor.ActiveCamera;
+        var state = new SurveillanceCameraMonitorUiState(GetNetEntity(visibleCamera), monitor.KnownSubnets.Keys.ToHashSet(), monitor.ActiveCameraAddress, monitor.ActiveSubnet, monitor.KnownCameras);
+        // Harmony change end
         _userInterface.SetUiState(uid, SurveillanceCameraMonitorUiKey.Key, state);
     }
 }

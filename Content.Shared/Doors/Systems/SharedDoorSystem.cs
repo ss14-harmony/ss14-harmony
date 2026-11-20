@@ -206,6 +206,14 @@ public abstract partial class SharedDoorSystem : EntitySystem
         if (args.Handled || !args.Complex || !door.ClickOpen)
             return;
 
+        // Harmony: AI clicks on jammed doors fail silently (signal jammer)
+        if (SuppressSignalJammedAiClick(uid, args.User))
+        {
+            args.Handled = true;
+            return;
+        }
+        // Harmony change end
+
         if (!TryToggleDoor(uid, door, args.User, predicted: true))
             _pryingSystem.TryPry(uid, args.User, out _);
 

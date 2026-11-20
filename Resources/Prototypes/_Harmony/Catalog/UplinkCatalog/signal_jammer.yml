@@ -1,0 +1,9 @@
+- type: listing
+  id: UplinkSignalJammer
+  name: uplink-harmony-signal-jammer-name
+  description: uplink-harmony-signal-jammer-desc
+  productEntity: SignalJammer
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkDisruption

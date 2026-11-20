@@ -245,6 +245,10 @@ public sealed partial class HolopadSystem : SharedHolopadSystem
 
     private void OnTelephoneStateChange(Entity<HolopadComponent> holopad, ref TelephoneStateChangeEvent args)
     {
+        // Harmony change start: track active holopad calls for signal jammer (signal jammer)
+        TrackSignalJammerHolopad(holopad.Owner, args.NewState);
+        // Harmony change end
+
         // Update holopad visual and ambient states
         switch (args.NewState)
         {
@@ -340,6 +344,10 @@ public sealed partial class HolopadSystem : SharedHolopadSystem
 
     private void OnHolopadShutdown(Entity<HolopadComponent> entity, ref ComponentShutdown args)
     {
+        // Harmony: remove deleted holopads from the signal jammer's active call set (signal jammer)
+        _activeSignalJammerHolopads.Remove(entity.Owner);
+        // Harmony change end
+
         if (TryComp<TelephoneComponent>(entity, out var telphone) && _telephoneSystem.IsTelephoneEngaged((entity.Owner, telphone)))
             _telephoneSystem.EndTelephoneCalls((entity, telphone));
 
@@ -484,6 +492,10 @@ public sealed partial class HolopadSystem : SharedHolopadSystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+
+        // Harmony: a signal jammer immediately disconnects calls at jammed holopads (signal jammer)
+        UpdateSignalJammedHolopads();
+        // Harmony change end
 
         var query = AllEntityQuery<HolopadUserComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var holopadUser, out var xform))

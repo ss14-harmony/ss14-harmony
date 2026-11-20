@@ -64,6 +64,11 @@ public sealed partial class StationAiVisionSystem : EntitySystem
     /// </summary>
     public bool IsAccessible(Entity<BroadphaseComponent, MapGridComponent> grid, Vector2i tile, float expansionSize = 8.5f, bool fastPath = false)
     {
+        // Harmony: AI occlusion takes precedence over vision (signal jammer)
+        if (IsSignalJammedTile((grid.Owner, grid.Comp2), tile))
+            return false;
+        // Harmony change end
+
         _viewportTiles.Clear();
         _opaque.Clear();
         _seeds.Clear();
@@ -87,6 +92,11 @@ public sealed partial class StationAiVisionSystem : EntitySystem
 
             if (seed.Comp.NeedsAnchoring && !Transform(seed.Owner).Anchored)
                 continue;
+
+            // Harmony: a jammed surveillance camera is not an AI vision source (signal jammer)
+            if (IsSignalJammedCameraSeed(seed.Owner))
+                continue;
+            // Harmony change end
 
             _job.Data.Add(seed);
         }
@@ -175,6 +185,11 @@ public sealed partial class StationAiVisionSystem : EntitySystem
             if (seed.Comp.NeedsAnchoring && !Transform(seed.Owner).Anchored)
                 continue;
 
+            // Harmony: camera disruption and the local AI occlusion field are separate effects (signal jammer)
+            if (IsSignalJammedCameraSeed(seed.Owner))
+                continue;
+            // Harmony change end
+
             _job.Data.Add(seed);
         }
 
@@ -220,6 +235,10 @@ public sealed partial class StationAiVisionSystem : EntitySystem
         _job.Grid = (grid.Owner, grid.Comp2);
         _job.VisibleTiles = visibleTiles;
         _parallel.ProcessNow(_job, _job.Data.Count);
+
+        // Harmony: apply the signal field (signal jammer)
+        RemoveSignalJammedTiles((grid.Owner, grid.Comp2), visibleTiles);
+        // Harmony change end
     }
 
     private int GetMaxDelta(Vector2i tile, Vector2i center)
