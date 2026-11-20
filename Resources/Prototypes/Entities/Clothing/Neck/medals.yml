@@ -1,4 +1,3 @@
-
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckBronzeheart
@@ -13,6 +12,16 @@
     tags:
       - Medal
       - WhitelistChameleon
+  # Harmony Change Start - Impstation Crew Medal
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+  # Harmony Change End
 
 - type: entity
   parent: ClothingNeckBase
@@ -30,6 +39,17 @@
     tags:
       - Medal
       - WhitelistChameleon
+  # Harmony Change Start - Impstation Crew Medal
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+  # Harmony Change End
+
 
 - type: entity
   parent: ClothingNeckBase
@@ -45,6 +65,16 @@
     tags:
       - Medal
       - WhitelistChameleon
+  # Harmony Change Start - Impstation Crew Medal
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+  # Harmony Change End
 
 - type: entity
   parent: ClothingNeckBase
@@ -60,6 +90,16 @@
     tags:
       - Medal
       - WhitelistChameleon
+  # Harmony Change Start - Impstation Crew Medal
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+  # Harmony Change End
 
 - type: entity
   parent: ClothingNeckBase
@@ -75,6 +115,16 @@
     tags:
       - Medal
       - WhitelistChameleon
+  # Harmony Change Start - Impstation Crew Medal
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+  # Harmony Change End
 
 - type: entity
   parent: ClothingNeckBase
@@ -90,6 +140,16 @@
     tags:
       - Medal
       - WhitelistChameleon
+  # Harmony Change Start - Impstation Crew Medal
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+  # Harmony Change End
 
 - type: entity
   parent: ClothingNeckBase
@@ -105,6 +165,16 @@
     tags:
       - Medal
       - WhitelistChameleon
+  # Harmony Change Start - Impstation Crew Medal
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+  # Harmony Change End
 
 - type: entity
   parent: ClothingNeckBase
@@ -122,3 +192,13 @@
     tags:
       - Medal
       - WhitelistChameleon
+  # Harmony Change Start - Impstation Crew Medal
+  - type: CrewMedal
+  - type: ActivatableUI
+    key: enum.CrewMedalUiKey.Key
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.CrewMedalUiKey.Key:
+        type: CrewMedalBoundUserInterface
+  # Harmony Change End

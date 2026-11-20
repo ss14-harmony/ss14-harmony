@@ -5,11 +5,11 @@ using Content.Shared.Objectives.Components;
 
 namespace Content.Server._Harmony.Objectives.Systems;
 
-public sealed class SelfAndTargetEscapeShuttleConditionSystem : EntitySystem
+public sealed partial class SelfAndTargetEscapeShuttleConditionSystem : EntitySystem
 {
-    [Dependency] private readonly EscapeShuttleConditionSystem _escapeShuttleConditionSystem = default!;
-    [Dependency] private readonly MindSystem _mindSystem = default!;
-    [Dependency] private readonly TargetObjectiveSystem _targetObjectiveSystem = default!;
+    [Dependency] private EscapeShuttleConditionSystem _escapeShuttleConditionSystem = default!;
+    [Dependency] private MindSystem _mindSystem = default!;
+    [Dependency] private TargetObjectiveSystem _targetObjectiveSystem = default!;
 
     public override void Initialize()
     {

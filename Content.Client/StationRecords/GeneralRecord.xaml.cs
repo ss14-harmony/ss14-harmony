@@ -17,9 +17,14 @@ public sealed partial class GeneralRecord : Control
         RecordName.Text = record.Name;
         Age.Text = Loc.GetString("general-station-record-console-record-age", ("age", record.Age.ToString()));
         Title.Text = Loc.GetString("general-station-record-console-record-title",
-            ("job", Loc.GetString(record.JobTitle)));
+            ("job", record.JobTitle));
         var species = Loc.GetString(prototypeManager.Index<SpeciesPrototype>(record.Species).Name);
-        Species.Text = Loc.GetString("general-station-record-console-record-species", ("species", species));
+        // Start Misfit - Add synthetic to synths on records console
+        var synthSpecies = record.Synthetic
+            ? Loc.GetString("synthetic-component-prefix", ("species", species))
+            : species;
+        Species.Text = Loc.GetString("general-station-record-console-record-species", ("species", synthSpecies));
+        // End Misfit
         Gender.Text = Loc.GetString("general-station-record-console-record-gender",
             ("gender", record.Gender.ToString()));
         Fingerprint.Text = Loc.GetString("general-station-record-console-record-fingerprint",

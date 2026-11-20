@@ -118,10 +118,7 @@
       speechSounds: Arachnid
       allowedEmotes: ['Click', 'Chitter']
     - type: Vocal
-      sounds:
-        Male: UnisexArachnid
-        Female: UnisexArachnid
-        Unsexed: UnisexArachnid
+      emoteSounds: UnisexArachnid
 
 - type: trait
   id: HarmonyDionaVocals
@@ -135,10 +132,7 @@
       speechSounds: Alto
       speechVerb: Plant
     - type: Vocal
-      sounds:
-        Male: UnisexDiona
-        Female: UnisexDiona
-        Unsexed: UnisexDiona
+      emoteSounds: UnisexDiona
 
 - type: trait
   id: HarmonyDwarfVocals
@@ -154,10 +148,7 @@
     - type: ReplacementAccent
       accent: scottish
     - type: Vocal
-      sounds:
-        Male: UnisexDwarf
-        Female: FemaleDwarf
-        Unsexed: UnisexDwarf
+      emoteSounds: UnisexDwarf
 
 - type: trait
   id: HarmonyHumanVocals
@@ -171,10 +162,7 @@
       speechSounds: Alto
       speechVerb: Default
     - type: Vocal
-      sounds:
-        Male: MaleHuman
-        Female: FemaleHuman
-        Unsexed: MaleHuman
+      emoteSounds: MaleHuman
 
 - type: trait
   id: HarmonyMothsVocals
@@ -190,10 +178,7 @@
       speechVerb: Moth
       allowedEmotes: ['Chitter', 'Squeak']
     - type: Vocal
-      sounds:
-        Male: UnisexMoth
-        Female: UnisexMoth
-        Unsexed: UnisexMoth
+      emoteSounds: UnisexMoth
 
 - type: trait
   id: HarmonyReptilianVocals
@@ -208,10 +193,7 @@
       speechSounds: Lizard
       speechVerb: Reptilian
     - type: Vocal
-      sounds:
-        Male: MaleReptilian
-        Female: FemaleReptilian
-        Unsexed: MaleReptilian
+      emoteSounds: MaleReptilian
 
 - type: trait
   id: HarmonySlimeVocals
@@ -226,10 +208,7 @@
       speechSounds: Slime
       allowedEmotes: ['Squish']
     - type: Vocal
-      sounds:
-        Male: MaleSlime
-        Female: FemaleSlime
-        Unsexed: MaleSlime
+      emoteSounds: MaleSlime
 
 - type: trait
   id: HarmonyVoxVocals
@@ -243,10 +222,7 @@
       speechVerb: Vox
       speechSounds: Vox
     - type: Vocal
-      sounds:
-        Male: UnisexVox
-        Female: UnisexVox
-        Unsexed: UnisexVox
+      emoteSounds: UnisexVox
 
 - type: trait
   id: IrishAccent

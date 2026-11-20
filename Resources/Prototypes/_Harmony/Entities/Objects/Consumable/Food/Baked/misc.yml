@@ -17,14 +17,12 @@
   - type: Sprite
     sprite: _Harmony/Objects/Consumable/Food/Baked/misc.rsi
     state: peanut-butter-jelly
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 21
-        reagents:
-        - ReagentId: PeanutButter
-          Quantity: 7
-        - ReagentId: JellyGrape
-          Quantity: 7
-        - ReagentId: Nutriment
-          Quantity: 7
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: PeanutButter
+        Quantity: 7
+      - ReagentId: JellyGrape
+        Quantity: 7
+      - ReagentId: Nutriment
+        Quantity: 7

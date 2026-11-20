@@ -81,7 +81,7 @@
   components:
   - type: Storage
     grid:
-    - 0,0,3,3
+    - 0,0,4,3 # Harmony specific change. Made it slightly larger to fit a bungo fruit inside
     maxItemSize: Normal
   - type: Item
     size: Huge
@@ -100,6 +100,7 @@
           amount: 2
         - id: WeaponBaguette
         - id: PaperWrittenCombatBakeryKit
+        - id: FoodBungo # Harmony specific change. Added to facilitate creating the Bungo Bomber
 
 - type: entity
   parent: [BoxCardboardSmall, BaseSyndicateContraband]

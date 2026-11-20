@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Shared._CD.Traits; // Misfit - Add synth prefix to species
 using Content.Shared.Atmos;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
@@ -81,11 +82,19 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             : Loc.GetString("health-analyzer-window-entity-unknown-text"));
         NameLabel.SetMessage(name);
 
-        SpeciesLabel.Text =
+        // Start Misfit - Change species identifier to have Synthetic prefix
+        var species =
             _entityManager.TryGetComponent<HumanoidProfileComponent>(target.Value,
                 out var humanoidComponent)
                 ? Loc.GetString(_prototypes.Index(humanoidComponent.Species).Name)
                 : Loc.GetString("health-analyzer-window-entity-unknown-species-text");
+
+        var synthSpecies = _entityManager.HasComponent<SynthComponent>(target.Value)
+            ? Loc.GetString("synthetic-component-prefix", ("species", species))
+            : species;
+
+        SpeciesLabel.Text = synthSpecies;
+        // End Misfit
 
         // Basic Diagnostic
 

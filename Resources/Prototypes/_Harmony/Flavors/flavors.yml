@@ -22,3 +22,8 @@
   id: jellygrape
   flavorType: Complex
   description: flavor-complex-jelly-grape
+
+- type: flavor
+  id: peanut
+  flavorType: complex
+  description: flavor-complex-peanut

@@ -1,6 +1,7 @@
 # Avali Sounds
 - type: emoteSounds
   id: MaleAvali
+  voiceSelectorName: humanoid-profile-editor-voice-masculine
   params:
     variation: 0.125
   sounds:
@@ -11,6 +12,7 @@
 
 - type: emoteSounds
   id: FemaleAvali
+  voiceSelectorName: humanoid-profile-editor-voice-feminine
   params:
     variation: 0.125
   sounds:

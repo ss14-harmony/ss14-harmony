@@ -1,0 +1,7 @@
+- type: objectiveIssuer
+  id: BloodBrother
+  name: objective-issuer-blood-brother
+
+- type: objectiveIssuer
+  id: Conspirator
+  name: objective-issuer-conspirator

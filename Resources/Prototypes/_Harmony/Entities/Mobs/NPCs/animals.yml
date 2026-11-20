@@ -29,8 +29,9 @@
         - ReagentId: Blood
           Quantity: 150
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Scale
+  - type: Injurable
+    damageContainer: Biological
   - type: TemperatureDamage
     heatDamageThreshold: 325
   - type: Fixtures

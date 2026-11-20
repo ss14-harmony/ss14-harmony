@@ -1,0 +1,29 @@
+﻿- type: reaction
+  id: BatteryAcid
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Rum:
+      amount: 1
+    SynthBlood:
+      amount: 1
+    DrGibb:
+      amount: 1
+    SpaceMountainWind:
+      amount: 1
+  products:
+    BatteryAcid: 4
+
+- type: reaction
+  id: AngelsKiss
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Rum:
+      amount: 1
+    SynthBlood:
+      amount: 1
+    CoffeeLiqueur:
+      amount: 1
+  products:
+    AngelsKiss: 3

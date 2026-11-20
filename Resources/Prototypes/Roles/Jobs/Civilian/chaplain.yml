@@ -9,6 +9,7 @@
   access:
   - Chapel
   - Maintenance
+  - Service # Harmony Change: Extends service access to the rest of the service roles
   special:
   - !type:AddComponentSpecial
     components:

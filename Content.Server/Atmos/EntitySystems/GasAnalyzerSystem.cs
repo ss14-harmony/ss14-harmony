@@ -6,19 +6,20 @@ using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Interaction;
 using Content.Shared.NodeContainer;
+using Content.Shared.PAI; // Harmony Additions: pAI Encryption and Atmospheric sensor
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 
 namespace Content.Server.Atmos.EntitySystems;
 
 [UsedImplicitly]
-public sealed class GasAnalyzerSystem : EntitySystem
+public sealed partial class GasAnalyzerSystem : EntitySystem
 {
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly AtmosphereSystem _atmo = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
-    [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private AtmosphereSystem _atmo = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private UserInterfaceSystem _userInterface = default!;
+    [Dependency] private SharedInteractionSystem _interactionSystem = default!;
 
     /// <summary>
     /// Minimum moles of a gas to be sent to the client.
@@ -61,6 +62,11 @@ public sealed class GasAnalyzerSystem : EntitySystem
     /// </summary>
     private void OnAfterInteract(Entity<GasAnalyzerComponent> entity, ref AfterInteractEvent args)
     {
+        // Harmony addition: Prevents pAIs being abused as gas analyzers by their despicable owners
+        if (HasComp<PAIComponent>(args.Used) && !HasComp<PAIComponent>(args.User)) 
+            return;
+        // End Harmony Addition
+
         var target = args.Target;
         if (target != null && !_interactionSystem.InRangeUnobstructed((args.User, null), (target.Value, null)))
         {

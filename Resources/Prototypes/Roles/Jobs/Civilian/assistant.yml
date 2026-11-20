@@ -12,7 +12,7 @@
 - type: startingGear
   id: PassengerGear
   equipment:
-    id: PassengerPDA
+    # id: PassengerPDA - Harmony Change
     ears: ClothingHeadsetGrey
   #storage:
     #back:

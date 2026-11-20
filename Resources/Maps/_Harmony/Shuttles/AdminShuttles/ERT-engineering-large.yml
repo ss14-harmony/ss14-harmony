@@ -7967,85 +7967,71 @@ entities:
   - uid: 574
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -4.5,-1.5
       parent: 1
   - uid: 575
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 0.5,-1.5
       parent: 1
   - uid: 576
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -0.5,-1.5
       parent: 1
   - uid: 577
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -1.5,2.5
       parent: 1
   - uid: 578
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -0.5,2.5
       parent: 1
   - uid: 579
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 0.5,2.5
       parent: 1
   - uid: 580
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 1.5,2.5
       parent: 1
   - uid: 581
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 2.5,4.5
       parent: 1
   - uid: 582
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -2.5,4.5
       parent: 1
   - uid: 583
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -2.5,3.5
       parent: 1
   - uid: 584
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -1.5,5.5
       parent: 1
   - uid: 585
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -0.5,5.5
       parent: 1
   - uid: 586
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 0.5,5.5
       parent: 1
   - uid: 587
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 1.5,5.5
       parent: 1
   - uid: 588
@@ -8066,13 +8052,11 @@ entities:
   - uid: 591
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 6.5,3.5
       parent: 1
   - uid: 592
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 8.5,3.5
       parent: 1
   - uid: 593

@@ -44,7 +44,7 @@ public sealed partial class ZombieComponent : Component
     };
 
     [ViewVariables(VVAccess.ReadWrite)]
-    public float ZombieMovementSpeedDebuff = 0.70f;
+    public float ZombieMovementSpeedDebuff = 0.90f; /// Harmony Change - changes movespeed debuff of zombies from .70 to .90
 
     /// <summary>
     /// The skin color of the zombie
@@ -129,8 +129,8 @@ public sealed partial class ZombieComponent : Component
     {
         DamageDict = new()
         {
-            { "Slash", 13 },
-            { "Piercing", 7 },
+            { "Slash", 15 }, // Harmony Change - Buffs zombie slash damage from 13 to 15
+            { "Piercing", 10 }, // Harmony Change - Buffs zombie attack damage from 7 to 10
             { "Structural", 10 }
         }
     };

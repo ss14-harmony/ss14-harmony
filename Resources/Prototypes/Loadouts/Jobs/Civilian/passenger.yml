@@ -121,3 +121,19 @@
   id: WinterBoots
   equipment:
     shoes: ClothingShoesBootsWinter
+
+# Begin Harmony Change
+# ID
+- type: loadout
+  id: PassengerPDA
+  equipment:
+    id: PassengerPDA
+
+- type: loadout
+  id: ClearPDA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: GreyTider
+  equipment:
+    id: ClearPDA
+# End Harmony Change

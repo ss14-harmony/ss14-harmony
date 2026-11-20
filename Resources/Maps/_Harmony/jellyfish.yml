@@ -78370,7 +78370,6 @@ entities:
   - uid: 9165
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -28.5,-13.5
       parent: 2
   - uid: 10116
@@ -78661,19 +78660,16 @@ entities:
   - uid: 16412
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -27.5,-13.5
       parent: 2
   - uid: 16417
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 12.5,1.5
       parent: 2
   - uid: 16418
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 12.5,0.5
       parent: 2
   - uid: 16439

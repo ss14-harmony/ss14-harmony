@@ -73,6 +73,10 @@ public sealed class IlleismAccentSystem : EntitySystem
     {
         var message = args.Message;
         var name = Name(uid).Split(' ')[0];
+        if (name == Name(uid))
+        {
+            name = name.Split('-')[0];
+        }
         var upperName = name.ToUpper();
 
         // I am going to Sec -> NAME is going to Sec

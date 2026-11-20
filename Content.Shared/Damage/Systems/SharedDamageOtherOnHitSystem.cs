@@ -4,10 +4,10 @@ using Content.Shared.Damage.Events;
 
 namespace Content.Shared.Damage.Systems;
 
-public abstract class SharedDamageOtherOnHitSystem : EntitySystem
+public abstract partial class SharedDamageOtherOnHitSystem : EntitySystem
 {
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly DamageExamineSystem _damageExamine = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private DamageExamineSystem _damageExamine = default!;
 
     public override void Initialize()
     {
@@ -27,6 +27,7 @@ public abstract class SharedDamageOtherOnHitSystem : EntitySystem
     /// </summary>
     private void OnAttemptPacifiedThrow(Entity<DamageOtherOnHitComponent> ent, ref AttemptPacifiedThrowEvent args)
     {
+        if(!ent.Comp.PacifiedCanThrow) // Harmony Change: Bool variable allows for damage dealing items to be thrown by pacifists
         args.Cancel("pacified-cannot-throw");
     }
 }

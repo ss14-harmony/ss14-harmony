@@ -68,7 +68,7 @@ public sealed partial class BinglePitComponent : Component
     {
         new(0, false, 2, 1f, 1), // level 1: bingles start and get a few bingles to start off with.
         new(10, true, 10, 2f, 5), // level 2: bingles slowly get bigger
-        new(100, true, 50, 3f, 20, true), // level 3: max bingle capacity reached, much less bingles
+        new(100, true, 50, 3f, 20), // level 3: max bingle capacity reached, much less bingles
     };
 
     /// <summary>
@@ -126,19 +126,12 @@ public sealed partial class BinglePitLevel
     [DataField]
     public int TileRadius;
 
-    /// <summary>
-    /// Will the pit ignore whether people are weightless or not.
-    /// </summary>
-    [DataField]
-    public bool IgnoreWeightless;
-
-    public BinglePitLevel(int pointsRequired, bool canEatLiving, int pointsPerBingle, float size, int tileRadius, bool ignoreWeightless = false)
+    public BinglePitLevel(int pointsRequired, bool canEatLiving, int pointsPerBingle, float size, int tileRadius)
     {
         PointsRequired = pointsRequired;
         CanEatLiving = canEatLiving;
         PointsPerBingle = pointsPerBingle;
         Size = size;
         TileRadius = tileRadius;
-        IgnoreWeightless = ignoreWeightless;
     }
 }

@@ -66,6 +66,17 @@
                                      VerticalAlignment="Center" />
                         <Label Name="PersonJob" />
                     </BoxContainer>
+                    <!-- Harmony Start - Species -->
+                    <BoxContainer Orientation="Horizontal"
+                                  Margin="0 0 0 5">
+                        <Label Text="{Loc 'general-station-record-species-filter'}"
+                               FontColorOverride="DarkGray" />
+                        <Label Text=":"
+                               Margin="0 0 6 0"
+                               FontColorOverride="DarkGray" />
+                        <Label Name="PersonSpecies" />
+                    </BoxContainer>
+                    <!-- Harmony End -->
                     <BoxContainer Orientation="Horizontal"
                                   Margin="0 0 0 5">
                         <Label Text="{Loc 'general-station-record-prints-filter'}"

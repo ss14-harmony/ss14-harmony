@@ -17,9 +17,9 @@ using Robust.Shared.Console;
 namespace Content.Server._Harmony.RoundEnd;
 
 [AdminCommand(AdminFlags.Admin)]
-public sealed class PacifyAllCommand : IConsoleCommand
+public sealed partial class PacifyAllCommand : IConsoleCommand
 {
-    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
 
     public string Command => "pacifyall";
     public string Description => "Pacify all players permanently.";

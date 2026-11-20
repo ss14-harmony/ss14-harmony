@@ -19,3 +19,20 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 3600 # 1h
+
+- type: antagSpecifier
+  parent: RestrictedAntag
+  id: BloodBrother
+  prefRoles:
+  - BloodBrother
+  allowNonHumans: true
+  multiAntagSetting: NotExclusive
+  briefing:
+    text: blood-brother-initial-role-greeting
+    color: MediumVioletRed
+    sound: /Audio/_Harmony/Misc/blood_brother_greeting.ogg
+  components:
+  - type: BloodBrother
+  - type: InitialBloodBrother
+  mindRoles:
+  - MindRoleBloodBrother

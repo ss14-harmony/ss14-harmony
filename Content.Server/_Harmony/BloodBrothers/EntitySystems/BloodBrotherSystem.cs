@@ -8,11 +8,11 @@ using Content.Shared._Harmony.Roles.Components;
 
 namespace Content.Server._Harmony.BloodBrothers.EntitySystems;
 
-public sealed class BloodBrotherSystem : SharedBloodBrotherSystem
+public sealed partial class BloodBrotherSystem : SharedBloodBrotherSystem
 {
-    [Dependency] private readonly MindSystem _mindSystem = default!;
-    [Dependency] private readonly RoleSystem _roleSystem = default!;
-    [Dependency] private readonly TargetObjectiveSystem _targetObjectiveSystem = default!;
+    [Dependency] private MindSystem _mindSystem = default!;
+    [Dependency] private RoleSystem _roleSystem = default!;
+    [Dependency] private TargetObjectiveSystem _targetObjectiveSystem = default!;
 
     public override void Initialize()
     {

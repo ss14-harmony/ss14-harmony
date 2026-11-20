@@ -7,11 +7,10 @@
   - Marathon
   - Oasis
   - Packed
- # - Plasma # Not in Harmony rotation
-  - Reach
+# - Plasma # Not in Harmony rotation
   - Exo
-  - Snowball
- # - Serpentcrest # Not In Harmony rotation
+# - Snowball # Not in Harmony rotation
+# - Serpentcrest # Not In Harmony rotation
   # Harmony maps start
   - Aspid
   - Atlas
@@ -24,4 +23,5 @@
   - Scylla
   - Wapiti
   - Amber
+  - Dove
   # Harmony maps end

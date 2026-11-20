@@ -171,6 +171,7 @@
     providedRecipes:
     - RecipeBaguetteSword
     - RecipeThrowingCroissant
+    - RecipeBungoBomber # Harmony change - adds Bungo Bomber
   - type: Item
     sprite: Structures/Machines/microwave_syndie.rsi
     size: Ginormous

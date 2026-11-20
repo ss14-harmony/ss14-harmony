@@ -995,6 +995,7 @@
   color: "#d5d5e4"
   metabolisms:
     Bloodstream:
+      metabolismRate: 0.2  # Harmony
       effects:
       - !type:Jitter
       - !type:GenericStatusEffect
@@ -1002,18 +1003,18 @@
         component: StutteringAccent
       - !type:ModifyStatusEffect
         effectProto: StatusEffectDrowsiness
-        time: 10
+        time: 2 # Harmony
         type: Remove
       - !type:ResetNarcolepsy
         conditions:
         - !type:ReagentCondition
           reagent: Ethyloxyephedrine
-          min: 10
+          min: 5 # Harmony
       - !type:PopupMessage
         visualType: Medium
         messages: ["ethyloxyephedrine-effect-feeling-awake", "ethyloxyephedrine-effect-clear-mind"]
         type: Local
-        probability: 0.1
+        probability: 0.05 # Harmony
 
 - type: reagent
   id: Diphenylmethylamine
@@ -1025,21 +1026,22 @@
   color: "#b0abaa"
   metabolisms:
     Bloodstream:
+      metabolismRate: 0.05  # Harmony
       effects:
       - !type:ModifyStatusEffect
         effectProto: StatusEffectDrowsiness
-        time: 10
+        time: 2 # Harmony
         type: Remove
       - !type:ResetNarcolepsy
         conditions:
         - !type:ReagentCondition
           reagent: Diphenylmethylamine
-          min: 5
+          min: 2.5 # Harmony
       - !type:PopupMessage
         visualType: Medium
         messages: ["ethyloxyephedrine-effect-feeling-awake", "ethyloxyephedrine-effect-clear-mind"]
         type: Local
-        probability: 0.1
+        probability: 0.05 # Harmony
 
 - type: reagent
   id: Sigynate

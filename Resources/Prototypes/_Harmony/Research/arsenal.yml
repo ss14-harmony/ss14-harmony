@@ -1,0 +1,13 @@
+- type: technology
+  id: PortableRecharging
+  name: research-technology-portable-recharging
+  icon:
+    sprite: Objects/Power/portable_recharger.rsi
+    state: charging
+  discipline: Arsenal
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - PortableRecharger
+  technologyPrerequisites:
+  - AdvancedPowercells

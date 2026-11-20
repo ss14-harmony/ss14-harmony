@@ -5,12 +5,14 @@
   description: A series of standards and procedures imposed upon command members.
   components:
   - type: Sprite
+    sprite: Objects/Misc/books.rsi
     layers:
     - state: paper
     - state: cover_strong
       color: "#284c8f"
     - state: icon_sop_harmony
       color: "#f7d61a"
+      sprite: _Harmony/Objects/Misc/books.rsi
   - type: GuideHelp
     guides:
     - HarmonyStandardOperatingProcedure

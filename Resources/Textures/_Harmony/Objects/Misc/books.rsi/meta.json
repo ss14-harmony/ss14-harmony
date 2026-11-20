@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Base taken from tgstation at commit https://github.com/tgstation/tgstation/commit/37fb6bc6dd20005775dde8d886f48f7722606b77, layers split by TheShuEd (github), icon_sop_harmony layer made by RotEmpress (github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon_sop_harmony"
+        }
+    ]
+}

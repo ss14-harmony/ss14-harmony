@@ -1,0 +1,15 @@
+#normal
+
+- type: entity
+  parent: AirlockCommandLocked
+  id: SichAirlockCommandLocked
+  name: command airlock
+  suffix: Command, Locked
+  
+#glass
+
+- type: entity
+  parent: AirlockCommandGlassLocked
+  id: SichAirlockCommandGlassLocked
+  name: command glass airlock
+  suffix: Command, Locked

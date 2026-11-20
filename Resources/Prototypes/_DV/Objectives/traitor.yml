@@ -1,4 +1,4 @@
-﻿# Base
+# Base
 # teach lesson
 - type: entity
   abstract: true
@@ -29,3 +29,9 @@
   - type: TargetObjective
     title: objective-condition-teach-person-title
   - type: PickRandomPerson
+    conditions:
+    - !type:ObjectiveTargetCondition
+      inverted: true
+      whitelist:
+        components:
+        - TeachLessonCondition

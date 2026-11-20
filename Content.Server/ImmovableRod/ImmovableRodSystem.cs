@@ -22,23 +22,22 @@ using Robust.Shared.Random;
 
 namespace Content.Server.ImmovableRod;
 
-public sealed class ImmovableRodSystem : EntitySystem
+public sealed partial class ImmovableRodSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
-    [Dependency] private readonly GibbingSystem _gibbing = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly DestructibleSystem _destructible = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    // Harmony change start
-    // The rod bounce behavior lives in a Harmony-only helper system.
-    // Injects the Harmony bounce helper so immovable rods can bounce off protected entities.
-    [Dependency] private readonly RodIndestructibleSystem _rodIndestructible = default!;
+    [Dependency] private GibbingSystem _gibbing = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private SharedPhysicsSystem _physics = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private DestructibleSystem _destructible = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedMapSystem _map = default!;
+    [Dependency] private ISharedAdminLogManager _adminLogger = default!;
+
+    // Harmony change start: handle rods hitting protected entities.
+    [Dependency] private RodIndestructibleSystem _rodIndestructible = default!;
     // Harmony change end
     public override void Update(float frameTime)
     {
@@ -116,14 +115,12 @@ public sealed class ImmovableRodSystem : EntitySystem
             return;
         }
 
-        // Harmony change start
-        // StartCollideEvent is already owned by the stock rod system.
-        // Gives the Harmony helper first chance to reflect the rod off RodIndestructible entities and stop the normal destruction path.
+        // Harmony change start: reflect rods before the normal destruction path.
         if (_rodIndestructible.TryBounceRod(uid, ref args))
             return;
         // Harmony change end
 
-        // dont delete/hurt self if polymoprhed into a rod
+        // Don't delete/hurt self if polymorphed into a rod
         if (TryComp<PolymorphedEntityComponent>(uid, out var polymorphed))
         {
             if (polymorphed.Parent == ent)
@@ -134,21 +131,22 @@ public sealed class ImmovableRodSystem : EntitySystem
         if (HasComp<BodyComponent>(ent))
         {
             component.MobCount++;
-            _popup.PopupEntity(Loc.GetString("immovable-rod-penetrated-mob", ("rod", uid), ("mob", ent)), uid, PopupType.LargeCaution);
 
-            if (!component.ShouldGib)
+            var coords = Transform(uid).Coordinates;
+
+            _adminLogger.Add(LogType.Gib, LogImpact.Medium, $"Entity {ToPrettyString(uid)} hit {ToPrettyString(ent)} at X:{coords.X} Y:{coords.Y}");
+
+            if (!component.ShouldGib || !_destructible.DestroyEntity(ent))
             {
-                if (component.Damage == null)
+                if (component.Damage is null)
                     return;
 
                 _damageable.TryChangeDamage(ent, component.Damage, ignoreResistances: true);
                 return;
             }
 
-            var coords = Transform(uid).Coordinates;
-            _adminLogger.Add(LogType.Gib, LogImpact.Low, $"Entity {ToPrettyString(uid)} gibbed {ToPrettyString(ent)} at X:{coords.X} Y:{coords.Y}");
-
             _gibbing.Gib(ent);
+            _popup.PopupEntity(Loc.GetString("immovable-rod-penetrated-mob", ("rod", uid), ("mob", ent)), uid, PopupType.LargeCaution);
             return;
         }
 
