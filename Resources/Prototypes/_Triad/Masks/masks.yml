@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingMaskPullableBase]
+  parent: [ClothingMaskBase]
   id: ClothingMaskVoxTrochar
   name: Vox trochar device
   description: A specialized device utilizing a frightening array of needles to forcibly nitrogenate (or oxygenate) the bloodstream without obscuring the face. Designed by and for Vox, but can be utilized by any species.
