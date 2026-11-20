@@ -155,10 +155,10 @@ public sealed partial class RevenantSystem
             _popup.PopupEntity(Loc.GetString("revenant-soul-harvested"), target, uid, PopupType.SmallCaution);
             return;
         }
-    //  Harmony change start - make revnants not able to harvest from sleeping players
-    //  if (_mobStateQuery.TryComp(target, out var mobstate) && mobstate.CurrentState == MobState.Alive && !HasComp<SleepingComponent>(target))
-        if (_mobStateQuery.TryComp(target, out var mobstate) && mobstate.CurrentState == MobState.Alive)
-    //  Harmony change end
+        // Harmony change start: protect yellowtext SSD players while allowing other sleeping targets.
+        // if (_mobStateQuery.TryComp(target, out var mobstate) && mobstate.CurrentState == MobState.Alive && !HasComp<SleepingComponent>(target))
+        if (IsHarvestProtected(target))
+        // Harmony change end
         {
             _popup.PopupEntity(Loc.GetString("revenant-soul-too-powerful"), target, uid);
             return;
@@ -203,6 +203,11 @@ public sealed partial class RevenantSystem
             return;
 
         _appearance.SetData(uid, RevenantVisuals.Harvesting, false);
+
+        // Harmony change start: do not finish harvesting a target who became SSD during the do-after
+        if (IsHarvestProtected(args.Args.Target.Value))
+            return;
+        // Harmony change end
 
         if (!TryComp<EssenceComponent>(args.Args.Target, out var essence))
             return;
