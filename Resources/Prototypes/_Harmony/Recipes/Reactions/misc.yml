@@ -1,0 +1,14 @@
+﻿- type: reaction
+  id: CreateSprayPainterAmmo
+  impact: Low
+  quantized: true
+  reactants:
+    Oil:
+      amount: 10
+    Iron:
+      amount: 15
+    Copper:
+      amount: 15
+  effects:
+  - !type:SpawnEntity
+    entity: SprayPainterAmmo
