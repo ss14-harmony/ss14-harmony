@@ -25,6 +25,7 @@
     - type: SleepEmitSound
       snore: /Audio/Voice/Misc/silly_snore.ogg
       interval: 10
+    - type: CreamPieStunner # Harmony Additions: Cream Pies only stun when thrown by a Clown
   - !type:AddImplantSpecial
     implants: [ SadTromboneImplant ]
 

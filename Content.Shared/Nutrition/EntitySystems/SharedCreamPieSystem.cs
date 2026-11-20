@@ -1,3 +1,4 @@
+using Content.Shared._Harmony.Nutrition.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Fluids;
@@ -121,7 +122,10 @@ public abstract partial class SharedCreamPieSystem : EntitySystem
         if (!Exists(args.Thrown) || !TryComp<CreamPieComponent>(args.Thrown, out var creamPie))
             return;
 
-        _stunSystem.TryUpdateParalyzeDuration(creamPied.Owner, creamPie.ParalyzeTime);
+        // Harmony Change: Cream Pies only stun when thrown by a Clown
+        if(HasComp<CreamPieStunnerComponent>(args.Component.Thrower))
+            _stunSystem.TryUpdateParalyzeDuration(creamPied.Owner, creamPie.ParalyzeTime);
+        // End of Harmony Changes | I'm not going to miss this meta as funny as it was
 
         // Already creamed, no need to spam popups.
         if (creamPied.Comp.CreamPied)
