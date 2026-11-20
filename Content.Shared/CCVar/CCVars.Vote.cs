@@ -177,4 +177,26 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> VotekickIgnoreGhostReqInLobby =
         CVarDef.Create("votekick.ignore_ghost_req_in_lobby", true, CVar.SERVERONLY);
+
+    // Start of Harmony additions: Change Auto evac call to OOC
+
+    /// <summary>
+    ///     Allows enabling/disabling player-started votekick for ultimate authority
+    /// </summary>
+    public static readonly CVarDef<bool> AutoEvacCallEnabled =
+        CVarDef.Create("voteautoevaccall.enabled", false, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Sets the duration of the auto evac vote timer when alone.
+    /// </summary>
+    public static readonly CVarDef<int>
+        VoteAutoEvacTimerAlone = CVarDef.Create("voteautoevaccall.alone_timer", 30, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Sets the duration of the auto evac vote timer.
+    /// </summary>
+    public static readonly CVarDef<int>
+        VoteAutoEvacTimer = CVarDef.Create("voteautoevaccall.timer", 60, CVar.SERVERONLY);
+
+    // End of Harmony additions
 }
