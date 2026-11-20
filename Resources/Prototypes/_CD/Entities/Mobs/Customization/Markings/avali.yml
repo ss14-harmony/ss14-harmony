@@ -360,4 +360,114 @@
     state: eyes_Starlight
   - sprite: _Harmony/Mobs/Customization/Avali/avali_eyes.rsi
     state: eyes_Starlight_skin
+
+# //Jewelry imported from Starlight // Avali Earrings - TailOverlay is used because otherwise they would be hidden by their ears. Will need to fix if/when ears disappear with helmets
+- type: marking
+  id: EarringOne
+  bodyPart: TailOverlay
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring1_1
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring1_2
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring1_3
+
+- type: marking
+  id: EarringTwo
+  bodyPart: TailOverlay
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring2_1
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring2_2
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring2_3
+
+- type: marking
+  id: EarringThree
+  bodyPart: TailOverlay
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring3_1
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring3_2
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring3_3
+
+- type: marking
+  id: EarringFour
+  bodyPart: TailOverlay
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring4_1
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring4_2
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring4_3
+
+- type: marking
+  id: EarringsCombined
+  bodyPart: TailOverlay
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring_combined_1
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring_combined_2
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_earring_combined_3
+
+
+# Avali Tailbands
+
+- type: marking
+  id: TailbandCombined
+  bodyPart: TailOverlay
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_tailband_combined_1
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_tailband_combined_2
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_tailband_combined_3
+
+- type: marking
+  id: TailbandOne
+  bodyPart: TailOverlay
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_tailband1_1
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_tailband1_2
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_tailband1_3
+
+- type: marking
+  id: TailbandTwo
+  bodyPart: TailOverlay
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_tailband2_1
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_tailband2_2
+
+- type: marking
+  id: TailbandThree
+  bodyPart: TailOverlay
+  groupWhitelist: [ Avali ]
+  sprites:
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_tailband3_1
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_tailband3_2
+  - sprite: /Prototypes/_Starlight/Mobs/Customization/Avali/avali_jewelry.rsi
+    state: avali_tailband3_3
 # End harmony changes
