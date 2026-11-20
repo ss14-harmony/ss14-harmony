@@ -42,9 +42,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/laser_projectile.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: icon
+    - state: medium
       shader: unshaded
   - type: PointLight
     enabled: true
@@ -54,6 +54,8 @@
     damage:
       types:
         Heat: 15
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectHeavyLaser
 
 - type: entity
   name: magnum laser bolt
@@ -61,9 +63,9 @@
   parent: BulletLaserBaseHarmony
   components:
   - type: Sprite
-    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/laser_projectile.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: icon
+    - state: heavy
       shader: unshaded
   - type: PointLight
     enabled: true
@@ -73,6 +75,26 @@
     damage:
       types:
         Heat: 30
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectHeavyLaser
+
+- type: entity
+  name: magnum disabler bolt
+  id: BulletLaserDisablerMagnumHarmony
+  parent: BulletDisabler
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
+    layers:
+    - state: mediumstun
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#0ab8c4"
+    radius: 1.4
+    energy: 5.0
+  - type: StaminaDamageOnCollide
+    damage: 30
 
 - type: entity
   name: magnum window-piercing bolt
@@ -80,15 +102,15 @@
   parent: BulletLaserBaseHarmony
   components:
   - type: Sprite
-    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/piercing_projectile.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: icon
+    - state: mediumgold
       shader: unshaded
   - type: PointLight
     enabled: true
-    color: "#ff4300"
+    color: "#ffcb6f"
   - type: Projectile
-    impactEffect: BulletImpactEffectOrangeDisabler
+    impactEffect: BulletImpactEffectGold
     damage:
       types:
         Heat: 20
@@ -101,6 +123,8 @@
         hard: false
         mask:
         - Opaque
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectGoldLaser
 
 - type: entity
   parent: BulletLaserHarmony
@@ -112,6 +136,8 @@
     proto: BulletLaserHarmony
     count: 2
     spread: 12.5
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectHeavyLaser
 
 - type: entity
   name: laser bolt x-ray
@@ -120,19 +146,21 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/xray_projectile.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: icon
+    - state: mediumsynd
       shader: unshaded
   - type: PointLight
     enabled: true
     color: "#15cb2a"
   - type: Projectile
-    impactEffect: BulletImpactEffectXRayHarmony
+    impactEffect: BulletImpactEffectSyndicate
     damage:
       types:
         Heat: 10
         Radiation: 6
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectSyndLaser
 
 - type: entity
   name: laser bolt shock
@@ -140,18 +168,20 @@
   parent: BulletLaserBaseHarmony
   components:
   - type: Sprite
-    sprite: _Harmony/Objects/Weapons/Guns/Projectiles/shock_projectile.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Projectiles/energybolts.rsi
     layers:
-    - state: icon
+    - state: mediumpurp
       shader: unshaded
   - type: PointLight
     enabled: true
     color: "#AA00FF"
   - type: Projectile
-    impactEffect: BulletImpactShockHarmony
+    impactEffect: BulletImpactEffectPurple
     damage:
       types:
         Shock: 9
     ignoreResistances: true
   - type: StaminaDamageOnCollide
     damage: 5
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectPurpLaser
