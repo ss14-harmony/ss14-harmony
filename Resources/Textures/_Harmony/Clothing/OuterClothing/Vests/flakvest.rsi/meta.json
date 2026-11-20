@@ -1,0 +1,30 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from space-wizards at commit https://github.com/space-wizards/space-station-14/commit/6759d6a6142c411ac445a56d9623042383d034a9. Made by Dieselmohawk (Github). Detective resprites by CrimsonJupiter (Github). Resprited by Halycon (kleinerstation13 on Github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+        "name": "icon"
+        },
+        {
+        "name": "equipped-OUTERCLOTHING",
+        "directions": 4
+        },
+        {
+        "name": "equipped-OUTERCLOTHING-vox",
+        "directions": 4
+        },
+        {
+        "name": "inhand-left",
+        "directions": 4
+        },
+        {
+        "name": "inhand-right",
+        "directions": 4
+        }
+    ]
+}
