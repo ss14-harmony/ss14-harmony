@@ -1,21 +1,21 @@
 - type: entity
   parent: MobLizard
-  id: MobLizardGizard
-  name: Gizard
+  id: MobLizardGizzard
+  name: Gizzard, the Lizard Wizard
   suffix: Harmony
   description: Sometimes you think you're the magic potion.
   components:
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: gizard
-      sprite: _Harmony/Mobs/Pets/gizard.rsi
+      state: gizzard
+      sprite: _Harmony/Mobs/Pets/gizzard.rsi
   - type: GhostRole
     makeSentient: true
     allowMovement: true
     allowSpeech: true
-    name: ghost-role-information-gizard-name
-    description: ghost-role-information-gizard-description
+    name: ghost-role-information-gizzard-name
+    description: ghost-role-information-gizzard-description
     rules: ghost-role-information-familiar-rules
     mindRoles:
     - MindRoleGhostRoleFamiliar
@@ -29,12 +29,9 @@
   - type: Tag
     tags:
     - DoorBumpOpener
-    - VimPilot
   - type: Access
     tags:
     - Wizard
-  - type: MindContainer
-  - type: MindExaminable
   - type: NpcFactionMember
     factions:
     - Wizard
@@ -42,7 +39,7 @@
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: gizard
+        Base: gizzard
       Critical:
         Base: dead
       Dead:
@@ -56,5 +53,14 @@
   - type: ActionGrant
     actions:
     - ActionBlink
-    - ActionPolymorphJauntII
     - ActionWehball
+    - ActionHealingBiteSpell
+  - type: Puller
+    needsHands: false
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4
+    baseSprintSpeed: 3
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 20

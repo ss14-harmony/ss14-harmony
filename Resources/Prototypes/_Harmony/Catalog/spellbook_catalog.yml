@@ -46,6 +46,20 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+
+- type: listing
+  id: SpellbookGizzard
+  name: spellbook-gizzard-name
+  description: spellbook-gizzard-desc
+  productAction: ActionGizzardSummon
+  cost:
+    WizCoin: 2
+  categories:
+  - SpellbookUtility
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
 # Equipment
 - type: listing
   id: SpellbookStaffSlipping
