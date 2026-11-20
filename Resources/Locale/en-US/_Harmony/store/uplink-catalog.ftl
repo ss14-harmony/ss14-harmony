@@ -87,6 +87,9 @@ uplink-syndiedrobe-flatpack-desc = A flatpack box containing a SyndieDrobe. Slay
 uplink-hyposhell-name = Box of hyposhells
 uplink-hyposhell-desc = A box containing four hyposhells, shotgun shells that can hold 7u of any chemical.
 
+uplink-piebox-name = Pies by Donk Co
+uplink-piebox-desc = Donk Co has listened clown operatives from around the universe. We get it. You can't use guns. Throw a pie instead. #GetYourDonkOn
+
 # Weapons
 
 uplink-malletofmalice-name = Mallet of Malice

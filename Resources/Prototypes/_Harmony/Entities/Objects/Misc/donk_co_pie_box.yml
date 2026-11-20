@@ -1,0 +1,28 @@
+- type: entity
+  parent: [BoxCardboard, BaseSyndicateContraband]
+  id: FoodBoxDonkPies
+  name: Pies by Donk Co
+  description: 'Donk Co is not responsible for banana cream effects lasting more than one shift. Consult a water bottle should effects persist.'
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/donkpocket.rsi
+    state: box
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,3,3
+    whitelist:
+      tags:
+      - Pie
+  - type: Item
+    sprite: Objects/Consumable/Food/Baked/donkpocket.rsi
+    size: Large
+    shape:
+    - 0,0,3,3
+    storedOffset: -1,1
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: FoodPieBananaCream
+          amount: 4
