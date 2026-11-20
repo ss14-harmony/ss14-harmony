@@ -1,0 +1,7 @@
+- type: metabolismCategory
+  id: Organic
+  name: metabolism-category-organic
+
+- type: metabolismCategory
+  id: Artificial
+  name: metabolism-category-artificial

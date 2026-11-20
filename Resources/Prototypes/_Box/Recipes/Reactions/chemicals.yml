@@ -1,0 +1,88 @@
+- type: reaction
+  id: IndustrialLubricant
+  reactants:
+    Oil:
+      amount: 1
+    Fersilicite:
+      amount: 1
+  products:
+    IndustrialLubricant: 2
+
+- type: reaction
+  id: ComputerCoolant
+  reactants:
+    EthyleneGlycol:
+      amount: 1
+    Water:
+      amount: 3
+  products:
+    ComputerCoolant: 3
+
+- type: reaction
+  id: EthyleneGlycol
+  minTemp: 325
+  reactants:
+    Ethanol:
+      amount: 1
+    SodiumHydroxide:
+      amount: 1
+  products:
+    EthyleneGlycol: 1
+
+- type: reaction
+  id: VoltaicAcid
+  reactants:
+    Lithium:
+      amount: 1
+    Sulfur:
+      amount: 1
+  products:
+    VoltaicAcid: 1
+
+- type: reaction
+  id: HydrogenChlroide
+  reactants:
+    Hydrogen:
+      amount: 1
+    Chlorine:
+      amount: 1
+  products:
+    HydrogenChloride: 2
+
+- type: reaction
+  id: Chloromethane
+  reactants:
+    HydrogenChloride:
+      amount: 1
+    Methanol:
+      amount: 1
+  products:
+    Chloromethane: 1
+    Water: 1
+
+- type: reaction
+  id: Dimethyldichlorosilane
+  minTemp: 570
+  reactants:
+    Chloromethane:
+      amount: 2
+    Silicon:
+      amount: 1
+    Copper:
+      amount: 1
+      catalyst: true
+  products:
+    Dimethyldichlorosilane: 1
+
+- type: reaction
+  id: CarbonMonoxide
+  requiredMixerCategories:
+  - Stir
+  minTemp: 570
+  reactants:
+    Carbon:
+      amount: 2
+    Oxygen:
+      amount: 1
+  products:
+    CarbonMonoxide: 2

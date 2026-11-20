@@ -1,0 +1,211 @@
+- type: reaction
+  id: EmergencyDefragmenter
+  reactants:
+    Bitflipper:
+      amount: 1
+    Sodium:
+      amount: 1
+    Arithrazine:
+      amount: 1
+  products:
+    EmergencyDefragmenter: 2
+
+- type: reaction
+  id: CryostabilizedDefragmenter
+  reactants:
+    Cryosilicate:
+      amount: 1
+    EmergencyDefragmenter:
+      amount: 1
+  products:
+    CryostabilizedDefragmenter: 2
+
+- type: reaction
+  id: Polydimethylsiloxane
+  reactants:
+    Dimethyldichlorosilane:
+      amount: 1
+    Water:
+      amount: 2
+  products:
+    Polydimethylsiloxane: 1
+    HydrochloricAcid: 2
+
+- type: reaction
+  id: Overclocker
+  reactants:
+    Epinephrine:
+      amount: 1
+    ActivatedSilicon:
+      amount: 1
+    Iron:
+      amount: 1
+  products:
+    Overclocker: 2
+
+- type: reaction
+  id: Recal
+  reactants:
+    ActivatedSilicon:
+      amount: 1
+    Haloperidol:
+      amount: 1
+    Epinephrine:
+      amount: 1
+  products:
+    Recal: 3
+
+- type: reaction
+  id: LiquidSolder
+  reactants:
+    Mannitol:
+      amount: 1
+    ActivatedSilicon:
+      amount: 1
+    Aluminium:
+      amount: 1
+  products:
+    LiquidSolder: 3
+
+- type: reaction
+  id: Degreaser
+  reactants:
+    Oil:
+      amount: 1
+    Ethylredoxrazine:
+      amount: 1
+  products:
+    Degreaser: 2
+
+# Recipe for Omni > IPC Omni - deactivate if OP *or* unused
+- type: reaction
+  id: SmartMetal
+  reactants:
+    Omnizine:
+      amount: 4
+    ActivatedSilicon:
+      amount: 2
+    Plasma:
+      amount: 2
+  products:
+    SmartMetal: 6
+
+# IPC Oil > IPC Salines
+- type: reaction
+  id: IPCOilBreakdown
+  source: true
+  requiredMixerCategories:
+  - Centrifuge
+  reactants:
+    IPCOil:
+      amount: 2
+  products:
+    ComputerCoolant: 1
+    IndustrialLubricant: 1
+
+- type: reaction
+  id: RoutineMaintenance
+  reactants:
+    ActivatedSilicon:
+      amount: 1
+    Iron:
+      amount: 3
+    Aluminium:
+      amount: 1
+  products:
+    RoutineMaintenance: 4
+
+- type: reaction
+  id: Nanoweldite
+  minTemp: 420
+  maxTemp: 520 # Hot Enough it can coagulate and form, but not too hot that it ignites instead
+  priority: 20
+  reactants:
+    Phosphorus:
+      amount: 3
+    Sulfur:
+      amount: 2
+    Plasma:
+      amount: 3
+    WeldingFuel:
+      amount: 1
+    ActivatedSilicon:
+      amount: 1
+  products:
+    Nanoweldite: 5
+
+- type: reaction
+  id: SOISapphire
+  minTemp: 300
+  reactants:
+    ActivatedSilicon:
+      amount: 1
+    Aluminium:
+      amount: 2
+    Oxygen:
+      amount: 3
+  products:
+    SOISapphire: 6
+
+- type: reaction
+  id: ECCMemory
+  reactants:
+    SOISapphire:
+      amount: 1
+    Radium:
+      amount: 1
+    Iodine:
+      amount: 2
+  products:
+    ECCMemory: 4
+
+- type: reaction
+  id: ThermalPaste
+  reactants:
+    Leporazine:
+      amount: 1
+    SOISapphire:
+      amount: 3
+  products:
+    ThermalPaste: 4
+
+- type: reaction
+  id: Cryosilicate
+  reactants: # Loosely based on Superconductive materials. Emphasis on Loosely (the game just doesn't have the elements for it)
+    Sugar:
+      amount: 1
+    Copper:
+      amount: 1
+    Aluminium:
+      amount: 1
+    Cryoxadone:
+      amount: 1
+    ActivatedSilicon:
+      amount: 1
+  products:
+    Cryosilicate: 5
+
+- type: reaction
+  id: CryoWeldite
+  minTemp: 370
+  reactants:
+    Nanoweldite:
+      amount: 1
+    Cryosilicate:
+      amount: 1
+    SmartMetal:
+      amount: 1
+  products:
+    CryoWeldite: 3
+
+- type: reaction
+  id: Cryoconductite
+  reactants:
+    Cryosilicate:
+      amount: 1
+    Silver:
+      amount: 1
+    ThermalPaste:
+      amount: 1
+  products:
+    Cryoconductite: 3

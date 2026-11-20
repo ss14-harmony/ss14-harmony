@@ -1,0 +1,29 @@
+- type: reagent
+  id: IPCOil
+  name: reagent-name-ipc-oil
+  group: Biological
+  desc: reagent-desc-ipc-oil
+  physicalDesc: reagent-physical-desc-oily
+  flavor: oily
+  flavorMinimum: 0.01
+  color: "#AABBAF"
+  recognizable: true
+  boilingPoint: 100 # same as coolant, good enough
+  meltingPoint: -30 # same as coolant, good enough
+  friction: 0.4
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Vox]
+          inverted: true
+        damage:
+          types:
+            Poison: 1
+      - !type:SatiateThirst
+        factor: 1
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Vox]

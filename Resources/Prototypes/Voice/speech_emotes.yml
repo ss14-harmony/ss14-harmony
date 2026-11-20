@@ -34,9 +34,11 @@
   whitelist:
     components:
     - Vocal
-  blacklist:
-    tags:
-    - SiliconEmotes
+  # Start Box Change
+  # blacklist:
+  #   tags:
+  #   - SiliconEmotes
+  # End Box Change
   chatMessages: ["chat-emote-msg-laugh"]
   chatTriggers:
     - laugh
@@ -64,8 +66,10 @@
     requireAll: true
     components:
     - Vocal
-    tags:
-    - SiliconEmotes
+  # Start Box Change
+    # tags:
+    # - SiliconEmotes
+  # End Box Change
   chatMessages: ["chat-emote-msg-honk"]
   chatTriggers:
     - honk
@@ -81,9 +85,11 @@
   whitelist:
     components:
     - Vocal
-  blacklist:
-    tags:
-    - SiliconEmotes
+  # Start Box Change
+  # blacklist:
+  #   tags:
+  #   - SiliconEmotes
+  # End Box Change
   chatMessages: ["chat-emote-msg-sigh"]
   chatTriggers:
     - sigh
@@ -98,9 +104,11 @@
   whitelist:
     components:
     - Vocal
-  blacklist:
-    tags:
-    - SiliconEmotes
+  # Start Box Change
+  # blacklist:
+  #   tags:
+  #   - SiliconEmotes
+  # End Box Change
   chatMessages: ["chat-emote-msg-whistle"]
   chatTriggers:
     - whistle
@@ -115,9 +123,11 @@
   whitelist:
     components:
     - Vocal
-  blacklist:
-    tags:
-    - SiliconEmotes
+  # Start Box Change
+  # blacklist:
+  #   tags:
+  #   - SiliconEmotes
+  # End Box Change
   chatMessages: ["chat-emote-msg-crying"]
   chatTriggers:
     - cry
@@ -298,9 +308,11 @@
   whitelist:
     components:
     - Hands
-  blacklist:
-    tags:
-    - SiliconEmotes
+  # Start Box Change
+  # blacklist:
+  #   tags:
+  #   - SiliconEmotes
+  # End Box Change
   chatMessages: ["chat-emote-msg-clap"]
   chatTriggers:
     - claps
@@ -315,9 +327,11 @@
   whitelist:
     components:
     - Hands
-  blacklist:
-    tags:
-    - SiliconEmotes
+  # Start Box Change
+  # blacklist:
+  #   tags:
+  #   - SiliconEmotes
+  # End Box Change
   chatMessages: [ "chat-emote-msg-clap-single" ]
   chatTriggers:
     - clap
@@ -334,9 +348,11 @@
   whitelist:
     components:
     - Hands
-  blacklist:
-    tags:
-    - SiliconEmotes
+  # Start Box Change
+  # blacklist:
+  #   tags:
+  #   - SiliconEmotes
+  # End Box Change
   chatMessages: ["chat-emote-msg-snap"]
   chatTriggers:
     - snap
@@ -385,9 +401,11 @@
   whitelist:
     components:
     - Hands
-  blacklist:
-    tags:
-    - SiliconEmotes
+  # Start Box Change
+  # blacklist:
+  #   tags:
+  #   - SiliconEmotes
+  # End Box Change
   chatMessages: ["chat-emote-msg-salute"]
   chatTriggers:
     - salute

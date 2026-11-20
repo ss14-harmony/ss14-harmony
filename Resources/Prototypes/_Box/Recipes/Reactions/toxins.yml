@@ -1,0 +1,27 @@
+# Hydrochloric Acid
+- type: reaction
+  id: HydrochloricAcid
+  reactants:
+    Water:
+      amount: 1
+      catalyst: true
+    HydrogenChloride:
+      amount: 1
+  products:
+    HydrochloricAcid: 1
+
+# Methanol
+- type: reaction
+  id: Methanol
+  minTemp: 524
+  priority: 20
+  reactants:
+    CarbonMonoxide:
+      amount: 1
+    Copper:
+      amount: 1
+      catalyst: true
+    Hydrogen:
+      amount: 2
+  products:
+    Methanol: 1

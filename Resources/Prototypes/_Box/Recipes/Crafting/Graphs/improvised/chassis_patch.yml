@@ -1,0 +1,15 @@
+- type: constructionGraph
+  id: ChassisPatch
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: icon
+          steps:
+            - material: Durathread
+              amount: 2
+            - material: Steel
+              amount: 2
+              doAfter: 3
+    - node: icon
+      entity: ChassisPatch1

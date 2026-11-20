@@ -1,0 +1,111 @@
+- type: stack
+  id: IPCOilPack
+  name: stack-ipc-oil-pack
+  icon: { sprite: "/Textures/_DV/Objects/Medical/Oilpack.rsi", state: icon }
+  spawn: IPCOilPack
+  maxCount: 10
+
+- type: stack
+  id: CablePack
+  name: stack-cable-pack
+  icon: { sprite: "/Textures/_Box/Objects/Medical/cable_pack.rsi", state: cable_pack }
+  spawn: CablePack
+  maxCount: 10
+
+- type: stack
+  id: ComponentPack
+  name: stack-component-pack
+  icon: { sprite: "/Textures/_Box/Objects/Medical/componentpack.rsi", state: icon }
+  spawn: ComponentPack
+  maxCount: 10
+
+- type: stack
+  id: RobotStructPack
+  name: stack-robotstruct-pack
+  icon: { sprite: "/Textures/_Box/Objects/Medical/componentpack.rsi", state: icon }
+  spawn: RobotStructPack
+  maxCount: 10
+
+- type: stack
+  id: ChassisPatch
+  name: stack-chassis-patch
+  icon: { sprite: "/Textures/_Box/Objects/Medical/chassis_patch.rsi", state: icon }
+  spawn: ChassisPatch
+  maxCount: 10
+
+- type: stack
+  id: ReplacementLenses
+  name: stack-replacement-lenses
+  icon: { sprite: "/Textures/_Box/Objects/Medical/replacement_lenses.rsi", state: icon }
+  spawn: ReplacementLenses
+  maxCount: 1
+
+- type: stack
+  id: RobotBurnPatch
+  name: stack-robot-burn-patch
+  icon: { sprite: "/Textures/_Box/Objects/Medical/AdvancedRobotTopicals.rsi", state: robot-burn }
+  spawn: RobotBurnPatch
+  maxCount: 10
+
+- type: stack
+  id: RobotTraumaPatch
+  name: stack-robot-trauma-patch
+  icon: { sprite: "/Textures/_Box/Objects/Medical/AdvancedRobotTopicals.rsi", state: robot-trauma }
+  spawn: RobotTraumaPatch
+  maxCount: 10
+
+- type: stack
+  id: AcidNeutralizationPatch
+  name: stack-acid-neutralization-patch
+  icon: { sprite: "/Textures/_Box/Objects/Medical/AdvancedRobotTopicals.rsi", state: acid-neutralization }
+  spawn: AcidNeutralizationPatch
+  maxCount: 10
+
+- type: stack
+  id: CoolingPatch
+  name: stack-cooling-patch
+  icon: { sprite: "/Textures/_Box/Objects/Medical/AdvancedRobotTopicals.rsi", state: cooling }
+  spawn: CoolingPatch
+  maxCount: 10
+
+- type: stack
+  id: DentRepairPatch
+  name: stack-dent-repair-patch
+  icon: { sprite: "/Textures/_Box/Objects/Medical/AdvancedRobotTopicals.rsi", state: dent-repair }
+  spawn: DentRepairPatch
+  maxCount: 10
+
+- type: stack
+  id: ElectronicRepairPatch
+  name: stack-electronic-repair-patch
+  icon: { sprite: "/Textures/_Box/Objects/Medical/AdvancedRobotTopicals.rsi", state: electronic-repair }
+  spawn: ElectronicRepairPatch
+  maxCount: 10
+
+- type: stack
+  id: PunctureRepairPatch
+  name: stack-puncture-repair-patch
+  icon: { sprite: "/Textures/_Box/Objects/Medical/AdvancedRobotTopicals.rsi", state: puncture-repair }
+  spawn: PunctureRepairPatch
+  maxCount: 10
+
+- type: stack
+  id: ShieldingPatch
+  name: stack-shielding-patch
+  icon: { sprite: "/Textures/_Box/Objects/Medical/AdvancedRobotTopicals.rsi", state: shielding }
+  spawn: ShieldingPatch
+  maxCount: 10
+
+- type: stack
+  id: GashRepairPatch
+  name: stack-gash-repair-patch
+  icon: { sprite: "/Textures/_Box/Objects/Medical/AdvancedRobotTopicals.rsi", state: gash-repair }
+  spawn: GashRepairPatch
+  maxCount: 10
+
+- type: stack
+  id: ThawingPatch
+  name: stack-thawing-patch
+  icon: { sprite: "/Textures/_Box/Objects/Medical/AdvancedRobotTopicals.rsi", state: thawing }
+  spawn: ThawingPatch
+  maxCount: 10

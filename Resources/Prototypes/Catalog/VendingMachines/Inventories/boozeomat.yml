@@ -47,8 +47,10 @@
     DrinkSakeBottleFull: 3
     DrinkBeerCan: 5
     DrinkWineCan: 5
+    DrinkIPCACan: 5 # Box Change - Synthanol Drinks for IPCs
   contrabandInventory:
     ChemistryBottleEthanol: 3
+    ChemistryBottleSynthanol: 3 # Box Change - Ethanol for IPCs
     DrinkBottleOfNothingFull: 1
     DrinkPoisonWinebottleFull: 2
   # Harmony Change Start - Readd Emag interactions

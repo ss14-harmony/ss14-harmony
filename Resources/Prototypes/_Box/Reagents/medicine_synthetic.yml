@@ -1,0 +1,555 @@
+# Emergency defragmenter
+- type: reagent
+  id: EmergencyDefragmenter
+  name: reagent-name-emergency-defragmenter
+  group: Synthetic
+  desc: reagent-desc-emergency-defragmenter
+  physicalDesc: reagent-physical-desc-electric
+  flavor: shocking
+  color: "#bd00ff"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      metabolismRate: 0.1
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Data: -0.3
+            Shock: 0.15
+            Caustic: 0.15
+            Slash: 0.5
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: EmergencyDefragmenter
+          min: 11
+        damage:
+          types:
+            Shock: 1
+
+# Cryostabilized Defragmenter
+- type: reagent
+  id: CryostabilizedDefragmenter
+  name: reagent-name-cryostabilized-defragmenter
+  group: Synthetic
+  desc: reagent-desc-cryostabilized-defragmenter
+  physicalDesc: reagent-physical-desc-electric
+  flavor: shocking
+  color: "#5F49FF"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+        - !type:HealthChange
+          conditions:
+          - !type:TemperatureCondition
+            max: 180.0
+          damage:
+            types:
+             Data: -2
+
+# Polydimethylsiloxane
+- type: reagent
+  id: Polydimethylsiloxane
+  name: reagent-name-polydimethylsiloxane
+  group: Synthetic
+  desc: reagent-desc-polydimethylsiloxane
+  physicalDesc: reagent-physical-desc-syrupy
+  flavor: sweet
+  color: "#C4A484"
+  metabolismCategories: [ Organic, Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:ModifyBleed
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+        amount: -1.5
+      - !type:AdjustTemperature
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+        - !type:TemperatureCondition
+          max: 423.15
+        - !type:ReagentCondition
+          reagent: Polydimethylsiloxane
+          min: 15
+        amount: 50000
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+          inverted: true
+        damage:
+          types:
+            Poison: 0.5
+      - !type:Vomit
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+          inverted: true
+        probability: 0.02
+      - !type:SatiateThirst
+        factor: 1
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+
+# Overclocker
+- type: reagent
+  id: Overclocker
+  name: reagent-name-overclocker
+  group: Synthetic
+  desc: reagent-desc-overclocker
+  physicalDesc: reagent-physical-desc-electric
+  flavor: shocking
+  color: "#E40605"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Overclocker
+          min: 0
+          max: 15
+        # - !type:TotalDamageCondition
+        #   min: 80
+        # Readd this once upstream provides a way to only heal past certain thresholds again
+        damage:
+          types:
+            Heat: -3
+            Blunt: -1
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Overclocker
+          min: 15
+        damage:
+          types:
+            Shock: 3
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectStunned
+        time: 0.75
+        type: Remove
+      - !type:ModifyKnockdown
+        time: 0.75
+        type: Remove
+      - !type:GenericStatusEffect
+        key: Adrenaline # Guess what epinephrine is...
+        component: IgnoreSlowOnDamage
+        time: 5 # lingers less than hivemind reagent to give it a niche
+
+# Recal - From Paradise SS13
+- type: reagent
+  id: Recal
+  name: reagent-name-recal
+  group: Synthetic
+  desc: reagent-desc-recal
+  physicalDesc: reagent-physical-desc-pungent
+  flavor: recal
+  color: "#85845d"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:GenericStatusEffect
+        key: Jitter
+        time: 4.0
+        type: Remove
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
+        time: 10.0
+        type: Remove
+      - !type:AdjustReagent
+        reagent: Bootloop
+        amount: -3.0
+      - !type:AdjustReagent
+        reagent: WeedDotExe
+        amount: -3.0
+      - !type:AdjustReagent
+        reagent: Bitflipper
+        amount: -3.0
+      - !type:AdjustReagent
+        reagent: Surge
+        amount: -3.0
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Recal
+          min: 14
+        damage:
+          types:
+            Heat: 1
+            Shock: 1
+
+# Smart Metal - From Paradise SS13 - IPC Omni
+- type: reagent
+  id: SmartMetal
+  name: reagent-name-smart-metal
+  group: Synthetic
+  desc: reagent-desc-smart-metal
+  physicalDesc: reagent-physical-desc-metallic
+  flavor: medicine
+  color: "#d6047f"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Burn: -2
+          Brute: -2
+
+# Liquid Solder - From Paradise SS13 - IPC Psicodine
+- type: reagent
+  id: LiquidSolder
+  name: reagent-name-liquid-solder
+  group: Synthetic
+  desc: reagent-desc-liquid-solder
+  physicalDesc: reagent-physical-desc-metallic
+  flavor: metallic
+  color: "#D7B395"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: LiquidSolder
+          min: 30
+        damage:
+          types:
+            Shock: 0.1
+      - !type:GenericStatusEffect
+        key: Jitter
+        time: 2.0
+        type: Remove
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrunk
+        time: 6.0
+        type: Remove
+      - !type:PopupMessage # we dont have sanity/mood so this will have to do
+        type: Local
+        visualType: Medium
+        messages:
+        - "psicodine-effect-fearless"
+        - "psicodine-effect-anxieties-wash-away"
+        - "psicodine-effect-at-peace"
+        probability: 0.2
+
+# Degreaser - From Paradise SS13
+- type: reagent
+  id: Degreaser
+  name: reagent-name-degreaser
+  group: Synthetic
+  desc: reagent-desc-degreaser
+  physicalDesc: reagent-physical-desc-oily
+  flavor: clean
+  color: "#CC7A00"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:SatiateThirst
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Vox]
+        factor: 1
+      - !type:AdjustReagent
+        reagent: SpaceLube
+        amount: -3.0
+      - !type:AdjustReagent
+        reagent: Mechazine
+        amount: -3.0
+      - !type:AdjustReagent
+        reagent: Synthanol
+        amount: -0.5
+
+# Routine Maintenance - RoboTrico
+- type: reagent
+  id: RoutineMaintenance
+  name: reagent-name-routine-maintenance
+  group: Synthetic
+  desc: reagent-desc-routine-maintenance
+  physicalDesc: reagent-physical-desc-metallic
+  flavor: metallic
+  color: "#c9d4db"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        # conditions:
+        # - !type:TotalDamageCondition
+        #   max: 60 
+        # Readd this once upstream provides a way to only heal past certain thresholds again
+        damage:
+          groups:
+            Brute: -0.6
+          types:
+            Heat: -0.2
+            Shock: -0.2
+            Cold: -0.2
+
+# Nanoweldite - Discount Omni for brutes, hard but possible to make
+- type: reagent
+  id: Nanoweldite
+  name: reagent-name-nanoweldite
+  parent: BasePyrotechnic
+  group: Synthetic
+  desc: reagent-desc-nanoweldite
+  physicalDesc: reagent-physical-desc-metallic
+  flavor: metallic
+  color: "#B18E7D"
+  metabolismCategories: [ Organic, Artificial ]
+  tileReactions:
+  - !type:FlammableTileReaction {}
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+        damage:
+          types:
+            Slash: -2
+            Piercing: -2
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Nanoweldite
+          min: 11.5
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+        damage:
+          types:
+            Heat: 1
+      - !type:SatiateThirst
+        factor: 0.5
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Vox]
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+          inverted: true
+        damage:
+          types:
+            Poison: 0.5
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+          inverted: true
+        damage:
+          types:
+            Heat: 0.5
+      - !type:Flammable
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [IPC]
+          inverted: true
+        multiplier: 0.4
+
+# SOI Sapphire - Radiation Protection ("Silicon on Insulator Sapphire", used to shield components from radiation)
+- type: reagent
+  id: SOISapphire
+  name: reagent-name-soi-sapphire
+  group: Synthetic
+  desc: reagent-desc-soi-sapphire
+  physicalDesc: reagent-physical-desc-shiny
+  flavor: metallic
+  color: "#0f52ba"
+  metabolismCategories: [ Organic, Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+        key: RadiationProtection
+        component: RadiationProtection
+        time: 2
+        type: Add
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: SOISapphire
+          min: 20
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+        damage:
+          types:
+            Shock: 1
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [IPC]
+          inverted: true
+        damage:
+          types:
+            Poison: 0.1
+            Slash: 0.1 # Getting sapphire deposited inside you will probably cut you up
+
+# ECC Memory - Anti-Rads med for IPCs, trades rads for minor shock, 3:1 ratio. - "Error correction code memory"
+- type: reagent
+  id: ECCMemory
+  name: reagent-name-ecc-memory
+  group: Synthetic
+  desc: reagent-desc-ecc-memory
+  physicalDesc: reagent-physical-desc-reasonably-metallic
+  flavor: tingly
+  color: "#824F41"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Radiation: -3
+            Shock: 1 # Less overall damage than Arith, but organics can heal up minor arith damage
+
+# Thermal Paste - Temp Stabilizer
+- type: reagent
+  id: ThermalPaste
+  name: reagent-name-thermal-paste
+  group: Synthetic
+  desc: reagent-desc-thermal-paste
+  physicalDesc: reagent-physical-desc-thick-and-grainy
+  flavor: bitter
+  color: "#9CA2C6"
+  metabolismCategories: [ Organic, Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+        damage:
+          types:
+            Cold: -0.5
+            Heat: -0.5
+      - !type:AdjustTemperature
+        conditions:
+        - !type:TemperatureCondition
+          max: 293.15
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+        amount: 100000 # thermal energy, not temperature!
+      - !type:AdjustTemperature
+        conditions:
+        - !type:TemperatureCondition
+          min: 293.15
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+        amount: -10000
+      - !type:PopupMessage
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+        type: Local
+        visualType: Medium
+        messages: [ "leporazine-effect-temperature-adjusting" ]
+        probability: 0.2
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Vox]
+          inverted: true
+        damage:
+          types:
+            Poison: 0.5
+      - !type:Vomit
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Vox, IPC]
+          inverted: true
+        probability: 0.02
+      - !type:SatiateHunger
+        factor: 1
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Vox]
+
+# Cryo SynthChems
+- type: reagent
+  id: Cryosilicate
+  name: reagent-name-cryosilicate
+  group: Synthetic
+  desc: reagent-desc-cryosilicate
+  physicalDesc: reagent-physical-desc-electric
+  flavor: fizzy
+  color: "#4B8BBA"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:TemperatureCondition
+          max: 180.0
+        damage:
+          groups:
+            Brute: -2
+            Burn: -3
+          types:
+            Radiation: -0.3
+
+- type: reagent
+  id: CryoWeldite
+  name: reagent-name-cryo-weldite
+  group: Synthetic
+  desc: reagent-desc-cryo-weldite
+  physicalDesc: reagent-physical-desc-abrasive
+  flavor: sharp
+  color: "#7E5AA5"
+  worksOnTheDead: true
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:TemperatureCondition
+          max: 180.0
+        damage:
+          groups:
+            Brute: -3
+          types:
+            Heat: -1
+            Shock: -1.5
+            Cold: -1
+            Caustic: -1
+            Radiation: -1
+
+- type: reagent
+  id: Cryoconductite
+  name: reagent-name-cryoconductite
+  group: Synthetic
+  desc: reagent-desc-cryoconductite
+  physicalDesc: reagent-physical-desc-metallic
+  flavor: minty
+  color: "#a799e6"
+  worksOnTheDead: true
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:TemperatureCondition
+          max: 180.0
+        damage:
+          types:
+            Heat: -4
+            Cold: -4

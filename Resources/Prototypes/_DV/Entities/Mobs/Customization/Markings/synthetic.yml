@@ -1,0 +1,385 @@
+# Heads
+- type: marking
+  id: SyntheticLizardHeadM
+  bodyPart: Head
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/head_markings.rsi
+    state: synth_lizard_head_m
+
+- type: marking
+  id: SyntheticLizardHeadF
+  bodyPart: Head
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/head_markings.rsi
+    state: synth_lizard_head_f
+
+- type: marking
+  id: SyntheticVulpkaninHead
+  bodyPart: Head
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/head_markings.rsi
+    state: vulp_head
+
+# Torsos
+- type: marking
+  id: SyntheticLizardChestM
+  bodyPart: Chest
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/body_markings.rsi
+    state: synth_lizard_chest_m
+
+- type: marking
+  id: SyntheticLizardChestF
+  bodyPart: Chest
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/body_markings.rsi
+    state: synth_lizard_chest_f
+
+# Arms
+- type: marking
+  id: SyntheticLizardRArm
+  bodyPart: RArm
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/body_markings.rsi
+    state: synth_lizard_r_arm
+
+- type: marking
+  id: SyntheticLizardLArm
+  bodyPart: LArm
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/body_markings.rsi
+    state: synth_lizard_l_arm
+
+- type: marking
+  id: SyntheticLizardRHand
+  bodyPart: RHand
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/body_markings.rsi
+    state: synth_lizard_r_hand
+
+- type: marking
+  id: SyntheticLizardLHand
+  bodyPart: LHand
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/body_markings.rsi
+    state: synth_lizard_l_hand
+
+# Legs
+- type: marking
+  id: SyntheticLizardRLeg
+  bodyPart: RLeg
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/body_markings.rsi
+    state: synth_lizard_r_leg
+
+- type: marking
+  id: SyntheticLizardLLeg
+  bodyPart: LLeg
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/body_markings.rsi
+    state: synth_lizard_l_leg
+
+- type: marking
+  id: SyntheticLizardRFoot
+  bodyPart: RFoot
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/body_markings.rsi
+    state: synth_lizard_r_foot
+
+- type: marking
+  id: SyntheticLizardLFoot
+  bodyPart: LFoot
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/body_markings.rsi
+    state: synth_lizard_l_foot
+
+# Eyes
+- type: marking
+  id: SyntheticIPCEyes
+  bodyPart: Eyes
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: Mobs/Customization/eyes.rsi
+    state: eyes
+
+#Box Change Start - Adds New Marking
+- type: marking
+  id: ProtogenMouth
+  bodyPart: Eyes
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/head_markings.rsi
+    state: protogen_mouth
+#Box Change End - Adds New Marking
+
+# Snouts
+- type: marking
+  id: SyntheticLizardSnoutBasic
+  bodyPart: Snout
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_basic
+
+- type: marking
+  id: SyntheticLizardSnoutUnder
+  bodyPart: Snout
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_under_1
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_under_2
+
+- type: marking
+  id: SyntheticLizardSnoutOver
+  bodyPart: Snout
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_over_1
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_over_2
+
+- type: marking
+  id: SyntheticLizardSnoutTert
+  bodyPart: Snout
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_tert_1
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_tert_2
+
+- type: marking
+  id: SyntheticLizardSnoutTertUnder
+  bodyPart: Snout
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_tert_under_1
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_tert_under_2
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_tert_under_3
+
+- type: marking
+  id: SyntheticLizardSnoutLong
+  bodyPart: Snout
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_long
+
+- type: marking
+  id: SyntheticLizardSnoutThick
+  bodyPart: Snout
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_thick
+
+- type: marking
+  id: SyntheticLizardSnoutThickLong
+  bodyPart: Snout
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_thick_long
+
+- type: marking
+  id: SyntheticLizardSnoutBarlessBasic
+  bodyPart: Snout
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_barless_basic
+
+- type: marking
+  id: SyntheticLizardSnoutBarlessUnder
+  bodyPart: Snout
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_barless_under_1
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_barless_under_2
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_barless_under_3
+
+- type: marking
+  id: SyntheticLizardSnoutBarlessOver
+  bodyPart: Snout
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_barless_over_1
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_barless_over_2
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_barless_over_3
+
+- type: marking
+  id: SyntheticLizardSnoutBarlessTert
+  bodyPart: Snout
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_barless_tert_1
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_barless_tert_2
+
+- type: marking
+  id: SyntheticLizardSnoutBarlessTertUnder
+  bodyPart: Snout
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_barless_tert_under_1
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_barless_tert_under_2
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: synth_lizard_snout_barless_tert_under_3
+
+#Box Change Start - Adds Several New Markings
+- type: marking
+  id: ProtogenSnout
+  bodyPart: Snout
+  groupWhitelist: [IPC]
+  coloring: # Funky - Add default color
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#000000"
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: protogen_snout_1
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: protogen_snout_2
+
+- type: marking
+  id: ProtogenBoltSnout
+  bodyPart: Snout
+  groupWhitelist: [IPC]
+  coloring: # Funky - Add default color
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#000000"
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: protogen_snout_bolt_1
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: protogen_snout_bolt_2
+#Box Change End - Adds Several New Markings
+
+# Tails
+- type: marking
+  id: SynthLizardTail
+  bodyPart: Tail
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/tail_markings.rsi
+    state: synth_lizard_tail
+
+- type: marking
+  id: SynthLizardTailWag
+  bodyPart: Tail
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/tail_markings.rsi
+    state: synth_lizard_tail_wag
+
+# Antenna
+- type: marking
+  id: SynthAntennaBasic
+  bodyPart: HeadTop
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/antenna_markings.rsi
+    state: synth_antenna_basic
+
+- type: marking
+  id: SynthAntennaCurled
+  bodyPart: HeadTop
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/antenna_markings.rsi
+    state: synth_antenna_curled
+
+- type: marking
+  id: SynthAntennaThick
+  bodyPart: HeadTop
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/antenna_markings.rsi
+    state: synth_antenna_thick
+
+- type: marking
+  id: SynthAntennaThickLight
+  bodyPart: HeadTop
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/antenna_markings.rsi
+    state: synth_antenna_thick_light_1
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/antenna_markings.rsi
+    state: synth_antenna_thick_light_2
+
+- type: marking
+  id: SynthAntennaShort
+  bodyPart: HeadTop
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/antenna_markings.rsi
+    state: synth_antenna_short
+
+- type: marking
+  id: SynthAntennaSharp
+  bodyPart: HeadTop
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/antenna_markings.rsi
+    state: synth_antenna_sharp
+
+- type: marking
+  id: SynthAntennaSharpLight
+  bodyPart: HeadTop
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/antenna_markings.rsi
+    state: synth_antenna_sharp_light_1
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/antenna_markings.rsi
+    state: synth_antenna_sharp_light_2
+
+- type: marking
+  id: SynthAntennaCobra
+  bodyPart: HeadTop
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/antenna_markings.rsi
+    state: synth_antenna_cobra_1
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/antenna_markings.rsi
+    state: synth_antenna_cobra_2
+
+- type: marking
+  id: SynthAntennaHood
+  bodyPart: HeadTop
+  groupWhitelist: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/antenna_markings.rsi
+    state: synth_antenna_hood_1
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/antenna_markings.rsi
+    state: synth_antenna_hood_2

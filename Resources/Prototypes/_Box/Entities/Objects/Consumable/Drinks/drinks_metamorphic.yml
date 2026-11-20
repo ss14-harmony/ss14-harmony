@@ -1,0 +1,97 @@
+- type: entity
+  parent: DrinkGlass
+  id: DrinkIPCAGlass
+  suffix: IPCA, BoxStation
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: IPCA
+        Quantity: 30
+  - type: Icon
+    sprite: _Box/Objects/Consumable/Drinks/ipca.rsi
+    state: synthanolglass
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkRobotTearsGlass
+  suffix: robot tears, BoxStation
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: RobotTears
+        Quantity: 30
+  - type: Icon
+    sprite: _Box/Objects/Consumable/Drinks/robottears.rsi
+    state: robottearsglass
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkTrinaryGlass
+  suffix: trinary, BoxStation
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Trinary
+        Quantity: 30
+  - type: Icon
+    sprite: _Box/Objects/Consumable/Drinks/trinary.rsi
+    state: trinaryglass
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkServoGlass
+  suffix: servo, BoxStation
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Servo
+        Quantity: 30
+  - type: Icon
+    sprite: _Box/Objects/Consumable/Drinks/servo.rsi
+    state: servoglass
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkSynthNSodaGlass
+  suffix: synth 'n soda, BoxStation
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: SynthNSoda
+        Quantity: 30
+  - type: Icon
+    sprite: _Box/Objects/Consumable/Drinks/synthnsoda.rsi
+    state: synthnsodaglass
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkSynthignonGlass
+  suffix: synthignon, BoxStation
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Synthignon
+        Quantity: 30
+  - type: Icon
+    sprite: _Box/Objects/Consumable/Drinks/synthignon.rsi
+    state: synthignonglass
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkUplinkGlass
+  suffix: uplink, BoxStation
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Uplink
+        Quantity: 30
+  - type: Icon
+    sprite: _Box/Objects/Consumable/Drinks/uplink.rsi
+    state: uplinkglass

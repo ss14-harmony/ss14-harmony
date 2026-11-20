@@ -252,6 +252,7 @@
   physicalDesc: reagent-physical-desc-neural
   flavor: mindful
   color: "#C584B8"
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem
   metabolisms:
     Digestion:
       effects:
@@ -261,3 +262,4 @@
         damage:
           types:
             Cellular: 2
+            Data: 2 # Box Change - SynthChem

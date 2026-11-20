@@ -17,6 +17,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Configuration; // Harmony
 using Content.Shared._Harmony.CCVars; // Harmony
+using Content.Shared._EE.Silicon.Components; // EE
 
 namespace Content.Server.Chat;
 
@@ -177,7 +178,13 @@ public sealed partial class SuicideSystem : EntitySystem
             return;
         }
 
-        args.DamageType ??= "Bloodloss";
+        // Box Change Start - Prevent IPC test fail and make IPC suicide damage more appropriate
+        // args.DamageType ??= "Bloodloss";
+        if (HasComp<SiliconComponent>(victim)) // Goobstation
+            args.DamageType ??= "Slash";
+        else
+            args.DamageType ??= "Bloodloss";
+        // Box Change End
         _suicide.ApplyLethalDamage(victim, args.DamageType);
         args.Handled = true;
     }

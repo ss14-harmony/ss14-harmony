@@ -1,0 +1,14 @@
+# IPCs
+- type: entity
+  parent: BoxSurvival
+  id: BoxSurvivalHumanoidSilicon
+  suffix: IPC, Box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ChassisPatch1
+        - id: Flare # Replace with miniwelder when welding healing is fixed
+        - id: EmergencySilipen
+

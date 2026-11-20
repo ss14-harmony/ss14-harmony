@@ -8,6 +8,7 @@
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
 
     # Head
+    - map: [ "enum.HumanoidVisualLayers.HeadBase" ] # Starcup: base head shapes for IPCs
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]

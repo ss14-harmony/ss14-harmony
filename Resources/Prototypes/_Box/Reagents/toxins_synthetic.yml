@@ -1,0 +1,88 @@
+# Zip Bomb
+- type: reagent
+  id: ZipBomb
+  name: reagent-name-zip-bomb
+  group: Synthetic
+  desc: reagent-desc-zip-bomb
+  physicalDesc: reagent-physical-desc-electric
+  flavor: shocking
+  color: "#920A1E"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: 0.1
+            Shock: 0.1
+      - !type:MovementSpeedModifier
+        walkSpeedModifier: 0.3
+        sprintSpeedModifier: 0.3
+      - !type:Emote
+        emote: Scream
+        showInChat: true
+        probability: 0.15
+      - !type:Drunk
+        boozePower: 5
+      - !type:AdjustTemperature
+        conditions:
+        - !type:TemperatureCondition
+          max: 423.15
+        amount: 100000
+
+# CIH
+- type: reagent
+  id: CIH
+  name: reagent-name-cih
+  group: Synthetic
+  desc: reagent-desc-cih
+  physicalDesc: reagent-physical-desc-electric
+  flavor: shocking
+  color: "#0827F5"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: 3
+            Blunt: 3
+
+# Bootloop
+- type: reagent
+  id: Bootloop
+  name: reagent-name-bootloop
+  group: Synthetic
+  desc: reagent-desc-bootloop
+  physicalDesc: reagent-physical-desc-electric
+  flavor: shocking
+  color: "#4AF626"
+  metabolismCategories: [ Artificial ]
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:MovementSpeedModifier
+        conditions:
+        - !type:ReagentCondition
+          reagent: Bootloop
+          max: 8
+        walkSpeedModifier: 0.65
+        sprintSpeedModifier: 0.65
+      - !type:ModifyStatusEffect
+        conditions:
+        - !type:ReagentCondition
+          reagent: Bootloop
+          max: 8
+        effectProto: StatusEffectDrowsiness
+        time: 4
+        type: Add
+      - !type:ModifyStatusEffect
+        conditions:
+        - !type:ReagentCondition
+          reagent: Bootloop
+          min: 8
+        effectProto: StatusEffectForcedSleeping
+        time: 3
+        type: Add

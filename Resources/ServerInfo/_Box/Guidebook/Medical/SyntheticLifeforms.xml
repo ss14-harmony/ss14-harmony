@@ -1,0 +1,55 @@
+<Document>
+# Synthetic Lifeforms
+
+Certain species are Synthetic Lifeforms, as opposed to Organic. Synthetics are defined by being partially or totally electronic and being artificial in nature or modified.
+
+<Box>
+<GuideEntityEmbed Entity="AppearanceIPC" Caption="I.P.C."/>
+<GuideEntityEmbed Entity="AppearanceVox" Caption="Vox"/>
+</Box>
+
+Synthetics may require extra attention when being treated. They may not respond to organic medicine, or may respond better to synthetic medicines.
+
+All Synthetics respond to synthetic medicines.
+
+Synthetic Medicines and Reagents usually fall under the Software, Malware, or Industrial metabolism types.
+
+## Common Synthetic Medicines
+<GuideReagentEmbed Reagent="EmergencyDefragmenter"/>
+<GuideReagentEmbed Reagent="RoutineMaintenance"/>
+<GuideReagentEmbed Reagent="ECCMemory"/>
+<GuideReagentEmbed Reagent="ThermalPaste"/>
+<GuideReagentEmbed Reagent="Recal"/>
+<GuideReagentEmbed Reagent="Cryosilicate"/>
+<GuideReagentEmbed Reagent="CryostabilizedDefragmenter"/>
+
+[textlink="Click here to see a complete list of synthetic reagents." link="Synthetic"]
+
+## I.P.C. Repair
+
+As I.P.C.s have been deemed lifeforms, their health falls under the purview of the Medical department.
+
+[bold]No Organic treatment works for I.P.C.s[/bold]
+
+[color=red][bold]Do NOT use a defibrillator on an I.P.C.,[/bold][/color] as this will cause the battery to discharge energy rays outward!
+
+A dead I.P.C. can be safely [color=yellow]Restart[/color]ed once sufficiently repaired.
+
+A series of common I.P.C. repair tools can be found in the Medical bay. They can be crafted in the [color=cyan]Medical TechFab[/color], or can be purchased via Cargo.
+
+<Box>
+<GuideEntityEmbed Entity="ChassisPatch" Caption="Chassis Patches"/>
+<GuideEntityEmbed Entity="CablePack" Caption="Robot Rewiring Kits"/>
+<GuideEntityEmbed Entity="RobotStructPack" Caption="Robot Structural Repair Kits"/>
+</Box>
+
+In a pinch, an I.P.C. can be repaired with any [color=yellow]Welder[/color].
+
+A set of more complex I.P.C. repair tools can be made by a Chemist with a [color=yellow]Microwave[/color].
+<GuideMicrowaveEmbed Recipe="RecipeIPCOilPack"/>
+<GuideMicrowaveEmbed Recipe="RecipeRobotBurnPatch"/>
+<GuideMicrowaveEmbed Recipe="RecipeRobotTraumaPatch"/>
+
+[textlink="Click here to see a complete list of recipes." link="MedicinalRecipes"]
+
+</Document>

@@ -131,6 +131,7 @@
   color: "#a1000b"
   boilingPoint: 78.2 # This isn't a real chemical...
   meltingPoint: -19.4
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: 20
@@ -148,6 +149,12 @@
           types:
             Caustic: 0.5
       - !type:Emote
+        # Box Change Start - IPCs
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [IPC]
+          inverted: true
+        # Box Change End
         emote: Scream
         probability: 0.3
   metabolisms:
@@ -164,6 +171,12 @@
         messages: [ "generic-reagent-effect-burning-insides" ]
         probability: 0.33
       - !type:Emote
+       # Box Change Start - IPCs
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [IPC]
+          inverted: true
+        # Box Change End
         emote: Scream
         probability: 0.3
 
@@ -198,6 +211,7 @@
   color: "#5050ff"
   boilingPoint: 165
   meltingPoint: -87
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem
   reactiveEffects:
     Acidic:
       methods: [ Touch ]
@@ -208,6 +222,12 @@
           types:
             Caustic: 0.3
       - !type:Emote
+        # Box Change Start - IPCs
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [IPC]
+          inverted: true
+        # Box Change End
         emote: Scream
         probability: 0.2
   metabolisms:
@@ -224,6 +244,12 @@
         messages: [ "generic-reagent-effect-burning-insides" ]
         probability: 0.33
       - !type:Emote
+        # Box Change Start - IPCs
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [IPC]
+          inverted: true
+        # Box Change End
         emote: Scream
         probability: 0.25
 
@@ -240,6 +266,7 @@
   recognizable: true
   boilingPoint: 337.0
   meltingPoint: 10.31
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: 10
@@ -257,6 +284,12 @@
           types:
             Caustic: 0.1
       - !type:Emote
+        # Box Change Start - IPCs
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [IPC]
+          inverted: true
+        # Box Change End
         emote: Scream
         probability: 0.1
   metabolisms:
@@ -273,6 +306,12 @@
         messages: [ "generic-reagent-effect-burning-insides" ]
         probability: 0.33
       - !type:Emote
+        # Box Change Start - IPCs
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [IPC]
+          inverted: true
+        # Box Change End
         emote: Scream
         probability: 0.2
 
@@ -464,6 +503,7 @@
   contrabandSeverity: Syndicate
   flavor: bitter
   color: "#7e916e"
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem - IPCs can now be affected by romerol injection
   worksOnTheDead: true
   metabolisms:
     Bloodstream:
@@ -561,6 +601,7 @@
   - Security
   - Medical
   color: "#AAAAAA"
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem - This should probably be its own Pax-derived Software chem, but fuck it.
   metabolisms:
     Bloodstream:
       effects:
@@ -673,6 +714,7 @@
   contrabandSeverity: Syndicate
   flavor: shocking
   color: "#FDD023"
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem
   metabolisms:
     Bloodstream:
       metabolismRate: 2.0
@@ -680,6 +722,15 @@
       - !type:Electrocute
         electrocuteTime: 1
         probability: 0.5
+      # Box Change Start - SynthChem
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+        damage:
+          types:
+            Shock: 1
+      # Box Change End
 
 - type: reagent
   id: Lipolicide
@@ -754,6 +805,7 @@
   desc: reagent-desc-toxintrash
   flavor: trashy
   physicalDesc: reagent-physical-desc-nondescript
+  metabolismCategories: [ Organic, Artificial ] # Box Change - SynthChem
   metabolisms:
     Digestion:
       effects:
@@ -762,6 +814,21 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [Vox]
+      # Box Change Start - SynthChem
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Synthetic]
+        probability: 0.5
+        damage:
+          groups:
+            Brute: -0.2 # Half of Protein
+      - !type:ModifyBloodLevel
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [Vox]
+        amount: 0.25 # 1/4 of Protein
+      # Box Change End
 
 - type: reagent
   id: Hemorrhinol
