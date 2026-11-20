@@ -1,12 +1,12 @@
 # Additional harmony security statuses
-- type: securityIcon
+- type: statusIcon
   parent: SecurityIcon
   id: SecurityIconMonitor
   icon:
     sprite: /Textures/_Harmony/Interface/Misc/security_icons.rsi
     state: hud_monitor
 
-- type: securityIcon
+- type: statusIcon
   parent: SecurityIcon
   id: SecurityIconSearch
   icon:

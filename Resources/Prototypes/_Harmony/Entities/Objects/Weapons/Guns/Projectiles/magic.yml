@@ -13,9 +13,9 @@
     soundHit:
       path: "/Audio/Effects/slip.ogg"
   - type: Sprite
-    sprite: Objects/Materials/materials.rsi
+    sprite: Objects/Materials/bananium.rsi
     layers:
-    - state: bananium
+    - state: bananium-1
   - type: StunOnCollide
     stunAmount: 1
     knockdownAmount: 1

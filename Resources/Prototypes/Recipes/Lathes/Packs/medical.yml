@@ -19,6 +19,7 @@
   - ChemistryEmptyVial
   - ChemistryEmptyVialSmall
   - Dropper
+  - CandyBowl
 
 - type: latheRecipePack
   parent: BasicChemistryStatic
@@ -53,6 +54,7 @@
   - JetInjector
   - ClothingEyesEyepatchHudMedical # Harmony
   - ClothingEyesHudMedical # Harmony
+  - VehicleWheelchairFolded
 
 - type: latheRecipePack
   id: RollerBedsStatic

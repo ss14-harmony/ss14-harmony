@@ -1,0 +1,12 @@
+- type: adminVerb
+  id: AdminSmiteValleyGirlAccent
+  categoryPrototype: Smite
+  name: admin-smite-valley-accent-name
+  description: admin-smite-valley-accent-description
+  icon:
+    sprite: Interface/Actions/voice-mask.rsi
+    state: icon
+  effects:
+  - !type:AddComponents
+    components:
+    - type: ValleyGirlAccent

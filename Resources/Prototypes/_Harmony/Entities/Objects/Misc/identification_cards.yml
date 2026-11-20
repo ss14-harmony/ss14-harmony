@@ -16,7 +16,7 @@
       state: Chef
   - type: PresetIdCard
     job: Chef
-    name: Poquito
+    name: id-card-preset-poquito
 
 - type: entity
   parent: IDCardStandard

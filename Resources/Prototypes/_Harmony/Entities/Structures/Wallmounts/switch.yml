@@ -6,7 +6,7 @@
   components:
     - type: Sprite
       drawdepth: SmallObjects
-      sprite: Structures/Wallmounts/switch_frame.rsi
+      sprite: Structures/Wallmounts/switch-frame.rsi
       state: grey
     - type: Construction
       graph: ButtonFrameGraph
@@ -19,7 +19,7 @@
   components:
     - type: Sprite
       drawdepth: SmallObjects
-      sprite: Structures/Wallmounts/switch_frame.rsi
+      sprite: Structures/Wallmounts/switch-frame.rsi
       state: caution
     - type: Construction
       graph: ButtonFrameGraph
@@ -32,8 +32,8 @@
   components:
     - type: Sprite
       drawdepth: SmallObjects
-      sprite: Structures/Wallmounts/switch_frame.rsi
-      state: caution_security
+      sprite: Structures/Wallmounts/switch-frame.rsi
+      state: caution-security
     - type: Construction
       graph: ButtonFrameGraph
       node: ButtonFrameCautionSecurityNode
@@ -45,8 +45,8 @@
   components:
     - type: Sprite
       drawdepth: SmallObjects
-      sprite: Structures/Wallmounts/switch_frame.rsi
-      state: exit
+      sprite: Structures/Wallmounts/switch-frame.rsi
+      state: white
     - type: Construction
       graph: ButtonFrameGraph
       node: ButtonFrameExitNode
@@ -58,7 +58,7 @@
   components:
     - type: Sprite
       drawdepth: SmallObjects
-      sprite: Structures/Wallmounts/switch_frame.rsi
+      sprite: Structures/Wallmounts/switch-frame.rsi
       state: janitor
     - type: Construction
       graph: ButtonFrameGraph
@@ -73,8 +73,8 @@
     - type: Clickable
     - type: InteractionOutline
     - type: Sprite
-      sprite: Structures/Wallmounts/locked_switch.rsi
-      state: unlocked
+      sprite: Structures/Wallmounts/switch-lockable.rsi
+      state: lock-unlocked
     - type: Construction
       graph: LockableButtonGraph
       node: assembly

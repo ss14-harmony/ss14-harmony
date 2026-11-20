@@ -14,7 +14,7 @@ public sealed partial class SynthSystem : EntitySystem
     private static readonly ProtoId<TypingIndicatorPrototype> RobotTypingIndicator = "robot"; // Misfit - Type safety
     private static readonly ProtoId<ReagentPrototype> SynthBlood = "SynthBlood"; // Misfit - Type safety
 
-    [Dependency] private SharedBloodstreamSystem _bloodstream = default!; // Misfit - Move synthetic trait to shared
+    [Dependency] private BloodstreamSystem _bloodstream = default!; // Misfit - Move synthetic trait to shared
     [Dependency] private SharedTypingIndicatorSystem _typingIndicator = default!; // Misfit - Partial typing indicator change
 
     public override void Initialize()

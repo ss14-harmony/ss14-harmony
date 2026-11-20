@@ -15,9 +15,10 @@
         pitch: 1.2
         maxDistance: 5
         variation: 0.2
-    icon:
-      sprite: _Harmony/Objects/Magic/magicactions.rsi
-      state: item_curse
+  - type: Sprite
+    sprite: _Harmony/Objects/Magic/magicactions.rsi
+    layers:
+    - state: item_curse
   - type: InstantAction
     event: !type:OnItemCurseActionEvent
   - type: ItemCurse

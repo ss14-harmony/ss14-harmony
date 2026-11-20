@@ -52,6 +52,7 @@ book-text-agrichemkit-manual = Thank you for choosing the safe-for-all-ages Nano
       Each individual plant responds to unstable mutagen differently, so you may want to use small doses on multiple crops and try to crossbreed the best traits from each of those. Applying multiple doses to one plant can stack multiple changes and make it harder to single out desirable traits.
       Unstable mutagen is entirely safe when used as a fertilizer, and NanoTrasen takes no responsibility for dead crops, excessive water bills, newly sentient plants asking existential questions, or flora-strangled farmhands that may coincidentally occur while using it.
       Do not drink unstable mutagen. Wash your hands thoroughly after handling. Wash your eyes if you have looked at unstable mutagen for over 30 minutes in a 24 hour period. Store in a dark room between 293–295K. Do not use on corporate holidays. If you begin hearing voices telling you to drink unstable mutagen, please contact your doctor, head of personnel, or exorcist.
+
 # Harmony changes - Adds bungo fruit recipe and mention of item to combat bakery kit
 book-text-combat-bakery-kit = Thank you for choosing our combat bakery kit!
       Enclosed are two (2) CyberSun patented Throwing Croissants, one (1) bungo fruit, and one (1) patent-pending Baguette Sword.
@@ -76,3 +77,15 @@ book-text-combat-bakery-kit = Thank you for choosing our combat bakery kit!
       LV wire x5
       Bungo Fruit x1
       Cook Time: 20 seconds
+
+book-text-reinforcement-initiation = [color=red][head=3]WELCOME TO THE SYNDICATE[/head][/color]
+
+    You have been chosen for an essential mission, and are to be discretely teleported into enemy territory. Observe the following upon your arrival:
+
+    - Aid the requester in their objectives, they are your commander. Their life is worth more than yours. Obey them without question.
+
+    - [italic]Do Not[/italic] reveal your identity to the enemies of the Syndicate unless ordered to by your commander. Consider equipping civilian clothing to blend in.
+
+    - Ensure your adaptive Syndicate ID Card properly displays your false identity, ask your commander how to do this if you have failed to remember your training.
+
+    - Above all, remember:[bold] DEATH TO NANOTRASEN. [/bold]

@@ -1,5 +1,5 @@
 using System.Text.RegularExpressions;
-using Content.Server.Speech.EntitySystems;
+using Content.Shared.Speech.EntitySystems; // Harmony change, update to Shared
 using Content.Server._Latestation.Speech.Components;
 using Robust.Shared.Random;
 using System.Linq;

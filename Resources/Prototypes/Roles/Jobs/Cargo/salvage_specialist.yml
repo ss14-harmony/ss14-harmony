@@ -12,6 +12,7 @@
   icon: "JobIconShaftMiner"
   startingGear: SalvageSpecialistGear
   supervisors: job-supervisors-qm
+  guides: [ Salvage ]
   access:
   - Cargo
   - Salvage

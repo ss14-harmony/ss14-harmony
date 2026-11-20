@@ -16,7 +16,8 @@
   - type: LimitedCharges
     maxCharges: 40
   - type: StealTarget
-    stealGroup: RCDElite
+    stealGroup:
+    - RCDElite
   - type: RCD
     availablePrototypes:
     - AirlockCommand

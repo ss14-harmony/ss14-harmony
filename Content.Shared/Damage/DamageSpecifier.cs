@@ -144,7 +144,7 @@ namespace Content.Shared.Damage
 
                 float newValue = value.Float();
 
-                if (modifierSet.FlatReduction.TryGetValue(key, out var reduction))
+                if (modifierSet.FlatReductions.TryGetValue(key, out var reduction))
                     newValue = Math.Max(0f, newValue - reduction); // flat reductions can't heal you
 
                 if (modifierSet.Coefficients.TryGetValue(key, out var coefficient))
@@ -354,16 +354,16 @@ namespace Content.Shared.Damage
                 result.Coefficients.Add(type, MathF.Pow(coef, inversePen));
             }
 
-            foreach (var (type, flat) in modifierSet.FlatReduction)
+            foreach (var (type, flat) in modifierSet.FlatReductions)
             {
                 // Negative flat reductions are not modified by this
                 if (flat <= 0)
                 {
-                    result.FlatReduction.Add(type, flat);
+                    result.FlatReductions.Add(type, flat);
                     continue;
                 }
 
-                result.FlatReduction.Add(type, flat * inversePen);
+                result.FlatReductions.Add(type, flat * inversePen);
             }
 
             return result;

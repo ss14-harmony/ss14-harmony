@@ -183,7 +183,7 @@
     layers:
     - state: green
     - state: icon-0
-      sprite: Mobs/Animals/hamster.rsi
+      sprite: Mobs/Animals/Rodents/hamster.rsi
     - state: ai
   - type: ConditionalSpawner
     prototypes:
@@ -214,7 +214,7 @@
     layers:
     - state: green
     - state: monkey
-#     sprite: Mobs/Animals/monkey.rsi
+#     sprite: Mobs/Animals/Ancestors/monkey.rsi
       sprite: _Harmony/Mobs/Animals/monkey.rsi # Harmony Change: Updated Sprite Pathing
   - type: ConditionalSpawner
     prototypes:

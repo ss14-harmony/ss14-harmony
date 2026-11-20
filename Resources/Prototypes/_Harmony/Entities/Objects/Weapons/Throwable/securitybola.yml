@@ -1,7 +1,7 @@
 - type: entity
   name: security bola
   parent: Bola
-  id: SecurityBola
+  id: SecurityBolaHarmony # Upstream has their own security bola now, leaving this in with a renamed ID for the time being
   description: Dedicated bolas made for use in Security operations.
   components:
   - type: Item

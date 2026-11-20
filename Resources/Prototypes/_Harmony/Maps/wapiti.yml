@@ -28,41 +28,41 @@
           ResearchDirector: [ 1, 1 ]
           Quartermaster: [ 1, 1 ]
           #service (10 - 14)
-          Bartender: [ 1, 1 ]
-          Botanist: [ 2, 2 ]
-          Chef: [ 1, 1 ]
-          Janitor: [ 1, 2 ]
-          Chaplain: [ 1, 1 ]
-          Librarian: [ 1, 1 ]
-          ServiceWorker: [ 2, 4 ]
-          Reporter: [ 1, 2 ]
+          Bartender: [ 0, 1 ]
+          Botanist: [ 0, 2 ]
+          Chef: [ 0, 1 ]
+          Janitor: [ 0, 2 ]
+          Chaplain: [ 0, 1 ]
+          Librarian: [ 0, 1 ]
+          ServiceWorker: [ 0, 4 ]
+          Reporter: [ 0, 2 ]
           #engineering (5 - 7)
-          AtmosphericTechnician: [ 2, 2 ]
-          StationEngineer: [ 3, 5 ]
-          TechnicalAssistant: [ 2, 2 ] #intern, not counted
+          AtmosphericTechnician: [ 1, 2 ]
+          StationEngineer: [ 2, 5 ]
+          TechnicalAssistant: [ 0, 2 ] #intern, not counted
           #medical (7 - 9)
-          Chemist: [ 2, 2 ]
-          MedicalDoctor: [ 3, 5 ]
-          Paramedic: [ 1, 1 ]
-          MedicalIntern: [ 2, 2 ] #intern, not counted
-          Psychologist: [ 1, 1 ]
+          Chemist: [ 1, 2 ]
+          MedicalDoctor: [ 2, 5 ]
+          Paramedic: [ 0, 1 ]
+          MedicalIntern: [ 0, 2 ] #intern, not counted
+          Psychologist: [ 0, 1 ]
           #science (2 - 4)
-          Scientist: [ 2, 4 ]
-          ResearchAssistant: [ 2, 2 ] #intern, not counted
+          Scientist: [ 1, 4 ]
+          ResearchAssistant: [ 0, 2 ] #intern, not counted
           #security (6 - 8)
           Warden: [ 1, 1 ]
-          SecurityOfficer: [ 3, 5 ]
+          SecurityOfficer: [ 2, 5 ]
           Detective: [ 1, 1 ]
-          SecurityCadet: [ 2, 2 ] #intern, not counted
-          Lawyer: [ 1, 2 ]
+          SecurityCadet: [ 0, 2 ] #intern, not counted
+          Lawyer: [ 0, 2 ]
           #supply (5 - 7)
-          SalvageSpecialist: [ 2, 4 ]
-          CargoTechnician: [ 3, 4 ]
+          SalvageSpecialist: [ 1, 4 ]
+          CargoTechnician: [ 1, 4 ]
           #civilian (5+)
           Passenger: [ -1, -1 ] #infinite, not counted
-          Clown: [ 1, 1 ]
-          Mime: [ 1, 1 ]
-          Musician: [ 1, 1 ]
+          Clown: [ 0, 1 ]
+          Mime: [ 0, 1 ]
+          Musician: [ 0, 1 ]
           #silicon (7)
           StationAi: [ 1, 1 ]
-          Borg: [ 2, 4 ]
+          Borg: [ 0, 4 ]

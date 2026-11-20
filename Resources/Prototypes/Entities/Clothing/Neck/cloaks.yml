@@ -7,7 +7,8 @@
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/centcomcloakformal.rsi
   - type: StealTarget
-    stealGroup: HeadCloak # leaving this here because I suppose it might be interesting?
+    stealGroup:
+    - HeadCloak # leaving this here because I suppose it might be interesting?
 
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
@@ -18,7 +19,8 @@
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/cap.rsi
   - type: StealTarget
-    stealGroup: HeadCloak
+    stealGroup:
+    - HeadCloak
 
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
@@ -29,7 +31,8 @@
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/hos.rsi
   - type: StealTarget
-    stealGroup: HeadCloak
+    stealGroup:
+    - HeadCloak
 
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
@@ -40,7 +43,8 @@
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/ce.rsi
   - type: StealTarget
-    stealGroup: HeadCloak
+    stealGroup:
+    - HeadCloak
 
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
@@ -51,7 +55,8 @@
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/cmo.rsi
   - type: StealTarget
-    stealGroup: HeadCloak
+    stealGroup:
+    - HeadCloak
 
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
@@ -62,9 +67,9 @@
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/rd.rsi
   - type: StealTarget
-    stealGroup: HeadCloak
-    
-# Harmony Change: Updated the sprite pathing for the QM spriting update
+    stealGroup:
+    - HeadCloak
+
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckCloakQm
@@ -72,9 +77,10 @@
   description: A strong brown cloak with a reflective stripe, while not as fancy as others, it does show your managing skills.
   components:
   - type: Sprite
-    sprite: _Harmony/Clothing/Neck/Cloaks/qm.rsi
+    sprite: _Harmony/Clothing/Neck/Cloaks/qm.rsi # Harmony Change: Updated the sprite pathing for the QM spriting update
   - type: StealTarget
-    stealGroup: HeadCloak
+    stealGroup:
+    - HeadCloak
 
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
@@ -85,7 +91,8 @@
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/hop.rsi
   - type: StealTarget
-    stealGroup: HeadCloak
+    stealGroup:
+    - HeadCloak
 
 - type: entity
   parent: ClothingNeckBase
@@ -114,7 +121,8 @@
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/capcloakformal.rsi
   - type: StealTarget
-    stealGroup: HeadCloak
+    stealGroup:
+    - HeadCloak
 
 - type: entity
   parent: ClothingNeckBase
@@ -125,7 +133,8 @@
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/admin.rsi
   - type: StealTarget
-    stealGroup: HeadCloak
+    stealGroup:
+    - HeadCloak
 
 - type: entity
   parent: ClothingNeckBase

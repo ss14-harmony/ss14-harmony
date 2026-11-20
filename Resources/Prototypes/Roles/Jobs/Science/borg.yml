@@ -14,7 +14,6 @@
     department: Command
     time: 2h
   # Harmony End
-  weight: 10
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain
@@ -31,5 +30,6 @@
       time: 4h # harmony: 10h -> 4h
   icon: JobIconBorg
   supervisors: job-supervisors-rd
+  guides: [ Cyborgs ]
   jobEntity: PlayerBorgBattery
   applyTraits: false

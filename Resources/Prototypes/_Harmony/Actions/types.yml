@@ -6,9 +6,10 @@
   components:
   - type: Action
     useDelay: 1.0
-    icon:
-      sprite: _Harmony/Clothing/Hands/Gloves/mantis_activated.rsi
-      state: icon
     itemIconStyle: NoItem
+  - type: Sprite
+    sprite: _Harmony/Clothing/Hands/Gloves/mantis_activated.rsi
+    layers:
+    - state: icon
   - type: InstantAction
     event: !type:ToggleActionEvent

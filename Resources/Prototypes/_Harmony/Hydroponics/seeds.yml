@@ -1,25 +1,54 @@
-- type: seed
-  id: peanut
-  name: seeds-peanut-name
-  noun: seeds-noun-seeds
-  displayName: seeds-peanut-display-name
-  plantRsi: _Harmony/Objects/Specific/Hydroponics/peanut.rsi
-  packetPrototype: PeanutSeeds
-  productPrototypes:
-    - FoodPeanut
-  lifespan: 25
-  maturation: 10
-  production: 3
-  yield: 4
-  potency: 10
-  growthStages: 4
-  waterConsumption: 0.60
-  chemicals:
-    Nutriment:
-      Min: 1
-      Max: 5
-      PotencyDivisor: 20
-    PeanutButter: # could be the wrong capitalization. unsure for now
-      Min: 2
-      Max: 6
-      PotencyDivisor: 20
+- type: entity
+  parent: BasePlant
+  id: PeanutPlant
+  name: peanut bush
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Specific/Hydroponics/peanut.rsi
+  - type: PlantData
+    name: seeds-peanut-name
+    packetPrototype: PeanutSeeds
+    productPrototypes: [FoodPeanut]
+  - type: Plant
+    lifespan: 25
+    maturation: 10
+    production: 3
+    yield: 4
+    potency: 10
+    growthStages: 4
+  - type: PlantGrowth
+    waterConsumption: 0.6
+  - type: PlantChemicals
+    chemicals:
+      Nutriment:
+        min: 1
+        max: 5
+        potencyDivisor: 20
+      PeanutButter: # could be the wrong capitalization. unsure for now
+        min: 2
+        max: 6
+        potencyDivisor: 20
+
+  # name: seeds-peanut-name
+  # noun: seeds-noun-seeds
+  # displayName: seeds-peanut-display-name
+  # plantRsi: _Harmony/Objects/Specific/Hydroponics/peanut.rsi
+  # packetPrototype: PeanutSeeds
+  # productPrototypes:
+  #   - FoodPeanut
+  # lifespan: 25
+  # maturation: 10
+  # production: 3
+  # yield: 4
+  # potency: 10
+  # growthStages: 4
+  # waterConsumption: 0.60
+  # chemicals:
+  #   Nutriment:
+  #     Min: 1
+  #     Max: 5
+  #     PotencyDivisor: 20
+  #   PeanutButter: # could be the wrong capitalization. unsure for now
+  #     Min: 2
+  #     Max: 6
+  #     PotencyDivisor: 20

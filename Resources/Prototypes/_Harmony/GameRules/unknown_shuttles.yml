@@ -7,7 +7,7 @@
   - type: StationEvent
     startAnnouncement: station-event-unknown-shuttle-incoming #!!
   - type: LoadMapRule
-    preloadedGrid: ShuttleChemLab
+    gridPath: /Maps/_Harmony/Shuttles/ShuttleEvent/chemlab.yml
 
 - type: entity
   id: UnknownShuttleBrigmedic
@@ -16,7 +16,7 @@
   - type: StationEvent
     startAnnouncement: station-event-unknown-shuttle-incoming #!!
   - type: LoadMapRule
-    preloadedGrid: ShuttleBrigmedic
+    gridPath: /Maps/_Harmony/Shuttles/ShuttleEvent/brigmedic.yml
 
 - type: entity
   id: UnknownShuttleCasino
@@ -25,7 +25,7 @@
   - type: StationEvent
     startAnnouncement: station-event-unknown-shuttle-incoming #!!
   - type: LoadMapRule
-    preloadedGrid: ShuttleCasino
+    gridPath: /Maps/_Harmony/Shuttles/ShuttleEvent/casino.yml
 
 # Harmony Hostile Shuttles
 
@@ -38,4 +38,4 @@
     weight: 5 #  Slightly lower chance, but not too low.
     earliestStart: 45 # Late because antag.
   - type: LoadMapRule
-    preloadedGrid: ShuttleSyndicateReinforcement
+    gridPath: /Maps/_Harmony/Shuttles/ShuttleEvent/syndicatereinforcement.yml

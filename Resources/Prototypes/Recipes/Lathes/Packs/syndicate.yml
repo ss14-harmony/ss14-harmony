@@ -4,9 +4,11 @@
 - type: latheRecipePack
   id: SyndicateAmmoStatic
   recipes:
-  - MagazineShotgun
-  - MagazineShotgunEmpty
-  - MagazineShotgunSlug
-  - MagazinePistolCaselessRifle
   - MagazineBoxAntiMateriel
+  - MagazinePistolCaselessRifle
+  - MagazineShotgun
+  - MagazineShotgunBeanbag
+  - MagazineShotgunEmpty
+#  - MagazineShotgunIncendiary Harmony Change- no incendiary ammo
+  - MagazineShotgunSlug
   - MagazineLightRifleCaseless # Harmony change - adds .30 rifle caseless to emagged lathes
