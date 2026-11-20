@@ -3,12 +3,12 @@ using Robust.Shared.Random;
 using Content.Server.Speech.EntitySystems;
 using Content.Server._Harmony.Speech.Components;
 using Content.Server.Speech.Prototypes;
-using Content.Shared.Speech;
+using Content.Shared.Speech.EntitySystems;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Harmony.Speech.EntitySystems;
 
-public sealed partial class ScandinavianAccentSystem : EntitySystem
+public sealed partial class ScandinavianAccentSystem : RelayAccentSystem<ScandinavianAccentComponent>
 {
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private ReplacementAccentSystem _replacement = default!;
@@ -23,12 +23,7 @@ public sealed partial class ScandinavianAccentSystem : EntitySystem
         { 'o',  ['ö','ø'] },
     };
 
-    public override void Initialize()
-    {
-        SubscribeLocalEvent<ScandinavianAccentComponent, AccentGetEvent>(OnAccent);
-    }
-
-    public string Accentuate(string message)
+    public override string Accentuate(string message, Entity<ScandinavianAccentComponent>? ent = null)
     {
         var msg = message;
 
@@ -73,10 +68,5 @@ public sealed partial class ScandinavianAccentSystem : EntitySystem
         }
 
         return msgBuilder.ToString();
-    }
-
-    private void OnAccent(Entity<ScandinavianAccentComponent> ent, ref AccentGetEvent args)
-    {
-        args.Message = Accentuate(args.Message);
     }
 }

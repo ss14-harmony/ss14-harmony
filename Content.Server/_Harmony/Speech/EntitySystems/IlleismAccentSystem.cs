@@ -1,10 +1,11 @@
 using System.Text.RegularExpressions;
 using Content.Server._Harmony.Speech.Components;
 using Content.Shared.Speech;
+using Content.Shared.Speech.EntitySystems;
 
 namespace Content.Server._Harmony.Speech.EntitySystems;
 
-public sealed class IlleismAccentSystem : EntitySystem
+public sealed class IlleismAccentSystem : RelayAccentSystem<IlleismAccentComponent>
 {
     // I am going to Sec -> NAME is going to Sec
     private static readonly Regex RegexIAmUpper = new(@"\bI\s*AM\b|\bI'?M\b");
@@ -39,12 +40,6 @@ public sealed class IlleismAccentSystem : EntitySystem
     private static readonly Regex RegexIllUpper = new(@"\bI'LL\b");
     private static readonly Regex RegexIllLower = new(@"\bi'll\b", RegexOptions.IgnoreCase);
 
-    public override void Initialize()
-    {
-        base.Initialize();
-        SubscribeLocalEvent<IlleismAccentComponent, AccentGetEvent>(OnAccent);
-    }
-
     private bool MostlyUppercase(string message)
     {
         int totalLetters = 0;
@@ -69,55 +64,61 @@ public sealed class IlleismAccentSystem : EntitySystem
         return uppercaseLetters > totalLetters / 2;
     }
 
-    private void OnAccent(EntityUid uid, IlleismAccentComponent component, AccentGetEvent args)
+    public override string Accentuate(string message, Entity<IlleismAccentComponent>? entity = null)
     {
-        var message = args.Message;
-        var name = Name(uid).Split(' ')[0];
-        if (name == Name(uid))
+        var msg = message;
+
+        if (entity == null)
+            return message;
+
+        var ent = entity.Value;
+
+        var name = Name(ent).Split(' ')[0];
+        if (name == Name(ent))
         {
             name = name.Split('-')[0];
         }
         var upperName = name.ToUpper();
 
         // I am going to Sec -> NAME is going to Sec
-        message = RegexIAmUpper.Replace(message, upperName + " IS");
-        message = RegexIAmLower.Replace(message, name + " is");
+        msg = RegexIAmUpper.Replace(msg, upperName + " IS");
+        msg = RegexIAmLower.Replace(msg, name + " is");
 
         // I have it -> NAME has it
-        message = RegexIHaveUpper.Replace(message, upperName + " HAS");
-        message = RegexIHaveLower.Replace(message, name + " has");
+        msg = RegexIHaveUpper.Replace(msg, upperName + " HAS");
+        msg = RegexIHaveLower.Replace(msg, name + " has");
 
         // I do! -> NAME does!
-        message = RegexIDoUpper.Replace(message, upperName + " DOES");
-        message = RegexIDoLower.Replace(message, name + " does");
+        msg = RegexIDoUpper.Replace(msg, upperName + " DOES");
+        msg = RegexIDoLower.Replace(msg, name + " does");
 
         // I don't! -> NAME doesn't!
-        message = RegexIDontUpper.Replace(message, upperName + " DOESN'T");
-        message = RegexIDontLower.Replace(message, name + " doesn't");
+        msg = RegexIDontUpper.Replace(msg, upperName + " DOESN'T");
+        msg = RegexIDontLower.Replace(msg, name + " doesn't");
 
 		// I'll do it -> NAME will do it
-        message = RegexIllUpper.Replace(message, upperName + " WILL");
-        message = RegexIllLower.Replace(message, name + " will");
+        msg = RegexIllUpper.Replace(msg, upperName + " WILL");
+        msg = RegexIllLower.Replace(msg, name + " will");
 
         // I/myself -> NAME
-        message = RegexMyselfUpper.Replace(message, upperName);
+        msg = RegexMyselfUpper.Replace(msg, upperName);
         if (MostlyUppercase(message))
         {
-            message = RegexI.Replace(message, upperName);
+            msg = RegexI.Replace(msg, upperName);
         }
         else
         {
-            message = RegexI.Replace(message, name);
+            msg = RegexI.Replace(msg, name);
         }
 
         // Me -> NAME
-        message = RegexMeUpper.Replace(message, upperName);
-        message = RegexMeLower.Replace(message, name);
+        msg = RegexMeUpper.Replace(msg, upperName);
+        msg = RegexMeLower.Replace(msg, name);
 
         // My crowbar -> NAME's crowbar
-        message = RegexMyUpper.Replace(message, upperName + "'S");
-        message = RegexMyLower.Replace(message, name + "'s");
+        msg = RegexMyUpper.Replace(msg, upperName + "'S");
+        msg = RegexMyLower.Replace(msg, name + "'s");
 
-        args.Message = message;
+        return msg;
     }
 };

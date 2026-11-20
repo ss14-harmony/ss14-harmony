@@ -1,7 +1,6 @@
-using Content.Server._Harmony.Speech.EntitySystems;
+using Content.Shared.Speech.Components;
 
 namespace Content.Server._Harmony.Speech.Components;
 
 [RegisterComponent]
-[Access(typeof(ScandinavianAccentSystem))]
-public sealed partial class ScandinavianAccentComponent : Component;
+public sealed partial class ScandinavianAccentComponent : BaseAccentComponent;
