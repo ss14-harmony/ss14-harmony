@@ -1,4 +1,8 @@
 using Content.Server.Destructible;
+// Harmony change start
+// Adds the Harmony rod bounce helper dependency so rod collisions can be reflected before normal destruction logic runs.
+using Content.Server._Harmony.ImmovableRod.Systems;
+// Harmony change end
 using Content.Server.Polymorph.Components;
 using Content.Server.Popups;
 using Content.Shared.Administration.Logs;
@@ -32,6 +36,9 @@ public sealed partial class ImmovableRodSystem : EntitySystem
     [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
 
+    // Harmony change start: handle rods hitting protected entities.
+    [Dependency] private RodIndestructibleSystem _rodIndestructible = default!;
+    // Harmony change end
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -107,6 +114,11 @@ public sealed partial class ImmovableRodSystem : EntitySystem
 
             return;
         }
+
+        // Harmony change start: reflect rods before the normal destruction path.
+        if (_rodIndestructible.TryBounceRod(uid, ref args))
+            return;
+        // Harmony change end
 
         // Don't delete/hurt self if polymorphed into a rod
         if (TryComp<PolymorphedEntityComponent>(uid, out var polymorphed))
