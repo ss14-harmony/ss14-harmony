@@ -96,6 +96,30 @@
       speechSounds: Vox
 
 - type: trait
+  id: HarmonyRaisedByVulpkanin
+  name: trait-raisedbyvulp-name
+  description: trait-raisedbyvulp-desc
+  replaceComponents: true
+  cost: 1
+  category: SpeechTraits
+  components:
+  - type: Speech
+    speechVerb: Vulpkanin
+    speechSounds: Vulpkanin
+
+- type: trait
+  id: HarmonyRaisedByAvali
+  name: trait-raisedbyavali-name
+  description: trait-raisedbyavali-desc
+  replaceComponents: true
+  cost: 1
+  category: SpeechTraits
+  components:
+  - type: Speech
+    speechVerb: Parrot
+    speechSounds: MaleAvali # No difference between this and FemaleAvali
+
+- type: trait
   id: HarmonyIlleism
   name: trait-illeism-name
   description: trait-illeism-desc
@@ -223,6 +247,34 @@
       speechSounds: Vox
     - type: Vocal
       emoteSounds: UnisexVox
+
+- type: trait
+  id: HarmonyVulpkaninVocals
+  name: trait-vulpvocals-name
+  description: trait-vulpvocals-desc
+  replaceComponents: true
+  cost: 2
+  category: SpeechTraits
+  components:
+  - type: Speech
+    speechVerb: Vulpkanin
+    speechSounds: Vulpkanin
+  - type: Vocal
+    emoteSounds: MaleVulpkanin
+
+- type: trait
+  id: HarmonyAvaliVocals
+  name: trait-avalivocals-name
+  description: trait-avalivocals-desc
+  replaceComponents: true
+  cost: 2
+  category: SpeechTraits
+  components:
+  - type: Speech
+    speechVerb: Parrot
+    speechSounds: MaleAvali # No difference between this and FemaleAvali
+  - type: Vocal
+    emoteSounds: MaleAvali
 
 - type: trait
   id: IrishAccent
