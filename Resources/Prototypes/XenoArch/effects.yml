@@ -167,7 +167,7 @@
     group: XenoArtifactNode
 
 - type: entity
-  parent: BaseOneTimeXenoArtifactEffect
+  parent: [BaseOneTimeXenoArtifactEffect, NFXenoArtifactHintCommunication] # Frontier: added NFXenoArtifactHintCommunication
   id: XenoArtifactEffectUniversalIntercom
   description: Obtains ability of long-distance communication device
   components:
@@ -231,7 +231,7 @@
   - type: XAERemoveCollision
 
 - type: entity
-  parent: BaseOneTimeXenoArtifactEffect
+  parent: [BaseOneTimeXenoArtifactEffect, NFXenoArtifactHintDisplacement] # Frontier: added NFXenoArtifactHintDisplacement
   id: XenoArtifactWandering
   description: Starts to move sporadically
   components:
@@ -244,7 +244,7 @@
       maxStepCooldown: 3
 
 - type: entity
-  parent: BaseOneTimeXenoArtifactEffect
+  parent: [BaseOneTimeXenoArtifactEffect, NFXenoArtifactHintStorage] # Frontier: added NFXenoArtifactHintStorage
   id: XenoArtifactSolutionStorage
   description: Obtains ability of container for chemical solutions
   components:
@@ -275,7 +275,7 @@
       utensil: None
 
 - type: entity
-  parent: BaseOneTimeXenoArtifactEffect
+  parent: [BaseOneTimeXenoArtifactEffect, NFXenoArtifactHintDisplacement] # Frontier: added NFXenoArtifactHintDisplacement
   id: XenoArtifactSpeedUp
   description: Improves holder movement speed
   components:
@@ -286,7 +286,7 @@
       sprintModifier: 1.3
 
 - type: entity
-  parent: BaseOneTimeXenoArtifactEffect
+  parent: [BaseOneTimeXenoArtifactEffect, NFXenoArtifactHintUtility] # Frontier: added NFXenoArtifactHintUtility
   id: XenoArtifactDrill
   description: Obtains ability of drill
   components:
@@ -351,7 +351,7 @@
         path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
 
 - type: entity
-  parent: BaseOneTimeXenoArtifactEffect
+  parent: [BaseOneTimeXenoArtifactEffect, NFXenoArtifactHintSentience] # Frontier: added NFXenoArtifactHintSentience
   id: XenoArtifactGhost
   description: Becomes sentient
   components:
@@ -371,7 +371,7 @@
     - type: GhostTakeoverAvailable
 
 - type: entity
-  parent: BaseOneTimeXenoArtifactEffect
+  parent: [BaseOneTimeXenoArtifactEffect, NFXenoArtifactHintUtility]  # Frontier: added NFXenoArtifactHintUtility
   id: XenoArtifactOmnitool
   description: Obtains ability of omnitool
   components:
@@ -418,9 +418,9 @@
           path: /Audio/Items/change_drill.ogg
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintCerebral] # Frontier: added NFXenoArtifactHintCerebral
   id: XenoArtifactEffectBadFeeling
-  description: Broadcasts sublime message
+  description: Broadcasts foreboding message # Frontier: sublime<foreboding
   components:
   - type: XAETelepathic
     messages:
@@ -448,7 +448,7 @@
     - badfeeling-artifact-drastic-6
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintCerebral] # Frontier: added NFXenoArtifactHintCerebral
   id: XenoArtifactEffectGoodFeeling
   description: Broadcasts sublime message
   components:
@@ -477,7 +477,7 @@
     - goodfeeling-artifact-drastic-6
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactEffectJunkSpawn
   description: Create recyclable junk
   components:
@@ -498,14 +498,14 @@
           weight: 1
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintElectricalInterference] # Frontier: added NFXenoArtifactHintElectricalInterference
   id: XenoArtifactEffectLightFlicker
   description: Minor electromagnetic interference
   components:
   - type: XAELightFlicker
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintBiochemical] # Frontier: added NFXenoArtifactHintBiochemical
   id: XenoArtifactPotassiumWave
   description: Produces potassium
   components:
@@ -530,7 +530,7 @@
     - Potassium
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactFloraSpawn
   description: Produces flora
   components:
@@ -544,7 +544,7 @@
         tableId: FloraTreeTable
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintBiochemical] # Frontier: added NFXenoArtifactHintBiochemical
   id: XenoArtifactChemicalPuddle
   description: Produces puddle of chemical mixture # todo: make description say what exact chemical is produced, maybe add mixes into possible chemicals
   components:
@@ -580,14 +580,14 @@
     - Sulfur
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintEnvironment] # Frontier: added NFXenoArtifactHintEnvironment
   id: XenoArtifactThrowThingsAround
   description: Minor implosion
   components:
   - type: XAEThrowThingsAround
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintEnergyRelease] # Frontier: added NFXenoArtifactHintEnergyRelease
   id: XenoArtifactColdWave
   description: Cools down surrounding gas
   components:
@@ -595,7 +595,7 @@
     targetTemp: 50
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintEnergyRelease] # Frontier: added NFXenoArtifactHintEnergyRelease
   id: XenoArtifactHeatWave
   description: Heats up surrounding gas greatly
   components:
@@ -603,7 +603,7 @@
     targetTemp: 500
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintBiochemical] # Frontier: added NFXenoArtifactHintBiochemical
   id: XenoArtifactFoamMild
   description: Produces chemical foam # todo: separate in 1 for each chemical for description? actually sounds like a very good idea
   components:
@@ -623,7 +623,7 @@
     - JuiceThatMakesYouWeh
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactRandomInstrumentSpawn
   description: Creates musical instrument
   components:
@@ -642,7 +642,7 @@
         tableId: RandomInstrumentTable
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactMonkeySpawn
   description: Creates primate
   components:
@@ -665,7 +665,7 @@
           weight: 5
 
 - type: entity
-  parent: BaseOneTimeXenoArtifactEffect
+  parent: [BaseOneTimeXenoArtifactEffect, NFXenoArtifactHintEnergyRelease] # Frontier: added NFXenoArtifactHintEnergyRelease
   id: XenoArtifactRadioactive
   description: Becomes mildly radioactive
   components:
@@ -678,7 +678,7 @@
       slope: 0.3
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintEnergyRelease] # Frontier: added NFXenoArtifactHintEnergyRelease
   id: XenoArtifactChargeBattery
   description: Charges up batteries
   components:
@@ -688,7 +688,7 @@
     - charge-artifact-popup
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintElectricalInterference] # Frontier: added NFXenoArtifactHintElectricalInterference
   id: XenoArtifactKnock
   description: Mild electromagnetic interference
   components:
@@ -696,7 +696,7 @@
   - type: XAELightFlicker
 
 - type: entity
-  parent: BaseOneTimeXenoArtifactEffect
+  parent: [BaseOneTimeXenoArtifactEffect, NFXenoArtifactHintMagnet] # Frontier: added NFXenoArtifactHintMagnet
   id: XenoArtifactMagnet
   description: Create small gravity well
   components:
@@ -710,7 +710,7 @@
       baseTangentialAcceleration: 3
 
 - type: entity
-  parent: BaseOneTimeXenoArtifactEffect
+  parent: [BaseOneTimeXenoArtifactEffect, NFXenoArtifactHintMagnet] # Frontier: added NFXenoArtifactHintMagnet
   id: XenoArtifactMagnetNegative
   description: Create small gravity well
   components:
@@ -724,7 +724,7 @@
       baseTangentialAcceleration: -3
 
 - type: entity
-  parent: BaseOneTimeXenoArtifactEffect
+  parent: [BaseOneTimeXenoArtifactEffect, NFXenoArtifactHintVisual] # Frontier: added NFXenoArtifactHintVisual
   id: XenoArtifactStealth
   description: Create light interference
   components:
@@ -737,7 +737,7 @@
       movementVisibilityRate: 0.10
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactRareMaterialSpawnSilver
   description: Create rare materials
   components:
@@ -759,7 +759,7 @@
         prob: 0.3
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactRareMaterialSpawnPlasma
   description: Create plasma
   components:
@@ -781,7 +781,7 @@
         prob: 0.3
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactRareMaterialSpawnGold
   description: Create gold
   components:
@@ -803,7 +803,7 @@
         prob: 0.3
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactRareMaterialSpawnUranium
   description: Create uranium
   components:
@@ -825,7 +825,7 @@
           chance: 0.3
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactAngryCarpSpawn
   description: Create hostile fish
   components:
@@ -846,7 +846,7 @@
         - id: MobCarpHolo
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactFaunaSpawn
   description: Create friendly fauna
   components:
@@ -886,7 +886,7 @@
           prob: 0.03
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Harmony: added NFXenoArtifactHintMatterCreation | Wasn't originally in Port
   id: XenoArtifactHostileFaunaSpawn
   description: Create hostile fauna
   components:
@@ -913,7 +913,7 @@
         - id: MobKangarooSpace
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactCashSpawn
   description: Create money
   components:
@@ -941,7 +941,7 @@
           weight: 0.1
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintEnvironment] # Frontier: added NFXenoArtifactHintEnvironment
   id: XenoArtifactShatterWindows
   description: Break windows
   components:
@@ -960,7 +960,7 @@
         Structural: 200
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintBiochemical] # Frontier: added NFXenoArtifactHintBiochemical
   id: XenoArtifactFoamGood
   description: Creates wave of helpful foam
   components:
@@ -981,7 +981,7 @@
     - Omnizine
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintBiochemical] # Frontier: added NFXenoArtifactHintBiochemical
   id: XenoArtifactFoamDangerous
   description: Creates wave of harmful foam
   components:
@@ -1003,7 +1003,7 @@
     - Amatoxin
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintBiochemical] # Frontier: added NFXenoArtifactHintBiochemical
   id: XenoArtifactPuddleRare
   description: Creates puddle of helpful chemicals
   components:
@@ -1033,7 +1033,7 @@
     - Siderlac
 
 - type: entity
-  parent: BaseOneTimeXenoArtifactEffect
+  parent: [BaseOneTimeXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactAnomalySpawn
   description: Creates anomaly
   components:
@@ -1048,7 +1048,7 @@
         - id: RandomAnomalySpawner
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintEnergyRelease] # Frontier: added NFXenoArtifactHintEnergyRelease
   id: XenoArtifactIgnite
   description: Pyrokinesis
   components:
@@ -1059,14 +1059,14 @@
       max: 6
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintDisplacement] # Frontier: added NFXenoArtifactHintDisplacement
   id: XenoArtifactTeleport
   description: Teleportation
   components:
   - type: XAERandomTeleportInvoker
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintElectricalInterference] # Frontier: added NFXenoArtifactHintElectricalInterference
   id: XenoArtifactEmp
   description: Dangerous electromagnetic interference
   components:
@@ -1078,14 +1078,14 @@
   - type: XAEEmpInArea
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintPolymorph] # Frontier: added NFXenoArtifactHintPolymorph
   id: XenoArtifactPolyMonkey
   description: Temporarily reshape flesh to fur
   components:
   - type: XAEPolymorph
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintPolymorph] # Frontier: added NFXenoArtifactHintPolymorph
   id: XenoArtifactPolyLizard
   description: Temporarily reshape flesh to scale
   components:
@@ -1093,7 +1093,7 @@
     polymorphPrototypeName: ArtifactLizard
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintPolymorph] # Frontier: added NFXenoArtifactHintPolymorph
   id: XenoArtifactPolyLuminous
   description: Temporarily reshape flesh to light
   components:
@@ -1101,7 +1101,7 @@
     polymorphPrototypeName: ArtifactLuminous
 
 - type: entity
-  parent: BaseOneTimeXenoArtifactEffect
+  parent: [BaseOneTimeXenoArtifactEffect, NFXenoArtifactHintEnergyRelease] # Frontier: added NFXenoArtifactHintEnergyRelease
   id: XenoArtifactRadioactiveStrong
   description: Becomes highly radioactive
   components:
@@ -1114,7 +1114,7 @@
       slope: 0.3
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactMaterialSpawnGlass
   description: Create glass
   components:
@@ -1128,7 +1128,7 @@
         id: SheetGlass
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactMaterialSpawnSteel
   description: Create steel
   components:
@@ -1142,7 +1142,7 @@
         id: SheetSteel
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactMaterialSpawnPlastic
   description: Create plastic
   components:
@@ -1156,14 +1156,14 @@
         id: SheetPlastic
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintDisplacement] # Frontier: added NFXenoArtifactHintDisplacement
   id: XenoArtifactPortal
   description: Create short-living bluespace portal
   components:
   - type: XAEPortal
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactArtifactSpawn
   description: Create artifact
   components:
@@ -1182,7 +1182,7 @@
         tableId: RandomArtifactTable
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintDisplacement] # Frontier: added NFXenoArtifactHintDisplacement
   id: XenoArtifactShuffle
   description: Switch places of sentient beings #not ALL beings, but oh well...
   components:
@@ -1193,7 +1193,7 @@
     - shuffle-artifact-popup
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintEnvironment] # Frontier: added NFXenoArtifactHintEnvironment
   id: XenoArtifactHealAll
   description: Miraculous healing
   components:
@@ -1241,7 +1241,7 @@
         id: Singularity
 
 - type: entity
-  parent: BaseOneTimeXenoArtifactEffect
+  parent: [BaseOneTimeXenoArtifactEffect, NFXenoArtifactHintEnvironment] # Frontier: added NFXenoArtifactHintEnvironment
   id: XenoArtifactExplosionScary
   description: Small scale high-speed nuclear reaction
   components:
@@ -1256,7 +1256,7 @@
     repeatable: true
 
 - type: entity
-  parent: BaseOneTimeXenoArtifactEffect
+  parent: [BaseOneTimeXenoArtifactEffect, NFXenoArtifactHintEnvironment] # Frontier: added NFXenoArtifactHintEnvironment
   id: XenoArtifactBoom
   description: Explosion
   components:
@@ -1270,7 +1270,7 @@
     repeatable: true
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactEffectCreationGasPlasma
   description: Expels plasma
   components:
@@ -1279,7 +1279,7 @@
       Plasma: 300
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactEffectCreationGasTritium
   description: Expels tritium
   components:
@@ -1288,7 +1288,7 @@
       Tritium: 300
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactEffectCreationGasAmmonia
   description: Expels ammonia
   components:
@@ -1297,7 +1297,7 @@
       Ammonia: 300
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactEffectCreationGasFrezon
   description: Expels frezon
   components:
@@ -1306,7 +1306,7 @@
       Frezon: 300
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactEffectCreationGasNitrousOxide
   description: Expels nitrous oxide
   components:
@@ -1315,7 +1315,7 @@
       NitrousOxide: 300
 
 - type: entity
-  parent: BaseXenoArtifactEffect
+  parent: [BaseXenoArtifactEffect, NFXenoArtifactHintMatterCreation] # Frontier: added NFXenoArtifactHintMatterCreation
   id: XenoArtifactEffectCreationGasCarbonDioxide
   description: Expels carbon dioxide
   components:
