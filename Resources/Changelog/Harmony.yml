@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: FluffMe
-  changes:
-  - message: Clipboard can now be printed in Autolathe.
-    type: Add
-  id: 53
-  time: '2024-09-14T05:13:57.0000000+00:00'
-  url: https://github.com/ss14-harmony/ss14-harmony/pull/53
 - author: spanky-spanky
   changes:
   - message: QOL improvements to Omega.
@@ -3795,3 +3788,10 @@
   id: 1453
   time: '2026-11-20T02:37:24.0000000+00:00'
   url: https://github.com/ss14-harmony/ss14-harmony/pull/1465
+- author: ZyinkNotAvailable
+  changes:
+  - message: Arcyox heals less brute and burn damage.
+    type: Tweak
+  id: 1454
+  time: '2026-11-20T07:38:30.0000000+00:00'
+  url: https://github.com/ss14-harmony/ss14-harmony/pull/1472
