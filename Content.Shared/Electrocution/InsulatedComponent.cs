@@ -16,5 +16,12 @@ namespace Content.Shared.Electrocution
         /// </summary>
         [DataField, AutoNetworkedField]
         public float Coefficient { get; set; } = 0f;
+
+        /// <summary>
+        /// Harmony addition: Insulating Drinks
+        /// Does it insulate aganist Lightning Arcs
+        /// </summary>
+        [DataField, AutoNetworkedField]
+        public bool ArcInsulation = true;
     }
 }
