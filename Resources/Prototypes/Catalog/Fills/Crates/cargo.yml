@@ -243,6 +243,7 @@
     - id: CablecuffsBroken
     - id: FoodPlateTin
     - id: WeakKudzu
+    - id: ClusterWeh # Harmony Change
     - id: MagazineFoamBox
       weight: 0.1
     - id: BoxDonkSoftBox
