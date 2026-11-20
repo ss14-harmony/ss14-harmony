@@ -10,7 +10,7 @@ using Robust.Shared.Map;
 
 namespace Content.Shared._Harmony.SignalJammer;
 
-public sealed class SharedSignalJammerSystem : EntitySystem
+public sealed partial class SharedSignalJammerSystem : EntitySystem
 {
     [Dependency] private ItemToggleSystem _toggle = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
