@@ -51,3 +51,77 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
+
+- type: entity
+  parent: [BaseWeaponRifle, BaseSyndicateContraband]
+  id: WeaponRifleGattar
+  name: Gattar
+  suffix: Harmony
+  description: It's a guitar! It's a gun! It's a Gattar!
+  components:
+  - type: Sprite
+    sprite: _Harmony/Objects/Weapons/Guns/Rifles/gattar.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Harmony/Objects/Weapons/Guns/Rifles/gattar.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Harmony/Weapons/Guns/Gunshots/guitar_shoot.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/_Harmony/Weapons/Guns/Cock/guitar_rack.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifle
+        insertSound: /Audio/_Harmony/Weapons/Guns/MagIn/guitar_magin.ogg
+        ejectSound: /Audio/_Harmony/Weapons/Guns/MagOut/guitar_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineRifle
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Wieldable
+    wieldSound:
+      path: /Audio/_Harmony/Weapons/Guns/guitar_draw.ogg
+  - type: Instrument
+    program: 29
+  - type: SwappableInstrument
+    instrumentList:
+      "Overdrive": {29: 0}
+      "Distortion": {30: 0}
+      "Harmonics": {31: 0}
+  - type: Tag
+    tags:
+    - StringInstrument
+  - type: ActivatableUI
+    verbOnly: true
+    inHandsOnly: true
+    singleUser: true
+    verbText: verb-instrument-openui
+    key: enum.InstrumentUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
