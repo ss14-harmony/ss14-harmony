@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 V <97265903+formlessnameless@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- files:
+  - large_stamp-cap.png
+  - large_stamp-ce.png
+  - large_stamp-centcom.png
+  - large_stamp-chap.png
+  - large_stamp-clown.png
+  - large_stamp-cmo.png
+  - large_stamp-deny.png
+  - large_stamp-hop.png
+  - large_stamp-hos.png
+  - large_stamp-mime.png
+  - large_stamp-ok.png
+  - large_stamp-qm.png
+  - large_stamp-rd.png
+  - large_stamp-syndicate.png
+  license: "CC-BY-SA-3.0"
+  copyright: "Stamp icons taken from tgstation"
+  source: "https://github.com/tgstation/tgstation/commit/9a9b428b61f388a0f6d7a20bbba05147e61023d0"
