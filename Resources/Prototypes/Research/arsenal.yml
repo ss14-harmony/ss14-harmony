@@ -102,7 +102,10 @@
   - Truncheon
   - TelescopicShield
   - HoloprojectorSecurity
-  - WeaponDisablerSMG
+# Harmony Change: Replaces the disbler SMG with the security bola cannon
+#  - WeaponDisablerSMG
+  - WeaponSecurityBolaCannonHarmony
+# End of Harmony Change
 
 - type: technology
   id: ExplosiveTechnology
