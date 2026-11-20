@@ -48,4 +48,18 @@ public sealed partial class RMCCVars
 
     public static readonly CVarDef<bool> RMCPlayVoicelinesVox =
         CVarDef.Create("rmc.play_voicelines_vox", true, CVar.REPLICATED | CVar.CLIENT | CVar.ARCHIVE); // Harmony change - Vox
+
+    // Start Box Change: Scurret, IPC, Thaven, Allulalo 
+    public static readonly CVarDef<bool> RMCPlayVoicelinesScurret =
+        CVarDef.Create("rmc.play_voicelines_scurret", true, CVar.REPLICATED | CVar.CLIENT | CVar.ARCHIVE);
+
+    public static readonly CVarDef<bool> RMCPlayVoicelinesIPC =
+        CVarDef.Create("rmc.play_voicelines_ipc", true, CVar.REPLICATED | CVar.CLIENT | CVar.ARCHIVE);
+
+    public static readonly CVarDef<bool> RMCPlayVoicelinesThaven =
+        CVarDef.Create("rmc.play_voicelines_thaven", true, CVar.REPLICATED | CVar.CLIENT | CVar.ARCHIVE);
+
+    public static readonly CVarDef<bool> RMCPlayVoicelinesAllulalo =
+        CVarDef.Create("rmc.play_voicelines_allulalo", true, CVar.REPLICATED | CVar.CLIENT | CVar.ARCHIVE);
+    // End Box Change
 }
