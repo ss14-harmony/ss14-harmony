@@ -7,15 +7,24 @@
   guides: [ Conspirators ]
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 3600 # 1h
+    time: 1h
 
 - type: antagSpecifier
   parent: RestrictedAntag
   id: Conspirator
   prefRoles:
   - Conspirator
+  briefing:
+    text: conspirator-role-greeting
+    color: "#724F29"
+    sound: /Audio/_Harmony/Misc/conspirator_greeting.ogg
   blacklist:
     components:
     - AntagImmune
+  components:
+  - type: Conspirator
+  - type: AutoImplant
+    implants:
+      - RadioImplantConspiracy
   mindRoles:
   - MindRoleConspirator
