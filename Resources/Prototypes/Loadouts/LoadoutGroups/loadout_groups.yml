@@ -1447,7 +1447,7 @@
   - LoadoutSpeciesBreathTool
   - LoadoutClothingMaskAuralis # Harmony
   - LoadoutClothingMaskVoxSpecial # Harmony
-  - LoadoutClothingMaskVoxTrochar # Harmony
+  - LoadoutClothingMaskVoxTrochar # Triad
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolMedical
@@ -1459,7 +1459,7 @@
   - LoadoutSpeciesBreathToolMedical
   - LoadoutClothingMaskAuralis # Harmony
   - LoadoutClothingMaskVoxSpecial # Harmony
-  - LoadoutClothingMaskVoxTrochar # Harmony
+  - LoadoutClothingMaskVoxTrochar # Triad
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolSecurity
@@ -1472,4 +1472,4 @@
   - LoadoutClothingMaskAuralis # Harmony
   - LoadoutClothingMaskVoxSpecial # Harmony
   - LoadoutClothingMaskNTEnforcer # Harmony
-  - LoadoutClothingMaskVoxTrochar # Harmony
+  - LoadoutClothingMaskVoxTrochar # Triad
