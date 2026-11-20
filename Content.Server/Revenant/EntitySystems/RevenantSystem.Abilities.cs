@@ -46,7 +46,6 @@ public sealed partial class RevenantSystem
     [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private SharedTransformSystem _transformSystem = default!;
     [Dependency] private SharedMapSystem _mapSystem = default!;
-
     [Dependency] private EntityQuery<TagComponent> _tagQuery = default!;
     [Dependency] private EntityQuery<ItemComponent> _itemQuery = default!;
     [Dependency] private EntityQuery<PoweredLightComponent> _poweredLightQuery = default!;

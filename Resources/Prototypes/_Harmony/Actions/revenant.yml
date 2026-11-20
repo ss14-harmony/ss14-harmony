@@ -1,0 +1,11 @@
+﻿- type: entity
+  id: ActionRevenantWhisper
+  name: Ghostly Whisper
+  description: Whisper a spooky message into someones ears.
+  components:
+  - type: Action
+    icon: { sprite : _Harmony/Interface/Actions/revenant.rsi, state: "ghostly_whisper"}
+    itemIconStyle: BigAction
+  - type: TargetAction
+  - type: EntityTargetAction
+    event: !type:RevenantWhisperActionEvent
