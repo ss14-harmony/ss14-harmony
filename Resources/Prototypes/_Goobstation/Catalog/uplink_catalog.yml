@@ -2,7 +2,7 @@
   id: UplinkHardsuitCybersunStealth
   name: uplink-hardsuit-cybersun-stealth-name
   description: uplink-hardsuit-cybersun-stealth-desc
-  icon: { sprite: /Textures/_Goobstation/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi, state: icon }
+  icon: { sprite: /Textures/_Harmony/Clothing/OuterClothing/Hardsuits/cybersunstealth.rsi, state: icon } # Harmony - changed sprite path
   productEntity: ClothingBackpackDuffelSyndicateStealthHardsuitBundle
   cost:
     Telecrystal: 15 # Harmony - modified since goob has different TC ratio.
