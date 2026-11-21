@@ -155,8 +155,10 @@ public sealed partial class RevenantSystem
             _popup.PopupEntity(Loc.GetString("revenant-soul-harvested"), target, uid, PopupType.SmallCaution);
             return;
         }
-
-        if (_mobStateQuery.TryComp(target, out var mobstate) && mobstate.CurrentState == MobState.Alive && !HasComp<SleepingComponent>(target))
+        // Harmony change start: protect yellowtext SSD players while allowing other sleeping targets.
+        // if (_mobStateQuery.TryComp(target, out var mobstate) && mobstate.CurrentState == MobState.Alive && !HasComp<SleepingComponent>(target))
+        if (IsHarvestProtected(target))
+        // Harmony change end
         {
             _popup.PopupEntity(Loc.GetString("revenant-soul-too-powerful"), target, uid);
             return;
