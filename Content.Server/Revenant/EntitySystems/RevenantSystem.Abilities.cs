@@ -204,11 +204,6 @@ public sealed partial class RevenantSystem
 
         _appearance.SetData(uid, RevenantVisuals.Harvesting, false);
 
-        // Harmony change start: do not finish harvesting a target who became SSD during the do-after
-        if (IsHarvestProtected(args.Args.Target.Value))
-            return;
-        // Harmony change end
-
         if (!TryComp<EssenceComponent>(args.Args.Target, out var essence))
             return;
 
